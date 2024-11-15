@@ -15586,7 +15586,7 @@ export namespace Core {
          */
         privateIp?: pulumi.Input<string>;
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
          */
         securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -36849,6 +36849,184 @@ export namespace FusionApps {
 }
 
 export namespace GenerativeAi {
+    export interface AgentAgentEndpointContentModerationConfig {
+        /**
+         * (Updatable) A flag to enable or disable content moderation on input.
+         */
+        shouldEnableOnInput?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A flag to enable or disable content moderation on output.
+         */
+        shouldEnableOnOutput?: pulumi.Input<boolean>;
+    }
+
+    export interface AgentAgentEndpointSessionConfig {
+        /**
+         * (Updatable) The session will become inactive after this timeout.
+         */
+        idleTimeoutInSeconds?: pulumi.Input<number>;
+    }
+
+    export interface AgentDataIngestionJobDataIngestionJobStatistic {
+        /**
+         * The duration of this ingestion job.
+         */
+        durationInSeconds?: pulumi.Input<number>;
+        /**
+         * The number of files that have failed during the ingestion.
+         */
+        numberOfFailedFiles?: pulumi.Input<number>;
+        /**
+         * The number of files that have been successfully ingested during the ingestion.
+         */
+        numberOfIngestedFiles?: pulumi.Input<number>;
+    }
+
+    export interface AgentDataSourceDataSourceConfig {
+        /**
+         * (Updatable) The type of the tool. The allowed values are:
+         * * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+         */
+        dataSourceConfigType: pulumi.Input<string>;
+        /**
+         * (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+         */
+        objectStoragePrefixes: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentDataSourceDataSourceConfigObjectStoragePrefix>[]>;
+    }
+
+    export interface AgentDataSourceDataSourceConfigObjectStoragePrefix {
+        /**
+         * (Updatable) The bucket name of an object.
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * (Updatable) The namespace name of an object.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the object (file) or prefix (folder).
+         */
+        prefix?: pulumi.Input<string>;
+    }
+
+    export interface AgentKnowledgeBaseIndexConfig {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+         */
+        clusterId?: pulumi.Input<string>;
+        /**
+         * (Updatable) **DatabaseConnection**
+         *
+         * The connection type for Databases.
+         */
+        databaseConnection?: pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigDatabaseConnection>;
+        /**
+         * (Updatable) Array of Database functions to be used.
+         */
+        databaseFunctions?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigDatabaseFunction>[]>;
+        /**
+         * (Updatable) The type of index. The allowed values are:
+         * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+         * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+         * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+         */
+        indexConfigType: pulumi.Input<string>;
+        /**
+         * (Updatable) Index configuration for open search.
+         */
+        indexes?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigIndex>[]>;
+        /**
+         * (Updatable) **SecretDetail**
+         *
+         * The details of configured security configuration on OpenSearch.
+         */
+        secretDetail?: pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigSecretDetail>;
+        /**
+         * (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        shouldEnableHybridSearch?: pulumi.Input<boolean>;
+    }
+
+    export interface AgentKnowledgeBaseIndexConfigDatabaseConnection {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+         */
+        connectionId: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of Database connection. The allowed values are:
+         * * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+         */
+        connectionType: pulumi.Input<string>;
+    }
+
+    export interface AgentKnowledgeBaseIndexConfigDatabaseFunction {
+        /**
+         * (Updatable) The name of the Database function.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface AgentKnowledgeBaseIndexConfigIndex {
+        /**
+         * (Updatable) The index name in opensearch.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) **IndexSchema**
+         *
+         * The index schema details.
+         */
+        schema?: pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigIndexSchema>;
+    }
+
+    export interface AgentKnowledgeBaseIndexConfigIndexSchema {
+        /**
+         * (Updatable) Body key name.
+         */
+        bodyKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+         */
+        embeddingBodyKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Title key that stores the Title of a document, if available.
+         */
+        titleKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) URL key that stores the URL of a document, if available.
+         */
+        urlKey?: pulumi.Input<string>;
+    }
+
+    export interface AgentKnowledgeBaseIndexConfigSecretDetail {
+        /**
+         * (Updatable) The IDCS Connect clientId.
+         */
+        clientId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URL represent authentication url of the IDCS.
+         */
+        idcsUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) Fully qualified scope url
+         */
+        scopeUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of OpenID. The allowed values are:
+         * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+         * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+         */
+        vaultSecretId: pulumi.Input<string>;
+    }
+
     export interface DedicatedAiClusterCapacity {
         /**
          * The type of the dedicated AI cluster capacity.
@@ -36869,6 +37047,72 @@ export namespace GenerativeAi {
          * (Updatable) Whether to enable the content moderation feature.
          */
         isEnabled: pulumi.Input<boolean>;
+    }
+
+    export interface GetAgentAgentEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAgentAgentEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAgentAgentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAgentAgentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAgentDataIngestionJobsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAgentDataIngestionJobsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAgentDataSourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAgentDataSourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAgentKnowledgeBasesFilter {
+        /**
+         * The index name in opensearch.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAgentKnowledgeBasesFilterArgs {
+        /**
+         * The index name in opensearch.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDedicatedAiClustersFilter {

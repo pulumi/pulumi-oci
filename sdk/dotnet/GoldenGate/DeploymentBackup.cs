@@ -40,6 +40,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         IsMetadataOnly = deploymentBackupIsMetadataOnly,
     ///         Locks = new[]
     ///         {
     ///             new Oci.GoldenGate.Inputs.DeploymentBackupLockArgs
@@ -120,6 +121,12 @@ namespace Pulumi.Oci.GoldenGate
 
         [Output("isLockOverride")]
         public Output<bool> IsLockOverride { get; private set; } = null!;
+
+        /// <summary>
+        /// Parameter to allow users to create backup without trails
+        /// </summary>
+        [Output("isMetadataOnly")]
+        public Output<bool> IsMetadataOnly { get; private set; } = null!;
 
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -294,6 +301,12 @@ namespace Pulumi.Oci.GoldenGate
         [Input("isLockOverride")]
         public Input<bool>? IsLockOverride { get; set; }
 
+        /// <summary>
+        /// Parameter to allow users to create backup without trails
+        /// </summary>
+        [Input("isMetadataOnly")]
+        public Input<bool>? IsMetadataOnly { get; set; }
+
         [Input("locks")]
         private InputList<Inputs.DeploymentBackupLockArgs>? _locks;
 
@@ -398,6 +411,12 @@ namespace Pulumi.Oci.GoldenGate
 
         [Input("isLockOverride")]
         public Input<bool>? IsLockOverride { get; set; }
+
+        /// <summary>
+        /// Parameter to allow users to create backup without trails
+        /// </summary>
+        [Input("isMetadataOnly")]
+        public Input<bool>? IsMetadataOnly { get; set; }
 
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.

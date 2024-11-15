@@ -68,6 +68,11 @@ public final class GetDeploymentBackupResult {
     private Boolean isAutomatic;
     private Boolean isLockOverride;
     /**
+     * @return Parameter to allow users to create backup without trails
+     * 
+     */
+    private Boolean isMetadataOnly;
+    /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
@@ -206,6 +211,13 @@ public final class GetDeploymentBackupResult {
         return this.isLockOverride;
     }
     /**
+     * @return Parameter to allow users to create backup without trails
+     * 
+     */
+    public Boolean isMetadataOnly() {
+        return this.isMetadataOnly;
+    }
+    /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
@@ -311,6 +323,7 @@ public final class GetDeploymentBackupResult {
         private String id;
         private Boolean isAutomatic;
         private Boolean isLockOverride;
+        private Boolean isMetadataOnly;
         private String lifecycleDetails;
         private List<GetDeploymentBackupLock> locks;
         private String namespace;
@@ -338,6 +351,7 @@ public final class GetDeploymentBackupResult {
     	      this.id = defaults.id;
     	      this.isAutomatic = defaults.isAutomatic;
     	      this.isLockOverride = defaults.isLockOverride;
+    	      this.isMetadataOnly = defaults.isMetadataOnly;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
     	      this.namespace = defaults.namespace;
@@ -446,6 +460,14 @@ public final class GetDeploymentBackupResult {
               throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "isLockOverride");
             }
             this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isMetadataOnly(Boolean isMetadataOnly) {
+            if (isMetadataOnly == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupResult", "isMetadataOnly");
+            }
+            this.isMetadataOnly = isMetadataOnly;
             return this;
         }
         @CustomType.Setter
@@ -561,6 +583,7 @@ public final class GetDeploymentBackupResult {
             _resultValue.id = id;
             _resultValue.isAutomatic = isAutomatic;
             _resultValue.isLockOverride = isLockOverride;
+            _resultValue.isMetadataOnly = isMetadataOnly;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;
             _resultValue.namespace = namespace;

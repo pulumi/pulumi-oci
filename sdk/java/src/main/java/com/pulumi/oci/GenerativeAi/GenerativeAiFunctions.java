@@ -7,6 +7,28 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcePlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasePlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClustersArgs;
@@ -19,6 +41,17 @@ import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsPlainArgs;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataIngestionJobLogContentResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataIngestionJobResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataIngestionJobsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataSourceResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataSourcesResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBaseResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBasesResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClusterResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClustersResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetEndpointResult;
@@ -29,6 +62,2568 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class GenerativeAiFunctions {
+    /**
+     * This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetAgent**
+     * 
+     * Gets information about an agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgent = GenerativeAiFunctions.getAgentAgent(GetAgentAgentArgs.builder()
+     *             .agentId(testAgentOciGenerativeAiAgentAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentResult> getAgentAgent(GetAgentAgentArgs args) {
+        return getAgentAgent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetAgent**
+     * 
+     * Gets information about an agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgent = GenerativeAiFunctions.getAgentAgent(GetAgentAgentArgs.builder()
+     *             .agentId(testAgentOciGenerativeAiAgentAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentResult> getAgentAgentPlain(GetAgentAgentPlainArgs args) {
+        return getAgentAgentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetAgent**
+     * 
+     * Gets information about an agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgent = GenerativeAiFunctions.getAgentAgent(GetAgentAgentArgs.builder()
+     *             .agentId(testAgentOciGenerativeAiAgentAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentResult> getAgentAgent(GetAgentAgentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentAgent:getAgentAgent", TypeShape.of(GetAgentAgentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetAgent**
+     * 
+     * Gets information about an agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgent = GenerativeAiFunctions.getAgentAgent(GetAgentAgentArgs.builder()
+     *             .agentId(testAgentOciGenerativeAiAgentAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentResult> getAgentAgentPlain(GetAgentAgentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentAgent:getAgentAgent", TypeShape.of(GetAgentAgentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetAgentEndpoint**
+     * 
+     * Gets information about an endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoint = GenerativeAiFunctions.getAgentAgentEndpoint(GetAgentAgentEndpointArgs.builder()
+     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentEndpointResult> getAgentAgentEndpoint(GetAgentAgentEndpointArgs args) {
+        return getAgentAgentEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetAgentEndpoint**
+     * 
+     * Gets information about an endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoint = GenerativeAiFunctions.getAgentAgentEndpoint(GetAgentAgentEndpointArgs.builder()
+     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentEndpointResult> getAgentAgentEndpointPlain(GetAgentAgentEndpointPlainArgs args) {
+        return getAgentAgentEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetAgentEndpoint**
+     * 
+     * Gets information about an endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoint = GenerativeAiFunctions.getAgentAgentEndpoint(GetAgentAgentEndpointArgs.builder()
+     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentEndpointResult> getAgentAgentEndpoint(GetAgentAgentEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentAgentEndpoint:getAgentAgentEndpoint", TypeShape.of(GetAgentAgentEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetAgentEndpoint**
+     * 
+     * Gets information about an endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoint = GenerativeAiFunctions.getAgentAgentEndpoint(GetAgentAgentEndpointArgs.builder()
+     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentEndpointResult> getAgentAgentEndpointPlain(GetAgentAgentEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentAgentEndpoint:getAgentAgentEndpoint", TypeShape.of(GetAgentAgentEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgentEndpoints**
+     * 
+     * Gets a list of endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentEndpointDisplayName)
+     *             .state(agentEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentEndpointsResult> getAgentAgentEndpoints() {
+        return getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgentEndpoints**
+     * 
+     * Gets a list of endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentEndpointDisplayName)
+     *             .state(agentEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentEndpointsResult> getAgentAgentEndpointsPlain() {
+        return getAgentAgentEndpointsPlain(GetAgentAgentEndpointsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgentEndpoints**
+     * 
+     * Gets a list of endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentEndpointDisplayName)
+     *             .state(agentEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentEndpointsResult> getAgentAgentEndpoints(GetAgentAgentEndpointsArgs args) {
+        return getAgentAgentEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgentEndpoints**
+     * 
+     * Gets a list of endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentEndpointDisplayName)
+     *             .state(agentEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentEndpointsResult> getAgentAgentEndpointsPlain(GetAgentAgentEndpointsPlainArgs args) {
+        return getAgentAgentEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgentEndpoints**
+     * 
+     * Gets a list of endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentEndpointDisplayName)
+     *             .state(agentEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentEndpointsResult> getAgentAgentEndpoints(GetAgentAgentEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentAgentEndpoints:getAgentAgentEndpoints", TypeShape.of(GetAgentAgentEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgentEndpoints**
+     * 
+     * Gets a list of endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentEndpointDisplayName)
+     *             .state(agentEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentEndpointsResult> getAgentAgentEndpointsPlain(GetAgentAgentEndpointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentAgentEndpoints:getAgentAgentEndpoints", TypeShape.of(GetAgentAgentEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgents**
+     * 
+     * Gets a list of agents.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = GenerativeAiFunctions.getAgentAgents(GetAgentAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentDisplayName)
+     *             .state(agentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentsResult> getAgentAgents() {
+        return getAgentAgents(GetAgentAgentsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgents**
+     * 
+     * Gets a list of agents.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = GenerativeAiFunctions.getAgentAgents(GetAgentAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentDisplayName)
+     *             .state(agentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentsResult> getAgentAgentsPlain() {
+        return getAgentAgentsPlain(GetAgentAgentsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgents**
+     * 
+     * Gets a list of agents.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = GenerativeAiFunctions.getAgentAgents(GetAgentAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentDisplayName)
+     *             .state(agentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentsResult> getAgentAgents(GetAgentAgentsArgs args) {
+        return getAgentAgents(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgents**
+     * 
+     * Gets a list of agents.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = GenerativeAiFunctions.getAgentAgents(GetAgentAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentDisplayName)
+     *             .state(agentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentsResult> getAgentAgentsPlain(GetAgentAgentsPlainArgs args) {
+        return getAgentAgentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgents**
+     * 
+     * Gets a list of agents.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = GenerativeAiFunctions.getAgentAgents(GetAgentAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentDisplayName)
+     *             .state(agentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentAgentsResult> getAgentAgents(GetAgentAgentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentAgents:getAgentAgents", TypeShape.of(GetAgentAgentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListAgents**
+     * 
+     * Gets a list of agents.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = GenerativeAiFunctions.getAgentAgents(GetAgentAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(agentDisplayName)
+     *             .state(agentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentAgentsResult> getAgentAgentsPlain(GetAgentAgentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentAgents:getAgentAgents", TypeShape.of(GetAgentAgentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataIngestionJob**
+     * 
+     * Gets information about a data ingestion job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJob = GenerativeAiFunctions.getAgentDataIngestionJob(GetAgentDataIngestionJobArgs.builder()
+     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataIngestionJobResult> getAgentDataIngestionJob(GetAgentDataIngestionJobArgs args) {
+        return getAgentDataIngestionJob(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataIngestionJob**
+     * 
+     * Gets information about a data ingestion job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJob = GenerativeAiFunctions.getAgentDataIngestionJob(GetAgentDataIngestionJobArgs.builder()
+     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataIngestionJobResult> getAgentDataIngestionJobPlain(GetAgentDataIngestionJobPlainArgs args) {
+        return getAgentDataIngestionJobPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataIngestionJob**
+     * 
+     * Gets information about a data ingestion job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJob = GenerativeAiFunctions.getAgentDataIngestionJob(GetAgentDataIngestionJobArgs.builder()
+     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataIngestionJobResult> getAgentDataIngestionJob(GetAgentDataIngestionJobArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentDataIngestionJob:getAgentDataIngestionJob", TypeShape.of(GetAgentDataIngestionJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataIngestionJob**
+     * 
+     * Gets information about a data ingestion job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJob = GenerativeAiFunctions.getAgentDataIngestionJob(GetAgentDataIngestionJobArgs.builder()
+     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataIngestionJobResult> getAgentDataIngestionJobPlain(GetAgentDataIngestionJobPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentDataIngestionJob:getAgentDataIngestionJob", TypeShape.of(GetAgentDataIngestionJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Ingestion Job Log Content resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataIngestionJobLogContent**
+     * 
+     * Returns the raw log file for the specified data ingestion job in text format.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobLogContent = GenerativeAiFunctions.getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs.builder()
+     *             .dataIngestionJobId(testDataIngestionJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataIngestionJobLogContentResult> getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs args) {
+        return getAgentDataIngestionJobLogContent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Ingestion Job Log Content resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataIngestionJobLogContent**
+     * 
+     * Returns the raw log file for the specified data ingestion job in text format.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobLogContent = GenerativeAiFunctions.getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs.builder()
+     *             .dataIngestionJobId(testDataIngestionJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataIngestionJobLogContentResult> getAgentDataIngestionJobLogContentPlain(GetAgentDataIngestionJobLogContentPlainArgs args) {
+        return getAgentDataIngestionJobLogContentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Ingestion Job Log Content resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataIngestionJobLogContent**
+     * 
+     * Returns the raw log file for the specified data ingestion job in text format.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobLogContent = GenerativeAiFunctions.getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs.builder()
+     *             .dataIngestionJobId(testDataIngestionJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataIngestionJobLogContentResult> getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentDataIngestionJobLogContent:getAgentDataIngestionJobLogContent", TypeShape.of(GetAgentDataIngestionJobLogContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Ingestion Job Log Content resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataIngestionJobLogContent**
+     * 
+     * Returns the raw log file for the specified data ingestion job in text format.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobLogContent = GenerativeAiFunctions.getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs.builder()
+     *             .dataIngestionJobId(testDataIngestionJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataIngestionJobLogContentResult> getAgentDataIngestionJobLogContentPlain(GetAgentDataIngestionJobLogContentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentDataIngestionJobLogContent:getAgentDataIngestionJobLogContent", TypeShape.of(GetAgentDataIngestionJobLogContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Ingestion Jobs in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataIngestionJobs**
+     * 
+     * Gets a list of data ingestion jobs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceId(testDataSource.id())
+     *             .displayName(dataIngestionJobDisplayName)
+     *             .state(dataIngestionJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataIngestionJobsResult> getAgentDataIngestionJobs() {
+        return getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Ingestion Jobs in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataIngestionJobs**
+     * 
+     * Gets a list of data ingestion jobs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceId(testDataSource.id())
+     *             .displayName(dataIngestionJobDisplayName)
+     *             .state(dataIngestionJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataIngestionJobsResult> getAgentDataIngestionJobsPlain() {
+        return getAgentDataIngestionJobsPlain(GetAgentDataIngestionJobsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Ingestion Jobs in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataIngestionJobs**
+     * 
+     * Gets a list of data ingestion jobs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceId(testDataSource.id())
+     *             .displayName(dataIngestionJobDisplayName)
+     *             .state(dataIngestionJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataIngestionJobsResult> getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs args) {
+        return getAgentDataIngestionJobs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Ingestion Jobs in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataIngestionJobs**
+     * 
+     * Gets a list of data ingestion jobs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceId(testDataSource.id())
+     *             .displayName(dataIngestionJobDisplayName)
+     *             .state(dataIngestionJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataIngestionJobsResult> getAgentDataIngestionJobsPlain(GetAgentDataIngestionJobsPlainArgs args) {
+        return getAgentDataIngestionJobsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Ingestion Jobs in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataIngestionJobs**
+     * 
+     * Gets a list of data ingestion jobs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceId(testDataSource.id())
+     *             .displayName(dataIngestionJobDisplayName)
+     *             .state(dataIngestionJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataIngestionJobsResult> getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentDataIngestionJobs:getAgentDataIngestionJobs", TypeShape.of(GetAgentDataIngestionJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Ingestion Jobs in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataIngestionJobs**
+     * 
+     * Gets a list of data ingestion jobs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceId(testDataSource.id())
+     *             .displayName(dataIngestionJobDisplayName)
+     *             .state(dataIngestionJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataIngestionJobsResult> getAgentDataIngestionJobsPlain(GetAgentDataIngestionJobsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentDataIngestionJobs:getAgentDataIngestionJobs", TypeShape.of(GetAgentDataIngestionJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataSource**
+     * 
+     * Gets information about a data source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSource = GenerativeAiFunctions.getAgentDataSource(GetAgentDataSourceArgs.builder()
+     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataSourceResult> getAgentDataSource(GetAgentDataSourceArgs args) {
+        return getAgentDataSource(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataSource**
+     * 
+     * Gets information about a data source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSource = GenerativeAiFunctions.getAgentDataSource(GetAgentDataSourceArgs.builder()
+     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataSourceResult> getAgentDataSourcePlain(GetAgentDataSourcePlainArgs args) {
+        return getAgentDataSourcePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataSource**
+     * 
+     * Gets information about a data source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSource = GenerativeAiFunctions.getAgentDataSource(GetAgentDataSourceArgs.builder()
+     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataSourceResult> getAgentDataSource(GetAgentDataSourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentDataSource:getAgentDataSource", TypeShape.of(GetAgentDataSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetDataSource**
+     * 
+     * Gets information about a data source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSource = GenerativeAiFunctions.getAgentDataSource(GetAgentDataSourceArgs.builder()
+     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataSourceResult> getAgentDataSourcePlain(GetAgentDataSourcePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentDataSource:getAgentDataSource", TypeShape.of(GetAgentDataSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataSources**
+     * 
+     * Gets a list of data sources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataSourceDisplayName)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .state(dataSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataSourcesResult> getAgentDataSources() {
+        return getAgentDataSources(GetAgentDataSourcesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataSources**
+     * 
+     * Gets a list of data sources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataSourceDisplayName)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .state(dataSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataSourcesResult> getAgentDataSourcesPlain() {
+        return getAgentDataSourcesPlain(GetAgentDataSourcesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataSources**
+     * 
+     * Gets a list of data sources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataSourceDisplayName)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .state(dataSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataSourcesResult> getAgentDataSources(GetAgentDataSourcesArgs args) {
+        return getAgentDataSources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataSources**
+     * 
+     * Gets a list of data sources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataSourceDisplayName)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .state(dataSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataSourcesResult> getAgentDataSourcesPlain(GetAgentDataSourcesPlainArgs args) {
+        return getAgentDataSourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataSources**
+     * 
+     * Gets a list of data sources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataSourceDisplayName)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .state(dataSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDataSourcesResult> getAgentDataSources(GetAgentDataSourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentDataSources:getAgentDataSources", TypeShape.of(GetAgentDataSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListDataSources**
+     * 
+     * Gets a list of data sources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataSourceDisplayName)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .state(dataSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentDataSourcesResult> getAgentDataSourcesPlain(GetAgentDataSourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentDataSources:getAgentDataSources", TypeShape.of(GetAgentDataSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetKnowledgeBase**
+     * 
+     * Gets information about a knowledge base.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBase = GenerativeAiFunctions.getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs.builder()
+     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentKnowledgeBaseResult> getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs args) {
+        return getAgentKnowledgeBase(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetKnowledgeBase**
+     * 
+     * Gets information about a knowledge base.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBase = GenerativeAiFunctions.getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs.builder()
+     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentKnowledgeBaseResult> getAgentKnowledgeBasePlain(GetAgentKnowledgeBasePlainArgs args) {
+        return getAgentKnowledgeBasePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetKnowledgeBase**
+     * 
+     * Gets information about a knowledge base.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBase = GenerativeAiFunctions.getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs.builder()
+     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentKnowledgeBaseResult> getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentKnowledgeBase:getAgentKnowledgeBase", TypeShape.of(GetAgentKnowledgeBaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **GetKnowledgeBase**
+     * 
+     * Gets information about a knowledge base.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBase = GenerativeAiFunctions.getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs.builder()
+     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentKnowledgeBaseResult> getAgentKnowledgeBasePlain(GetAgentKnowledgeBasePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentKnowledgeBase:getAgentKnowledgeBase", TypeShape.of(GetAgentKnowledgeBaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListKnowledgeBases**
+     * 
+     * Gets a list of knowledge bases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = GenerativeAiFunctions.getAgentKnowledgeBases(GetAgentKnowledgeBasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .state(knowledgeBaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentKnowledgeBasesResult> getAgentKnowledgeBases() {
+        return getAgentKnowledgeBases(GetAgentKnowledgeBasesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListKnowledgeBases**
+     * 
+     * Gets a list of knowledge bases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = GenerativeAiFunctions.getAgentKnowledgeBases(GetAgentKnowledgeBasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .state(knowledgeBaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentKnowledgeBasesResult> getAgentKnowledgeBasesPlain() {
+        return getAgentKnowledgeBasesPlain(GetAgentKnowledgeBasesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListKnowledgeBases**
+     * 
+     * Gets a list of knowledge bases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = GenerativeAiFunctions.getAgentKnowledgeBases(GetAgentKnowledgeBasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .state(knowledgeBaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentKnowledgeBasesResult> getAgentKnowledgeBases(GetAgentKnowledgeBasesArgs args) {
+        return getAgentKnowledgeBases(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListKnowledgeBases**
+     * 
+     * Gets a list of knowledge bases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = GenerativeAiFunctions.getAgentKnowledgeBases(GetAgentKnowledgeBasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .state(knowledgeBaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentKnowledgeBasesResult> getAgentKnowledgeBasesPlain(GetAgentKnowledgeBasesPlainArgs args) {
+        return getAgentKnowledgeBasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListKnowledgeBases**
+     * 
+     * Gets a list of knowledge bases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = GenerativeAiFunctions.getAgentKnowledgeBases(GetAgentKnowledgeBasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .state(knowledgeBaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentKnowledgeBasesResult> getAgentKnowledgeBases(GetAgentKnowledgeBasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", TypeShape.of(GetAgentKnowledgeBasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * **ListKnowledgeBases**
+     * 
+     * Gets a list of knowledge bases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = GenerativeAiFunctions.getAgentKnowledgeBases(GetAgentKnowledgeBasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .state(knowledgeBaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentKnowledgeBasesResult> getAgentKnowledgeBasesPlain(GetAgentKnowledgeBasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", TypeShape.of(GetAgentKnowledgeBasesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
      * 

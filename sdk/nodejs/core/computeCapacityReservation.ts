@@ -106,7 +106,7 @@ export class ComputeCapacityReservation extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) The capacity configurations for the capacity reservation.
+     * (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
      *
      * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      */
@@ -219,7 +219,7 @@ export interface ComputeCapacityReservationState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The capacity configurations for the capacity reservation.
+     * (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
      *
      * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      */
@@ -279,7 +279,7 @@ export interface ComputeCapacityReservationArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The capacity configurations for the capacity reservation.
+     * (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
      *
      * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      */

@@ -73,7 +73,7 @@ type Deployment struct {
 	LifecycleSubState pulumi.StringOutput `pulumi:"lifecycleSubState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 	LoadBalancerSubnetId pulumi.StringOutput `pulumi:"loadBalancerSubnetId"`
 	// Locks associated with this resource.
 	Locks DeploymentLockArrayOutput `pulumi:"locks"`
@@ -210,7 +210,7 @@ type deploymentState struct {
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 	LoadBalancerSubnetId *string `pulumi:"loadBalancerSubnetId"`
 	// Locks associated with this resource.
 	Locks []DeploymentLock `pulumi:"locks"`
@@ -297,7 +297,7 @@ type DeploymentState struct {
 	LifecycleSubState pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
 	LoadBalancerId pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 	LoadBalancerSubnetId pulumi.StringPtrInput
 	// Locks associated with this resource.
 	Locks DeploymentLockArrayInput
@@ -368,7 +368,7 @@ type deploymentArgs struct {
 	IsPublic *bool `pulumi:"isPublic"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel string `pulumi:"licenseModel"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 	LoadBalancerSubnetId *string `pulumi:"loadBalancerSubnetId"`
 	// Locks associated with this resource.
 	Locks []DeploymentLock `pulumi:"locks"`
@@ -414,7 +414,7 @@ type DeploymentArgs struct {
 	IsPublic pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 	LoadBalancerSubnetId pulumi.StringPtrInput
 	// Locks associated with this resource.
 	Locks DeploymentLockArrayInput
@@ -637,7 +637,7 @@ func (o DeploymentOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 func (o DeploymentOutput) LoadBalancerSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LoadBalancerSubnetId }).(pulumi.StringOutput)
 }

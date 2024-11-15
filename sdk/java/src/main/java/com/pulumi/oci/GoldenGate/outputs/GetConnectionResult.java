@@ -25,6 +25,11 @@ public final class GetConnectionResult {
     private String accessKeyId;
     private String accountKey;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+     * 
+     */
+    private String accountKeySecretId;
+    /**
      * @return Sets the Azure storage account name.
      * 
      */
@@ -63,6 +68,11 @@ public final class GetConnectionResult {
     private String clientId;
     private String clientSecret;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * 
+     */
+    private String clientSecretSecretId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
@@ -92,6 +102,10 @@ public final class GetConnectionResult {
      * 
      */
     private String connectionUrl;
+    /**
+     * @return The base64 encoded content of the consumer.properties file.
+     * 
+     */
     private String consumerProperties;
     private String coreSiteXml;
     /**
@@ -130,9 +144,10 @@ public final class GetConnectionResult {
      */
     private String displayName;
     /**
-     * @return Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * @return Indicates that sensitive attributes are provided via Secrets.
      * 
      */
+    private Boolean doesUseSecretIds;
     private String endpoint;
     private String fingerprint;
     /**
@@ -175,6 +190,11 @@ public final class GetConnectionResult {
     private String jndiProviderUrl;
     private String jndiSecurityCredentials;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
+     * 
+     */
+    private String jndiSecurityCredentialsSecretId;
+    /**
      * @return Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
      * 
      */
@@ -186,6 +206,16 @@ public final class GetConnectionResult {
     private String keyId;
     private String keyStore;
     private String keyStorePassword;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * 
+     */
+    private String keyStorePasswordSecretId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+     * 
+     */
+    private String keyStoreSecretId;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -203,6 +233,11 @@ public final class GetConnectionResult {
     private List<String> nsgIds;
     private String password;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, &#39;password&#39; field must not be provided.
+     * 
+     */
+    private String passwordSecretId;
+    /**
      * @return The port of an endpoint usually specified for a connection.
      * 
      */
@@ -214,7 +249,21 @@ public final class GetConnectionResult {
      */
     private String privateIp;
     private String privateKeyFile;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
+     * 
+     */
+    private String privateKeyFileSecretId;
     private String privateKeyPassphrase;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
+     * 
+     */
+    private String privateKeyPassphraseSecretId;
+    /**
+     * @return The base64 encoded content of the producer.properties file.
+     * 
+     */
     private String producerProperties;
     private String publicKeyFingerprint;
     /**
@@ -233,7 +282,17 @@ public final class GetConnectionResult {
      */
     private String routingMethod;
     private String sasToken;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
+     * 
+     */
+    private String sasTokenSecretId;
     private String secretAccessKey;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * 
+     */
+    private String secretAccessKeySecretId;
     /**
      * @return Security Protocol to be provided for the following connection types:
      * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
@@ -248,6 +307,11 @@ public final class GetConnectionResult {
      */
     private String servers;
     private String serviceAccountKeyFile;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * 
+     */
+    private String serviceAccountKeyFileSecretId;
     /**
      * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
@@ -270,10 +334,31 @@ public final class GetConnectionResult {
     private String sslCa;
     private String sslCert;
     private String sslClientKeystash;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * 
+     */
+    private String sslClientKeystashSecretId;
     private String sslClientKeystoredb;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * 
+     */
+    private String sslClientKeystoredbSecretId;
     private String sslCrl;
     private String sslKey;
     private String sslKeyPassword;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * 
+     */
+    private String sslKeyPasswordSecretId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * 
+     */
+    private String sslKeySecretId;
     /**
      * @return SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
      * 
@@ -320,8 +405,19 @@ public final class GetConnectionResult {
      * 
      */
     private String timeUpdated;
+    private Boolean triggerRefresh;
     private String trustStore;
     private String trustStorePassword;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * 
+     */
+    private String trustStorePasswordSecretId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided
+     * 
+     */
+    private String trustStoreSecretId;
     /**
      * @return Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
      * 
@@ -343,6 +439,11 @@ public final class GetConnectionResult {
      */
     private String vaultId;
     private String wallet;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+     * 
+     */
+    private String walletSecretId;
 
     private GetConnectionResult() {}
     /**
@@ -354,6 +455,13 @@ public final class GetConnectionResult {
     }
     public String accountKey() {
         return this.accountKey;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+     * 
+     */
+    public String accountKeySecretId() {
+        return this.accountKeySecretId;
     }
     /**
      * @return Sets the Azure storage account name.
@@ -410,6 +518,13 @@ public final class GetConnectionResult {
         return this.clientSecret;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * 
+     */
+    public String clientSecretSecretId() {
+        return this.clientSecretSecretId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
@@ -451,6 +566,10 @@ public final class GetConnectionResult {
     public String connectionUrl() {
         return this.connectionUrl;
     }
+    /**
+     * @return The base64 encoded content of the consumer.properties file.
+     * 
+     */
     public String consumerProperties() {
         return this.consumerProperties;
     }
@@ -507,9 +626,12 @@ public final class GetConnectionResult {
         return this.displayName;
     }
     /**
-     * @return Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * @return Indicates that sensitive attributes are provided via Secrets.
      * 
      */
+    public Boolean doesUseSecretIds() {
+        return this.doesUseSecretIds;
+    }
     public String endpoint() {
         return this.endpoint;
     }
@@ -574,6 +696,13 @@ public final class GetConnectionResult {
         return this.jndiSecurityCredentials;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
+     * 
+     */
+    public String jndiSecurityCredentialsSecretId() {
+        return this.jndiSecurityCredentialsSecretId;
+    }
+    /**
      * @return Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
      * 
      */
@@ -592,6 +721,20 @@ public final class GetConnectionResult {
     }
     public String keyStorePassword() {
         return this.keyStorePassword;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * 
+     */
+    public String keyStorePasswordSecretId() {
+        return this.keyStorePasswordSecretId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+     * 
+     */
+    public String keyStoreSecretId() {
+        return this.keyStoreSecretId;
     }
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -618,6 +761,13 @@ public final class GetConnectionResult {
         return this.password;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, &#39;password&#39; field must not be provided.
+     * 
+     */
+    public String passwordSecretId() {
+        return this.passwordSecretId;
+    }
+    /**
      * @return The port of an endpoint usually specified for a connection.
      * 
      */
@@ -635,9 +785,27 @@ public final class GetConnectionResult {
     public String privateKeyFile() {
         return this.privateKeyFile;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
+     * 
+     */
+    public String privateKeyFileSecretId() {
+        return this.privateKeyFileSecretId;
+    }
     public String privateKeyPassphrase() {
         return this.privateKeyPassphrase;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
+     * 
+     */
+    public String privateKeyPassphraseSecretId() {
+        return this.privateKeyPassphraseSecretId;
+    }
+    /**
+     * @return The base64 encoded content of the producer.properties file.
+     * 
+     */
     public String producerProperties() {
         return this.producerProperties;
     }
@@ -668,8 +836,22 @@ public final class GetConnectionResult {
     public String sasToken() {
         return this.sasToken;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
+     * 
+     */
+    public String sasTokenSecretId() {
+        return this.sasTokenSecretId;
+    }
     public String secretAccessKey() {
         return this.secretAccessKey;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * 
+     */
+    public String secretAccessKeySecretId() {
+        return this.secretAccessKeySecretId;
     }
     /**
      * @return Security Protocol to be provided for the following connection types:
@@ -690,6 +872,13 @@ public final class GetConnectionResult {
     }
     public String serviceAccountKeyFile() {
         return this.serviceAccountKeyFile;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * 
+     */
+    public String serviceAccountKeyFileSecretId() {
+        return this.serviceAccountKeyFileSecretId;
     }
     /**
      * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
@@ -725,8 +914,22 @@ public final class GetConnectionResult {
     public String sslClientKeystash() {
         return this.sslClientKeystash;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * 
+     */
+    public String sslClientKeystashSecretId() {
+        return this.sslClientKeystashSecretId;
+    }
     public String sslClientKeystoredb() {
         return this.sslClientKeystoredb;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * 
+     */
+    public String sslClientKeystoredbSecretId() {
+        return this.sslClientKeystoredbSecretId;
     }
     public String sslCrl() {
         return this.sslCrl;
@@ -736,6 +939,21 @@ public final class GetConnectionResult {
     }
     public String sslKeyPassword() {
         return this.sslKeyPassword;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * 
+     */
+    public String sslKeyPasswordSecretId() {
+        return this.sslKeyPasswordSecretId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * 
+     */
+    public String sslKeySecretId() {
+        return this.sslKeySecretId;
     }
     /**
      * @return SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
@@ -803,11 +1021,28 @@ public final class GetConnectionResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    public Boolean triggerRefresh() {
+        return this.triggerRefresh;
+    }
     public String trustStore() {
         return this.trustStore;
     }
     public String trustStorePassword() {
         return this.trustStorePassword;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * 
+     */
+    public String trustStorePasswordSecretId() {
+        return this.trustStorePasswordSecretId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided
+     * 
+     */
+    public String trustStoreSecretId() {
+        return this.trustStoreSecretId;
     }
     /**
      * @return Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
@@ -840,6 +1075,13 @@ public final class GetConnectionResult {
     public String wallet() {
         return this.wallet;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+     * 
+     */
+    public String walletSecretId() {
+        return this.walletSecretId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -852,6 +1094,7 @@ public final class GetConnectionResult {
     public static final class Builder {
         private String accessKeyId;
         private String accountKey;
+        private String accountKeySecretId;
         private String accountName;
         private List<GetConnectionAdditionalAttribute> additionalAttributes;
         private String authenticationMode;
@@ -860,6 +1103,7 @@ public final class GetConnectionResult {
         private List<GetConnectionBootstrapServer> bootstrapServers;
         private String clientId;
         private String clientSecret;
+        private String clientSecretSecretId;
         private String compartmentId;
         private String connectionFactory;
         private String connectionId;
@@ -875,6 +1119,7 @@ public final class GetConnectionResult {
         private String deploymentId;
         private String description;
         private String displayName;
+        private Boolean doesUseSecretIds;
         private String endpoint;
         private String fingerprint;
         private Map<String,String> freeformTags;
@@ -886,38 +1131,51 @@ public final class GetConnectionResult {
         private String jndiInitialContextFactory;
         private String jndiProviderUrl;
         private String jndiSecurityCredentials;
+        private String jndiSecurityCredentialsSecretId;
         private String jndiSecurityPrincipal;
         private String keyId;
         private String keyStore;
         private String keyStorePassword;
+        private String keyStorePasswordSecretId;
+        private String keyStoreSecretId;
         private String lifecycleDetails;
         private List<GetConnectionLock> locks;
         private List<String> nsgIds;
         private String password;
+        private String passwordSecretId;
         private Integer port;
         private String privateIp;
         private String privateKeyFile;
+        private String privateKeyFileSecretId;
         private String privateKeyPassphrase;
+        private String privateKeyPassphraseSecretId;
         private String producerProperties;
         private String publicKeyFingerprint;
         private String redisClusterId;
         private String region;
         private String routingMethod;
         private String sasToken;
+        private String sasTokenSecretId;
         private String secretAccessKey;
+        private String secretAccessKeySecretId;
         private String securityProtocol;
         private String servers;
         private String serviceAccountKeyFile;
+        private String serviceAccountKeyFileSecretId;
         private String sessionMode;
         private Boolean shouldUseJndi;
         private Boolean shouldValidateServerCertificate;
         private String sslCa;
         private String sslCert;
         private String sslClientKeystash;
+        private String sslClientKeystashSecretId;
         private String sslClientKeystoredb;
+        private String sslClientKeystoredbSecretId;
         private String sslCrl;
         private String sslKey;
         private String sslKeyPassword;
+        private String sslKeyPasswordSecretId;
+        private String sslKeySecretId;
         private String sslMode;
         private String sslServerCertificate;
         private String state;
@@ -928,18 +1186,23 @@ public final class GetConnectionResult {
         private String tenancyId;
         private String timeCreated;
         private String timeUpdated;
+        private Boolean triggerRefresh;
         private String trustStore;
         private String trustStorePassword;
+        private String trustStorePasswordSecretId;
+        private String trustStoreSecretId;
         private String url;
         private String userId;
         private String username;
         private String vaultId;
         private String wallet;
+        private String walletSecretId;
         public Builder() {}
         public Builder(GetConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessKeyId = defaults.accessKeyId;
     	      this.accountKey = defaults.accountKey;
+    	      this.accountKeySecretId = defaults.accountKeySecretId;
     	      this.accountName = defaults.accountName;
     	      this.additionalAttributes = defaults.additionalAttributes;
     	      this.authenticationMode = defaults.authenticationMode;
@@ -948,6 +1211,7 @@ public final class GetConnectionResult {
     	      this.bootstrapServers = defaults.bootstrapServers;
     	      this.clientId = defaults.clientId;
     	      this.clientSecret = defaults.clientSecret;
+    	      this.clientSecretSecretId = defaults.clientSecretSecretId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionFactory = defaults.connectionFactory;
     	      this.connectionId = defaults.connectionId;
@@ -963,6 +1227,7 @@ public final class GetConnectionResult {
     	      this.deploymentId = defaults.deploymentId;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.doesUseSecretIds = defaults.doesUseSecretIds;
     	      this.endpoint = defaults.endpoint;
     	      this.fingerprint = defaults.fingerprint;
     	      this.freeformTags = defaults.freeformTags;
@@ -974,38 +1239,51 @@ public final class GetConnectionResult {
     	      this.jndiInitialContextFactory = defaults.jndiInitialContextFactory;
     	      this.jndiProviderUrl = defaults.jndiProviderUrl;
     	      this.jndiSecurityCredentials = defaults.jndiSecurityCredentials;
+    	      this.jndiSecurityCredentialsSecretId = defaults.jndiSecurityCredentialsSecretId;
     	      this.jndiSecurityPrincipal = defaults.jndiSecurityPrincipal;
     	      this.keyId = defaults.keyId;
     	      this.keyStore = defaults.keyStore;
     	      this.keyStorePassword = defaults.keyStorePassword;
+    	      this.keyStorePasswordSecretId = defaults.keyStorePasswordSecretId;
+    	      this.keyStoreSecretId = defaults.keyStoreSecretId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
     	      this.nsgIds = defaults.nsgIds;
     	      this.password = defaults.password;
+    	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.port = defaults.port;
     	      this.privateIp = defaults.privateIp;
     	      this.privateKeyFile = defaults.privateKeyFile;
+    	      this.privateKeyFileSecretId = defaults.privateKeyFileSecretId;
     	      this.privateKeyPassphrase = defaults.privateKeyPassphrase;
+    	      this.privateKeyPassphraseSecretId = defaults.privateKeyPassphraseSecretId;
     	      this.producerProperties = defaults.producerProperties;
     	      this.publicKeyFingerprint = defaults.publicKeyFingerprint;
     	      this.redisClusterId = defaults.redisClusterId;
     	      this.region = defaults.region;
     	      this.routingMethod = defaults.routingMethod;
     	      this.sasToken = defaults.sasToken;
+    	      this.sasTokenSecretId = defaults.sasTokenSecretId;
     	      this.secretAccessKey = defaults.secretAccessKey;
+    	      this.secretAccessKeySecretId = defaults.secretAccessKeySecretId;
     	      this.securityProtocol = defaults.securityProtocol;
     	      this.servers = defaults.servers;
     	      this.serviceAccountKeyFile = defaults.serviceAccountKeyFile;
+    	      this.serviceAccountKeyFileSecretId = defaults.serviceAccountKeyFileSecretId;
     	      this.sessionMode = defaults.sessionMode;
     	      this.shouldUseJndi = defaults.shouldUseJndi;
     	      this.shouldValidateServerCertificate = defaults.shouldValidateServerCertificate;
     	      this.sslCa = defaults.sslCa;
     	      this.sslCert = defaults.sslCert;
     	      this.sslClientKeystash = defaults.sslClientKeystash;
+    	      this.sslClientKeystashSecretId = defaults.sslClientKeystashSecretId;
     	      this.sslClientKeystoredb = defaults.sslClientKeystoredb;
+    	      this.sslClientKeystoredbSecretId = defaults.sslClientKeystoredbSecretId;
     	      this.sslCrl = defaults.sslCrl;
     	      this.sslKey = defaults.sslKey;
     	      this.sslKeyPassword = defaults.sslKeyPassword;
+    	      this.sslKeyPasswordSecretId = defaults.sslKeyPasswordSecretId;
+    	      this.sslKeySecretId = defaults.sslKeySecretId;
     	      this.sslMode = defaults.sslMode;
     	      this.sslServerCertificate = defaults.sslServerCertificate;
     	      this.state = defaults.state;
@@ -1016,13 +1294,17 @@ public final class GetConnectionResult {
     	      this.tenancyId = defaults.tenancyId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.triggerRefresh = defaults.triggerRefresh;
     	      this.trustStore = defaults.trustStore;
     	      this.trustStorePassword = defaults.trustStorePassword;
+    	      this.trustStorePasswordSecretId = defaults.trustStorePasswordSecretId;
+    	      this.trustStoreSecretId = defaults.trustStoreSecretId;
     	      this.url = defaults.url;
     	      this.userId = defaults.userId;
     	      this.username = defaults.username;
     	      this.vaultId = defaults.vaultId;
     	      this.wallet = defaults.wallet;
+    	      this.walletSecretId = defaults.walletSecretId;
         }
 
         @CustomType.Setter
@@ -1039,6 +1321,14 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "accountKey");
             }
             this.accountKey = accountKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder accountKeySecretId(String accountKeySecretId) {
+            if (accountKeySecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "accountKeySecretId");
+            }
+            this.accountKeySecretId = accountKeySecretId;
             return this;
         }
         @CustomType.Setter
@@ -1109,6 +1399,14 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "clientSecret");
             }
             this.clientSecret = clientSecret;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clientSecretSecretId(String clientSecretSecretId) {
+            if (clientSecretSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "clientSecretSecretId");
+            }
+            this.clientSecretSecretId = clientSecretSecretId;
             return this;
         }
         @CustomType.Setter
@@ -1232,6 +1530,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            if (doesUseSecretIds == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "doesUseSecretIds");
+            }
+            this.doesUseSecretIds = doesUseSecretIds;
+            return this;
+        }
+        @CustomType.Setter
         public Builder endpoint(String endpoint) {
             if (endpoint == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "endpoint");
@@ -1323,6 +1629,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder jndiSecurityCredentialsSecretId(String jndiSecurityCredentialsSecretId) {
+            if (jndiSecurityCredentialsSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "jndiSecurityCredentialsSecretId");
+            }
+            this.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder jndiSecurityPrincipal(String jndiSecurityPrincipal) {
             if (jndiSecurityPrincipal == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "jndiSecurityPrincipal");
@@ -1352,6 +1666,22 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "keyStorePassword");
             }
             this.keyStorePassword = keyStorePassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
+            if (keyStorePasswordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "keyStorePasswordSecretId");
+            }
+            this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStoreSecretId(String keyStoreSecretId) {
+            if (keyStoreSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "keyStoreSecretId");
+            }
+            this.keyStoreSecretId = keyStoreSecretId;
             return this;
         }
         @CustomType.Setter
@@ -1393,6 +1723,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder passwordSecretId(String passwordSecretId) {
+            if (passwordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "passwordSecretId");
+            }
+            this.passwordSecretId = passwordSecretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder port(Integer port) {
             if (port == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "port");
@@ -1417,11 +1755,27 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder privateKeyFileSecretId(String privateKeyFileSecretId) {
+            if (privateKeyFileSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "privateKeyFileSecretId");
+            }
+            this.privateKeyFileSecretId = privateKeyFileSecretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder privateKeyPassphrase(String privateKeyPassphrase) {
             if (privateKeyPassphrase == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "privateKeyPassphrase");
             }
             this.privateKeyPassphrase = privateKeyPassphrase;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder privateKeyPassphraseSecretId(String privateKeyPassphraseSecretId) {
+            if (privateKeyPassphraseSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "privateKeyPassphraseSecretId");
+            }
+            this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
             return this;
         }
         @CustomType.Setter
@@ -1473,11 +1827,27 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sasTokenSecretId(String sasTokenSecretId) {
+            if (sasTokenSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "sasTokenSecretId");
+            }
+            this.sasTokenSecretId = sasTokenSecretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder secretAccessKey(String secretAccessKey) {
             if (secretAccessKey == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "secretAccessKey");
             }
             this.secretAccessKey = secretAccessKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secretAccessKeySecretId(String secretAccessKeySecretId) {
+            if (secretAccessKeySecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "secretAccessKeySecretId");
+            }
+            this.secretAccessKeySecretId = secretAccessKeySecretId;
             return this;
         }
         @CustomType.Setter
@@ -1502,6 +1872,14 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "serviceAccountKeyFile");
             }
             this.serviceAccountKeyFile = serviceAccountKeyFile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceAccountKeyFileSecretId(String serviceAccountKeyFileSecretId) {
+            if (serviceAccountKeyFileSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "serviceAccountKeyFileSecretId");
+            }
+            this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             return this;
         }
         @CustomType.Setter
@@ -1553,11 +1931,27 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sslClientKeystashSecretId(String sslClientKeystashSecretId) {
+            if (sslClientKeystashSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "sslClientKeystashSecretId");
+            }
+            this.sslClientKeystashSecretId = sslClientKeystashSecretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sslClientKeystoredb(String sslClientKeystoredb) {
             if (sslClientKeystoredb == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "sslClientKeystoredb");
             }
             this.sslClientKeystoredb = sslClientKeystoredb;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sslClientKeystoredbSecretId(String sslClientKeystoredbSecretId) {
+            if (sslClientKeystoredbSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "sslClientKeystoredbSecretId");
+            }
+            this.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
             return this;
         }
         @CustomType.Setter
@@ -1582,6 +1976,22 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "sslKeyPassword");
             }
             this.sslKeyPassword = sslKeyPassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sslKeyPasswordSecretId(String sslKeyPasswordSecretId) {
+            if (sslKeyPasswordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "sslKeyPasswordSecretId");
+            }
+            this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sslKeySecretId(String sslKeySecretId) {
+            if (sslKeySecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "sslKeySecretId");
+            }
+            this.sslKeySecretId = sslKeySecretId;
             return this;
         }
         @CustomType.Setter
@@ -1665,6 +2075,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder triggerRefresh(Boolean triggerRefresh) {
+            if (triggerRefresh == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "triggerRefresh");
+            }
+            this.triggerRefresh = triggerRefresh;
+            return this;
+        }
+        @CustomType.Setter
         public Builder trustStore(String trustStore) {
             if (trustStore == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "trustStore");
@@ -1678,6 +2096,22 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "trustStorePassword");
             }
             this.trustStorePassword = trustStorePassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
+            if (trustStorePasswordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "trustStorePasswordSecretId");
+            }
+            this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder trustStoreSecretId(String trustStoreSecretId) {
+            if (trustStoreSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "trustStoreSecretId");
+            }
+            this.trustStoreSecretId = trustStoreSecretId;
             return this;
         }
         @CustomType.Setter
@@ -1720,10 +2154,19 @@ public final class GetConnectionResult {
             this.wallet = wallet;
             return this;
         }
+        @CustomType.Setter
+        public Builder walletSecretId(String walletSecretId) {
+            if (walletSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "walletSecretId");
+            }
+            this.walletSecretId = walletSecretId;
+            return this;
+        }
         public GetConnectionResult build() {
             final var _resultValue = new GetConnectionResult();
             _resultValue.accessKeyId = accessKeyId;
             _resultValue.accountKey = accountKey;
+            _resultValue.accountKeySecretId = accountKeySecretId;
             _resultValue.accountName = accountName;
             _resultValue.additionalAttributes = additionalAttributes;
             _resultValue.authenticationMode = authenticationMode;
@@ -1732,6 +2175,7 @@ public final class GetConnectionResult {
             _resultValue.bootstrapServers = bootstrapServers;
             _resultValue.clientId = clientId;
             _resultValue.clientSecret = clientSecret;
+            _resultValue.clientSecretSecretId = clientSecretSecretId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionFactory = connectionFactory;
             _resultValue.connectionId = connectionId;
@@ -1747,6 +2191,7 @@ public final class GetConnectionResult {
             _resultValue.deploymentId = deploymentId;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.doesUseSecretIds = doesUseSecretIds;
             _resultValue.endpoint = endpoint;
             _resultValue.fingerprint = fingerprint;
             _resultValue.freeformTags = freeformTags;
@@ -1758,38 +2203,51 @@ public final class GetConnectionResult {
             _resultValue.jndiInitialContextFactory = jndiInitialContextFactory;
             _resultValue.jndiProviderUrl = jndiProviderUrl;
             _resultValue.jndiSecurityCredentials = jndiSecurityCredentials;
+            _resultValue.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
             _resultValue.jndiSecurityPrincipal = jndiSecurityPrincipal;
             _resultValue.keyId = keyId;
             _resultValue.keyStore = keyStore;
             _resultValue.keyStorePassword = keyStorePassword;
+            _resultValue.keyStorePasswordSecretId = keyStorePasswordSecretId;
+            _resultValue.keyStoreSecretId = keyStoreSecretId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;
             _resultValue.nsgIds = nsgIds;
             _resultValue.password = password;
+            _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.port = port;
             _resultValue.privateIp = privateIp;
             _resultValue.privateKeyFile = privateKeyFile;
+            _resultValue.privateKeyFileSecretId = privateKeyFileSecretId;
             _resultValue.privateKeyPassphrase = privateKeyPassphrase;
+            _resultValue.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
             _resultValue.producerProperties = producerProperties;
             _resultValue.publicKeyFingerprint = publicKeyFingerprint;
             _resultValue.redisClusterId = redisClusterId;
             _resultValue.region = region;
             _resultValue.routingMethod = routingMethod;
             _resultValue.sasToken = sasToken;
+            _resultValue.sasTokenSecretId = sasTokenSecretId;
             _resultValue.secretAccessKey = secretAccessKey;
+            _resultValue.secretAccessKeySecretId = secretAccessKeySecretId;
             _resultValue.securityProtocol = securityProtocol;
             _resultValue.servers = servers;
             _resultValue.serviceAccountKeyFile = serviceAccountKeyFile;
+            _resultValue.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             _resultValue.sessionMode = sessionMode;
             _resultValue.shouldUseJndi = shouldUseJndi;
             _resultValue.shouldValidateServerCertificate = shouldValidateServerCertificate;
             _resultValue.sslCa = sslCa;
             _resultValue.sslCert = sslCert;
             _resultValue.sslClientKeystash = sslClientKeystash;
+            _resultValue.sslClientKeystashSecretId = sslClientKeystashSecretId;
             _resultValue.sslClientKeystoredb = sslClientKeystoredb;
+            _resultValue.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
             _resultValue.sslCrl = sslCrl;
             _resultValue.sslKey = sslKey;
             _resultValue.sslKeyPassword = sslKeyPassword;
+            _resultValue.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+            _resultValue.sslKeySecretId = sslKeySecretId;
             _resultValue.sslMode = sslMode;
             _resultValue.sslServerCertificate = sslServerCertificate;
             _resultValue.state = state;
@@ -1800,13 +2258,17 @@ public final class GetConnectionResult {
             _resultValue.tenancyId = tenancyId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.triggerRefresh = triggerRefresh;
             _resultValue.trustStore = trustStore;
             _resultValue.trustStorePassword = trustStorePassword;
+            _resultValue.trustStorePasswordSecretId = trustStorePasswordSecretId;
+            _resultValue.trustStoreSecretId = trustStoreSecretId;
             _resultValue.url = url;
             _resultValue.userId = userId;
             _resultValue.username = username;
             _resultValue.vaultId = vaultId;
             _resultValue.wallet = wallet;
+            _resultValue.walletSecretId = walletSecretId;
             return _resultValue;
         }
     }

@@ -52,7 +52,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The OCID of the boot volume replica.
+        /// (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
         /// </summary>
         public readonly string Id;
         /// <summary>

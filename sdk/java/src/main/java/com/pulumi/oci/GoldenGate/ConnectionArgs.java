@@ -54,6 +54,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+     * 
+     */
+    @Import(name="accountKeySecretId")
+    private @Nullable Output<String> accountKeySecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> accountKeySecretId() {
+        return Optional.ofNullable(this.accountKeySecretId);
+    }
+
+    /**
      * (Updatable) Sets the Azure storage account name.
      * 
      */
@@ -171,6 +186,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> clientSecret() {
         return Optional.ofNullable(this.clientSecret);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * 
+     */
+    @Import(name="clientSecretSecretId")
+    private @Nullable Output<String> clientSecretSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> clientSecretSecretId() {
+        return Optional.ofNullable(this.clientSecretSecretId);
     }
 
     /**
@@ -384,6 +414,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Indicates that sensitive attributes are provided via Secrets.
+     * 
+     */
+    @Import(name="doesUseSecretIds")
+    private @Nullable Output<Boolean> doesUseSecretIds;
+
+    /**
+     * @return (Updatable) Indicates that sensitive attributes are provided via Secrets.
+     * 
+     */
+    public Optional<Output<Boolean>> doesUseSecretIds() {
+        return Optional.ofNullable(this.doesUseSecretIds);
+    }
+
+    /**
      * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
      * 
      */
@@ -513,6 +558,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
+     * 
+     */
+    @Import(name="jndiSecurityCredentialsSecretId")
+    private @Nullable Output<String> jndiSecurityCredentialsSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> jndiSecurityCredentialsSecretId() {
+        return Optional.ofNullable(this.jndiSecurityCredentialsSecretId);
+    }
+
+    /**
      * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
      * 
      */
@@ -573,6 +633,36 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * 
+     */
+    @Import(name="keyStorePasswordSecretId")
+    private @Nullable Output<String> keyStorePasswordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> keyStorePasswordSecretId() {
+        return Optional.ofNullable(this.keyStorePasswordSecretId);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+     * 
+     */
+    @Import(name="keyStoreSecretId")
+    private @Nullable Output<String> keyStoreSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> keyStoreSecretId() {
+        return Optional.ofNullable(this.keyStoreSecretId);
+    }
+
+    /**
      * Locks associated with this resource.
      * 
      */
@@ -615,6 +705,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> password() {
         return Optional.ofNullable(this.password);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, &#39;password&#39; field must not be provided.
+     * 
+     */
+    @Import(name="passwordSecretId")
+    private @Nullable Output<String> passwordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, &#39;password&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> passwordSecretId() {
+        return Optional.ofNullable(this.passwordSecretId);
     }
 
     /**
@@ -667,6 +772,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
+     * 
+     */
+    @Import(name="privateKeyFileSecretId")
+    private @Nullable Output<String> privateKeyFileSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> privateKeyFileSecretId() {
+        return Optional.ofNullable(this.privateKeyFileSecretId);
+    }
+
+    /**
      * (Updatable) Password if the private key file is encrypted.
      * 
      */
@@ -679,6 +799,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> privateKeyPassphrase() {
         return Optional.ofNullable(this.privateKeyPassphrase);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
+     * 
+     */
+    @Import(name="privateKeyPassphraseSecretId")
+    private @Nullable Output<String> privateKeyPassphraseSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> privateKeyPassphraseSecretId() {
+        return Optional.ofNullable(this.privateKeyPassphraseSecretId);
     }
 
     /**
@@ -772,6 +907,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
+     * 
+     */
+    @Import(name="sasTokenSecretId")
+    private @Nullable Output<String> sasTokenSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> sasTokenSecretId() {
+        return Optional.ofNullable(this.sasTokenSecretId);
+    }
+
+    /**
      * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
@@ -784,6 +934,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> secretAccessKey() {
         return Optional.ofNullable(this.secretAccessKey);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * 
+     */
+    @Import(name="secretAccessKeySecretId")
+    private @Nullable Output<String> secretAccessKeySecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> secretAccessKeySecretId() {
+        return Optional.ofNullable(this.secretAccessKeySecretId);
     }
 
     /**
@@ -829,6 +994,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> serviceAccountKeyFile() {
         return Optional.ofNullable(this.serviceAccountKeyFile);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * 
+     */
+    @Import(name="serviceAccountKeyFileSecretId")
+    private @Nullable Output<String> serviceAccountKeyFileSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> serviceAccountKeyFileSecretId() {
+        return Optional.ofNullable(this.serviceAccountKeyFileSecretId);
     }
 
     /**
@@ -922,6 +1102,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * 
+     */
+    @Import(name="sslClientKeystashSecretId")
+    private @Nullable Output<String> sslClientKeystashSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> sslClientKeystashSecretId() {
+        return Optional.ofNullable(this.sslClientKeystashSecretId);
+    }
+
+    /**
      * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
      * 
      */
@@ -934,6 +1129,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> sslClientKeystoredb() {
         return Optional.ofNullable(this.sslClientKeystoredb);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * 
+     */
+    @Import(name="sslClientKeystoredbSecretId")
+    private @Nullable Output<String> sslClientKeystoredbSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> sslClientKeystoredbSecretId() {
+        return Optional.ofNullable(this.sslClientKeystoredbSecretId);
     }
 
     /**
@@ -952,14 +1162,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
      * 
      */
     @Import(name="sslKey")
     private @Nullable Output<String> sslKey;
 
     /**
-     * @return (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * @return (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
      * 
      */
     public Optional<Output<String>> sslKey() {
@@ -979,6 +1189,38 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> sslKeyPassword() {
         return Optional.ofNullable(this.sslKeyPassword);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * 
+     */
+    @Import(name="sslKeyPasswordSecretId")
+    private @Nullable Output<String> sslKeyPasswordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> sslKeyPasswordSecretId() {
+        return Optional.ofNullable(this.sslKeyPasswordSecretId);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * 
+     */
+    @Import(name="sslKeySecretId")
+    private @Nullable Output<String> sslKeySecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> sslKeySecretId() {
+        return Optional.ofNullable(this.sslKeySecretId);
     }
 
     /**
@@ -1072,6 +1314,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="triggerRefresh")
+    private @Nullable Output<Boolean> triggerRefresh;
+
+    /**
+     * @return (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Boolean>> triggerRefresh() {
+        return Optional.ofNullable(this.triggerRefresh);
+    }
+
+    /**
      * (Updatable) The base64 encoded content of the TrustStore file.
      * 
      */
@@ -1099,6 +1362,36 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> trustStorePassword() {
         return Optional.ofNullable(this.trustStorePassword);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * 
+     */
+    @Import(name="trustStorePasswordSecretId")
+    private @Nullable Output<String> trustStorePasswordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> trustStorePasswordSecretId() {
+        return Optional.ofNullable(this.trustStorePasswordSecretId);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    @Import(name="trustStoreSecretId")
+    private @Nullable Output<String> trustStoreSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> trustStoreSecretId() {
+        return Optional.ofNullable(this.trustStoreSecretId);
     }
 
     /**
@@ -1164,9 +1457,6 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="wallet")
     private @Nullable Output<String> wallet;
@@ -1174,12 +1464,24 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<String>> wallet() {
         return Optional.ofNullable(this.wallet);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+     * 
+     */
+    @Import(name="walletSecretId")
+    private @Nullable Output<String> walletSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> walletSecretId() {
+        return Optional.ofNullable(this.walletSecretId);
     }
 
     private ConnectionArgs() {}
@@ -1187,6 +1489,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     private ConnectionArgs(ConnectionArgs $) {
         this.accessKeyId = $.accessKeyId;
         this.accountKey = $.accountKey;
+        this.accountKeySecretId = $.accountKeySecretId;
         this.accountName = $.accountName;
         this.additionalAttributes = $.additionalAttributes;
         this.authenticationMode = $.authenticationMode;
@@ -1195,6 +1498,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         this.bootstrapServers = $.bootstrapServers;
         this.clientId = $.clientId;
         this.clientSecret = $.clientSecret;
+        this.clientSecretSecretId = $.clientSecretSecretId;
         this.compartmentId = $.compartmentId;
         this.connectionFactory = $.connectionFactory;
         this.connectionString = $.connectionString;
@@ -1209,6 +1513,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         this.deploymentId = $.deploymentId;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.doesUseSecretIds = $.doesUseSecretIds;
         this.endpoint = $.endpoint;
         this.fingerprint = $.fingerprint;
         this.freeformTags = $.freeformTags;
@@ -1218,50 +1523,67 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         this.jndiInitialContextFactory = $.jndiInitialContextFactory;
         this.jndiProviderUrl = $.jndiProviderUrl;
         this.jndiSecurityCredentials = $.jndiSecurityCredentials;
+        this.jndiSecurityCredentialsSecretId = $.jndiSecurityCredentialsSecretId;
         this.jndiSecurityPrincipal = $.jndiSecurityPrincipal;
         this.keyId = $.keyId;
         this.keyStore = $.keyStore;
         this.keyStorePassword = $.keyStorePassword;
+        this.keyStorePasswordSecretId = $.keyStorePasswordSecretId;
+        this.keyStoreSecretId = $.keyStoreSecretId;
         this.locks = $.locks;
         this.nsgIds = $.nsgIds;
         this.password = $.password;
+        this.passwordSecretId = $.passwordSecretId;
         this.port = $.port;
         this.privateIp = $.privateIp;
         this.privateKeyFile = $.privateKeyFile;
+        this.privateKeyFileSecretId = $.privateKeyFileSecretId;
         this.privateKeyPassphrase = $.privateKeyPassphrase;
+        this.privateKeyPassphraseSecretId = $.privateKeyPassphraseSecretId;
         this.producerProperties = $.producerProperties;
         this.publicKeyFingerprint = $.publicKeyFingerprint;
         this.redisClusterId = $.redisClusterId;
         this.region = $.region;
         this.routingMethod = $.routingMethod;
         this.sasToken = $.sasToken;
+        this.sasTokenSecretId = $.sasTokenSecretId;
         this.secretAccessKey = $.secretAccessKey;
+        this.secretAccessKeySecretId = $.secretAccessKeySecretId;
         this.securityProtocol = $.securityProtocol;
         this.servers = $.servers;
         this.serviceAccountKeyFile = $.serviceAccountKeyFile;
+        this.serviceAccountKeyFileSecretId = $.serviceAccountKeyFileSecretId;
         this.sessionMode = $.sessionMode;
         this.shouldUseJndi = $.shouldUseJndi;
         this.shouldValidateServerCertificate = $.shouldValidateServerCertificate;
         this.sslCa = $.sslCa;
         this.sslCert = $.sslCert;
         this.sslClientKeystash = $.sslClientKeystash;
+        this.sslClientKeystashSecretId = $.sslClientKeystashSecretId;
         this.sslClientKeystoredb = $.sslClientKeystoredb;
+        this.sslClientKeystoredbSecretId = $.sslClientKeystoredbSecretId;
         this.sslCrl = $.sslCrl;
         this.sslKey = $.sslKey;
         this.sslKeyPassword = $.sslKeyPassword;
+        this.sslKeyPasswordSecretId = $.sslKeyPasswordSecretId;
+        this.sslKeySecretId = $.sslKeySecretId;
         this.sslMode = $.sslMode;
         this.sslServerCertificate = $.sslServerCertificate;
         this.streamPoolId = $.streamPoolId;
         this.subnetId = $.subnetId;
         this.technologyType = $.technologyType;
         this.tenancyId = $.tenancyId;
+        this.triggerRefresh = $.triggerRefresh;
         this.trustStore = $.trustStore;
         this.trustStorePassword = $.trustStorePassword;
+        this.trustStorePasswordSecretId = $.trustStorePasswordSecretId;
+        this.trustStoreSecretId = $.trustStoreSecretId;
         this.url = $.url;
         this.userId = $.userId;
         this.username = $.username;
         this.vaultId = $.vaultId;
         this.wallet = $.wallet;
+        this.walletSecretId = $.walletSecretId;
     }
 
     public static Builder builder() {
@@ -1322,6 +1644,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder accountKey(String accountKey) {
             return accountKey(Output.of(accountKey));
+        }
+
+        /**
+         * @param accountKeySecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accountKeySecretId(@Nullable Output<String> accountKeySecretId) {
+            $.accountKeySecretId = accountKeySecretId;
+            return this;
+        }
+
+        /**
+         * @param accountKeySecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accountKeySecretId(String accountKeySecretId) {
+            return accountKeySecretId(Output.of(accountKeySecretId));
         }
 
         /**
@@ -1510,6 +1853,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder clientSecret(String clientSecret) {
             return clientSecret(Output.of(clientSecret));
+        }
+
+        /**
+         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clientSecretSecretId(@Nullable Output<String> clientSecretSecretId) {
+            $.clientSecretSecretId = clientSecretSecretId;
+            return this;
+        }
+
+        /**
+         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clientSecretSecretId(String clientSecretSecretId) {
+            return clientSecretSecretId(Output.of(clientSecretSecretId));
         }
 
         /**
@@ -1807,6 +2171,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param doesUseSecretIds (Updatable) Indicates that sensitive attributes are provided via Secrets.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder doesUseSecretIds(@Nullable Output<Boolean> doesUseSecretIds) {
+            $.doesUseSecretIds = doesUseSecretIds;
+            return this;
+        }
+
+        /**
+         * @param doesUseSecretIds (Updatable) Indicates that sensitive attributes are provided via Secrets.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            return doesUseSecretIds(Output.of(doesUseSecretIds));
+        }
+
+        /**
          * @param endpoint (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
          * 
          * @return builder
@@ -1986,6 +2371,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param jndiSecurityCredentialsSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jndiSecurityCredentialsSecretId(@Nullable Output<String> jndiSecurityCredentialsSecretId) {
+            $.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
+            return this;
+        }
+
+        /**
+         * @param jndiSecurityCredentialsSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jndiSecurityCredentialsSecretId(String jndiSecurityCredentialsSecretId) {
+            return jndiSecurityCredentialsSecretId(Output.of(jndiSecurityCredentialsSecretId));
+        }
+
+        /**
          * @param jndiSecurityPrincipal (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
          * 
          * @return builder
@@ -2067,6 +2473,48 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder keyStorePassword(String keyStorePassword) {
             return keyStorePassword(Output.of(keyStorePassword));
+        }
+
+        /**
+         * @param keyStorePasswordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStorePasswordSecretId(@Nullable Output<String> keyStorePasswordSecretId) {
+            $.keyStorePasswordSecretId = keyStorePasswordSecretId;
+            return this;
+        }
+
+        /**
+         * @param keyStorePasswordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
+            return keyStorePasswordSecretId(Output.of(keyStorePasswordSecretId));
+        }
+
+        /**
+         * @param keyStoreSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreSecretId(@Nullable Output<String> keyStoreSecretId) {
+            $.keyStoreSecretId = keyStoreSecretId;
+            return this;
+        }
+
+        /**
+         * @param keyStoreSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreSecretId(String keyStoreSecretId) {
+            return keyStoreSecretId(Output.of(keyStoreSecretId));
         }
 
         /**
@@ -2153,6 +2601,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param passwordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, &#39;password&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder passwordSecretId(@Nullable Output<String> passwordSecretId) {
+            $.passwordSecretId = passwordSecretId;
+            return this;
+        }
+
+        /**
+         * @param passwordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, &#39;password&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            return passwordSecretId(Output.of(passwordSecretId));
+        }
+
+        /**
          * @param port (Updatable) The port of an endpoint usually specified for a connection.
          * 
          * @return builder
@@ -2220,6 +2689,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param privateKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKeyFileSecretId(@Nullable Output<String> privateKeyFileSecretId) {
+            $.privateKeyFileSecretId = privateKeyFileSecretId;
+            return this;
+        }
+
+        /**
+         * @param privateKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKeyFileSecretId(String privateKeyFileSecretId) {
+            return privateKeyFileSecretId(Output.of(privateKeyFileSecretId));
+        }
+
+        /**
          * @param privateKeyPassphrase (Updatable) Password if the private key file is encrypted.
          * 
          * @return builder
@@ -2238,6 +2728,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder privateKeyPassphrase(String privateKeyPassphrase) {
             return privateKeyPassphrase(Output.of(privateKeyPassphrase));
+        }
+
+        /**
+         * @param privateKeyPassphraseSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKeyPassphraseSecretId(@Nullable Output<String> privateKeyPassphraseSecretId) {
+            $.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+            return this;
+        }
+
+        /**
+         * @param privateKeyPassphraseSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKeyPassphraseSecretId(String privateKeyPassphraseSecretId) {
+            return privateKeyPassphraseSecretId(Output.of(privateKeyPassphraseSecretId));
         }
 
         /**
@@ -2367,6 +2878,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param sasTokenSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sasTokenSecretId(@Nullable Output<String> sasTokenSecretId) {
+            $.sasTokenSecretId = sasTokenSecretId;
+            return this;
+        }
+
+        /**
+         * @param sasTokenSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sasTokenSecretId(String sasTokenSecretId) {
+            return sasTokenSecretId(Output.of(sasTokenSecretId));
+        }
+
+        /**
          * @param secretAccessKey (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
          * 
          * @return builder
@@ -2385,6 +2917,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder secretAccessKey(String secretAccessKey) {
             return secretAccessKey(Output.of(secretAccessKey));
+        }
+
+        /**
+         * @param secretAccessKeySecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretAccessKeySecretId(@Nullable Output<String> secretAccessKeySecretId) {
+            $.secretAccessKeySecretId = secretAccessKeySecretId;
+            return this;
+        }
+
+        /**
+         * @param secretAccessKeySecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretAccessKeySecretId(String secretAccessKeySecretId) {
+            return secretAccessKeySecretId(Output.of(secretAccessKeySecretId));
         }
 
         /**
@@ -2448,6 +3001,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
             return serviceAccountKeyFile(Output.of(serviceAccountKeyFile));
+        }
+
+        /**
+         * @param serviceAccountKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceAccountKeyFileSecretId(@Nullable Output<String> serviceAccountKeyFileSecretId) {
+            $.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
+            return this;
+        }
+
+        /**
+         * @param serviceAccountKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceAccountKeyFileSecretId(String serviceAccountKeyFileSecretId) {
+            return serviceAccountKeyFileSecretId(Output.of(serviceAccountKeyFileSecretId));
         }
 
         /**
@@ -2577,6 +3151,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param sslClientKeystashSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslClientKeystashSecretId(@Nullable Output<String> sslClientKeystashSecretId) {
+            $.sslClientKeystashSecretId = sslClientKeystashSecretId;
+            return this;
+        }
+
+        /**
+         * @param sslClientKeystashSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslClientKeystashSecretId(String sslClientKeystashSecretId) {
+            return sslClientKeystashSecretId(Output.of(sslClientKeystashSecretId));
+        }
+
+        /**
          * @param sslClientKeystoredb (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
          * 
          * @return builder
@@ -2595,6 +3190,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sslClientKeystoredb(String sslClientKeystoredb) {
             return sslClientKeystoredb(Output.of(sslClientKeystoredb));
+        }
+
+        /**
+         * @param sslClientKeystoredbSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslClientKeystoredbSecretId(@Nullable Output<String> sslClientKeystoredbSecretId) {
+            $.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
+            return this;
+        }
+
+        /**
+         * @param sslClientKeystoredbSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslClientKeystoredbSecretId(String sslClientKeystoredbSecretId) {
+            return sslClientKeystoredbSecretId(Output.of(sslClientKeystoredbSecretId));
         }
 
         /**
@@ -2619,7 +3235,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslKey (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+         * @param sslKey (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
          * 
          * @return builder
          * 
@@ -2630,7 +3246,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslKey (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+         * @param sslKey (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
          * 
          * @return builder
          * 
@@ -2658,6 +3274,50 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sslKeyPassword(String sslKeyPassword) {
             return sslKeyPassword(Output.of(sslKeyPassword));
+        }
+
+        /**
+         * @param sslKeyPasswordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslKeyPasswordSecretId(@Nullable Output<String> sslKeyPasswordSecretId) {
+            $.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+            return this;
+        }
+
+        /**
+         * @param sslKeyPasswordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslKeyPasswordSecretId(String sslKeyPasswordSecretId) {
+            return sslKeyPasswordSecretId(Output.of(sslKeyPasswordSecretId));
+        }
+
+        /**
+         * @param sslKeySecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+         * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslKeySecretId(@Nullable Output<String> sslKeySecretId) {
+            $.sslKeySecretId = sslKeySecretId;
+            return this;
+        }
+
+        /**
+         * @param sslKeySecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+         * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslKeySecretId(String sslKeySecretId) {
+            return sslKeySecretId(Output.of(sslKeySecretId));
         }
 
         /**
@@ -2787,6 +3447,33 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param triggerRefresh (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder triggerRefresh(@Nullable Output<Boolean> triggerRefresh) {
+            $.triggerRefresh = triggerRefresh;
+            return this;
+        }
+
+        /**
+         * @param triggerRefresh (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder triggerRefresh(Boolean triggerRefresh) {
+            return triggerRefresh(Output.of(triggerRefresh));
+        }
+
+        /**
          * @param trustStore (Updatable) The base64 encoded content of the TrustStore file.
          * 
          * @return builder
@@ -2826,6 +3513,48 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder trustStorePassword(String trustStorePassword) {
             return trustStorePassword(Output.of(trustStorePassword));
+        }
+
+        /**
+         * @param trustStorePasswordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustStorePasswordSecretId(@Nullable Output<String> trustStorePasswordSecretId) {
+            $.trustStorePasswordSecretId = trustStorePasswordSecretId;
+            return this;
+        }
+
+        /**
+         * @param trustStorePasswordSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
+            return trustStorePasswordSecretId(Output.of(trustStorePasswordSecretId));
+        }
+
+        /**
+         * @param trustStoreSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustStoreSecretId(@Nullable Output<String> trustStoreSecretId) {
+            $.trustStoreSecretId = trustStoreSecretId;
+            return this;
+        }
+
+        /**
+         * @param trustStoreSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustStoreSecretId(String trustStoreSecretId) {
+            return trustStoreSecretId(Output.of(trustStoreSecretId));
         }
 
         /**
@@ -2915,9 +3644,6 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -2929,14 +3655,32 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder wallet(String wallet) {
             return wallet(Output.of(wallet));
+        }
+
+        /**
+         * @param walletSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder walletSecretId(@Nullable Output<String> walletSecretId) {
+            $.walletSecretId = walletSecretId;
+            return this;
+        }
+
+        /**
+         * @param walletSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder walletSecretId(String walletSecretId) {
+            return walletSecretId(Output.of(walletSecretId));
         }
 
         public ConnectionArgs build() {

@@ -91,7 +91,7 @@ type ComputeCapacityReservation struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// (Updatable) The capacity configurations for the capacity reservation.
+	// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
 	//
 	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs ComputeCapacityReservationInstanceReservationConfigArrayOutput `pulumi:"instanceReservationConfigs"`
@@ -161,7 +161,7 @@ type computeCapacityReservationState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) The capacity configurations for the capacity reservation.
+	// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
 	//
 	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs []ComputeCapacityReservationInstanceReservationConfig `pulumi:"instanceReservationConfigs"`
@@ -193,7 +193,7 @@ type ComputeCapacityReservationState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) The capacity configurations for the capacity reservation.
+	// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
 	//
 	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs ComputeCapacityReservationInstanceReservationConfigArrayInput
@@ -229,7 +229,7 @@ type computeCapacityReservationArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) The capacity configurations for the capacity reservation.
+	// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
 	//
 	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs []ComputeCapacityReservationInstanceReservationConfig `pulumi:"instanceReservationConfigs"`
@@ -252,7 +252,7 @@ type ComputeCapacityReservationArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) The capacity configurations for the capacity reservation.
+	// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
 	//
 	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs ComputeCapacityReservationInstanceReservationConfigArrayInput
@@ -375,7 +375,7 @@ func (o ComputeCapacityReservationOutput) FreeformTags() pulumi.StringMapOutput 
 	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) The capacity configurations for the capacity reservation.
+// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
 //
 // To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 func (o ComputeCapacityReservationOutput) InstanceReservationConfigs() ComputeCapacityReservationInstanceReservationConfigArrayOutput {

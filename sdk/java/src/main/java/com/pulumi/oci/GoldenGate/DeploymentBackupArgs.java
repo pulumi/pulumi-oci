@@ -118,6 +118,21 @@ public final class DeploymentBackupArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Parameter to allow users to create backup without trails
+     * 
+     */
+    @Import(name="isMetadataOnly")
+    private @Nullable Output<Boolean> isMetadataOnly;
+
+    /**
+     * @return Parameter to allow users to create backup without trails
+     * 
+     */
+    public Optional<Output<Boolean>> isMetadataOnly() {
+        return Optional.ofNullable(this.isMetadataOnly);
+    }
+
+    /**
      * Locks associated with this resource.
      * 
      */
@@ -178,6 +193,7 @@ public final class DeploymentBackupArgs extends com.pulumi.resources.ResourceArg
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isLockOverride = $.isLockOverride;
+        this.isMetadataOnly = $.isMetadataOnly;
         this.locks = $.locks;
         this.namespace = $.namespace;
         this.object = $.object;
@@ -334,6 +350,27 @@ public final class DeploymentBackupArgs extends com.pulumi.resources.ResourceArg
 
         public Builder isLockOverride(Boolean isLockOverride) {
             return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param isMetadataOnly Parameter to allow users to create backup without trails
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMetadataOnly(@Nullable Output<Boolean> isMetadataOnly) {
+            $.isMetadataOnly = isMetadataOnly;
+            return this;
+        }
+
+        /**
+         * @param isMetadataOnly Parameter to allow users to create backup without trails
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMetadataOnly(Boolean isMetadataOnly) {
+            return isMetadataOnly(Output.of(isMetadataOnly));
         }
 
         /**

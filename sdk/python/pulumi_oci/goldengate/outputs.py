@@ -1263,6 +1263,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     def __init__(__self__, *,
                  access_key_id: str,
                  account_key: str,
+                 account_key_secret_id: str,
                  account_name: str,
                  additional_attributes: Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult'],
                  authentication_mode: str,
@@ -1271,6 +1272,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  bootstrap_servers: Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult'],
                  client_id: str,
                  client_secret: str,
+                 client_secret_secret_id: str,
                  compartment_id: str,
                  connection_factory: str,
                  connection_string: str,
@@ -1285,6 +1287,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  deployment_id: str,
                  description: str,
                  display_name: str,
+                 does_use_secret_ids: bool,
                  endpoint: str,
                  fingerprint: str,
                  freeform_tags: Mapping[str, str],
@@ -1296,38 +1299,51 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  jndi_initial_context_factory: str,
                  jndi_provider_url: str,
                  jndi_security_credentials: str,
+                 jndi_security_credentials_secret_id: str,
                  jndi_security_principal: str,
                  key_id: str,
                  key_store: str,
                  key_store_password: str,
+                 key_store_password_secret_id: str,
+                 key_store_secret_id: str,
                  lifecycle_details: str,
                  locks: Sequence['outputs.GetConnectionsConnectionCollectionItemLockResult'],
                  nsg_ids: Sequence[str],
                  password: str,
+                 password_secret_id: str,
                  port: int,
                  private_ip: str,
                  private_key_file: str,
+                 private_key_file_secret_id: str,
                  private_key_passphrase: str,
+                 private_key_passphrase_secret_id: str,
                  producer_properties: str,
                  public_key_fingerprint: str,
                  redis_cluster_id: str,
                  region: str,
                  routing_method: str,
                  sas_token: str,
+                 sas_token_secret_id: str,
                  secret_access_key: str,
+                 secret_access_key_secret_id: str,
                  security_protocol: str,
                  servers: str,
                  service_account_key_file: str,
+                 service_account_key_file_secret_id: str,
                  session_mode: str,
                  should_use_jndi: bool,
                  should_validate_server_certificate: bool,
                  ssl_ca: str,
                  ssl_cert: str,
                  ssl_client_keystash: str,
+                 ssl_client_keystash_secret_id: str,
                  ssl_client_keystoredb: str,
+                 ssl_client_keystoredb_secret_id: str,
                  ssl_crl: str,
                  ssl_key: str,
                  ssl_key_password: str,
+                 ssl_key_password_secret_id: str,
+                 ssl_key_secret_id: str,
                  ssl_mode: str,
                  ssl_server_certificate: str,
                  state: str,
@@ -1338,15 +1354,20 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  tenancy_id: str,
                  time_created: str,
                  time_updated: str,
+                 trigger_refresh: bool,
                  trust_store: str,
                  trust_store_password: str,
+                 trust_store_password_secret_id: str,
+                 trust_store_secret_id: str,
                  url: str,
                  user_id: str,
                  username: str,
                  vault_id: str,
-                 wallet: str):
+                 wallet: str,
+                 wallet_secret_id: str):
         """
         :param str access_key_id: Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        :param str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
         :param str account_name: Sets the Azure storage account name.
         :param Sequence['GetConnectionsConnectionCollectionItemAdditionalAttributeArgs'] additional_attributes: An array of name-value pair attribute entries. Used as additional parameters in connection string.
         :param str authentication_mode: Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
@@ -1356,6 +1377,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str azure_tenant_id: Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param Sequence['GetConnectionsConnectionCollectionItemBootstrapServerArgs'] bootstrap_servers: Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param str client_id: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        :param str client_secret_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
         :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param str connection_factory: The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param str connection_string: * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
@@ -1365,6 +1387,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str connection_url: * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
                * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
                * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
+        :param str consumer_properties: The base64 encoded content of the consumer.properties file.
         :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param str database_name: The name of the database.
         :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
@@ -1372,6 +1395,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param str description: Metadata about this specific object.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param bool does_use_secret_ids: Indicates that sensitive attributes are provided via Secrets.
         :param str endpoint: Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
         :param Mapping[str, str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str host: The name or address of a host.
@@ -1382,26 +1406,41 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str jndi_connection_factory: The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         :param str jndi_initial_context_factory: The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
         :param str jndi_provider_url: The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+        :param str jndi_security_credentials_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
         :param str jndi_security_principal: Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         :param str key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+        :param str key_store_password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+        :param str key_store_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param Sequence['GetConnectionsConnectionCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
+        :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, 'password' field must not be provided.
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param str private_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        :param str private_key_passphrase_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        :param str producer_properties: The base64 encoded content of the producer.properties file.
         :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param str region: The name of the region. e.g.: us-ashburn-1
         :param str routing_method: Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+        :param str sas_token_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+        :param str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
         :param str security_protocol: Security Protocol to be provided for the following connection types:
                * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
                * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         :param str servers: Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
                If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+        :param str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param bool should_use_jndi: If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param bool should_validate_server_certificate: If set to true, the driver validates the certificate that is sent by the database server.
         :param str ssl_ca: Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        :param str ssl_client_keystash_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        :param str ssl_client_keystoredb_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        :param str ssl_key_password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+        :param str ssl_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+               * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
         :param str ssl_mode: SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         :param str state: A filter to return only connections having the 'lifecycleState' given.
         :param str stream_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -1411,13 +1450,17 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str trust_store_password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+        :param str trust_store_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
         :param str url: Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
         :param str user_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
         :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
         pulumi.set(__self__, "account_key", account_key)
+        pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "additional_attributes", additional_attributes)
         pulumi.set(__self__, "authentication_mode", authentication_mode)
@@ -1426,6 +1469,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
         pulumi.set(__self__, "client_id", client_id)
         pulumi.set(__self__, "client_secret", client_secret)
+        pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_factory", connection_factory)
         pulumi.set(__self__, "connection_string", connection_string)
@@ -1440,6 +1484,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "deployment_id", deployment_id)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "does_use_secret_ids", does_use_secret_ids)
         pulumi.set(__self__, "endpoint", endpoint)
         pulumi.set(__self__, "fingerprint", fingerprint)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -1451,38 +1496,51 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
         pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
         pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+        pulumi.set(__self__, "jndi_security_credentials_secret_id", jndi_security_credentials_secret_id)
         pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
         pulumi.set(__self__, "key_id", key_id)
         pulumi.set(__self__, "key_store", key_store)
         pulumi.set(__self__, "key_store_password", key_store_password)
+        pulumi.set(__self__, "key_store_password_secret_id", key_store_password_secret_id)
+        pulumi.set(__self__, "key_store_secret_id", key_store_secret_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "private_ip", private_ip)
         pulumi.set(__self__, "private_key_file", private_key_file)
+        pulumi.set(__self__, "private_key_file_secret_id", private_key_file_secret_id)
         pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+        pulumi.set(__self__, "private_key_passphrase_secret_id", private_key_passphrase_secret_id)
         pulumi.set(__self__, "producer_properties", producer_properties)
         pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
         pulumi.set(__self__, "redis_cluster_id", redis_cluster_id)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "routing_method", routing_method)
         pulumi.set(__self__, "sas_token", sas_token)
+        pulumi.set(__self__, "sas_token_secret_id", sas_token_secret_id)
         pulumi.set(__self__, "secret_access_key", secret_access_key)
+        pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
         pulumi.set(__self__, "security_protocol", security_protocol)
         pulumi.set(__self__, "servers", servers)
         pulumi.set(__self__, "service_account_key_file", service_account_key_file)
+        pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
         pulumi.set(__self__, "session_mode", session_mode)
         pulumi.set(__self__, "should_use_jndi", should_use_jndi)
         pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
         pulumi.set(__self__, "ssl_ca", ssl_ca)
         pulumi.set(__self__, "ssl_cert", ssl_cert)
         pulumi.set(__self__, "ssl_client_keystash", ssl_client_keystash)
+        pulumi.set(__self__, "ssl_client_keystash_secret_id", ssl_client_keystash_secret_id)
         pulumi.set(__self__, "ssl_client_keystoredb", ssl_client_keystoredb)
+        pulumi.set(__self__, "ssl_client_keystoredb_secret_id", ssl_client_keystoredb_secret_id)
         pulumi.set(__self__, "ssl_crl", ssl_crl)
         pulumi.set(__self__, "ssl_key", ssl_key)
         pulumi.set(__self__, "ssl_key_password", ssl_key_password)
+        pulumi.set(__self__, "ssl_key_password_secret_id", ssl_key_password_secret_id)
+        pulumi.set(__self__, "ssl_key_secret_id", ssl_key_secret_id)
         pulumi.set(__self__, "ssl_mode", ssl_mode)
         pulumi.set(__self__, "ssl_server_certificate", ssl_server_certificate)
         pulumi.set(__self__, "state", state)
@@ -1493,13 +1551,17 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "tenancy_id", tenancy_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "trigger_refresh", trigger_refresh)
         pulumi.set(__self__, "trust_store", trust_store)
         pulumi.set(__self__, "trust_store_password", trust_store_password)
+        pulumi.set(__self__, "trust_store_password_secret_id", trust_store_password_secret_id)
+        pulumi.set(__self__, "trust_store_secret_id", trust_store_secret_id)
         pulumi.set(__self__, "url", url)
         pulumi.set(__self__, "user_id", user_id)
         pulumi.set(__self__, "username", username)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "wallet", wallet)
+        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="accessKeyId")
@@ -1513,6 +1575,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="accountKey")
     def account_key(self) -> str:
         return pulumi.get(self, "account_key")
+
+    @property
+    @pulumi.getter(name="accountKeySecretId")
+    def account_key_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+        """
+        return pulumi.get(self, "account_key_secret_id")
 
     @property
     @pulumi.getter(name="accountName")
@@ -1578,6 +1648,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "client_secret")
 
     @property
+    @pulumi.getter(name="clientSecretSecretId")
+    def client_secret_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        """
+        return pulumi.get(self, "client_secret_secret_id")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -1624,6 +1702,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @property
     @pulumi.getter(name="consumerProperties")
     def consumer_properties(self) -> str:
+        """
+        The base64 encoded content of the consumer.properties file.
+        """
         return pulumi.get(self, "consumer_properties")
 
     @property
@@ -1686,6 +1767,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         A filter to return only the resources that match the entire 'displayName' given.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="doesUseSecretIds")
+    def does_use_secret_ids(self) -> bool:
+        """
+        Indicates that sensitive attributes are provided via Secrets.
+        """
+        return pulumi.get(self, "does_use_secret_ids")
 
     @property
     @pulumi.getter
@@ -1769,6 +1858,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "jndi_security_credentials")
 
     @property
+    @pulumi.getter(name="jndiSecurityCredentialsSecretId")
+    def jndi_security_credentials_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+        """
+        return pulumi.get(self, "jndi_security_credentials_secret_id")
+
+    @property
     @pulumi.getter(name="jndiSecurityPrincipal")
     def jndi_security_principal(self) -> str:
         """
@@ -1793,6 +1890,22 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="keyStorePassword")
     def key_store_password(self) -> str:
         return pulumi.get(self, "key_store_password")
+
+    @property
+    @pulumi.getter(name="keyStorePasswordSecretId")
+    def key_store_password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+        """
+        return pulumi.get(self, "key_store_password_secret_id")
+
+    @property
+    @pulumi.getter(name="keyStoreSecretId")
+    def key_store_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+        """
+        return pulumi.get(self, "key_store_secret_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -1824,6 +1937,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "password")
 
     @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, 'password' field must not be provided.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @property
     @pulumi.getter
     def port(self) -> int:
         """
@@ -1846,13 +1967,32 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "private_key_file")
 
     @property
+    @pulumi.getter(name="privateKeyFileSecretId")
+    def private_key_file_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_file_secret_id")
+
+    @property
     @pulumi.getter(name="privateKeyPassphrase")
     def private_key_passphrase(self) -> str:
         return pulumi.get(self, "private_key_passphrase")
 
     @property
+    @pulumi.getter(name="privateKeyPassphraseSecretId")
+    def private_key_passphrase_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_passphrase_secret_id")
+
+    @property
     @pulumi.getter(name="producerProperties")
     def producer_properties(self) -> str:
+        """
+        The base64 encoded content of the producer.properties file.
+        """
         return pulumi.get(self, "producer_properties")
 
     @property
@@ -1890,9 +2030,25 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "sas_token")
 
     @property
+    @pulumi.getter(name="sasTokenSecretId")
+    def sas_token_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+        """
+        return pulumi.get(self, "sas_token_secret_id")
+
+    @property
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> str:
         return pulumi.get(self, "secret_access_key")
+
+    @property
+    @pulumi.getter(name="secretAccessKeySecretId")
+    def secret_access_key_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        """
+        return pulumi.get(self, "secret_access_key_secret_id")
 
     @property
     @pulumi.getter(name="securityProtocol")
@@ -1917,6 +2073,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="serviceAccountKeyFile")
     def service_account_key_file(self) -> str:
         return pulumi.get(self, "service_account_key_file")
+
+    @property
+    @pulumi.getter(name="serviceAccountKeyFileSecretId")
+    def service_account_key_file_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "service_account_key_file_secret_id")
 
     @property
     @pulumi.getter(name="sessionMode")
@@ -1961,9 +2125,25 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "ssl_client_keystash")
 
     @property
+    @pulumi.getter(name="sslClientKeystashSecretId")
+    def ssl_client_keystash_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        """
+        return pulumi.get(self, "ssl_client_keystash_secret_id")
+
+    @property
     @pulumi.getter(name="sslClientKeystoredb")
     def ssl_client_keystoredb(self) -> str:
         return pulumi.get(self, "ssl_client_keystoredb")
+
+    @property
+    @pulumi.getter(name="sslClientKeystoredbSecretId")
+    def ssl_client_keystoredb_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        """
+        return pulumi.get(self, "ssl_client_keystoredb_secret_id")
 
     @property
     @pulumi.getter(name="sslCrl")
@@ -1979,6 +2159,23 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslKeyPassword")
     def ssl_key_password(self) -> str:
         return pulumi.get(self, "ssl_key_password")
+
+    @property
+    @pulumi.getter(name="sslKeyPasswordSecretId")
+    def ssl_key_password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+        """
+        return pulumi.get(self, "ssl_key_password_secret_id")
+
+    @property
+    @pulumi.getter(name="sslKeySecretId")
+    def ssl_key_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+        * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+        """
+        return pulumi.get(self, "ssl_key_secret_id")
 
     @property
     @pulumi.getter(name="sslMode")
@@ -2058,6 +2255,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="triggerRefresh")
+    def trigger_refresh(self) -> bool:
+        return pulumi.get(self, "trigger_refresh")
+
+    @property
     @pulumi.getter(name="trustStore")
     def trust_store(self) -> str:
         return pulumi.get(self, "trust_store")
@@ -2066,6 +2268,22 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="trustStorePassword")
     def trust_store_password(self) -> str:
         return pulumi.get(self, "trust_store_password")
+
+    @property
+    @pulumi.getter(name="trustStorePasswordSecretId")
+    def trust_store_password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+        """
+        return pulumi.get(self, "trust_store_password_secret_id")
+
+    @property
+    @pulumi.getter(name="trustStoreSecretId")
+    def trust_store_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+        """
+        return pulumi.get(self, "trust_store_secret_id")
 
     @property
     @pulumi.getter
@@ -2103,6 +2321,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def wallet(self) -> str:
         return pulumi.get(self, "wallet")
+
+    @property
+    @pulumi.getter(name="walletSecretId")
+    def wallet_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        """
+        return pulumi.get(self, "wallet_secret_id")
 
 
 @pulumi.output_type
@@ -2683,6 +2909,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
                  id: str,
                  is_automatic: bool,
                  is_lock_override: bool,
+                 is_metadata_only: bool,
                  lifecycle_details: str,
                  locks: Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemLockResult'],
                  namespace: str,
@@ -2706,6 +2933,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         :param Mapping[str, str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param bool is_automatic: True if this object is automatically created
+        :param bool is_metadata_only: Parameter to allow users to create backup without trails
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param Sequence['GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str namespace: Name of namespace that serves as a container for all of your buckets
@@ -2730,6 +2958,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_automatic", is_automatic)
         pulumi.set(__self__, "is_lock_override", is_lock_override)
+        pulumi.set(__self__, "is_metadata_only", is_metadata_only)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "namespace", namespace)
@@ -2827,6 +3056,14 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     @pulumi.getter(name="isLockOverride")
     def is_lock_override(self) -> bool:
         return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter(name="isMetadataOnly")
+    def is_metadata_only(self) -> bool:
+        """
+        Parameter to allow users to create backup without trails
+        """
+        return pulumi.get(self, "is_metadata_only")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -4626,7 +4863,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
-        :param str load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        :param str load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         :param Sequence['GetDeploymentsDeploymentCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs'] maintenance_configurations: Attributes for configuring automatic deployment maintenance.
         :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs'] maintenance_windows: Defines the maintenance window, when automatic actions can be performed.
@@ -4892,7 +5129,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="loadBalancerSubnetId")
     def load_balancer_subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
 

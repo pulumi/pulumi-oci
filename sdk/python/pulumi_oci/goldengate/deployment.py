@@ -59,7 +59,7 @@ class DeploymentArgs:
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
-        :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        :param pulumi.Input[str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -285,7 +285,7 @@ class DeploymentArgs:
     @pulumi.getter(name="loadBalancerSubnetId")
     def load_balancer_subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
 
@@ -434,7 +434,7 @@ class _DeploymentState:
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
-        :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        :param pulumi.Input[str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -829,7 +829,7 @@ class _DeploymentState:
     @pulumi.getter(name="loadBalancerSubnetId")
     def load_balancer_subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
 
@@ -1107,7 +1107,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
-        :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        :param pulumi.Input[str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -1320,7 +1320,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
-        :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        :param pulumi.Input[str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -1581,7 +1581,7 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerSubnetId")
     def load_balancer_subnet_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
 

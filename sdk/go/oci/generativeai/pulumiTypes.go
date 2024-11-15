@@ -13,6 +13,1772 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AgentAgentEndpointContentModerationConfig struct {
+	// (Updatable) A flag to enable or disable content moderation on input.
+	ShouldEnableOnInput *bool `pulumi:"shouldEnableOnInput"`
+	// (Updatable) A flag to enable or disable content moderation on output.
+	ShouldEnableOnOutput *bool `pulumi:"shouldEnableOnOutput"`
+}
+
+// AgentAgentEndpointContentModerationConfigInput is an input type that accepts AgentAgentEndpointContentModerationConfigArgs and AgentAgentEndpointContentModerationConfigOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointContentModerationConfigInput` via:
+//
+//	AgentAgentEndpointContentModerationConfigArgs{...}
+type AgentAgentEndpointContentModerationConfigInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointContentModerationConfigOutput() AgentAgentEndpointContentModerationConfigOutput
+	ToAgentAgentEndpointContentModerationConfigOutputWithContext(context.Context) AgentAgentEndpointContentModerationConfigOutput
+}
+
+type AgentAgentEndpointContentModerationConfigArgs struct {
+	// (Updatable) A flag to enable or disable content moderation on input.
+	ShouldEnableOnInput pulumi.BoolPtrInput `pulumi:"shouldEnableOnInput"`
+	// (Updatable) A flag to enable or disable content moderation on output.
+	ShouldEnableOnOutput pulumi.BoolPtrInput `pulumi:"shouldEnableOnOutput"`
+}
+
+func (AgentAgentEndpointContentModerationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointContentModerationConfig)(nil)).Elem()
+}
+
+func (i AgentAgentEndpointContentModerationConfigArgs) ToAgentAgentEndpointContentModerationConfigOutput() AgentAgentEndpointContentModerationConfigOutput {
+	return i.ToAgentAgentEndpointContentModerationConfigOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointContentModerationConfigArgs) ToAgentAgentEndpointContentModerationConfigOutputWithContext(ctx context.Context) AgentAgentEndpointContentModerationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointContentModerationConfigOutput)
+}
+
+func (i AgentAgentEndpointContentModerationConfigArgs) ToAgentAgentEndpointContentModerationConfigPtrOutput() AgentAgentEndpointContentModerationConfigPtrOutput {
+	return i.ToAgentAgentEndpointContentModerationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointContentModerationConfigArgs) ToAgentAgentEndpointContentModerationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointContentModerationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointContentModerationConfigOutput).ToAgentAgentEndpointContentModerationConfigPtrOutputWithContext(ctx)
+}
+
+// AgentAgentEndpointContentModerationConfigPtrInput is an input type that accepts AgentAgentEndpointContentModerationConfigArgs, AgentAgentEndpointContentModerationConfigPtr and AgentAgentEndpointContentModerationConfigPtrOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointContentModerationConfigPtrInput` via:
+//
+//	        AgentAgentEndpointContentModerationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentEndpointContentModerationConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointContentModerationConfigPtrOutput() AgentAgentEndpointContentModerationConfigPtrOutput
+	ToAgentAgentEndpointContentModerationConfigPtrOutputWithContext(context.Context) AgentAgentEndpointContentModerationConfigPtrOutput
+}
+
+type agentAgentEndpointContentModerationConfigPtrType AgentAgentEndpointContentModerationConfigArgs
+
+func AgentAgentEndpointContentModerationConfigPtr(v *AgentAgentEndpointContentModerationConfigArgs) AgentAgentEndpointContentModerationConfigPtrInput {
+	return (*agentAgentEndpointContentModerationConfigPtrType)(v)
+}
+
+func (*agentAgentEndpointContentModerationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointContentModerationConfig)(nil)).Elem()
+}
+
+func (i *agentAgentEndpointContentModerationConfigPtrType) ToAgentAgentEndpointContentModerationConfigPtrOutput() AgentAgentEndpointContentModerationConfigPtrOutput {
+	return i.ToAgentAgentEndpointContentModerationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentEndpointContentModerationConfigPtrType) ToAgentAgentEndpointContentModerationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointContentModerationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointContentModerationConfigPtrOutput)
+}
+
+type AgentAgentEndpointContentModerationConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointContentModerationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointContentModerationConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointContentModerationConfigOutput) ToAgentAgentEndpointContentModerationConfigOutput() AgentAgentEndpointContentModerationConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointContentModerationConfigOutput) ToAgentAgentEndpointContentModerationConfigOutputWithContext(ctx context.Context) AgentAgentEndpointContentModerationConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointContentModerationConfigOutput) ToAgentAgentEndpointContentModerationConfigPtrOutput() AgentAgentEndpointContentModerationConfigPtrOutput {
+	return o.ToAgentAgentEndpointContentModerationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentEndpointContentModerationConfigOutput) ToAgentAgentEndpointContentModerationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointContentModerationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentEndpointContentModerationConfig) *AgentAgentEndpointContentModerationConfig {
+		return &v
+	}).(AgentAgentEndpointContentModerationConfigPtrOutput)
+}
+
+// (Updatable) A flag to enable or disable content moderation on input.
+func (o AgentAgentEndpointContentModerationConfigOutput) ShouldEnableOnInput() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointContentModerationConfig) *bool { return v.ShouldEnableOnInput }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) A flag to enable or disable content moderation on output.
+func (o AgentAgentEndpointContentModerationConfigOutput) ShouldEnableOnOutput() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointContentModerationConfig) *bool { return v.ShouldEnableOnOutput }).(pulumi.BoolPtrOutput)
+}
+
+type AgentAgentEndpointContentModerationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointContentModerationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointContentModerationConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointContentModerationConfigPtrOutput) ToAgentAgentEndpointContentModerationConfigPtrOutput() AgentAgentEndpointContentModerationConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointContentModerationConfigPtrOutput) ToAgentAgentEndpointContentModerationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointContentModerationConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointContentModerationConfigPtrOutput) Elem() AgentAgentEndpointContentModerationConfigOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointContentModerationConfig) AgentAgentEndpointContentModerationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentEndpointContentModerationConfig
+		return ret
+	}).(AgentAgentEndpointContentModerationConfigOutput)
+}
+
+// (Updatable) A flag to enable or disable content moderation on input.
+func (o AgentAgentEndpointContentModerationConfigPtrOutput) ShouldEnableOnInput() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointContentModerationConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ShouldEnableOnInput
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) A flag to enable or disable content moderation on output.
+func (o AgentAgentEndpointContentModerationConfigPtrOutput) ShouldEnableOnOutput() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointContentModerationConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ShouldEnableOnOutput
+	}).(pulumi.BoolPtrOutput)
+}
+
+type AgentAgentEndpointSessionConfig struct {
+	// (Updatable) The session will become inactive after this timeout.
+	IdleTimeoutInSeconds *int `pulumi:"idleTimeoutInSeconds"`
+}
+
+// AgentAgentEndpointSessionConfigInput is an input type that accepts AgentAgentEndpointSessionConfigArgs and AgentAgentEndpointSessionConfigOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointSessionConfigInput` via:
+//
+//	AgentAgentEndpointSessionConfigArgs{...}
+type AgentAgentEndpointSessionConfigInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointSessionConfigOutput() AgentAgentEndpointSessionConfigOutput
+	ToAgentAgentEndpointSessionConfigOutputWithContext(context.Context) AgentAgentEndpointSessionConfigOutput
+}
+
+type AgentAgentEndpointSessionConfigArgs struct {
+	// (Updatable) The session will become inactive after this timeout.
+	IdleTimeoutInSeconds pulumi.IntPtrInput `pulumi:"idleTimeoutInSeconds"`
+}
+
+func (AgentAgentEndpointSessionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointSessionConfig)(nil)).Elem()
+}
+
+func (i AgentAgentEndpointSessionConfigArgs) ToAgentAgentEndpointSessionConfigOutput() AgentAgentEndpointSessionConfigOutput {
+	return i.ToAgentAgentEndpointSessionConfigOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointSessionConfigArgs) ToAgentAgentEndpointSessionConfigOutputWithContext(ctx context.Context) AgentAgentEndpointSessionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointSessionConfigOutput)
+}
+
+func (i AgentAgentEndpointSessionConfigArgs) ToAgentAgentEndpointSessionConfigPtrOutput() AgentAgentEndpointSessionConfigPtrOutput {
+	return i.ToAgentAgentEndpointSessionConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointSessionConfigArgs) ToAgentAgentEndpointSessionConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointSessionConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointSessionConfigOutput).ToAgentAgentEndpointSessionConfigPtrOutputWithContext(ctx)
+}
+
+// AgentAgentEndpointSessionConfigPtrInput is an input type that accepts AgentAgentEndpointSessionConfigArgs, AgentAgentEndpointSessionConfigPtr and AgentAgentEndpointSessionConfigPtrOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointSessionConfigPtrInput` via:
+//
+//	        AgentAgentEndpointSessionConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentEndpointSessionConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointSessionConfigPtrOutput() AgentAgentEndpointSessionConfigPtrOutput
+	ToAgentAgentEndpointSessionConfigPtrOutputWithContext(context.Context) AgentAgentEndpointSessionConfigPtrOutput
+}
+
+type agentAgentEndpointSessionConfigPtrType AgentAgentEndpointSessionConfigArgs
+
+func AgentAgentEndpointSessionConfigPtr(v *AgentAgentEndpointSessionConfigArgs) AgentAgentEndpointSessionConfigPtrInput {
+	return (*agentAgentEndpointSessionConfigPtrType)(v)
+}
+
+func (*agentAgentEndpointSessionConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointSessionConfig)(nil)).Elem()
+}
+
+func (i *agentAgentEndpointSessionConfigPtrType) ToAgentAgentEndpointSessionConfigPtrOutput() AgentAgentEndpointSessionConfigPtrOutput {
+	return i.ToAgentAgentEndpointSessionConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentEndpointSessionConfigPtrType) ToAgentAgentEndpointSessionConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointSessionConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointSessionConfigPtrOutput)
+}
+
+type AgentAgentEndpointSessionConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointSessionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointSessionConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointSessionConfigOutput) ToAgentAgentEndpointSessionConfigOutput() AgentAgentEndpointSessionConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointSessionConfigOutput) ToAgentAgentEndpointSessionConfigOutputWithContext(ctx context.Context) AgentAgentEndpointSessionConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointSessionConfigOutput) ToAgentAgentEndpointSessionConfigPtrOutput() AgentAgentEndpointSessionConfigPtrOutput {
+	return o.ToAgentAgentEndpointSessionConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentEndpointSessionConfigOutput) ToAgentAgentEndpointSessionConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointSessionConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentEndpointSessionConfig) *AgentAgentEndpointSessionConfig {
+		return &v
+	}).(AgentAgentEndpointSessionConfigPtrOutput)
+}
+
+// (Updatable) The session will become inactive after this timeout.
+func (o AgentAgentEndpointSessionConfigOutput) IdleTimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointSessionConfig) *int { return v.IdleTimeoutInSeconds }).(pulumi.IntPtrOutput)
+}
+
+type AgentAgentEndpointSessionConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointSessionConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointSessionConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointSessionConfigPtrOutput) ToAgentAgentEndpointSessionConfigPtrOutput() AgentAgentEndpointSessionConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointSessionConfigPtrOutput) ToAgentAgentEndpointSessionConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointSessionConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointSessionConfigPtrOutput) Elem() AgentAgentEndpointSessionConfigOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointSessionConfig) AgentAgentEndpointSessionConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentEndpointSessionConfig
+		return ret
+	}).(AgentAgentEndpointSessionConfigOutput)
+}
+
+// (Updatable) The session will become inactive after this timeout.
+func (o AgentAgentEndpointSessionConfigPtrOutput) IdleTimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointSessionConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.IdleTimeoutInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+type AgentDataIngestionJobDataIngestionJobStatistic struct {
+	// The duration of this ingestion job.
+	DurationInSeconds *int `pulumi:"durationInSeconds"`
+	// The number of files that have failed during the ingestion.
+	NumberOfFailedFiles *int `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been successfully ingested during the ingestion.
+	NumberOfIngestedFiles *int `pulumi:"numberOfIngestedFiles"`
+}
+
+// AgentDataIngestionJobDataIngestionJobStatisticInput is an input type that accepts AgentDataIngestionJobDataIngestionJobStatisticArgs and AgentDataIngestionJobDataIngestionJobStatisticOutput values.
+// You can construct a concrete instance of `AgentDataIngestionJobDataIngestionJobStatisticInput` via:
+//
+//	AgentDataIngestionJobDataIngestionJobStatisticArgs{...}
+type AgentDataIngestionJobDataIngestionJobStatisticInput interface {
+	pulumi.Input
+
+	ToAgentDataIngestionJobDataIngestionJobStatisticOutput() AgentDataIngestionJobDataIngestionJobStatisticOutput
+	ToAgentDataIngestionJobDataIngestionJobStatisticOutputWithContext(context.Context) AgentDataIngestionJobDataIngestionJobStatisticOutput
+}
+
+type AgentDataIngestionJobDataIngestionJobStatisticArgs struct {
+	// The duration of this ingestion job.
+	DurationInSeconds pulumi.IntPtrInput `pulumi:"durationInSeconds"`
+	// The number of files that have failed during the ingestion.
+	NumberOfFailedFiles pulumi.IntPtrInput `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been successfully ingested during the ingestion.
+	NumberOfIngestedFiles pulumi.IntPtrInput `pulumi:"numberOfIngestedFiles"`
+}
+
+func (AgentDataIngestionJobDataIngestionJobStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (i AgentDataIngestionJobDataIngestionJobStatisticArgs) ToAgentDataIngestionJobDataIngestionJobStatisticOutput() AgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return i.ToAgentDataIngestionJobDataIngestionJobStatisticOutputWithContext(context.Background())
+}
+
+func (i AgentDataIngestionJobDataIngestionJobStatisticArgs) ToAgentDataIngestionJobDataIngestionJobStatisticOutputWithContext(ctx context.Context) AgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentDataIngestionJobDataIngestionJobStatisticOutput)
+}
+
+// AgentDataIngestionJobDataIngestionJobStatisticArrayInput is an input type that accepts AgentDataIngestionJobDataIngestionJobStatisticArray and AgentDataIngestionJobDataIngestionJobStatisticArrayOutput values.
+// You can construct a concrete instance of `AgentDataIngestionJobDataIngestionJobStatisticArrayInput` via:
+//
+//	AgentDataIngestionJobDataIngestionJobStatisticArray{ AgentDataIngestionJobDataIngestionJobStatisticArgs{...} }
+type AgentDataIngestionJobDataIngestionJobStatisticArrayInput interface {
+	pulumi.Input
+
+	ToAgentDataIngestionJobDataIngestionJobStatisticArrayOutput() AgentDataIngestionJobDataIngestionJobStatisticArrayOutput
+	ToAgentDataIngestionJobDataIngestionJobStatisticArrayOutputWithContext(context.Context) AgentDataIngestionJobDataIngestionJobStatisticArrayOutput
+}
+
+type AgentDataIngestionJobDataIngestionJobStatisticArray []AgentDataIngestionJobDataIngestionJobStatisticInput
+
+func (AgentDataIngestionJobDataIngestionJobStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentDataIngestionJobDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (i AgentDataIngestionJobDataIngestionJobStatisticArray) ToAgentDataIngestionJobDataIngestionJobStatisticArrayOutput() AgentDataIngestionJobDataIngestionJobStatisticArrayOutput {
+	return i.ToAgentDataIngestionJobDataIngestionJobStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i AgentDataIngestionJobDataIngestionJobStatisticArray) ToAgentDataIngestionJobDataIngestionJobStatisticArrayOutputWithContext(ctx context.Context) AgentDataIngestionJobDataIngestionJobStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentDataIngestionJobDataIngestionJobStatisticArrayOutput)
+}
+
+type AgentDataIngestionJobDataIngestionJobStatisticOutput struct{ *pulumi.OutputState }
+
+func (AgentDataIngestionJobDataIngestionJobStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (o AgentDataIngestionJobDataIngestionJobStatisticOutput) ToAgentDataIngestionJobDataIngestionJobStatisticOutput() AgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return o
+}
+
+func (o AgentDataIngestionJobDataIngestionJobStatisticOutput) ToAgentDataIngestionJobDataIngestionJobStatisticOutputWithContext(ctx context.Context) AgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return o
+}
+
+// The duration of this ingestion job.
+func (o AgentDataIngestionJobDataIngestionJobStatisticOutput) DurationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AgentDataIngestionJobDataIngestionJobStatistic) *int { return v.DurationInSeconds }).(pulumi.IntPtrOutput)
+}
+
+// The number of files that have failed during the ingestion.
+func (o AgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfFailedFiles() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AgentDataIngestionJobDataIngestionJobStatistic) *int { return v.NumberOfFailedFiles }).(pulumi.IntPtrOutput)
+}
+
+// The number of files that have been successfully ingested during the ingestion.
+func (o AgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfIngestedFiles() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AgentDataIngestionJobDataIngestionJobStatistic) *int { return v.NumberOfIngestedFiles }).(pulumi.IntPtrOutput)
+}
+
+type AgentDataIngestionJobDataIngestionJobStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (AgentDataIngestionJobDataIngestionJobStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentDataIngestionJobDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (o AgentDataIngestionJobDataIngestionJobStatisticArrayOutput) ToAgentDataIngestionJobDataIngestionJobStatisticArrayOutput() AgentDataIngestionJobDataIngestionJobStatisticArrayOutput {
+	return o
+}
+
+func (o AgentDataIngestionJobDataIngestionJobStatisticArrayOutput) ToAgentDataIngestionJobDataIngestionJobStatisticArrayOutputWithContext(ctx context.Context) AgentDataIngestionJobDataIngestionJobStatisticArrayOutput {
+	return o
+}
+
+func (o AgentDataIngestionJobDataIngestionJobStatisticArrayOutput) Index(i pulumi.IntInput) AgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AgentDataIngestionJobDataIngestionJobStatistic {
+		return vs[0].([]AgentDataIngestionJobDataIngestionJobStatistic)[vs[1].(int)]
+	}).(AgentDataIngestionJobDataIngestionJobStatisticOutput)
+}
+
+type AgentDataSourceDataSourceConfig struct {
+	// (Updatable) The type of the tool. The allowed values are:
+	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	DataSourceConfigType string `pulumi:"dataSourceConfigType"`
+	// (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+	ObjectStoragePrefixes []AgentDataSourceDataSourceConfigObjectStoragePrefix `pulumi:"objectStoragePrefixes"`
+}
+
+// AgentDataSourceDataSourceConfigInput is an input type that accepts AgentDataSourceDataSourceConfigArgs and AgentDataSourceDataSourceConfigOutput values.
+// You can construct a concrete instance of `AgentDataSourceDataSourceConfigInput` via:
+//
+//	AgentDataSourceDataSourceConfigArgs{...}
+type AgentDataSourceDataSourceConfigInput interface {
+	pulumi.Input
+
+	ToAgentDataSourceDataSourceConfigOutput() AgentDataSourceDataSourceConfigOutput
+	ToAgentDataSourceDataSourceConfigOutputWithContext(context.Context) AgentDataSourceDataSourceConfigOutput
+}
+
+type AgentDataSourceDataSourceConfigArgs struct {
+	// (Updatable) The type of the tool. The allowed values are:
+	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	DataSourceConfigType pulumi.StringInput `pulumi:"dataSourceConfigType"`
+	// (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+	ObjectStoragePrefixes AgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput `pulumi:"objectStoragePrefixes"`
+}
+
+func (AgentDataSourceDataSourceConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentDataSourceDataSourceConfig)(nil)).Elem()
+}
+
+func (i AgentDataSourceDataSourceConfigArgs) ToAgentDataSourceDataSourceConfigOutput() AgentDataSourceDataSourceConfigOutput {
+	return i.ToAgentDataSourceDataSourceConfigOutputWithContext(context.Background())
+}
+
+func (i AgentDataSourceDataSourceConfigArgs) ToAgentDataSourceDataSourceConfigOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentDataSourceDataSourceConfigOutput)
+}
+
+func (i AgentDataSourceDataSourceConfigArgs) ToAgentDataSourceDataSourceConfigPtrOutput() AgentDataSourceDataSourceConfigPtrOutput {
+	return i.ToAgentDataSourceDataSourceConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentDataSourceDataSourceConfigArgs) ToAgentDataSourceDataSourceConfigPtrOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentDataSourceDataSourceConfigOutput).ToAgentDataSourceDataSourceConfigPtrOutputWithContext(ctx)
+}
+
+// AgentDataSourceDataSourceConfigPtrInput is an input type that accepts AgentDataSourceDataSourceConfigArgs, AgentDataSourceDataSourceConfigPtr and AgentDataSourceDataSourceConfigPtrOutput values.
+// You can construct a concrete instance of `AgentDataSourceDataSourceConfigPtrInput` via:
+//
+//	        AgentDataSourceDataSourceConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentDataSourceDataSourceConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentDataSourceDataSourceConfigPtrOutput() AgentDataSourceDataSourceConfigPtrOutput
+	ToAgentDataSourceDataSourceConfigPtrOutputWithContext(context.Context) AgentDataSourceDataSourceConfigPtrOutput
+}
+
+type agentDataSourceDataSourceConfigPtrType AgentDataSourceDataSourceConfigArgs
+
+func AgentDataSourceDataSourceConfigPtr(v *AgentDataSourceDataSourceConfigArgs) AgentDataSourceDataSourceConfigPtrInput {
+	return (*agentDataSourceDataSourceConfigPtrType)(v)
+}
+
+func (*agentDataSourceDataSourceConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentDataSourceDataSourceConfig)(nil)).Elem()
+}
+
+func (i *agentDataSourceDataSourceConfigPtrType) ToAgentDataSourceDataSourceConfigPtrOutput() AgentDataSourceDataSourceConfigPtrOutput {
+	return i.ToAgentDataSourceDataSourceConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentDataSourceDataSourceConfigPtrType) ToAgentDataSourceDataSourceConfigPtrOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentDataSourceDataSourceConfigPtrOutput)
+}
+
+type AgentDataSourceDataSourceConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentDataSourceDataSourceConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentDataSourceDataSourceConfig)(nil)).Elem()
+}
+
+func (o AgentDataSourceDataSourceConfigOutput) ToAgentDataSourceDataSourceConfigOutput() AgentDataSourceDataSourceConfigOutput {
+	return o
+}
+
+func (o AgentDataSourceDataSourceConfigOutput) ToAgentDataSourceDataSourceConfigOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigOutput {
+	return o
+}
+
+func (o AgentDataSourceDataSourceConfigOutput) ToAgentDataSourceDataSourceConfigPtrOutput() AgentDataSourceDataSourceConfigPtrOutput {
+	return o.ToAgentDataSourceDataSourceConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentDataSourceDataSourceConfigOutput) ToAgentDataSourceDataSourceConfigPtrOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentDataSourceDataSourceConfig) *AgentDataSourceDataSourceConfig {
+		return &v
+	}).(AgentDataSourceDataSourceConfigPtrOutput)
+}
+
+// (Updatable) The type of the tool. The allowed values are:
+// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+func (o AgentDataSourceDataSourceConfigOutput) DataSourceConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentDataSourceDataSourceConfig) string { return v.DataSourceConfigType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+func (o AgentDataSourceDataSourceConfigOutput) ObjectStoragePrefixes() AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o.ApplyT(func(v AgentDataSourceDataSourceConfig) []AgentDataSourceDataSourceConfigObjectStoragePrefix {
+		return v.ObjectStoragePrefixes
+	}).(AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput)
+}
+
+type AgentDataSourceDataSourceConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentDataSourceDataSourceConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentDataSourceDataSourceConfig)(nil)).Elem()
+}
+
+func (o AgentDataSourceDataSourceConfigPtrOutput) ToAgentDataSourceDataSourceConfigPtrOutput() AgentDataSourceDataSourceConfigPtrOutput {
+	return o
+}
+
+func (o AgentDataSourceDataSourceConfigPtrOutput) ToAgentDataSourceDataSourceConfigPtrOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigPtrOutput {
+	return o
+}
+
+func (o AgentDataSourceDataSourceConfigPtrOutput) Elem() AgentDataSourceDataSourceConfigOutput {
+	return o.ApplyT(func(v *AgentDataSourceDataSourceConfig) AgentDataSourceDataSourceConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentDataSourceDataSourceConfig
+		return ret
+	}).(AgentDataSourceDataSourceConfigOutput)
+}
+
+// (Updatable) The type of the tool. The allowed values are:
+// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+func (o AgentDataSourceDataSourceConfigPtrOutput) DataSourceConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentDataSourceDataSourceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DataSourceConfigType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+func (o AgentDataSourceDataSourceConfigPtrOutput) ObjectStoragePrefixes() AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o.ApplyT(func(v *AgentDataSourceDataSourceConfig) []AgentDataSourceDataSourceConfigObjectStoragePrefix {
+		if v == nil {
+			return nil
+		}
+		return v.ObjectStoragePrefixes
+	}).(AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput)
+}
+
+type AgentDataSourceDataSourceConfigObjectStoragePrefix struct {
+	// (Updatable) The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// (Updatable) The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// (Updatable) The name of the object (file) or prefix (folder).
+	Prefix *string `pulumi:"prefix"`
+}
+
+// AgentDataSourceDataSourceConfigObjectStoragePrefixInput is an input type that accepts AgentDataSourceDataSourceConfigObjectStoragePrefixArgs and AgentDataSourceDataSourceConfigObjectStoragePrefixOutput values.
+// You can construct a concrete instance of `AgentDataSourceDataSourceConfigObjectStoragePrefixInput` via:
+//
+//	AgentDataSourceDataSourceConfigObjectStoragePrefixArgs{...}
+type AgentDataSourceDataSourceConfigObjectStoragePrefixInput interface {
+	pulumi.Input
+
+	ToAgentDataSourceDataSourceConfigObjectStoragePrefixOutput() AgentDataSourceDataSourceConfigObjectStoragePrefixOutput
+	ToAgentDataSourceDataSourceConfigObjectStoragePrefixOutputWithContext(context.Context) AgentDataSourceDataSourceConfigObjectStoragePrefixOutput
+}
+
+type AgentDataSourceDataSourceConfigObjectStoragePrefixArgs struct {
+	// (Updatable) The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// (Updatable) The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// (Updatable) The name of the object (file) or prefix (folder).
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+}
+
+func (AgentDataSourceDataSourceConfigObjectStoragePrefixArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentDataSourceDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (i AgentDataSourceDataSourceConfigObjectStoragePrefixArgs) ToAgentDataSourceDataSourceConfigObjectStoragePrefixOutput() AgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return i.ToAgentDataSourceDataSourceConfigObjectStoragePrefixOutputWithContext(context.Background())
+}
+
+func (i AgentDataSourceDataSourceConfigObjectStoragePrefixArgs) ToAgentDataSourceDataSourceConfigObjectStoragePrefixOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentDataSourceDataSourceConfigObjectStoragePrefixOutput)
+}
+
+// AgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput is an input type that accepts AgentDataSourceDataSourceConfigObjectStoragePrefixArray and AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput values.
+// You can construct a concrete instance of `AgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput` via:
+//
+//	AgentDataSourceDataSourceConfigObjectStoragePrefixArray{ AgentDataSourceDataSourceConfigObjectStoragePrefixArgs{...} }
+type AgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput interface {
+	pulumi.Input
+
+	ToAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput() AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput
+	ToAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutputWithContext(context.Context) AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput
+}
+
+type AgentDataSourceDataSourceConfigObjectStoragePrefixArray []AgentDataSourceDataSourceConfigObjectStoragePrefixInput
+
+func (AgentDataSourceDataSourceConfigObjectStoragePrefixArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentDataSourceDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (i AgentDataSourceDataSourceConfigObjectStoragePrefixArray) ToAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput() AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return i.ToAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutputWithContext(context.Background())
+}
+
+func (i AgentDataSourceDataSourceConfigObjectStoragePrefixArray) ToAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput)
+}
+
+type AgentDataSourceDataSourceConfigObjectStoragePrefixOutput struct{ *pulumi.OutputState }
+
+func (AgentDataSourceDataSourceConfigObjectStoragePrefixOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentDataSourceDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (o AgentDataSourceDataSourceConfigObjectStoragePrefixOutput) ToAgentDataSourceDataSourceConfigObjectStoragePrefixOutput() AgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return o
+}
+
+func (o AgentDataSourceDataSourceConfigObjectStoragePrefixOutput) ToAgentDataSourceDataSourceConfigObjectStoragePrefixOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return o
+}
+
+// (Updatable) The bucket name of an object.
+func (o AgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentDataSourceDataSourceConfigObjectStoragePrefix) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// (Updatable) The namespace name of an object.
+func (o AgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentDataSourceDataSourceConfigObjectStoragePrefix) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// (Updatable) The name of the object (file) or prefix (folder).
+func (o AgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentDataSourceDataSourceConfigObjectStoragePrefix) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+type AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput struct{ *pulumi.OutputState }
+
+func (AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentDataSourceDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (o AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput) ToAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput() AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o
+}
+
+func (o AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput) ToAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutputWithContext(ctx context.Context) AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o
+}
+
+func (o AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput) Index(i pulumi.IntInput) AgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AgentDataSourceDataSourceConfigObjectStoragePrefix {
+		return vs[0].([]AgentDataSourceDataSourceConfigObjectStoragePrefix)[vs[1].(int)]
+	}).(AgentDataSourceDataSourceConfigObjectStoragePrefixOutput)
+}
+
+type AgentKnowledgeBaseIndexConfig struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+	ClusterId *string `pulumi:"clusterId"`
+	// (Updatable) **DatabaseConnection**
+	//
+	// The connection type for Databases.
+	DatabaseConnection *AgentKnowledgeBaseIndexConfigDatabaseConnection `pulumi:"databaseConnection"`
+	// (Updatable) Array of Database functions to be used.
+	DatabaseFunctions []AgentKnowledgeBaseIndexConfigDatabaseFunction `pulumi:"databaseFunctions"`
+	// (Updatable) The type of index. The allowed values are:
+	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	IndexConfigType string `pulumi:"indexConfigType"`
+	// (Updatable) Index configuration for open search.
+	Indexes []AgentKnowledgeBaseIndexConfigIndex `pulumi:"indexes"`
+	// (Updatable) **SecretDetail**
+	//
+	// The details of configured security configuration on OpenSearch.
+	SecretDetail *AgentKnowledgeBaseIndexConfigSecretDetail `pulumi:"secretDetail"`
+	// (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ShouldEnableHybridSearch *bool `pulumi:"shouldEnableHybridSearch"`
+}
+
+// AgentKnowledgeBaseIndexConfigInput is an input type that accepts AgentKnowledgeBaseIndexConfigArgs and AgentKnowledgeBaseIndexConfigOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigInput` via:
+//
+//	AgentKnowledgeBaseIndexConfigArgs{...}
+type AgentKnowledgeBaseIndexConfigInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigOutput() AgentKnowledgeBaseIndexConfigOutput
+	ToAgentKnowledgeBaseIndexConfigOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigOutput
+}
+
+type AgentKnowledgeBaseIndexConfigArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
+	// (Updatable) **DatabaseConnection**
+	//
+	// The connection type for Databases.
+	DatabaseConnection AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrInput `pulumi:"databaseConnection"`
+	// (Updatable) Array of Database functions to be used.
+	DatabaseFunctions AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput `pulumi:"databaseFunctions"`
+	// (Updatable) The type of index. The allowed values are:
+	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	IndexConfigType pulumi.StringInput `pulumi:"indexConfigType"`
+	// (Updatable) Index configuration for open search.
+	Indexes AgentKnowledgeBaseIndexConfigIndexArrayInput `pulumi:"indexes"`
+	// (Updatable) **SecretDetail**
+	//
+	// The details of configured security configuration on OpenSearch.
+	SecretDetail AgentKnowledgeBaseIndexConfigSecretDetailPtrInput `pulumi:"secretDetail"`
+	// (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ShouldEnableHybridSearch pulumi.BoolPtrInput `pulumi:"shouldEnableHybridSearch"`
+}
+
+func (AgentKnowledgeBaseIndexConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfig)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseIndexConfigArgs) ToAgentKnowledgeBaseIndexConfigOutput() AgentKnowledgeBaseIndexConfigOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigArgs) ToAgentKnowledgeBaseIndexConfigOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigOutput)
+}
+
+func (i AgentKnowledgeBaseIndexConfigArgs) ToAgentKnowledgeBaseIndexConfigPtrOutput() AgentKnowledgeBaseIndexConfigPtrOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigArgs) ToAgentKnowledgeBaseIndexConfigPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigOutput).ToAgentKnowledgeBaseIndexConfigPtrOutputWithContext(ctx)
+}
+
+// AgentKnowledgeBaseIndexConfigPtrInput is an input type that accepts AgentKnowledgeBaseIndexConfigArgs, AgentKnowledgeBaseIndexConfigPtr and AgentKnowledgeBaseIndexConfigPtrOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigPtrInput` via:
+//
+//	        AgentKnowledgeBaseIndexConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentKnowledgeBaseIndexConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigPtrOutput() AgentKnowledgeBaseIndexConfigPtrOutput
+	ToAgentKnowledgeBaseIndexConfigPtrOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigPtrOutput
+}
+
+type agentKnowledgeBaseIndexConfigPtrType AgentKnowledgeBaseIndexConfigArgs
+
+func AgentKnowledgeBaseIndexConfigPtr(v *AgentKnowledgeBaseIndexConfigArgs) AgentKnowledgeBaseIndexConfigPtrInput {
+	return (*agentKnowledgeBaseIndexConfigPtrType)(v)
+}
+
+func (*agentKnowledgeBaseIndexConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentKnowledgeBaseIndexConfig)(nil)).Elem()
+}
+
+func (i *agentKnowledgeBaseIndexConfigPtrType) ToAgentKnowledgeBaseIndexConfigPtrOutput() AgentKnowledgeBaseIndexConfigPtrOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentKnowledgeBaseIndexConfigPtrType) ToAgentKnowledgeBaseIndexConfigPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfig)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigOutput) ToAgentKnowledgeBaseIndexConfigOutput() AgentKnowledgeBaseIndexConfigOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigOutput) ToAgentKnowledgeBaseIndexConfigOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigOutput) ToAgentKnowledgeBaseIndexConfigPtrOutput() AgentKnowledgeBaseIndexConfigPtrOutput {
+	return o.ToAgentKnowledgeBaseIndexConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentKnowledgeBaseIndexConfigOutput) ToAgentKnowledgeBaseIndexConfigPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentKnowledgeBaseIndexConfig) *AgentKnowledgeBaseIndexConfig {
+		return &v
+	}).(AgentKnowledgeBaseIndexConfigPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+func (o AgentKnowledgeBaseIndexConfigOutput) ClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) **DatabaseConnection**
+//
+// The connection type for Databases.
+func (o AgentKnowledgeBaseIndexConfigOutput) DatabaseConnection() AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) *AgentKnowledgeBaseIndexConfigDatabaseConnection {
+		return v.DatabaseConnection
+	}).(AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput)
+}
+
+// (Updatable) Array of Database functions to be used.
+func (o AgentKnowledgeBaseIndexConfigOutput) DatabaseFunctions() AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) []AgentKnowledgeBaseIndexConfigDatabaseFunction {
+		return v.DatabaseFunctions
+	}).(AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput)
+}
+
+// (Updatable) The type of index. The allowed values are:
+// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+func (o AgentKnowledgeBaseIndexConfigOutput) IndexConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) string { return v.IndexConfigType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Index configuration for open search.
+func (o AgentKnowledgeBaseIndexConfigOutput) Indexes() AgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) []AgentKnowledgeBaseIndexConfigIndex { return v.Indexes }).(AgentKnowledgeBaseIndexConfigIndexArrayOutput)
+}
+
+// (Updatable) **SecretDetail**
+//
+// The details of configured security configuration on OpenSearch.
+func (o AgentKnowledgeBaseIndexConfigOutput) SecretDetail() AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) *AgentKnowledgeBaseIndexConfigSecretDetail {
+		return v.SecretDetail
+	}).(AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput)
+}
+
+// (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AgentKnowledgeBaseIndexConfigOutput) ShouldEnableHybridSearch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) *bool { return v.ShouldEnableHybridSearch }).(pulumi.BoolPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentKnowledgeBaseIndexConfig)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) ToAgentKnowledgeBaseIndexConfigPtrOutput() AgentKnowledgeBaseIndexConfigPtrOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) ToAgentKnowledgeBaseIndexConfigPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigPtrOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) Elem() AgentKnowledgeBaseIndexConfigOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) AgentKnowledgeBaseIndexConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentKnowledgeBaseIndexConfig
+		return ret
+	}).(AgentKnowledgeBaseIndexConfigOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) ClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClusterId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) **DatabaseConnection**
+//
+// The connection type for Databases.
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) DatabaseConnection() AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) *AgentKnowledgeBaseIndexConfigDatabaseConnection {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseConnection
+	}).(AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput)
+}
+
+// (Updatable) Array of Database functions to be used.
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) DatabaseFunctions() AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) []AgentKnowledgeBaseIndexConfigDatabaseFunction {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseFunctions
+	}).(AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput)
+}
+
+// (Updatable) The type of index. The allowed values are:
+// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) IndexConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.IndexConfigType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Index configuration for open search.
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) Indexes() AgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) []AgentKnowledgeBaseIndexConfigIndex {
+		if v == nil {
+			return nil
+		}
+		return v.Indexes
+	}).(AgentKnowledgeBaseIndexConfigIndexArrayOutput)
+}
+
+// (Updatable) **SecretDetail**
+//
+// The details of configured security configuration on OpenSearch.
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) SecretDetail() AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) *AgentKnowledgeBaseIndexConfigSecretDetail {
+		if v == nil {
+			return nil
+		}
+		return v.SecretDetail
+	}).(AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput)
+}
+
+// (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AgentKnowledgeBaseIndexConfigPtrOutput) ShouldEnableHybridSearch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ShouldEnableHybridSearch
+	}).(pulumi.BoolPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigDatabaseConnection struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// (Updatable) The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType string `pulumi:"connectionType"`
+}
+
+// AgentKnowledgeBaseIndexConfigDatabaseConnectionInput is an input type that accepts AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs and AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigDatabaseConnectionInput` via:
+//
+//	AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs{...}
+type AgentKnowledgeBaseIndexConfigDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput() AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput
+	ToAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput
+}
+
+type AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// (Updatable) The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+}
+
+func (AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput() AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput)
+}
+
+func (i AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput() AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput).ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutputWithContext(ctx)
+}
+
+// AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrInput is an input type that accepts AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs, AgentKnowledgeBaseIndexConfigDatabaseConnectionPtr and AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrInput` via:
+//
+//	        AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput() AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput
+	ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput
+}
+
+type agentKnowledgeBaseIndexConfigDatabaseConnectionPtrType AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs
+
+func AgentKnowledgeBaseIndexConfigDatabaseConnectionPtr(v *AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs) AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrInput {
+	return (*agentKnowledgeBaseIndexConfigDatabaseConnectionPtrType)(v)
+}
+
+func (*agentKnowledgeBaseIndexConfigDatabaseConnectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentKnowledgeBaseIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i *agentKnowledgeBaseIndexConfigDatabaseConnectionPtrType) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput() AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (i *agentKnowledgeBaseIndexConfigDatabaseConnectionPtrType) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput() AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput() AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return o.ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentKnowledgeBaseIndexConfigDatabaseConnection) *AgentKnowledgeBaseIndexConfigDatabaseConnection {
+		return &v
+	}).(AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigDatabaseConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The type of Database connection. The allowed values are:
+// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigDatabaseConnection) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentKnowledgeBaseIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput() AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput) ToAgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput) Elem() AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigDatabaseConnection) AgentKnowledgeBaseIndexConfigDatabaseConnection {
+		if v != nil {
+			return *v
+		}
+		var ret AgentKnowledgeBaseIndexConfigDatabaseConnection
+		return ret
+	}).(AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectionId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of Database connection. The allowed values are:
+// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput) ConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigDatabaseFunction struct {
+	// (Updatable) The name of the Database function.
+	Name *string `pulumi:"name"`
+}
+
+// AgentKnowledgeBaseIndexConfigDatabaseFunctionInput is an input type that accepts AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs and AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigDatabaseFunctionInput` via:
+//
+//	AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs{...}
+type AgentKnowledgeBaseIndexConfigDatabaseFunctionInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput() AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput
+	ToAgentKnowledgeBaseIndexConfigDatabaseFunctionOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput
+}
+
+type AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs struct {
+	// (Updatable) The name of the Database function.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs) ToAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput() AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigDatabaseFunctionOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs) ToAgentKnowledgeBaseIndexConfigDatabaseFunctionOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput)
+}
+
+// AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput is an input type that accepts AgentKnowledgeBaseIndexConfigDatabaseFunctionArray and AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput` via:
+//
+//	AgentKnowledgeBaseIndexConfigDatabaseFunctionArray{ AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs{...} }
+type AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput() AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput
+	ToAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput
+}
+
+type AgentKnowledgeBaseIndexConfigDatabaseFunctionArray []AgentKnowledgeBaseIndexConfigDatabaseFunctionInput
+
+func (AgentKnowledgeBaseIndexConfigDatabaseFunctionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentKnowledgeBaseIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseIndexConfigDatabaseFunctionArray) ToAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput() AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigDatabaseFunctionArray) ToAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput) ToAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput() AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput) ToAgentKnowledgeBaseIndexConfigDatabaseFunctionOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return o
+}
+
+// (Updatable) The name of the Database function.
+func (o AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigDatabaseFunction) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentKnowledgeBaseIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) ToAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput() AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) ToAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) Index(i pulumi.IntInput) AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AgentKnowledgeBaseIndexConfigDatabaseFunction {
+		return vs[0].([]AgentKnowledgeBaseIndexConfigDatabaseFunction)[vs[1].(int)]
+	}).(AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigIndex struct {
+	// (Updatable) The index name in opensearch.
+	Name *string `pulumi:"name"`
+	// (Updatable) **IndexSchema**
+	//
+	// The index schema details.
+	Schema *AgentKnowledgeBaseIndexConfigIndexSchema `pulumi:"schema"`
+}
+
+// AgentKnowledgeBaseIndexConfigIndexInput is an input type that accepts AgentKnowledgeBaseIndexConfigIndexArgs and AgentKnowledgeBaseIndexConfigIndexOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigIndexInput` via:
+//
+//	AgentKnowledgeBaseIndexConfigIndexArgs{...}
+type AgentKnowledgeBaseIndexConfigIndexInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigIndexOutput() AgentKnowledgeBaseIndexConfigIndexOutput
+	ToAgentKnowledgeBaseIndexConfigIndexOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigIndexOutput
+}
+
+type AgentKnowledgeBaseIndexConfigIndexArgs struct {
+	// (Updatable) The index name in opensearch.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) **IndexSchema**
+	//
+	// The index schema details.
+	Schema AgentKnowledgeBaseIndexConfigIndexSchemaPtrInput `pulumi:"schema"`
+}
+
+func (AgentKnowledgeBaseIndexConfigIndexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndex)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseIndexConfigIndexArgs) ToAgentKnowledgeBaseIndexConfigIndexOutput() AgentKnowledgeBaseIndexConfigIndexOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigIndexOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigIndexArgs) ToAgentKnowledgeBaseIndexConfigIndexOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigIndexOutput)
+}
+
+// AgentKnowledgeBaseIndexConfigIndexArrayInput is an input type that accepts AgentKnowledgeBaseIndexConfigIndexArray and AgentKnowledgeBaseIndexConfigIndexArrayOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigIndexArrayInput` via:
+//
+//	AgentKnowledgeBaseIndexConfigIndexArray{ AgentKnowledgeBaseIndexConfigIndexArgs{...} }
+type AgentKnowledgeBaseIndexConfigIndexArrayInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigIndexArrayOutput() AgentKnowledgeBaseIndexConfigIndexArrayOutput
+	ToAgentKnowledgeBaseIndexConfigIndexArrayOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigIndexArrayOutput
+}
+
+type AgentKnowledgeBaseIndexConfigIndexArray []AgentKnowledgeBaseIndexConfigIndexInput
+
+func (AgentKnowledgeBaseIndexConfigIndexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentKnowledgeBaseIndexConfigIndex)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseIndexConfigIndexArray) ToAgentKnowledgeBaseIndexConfigIndexArrayOutput() AgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigIndexArrayOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigIndexArray) ToAgentKnowledgeBaseIndexConfigIndexArrayOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigIndexArrayOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigIndexOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigIndexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndex)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexOutput) ToAgentKnowledgeBaseIndexConfigIndexOutput() AgentKnowledgeBaseIndexConfigIndexOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexOutput) ToAgentKnowledgeBaseIndexConfigIndexOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexOutput {
+	return o
+}
+
+// (Updatable) The index name in opensearch.
+func (o AgentKnowledgeBaseIndexConfigIndexOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigIndex) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) **IndexSchema**
+//
+// The index schema details.
+func (o AgentKnowledgeBaseIndexConfigIndexOutput) Schema() AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigIndex) *AgentKnowledgeBaseIndexConfigIndexSchema { return v.Schema }).(AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigIndexArrayOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigIndexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentKnowledgeBaseIndexConfigIndex)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexArrayOutput) ToAgentKnowledgeBaseIndexConfigIndexArrayOutput() AgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexArrayOutput) ToAgentKnowledgeBaseIndexConfigIndexArrayOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexArrayOutput) Index(i pulumi.IntInput) AgentKnowledgeBaseIndexConfigIndexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AgentKnowledgeBaseIndexConfigIndex {
+		return vs[0].([]AgentKnowledgeBaseIndexConfigIndex)[vs[1].(int)]
+	}).(AgentKnowledgeBaseIndexConfigIndexOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigIndexSchema struct {
+	// (Updatable) Body key name.
+	BodyKey *string `pulumi:"bodyKey"`
+	// (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+	EmbeddingBodyKey *string `pulumi:"embeddingBodyKey"`
+	// (Updatable) Title key that stores the Title of a document, if available.
+	TitleKey *string `pulumi:"titleKey"`
+	// (Updatable) URL key that stores the URL of a document, if available.
+	UrlKey *string `pulumi:"urlKey"`
+}
+
+// AgentKnowledgeBaseIndexConfigIndexSchemaInput is an input type that accepts AgentKnowledgeBaseIndexConfigIndexSchemaArgs and AgentKnowledgeBaseIndexConfigIndexSchemaOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigIndexSchemaInput` via:
+//
+//	AgentKnowledgeBaseIndexConfigIndexSchemaArgs{...}
+type AgentKnowledgeBaseIndexConfigIndexSchemaInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigIndexSchemaOutput() AgentKnowledgeBaseIndexConfigIndexSchemaOutput
+	ToAgentKnowledgeBaseIndexConfigIndexSchemaOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigIndexSchemaOutput
+}
+
+type AgentKnowledgeBaseIndexConfigIndexSchemaArgs struct {
+	// (Updatable) Body key name.
+	BodyKey pulumi.StringPtrInput `pulumi:"bodyKey"`
+	// (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+	EmbeddingBodyKey pulumi.StringPtrInput `pulumi:"embeddingBodyKey"`
+	// (Updatable) Title key that stores the Title of a document, if available.
+	TitleKey pulumi.StringPtrInput `pulumi:"titleKey"`
+	// (Updatable) URL key that stores the URL of a document, if available.
+	UrlKey pulumi.StringPtrInput `pulumi:"urlKey"`
+}
+
+func (AgentKnowledgeBaseIndexConfigIndexSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseIndexConfigIndexSchemaArgs) ToAgentKnowledgeBaseIndexConfigIndexSchemaOutput() AgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigIndexSchemaOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigIndexSchemaArgs) ToAgentKnowledgeBaseIndexConfigIndexSchemaOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigIndexSchemaOutput)
+}
+
+func (i AgentKnowledgeBaseIndexConfigIndexSchemaArgs) ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput() AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigIndexSchemaArgs) ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigIndexSchemaOutput).ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutputWithContext(ctx)
+}
+
+// AgentKnowledgeBaseIndexConfigIndexSchemaPtrInput is an input type that accepts AgentKnowledgeBaseIndexConfigIndexSchemaArgs, AgentKnowledgeBaseIndexConfigIndexSchemaPtr and AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigIndexSchemaPtrInput` via:
+//
+//	        AgentKnowledgeBaseIndexConfigIndexSchemaArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentKnowledgeBaseIndexConfigIndexSchemaPtrInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput() AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput
+	ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput
+}
+
+type agentKnowledgeBaseIndexConfigIndexSchemaPtrType AgentKnowledgeBaseIndexConfigIndexSchemaArgs
+
+func AgentKnowledgeBaseIndexConfigIndexSchemaPtr(v *AgentKnowledgeBaseIndexConfigIndexSchemaArgs) AgentKnowledgeBaseIndexConfigIndexSchemaPtrInput {
+	return (*agentKnowledgeBaseIndexConfigIndexSchemaPtrType)(v)
+}
+
+func (*agentKnowledgeBaseIndexConfigIndexSchemaPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentKnowledgeBaseIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (i *agentKnowledgeBaseIndexConfigIndexSchemaPtrType) ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput() AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutputWithContext(context.Background())
+}
+
+func (i *agentKnowledgeBaseIndexConfigIndexSchemaPtrType) ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigIndexSchemaOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigIndexSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaOutput) ToAgentKnowledgeBaseIndexConfigIndexSchemaOutput() AgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaOutput) ToAgentKnowledgeBaseIndexConfigIndexSchemaOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaOutput) ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput() AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
+	return o.ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutputWithContext(context.Background())
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaOutput) ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentKnowledgeBaseIndexConfigIndexSchema) *AgentKnowledgeBaseIndexConfigIndexSchema {
+		return &v
+	}).(AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput)
+}
+
+// (Updatable) Body key name.
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaOutput) BodyKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigIndexSchema) *string { return v.BodyKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaOutput) EmbeddingBodyKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigIndexSchema) *string { return v.EmbeddingBodyKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Title key that stores the Title of a document, if available.
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaOutput) TitleKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigIndexSchema) *string { return v.TitleKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) URL key that stores the URL of a document, if available.
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaOutput) UrlKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigIndexSchema) *string { return v.UrlKey }).(pulumi.StringPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentKnowledgeBaseIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput) ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput() AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput) ToAgentKnowledgeBaseIndexConfigIndexSchemaPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput) Elem() AgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigIndexSchema) AgentKnowledgeBaseIndexConfigIndexSchema {
+		if v != nil {
+			return *v
+		}
+		var ret AgentKnowledgeBaseIndexConfigIndexSchema
+		return ret
+	}).(AgentKnowledgeBaseIndexConfigIndexSchemaOutput)
+}
+
+// (Updatable) Body key name.
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput) BodyKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigIndexSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BodyKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput) EmbeddingBodyKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigIndexSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EmbeddingBodyKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Title key that stores the Title of a document, if available.
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput) TitleKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigIndexSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TitleKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) URL key that stores the URL of a document, if available.
+func (o AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput) UrlKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigIndexSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UrlKey
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigSecretDetail struct {
+	// (Updatable) The IDCS Connect clientId.
+	ClientId *string `pulumi:"clientId"`
+	// (Updatable) The URL represent authentication url of the IDCS.
+	IdcsUrl *string `pulumi:"idcsUrl"`
+	// (Updatable) Fully qualified scope url
+	ScopeUrl *string `pulumi:"scopeUrl"`
+	// (Updatable) The type of OpenID. The allowed values are:
+	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	Type string `pulumi:"type"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// AgentKnowledgeBaseIndexConfigSecretDetailInput is an input type that accepts AgentKnowledgeBaseIndexConfigSecretDetailArgs and AgentKnowledgeBaseIndexConfigSecretDetailOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigSecretDetailInput` via:
+//
+//	AgentKnowledgeBaseIndexConfigSecretDetailArgs{...}
+type AgentKnowledgeBaseIndexConfigSecretDetailInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigSecretDetailOutput() AgentKnowledgeBaseIndexConfigSecretDetailOutput
+	ToAgentKnowledgeBaseIndexConfigSecretDetailOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigSecretDetailOutput
+}
+
+type AgentKnowledgeBaseIndexConfigSecretDetailArgs struct {
+	// (Updatable) The IDCS Connect clientId.
+	ClientId pulumi.StringPtrInput `pulumi:"clientId"`
+	// (Updatable) The URL represent authentication url of the IDCS.
+	IdcsUrl pulumi.StringPtrInput `pulumi:"idcsUrl"`
+	// (Updatable) Fully qualified scope url
+	ScopeUrl pulumi.StringPtrInput `pulumi:"scopeUrl"`
+	// (Updatable) The type of OpenID. The allowed values are:
+	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	Type pulumi.StringInput `pulumi:"type"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (AgentKnowledgeBaseIndexConfigSecretDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseIndexConfigSecretDetailArgs) ToAgentKnowledgeBaseIndexConfigSecretDetailOutput() AgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigSecretDetailOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigSecretDetailArgs) ToAgentKnowledgeBaseIndexConfigSecretDetailOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigSecretDetailOutput)
+}
+
+func (i AgentKnowledgeBaseIndexConfigSecretDetailArgs) ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutput() AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseIndexConfigSecretDetailArgs) ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigSecretDetailOutput).ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutputWithContext(ctx)
+}
+
+// AgentKnowledgeBaseIndexConfigSecretDetailPtrInput is an input type that accepts AgentKnowledgeBaseIndexConfigSecretDetailArgs, AgentKnowledgeBaseIndexConfigSecretDetailPtr and AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseIndexConfigSecretDetailPtrInput` via:
+//
+//	        AgentKnowledgeBaseIndexConfigSecretDetailArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentKnowledgeBaseIndexConfigSecretDetailPtrInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutput() AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput
+	ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutputWithContext(context.Context) AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput
+}
+
+type agentKnowledgeBaseIndexConfigSecretDetailPtrType AgentKnowledgeBaseIndexConfigSecretDetailArgs
+
+func AgentKnowledgeBaseIndexConfigSecretDetailPtr(v *AgentKnowledgeBaseIndexConfigSecretDetailArgs) AgentKnowledgeBaseIndexConfigSecretDetailPtrInput {
+	return (*agentKnowledgeBaseIndexConfigSecretDetailPtrType)(v)
+}
+
+func (*agentKnowledgeBaseIndexConfigSecretDetailPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentKnowledgeBaseIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (i *agentKnowledgeBaseIndexConfigSecretDetailPtrType) ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutput() AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return i.ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutputWithContext(context.Background())
+}
+
+func (i *agentKnowledgeBaseIndexConfigSecretDetailPtrType) ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigSecretDetailOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigSecretDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) ToAgentKnowledgeBaseIndexConfigSecretDetailOutput() AgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) ToAgentKnowledgeBaseIndexConfigSecretDetailOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutput() AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return o.ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutputWithContext(context.Background())
+}
+
+func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentKnowledgeBaseIndexConfigSecretDetail) *AgentKnowledgeBaseIndexConfigSecretDetail {
+		return &v
+	}).(AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput)
+}
+
+// (Updatable) The IDCS Connect clientId.
+func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigSecretDetail) *string { return v.ClientId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The URL represent authentication url of the IDCS.
+func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) IdcsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigSecretDetail) *string { return v.IdcsUrl }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Fully qualified scope url
+func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) ScopeUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigSecretDetail) *string { return v.ScopeUrl }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of OpenID. The allowed values are:
+// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigSecretDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigSecretDetail) string { return v.VaultSecretId }).(pulumi.StringOutput)
+}
+
+type AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentKnowledgeBaseIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutput() AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) ToAgentKnowledgeBaseIndexConfigSecretDetailPtrOutputWithContext(ctx context.Context) AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) Elem() AgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigSecretDetail) AgentKnowledgeBaseIndexConfigSecretDetail {
+		if v != nil {
+			return *v
+		}
+		var ret AgentKnowledgeBaseIndexConfigSecretDetail
+		return ret
+	}).(AgentKnowledgeBaseIndexConfigSecretDetailOutput)
+}
+
+// (Updatable) The IDCS Connect clientId.
+func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigSecretDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The URL represent authentication url of the IDCS.
+func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) IdcsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigSecretDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IdcsUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Fully qualified scope url
+func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) ScopeUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigSecretDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScopeUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of OpenID. The allowed values are:
+// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigSecretDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigSecretDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.VaultSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
 type DedicatedAiClusterCapacity struct {
 	// The type of the dedicated AI cluster capacity.
 	CapacityType *string `pulumi:"capacityType"`
@@ -1090,6 +2856,4703 @@ func (o ModelModelMetricArrayOutput) Index(i pulumi.IntInput) ModelModelMetricOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelModelMetric {
 		return vs[0].([]ModelModelMetric)[vs[1].(int)]
 	}).(ModelModelMetricOutput)
+}
+
+type GetAgentAgentEndpointContentModerationConfig struct {
+	// A flag to enable or disable content moderation on input.
+	ShouldEnableOnInput bool `pulumi:"shouldEnableOnInput"`
+	// A flag to enable or disable content moderation on output.
+	ShouldEnableOnOutput bool `pulumi:"shouldEnableOnOutput"`
+}
+
+// GetAgentAgentEndpointContentModerationConfigInput is an input type that accepts GetAgentAgentEndpointContentModerationConfigArgs and GetAgentAgentEndpointContentModerationConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointContentModerationConfigInput` via:
+//
+//	GetAgentAgentEndpointContentModerationConfigArgs{...}
+type GetAgentAgentEndpointContentModerationConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointContentModerationConfigOutput() GetAgentAgentEndpointContentModerationConfigOutput
+	ToGetAgentAgentEndpointContentModerationConfigOutputWithContext(context.Context) GetAgentAgentEndpointContentModerationConfigOutput
+}
+
+type GetAgentAgentEndpointContentModerationConfigArgs struct {
+	// A flag to enable or disable content moderation on input.
+	ShouldEnableOnInput pulumi.BoolInput `pulumi:"shouldEnableOnInput"`
+	// A flag to enable or disable content moderation on output.
+	ShouldEnableOnOutput pulumi.BoolInput `pulumi:"shouldEnableOnOutput"`
+}
+
+func (GetAgentAgentEndpointContentModerationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointContentModerationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointContentModerationConfigArgs) ToGetAgentAgentEndpointContentModerationConfigOutput() GetAgentAgentEndpointContentModerationConfigOutput {
+	return i.ToGetAgentAgentEndpointContentModerationConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointContentModerationConfigArgs) ToGetAgentAgentEndpointContentModerationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointContentModerationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointContentModerationConfigOutput)
+}
+
+// GetAgentAgentEndpointContentModerationConfigArrayInput is an input type that accepts GetAgentAgentEndpointContentModerationConfigArray and GetAgentAgentEndpointContentModerationConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointContentModerationConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointContentModerationConfigArray{ GetAgentAgentEndpointContentModerationConfigArgs{...} }
+type GetAgentAgentEndpointContentModerationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointContentModerationConfigArrayOutput() GetAgentAgentEndpointContentModerationConfigArrayOutput
+	ToGetAgentAgentEndpointContentModerationConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointContentModerationConfigArrayOutput
+}
+
+type GetAgentAgentEndpointContentModerationConfigArray []GetAgentAgentEndpointContentModerationConfigInput
+
+func (GetAgentAgentEndpointContentModerationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointContentModerationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointContentModerationConfigArray) ToGetAgentAgentEndpointContentModerationConfigArrayOutput() GetAgentAgentEndpointContentModerationConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointContentModerationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointContentModerationConfigArray) ToGetAgentAgentEndpointContentModerationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointContentModerationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointContentModerationConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointContentModerationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointContentModerationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointContentModerationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointContentModerationConfigOutput) ToGetAgentAgentEndpointContentModerationConfigOutput() GetAgentAgentEndpointContentModerationConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointContentModerationConfigOutput) ToGetAgentAgentEndpointContentModerationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointContentModerationConfigOutput {
+	return o
+}
+
+// A flag to enable or disable content moderation on input.
+func (o GetAgentAgentEndpointContentModerationConfigOutput) ShouldEnableOnInput() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointContentModerationConfig) bool { return v.ShouldEnableOnInput }).(pulumi.BoolOutput)
+}
+
+// A flag to enable or disable content moderation on output.
+func (o GetAgentAgentEndpointContentModerationConfigOutput) ShouldEnableOnOutput() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointContentModerationConfig) bool { return v.ShouldEnableOnOutput }).(pulumi.BoolOutput)
+}
+
+type GetAgentAgentEndpointContentModerationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointContentModerationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointContentModerationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointContentModerationConfigArrayOutput) ToGetAgentAgentEndpointContentModerationConfigArrayOutput() GetAgentAgentEndpointContentModerationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointContentModerationConfigArrayOutput) ToGetAgentAgentEndpointContentModerationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointContentModerationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointContentModerationConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointContentModerationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointContentModerationConfig {
+		return vs[0].([]GetAgentAgentEndpointContentModerationConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointContentModerationConfigOutput)
+}
+
+type GetAgentAgentEndpointSessionConfig struct {
+	// The session will become inactive after this timeout.
+	IdleTimeoutInSeconds int `pulumi:"idleTimeoutInSeconds"`
+}
+
+// GetAgentAgentEndpointSessionConfigInput is an input type that accepts GetAgentAgentEndpointSessionConfigArgs and GetAgentAgentEndpointSessionConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointSessionConfigInput` via:
+//
+//	GetAgentAgentEndpointSessionConfigArgs{...}
+type GetAgentAgentEndpointSessionConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointSessionConfigOutput() GetAgentAgentEndpointSessionConfigOutput
+	ToGetAgentAgentEndpointSessionConfigOutputWithContext(context.Context) GetAgentAgentEndpointSessionConfigOutput
+}
+
+type GetAgentAgentEndpointSessionConfigArgs struct {
+	// The session will become inactive after this timeout.
+	IdleTimeoutInSeconds pulumi.IntInput `pulumi:"idleTimeoutInSeconds"`
+}
+
+func (GetAgentAgentEndpointSessionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointSessionConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointSessionConfigArgs) ToGetAgentAgentEndpointSessionConfigOutput() GetAgentAgentEndpointSessionConfigOutput {
+	return i.ToGetAgentAgentEndpointSessionConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointSessionConfigArgs) ToGetAgentAgentEndpointSessionConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointSessionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointSessionConfigOutput)
+}
+
+// GetAgentAgentEndpointSessionConfigArrayInput is an input type that accepts GetAgentAgentEndpointSessionConfigArray and GetAgentAgentEndpointSessionConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointSessionConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointSessionConfigArray{ GetAgentAgentEndpointSessionConfigArgs{...} }
+type GetAgentAgentEndpointSessionConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointSessionConfigArrayOutput() GetAgentAgentEndpointSessionConfigArrayOutput
+	ToGetAgentAgentEndpointSessionConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointSessionConfigArrayOutput
+}
+
+type GetAgentAgentEndpointSessionConfigArray []GetAgentAgentEndpointSessionConfigInput
+
+func (GetAgentAgentEndpointSessionConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointSessionConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointSessionConfigArray) ToGetAgentAgentEndpointSessionConfigArrayOutput() GetAgentAgentEndpointSessionConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointSessionConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointSessionConfigArray) ToGetAgentAgentEndpointSessionConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointSessionConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointSessionConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointSessionConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointSessionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointSessionConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointSessionConfigOutput) ToGetAgentAgentEndpointSessionConfigOutput() GetAgentAgentEndpointSessionConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointSessionConfigOutput) ToGetAgentAgentEndpointSessionConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointSessionConfigOutput {
+	return o
+}
+
+// The session will become inactive after this timeout.
+func (o GetAgentAgentEndpointSessionConfigOutput) IdleTimeoutInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointSessionConfig) int { return v.IdleTimeoutInSeconds }).(pulumi.IntOutput)
+}
+
+type GetAgentAgentEndpointSessionConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointSessionConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointSessionConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointSessionConfigArrayOutput) ToGetAgentAgentEndpointSessionConfigArrayOutput() GetAgentAgentEndpointSessionConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointSessionConfigArrayOutput) ToGetAgentAgentEndpointSessionConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointSessionConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointSessionConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointSessionConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointSessionConfig {
+		return vs[0].([]GetAgentAgentEndpointSessionConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointSessionConfigOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollection struct {
+	Items []GetAgentAgentEndpointsAgentEndpointCollectionItem `pulumi:"items"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionArgs and GetAgentAgentEndpointsAgentEndpointCollectionOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionOutput() GetAgentAgentEndpointsAgentEndpointCollectionOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionArgs struct {
+	Items GetAgentAgentEndpointsAgentEndpointCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollection)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionOutput() GetAgentAgentEndpointsAgentEndpointCollectionOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionArray and GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionArray{ GetAgentAgentEndpointsAgentEndpointCollectionArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionArray []GetAgentAgentEndpointsAgentEndpointCollectionInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollection)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionArray) ToGetAgentAgentEndpointsAgentEndpointCollectionArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionArray) ToGetAgentAgentEndpointsAgentEndpointCollectionArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollection)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionOutput() GetAgentAgentEndpointsAgentEndpointCollectionOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionOutput) Items() GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollection) []GetAgentAgentEndpointsAgentEndpointCollectionItem {
+		return v.Items
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollection)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollection {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollection)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+	AgentId string `pulumi:"agentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+	ContentModerationConfigs []GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig `pulumi:"contentModerationConfigs"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the endpoint.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
+	Id string `pulumi:"id"`
+	// A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// **SessionConfig**
+	SessionConfigs []GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig `pulumi:"sessionConfigs"`
+	// Whether to show citations in the chat result.
+	ShouldEnableCitation bool `pulumi:"shouldEnableCitation"`
+	// Whether or not to enable Session-based chat.
+	ShouldEnableSession bool `pulumi:"shouldEnableSession"`
+	// Whether to show traces in the chat result.
+	ShouldEnableTrace bool `pulumi:"shouldEnableTrace"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the AgentEndpoint was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the endpoint was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+	AgentId pulumi.StringInput `pulumi:"agentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+	ContentModerationConfigs GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayInput `pulumi:"contentModerationConfigs"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the endpoint.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// **SessionConfig**
+	SessionConfigs GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayInput `pulumi:"sessionConfigs"`
+	// Whether to show citations in the chat result.
+	ShouldEnableCitation pulumi.BoolInput `pulumi:"shouldEnableCitation"`
+	// Whether or not to enable Session-based chat.
+	ShouldEnableSession pulumi.BoolInput `pulumi:"shouldEnableSession"`
+	// Whether to show traces in the chat result.
+	ShouldEnableTrace pulumi.BoolInput `pulumi:"shouldEnableTrace"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the AgentEndpoint was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the endpoint was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemArray and GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemArray []GetAgentAgentEndpointsAgentEndpointCollectionItemInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) AgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.AgentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) ContentModerationConfigs() GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) []GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig {
+		return v.ContentModerationConfigs
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// An optional description of the endpoint.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// **SessionConfig**
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) SessionConfigs() GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) []GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig {
+		return v.SessionConfigs
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput)
+}
+
+// Whether to show citations in the chat result.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) ShouldEnableCitation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) bool { return v.ShouldEnableCitation }).(pulumi.BoolOutput)
+}
+
+// Whether or not to enable Session-based chat.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) ShouldEnableSession() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) bool { return v.ShouldEnableSession }).(pulumi.BoolOutput)
+}
+
+// Whether to show traces in the chat result.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) ShouldEnableTrace() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) bool { return v.ShouldEnableTrace }).(pulumi.BoolOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the AgentEndpoint was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the endpoint was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItem {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItem)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig struct {
+	// A flag to enable or disable content moderation on input.
+	ShouldEnableOnInput bool `pulumi:"shouldEnableOnInput"`
+	// A flag to enable or disable content moderation on output.
+	ShouldEnableOnOutput bool `pulumi:"shouldEnableOnOutput"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs struct {
+	// A flag to enable or disable content moderation on input.
+	ShouldEnableOnInput pulumi.BoolInput `pulumi:"shouldEnableOnInput"`
+	// A flag to enable or disable content moderation on output.
+	ShouldEnableOnOutput pulumi.BoolInput `pulumi:"shouldEnableOnOutput"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArray and GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArray []GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput {
+	return o
+}
+
+// A flag to enable or disable content moderation on input.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput) ShouldEnableOnInput() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig) bool {
+		return v.ShouldEnableOnInput
+	}).(pulumi.BoolOutput)
+}
+
+// A flag to enable or disable content moderation on output.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput) ShouldEnableOnOutput() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig) bool {
+		return v.ShouldEnableOnOutput
+	}).(pulumi.BoolOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig struct {
+	// The session will become inactive after this timeout.
+	IdleTimeoutInSeconds int `pulumi:"idleTimeoutInSeconds"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs struct {
+	// The session will become inactive after this timeout.
+	IdleTimeoutInSeconds pulumi.IntInput `pulumi:"idleTimeoutInSeconds"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArray and GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArray []GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput {
+	return o
+}
+
+// The session will become inactive after this timeout.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput) IdleTimeoutInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig) int {
+		return v.IdleTimeoutInSeconds
+	}).(pulumi.IntOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput)
+}
+
+type GetAgentAgentEndpointsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAgentAgentEndpointsFilterInput is an input type that accepts GetAgentAgentEndpointsFilterArgs and GetAgentAgentEndpointsFilterOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsFilterInput` via:
+//
+//	GetAgentAgentEndpointsFilterArgs{...}
+type GetAgentAgentEndpointsFilterInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsFilterOutput() GetAgentAgentEndpointsFilterOutput
+	ToGetAgentAgentEndpointsFilterOutputWithContext(context.Context) GetAgentAgentEndpointsFilterOutput
+}
+
+type GetAgentAgentEndpointsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAgentAgentEndpointsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsFilterArgs) ToGetAgentAgentEndpointsFilterOutput() GetAgentAgentEndpointsFilterOutput {
+	return i.ToGetAgentAgentEndpointsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsFilterArgs) ToGetAgentAgentEndpointsFilterOutputWithContext(ctx context.Context) GetAgentAgentEndpointsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsFilterOutput)
+}
+
+// GetAgentAgentEndpointsFilterArrayInput is an input type that accepts GetAgentAgentEndpointsFilterArray and GetAgentAgentEndpointsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsFilterArrayInput` via:
+//
+//	GetAgentAgentEndpointsFilterArray{ GetAgentAgentEndpointsFilterArgs{...} }
+type GetAgentAgentEndpointsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsFilterArrayOutput() GetAgentAgentEndpointsFilterArrayOutput
+	ToGetAgentAgentEndpointsFilterArrayOutputWithContext(context.Context) GetAgentAgentEndpointsFilterArrayOutput
+}
+
+type GetAgentAgentEndpointsFilterArray []GetAgentAgentEndpointsFilterInput
+
+func (GetAgentAgentEndpointsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsFilterArray) ToGetAgentAgentEndpointsFilterArrayOutput() GetAgentAgentEndpointsFilterArrayOutput {
+	return i.ToGetAgentAgentEndpointsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsFilterArray) ToGetAgentAgentEndpointsFilterArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsFilterArrayOutput)
+}
+
+type GetAgentAgentEndpointsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsFilterOutput) ToGetAgentAgentEndpointsFilterOutput() GetAgentAgentEndpointsFilterOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsFilterOutput) ToGetAgentAgentEndpointsFilterOutputWithContext(ctx context.Context) GetAgentAgentEndpointsFilterOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAgentAgentEndpointsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAgentAgentEndpointsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAgentAgentEndpointsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsFilterArrayOutput) ToGetAgentAgentEndpointsFilterArrayOutput() GetAgentAgentEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsFilterArrayOutput) ToGetAgentAgentEndpointsFilterArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsFilter {
+		return vs[0].([]GetAgentAgentEndpointsFilter)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsFilterOutput)
+}
+
+type GetAgentAgentsAgentCollection struct {
+	Items []GetAgentAgentsAgentCollectionItem `pulumi:"items"`
+}
+
+// GetAgentAgentsAgentCollectionInput is an input type that accepts GetAgentAgentsAgentCollectionArgs and GetAgentAgentsAgentCollectionOutput values.
+// You can construct a concrete instance of `GetAgentAgentsAgentCollectionInput` via:
+//
+//	GetAgentAgentsAgentCollectionArgs{...}
+type GetAgentAgentsAgentCollectionInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsAgentCollectionOutput() GetAgentAgentsAgentCollectionOutput
+	ToGetAgentAgentsAgentCollectionOutputWithContext(context.Context) GetAgentAgentsAgentCollectionOutput
+}
+
+type GetAgentAgentsAgentCollectionArgs struct {
+	Items GetAgentAgentsAgentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAgentAgentsAgentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsAgentCollection)(nil)).Elem()
+}
+
+func (i GetAgentAgentsAgentCollectionArgs) ToGetAgentAgentsAgentCollectionOutput() GetAgentAgentsAgentCollectionOutput {
+	return i.ToGetAgentAgentsAgentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsAgentCollectionArgs) ToGetAgentAgentsAgentCollectionOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsAgentCollectionOutput)
+}
+
+// GetAgentAgentsAgentCollectionArrayInput is an input type that accepts GetAgentAgentsAgentCollectionArray and GetAgentAgentsAgentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentsAgentCollectionArrayInput` via:
+//
+//	GetAgentAgentsAgentCollectionArray{ GetAgentAgentsAgentCollectionArgs{...} }
+type GetAgentAgentsAgentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsAgentCollectionArrayOutput() GetAgentAgentsAgentCollectionArrayOutput
+	ToGetAgentAgentsAgentCollectionArrayOutputWithContext(context.Context) GetAgentAgentsAgentCollectionArrayOutput
+}
+
+type GetAgentAgentsAgentCollectionArray []GetAgentAgentsAgentCollectionInput
+
+func (GetAgentAgentsAgentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsAgentCollection)(nil)).Elem()
+}
+
+func (i GetAgentAgentsAgentCollectionArray) ToGetAgentAgentsAgentCollectionArrayOutput() GetAgentAgentsAgentCollectionArrayOutput {
+	return i.ToGetAgentAgentsAgentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsAgentCollectionArray) ToGetAgentAgentsAgentCollectionArrayOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsAgentCollectionArrayOutput)
+}
+
+type GetAgentAgentsAgentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsAgentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsAgentCollection)(nil)).Elem()
+}
+
+func (o GetAgentAgentsAgentCollectionOutput) ToGetAgentAgentsAgentCollectionOutput() GetAgentAgentsAgentCollectionOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionOutput) ToGetAgentAgentsAgentCollectionOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionOutput) Items() GetAgentAgentsAgentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollection) []GetAgentAgentsAgentCollectionItem { return v.Items }).(GetAgentAgentsAgentCollectionItemArrayOutput)
+}
+
+type GetAgentAgentsAgentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsAgentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsAgentCollection)(nil)).Elem()
+}
+
+func (o GetAgentAgentsAgentCollectionArrayOutput) ToGetAgentAgentsAgentCollectionArrayOutput() GetAgentAgentsAgentCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionArrayOutput) ToGetAgentAgentsAgentCollectionArrayOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentAgentsAgentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentsAgentCollection {
+		return vs[0].([]GetAgentAgentsAgentCollection)[vs[1].(int)]
+	}).(GetAgentAgentsAgentCollectionOutput)
+}
+
+type GetAgentAgentsAgentCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description about the agent.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+	Id string `pulumi:"id"`
+	// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	KnowledgeBaseIds []string `pulumi:"knowledgeBaseIds"`
+	// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the agent was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the agent was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Details about purpose and responsibility of the agent
+	WelcomeMessage string `pulumi:"welcomeMessage"`
+}
+
+// GetAgentAgentsAgentCollectionItemInput is an input type that accepts GetAgentAgentsAgentCollectionItemArgs and GetAgentAgentsAgentCollectionItemOutput values.
+// You can construct a concrete instance of `GetAgentAgentsAgentCollectionItemInput` via:
+//
+//	GetAgentAgentsAgentCollectionItemArgs{...}
+type GetAgentAgentsAgentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsAgentCollectionItemOutput() GetAgentAgentsAgentCollectionItemOutput
+	ToGetAgentAgentsAgentCollectionItemOutputWithContext(context.Context) GetAgentAgentsAgentCollectionItemOutput
+}
+
+type GetAgentAgentsAgentCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description about the agent.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+	Id pulumi.StringInput `pulumi:"id"`
+	// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	KnowledgeBaseIds pulumi.StringArrayInput `pulumi:"knowledgeBaseIds"`
+	// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the agent was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the agent was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Details about purpose and responsibility of the agent
+	WelcomeMessage pulumi.StringInput `pulumi:"welcomeMessage"`
+}
+
+func (GetAgentAgentsAgentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsAgentCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentAgentsAgentCollectionItemArgs) ToGetAgentAgentsAgentCollectionItemOutput() GetAgentAgentsAgentCollectionItemOutput {
+	return i.ToGetAgentAgentsAgentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsAgentCollectionItemArgs) ToGetAgentAgentsAgentCollectionItemOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsAgentCollectionItemOutput)
+}
+
+// GetAgentAgentsAgentCollectionItemArrayInput is an input type that accepts GetAgentAgentsAgentCollectionItemArray and GetAgentAgentsAgentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentsAgentCollectionItemArrayInput` via:
+//
+//	GetAgentAgentsAgentCollectionItemArray{ GetAgentAgentsAgentCollectionItemArgs{...} }
+type GetAgentAgentsAgentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsAgentCollectionItemArrayOutput() GetAgentAgentsAgentCollectionItemArrayOutput
+	ToGetAgentAgentsAgentCollectionItemArrayOutputWithContext(context.Context) GetAgentAgentsAgentCollectionItemArrayOutput
+}
+
+type GetAgentAgentsAgentCollectionItemArray []GetAgentAgentsAgentCollectionItemInput
+
+func (GetAgentAgentsAgentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsAgentCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentAgentsAgentCollectionItemArray) ToGetAgentAgentsAgentCollectionItemArrayOutput() GetAgentAgentsAgentCollectionItemArrayOutput {
+	return i.ToGetAgentAgentsAgentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsAgentCollectionItemArray) ToGetAgentAgentsAgentCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsAgentCollectionItemArrayOutput)
+}
+
+type GetAgentAgentsAgentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsAgentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsAgentCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentAgentsAgentCollectionItemOutput) ToGetAgentAgentsAgentCollectionItemOutput() GetAgentAgentsAgentCollectionItemOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionItemOutput) ToGetAgentAgentsAgentCollectionItemOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetAgentAgentsAgentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetAgentAgentsAgentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Description about the agent.
+func (o GetAgentAgentsAgentCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetAgentAgentsAgentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetAgentAgentsAgentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+func (o GetAgentAgentsAgentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+func (o GetAgentAgentsAgentCollectionItemOutput) KnowledgeBaseIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) []string { return v.KnowledgeBaseIds }).(pulumi.StringArrayOutput)
+}
+
+// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetAgentAgentsAgentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetAgentAgentsAgentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAgentAgentsAgentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the agent was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentAgentsAgentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the agent was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentAgentsAgentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Details about purpose and responsibility of the agent
+func (o GetAgentAgentsAgentCollectionItemOutput) WelcomeMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.WelcomeMessage }).(pulumi.StringOutput)
+}
+
+type GetAgentAgentsAgentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsAgentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsAgentCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentAgentsAgentCollectionItemArrayOutput) ToGetAgentAgentsAgentCollectionItemArrayOutput() GetAgentAgentsAgentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionItemArrayOutput) ToGetAgentAgentsAgentCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentAgentsAgentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentsAgentCollectionItem {
+		return vs[0].([]GetAgentAgentsAgentCollectionItem)[vs[1].(int)]
+	}).(GetAgentAgentsAgentCollectionItemOutput)
+}
+
+type GetAgentAgentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAgentAgentsFilterInput is an input type that accepts GetAgentAgentsFilterArgs and GetAgentAgentsFilterOutput values.
+// You can construct a concrete instance of `GetAgentAgentsFilterInput` via:
+//
+//	GetAgentAgentsFilterArgs{...}
+type GetAgentAgentsFilterInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsFilterOutput() GetAgentAgentsFilterOutput
+	ToGetAgentAgentsFilterOutputWithContext(context.Context) GetAgentAgentsFilterOutput
+}
+
+type GetAgentAgentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAgentAgentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsFilter)(nil)).Elem()
+}
+
+func (i GetAgentAgentsFilterArgs) ToGetAgentAgentsFilterOutput() GetAgentAgentsFilterOutput {
+	return i.ToGetAgentAgentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsFilterArgs) ToGetAgentAgentsFilterOutputWithContext(ctx context.Context) GetAgentAgentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsFilterOutput)
+}
+
+// GetAgentAgentsFilterArrayInput is an input type that accepts GetAgentAgentsFilterArray and GetAgentAgentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentsFilterArrayInput` via:
+//
+//	GetAgentAgentsFilterArray{ GetAgentAgentsFilterArgs{...} }
+type GetAgentAgentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsFilterArrayOutput() GetAgentAgentsFilterArrayOutput
+	ToGetAgentAgentsFilterArrayOutputWithContext(context.Context) GetAgentAgentsFilterArrayOutput
+}
+
+type GetAgentAgentsFilterArray []GetAgentAgentsFilterInput
+
+func (GetAgentAgentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsFilter)(nil)).Elem()
+}
+
+func (i GetAgentAgentsFilterArray) ToGetAgentAgentsFilterArrayOutput() GetAgentAgentsFilterArrayOutput {
+	return i.ToGetAgentAgentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsFilterArray) ToGetAgentAgentsFilterArrayOutputWithContext(ctx context.Context) GetAgentAgentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsFilterArrayOutput)
+}
+
+type GetAgentAgentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsFilter)(nil)).Elem()
+}
+
+func (o GetAgentAgentsFilterOutput) ToGetAgentAgentsFilterOutput() GetAgentAgentsFilterOutput {
+	return o
+}
+
+func (o GetAgentAgentsFilterOutput) ToGetAgentAgentsFilterOutputWithContext(ctx context.Context) GetAgentAgentsFilterOutput {
+	return o
+}
+
+func (o GetAgentAgentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAgentAgentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAgentAgentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAgentAgentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAgentAgentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsFilter)(nil)).Elem()
+}
+
+func (o GetAgentAgentsFilterArrayOutput) ToGetAgentAgentsFilterArrayOutput() GetAgentAgentsFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsFilterArrayOutput) ToGetAgentAgentsFilterArrayOutputWithContext(ctx context.Context) GetAgentAgentsFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsFilterArrayOutput) Index(i pulumi.IntInput) GetAgentAgentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentsFilter {
+		return vs[0].([]GetAgentAgentsFilter)[vs[1].(int)]
+	}).(GetAgentAgentsFilterOutput)
+}
+
+type GetAgentDataIngestionJobDataIngestionJobStatistic struct {
+	// The duration of this ingestion job.
+	DurationInSeconds int `pulumi:"durationInSeconds"`
+	// The number of files that have failed during the ingestion.
+	NumberOfFailedFiles int `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been successfully ingested during the ingestion.
+	NumberOfIngestedFiles int `pulumi:"numberOfIngestedFiles"`
+}
+
+// GetAgentDataIngestionJobDataIngestionJobStatisticInput is an input type that accepts GetAgentDataIngestionJobDataIngestionJobStatisticArgs and GetAgentDataIngestionJobDataIngestionJobStatisticOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobDataIngestionJobStatisticInput` via:
+//
+//	GetAgentDataIngestionJobDataIngestionJobStatisticArgs{...}
+type GetAgentDataIngestionJobDataIngestionJobStatisticInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobDataIngestionJobStatisticOutput() GetAgentDataIngestionJobDataIngestionJobStatisticOutput
+	ToGetAgentDataIngestionJobDataIngestionJobStatisticOutputWithContext(context.Context) GetAgentDataIngestionJobDataIngestionJobStatisticOutput
+}
+
+type GetAgentDataIngestionJobDataIngestionJobStatisticArgs struct {
+	// The duration of this ingestion job.
+	DurationInSeconds pulumi.IntInput `pulumi:"durationInSeconds"`
+	// The number of files that have failed during the ingestion.
+	NumberOfFailedFiles pulumi.IntInput `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been successfully ingested during the ingestion.
+	NumberOfIngestedFiles pulumi.IntInput `pulumi:"numberOfIngestedFiles"`
+}
+
+func (GetAgentDataIngestionJobDataIngestionJobStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobDataIngestionJobStatisticArgs) ToGetAgentDataIngestionJobDataIngestionJobStatisticOutput() GetAgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return i.ToGetAgentDataIngestionJobDataIngestionJobStatisticOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobDataIngestionJobStatisticArgs) ToGetAgentDataIngestionJobDataIngestionJobStatisticOutputWithContext(ctx context.Context) GetAgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobDataIngestionJobStatisticOutput)
+}
+
+// GetAgentDataIngestionJobDataIngestionJobStatisticArrayInput is an input type that accepts GetAgentDataIngestionJobDataIngestionJobStatisticArray and GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobDataIngestionJobStatisticArrayInput` via:
+//
+//	GetAgentDataIngestionJobDataIngestionJobStatisticArray{ GetAgentDataIngestionJobDataIngestionJobStatisticArgs{...} }
+type GetAgentDataIngestionJobDataIngestionJobStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput() GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput
+	ToGetAgentDataIngestionJobDataIngestionJobStatisticArrayOutputWithContext(context.Context) GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput
+}
+
+type GetAgentDataIngestionJobDataIngestionJobStatisticArray []GetAgentDataIngestionJobDataIngestionJobStatisticInput
+
+func (GetAgentDataIngestionJobDataIngestionJobStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobDataIngestionJobStatisticArray) ToGetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput() GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput {
+	return i.ToGetAgentDataIngestionJobDataIngestionJobStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobDataIngestionJobStatisticArray) ToGetAgentDataIngestionJobDataIngestionJobStatisticArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput)
+}
+
+type GetAgentDataIngestionJobDataIngestionJobStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobDataIngestionJobStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobStatisticOutput) ToGetAgentDataIngestionJobDataIngestionJobStatisticOutput() GetAgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobStatisticOutput) ToGetAgentDataIngestionJobDataIngestionJobStatisticOutputWithContext(ctx context.Context) GetAgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return o
+}
+
+// The duration of this ingestion job.
+func (o GetAgentDataIngestionJobDataIngestionJobStatisticOutput) DurationInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobDataIngestionJobStatistic) int { return v.DurationInSeconds }).(pulumi.IntOutput)
+}
+
+// The number of files that have failed during the ingestion.
+func (o GetAgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfFailedFiles() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobDataIngestionJobStatistic) int { return v.NumberOfFailedFiles }).(pulumi.IntOutput)
+}
+
+// The number of files that have been successfully ingested during the ingestion.
+func (o GetAgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfIngestedFiles() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobDataIngestionJobStatistic) int { return v.NumberOfIngestedFiles }).(pulumi.IntOutput)
+}
+
+type GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput) ToGetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput() GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput) ToGetAgentDataIngestionJobDataIngestionJobStatisticArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput) Index(i pulumi.IntInput) GetAgentDataIngestionJobDataIngestionJobStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataIngestionJobDataIngestionJobStatistic {
+		return vs[0].([]GetAgentDataIngestionJobDataIngestionJobStatistic)[vs[1].(int)]
+	}).(GetAgentDataIngestionJobDataIngestionJobStatisticOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollection struct {
+	Items []GetAgentDataIngestionJobsDataIngestionJobCollectionItem `pulumi:"items"`
+}
+
+// GetAgentDataIngestionJobsDataIngestionJobCollectionInput is an input type that accepts GetAgentDataIngestionJobsDataIngestionJobCollectionArgs and GetAgentDataIngestionJobsDataIngestionJobCollectionOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsDataIngestionJobCollectionInput` via:
+//
+//	GetAgentDataIngestionJobsDataIngestionJobCollectionArgs{...}
+type GetAgentDataIngestionJobsDataIngestionJobCollectionInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionOutput
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionOutputWithContext(context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionOutput
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionArgs struct {
+	Items GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollection)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionArgs) ToGetAgentDataIngestionJobsDataIngestionJobCollectionOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionOutput {
+	return i.ToGetAgentDataIngestionJobsDataIngestionJobCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionArgs) ToGetAgentDataIngestionJobsDataIngestionJobCollectionOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsDataIngestionJobCollectionOutput)
+}
+
+// GetAgentDataIngestionJobsDataIngestionJobCollectionArrayInput is an input type that accepts GetAgentDataIngestionJobsDataIngestionJobCollectionArray and GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsDataIngestionJobCollectionArrayInput` via:
+//
+//	GetAgentDataIngestionJobsDataIngestionJobCollectionArray{ GetAgentDataIngestionJobsDataIngestionJobCollectionArgs{...} }
+type GetAgentDataIngestionJobsDataIngestionJobCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutputWithContext(context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionArray []GetAgentDataIngestionJobsDataIngestionJobCollectionInput
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsDataIngestionJobCollection)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionArray) ToGetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput {
+	return i.ToGetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionArray) ToGetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollection)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionOutput) Items() GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollection) []GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
+		return v.Items
+	}).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsDataIngestionJobCollection)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentDataIngestionJobsDataIngestionJobCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataIngestionJobsDataIngestionJobCollection {
+		return vs[0].([]GetAgentDataIngestionJobsDataIngestionJobCollection)[vs[1].(int)]
+	}).(GetAgentDataIngestionJobsDataIngestionJobCollectionOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// **DataIngestionJobStatistics**
+	DataIngestionJobStatistics []GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic `pulumi:"dataIngestionJobStatistics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+	DataSourceId string `pulumi:"dataSourceId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
+	Id string `pulumi:"id"`
+	// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the data ingestion job was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the data ingestion job was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetAgentDataIngestionJobsDataIngestionJobCollectionItemInput is an input type that accepts GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs and GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsDataIngestionJobCollectionItemInput` via:
+//
+//	GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs{...}
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemOutputWithContext(context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// **DataIngestionJobStatistics**
+	DataIngestionJobStatistics GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayInput `pulumi:"dataIngestionJobStatistics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the data ingestion job was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the data ingestion job was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput {
+	return i.ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput)
+}
+
+// GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayInput is an input type that accepts GetAgentDataIngestionJobsDataIngestionJobCollectionItemArray and GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayInput` via:
+//
+//	GetAgentDataIngestionJobsDataIngestionJobCollectionItemArray{ GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs{...} }
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutputWithContext(context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemArray []GetAgentDataIngestionJobsDataIngestionJobCollectionItemInput
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsDataIngestionJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemArray) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput {
+	return i.ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemArray) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// **DataIngestionJobStatistics**
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) DataIngestionJobStatistics() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) []GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic {
+		return v.DataIngestionJobStatistics
+	}).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the data ingestion job was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the data ingestion job was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsDataIngestionJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
+		return vs[0].([]GetAgentDataIngestionJobsDataIngestionJobCollectionItem)[vs[1].(int)]
+	}).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic struct {
+	// The duration of this ingestion job.
+	DurationInSeconds int `pulumi:"durationInSeconds"`
+	// The number of files that have failed during the ingestion.
+	NumberOfFailedFiles int `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been successfully ingested during the ingestion.
+	NumberOfIngestedFiles int `pulumi:"numberOfIngestedFiles"`
+}
+
+// GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticInput is an input type that accepts GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs and GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticInput` via:
+//
+//	GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs{...}
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutputWithContext(context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs struct {
+	// The duration of this ingestion job.
+	DurationInSeconds pulumi.IntInput `pulumi:"durationInSeconds"`
+	// The number of files that have failed during the ingestion.
+	NumberOfFailedFiles pulumi.IntInput `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been successfully ingested during the ingestion.
+	NumberOfIngestedFiles pulumi.IntInput `pulumi:"numberOfIngestedFiles"`
+}
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput {
+	return i.ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput)
+}
+
+// GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayInput is an input type that accepts GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArray and GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayInput` via:
+//
+//	GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArray{ GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs{...} }
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutputWithContext(context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArray []GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticInput
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArray) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput {
+	return i.ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArray) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput {
+	return o
+}
+
+// The duration of this ingestion job.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput) DurationInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic) int {
+		return v.DurationInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// The number of files that have failed during the ingestion.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput) NumberOfFailedFiles() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic) int {
+		return v.NumberOfFailedFiles
+	}).(pulumi.IntOutput)
+}
+
+// The number of files that have been successfully ingested during the ingestion.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput) NumberOfIngestedFiles() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic) int {
+		return v.NumberOfIngestedFiles
+	}).(pulumi.IntOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput) Index(i pulumi.IntInput) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic {
+		return vs[0].([]GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic)[vs[1].(int)]
+	}).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput)
+}
+
+type GetAgentDataIngestionJobsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAgentDataIngestionJobsFilterInput is an input type that accepts GetAgentDataIngestionJobsFilterArgs and GetAgentDataIngestionJobsFilterOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsFilterInput` via:
+//
+//	GetAgentDataIngestionJobsFilterArgs{...}
+type GetAgentDataIngestionJobsFilterInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsFilterOutput() GetAgentDataIngestionJobsFilterOutput
+	ToGetAgentDataIngestionJobsFilterOutputWithContext(context.Context) GetAgentDataIngestionJobsFilterOutput
+}
+
+type GetAgentDataIngestionJobsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAgentDataIngestionJobsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsFilter)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsFilterArgs) ToGetAgentDataIngestionJobsFilterOutput() GetAgentDataIngestionJobsFilterOutput {
+	return i.ToGetAgentDataIngestionJobsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsFilterArgs) ToGetAgentDataIngestionJobsFilterOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsFilterOutput)
+}
+
+// GetAgentDataIngestionJobsFilterArrayInput is an input type that accepts GetAgentDataIngestionJobsFilterArray and GetAgentDataIngestionJobsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsFilterArrayInput` via:
+//
+//	GetAgentDataIngestionJobsFilterArray{ GetAgentDataIngestionJobsFilterArgs{...} }
+type GetAgentDataIngestionJobsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsFilterArrayOutput() GetAgentDataIngestionJobsFilterArrayOutput
+	ToGetAgentDataIngestionJobsFilterArrayOutputWithContext(context.Context) GetAgentDataIngestionJobsFilterArrayOutput
+}
+
+type GetAgentDataIngestionJobsFilterArray []GetAgentDataIngestionJobsFilterInput
+
+func (GetAgentDataIngestionJobsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsFilter)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsFilterArray) ToGetAgentDataIngestionJobsFilterArrayOutput() GetAgentDataIngestionJobsFilterArrayOutput {
+	return i.ToGetAgentDataIngestionJobsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsFilterArray) ToGetAgentDataIngestionJobsFilterArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsFilterArrayOutput)
+}
+
+type GetAgentDataIngestionJobsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsFilter)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsFilterOutput) ToGetAgentDataIngestionJobsFilterOutput() GetAgentDataIngestionJobsFilterOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsFilterOutput) ToGetAgentDataIngestionJobsFilterOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsFilterOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAgentDataIngestionJobsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAgentDataIngestionJobsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAgentDataIngestionJobsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsFilter)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsFilterArrayOutput) ToGetAgentDataIngestionJobsFilterArrayOutput() GetAgentDataIngestionJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsFilterArrayOutput) ToGetAgentDataIngestionJobsFilterArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsFilterArrayOutput) Index(i pulumi.IntInput) GetAgentDataIngestionJobsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataIngestionJobsFilter {
+		return vs[0].([]GetAgentDataIngestionJobsFilter)[vs[1].(int)]
+	}).(GetAgentDataIngestionJobsFilterOutput)
+}
+
+type GetAgentDataSourceDataSourceConfig struct {
+	// The type of the tool. The allowed values are:
+	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	DataSourceConfigType string `pulumi:"dataSourceConfigType"`
+	// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+	ObjectStoragePrefixes []GetAgentDataSourceDataSourceConfigObjectStoragePrefix `pulumi:"objectStoragePrefixes"`
+}
+
+// GetAgentDataSourceDataSourceConfigInput is an input type that accepts GetAgentDataSourceDataSourceConfigArgs and GetAgentDataSourceDataSourceConfigOutput values.
+// You can construct a concrete instance of `GetAgentDataSourceDataSourceConfigInput` via:
+//
+//	GetAgentDataSourceDataSourceConfigArgs{...}
+type GetAgentDataSourceDataSourceConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourceDataSourceConfigOutput() GetAgentDataSourceDataSourceConfigOutput
+	ToGetAgentDataSourceDataSourceConfigOutputWithContext(context.Context) GetAgentDataSourceDataSourceConfigOutput
+}
+
+type GetAgentDataSourceDataSourceConfigArgs struct {
+	// The type of the tool. The allowed values are:
+	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	DataSourceConfigType pulumi.StringInput `pulumi:"dataSourceConfigType"`
+	// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+	ObjectStoragePrefixes GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput `pulumi:"objectStoragePrefixes"`
+}
+
+func (GetAgentDataSourceDataSourceConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourceDataSourceConfig)(nil)).Elem()
+}
+
+func (i GetAgentDataSourceDataSourceConfigArgs) ToGetAgentDataSourceDataSourceConfigOutput() GetAgentDataSourceDataSourceConfigOutput {
+	return i.ToGetAgentDataSourceDataSourceConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourceDataSourceConfigArgs) ToGetAgentDataSourceDataSourceConfigOutputWithContext(ctx context.Context) GetAgentDataSourceDataSourceConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourceDataSourceConfigOutput)
+}
+
+// GetAgentDataSourceDataSourceConfigArrayInput is an input type that accepts GetAgentDataSourceDataSourceConfigArray and GetAgentDataSourceDataSourceConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataSourceDataSourceConfigArrayInput` via:
+//
+//	GetAgentDataSourceDataSourceConfigArray{ GetAgentDataSourceDataSourceConfigArgs{...} }
+type GetAgentDataSourceDataSourceConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourceDataSourceConfigArrayOutput() GetAgentDataSourceDataSourceConfigArrayOutput
+	ToGetAgentDataSourceDataSourceConfigArrayOutputWithContext(context.Context) GetAgentDataSourceDataSourceConfigArrayOutput
+}
+
+type GetAgentDataSourceDataSourceConfigArray []GetAgentDataSourceDataSourceConfigInput
+
+func (GetAgentDataSourceDataSourceConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourceDataSourceConfig)(nil)).Elem()
+}
+
+func (i GetAgentDataSourceDataSourceConfigArray) ToGetAgentDataSourceDataSourceConfigArrayOutput() GetAgentDataSourceDataSourceConfigArrayOutput {
+	return i.ToGetAgentDataSourceDataSourceConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourceDataSourceConfigArray) ToGetAgentDataSourceDataSourceConfigArrayOutputWithContext(ctx context.Context) GetAgentDataSourceDataSourceConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourceDataSourceConfigArrayOutput)
+}
+
+type GetAgentDataSourceDataSourceConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourceDataSourceConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourceDataSourceConfig)(nil)).Elem()
+}
+
+func (o GetAgentDataSourceDataSourceConfigOutput) ToGetAgentDataSourceDataSourceConfigOutput() GetAgentDataSourceDataSourceConfigOutput {
+	return o
+}
+
+func (o GetAgentDataSourceDataSourceConfigOutput) ToGetAgentDataSourceDataSourceConfigOutputWithContext(ctx context.Context) GetAgentDataSourceDataSourceConfigOutput {
+	return o
+}
+
+// The type of the tool. The allowed values are:
+// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+func (o GetAgentDataSourceDataSourceConfigOutput) DataSourceConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourceDataSourceConfig) string { return v.DataSourceConfigType }).(pulumi.StringOutput)
+}
+
+// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+func (o GetAgentDataSourceDataSourceConfigOutput) ObjectStoragePrefixes() GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o.ApplyT(func(v GetAgentDataSourceDataSourceConfig) []GetAgentDataSourceDataSourceConfigObjectStoragePrefix {
+		return v.ObjectStoragePrefixes
+	}).(GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput)
+}
+
+type GetAgentDataSourceDataSourceConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourceDataSourceConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourceDataSourceConfig)(nil)).Elem()
+}
+
+func (o GetAgentDataSourceDataSourceConfigArrayOutput) ToGetAgentDataSourceDataSourceConfigArrayOutput() GetAgentDataSourceDataSourceConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourceDataSourceConfigArrayOutput) ToGetAgentDataSourceDataSourceConfigArrayOutputWithContext(ctx context.Context) GetAgentDataSourceDataSourceConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourceDataSourceConfigArrayOutput) Index(i pulumi.IntInput) GetAgentDataSourceDataSourceConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataSourceDataSourceConfig {
+		return vs[0].([]GetAgentDataSourceDataSourceConfig)[vs[1].(int)]
+	}).(GetAgentDataSourceDataSourceConfigOutput)
+}
+
+type GetAgentDataSourceDataSourceConfigObjectStoragePrefix struct {
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The name of the object (file) or prefix (folder).
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentDataSourceDataSourceConfigObjectStoragePrefixInput is an input type that accepts GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs and GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput values.
+// You can construct a concrete instance of `GetAgentDataSourceDataSourceConfigObjectStoragePrefixInput` via:
+//
+//	GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs{...}
+type GetAgentDataSourceDataSourceConfigObjectStoragePrefixInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput() GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput
+	ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixOutputWithContext(context.Context) GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput
+}
+
+type GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs struct {
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The name of the object (file) or prefix (folder).
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourceDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (i GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs) ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput() GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return i.ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs) ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixOutputWithContext(ctx context.Context) GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput)
+}
+
+// GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput is an input type that accepts GetAgentDataSourceDataSourceConfigObjectStoragePrefixArray and GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput` via:
+//
+//	GetAgentDataSourceDataSourceConfigObjectStoragePrefixArray{ GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs{...} }
+type GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput() GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput
+	ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutputWithContext(context.Context) GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput
+}
+
+type GetAgentDataSourceDataSourceConfigObjectStoragePrefixArray []GetAgentDataSourceDataSourceConfigObjectStoragePrefixInput
+
+func (GetAgentDataSourceDataSourceConfigObjectStoragePrefixArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourceDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (i GetAgentDataSourceDataSourceConfigObjectStoragePrefixArray) ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput() GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return i.ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourceDataSourceConfigObjectStoragePrefixArray) ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutputWithContext(ctx context.Context) GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput)
+}
+
+type GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourceDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput) ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput() GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return o
+}
+
+func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput) ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixOutputWithContext(ctx context.Context) GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return o
+}
+
+// The bucket name of an object.
+func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourceDataSourceConfigObjectStoragePrefix) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourceDataSourceConfigObjectStoragePrefix) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The name of the object (file) or prefix (folder).
+func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourceDataSourceConfigObjectStoragePrefix) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourceDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput) ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput() GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput) ToGetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutputWithContext(ctx context.Context) GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput) Index(i pulumi.IntInput) GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataSourceDataSourceConfigObjectStoragePrefix {
+		return vs[0].([]GetAgentDataSourceDataSourceConfigObjectStoragePrefix)[vs[1].(int)]
+	}).(GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollection struct {
+	Items []GetAgentDataSourcesDataSourceCollectionItem `pulumi:"items"`
+}
+
+// GetAgentDataSourcesDataSourceCollectionInput is an input type that accepts GetAgentDataSourcesDataSourceCollectionArgs and GetAgentDataSourcesDataSourceCollectionOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesDataSourceCollectionInput` via:
+//
+//	GetAgentDataSourcesDataSourceCollectionArgs{...}
+type GetAgentDataSourcesDataSourceCollectionInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesDataSourceCollectionOutput() GetAgentDataSourcesDataSourceCollectionOutput
+	ToGetAgentDataSourcesDataSourceCollectionOutputWithContext(context.Context) GetAgentDataSourcesDataSourceCollectionOutput
+}
+
+type GetAgentDataSourcesDataSourceCollectionArgs struct {
+	Items GetAgentDataSourcesDataSourceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAgentDataSourcesDataSourceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesDataSourceCollection)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionArgs) ToGetAgentDataSourcesDataSourceCollectionOutput() GetAgentDataSourcesDataSourceCollectionOutput {
+	return i.ToGetAgentDataSourcesDataSourceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionArgs) ToGetAgentDataSourcesDataSourceCollectionOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesDataSourceCollectionOutput)
+}
+
+// GetAgentDataSourcesDataSourceCollectionArrayInput is an input type that accepts GetAgentDataSourcesDataSourceCollectionArray and GetAgentDataSourcesDataSourceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesDataSourceCollectionArrayInput` via:
+//
+//	GetAgentDataSourcesDataSourceCollectionArray{ GetAgentDataSourcesDataSourceCollectionArgs{...} }
+type GetAgentDataSourcesDataSourceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesDataSourceCollectionArrayOutput() GetAgentDataSourcesDataSourceCollectionArrayOutput
+	ToGetAgentDataSourcesDataSourceCollectionArrayOutputWithContext(context.Context) GetAgentDataSourcesDataSourceCollectionArrayOutput
+}
+
+type GetAgentDataSourcesDataSourceCollectionArray []GetAgentDataSourcesDataSourceCollectionInput
+
+func (GetAgentDataSourcesDataSourceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesDataSourceCollection)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionArray) ToGetAgentDataSourcesDataSourceCollectionArrayOutput() GetAgentDataSourcesDataSourceCollectionArrayOutput {
+	return i.ToGetAgentDataSourcesDataSourceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionArray) ToGetAgentDataSourcesDataSourceCollectionArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesDataSourceCollectionArrayOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesDataSourceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesDataSourceCollection)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionOutput) ToGetAgentDataSourcesDataSourceCollectionOutput() GetAgentDataSourcesDataSourceCollectionOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionOutput) ToGetAgentDataSourcesDataSourceCollectionOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionOutput) Items() GetAgentDataSourcesDataSourceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollection) []GetAgentDataSourcesDataSourceCollectionItem {
+		return v.Items
+	}).(GetAgentDataSourcesDataSourceCollectionItemArrayOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesDataSourceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesDataSourceCollection)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionArrayOutput) ToGetAgentDataSourcesDataSourceCollectionArrayOutput() GetAgentDataSourcesDataSourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionArrayOutput) ToGetAgentDataSourcesDataSourceCollectionArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentDataSourcesDataSourceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataSourcesDataSourceCollection {
+		return vs[0].([]GetAgentDataSourcesDataSourceCollection)[vs[1].(int)]
+	}).(GetAgentDataSourcesDataSourceCollectionOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// **DataSourceConfig**
+	DataSourceConfigs []GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig `pulumi:"dataSourceConfigs"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A description of the data source.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
+	// A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the data source was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the data source was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetAgentDataSourcesDataSourceCollectionItemInput is an input type that accepts GetAgentDataSourcesDataSourceCollectionItemArgs and GetAgentDataSourcesDataSourceCollectionItemOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesDataSourceCollectionItemInput` via:
+//
+//	GetAgentDataSourcesDataSourceCollectionItemArgs{...}
+type GetAgentDataSourcesDataSourceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesDataSourceCollectionItemOutput() GetAgentDataSourcesDataSourceCollectionItemOutput
+	ToGetAgentDataSourcesDataSourceCollectionItemOutputWithContext(context.Context) GetAgentDataSourcesDataSourceCollectionItemOutput
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// **DataSourceConfig**
+	DataSourceConfigs GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayInput `pulumi:"dataSourceConfigs"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A description of the data source.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
+	// A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the data source was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the data source was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetAgentDataSourcesDataSourceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemArgs) ToGetAgentDataSourcesDataSourceCollectionItemOutput() GetAgentDataSourcesDataSourceCollectionItemOutput {
+	return i.ToGetAgentDataSourcesDataSourceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemArgs) ToGetAgentDataSourcesDataSourceCollectionItemOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesDataSourceCollectionItemOutput)
+}
+
+// GetAgentDataSourcesDataSourceCollectionItemArrayInput is an input type that accepts GetAgentDataSourcesDataSourceCollectionItemArray and GetAgentDataSourcesDataSourceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesDataSourceCollectionItemArrayInput` via:
+//
+//	GetAgentDataSourcesDataSourceCollectionItemArray{ GetAgentDataSourcesDataSourceCollectionItemArgs{...} }
+type GetAgentDataSourcesDataSourceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesDataSourceCollectionItemArrayOutput() GetAgentDataSourcesDataSourceCollectionItemArrayOutput
+	ToGetAgentDataSourcesDataSourceCollectionItemArrayOutputWithContext(context.Context) GetAgentDataSourcesDataSourceCollectionItemArrayOutput
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemArray []GetAgentDataSourcesDataSourceCollectionItemInput
+
+func (GetAgentDataSourcesDataSourceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesDataSourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemArray) ToGetAgentDataSourcesDataSourceCollectionItemArrayOutput() GetAgentDataSourcesDataSourceCollectionItemArrayOutput {
+	return i.ToGetAgentDataSourcesDataSourceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemArray) ToGetAgentDataSourcesDataSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesDataSourceCollectionItemArrayOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesDataSourceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) ToGetAgentDataSourcesDataSourceCollectionItemOutput() GetAgentDataSourcesDataSourceCollectionItemOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) ToGetAgentDataSourcesDataSourceCollectionItemOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// **DataSourceConfig**
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) DataSourceConfigs() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) []GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig {
+		return v.DataSourceConfigs
+	}).(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A description of the data source.
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) KnowledgeBaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the data source was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the data source was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesDataSourceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesDataSourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemArrayOutput) ToGetAgentDataSourcesDataSourceCollectionItemArrayOutput() GetAgentDataSourcesDataSourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemArrayOutput) ToGetAgentDataSourcesDataSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentDataSourcesDataSourceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataSourcesDataSourceCollectionItem {
+		return vs[0].([]GetAgentDataSourcesDataSourceCollectionItem)[vs[1].(int)]
+	}).(GetAgentDataSourcesDataSourceCollectionItemOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig struct {
+	// The type of the tool. The allowed values are:
+	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	DataSourceConfigType string `pulumi:"dataSourceConfigType"`
+	// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+	ObjectStoragePrefixes []GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix `pulumi:"objectStoragePrefixes"`
+}
+
+// GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigInput is an input type that accepts GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs and GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigInput` via:
+//
+//	GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs{...}
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput
+	ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutputWithContext(context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs struct {
+	// The type of the tool. The allowed values are:
+	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	DataSourceConfigType pulumi.StringInput `pulumi:"dataSourceConfigType"`
+	// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+	ObjectStoragePrefixes GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayInput `pulumi:"objectStoragePrefixes"`
+}
+
+func (GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput {
+	return i.ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput)
+}
+
+// GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayInput is an input type that accepts GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArray and GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayInput` via:
+//
+//	GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArray{ GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs{...} }
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput
+	ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutputWithContext(context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArray []GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigInput
+
+func (GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArray) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput {
+	return i.ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArray) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput {
+	return o
+}
+
+// The type of the tool. The allowed values are:
+// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput) DataSourceConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig) string {
+		return v.DataSourceConfigType
+	}).(pulumi.StringOutput)
+}
+
+// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput) ObjectStoragePrefixes() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig) []GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix {
+		return v.ObjectStoragePrefixes
+	}).(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput) Index(i pulumi.IntInput) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig {
+		return vs[0].([]GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig)[vs[1].(int)]
+	}).(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix struct {
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The name of the object (file) or prefix (folder).
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixInput is an input type that accepts GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs and GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixInput` via:
+//
+//	GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs{...}
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput
+	ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutputWithContext(context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs struct {
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The name of the object (file) or prefix (folder).
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput {
+	return i.ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput)
+}
+
+// GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayInput is an input type that accepts GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArray and GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayInput` via:
+//
+//	GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArray{ GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs{...} }
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput
+	ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutputWithContext(context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArray []GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixInput
+
+func (GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArray) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput {
+	return i.ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArray) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput {
+	return o
+}
+
+// The bucket name of an object.
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The name of the object (file) or prefix (folder).
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix) string {
+		return v.Prefix
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput) ToGetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput) Index(i pulumi.IntInput) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix {
+		return vs[0].([]GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix)[vs[1].(int)]
+	}).(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput)
+}
+
+type GetAgentDataSourcesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAgentDataSourcesFilterInput is an input type that accepts GetAgentDataSourcesFilterArgs and GetAgentDataSourcesFilterOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesFilterInput` via:
+//
+//	GetAgentDataSourcesFilterArgs{...}
+type GetAgentDataSourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesFilterOutput() GetAgentDataSourcesFilterOutput
+	ToGetAgentDataSourcesFilterOutputWithContext(context.Context) GetAgentDataSourcesFilterOutput
+}
+
+type GetAgentDataSourcesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAgentDataSourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesFilter)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesFilterArgs) ToGetAgentDataSourcesFilterOutput() GetAgentDataSourcesFilterOutput {
+	return i.ToGetAgentDataSourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesFilterArgs) ToGetAgentDataSourcesFilterOutputWithContext(ctx context.Context) GetAgentDataSourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesFilterOutput)
+}
+
+// GetAgentDataSourcesFilterArrayInput is an input type that accepts GetAgentDataSourcesFilterArray and GetAgentDataSourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataSourcesFilterArrayInput` via:
+//
+//	GetAgentDataSourcesFilterArray{ GetAgentDataSourcesFilterArgs{...} }
+type GetAgentDataSourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataSourcesFilterArrayOutput() GetAgentDataSourcesFilterArrayOutput
+	ToGetAgentDataSourcesFilterArrayOutputWithContext(context.Context) GetAgentDataSourcesFilterArrayOutput
+}
+
+type GetAgentDataSourcesFilterArray []GetAgentDataSourcesFilterInput
+
+func (GetAgentDataSourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesFilter)(nil)).Elem()
+}
+
+func (i GetAgentDataSourcesFilterArray) ToGetAgentDataSourcesFilterArrayOutput() GetAgentDataSourcesFilterArrayOutput {
+	return i.ToGetAgentDataSourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataSourcesFilterArray) ToGetAgentDataSourcesFilterArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataSourcesFilterArrayOutput)
+}
+
+type GetAgentDataSourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataSourcesFilter)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesFilterOutput) ToGetAgentDataSourcesFilterOutput() GetAgentDataSourcesFilterOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesFilterOutput) ToGetAgentDataSourcesFilterOutputWithContext(ctx context.Context) GetAgentDataSourcesFilterOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAgentDataSourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAgentDataSourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAgentDataSourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataSourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataSourcesFilter)(nil)).Elem()
+}
+
+func (o GetAgentDataSourcesFilterArrayOutput) ToGetAgentDataSourcesFilterArrayOutput() GetAgentDataSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesFilterArrayOutput) ToGetAgentDataSourcesFilterArrayOutputWithContext(ctx context.Context) GetAgentDataSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentDataSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetAgentDataSourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataSourcesFilter {
+		return vs[0].([]GetAgentDataSourcesFilter)[vs[1].(int)]
+	}).(GetAgentDataSourcesFilterOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// **DatabaseConnection**
+	DatabaseConnections []GetAgentKnowledgeBaseIndexConfigDatabaseConnection `pulumi:"databaseConnections"`
+	// Array of Database functions to be used.
+	DatabaseFunctions []GetAgentKnowledgeBaseIndexConfigDatabaseFunction `pulumi:"databaseFunctions"`
+	// The type of index. The allowed values are:
+	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	IndexConfigType string `pulumi:"indexConfigType"`
+	// Index configuration for open search.
+	Indexes []GetAgentKnowledgeBaseIndexConfigIndex `pulumi:"indexes"`
+	// **SecretDetail**
+	SecretDetails []GetAgentKnowledgeBaseIndexConfigSecretDetail `pulumi:"secretDetails"`
+	// Whether to enable Hybrid search in service managed OpenSearch.
+	ShouldEnableHybridSearch bool `pulumi:"shouldEnableHybridSearch"`
+}
+
+// GetAgentKnowledgeBaseIndexConfigInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigArgs and GetAgentKnowledgeBaseIndexConfigOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigArgs{...}
+type GetAgentKnowledgeBaseIndexConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigOutput() GetAgentKnowledgeBaseIndexConfigOutput
+	ToGetAgentKnowledgeBaseIndexConfigOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// **DatabaseConnection**
+	DatabaseConnections GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayInput `pulumi:"databaseConnections"`
+	// Array of Database functions to be used.
+	DatabaseFunctions GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput `pulumi:"databaseFunctions"`
+	// The type of index. The allowed values are:
+	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	IndexConfigType pulumi.StringInput `pulumi:"indexConfigType"`
+	// Index configuration for open search.
+	Indexes GetAgentKnowledgeBaseIndexConfigIndexArrayInput `pulumi:"indexes"`
+	// **SecretDetail**
+	SecretDetails GetAgentKnowledgeBaseIndexConfigSecretDetailArrayInput `pulumi:"secretDetails"`
+	// Whether to enable Hybrid search in service managed OpenSearch.
+	ShouldEnableHybridSearch pulumi.BoolInput `pulumi:"shouldEnableHybridSearch"`
+}
+
+func (GetAgentKnowledgeBaseIndexConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfig)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigArgs) ToGetAgentKnowledgeBaseIndexConfigOutput() GetAgentKnowledgeBaseIndexConfigOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigArgs) ToGetAgentKnowledgeBaseIndexConfigOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigOutput)
+}
+
+// GetAgentKnowledgeBaseIndexConfigArrayInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigArray and GetAgentKnowledgeBaseIndexConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigArrayInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigArray{ GetAgentKnowledgeBaseIndexConfigArgs{...} }
+type GetAgentKnowledgeBaseIndexConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigArrayOutput() GetAgentKnowledgeBaseIndexConfigArrayOutput
+	ToGetAgentKnowledgeBaseIndexConfigArrayOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigArrayOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigArray []GetAgentKnowledgeBaseIndexConfigInput
+
+func (GetAgentKnowledgeBaseIndexConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfig)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigArray) ToGetAgentKnowledgeBaseIndexConfigArrayOutput() GetAgentKnowledgeBaseIndexConfigArrayOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigArray) ToGetAgentKnowledgeBaseIndexConfigArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigArrayOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfig)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigOutput) ToGetAgentKnowledgeBaseIndexConfigOutput() GetAgentKnowledgeBaseIndexConfigOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigOutput) ToGetAgentKnowledgeBaseIndexConfigOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+func (o GetAgentKnowledgeBaseIndexConfigOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// **DatabaseConnection**
+func (o GetAgentKnowledgeBaseIndexConfigOutput) DatabaseConnections() GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) []GetAgentKnowledgeBaseIndexConfigDatabaseConnection {
+		return v.DatabaseConnections
+	}).(GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput)
+}
+
+// Array of Database functions to be used.
+func (o GetAgentKnowledgeBaseIndexConfigOutput) DatabaseFunctions() GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) []GetAgentKnowledgeBaseIndexConfigDatabaseFunction {
+		return v.DatabaseFunctions
+	}).(GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput)
+}
+
+// The type of index. The allowed values are:
+// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+func (o GetAgentKnowledgeBaseIndexConfigOutput) IndexConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) string { return v.IndexConfigType }).(pulumi.StringOutput)
+}
+
+// Index configuration for open search.
+func (o GetAgentKnowledgeBaseIndexConfigOutput) Indexes() GetAgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) []GetAgentKnowledgeBaseIndexConfigIndex { return v.Indexes }).(GetAgentKnowledgeBaseIndexConfigIndexArrayOutput)
+}
+
+// **SecretDetail**
+func (o GetAgentKnowledgeBaseIndexConfigOutput) SecretDetails() GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) []GetAgentKnowledgeBaseIndexConfigSecretDetail {
+		return v.SecretDetails
+	}).(GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput)
+}
+
+// Whether to enable Hybrid search in service managed OpenSearch.
+func (o GetAgentKnowledgeBaseIndexConfigOutput) ShouldEnableHybridSearch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) bool { return v.ShouldEnableHybridSearch }).(pulumi.BoolOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfig)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigArrayOutput) ToGetAgentKnowledgeBaseIndexConfigArrayOutput() GetAgentKnowledgeBaseIndexConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigArrayOutput) ToGetAgentKnowledgeBaseIndexConfigArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBaseIndexConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBaseIndexConfig {
+		return vs[0].([]GetAgentKnowledgeBaseIndexConfig)[vs[1].(int)]
+	}).(GetAgentKnowledgeBaseIndexConfigOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseConnection struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType string `pulumi:"connectionType"`
+}
+
+// GetAgentKnowledgeBaseIndexConfigDatabaseConnectionInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs and GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigDatabaseConnectionInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs{...}
+type GetAgentKnowledgeBaseIndexConfigDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput() GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput
+	ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+}
+
+func (GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs) ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput() GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs) ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput)
+}
+
+// GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArray and GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArray{ GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs{...} }
+type GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput() GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput
+	ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArray []GetAgentKnowledgeBaseIndexConfigDatabaseConnectionInput
+
+func (GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArray) ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput() GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArray) ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput() GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigDatabaseConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// The type of Database connection. The allowed values are:
+// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigDatabaseConnection) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput) ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput() GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput) ToGetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBaseIndexConfigDatabaseConnection {
+		return vs[0].([]GetAgentKnowledgeBaseIndexConfigDatabaseConnection)[vs[1].(int)]
+	}).(GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseFunction struct {
+	// The index name in opensearch.
+	Name string `pulumi:"name"`
+}
+
+// GetAgentKnowledgeBaseIndexConfigDatabaseFunctionInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs and GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigDatabaseFunctionInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs{...}
+type GetAgentKnowledgeBaseIndexConfigDatabaseFunctionInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput() GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput
+	ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs struct {
+	// The index name in opensearch.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs) ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput() GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs) ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput)
+}
+
+// GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArray and GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArray{ GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs{...} }
+type GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput() GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput
+	ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArray []GetAgentKnowledgeBaseIndexConfigDatabaseFunctionInput
+
+func (GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArray) ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput() GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArray) ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput) ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput() GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput) ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return o
+}
+
+// The index name in opensearch.
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigDatabaseFunction) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput() GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) ToGetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBaseIndexConfigDatabaseFunction {
+		return vs[0].([]GetAgentKnowledgeBaseIndexConfigDatabaseFunction)[vs[1].(int)]
+	}).(GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndex struct {
+	// The index name in opensearch.
+	Name string `pulumi:"name"`
+	// **IndexSchema**
+	Schemas []GetAgentKnowledgeBaseIndexConfigIndexSchema `pulumi:"schemas"`
+}
+
+// GetAgentKnowledgeBaseIndexConfigIndexInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigIndexArgs and GetAgentKnowledgeBaseIndexConfigIndexOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigIndexInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigIndexArgs{...}
+type GetAgentKnowledgeBaseIndexConfigIndexInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigIndexOutput() GetAgentKnowledgeBaseIndexConfigIndexOutput
+	ToGetAgentKnowledgeBaseIndexConfigIndexOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigIndexOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndexArgs struct {
+	// The index name in opensearch.
+	Name pulumi.StringInput `pulumi:"name"`
+	// **IndexSchema**
+	Schemas GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayInput `pulumi:"schemas"`
+}
+
+func (GetAgentKnowledgeBaseIndexConfigIndexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigIndex)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigIndexArgs) ToGetAgentKnowledgeBaseIndexConfigIndexOutput() GetAgentKnowledgeBaseIndexConfigIndexOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigIndexOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigIndexArgs) ToGetAgentKnowledgeBaseIndexConfigIndexOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigIndexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigIndexOutput)
+}
+
+// GetAgentKnowledgeBaseIndexConfigIndexArrayInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigIndexArray and GetAgentKnowledgeBaseIndexConfigIndexArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigIndexArrayInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigIndexArray{ GetAgentKnowledgeBaseIndexConfigIndexArgs{...} }
+type GetAgentKnowledgeBaseIndexConfigIndexArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigIndexArrayOutput() GetAgentKnowledgeBaseIndexConfigIndexArrayOutput
+	ToGetAgentKnowledgeBaseIndexConfigIndexArrayOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigIndexArrayOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndexArray []GetAgentKnowledgeBaseIndexConfigIndexInput
+
+func (GetAgentKnowledgeBaseIndexConfigIndexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigIndex)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigIndexArray) ToGetAgentKnowledgeBaseIndexConfigIndexArrayOutput() GetAgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigIndexArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigIndexArray) ToGetAgentKnowledgeBaseIndexConfigIndexArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigIndexArrayOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndexOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigIndexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigIndex)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexOutput) ToGetAgentKnowledgeBaseIndexConfigIndexOutput() GetAgentKnowledgeBaseIndexConfigIndexOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexOutput) ToGetAgentKnowledgeBaseIndexConfigIndexOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigIndexOutput {
+	return o
+}
+
+// The index name in opensearch.
+func (o GetAgentKnowledgeBaseIndexConfigIndexOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigIndex) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// **IndexSchema**
+func (o GetAgentKnowledgeBaseIndexConfigIndexOutput) Schemas() GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigIndex) []GetAgentKnowledgeBaseIndexConfigIndexSchema {
+		return v.Schemas
+	}).(GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigIndexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigIndex)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexArrayOutput) ToGetAgentKnowledgeBaseIndexConfigIndexArrayOutput() GetAgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexArrayOutput) ToGetAgentKnowledgeBaseIndexConfigIndexArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigIndexArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBaseIndexConfigIndexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBaseIndexConfigIndex {
+		return vs[0].([]GetAgentKnowledgeBaseIndexConfigIndex)[vs[1].(int)]
+	}).(GetAgentKnowledgeBaseIndexConfigIndexOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndexSchema struct {
+	// Body key name.
+	BodyKey string `pulumi:"bodyKey"`
+	// Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+	EmbeddingBodyKey string `pulumi:"embeddingBodyKey"`
+	// Title key that stores the Title of a document, if available.
+	TitleKey string `pulumi:"titleKey"`
+	// URL key that stores the URL of a document, if available.
+	UrlKey string `pulumi:"urlKey"`
+}
+
+// GetAgentKnowledgeBaseIndexConfigIndexSchemaInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs and GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigIndexSchemaInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs{...}
+type GetAgentKnowledgeBaseIndexConfigIndexSchemaInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigIndexSchemaOutput() GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput
+	ToGetAgentKnowledgeBaseIndexConfigIndexSchemaOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs struct {
+	// Body key name.
+	BodyKey pulumi.StringInput `pulumi:"bodyKey"`
+	// Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+	EmbeddingBodyKey pulumi.StringInput `pulumi:"embeddingBodyKey"`
+	// Title key that stores the Title of a document, if available.
+	TitleKey pulumi.StringInput `pulumi:"titleKey"`
+	// URL key that stores the URL of a document, if available.
+	UrlKey pulumi.StringInput `pulumi:"urlKey"`
+}
+
+func (GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs) ToGetAgentKnowledgeBaseIndexConfigIndexSchemaOutput() GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigIndexSchemaOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs) ToGetAgentKnowledgeBaseIndexConfigIndexSchemaOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput)
+}
+
+// GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigIndexSchemaArray and GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigIndexSchemaArray{ GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs{...} }
+type GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput() GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput
+	ToGetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndexSchemaArray []GetAgentKnowledgeBaseIndexConfigIndexSchemaInput
+
+func (GetAgentKnowledgeBaseIndexConfigIndexSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigIndexSchemaArray) ToGetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput() GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigIndexSchemaArray) ToGetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput) ToGetAgentKnowledgeBaseIndexConfigIndexSchemaOutput() GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput) ToGetAgentKnowledgeBaseIndexConfigIndexSchemaOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return o
+}
+
+// Body key name.
+func (o GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput) BodyKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigIndexSchema) string { return v.BodyKey }).(pulumi.StringOutput)
+}
+
+// Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+func (o GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput) EmbeddingBodyKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigIndexSchema) string { return v.EmbeddingBodyKey }).(pulumi.StringOutput)
+}
+
+// Title key that stores the Title of a document, if available.
+func (o GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput) TitleKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigIndexSchema) string { return v.TitleKey }).(pulumi.StringOutput)
+}
+
+// URL key that stores the URL of a document, if available.
+func (o GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput) UrlKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigIndexSchema) string { return v.UrlKey }).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput) ToGetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput() GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput) ToGetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBaseIndexConfigIndexSchema {
+		return vs[0].([]GetAgentKnowledgeBaseIndexConfigIndexSchema)[vs[1].(int)]
+	}).(GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigSecretDetail struct {
+	// The IDCS Connect clientId.
+	ClientId string `pulumi:"clientId"`
+	// The URL represent authentication url of the IDCS.
+	IdcsUrl string `pulumi:"idcsUrl"`
+	// Fully qualified scope url
+	ScopeUrl string `pulumi:"scopeUrl"`
+	// The type of OpenID. The allowed values are:
+	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	Type string `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetAgentKnowledgeBaseIndexConfigSecretDetailInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigSecretDetailArgs and GetAgentKnowledgeBaseIndexConfigSecretDetailOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigSecretDetailInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigSecretDetailArgs{...}
+type GetAgentKnowledgeBaseIndexConfigSecretDetailInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigSecretDetailOutput() GetAgentKnowledgeBaseIndexConfigSecretDetailOutput
+	ToGetAgentKnowledgeBaseIndexConfigSecretDetailOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigSecretDetailOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigSecretDetailArgs struct {
+	// The IDCS Connect clientId.
+	ClientId pulumi.StringInput `pulumi:"clientId"`
+	// The URL represent authentication url of the IDCS.
+	IdcsUrl pulumi.StringInput `pulumi:"idcsUrl"`
+	// Fully qualified scope url
+	ScopeUrl pulumi.StringInput `pulumi:"scopeUrl"`
+	// The type of OpenID. The allowed values are:
+	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	Type pulumi.StringInput `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetAgentKnowledgeBaseIndexConfigSecretDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigSecretDetailArgs) ToGetAgentKnowledgeBaseIndexConfigSecretDetailOutput() GetAgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigSecretDetailOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigSecretDetailArgs) ToGetAgentKnowledgeBaseIndexConfigSecretDetailOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigSecretDetailOutput)
+}
+
+// GetAgentKnowledgeBaseIndexConfigSecretDetailArrayInput is an input type that accepts GetAgentKnowledgeBaseIndexConfigSecretDetailArray and GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseIndexConfigSecretDetailArrayInput` via:
+//
+//	GetAgentKnowledgeBaseIndexConfigSecretDetailArray{ GetAgentKnowledgeBaseIndexConfigSecretDetailArgs{...} }
+type GetAgentKnowledgeBaseIndexConfigSecretDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput() GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput
+	ToGetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutputWithContext(context.Context) GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput
+}
+
+type GetAgentKnowledgeBaseIndexConfigSecretDetailArray []GetAgentKnowledgeBaseIndexConfigSecretDetailInput
+
+func (GetAgentKnowledgeBaseIndexConfigSecretDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigSecretDetailArray) ToGetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput() GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput {
+	return i.ToGetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseIndexConfigSecretDetailArray) ToGetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigSecretDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) ToGetAgentKnowledgeBaseIndexConfigSecretDetailOutput() GetAgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) ToGetAgentKnowledgeBaseIndexConfigSecretDetailOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return o
+}
+
+// The IDCS Connect clientId.
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigSecretDetail) string { return v.ClientId }).(pulumi.StringOutput)
+}
+
+// The URL represent authentication url of the IDCS.
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) IdcsUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigSecretDetail) string { return v.IdcsUrl }).(pulumi.StringOutput)
+}
+
+// Fully qualified scope url
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) ScopeUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigSecretDetail) string { return v.ScopeUrl }).(pulumi.StringOutput)
+}
+
+// The type of OpenID. The allowed values are:
+// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigSecretDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigSecretDetail) string { return v.VaultSecretId }).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput) ToGetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput() GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput) ToGetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBaseIndexConfigSecretDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBaseIndexConfigSecretDetail {
+		return vs[0].([]GetAgentKnowledgeBaseIndexConfigSecretDetail)[vs[1].(int)]
+	}).(GetAgentKnowledgeBaseIndexConfigSecretDetailOutput)
+}
+
+type GetAgentKnowledgeBasesFilter struct {
+	// The index name in opensearch.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAgentKnowledgeBasesFilterInput is an input type that accepts GetAgentKnowledgeBasesFilterArgs and GetAgentKnowledgeBasesFilterOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesFilterInput` via:
+//
+//	GetAgentKnowledgeBasesFilterArgs{...}
+type GetAgentKnowledgeBasesFilterInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesFilterOutput() GetAgentKnowledgeBasesFilterOutput
+	ToGetAgentKnowledgeBasesFilterOutputWithContext(context.Context) GetAgentKnowledgeBasesFilterOutput
+}
+
+type GetAgentKnowledgeBasesFilterArgs struct {
+	// The index name in opensearch.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAgentKnowledgeBasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesFilter)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesFilterArgs) ToGetAgentKnowledgeBasesFilterOutput() GetAgentKnowledgeBasesFilterOutput {
+	return i.ToGetAgentKnowledgeBasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesFilterArgs) ToGetAgentKnowledgeBasesFilterOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesFilterOutput)
+}
+
+// GetAgentKnowledgeBasesFilterArrayInput is an input type that accepts GetAgentKnowledgeBasesFilterArray and GetAgentKnowledgeBasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesFilterArrayInput` via:
+//
+//	GetAgentKnowledgeBasesFilterArray{ GetAgentKnowledgeBasesFilterArgs{...} }
+type GetAgentKnowledgeBasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesFilterArrayOutput() GetAgentKnowledgeBasesFilterArrayOutput
+	ToGetAgentKnowledgeBasesFilterArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesFilterArrayOutput
+}
+
+type GetAgentKnowledgeBasesFilterArray []GetAgentKnowledgeBasesFilterInput
+
+func (GetAgentKnowledgeBasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesFilter)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesFilterArray) ToGetAgentKnowledgeBasesFilterArrayOutput() GetAgentKnowledgeBasesFilterArrayOutput {
+	return i.ToGetAgentKnowledgeBasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesFilterArray) ToGetAgentKnowledgeBasesFilterArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesFilterArrayOutput)
+}
+
+type GetAgentKnowledgeBasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesFilter)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesFilterOutput) ToGetAgentKnowledgeBasesFilterOutput() GetAgentKnowledgeBasesFilterOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesFilterOutput) ToGetAgentKnowledgeBasesFilterOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesFilterOutput {
+	return o
+}
+
+// The index name in opensearch.
+func (o GetAgentKnowledgeBasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAgentKnowledgeBasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAgentKnowledgeBasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAgentKnowledgeBasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesFilter)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesFilterArrayOutput) ToGetAgentKnowledgeBasesFilterArrayOutput() GetAgentKnowledgeBasesFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesFilterArrayOutput) ToGetAgentKnowledgeBasesFilterArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesFilterArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesFilter {
+		return vs[0].([]GetAgentKnowledgeBasesFilter)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesFilterOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollection struct {
+	Items []GetAgentKnowledgeBasesKnowledgeBaseCollectionItem `pulumi:"items"`
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionArgs and GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionArgs{...}
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionArgs struct {
+	Items GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollection)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput)
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionArray and GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionArray{ GetAgentKnowledgeBasesKnowledgeBaseCollectionArgs{...} }
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionArray []GetAgentKnowledgeBasesKnowledgeBaseCollectionInput
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollection)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollection)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput) Items() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollection) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItem {
+		return v.Items
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollection)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollection {
+		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollection)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A description of the knowledge base.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+	Id string `pulumi:"id"`
+	// **IndexConfig**
+	IndexConfigs []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig `pulumi:"indexConfigs"`
+	// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the knowledge base was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the knowledge base was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArgs and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArgs{...}
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A description of the knowledge base.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+	Id pulumi.StringInput `pulumi:"id"`
+	// **IndexConfig**
+	IndexConfigs GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayInput `pulumi:"indexConfigs"`
+	// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the knowledge base was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the knowledge base was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput)
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArray and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArray{ GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArgs{...} }
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArray []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemInput
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A description of the knowledge base.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// **IndexConfig**
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) IndexConfigs() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig {
+		return v.IndexConfigs
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput)
+}
+
+// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the knowledge base was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the knowledge base was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollectionItem {
+		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollectionItem)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// **DatabaseConnection**
+	DatabaseConnections []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection `pulumi:"databaseConnections"`
+	// Array of Database functions to be used.
+	DatabaseFunctions []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction `pulumi:"databaseFunctions"`
+	// The type of index. The allowed values are:
+	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	IndexConfigType string `pulumi:"indexConfigType"`
+	// Index configuration for open search.
+	Indexes []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex `pulumi:"indexes"`
+	// **SecretDetail**
+	SecretDetails []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail `pulumi:"secretDetails"`
+	// Whether to enable Hybrid search in service managed OpenSearch.
+	ShouldEnableHybridSearch bool `pulumi:"shouldEnableHybridSearch"`
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs{...}
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// **DatabaseConnection**
+	DatabaseConnections GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayInput `pulumi:"databaseConnections"`
+	// Array of Database functions to be used.
+	DatabaseFunctions GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayInput `pulumi:"databaseFunctions"`
+	// The type of index. The allowed values are:
+	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	IndexConfigType pulumi.StringInput `pulumi:"indexConfigType"`
+	// Index configuration for open search.
+	Indexes GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayInput `pulumi:"indexes"`
+	// **SecretDetail**
+	SecretDetails GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayInput `pulumi:"secretDetails"`
+	// Whether to enable Hybrid search in service managed OpenSearch.
+	ShouldEnableHybridSearch pulumi.BoolInput `pulumi:"shouldEnableHybridSearch"`
+}
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput)
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArray and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArray{ GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs{...} }
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArray []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigInput
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// **DatabaseConnection**
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) DatabaseConnections() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection {
+		return v.DatabaseConnections
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput)
+}
+
+// Array of Database functions to be used.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) DatabaseFunctions() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction {
+		return v.DatabaseFunctions
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput)
+}
+
+// The type of index. The allowed values are:
+// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) IndexConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) string { return v.IndexConfigType }).(pulumi.StringOutput)
+}
+
+// Index configuration for open search.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) Indexes() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex {
+		return v.Indexes
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput)
+}
+
+// **SecretDetail**
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) SecretDetails() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail {
+		return v.SecretDetails
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput)
+}
+
+// Whether to enable Hybrid search in service managed OpenSearch.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) ShouldEnableHybridSearch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) bool {
+		return v.ShouldEnableHybridSearch
+	}).(pulumi.BoolOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig {
+		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType string `pulumi:"connectionType"`
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs{...}
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+}
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput)
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArray and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArray{ GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs{...} }
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArray []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionInput
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection) string {
+		return v.ConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The type of Database connection. The allowed values are:
+// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection) string {
+		return v.ConnectionType
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection {
+		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction struct {
+	// The index name in opensearch.
+	Name string `pulumi:"name"`
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs{...}
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs struct {
+	// The index name in opensearch.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput)
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArray and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArray{ GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs{...} }
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArray []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionInput
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput {
+	return o
+}
+
+// The index name in opensearch.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction {
+		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex struct {
+	// The index name in opensearch.
+	Name string `pulumi:"name"`
+	// **IndexSchema**
+	Schemas []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema `pulumi:"schemas"`
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs{...}
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs struct {
+	// The index name in opensearch.
+	Name pulumi.StringInput `pulumi:"name"`
+	// **IndexSchema**
+	Schemas GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayInput `pulumi:"schemas"`
+}
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput)
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArray and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArray{ GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs{...} }
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArray []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexInput
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput {
+	return o
+}
+
+// The index name in opensearch.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// **IndexSchema**
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput) Schemas() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema {
+		return v.Schemas
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex {
+		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema struct {
+	// Body key name.
+	BodyKey string `pulumi:"bodyKey"`
+	// Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+	EmbeddingBodyKey string `pulumi:"embeddingBodyKey"`
+	// Title key that stores the Title of a document, if available.
+	TitleKey string `pulumi:"titleKey"`
+	// URL key that stores the URL of a document, if available.
+	UrlKey string `pulumi:"urlKey"`
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs{...}
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs struct {
+	// Body key name.
+	BodyKey pulumi.StringInput `pulumi:"bodyKey"`
+	// Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+	EmbeddingBodyKey pulumi.StringInput `pulumi:"embeddingBodyKey"`
+	// Title key that stores the Title of a document, if available.
+	TitleKey pulumi.StringInput `pulumi:"titleKey"`
+	// URL key that stores the URL of a document, if available.
+	UrlKey pulumi.StringInput `pulumi:"urlKey"`
+}
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput)
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArray and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArray{ GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs{...} }
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArray []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaInput
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput {
+	return o
+}
+
+// Body key name.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput) BodyKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema) string {
+		return v.BodyKey
+	}).(pulumi.StringOutput)
+}
+
+// Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput) EmbeddingBodyKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema) string {
+		return v.EmbeddingBodyKey
+	}).(pulumi.StringOutput)
+}
+
+// Title key that stores the Title of a document, if available.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput) TitleKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema) string {
+		return v.TitleKey
+	}).(pulumi.StringOutput)
+}
+
+// URL key that stores the URL of a document, if available.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput) UrlKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema) string {
+		return v.UrlKey
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema {
+		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail struct {
+	// The IDCS Connect clientId.
+	ClientId string `pulumi:"clientId"`
+	// The URL represent authentication url of the IDCS.
+	IdcsUrl string `pulumi:"idcsUrl"`
+	// Fully qualified scope url
+	ScopeUrl string `pulumi:"scopeUrl"`
+	// The type of OpenID. The allowed values are:
+	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	Type string `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs{...}
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs struct {
+	// The IDCS Connect clientId.
+	ClientId pulumi.StringInput `pulumi:"clientId"`
+	// The URL represent authentication url of the IDCS.
+	IdcsUrl pulumi.StringInput `pulumi:"idcsUrl"`
+	// Fully qualified scope url
+	ScopeUrl pulumi.StringInput `pulumi:"scopeUrl"`
+	// The type of OpenID. The allowed values are:
+	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	Type pulumi.StringInput `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput)
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArray and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArray{ GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs{...} }
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArray []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailInput
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput {
+	return o
+}
+
+// The IDCS Connect clientId.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail) string {
+		return v.ClientId
+	}).(pulumi.StringOutput)
+}
+
+// The URL represent authentication url of the IDCS.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput) IdcsUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail) string {
+		return v.IdcsUrl
+	}).(pulumi.StringOutput)
+}
+
+// Fully qualified scope url
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput) ScopeUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail) string {
+		return v.ScopeUrl
+	}).(pulumi.StringOutput)
+}
+
+// The type of OpenID. The allowed values are:
+// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail) string {
+		return v.VaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail {
+		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput)
 }
 
 type GetDedicatedAiClusterCapacity struct {
@@ -3845,6 +10308,28 @@ func (o GetModelsModelCollectionItemModelMetricArrayOutput) Index(i pulumi.IntIn
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointContentModerationConfigInput)(nil)).Elem(), AgentAgentEndpointContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointContentModerationConfigPtrInput)(nil)).Elem(), AgentAgentEndpointContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointSessionConfigInput)(nil)).Elem(), AgentAgentEndpointSessionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointSessionConfigPtrInput)(nil)).Elem(), AgentAgentEndpointSessionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobStatisticInput)(nil)).Elem(), AgentDataIngestionJobDataIngestionJobStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobStatisticArrayInput)(nil)).Elem(), AgentDataIngestionJobDataIngestionJobStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataSourceDataSourceConfigInput)(nil)).Elem(), AgentDataSourceDataSourceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataSourceDataSourceConfigPtrInput)(nil)).Elem(), AgentDataSourceDataSourceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataSourceDataSourceConfigObjectStoragePrefixInput)(nil)).Elem(), AgentDataSourceDataSourceConfigObjectStoragePrefixArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput)(nil)).Elem(), AgentDataSourceDataSourceConfigObjectStoragePrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigPtrInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigDatabaseConnectionInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigDatabaseFunctionInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigDatabaseFunctionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndexInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigIndexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndexArrayInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigIndexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndexSchemaInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigIndexSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndexSchemaPtrInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigIndexSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigSecretDetailInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigSecretDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigSecretDetailPtrInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigSecretDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedAiClusterCapacityInput)(nil)).Elem(), DedicatedAiClusterCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedAiClusterCapacityArrayInput)(nil)).Elem(), DedicatedAiClusterCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointContentModerationConfigInput)(nil)).Elem(), EndpointContentModerationConfigArgs{})
@@ -3857,6 +10342,80 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelFineTuneDetailsTrainingDatasetPtrInput)(nil)).Elem(), ModelFineTuneDetailsTrainingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelModelMetricInput)(nil)).Elem(), ModelModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelModelMetricArrayInput)(nil)).Elem(), ModelModelMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointContentModerationConfigInput)(nil)).Elem(), GetAgentAgentEndpointContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointContentModerationConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointContentModerationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointSessionConfigInput)(nil)).Elem(), GetAgentAgentEndpointSessionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointSessionConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointSessionConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsFilterInput)(nil)).Elem(), GetAgentAgentEndpointsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsFilterArrayInput)(nil)).Elem(), GetAgentAgentEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionInput)(nil)).Elem(), GetAgentAgentsAgentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionArrayInput)(nil)).Elem(), GetAgentAgentsAgentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionItemInput)(nil)).Elem(), GetAgentAgentsAgentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionItemArrayInput)(nil)).Elem(), GetAgentAgentsAgentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsFilterInput)(nil)).Elem(), GetAgentAgentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsFilterArrayInput)(nil)).Elem(), GetAgentAgentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobStatisticInput)(nil)).Elem(), GetAgentDataIngestionJobDataIngestionJobStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobStatisticArrayInput)(nil)).Elem(), GetAgentDataIngestionJobDataIngestionJobStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionArrayInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsFilterInput)(nil)).Elem(), GetAgentDataIngestionJobsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsFilterArrayInput)(nil)).Elem(), GetAgentDataIngestionJobsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourceDataSourceConfigInput)(nil)).Elem(), GetAgentDataSourceDataSourceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourceDataSourceConfigArrayInput)(nil)).Elem(), GetAgentDataSourceDataSourceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourceDataSourceConfigObjectStoragePrefixInput)(nil)).Elem(), GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput)(nil)).Elem(), GetAgentDataSourceDataSourceConfigObjectStoragePrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionInput)(nil)).Elem(), GetAgentDataSourcesDataSourceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionArrayInput)(nil)).Elem(), GetAgentDataSourcesDataSourceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemInput)(nil)).Elem(), GetAgentDataSourcesDataSourceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemArrayInput)(nil)).Elem(), GetAgentDataSourcesDataSourceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigInput)(nil)).Elem(), GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayInput)(nil)).Elem(), GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixInput)(nil)).Elem(), GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayInput)(nil)).Elem(), GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesFilterInput)(nil)).Elem(), GetAgentDataSourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourcesFilterArrayInput)(nil)).Elem(), GetAgentDataSourcesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigArrayInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigDatabaseConnectionInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigDatabaseFunctionInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigIndexInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigIndexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigIndexArrayInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigIndexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigIndexSchemaInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigIndexSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigSecretDetailInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigSecretDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigSecretDetailArrayInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigSecretDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesFilterInput)(nil)).Elem(), GetAgentKnowledgeBasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesFilterArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterCapacityInput)(nil)).Elem(), GetDedicatedAiClusterCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterCapacityArrayInput)(nil)).Elem(), GetDedicatedAiClusterCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClustersDedicatedAiClusterCollectionInput)(nil)).Elem(), GetDedicatedAiClustersDedicatedAiClusterCollectionArgs{})
@@ -3899,6 +10458,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArrayInput)(nil)).Elem(), GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemModelMetricInput)(nil)).Elem(), GetModelsModelCollectionItemModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemModelMetricArrayInput)(nil)).Elem(), GetModelsModelCollectionItemModelMetricArray{})
+	pulumi.RegisterOutputType(AgentAgentEndpointContentModerationConfigOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointContentModerationConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointSessionConfigOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointSessionConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentDataIngestionJobDataIngestionJobStatisticOutput{})
+	pulumi.RegisterOutputType(AgentDataIngestionJobDataIngestionJobStatisticArrayOutput{})
+	pulumi.RegisterOutputType(AgentDataSourceDataSourceConfigOutput{})
+	pulumi.RegisterOutputType(AgentDataSourceDataSourceConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentDataSourceDataSourceConfigObjectStoragePrefixOutput{})
+	pulumi.RegisterOutputType(AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigDatabaseFunctionOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigIndexOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigIndexArrayOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigIndexSchemaOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigSecretDetailOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput{})
 	pulumi.RegisterOutputType(DedicatedAiClusterCapacityOutput{})
 	pulumi.RegisterOutputType(DedicatedAiClusterCapacityArrayOutput{})
 	pulumi.RegisterOutputType(EndpointContentModerationConfigOutput{})
@@ -3911,6 +10492,80 @@ func init() {
 	pulumi.RegisterOutputType(ModelFineTuneDetailsTrainingDatasetPtrOutput{})
 	pulumi.RegisterOutputType(ModelModelMetricOutput{})
 	pulumi.RegisterOutputType(ModelModelMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointContentModerationConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointContentModerationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointSessionConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointSessionConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsFilterOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsFilterOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobDataIngestionJobStatisticOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsFilterOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourceDataSourceConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourceDataSourceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesDataSourceCollectionOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesDataSourceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesDataSourceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesDataSourceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetAgentDataSourcesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigDatabaseFunctionOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigIndexOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigIndexArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigIndexSchemaOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigSecretDetailOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesFilterOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClusterCapacityOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClusterCapacityArrayOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClustersDedicatedAiClusterCollectionOutput{})

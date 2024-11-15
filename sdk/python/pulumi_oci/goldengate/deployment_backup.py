@@ -30,6 +30,7 @@ class DeploymentBackupArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 is_metadata_only: Optional[pulumi.Input[bool]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]] = None):
         """
         The set of arguments for constructing a DeploymentBackup resource.
@@ -45,6 +46,7 @@ class DeploymentBackupArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_metadata_only: Parameter to allow users to create backup without trails
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]] locks: Locks associated with this resource.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -59,6 +61,8 @@ class DeploymentBackupArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_lock_override is not None:
             pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if is_metadata_only is not None:
+            pulumi.set(__self__, "is_metadata_only", is_metadata_only)
         if locks is not None:
             pulumi.set(__self__, "locks", locks)
 
@@ -172,6 +176,18 @@ class DeploymentBackupArgs:
         pulumi.set(self, "is_lock_override", value)
 
     @property
+    @pulumi.getter(name="isMetadataOnly")
+    def is_metadata_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Parameter to allow users to create backup without trails
+        """
+        return pulumi.get(self, "is_metadata_only")
+
+    @is_metadata_only.setter
+    def is_metadata_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_metadata_only", value)
+
+    @property
     @pulumi.getter
     def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]]:
         """
@@ -197,6 +213,7 @@ class _DeploymentBackupState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_automatic: Optional[pulumi.Input[bool]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 is_metadata_only: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
@@ -220,6 +237,7 @@ class _DeploymentBackupState:
         :param pulumi.Input[str] display_name: An object's Display Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_automatic: True if this object is automatically created
+        :param pulumi.Input[bool] is_metadata_only: Parameter to allow users to create backup without trails
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
@@ -257,6 +275,8 @@ class _DeploymentBackupState:
             pulumi.set(__self__, "is_automatic", is_automatic)
         if is_lock_override is not None:
             pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if is_metadata_only is not None:
+            pulumi.set(__self__, "is_metadata_only", is_metadata_only)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if locks is not None:
@@ -398,6 +418,18 @@ class _DeploymentBackupState:
     @is_lock_override.setter
     def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter(name="isMetadataOnly")
+    def is_metadata_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Parameter to allow users to create backup without trails
+        """
+        return pulumi.get(self, "is_metadata_only")
+
+    @is_metadata_only.setter
+    def is_metadata_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_metadata_only", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -560,6 +592,7 @@ class DeploymentBackup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 is_metadata_only: Optional[pulumi.Input[bool]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
@@ -588,6 +621,7 @@ class DeploymentBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            is_metadata_only=deployment_backup_is_metadata_only,
             locks=[{
                 "type": deployment_backup_locks_type,
                 "message": deployment_backup_locks_message,
@@ -610,6 +644,7 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[str] display_name: An object's Display Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_metadata_only: Parameter to allow users to create backup without trails
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
@@ -648,6 +683,7 @@ class DeploymentBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            is_metadata_only=deployment_backup_is_metadata_only,
             locks=[{
                 "type": deployment_backup_locks_type,
                 "message": deployment_backup_locks_message,
@@ -684,6 +720,7 @@ class DeploymentBackup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 is_metadata_only: Optional[pulumi.Input[bool]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
@@ -711,6 +748,7 @@ class DeploymentBackup(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["is_metadata_only"] = is_metadata_only
             __props__.__dict__["locks"] = locks
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")
@@ -750,6 +788,7 @@ class DeploymentBackup(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_automatic: Optional[pulumi.Input[bool]] = None,
             is_lock_override: Optional[pulumi.Input[bool]] = None,
+            is_metadata_only: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
@@ -778,6 +817,7 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: An object's Display Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_automatic: True if this object is automatically created
+        :param pulumi.Input[bool] is_metadata_only: Parameter to allow users to create backup without trails
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
@@ -809,6 +849,7 @@ class DeploymentBackup(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_automatic"] = is_automatic
         __props__.__dict__["is_lock_override"] = is_lock_override
+        __props__.__dict__["is_metadata_only"] = is_metadata_only
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["locks"] = locks
         __props__.__dict__["namespace"] = namespace
@@ -899,6 +940,14 @@ class DeploymentBackup(pulumi.CustomResource):
     @pulumi.getter(name="isLockOverride")
     def is_lock_override(self) -> pulumi.Output[bool]:
         return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter(name="isMetadataOnly")
+    def is_metadata_only(self) -> pulumi.Output[bool]:
+        """
+        Parameter to allow users to create backup without trails
+        """
+        return pulumi.get(self, "is_metadata_only")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

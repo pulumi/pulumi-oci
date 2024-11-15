@@ -5,6 +5,31 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AgentAgentArgs, AgentAgentState } from "./agentAgent";
+export type AgentAgent = import("./agentAgent").AgentAgent;
+export const AgentAgent: typeof import("./agentAgent").AgentAgent = null as any;
+utilities.lazyLoad(exports, ["AgentAgent"], () => require("./agentAgent"));
+
+export { AgentAgentEndpointArgs, AgentAgentEndpointState } from "./agentAgentEndpoint";
+export type AgentAgentEndpoint = import("./agentAgentEndpoint").AgentAgentEndpoint;
+export const AgentAgentEndpoint: typeof import("./agentAgentEndpoint").AgentAgentEndpoint = null as any;
+utilities.lazyLoad(exports, ["AgentAgentEndpoint"], () => require("./agentAgentEndpoint"));
+
+export { AgentDataIngestionJobArgs, AgentDataIngestionJobState } from "./agentDataIngestionJob";
+export type AgentDataIngestionJob = import("./agentDataIngestionJob").AgentDataIngestionJob;
+export const AgentDataIngestionJob: typeof import("./agentDataIngestionJob").AgentDataIngestionJob = null as any;
+utilities.lazyLoad(exports, ["AgentDataIngestionJob"], () => require("./agentDataIngestionJob"));
+
+export { AgentDataSourceArgs, AgentDataSourceState } from "./agentDataSource";
+export type AgentDataSource = import("./agentDataSource").AgentDataSource;
+export const AgentDataSource: typeof import("./agentDataSource").AgentDataSource = null as any;
+utilities.lazyLoad(exports, ["AgentDataSource"], () => require("./agentDataSource"));
+
+export { AgentKnowledgeBaseArgs, AgentKnowledgeBaseState } from "./agentKnowledgeBase";
+export type AgentKnowledgeBase = import("./agentKnowledgeBase").AgentKnowledgeBase;
+export const AgentKnowledgeBase: typeof import("./agentKnowledgeBase").AgentKnowledgeBase = null as any;
+utilities.lazyLoad(exports, ["AgentKnowledgeBase"], () => require("./agentKnowledgeBase"));
+
 export { DedicatedAiClusterArgs, DedicatedAiClusterState } from "./dedicatedAiCluster";
 export type DedicatedAiCluster = import("./dedicatedAiCluster").DedicatedAiCluster;
 export const DedicatedAiCluster: typeof import("./dedicatedAiCluster").DedicatedAiCluster = null as any;
@@ -14,6 +39,61 @@ export { EndpointArgs, EndpointState } from "./endpoint";
 export type Endpoint = import("./endpoint").Endpoint;
 export const Endpoint: typeof import("./endpoint").Endpoint = null as any;
 utilities.lazyLoad(exports, ["Endpoint"], () => require("./endpoint"));
+
+export { GetAgentAgentArgs, GetAgentAgentResult, GetAgentAgentOutputArgs } from "./getAgentAgent";
+export const getAgentAgent: typeof import("./getAgentAgent").getAgentAgent = null as any;
+export const getAgentAgentOutput: typeof import("./getAgentAgent").getAgentAgentOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentAgent","getAgentAgentOutput"], () => require("./getAgentAgent"));
+
+export { GetAgentAgentEndpointArgs, GetAgentAgentEndpointResult, GetAgentAgentEndpointOutputArgs } from "./getAgentAgentEndpoint";
+export const getAgentAgentEndpoint: typeof import("./getAgentAgentEndpoint").getAgentAgentEndpoint = null as any;
+export const getAgentAgentEndpointOutput: typeof import("./getAgentAgentEndpoint").getAgentAgentEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentAgentEndpoint","getAgentAgentEndpointOutput"], () => require("./getAgentAgentEndpoint"));
+
+export { GetAgentAgentEndpointsArgs, GetAgentAgentEndpointsResult, GetAgentAgentEndpointsOutputArgs } from "./getAgentAgentEndpoints";
+export const getAgentAgentEndpoints: typeof import("./getAgentAgentEndpoints").getAgentAgentEndpoints = null as any;
+export const getAgentAgentEndpointsOutput: typeof import("./getAgentAgentEndpoints").getAgentAgentEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentAgentEndpoints","getAgentAgentEndpointsOutput"], () => require("./getAgentAgentEndpoints"));
+
+export { GetAgentAgentsArgs, GetAgentAgentsResult, GetAgentAgentsOutputArgs } from "./getAgentAgents";
+export const getAgentAgents: typeof import("./getAgentAgents").getAgentAgents = null as any;
+export const getAgentAgentsOutput: typeof import("./getAgentAgents").getAgentAgentsOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentAgents","getAgentAgentsOutput"], () => require("./getAgentAgents"));
+
+export { GetAgentDataIngestionJobArgs, GetAgentDataIngestionJobResult, GetAgentDataIngestionJobOutputArgs } from "./getAgentDataIngestionJob";
+export const getAgentDataIngestionJob: typeof import("./getAgentDataIngestionJob").getAgentDataIngestionJob = null as any;
+export const getAgentDataIngestionJobOutput: typeof import("./getAgentDataIngestionJob").getAgentDataIngestionJobOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentDataIngestionJob","getAgentDataIngestionJobOutput"], () => require("./getAgentDataIngestionJob"));
+
+export { GetAgentDataIngestionJobLogContentArgs, GetAgentDataIngestionJobLogContentResult, GetAgentDataIngestionJobLogContentOutputArgs } from "./getAgentDataIngestionJobLogContent";
+export const getAgentDataIngestionJobLogContent: typeof import("./getAgentDataIngestionJobLogContent").getAgentDataIngestionJobLogContent = null as any;
+export const getAgentDataIngestionJobLogContentOutput: typeof import("./getAgentDataIngestionJobLogContent").getAgentDataIngestionJobLogContentOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentDataIngestionJobLogContent","getAgentDataIngestionJobLogContentOutput"], () => require("./getAgentDataIngestionJobLogContent"));
+
+export { GetAgentDataIngestionJobsArgs, GetAgentDataIngestionJobsResult, GetAgentDataIngestionJobsOutputArgs } from "./getAgentDataIngestionJobs";
+export const getAgentDataIngestionJobs: typeof import("./getAgentDataIngestionJobs").getAgentDataIngestionJobs = null as any;
+export const getAgentDataIngestionJobsOutput: typeof import("./getAgentDataIngestionJobs").getAgentDataIngestionJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentDataIngestionJobs","getAgentDataIngestionJobsOutput"], () => require("./getAgentDataIngestionJobs"));
+
+export { GetAgentDataSourceArgs, GetAgentDataSourceResult, GetAgentDataSourceOutputArgs } from "./getAgentDataSource";
+export const getAgentDataSource: typeof import("./getAgentDataSource").getAgentDataSource = null as any;
+export const getAgentDataSourceOutput: typeof import("./getAgentDataSource").getAgentDataSourceOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentDataSource","getAgentDataSourceOutput"], () => require("./getAgentDataSource"));
+
+export { GetAgentDataSourcesArgs, GetAgentDataSourcesResult, GetAgentDataSourcesOutputArgs } from "./getAgentDataSources";
+export const getAgentDataSources: typeof import("./getAgentDataSources").getAgentDataSources = null as any;
+export const getAgentDataSourcesOutput: typeof import("./getAgentDataSources").getAgentDataSourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentDataSources","getAgentDataSourcesOutput"], () => require("./getAgentDataSources"));
+
+export { GetAgentKnowledgeBaseArgs, GetAgentKnowledgeBaseResult, GetAgentKnowledgeBaseOutputArgs } from "./getAgentKnowledgeBase";
+export const getAgentKnowledgeBase: typeof import("./getAgentKnowledgeBase").getAgentKnowledgeBase = null as any;
+export const getAgentKnowledgeBaseOutput: typeof import("./getAgentKnowledgeBase").getAgentKnowledgeBaseOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentKnowledgeBase","getAgentKnowledgeBaseOutput"], () => require("./getAgentKnowledgeBase"));
+
+export { GetAgentKnowledgeBasesArgs, GetAgentKnowledgeBasesResult, GetAgentKnowledgeBasesOutputArgs } from "./getAgentKnowledgeBases";
+export const getAgentKnowledgeBases: typeof import("./getAgentKnowledgeBases").getAgentKnowledgeBases = null as any;
+export const getAgentKnowledgeBasesOutput: typeof import("./getAgentKnowledgeBases").getAgentKnowledgeBasesOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentKnowledgeBases","getAgentKnowledgeBasesOutput"], () => require("./getAgentKnowledgeBases"));
 
 export { GetDedicatedAiClusterArgs, GetDedicatedAiClusterResult, GetDedicatedAiClusterOutputArgs } from "./getDedicatedAiCluster";
 export const getDedicatedAiCluster: typeof import("./getDedicatedAiCluster").getDedicatedAiCluster = null as any;
@@ -55,6 +135,16 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:GenerativeAi/agentAgent:AgentAgent":
+                return new AgentAgent(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/agentAgentEndpoint:AgentAgentEndpoint":
+                return new AgentAgentEndpoint(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/agentDataIngestionJob:AgentDataIngestionJob":
+                return new AgentDataIngestionJob(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/agentDataSource:AgentDataSource":
+                return new AgentDataSource(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase":
+                return new AgentKnowledgeBase(name, <any>undefined, { urn })
             case "oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster":
                 return new DedicatedAiCluster(name, <any>undefined, { urn })
             case "oci:GenerativeAi/endpoint:Endpoint":
@@ -66,6 +156,11 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentAgent", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentAgentEndpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentDataIngestionJob", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentDataSource", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentKnowledgeBase", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/dedicatedAiCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/endpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/model", _module)

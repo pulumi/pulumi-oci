@@ -14,23 +14,23 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetBootVolumeSourceDetailResult
     {
         /// <summary>
-        /// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        /// (Applicable when type=bootVolumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
         /// </summary>
         public readonly string ChangeBlockSizeInBytes;
         /// <summary>
-        /// The OCID of the first boot volume backup.
+        /// (Required when type=bootVolumeBackupDelta) The OCID of the first boot volume backup.
         /// </summary>
         public readonly string FirstBackupId;
         /// <summary>
-        /// The OCID of the boot volume replica.
+        /// (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The OCID of the second boot volume backup.
+        /// (Required when type=bootVolumeBackupDelta) The OCID of the second boot volume backup.
         /// </summary>
         public readonly string SecondBackupId;
         /// <summary>
-        /// The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
+        /// (Required) The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
         /// </summary>
         public readonly string Type;
 

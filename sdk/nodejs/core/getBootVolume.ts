@@ -86,7 +86,7 @@ export interface GetBootVolumeResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The OCID of the boot volume replica.
+     * (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
      */
     readonly id: string;
     /**

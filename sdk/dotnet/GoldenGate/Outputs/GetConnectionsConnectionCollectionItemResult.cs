@@ -19,6 +19,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string AccessKeyId;
         public readonly string AccountKey;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+        /// </summary>
+        public readonly string AccountKeySecretId;
+        /// <summary>
         /// Sets the Azure storage account name.
         /// </summary>
         public readonly string AccountName;
@@ -50,6 +54,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string ClientId;
         public readonly string ClientSecret;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        /// </summary>
+        public readonly string ClientSecretSecretId;
+        /// <summary>
         /// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         /// </summary>
         public readonly string CompartmentId;
@@ -73,6 +81,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
         /// </summary>
         public readonly string ConnectionUrl;
+        /// <summary>
+        /// The base64 encoded content of the consumer.properties file.
+        /// </summary>
         public readonly string ConsumerProperties;
         public readonly string CoreSiteXml;
         /// <summary>
@@ -103,6 +114,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// A filter to return only the resources that match the entire 'displayName' given.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Indicates that sensitive attributes are provided via Secrets.
+        /// </summary>
+        public readonly bool DoesUseSecretIds;
         /// <summary>
         /// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
         /// </summary>
@@ -141,6 +156,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string JndiProviderUrl;
         public readonly string JndiSecurityCredentials;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+        /// </summary>
+        public readonly string JndiSecurityCredentialsSecretId;
+        /// <summary>
         /// Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         /// </summary>
         public readonly string JndiSecurityPrincipal;
@@ -150,6 +169,14 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string KeyId;
         public readonly string KeyStore;
         public readonly string KeyStorePassword;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+        /// </summary>
+        public readonly string KeyStorePasswordSecretId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+        /// </summary>
+        public readonly string KeyStoreSecretId;
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
@@ -164,6 +191,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly ImmutableArray<string> NsgIds;
         public readonly string Password;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, 'password' field must not be provided.
+        /// </summary>
+        public readonly string PasswordSecretId;
+        /// <summary>
         /// The port of an endpoint usually specified for a connection.
         /// </summary>
         public readonly int Port;
@@ -173,7 +204,18 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string PrivateIp;
         public readonly string PrivateKeyFile;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        /// </summary>
+        public readonly string PrivateKeyFileSecretId;
         public readonly string PrivateKeyPassphrase;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        /// </summary>
+        public readonly string PrivateKeyPassphraseSecretId;
+        /// <summary>
+        /// The base64 encoded content of the producer.properties file.
+        /// </summary>
         public readonly string ProducerProperties;
         public readonly string PublicKeyFingerprint;
         /// <summary>
@@ -189,7 +231,15 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string RoutingMethod;
         public readonly string SasToken;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+        /// </summary>
+        public readonly string SasTokenSecretId;
         public readonly string SecretAccessKey;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        /// </summary>
+        public readonly string SecretAccessKeySecretId;
         /// <summary>
         /// Security Protocol to be provided for the following connection types:
         /// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
@@ -202,6 +252,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string Servers;
         public readonly string ServiceAccountKeyFile;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        /// </summary>
+        public readonly string ServiceAccountKeyFileSecretId;
         /// <summary>
         /// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         /// </summary>
@@ -220,10 +274,27 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string SslCa;
         public readonly string SslCert;
         public readonly string SslClientKeystash;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        /// </summary>
+        public readonly string SslClientKeystashSecretId;
         public readonly string SslClientKeystoredb;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        /// </summary>
+        public readonly string SslClientKeystoredbSecretId;
         public readonly string SslCrl;
         public readonly string SslKey;
         public readonly string SslKeyPassword;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+        /// </summary>
+        public readonly string SslKeyPasswordSecretId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+        /// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+        /// </summary>
+        public readonly string SslKeySecretId;
         /// <summary>
         /// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         /// </summary>
@@ -261,8 +332,17 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeUpdated;
+        public readonly bool TriggerRefresh;
         public readonly string TrustStore;
         public readonly string TrustStorePassword;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+        /// </summary>
+        public readonly string TrustStorePasswordSecretId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+        /// </summary>
+        public readonly string TrustStoreSecretId;
         /// <summary>
         /// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
         /// </summary>
@@ -280,12 +360,18 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string VaultId;
         public readonly string Wallet;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        /// </summary>
+        public readonly string WalletSecretId;
 
         [OutputConstructor]
         private GetConnectionsConnectionCollectionItemResult(
             string accessKeyId,
 
             string accountKey,
+
+            string accountKeySecretId,
 
             string accountName,
 
@@ -302,6 +388,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string clientId,
 
             string clientSecret,
+
+            string clientSecretSecretId,
 
             string compartmentId,
 
@@ -331,6 +419,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string displayName,
 
+            bool doesUseSecretIds,
+
             string endpoint,
 
             string fingerprint,
@@ -353,6 +443,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string jndiSecurityCredentials,
 
+            string jndiSecurityCredentialsSecretId,
+
             string jndiSecurityPrincipal,
 
             string keyId,
@@ -360,6 +452,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string keyStore,
 
             string keyStorePassword,
+
+            string keyStorePasswordSecretId,
+
+            string keyStoreSecretId,
 
             string lifecycleDetails,
 
@@ -369,13 +465,19 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string password,
 
+            string passwordSecretId,
+
             int port,
 
             string privateIp,
 
             string privateKeyFile,
 
+            string privateKeyFileSecretId,
+
             string privateKeyPassphrase,
+
+            string privateKeyPassphraseSecretId,
 
             string producerProperties,
 
@@ -389,13 +491,19 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string sasToken,
 
+            string sasTokenSecretId,
+
             string secretAccessKey,
+
+            string secretAccessKeySecretId,
 
             string securityProtocol,
 
             string servers,
 
             string serviceAccountKeyFile,
+
+            string serviceAccountKeyFileSecretId,
 
             string sessionMode,
 
@@ -409,13 +517,21 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string sslClientKeystash,
 
+            string sslClientKeystashSecretId,
+
             string sslClientKeystoredb,
+
+            string sslClientKeystoredbSecretId,
 
             string sslCrl,
 
             string sslKey,
 
             string sslKeyPassword,
+
+            string sslKeyPasswordSecretId,
+
+            string sslKeySecretId,
 
             string sslMode,
 
@@ -437,9 +553,15 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string timeUpdated,
 
+            bool triggerRefresh,
+
             string trustStore,
 
             string trustStorePassword,
+
+            string trustStorePasswordSecretId,
+
+            string trustStoreSecretId,
 
             string url,
 
@@ -449,10 +571,13 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string vaultId,
 
-            string wallet)
+            string wallet,
+
+            string walletSecretId)
         {
             AccessKeyId = accessKeyId;
             AccountKey = accountKey;
+            AccountKeySecretId = accountKeySecretId;
             AccountName = accountName;
             AdditionalAttributes = additionalAttributes;
             AuthenticationMode = authenticationMode;
@@ -461,6 +586,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             BootstrapServers = bootstrapServers;
             ClientId = clientId;
             ClientSecret = clientSecret;
+            ClientSecretSecretId = clientSecretSecretId;
             CompartmentId = compartmentId;
             ConnectionFactory = connectionFactory;
             ConnectionString = connectionString;
@@ -475,6 +601,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             DeploymentId = deploymentId;
             Description = description;
             DisplayName = displayName;
+            DoesUseSecretIds = doesUseSecretIds;
             Endpoint = endpoint;
             Fingerprint = fingerprint;
             FreeformTags = freeformTags;
@@ -486,38 +613,51 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             JndiInitialContextFactory = jndiInitialContextFactory;
             JndiProviderUrl = jndiProviderUrl;
             JndiSecurityCredentials = jndiSecurityCredentials;
+            JndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
             JndiSecurityPrincipal = jndiSecurityPrincipal;
             KeyId = keyId;
             KeyStore = keyStore;
             KeyStorePassword = keyStorePassword;
+            KeyStorePasswordSecretId = keyStorePasswordSecretId;
+            KeyStoreSecretId = keyStoreSecretId;
             LifecycleDetails = lifecycleDetails;
             Locks = locks;
             NsgIds = nsgIds;
             Password = password;
+            PasswordSecretId = passwordSecretId;
             Port = port;
             PrivateIp = privateIp;
             PrivateKeyFile = privateKeyFile;
+            PrivateKeyFileSecretId = privateKeyFileSecretId;
             PrivateKeyPassphrase = privateKeyPassphrase;
+            PrivateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
             ProducerProperties = producerProperties;
             PublicKeyFingerprint = publicKeyFingerprint;
             RedisClusterId = redisClusterId;
             Region = region;
             RoutingMethod = routingMethod;
             SasToken = sasToken;
+            SasTokenSecretId = sasTokenSecretId;
             SecretAccessKey = secretAccessKey;
+            SecretAccessKeySecretId = secretAccessKeySecretId;
             SecurityProtocol = securityProtocol;
             Servers = servers;
             ServiceAccountKeyFile = serviceAccountKeyFile;
+            ServiceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             SessionMode = sessionMode;
             ShouldUseJndi = shouldUseJndi;
             ShouldValidateServerCertificate = shouldValidateServerCertificate;
             SslCa = sslCa;
             SslCert = sslCert;
             SslClientKeystash = sslClientKeystash;
+            SslClientKeystashSecretId = sslClientKeystashSecretId;
             SslClientKeystoredb = sslClientKeystoredb;
+            SslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
             SslCrl = sslCrl;
             SslKey = sslKey;
             SslKeyPassword = sslKeyPassword;
+            SslKeyPasswordSecretId = sslKeyPasswordSecretId;
+            SslKeySecretId = sslKeySecretId;
             SslMode = sslMode;
             SslServerCertificate = sslServerCertificate;
             State = state;
@@ -528,13 +668,17 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             TenancyId = tenancyId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            TriggerRefresh = triggerRefresh;
             TrustStore = trustStore;
             TrustStorePassword = trustStorePassword;
+            TrustStorePasswordSecretId = trustStorePasswordSecretId;
+            TrustStoreSecretId = trustStoreSecretId;
             Url = url;
             UserId = userId;
             Username = username;
             VaultId = vaultId;
             Wallet = wallet;
+            WalletSecretId = walletSecretId;
         }
     }
 }

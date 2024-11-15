@@ -27,13 +27,16 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_key_id=None, account_key=None, account_name=None, additional_attributes=None, authentication_mode=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, lifecycle_details=None, locks=None, nsg_ids=None, password=None, port=None, private_ip=None, private_key_file=None, private_key_passphrase=None, producer_properties=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, routing_method=None, sas_token=None, secret_access_key=None, security_protocol=None, servers=None, service_account_key_file=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystoredb=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_mode=None, ssl_server_certificate=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trust_store=None, trust_store_password=None, url=None, user_id=None, username=None, vault_id=None, wallet=None):
+    def __init__(__self__, access_key_id=None, account_key=None, account_key_secret_id=None, account_name=None, additional_attributes=None, authentication_mode=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, client_secret_secret_id=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, does_use_secret_ids=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_credentials_secret_id=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, key_store_password_secret_id=None, key_store_secret_id=None, lifecycle_details=None, locks=None, nsg_ids=None, password=None, password_secret_id=None, port=None, private_ip=None, private_key_file=None, private_key_file_secret_id=None, private_key_passphrase=None, private_key_passphrase_secret_id=None, producer_properties=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, routing_method=None, sas_token=None, sas_token_secret_id=None, secret_access_key=None, secret_access_key_secret_id=None, security_protocol=None, servers=None, service_account_key_file=None, service_account_key_file_secret_id=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystash_secret_id=None, ssl_client_keystoredb=None, ssl_client_keystoredb_secret_id=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_key_password_secret_id=None, ssl_key_secret_id=None, ssl_mode=None, ssl_server_certificate=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trigger_refresh=None, trust_store=None, trust_store_password=None, trust_store_password_secret_id=None, trust_store_secret_id=None, url=None, user_id=None, username=None, vault_id=None, wallet=None, wallet_secret_id=None):
         if access_key_id and not isinstance(access_key_id, str):
             raise TypeError("Expected argument 'access_key_id' to be a str")
         pulumi.set(__self__, "access_key_id", access_key_id)
         if account_key and not isinstance(account_key, str):
             raise TypeError("Expected argument 'account_key' to be a str")
         pulumi.set(__self__, "account_key", account_key)
+        if account_key_secret_id and not isinstance(account_key_secret_id, str):
+            raise TypeError("Expected argument 'account_key_secret_id' to be a str")
+        pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
         if account_name and not isinstance(account_name, str):
             raise TypeError("Expected argument 'account_name' to be a str")
         pulumi.set(__self__, "account_name", account_name)
@@ -58,6 +61,9 @@ class GetConnectionResult:
         if client_secret and not isinstance(client_secret, str):
             raise TypeError("Expected argument 'client_secret' to be a str")
         pulumi.set(__self__, "client_secret", client_secret)
+        if client_secret_secret_id and not isinstance(client_secret_secret_id, str):
+            raise TypeError("Expected argument 'client_secret_secret_id' to be a str")
+        pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -103,6 +109,9 @@ class GetConnectionResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if does_use_secret_ids and not isinstance(does_use_secret_ids, bool):
+            raise TypeError("Expected argument 'does_use_secret_ids' to be a bool")
+        pulumi.set(__self__, "does_use_secret_ids", does_use_secret_ids)
         if endpoint and not isinstance(endpoint, str):
             raise TypeError("Expected argument 'endpoint' to be a str")
         pulumi.set(__self__, "endpoint", endpoint)
@@ -136,6 +145,9 @@ class GetConnectionResult:
         if jndi_security_credentials and not isinstance(jndi_security_credentials, str):
             raise TypeError("Expected argument 'jndi_security_credentials' to be a str")
         pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+        if jndi_security_credentials_secret_id and not isinstance(jndi_security_credentials_secret_id, str):
+            raise TypeError("Expected argument 'jndi_security_credentials_secret_id' to be a str")
+        pulumi.set(__self__, "jndi_security_credentials_secret_id", jndi_security_credentials_secret_id)
         if jndi_security_principal and not isinstance(jndi_security_principal, str):
             raise TypeError("Expected argument 'jndi_security_principal' to be a str")
         pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
@@ -148,6 +160,12 @@ class GetConnectionResult:
         if key_store_password and not isinstance(key_store_password, str):
             raise TypeError("Expected argument 'key_store_password' to be a str")
         pulumi.set(__self__, "key_store_password", key_store_password)
+        if key_store_password_secret_id and not isinstance(key_store_password_secret_id, str):
+            raise TypeError("Expected argument 'key_store_password_secret_id' to be a str")
+        pulumi.set(__self__, "key_store_password_secret_id", key_store_password_secret_id)
+        if key_store_secret_id and not isinstance(key_store_secret_id, str):
+            raise TypeError("Expected argument 'key_store_secret_id' to be a str")
+        pulumi.set(__self__, "key_store_secret_id", key_store_secret_id)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -160,6 +178,9 @@ class GetConnectionResult:
         if password and not isinstance(password, str):
             raise TypeError("Expected argument 'password' to be a str")
         pulumi.set(__self__, "password", password)
+        if password_secret_id and not isinstance(password_secret_id, str):
+            raise TypeError("Expected argument 'password_secret_id' to be a str")
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
         if port and not isinstance(port, int):
             raise TypeError("Expected argument 'port' to be a int")
         pulumi.set(__self__, "port", port)
@@ -169,9 +190,15 @@ class GetConnectionResult:
         if private_key_file and not isinstance(private_key_file, str):
             raise TypeError("Expected argument 'private_key_file' to be a str")
         pulumi.set(__self__, "private_key_file", private_key_file)
+        if private_key_file_secret_id and not isinstance(private_key_file_secret_id, str):
+            raise TypeError("Expected argument 'private_key_file_secret_id' to be a str")
+        pulumi.set(__self__, "private_key_file_secret_id", private_key_file_secret_id)
         if private_key_passphrase and not isinstance(private_key_passphrase, str):
             raise TypeError("Expected argument 'private_key_passphrase' to be a str")
         pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+        if private_key_passphrase_secret_id and not isinstance(private_key_passphrase_secret_id, str):
+            raise TypeError("Expected argument 'private_key_passphrase_secret_id' to be a str")
+        pulumi.set(__self__, "private_key_passphrase_secret_id", private_key_passphrase_secret_id)
         if producer_properties and not isinstance(producer_properties, str):
             raise TypeError("Expected argument 'producer_properties' to be a str")
         pulumi.set(__self__, "producer_properties", producer_properties)
@@ -190,9 +217,15 @@ class GetConnectionResult:
         if sas_token and not isinstance(sas_token, str):
             raise TypeError("Expected argument 'sas_token' to be a str")
         pulumi.set(__self__, "sas_token", sas_token)
+        if sas_token_secret_id and not isinstance(sas_token_secret_id, str):
+            raise TypeError("Expected argument 'sas_token_secret_id' to be a str")
+        pulumi.set(__self__, "sas_token_secret_id", sas_token_secret_id)
         if secret_access_key and not isinstance(secret_access_key, str):
             raise TypeError("Expected argument 'secret_access_key' to be a str")
         pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if secret_access_key_secret_id and not isinstance(secret_access_key_secret_id, str):
+            raise TypeError("Expected argument 'secret_access_key_secret_id' to be a str")
+        pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
         if security_protocol and not isinstance(security_protocol, str):
             raise TypeError("Expected argument 'security_protocol' to be a str")
         pulumi.set(__self__, "security_protocol", security_protocol)
@@ -202,6 +235,9 @@ class GetConnectionResult:
         if service_account_key_file and not isinstance(service_account_key_file, str):
             raise TypeError("Expected argument 'service_account_key_file' to be a str")
         pulumi.set(__self__, "service_account_key_file", service_account_key_file)
+        if service_account_key_file_secret_id and not isinstance(service_account_key_file_secret_id, str):
+            raise TypeError("Expected argument 'service_account_key_file_secret_id' to be a str")
+        pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
         if session_mode and not isinstance(session_mode, str):
             raise TypeError("Expected argument 'session_mode' to be a str")
         pulumi.set(__self__, "session_mode", session_mode)
@@ -220,9 +256,15 @@ class GetConnectionResult:
         if ssl_client_keystash and not isinstance(ssl_client_keystash, str):
             raise TypeError("Expected argument 'ssl_client_keystash' to be a str")
         pulumi.set(__self__, "ssl_client_keystash", ssl_client_keystash)
+        if ssl_client_keystash_secret_id and not isinstance(ssl_client_keystash_secret_id, str):
+            raise TypeError("Expected argument 'ssl_client_keystash_secret_id' to be a str")
+        pulumi.set(__self__, "ssl_client_keystash_secret_id", ssl_client_keystash_secret_id)
         if ssl_client_keystoredb and not isinstance(ssl_client_keystoredb, str):
             raise TypeError("Expected argument 'ssl_client_keystoredb' to be a str")
         pulumi.set(__self__, "ssl_client_keystoredb", ssl_client_keystoredb)
+        if ssl_client_keystoredb_secret_id and not isinstance(ssl_client_keystoredb_secret_id, str):
+            raise TypeError("Expected argument 'ssl_client_keystoredb_secret_id' to be a str")
+        pulumi.set(__self__, "ssl_client_keystoredb_secret_id", ssl_client_keystoredb_secret_id)
         if ssl_crl and not isinstance(ssl_crl, str):
             raise TypeError("Expected argument 'ssl_crl' to be a str")
         pulumi.set(__self__, "ssl_crl", ssl_crl)
@@ -232,6 +274,12 @@ class GetConnectionResult:
         if ssl_key_password and not isinstance(ssl_key_password, str):
             raise TypeError("Expected argument 'ssl_key_password' to be a str")
         pulumi.set(__self__, "ssl_key_password", ssl_key_password)
+        if ssl_key_password_secret_id and not isinstance(ssl_key_password_secret_id, str):
+            raise TypeError("Expected argument 'ssl_key_password_secret_id' to be a str")
+        pulumi.set(__self__, "ssl_key_password_secret_id", ssl_key_password_secret_id)
+        if ssl_key_secret_id and not isinstance(ssl_key_secret_id, str):
+            raise TypeError("Expected argument 'ssl_key_secret_id' to be a str")
+        pulumi.set(__self__, "ssl_key_secret_id", ssl_key_secret_id)
         if ssl_mode and not isinstance(ssl_mode, str):
             raise TypeError("Expected argument 'ssl_mode' to be a str")
         pulumi.set(__self__, "ssl_mode", ssl_mode)
@@ -262,12 +310,21 @@ class GetConnectionResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if trigger_refresh and not isinstance(trigger_refresh, bool):
+            raise TypeError("Expected argument 'trigger_refresh' to be a bool")
+        pulumi.set(__self__, "trigger_refresh", trigger_refresh)
         if trust_store and not isinstance(trust_store, str):
             raise TypeError("Expected argument 'trust_store' to be a str")
         pulumi.set(__self__, "trust_store", trust_store)
         if trust_store_password and not isinstance(trust_store_password, str):
             raise TypeError("Expected argument 'trust_store_password' to be a str")
         pulumi.set(__self__, "trust_store_password", trust_store_password)
+        if trust_store_password_secret_id and not isinstance(trust_store_password_secret_id, str):
+            raise TypeError("Expected argument 'trust_store_password_secret_id' to be a str")
+        pulumi.set(__self__, "trust_store_password_secret_id", trust_store_password_secret_id)
+        if trust_store_secret_id and not isinstance(trust_store_secret_id, str):
+            raise TypeError("Expected argument 'trust_store_secret_id' to be a str")
+        pulumi.set(__self__, "trust_store_secret_id", trust_store_secret_id)
         if url and not isinstance(url, str):
             raise TypeError("Expected argument 'url' to be a str")
         pulumi.set(__self__, "url", url)
@@ -283,6 +340,9 @@ class GetConnectionResult:
         if wallet and not isinstance(wallet, str):
             raise TypeError("Expected argument 'wallet' to be a str")
         pulumi.set(__self__, "wallet", wallet)
+        if wallet_secret_id and not isinstance(wallet_secret_id, str):
+            raise TypeError("Expected argument 'wallet_secret_id' to be a str")
+        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="accessKeyId")
@@ -296,6 +356,14 @@ class GetConnectionResult:
     @pulumi.getter(name="accountKey")
     def account_key(self) -> str:
         return pulumi.get(self, "account_key")
+
+    @property
+    @pulumi.getter(name="accountKeySecretId")
+    def account_key_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+        """
+        return pulumi.get(self, "account_key_secret_id")
 
     @property
     @pulumi.getter(name="accountName")
@@ -361,6 +429,14 @@ class GetConnectionResult:
         return pulumi.get(self, "client_secret")
 
     @property
+    @pulumi.getter(name="clientSecretSecretId")
+    def client_secret_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        """
+        return pulumi.get(self, "client_secret_secret_id")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -412,6 +488,9 @@ class GetConnectionResult:
     @property
     @pulumi.getter(name="consumerProperties")
     def consumer_properties(self) -> str:
+        """
+        The base64 encoded content of the consumer.properties file.
+        """
         return pulumi.get(self, "consumer_properties")
 
     @property
@@ -476,11 +555,16 @@ class GetConnectionResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="doesUseSecretIds")
+    def does_use_secret_ids(self) -> bool:
+        """
+        Indicates that sensitive attributes are provided via Secrets.
+        """
+        return pulumi.get(self, "does_use_secret_ids")
+
+    @property
     @pulumi.getter
     def endpoint(self) -> str:
-        """
-        Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
-        """
         return pulumi.get(self, "endpoint")
 
     @property
@@ -557,6 +641,14 @@ class GetConnectionResult:
         return pulumi.get(self, "jndi_security_credentials")
 
     @property
+    @pulumi.getter(name="jndiSecurityCredentialsSecretId")
+    def jndi_security_credentials_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+        """
+        return pulumi.get(self, "jndi_security_credentials_secret_id")
+
+    @property
     @pulumi.getter(name="jndiSecurityPrincipal")
     def jndi_security_principal(self) -> str:
         """
@@ -581,6 +673,22 @@ class GetConnectionResult:
     @pulumi.getter(name="keyStorePassword")
     def key_store_password(self) -> str:
         return pulumi.get(self, "key_store_password")
+
+    @property
+    @pulumi.getter(name="keyStorePasswordSecretId")
+    def key_store_password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+        """
+        return pulumi.get(self, "key_store_password_secret_id")
+
+    @property
+    @pulumi.getter(name="keyStoreSecretId")
+    def key_store_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+        """
+        return pulumi.get(self, "key_store_secret_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -612,6 +720,14 @@ class GetConnectionResult:
         return pulumi.get(self, "password")
 
     @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, 'password' field must not be provided.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @property
     @pulumi.getter
     def port(self) -> int:
         """
@@ -634,13 +750,32 @@ class GetConnectionResult:
         return pulumi.get(self, "private_key_file")
 
     @property
+    @pulumi.getter(name="privateKeyFileSecretId")
+    def private_key_file_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_file_secret_id")
+
+    @property
     @pulumi.getter(name="privateKeyPassphrase")
     def private_key_passphrase(self) -> str:
         return pulumi.get(self, "private_key_passphrase")
 
     @property
+    @pulumi.getter(name="privateKeyPassphraseSecretId")
+    def private_key_passphrase_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_passphrase_secret_id")
+
+    @property
     @pulumi.getter(name="producerProperties")
     def producer_properties(self) -> str:
+        """
+        The base64 encoded content of the producer.properties file.
+        """
         return pulumi.get(self, "producer_properties")
 
     @property
@@ -678,9 +813,25 @@ class GetConnectionResult:
         return pulumi.get(self, "sas_token")
 
     @property
+    @pulumi.getter(name="sasTokenSecretId")
+    def sas_token_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+        """
+        return pulumi.get(self, "sas_token_secret_id")
+
+    @property
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> str:
         return pulumi.get(self, "secret_access_key")
+
+    @property
+    @pulumi.getter(name="secretAccessKeySecretId")
+    def secret_access_key_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        """
+        return pulumi.get(self, "secret_access_key_secret_id")
 
     @property
     @pulumi.getter(name="securityProtocol")
@@ -705,6 +856,14 @@ class GetConnectionResult:
     @pulumi.getter(name="serviceAccountKeyFile")
     def service_account_key_file(self) -> str:
         return pulumi.get(self, "service_account_key_file")
+
+    @property
+    @pulumi.getter(name="serviceAccountKeyFileSecretId")
+    def service_account_key_file_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "service_account_key_file_secret_id")
 
     @property
     @pulumi.getter(name="sessionMode")
@@ -749,9 +908,25 @@ class GetConnectionResult:
         return pulumi.get(self, "ssl_client_keystash")
 
     @property
+    @pulumi.getter(name="sslClientKeystashSecretId")
+    def ssl_client_keystash_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        """
+        return pulumi.get(self, "ssl_client_keystash_secret_id")
+
+    @property
     @pulumi.getter(name="sslClientKeystoredb")
     def ssl_client_keystoredb(self) -> str:
         return pulumi.get(self, "ssl_client_keystoredb")
+
+    @property
+    @pulumi.getter(name="sslClientKeystoredbSecretId")
+    def ssl_client_keystoredb_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        """
+        return pulumi.get(self, "ssl_client_keystoredb_secret_id")
 
     @property
     @pulumi.getter(name="sslCrl")
@@ -767,6 +942,23 @@ class GetConnectionResult:
     @pulumi.getter(name="sslKeyPassword")
     def ssl_key_password(self) -> str:
         return pulumi.get(self, "ssl_key_password")
+
+    @property
+    @pulumi.getter(name="sslKeyPasswordSecretId")
+    def ssl_key_password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+        """
+        return pulumi.get(self, "ssl_key_password_secret_id")
+
+    @property
+    @pulumi.getter(name="sslKeySecretId")
+    def ssl_key_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+        * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+        """
+        return pulumi.get(self, "ssl_key_secret_id")
 
     @property
     @pulumi.getter(name="sslMode")
@@ -846,6 +1038,11 @@ class GetConnectionResult:
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="triggerRefresh")
+    def trigger_refresh(self) -> bool:
+        return pulumi.get(self, "trigger_refresh")
+
+    @property
     @pulumi.getter(name="trustStore")
     def trust_store(self) -> str:
         return pulumi.get(self, "trust_store")
@@ -854,6 +1051,22 @@ class GetConnectionResult:
     @pulumi.getter(name="trustStorePassword")
     def trust_store_password(self) -> str:
         return pulumi.get(self, "trust_store_password")
+
+    @property
+    @pulumi.getter(name="trustStorePasswordSecretId")
+    def trust_store_password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+        """
+        return pulumi.get(self, "trust_store_password_secret_id")
+
+    @property
+    @pulumi.getter(name="trustStoreSecretId")
+    def trust_store_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided
+        """
+        return pulumi.get(self, "trust_store_secret_id")
 
     @property
     @pulumi.getter
@@ -892,6 +1105,14 @@ class GetConnectionResult:
     def wallet(self) -> str:
         return pulumi.get(self, "wallet")
 
+    @property
+    @pulumi.getter(name="walletSecretId")
+    def wallet_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        """
+        return pulumi.get(self, "wallet_secret_id")
+
 
 class AwaitableGetConnectionResult(GetConnectionResult):
     # pylint: disable=using-constant-test
@@ -901,6 +1122,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
         return GetConnectionResult(
             access_key_id=self.access_key_id,
             account_key=self.account_key,
+            account_key_secret_id=self.account_key_secret_id,
             account_name=self.account_name,
             additional_attributes=self.additional_attributes,
             authentication_mode=self.authentication_mode,
@@ -909,6 +1131,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             bootstrap_servers=self.bootstrap_servers,
             client_id=self.client_id,
             client_secret=self.client_secret,
+            client_secret_secret_id=self.client_secret_secret_id,
             compartment_id=self.compartment_id,
             connection_factory=self.connection_factory,
             connection_id=self.connection_id,
@@ -924,6 +1147,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             deployment_id=self.deployment_id,
             description=self.description,
             display_name=self.display_name,
+            does_use_secret_ids=self.does_use_secret_ids,
             endpoint=self.endpoint,
             fingerprint=self.fingerprint,
             freeform_tags=self.freeform_tags,
@@ -935,38 +1159,51 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             jndi_initial_context_factory=self.jndi_initial_context_factory,
             jndi_provider_url=self.jndi_provider_url,
             jndi_security_credentials=self.jndi_security_credentials,
+            jndi_security_credentials_secret_id=self.jndi_security_credentials_secret_id,
             jndi_security_principal=self.jndi_security_principal,
             key_id=self.key_id,
             key_store=self.key_store,
             key_store_password=self.key_store_password,
+            key_store_password_secret_id=self.key_store_password_secret_id,
+            key_store_secret_id=self.key_store_secret_id,
             lifecycle_details=self.lifecycle_details,
             locks=self.locks,
             nsg_ids=self.nsg_ids,
             password=self.password,
+            password_secret_id=self.password_secret_id,
             port=self.port,
             private_ip=self.private_ip,
             private_key_file=self.private_key_file,
+            private_key_file_secret_id=self.private_key_file_secret_id,
             private_key_passphrase=self.private_key_passphrase,
+            private_key_passphrase_secret_id=self.private_key_passphrase_secret_id,
             producer_properties=self.producer_properties,
             public_key_fingerprint=self.public_key_fingerprint,
             redis_cluster_id=self.redis_cluster_id,
             region=self.region,
             routing_method=self.routing_method,
             sas_token=self.sas_token,
+            sas_token_secret_id=self.sas_token_secret_id,
             secret_access_key=self.secret_access_key,
+            secret_access_key_secret_id=self.secret_access_key_secret_id,
             security_protocol=self.security_protocol,
             servers=self.servers,
             service_account_key_file=self.service_account_key_file,
+            service_account_key_file_secret_id=self.service_account_key_file_secret_id,
             session_mode=self.session_mode,
             should_use_jndi=self.should_use_jndi,
             should_validate_server_certificate=self.should_validate_server_certificate,
             ssl_ca=self.ssl_ca,
             ssl_cert=self.ssl_cert,
             ssl_client_keystash=self.ssl_client_keystash,
+            ssl_client_keystash_secret_id=self.ssl_client_keystash_secret_id,
             ssl_client_keystoredb=self.ssl_client_keystoredb,
+            ssl_client_keystoredb_secret_id=self.ssl_client_keystoredb_secret_id,
             ssl_crl=self.ssl_crl,
             ssl_key=self.ssl_key,
             ssl_key_password=self.ssl_key_password,
+            ssl_key_password_secret_id=self.ssl_key_password_secret_id,
+            ssl_key_secret_id=self.ssl_key_secret_id,
             ssl_mode=self.ssl_mode,
             ssl_server_certificate=self.ssl_server_certificate,
             state=self.state,
@@ -977,13 +1214,17 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             tenancy_id=self.tenancy_id,
             time_created=self.time_created,
             time_updated=self.time_updated,
+            trigger_refresh=self.trigger_refresh,
             trust_store=self.trust_store,
             trust_store_password=self.trust_store_password,
+            trust_store_password_secret_id=self.trust_store_password_secret_id,
+            trust_store_secret_id=self.trust_store_secret_id,
             url=self.url,
             user_id=self.user_id,
             username=self.username,
             vault_id=self.vault_id,
-            wallet=self.wallet)
+            wallet=self.wallet,
+            wallet_secret_id=self.wallet_secret_id)
 
 
 def get_connection(connection_id: Optional[str] = None,
@@ -1013,6 +1254,7 @@ def get_connection(connection_id: Optional[str] = None,
     return AwaitableGetConnectionResult(
         access_key_id=pulumi.get(__ret__, 'access_key_id'),
         account_key=pulumi.get(__ret__, 'account_key'),
+        account_key_secret_id=pulumi.get(__ret__, 'account_key_secret_id'),
         account_name=pulumi.get(__ret__, 'account_name'),
         additional_attributes=pulumi.get(__ret__, 'additional_attributes'),
         authentication_mode=pulumi.get(__ret__, 'authentication_mode'),
@@ -1021,6 +1263,7 @@ def get_connection(connection_id: Optional[str] = None,
         bootstrap_servers=pulumi.get(__ret__, 'bootstrap_servers'),
         client_id=pulumi.get(__ret__, 'client_id'),
         client_secret=pulumi.get(__ret__, 'client_secret'),
+        client_secret_secret_id=pulumi.get(__ret__, 'client_secret_secret_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         connection_factory=pulumi.get(__ret__, 'connection_factory'),
         connection_id=pulumi.get(__ret__, 'connection_id'),
@@ -1036,6 +1279,7 @@ def get_connection(connection_id: Optional[str] = None,
         deployment_id=pulumi.get(__ret__, 'deployment_id'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        does_use_secret_ids=pulumi.get(__ret__, 'does_use_secret_ids'),
         endpoint=pulumi.get(__ret__, 'endpoint'),
         fingerprint=pulumi.get(__ret__, 'fingerprint'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
@@ -1047,38 +1291,51 @@ def get_connection(connection_id: Optional[str] = None,
         jndi_initial_context_factory=pulumi.get(__ret__, 'jndi_initial_context_factory'),
         jndi_provider_url=pulumi.get(__ret__, 'jndi_provider_url'),
         jndi_security_credentials=pulumi.get(__ret__, 'jndi_security_credentials'),
+        jndi_security_credentials_secret_id=pulumi.get(__ret__, 'jndi_security_credentials_secret_id'),
         jndi_security_principal=pulumi.get(__ret__, 'jndi_security_principal'),
         key_id=pulumi.get(__ret__, 'key_id'),
         key_store=pulumi.get(__ret__, 'key_store'),
         key_store_password=pulumi.get(__ret__, 'key_store_password'),
+        key_store_password_secret_id=pulumi.get(__ret__, 'key_store_password_secret_id'),
+        key_store_secret_id=pulumi.get(__ret__, 'key_store_secret_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         locks=pulumi.get(__ret__, 'locks'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         password=pulumi.get(__ret__, 'password'),
+        password_secret_id=pulumi.get(__ret__, 'password_secret_id'),
         port=pulumi.get(__ret__, 'port'),
         private_ip=pulumi.get(__ret__, 'private_ip'),
         private_key_file=pulumi.get(__ret__, 'private_key_file'),
+        private_key_file_secret_id=pulumi.get(__ret__, 'private_key_file_secret_id'),
         private_key_passphrase=pulumi.get(__ret__, 'private_key_passphrase'),
+        private_key_passphrase_secret_id=pulumi.get(__ret__, 'private_key_passphrase_secret_id'),
         producer_properties=pulumi.get(__ret__, 'producer_properties'),
         public_key_fingerprint=pulumi.get(__ret__, 'public_key_fingerprint'),
         redis_cluster_id=pulumi.get(__ret__, 'redis_cluster_id'),
         region=pulumi.get(__ret__, 'region'),
         routing_method=pulumi.get(__ret__, 'routing_method'),
         sas_token=pulumi.get(__ret__, 'sas_token'),
+        sas_token_secret_id=pulumi.get(__ret__, 'sas_token_secret_id'),
         secret_access_key=pulumi.get(__ret__, 'secret_access_key'),
+        secret_access_key_secret_id=pulumi.get(__ret__, 'secret_access_key_secret_id'),
         security_protocol=pulumi.get(__ret__, 'security_protocol'),
         servers=pulumi.get(__ret__, 'servers'),
         service_account_key_file=pulumi.get(__ret__, 'service_account_key_file'),
+        service_account_key_file_secret_id=pulumi.get(__ret__, 'service_account_key_file_secret_id'),
         session_mode=pulumi.get(__ret__, 'session_mode'),
         should_use_jndi=pulumi.get(__ret__, 'should_use_jndi'),
         should_validate_server_certificate=pulumi.get(__ret__, 'should_validate_server_certificate'),
         ssl_ca=pulumi.get(__ret__, 'ssl_ca'),
         ssl_cert=pulumi.get(__ret__, 'ssl_cert'),
         ssl_client_keystash=pulumi.get(__ret__, 'ssl_client_keystash'),
+        ssl_client_keystash_secret_id=pulumi.get(__ret__, 'ssl_client_keystash_secret_id'),
         ssl_client_keystoredb=pulumi.get(__ret__, 'ssl_client_keystoredb'),
+        ssl_client_keystoredb_secret_id=pulumi.get(__ret__, 'ssl_client_keystoredb_secret_id'),
         ssl_crl=pulumi.get(__ret__, 'ssl_crl'),
         ssl_key=pulumi.get(__ret__, 'ssl_key'),
         ssl_key_password=pulumi.get(__ret__, 'ssl_key_password'),
+        ssl_key_password_secret_id=pulumi.get(__ret__, 'ssl_key_password_secret_id'),
+        ssl_key_secret_id=pulumi.get(__ret__, 'ssl_key_secret_id'),
         ssl_mode=pulumi.get(__ret__, 'ssl_mode'),
         ssl_server_certificate=pulumi.get(__ret__, 'ssl_server_certificate'),
         state=pulumi.get(__ret__, 'state'),
@@ -1089,13 +1346,17 @@ def get_connection(connection_id: Optional[str] = None,
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
+        trigger_refresh=pulumi.get(__ret__, 'trigger_refresh'),
         trust_store=pulumi.get(__ret__, 'trust_store'),
         trust_store_password=pulumi.get(__ret__, 'trust_store_password'),
+        trust_store_password_secret_id=pulumi.get(__ret__, 'trust_store_password_secret_id'),
+        trust_store_secret_id=pulumi.get(__ret__, 'trust_store_secret_id'),
         url=pulumi.get(__ret__, 'url'),
         user_id=pulumi.get(__ret__, 'user_id'),
         username=pulumi.get(__ret__, 'username'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
-        wallet=pulumi.get(__ret__, 'wallet'))
+        wallet=pulumi.get(__ret__, 'wallet'),
+        wallet_secret_id=pulumi.get(__ret__, 'wallet_secret_id'))
 def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionResult]:
     """
@@ -1122,6 +1383,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
     return __ret__.apply(lambda __response__: GetConnectionResult(
         access_key_id=pulumi.get(__response__, 'access_key_id'),
         account_key=pulumi.get(__response__, 'account_key'),
+        account_key_secret_id=pulumi.get(__response__, 'account_key_secret_id'),
         account_name=pulumi.get(__response__, 'account_name'),
         additional_attributes=pulumi.get(__response__, 'additional_attributes'),
         authentication_mode=pulumi.get(__response__, 'authentication_mode'),
@@ -1130,6 +1392,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
         bootstrap_servers=pulumi.get(__response__, 'bootstrap_servers'),
         client_id=pulumi.get(__response__, 'client_id'),
         client_secret=pulumi.get(__response__, 'client_secret'),
+        client_secret_secret_id=pulumi.get(__response__, 'client_secret_secret_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         connection_factory=pulumi.get(__response__, 'connection_factory'),
         connection_id=pulumi.get(__response__, 'connection_id'),
@@ -1145,6 +1408,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
         deployment_id=pulumi.get(__response__, 'deployment_id'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        does_use_secret_ids=pulumi.get(__response__, 'does_use_secret_ids'),
         endpoint=pulumi.get(__response__, 'endpoint'),
         fingerprint=pulumi.get(__response__, 'fingerprint'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
@@ -1156,38 +1420,51 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
         jndi_initial_context_factory=pulumi.get(__response__, 'jndi_initial_context_factory'),
         jndi_provider_url=pulumi.get(__response__, 'jndi_provider_url'),
         jndi_security_credentials=pulumi.get(__response__, 'jndi_security_credentials'),
+        jndi_security_credentials_secret_id=pulumi.get(__response__, 'jndi_security_credentials_secret_id'),
         jndi_security_principal=pulumi.get(__response__, 'jndi_security_principal'),
         key_id=pulumi.get(__response__, 'key_id'),
         key_store=pulumi.get(__response__, 'key_store'),
         key_store_password=pulumi.get(__response__, 'key_store_password'),
+        key_store_password_secret_id=pulumi.get(__response__, 'key_store_password_secret_id'),
+        key_store_secret_id=pulumi.get(__response__, 'key_store_secret_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         locks=pulumi.get(__response__, 'locks'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         password=pulumi.get(__response__, 'password'),
+        password_secret_id=pulumi.get(__response__, 'password_secret_id'),
         port=pulumi.get(__response__, 'port'),
         private_ip=pulumi.get(__response__, 'private_ip'),
         private_key_file=pulumi.get(__response__, 'private_key_file'),
+        private_key_file_secret_id=pulumi.get(__response__, 'private_key_file_secret_id'),
         private_key_passphrase=pulumi.get(__response__, 'private_key_passphrase'),
+        private_key_passphrase_secret_id=pulumi.get(__response__, 'private_key_passphrase_secret_id'),
         producer_properties=pulumi.get(__response__, 'producer_properties'),
         public_key_fingerprint=pulumi.get(__response__, 'public_key_fingerprint'),
         redis_cluster_id=pulumi.get(__response__, 'redis_cluster_id'),
         region=pulumi.get(__response__, 'region'),
         routing_method=pulumi.get(__response__, 'routing_method'),
         sas_token=pulumi.get(__response__, 'sas_token'),
+        sas_token_secret_id=pulumi.get(__response__, 'sas_token_secret_id'),
         secret_access_key=pulumi.get(__response__, 'secret_access_key'),
+        secret_access_key_secret_id=pulumi.get(__response__, 'secret_access_key_secret_id'),
         security_protocol=pulumi.get(__response__, 'security_protocol'),
         servers=pulumi.get(__response__, 'servers'),
         service_account_key_file=pulumi.get(__response__, 'service_account_key_file'),
+        service_account_key_file_secret_id=pulumi.get(__response__, 'service_account_key_file_secret_id'),
         session_mode=pulumi.get(__response__, 'session_mode'),
         should_use_jndi=pulumi.get(__response__, 'should_use_jndi'),
         should_validate_server_certificate=pulumi.get(__response__, 'should_validate_server_certificate'),
         ssl_ca=pulumi.get(__response__, 'ssl_ca'),
         ssl_cert=pulumi.get(__response__, 'ssl_cert'),
         ssl_client_keystash=pulumi.get(__response__, 'ssl_client_keystash'),
+        ssl_client_keystash_secret_id=pulumi.get(__response__, 'ssl_client_keystash_secret_id'),
         ssl_client_keystoredb=pulumi.get(__response__, 'ssl_client_keystoredb'),
+        ssl_client_keystoredb_secret_id=pulumi.get(__response__, 'ssl_client_keystoredb_secret_id'),
         ssl_crl=pulumi.get(__response__, 'ssl_crl'),
         ssl_key=pulumi.get(__response__, 'ssl_key'),
         ssl_key_password=pulumi.get(__response__, 'ssl_key_password'),
+        ssl_key_password_secret_id=pulumi.get(__response__, 'ssl_key_password_secret_id'),
+        ssl_key_secret_id=pulumi.get(__response__, 'ssl_key_secret_id'),
         ssl_mode=pulumi.get(__response__, 'ssl_mode'),
         ssl_server_certificate=pulumi.get(__response__, 'ssl_server_certificate'),
         state=pulumi.get(__response__, 'state'),
@@ -1198,10 +1475,14 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
         tenancy_id=pulumi.get(__response__, 'tenancy_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
+        trigger_refresh=pulumi.get(__response__, 'trigger_refresh'),
         trust_store=pulumi.get(__response__, 'trust_store'),
         trust_store_password=pulumi.get(__response__, 'trust_store_password'),
+        trust_store_password_secret_id=pulumi.get(__response__, 'trust_store_password_secret_id'),
+        trust_store_secret_id=pulumi.get(__response__, 'trust_store_secret_id'),
         url=pulumi.get(__response__, 'url'),
         user_id=pulumi.get(__response__, 'user_id'),
         username=pulumi.get(__response__, 'username'),
         vault_id=pulumi.get(__response__, 'vault_id'),
-        wallet=pulumi.get(__response__, 'wallet')))
+        wallet=pulumi.get(__response__, 'wallet'),
+        wallet_secret_id=pulumi.get(__response__, 'wallet_secret_id')))

@@ -10360,7 +10360,7 @@ class InstanceCreateVnicDetails(dict):
                If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
                Example: `10.0.3.3`
-        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
                
                If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -10509,7 +10509,7 @@ class InstanceCreateVnicDetails(dict):
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[Mapping[str, str]]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -16857,11 +16857,11 @@ class GetBootVolumeSourceDetailResult(dict):
                  second_backup_id: str,
                  type: str):
         """
-        :param str change_block_size_in_bytes: Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
-        :param str first_backup_id: The OCID of the first boot volume backup.
-        :param str id: The OCID of the boot volume replica.
-        :param str second_backup_id: The OCID of the second boot volume backup.
-        :param str type: The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
+        :param str change_block_size_in_bytes: (Applicable when type=bootVolumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        :param str first_backup_id: (Required when type=bootVolumeBackupDelta) The OCID of the first boot volume backup.
+        :param str id: (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
+        :param str second_backup_id: (Required when type=bootVolumeBackupDelta) The OCID of the second boot volume backup.
+        :param str type: (Required) The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
         """
         pulumi.set(__self__, "change_block_size_in_bytes", change_block_size_in_bytes)
         pulumi.set(__self__, "first_backup_id", first_backup_id)
@@ -16873,7 +16873,7 @@ class GetBootVolumeSourceDetailResult(dict):
     @pulumi.getter(name="changeBlockSizeInBytes")
     def change_block_size_in_bytes(self) -> str:
         """
-        Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        (Applicable when type=bootVolumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
         """
         return pulumi.get(self, "change_block_size_in_bytes")
 
@@ -16881,7 +16881,7 @@ class GetBootVolumeSourceDetailResult(dict):
     @pulumi.getter(name="firstBackupId")
     def first_backup_id(self) -> str:
         """
-        The OCID of the first boot volume backup.
+        (Required when type=bootVolumeBackupDelta) The OCID of the first boot volume backup.
         """
         return pulumi.get(self, "first_backup_id")
 
@@ -16889,7 +16889,7 @@ class GetBootVolumeSourceDetailResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the boot volume replica.
+        (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
         """
         return pulumi.get(self, "id")
 
@@ -16897,7 +16897,7 @@ class GetBootVolumeSourceDetailResult(dict):
     @pulumi.getter(name="secondBackupId")
     def second_backup_id(self) -> str:
         """
-        The OCID of the second boot volume backup.
+        (Required when type=bootVolumeBackupDelta) The OCID of the second boot volume backup.
         """
         return pulumi.get(self, "second_backup_id")
 
@@ -16905,7 +16905,7 @@ class GetBootVolumeSourceDetailResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
+        (Required) The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
         """
         return pulumi.get(self, "type")
 
@@ -16948,7 +16948,7 @@ class GetBootVolumesBootVolumeResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the boot volume replica.
+        :param str id: (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
         :param str image_id: The image OCID used to create the boot volume.
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param bool is_hydrated: Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
@@ -17074,7 +17074,7 @@ class GetBootVolumesBootVolumeResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the boot volume replica.
+        (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
         """
         return pulumi.get(self, "id")
 
@@ -17273,11 +17273,11 @@ class GetBootVolumesBootVolumeSourceDetailResult(dict):
                  second_backup_id: str,
                  type: str):
         """
-        :param str change_block_size_in_bytes: Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
-        :param str first_backup_id: The OCID of the first boot volume backup.
-        :param str id: The OCID of the boot volume replica.
-        :param str second_backup_id: The OCID of the second boot volume backup.
-        :param str type: The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
+        :param str change_block_size_in_bytes: (Applicable when type=bootVolumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        :param str first_backup_id: (Required when type=bootVolumeBackupDelta) The OCID of the first boot volume backup.
+        :param str id: (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
+        :param str second_backup_id: (Required when type=bootVolumeBackupDelta) The OCID of the second boot volume backup.
+        :param str type: (Required) The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
         """
         pulumi.set(__self__, "change_block_size_in_bytes", change_block_size_in_bytes)
         pulumi.set(__self__, "first_backup_id", first_backup_id)
@@ -17289,7 +17289,7 @@ class GetBootVolumesBootVolumeSourceDetailResult(dict):
     @pulumi.getter(name="changeBlockSizeInBytes")
     def change_block_size_in_bytes(self) -> str:
         """
-        Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        (Applicable when type=bootVolumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
         """
         return pulumi.get(self, "change_block_size_in_bytes")
 
@@ -17297,7 +17297,7 @@ class GetBootVolumesBootVolumeSourceDetailResult(dict):
     @pulumi.getter(name="firstBackupId")
     def first_backup_id(self) -> str:
         """
-        The OCID of the first boot volume backup.
+        (Required when type=bootVolumeBackupDelta) The OCID of the first boot volume backup.
         """
         return pulumi.get(self, "first_backup_id")
 
@@ -17305,7 +17305,7 @@ class GetBootVolumesBootVolumeSourceDetailResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the boot volume replica.
+        (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
         """
         return pulumi.get(self, "id")
 
@@ -17313,7 +17313,7 @@ class GetBootVolumesBootVolumeSourceDetailResult(dict):
     @pulumi.getter(name="secondBackupId")
     def second_backup_id(self) -> str:
         """
-        The OCID of the second boot volume backup.
+        (Required when type=bootVolumeBackupDelta) The OCID of the second boot volume backup.
         """
         return pulumi.get(self, "second_backup_id")
 
@@ -17321,7 +17321,7 @@ class GetBootVolumesBootVolumeSourceDetailResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
+        (Required) The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
         """
         return pulumi.get(self, "type")
 
@@ -48669,11 +48669,11 @@ class GetVolumeSourceDetailResult(dict):
                  second_backup_id: str,
                  type: str):
         """
-        :param str change_block_size_in_bytes: Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
-        :param str first_backup_id: The OCID of the first volume backup.
-        :param str id: The OCID of the block volume replica.
-        :param str second_backup_id: The OCID of the second volume backup.
-        :param str type: The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+        :param str change_block_size_in_bytes: (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        :param str first_backup_id: (Required when type=volumeBackupDelta) The OCID of the first volume backup.
+        :param str id: (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
+        :param str second_backup_id: (Required when type=volumeBackupDelta) The OCID of the second volume backup.
+        :param str type: (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
         """
         pulumi.set(__self__, "change_block_size_in_bytes", change_block_size_in_bytes)
         pulumi.set(__self__, "first_backup_id", first_backup_id)
@@ -48685,7 +48685,7 @@ class GetVolumeSourceDetailResult(dict):
     @pulumi.getter(name="changeBlockSizeInBytes")
     def change_block_size_in_bytes(self) -> str:
         """
-        Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
         """
         return pulumi.get(self, "change_block_size_in_bytes")
 
@@ -48693,7 +48693,7 @@ class GetVolumeSourceDetailResult(dict):
     @pulumi.getter(name="firstBackupId")
     def first_backup_id(self) -> str:
         """
-        The OCID of the first volume backup.
+        (Required when type=volumeBackupDelta) The OCID of the first volume backup.
         """
         return pulumi.get(self, "first_backup_id")
 
@@ -48701,7 +48701,7 @@ class GetVolumeSourceDetailResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the block volume replica.
+        (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
         """
         return pulumi.get(self, "id")
 
@@ -48709,7 +48709,7 @@ class GetVolumeSourceDetailResult(dict):
     @pulumi.getter(name="secondBackupId")
     def second_backup_id(self) -> str:
         """
-        The OCID of the second volume backup.
+        (Required when type=volumeBackupDelta) The OCID of the second volume backup.
         """
         return pulumi.get(self, "second_backup_id")
 
@@ -48717,7 +48717,7 @@ class GetVolumeSourceDetailResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+        (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
         """
         return pulumi.get(self, "type")
 
@@ -48787,7 +48787,7 @@ class GetVolumesVolumeResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the block volume replica.
+        :param str id: (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param bool is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         :param str kms_key_id: The OCID of the Vault service key which is the master encryption key for the volume.
@@ -48913,7 +48913,7 @@ class GetVolumesVolumeResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the block volume replica.
+        (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
         """
         return pulumi.get(self, "id")
 
@@ -49113,11 +49113,11 @@ class GetVolumesVolumeSourceDetailResult(dict):
                  second_backup_id: str,
                  type: str):
         """
-        :param str change_block_size_in_bytes: Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
-        :param str first_backup_id: The OCID of the first volume backup.
-        :param str id: The OCID of the block volume replica.
-        :param str second_backup_id: The OCID of the second volume backup.
-        :param str type: The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+        :param str change_block_size_in_bytes: (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        :param str first_backup_id: (Required when type=volumeBackupDelta) The OCID of the first volume backup.
+        :param str id: (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
+        :param str second_backup_id: (Required when type=volumeBackupDelta) The OCID of the second volume backup.
+        :param str type: (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
         """
         pulumi.set(__self__, "change_block_size_in_bytes", change_block_size_in_bytes)
         pulumi.set(__self__, "first_backup_id", first_backup_id)
@@ -49129,7 +49129,7 @@ class GetVolumesVolumeSourceDetailResult(dict):
     @pulumi.getter(name="changeBlockSizeInBytes")
     def change_block_size_in_bytes(self) -> str:
         """
-        Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
         """
         return pulumi.get(self, "change_block_size_in_bytes")
 
@@ -49137,7 +49137,7 @@ class GetVolumesVolumeSourceDetailResult(dict):
     @pulumi.getter(name="firstBackupId")
     def first_backup_id(self) -> str:
         """
-        The OCID of the first volume backup.
+        (Required when type=volumeBackupDelta) The OCID of the first volume backup.
         """
         return pulumi.get(self, "first_backup_id")
 
@@ -49145,7 +49145,7 @@ class GetVolumesVolumeSourceDetailResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the block volume replica.
+        (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
         """
         return pulumi.get(self, "id")
 
@@ -49153,7 +49153,7 @@ class GetVolumesVolumeSourceDetailResult(dict):
     @pulumi.getter(name="secondBackupId")
     def second_backup_id(self) -> str:
         """
-        The OCID of the second volume backup.
+        (Required when type=volumeBackupDelta) The OCID of the second volume backup.
         """
         return pulumi.get(self, "second_backup_id")
 
@@ -49161,7 +49161,7 @@ class GetVolumesVolumeSourceDetailResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+        (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
         """
         return pulumi.get(self, "type")
 

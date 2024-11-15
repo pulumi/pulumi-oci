@@ -21,6 +21,16 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:GenerativeAi/agentAgent:AgentAgent":
+		r = &AgentAgent{}
+	case "oci:GenerativeAi/agentAgentEndpoint:AgentAgentEndpoint":
+		r = &AgentAgentEndpoint{}
+	case "oci:GenerativeAi/agentDataIngestionJob:AgentDataIngestionJob":
+		r = &AgentDataIngestionJob{}
+	case "oci:GenerativeAi/agentDataSource:AgentDataSource":
+		r = &AgentDataSource{}
+	case "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase":
+		r = &AgentKnowledgeBase{}
 	case "oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster":
 		r = &DedicatedAiCluster{}
 	case "oci:GenerativeAi/endpoint:Endpoint":
@@ -40,6 +50,31 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/agentAgent",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/agentAgentEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/agentDataIngestionJob",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/agentDataSource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/agentKnowledgeBase",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"GenerativeAi/dedicatedAiCluster",

@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The OCID of the block volume replica.
+        /// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
         /// </summary>
         public readonly string Id;
         /// <summary>

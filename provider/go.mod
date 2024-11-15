@@ -10,10 +10,10 @@ replace (
 	github.com/oracle/terraform-provider-oci/shim => ./shim
 )
 
-replace github.com/oracle/oci-go-sdk/v65 => github.com/oracle/oci-go-sdk/v65 v65.78.0
+replace github.com/oracle/oci-go-sdk/v65 => github.com/oracle/oci-go-sdk/v65 v65.78.1
 
 require (
-	github.com/oracle/terraform-provider-oci v1.0.19-0.20241107155655-7ee7d245152b // indirect
+	github.com/oracle/terraform-provider-oci v1.0.19-0.20241113125914-aacfd8517021 // indirect
 	github.com/oracle/terraform-provider-oci/shim v0.0.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.95.0
 	github.com/pulumi/pulumi/pkg/v3 v3.137.0 // indirect

@@ -49,6 +49,10 @@ export interface GetConnectionResult {
     readonly accessKeyId: string;
     readonly accountKey: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+     */
+    readonly accountKeySecretId: string;
+    /**
      * Sets the Azure storage account name.
      */
     readonly accountName: string;
@@ -80,6 +84,10 @@ export interface GetConnectionResult {
     readonly clientId: string;
     readonly clientSecret: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+     */
+    readonly clientSecretSecretId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
     readonly compartmentId: string;
@@ -104,6 +112,9 @@ export interface GetConnectionResult {
      * * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
      */
     readonly connectionUrl: string;
+    /**
+     * The base64 encoded content of the consumer.properties file.
+     */
     readonly consumerProperties: string;
     readonly coreSiteXml: string;
     /**
@@ -135,8 +146,9 @@ export interface GetConnectionResult {
      */
     readonly displayName: string;
     /**
-     * Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * Indicates that sensitive attributes are provided via Secrets.
      */
+    readonly doesUseSecretIds: boolean;
     readonly endpoint: string;
     readonly fingerprint: string;
     /**
@@ -172,6 +184,10 @@ export interface GetConnectionResult {
     readonly jndiProviderUrl: string;
     readonly jndiSecurityCredentials: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+     */
+    readonly jndiSecurityCredentialsSecretId: string;
+    /**
      * Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
      */
     readonly jndiSecurityPrincipal: string;
@@ -181,6 +197,14 @@ export interface GetConnectionResult {
     readonly keyId: string;
     readonly keyStore: string;
     readonly keyStorePassword: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+     */
+    readonly keyStorePasswordSecretId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+     */
+    readonly keyStoreSecretId: string;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
@@ -195,6 +219,10 @@ export interface GetConnectionResult {
     readonly nsgIds: string[];
     readonly password: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, 'password' field must not be provided.
+     */
+    readonly passwordSecretId: string;
+    /**
      * The port of an endpoint usually specified for a connection.
      */
     readonly port: number;
@@ -204,7 +232,18 @@ export interface GetConnectionResult {
      */
     readonly privateIp: string;
     readonly privateKeyFile: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+     */
+    readonly privateKeyFileSecretId: string;
     readonly privateKeyPassphrase: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+     */
+    readonly privateKeyPassphraseSecretId: string;
+    /**
+     * The base64 encoded content of the producer.properties file.
+     */
     readonly producerProperties: string;
     readonly publicKeyFingerprint: string;
     /**
@@ -220,7 +259,15 @@ export interface GetConnectionResult {
      */
     readonly routingMethod: string;
     readonly sasToken: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+     */
+    readonly sasTokenSecretId: string;
     readonly secretAccessKey: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+     */
+    readonly secretAccessKeySecretId: string;
     /**
      * Security Protocol to be provided for the following connection types:
      * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
@@ -233,6 +280,10 @@ export interface GetConnectionResult {
      */
     readonly servers: string;
     readonly serviceAccountKeyFile: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+     */
+    readonly serviceAccountKeyFileSecretId: string;
     /**
      * The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
@@ -251,10 +302,27 @@ export interface GetConnectionResult {
     readonly sslCa: string;
     readonly sslCert: string;
     readonly sslClientKeystash: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     */
+    readonly sslClientKeystashSecretId: string;
     readonly sslClientKeystoredb: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+     */
+    readonly sslClientKeystoredbSecretId: string;
     readonly sslCrl: string;
     readonly sslKey: string;
     readonly sslKeyPassword: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+     */
+    readonly sslKeyPasswordSecretId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+     */
+    readonly sslKeySecretId: string;
     /**
      * SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
      */
@@ -292,8 +360,17 @@ export interface GetConnectionResult {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeUpdated: string;
+    readonly triggerRefresh: boolean;
     readonly trustStore: string;
     readonly trustStorePassword: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+     */
+    readonly trustStorePasswordSecretId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided
+     */
+    readonly trustStoreSecretId: string;
     /**
      * Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
      */
@@ -311,6 +388,10 @@ export interface GetConnectionResult {
      */
     readonly vaultId: string;
     readonly wallet: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+     */
+    readonly walletSecretId: string;
 }
 /**
  * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.

@@ -85,7 +85,7 @@ export interface GetVolumeResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The OCID of the block volume replica.
+     * (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
      */
     readonly id: string;
     /**

@@ -30,6 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     isMetadataOnly: deploymentBackupIsMetadataOnly,
  *     locks: [{
  *         type: deploymentBackupLocksType,
  *         message: deploymentBackupLocksMessage,
@@ -111,6 +112,10 @@ export class DeploymentBackup extends pulumi.CustomResource {
     public /*out*/ readonly isAutomatic!: pulumi.Output<boolean>;
     public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
+     * Parameter to allow users to create backup without trails
+     */
+    public readonly isMetadataOnly!: pulumi.Output<boolean>;
+    /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -186,6 +191,7 @@ export class DeploymentBackup extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isAutomatic"] = state ? state.isAutomatic : undefined;
             resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
+            resourceInputs["isMetadataOnly"] = state ? state.isMetadataOnly : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
@@ -225,6 +231,7 @@ export class DeploymentBackup extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["isMetadataOnly"] = args ? args.isMetadataOnly : undefined;
             resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
             resourceInputs["object"] = args ? args.object : undefined;
@@ -287,6 +294,10 @@ export interface DeploymentBackupState {
      */
     isAutomatic?: pulumi.Input<boolean>;
     isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Parameter to allow users to create backup without trails
+     */
+    isMetadataOnly?: pulumi.Input<boolean>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
@@ -370,6 +381,10 @@ export interface DeploymentBackupArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Parameter to allow users to create backup without trails
+     */
+    isMetadataOnly?: pulumi.Input<boolean>;
     /**
      * Locks associated with this resource.
      */

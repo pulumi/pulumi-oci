@@ -80,7 +80,7 @@ type LookupBootVolumeResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The OCID of the boot volume replica.
+	// (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
 	Id string `pulumi:"id"`
 	// The image OCID used to create the boot volume.
 	ImageId string `pulumi:"imageId"`
@@ -210,7 +210,7 @@ func (o LookupBootVolumeResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the boot volume replica.
+// (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
 func (o LookupBootVolumeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.Id }).(pulumi.StringOutput)
 }

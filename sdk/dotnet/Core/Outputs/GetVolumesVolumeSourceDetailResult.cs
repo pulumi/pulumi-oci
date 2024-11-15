@@ -14,23 +14,23 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetVolumesVolumeSourceDetailResult
     {
         /// <summary>
-        /// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        /// (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
         /// </summary>
         public readonly string ChangeBlockSizeInBytes;
         /// <summary>
-        /// The OCID of the first volume backup.
+        /// (Required when type=volumeBackupDelta) The OCID of the first volume backup.
         /// </summary>
         public readonly string FirstBackupId;
         /// <summary>
-        /// The OCID of the block volume replica.
+        /// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The OCID of the second volume backup.
+        /// (Required when type=volumeBackupDelta) The OCID of the second volume backup.
         /// </summary>
         public readonly string SecondBackupId;
         /// <summary>
-        /// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+        /// (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
         /// </summary>
         public readonly string Type;
 

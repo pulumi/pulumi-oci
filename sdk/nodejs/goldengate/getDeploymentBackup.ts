@@ -86,6 +86,10 @@ export interface GetDeploymentBackupResult {
     readonly isAutomatic: boolean;
     readonly isLockOverride: boolean;
     /**
+     * Parameter to allow users to create backup without trails
+     */
+    readonly isMetadataOnly: boolean;
+    /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
     readonly lifecycleDetails: string;

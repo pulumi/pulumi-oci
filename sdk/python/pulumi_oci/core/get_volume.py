@@ -194,7 +194,7 @@ class GetVolumeResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the block volume replica.
+        (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
         """
         return pulumi.get(self, "id")
 

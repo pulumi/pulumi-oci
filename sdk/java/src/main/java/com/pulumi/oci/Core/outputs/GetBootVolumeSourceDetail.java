@@ -11,62 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetBootVolumeSourceDetail {
     /**
-     * @return Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * @return (Applicable when type=bootVolumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
      * 
      */
     private String changeBlockSizeInBytes;
     /**
-     * @return The OCID of the first boot volume backup.
+     * @return (Required when type=bootVolumeBackupDelta) The OCID of the first boot volume backup.
      * 
      */
     private String firstBackupId;
     /**
-     * @return The OCID of the boot volume replica.
+     * @return (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
      * 
      */
     private String id;
     /**
-     * @return The OCID of the second boot volume backup.
+     * @return (Required when type=bootVolumeBackupDelta) The OCID of the second boot volume backup.
      * 
      */
     private String secondBackupId;
     /**
-     * @return The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
+     * @return (Required) The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
      * 
      */
     private String type;
 
     private GetBootVolumeSourceDetail() {}
     /**
-     * @return Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * @return (Applicable when type=bootVolumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
      * 
      */
     public String changeBlockSizeInBytes() {
         return this.changeBlockSizeInBytes;
     }
     /**
-     * @return The OCID of the first boot volume backup.
+     * @return (Required when type=bootVolumeBackupDelta) The OCID of the first boot volume backup.
      * 
      */
     public String firstBackupId() {
         return this.firstBackupId;
     }
     /**
-     * @return The OCID of the boot volume replica.
+     * @return (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The OCID of the second boot volume backup.
+     * @return (Required when type=bootVolumeBackupDelta) The OCID of the second boot volume backup.
      * 
      */
     public String secondBackupId() {
         return this.secondBackupId;
     }
     /**
-     * @return The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
+     * @return (Required) The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
      * 
      */
     public String type() {

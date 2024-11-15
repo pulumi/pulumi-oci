@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  *             .object(deploymentBackupObject)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .isMetadataOnly(deploymentBackupIsMetadataOnly)
  *             .locks(DeploymentBackupLockArgs.builder()
  *                 .type(deploymentBackupLocksType)
  *                 .message(deploymentBackupLocksMessage)
@@ -212,6 +213,20 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
 
     public Output<Boolean> isLockOverride() {
         return this.isLockOverride;
+    }
+    /**
+     * Parameter to allow users to create backup without trails
+     * 
+     */
+    @Export(name="isMetadataOnly", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isMetadataOnly;
+
+    /**
+     * @return Parameter to allow users to create backup without trails
+     * 
+     */
+    public Output<Boolean> isMetadataOnly() {
+        return this.isMetadataOnly;
     }
     /**
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.

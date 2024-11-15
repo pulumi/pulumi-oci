@@ -142,6 +142,10 @@ namespace Pulumi.Oci.GoldenGate
         public readonly bool IsAutomatic;
         public readonly bool IsLockOverride;
         /// <summary>
+        /// Parameter to allow users to create backup without trails
+        /// </summary>
+        public readonly bool IsMetadataOnly;
+        /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -216,6 +220,8 @@ namespace Pulumi.Oci.GoldenGate
 
             bool isLockOverride,
 
+            bool isMetadataOnly,
+
             string lifecycleDetails,
 
             ImmutableArray<Outputs.GetDeploymentBackupLockResult> locks,
@@ -252,6 +258,7 @@ namespace Pulumi.Oci.GoldenGate
             Id = id;
             IsAutomatic = isAutomatic;
             IsLockOverride = isLockOverride;
+            IsMetadataOnly = isMetadataOnly;
             LifecycleDetails = lifecycleDetails;
             Locks = locks;
             Namespace = @namespace;

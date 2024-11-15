@@ -163,6 +163,21 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * Parameter to allow users to create backup without trails
+     * 
+     */
+    @Import(name="isMetadataOnly")
+    private @Nullable Output<Boolean> isMetadataOnly;
+
+    /**
+     * @return Parameter to allow users to create backup without trails
+     * 
+     */
+    public Optional<Output<Boolean>> isMetadataOnly() {
+        return Optional.ofNullable(this.isMetadataOnly);
+    }
+
+    /**
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
@@ -361,6 +376,7 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
         this.freeformTags = $.freeformTags;
         this.isAutomatic = $.isAutomatic;
         this.isLockOverride = $.isLockOverride;
+        this.isMetadataOnly = $.isMetadataOnly;
         this.lifecycleDetails = $.lifecycleDetails;
         this.locks = $.locks;
         this.namespace = $.namespace;
@@ -589,6 +605,27 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
 
         public Builder isLockOverride(Boolean isLockOverride) {
             return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param isMetadataOnly Parameter to allow users to create backup without trails
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMetadataOnly(@Nullable Output<Boolean> isMetadataOnly) {
+            $.isMetadataOnly = isMetadataOnly;
+            return this;
+        }
+
+        /**
+         * @param isMetadataOnly Parameter to allow users to create backup without trails
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMetadataOnly(Boolean isMetadataOnly) {
+            return isMetadataOnly(Output.of(isMetadataOnly));
         }
 
         /**

@@ -132,7 +132,7 @@ export class InstancePool extends pulumi.CustomResource {
      */
     public readonly instanceHostnameFormatter!: pulumi.Output<string>;
     /**
-     * The load balancers to attach to the instance pool. (Note: From 6.14.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+     * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
     public readonly loadBalancers!: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[]>;
     /**
@@ -254,7 +254,7 @@ export interface InstancePoolState {
      */
     instanceHostnameFormatter?: pulumi.Input<string>;
     /**
-     * The load balancers to attach to the instance pool. (Note: From 6.14.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+     * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
     loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[]>;
     /**
@@ -314,7 +314,7 @@ export interface InstancePoolArgs {
      */
     instanceHostnameFormatter?: pulumi.Input<string>;
     /**
-     * The load balancers to attach to the instance pool. (Note: From 6.14.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+     * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
     loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[]>;
     /**

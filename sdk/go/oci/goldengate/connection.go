@@ -31,13 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.NewConnection(ctx, "test_connection", &GoldenGate.ConnectionArgs{
-//				CompartmentId:  pulumi.Any(compartmentId),
-//				ConnectionType: pulumi.Any(connectionConnectionType),
-//				DisplayName:    pulumi.Any(connectionDisplayName),
-//				TechnologyType: pulumi.Any(connectionTechnologyType),
-//				AccessKeyId:    pulumi.Any(testKey.Id),
-//				AccountKey:     pulumi.Any(connectionAccountKey),
-//				AccountName:    pulumi.Any(connectionAccountName),
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				ConnectionType:     pulumi.Any(connectionConnectionType),
+//				DisplayName:        pulumi.Any(connectionDisplayName),
+//				TechnologyType:     pulumi.Any(connectionTechnologyType),
+//				AccessKeyId:        pulumi.Any(testKey.Id),
+//				AccountKey:         pulumi.Any(connectionAccountKey),
+//				AccountKeySecretId: pulumi.Any(testSecret.Id),
+//				AccountName:        pulumi.Any(connectionAccountName),
 //				AdditionalAttributes: goldengate.ConnectionAdditionalAttributeArray{
 //					&goldengate.ConnectionAdditionalAttributeArgs{
 //						Name:  pulumi.Any(connectionAdditionalAttributesName),
@@ -54,35 +55,40 @@ import (
 //						PrivateIp: pulumi.Any(connectionBootstrapServersPrivateIp),
 //					},
 //				},
-//				ClientId:           pulumi.Any(testClient.Id),
-//				ClientSecret:       pulumi.Any(connectionClientSecret),
-//				ConnectionFactory:  pulumi.Any(connectionConnectionFactory),
-//				ConnectionString:   pulumi.Any(connectionConnectionString),
-//				ConnectionUrl:      pulumi.Any(connectionConnectionUrl),
-//				ConsumerProperties: pulumi.Any(connectionConsumerProperties),
-//				CoreSiteXml:        pulumi.Any(connectionCoreSiteXml),
-//				DatabaseId:         pulumi.Any(testDatabase.Id),
-//				DatabaseName:       pulumi.Any(testDatabase.Name),
-//				DbSystemId:         pulumi.Any(testDbSystem.Id),
+//				ClientId:             pulumi.Any(testClient.Id),
+//				ClientSecret:         pulumi.Any(connectionClientSecret),
+//				ClientSecretSecretId: pulumi.Any(testSecret.Id),
+//				ConnectionFactory:    pulumi.Any(connectionConnectionFactory),
+//				ConnectionString:     pulumi.Any(connectionConnectionString),
+//				ConnectionUrl:        pulumi.Any(connectionConnectionUrl),
+//				ConsumerProperties:   pulumi.Any(connectionConsumerProperties),
+//				CoreSiteXml:          pulumi.Any(connectionCoreSiteXml),
+//				DatabaseId:           pulumi.Any(testDatabase.Id),
+//				DatabaseName:         pulumi.Any(testDatabase.Name),
+//				DbSystemId:           pulumi.Any(testDbSystem.Id),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				DeploymentId: pulumi.Any(testDeployment.Id),
-//				Description:  pulumi.Any(connectionDescription),
-//				Endpoint:     pulumi.Any(connectionEndpoint),
-//				Fingerprint:  pulumi.Any(connectionFingerprint),
+//				DeploymentId:     pulumi.Any(testDeployment.Id),
+//				Description:      pulumi.Any(connectionDescription),
+//				DoesUseSecretIds: pulumi.Any(connectionDoesUseSecretIds),
+//				Endpoint:         pulumi.Any(connectionEndpoint),
+//				Fingerprint:      pulumi.Any(connectionFingerprint),
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
-//				Host:                      pulumi.Any(connectionHost),
-//				JndiConnectionFactory:     pulumi.Any(connectionJndiConnectionFactory),
-//				JndiInitialContextFactory: pulumi.Any(connectionJndiInitialContextFactory),
-//				JndiProviderUrl:           pulumi.Any(connectionJndiProviderUrl),
-//				JndiSecurityCredentials:   pulumi.Any(connectionJndiSecurityCredentials),
-//				JndiSecurityPrincipal:     pulumi.Any(connectionJndiSecurityPrincipal),
-//				KeyId:                     pulumi.Any(testKey.Id),
-//				KeyStore:                  pulumi.Any(connectionKeyStore),
-//				KeyStorePassword:          pulumi.Any(connectionKeyStorePassword),
+//				Host:                            pulumi.Any(connectionHost),
+//				JndiConnectionFactory:           pulumi.Any(connectionJndiConnectionFactory),
+//				JndiInitialContextFactory:       pulumi.Any(connectionJndiInitialContextFactory),
+//				JndiProviderUrl:                 pulumi.Any(connectionJndiProviderUrl),
+//				JndiSecurityCredentials:         pulumi.Any(connectionJndiSecurityCredentials),
+//				JndiSecurityCredentialsSecretId: pulumi.Any(testSecret.Id),
+//				JndiSecurityPrincipal:           pulumi.Any(connectionJndiSecurityPrincipal),
+//				KeyId:                           pulumi.Any(testKey.Id),
+//				KeyStore:                        pulumi.Any(connectionKeyStore),
+//				KeyStorePassword:                pulumi.Any(connectionKeyStorePassword),
+//				KeyStoreSecretId:                pulumi.Any(testSecret.Id),
+//				KeyStorePasswordSecretId:        pulumi.Any(testSecret.Id),
 //				Locks: goldengate.ConnectionLockArray{
 //					&goldengate.ConnectionLockArgs{
 //						Type:    pulumi.Any(connectionLocksType),
@@ -91,30 +97,40 @@ import (
 //				},
 //				NsgIds:                          pulumi.Any(connectionNsgIds),
 //				Password:                        pulumi.Any(connectionPassword),
+//				PasswordSecretId:                pulumi.Any(testSecret.Id),
 //				Port:                            pulumi.Any(connectionPort),
 //				PrivateIp:                       pulumi.Any(connectionPrivateIp),
 //				PrivateKeyFile:                  pulumi.Any(connectionPrivateKeyFile),
+//				PrivateKeyFileSecretId:          pulumi.Any(testSecret.Id),
 //				PrivateKeyPassphrase:            pulumi.Any(connectionPrivateKeyPassphrase),
+//				PrivateKeyPassphraseSecretId:    pulumi.Any(testSecret.Id),
 //				ProducerProperties:              pulumi.Any(connectionProducerProperties),
 //				PublicKeyFingerprint:            pulumi.Any(connectionPublicKeyFingerprint),
 //				RedisClusterId:                  pulumi.Any(testRedisCluster.Id),
 //				Region:                          pulumi.Any(connectionRegion),
 //				RoutingMethod:                   pulumi.Any(connectionRoutingMethod),
 //				SasToken:                        pulumi.Any(connectionSasToken),
+//				SasTokenSecretId:                pulumi.Any(testSecret.Id),
 //				SecretAccessKey:                 pulumi.Any(connectionSecretAccessKey),
+//				SecretAccessKeySecretId:         pulumi.Any(testSecret.Id),
 //				SecurityProtocol:                pulumi.Any(connectionSecurityProtocol),
 //				Servers:                         pulumi.Any(connectionServers),
 //				ServiceAccountKeyFile:           pulumi.Any(connectionServiceAccountKeyFile),
+//				ServiceAccountKeyFileSecretId:   pulumi.Any(testSecret.Id),
 //				SessionMode:                     pulumi.Any(connectionSessionMode),
 //				ShouldUseJndi:                   pulumi.Any(connectionShouldUseJndi),
 //				ShouldValidateServerCertificate: pulumi.Any(connectionShouldValidateServerCertificate),
 //				SslCa:                           pulumi.Any(connectionSslCa),
 //				SslCert:                         pulumi.Any(connectionSslCert),
 //				SslClientKeystash:               pulumi.Any(connectionSslClientKeystash),
+//				SslClientKeystashSecretId:       pulumi.Any(testSecret.Id),
 //				SslClientKeystoredb:             pulumi.Any(connectionSslClientKeystoredb),
+//				SslClientKeystoredbSecretId:     pulumi.Any(testSecret.Id),
 //				SslCrl:                          pulumi.Any(connectionSslCrl),
 //				SslKey:                          pulumi.Any(connectionSslKey),
 //				SslKeyPassword:                  pulumi.Any(connectionSslKeyPassword),
+//				SslKeyPasswordSecretId:          pulumi.Any(testSecret.Id),
+//				SslKeySecretId:                  pulumi.Any(testSecret.Id),
 //				SslMode:                         pulumi.Any(connectionSslMode),
 //				SslServerCertificate:            pulumi.Any(connectionSslServerCertificate),
 //				StreamPoolId:                    pulumi.Any(testStreamPool.Id),
@@ -122,11 +138,15 @@ import (
 //				TenancyId:                       pulumi.Any(testTenancy.Id),
 //				TrustStore:                      pulumi.Any(connectionTrustStore),
 //				TrustStorePassword:              pulumi.Any(connectionTrustStorePassword),
+//				TrustStorePasswordSecretId:      pulumi.Any(testSecret.Id),
+//				TrustStoreSecretId:              pulumi.Any(testSecret.Id),
 //				Url:                             pulumi.Any(connectionUrl),
 //				UserId:                          pulumi.Any(testUser.Id),
 //				Username:                        pulumi.Any(connectionUsername),
 //				VaultId:                         pulumi.Any(testVault.Id),
 //				Wallet:                          pulumi.Any(connectionWallet),
+//				WalletSecretId:                  pulumi.Any(testSecret.Id),
+//				TriggerRefresh:                  pulumi.Bool(true),
 //			})
 //			if err != nil {
 //				return err
@@ -150,7 +170,9 @@ type Connection struct {
 	// (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
 	AccessKeyId pulumi.StringOutput `pulumi:"accessKeyId"`
 	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-	AccountKey pulumi.StringOutput `pulumi:"accountKey"`
+	AccountKey pulumi.StringPtrOutput `pulumi:"accountKey"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+	AccountKeySecretId pulumi.StringOutput `pulumi:"accountKeySecretId"`
 	// (Updatable) Sets the Azure storage account name.
 	AccountName pulumi.StringOutput `pulumi:"accountName"`
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -166,7 +188,9 @@ type Connection struct {
 	// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId pulumi.StringOutput `pulumi:"clientId"`
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-	ClientSecret pulumi.StringOutput `pulumi:"clientSecret"`
+	ClientSecret pulumi.StringPtrOutput `pulumi:"clientSecret"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+	ClientSecretSecretId pulumi.StringPtrOutput `pulumi:"clientSecretSecretId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
@@ -195,6 +219,8 @@ type Connection struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
+	DoesUseSecretIds pulumi.BoolOutput `pulumi:"doesUseSecretIds"`
 	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
 	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
@@ -214,15 +240,21 @@ type Connection struct {
 	// (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
 	JndiProviderUrl pulumi.StringOutput `pulumi:"jndiProviderUrl"`
 	// (Updatable) The password associated to the principal.
-	JndiSecurityCredentials pulumi.StringOutput `pulumi:"jndiSecurityCredentials"`
+	JndiSecurityCredentials pulumi.StringPtrOutput `pulumi:"jndiSecurityCredentials"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+	JndiSecurityCredentialsSecretId pulumi.StringPtrOutput `pulumi:"jndiSecurityCredentialsSecretId"`
 	// (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
 	JndiSecurityPrincipal pulumi.StringOutput `pulumi:"jndiSecurityPrincipal"`
 	// (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 	KeyId pulumi.StringOutput `pulumi:"keyId"`
 	// (Updatable) The base64 encoded content of the KeyStore file.
-	KeyStore pulumi.StringOutput `pulumi:"keyStore"`
+	KeyStore pulumi.StringPtrOutput `pulumi:"keyStore"`
 	// (Updatable) The KeyStore password.
-	KeyStorePassword pulumi.StringOutput `pulumi:"keyStorePassword"`
+	KeyStorePassword pulumi.StringPtrOutput `pulumi:"keyStorePassword"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+	KeyStorePasswordSecretId pulumi.StringPtrOutput `pulumi:"keyStorePasswordSecretId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+	KeyStoreSecretId pulumi.StringPtrOutput `pulumi:"keyStoreSecretId"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -230,7 +262,9 @@ type Connection struct {
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-	Password pulumi.StringOutput `pulumi:"password"`
+	Password pulumi.StringPtrOutput `pulumi:"password"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+	PasswordSecretId pulumi.StringPtrOutput `pulumi:"passwordSecretId"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntOutput `pulumi:"port"`
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
@@ -238,9 +272,13 @@ type Connection struct {
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringOutput `pulumi:"privateIp"`
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-	PrivateKeyFile pulumi.StringOutput `pulumi:"privateKeyFile"`
+	PrivateKeyFile pulumi.StringPtrOutput `pulumi:"privateKeyFile"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+	PrivateKeyFileSecretId pulumi.StringPtrOutput `pulumi:"privateKeyFileSecretId"`
 	// (Updatable) Password if the private key file is encrypted.
-	PrivateKeyPassphrase pulumi.StringOutput `pulumi:"privateKeyPassphrase"`
+	PrivateKeyPassphrase pulumi.StringPtrOutput `pulumi:"privateKeyPassphrase"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+	PrivateKeyPassphraseSecretId pulumi.StringPtrOutput `pulumi:"privateKeyPassphraseSecretId"`
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties pulumi.StringOutput `pulumi:"producerProperties"`
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -252,15 +290,21 @@ type Connection struct {
 	// (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
 	RoutingMethod pulumi.StringOutput `pulumi:"routingMethod"`
 	// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-	SasToken pulumi.StringOutput `pulumi:"sasToken"`
+	SasToken pulumi.StringPtrOutput `pulumi:"sasToken"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+	SasTokenSecretId pulumi.StringPtrOutput `pulumi:"sasTokenSecretId"`
 	// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-	SecretAccessKey pulumi.StringOutput `pulumi:"secretAccessKey"`
+	SecretAccessKey pulumi.StringPtrOutput `pulumi:"secretAccessKey"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+	SecretAccessKeySecretId pulumi.StringPtrOutput `pulumi:"secretAccessKeySecretId"`
 	// (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
 	SecurityProtocol pulumi.StringOutput `pulumi:"securityProtocol"`
 	// (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
 	Servers pulumi.StringOutput `pulumi:"servers"`
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
-	ServiceAccountKeyFile pulumi.StringOutput `pulumi:"serviceAccountKeyFile"`
+	ServiceAccountKeyFile pulumi.StringPtrOutput `pulumi:"serviceAccountKeyFile"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	ServiceAccountKeyFileSecretId pulumi.StringPtrOutput `pulumi:"serviceAccountKeyFileSecretId"`
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringOutput `pulumi:"sessionMode"`
 	// (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
@@ -272,15 +316,24 @@ type Connection struct {
 	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
 	SslCert pulumi.StringOutput `pulumi:"sslCert"`
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
-	SslClientKeystash pulumi.StringOutput `pulumi:"sslClientKeystash"`
+	SslClientKeystash pulumi.StringPtrOutput `pulumi:"sslClientKeystash"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+	SslClientKeystashSecretId pulumi.StringPtrOutput `pulumi:"sslClientKeystashSecretId"`
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
-	SslClientKeystoredb pulumi.StringOutput `pulumi:"sslClientKeystoredb"`
+	SslClientKeystoredb pulumi.StringPtrOutput `pulumi:"sslClientKeystoredb"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+	SslClientKeystoredbSecretId pulumi.StringPtrOutput `pulumi:"sslClientKeystoredbSecretId"`
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringOutput `pulumi:"sslCrl"`
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
-	SslKey pulumi.StringOutput `pulumi:"sslKey"`
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+	SslKey pulumi.StringPtrOutput `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
-	SslKeyPassword pulumi.StringOutput `pulumi:"sslKeyPassword"`
+	SslKeyPassword pulumi.StringPtrOutput `pulumi:"sslKeyPassword"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+	SslKeyPasswordSecretId pulumi.StringPtrOutput `pulumi:"sslKeyPasswordSecretId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+	// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+	SslKeySecretId pulumi.StringPtrOutput `pulumi:"sslKeySecretId"`
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode pulumi.StringOutput `pulumi:"sslMode"`
 	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
@@ -301,10 +354,19 @@ type Connection struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TriggerRefresh pulumi.BoolPtrOutput `pulumi:"triggerRefresh"`
 	// (Updatable) The base64 encoded content of the TrustStore file.
-	TrustStore pulumi.StringOutput `pulumi:"trustStore"`
+	TrustStore pulumi.StringPtrOutput `pulumi:"trustStore"`
 	// (Updatable) The TrustStore password.
-	TrustStorePassword pulumi.StringOutput `pulumi:"trustStorePassword"`
+	TrustStorePassword pulumi.StringPtrOutput `pulumi:"trustStorePassword"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+	TrustStorePasswordSecretId pulumi.StringPtrOutput `pulumi:"trustStorePasswordSecretId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+	TrustStoreSecretId pulumi.StringPtrOutput `pulumi:"trustStoreSecretId"`
 	// (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url pulumi.StringOutput `pulumi:"url"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
@@ -314,10 +376,9 @@ type Connection struct {
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Wallet pulumi.StringOutput `pulumi:"wallet"`
+	Wallet pulumi.StringPtrOutput `pulumi:"wallet"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	WalletSecretId pulumi.StringPtrOutput `pulumi:"walletSecretId"`
 }
 
 // NewConnection registers a new resource with the given unique name, arguments, and options.
@@ -339,6 +400,18 @@ func NewConnection(ctx *pulumi.Context,
 	if args.TechnologyType == nil {
 		return nil, errors.New("invalid value for required argument 'TechnologyType'")
 	}
+	if args.AccountKey != nil {
+		args.AccountKey = pulumi.ToSecret(args.AccountKey).(pulumi.StringPtrInput)
+	}
+	if args.ClientSecret != nil {
+		args.ClientSecret = pulumi.ToSecret(args.ClientSecret).(pulumi.StringPtrInput)
+	}
+	if args.JndiSecurityCredentials != nil {
+		args.JndiSecurityCredentials = pulumi.ToSecret(args.JndiSecurityCredentials).(pulumi.StringPtrInput)
+	}
+	if args.KeyStore != nil {
+		args.KeyStore = pulumi.ToSecret(args.KeyStore).(pulumi.StringPtrInput)
+	}
 	if args.KeyStorePassword != nil {
 		args.KeyStorePassword = pulumi.ToSecret(args.KeyStorePassword).(pulumi.StringPtrInput)
 	}
@@ -351,19 +424,55 @@ func NewConnection(ctx *pulumi.Context,
 	if args.PrivateKeyPassphrase != nil {
 		args.PrivateKeyPassphrase = pulumi.ToSecret(args.PrivateKeyPassphrase).(pulumi.StringPtrInput)
 	}
+	if args.SasToken != nil {
+		args.SasToken = pulumi.ToSecret(args.SasToken).(pulumi.StringPtrInput)
+	}
+	if args.SecretAccessKey != nil {
+		args.SecretAccessKey = pulumi.ToSecret(args.SecretAccessKey).(pulumi.StringPtrInput)
+	}
+	if args.ServiceAccountKeyFile != nil {
+		args.ServiceAccountKeyFile = pulumi.ToSecret(args.ServiceAccountKeyFile).(pulumi.StringPtrInput)
+	}
+	if args.SslClientKeystash != nil {
+		args.SslClientKeystash = pulumi.ToSecret(args.SslClientKeystash).(pulumi.StringPtrInput)
+	}
+	if args.SslClientKeystoredb != nil {
+		args.SslClientKeystoredb = pulumi.ToSecret(args.SslClientKeystoredb).(pulumi.StringPtrInput)
+	}
+	if args.SslKey != nil {
+		args.SslKey = pulumi.ToSecret(args.SslKey).(pulumi.StringPtrInput)
+	}
 	if args.SslKeyPassword != nil {
 		args.SslKeyPassword = pulumi.ToSecret(args.SslKeyPassword).(pulumi.StringPtrInput)
+	}
+	if args.TrustStore != nil {
+		args.TrustStore = pulumi.ToSecret(args.TrustStore).(pulumi.StringPtrInput)
 	}
 	if args.TrustStorePassword != nil {
 		args.TrustStorePassword = pulumi.ToSecret(args.TrustStorePassword).(pulumi.StringPtrInput)
 	}
+	if args.Wallet != nil {
+		args.Wallet = pulumi.ToSecret(args.Wallet).(pulumi.StringPtrInput)
+	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"accountKey",
+		"clientSecret",
+		"jndiSecurityCredentials",
+		"keyStore",
 		"keyStorePassword",
 		"password",
 		"privateKeyFile",
 		"privateKeyPassphrase",
+		"sasToken",
+		"secretAccessKey",
+		"serviceAccountKeyFile",
+		"sslClientKeystash",
+		"sslClientKeystoredb",
+		"sslKey",
 		"sslKeyPassword",
+		"trustStore",
 		"trustStorePassword",
+		"wallet",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
@@ -393,6 +502,8 @@ type connectionState struct {
 	AccessKeyId *string `pulumi:"accessKeyId"`
 	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
 	AccountKey *string `pulumi:"accountKey"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+	AccountKeySecretId *string `pulumi:"accountKeySecretId"`
 	// (Updatable) Sets the Azure storage account name.
 	AccountName *string `pulumi:"accountName"`
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -409,6 +520,8 @@ type connectionState struct {
 	ClientId *string `pulumi:"clientId"`
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
 	ClientSecret *string `pulumi:"clientSecret"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+	ClientSecretSecretId *string `pulumi:"clientSecretSecretId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
@@ -437,6 +550,8 @@ type connectionState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
+	DoesUseSecretIds *bool `pulumi:"doesUseSecretIds"`
 	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
 	Endpoint *string `pulumi:"endpoint"`
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
@@ -457,6 +572,8 @@ type connectionState struct {
 	JndiProviderUrl *string `pulumi:"jndiProviderUrl"`
 	// (Updatable) The password associated to the principal.
 	JndiSecurityCredentials *string `pulumi:"jndiSecurityCredentials"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+	JndiSecurityCredentialsSecretId *string `pulumi:"jndiSecurityCredentialsSecretId"`
 	// (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
 	JndiSecurityPrincipal *string `pulumi:"jndiSecurityPrincipal"`
 	// (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
@@ -465,6 +582,10 @@ type connectionState struct {
 	KeyStore *string `pulumi:"keyStore"`
 	// (Updatable) The KeyStore password.
 	KeyStorePassword *string `pulumi:"keyStorePassword"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+	KeyStorePasswordSecretId *string `pulumi:"keyStorePasswordSecretId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+	KeyStoreSecretId *string `pulumi:"keyStoreSecretId"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -473,6 +594,8 @@ type connectionState struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
 	Password *string `pulumi:"password"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port *int `pulumi:"port"`
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
@@ -481,8 +604,12 @@ type connectionState struct {
 	PrivateIp *string `pulumi:"privateIp"`
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PrivateKeyFile *string `pulumi:"privateKeyFile"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+	PrivateKeyFileSecretId *string `pulumi:"privateKeyFileSecretId"`
 	// (Updatable) Password if the private key file is encrypted.
 	PrivateKeyPassphrase *string `pulumi:"privateKeyPassphrase"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+	PrivateKeyPassphraseSecretId *string `pulumi:"privateKeyPassphraseSecretId"`
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties *string `pulumi:"producerProperties"`
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -495,14 +622,20 @@ type connectionState struct {
 	RoutingMethod *string `pulumi:"routingMethod"`
 	// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
 	SasToken *string `pulumi:"sasToken"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+	SasTokenSecretId *string `pulumi:"sasTokenSecretId"`
 	// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
 	SecretAccessKey *string `pulumi:"secretAccessKey"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+	SecretAccessKeySecretId *string `pulumi:"secretAccessKeySecretId"`
 	// (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
 	SecurityProtocol *string `pulumi:"securityProtocol"`
 	// (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
 	Servers *string `pulumi:"servers"`
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
 	ServiceAccountKeyFile *string `pulumi:"serviceAccountKeyFile"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	ServiceAccountKeyFileSecretId *string `pulumi:"serviceAccountKeyFileSecretId"`
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode *string `pulumi:"sessionMode"`
 	// (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
@@ -515,14 +648,23 @@ type connectionState struct {
 	SslCert *string `pulumi:"sslCert"`
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
 	SslClientKeystash *string `pulumi:"sslClientKeystash"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+	SslClientKeystashSecretId *string `pulumi:"sslClientKeystashSecretId"`
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
 	SslClientKeystoredb *string `pulumi:"sslClientKeystoredb"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+	SslClientKeystoredbSecretId *string `pulumi:"sslClientKeystoredbSecretId"`
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl *string `pulumi:"sslCrl"`
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
 	SslKey *string `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword *string `pulumi:"sslKeyPassword"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+	SslKeyPasswordSecretId *string `pulumi:"sslKeyPasswordSecretId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+	// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+	SslKeySecretId *string `pulumi:"sslKeySecretId"`
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode *string `pulumi:"sslMode"`
 	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
@@ -543,10 +685,19 @@ type connectionState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TriggerRefresh *bool `pulumi:"triggerRefresh"`
 	// (Updatable) The base64 encoded content of the TrustStore file.
 	TrustStore *string `pulumi:"trustStore"`
 	// (Updatable) The TrustStore password.
 	TrustStorePassword *string `pulumi:"trustStorePassword"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+	TrustStorePasswordSecretId *string `pulumi:"trustStorePasswordSecretId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+	TrustStoreSecretId *string `pulumi:"trustStoreSecretId"`
 	// (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url *string `pulumi:"url"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
@@ -556,10 +707,9 @@ type connectionState struct {
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId *string `pulumi:"vaultId"`
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Wallet *string `pulumi:"wallet"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
 type ConnectionState struct {
@@ -567,6 +717,8 @@ type ConnectionState struct {
 	AccessKeyId pulumi.StringPtrInput
 	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
 	AccountKey pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+	AccountKeySecretId pulumi.StringPtrInput
 	// (Updatable) Sets the Azure storage account name.
 	AccountName pulumi.StringPtrInput
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -583,6 +735,8 @@ type ConnectionState struct {
 	ClientId pulumi.StringPtrInput
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
 	ClientSecret pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+	ClientSecretSecretId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
@@ -611,6 +765,8 @@ type ConnectionState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
+	DoesUseSecretIds pulumi.BoolPtrInput
 	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
 	Endpoint pulumi.StringPtrInput
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
@@ -631,6 +787,8 @@ type ConnectionState struct {
 	JndiProviderUrl pulumi.StringPtrInput
 	// (Updatable) The password associated to the principal.
 	JndiSecurityCredentials pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+	JndiSecurityCredentialsSecretId pulumi.StringPtrInput
 	// (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
 	JndiSecurityPrincipal pulumi.StringPtrInput
 	// (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
@@ -639,6 +797,10 @@ type ConnectionState struct {
 	KeyStore pulumi.StringPtrInput
 	// (Updatable) The KeyStore password.
 	KeyStorePassword pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+	KeyStorePasswordSecretId pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+	KeyStoreSecretId pulumi.StringPtrInput
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Locks associated with this resource.
@@ -647,6 +809,8 @@ type ConnectionState struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
 	Password pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+	PasswordSecretId pulumi.StringPtrInput
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntPtrInput
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
@@ -655,8 +819,12 @@ type ConnectionState struct {
 	PrivateIp pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PrivateKeyFile pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+	PrivateKeyFileSecretId pulumi.StringPtrInput
 	// (Updatable) Password if the private key file is encrypted.
 	PrivateKeyPassphrase pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+	PrivateKeyPassphraseSecretId pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties pulumi.StringPtrInput
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -669,14 +837,20 @@ type ConnectionState struct {
 	RoutingMethod pulumi.StringPtrInput
 	// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
 	SasToken pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+	SasTokenSecretId pulumi.StringPtrInput
 	// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
 	SecretAccessKey pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+	SecretAccessKeySecretId pulumi.StringPtrInput
 	// (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
 	SecurityProtocol pulumi.StringPtrInput
 	// (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
 	Servers pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
 	ServiceAccountKeyFile pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	ServiceAccountKeyFileSecretId pulumi.StringPtrInput
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringPtrInput
 	// (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
@@ -689,14 +863,23 @@ type ConnectionState struct {
 	SslCert pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
 	SslClientKeystash pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+	SslClientKeystashSecretId pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
 	SslClientKeystoredb pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+	SslClientKeystoredbSecretId pulumi.StringPtrInput
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringPtrInput
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
 	SslKey pulumi.StringPtrInput
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+	SslKeyPasswordSecretId pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+	// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+	SslKeySecretId pulumi.StringPtrInput
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode pulumi.StringPtrInput
 	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
@@ -717,10 +900,19 @@ type ConnectionState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringPtrInput
+	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TriggerRefresh pulumi.BoolPtrInput
 	// (Updatable) The base64 encoded content of the TrustStore file.
 	TrustStore pulumi.StringPtrInput
 	// (Updatable) The TrustStore password.
 	TrustStorePassword pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+	TrustStorePasswordSecretId pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+	TrustStoreSecretId pulumi.StringPtrInput
 	// (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
@@ -730,10 +922,9 @@ type ConnectionState struct {
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId pulumi.StringPtrInput
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Wallet pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	WalletSecretId pulumi.StringPtrInput
 }
 
 func (ConnectionState) ElementType() reflect.Type {
@@ -745,6 +936,8 @@ type connectionArgs struct {
 	AccessKeyId *string `pulumi:"accessKeyId"`
 	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
 	AccountKey *string `pulumi:"accountKey"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+	AccountKeySecretId *string `pulumi:"accountKeySecretId"`
 	// (Updatable) Sets the Azure storage account name.
 	AccountName *string `pulumi:"accountName"`
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -761,6 +954,8 @@ type connectionArgs struct {
 	ClientId *string `pulumi:"clientId"`
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
 	ClientSecret *string `pulumi:"clientSecret"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+	ClientSecretSecretId *string `pulumi:"clientSecretSecretId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
@@ -789,6 +984,8 @@ type connectionArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
+	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
+	DoesUseSecretIds *bool `pulumi:"doesUseSecretIds"`
 	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
 	Endpoint *string `pulumi:"endpoint"`
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
@@ -807,6 +1004,8 @@ type connectionArgs struct {
 	JndiProviderUrl *string `pulumi:"jndiProviderUrl"`
 	// (Updatable) The password associated to the principal.
 	JndiSecurityCredentials *string `pulumi:"jndiSecurityCredentials"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+	JndiSecurityCredentialsSecretId *string `pulumi:"jndiSecurityCredentialsSecretId"`
 	// (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
 	JndiSecurityPrincipal *string `pulumi:"jndiSecurityPrincipal"`
 	// (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
@@ -815,12 +1014,18 @@ type connectionArgs struct {
 	KeyStore *string `pulumi:"keyStore"`
 	// (Updatable) The KeyStore password.
 	KeyStorePassword *string `pulumi:"keyStorePassword"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+	KeyStorePasswordSecretId *string `pulumi:"keyStorePasswordSecretId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+	KeyStoreSecretId *string `pulumi:"keyStoreSecretId"`
 	// Locks associated with this resource.
 	Locks []ConnectionLock `pulumi:"locks"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
 	Password *string `pulumi:"password"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port *int `pulumi:"port"`
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
@@ -829,8 +1034,12 @@ type connectionArgs struct {
 	PrivateIp *string `pulumi:"privateIp"`
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PrivateKeyFile *string `pulumi:"privateKeyFile"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+	PrivateKeyFileSecretId *string `pulumi:"privateKeyFileSecretId"`
 	// (Updatable) Password if the private key file is encrypted.
 	PrivateKeyPassphrase *string `pulumi:"privateKeyPassphrase"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+	PrivateKeyPassphraseSecretId *string `pulumi:"privateKeyPassphraseSecretId"`
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties *string `pulumi:"producerProperties"`
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -843,14 +1052,20 @@ type connectionArgs struct {
 	RoutingMethod *string `pulumi:"routingMethod"`
 	// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
 	SasToken *string `pulumi:"sasToken"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+	SasTokenSecretId *string `pulumi:"sasTokenSecretId"`
 	// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
 	SecretAccessKey *string `pulumi:"secretAccessKey"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+	SecretAccessKeySecretId *string `pulumi:"secretAccessKeySecretId"`
 	// (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
 	SecurityProtocol *string `pulumi:"securityProtocol"`
 	// (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
 	Servers *string `pulumi:"servers"`
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
 	ServiceAccountKeyFile *string `pulumi:"serviceAccountKeyFile"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	ServiceAccountKeyFileSecretId *string `pulumi:"serviceAccountKeyFileSecretId"`
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode *string `pulumi:"sessionMode"`
 	// (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
@@ -863,14 +1078,23 @@ type connectionArgs struct {
 	SslCert *string `pulumi:"sslCert"`
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
 	SslClientKeystash *string `pulumi:"sslClientKeystash"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+	SslClientKeystashSecretId *string `pulumi:"sslClientKeystashSecretId"`
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
 	SslClientKeystoredb *string `pulumi:"sslClientKeystoredb"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+	SslClientKeystoredbSecretId *string `pulumi:"sslClientKeystoredbSecretId"`
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl *string `pulumi:"sslCrl"`
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
 	SslKey *string `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword *string `pulumi:"sslKeyPassword"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+	SslKeyPasswordSecretId *string `pulumi:"sslKeyPasswordSecretId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+	// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+	SslKeySecretId *string `pulumi:"sslKeySecretId"`
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode *string `pulumi:"sslMode"`
 	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
@@ -883,10 +1107,19 @@ type connectionArgs struct {
 	TechnologyType string `pulumi:"technologyType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
 	TenancyId *string `pulumi:"tenancyId"`
+	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TriggerRefresh *bool `pulumi:"triggerRefresh"`
 	// (Updatable) The base64 encoded content of the TrustStore file.
 	TrustStore *string `pulumi:"trustStore"`
 	// (Updatable) The TrustStore password.
 	TrustStorePassword *string `pulumi:"trustStorePassword"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+	TrustStorePasswordSecretId *string `pulumi:"trustStorePasswordSecretId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+	TrustStoreSecretId *string `pulumi:"trustStoreSecretId"`
 	// (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url *string `pulumi:"url"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
@@ -896,10 +1129,9 @@ type connectionArgs struct {
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId *string `pulumi:"vaultId"`
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Wallet *string `pulumi:"wallet"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
 // The set of arguments for constructing a Connection resource.
@@ -908,6 +1140,8 @@ type ConnectionArgs struct {
 	AccessKeyId pulumi.StringPtrInput
 	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
 	AccountKey pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+	AccountKeySecretId pulumi.StringPtrInput
 	// (Updatable) Sets the Azure storage account name.
 	AccountName pulumi.StringPtrInput
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -924,6 +1158,8 @@ type ConnectionArgs struct {
 	ClientId pulumi.StringPtrInput
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
 	ClientSecret pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+	ClientSecretSecretId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
@@ -952,6 +1188,8 @@ type ConnectionArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringInput
+	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
+	DoesUseSecretIds pulumi.BoolPtrInput
 	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
 	Endpoint pulumi.StringPtrInput
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
@@ -970,6 +1208,8 @@ type ConnectionArgs struct {
 	JndiProviderUrl pulumi.StringPtrInput
 	// (Updatable) The password associated to the principal.
 	JndiSecurityCredentials pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+	JndiSecurityCredentialsSecretId pulumi.StringPtrInput
 	// (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
 	JndiSecurityPrincipal pulumi.StringPtrInput
 	// (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
@@ -978,12 +1218,18 @@ type ConnectionArgs struct {
 	KeyStore pulumi.StringPtrInput
 	// (Updatable) The KeyStore password.
 	KeyStorePassword pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+	KeyStorePasswordSecretId pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+	KeyStoreSecretId pulumi.StringPtrInput
 	// Locks associated with this resource.
 	Locks ConnectionLockArrayInput
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
 	Password pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+	PasswordSecretId pulumi.StringPtrInput
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntPtrInput
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
@@ -992,8 +1238,12 @@ type ConnectionArgs struct {
 	PrivateIp pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PrivateKeyFile pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+	PrivateKeyFileSecretId pulumi.StringPtrInput
 	// (Updatable) Password if the private key file is encrypted.
 	PrivateKeyPassphrase pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+	PrivateKeyPassphraseSecretId pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the producer.properties file.
 	ProducerProperties pulumi.StringPtrInput
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -1006,14 +1256,20 @@ type ConnectionArgs struct {
 	RoutingMethod pulumi.StringPtrInput
 	// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
 	SasToken pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+	SasTokenSecretId pulumi.StringPtrInput
 	// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
 	SecretAccessKey pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+	SecretAccessKeySecretId pulumi.StringPtrInput
 	// (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
 	SecurityProtocol pulumi.StringPtrInput
 	// (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
 	Servers pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
 	ServiceAccountKeyFile pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	ServiceAccountKeyFileSecretId pulumi.StringPtrInput
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringPtrInput
 	// (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
@@ -1026,14 +1282,23 @@ type ConnectionArgs struct {
 	SslCert pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
 	SslClientKeystash pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+	SslClientKeystashSecretId pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
 	SslClientKeystoredb pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+	SslClientKeystoredbSecretId pulumi.StringPtrInput
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringPtrInput
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
 	SslKey pulumi.StringPtrInput
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+	SslKeyPasswordSecretId pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+	// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+	SslKeySecretId pulumi.StringPtrInput
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode pulumi.StringPtrInput
 	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
@@ -1046,10 +1311,19 @@ type ConnectionArgs struct {
 	TechnologyType pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
 	TenancyId pulumi.StringPtrInput
+	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TriggerRefresh pulumi.BoolPtrInput
 	// (Updatable) The base64 encoded content of the TrustStore file.
 	TrustStore pulumi.StringPtrInput
 	// (Updatable) The TrustStore password.
 	TrustStorePassword pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+	TrustStorePasswordSecretId pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+	TrustStoreSecretId pulumi.StringPtrInput
 	// (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
@@ -1059,10 +1333,9 @@ type ConnectionArgs struct {
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId pulumi.StringPtrInput
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Wallet pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	WalletSecretId pulumi.StringPtrInput
 }
 
 func (ConnectionArgs) ElementType() reflect.Type {
@@ -1158,8 +1431,13 @@ func (o ConnectionOutput) AccessKeyId() pulumi.StringOutput {
 }
 
 // (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-func (o ConnectionOutput) AccountKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AccountKey }).(pulumi.StringOutput)
+func (o ConnectionOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.AccountKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+func (o ConnectionOutput) AccountKeySecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AccountKeySecretId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Sets the Azure storage account name.
@@ -1198,8 +1476,13 @@ func (o ConnectionOutput) ClientId() pulumi.StringOutput {
 }
 
 // (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-func (o ConnectionOutput) ClientSecret() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ClientSecret }).(pulumi.StringOutput)
+func (o ConnectionOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ClientSecret }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+func (o ConnectionOutput) ClientSecretSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ClientSecretSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -1272,6 +1555,11 @@ func (o ConnectionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// (Updatable) Indicates that sensitive attributes are provided via Secrets.
+func (o ConnectionOutput) DoesUseSecretIds() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Connection) pulumi.BoolOutput { return v.DoesUseSecretIds }).(pulumi.BoolOutput)
+}
+
 // (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
 func (o ConnectionOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Endpoint }).(pulumi.StringOutput)
@@ -1318,8 +1606,13 @@ func (o ConnectionOutput) JndiProviderUrl() pulumi.StringOutput {
 }
 
 // (Updatable) The password associated to the principal.
-func (o ConnectionOutput) JndiSecurityCredentials() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.JndiSecurityCredentials }).(pulumi.StringOutput)
+func (o ConnectionOutput) JndiSecurityCredentials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.JndiSecurityCredentials }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+func (o ConnectionOutput) JndiSecurityCredentialsSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.JndiSecurityCredentialsSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
@@ -1333,13 +1626,23 @@ func (o ConnectionOutput) KeyId() pulumi.StringOutput {
 }
 
 // (Updatable) The base64 encoded content of the KeyStore file.
-func (o ConnectionOutput) KeyStore() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.KeyStore }).(pulumi.StringOutput)
+func (o ConnectionOutput) KeyStore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.KeyStore }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The KeyStore password.
-func (o ConnectionOutput) KeyStorePassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.KeyStorePassword }).(pulumi.StringOutput)
+func (o ConnectionOutput) KeyStorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.KeyStorePassword }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+func (o ConnectionOutput) KeyStorePasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.KeyStorePasswordSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+func (o ConnectionOutput) KeyStoreSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.KeyStoreSecretId }).(pulumi.StringPtrOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -1358,8 +1661,13 @@ func (o ConnectionOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-func (o ConnectionOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
+func (o ConnectionOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+func (o ConnectionOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The port of an endpoint usually specified for a connection.
@@ -1375,13 +1683,23 @@ func (o ConnectionOutput) PrivateIp() pulumi.StringOutput {
 }
 
 // (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-func (o ConnectionOutput) PrivateKeyFile() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PrivateKeyFile }).(pulumi.StringOutput)
+func (o ConnectionOutput) PrivateKeyFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.PrivateKeyFile }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+func (o ConnectionOutput) PrivateKeyFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.PrivateKeyFileSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Password if the private key file is encrypted.
-func (o ConnectionOutput) PrivateKeyPassphrase() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PrivateKeyPassphrase }).(pulumi.StringOutput)
+func (o ConnectionOutput) PrivateKeyPassphrase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.PrivateKeyPassphrase }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+func (o ConnectionOutput) PrivateKeyPassphraseSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.PrivateKeyPassphraseSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The base64 encoded content of the producer.properties file.
@@ -1410,13 +1728,23 @@ func (o ConnectionOutput) RoutingMethod() pulumi.StringOutput {
 }
 
 // (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-func (o ConnectionOutput) SasToken() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SasToken }).(pulumi.StringOutput)
+func (o ConnectionOutput) SasToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SasToken }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
+func (o ConnectionOutput) SasTokenSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SasTokenSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-func (o ConnectionOutput) SecretAccessKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SecretAccessKey }).(pulumi.StringOutput)
+func (o ConnectionOutput) SecretAccessKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SecretAccessKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+func (o ConnectionOutput) SecretAccessKeySecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SecretAccessKeySecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
@@ -1430,8 +1758,13 @@ func (o ConnectionOutput) Servers() pulumi.StringOutput {
 }
 
 // (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
-func (o ConnectionOutput) ServiceAccountKeyFile() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ServiceAccountKeyFile }).(pulumi.StringOutput)
+func (o ConnectionOutput) ServiceAccountKeyFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ServiceAccountKeyFile }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+func (o ConnectionOutput) ServiceAccountKeyFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ServiceAccountKeyFileSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
@@ -1460,13 +1793,23 @@ func (o ConnectionOutput) SslCert() pulumi.StringOutput {
 }
 
 // (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
-func (o ConnectionOutput) SslClientKeystash() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslClientKeystash }).(pulumi.StringOutput)
+func (o ConnectionOutput) SslClientKeystash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslClientKeystash }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+func (o ConnectionOutput) SslClientKeystashSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslClientKeystashSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
-func (o ConnectionOutput) SslClientKeystoredb() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslClientKeystoredb }).(pulumi.StringOutput)
+func (o ConnectionOutput) SslClientKeystoredb() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslClientKeystoredb }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+func (o ConnectionOutput) SslClientKeystoredbSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslClientKeystoredbSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
@@ -1474,14 +1817,25 @@ func (o ConnectionOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCrl }).(pulumi.StringOutput)
 }
 
-// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
-func (o ConnectionOutput) SslKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslKey }).(pulumi.StringOutput)
+// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+func (o ConnectionOutput) SslKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslKey }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
-func (o ConnectionOutput) SslKeyPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslKeyPassword }).(pulumi.StringOutput)
+func (o ConnectionOutput) SslKeyPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslKeyPassword }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+func (o ConnectionOutput) SslKeyPasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslKeyPasswordSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+func (o ConnectionOutput) SslKeySecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslKeySecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) SSL modes for PostgreSQL.
@@ -1534,14 +1888,32 @@ func (o ConnectionOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ConnectionOutput) TriggerRefresh() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.BoolPtrOutput { return v.TriggerRefresh }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) The base64 encoded content of the TrustStore file.
-func (o ConnectionOutput) TrustStore() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TrustStore }).(pulumi.StringOutput)
+func (o ConnectionOutput) TrustStore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TrustStore }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The TrustStore password.
-func (o ConnectionOutput) TrustStorePassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TrustStorePassword }).(pulumi.StringOutput)
+func (o ConnectionOutput) TrustStorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TrustStorePassword }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+func (o ConnectionOutput) TrustStorePasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TrustStorePasswordSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+func (o ConnectionOutput) TrustStoreSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TrustStoreSecretId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
@@ -1565,11 +1937,13 @@ func (o ConnectionOutput) VaultId() pulumi.StringOutput {
 }
 
 // (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ConnectionOutput) Wallet() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Wallet }).(pulumi.StringOutput)
+func (o ConnectionOutput) Wallet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Wallet }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+func (o ConnectionOutput) WalletSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.WalletSecretId }).(pulumi.StringPtrOutput)
 }
 
 type ConnectionArrayOutput struct{ *pulumi.OutputState }

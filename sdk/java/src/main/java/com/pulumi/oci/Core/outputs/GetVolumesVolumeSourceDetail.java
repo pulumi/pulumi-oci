@@ -11,62 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetVolumesVolumeSourceDetail {
     /**
-     * @return Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * @return (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
      * 
      */
     private String changeBlockSizeInBytes;
     /**
-     * @return The OCID of the first volume backup.
+     * @return (Required when type=volumeBackupDelta) The OCID of the first volume backup.
      * 
      */
     private String firstBackupId;
     /**
-     * @return The OCID of the block volume replica.
+     * @return (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
      * 
      */
     private String id;
     /**
-     * @return The OCID of the second volume backup.
+     * @return (Required when type=volumeBackupDelta) The OCID of the second volume backup.
      * 
      */
     private String secondBackupId;
     /**
-     * @return The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+     * @return (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
      * 
      */
     private String type;
 
     private GetVolumesVolumeSourceDetail() {}
     /**
-     * @return Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * @return (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
      * 
      */
     public String changeBlockSizeInBytes() {
         return this.changeBlockSizeInBytes;
     }
     /**
-     * @return The OCID of the first volume backup.
+     * @return (Required when type=volumeBackupDelta) The OCID of the first volume backup.
      * 
      */
     public String firstBackupId() {
         return this.firstBackupId;
     }
     /**
-     * @return The OCID of the block volume replica.
+     * @return (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The OCID of the second volume backup.
+     * @return (Required when type=volumeBackupDelta) The OCID of the second volume backup.
      * 
      */
     public String secondBackupId() {
         return this.secondBackupId;
     }
     /**
-     * @return The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+     * @return (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
      * 
      */
     public String type() {

@@ -108,7 +108,7 @@ type LookupDeploymentResult struct {
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 	LoadBalancerSubnetId string `pulumi:"loadBalancerSubnetId"`
 	// Locks associated with this resource.
 	Locks []GetDeploymentLock `pulumi:"locks"`
@@ -322,7 +322,7 @@ func (o LookupDeploymentResultOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 func (o LookupDeploymentResultOutput) LoadBalancerSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LoadBalancerSubnetId }).(pulumi.StringOutput)
 }

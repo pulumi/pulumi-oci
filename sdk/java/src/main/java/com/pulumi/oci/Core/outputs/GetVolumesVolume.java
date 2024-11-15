@@ -70,7 +70,7 @@ public final class GetVolumesVolume {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The OCID of the block volume replica.
+     * @return (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
      * 
      */
     private String id;
@@ -213,7 +213,7 @@ public final class GetVolumesVolume {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the block volume replica.
+     * @return (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
      * 
      */
     public String id() {

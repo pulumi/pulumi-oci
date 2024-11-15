@@ -28931,15 +28931,15 @@ func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput) Index(i pulumi.
 }
 
 type GetVolumeSourceDetail struct {
-	// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+	// (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
 	ChangeBlockSizeInBytes string `pulumi:"changeBlockSizeInBytes"`
-	// The OCID of the first volume backup.
+	// (Required when type=volumeBackupDelta) The OCID of the first volume backup.
 	FirstBackupId string `pulumi:"firstBackupId"`
-	// The OCID of the block volume replica.
+	// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 	Id string `pulumi:"id"`
-	// The OCID of the second volume backup.
+	// (Required when type=volumeBackupDelta) The OCID of the second volume backup.
 	SecondBackupId string `pulumi:"secondBackupId"`
-	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+	// (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 	Type string `pulumi:"type"`
 }
 
@@ -28955,15 +28955,15 @@ type GetVolumeSourceDetailInput interface {
 }
 
 type GetVolumeSourceDetailArgs struct {
-	// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+	// (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
 	ChangeBlockSizeInBytes pulumi.StringInput `pulumi:"changeBlockSizeInBytes"`
-	// The OCID of the first volume backup.
+	// (Required when type=volumeBackupDelta) The OCID of the first volume backup.
 	FirstBackupId pulumi.StringInput `pulumi:"firstBackupId"`
-	// The OCID of the block volume replica.
+	// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The OCID of the second volume backup.
+	// (Required when type=volumeBackupDelta) The OCID of the second volume backup.
 	SecondBackupId pulumi.StringInput `pulumi:"secondBackupId"`
-	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+	// (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -29018,27 +29018,27 @@ func (o GetVolumeSourceDetailOutput) ToGetVolumeSourceDetailOutputWithContext(ct
 	return o
 }
 
-// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+// (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
 func (o GetVolumeSourceDetailOutput) ChangeBlockSizeInBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.ChangeBlockSizeInBytes }).(pulumi.StringOutput)
 }
 
-// The OCID of the first volume backup.
+// (Required when type=volumeBackupDelta) The OCID of the first volume backup.
 func (o GetVolumeSourceDetailOutput) FirstBackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.FirstBackupId }).(pulumi.StringOutput)
 }
 
-// The OCID of the block volume replica.
+// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 func (o GetVolumeSourceDetailOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The OCID of the second volume backup.
+// (Required when type=volumeBackupDelta) The OCID of the second volume backup.
 func (o GetVolumeSourceDetailOutput) SecondBackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.SecondBackupId }).(pulumi.StringOutput)
 }
 
-// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+// (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 func (o GetVolumeSourceDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -29191,7 +29191,7 @@ type GetVolumesVolume struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The OCID of the block volume replica.
+	// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 	Id string `pulumi:"id"`
 	// Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
@@ -29254,7 +29254,7 @@ type GetVolumesVolumeArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The OCID of the block volume replica.
+	// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolInput `pulumi:"isAutoTuneEnabled"`
@@ -29389,7 +29389,7 @@ func (o GetVolumesVolumeOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetVolumesVolume) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the block volume replica.
+// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 func (o GetVolumesVolumeOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolume) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -29716,15 +29716,15 @@ func (o GetVolumesVolumeBlockVolumeReplicaArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetVolumesVolumeSourceDetail struct {
-	// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+	// (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
 	ChangeBlockSizeInBytes string `pulumi:"changeBlockSizeInBytes"`
-	// The OCID of the first volume backup.
+	// (Required when type=volumeBackupDelta) The OCID of the first volume backup.
 	FirstBackupId string `pulumi:"firstBackupId"`
-	// The OCID of the block volume replica.
+	// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 	Id string `pulumi:"id"`
-	// The OCID of the second volume backup.
+	// (Required when type=volumeBackupDelta) The OCID of the second volume backup.
 	SecondBackupId string `pulumi:"secondBackupId"`
-	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+	// (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 	Type string `pulumi:"type"`
 }
 
@@ -29740,15 +29740,15 @@ type GetVolumesVolumeSourceDetailInput interface {
 }
 
 type GetVolumesVolumeSourceDetailArgs struct {
-	// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+	// (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
 	ChangeBlockSizeInBytes pulumi.StringInput `pulumi:"changeBlockSizeInBytes"`
-	// The OCID of the first volume backup.
+	// (Required when type=volumeBackupDelta) The OCID of the first volume backup.
 	FirstBackupId pulumi.StringInput `pulumi:"firstBackupId"`
-	// The OCID of the block volume replica.
+	// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The OCID of the second volume backup.
+	// (Required when type=volumeBackupDelta) The OCID of the second volume backup.
 	SecondBackupId pulumi.StringInput `pulumi:"secondBackupId"`
-	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+	// (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -29803,27 +29803,27 @@ func (o GetVolumesVolumeSourceDetailOutput) ToGetVolumesVolumeSourceDetailOutput
 	return o
 }
 
-// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+// (Applicable when type=volumeBackupDelta) Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
 func (o GetVolumesVolumeSourceDetailOutput) ChangeBlockSizeInBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.ChangeBlockSizeInBytes }).(pulumi.StringOutput)
 }
 
-// The OCID of the first volume backup.
+// (Required when type=volumeBackupDelta) The OCID of the first volume backup.
 func (o GetVolumesVolumeSourceDetailOutput) FirstBackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.FirstBackupId }).(pulumi.StringOutput)
 }
 
-// The OCID of the block volume replica.
+// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 func (o GetVolumesVolumeSourceDetailOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The OCID of the second volume backup.
+// (Required when type=volumeBackupDelta) The OCID of the second volume backup.
 func (o GetVolumesVolumeSourceDetailOutput) SecondBackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.SecondBackupId }).(pulumi.StringOutput)
 }
 
-// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+// (Required) The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 func (o GetVolumesVolumeSourceDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.Type }).(pulumi.StringOutput)
 }

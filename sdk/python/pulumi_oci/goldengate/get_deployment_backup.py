@@ -27,7 +27,7 @@ class GetDeploymentBackupResult:
     """
     A collection of values returned by getDeploymentBackup.
     """
-    def __init__(__self__, backup_type=None, bucket=None, compartment_id=None, defined_tags=None, deployment_backup_id=None, deployment_id=None, deployment_type=None, display_name=None, freeform_tags=None, id=None, is_automatic=None, is_lock_override=None, lifecycle_details=None, locks=None, namespace=None, object=None, ogg_version=None, size_in_bytes=None, state=None, system_tags=None, time_backup_finished=None, time_created=None, time_of_backup=None, time_updated=None):
+    def __init__(__self__, backup_type=None, bucket=None, compartment_id=None, defined_tags=None, deployment_backup_id=None, deployment_id=None, deployment_type=None, display_name=None, freeform_tags=None, id=None, is_automatic=None, is_lock_override=None, is_metadata_only=None, lifecycle_details=None, locks=None, namespace=None, object=None, ogg_version=None, size_in_bytes=None, state=None, system_tags=None, time_backup_finished=None, time_created=None, time_of_backup=None, time_updated=None):
         if backup_type and not isinstance(backup_type, str):
             raise TypeError("Expected argument 'backup_type' to be a str")
         pulumi.set(__self__, "backup_type", backup_type)
@@ -64,6 +64,9 @@ class GetDeploymentBackupResult:
         if is_lock_override and not isinstance(is_lock_override, bool):
             raise TypeError("Expected argument 'is_lock_override' to be a bool")
         pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if is_metadata_only and not isinstance(is_metadata_only, bool):
+            raise TypeError("Expected argument 'is_metadata_only' to be a bool")
+        pulumi.set(__self__, "is_metadata_only", is_metadata_only)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -192,6 +195,14 @@ class GetDeploymentBackupResult:
         return pulumi.get(self, "is_lock_override")
 
     @property
+    @pulumi.getter(name="isMetadataOnly")
+    def is_metadata_only(self) -> bool:
+        """
+        Parameter to allow users to create backup without trails
+        """
+        return pulumi.get(self, "is_metadata_only")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -306,6 +317,7 @@ class AwaitableGetDeploymentBackupResult(GetDeploymentBackupResult):
             id=self.id,
             is_automatic=self.is_automatic,
             is_lock_override=self.is_lock_override,
+            is_metadata_only=self.is_metadata_only,
             lifecycle_details=self.lifecycle_details,
             locks=self.locks,
             namespace=self.namespace,
@@ -357,6 +369,7 @@ def get_deployment_backup(deployment_backup_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_automatic=pulumi.get(__ret__, 'is_automatic'),
         is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
+        is_metadata_only=pulumi.get(__ret__, 'is_metadata_only'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         locks=pulumi.get(__ret__, 'locks'),
         namespace=pulumi.get(__ret__, 'namespace'),
@@ -405,6 +418,7 @@ def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[str
         id=pulumi.get(__response__, 'id'),
         is_automatic=pulumi.get(__response__, 'is_automatic'),
         is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        is_metadata_only=pulumi.get(__response__, 'is_metadata_only'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         locks=pulumi.get(__response__, 'locks'),
         namespace=pulumi.get(__response__, 'namespace'),

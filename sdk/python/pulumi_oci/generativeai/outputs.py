@@ -16,12 +16,60 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AgentAgentEndpointContentModerationConfig',
+    'AgentAgentEndpointSessionConfig',
+    'AgentDataIngestionJobDataIngestionJobStatistic',
+    'AgentDataSourceDataSourceConfig',
+    'AgentDataSourceDataSourceConfigObjectStoragePrefix',
+    'AgentKnowledgeBaseIndexConfig',
+    'AgentKnowledgeBaseIndexConfigDatabaseConnection',
+    'AgentKnowledgeBaseIndexConfigDatabaseFunction',
+    'AgentKnowledgeBaseIndexConfigIndex',
+    'AgentKnowledgeBaseIndexConfigIndexSchema',
+    'AgentKnowledgeBaseIndexConfigSecretDetail',
     'DedicatedAiClusterCapacity',
     'EndpointContentModerationConfig',
     'ModelFineTuneDetails',
     'ModelFineTuneDetailsTrainingConfig',
     'ModelFineTuneDetailsTrainingDataset',
     'ModelModelMetric',
+    'GetAgentAgentEndpointContentModerationConfigResult',
+    'GetAgentAgentEndpointSessionConfigResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigResult',
+    'GetAgentAgentEndpointsFilterResult',
+    'GetAgentAgentsAgentCollectionResult',
+    'GetAgentAgentsAgentCollectionItemResult',
+    'GetAgentAgentsFilterResult',
+    'GetAgentDataIngestionJobDataIngestionJobStatisticResult',
+    'GetAgentDataIngestionJobsDataIngestionJobCollectionResult',
+    'GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult',
+    'GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticResult',
+    'GetAgentDataIngestionJobsFilterResult',
+    'GetAgentDataSourceDataSourceConfigResult',
+    'GetAgentDataSourceDataSourceConfigObjectStoragePrefixResult',
+    'GetAgentDataSourcesDataSourceCollectionResult',
+    'GetAgentDataSourcesDataSourceCollectionItemResult',
+    'GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigResult',
+    'GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixResult',
+    'GetAgentDataSourcesFilterResult',
+    'GetAgentKnowledgeBaseIndexConfigResult',
+    'GetAgentKnowledgeBaseIndexConfigDatabaseConnectionResult',
+    'GetAgentKnowledgeBaseIndexConfigDatabaseFunctionResult',
+    'GetAgentKnowledgeBaseIndexConfigIndexResult',
+    'GetAgentKnowledgeBaseIndexConfigIndexSchemaResult',
+    'GetAgentKnowledgeBaseIndexConfigSecretDetailResult',
+    'GetAgentKnowledgeBasesFilterResult',
+    'GetAgentKnowledgeBasesKnowledgeBaseCollectionResult',
+    'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemResult',
+    'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult',
+    'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionResult',
+    'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionResult',
+    'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexResult',
+    'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaResult',
+    'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailResult',
     'GetDedicatedAiClusterCapacityResult',
     'GetDedicatedAiClustersDedicatedAiClusterCollectionResult',
     'GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult',
@@ -44,6 +92,660 @@ __all__ = [
     'GetModelsModelCollectionItemFineTuneDetailTrainingDatasetResult',
     'GetModelsModelCollectionItemModelMetricResult',
 ]
+
+@pulumi.output_type
+class AgentAgentEndpointContentModerationConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "shouldEnableOnInput":
+            suggest = "should_enable_on_input"
+        elif key == "shouldEnableOnOutput":
+            suggest = "should_enable_on_output"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentEndpointContentModerationConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentEndpointContentModerationConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentEndpointContentModerationConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 should_enable_on_input: Optional[bool] = None,
+                 should_enable_on_output: Optional[bool] = None):
+        """
+        :param bool should_enable_on_input: (Updatable) A flag to enable or disable content moderation on input.
+        :param bool should_enable_on_output: (Updatable) A flag to enable or disable content moderation on output.
+        """
+        if should_enable_on_input is not None:
+            pulumi.set(__self__, "should_enable_on_input", should_enable_on_input)
+        if should_enable_on_output is not None:
+            pulumi.set(__self__, "should_enable_on_output", should_enable_on_output)
+
+    @property
+    @pulumi.getter(name="shouldEnableOnInput")
+    def should_enable_on_input(self) -> Optional[bool]:
+        """
+        (Updatable) A flag to enable or disable content moderation on input.
+        """
+        return pulumi.get(self, "should_enable_on_input")
+
+    @property
+    @pulumi.getter(name="shouldEnableOnOutput")
+    def should_enable_on_output(self) -> Optional[bool]:
+        """
+        (Updatable) A flag to enable or disable content moderation on output.
+        """
+        return pulumi.get(self, "should_enable_on_output")
+
+
+@pulumi.output_type
+class AgentAgentEndpointSessionConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "idleTimeoutInSeconds":
+            suggest = "idle_timeout_in_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentEndpointSessionConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentEndpointSessionConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentEndpointSessionConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 idle_timeout_in_seconds: Optional[int] = None):
+        """
+        :param int idle_timeout_in_seconds: (Updatable) The session will become inactive after this timeout.
+        """
+        if idle_timeout_in_seconds is not None:
+            pulumi.set(__self__, "idle_timeout_in_seconds", idle_timeout_in_seconds)
+
+    @property
+    @pulumi.getter(name="idleTimeoutInSeconds")
+    def idle_timeout_in_seconds(self) -> Optional[int]:
+        """
+        (Updatable) The session will become inactive after this timeout.
+        """
+        return pulumi.get(self, "idle_timeout_in_seconds")
+
+
+@pulumi.output_type
+class AgentDataIngestionJobDataIngestionJobStatistic(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationInSeconds":
+            suggest = "duration_in_seconds"
+        elif key == "numberOfFailedFiles":
+            suggest = "number_of_failed_files"
+        elif key == "numberOfIngestedFiles":
+            suggest = "number_of_ingested_files"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentDataIngestionJobDataIngestionJobStatistic. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentDataIngestionJobDataIngestionJobStatistic.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentDataIngestionJobDataIngestionJobStatistic.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_in_seconds: Optional[int] = None,
+                 number_of_failed_files: Optional[int] = None,
+                 number_of_ingested_files: Optional[int] = None):
+        """
+        :param int duration_in_seconds: The duration of this ingestion job.
+        :param int number_of_failed_files: The number of files that have failed during the ingestion.
+        :param int number_of_ingested_files: The number of files that have been successfully ingested during the ingestion.
+        """
+        if duration_in_seconds is not None:
+            pulumi.set(__self__, "duration_in_seconds", duration_in_seconds)
+        if number_of_failed_files is not None:
+            pulumi.set(__self__, "number_of_failed_files", number_of_failed_files)
+        if number_of_ingested_files is not None:
+            pulumi.set(__self__, "number_of_ingested_files", number_of_ingested_files)
+
+    @property
+    @pulumi.getter(name="durationInSeconds")
+    def duration_in_seconds(self) -> Optional[int]:
+        """
+        The duration of this ingestion job.
+        """
+        return pulumi.get(self, "duration_in_seconds")
+
+    @property
+    @pulumi.getter(name="numberOfFailedFiles")
+    def number_of_failed_files(self) -> Optional[int]:
+        """
+        The number of files that have failed during the ingestion.
+        """
+        return pulumi.get(self, "number_of_failed_files")
+
+    @property
+    @pulumi.getter(name="numberOfIngestedFiles")
+    def number_of_ingested_files(self) -> Optional[int]:
+        """
+        The number of files that have been successfully ingested during the ingestion.
+        """
+        return pulumi.get(self, "number_of_ingested_files")
+
+
+@pulumi.output_type
+class AgentDataSourceDataSourceConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataSourceConfigType":
+            suggest = "data_source_config_type"
+        elif key == "objectStoragePrefixes":
+            suggest = "object_storage_prefixes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentDataSourceDataSourceConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentDataSourceDataSourceConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentDataSourceDataSourceConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_source_config_type: str,
+                 object_storage_prefixes: Sequence['outputs.AgentDataSourceDataSourceConfigObjectStoragePrefix']):
+        """
+        :param str data_source_config_type: (Updatable) The type of the tool. The allowed values are:
+               * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        :param Sequence['AgentDataSourceDataSourceConfigObjectStoragePrefixArgs'] object_storage_prefixes: (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+        """
+        pulumi.set(__self__, "data_source_config_type", data_source_config_type)
+        pulumi.set(__self__, "object_storage_prefixes", object_storage_prefixes)
+
+    @property
+    @pulumi.getter(name="dataSourceConfigType")
+    def data_source_config_type(self) -> str:
+        """
+        (Updatable) The type of the tool. The allowed values are:
+        * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        """
+        return pulumi.get(self, "data_source_config_type")
+
+    @property
+    @pulumi.getter(name="objectStoragePrefixes")
+    def object_storage_prefixes(self) -> Sequence['outputs.AgentDataSourceDataSourceConfigObjectStoragePrefix']:
+        """
+        (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+        """
+        return pulumi.get(self, "object_storage_prefixes")
+
+
+@pulumi.output_type
+class AgentDataSourceDataSourceConfigObjectStoragePrefix(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str,
+                 prefix: Optional[str] = None):
+        """
+        :param str bucket: (Updatable) The bucket name of an object.
+        :param str namespace: (Updatable) The namespace name of an object.
+        :param str prefix: (Updatable) The name of the object (file) or prefix (folder).
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        (Updatable) The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        (Updatable) The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        """
+        (Updatable) The name of the object (file) or prefix (folder).
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class AgentKnowledgeBaseIndexConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "indexConfigType":
+            suggest = "index_config_type"
+        elif key == "clusterId":
+            suggest = "cluster_id"
+        elif key == "databaseConnection":
+            suggest = "database_connection"
+        elif key == "databaseFunctions":
+            suggest = "database_functions"
+        elif key == "secretDetail":
+            suggest = "secret_detail"
+        elif key == "shouldEnableHybridSearch":
+            suggest = "should_enable_hybrid_search"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentKnowledgeBaseIndexConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentKnowledgeBaseIndexConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentKnowledgeBaseIndexConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 index_config_type: str,
+                 cluster_id: Optional[str] = None,
+                 database_connection: Optional['outputs.AgentKnowledgeBaseIndexConfigDatabaseConnection'] = None,
+                 database_functions: Optional[Sequence['outputs.AgentKnowledgeBaseIndexConfigDatabaseFunction']] = None,
+                 indexes: Optional[Sequence['outputs.AgentKnowledgeBaseIndexConfigIndex']] = None,
+                 secret_detail: Optional['outputs.AgentKnowledgeBaseIndexConfigSecretDetail'] = None,
+                 should_enable_hybrid_search: Optional[bool] = None):
+        """
+        :param str index_config_type: (Updatable) The type of index. The allowed values are:
+               * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+               * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+               * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        :param str cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+        :param 'AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs' database_connection: (Updatable) **DatabaseConnection**
+               
+               The connection type for Databases.
+        :param Sequence['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs'] database_functions: (Updatable) Array of Database functions to be used.
+        :param Sequence['AgentKnowledgeBaseIndexConfigIndexArgs'] indexes: (Updatable) Index configuration for open search.
+        :param 'AgentKnowledgeBaseIndexConfigSecretDetailArgs' secret_detail: (Updatable) **SecretDetail**
+               
+               The details of configured security configuration on OpenSearch.
+        :param bool should_enable_hybrid_search: (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "index_config_type", index_config_type)
+        if cluster_id is not None:
+            pulumi.set(__self__, "cluster_id", cluster_id)
+        if database_connection is not None:
+            pulumi.set(__self__, "database_connection", database_connection)
+        if database_functions is not None:
+            pulumi.set(__self__, "database_functions", database_functions)
+        if indexes is not None:
+            pulumi.set(__self__, "indexes", indexes)
+        if secret_detail is not None:
+            pulumi.set(__self__, "secret_detail", secret_detail)
+        if should_enable_hybrid_search is not None:
+            pulumi.set(__self__, "should_enable_hybrid_search", should_enable_hybrid_search)
+
+    @property
+    @pulumi.getter(name="indexConfigType")
+    def index_config_type(self) -> str:
+        """
+        (Updatable) The type of index. The allowed values are:
+        * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+        * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+        * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        """
+        return pulumi.get(self, "index_config_type")
+
+    @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @property
+    @pulumi.getter(name="databaseConnection")
+    def database_connection(self) -> Optional['outputs.AgentKnowledgeBaseIndexConfigDatabaseConnection']:
+        """
+        (Updatable) **DatabaseConnection**
+
+        The connection type for Databases.
+        """
+        return pulumi.get(self, "database_connection")
+
+    @property
+    @pulumi.getter(name="databaseFunctions")
+    def database_functions(self) -> Optional[Sequence['outputs.AgentKnowledgeBaseIndexConfigDatabaseFunction']]:
+        """
+        (Updatable) Array of Database functions to be used.
+        """
+        return pulumi.get(self, "database_functions")
+
+    @property
+    @pulumi.getter
+    def indexes(self) -> Optional[Sequence['outputs.AgentKnowledgeBaseIndexConfigIndex']]:
+        """
+        (Updatable) Index configuration for open search.
+        """
+        return pulumi.get(self, "indexes")
+
+    @property
+    @pulumi.getter(name="secretDetail")
+    def secret_detail(self) -> Optional['outputs.AgentKnowledgeBaseIndexConfigSecretDetail']:
+        """
+        (Updatable) **SecretDetail**
+
+        The details of configured security configuration on OpenSearch.
+        """
+        return pulumi.get(self, "secret_detail")
+
+    @property
+    @pulumi.getter(name="shouldEnableHybridSearch")
+    def should_enable_hybrid_search(self) -> Optional[bool]:
+        """
+        (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "should_enable_hybrid_search")
+
+
+@pulumi.output_type
+class AgentKnowledgeBaseIndexConfigDatabaseConnection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionId":
+            suggest = "connection_id"
+        elif key == "connectionType":
+            suggest = "connection_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentKnowledgeBaseIndexConfigDatabaseConnection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentKnowledgeBaseIndexConfigDatabaseConnection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentKnowledgeBaseIndexConfigDatabaseConnection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_id: str,
+                 connection_type: str):
+        """
+        :param str connection_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        :param str connection_type: (Updatable) The type of Database connection. The allowed values are:
+               * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_type", connection_type)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> str:
+        """
+        (Updatable) The type of Database connection. The allowed values are:
+        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+
+@pulumi.output_type
+class AgentKnowledgeBaseIndexConfigDatabaseFunction(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: (Updatable) The name of the Database function.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the Database function.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class AgentKnowledgeBaseIndexConfigIndex(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 schema: Optional['outputs.AgentKnowledgeBaseIndexConfigIndexSchema'] = None):
+        """
+        :param str name: (Updatable) The index name in opensearch.
+        :param 'AgentKnowledgeBaseIndexConfigIndexSchemaArgs' schema: (Updatable) **IndexSchema**
+               
+               The index schema details.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if schema is not None:
+            pulumi.set(__self__, "schema", schema)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) The index name in opensearch.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def schema(self) -> Optional['outputs.AgentKnowledgeBaseIndexConfigIndexSchema']:
+        """
+        (Updatable) **IndexSchema**
+
+        The index schema details.
+        """
+        return pulumi.get(self, "schema")
+
+
+@pulumi.output_type
+class AgentKnowledgeBaseIndexConfigIndexSchema(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bodyKey":
+            suggest = "body_key"
+        elif key == "embeddingBodyKey":
+            suggest = "embedding_body_key"
+        elif key == "titleKey":
+            suggest = "title_key"
+        elif key == "urlKey":
+            suggest = "url_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentKnowledgeBaseIndexConfigIndexSchema. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentKnowledgeBaseIndexConfigIndexSchema.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentKnowledgeBaseIndexConfigIndexSchema.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 body_key: Optional[str] = None,
+                 embedding_body_key: Optional[str] = None,
+                 title_key: Optional[str] = None,
+                 url_key: Optional[str] = None):
+        """
+        :param str body_key: (Updatable) Body key name.
+        :param str embedding_body_key: (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+        :param str title_key: (Updatable) Title key that stores the Title of a document, if available.
+        :param str url_key: (Updatable) URL key that stores the URL of a document, if available.
+        """
+        if body_key is not None:
+            pulumi.set(__self__, "body_key", body_key)
+        if embedding_body_key is not None:
+            pulumi.set(__self__, "embedding_body_key", embedding_body_key)
+        if title_key is not None:
+            pulumi.set(__self__, "title_key", title_key)
+        if url_key is not None:
+            pulumi.set(__self__, "url_key", url_key)
+
+    @property
+    @pulumi.getter(name="bodyKey")
+    def body_key(self) -> Optional[str]:
+        """
+        (Updatable) Body key name.
+        """
+        return pulumi.get(self, "body_key")
+
+    @property
+    @pulumi.getter(name="embeddingBodyKey")
+    def embedding_body_key(self) -> Optional[str]:
+        """
+        (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+        """
+        return pulumi.get(self, "embedding_body_key")
+
+    @property
+    @pulumi.getter(name="titleKey")
+    def title_key(self) -> Optional[str]:
+        """
+        (Updatable) Title key that stores the Title of a document, if available.
+        """
+        return pulumi.get(self, "title_key")
+
+    @property
+    @pulumi.getter(name="urlKey")
+    def url_key(self) -> Optional[str]:
+        """
+        (Updatable) URL key that stores the URL of a document, if available.
+        """
+        return pulumi.get(self, "url_key")
+
+
+@pulumi.output_type
+class AgentKnowledgeBaseIndexConfigSecretDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "vaultSecretId":
+            suggest = "vault_secret_id"
+        elif key == "clientId":
+            suggest = "client_id"
+        elif key == "idcsUrl":
+            suggest = "idcs_url"
+        elif key == "scopeUrl":
+            suggest = "scope_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentKnowledgeBaseIndexConfigSecretDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentKnowledgeBaseIndexConfigSecretDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentKnowledgeBaseIndexConfigSecretDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 vault_secret_id: str,
+                 client_id: Optional[str] = None,
+                 idcs_url: Optional[str] = None,
+                 scope_url: Optional[str] = None):
+        """
+        :param str type: (Updatable) The type of OpenID. The allowed values are:
+               * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+               * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        :param str vault_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+        :param str client_id: (Updatable) The IDCS Connect clientId.
+        :param str idcs_url: (Updatable) The URL represent authentication url of the IDCS.
+        :param str scope_url: (Updatable) Fully qualified scope url
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if idcs_url is not None:
+            pulumi.set(__self__, "idcs_url", idcs_url)
+        if scope_url is not None:
+            pulumi.set(__self__, "scope_url", scope_url)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) The type of OpenID. The allowed values are:
+        * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+        * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> Optional[str]:
+        """
+        (Updatable) The IDCS Connect clientId.
+        """
+        return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="idcsUrl")
+    def idcs_url(self) -> Optional[str]:
+        """
+        (Updatable) The URL represent authentication url of the IDCS.
+        """
+        return pulumi.get(self, "idcs_url")
+
+    @property
+    @pulumi.getter(name="scopeUrl")
+    def scope_url(self) -> Optional[str]:
+        """
+        (Updatable) Fully qualified scope url
+        """
+        return pulumi.get(self, "scope_url")
+
 
 @pulumi.output_type
 class DedicatedAiClusterCapacity(dict):
@@ -519,6 +1221,1876 @@ class ModelModelMetric(dict):
         The type of the model metrics. Each type of model can expect a different set of model metrics.
         """
         return pulumi.get(self, "model_metrics_type")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointContentModerationConfigResult(dict):
+    def __init__(__self__, *,
+                 should_enable_on_input: bool,
+                 should_enable_on_output: bool):
+        """
+        :param bool should_enable_on_input: A flag to enable or disable content moderation on input.
+        :param bool should_enable_on_output: A flag to enable or disable content moderation on output.
+        """
+        pulumi.set(__self__, "should_enable_on_input", should_enable_on_input)
+        pulumi.set(__self__, "should_enable_on_output", should_enable_on_output)
+
+    @property
+    @pulumi.getter(name="shouldEnableOnInput")
+    def should_enable_on_input(self) -> bool:
+        """
+        A flag to enable or disable content moderation on input.
+        """
+        return pulumi.get(self, "should_enable_on_input")
+
+    @property
+    @pulumi.getter(name="shouldEnableOnOutput")
+    def should_enable_on_output(self) -> bool:
+        """
+        A flag to enable or disable content moderation on output.
+        """
+        return pulumi.get(self, "should_enable_on_output")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointSessionConfigResult(dict):
+    def __init__(__self__, *,
+                 idle_timeout_in_seconds: int):
+        """
+        :param int idle_timeout_in_seconds: The session will become inactive after this timeout.
+        """
+        pulumi.set(__self__, "idle_timeout_in_seconds", idle_timeout_in_seconds)
+
+    @property
+    @pulumi.getter(name="idleTimeoutInSeconds")
+    def idle_timeout_in_seconds(self) -> int:
+        """
+        The session will become inactive after this timeout.
+        """
+        return pulumi.get(self, "idle_timeout_in_seconds")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_id: str,
+                 compartment_id: str,
+                 content_moderation_configs: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigResult'],
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 session_configs: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigResult'],
+                 should_enable_citation: bool,
+                 should_enable_session: bool,
+                 should_enable_trace: bool,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs'] content_moderation_configs: The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: An optional description of the endpoint.
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
+        :param str lifecycle_details: A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs'] session_configs: **SessionConfig**
+        :param bool should_enable_citation: Whether to show citations in the chat result.
+        :param bool should_enable_session: Whether or not to enable Session-based chat.
+        :param bool should_enable_trace: Whether to show traces in the chat result.
+        :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the AgentEndpoint was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the endpoint was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "content_moderation_configs", content_moderation_configs)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "session_configs", session_configs)
+        pulumi.set(__self__, "should_enable_citation", should_enable_citation)
+        pulumi.set(__self__, "should_enable_session", should_enable_session)
+        pulumi.set(__self__, "should_enable_trace", should_enable_trace)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="contentModerationConfigs")
+    def content_moderation_configs(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigResult']:
+        """
+        The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        """
+        return pulumi.get(self, "content_moderation_configs")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        An optional description of the endpoint.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="sessionConfigs")
+    def session_configs(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigResult']:
+        """
+        **SessionConfig**
+        """
+        return pulumi.get(self, "session_configs")
+
+    @property
+    @pulumi.getter(name="shouldEnableCitation")
+    def should_enable_citation(self) -> bool:
+        """
+        Whether to show citations in the chat result.
+        """
+        return pulumi.get(self, "should_enable_citation")
+
+    @property
+    @pulumi.getter(name="shouldEnableSession")
+    def should_enable_session(self) -> bool:
+        """
+        Whether or not to enable Session-based chat.
+        """
+        return pulumi.get(self, "should_enable_session")
+
+    @property
+    @pulumi.getter(name="shouldEnableTrace")
+    def should_enable_trace(self) -> bool:
+        """
+        Whether to show traces in the chat result.
+        """
+        return pulumi.get(self, "should_enable_trace")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the AgentEndpoint was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the endpoint was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigResult(dict):
+    def __init__(__self__, *,
+                 should_enable_on_input: bool,
+                 should_enable_on_output: bool):
+        """
+        :param bool should_enable_on_input: A flag to enable or disable content moderation on input.
+        :param bool should_enable_on_output: A flag to enable or disable content moderation on output.
+        """
+        pulumi.set(__self__, "should_enable_on_input", should_enable_on_input)
+        pulumi.set(__self__, "should_enable_on_output", should_enable_on_output)
+
+    @property
+    @pulumi.getter(name="shouldEnableOnInput")
+    def should_enable_on_input(self) -> bool:
+        """
+        A flag to enable or disable content moderation on input.
+        """
+        return pulumi.get(self, "should_enable_on_input")
+
+    @property
+    @pulumi.getter(name="shouldEnableOnOutput")
+    def should_enable_on_output(self) -> bool:
+        """
+        A flag to enable or disable content moderation on output.
+        """
+        return pulumi.get(self, "should_enable_on_output")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigResult(dict):
+    def __init__(__self__, *,
+                 idle_timeout_in_seconds: int):
+        """
+        :param int idle_timeout_in_seconds: The session will become inactive after this timeout.
+        """
+        pulumi.set(__self__, "idle_timeout_in_seconds", idle_timeout_in_seconds)
+
+    @property
+    @pulumi.getter(name="idleTimeoutInSeconds")
+    def idle_timeout_in_seconds(self) -> int:
+        """
+        The session will become inactive after this timeout.
+        """
+        return pulumi.get(self, "idle_timeout_in_seconds")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAgentAgentsAgentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAgentAgentsAgentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAgentAgentsAgentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAgentAgentsAgentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 knowledge_base_ids: Sequence[str],
+                 lifecycle_details: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str,
+                 welcome_message: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: Description about the agent.
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+        :param Sequence[str] knowledge_base_ids: List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        :param str lifecycle_details: A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the agent was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the agent was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str welcome_message: Details about purpose and responsibility of the agent
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "knowledge_base_ids", knowledge_base_ids)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "welcome_message", welcome_message)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description about the agent.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="knowledgeBaseIds")
+    def knowledge_base_ids(self) -> Sequence[str]:
+        """
+        List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        """
+        return pulumi.get(self, "knowledge_base_ids")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the agent was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the agent was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="welcomeMessage")
+    def welcome_message(self) -> str:
+        """
+        Details about purpose and responsibility of the agent
+        """
+        return pulumi.get(self, "welcome_message")
+
+
+@pulumi.output_type
+class GetAgentAgentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAgentDataIngestionJobDataIngestionJobStatisticResult(dict):
+    def __init__(__self__, *,
+                 duration_in_seconds: int,
+                 number_of_failed_files: int,
+                 number_of_ingested_files: int):
+        """
+        :param int duration_in_seconds: The duration of this ingestion job.
+        :param int number_of_failed_files: The number of files that have failed during the ingestion.
+        :param int number_of_ingested_files: The number of files that have been successfully ingested during the ingestion.
+        """
+        pulumi.set(__self__, "duration_in_seconds", duration_in_seconds)
+        pulumi.set(__self__, "number_of_failed_files", number_of_failed_files)
+        pulumi.set(__self__, "number_of_ingested_files", number_of_ingested_files)
+
+    @property
+    @pulumi.getter(name="durationInSeconds")
+    def duration_in_seconds(self) -> int:
+        """
+        The duration of this ingestion job.
+        """
+        return pulumi.get(self, "duration_in_seconds")
+
+    @property
+    @pulumi.getter(name="numberOfFailedFiles")
+    def number_of_failed_files(self) -> int:
+        """
+        The number of files that have failed during the ingestion.
+        """
+        return pulumi.get(self, "number_of_failed_files")
+
+    @property
+    @pulumi.getter(name="numberOfIngestedFiles")
+    def number_of_ingested_files(self) -> int:
+        """
+        The number of files that have been successfully ingested during the ingestion.
+        """
+        return pulumi.get(self, "number_of_ingested_files")
+
+
+@pulumi.output_type
+class GetAgentDataIngestionJobsDataIngestionJobCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 data_ingestion_job_statistics: Sequence['outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticResult'],
+                 data_source_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs'] data_ingestion_job_statistics: **DataIngestionJobStatistics**
+        :param str data_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: A user-friendly name. Does not have to be unique, and it's changeable.
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
+        :param str lifecycle_details: A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the data ingestion job was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the data ingestion job was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_ingestion_job_statistics", data_ingestion_job_statistics)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dataIngestionJobStatistics")
+    def data_ingestion_job_statistics(self) -> Sequence['outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticResult']:
+        """
+        **DataIngestionJobStatistics**
+        """
+        return pulumi.get(self, "data_ingestion_job_statistics")
+
+    @property
+    @pulumi.getter(name="dataSourceId")
+    def data_source_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+        """
+        return pulumi.get(self, "data_source_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the data ingestion job was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the data ingestion job was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticResult(dict):
+    def __init__(__self__, *,
+                 duration_in_seconds: int,
+                 number_of_failed_files: int,
+                 number_of_ingested_files: int):
+        """
+        :param int duration_in_seconds: The duration of this ingestion job.
+        :param int number_of_failed_files: The number of files that have failed during the ingestion.
+        :param int number_of_ingested_files: The number of files that have been successfully ingested during the ingestion.
+        """
+        pulumi.set(__self__, "duration_in_seconds", duration_in_seconds)
+        pulumi.set(__self__, "number_of_failed_files", number_of_failed_files)
+        pulumi.set(__self__, "number_of_ingested_files", number_of_ingested_files)
+
+    @property
+    @pulumi.getter(name="durationInSeconds")
+    def duration_in_seconds(self) -> int:
+        """
+        The duration of this ingestion job.
+        """
+        return pulumi.get(self, "duration_in_seconds")
+
+    @property
+    @pulumi.getter(name="numberOfFailedFiles")
+    def number_of_failed_files(self) -> int:
+        """
+        The number of files that have failed during the ingestion.
+        """
+        return pulumi.get(self, "number_of_failed_files")
+
+    @property
+    @pulumi.getter(name="numberOfIngestedFiles")
+    def number_of_ingested_files(self) -> int:
+        """
+        The number of files that have been successfully ingested during the ingestion.
+        """
+        return pulumi.get(self, "number_of_ingested_files")
+
+
+@pulumi.output_type
+class GetAgentDataIngestionJobsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAgentDataSourceDataSourceConfigResult(dict):
+    def __init__(__self__, *,
+                 data_source_config_type: str,
+                 object_storage_prefixes: Sequence['outputs.GetAgentDataSourceDataSourceConfigObjectStoragePrefixResult']):
+        """
+        :param str data_source_config_type: The type of the tool. The allowed values are:
+               * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        :param Sequence['GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs'] object_storage_prefixes: The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+        """
+        pulumi.set(__self__, "data_source_config_type", data_source_config_type)
+        pulumi.set(__self__, "object_storage_prefixes", object_storage_prefixes)
+
+    @property
+    @pulumi.getter(name="dataSourceConfigType")
+    def data_source_config_type(self) -> str:
+        """
+        The type of the tool. The allowed values are:
+        * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        """
+        return pulumi.get(self, "data_source_config_type")
+
+    @property
+    @pulumi.getter(name="objectStoragePrefixes")
+    def object_storage_prefixes(self) -> Sequence['outputs.GetAgentDataSourceDataSourceConfigObjectStoragePrefixResult']:
+        """
+        The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+        """
+        return pulumi.get(self, "object_storage_prefixes")
+
+
+@pulumi.output_type
+class GetAgentDataSourceDataSourceConfigObjectStoragePrefixResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str,
+                 prefix: str):
+        """
+        :param str bucket: The bucket name of an object.
+        :param str namespace: The namespace name of an object.
+        :param str prefix: The name of the object (file) or prefix (folder).
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> str:
+        """
+        The name of the object (file) or prefix (folder).
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetAgentDataSourcesDataSourceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAgentDataSourcesDataSourceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAgentDataSourcesDataSourceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAgentDataSourcesDataSourceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 data_source_configs: Sequence['outputs.GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigResult'],
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 knowledge_base_id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs'] data_source_configs: **DataSourceConfig**
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: A description of the data source.
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+        :param str knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+        :param str lifecycle_details: A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the data source was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the data source was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_source_configs", data_source_configs)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dataSourceConfigs")
+    def data_source_configs(self) -> Sequence['outputs.GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigResult']:
+        """
+        **DataSourceConfig**
+        """
+        return pulumi.get(self, "data_source_configs")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A description of the data source.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="knowledgeBaseId")
+    def knowledge_base_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+        """
+        return pulumi.get(self, "knowledge_base_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the data source was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the data source was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigResult(dict):
+    def __init__(__self__, *,
+                 data_source_config_type: str,
+                 object_storage_prefixes: Sequence['outputs.GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixResult']):
+        """
+        :param str data_source_config_type: The type of the tool. The allowed values are:
+               * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        :param Sequence['GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs'] object_storage_prefixes: The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+        """
+        pulumi.set(__self__, "data_source_config_type", data_source_config_type)
+        pulumi.set(__self__, "object_storage_prefixes", object_storage_prefixes)
+
+    @property
+    @pulumi.getter(name="dataSourceConfigType")
+    def data_source_config_type(self) -> str:
+        """
+        The type of the tool. The allowed values are:
+        * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        """
+        return pulumi.get(self, "data_source_config_type")
+
+    @property
+    @pulumi.getter(name="objectStoragePrefixes")
+    def object_storage_prefixes(self) -> Sequence['outputs.GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixResult']:
+        """
+        The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+        """
+        return pulumi.get(self, "object_storage_prefixes")
+
+
+@pulumi.output_type
+class GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str,
+                 prefix: str):
+        """
+        :param str bucket: The bucket name of an object.
+        :param str namespace: The namespace name of an object.
+        :param str prefix: The name of the object (file) or prefix (folder).
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> str:
+        """
+        The name of the object (file) or prefix (folder).
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetAgentDataSourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBaseIndexConfigResult(dict):
+    def __init__(__self__, *,
+                 cluster_id: str,
+                 database_connections: Sequence['outputs.GetAgentKnowledgeBaseIndexConfigDatabaseConnectionResult'],
+                 database_functions: Sequence['outputs.GetAgentKnowledgeBaseIndexConfigDatabaseFunctionResult'],
+                 index_config_type: str,
+                 indexes: Sequence['outputs.GetAgentKnowledgeBaseIndexConfigIndexResult'],
+                 secret_details: Sequence['outputs.GetAgentKnowledgeBaseIndexConfigSecretDetailResult'],
+                 should_enable_hybrid_search: bool):
+        """
+        :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+        :param Sequence['GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs'] database_connections: **DatabaseConnection**
+        :param Sequence['GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs'] database_functions: Array of Database functions to be used.
+        :param str index_config_type: The type of index. The allowed values are:
+               * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+               * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+               * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        :param Sequence['GetAgentKnowledgeBaseIndexConfigIndexArgs'] indexes: Index configuration for open search.
+        :param Sequence['GetAgentKnowledgeBaseIndexConfigSecretDetailArgs'] secret_details: **SecretDetail**
+        :param bool should_enable_hybrid_search: Whether to enable Hybrid search in service managed OpenSearch.
+        """
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "database_connections", database_connections)
+        pulumi.set(__self__, "database_functions", database_functions)
+        pulumi.set(__self__, "index_config_type", index_config_type)
+        pulumi.set(__self__, "indexes", indexes)
+        pulumi.set(__self__, "secret_details", secret_details)
+        pulumi.set(__self__, "should_enable_hybrid_search", should_enable_hybrid_search)
+
+    @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @property
+    @pulumi.getter(name="databaseConnections")
+    def database_connections(self) -> Sequence['outputs.GetAgentKnowledgeBaseIndexConfigDatabaseConnectionResult']:
+        """
+        **DatabaseConnection**
+        """
+        return pulumi.get(self, "database_connections")
+
+    @property
+    @pulumi.getter(name="databaseFunctions")
+    def database_functions(self) -> Sequence['outputs.GetAgentKnowledgeBaseIndexConfigDatabaseFunctionResult']:
+        """
+        Array of Database functions to be used.
+        """
+        return pulumi.get(self, "database_functions")
+
+    @property
+    @pulumi.getter(name="indexConfigType")
+    def index_config_type(self) -> str:
+        """
+        The type of index. The allowed values are:
+        * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+        * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+        * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        """
+        return pulumi.get(self, "index_config_type")
+
+    @property
+    @pulumi.getter
+    def indexes(self) -> Sequence['outputs.GetAgentKnowledgeBaseIndexConfigIndexResult']:
+        """
+        Index configuration for open search.
+        """
+        return pulumi.get(self, "indexes")
+
+    @property
+    @pulumi.getter(name="secretDetails")
+    def secret_details(self) -> Sequence['outputs.GetAgentKnowledgeBaseIndexConfigSecretDetailResult']:
+        """
+        **SecretDetail**
+        """
+        return pulumi.get(self, "secret_details")
+
+    @property
+    @pulumi.getter(name="shouldEnableHybridSearch")
+    def should_enable_hybrid_search(self) -> bool:
+        """
+        Whether to enable Hybrid search in service managed OpenSearch.
+        """
+        return pulumi.get(self, "should_enable_hybrid_search")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBaseIndexConfigDatabaseConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_id: str,
+                 connection_type: str):
+        """
+        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        :param str connection_type: The type of Database connection. The allowed values are:
+               * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_type", connection_type)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> str:
+        """
+        The type of Database connection. The allowed values are:
+        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBaseIndexConfigDatabaseFunctionResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: The index name in opensearch.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The index name in opensearch.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBaseIndexConfigIndexResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 schemas: Sequence['outputs.GetAgentKnowledgeBaseIndexConfigIndexSchemaResult']):
+        """
+        :param str name: The index name in opensearch.
+        :param Sequence['GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs'] schemas: **IndexSchema**
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "schemas", schemas)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The index name in opensearch.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def schemas(self) -> Sequence['outputs.GetAgentKnowledgeBaseIndexConfigIndexSchemaResult']:
+        """
+        **IndexSchema**
+        """
+        return pulumi.get(self, "schemas")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBaseIndexConfigIndexSchemaResult(dict):
+    def __init__(__self__, *,
+                 body_key: str,
+                 embedding_body_key: str,
+                 title_key: str,
+                 url_key: str):
+        """
+        :param str body_key: Body key name.
+        :param str embedding_body_key: Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+        :param str title_key: Title key that stores the Title of a document, if available.
+        :param str url_key: URL key that stores the URL of a document, if available.
+        """
+        pulumi.set(__self__, "body_key", body_key)
+        pulumi.set(__self__, "embedding_body_key", embedding_body_key)
+        pulumi.set(__self__, "title_key", title_key)
+        pulumi.set(__self__, "url_key", url_key)
+
+    @property
+    @pulumi.getter(name="bodyKey")
+    def body_key(self) -> str:
+        """
+        Body key name.
+        """
+        return pulumi.get(self, "body_key")
+
+    @property
+    @pulumi.getter(name="embeddingBodyKey")
+    def embedding_body_key(self) -> str:
+        """
+        Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+        """
+        return pulumi.get(self, "embedding_body_key")
+
+    @property
+    @pulumi.getter(name="titleKey")
+    def title_key(self) -> str:
+        """
+        Title key that stores the Title of a document, if available.
+        """
+        return pulumi.get(self, "title_key")
+
+    @property
+    @pulumi.getter(name="urlKey")
+    def url_key(self) -> str:
+        """
+        URL key that stores the URL of a document, if available.
+        """
+        return pulumi.get(self, "url_key")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBaseIndexConfigSecretDetailResult(dict):
+    def __init__(__self__, *,
+                 client_id: str,
+                 idcs_url: str,
+                 scope_url: str,
+                 type: str,
+                 vault_secret_id: str):
+        """
+        :param str client_id: The IDCS Connect clientId.
+        :param str idcs_url: The URL represent authentication url of the IDCS.
+        :param str scope_url: Fully qualified scope url
+        :param str type: The type of OpenID. The allowed values are:
+               * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+               * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        :param str vault_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+        """
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "idcs_url", idcs_url)
+        pulumi.set(__self__, "scope_url", scope_url)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> str:
+        """
+        The IDCS Connect clientId.
+        """
+        return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="idcsUrl")
+    def idcs_url(self) -> str:
+        """
+        The URL represent authentication url of the IDCS.
+        """
+        return pulumi.get(self, "idcs_url")
+
+    @property
+    @pulumi.getter(name="scopeUrl")
+    def scope_url(self) -> str:
+        """
+        Fully qualified scope url
+        """
+        return pulumi.get(self, "scope_url")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of OpenID. The allowed values are:
+        * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+        * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBasesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The index name in opensearch.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The index name in opensearch.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBasesKnowledgeBaseCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 index_configs: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult'],
+                 lifecycle_details: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: A description of the knowledge base.
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs'] index_configs: **IndexConfig**
+        :param str lifecycle_details: A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the knowledge base was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the knowledge base was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "index_configs", index_configs)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A description of the knowledge base.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="indexConfigs")
+    def index_configs(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult']:
+        """
+        **IndexConfig**
+        """
+        return pulumi.get(self, "index_configs")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the knowledge base was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the knowledge base was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult(dict):
+    def __init__(__self__, *,
+                 cluster_id: str,
+                 database_connections: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionResult'],
+                 database_functions: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionResult'],
+                 index_config_type: str,
+                 indexes: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexResult'],
+                 secret_details: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailResult'],
+                 should_enable_hybrid_search: bool):
+        """
+        :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs'] database_connections: **DatabaseConnection**
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs'] database_functions: Array of Database functions to be used.
+        :param str index_config_type: The type of index. The allowed values are:
+               * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+               * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+               * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs'] indexes: Index configuration for open search.
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs'] secret_details: **SecretDetail**
+        :param bool should_enable_hybrid_search: Whether to enable Hybrid search in service managed OpenSearch.
+        """
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "database_connections", database_connections)
+        pulumi.set(__self__, "database_functions", database_functions)
+        pulumi.set(__self__, "index_config_type", index_config_type)
+        pulumi.set(__self__, "indexes", indexes)
+        pulumi.set(__self__, "secret_details", secret_details)
+        pulumi.set(__self__, "should_enable_hybrid_search", should_enable_hybrid_search)
+
+    @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @property
+    @pulumi.getter(name="databaseConnections")
+    def database_connections(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionResult']:
+        """
+        **DatabaseConnection**
+        """
+        return pulumi.get(self, "database_connections")
+
+    @property
+    @pulumi.getter(name="databaseFunctions")
+    def database_functions(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionResult']:
+        """
+        Array of Database functions to be used.
+        """
+        return pulumi.get(self, "database_functions")
+
+    @property
+    @pulumi.getter(name="indexConfigType")
+    def index_config_type(self) -> str:
+        """
+        The type of index. The allowed values are:
+        * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
+        * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
+        * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        """
+        return pulumi.get(self, "index_config_type")
+
+    @property
+    @pulumi.getter
+    def indexes(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexResult']:
+        """
+        Index configuration for open search.
+        """
+        return pulumi.get(self, "indexes")
+
+    @property
+    @pulumi.getter(name="secretDetails")
+    def secret_details(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailResult']:
+        """
+        **SecretDetail**
+        """
+        return pulumi.get(self, "secret_details")
+
+    @property
+    @pulumi.getter(name="shouldEnableHybridSearch")
+    def should_enable_hybrid_search(self) -> bool:
+        """
+        Whether to enable Hybrid search in service managed OpenSearch.
+        """
+        return pulumi.get(self, "should_enable_hybrid_search")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_id: str,
+                 connection_type: str):
+        """
+        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        :param str connection_type: The type of Database connection. The allowed values are:
+               * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_type", connection_type)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> str:
+        """
+        The type of Database connection. The allowed values are:
+        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: The index name in opensearch.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The index name in opensearch.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 schemas: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaResult']):
+        """
+        :param str name: The index name in opensearch.
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs'] schemas: **IndexSchema**
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "schemas", schemas)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The index name in opensearch.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def schemas(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaResult']:
+        """
+        **IndexSchema**
+        """
+        return pulumi.get(self, "schemas")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaResult(dict):
+    def __init__(__self__, *,
+                 body_key: str,
+                 embedding_body_key: str,
+                 title_key: str,
+                 url_key: str):
+        """
+        :param str body_key: Body key name.
+        :param str embedding_body_key: Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+        :param str title_key: Title key that stores the Title of a document, if available.
+        :param str url_key: URL key that stores the URL of a document, if available.
+        """
+        pulumi.set(__self__, "body_key", body_key)
+        pulumi.set(__self__, "embedding_body_key", embedding_body_key)
+        pulumi.set(__self__, "title_key", title_key)
+        pulumi.set(__self__, "url_key", url_key)
+
+    @property
+    @pulumi.getter(name="bodyKey")
+    def body_key(self) -> str:
+        """
+        Body key name.
+        """
+        return pulumi.get(self, "body_key")
+
+    @property
+    @pulumi.getter(name="embeddingBodyKey")
+    def embedding_body_key(self) -> str:
+        """
+        Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+        """
+        return pulumi.get(self, "embedding_body_key")
+
+    @property
+    @pulumi.getter(name="titleKey")
+    def title_key(self) -> str:
+        """
+        Title key that stores the Title of a document, if available.
+        """
+        return pulumi.get(self, "title_key")
+
+    @property
+    @pulumi.getter(name="urlKey")
+    def url_key(self) -> str:
+        """
+        URL key that stores the URL of a document, if available.
+        """
+        return pulumi.get(self, "url_key")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailResult(dict):
+    def __init__(__self__, *,
+                 client_id: str,
+                 idcs_url: str,
+                 scope_url: str,
+                 type: str,
+                 vault_secret_id: str):
+        """
+        :param str client_id: The IDCS Connect clientId.
+        :param str idcs_url: The URL represent authentication url of the IDCS.
+        :param str scope_url: Fully qualified scope url
+        :param str type: The type of OpenID. The allowed values are:
+               * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+               * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        :param str vault_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+        """
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "idcs_url", idcs_url)
+        pulumi.set(__self__, "scope_url", scope_url)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> str:
+        """
+        The IDCS Connect clientId.
+        """
+        return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="idcsUrl")
+    def idcs_url(self) -> str:
+        """
+        The URL represent authentication url of the IDCS.
+        """
+        return pulumi.get(self, "idcs_url")
+
+    @property
+    @pulumi.getter(name="scopeUrl")
+    def scope_url(self) -> str:
+        """
+        Fully qualified scope url
+        """
+        return pulumi.get(self, "scope_url")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of OpenID. The allowed values are:
+        * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
+        * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+        """
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type

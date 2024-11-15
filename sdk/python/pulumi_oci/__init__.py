@@ -3806,6 +3806,46 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "GenerativeAi/agentAgent",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/agentAgent:AgentAgent": "AgentAgent"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/agentAgentEndpoint",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/agentAgentEndpoint:AgentAgentEndpoint": "AgentAgentEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/agentDataIngestionJob",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/agentDataIngestionJob:AgentDataIngestionJob": "AgentDataIngestionJob"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/agentDataSource",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/agentDataSource:AgentDataSource": "AgentDataSource"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/agentKnowledgeBase",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase": "AgentKnowledgeBase"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "GenerativeAi/dedicatedAiCluster",
   "fqn": "pulumi_oci.generativeai",
   "classes": {

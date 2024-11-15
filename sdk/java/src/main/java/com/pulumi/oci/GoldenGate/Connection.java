@@ -19,6 +19,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -61,6 +62,7 @@ import javax.annotation.Nullable;
  *             .technologyType(connectionTechnologyType)
  *             .accessKeyId(testKey.id())
  *             .accountKey(connectionAccountKey)
+ *             .accountKeySecretId(testSecret.id())
  *             .accountName(connectionAccountName)
  *             .additionalAttributes(ConnectionAdditionalAttributeArgs.builder()
  *                 .name(connectionAdditionalAttributesName)
@@ -76,6 +78,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .clientId(testClient.id())
  *             .clientSecret(connectionClientSecret)
+ *             .clientSecretSecretId(testSecret.id())
  *             .connectionFactory(connectionConnectionFactory)
  *             .connectionString(connectionConnectionString)
  *             .connectionUrl(connectionConnectionUrl)
@@ -87,6 +90,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .deploymentId(testDeployment.id())
  *             .description(connectionDescription)
+ *             .doesUseSecretIds(connectionDoesUseSecretIds)
  *             .endpoint(connectionEndpoint)
  *             .fingerprint(connectionFingerprint)
  *             .freeformTags(Map.of("bar-key", "value"))
@@ -95,40 +99,53 @@ import javax.annotation.Nullable;
  *             .jndiInitialContextFactory(connectionJndiInitialContextFactory)
  *             .jndiProviderUrl(connectionJndiProviderUrl)
  *             .jndiSecurityCredentials(connectionJndiSecurityCredentials)
+ *             .jndiSecurityCredentialsSecretId(testSecret.id())
  *             .jndiSecurityPrincipal(connectionJndiSecurityPrincipal)
  *             .keyId(testKey.id())
  *             .keyStore(connectionKeyStore)
  *             .keyStorePassword(connectionKeyStorePassword)
+ *             .keyStoreSecretId(testSecret.id())
+ *             .keyStorePasswordSecretId(testSecret.id())
  *             .locks(ConnectionLockArgs.builder()
  *                 .type(connectionLocksType)
  *                 .message(connectionLocksMessage)
  *                 .build())
  *             .nsgIds(connectionNsgIds)
  *             .password(connectionPassword)
+ *             .passwordSecretId(testSecret.id())
  *             .port(connectionPort)
  *             .privateIp(connectionPrivateIp)
  *             .privateKeyFile(connectionPrivateKeyFile)
+ *             .privateKeyFileSecretId(testSecret.id())
  *             .privateKeyPassphrase(connectionPrivateKeyPassphrase)
+ *             .privateKeyPassphraseSecretId(testSecret.id())
  *             .producerProperties(connectionProducerProperties)
  *             .publicKeyFingerprint(connectionPublicKeyFingerprint)
  *             .redisClusterId(testRedisCluster.id())
  *             .region(connectionRegion)
  *             .routingMethod(connectionRoutingMethod)
  *             .sasToken(connectionSasToken)
+ *             .sasTokenSecretId(testSecret.id())
  *             .secretAccessKey(connectionSecretAccessKey)
+ *             .secretAccessKeySecretId(testSecret.id())
  *             .securityProtocol(connectionSecurityProtocol)
  *             .servers(connectionServers)
  *             .serviceAccountKeyFile(connectionServiceAccountKeyFile)
+ *             .serviceAccountKeyFileSecretId(testSecret.id())
  *             .sessionMode(connectionSessionMode)
  *             .shouldUseJndi(connectionShouldUseJndi)
  *             .shouldValidateServerCertificate(connectionShouldValidateServerCertificate)
  *             .sslCa(connectionSslCa)
  *             .sslCert(connectionSslCert)
  *             .sslClientKeystash(connectionSslClientKeystash)
+ *             .sslClientKeystashSecretId(testSecret.id())
  *             .sslClientKeystoredb(connectionSslClientKeystoredb)
+ *             .sslClientKeystoredbSecretId(testSecret.id())
  *             .sslCrl(connectionSslCrl)
  *             .sslKey(connectionSslKey)
  *             .sslKeyPassword(connectionSslKeyPassword)
+ *             .sslKeyPasswordSecretId(testSecret.id())
+ *             .sslKeySecretId(testSecret.id())
  *             .sslMode(connectionSslMode)
  *             .sslServerCertificate(connectionSslServerCertificate)
  *             .streamPoolId(testStreamPool.id())
@@ -136,11 +153,15 @@ import javax.annotation.Nullable;
  *             .tenancyId(testTenancy.id())
  *             .trustStore(connectionTrustStore)
  *             .trustStorePassword(connectionTrustStorePassword)
+ *             .trustStorePasswordSecretId(testSecret.id())
+ *             .trustStoreSecretId(testSecret.id())
  *             .url(connectionUrl)
  *             .userId(testUser.id())
  *             .username(connectionUsername)
  *             .vaultId(testVault.id())
  *             .wallet(connectionWallet)
+ *             .walletSecretId(testSecret.id())
+ *             .triggerRefresh(true)
  *             .build());
  * 
  *     }
@@ -179,14 +200,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="accountKey", refs={String.class}, tree="[0]")
-    private Output<String> accountKey;
+    private Output</* @Nullable */ String> accountKey;
 
     /**
      * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
      * 
      */
-    public Output<String> accountKey() {
-        return this.accountKey;
+    public Output<Optional<String>> accountKey() {
+        return Codegen.optional(this.accountKey);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+     * 
+     */
+    @Export(name="accountKeySecretId", refs={String.class}, tree="[0]")
+    private Output<String> accountKeySecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+     * 
+     */
+    public Output<String> accountKeySecretId() {
+        return this.accountKeySecretId;
     }
     /**
      * (Updatable) Sets the Azure storage account name.
@@ -291,14 +326,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="clientSecret", refs={String.class}, tree="[0]")
-    private Output<String> clientSecret;
+    private Output</* @Nullable */ String> clientSecret;
 
     /**
      * @return (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
      * 
      */
-    public Output<String> clientSecret() {
-        return this.clientSecret;
+    public Output<Optional<String>> clientSecret() {
+        return Codegen.optional(this.clientSecret);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * 
+     */
+    @Export(name="clientSecretSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> clientSecretSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> clientSecretSecretId() {
+        return Codegen.optional(this.clientSecretSecretId);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -497,6 +546,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * (Updatable) Indicates that sensitive attributes are provided via Secrets.
+     * 
+     */
+    @Export(name="doesUseSecretIds", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> doesUseSecretIds;
+
+    /**
+     * @return (Updatable) Indicates that sensitive attributes are provided via Secrets.
+     * 
+     */
+    public Output<Boolean> doesUseSecretIds() {
+        return this.doesUseSecretIds;
+    }
+    /**
      * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
      * 
      */
@@ -621,14 +684,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="jndiSecurityCredentials", refs={String.class}, tree="[0]")
-    private Output<String> jndiSecurityCredentials;
+    private Output</* @Nullable */ String> jndiSecurityCredentials;
 
     /**
      * @return (Updatable) The password associated to the principal.
      * 
      */
-    public Output<String> jndiSecurityCredentials() {
-        return this.jndiSecurityCredentials;
+    public Output<Optional<String>> jndiSecurityCredentials() {
+        return Codegen.optional(this.jndiSecurityCredentials);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
+     * 
+     */
+    @Export(name="jndiSecurityCredentialsSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> jndiSecurityCredentialsSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> jndiSecurityCredentialsSecretId() {
+        return Codegen.optional(this.jndiSecurityCredentialsSecretId);
     }
     /**
      * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
@@ -663,28 +740,56 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="keyStore", refs={String.class}, tree="[0]")
-    private Output<String> keyStore;
+    private Output</* @Nullable */ String> keyStore;
 
     /**
      * @return (Updatable) The base64 encoded content of the KeyStore file.
      * 
      */
-    public Output<String> keyStore() {
-        return this.keyStore;
+    public Output<Optional<String>> keyStore() {
+        return Codegen.optional(this.keyStore);
     }
     /**
      * (Updatable) The KeyStore password.
      * 
      */
     @Export(name="keyStorePassword", refs={String.class}, tree="[0]")
-    private Output<String> keyStorePassword;
+    private Output</* @Nullable */ String> keyStorePassword;
 
     /**
      * @return (Updatable) The KeyStore password.
      * 
      */
-    public Output<String> keyStorePassword() {
-        return this.keyStorePassword;
+    public Output<Optional<String>> keyStorePassword() {
+        return Codegen.optional(this.keyStorePassword);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * 
+     */
+    @Export(name="keyStorePasswordSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> keyStorePasswordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> keyStorePasswordSecretId() {
+        return Codegen.optional(this.keyStorePasswordSecretId);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+     * 
+     */
+    @Export(name="keyStoreSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> keyStoreSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> keyStoreSecretId() {
+        return Codegen.optional(this.keyStoreSecretId);
     }
     /**
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -733,14 +838,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
-    private Output<String> password;
+    private Output</* @Nullable */ String> password;
 
     /**
      * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      * 
      */
-    public Output<String> password() {
-        return this.password;
+    public Output<Optional<String>> password() {
+        return Codegen.optional(this.password);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, &#39;password&#39; field must not be provided.
+     * 
+     */
+    @Export(name="passwordSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> passwordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, &#39;password&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> passwordSecretId() {
+        return Codegen.optional(this.passwordSecretId);
     }
     /**
      * (Updatable) The port of an endpoint usually specified for a connection.
@@ -779,28 +898,56 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="privateKeyFile", refs={String.class}, tree="[0]")
-    private Output<String> privateKeyFile;
+    private Output</* @Nullable */ String> privateKeyFile;
 
     /**
      * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
      */
-    public Output<String> privateKeyFile() {
-        return this.privateKeyFile;
+    public Output<Optional<String>> privateKeyFile() {
+        return Codegen.optional(this.privateKeyFile);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
+     * 
+     */
+    @Export(name="privateKeyFileSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> privateKeyFileSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> privateKeyFileSecretId() {
+        return Codegen.optional(this.privateKeyFileSecretId);
     }
     /**
      * (Updatable) Password if the private key file is encrypted.
      * 
      */
     @Export(name="privateKeyPassphrase", refs={String.class}, tree="[0]")
-    private Output<String> privateKeyPassphrase;
+    private Output</* @Nullable */ String> privateKeyPassphrase;
 
     /**
      * @return (Updatable) Password if the private key file is encrypted.
      * 
      */
-    public Output<String> privateKeyPassphrase() {
-        return this.privateKeyPassphrase;
+    public Output<Optional<String>> privateKeyPassphrase() {
+        return Codegen.optional(this.privateKeyPassphrase);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
+     * 
+     */
+    @Export(name="privateKeyPassphraseSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> privateKeyPassphraseSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> privateKeyPassphraseSecretId() {
+        return Codegen.optional(this.privateKeyPassphraseSecretId);
     }
     /**
      * (Updatable) The base64 encoded content of the producer.properties file.
@@ -877,28 +1024,56 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sasToken", refs={String.class}, tree="[0]")
-    private Output<String> sasToken;
+    private Output</* @Nullable */ String> sasToken;
 
     /**
      * @return (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
      * 
      */
-    public Output<String> sasToken() {
-        return this.sasToken;
+    public Output<Optional<String>> sasToken() {
+        return Codegen.optional(this.sasToken);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
+     * 
+     */
+    @Export(name="sasTokenSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> sasTokenSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> sasTokenSecretId() {
+        return Codegen.optional(this.sasTokenSecretId);
     }
     /**
      * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
     @Export(name="secretAccessKey", refs={String.class}, tree="[0]")
-    private Output<String> secretAccessKey;
+    private Output</* @Nullable */ String> secretAccessKey;
 
     /**
      * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
-    public Output<String> secretAccessKey() {
-        return this.secretAccessKey;
+    public Output<Optional<String>> secretAccessKey() {
+        return Codegen.optional(this.secretAccessKey);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * 
+     */
+    @Export(name="secretAccessKeySecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> secretAccessKeySecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> secretAccessKeySecretId() {
+        return Codegen.optional(this.secretAccessKeySecretId);
     }
     /**
      * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
@@ -933,14 +1108,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="serviceAccountKeyFile", refs={String.class}, tree="[0]")
-    private Output<String> serviceAccountKeyFile;
+    private Output</* @Nullable */ String> serviceAccountKeyFile;
 
     /**
      * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
      * 
      */
-    public Output<String> serviceAccountKeyFile() {
-        return this.serviceAccountKeyFile;
+    public Output<Optional<String>> serviceAccountKeyFile() {
+        return Codegen.optional(this.serviceAccountKeyFile);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * 
+     */
+    @Export(name="serviceAccountKeyFileSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> serviceAccountKeyFileSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> serviceAccountKeyFileSecretId() {
+        return Codegen.optional(this.serviceAccountKeyFileSecretId);
     }
     /**
      * (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
@@ -1017,28 +1206,56 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sslClientKeystash", refs={String.class}, tree="[0]")
-    private Output<String> sslClientKeystash;
+    private Output</* @Nullable */ String> sslClientKeystash;
 
     /**
      * @return (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
      * 
      */
-    public Output<String> sslClientKeystash() {
-        return this.sslClientKeystash;
+    public Output<Optional<String>> sslClientKeystash() {
+        return Codegen.optional(this.sslClientKeystash);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * 
+     */
+    @Export(name="sslClientKeystashSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> sslClientKeystashSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> sslClientKeystashSecretId() {
+        return Codegen.optional(this.sslClientKeystashSecretId);
     }
     /**
      * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
      * 
      */
     @Export(name="sslClientKeystoredb", refs={String.class}, tree="[0]")
-    private Output<String> sslClientKeystoredb;
+    private Output</* @Nullable */ String> sslClientKeystoredb;
 
     /**
      * @return (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
      * 
      */
-    public Output<String> sslClientKeystoredb() {
-        return this.sslClientKeystoredb;
+    public Output<Optional<String>> sslClientKeystoredb() {
+        return Codegen.optional(this.sslClientKeystoredb);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * 
+     */
+    @Export(name="sslClientKeystoredbSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> sslClientKeystoredbSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> sslClientKeystoredbSecretId() {
+        return Codegen.optional(this.sslClientKeystoredbSecretId);
     }
     /**
      * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
@@ -1055,32 +1272,62 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.sslCrl;
     }
     /**
-     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
      * 
      */
     @Export(name="sslKey", refs={String.class}, tree="[0]")
-    private Output<String> sslKey;
+    private Output</* @Nullable */ String> sslKey;
 
     /**
-     * @return (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * @return (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
      * 
      */
-    public Output<String> sslKey() {
-        return this.sslKey;
+    public Output<Optional<String>> sslKey() {
+        return Codegen.optional(this.sslKey);
     }
     /**
      * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
      * 
      */
     @Export(name="sslKeyPassword", refs={String.class}, tree="[0]")
-    private Output<String> sslKeyPassword;
+    private Output</* @Nullable */ String> sslKeyPassword;
 
     /**
      * @return (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
      * 
      */
-    public Output<String> sslKeyPassword() {
-        return this.sslKeyPassword;
+    public Output<Optional<String>> sslKeyPassword() {
+        return Codegen.optional(this.sslKeyPassword);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * 
+     */
+    @Export(name="sslKeyPasswordSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> sslKeyPasswordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> sslKeyPasswordSecretId() {
+        return Codegen.optional(this.sslKeyPasswordSecretId);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * 
+     */
+    @Export(name="sslKeySecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> sslKeySecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> sslKeySecretId() {
+        return Codegen.optional(this.sslKeySecretId);
     }
     /**
      * (Updatable) SSL modes for PostgreSQL.
@@ -1223,32 +1470,80 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
+     * (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="triggerRefresh", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> triggerRefresh;
+
+    /**
+     * @return (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Boolean>> triggerRefresh() {
+        return Codegen.optional(this.triggerRefresh);
+    }
+    /**
      * (Updatable) The base64 encoded content of the TrustStore file.
      * 
      */
     @Export(name="trustStore", refs={String.class}, tree="[0]")
-    private Output<String> trustStore;
+    private Output</* @Nullable */ String> trustStore;
 
     /**
      * @return (Updatable) The base64 encoded content of the TrustStore file.
      * 
      */
-    public Output<String> trustStore() {
-        return this.trustStore;
+    public Output<Optional<String>> trustStore() {
+        return Codegen.optional(this.trustStore);
     }
     /**
      * (Updatable) The TrustStore password.
      * 
      */
     @Export(name="trustStorePassword", refs={String.class}, tree="[0]")
-    private Output<String> trustStorePassword;
+    private Output</* @Nullable */ String> trustStorePassword;
 
     /**
      * @return (Updatable) The TrustStore password.
      * 
      */
-    public Output<String> trustStorePassword() {
-        return this.trustStorePassword;
+    public Output<Optional<String>> trustStorePassword() {
+        return Codegen.optional(this.trustStorePassword);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * 
+     */
+    @Export(name="trustStorePasswordSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> trustStorePasswordSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> trustStorePasswordSecretId() {
+        return Codegen.optional(this.trustStorePasswordSecretId);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    @Export(name="trustStoreSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> trustStoreSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> trustStoreSecretId() {
+        return Codegen.optional(this.trustStoreSecretId);
     }
     /**
      * (Updatable) Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
@@ -1309,22 +1604,30 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="wallet", refs={String.class}, tree="[0]")
-    private Output<String> wallet;
+    private Output</* @Nullable */ String> wallet;
 
     /**
      * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public Output<Optional<String>> wallet() {
+        return Codegen.optional(this.wallet);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
      * 
      */
-    public Output<String> wallet() {
-        return this.wallet;
+    @Export(name="walletSecretId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> walletSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+     * 
+     */
+    public Output<Optional<String>> walletSecretId() {
+        return Codegen.optional(this.walletSecretId);
     }
 
     /**
@@ -1367,12 +1670,24 @@ public class Connection extends com.pulumi.resources.CustomResource {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
+                "accountKey",
+                "clientSecret",
+                "jndiSecurityCredentials",
+                "keyStore",
                 "keyStorePassword",
                 "password",
                 "privateKeyFile",
                 "privateKeyPassphrase",
+                "sasToken",
+                "secretAccessKey",
+                "serviceAccountKeyFile",
+                "sslClientKeystash",
+                "sslClientKeystoredb",
+                "sslKey",
                 "sslKeyPassword",
-                "trustStorePassword"
+                "trustStore",
+                "trustStorePassword",
+                "wallet"
             ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);

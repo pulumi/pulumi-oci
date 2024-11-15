@@ -5,8 +5,24 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .agent_agent import *
+from .agent_agent_endpoint import *
+from .agent_data_ingestion_job import *
+from .agent_data_source import *
+from .agent_knowledge_base import *
 from .dedicated_ai_cluster import *
 from .endpoint import *
+from .get_agent_agent import *
+from .get_agent_agent_endpoint import *
+from .get_agent_agent_endpoints import *
+from .get_agent_agents import *
+from .get_agent_data_ingestion_job import *
+from .get_agent_data_ingestion_job_log_content import *
+from .get_agent_data_ingestion_jobs import *
+from .get_agent_data_source import *
+from .get_agent_data_sources import *
+from .get_agent_knowledge_base import *
+from .get_agent_knowledge_bases import *
 from .get_dedicated_ai_cluster import *
 from .get_dedicated_ai_clusters import *
 from .get_endpoint import *

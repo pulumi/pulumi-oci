@@ -43,6 +43,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
+//				IsMetadataOnly: pulumi.Any(deploymentBackupIsMetadataOnly),
 //				Locks: goldengate.DeploymentBackupLockArray{
 //					&goldengate.DeploymentBackupLockArgs{
 //						Type:    pulumi.Any(deploymentBackupLocksType),
@@ -88,6 +89,8 @@ type DeploymentBackup struct {
 	// True if this object is automatically created
 	IsAutomatic    pulumi.BoolOutput `pulumi:"isAutomatic"`
 	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly pulumi.BoolOutput `pulumi:"isMetadataOnly"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -184,6 +187,8 @@ type deploymentBackupState struct {
 	// True if this object is automatically created
 	IsAutomatic    *bool `pulumi:"isAutomatic"`
 	IsLockOverride *bool `pulumi:"isLockOverride"`
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly *bool `pulumi:"isMetadataOnly"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -233,6 +238,8 @@ type DeploymentBackupState struct {
 	// True if this object is automatically created
 	IsAutomatic    pulumi.BoolPtrInput
 	IsLockOverride pulumi.BoolPtrInput
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly pulumi.BoolPtrInput
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Locks associated with this resource.
@@ -280,6 +287,8 @@ type deploymentBackupArgs struct {
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags   map[string]string `pulumi:"freeformTags"`
 	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly *bool `pulumi:"isMetadataOnly"`
 	// Locks associated with this resource.
 	Locks []DeploymentBackupLock `pulumi:"locks"`
 	// Name of namespace that serves as a container for all of your buckets
@@ -306,6 +315,8 @@ type DeploymentBackupArgs struct {
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly pulumi.BoolPtrInput
 	// Locks associated with this resource.
 	Locks DeploymentBackupLockArrayInput
 	// Name of namespace that serves as a container for all of your buckets
@@ -451,6 +462,11 @@ func (o DeploymentBackupOutput) IsAutomatic() pulumi.BoolOutput {
 
 func (o DeploymentBackupOutput) IsLockOverride() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DeploymentBackup) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Parameter to allow users to create backup without trails
+func (o DeploymentBackupOutput) IsMetadataOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.BoolOutput { return v.IsMetadataOnly }).(pulumi.BoolOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.

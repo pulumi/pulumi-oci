@@ -80,6 +80,8 @@ type LookupDeploymentBackupResult struct {
 	// True if this object is automatically created
 	IsAutomatic    bool `pulumi:"isAutomatic"`
 	IsLockOverride bool `pulumi:"isLockOverride"`
+	// Parameter to allow users to create backup without trails
+	IsMetadataOnly bool `pulumi:"isMetadataOnly"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -206,6 +208,11 @@ func (o LookupDeploymentBackupResultOutput) IsAutomatic() pulumi.BoolOutput {
 
 func (o LookupDeploymentBackupResultOutput) IsLockOverride() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Parameter to allow users to create backup without trails
+func (o LookupDeploymentBackupResultOutput) IsMetadataOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) bool { return v.IsMetadataOnly }).(pulumi.BoolOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.

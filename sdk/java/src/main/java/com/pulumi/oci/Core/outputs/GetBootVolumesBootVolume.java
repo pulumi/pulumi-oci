@@ -70,7 +70,7 @@ public final class GetBootVolumesBootVolume {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The OCID of the boot volume replica.
+     * @return (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
      * 
      */
     private String id;
@@ -209,7 +209,7 @@ public final class GetBootVolumesBootVolume {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the boot volume replica.
+     * @return (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
      * 
      */
     public String id() {

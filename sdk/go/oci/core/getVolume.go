@@ -79,7 +79,7 @@ type LookupVolumeResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The OCID of the block volume replica.
+	// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 	Id string `pulumi:"id"`
 	// Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
@@ -208,7 +208,7 @@ func (o LookupVolumeResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVolumeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the block volume replica.
+// (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
 func (o LookupVolumeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVolumeResult) string { return v.Id }).(pulumi.StringOutput)
 }

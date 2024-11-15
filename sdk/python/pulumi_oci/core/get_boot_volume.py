@@ -199,7 +199,7 @@ class GetBootVolumeResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the boot volume replica.
+        (Required when type=bootVolume | bootVolumeBackup | bootVolumeReplica) The OCID of the boot volume replica.
         """
         return pulumi.get(self, "id")
 

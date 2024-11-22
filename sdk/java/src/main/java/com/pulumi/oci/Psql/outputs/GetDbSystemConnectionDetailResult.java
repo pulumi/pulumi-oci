@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemConnectionDetailInstanceEndpoint;
 import com.pulumi.oci.Psql.outputs.GetDbSystemConnectionDetailPrimaryDbEndpoint;
+import com.pulumi.oci.Psql.outputs.GetDbSystemConnectionDetailReaderEndpoint;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -34,6 +35,11 @@ public final class GetDbSystemConnectionDetailResult {
      * 
      */
     private List<GetDbSystemConnectionDetailPrimaryDbEndpoint> primaryDbEndpoints;
+    /**
+     * @return Information about the database instance node endpoint.
+     * 
+     */
+    private List<GetDbSystemConnectionDetailReaderEndpoint> readerEndpoints;
 
     private GetDbSystemConnectionDetailResult() {}
     /**
@@ -67,6 +73,13 @@ public final class GetDbSystemConnectionDetailResult {
     public List<GetDbSystemConnectionDetailPrimaryDbEndpoint> primaryDbEndpoints() {
         return this.primaryDbEndpoints;
     }
+    /**
+     * @return Information about the database instance node endpoint.
+     * 
+     */
+    public List<GetDbSystemConnectionDetailReaderEndpoint> readerEndpoints() {
+        return this.readerEndpoints;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -82,6 +95,7 @@ public final class GetDbSystemConnectionDetailResult {
         private String id;
         private List<GetDbSystemConnectionDetailInstanceEndpoint> instanceEndpoints;
         private List<GetDbSystemConnectionDetailPrimaryDbEndpoint> primaryDbEndpoints;
+        private List<GetDbSystemConnectionDetailReaderEndpoint> readerEndpoints;
         public Builder() {}
         public Builder(GetDbSystemConnectionDetailResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,6 +104,7 @@ public final class GetDbSystemConnectionDetailResult {
     	      this.id = defaults.id;
     	      this.instanceEndpoints = defaults.instanceEndpoints;
     	      this.primaryDbEndpoints = defaults.primaryDbEndpoints;
+    	      this.readerEndpoints = defaults.readerEndpoints;
         }
 
         @CustomType.Setter
@@ -138,6 +153,17 @@ public final class GetDbSystemConnectionDetailResult {
         public Builder primaryDbEndpoints(GetDbSystemConnectionDetailPrimaryDbEndpoint... primaryDbEndpoints) {
             return primaryDbEndpoints(List.of(primaryDbEndpoints));
         }
+        @CustomType.Setter
+        public Builder readerEndpoints(List<GetDbSystemConnectionDetailReaderEndpoint> readerEndpoints) {
+            if (readerEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemConnectionDetailResult", "readerEndpoints");
+            }
+            this.readerEndpoints = readerEndpoints;
+            return this;
+        }
+        public Builder readerEndpoints(GetDbSystemConnectionDetailReaderEndpoint... readerEndpoints) {
+            return readerEndpoints(List.of(readerEndpoints));
+        }
         public GetDbSystemConnectionDetailResult build() {
             final var _resultValue = new GetDbSystemConnectionDetailResult();
             _resultValue.caCertificate = caCertificate;
@@ -145,6 +171,7 @@ public final class GetDbSystemConnectionDetailResult {
             _resultValue.id = id;
             _resultValue.instanceEndpoints = instanceEndpoints;
             _resultValue.primaryDbEndpoints = primaryDbEndpoints;
+            _resultValue.readerEndpoints = readerEndpoints;
             return _resultValue;
         }
     }

@@ -43,6 +43,7 @@ namespace Pulumi.Oci.Psql
     ///         NetworkDetails = new Oci.Psql.Inputs.DbSystemNetworkDetailsArgs
     ///         {
     ///             SubnetId = testSubnet.Id,
+    ///             IsReaderEndpointEnabled = dbSystemNetworkDetailsIsReaderEndpointEnabled,
     ///             NsgIds = dbSystemNetworkDetailsNsgIds,
     ///             PrimaryDbEndpointPrivateIp = dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp,
     ///         },

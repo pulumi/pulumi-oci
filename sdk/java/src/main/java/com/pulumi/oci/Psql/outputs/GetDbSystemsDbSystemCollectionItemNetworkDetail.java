@@ -5,12 +5,18 @@ package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetDbSystemsDbSystemCollectionItemNetworkDetail {
+    /**
+     * @return Specifies if the reader endpoint is enabled on the dbSystem.
+     * 
+     */
+    private Boolean isReaderEndpointEnabled;
     /**
      * @return List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
@@ -28,6 +34,13 @@ public final class GetDbSystemsDbSystemCollectionItemNetworkDetail {
     private String subnetId;
 
     private GetDbSystemsDbSystemCollectionItemNetworkDetail() {}
+    /**
+     * @return Specifies if the reader endpoint is enabled on the dbSystem.
+     * 
+     */
+    public Boolean isReaderEndpointEnabled() {
+        return this.isReaderEndpointEnabled;
+    }
     /**
      * @return List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
@@ -59,17 +72,27 @@ public final class GetDbSystemsDbSystemCollectionItemNetworkDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean isReaderEndpointEnabled;
         private List<String> nsgIds;
         private String primaryDbEndpointPrivateIp;
         private String subnetId;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemCollectionItemNetworkDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isReaderEndpointEnabled = defaults.isReaderEndpointEnabled;
     	      this.nsgIds = defaults.nsgIds;
     	      this.primaryDbEndpointPrivateIp = defaults.primaryDbEndpointPrivateIp;
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder isReaderEndpointEnabled(Boolean isReaderEndpointEnabled) {
+            if (isReaderEndpointEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemNetworkDetail", "isReaderEndpointEnabled");
+            }
+            this.isReaderEndpointEnabled = isReaderEndpointEnabled;
+            return this;
+        }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             if (nsgIds == null) {
@@ -99,6 +122,7 @@ public final class GetDbSystemsDbSystemCollectionItemNetworkDetail {
         }
         public GetDbSystemsDbSystemCollectionItemNetworkDetail build() {
             final var _resultValue = new GetDbSystemsDbSystemCollectionItemNetworkDetail();
+            _resultValue.isReaderEndpointEnabled = isReaderEndpointEnabled;
             _resultValue.nsgIds = nsgIds;
             _resultValue.primaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
             _resultValue.subnetId = subnetId;

@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *     displayName: dbSystemDisplayName,
  *     networkDetails: {
  *         subnetId: testSubnet.id,
+ *         isReaderEndpointEnabled: dbSystemNetworkDetailsIsReaderEndpointEnabled,
  *         nsgIds: dbSystemNetworkDetailsNsgIds,
  *         primaryDbEndpointPrivateIp: dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp,
  *     },

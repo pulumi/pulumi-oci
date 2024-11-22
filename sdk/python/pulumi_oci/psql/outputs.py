@@ -50,6 +50,7 @@ __all__ = [
     'GetDbSystemConnectionDetailInstanceEndpointResult',
     'GetDbSystemConnectionDetailInstanceEndpointEndpointResult',
     'GetDbSystemConnectionDetailPrimaryDbEndpointResult',
+    'GetDbSystemConnectionDetailReaderEndpointResult',
     'GetDbSystemCredentialResult',
     'GetDbSystemCredentialPasswordDetailResult',
     'GetDbSystemInstanceResult',
@@ -816,6 +817,8 @@ class DbSystemNetworkDetails(dict):
         suggest = None
         if key == "subnetId":
             suggest = "subnet_id"
+        elif key == "isReaderEndpointEnabled":
+            suggest = "is_reader_endpoint_enabled"
         elif key == "nsgIds":
             suggest = "nsg_ids"
         elif key == "primaryDbEndpointPrivateIp":
@@ -834,14 +837,18 @@ class DbSystemNetworkDetails(dict):
 
     def __init__(__self__, *,
                  subnet_id: str,
+                 is_reader_endpoint_enabled: Optional[bool] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  primary_db_endpoint_private_ip: Optional[str] = None):
         """
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
+        :param bool is_reader_endpoint_enabled: (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
         :param Sequence[str] nsg_ids: (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if is_reader_endpoint_enabled is not None:
+            pulumi.set(__self__, "is_reader_endpoint_enabled", is_reader_endpoint_enabled)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if primary_db_endpoint_private_ip is not None:
@@ -854,6 +861,14 @@ class DbSystemNetworkDetails(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="isReaderEndpointEnabled")
+    def is_reader_endpoint_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+        """
+        return pulumi.get(self, "is_reader_endpoint_enabled")
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -2071,6 +2086,46 @@ class GetDbSystemConnectionDetailPrimaryDbEndpointResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemConnectionDetailReaderEndpointResult(dict):
+    def __init__(__self__, *,
+                 fqdn: str,
+                 ip_address: str,
+                 port: int):
+        """
+        :param str fqdn: The FQDN of the endpoint.
+        :param str ip_address: The IP address of the endpoint.
+        :param int port: The port address of the endpoint.
+        """
+        pulumi.set(__self__, "fqdn", fqdn)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def fqdn(self) -> str:
+        """
+        The FQDN of the endpoint.
+        """
+        return pulumi.get(self, "fqdn")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> str:
+        """
+        The IP address of the endpoint.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        The port address of the endpoint.
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
 class GetDbSystemCredentialResult(dict):
     def __init__(__self__, *,
                  password_details: Sequence['outputs.GetDbSystemCredentialPasswordDetailResult'],
@@ -2347,17 +2402,28 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
 @pulumi.output_type
 class GetDbSystemNetworkDetailResult(dict):
     def __init__(__self__, *,
+                 is_reader_endpoint_enabled: bool,
                  nsg_ids: Sequence[str],
                  primary_db_endpoint_private_ip: str,
                  subnet_id: str):
         """
+        :param bool is_reader_endpoint_enabled: Specifies if the reader endpoint is enabled on the dbSystem.
         :param Sequence[str] nsg_ids: List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         """
+        pulumi.set(__self__, "is_reader_endpoint_enabled", is_reader_endpoint_enabled)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "primary_db_endpoint_private_ip", primary_db_endpoint_private_ip)
         pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="isReaderEndpointEnabled")
+    def is_reader_endpoint_enabled(self) -> bool:
+        """
+        Specifies if the reader endpoint is enabled on the dbSystem.
+        """
+        return pulumi.get(self, "is_reader_endpoint_enabled")
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -3110,17 +3176,28 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
 @pulumi.output_type
 class GetDbSystemsDbSystemCollectionItemNetworkDetailResult(dict):
     def __init__(__self__, *,
+                 is_reader_endpoint_enabled: bool,
                  nsg_ids: Sequence[str],
                  primary_db_endpoint_private_ip: str,
                  subnet_id: str):
         """
+        :param bool is_reader_endpoint_enabled: Specifies if the reader endpoint is enabled on the dbSystem.
         :param Sequence[str] nsg_ids: List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         """
+        pulumi.set(__self__, "is_reader_endpoint_enabled", is_reader_endpoint_enabled)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "primary_db_endpoint_private_ip", primary_db_endpoint_private_ip)
         pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="isReaderEndpointEnabled")
+    def is_reader_endpoint_enabled(self) -> bool:
+        """
+        Specifies if the reader endpoint is enabled on the dbSystem.
+        """
+        return pulumi.get(self, "is_reader_endpoint_enabled")
 
     @property
     @pulumi.getter(name="nsgIds")

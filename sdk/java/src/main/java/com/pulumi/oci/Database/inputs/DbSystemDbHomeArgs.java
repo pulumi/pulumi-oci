@@ -147,6 +147,21 @@ public final class DbSystemDbHomeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Indicates whether unified auditing is enabled or not
+     * 
+     */
+    @Import(name="isUnifiedAuditingEnabled")
+    private @Nullable Output<Boolean> isUnifiedAuditingEnabled;
+
+    /**
+     * @return Indicates whether unified auditing is enabled or not
+     * 
+     */
+    public Optional<Output<Boolean>> isUnifiedAuditingEnabled() {
+        return Optional.ofNullable(this.isUnifiedAuditingEnabled);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
@@ -218,6 +233,7 @@ public final class DbSystemDbHomeArgs extends com.pulumi.resources.ResourceArgs 
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.id = $.id;
+        this.isUnifiedAuditingEnabled = $.isUnifiedAuditingEnabled;
         this.lastPatchHistoryEntryId = $.lastPatchHistoryEntryId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
@@ -413,6 +429,27 @@ public final class DbSystemDbHomeArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder id(String id) {
             return id(Output.of(id));
+        }
+
+        /**
+         * @param isUnifiedAuditingEnabled Indicates whether unified auditing is enabled or not
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUnifiedAuditingEnabled(@Nullable Output<Boolean> isUnifiedAuditingEnabled) {
+            $.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            return this;
+        }
+
+        /**
+         * @param isUnifiedAuditingEnabled Indicates whether unified auditing is enabled or not
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            return isUnifiedAuditingEnabled(Output.of(isUnifiedAuditingEnabled));
         }
 
         /**

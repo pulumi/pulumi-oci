@@ -57,6 +57,11 @@ public final class DbSystemDbHome {
      */
     private @Nullable String id;
     /**
+     * @return Indicates whether unified auditing is enabled or not
+     * 
+     */
+    private @Nullable Boolean isUnifiedAuditingEnabled;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
@@ -138,6 +143,13 @@ public final class DbSystemDbHome {
         return Optional.ofNullable(this.id);
     }
     /**
+     * @return Indicates whether unified auditing is enabled or not
+     * 
+     */
+    public Optional<Boolean> isUnifiedAuditingEnabled() {
+        return Optional.ofNullable(this.isUnifiedAuditingEnabled);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
@@ -184,6 +196,7 @@ public final class DbSystemDbHome {
         private @Nullable String displayName;
         private @Nullable Map<String,String> freeformTags;
         private @Nullable String id;
+        private @Nullable Boolean isUnifiedAuditingEnabled;
         private @Nullable String lastPatchHistoryEntryId;
         private @Nullable String lifecycleDetails;
         private @Nullable String state;
@@ -200,6 +213,7 @@ public final class DbSystemDbHome {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isUnifiedAuditingEnabled = defaults.isUnifiedAuditingEnabled;
     	      this.lastPatchHistoryEntryId = defaults.lastPatchHistoryEntryId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
@@ -263,6 +277,12 @@ public final class DbSystemDbHome {
             return this;
         }
         @CustomType.Setter
+        public Builder isUnifiedAuditingEnabled(@Nullable Boolean isUnifiedAuditingEnabled) {
+
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lastPatchHistoryEntryId(@Nullable String lastPatchHistoryEntryId) {
 
             this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
@@ -297,6 +317,7 @@ public final class DbSystemDbHome {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
             _resultValue.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;

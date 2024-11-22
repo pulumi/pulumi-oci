@@ -6,6 +6,7 @@ package com.pulumi.oci.Psql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DbSystemNetworkDetailsArgs Empty = new DbSystemNetworkDetailsArgs();
+
+    /**
+     * (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+     * 
+     */
+    @Import(name="isReaderEndpointEnabled")
+    private @Nullable Output<Boolean> isReaderEndpointEnabled;
+
+    /**
+     * @return (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+     * 
+     */
+    public Optional<Output<Boolean>> isReaderEndpointEnabled() {
+        return Optional.ofNullable(this.isReaderEndpointEnabled);
+    }
 
     /**
      * (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
@@ -65,6 +81,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
     private DbSystemNetworkDetailsArgs() {}
 
     private DbSystemNetworkDetailsArgs(DbSystemNetworkDetailsArgs $) {
+        this.isReaderEndpointEnabled = $.isReaderEndpointEnabled;
         this.nsgIds = $.nsgIds;
         this.primaryDbEndpointPrivateIp = $.primaryDbEndpointPrivateIp;
         this.subnetId = $.subnetId;
@@ -86,6 +103,27 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
 
         public Builder(DbSystemNetworkDetailsArgs defaults) {
             $ = new DbSystemNetworkDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param isReaderEndpointEnabled (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isReaderEndpointEnabled(@Nullable Output<Boolean> isReaderEndpointEnabled) {
+            $.isReaderEndpointEnabled = isReaderEndpointEnabled;
+            return this;
+        }
+
+        /**
+         * @param isReaderEndpointEnabled (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isReaderEndpointEnabled(Boolean isReaderEndpointEnabled) {
+            return isReaderEndpointEnabled(Output.of(isReaderEndpointEnabled));
         }
 
         /**

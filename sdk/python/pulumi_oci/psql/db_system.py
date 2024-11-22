@@ -848,6 +848,7 @@ class DbSystem(pulumi.CustomResource):
             display_name=db_system_display_name,
             network_details={
                 "subnet_id": test_subnet["id"],
+                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled,
                 "nsg_ids": db_system_network_details_nsg_ids,
                 "primary_db_endpoint_private_ip": db_system_network_details_primary_db_endpoint_private_ip,
             },
@@ -964,6 +965,7 @@ class DbSystem(pulumi.CustomResource):
             display_name=db_system_display_name,
             network_details={
                 "subnet_id": test_subnet["id"],
+                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled,
                 "nsg_ids": db_system_network_details_nsg_ids,
                 "primary_db_endpoint_private_ip": db_system_network_details_primary_db_endpoint_private_ip,
             },

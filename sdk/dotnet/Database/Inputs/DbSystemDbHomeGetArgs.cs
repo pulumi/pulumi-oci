@@ -77,6 +77,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
+        /// Indicates whether unified auditing is enabled or not
+        /// </summary>
+        [Input("isUnifiedAuditingEnabled")]
+        public Input<bool>? IsUnifiedAuditingEnabled { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         /// </summary>
         [Input("lastPatchHistoryEntryId")]

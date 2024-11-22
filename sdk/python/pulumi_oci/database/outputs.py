@@ -7655,6 +7655,8 @@ class DbSystemDbHome(dict):
             suggest = "display_name"
         elif key == "freeformTags":
             suggest = "freeform_tags"
+        elif key == "isUnifiedAuditingEnabled":
+            suggest = "is_unified_auditing_enabled"
         elif key == "lastPatchHistoryEntryId":
             suggest = "last_patch_history_entry_id"
         elif key == "lifecycleDetails":
@@ -7683,6 +7685,7 @@ class DbSystemDbHome(dict):
                  display_name: Optional[str] = None,
                  freeform_tags: Optional[Mapping[str, str]] = None,
                  id: Optional[str] = None,
+                 is_unified_auditing_enabled: Optional[bool] = None,
                  last_patch_history_entry_id: Optional[str] = None,
                  lifecycle_details: Optional[str] = None,
                  state: Optional[str] = None,
@@ -7699,6 +7702,7 @@ class DbSystemDbHome(dict):
         :param str display_name: The user-provided name of the Database Home.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param bool is_unified_auditing_enabled: Indicates whether unified auditing is enabled or not
         :param str last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current state of the DB system.
@@ -7721,6 +7725,8 @@ class DbSystemDbHome(dict):
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_unified_auditing_enabled is not None:
+            pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
         if last_patch_history_entry_id is not None:
             pulumi.set(__self__, "last_patch_history_entry_id", last_patch_history_entry_id)
         if lifecycle_details is not None:
@@ -7799,6 +7805,14 @@ class DbSystemDbHome(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isUnifiedAuditingEnabled")
+    def is_unified_auditing_enabled(self) -> Optional[bool]:
+        """
+        Indicates whether unified auditing is enabled or not
+        """
+        return pulumi.get(self, "is_unified_auditing_enabled")
 
     @property
     @pulumi.getter(name="lastPatchHistoryEntryId")
@@ -18919,7 +18933,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-        :param bool is_dev_tier: Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        :param bool is_dev_tier: Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
         :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
         :param bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
@@ -19555,7 +19570,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isDevTier")
     def is_dev_tier(self) -> bool:
         """
-        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
         """
         return pulumi.get(self, "is_dev_tier")
 
@@ -21636,7 +21652,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-        :param bool is_dev_tier: Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        :param bool is_dev_tier: Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
         :param bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         :param bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
@@ -22223,7 +22239,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isDevTier")
     def is_dev_tier(self) -> bool:
         """
-        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
         """
         return pulumi.get(self, "is_dev_tier")
 
@@ -38971,6 +38987,7 @@ class GetDbSystemsDbSystemDbHomeResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
+                 is_unified_auditing_enabled: bool,
                  last_patch_history_entry_id: str,
                  lifecycle_details: str,
                  state: str,
@@ -38994,6 +39011,7 @@ class GetDbSystemsDbSystemDbHomeResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
         pulumi.set(__self__, "last_patch_history_entry_id", last_patch_history_entry_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
@@ -39055,6 +39073,11 @@ class GetDbSystemsDbSystemDbHomeResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isUnifiedAuditingEnabled")
+    def is_unified_auditing_enabled(self) -> bool:
+        return pulumi.get(self, "is_unified_auditing_enabled")
 
     @property
     @pulumi.getter(name="lastPatchHistoryEntryId")

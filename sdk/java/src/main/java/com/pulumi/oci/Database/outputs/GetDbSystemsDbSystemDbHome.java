@@ -39,6 +39,7 @@ public final class GetDbSystemsDbSystemDbHome {
      * 
      */
     private String id;
+    private Boolean isUnifiedAuditingEnabled;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
@@ -104,6 +105,9 @@ public final class GetDbSystemsDbSystemDbHome {
     public String id() {
         return this.id;
     }
+    public Boolean isUnifiedAuditingEnabled() {
+        return this.isUnifiedAuditingEnabled;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
@@ -151,6 +155,7 @@ public final class GetDbSystemsDbSystemDbHome {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isUnifiedAuditingEnabled;
         private String lastPatchHistoryEntryId;
         private String lifecycleDetails;
         private String state;
@@ -167,6 +172,7 @@ public final class GetDbSystemsDbSystemDbHome {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isUnifiedAuditingEnabled = defaults.isUnifiedAuditingEnabled;
     	      this.lastPatchHistoryEntryId = defaults.lastPatchHistoryEntryId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
@@ -249,6 +255,14 @@ public final class GetDbSystemsDbSystemDbHome {
             return this;
         }
         @CustomType.Setter
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            if (isUnifiedAuditingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "isUnifiedAuditingEnabled");
+            }
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
             if (lastPatchHistoryEntryId == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHome", "lastPatchHistoryEntryId");
@@ -291,6 +305,7 @@ public final class GetDbSystemsDbSystemDbHome {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
             _resultValue.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;

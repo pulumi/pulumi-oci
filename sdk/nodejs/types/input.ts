@@ -25883,6 +25883,10 @@ export namespace Database {
          */
         id?: pulumi.Input<string>;
         /**
+         * Indicates whether unified auditing is enabled or not
+         */
+        isUnifiedAuditingEnabled?: pulumi.Input<boolean>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
          */
         lastPatchHistoryEntryId?: pulumi.Input<string>;
@@ -77802,6 +77806,10 @@ export namespace Psql {
     }
 
     export interface DbSystemNetworkDetails {
+        /**
+         * (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+         */
+        isReaderEndpointEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          */

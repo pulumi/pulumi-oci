@@ -79,6 +79,7 @@ import javax.annotation.Nullable;
  *             .displayName(dbSystemDisplayName)
  *             .networkDetails(DbSystemNetworkDetailsArgs.builder()
  *                 .subnetId(testSubnet.id())
+ *                 .isReaderEndpointEnabled(dbSystemNetworkDetailsIsReaderEndpointEnabled)
  *                 .nsgIds(dbSystemNetworkDetailsNsgIds)
  *                 .primaryDbEndpointPrivateIp(dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp)
  *                 .build())

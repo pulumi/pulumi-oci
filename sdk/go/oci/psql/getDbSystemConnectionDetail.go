@@ -67,6 +67,8 @@ type GetDbSystemConnectionDetailResult struct {
 	InstanceEndpoints []GetDbSystemConnectionDetailInstanceEndpoint `pulumi:"instanceEndpoints"`
 	// Information about the database instance node endpoint.
 	PrimaryDbEndpoints []GetDbSystemConnectionDetailPrimaryDbEndpoint `pulumi:"primaryDbEndpoints"`
+	// Information about the database instance node endpoint.
+	ReaderEndpoints []GetDbSystemConnectionDetailReaderEndpoint `pulumi:"readerEndpoints"`
 }
 
 func GetDbSystemConnectionDetailOutput(ctx *pulumi.Context, args GetDbSystemConnectionDetailOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemConnectionDetailResultOutput {
@@ -139,6 +141,13 @@ func (o GetDbSystemConnectionDetailResultOutput) PrimaryDbEndpoints() GetDbSyste
 	return o.ApplyT(func(v GetDbSystemConnectionDetailResult) []GetDbSystemConnectionDetailPrimaryDbEndpoint {
 		return v.PrimaryDbEndpoints
 	}).(GetDbSystemConnectionDetailPrimaryDbEndpointArrayOutput)
+}
+
+// Information about the database instance node endpoint.
+func (o GetDbSystemConnectionDetailResultOutput) ReaderEndpoints() GetDbSystemConnectionDetailReaderEndpointArrayOutput {
+	return o.ApplyT(func(v GetDbSystemConnectionDetailResult) []GetDbSystemConnectionDetailReaderEndpoint {
+		return v.ReaderEndpoints
+	}).(GetDbSystemConnectionDetailReaderEndpointArrayOutput)
 }
 
 func init() {

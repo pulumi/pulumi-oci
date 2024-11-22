@@ -27,7 +27,7 @@ class GetDbSystemConnectionDetailResult:
     """
     A collection of values returned by getDbSystemConnectionDetail.
     """
-    def __init__(__self__, ca_certificate=None, db_system_id=None, id=None, instance_endpoints=None, primary_db_endpoints=None):
+    def __init__(__self__, ca_certificate=None, db_system_id=None, id=None, instance_endpoints=None, primary_db_endpoints=None, reader_endpoints=None):
         if ca_certificate and not isinstance(ca_certificate, str):
             raise TypeError("Expected argument 'ca_certificate' to be a str")
         pulumi.set(__self__, "ca_certificate", ca_certificate)
@@ -43,6 +43,9 @@ class GetDbSystemConnectionDetailResult:
         if primary_db_endpoints and not isinstance(primary_db_endpoints, list):
             raise TypeError("Expected argument 'primary_db_endpoints' to be a list")
         pulumi.set(__self__, "primary_db_endpoints", primary_db_endpoints)
+        if reader_endpoints and not isinstance(reader_endpoints, list):
+            raise TypeError("Expected argument 'reader_endpoints' to be a list")
+        pulumi.set(__self__, "reader_endpoints", reader_endpoints)
 
     @property
     @pulumi.getter(name="caCertificate")
@@ -81,6 +84,14 @@ class GetDbSystemConnectionDetailResult:
         """
         return pulumi.get(self, "primary_db_endpoints")
 
+    @property
+    @pulumi.getter(name="readerEndpoints")
+    def reader_endpoints(self) -> Sequence['outputs.GetDbSystemConnectionDetailReaderEndpointResult']:
+        """
+        Information about the database instance node endpoint.
+        """
+        return pulumi.get(self, "reader_endpoints")
+
 
 class AwaitableGetDbSystemConnectionDetailResult(GetDbSystemConnectionDetailResult):
     # pylint: disable=using-constant-test
@@ -92,7 +103,8 @@ class AwaitableGetDbSystemConnectionDetailResult(GetDbSystemConnectionDetailResu
             db_system_id=self.db_system_id,
             id=self.id,
             instance_endpoints=self.instance_endpoints,
-            primary_db_endpoints=self.primary_db_endpoints)
+            primary_db_endpoints=self.primary_db_endpoints,
+            reader_endpoints=self.reader_endpoints)
 
 
 def get_db_system_connection_detail(db_system_id: Optional[str] = None,
@@ -124,7 +136,8 @@ def get_db_system_connection_detail(db_system_id: Optional[str] = None,
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
         id=pulumi.get(__ret__, 'id'),
         instance_endpoints=pulumi.get(__ret__, 'instance_endpoints'),
-        primary_db_endpoints=pulumi.get(__ret__, 'primary_db_endpoints'))
+        primary_db_endpoints=pulumi.get(__ret__, 'primary_db_endpoints'),
+        reader_endpoints=pulumi.get(__ret__, 'reader_endpoints'))
 def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemConnectionDetailResult]:
     """
@@ -153,4 +166,5 @@ def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[s
         db_system_id=pulumi.get(__response__, 'db_system_id'),
         id=pulumi.get(__response__, 'id'),
         instance_endpoints=pulumi.get(__response__, 'instance_endpoints'),
-        primary_db_endpoints=pulumi.get(__response__, 'primary_db_endpoints')))
+        primary_db_endpoints=pulumi.get(__response__, 'primary_db_endpoints'),
+        reader_endpoints=pulumi.get(__response__, 'reader_endpoints')))

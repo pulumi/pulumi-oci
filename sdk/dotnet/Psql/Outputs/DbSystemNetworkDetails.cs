@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class DbSystemNetworkDetails
     {
         /// <summary>
+        /// (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+        /// </summary>
+        public readonly bool? IsReaderEndpointEnabled;
+        /// <summary>
         /// (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
@@ -28,12 +32,15 @@ namespace Pulumi.Oci.Psql.Outputs
 
         [OutputConstructor]
         private DbSystemNetworkDetails(
+            bool? isReaderEndpointEnabled,
+
             ImmutableArray<string> nsgIds,
 
             string? primaryDbEndpointPrivateIp,
 
             string subnetId)
         {
+            IsReaderEndpointEnabled = isReaderEndpointEnabled;
             NsgIds = nsgIds;
             PrimaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
             SubnetId = subnetId;

@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -13,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DbSystemNetworkDetails {
+    /**
+     * @return (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+     * 
+     */
+    private @Nullable Boolean isReaderEndpointEnabled;
     /**
      * @return (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
@@ -30,6 +36,13 @@ public final class DbSystemNetworkDetails {
     private String subnetId;
 
     private DbSystemNetworkDetails() {}
+    /**
+     * @return (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+     * 
+     */
+    public Optional<Boolean> isReaderEndpointEnabled() {
+        return Optional.ofNullable(this.isReaderEndpointEnabled);
+    }
     /**
      * @return (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
@@ -61,17 +74,25 @@ public final class DbSystemNetworkDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean isReaderEndpointEnabled;
         private @Nullable List<String> nsgIds;
         private @Nullable String primaryDbEndpointPrivateIp;
         private String subnetId;
         public Builder() {}
         public Builder(DbSystemNetworkDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isReaderEndpointEnabled = defaults.isReaderEndpointEnabled;
     	      this.nsgIds = defaults.nsgIds;
     	      this.primaryDbEndpointPrivateIp = defaults.primaryDbEndpointPrivateIp;
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder isReaderEndpointEnabled(@Nullable Boolean isReaderEndpointEnabled) {
+
+            this.isReaderEndpointEnabled = isReaderEndpointEnabled;
+            return this;
+        }
         @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
 
@@ -97,6 +118,7 @@ public final class DbSystemNetworkDetails {
         }
         public DbSystemNetworkDetails build() {
             final var _resultValue = new DbSystemNetworkDetails();
+            _resultValue.isReaderEndpointEnabled = isReaderEndpointEnabled;
             _resultValue.nsgIds = nsgIds;
             _resultValue.primaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
             _resultValue.subnetId = subnetId;

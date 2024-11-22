@@ -1624,6 +1624,8 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) RetentionDays() pulumi.In
 }
 
 type DbSystemNetworkDetails struct {
+	// (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+	IsReaderEndpointEnabled *bool `pulumi:"isReaderEndpointEnabled"`
 	// (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
@@ -1644,6 +1646,8 @@ type DbSystemNetworkDetailsInput interface {
 }
 
 type DbSystemNetworkDetailsArgs struct {
+	// (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+	IsReaderEndpointEnabled pulumi.BoolPtrInput `pulumi:"isReaderEndpointEnabled"`
 	// (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
@@ -1729,6 +1733,11 @@ func (o DbSystemNetworkDetailsOutput) ToDbSystemNetworkDetailsPtrOutputWithConte
 	}).(DbSystemNetworkDetailsPtrOutput)
 }
 
+// (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+func (o DbSystemNetworkDetailsOutput) IsReaderEndpointEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DbSystemNetworkDetails) *bool { return v.IsReaderEndpointEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 func (o DbSystemNetworkDetailsOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DbSystemNetworkDetails) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -1766,6 +1775,16 @@ func (o DbSystemNetworkDetailsPtrOutput) Elem() DbSystemNetworkDetailsOutput {
 		var ret DbSystemNetworkDetails
 		return ret
 	}).(DbSystemNetworkDetailsOutput)
+}
+
+// (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+func (o DbSystemNetworkDetailsPtrOutput) IsReaderEndpointEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbSystemNetworkDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsReaderEndpointEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
@@ -4700,6 +4719,121 @@ func (o GetDbSystemConnectionDetailPrimaryDbEndpointArrayOutput) Index(i pulumi.
 	}).(GetDbSystemConnectionDetailPrimaryDbEndpointOutput)
 }
 
+type GetDbSystemConnectionDetailReaderEndpoint struct {
+	// The FQDN of the endpoint.
+	Fqdn string `pulumi:"fqdn"`
+	// The IP address of the endpoint.
+	IpAddress string `pulumi:"ipAddress"`
+	// The port address of the endpoint.
+	Port int `pulumi:"port"`
+}
+
+// GetDbSystemConnectionDetailReaderEndpointInput is an input type that accepts GetDbSystemConnectionDetailReaderEndpointArgs and GetDbSystemConnectionDetailReaderEndpointOutput values.
+// You can construct a concrete instance of `GetDbSystemConnectionDetailReaderEndpointInput` via:
+//
+//	GetDbSystemConnectionDetailReaderEndpointArgs{...}
+type GetDbSystemConnectionDetailReaderEndpointInput interface {
+	pulumi.Input
+
+	ToGetDbSystemConnectionDetailReaderEndpointOutput() GetDbSystemConnectionDetailReaderEndpointOutput
+	ToGetDbSystemConnectionDetailReaderEndpointOutputWithContext(context.Context) GetDbSystemConnectionDetailReaderEndpointOutput
+}
+
+type GetDbSystemConnectionDetailReaderEndpointArgs struct {
+	// The FQDN of the endpoint.
+	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	// The IP address of the endpoint.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The port address of the endpoint.
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetDbSystemConnectionDetailReaderEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemConnectionDetailReaderEndpoint)(nil)).Elem()
+}
+
+func (i GetDbSystemConnectionDetailReaderEndpointArgs) ToGetDbSystemConnectionDetailReaderEndpointOutput() GetDbSystemConnectionDetailReaderEndpointOutput {
+	return i.ToGetDbSystemConnectionDetailReaderEndpointOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemConnectionDetailReaderEndpointArgs) ToGetDbSystemConnectionDetailReaderEndpointOutputWithContext(ctx context.Context) GetDbSystemConnectionDetailReaderEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemConnectionDetailReaderEndpointOutput)
+}
+
+// GetDbSystemConnectionDetailReaderEndpointArrayInput is an input type that accepts GetDbSystemConnectionDetailReaderEndpointArray and GetDbSystemConnectionDetailReaderEndpointArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemConnectionDetailReaderEndpointArrayInput` via:
+//
+//	GetDbSystemConnectionDetailReaderEndpointArray{ GetDbSystemConnectionDetailReaderEndpointArgs{...} }
+type GetDbSystemConnectionDetailReaderEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemConnectionDetailReaderEndpointArrayOutput() GetDbSystemConnectionDetailReaderEndpointArrayOutput
+	ToGetDbSystemConnectionDetailReaderEndpointArrayOutputWithContext(context.Context) GetDbSystemConnectionDetailReaderEndpointArrayOutput
+}
+
+type GetDbSystemConnectionDetailReaderEndpointArray []GetDbSystemConnectionDetailReaderEndpointInput
+
+func (GetDbSystemConnectionDetailReaderEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemConnectionDetailReaderEndpoint)(nil)).Elem()
+}
+
+func (i GetDbSystemConnectionDetailReaderEndpointArray) ToGetDbSystemConnectionDetailReaderEndpointArrayOutput() GetDbSystemConnectionDetailReaderEndpointArrayOutput {
+	return i.ToGetDbSystemConnectionDetailReaderEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemConnectionDetailReaderEndpointArray) ToGetDbSystemConnectionDetailReaderEndpointArrayOutputWithContext(ctx context.Context) GetDbSystemConnectionDetailReaderEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemConnectionDetailReaderEndpointArrayOutput)
+}
+
+type GetDbSystemConnectionDetailReaderEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemConnectionDetailReaderEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemConnectionDetailReaderEndpoint)(nil)).Elem()
+}
+
+func (o GetDbSystemConnectionDetailReaderEndpointOutput) ToGetDbSystemConnectionDetailReaderEndpointOutput() GetDbSystemConnectionDetailReaderEndpointOutput {
+	return o
+}
+
+func (o GetDbSystemConnectionDetailReaderEndpointOutput) ToGetDbSystemConnectionDetailReaderEndpointOutputWithContext(ctx context.Context) GetDbSystemConnectionDetailReaderEndpointOutput {
+	return o
+}
+
+// The FQDN of the endpoint.
+func (o GetDbSystemConnectionDetailReaderEndpointOutput) Fqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemConnectionDetailReaderEndpoint) string { return v.Fqdn }).(pulumi.StringOutput)
+}
+
+// The IP address of the endpoint.
+func (o GetDbSystemConnectionDetailReaderEndpointOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemConnectionDetailReaderEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The port address of the endpoint.
+func (o GetDbSystemConnectionDetailReaderEndpointOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemConnectionDetailReaderEndpoint) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetDbSystemConnectionDetailReaderEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemConnectionDetailReaderEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemConnectionDetailReaderEndpoint)(nil)).Elem()
+}
+
+func (o GetDbSystemConnectionDetailReaderEndpointArrayOutput) ToGetDbSystemConnectionDetailReaderEndpointArrayOutput() GetDbSystemConnectionDetailReaderEndpointArrayOutput {
+	return o
+}
+
+func (o GetDbSystemConnectionDetailReaderEndpointArrayOutput) ToGetDbSystemConnectionDetailReaderEndpointArrayOutputWithContext(ctx context.Context) GetDbSystemConnectionDetailReaderEndpointArrayOutput {
+	return o
+}
+
+func (o GetDbSystemConnectionDetailReaderEndpointArrayOutput) Index(i pulumi.IntInput) GetDbSystemConnectionDetailReaderEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemConnectionDetailReaderEndpoint {
+		return vs[0].([]GetDbSystemConnectionDetailReaderEndpoint)[vs[1].(int)]
+	}).(GetDbSystemConnectionDetailReaderEndpointOutput)
+}
+
 type GetDbSystemCredential struct {
 	PasswordDetails []GetDbSystemCredentialPasswordDetail `pulumi:"passwordDetails"`
 	Username        string                                `pulumi:"username"`
@@ -5424,6 +5558,8 @@ func (o GetDbSystemManagementPolicyBackupPolicyArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetDbSystemNetworkDetail struct {
+	// Specifies if the reader endpoint is enabled on the dbSystem.
+	IsReaderEndpointEnabled bool `pulumi:"isReaderEndpointEnabled"`
 	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
@@ -5444,6 +5580,8 @@ type GetDbSystemNetworkDetailInput interface {
 }
 
 type GetDbSystemNetworkDetailArgs struct {
+	// Specifies if the reader endpoint is enabled on the dbSystem.
+	IsReaderEndpointEnabled pulumi.BoolInput `pulumi:"isReaderEndpointEnabled"`
 	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
@@ -5501,6 +5639,11 @@ func (o GetDbSystemNetworkDetailOutput) ToGetDbSystemNetworkDetailOutput() GetDb
 
 func (o GetDbSystemNetworkDetailOutput) ToGetDbSystemNetworkDetailOutputWithContext(ctx context.Context) GetDbSystemNetworkDetailOutput {
 	return o
+}
+
+// Specifies if the reader endpoint is enabled on the dbSystem.
+func (o GetDbSystemNetworkDetailOutput) IsReaderEndpointEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemNetworkDetail) bool { return v.IsReaderEndpointEnabled }).(pulumi.BoolOutput)
 }
 
 // List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
@@ -7069,6 +7212,8 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayOutpu
 }
 
 type GetDbSystemsDbSystemCollectionItemNetworkDetail struct {
+	// Specifies if the reader endpoint is enabled on the dbSystem.
+	IsReaderEndpointEnabled bool `pulumi:"isReaderEndpointEnabled"`
 	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
@@ -7089,6 +7234,8 @@ type GetDbSystemsDbSystemCollectionItemNetworkDetailInput interface {
 }
 
 type GetDbSystemsDbSystemCollectionItemNetworkDetailArgs struct {
+	// Specifies if the reader endpoint is enabled on the dbSystem.
+	IsReaderEndpointEnabled pulumi.BoolInput `pulumi:"isReaderEndpointEnabled"`
 	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
@@ -7146,6 +7293,11 @@ func (o GetDbSystemsDbSystemCollectionItemNetworkDetailOutput) ToGetDbSystemsDbS
 
 func (o GetDbSystemsDbSystemCollectionItemNetworkDetailOutput) ToGetDbSystemsDbSystemCollectionItemNetworkDetailOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemNetworkDetailOutput {
 	return o
+}
+
+// Specifies if the reader endpoint is enabled on the dbSystem.
+func (o GetDbSystemsDbSystemCollectionItemNetworkDetailOutput) IsReaderEndpointEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemNetworkDetail) bool { return v.IsReaderEndpointEnabled }).(pulumi.BoolOutput)
 }
 
 // List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
@@ -9237,6 +9389,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemConnectionDetailInstanceEndpointEndpointArrayInput)(nil)).Elem(), GetDbSystemConnectionDetailInstanceEndpointEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemConnectionDetailPrimaryDbEndpointInput)(nil)).Elem(), GetDbSystemConnectionDetailPrimaryDbEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemConnectionDetailPrimaryDbEndpointArrayInput)(nil)).Elem(), GetDbSystemConnectionDetailPrimaryDbEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemConnectionDetailReaderEndpointInput)(nil)).Elem(), GetDbSystemConnectionDetailReaderEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemConnectionDetailReaderEndpointArrayInput)(nil)).Elem(), GetDbSystemConnectionDetailReaderEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemCredentialInput)(nil)).Elem(), GetDbSystemCredentialArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemCredentialArrayInput)(nil)).Elem(), GetDbSystemCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemCredentialPasswordDetailInput)(nil)).Elem(), GetDbSystemCredentialPasswordDetailArgs{})
@@ -9375,6 +9529,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemConnectionDetailInstanceEndpointEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemConnectionDetailPrimaryDbEndpointOutput{})
 	pulumi.RegisterOutputType(GetDbSystemConnectionDetailPrimaryDbEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemConnectionDetailReaderEndpointOutput{})
+	pulumi.RegisterOutputType(GetDbSystemConnectionDetailReaderEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemCredentialOutput{})
 	pulumi.RegisterOutputType(GetDbSystemCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemCredentialPasswordDetailOutput{})

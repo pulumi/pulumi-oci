@@ -48,6 +48,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
+        /// Indicates whether unified auditing is enabled or not
+        /// </summary>
+        public readonly bool? IsUnifiedAuditingEnabled;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         /// </summary>
         public readonly string? LastPatchHistoryEntryId;
@@ -84,6 +88,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? id,
 
+            bool? isUnifiedAuditingEnabled,
+
             string? lastPatchHistoryEntryId,
 
             string? lifecycleDetails,
@@ -101,6 +107,7 @@ namespace Pulumi.Oci.Database.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
             LastPatchHistoryEntryId = lastPatchHistoryEntryId;
             LifecycleDetails = lifecycleDetails;
             State = state;

@@ -60,6 +60,10 @@ export interface GetDbSystemConnectionDetailResult {
      * Information about the database instance node endpoint.
      */
     readonly primaryDbEndpoints: outputs.Psql.GetDbSystemConnectionDetailPrimaryDbEndpoint[];
+    /**
+     * Information about the database instance node endpoint.
+     */
+    readonly readerEndpoints: outputs.Psql.GetDbSystemConnectionDetailReaderEndpoint[];
 }
 /**
  * This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.

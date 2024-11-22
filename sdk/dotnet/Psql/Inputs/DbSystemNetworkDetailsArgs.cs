@@ -12,6 +12,12 @@ namespace Pulumi.Oci.Psql.Inputs
 
     public sealed class DbSystemNetworkDetailsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+        /// </summary>
+        [Input("isReaderEndpointEnabled")]
+        public Input<bool>? IsReaderEndpointEnabled { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 

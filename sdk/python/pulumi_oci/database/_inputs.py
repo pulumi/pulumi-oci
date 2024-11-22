@@ -9572,6 +9572,10 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
+        is_unified_auditing_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Indicates whether unified auditing is enabled or not
+        """
         last_patch_history_entry_id: NotRequired[pulumi.Input[str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
@@ -9603,6 +9607,7 @@ class DbSystemDbHomeArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
+                 is_unified_auditing_enabled: Optional[pulumi.Input[bool]] = None,
                  last_patch_history_entry_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -9619,6 +9624,7 @@ class DbSystemDbHomeArgs:
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param pulumi.Input[bool] is_unified_auditing_enabled: Indicates whether unified auditing is enabled or not
         :param pulumi.Input[str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] state: The current state of the DB system.
@@ -9641,6 +9647,8 @@ class DbSystemDbHomeArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_unified_auditing_enabled is not None:
+            pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
         if last_patch_history_entry_id is not None:
             pulumi.set(__self__, "last_patch_history_entry_id", last_patch_history_entry_id)
         if lifecycle_details is not None:
@@ -9755,6 +9763,18 @@ class DbSystemDbHomeArgs:
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isUnifiedAuditingEnabled")
+    def is_unified_auditing_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether unified auditing is enabled or not
+        """
+        return pulumi.get(self, "is_unified_auditing_enabled")
+
+    @is_unified_auditing_enabled.setter
+    def is_unified_auditing_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_unified_auditing_enabled", value)
 
     @property
     @pulumi.getter(name="lastPatchHistoryEntryId")

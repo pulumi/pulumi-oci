@@ -114,6 +114,10 @@ namespace Pulumi.Oci.Psql
         /// Information about the database instance node endpoint.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemConnectionDetailPrimaryDbEndpointResult> PrimaryDbEndpoints;
+        /// <summary>
+        /// Information about the database instance node endpoint.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDbSystemConnectionDetailReaderEndpointResult> ReaderEndpoints;
 
         [OutputConstructor]
         private GetDbSystemConnectionDetailResult(
@@ -125,13 +129,16 @@ namespace Pulumi.Oci.Psql
 
             ImmutableArray<Outputs.GetDbSystemConnectionDetailInstanceEndpointResult> instanceEndpoints,
 
-            ImmutableArray<Outputs.GetDbSystemConnectionDetailPrimaryDbEndpointResult> primaryDbEndpoints)
+            ImmutableArray<Outputs.GetDbSystemConnectionDetailPrimaryDbEndpointResult> primaryDbEndpoints,
+
+            ImmutableArray<Outputs.GetDbSystemConnectionDetailReaderEndpointResult> readerEndpoints)
         {
             CaCertificate = caCertificate;
             DbSystemId = dbSystemId;
             Id = id;
             InstanceEndpoints = instanceEndpoints;
             PrimaryDbEndpoints = primaryDbEndpoints;
+            ReaderEndpoints = readerEndpoints;
         }
     }
 }

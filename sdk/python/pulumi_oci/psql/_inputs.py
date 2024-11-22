@@ -957,6 +957,10 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         """
+        is_reader_endpoint_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+        """
         nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
         """
         (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
@@ -972,14 +976,18 @@ elif False:
 class DbSystemNetworkDetailsArgs:
     def __init__(__self__, *,
                  subnet_id: pulumi.Input[str],
+                 is_reader_endpoint_enabled: Optional[pulumi.Input[bool]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  primary_db_endpoint_private_ip: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
+        :param pulumi.Input[bool] is_reader_endpoint_enabled: (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         :param pulumi.Input[str] primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if is_reader_endpoint_enabled is not None:
+            pulumi.set(__self__, "is_reader_endpoint_enabled", is_reader_endpoint_enabled)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if primary_db_endpoint_private_ip is not None:
@@ -996,6 +1004,18 @@ class DbSystemNetworkDetailsArgs:
     @subnet_id.setter
     def subnet_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="isReaderEndpointEnabled")
+    def is_reader_endpoint_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
+        """
+        return pulumi.get(self, "is_reader_endpoint_enabled")
+
+    @is_reader_endpoint_enabled.setter
+    def is_reader_endpoint_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_reader_endpoint_enabled", value)
 
     @property
     @pulumi.getter(name="nsgIds")

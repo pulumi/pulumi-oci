@@ -45,6 +45,7 @@ import (
 //				DisplayName: pulumi.Any(dbSystemDisplayName),
 //				NetworkDetails: &psql.DbSystemNetworkDetailsArgs{
 //					SubnetId:                   pulumi.Any(testSubnet.Id),
+//					IsReaderEndpointEnabled:    pulumi.Any(dbSystemNetworkDetailsIsReaderEndpointEnabled),
 //					NsgIds:                     pulumi.Any(dbSystemNetworkDetailsNsgIds),
 //					PrimaryDbEndpointPrivateIp: pulumi.Any(dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp),
 //				},

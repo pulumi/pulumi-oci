@@ -107,7 +107,7 @@ export interface GetOdaPrivateEndpointsResult {
  * });
  * ```
  */
-export function getOdaPrivateEndpointsOutput(args: GetOdaPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaPrivateEndpointsResult> {
+export function getOdaPrivateEndpointsOutput(args: GetOdaPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOdaPrivateEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Oda/getOdaPrivateEndpoints:getOdaPrivateEndpoints", {
         "compartmentId": args.compartmentId,

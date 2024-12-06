@@ -99,7 +99,7 @@ export interface GetVmClusterUpdateHistoryEntryResult {
  * });
  * ```
  */
-export function getVmClusterUpdateHistoryEntryOutput(args: GetVmClusterUpdateHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterUpdateHistoryEntryResult> {
+export function getVmClusterUpdateHistoryEntryOutput(args: GetVmClusterUpdateHistoryEntryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVmClusterUpdateHistoryEntryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry", {
         "updateHistoryEntryId": args.updateHistoryEntryId,

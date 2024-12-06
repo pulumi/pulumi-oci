@@ -171,7 +171,7 @@ def get_autonomous_database_software_images_output(compartment_id: Optional[pulu
                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseSoftwareImagesFilterArgs', 'GetAutonomousDatabaseSoftwareImagesFilterArgsDict']]]]] = None,
                                                    image_shape_family: Optional[pulumi.Input[str]] = None,
                                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseSoftwareImagesResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseSoftwareImagesResult]:
     """
     This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
 
@@ -201,7 +201,7 @@ def get_autonomous_database_software_images_output(compartment_id: Optional[pulu
     __args__['filters'] = filters
     __args__['imageShapeFamily'] = image_shape_family
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages', __args__, opts=opts, typ=GetAutonomousDatabaseSoftwareImagesResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabaseSoftwareImagesResult(
         autonomous_database_software_image_collections=pulumi.get(__response__, 'autonomous_database_software_image_collections'),

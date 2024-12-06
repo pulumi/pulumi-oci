@@ -144,7 +144,7 @@ export interface GetAlertAnalyticResult {
  * });
  * ```
  */
-export function getAlertAnalyticOutput(args: GetAlertAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertAnalyticResult> {
+export function getAlertAnalyticOutput(args: GetAlertAnalyticOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAlertAnalyticResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAlertAnalytic:getAlertAnalytic", {
         "accessLevel": args.accessLevel,

@@ -92,7 +92,7 @@ export interface GetListenerRulesResult {
  * });
  * ```
  */
-export function getListenerRulesOutput(args: GetListenerRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListenerRulesResult> {
+export function getListenerRulesOutput(args: GetListenerRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetListenerRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getListenerRules:getListenerRules", {
         "filters": args.filters,

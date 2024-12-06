@@ -100,7 +100,7 @@ export interface GetRunStatementResult {
  * });
  * ```
  */
-export function getRunStatementOutput(args: GetRunStatementOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunStatementResult> {
+export function getRunStatementOutput(args: GetRunStatementOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRunStatementResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataFlow/getRunStatement:getRunStatement", {
         "runId": args.runId,

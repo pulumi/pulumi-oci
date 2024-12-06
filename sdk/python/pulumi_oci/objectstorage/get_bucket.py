@@ -365,7 +365,7 @@ def get_bucket(name: Optional[str] = None,
         versioning=pulumi.get(__ret__, 'versioning'))
 def get_bucket_output(name: Optional[pulumi.Input[str]] = None,
                       namespace: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBucketResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBucketResult]:
     """
     This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.
 
@@ -388,7 +388,7 @@ def get_bucket_output(name: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['name'] = name
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getBucket:getBucket', __args__, opts=opts, typ=GetBucketResult)
     return __ret__.apply(lambda __response__: GetBucketResult(
         access_type=pulumi.get(__response__, 'access_type'),

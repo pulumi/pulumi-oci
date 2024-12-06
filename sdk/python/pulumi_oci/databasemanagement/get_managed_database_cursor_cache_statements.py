@@ -160,7 +160,7 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
                                                         managed_database_id: Optional[pulumi.Input[str]] = None,
                                                         opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                         sql_text: Optional[pulumi.Input[Optional[str]]] = None,
-                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseCursorCacheStatementsResult]:
+                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseCursorCacheStatementsResult]:
     """
     This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
 
@@ -188,7 +188,7 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
     __args__['managedDatabaseId'] = managed_database_id
     __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['sqlText'] = sql_text
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements', __args__, opts=opts, typ=GetManagedDatabaseCursorCacheStatementsResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseCursorCacheStatementsResult(
         cursor_cache_statement_collections=pulumi.get(__response__, 'cursor_cache_statement_collections'),

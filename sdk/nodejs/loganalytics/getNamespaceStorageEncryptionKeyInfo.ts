@@ -69,7 +69,7 @@ export interface GetNamespaceStorageEncryptionKeyInfoResult {
  * });
  * ```
  */
-export function getNamespaceStorageEncryptionKeyInfoOutput(args: GetNamespaceStorageEncryptionKeyInfoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageEncryptionKeyInfoResult> {
+export function getNamespaceStorageEncryptionKeyInfoOutput(args: GetNamespaceStorageEncryptionKeyInfoOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceStorageEncryptionKeyInfoResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", {
         "namespace": args.namespace,

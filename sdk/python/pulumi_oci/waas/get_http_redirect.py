@@ -204,7 +204,7 @@ def get_http_redirect(http_redirect_id: Optional[str] = None,
         targets=pulumi.get(__ret__, 'targets'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_http_redirect_output(http_redirect_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHttpRedirectResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHttpRedirectResult]:
     """
     This data source provides details about a specific Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
 
@@ -224,7 +224,7 @@ def get_http_redirect_output(http_redirect_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['httpRedirectId'] = http_redirect_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waas/getHttpRedirect:getHttpRedirect', __args__, opts=opts, typ=GetHttpRedirectResult)
     return __ret__.apply(lambda __response__: GetHttpRedirectResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

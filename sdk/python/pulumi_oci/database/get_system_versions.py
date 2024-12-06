@@ -150,7 +150,7 @@ def get_system_versions_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSystemVersionsFilterArgs', 'GetSystemVersionsFilterArgsDict']]]]] = None,
                                gi_version: Optional[pulumi.Input[str]] = None,
                                shape: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSystemVersionsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSystemVersionsResult]:
     """
     This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
 
@@ -177,7 +177,7 @@ def get_system_versions_output(compartment_id: Optional[pulumi.Input[str]] = Non
     __args__['filters'] = filters
     __args__['giVersion'] = gi_version
     __args__['shape'] = shape
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getSystemVersions:getSystemVersions', __args__, opts=opts, typ=GetSystemVersionsResult)
     return __ret__.apply(lambda __response__: GetSystemVersionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

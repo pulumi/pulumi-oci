@@ -204,7 +204,7 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = 
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMysqlBackupsFilterArgs', 'GetMysqlBackupsFilterArgsDict']]]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlBackupsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlBackupsResult]:
     """
     This data source provides the list of Mysql Backups in Oracle Cloud Infrastructure MySQL Database service.
 
@@ -240,7 +240,7 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = 
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlBackups:getMysqlBackups', __args__, opts=opts, typ=GetMysqlBackupsResult)
     return __ret__.apply(lambda __response__: GetMysqlBackupsResult(
         backup_id=pulumi.get(__response__, 'backup_id'),

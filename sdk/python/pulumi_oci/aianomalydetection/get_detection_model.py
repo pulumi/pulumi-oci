@@ -256,7 +256,7 @@ def get_detection_model(model_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_detection_model_output(model_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectionModelResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDetectionModelResult]:
     """
     This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
 
@@ -276,7 +276,7 @@ def get_detection_model_output(model_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['modelId'] = model_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:AiAnomalyDetection/getDetectionModel:getDetectionModel', __args__, opts=opts, typ=GetDetectionModelResult)
     return __ret__.apply(lambda __response__: GetDetectionModelResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

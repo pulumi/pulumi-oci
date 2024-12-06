@@ -419,7 +419,7 @@ def get_exadata_insight(exadata_insight_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_exadata_insight_output(exadata_insight_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInsightResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadataInsightResult]:
     """
     This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -439,7 +439,7 @@ def get_exadata_insight_output(exadata_insight_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['exadataInsightId'] = exadata_insight_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getExadataInsight:getExadataInsight', __args__, opts=opts, typ=GetExadataInsightResult)
     return __ret__.apply(lambda __response__: GetExadataInsightResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

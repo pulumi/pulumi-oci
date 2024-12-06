@@ -192,7 +192,7 @@ def get_managed_database_optimizer_statistics_collection_aggregations_output(end
                                                                              managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                              start_time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                                              task_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult]:
+                                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult]:
     """
     This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
 
@@ -231,7 +231,7 @@ def get_managed_database_optimizer_statistics_collection_aggregations_output(end
     __args__['managedDatabaseId'] = managed_database_id
     __args__['startTimeGreaterThanOrEqualTo'] = start_time_greater_than_or_equal_to
     __args__['taskType'] = task_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult(
         end_time_less_than_or_equal_to=pulumi.get(__response__, 'end_time_less_than_or_equal_to'),

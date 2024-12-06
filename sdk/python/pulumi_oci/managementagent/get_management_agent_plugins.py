@@ -180,7 +180,7 @@ def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentPluginsFilterArgs', 'GetManagementAgentPluginsFilterArgsDict']]]]] = None,
                                         platform_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentPluginsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentPluginsResult]:
     """
     This data source provides the list of Management Agent Plugins in Oracle Cloud Infrastructure Management Agent service.
 
@@ -213,7 +213,7 @@ def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional
     __args__['filters'] = filters
     __args__['platformTypes'] = platform_types
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins', __args__, opts=opts, typ=GetManagementAgentPluginsResult)
     return __ret__.apply(lambda __response__: GetManagementAgentPluginsResult(
         agent_id=pulumi.get(__response__, 'agent_id'),

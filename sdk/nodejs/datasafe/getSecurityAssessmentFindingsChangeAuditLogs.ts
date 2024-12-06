@@ -163,7 +163,7 @@ export interface GetSecurityAssessmentFindingsChangeAuditLogsResult {
  * });
  * ```
  */
-export function getSecurityAssessmentFindingsChangeAuditLogsOutput(args: GetSecurityAssessmentFindingsChangeAuditLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> {
+export function getSecurityAssessmentFindingsChangeAuditLogsOutput(args: GetSecurityAssessmentFindingsChangeAuditLogsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs", {
         "filters": args.filters,

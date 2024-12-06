@@ -190,7 +190,7 @@ def get_peer(blockchain_platform_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_peer_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                     peer_id: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPeerResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPeerResult]:
     """
     This data source provides details about a specific Peer resource in Oracle Cloud Infrastructure Blockchain service.
 
@@ -213,7 +213,7 @@ def get_peer_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['blockchainPlatformId'] = blockchain_platform_id
     __args__['peerId'] = peer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Blockchain/getPeer:getPeer', __args__, opts=opts, typ=GetPeerResult)
     return __ret__.apply(lambda __response__: GetPeerResult(
         ad=pulumi.get(__response__, 'ad'),

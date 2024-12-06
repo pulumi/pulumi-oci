@@ -163,7 +163,7 @@ export interface GetInstallationSitesResult {
  * });
  * ```
  */
-export function getInstallationSitesOutput(args: GetInstallationSitesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstallationSitesResult> {
+export function getInstallationSitesOutput(args: GetInstallationSitesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstallationSitesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getInstallationSites:getInstallationSites", {
         "applicationId": args.applicationId,

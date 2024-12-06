@@ -88,7 +88,7 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
  * });
  * ```
  */
-export function getSecurityPolicyDeploymentSecurityPolicyEntryStateOutput(args: GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> {
+export function getSecurityPolicyDeploymentSecurityPolicyEntryStateOutput(args: GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState", {
         "securityPolicyDeploymentId": args.securityPolicyDeploymentId,

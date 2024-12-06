@@ -346,7 +346,7 @@ def get_sql_firewall_policy(sql_firewall_policy_id: Optional[str] = None,
         violation_action=pulumi.get(__ret__, 'violation_action'),
         violation_audit=pulumi.get(__ret__, 'violation_audit'))
 def get_sql_firewall_policy_output(sql_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlFirewallPolicyResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallPolicyResult]:
     """
     This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -366,7 +366,7 @@ def get_sql_firewall_policy_output(sql_firewall_policy_id: Optional[pulumi.Input
     """
     __args__ = dict()
     __args__['sqlFirewallPolicyId'] = sql_firewall_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSqlFirewallPolicy:getSqlFirewallPolicy', __args__, opts=opts, typ=GetSqlFirewallPolicyResult)
     return __ret__.apply(lambda __response__: GetSqlFirewallPolicyResult(
         allowed_client_ips=pulumi.get(__response__, 'allowed_client_ips'),

@@ -249,7 +249,7 @@ def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[str
                                 infrastructure_type: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 target_database_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasesResult]:
     """
     This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.
 
@@ -294,7 +294,7 @@ def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[str
     __args__['infrastructureType'] = infrastructure_type
     __args__['state'] = state
     __args__['targetDatabaseId'] = target_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabases:getTargetDatabases', __args__, opts=opts, typ=GetTargetDatabasesResult)
     return __ret__.apply(lambda __response__: GetTargetDatabasesResult(
         access_level=pulumi.get(__response__, 'access_level'),

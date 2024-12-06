@@ -104,7 +104,7 @@ export interface GetZprPolicyResult {
  * });
  * ```
  */
-export function getZprPolicyOutput(args: GetZprPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetZprPolicyResult> {
+export function getZprPolicyOutput(args: GetZprPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetZprPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Zpr/getZprPolicy:getZprPolicy", {
         "zprPolicyId": args.zprPolicyId,

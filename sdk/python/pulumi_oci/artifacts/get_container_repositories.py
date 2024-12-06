@@ -201,7 +201,7 @@ def get_container_repositories_output(compartment_id: Optional[pulumi.Input[str]
                                       is_public: Optional[pulumi.Input[Optional[bool]]] = None,
                                       repository_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerRepositoriesResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerRepositoriesResult]:
     """
     This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
 
@@ -237,7 +237,7 @@ def get_container_repositories_output(compartment_id: Optional[pulumi.Input[str]
     __args__['isPublic'] = is_public
     __args__['repositoryId'] = repository_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerRepositories:getContainerRepositories', __args__, opts=opts, typ=GetContainerRepositoriesResult)
     return __ret__.apply(lambda __response__: GetContainerRepositoriesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

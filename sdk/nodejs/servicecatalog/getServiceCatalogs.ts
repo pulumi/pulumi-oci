@@ -94,7 +94,7 @@ export interface GetServiceCatalogsResult {
  * });
  * ```
  */
-export function getServiceCatalogsOutput(args: GetServiceCatalogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceCatalogsResult> {
+export function getServiceCatalogsOutput(args: GetServiceCatalogsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceCatalogsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", {
         "compartmentId": args.compartmentId,

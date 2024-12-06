@@ -94,7 +94,7 @@ export interface GetInstanceAvailablePluginResult {
  * });
  * ```
  */
-export function getInstanceAvailablePluginOutput(args: GetInstanceAvailablePluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceAvailablePluginResult> {
+export function getInstanceAvailablePluginOutput(args: GetInstanceAvailablePluginOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceAvailablePluginResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", {
         "compartmentId": args.compartmentId,

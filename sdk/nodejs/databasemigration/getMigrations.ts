@@ -135,7 +135,7 @@ export interface GetMigrationsResult {
 /**
  * ## Example Usage
  */
-export function getMigrationsOutput(args: GetMigrationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationsResult> {
+export function getMigrationsOutput(args: GetMigrationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMigrationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseMigration/getMigrations:getMigrations", {
         "migrationId": args.migrationId,

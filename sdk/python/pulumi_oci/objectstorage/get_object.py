@@ -381,7 +381,7 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[bool
                       namespace: Optional[pulumi.Input[str]] = None,
                       object: Optional[pulumi.Input[str]] = None,
                       version_id: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetObjectResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectResult]:
     """
     This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
 
@@ -431,7 +431,7 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[bool
     __args__['namespace'] = namespace
     __args__['object'] = object
     __args__['versionId'] = version_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getObject:getObject', __args__, opts=opts, typ=GetObjectResult)
     return __ret__.apply(lambda __response__: GetObjectResult(
         base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),

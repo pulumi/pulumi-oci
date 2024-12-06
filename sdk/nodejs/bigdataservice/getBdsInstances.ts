@@ -97,7 +97,7 @@ export interface GetBdsInstancesResult {
  * });
  * ```
  */
-export function getBdsInstancesOutput(args: GetBdsInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstancesResult> {
+export function getBdsInstancesOutput(args: GetBdsInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBdsInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstances:getBdsInstances", {
         "compartmentId": args.compartmentId,

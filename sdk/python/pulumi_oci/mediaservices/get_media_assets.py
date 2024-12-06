@@ -312,7 +312,7 @@ def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[str]]] = None
                             source_media_workflow_version: Optional[pulumi.Input[Optional[str]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             type: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaAssetsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaAssetsResult]:
     """
     This data source provides the list of Media Assets in Oracle Cloud Infrastructure Media Services service.
 
@@ -366,7 +366,7 @@ def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[str]]] = None
     __args__['sourceMediaWorkflowVersion'] = source_media_workflow_version
     __args__['state'] = state
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaAssets:getMediaAssets', __args__, opts=opts, typ=GetMediaAssetsResult)
     return __ret__.apply(lambda __response__: GetMediaAssetsResult(
         bucket=pulumi.get(__response__, 'bucket'),

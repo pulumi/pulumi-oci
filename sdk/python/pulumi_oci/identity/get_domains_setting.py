@@ -942,7 +942,7 @@ def get_domains_setting_output(attribute_sets: Optional[pulumi.Input[Optional[Se
                                idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                setting_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsSettingResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsSettingResult]:
     """
     This data source provides details about a specific Setting resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -977,7 +977,7 @@ def get_domains_setting_output(attribute_sets: Optional[pulumi.Input[Optional[Se
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
     __args__['settingId'] = setting_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsSetting:getDomainsSetting', __args__, opts=opts, typ=GetDomainsSettingResult)
     return __ret__.apply(lambda __response__: GetDomainsSettingResult(
         account_always_trust_scope=pulumi.get(__response__, 'account_always_trust_scope'),

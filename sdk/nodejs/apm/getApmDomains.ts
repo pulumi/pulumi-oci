@@ -97,7 +97,7 @@ export interface GetApmDomainsResult {
  * });
  * ```
  */
-export function getApmDomainsOutput(args: GetApmDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApmDomainsResult> {
+export function getApmDomainsOutput(args: GetApmDomainsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApmDomainsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Apm/getApmDomains:getApmDomains", {
         "compartmentId": args.compartmentId,

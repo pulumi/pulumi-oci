@@ -105,7 +105,7 @@ export interface GetNetworkFirewallPolicyTunnelInspectionRuleResult {
  * });
  * ```
  */
-export function getNetworkFirewallPolicyTunnelInspectionRuleOutput(args: GetNetworkFirewallPolicyTunnelInspectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyTunnelInspectionRuleResult> {
+export function getNetworkFirewallPolicyTunnelInspectionRuleOutput(args: GetNetworkFirewallPolicyTunnelInspectionRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyTunnelInspectionRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRule:getNetworkFirewallPolicyTunnelInspectionRule", {
         "networkFirewallPolicyId": args.networkFirewallPolicyId,

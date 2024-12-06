@@ -119,7 +119,7 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
  * });
  * ```
  */
-export function getDatabaseToolsPrivateEndpointsOutput(args: GetDatabaseToolsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsPrivateEndpointsResult> {
+export function getDatabaseToolsPrivateEndpointsOutput(args: GetDatabaseToolsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseToolsPrivateEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", {
         "compartmentId": args.compartmentId,

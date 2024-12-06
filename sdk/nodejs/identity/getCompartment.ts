@@ -112,7 +112,7 @@ export interface GetCompartmentResult {
  * });
  * ```
  */
-export function getCompartmentOutput(args: GetCompartmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCompartmentResult> {
+export function getCompartmentOutput(args: GetCompartmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCompartmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getCompartment:getCompartment", {
         "id": args.id,

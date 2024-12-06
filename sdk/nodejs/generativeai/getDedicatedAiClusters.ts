@@ -95,7 +95,7 @@ export interface GetDedicatedAiClustersResult {
  * });
  * ```
  */
-export function getDedicatedAiClustersOutput(args: GetDedicatedAiClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedAiClustersResult> {
+export function getDedicatedAiClustersOutput(args: GetDedicatedAiClustersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDedicatedAiClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters", {
         "compartmentId": args.compartmentId,

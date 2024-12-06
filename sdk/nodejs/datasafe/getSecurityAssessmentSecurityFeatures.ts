@@ -190,7 +190,7 @@ export interface GetSecurityAssessmentSecurityFeaturesResult {
  * });
  * ```
  */
-export function getSecurityAssessmentSecurityFeaturesOutput(args: GetSecurityAssessmentSecurityFeaturesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentSecurityFeaturesResult> {
+export function getSecurityAssessmentSecurityFeaturesOutput(args: GetSecurityAssessmentSecurityFeaturesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAssessmentSecurityFeaturesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", {
         "accessLevel": args.accessLevel,

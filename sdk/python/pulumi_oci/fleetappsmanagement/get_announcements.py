@@ -132,7 +132,7 @@ def get_announcements(display_name: Optional[str] = None,
 def get_announcements_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
                              summary_contains: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnnouncementsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnnouncementsResult]:
     """
     This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -156,7 +156,7 @@ def get_announcements_output(display_name: Optional[pulumi.Input[Optional[str]]]
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['summaryContains'] = summary_contains
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getAnnouncements:getAnnouncements', __args__, opts=opts, typ=GetAnnouncementsResult)
     return __ret__.apply(lambda __response__: GetAnnouncementsResult(
         announcement_collections=pulumi.get(__response__, 'announcement_collections'),

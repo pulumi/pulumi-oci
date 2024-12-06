@@ -144,7 +144,7 @@ def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[str]] = Non
                                    endpoint: Optional[pulumi.Input[Optional[str]]] = None,
                                    expiration: Optional[pulumi.Input[Optional[int]]] = None,
                                    token_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterKubeConfigResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterKubeConfigResult]:
     """
     This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
 
@@ -173,7 +173,7 @@ def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[str]] = Non
     __args__['endpoint'] = endpoint
     __args__['expiration'] = expiration
     __args__['tokenVersion'] = token_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig', __args__, opts=opts, typ=GetClusterKubeConfigResult)
     return __ret__.apply(lambda __response__: GetClusterKubeConfigResult(
         cluster_id=pulumi.get(__response__, 'cluster_id'),

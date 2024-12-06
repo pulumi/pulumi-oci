@@ -168,7 +168,7 @@ def get_masking_policy_masking_objects_output(filters: Optional[pulumi.Input[Opt
                                               object_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               objects: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPolicyMaskingObjectsResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyMaskingObjectsResult]:
     """
     This data source provides the list of Masking Policy Masking Objects in Oracle Cloud Infrastructure Data Safe service.
 
@@ -198,7 +198,7 @@ def get_masking_policy_masking_objects_output(filters: Optional[pulumi.Input[Opt
     __args__['objectTypes'] = object_types
     __args__['objects'] = objects
     __args__['schemaNames'] = schema_names
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPolicyMaskingObjects:getMaskingPolicyMaskingObjects', __args__, opts=opts, typ=GetMaskingPolicyMaskingObjectsResult)
     return __ret__.apply(lambda __response__: GetMaskingPolicyMaskingObjectsResult(
         filters=pulumi.get(__response__, 'filters'),

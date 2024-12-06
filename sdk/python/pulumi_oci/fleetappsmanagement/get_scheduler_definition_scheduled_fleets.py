@@ -147,7 +147,7 @@ def get_scheduler_definition_scheduled_fleets_output(compartment_id: Optional[pu
                                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulerDefinitionScheduledFleetsFilterArgs', 'GetSchedulerDefinitionScheduledFleetsFilterArgsDict']]]]] = None,
                                                      scheduler_definition_id: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSchedulerDefinitionScheduledFleetsResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerDefinitionScheduledFleetsResult]:
     """
     This data source provides the list of Scheduler Definition Scheduled Fleets in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -174,7 +174,7 @@ def get_scheduler_definition_scheduled_fleets_output(compartment_id: Optional[pu
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['schedulerDefinitionId'] = scheduler_definition_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getSchedulerDefinitionScheduledFleets:getSchedulerDefinitionScheduledFleets', __args__, opts=opts, typ=GetSchedulerDefinitionScheduledFleetsResult)
     return __ret__.apply(lambda __response__: GetSchedulerDefinitionScheduledFleetsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

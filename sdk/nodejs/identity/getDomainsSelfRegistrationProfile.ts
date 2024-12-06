@@ -249,7 +249,7 @@ export interface GetDomainsSelfRegistrationProfileResult {
  * });
  * ```
  */
-export function getDomainsSelfRegistrationProfileOutput(args: GetDomainsSelfRegistrationProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSelfRegistrationProfileResult> {
+export function getDomainsSelfRegistrationProfileOutput(args: GetDomainsSelfRegistrationProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsSelfRegistrationProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile", {
         "attributeSets": args.attributeSets,

@@ -118,7 +118,7 @@ def get_db_management_private_endpoint_associated_database(compartment_id: Optio
         items=pulumi.get(__ret__, 'items'))
 def get_db_management_private_endpoint_associated_database_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                                   db_management_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbManagementPrivateEndpointAssociatedDatabaseResult]:
+                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbManagementPrivateEndpointAssociatedDatabaseResult]:
     """
     This data source provides details about a specific Db Management Private Endpoint Associated Database resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -141,7 +141,7 @@ def get_db_management_private_endpoint_associated_database_output(compartment_id
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['dbManagementPrivateEndpointId'] = db_management_private_endpoint_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase', __args__, opts=opts, typ=GetDbManagementPrivateEndpointAssociatedDatabaseResult)
     return __ret__.apply(lambda __response__: GetDbManagementPrivateEndpointAssociatedDatabaseResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -162,7 +162,7 @@ export interface GetFleetCryptoAnalysisResultsResult {
  * });
  * ```
  */
-export function getFleetCryptoAnalysisResultsOutput(args: GetFleetCryptoAnalysisResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetCryptoAnalysisResultsResult> {
+export function getFleetCryptoAnalysisResultsOutput(args: GetFleetCryptoAnalysisResultsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetCryptoAnalysisResultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", {
         "aggregationMode": args.aggregationMode,

@@ -149,7 +149,7 @@ export interface GetReplicaResult {
  * });
  * ```
  */
-export function getReplicaOutput(args: GetReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicaResult> {
+export function getReplicaOutput(args: GetReplicaOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReplicaResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getReplica:getReplica", {
         "replicaId": args.replicaId,

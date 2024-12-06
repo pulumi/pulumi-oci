@@ -159,7 +159,7 @@ export interface GetDatabaseRegistrationResult {
  * });
  * ```
  */
-export function getDatabaseRegistrationOutput(args: GetDatabaseRegistrationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseRegistrationResult> {
+export function getDatabaseRegistrationOutput(args: GetDatabaseRegistrationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseRegistrationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", {
         "databaseRegistrationId": args.databaseRegistrationId,

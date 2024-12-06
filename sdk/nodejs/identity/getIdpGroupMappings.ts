@@ -79,7 +79,7 @@ export interface GetIdpGroupMappingsResult {
  * });
  * ```
  */
-export function getIdpGroupMappingsOutput(args: GetIdpGroupMappingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdpGroupMappingsResult> {
+export function getIdpGroupMappingsOutput(args: GetIdpGroupMappingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIdpGroupMappingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", {
         "filters": args.filters,

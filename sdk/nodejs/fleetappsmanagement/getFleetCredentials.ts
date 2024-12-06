@@ -123,7 +123,7 @@ export interface GetFleetCredentialsResult {
  * });
  * ```
  */
-export function getFleetCredentialsOutput(args: GetFleetCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetCredentialsResult> {
+export function getFleetCredentialsOutput(args: GetFleetCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getFleetCredentials:getFleetCredentials", {
         "compartmentId": args.compartmentId,

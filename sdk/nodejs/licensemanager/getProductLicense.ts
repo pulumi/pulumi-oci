@@ -145,7 +145,7 @@ export interface GetProductLicenseResult {
  * });
  * ```
  */
-export function getProductLicenseOutput(args: GetProductLicenseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProductLicenseResult> {
+export function getProductLicenseOutput(args: GetProductLicenseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProductLicenseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LicenseManager/getProductLicense:getProductLicense", {
         "productLicenseId": args.productLicenseId,

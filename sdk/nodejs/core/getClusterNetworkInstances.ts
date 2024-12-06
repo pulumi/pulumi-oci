@@ -94,7 +94,7 @@ export interface GetClusterNetworkInstancesResult {
  * });
  * ```
  */
-export function getClusterNetworkInstancesOutput(args: GetClusterNetworkInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterNetworkInstancesResult> {
+export function getClusterNetworkInstancesOutput(args: GetClusterNetworkInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClusterNetworkInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", {
         "clusterNetworkId": args.clusterNetworkId,

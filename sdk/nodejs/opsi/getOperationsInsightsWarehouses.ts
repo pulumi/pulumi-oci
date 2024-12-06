@@ -107,7 +107,7 @@ export interface GetOperationsInsightsWarehousesResult {
  * });
  * ```
  */
-export function getOperationsInsightsWarehousesOutput(args?: GetOperationsInsightsWarehousesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehousesResult> {
+export function getOperationsInsightsWarehousesOutput(args?: GetOperationsInsightsWarehousesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOperationsInsightsWarehousesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses", {

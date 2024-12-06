@@ -100,7 +100,7 @@ def get_log_analytics_preference(namespace: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         namespace=pulumi.get(__ret__, 'namespace'))
 def get_log_analytics_preference_output(namespace: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsPreferenceResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsPreferenceResult]:
     """
     This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -120,7 +120,7 @@ def get_log_analytics_preference_output(namespace: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference', __args__, opts=opts, typ=GetLogAnalyticsPreferenceResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsPreferenceResult(
         id=pulumi.get(__response__, 'id'),

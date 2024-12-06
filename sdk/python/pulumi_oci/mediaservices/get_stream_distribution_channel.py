@@ -227,7 +227,7 @@ def get_stream_distribution_channel(stream_distribution_channel_id: Optional[str
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_stream_distribution_channel_output(stream_distribution_channel_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamDistributionChannelResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamDistributionChannelResult]:
     """
     This data source provides details about a specific Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
 
@@ -247,7 +247,7 @@ def get_stream_distribution_channel_output(stream_distribution_channel_id: Optio
     """
     __args__ = dict()
     __args__['streamDistributionChannelId'] = stream_distribution_channel_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getStreamDistributionChannel:getStreamDistributionChannel', __args__, opts=opts, typ=GetStreamDistributionChannelResult)
     return __ret__.apply(lambda __response__: GetStreamDistributionChannelResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

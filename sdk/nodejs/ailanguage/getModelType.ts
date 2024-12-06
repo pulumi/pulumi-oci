@@ -71,7 +71,7 @@ export interface GetModelTypeResult {
  * });
  * ```
  */
-export function getModelTypeOutput(args: GetModelTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelTypeResult> {
+export function getModelTypeOutput(args: GetModelTypeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelTypeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiLanguage/getModelType:getModelType", {
         "modelType": args.modelType,

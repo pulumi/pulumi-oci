@@ -74,7 +74,7 @@ export interface GetCrossConnectLocationsResult {
  * });
  * ```
  */
-export function getCrossConnectLocationsOutput(args: GetCrossConnectLocationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectLocationsResult> {
+export function getCrossConnectLocationsOutput(args: GetCrossConnectLocationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCrossConnectLocationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getCrossConnectLocations:getCrossConnectLocations", {
         "compartmentId": args.compartmentId,

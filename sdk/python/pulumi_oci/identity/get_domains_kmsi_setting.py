@@ -422,7 +422,7 @@ def get_domains_kmsi_setting_output(attribute_sets: Optional[pulumi.Input[Option
                                     idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                     kmsi_setting_id: Optional[pulumi.Input[str]] = None,
                                     resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsKmsiSettingResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsKmsiSettingResult]:
     """
     This data source provides details about a specific Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -457,7 +457,7 @@ def get_domains_kmsi_setting_output(attribute_sets: Optional[pulumi.Input[Option
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['kmsiSettingId'] = kmsi_setting_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsKmsiSetting:getDomainsKmsiSetting', __args__, opts=opts, typ=GetDomainsKmsiSettingResult)
     return __ret__.apply(lambda __response__: GetDomainsKmsiSettingResult(
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),

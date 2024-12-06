@@ -240,7 +240,7 @@ def get_occ_demand_signal(occ_demand_signal_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_occ_demand_signal_output(occ_demand_signal_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccDemandSignalResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccDemandSignalResult]:
     """
     This data source provides details about a specific Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
 
@@ -260,7 +260,7 @@ def get_occ_demand_signal_output(occ_demand_signal_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['occDemandSignalId'] = occ_demand_signal_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DemandSignal/getOccDemandSignal:getOccDemandSignal', __args__, opts=opts, typ=GetOccDemandSignalResult)
     return __ret__.apply(lambda __response__: GetOccDemandSignalResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

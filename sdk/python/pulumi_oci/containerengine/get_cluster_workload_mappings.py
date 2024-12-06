@@ -117,7 +117,7 @@ def get_cluster_workload_mappings(cluster_id: Optional[str] = None,
         workload_mappings=pulumi.get(__ret__, 'workload_mappings'))
 def get_cluster_workload_mappings_output(cluster_id: Optional[pulumi.Input[str]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterWorkloadMappingsFilterArgs', 'GetClusterWorkloadMappingsFilterArgsDict']]]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterWorkloadMappingsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterWorkloadMappingsResult]:
     """
     This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
 
@@ -138,7 +138,7 @@ def get_cluster_workload_mappings_output(cluster_id: Optional[pulumi.Input[str]]
     __args__ = dict()
     __args__['clusterId'] = cluster_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings', __args__, opts=opts, typ=GetClusterWorkloadMappingsResult)
     return __ret__.apply(lambda __response__: GetClusterWorkloadMappingsResult(
         cluster_id=pulumi.get(__response__, 'cluster_id'),

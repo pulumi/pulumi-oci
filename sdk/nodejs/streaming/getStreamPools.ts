@@ -104,7 +104,7 @@ export interface GetStreamPoolsResult {
  * });
  * ```
  */
-export function getStreamPoolsOutput(args: GetStreamPoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamPoolsResult> {
+export function getStreamPoolsOutput(args: GetStreamPoolsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStreamPoolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Streaming/getStreamPools:getStreamPools", {
         "compartmentId": args.compartmentId,

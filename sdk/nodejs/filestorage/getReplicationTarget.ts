@@ -123,7 +123,7 @@ export interface GetReplicationTargetResult {
  * });
  * ```
  */
-export function getReplicationTargetOutput(args: GetReplicationTargetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationTargetResult> {
+export function getReplicationTargetOutput(args: GetReplicationTargetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReplicationTargetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FileStorage/getReplicationTarget:getReplicationTarget", {
         "replicationTargetId": args.replicationTargetId,

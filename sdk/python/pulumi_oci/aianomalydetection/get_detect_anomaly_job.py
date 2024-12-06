@@ -295,7 +295,7 @@ def get_detect_anomaly_job(detect_anomaly_job_id: Optional[str] = None,
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'))
 def get_detect_anomaly_job_output(detect_anomaly_job_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectAnomalyJobResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDetectAnomalyJobResult]:
     """
     This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
 
@@ -315,7 +315,7 @@ def get_detect_anomaly_job_output(detect_anomaly_job_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['detectAnomalyJobId'] = detect_anomaly_job_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob', __args__, opts=opts, typ=GetDetectAnomalyJobResult)
     return __ret__.apply(lambda __response__: GetDetectAnomalyJobResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -269,7 +269,7 @@ def get_data_mask_rule(data_mask_rule_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_data_mask_rule_output(data_mask_rule_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataMaskRuleResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataMaskRuleResult]:
     """
     This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -289,7 +289,7 @@ def get_data_mask_rule_output(data_mask_rule_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['dataMaskRuleId'] = data_mask_rule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getDataMaskRule:getDataMaskRule', __args__, opts=opts, typ=GetDataMaskRuleResult)
     return __ret__.apply(lambda __response__: GetDataMaskRuleResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

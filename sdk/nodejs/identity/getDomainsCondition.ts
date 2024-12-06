@@ -189,7 +189,7 @@ export interface GetDomainsConditionResult {
  * });
  * ```
  */
-export function getDomainsConditionOutput(args: GetDomainsConditionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsConditionResult> {
+export function getDomainsConditionOutput(args: GetDomainsConditionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsConditionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsCondition:getDomainsCondition", {
         "attributeSets": args.attributeSets,

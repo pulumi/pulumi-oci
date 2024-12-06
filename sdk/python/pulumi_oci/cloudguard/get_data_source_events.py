@@ -137,7 +137,7 @@ def get_data_source_events(data_source_id: Optional[str] = None,
 def get_data_source_events_output(data_source_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataSourceEventsFilterArgs', 'GetDataSourceEventsFilterArgsDict']]]]] = None,
                                   region: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSourceEventsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSourceEventsResult]:
     """
     This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -163,7 +163,7 @@ def get_data_source_events_output(data_source_id: Optional[pulumi.Input[str]] = 
     __args__['dataSourceId'] = data_source_id
     __args__['filters'] = filters
     __args__['region'] = region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getDataSourceEvents:getDataSourceEvents', __args__, opts=opts, typ=GetDataSourceEventsResult)
     return __ret__.apply(lambda __response__: GetDataSourceEventsResult(
         data_source_event_collections=pulumi.get(__response__, 'data_source_event_collections'),

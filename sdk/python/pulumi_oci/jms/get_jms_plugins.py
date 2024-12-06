@@ -254,7 +254,7 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = Non
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            time_last_seen_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                            time_registered_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJmsPluginsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJmsPluginsResult]:
     """
     This data source provides the list of Jms Plugins in Oracle Cloud Infrastructure Jms service.
 
@@ -302,7 +302,7 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = Non
     __args__['state'] = state
     __args__['timeLastSeenLessThanOrEqualTo'] = time_last_seen_less_than_or_equal_to
     __args__['timeRegisteredLessThanOrEqualTo'] = time_registered_less_than_or_equal_to
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJmsPlugins:getJmsPlugins', __args__, opts=opts, typ=GetJmsPluginsResult)
     return __ret__.apply(lambda __response__: GetJmsPluginsResult(
         agent_id=pulumi.get(__response__, 'agent_id'),

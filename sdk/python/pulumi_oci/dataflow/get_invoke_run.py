@@ -666,7 +666,7 @@ def get_invoke_run(run_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         warehouse_bucket_uri=pulumi.get(__ret__, 'warehouse_bucket_uri'))
 def get_invoke_run_output(run_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvokeRunResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvokeRunResult]:
     """
     This data source provides details about a specific Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
 
@@ -686,7 +686,7 @@ def get_invoke_run_output(run_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['runId'] = run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getInvokeRun:getInvokeRun', __args__, opts=opts, typ=GetInvokeRunResult)
     return __ret__.apply(lambda __response__: GetInvokeRunResult(
         application_id=pulumi.get(__response__, 'application_id'),

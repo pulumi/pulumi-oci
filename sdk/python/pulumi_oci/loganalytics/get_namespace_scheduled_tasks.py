@@ -183,7 +183,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
                                          namespace: Optional[pulumi.Input[str]] = None,
                                          target_service: Optional[pulumi.Input[Optional[str]]] = None,
                                          task_type: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceScheduledTasksResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceScheduledTasksResult]:
     """
     This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -216,7 +216,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
     __args__['namespace'] = namespace
     __args__['targetService'] = target_service
     __args__['taskType'] = task_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks', __args__, opts=opts, typ=GetNamespaceScheduledTasksResult)
     return __ret__.apply(lambda __response__: GetNamespaceScheduledTasksResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

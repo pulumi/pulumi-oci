@@ -171,7 +171,7 @@ def get_private_application_package(private_application_package_id: Optional[str
         time_created=pulumi.get(__ret__, 'time_created'),
         version=pulumi.get(__ret__, 'version'))
 def get_private_application_package_output(private_application_package_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateApplicationPackageResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateApplicationPackageResult]:
     """
     This data source provides details about a specific Private Application Package resource in Oracle Cloud Infrastructure Service Catalog service.
 
@@ -191,7 +191,7 @@ def get_private_application_package_output(private_application_package_id: Optio
     """
     __args__ = dict()
     __args__['privateApplicationPackageId'] = private_application_package_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getPrivateApplicationPackage:getPrivateApplicationPackage', __args__, opts=opts, typ=GetPrivateApplicationPackageResult)
     return __ret__.apply(lambda __response__: GetPrivateApplicationPackageResult(
         content_url=pulumi.get(__response__, 'content_url'),

@@ -72,7 +72,7 @@ export interface GetMessagesResult {
  * });
  * ```
  */
-export function getMessagesOutput(args: GetMessagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMessagesResult> {
+export function getMessagesOutput(args: GetMessagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMessagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getMessages:getMessages", {
         "deploymentId": args.deploymentId,

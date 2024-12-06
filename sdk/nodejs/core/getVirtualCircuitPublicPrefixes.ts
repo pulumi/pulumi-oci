@@ -87,7 +87,7 @@ export interface GetVirtualCircuitPublicPrefixesResult {
  * });
  * ```
  */
-export function getVirtualCircuitPublicPrefixesOutput(args: GetVirtualCircuitPublicPrefixesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitPublicPrefixesResult> {
+export function getVirtualCircuitPublicPrefixesOutput(args: GetVirtualCircuitPublicPrefixesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualCircuitPublicPrefixesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", {
         "filters": args.filters,

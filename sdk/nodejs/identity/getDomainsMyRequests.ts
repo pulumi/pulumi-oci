@@ -149,7 +149,7 @@ export interface GetDomainsMyRequestsResult {
  * });
  * ```
  */
-export function getDomainsMyRequestsOutput(args: GetDomainsMyRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyRequestsResult> {
+export function getDomainsMyRequestsOutput(args: GetDomainsMyRequestsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyRequestsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyRequests:getDomainsMyRequests", {
         "attributeSets": args.attributeSets,

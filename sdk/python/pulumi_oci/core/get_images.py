@@ -244,7 +244,7 @@ def get_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                       sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImagesResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagesResult]:
     """
     This data source provides the list of Images in Oracle Cloud Infrastructure Core service.
 
@@ -296,7 +296,7 @@ def get_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getImages:getImages', __args__, opts=opts, typ=GetImagesResult)
     return __ret__.apply(lambda __response__: GetImagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

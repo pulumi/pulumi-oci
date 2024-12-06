@@ -69,7 +69,7 @@ export interface GetApiValidationResult {
  * });
  * ```
  */
-export function getApiValidationOutput(args: GetApiValidationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiValidationResult> {
+export function getApiValidationOutput(args: GetApiValidationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApiValidationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApiGateway/getApiValidation:getApiValidation", {
         "apiId": args.apiId,

@@ -75,7 +75,7 @@ export interface GetUiPasswordResult {
  * });
  * ```
  */
-export function getUiPasswordOutput(args: GetUiPasswordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUiPasswordResult> {
+export function getUiPasswordOutput(args: GetUiPasswordOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUiPasswordResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getUiPassword:getUiPassword", {
         "userId": args.userId,

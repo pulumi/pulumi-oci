@@ -171,7 +171,7 @@ def get_fusion_environments_output(compartment_id: Optional[pulumi.Input[str]] =
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentsFilterArgs', 'GetFusionEnvironmentsFilterArgsDict']]]]] = None,
                                    fusion_environment_family_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentsResult]:
     """
     This data source provides the list of Fusion Environments in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -201,7 +201,7 @@ def get_fusion_environments_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['filters'] = filters
     __args__['fusionEnvironmentFamilyId'] = fusion_environment_family_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironments:getFusionEnvironments', __args__, opts=opts, typ=GetFusionEnvironmentsResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

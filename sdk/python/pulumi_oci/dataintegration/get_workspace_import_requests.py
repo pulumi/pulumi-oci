@@ -198,7 +198,7 @@ def get_workspace_import_requests_output(filters: Optional[pulumi.Input[Optional
                                          time_ended_in_millis: Optional[pulumi.Input[Optional[str]]] = None,
                                          time_started_in_millis: Optional[pulumi.Input[Optional[str]]] = None,
                                          workspace_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceImportRequestsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceImportRequestsResult]:
     """
     This data source provides the list of Workspace Import Requests in Oracle Cloud Infrastructure Data Integration service.
 
@@ -234,7 +234,7 @@ def get_workspace_import_requests_output(filters: Optional[pulumi.Input[Optional
     __args__['timeEndedInMillis'] = time_ended_in_millis
     __args__['timeStartedInMillis'] = time_started_in_millis
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests', __args__, opts=opts, typ=GetWorkspaceImportRequestsResult)
     return __ret__.apply(lambda __response__: GetWorkspaceImportRequestsResult(
         filters=pulumi.get(__response__, 'filters'),

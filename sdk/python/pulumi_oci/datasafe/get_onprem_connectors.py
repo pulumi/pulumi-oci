@@ -195,7 +195,7 @@ def get_onprem_connectors_output(access_level: Optional[pulumi.Input[Optional[st
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnpremConnectorsFilterArgs', 'GetOnpremConnectorsFilterArgsDict']]]]] = None,
                                  on_prem_connector_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  on_prem_connector_lifecycle_state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOnpremConnectorsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnpremConnectorsResult]:
     """
     This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.
 
@@ -231,7 +231,7 @@ def get_onprem_connectors_output(access_level: Optional[pulumi.Input[Optional[st
     __args__['filters'] = filters
     __args__['onPremConnectorId'] = on_prem_connector_id
     __args__['onPremConnectorLifecycleState'] = on_prem_connector_lifecycle_state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getOnpremConnectors:getOnpremConnectors', __args__, opts=opts, typ=GetOnpremConnectorsResult)
     return __ret__.apply(lambda __response__: GetOnpremConnectorsResult(
         access_level=pulumi.get(__response__, 'access_level'),

@@ -79,7 +79,7 @@ export interface GetDedicatedAiClusterResult {
  * });
  * ```
  */
-export function getDedicatedAiClusterOutput(args: GetDedicatedAiClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedAiClusterResult> {
+export function getDedicatedAiClusterOutput(args: GetDedicatedAiClusterOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDedicatedAiClusterResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", {
         "dedicatedAiClusterId": args.dedicatedAiClusterId,

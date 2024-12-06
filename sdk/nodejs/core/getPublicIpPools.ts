@@ -96,7 +96,7 @@ export interface GetPublicIpPoolsResult {
  * });
  * ```
  */
-export function getPublicIpPoolsOutput(args: GetPublicIpPoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpPoolsResult> {
+export function getPublicIpPoolsOutput(args: GetPublicIpPoolsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPublicIpPoolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getPublicIpPools:getPublicIpPools", {
         "byoipRangeId": args.byoipRangeId,

@@ -94,7 +94,7 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  * });
  * ```
  */
-export function getManagedDatabaseCursorCacheStatementsOutput(args: GetManagedDatabaseCursorCacheStatementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseCursorCacheStatementsResult> {
+export function getManagedDatabaseCursorCacheStatementsOutput(args: GetManagedDatabaseCursorCacheStatementsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseCursorCacheStatementsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", {
         "filters": args.filters,

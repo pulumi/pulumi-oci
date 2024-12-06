@@ -118,7 +118,7 @@ export interface GetDatabaseSecurityConfigResult {
  * });
  * ```
  */
-export function getDatabaseSecurityConfigOutput(args: GetDatabaseSecurityConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseSecurityConfigResult> {
+export function getDatabaseSecurityConfigOutput(args: GetDatabaseSecurityConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseSecurityConfigResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getDatabaseSecurityConfig:getDatabaseSecurityConfig", {
         "databaseSecurityConfigId": args.databaseSecurityConfigId,

@@ -72,7 +72,7 @@ export interface GetLogAnalyticsLogGroupsSummaryResult {
  * });
  * ```
  */
-export function getLogAnalyticsLogGroupsSummaryOutput(args: GetLogAnalyticsLogGroupsSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsLogGroupsSummaryResult> {
+export function getLogAnalyticsLogGroupsSummaryOutput(args: GetLogAnalyticsLogGroupsSummaryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsLogGroupsSummaryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", {
         "compartmentId": args.compartmentId,

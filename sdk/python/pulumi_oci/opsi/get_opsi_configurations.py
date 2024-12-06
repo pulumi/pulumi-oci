@@ -171,7 +171,7 @@ def get_opsi_configurations_output(compartment_id: Optional[pulumi.Input[str]] =
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpsiConfigurationsFilterArgs', 'GetOpsiConfigurationsFilterArgsDict']]]]] = None,
                                    opsi_config_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                    states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpsiConfigurationsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpsiConfigurationsResult]:
     """
     This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
 
@@ -201,7 +201,7 @@ def get_opsi_configurations_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['filters'] = filters
     __args__['opsiConfigTypes'] = opsi_config_types
     __args__['states'] = states
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOpsiConfigurations:getOpsiConfigurations', __args__, opts=opts, typ=GetOpsiConfigurationsResult)
     return __ret__.apply(lambda __response__: GetOpsiConfigurationsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

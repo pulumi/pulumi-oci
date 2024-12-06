@@ -94,7 +94,7 @@ export interface GetDbCredentialsResult {
  * });
  * ```
  */
-export function getDbCredentialsOutput(args: GetDbCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbCredentialsResult> {
+export function getDbCredentialsOutput(args: GetDbCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDbCredentials:getDbCredentials", {
         "filters": args.filters,

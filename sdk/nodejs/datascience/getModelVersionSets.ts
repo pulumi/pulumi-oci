@@ -126,7 +126,7 @@ export interface GetModelVersionSetsResult {
  * });
  * ```
  */
-export function getModelVersionSetsOutput(args: GetModelVersionSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelVersionSetsResult> {
+export function getModelVersionSetsOutput(args: GetModelVersionSetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelVersionSetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getModelVersionSets:getModelVersionSets", {
         "compartmentId": args.compartmentId,

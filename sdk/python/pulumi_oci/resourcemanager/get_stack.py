@@ -198,7 +198,7 @@ def get_stack(stack_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         variables=pulumi.get(__ret__, 'variables'))
 def get_stack_output(stack_id: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStackResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStackResult]:
     """
     This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
 
@@ -218,7 +218,7 @@ def get_stack_output(stack_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['stackId'] = stack_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ResourceManager/getStack:getStack', __args__, opts=opts, typ=GetStackResult)
     return __ret__.apply(lambda __response__: GetStackResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

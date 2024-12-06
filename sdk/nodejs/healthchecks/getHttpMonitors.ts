@@ -97,7 +97,7 @@ export interface GetHttpMonitorsResult {
  * });
  * ```
  */
-export function getHttpMonitorsOutput(args: GetHttpMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpMonitorsResult> {
+export function getHttpMonitorsOutput(args: GetHttpMonitorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHttpMonitorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:HealthChecks/getHttpMonitors:getHttpMonitors", {
         "compartmentId": args.compartmentId,

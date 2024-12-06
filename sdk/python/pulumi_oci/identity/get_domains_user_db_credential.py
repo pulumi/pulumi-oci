@@ -474,7 +474,7 @@ def get_domains_user_db_credential_output(attribute_sets: Optional[pulumi.Input[
                                           idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                           resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                           user_db_credential_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsUserDbCredentialResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsUserDbCredentialResult]:
     """
     This data source provides details about a specific User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -509,7 +509,7 @@ def get_domains_user_db_credential_output(attribute_sets: Optional[pulumi.Input[
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
     __args__['userDbCredentialId'] = user_db_credential_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsUserDbCredential:getDomainsUserDbCredential', __args__, opts=opts, typ=GetDomainsUserDbCredentialResult)
     return __ret__.apply(lambda __response__: GetDomainsUserDbCredentialResult(
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),

@@ -222,7 +222,7 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                                              metastore_config_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceMetastoreConfigResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceMetastoreConfigResult]:
     """
     This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
 
@@ -245,7 +245,7 @@ def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.In
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
     __args__['metastoreConfigId'] = metastore_config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig', __args__, opts=opts, typ=GetBdsInstanceMetastoreConfigResult)
     return __ret__.apply(lambda __response__: GetBdsInstanceMetastoreConfigResult(
         activate_trigger=pulumi.get(__response__, 'activate_trigger'),

@@ -80,7 +80,7 @@ export interface GetListingTaxesResult {
  * });
  * ```
  */
-export function getListingTaxesOutput(args: GetListingTaxesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingTaxesResult> {
+export function getListingTaxesOutput(args: GetListingTaxesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetListingTaxesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Marketplace/getListingTaxes:getListingTaxes", {
         "compartmentId": args.compartmentId,

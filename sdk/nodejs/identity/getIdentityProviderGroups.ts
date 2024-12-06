@@ -98,7 +98,7 @@ export interface GetIdentityProviderGroupsResult {
  * });
  * ```
  */
-export function getIdentityProviderGroupsOutput(args: GetIdentityProviderGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdentityProviderGroupsResult> {
+export function getIdentityProviderGroupsOutput(args: GetIdentityProviderGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIdentityProviderGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", {
         "filters": args.filters,

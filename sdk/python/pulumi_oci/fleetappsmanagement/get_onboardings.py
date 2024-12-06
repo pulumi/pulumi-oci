@@ -140,7 +140,7 @@ def get_onboardings_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnboardingsFilterArgs', 'GetOnboardingsFilterArgsDict']]]]] = None,
                            id: Optional[pulumi.Input[Optional[str]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOnboardingsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnboardingsResult]:
     """
     This data source provides the list of Onboardings in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -167,7 +167,7 @@ def get_onboardings_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getOnboardings:getOnboardings', __args__, opts=opts, typ=GetOnboardingsResult)
     return __ret__.apply(lambda __response__: GetOnboardingsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

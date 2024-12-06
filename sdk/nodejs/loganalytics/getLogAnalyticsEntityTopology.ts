@@ -96,7 +96,7 @@ export interface GetLogAnalyticsEntityTopologyResult {
  * });
  * ```
  */
-export function getLogAnalyticsEntityTopologyOutput(args: GetLogAnalyticsEntityTopologyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntityTopologyResult> {
+export function getLogAnalyticsEntityTopologyOutput(args: GetLogAnalyticsEntityTopologyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsEntityTopologyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", {
         "logAnalyticsEntityId": args.logAnalyticsEntityId,

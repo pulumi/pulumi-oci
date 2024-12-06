@@ -261,7 +261,7 @@ def get_remediation_run_stage(remediation_run_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_remediation_run_stage_output(remediation_run_id: Optional[pulumi.Input[str]] = None,
                                      stage_type: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunStageResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemediationRunStageResult]:
     """
     This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
 
@@ -284,7 +284,7 @@ def get_remediation_run_stage_output(remediation_run_id: Optional[pulumi.Input[s
     __args__ = dict()
     __args__['remediationRunId'] = remediation_run_id
     __args__['stageType'] = stage_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Adm/getRemediationRunStage:getRemediationRunStage', __args__, opts=opts, typ=GetRemediationRunStageResult)
     return __ret__.apply(lambda __response__: GetRemediationRunStageResult(
         audit_id=pulumi.get(__response__, 'audit_id'),

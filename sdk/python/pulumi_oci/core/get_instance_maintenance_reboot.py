@@ -100,7 +100,7 @@ def get_instance_maintenance_reboot(instance_id: Optional[str] = None,
         instance_id=pulumi.get(__ret__, 'instance_id'),
         time_maintenance_reboot_due_max=pulumi.get(__ret__, 'time_maintenance_reboot_due_max'))
 def get_instance_maintenance_reboot_output(instance_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceMaintenanceRebootResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceMaintenanceRebootResult]:
     """
     This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
 
@@ -121,7 +121,7 @@ def get_instance_maintenance_reboot_output(instance_id: Optional[pulumi.Input[st
     """
     __args__ = dict()
     __args__['instanceId'] = instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot', __args__, opts=opts, typ=GetInstanceMaintenanceRebootResult)
     return __ret__.apply(lambda __response__: GetInstanceMaintenanceRebootResult(
         id=pulumi.get(__response__, 'id'),

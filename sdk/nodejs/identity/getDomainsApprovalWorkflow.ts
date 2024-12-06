@@ -169,7 +169,7 @@ export interface GetDomainsApprovalWorkflowResult {
  * });
  * ```
  */
-export function getDomainsApprovalWorkflowOutput(args: GetDomainsApprovalWorkflowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsApprovalWorkflowResult> {
+export function getDomainsApprovalWorkflowOutput(args: GetDomainsApprovalWorkflowOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsApprovalWorkflowResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsApprovalWorkflow:getDomainsApprovalWorkflow", {
         "approvalWorkflowId": args.approvalWorkflowId,

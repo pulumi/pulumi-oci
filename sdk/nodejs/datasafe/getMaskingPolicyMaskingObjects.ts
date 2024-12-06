@@ -105,7 +105,7 @@ export interface GetMaskingPolicyMaskingObjectsResult {
  * });
  * ```
  */
-export function getMaskingPolicyMaskingObjectsOutput(args: GetMaskingPolicyMaskingObjectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPolicyMaskingObjectsResult> {
+export function getMaskingPolicyMaskingObjectsOutput(args: GetMaskingPolicyMaskingObjectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaskingPolicyMaskingObjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPolicyMaskingObjects:getMaskingPolicyMaskingObjects", {
         "filters": args.filters,

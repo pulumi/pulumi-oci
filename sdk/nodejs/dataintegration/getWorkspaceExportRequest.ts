@@ -142,7 +142,7 @@ export interface GetWorkspaceExportRequestResult {
  * });
  * ```
  */
-export function getWorkspaceExportRequestOutput(args: GetWorkspaceExportRequestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceExportRequestResult> {
+export function getWorkspaceExportRequestOutput(args: GetWorkspaceExportRequestOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspaceExportRequestResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceExportRequest:getWorkspaceExportRequest", {
         "exportRequestKey": args.exportRequestKey,

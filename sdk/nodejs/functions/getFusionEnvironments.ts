@@ -108,7 +108,7 @@ export interface GetFusionEnvironmentsResult {
  * });
  * ```
  */
-export function getFusionEnvironmentsOutput(args: GetFusionEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentsResult> {
+export function getFusionEnvironmentsOutput(args: GetFusionEnvironmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironments:getFusionEnvironments", {
         "compartmentId": args.compartmentId,

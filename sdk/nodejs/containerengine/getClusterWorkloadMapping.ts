@@ -102,7 +102,7 @@ export interface GetClusterWorkloadMappingResult {
  * });
  * ```
  */
-export function getClusterWorkloadMappingOutput(args: GetClusterWorkloadMappingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterWorkloadMappingResult> {
+export function getClusterWorkloadMappingOutput(args: GetClusterWorkloadMappingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClusterWorkloadMappingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", {
         "clusterId": args.clusterId,

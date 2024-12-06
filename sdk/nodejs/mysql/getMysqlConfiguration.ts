@@ -117,7 +117,7 @@ export interface GetMysqlConfigurationResult {
  * });
  * ```
  */
-export function getMysqlConfigurationOutput(args: GetMysqlConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlConfigurationResult> {
+export function getMysqlConfigurationOutput(args: GetMysqlConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMysqlConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", {
         "configurationId": args.configurationId,

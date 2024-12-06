@@ -114,7 +114,7 @@ export interface GetTargetDatabasePeerTargetDatabaseResult {
  * });
  * ```
  */
-export function getTargetDatabasePeerTargetDatabaseOutput(args: GetTargetDatabasePeerTargetDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasePeerTargetDatabaseResult> {
+export function getTargetDatabasePeerTargetDatabaseOutput(args: GetTargetDatabasePeerTargetDatabaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetDatabasePeerTargetDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabasePeerTargetDatabase:getTargetDatabasePeerTargetDatabase", {
         "peerTargetDatabaseId": args.peerTargetDatabaseId,

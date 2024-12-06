@@ -75,7 +75,7 @@ export interface GetCategoriesResult {
  * });
  * ```
  */
-export function getCategoriesOutput(args?: GetCategoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoriesResult> {
+export function getCategoriesOutput(args?: GetCategoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCategoriesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Marketplace/getCategories:getCategories", {

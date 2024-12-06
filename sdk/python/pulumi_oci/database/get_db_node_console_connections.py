@@ -117,7 +117,7 @@ def get_db_node_console_connections(db_node_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_db_node_console_connections_output(db_node_id: Optional[pulumi.Input[str]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict']]]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeConsoleConnectionsResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeConsoleConnectionsResult]:
     """
     This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
 
@@ -138,7 +138,7 @@ def get_db_node_console_connections_output(db_node_id: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['dbNodeId'] = db_node_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections', __args__, opts=opts, typ=GetDbNodeConsoleConnectionsResult)
     return __ret__.apply(lambda __response__: GetDbNodeConsoleConnectionsResult(
         console_connections=pulumi.get(__response__, 'console_connections'),

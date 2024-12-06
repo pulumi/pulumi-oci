@@ -92,7 +92,7 @@ export interface GetSchedulesResult {
  * });
  * ```
  */
-export function getSchedulesOutput(args: GetSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSchedulesResult> {
+export function getSchedulesOutput(args: GetSchedulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSchedulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MeteringComputation/getSchedules:getSchedules", {
         "compartmentId": args.compartmentId,

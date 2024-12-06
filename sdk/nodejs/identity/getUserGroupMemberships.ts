@@ -115,7 +115,7 @@ export interface GetUserGroupMembershipsResult {
  * });
  * ```
  */
-export function getUserGroupMembershipsOutput(args: GetUserGroupMembershipsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupMembershipsResult> {
+export function getUserGroupMembershipsOutput(args: GetUserGroupMembershipsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserGroupMembershipsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", {
         "compartmentId": args.compartmentId,

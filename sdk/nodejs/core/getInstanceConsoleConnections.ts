@@ -90,7 +90,7 @@ export interface GetInstanceConsoleConnectionsResult {
  * });
  * ```
  */
-export function getInstanceConsoleConnectionsOutput(args: GetInstanceConsoleConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConsoleConnectionsResult> {
+export function getInstanceConsoleConnectionsOutput(args: GetInstanceConsoleConnectionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceConsoleConnectionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", {
         "compartmentId": args.compartmentId,

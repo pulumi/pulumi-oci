@@ -232,7 +232,7 @@ def get_dedicated_vantage_point(apm_domain_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_dedicated_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                        dedicated_vantage_point_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVantagePointResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVantagePointResult]:
     """
     This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
 
@@ -255,7 +255,7 @@ def get_dedicated_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
     __args__['dedicatedVantagePointId'] = dedicated_vantage_point_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint', __args__, opts=opts, typ=GetDedicatedVantagePointResult)
     return __ret__.apply(lambda __response__: GetDedicatedVantagePointResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

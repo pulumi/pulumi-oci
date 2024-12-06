@@ -176,7 +176,7 @@ def get_replication_targets_output(availability_domain: Optional[pulumi.Input[st
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationTargetsFilterArgs', 'GetReplicationTargetsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationTargetsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationTargetsResult]:
     """
     This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
 
@@ -209,7 +209,7 @@ def get_replication_targets_output(availability_domain: Optional[pulumi.Input[st
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getReplicationTargets:getReplicationTargets', __args__, opts=opts, typ=GetReplicationTargetsResult)
     return __ret__.apply(lambda __response__: GetReplicationTargetsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

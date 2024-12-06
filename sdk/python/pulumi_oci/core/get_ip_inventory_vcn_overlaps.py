@@ -183,7 +183,7 @@ def get_ip_inventory_vcn_overlaps_output(compartment_lists: Optional[pulumi.Inpu
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpInventoryVcnOverlapsFilterArgs', 'GetIpInventoryVcnOverlapsFilterArgsDict']]]]] = None,
                                          region_lists: Optional[pulumi.Input[Sequence[str]]] = None,
                                          vcn_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpInventoryVcnOverlapsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpInventoryVcnOverlapsResult]:
     """
     This data source provides the list of Ip Inventory Vcn Overlaps in Oracle Cloud Infrastructure Core service.
 
@@ -210,7 +210,7 @@ def get_ip_inventory_vcn_overlaps_output(compartment_lists: Optional[pulumi.Inpu
     __args__['filters'] = filters
     __args__['regionLists'] = region_lists
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps', __args__, opts=opts, typ=GetIpInventoryVcnOverlapsResult)
     return __ret__.apply(lambda __response__: GetIpInventoryVcnOverlapsResult(
         compartment_lists=pulumi.get(__response__, 'compartment_lists'),

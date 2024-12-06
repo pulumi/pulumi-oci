@@ -115,7 +115,7 @@ export interface GetOutboundConnectorsResult {
  * });
  * ```
  */
-export function getOutboundConnectorsOutput(args: GetOutboundConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOutboundConnectorsResult> {
+export function getOutboundConnectorsOutput(args: GetOutboundConnectorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOutboundConnectorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FileStorage/getOutboundConnectors:getOutboundConnectors", {
         "availabilityDomain": args.availabilityDomain,

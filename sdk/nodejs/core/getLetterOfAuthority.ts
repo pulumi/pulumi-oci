@@ -90,7 +90,7 @@ export interface GetLetterOfAuthorityResult {
  * });
  * ```
  */
-export function getLetterOfAuthorityOutput(args: GetLetterOfAuthorityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLetterOfAuthorityResult> {
+export function getLetterOfAuthorityOutput(args: GetLetterOfAuthorityOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLetterOfAuthorityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getLetterOfAuthority:getLetterOfAuthority", {
         "crossConnectId": args.crossConnectId,

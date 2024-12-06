@@ -153,7 +153,7 @@ def get_oneoff_patches_output(compartment_id: Optional[pulumi.Input[str]] = None
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOneoffPatchesFilterArgs', 'GetOneoffPatchesFilterArgsDict']]]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOneoffPatchesResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOneoffPatchesResult]:
     """
     This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
 
@@ -180,7 +180,7 @@ def get_oneoff_patches_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getOneoffPatches:getOneoffPatches', __args__, opts=opts, typ=GetOneoffPatchesResult)
     return __ret__.apply(lambda __response__: GetOneoffPatchesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

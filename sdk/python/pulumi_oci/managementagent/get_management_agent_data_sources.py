@@ -132,7 +132,7 @@ def get_management_agent_data_sources(filters: Optional[Sequence[Union['GetManag
 def get_management_agent_data_sources_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict']]]]] = None,
                                              management_agent_id: Optional[pulumi.Input[str]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentDataSourcesResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentDataSourcesResult]:
     """
     This data source provides the list of Management Agent Data Sources in Oracle Cloud Infrastructure Management Agent service.
 
@@ -156,7 +156,7 @@ def get_management_agent_data_sources_output(filters: Optional[pulumi.Input[Opti
     __args__['filters'] = filters
     __args__['managementAgentId'] = management_agent_id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources', __args__, opts=opts, typ=GetManagementAgentDataSourcesResult)
     return __ret__.apply(lambda __response__: GetManagementAgentDataSourcesResult(
         data_sources=pulumi.get(__response__, 'data_sources'),

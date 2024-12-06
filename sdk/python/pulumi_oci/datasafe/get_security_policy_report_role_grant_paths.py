@@ -152,7 +152,7 @@ def get_security_policy_report_role_grant_paths_output(filters: Optional[pulumi.
                                                        granted_role: Optional[pulumi.Input[str]] = None,
                                                        grantee: Optional[pulumi.Input[str]] = None,
                                                        security_policy_report_id: Optional[pulumi.Input[str]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyReportRoleGrantPathsResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportRoleGrantPathsResult]:
     """
     This data source provides the list of Security Policy Report Role Grant Paths in Oracle Cloud Infrastructure Data Safe service.
 
@@ -181,7 +181,7 @@ def get_security_policy_report_role_grant_paths_output(filters: Optional[pulumi.
     __args__['grantedRole'] = granted_role
     __args__['grantee'] = grantee
     __args__['securityPolicyReportId'] = security_policy_report_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths', __args__, opts=opts, typ=GetSecurityPolicyReportRoleGrantPathsResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyReportRoleGrantPathsResult(
         filters=pulumi.get(__response__, 'filters'),

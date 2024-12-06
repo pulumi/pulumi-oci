@@ -89,7 +89,7 @@ export interface GetIamWorkRequestsResult {
  * });
  * ```
  */
-export function getIamWorkRequestsOutput(args: GetIamWorkRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamWorkRequestsResult> {
+export function getIamWorkRequestsOutput(args: GetIamWorkRequestsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamWorkRequestsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getIamWorkRequests:getIamWorkRequests", {
         "compartmentId": args.compartmentId,

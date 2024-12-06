@@ -153,7 +153,7 @@ def get_network_load_balancers_output(compartment_id: Optional[pulumi.Input[str]
                                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkLoadBalancersFilterArgs', 'GetNetworkLoadBalancersFilterArgsDict']]]]] = None,
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancersResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkLoadBalancersResult]:
     """
     This data source provides the list of Network Load Balancers in Oracle Cloud Infrastructure Network Load Balancer service.
 
@@ -180,7 +180,7 @@ def get_network_load_balancers_output(compartment_id: Optional[pulumi.Input[str]
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getNetworkLoadBalancers:getNetworkLoadBalancers', __args__, opts=opts, typ=GetNetworkLoadBalancersResult)
     return __ret__.apply(lambda __response__: GetNetworkLoadBalancersResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

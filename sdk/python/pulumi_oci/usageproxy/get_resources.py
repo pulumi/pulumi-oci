@@ -145,7 +145,7 @@ def get_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          entitlement_id: Optional[pulumi.Input[Optional[str]]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResourcesFilterArgs', 'GetResourcesFilterArgsDict']]]]] = None,
                          service_name: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourcesResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourcesResult]:
     """
     This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
 
@@ -173,7 +173,7 @@ def get_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['entitlementId'] = entitlement_id
     __args__['filters'] = filters
     __args__['serviceName'] = service_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getResources:getResources', __args__, opts=opts, typ=GetResourcesResult)
     return __ret__.apply(lambda __response__: GetResourcesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

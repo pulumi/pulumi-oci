@@ -110,7 +110,7 @@ export interface GetVolumeGroupReplicasResult {
  * });
  * ```
  */
-export function getVolumeGroupReplicasOutput(args: GetVolumeGroupReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupReplicasResult> {
+export function getVolumeGroupReplicasOutput(args: GetVolumeGroupReplicasOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeGroupReplicasResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", {
         "availabilityDomain": args.availabilityDomain,

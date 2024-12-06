@@ -129,7 +129,7 @@ def get_listing_taxes(compartment_id: Optional[str] = None,
 def get_listing_taxes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingTaxesFilterArgs', 'GetListingTaxesFilterArgsDict']]]]] = None,
                              listing_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingTaxesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingTaxesResult]:
     """
     This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.
 
@@ -153,7 +153,7 @@ def get_listing_taxes_output(compartment_id: Optional[pulumi.Input[Optional[str]
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['listingId'] = listing_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getListingTaxes:getListingTaxes', __args__, opts=opts, typ=GetListingTaxesResult)
     return __ret__.apply(lambda __response__: GetListingTaxesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

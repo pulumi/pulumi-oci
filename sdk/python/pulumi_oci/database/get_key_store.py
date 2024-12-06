@@ -214,7 +214,7 @@ def get_key_store(key_store_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         type_details=pulumi.get(__ret__, 'type_details'))
 def get_key_store_output(key_store_id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyStoreResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyStoreResult]:
     """
     This data source provides details about a specific Key Store resource in Oracle Cloud Infrastructure Database service.
 
@@ -234,7 +234,7 @@ def get_key_store_output(key_store_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['keyStoreId'] = key_store_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getKeyStore:getKeyStore', __args__, opts=opts, typ=GetKeyStoreResult)
     return __ret__.apply(lambda __response__: GetKeyStoreResult(
         associated_databases=pulumi.get(__response__, 'associated_databases'),

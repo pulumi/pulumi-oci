@@ -158,7 +158,7 @@ export interface GetSecurityPolicyReportsResult {
  * });
  * ```
  */
-export function getSecurityPolicyReportsOutput(args: GetSecurityPolicyReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportsResult> {
+export function getSecurityPolicyReportsOutput(args: GetSecurityPolicyReportsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityPolicyReportsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyReports:getSecurityPolicyReports", {
         "accessLevel": args.accessLevel,

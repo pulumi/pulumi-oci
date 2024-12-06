@@ -87,7 +87,7 @@ export interface GetDelegatedResourceAccessRequestAuditLogReportResult {
  * });
  * ```
  */
-export function getDelegatedResourceAccessRequestAuditLogReportOutput(args: GetDelegatedResourceAccessRequestAuditLogReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegatedResourceAccessRequestAuditLogReportResult> {
+export function getDelegatedResourceAccessRequestAuditLogReportOutput(args: GetDelegatedResourceAccessRequestAuditLogReportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDelegatedResourceAccessRequestAuditLogReportResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport", {
         "delegatedResourceAccessRequestId": args.delegatedResourceAccessRequestId,

@@ -121,7 +121,7 @@ export interface GetUnifiedAgentConfigurationsResult {
  * });
  * ```
  */
-export function getUnifiedAgentConfigurationsOutput(args: GetUnifiedAgentConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUnifiedAgentConfigurationsResult> {
+export function getUnifiedAgentConfigurationsOutput(args: GetUnifiedAgentConfigurationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUnifiedAgentConfigurationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", {
         "compartmentId": args.compartmentId,

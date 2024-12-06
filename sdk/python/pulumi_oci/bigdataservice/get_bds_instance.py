@@ -493,7 +493,7 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         util_nodes=pulumi.get(__ret__, 'util_nodes'),
         worker_nodes=pulumi.get(__ret__, 'worker_nodes'))
 def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceResult]:
     """
     This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
 
@@ -513,7 +513,7 @@ def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstance:getBdsInstance', __args__, opts=opts, typ=GetBdsInstanceResult)
     return __ret__.apply(lambda __response__: GetBdsInstanceResult(
         bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),

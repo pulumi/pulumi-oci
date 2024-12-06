@@ -77,7 +77,7 @@ export interface GetFusionEnvironmentFamilyLimitsAndUsageResult {
  * });
  * ```
  */
-export function getFusionEnvironmentFamilyLimitsAndUsageOutput(args: GetFusionEnvironmentFamilyLimitsAndUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> {
+export function getFusionEnvironmentFamilyLimitsAndUsageOutput(args: GetFusionEnvironmentFamilyLimitsAndUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", {
         "fusionEnvironmentFamilyId": args.fusionEnvironmentFamilyId,

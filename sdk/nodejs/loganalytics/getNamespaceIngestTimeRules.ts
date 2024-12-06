@@ -138,7 +138,7 @@ export interface GetNamespaceIngestTimeRulesResult {
  * });
  * ```
  */
-export function getNamespaceIngestTimeRulesOutput(args: GetNamespaceIngestTimeRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceIngestTimeRulesResult> {
+export function getNamespaceIngestTimeRulesOutput(args: GetNamespaceIngestTimeRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceIngestTimeRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", {
         "compartmentId": args.compartmentId,

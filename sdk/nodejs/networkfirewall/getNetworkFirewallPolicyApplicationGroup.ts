@@ -59,7 +59,7 @@ export interface GetNetworkFirewallPolicyApplicationGroupResult {
  *
  * Get ApplicationGroup by the given name in the context of network firewall policy.
  */
-export function getNetworkFirewallPolicyApplicationGroupOutput(args: GetNetworkFirewallPolicyApplicationGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyApplicationGroupResult> {
+export function getNetworkFirewallPolicyApplicationGroupOutput(args: GetNetworkFirewallPolicyApplicationGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyApplicationGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup", {
         "name": args.name,

@@ -107,7 +107,7 @@ export interface GetOdaInstancesResult {
  * });
  * ```
  */
-export function getOdaInstancesOutput(args: GetOdaInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaInstancesResult> {
+export function getOdaInstancesOutput(args: GetOdaInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOdaInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Oda/getOdaInstances:getOdaInstances", {
         "compartmentId": args.compartmentId,

@@ -113,7 +113,7 @@ export interface GetTraceSnapshotDataResult {
  * });
  * ```
  */
-export function getTraceSnapshotDataOutput(args: GetTraceSnapshotDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceSnapshotDataResult> {
+export function getTraceSnapshotDataOutput(args: GetTraceSnapshotDataOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTraceSnapshotDataResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", {
         "apmDomainId": args.apmDomainId,

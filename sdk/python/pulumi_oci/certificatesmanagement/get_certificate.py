@@ -334,7 +334,7 @@ def get_certificate(certificate_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'))
 def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateResult]:
     """
     This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
 
@@ -354,7 +354,7 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['certificateId'] = certificate_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCertificate:getCertificate', __args__, opts=opts, typ=GetCertificateResult)
     return __ret__.apply(lambda __response__: GetCertificateResult(
         certificate_configs=pulumi.get(__response__, 'certificate_configs'),

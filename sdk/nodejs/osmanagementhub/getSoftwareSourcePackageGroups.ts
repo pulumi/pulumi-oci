@@ -112,7 +112,7 @@ export interface GetSoftwareSourcePackageGroupsResult {
  * });
  * ```
  */
-export function getSoftwareSourcePackageGroupsOutput(args: GetSoftwareSourcePackageGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourcePackageGroupsResult> {
+export function getSoftwareSourcePackageGroupsOutput(args: GetSoftwareSourcePackageGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSoftwareSourcePackageGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwareSourcePackageGroups:getSoftwareSourcePackageGroups", {
         "compartmentId": args.compartmentId,

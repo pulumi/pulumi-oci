@@ -92,7 +92,7 @@ export interface GetBdsInstanceApiKeysResult {
  * });
  * ```
  */
-export function getBdsInstanceApiKeysOutput(args: GetBdsInstanceApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceApiKeysResult> {
+export function getBdsInstanceApiKeysOutput(args: GetBdsInstanceApiKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBdsInstanceApiKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", {
         "bdsInstanceId": args.bdsInstanceId,

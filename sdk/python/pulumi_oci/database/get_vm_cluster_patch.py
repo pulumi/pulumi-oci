@@ -192,7 +192,7 @@ def get_vm_cluster_patch(patch_id: Optional[str] = None,
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[str]] = None,
                                 vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterPatchResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterPatchResult]:
     """
     This data source provides details about a specific Vm Cluster Patch resource in Oracle Cloud Infrastructure Database service.
 
@@ -215,7 +215,7 @@ def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['patchId'] = patch_id
     __args__['vmClusterId'] = vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterPatch:getVmClusterPatch', __args__, opts=opts, typ=GetVmClusterPatchResult)
     return __ret__.apply(lambda __response__: GetVmClusterPatchResult(
         available_actions=pulumi.get(__response__, 'available_actions'),

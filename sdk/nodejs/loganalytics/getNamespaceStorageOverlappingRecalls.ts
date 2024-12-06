@@ -94,7 +94,7 @@ export interface GetNamespaceStorageOverlappingRecallsResult {
  * });
  * ```
  */
-export function getNamespaceStorageOverlappingRecallsOutput(args: GetNamespaceStorageOverlappingRecallsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageOverlappingRecallsResult> {
+export function getNamespaceStorageOverlappingRecallsOutput(args: GetNamespaceStorageOverlappingRecallsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceStorageOverlappingRecallsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", {
         "filters": args.filters,

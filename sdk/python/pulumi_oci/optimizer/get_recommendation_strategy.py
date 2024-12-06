@@ -150,7 +150,7 @@ def get_recommendation_strategy_output(compartment_id: Optional[pulumi.Input[str
                                        compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                        recommendation_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecommendationStrategyResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecommendationStrategyResult]:
     """
     This data source provides details about a specific Recommendation Strategy resource in Oracle Cloud Infrastructure Optimizer service.
 
@@ -181,7 +181,7 @@ def get_recommendation_strategy_output(compartment_id: Optional[pulumi.Input[str
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['name'] = name
     __args__['recommendationName'] = recommendation_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy', __args__, opts=opts, typ=GetRecommendationStrategyResult)
     return __ret__.apply(lambda __response__: GetRecommendationStrategyResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

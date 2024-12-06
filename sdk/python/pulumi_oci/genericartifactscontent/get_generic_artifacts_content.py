@@ -86,7 +86,7 @@ def get_generic_artifacts_content(artifact_id: Optional[str] = None,
         artifact_id=pulumi.get(__ret__, 'artifact_id'),
         id=pulumi.get(__ret__, 'id'))
 def get_generic_artifacts_content_output(artifact_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGenericArtifactsContentResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenericArtifactsContentResult]:
     """
     This data source provides details about a specific Generic Artifacts Content resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
 
@@ -106,7 +106,7 @@ def get_generic_artifacts_content_output(artifact_id: Optional[pulumi.Input[str]
     """
     __args__ = dict()
     __args__['artifactId'] = artifact_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent', __args__, opts=opts, typ=GetGenericArtifactsContentResult)
     return __ret__.apply(lambda __response__: GetGenericArtifactsContentResult(
         artifact_id=pulumi.get(__response__, 'artifact_id'),

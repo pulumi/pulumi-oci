@@ -113,7 +113,7 @@ def get_autonomous_database_regional_wallet_management(opts: Optional[pulumi.Inv
         should_rotate=pulumi.get(__ret__, 'should_rotate'),
         state=pulumi.get(__ret__, 'state'),
         time_rotated=pulumi.get(__ret__, 'time_rotated'))
-def get_autonomous_database_regional_wallet_management_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseRegionalWalletManagementResult]:
+def get_autonomous_database_regional_wallet_management_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseRegionalWalletManagementResult]:
     """
     This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
 
@@ -129,7 +129,7 @@ def get_autonomous_database_regional_wallet_management_output(opts: Optional[pul
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement', __args__, opts=opts, typ=GetAutonomousDatabaseRegionalWalletManagementResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabaseRegionalWalletManagementResult(
         grace_period=pulumi.get(__response__, 'grace_period'),

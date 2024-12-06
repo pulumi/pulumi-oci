@@ -119,7 +119,7 @@ export interface GetContainerImageSignatureResult {
  * });
  * ```
  */
-export function getContainerImageSignatureOutput(args: GetContainerImageSignatureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerImageSignatureResult> {
+export function getContainerImageSignatureOutput(args: GetContainerImageSignatureOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetContainerImageSignatureResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", {
         "imageSignatureId": args.imageSignatureId,

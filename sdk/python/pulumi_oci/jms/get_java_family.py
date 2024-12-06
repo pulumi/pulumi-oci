@@ -194,7 +194,7 @@ def get_java_family(family_version: Optional[str] = None,
         release_date=pulumi.get(__ret__, 'release_date'),
         support_type=pulumi.get(__ret__, 'support_type'))
 def get_java_family_output(family_version: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaFamilyResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaFamilyResult]:
     """
     This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
 
@@ -214,7 +214,7 @@ def get_java_family_output(family_version: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['familyVersion'] = family_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaFamily:getJavaFamily', __args__, opts=opts, typ=GetJavaFamilyResult)
     return __ret__.apply(lambda __response__: GetJavaFamilyResult(
         display_name=pulumi.get(__response__, 'display_name'),

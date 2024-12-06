@@ -116,7 +116,7 @@ export interface GetServiceProvidersResult {
  * });
  * ```
  */
-export function getServiceProvidersOutput(args: GetServiceProvidersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceProvidersResult> {
+export function getServiceProvidersOutput(args: GetServiceProvidersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceProvidersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getServiceProviders:getServiceProviders", {
         "compartmentId": args.compartmentId,

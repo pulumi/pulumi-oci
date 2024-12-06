@@ -110,7 +110,7 @@ export interface GetFusionEnvironmentRefreshActivitiesResult {
  * });
  * ```
  */
-export function getFusionEnvironmentRefreshActivitiesOutput(args: GetFusionEnvironmentRefreshActivitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentRefreshActivitiesResult> {
+export function getFusionEnvironmentRefreshActivitiesOutput(args: GetFusionEnvironmentRefreshActivitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentRefreshActivitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", {
         "displayName": args.displayName,

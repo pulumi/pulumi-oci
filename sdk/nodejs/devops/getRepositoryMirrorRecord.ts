@@ -91,7 +91,7 @@ export interface GetRepositoryMirrorRecordResult {
  * });
  * ```
  */
-export function getRepositoryMirrorRecordOutput(args: GetRepositoryMirrorRecordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryMirrorRecordResult> {
+export function getRepositoryMirrorRecordOutput(args: GetRepositoryMirrorRecordOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryMirrorRecordResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", {
         "mirrorRecordType": args.mirrorRecordType,

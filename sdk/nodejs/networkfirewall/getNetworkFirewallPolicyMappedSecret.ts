@@ -69,7 +69,7 @@ export interface GetNetworkFirewallPolicyMappedSecretResult {
  *
  * Get Mapped Secret by the given name in the context of network firewall policy.
  */
-export function getNetworkFirewallPolicyMappedSecretOutput(args: GetNetworkFirewallPolicyMappedSecretOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyMappedSecretResult> {
+export function getNetworkFirewallPolicyMappedSecretOutput(args: GetNetworkFirewallPolicyMappedSecretOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyMappedSecretResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", {
         "name": args.name,

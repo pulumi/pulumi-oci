@@ -161,7 +161,7 @@ export interface GetExternalExadataStorageServerResult {
  * });
  * ```
  */
-export function getExternalExadataStorageServerOutput(args: GetExternalExadataStorageServerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerResult> {
+export function getExternalExadataStorageServerOutput(args: GetExternalExadataStorageServerOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalExadataStorageServerResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", {
         "externalExadataStorageServerId": args.externalExadataStorageServerId,

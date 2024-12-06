@@ -129,7 +129,7 @@ export interface GetExternalExadataStorageGridResult {
  * });
  * ```
  */
-export function getExternalExadataStorageGridOutput(args: GetExternalExadataStorageGridOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageGridResult> {
+export function getExternalExadataStorageGridOutput(args: GetExternalExadataStorageGridOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalExadataStorageGridResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", {
         "externalExadataStorageGridId": args.externalExadataStorageGridId,

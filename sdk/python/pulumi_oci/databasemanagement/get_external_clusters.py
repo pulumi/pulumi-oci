@@ -153,7 +153,7 @@ def get_external_clusters_output(compartment_id: Optional[pulumi.Input[Optional[
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  external_db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalClustersFilterArgs', 'GetExternalClustersFilterArgsDict']]]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClustersResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalClustersResult]:
     """
     This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
 
@@ -180,7 +180,7 @@ def get_external_clusters_output(compartment_id: Optional[pulumi.Input[Optional[
     __args__['displayName'] = display_name
     __args__['externalDbSystemId'] = external_db_system_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalClusters:getExternalClusters', __args__, opts=opts, typ=GetExternalClustersResult)
     return __ret__.apply(lambda __response__: GetExternalClustersResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

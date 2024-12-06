@@ -305,7 +305,7 @@ def get_configuration(configuration_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_configuration_output(configuration_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigurationResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigurationResult]:
     """
     This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
 
@@ -325,7 +325,7 @@ def get_configuration_output(configuration_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['configurationId'] = configuration_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getConfiguration:getConfiguration', __args__, opts=opts, typ=GetConfigurationResult)
     return __ret__.apply(lambda __response__: GetConfigurationResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

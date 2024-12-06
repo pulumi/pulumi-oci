@@ -107,7 +107,7 @@ export interface GetGenericArtifactResult {
  * });
  * ```
  */
-export function getGenericArtifactOutput(args: GetGenericArtifactOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGenericArtifactResult> {
+export function getGenericArtifactOutput(args: GetGenericArtifactOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGenericArtifactResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Artifacts/getGenericArtifact:getGenericArtifact", {
         "artifactId": args.artifactId,

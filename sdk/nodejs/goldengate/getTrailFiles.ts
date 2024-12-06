@@ -94,7 +94,7 @@ export interface GetTrailFilesResult {
  * });
  * ```
  */
-export function getTrailFilesOutput(args: GetTrailFilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTrailFilesResult> {
+export function getTrailFilesOutput(args: GetTrailFilesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTrailFilesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getTrailFiles:getTrailFiles", {
         "deploymentId": args.deploymentId,

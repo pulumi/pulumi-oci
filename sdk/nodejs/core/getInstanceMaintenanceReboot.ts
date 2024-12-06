@@ -69,7 +69,7 @@ export interface GetInstanceMaintenanceRebootResult {
  * });
  * ```
  */
-export function getInstanceMaintenanceRebootOutput(args: GetInstanceMaintenanceRebootOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMaintenanceRebootResult> {
+export function getInstanceMaintenanceRebootOutput(args: GetInstanceMaintenanceRebootOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceMaintenanceRebootResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", {
         "instanceId": args.instanceId,

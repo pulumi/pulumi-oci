@@ -146,7 +146,7 @@ def get_managed_database_optimizer_statistics_advisor_executions_output(end_time
                                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgsDict']]]]] = None,
                                                                         managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                         start_time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult]:
+                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult]:
     """
     This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
 
@@ -175,7 +175,7 @@ def get_managed_database_optimizer_statistics_advisor_executions_output(end_time
     __args__['filters'] = filters
     __args__['managedDatabaseId'] = managed_database_id
     __args__['startTimeGreaterThanOrEqualTo'] = start_time_greater_than_or_equal_to
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult(
         end_time_less_than_or_equal_to=pulumi.get(__response__, 'end_time_less_than_or_equal_to'),

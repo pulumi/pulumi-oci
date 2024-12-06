@@ -409,7 +409,7 @@ def get_cluster(cluster_id: Optional[str] = None,
         vsphere_upgrade_objects=pulumi.get(__ret__, 'vsphere_upgrade_objects'),
         workload_network_cidr=pulumi.get(__ret__, 'workload_network_cidr'))
 def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterResult]:
     """
     This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
@@ -429,7 +429,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getCluster:getCluster', __args__, opts=opts, typ=GetClusterResult)
     return __ret__.apply(lambda __response__: GetClusterResult(
         actual_esxi_hosts_count=pulumi.get(__response__, 'actual_esxi_hosts_count'),

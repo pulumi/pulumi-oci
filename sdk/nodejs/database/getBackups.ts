@@ -95,7 +95,7 @@ export interface GetBackupsResult {
  * });
  * ```
  */
-export function getBackupsOutput(args?: GetBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupsResult> {
+export function getBackupsOutput(args?: GetBackupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBackupsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getBackups:getBackups", {

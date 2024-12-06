@@ -292,7 +292,7 @@ def get_occ_availability_catalog(occ_availability_catalog_id: Optional[str] = No
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_occ_availability_catalog_output(occ_availability_catalog_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccAvailabilityCatalogResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccAvailabilityCatalogResult]:
     """
     This data source provides details about a specific Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -312,7 +312,7 @@ def get_occ_availability_catalog_output(occ_availability_catalog_id: Optional[pu
     """
     __args__ = dict()
     __args__['occAvailabilityCatalogId'] = occ_availability_catalog_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccAvailabilityCatalog:getOccAvailabilityCatalog', __args__, opts=opts, typ=GetOccAvailabilityCatalogResult)
     return __ret__.apply(lambda __response__: GetOccAvailabilityCatalogResult(
         base64encoded_catalog_details=pulumi.get(__response__, 'base64encoded_catalog_details'),

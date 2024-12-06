@@ -140,7 +140,7 @@ export interface GetUserAssessmentProfileAnalyticsResult {
  * });
  * ```
  */
-export function getUserAssessmentProfileAnalyticsOutput(args: GetUserAssessmentProfileAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentProfileAnalyticsResult> {
+export function getUserAssessmentProfileAnalyticsOutput(args: GetUserAssessmentProfileAnalyticsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserAssessmentProfileAnalyticsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics", {
         "accessLevel": args.accessLevel,

@@ -333,7 +333,7 @@ def get_bastion(bastion_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_bastion_output(bastion_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBastionResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBastionResult]:
     """
     This data source provides details about a specific Bastion resource in Oracle Cloud Infrastructure Bastion service.
 
@@ -353,7 +353,7 @@ def get_bastion_output(bastion_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['bastionId'] = bastion_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Bastion/getBastion:getBastion', __args__, opts=opts, typ=GetBastionResult)
     return __ret__.apply(lambda __response__: GetBastionResult(
         bastion_id=pulumi.get(__response__, 'bastion_id'),

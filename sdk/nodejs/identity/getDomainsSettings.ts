@@ -111,7 +111,7 @@ export interface GetDomainsSettingsResult {
  * });
  * ```
  */
-export function getDomainsSettingsOutput(args: GetDomainsSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSettingsResult> {
+export function getDomainsSettingsOutput(args: GetDomainsSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSettings:getDomainsSettings", {
         "attributeSets": args.attributeSets,

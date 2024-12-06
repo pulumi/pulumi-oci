@@ -187,7 +187,7 @@ def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequ
                                     pbf_listing_id: Optional[pulumi.Input[str]] = None,
                                     pbf_listing_version_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingVersionsResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbfListingVersionsResult]:
     """
     This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
 
@@ -224,7 +224,7 @@ def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequ
     __args__['pbfListingId'] = pbf_listing_id
     __args__['pbfListingVersionId'] = pbf_listing_version_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getPbfListingVersions:getPbfListingVersions', __args__, opts=opts, typ=GetPbfListingVersionsResult)
     return __ret__.apply(lambda __response__: GetPbfListingVersionsResult(
         filters=pulumi.get(__response__, 'filters'),

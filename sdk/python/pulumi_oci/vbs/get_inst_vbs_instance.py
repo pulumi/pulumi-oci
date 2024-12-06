@@ -265,7 +265,7 @@ def get_inst_vbs_instance(vbs_instance_id: Optional[str] = None,
         vbs_access_url=pulumi.get(__ret__, 'vbs_access_url'),
         vbs_instance_id=pulumi.get(__ret__, 'vbs_instance_id'))
 def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstVbsInstanceResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstVbsInstanceResult]:
     """
     This data source provides details about a specific Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
 
@@ -285,7 +285,7 @@ def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[str]] = 
     """
     __args__ = dict()
     __args__['vbsInstanceId'] = vbs_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Vbs/getInstVbsInstance:getInstVbsInstance', __args__, opts=opts, typ=GetInstVbsInstanceResult)
     return __ret__.apply(lambda __response__: GetInstVbsInstanceResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

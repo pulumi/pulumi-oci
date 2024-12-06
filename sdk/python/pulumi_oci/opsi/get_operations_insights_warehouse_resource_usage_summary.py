@@ -126,7 +126,7 @@ def get_operations_insights_warehouse_resource_usage_summary(operations_insights
         state=pulumi.get(__ret__, 'state'),
         storage_used_in_gbs=pulumi.get(__ret__, 'storage_used_in_gbs'))
 def get_operations_insights_warehouse_resource_usage_summary_output(operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
-                                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsWarehouseResourceUsageSummaryResult]:
+                                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsWarehouseResourceUsageSummaryResult]:
     """
     This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -147,7 +147,7 @@ def get_operations_insights_warehouse_resource_usage_summary_output(operations_i
     """
     __args__ = dict()
     __args__['operationsInsightsWarehouseId'] = operations_insights_warehouse_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary', __args__, opts=opts, typ=GetOperationsInsightsWarehouseResourceUsageSummaryResult)
     return __ret__.apply(lambda __response__: GetOperationsInsightsWarehouseResourceUsageSummaryResult(
         cpu_used=pulumi.get(__response__, 'cpu_used'),

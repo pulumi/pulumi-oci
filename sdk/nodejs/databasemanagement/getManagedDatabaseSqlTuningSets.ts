@@ -102,7 +102,7 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
  * });
  * ```
  */
-export function getManagedDatabaseSqlTuningSetsOutput(args: GetManagedDatabaseSqlTuningSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningSetsResult> {
+export function getManagedDatabaseSqlTuningSetsOutput(args: GetManagedDatabaseSqlTuningSetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseSqlTuningSetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", {
         "filters": args.filters,

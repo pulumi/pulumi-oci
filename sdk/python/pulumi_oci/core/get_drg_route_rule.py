@@ -213,7 +213,7 @@ def get_drg_route_rule(drg_route_table_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_drg_route_rule_output(drg_route_table_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteRuleResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgRouteRuleResult]:
     """
     This data source provides details about a specific Drg Route Table resource in Oracle Cloud Infrastructure Core service.
 
@@ -233,7 +233,7 @@ def get_drg_route_rule_output(drg_route_table_id: Optional[pulumi.Input[str]] = 
     """
     __args__ = dict()
     __args__['drgRouteTableId'] = drg_route_table_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgRouteRule:getDrgRouteRule', __args__, opts=opts, typ=GetDrgRouteRuleResult)
     return __ret__.apply(lambda __response__: GetDrgRouteRuleResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

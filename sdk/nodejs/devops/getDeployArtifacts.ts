@@ -116,7 +116,7 @@ export interface GetDeployArtifactsResult {
  * });
  * ```
  */
-export function getDeployArtifactsOutput(args?: GetDeployArtifactsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployArtifactsResult> {
+export function getDeployArtifactsOutput(args?: GetDeployArtifactsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDeployArtifactsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getDeployArtifacts:getDeployArtifacts", {

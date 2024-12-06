@@ -401,7 +401,7 @@ def get_repository(fields: Optional[Sequence[str]] = None,
         trigger_build_events=pulumi.get(__ret__, 'trigger_build_events'))
 def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                           repository_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryResult]:
     """
     This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Devops service.
 
@@ -424,7 +424,7 @@ def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]
     __args__ = dict()
     __args__['fields'] = fields
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepository:getRepository', __args__, opts=opts, typ=GetRepositoryResult)
     return __ret__.apply(lambda __response__: GetRepositoryResult(
         branch_count=pulumi.get(__response__, 'branch_count'),

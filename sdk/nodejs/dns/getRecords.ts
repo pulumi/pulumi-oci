@@ -151,7 +151,7 @@ export interface GetRecordsResult {
  * });
  * ```
  */
-export function getRecordsOutput(args: GetRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecordsResult> {
+export function getRecordsOutput(args: GetRecordsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecordsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getRecords:getRecords", {
         "compartmentId": args.compartmentId,

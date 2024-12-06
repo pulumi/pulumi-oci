@@ -357,7 +357,7 @@ def get_domains_approval_workflow_assignment_output(approval_workflow_assignment
                                                     authorization: Optional[pulumi.Input[Optional[str]]] = None,
                                                     idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                                     resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsApprovalWorkflowAssignmentResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsApprovalWorkflowAssignmentResult]:
     """
     This data source provides details about a specific Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -392,7 +392,7 @@ def get_domains_approval_workflow_assignment_output(approval_workflow_assignment
     __args__['authorization'] = authorization
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsApprovalWorkflowAssignment:getDomainsApprovalWorkflowAssignment', __args__, opts=opts, typ=GetDomainsApprovalWorkflowAssignmentResult)
     return __ret__.apply(lambda __response__: GetDomainsApprovalWorkflowAssignmentResult(
         approval_workflow_assignment_id=pulumi.get(__response__, 'approval_workflow_assignment_id'),

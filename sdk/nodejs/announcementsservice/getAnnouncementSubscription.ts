@@ -125,7 +125,7 @@ export interface GetAnnouncementSubscriptionResult {
  * });
  * ```
  */
-export function getAnnouncementSubscriptionOutput(args: GetAnnouncementSubscriptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnouncementSubscriptionResult> {
+export function getAnnouncementSubscriptionOutput(args: GetAnnouncementSubscriptionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAnnouncementSubscriptionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", {
         "announcementSubscriptionId": args.announcementSubscriptionId,

@@ -101,7 +101,7 @@ export interface GetUsagePlanResult {
  * });
  * ```
  */
-export function getUsagePlanOutput(args: GetUsagePlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsagePlanResult> {
+export function getUsagePlanOutput(args: GetUsagePlanOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUsagePlanResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApiGateway/getUsagePlan:getUsagePlan", {
         "usagePlanId": args.usagePlanId,

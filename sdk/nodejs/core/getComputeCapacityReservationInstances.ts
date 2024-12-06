@@ -94,7 +94,7 @@ export interface GetComputeCapacityReservationInstancesResult {
  * });
  * ```
  */
-export function getComputeCapacityReservationInstancesOutput(args: GetComputeCapacityReservationInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityReservationInstancesResult> {
+export function getComputeCapacityReservationInstancesOutput(args: GetComputeCapacityReservationInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetComputeCapacityReservationInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", {
         "availabilityDomain": args.availabilityDomain,

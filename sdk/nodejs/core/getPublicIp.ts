@@ -195,7 +195,7 @@ export interface GetPublicIpResult {
  * });
  * ```
  */
-export function getPublicIpOutput(args?: GetPublicIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpResult> {
+export function getPublicIpOutput(args?: GetPublicIpOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPublicIpResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getPublicIp:getPublicIp", {

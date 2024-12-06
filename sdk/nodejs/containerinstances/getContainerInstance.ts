@@ -153,7 +153,7 @@ export interface GetContainerInstanceResult {
  * });
  * ```
  */
-export function getContainerInstanceOutput(args: GetContainerInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerInstanceResult> {
+export function getContainerInstanceOutput(args: GetContainerInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetContainerInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerInstances/getContainerInstance:getContainerInstance", {
         "containerInstanceId": args.containerInstanceId,

@@ -287,7 +287,7 @@ def get_erratum(compartment_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_erratum_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        name: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetErratumResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetErratumResult]:
     """
     This data source provides details about a specific Erratum resource in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -310,7 +310,7 @@ def get_erratum_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getErratum:getErratum', __args__, opts=opts, typ=GetErratumResult)
     return __ret__.apply(lambda __response__: GetErratumResult(
         advisory_severity=pulumi.get(__response__, 'advisory_severity'),

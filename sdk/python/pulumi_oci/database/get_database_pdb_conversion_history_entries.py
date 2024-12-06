@@ -147,7 +147,7 @@ def get_database_pdb_conversion_history_entries_output(database_id: Optional[pul
                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict']]]]] = None,
                                                        pdb_conversion_action: Optional[pulumi.Input[Optional[str]]] = None,
                                                        state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabasePdbConversionHistoryEntriesResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabasePdbConversionHistoryEntriesResult]:
     """
     This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
 
@@ -174,7 +174,7 @@ def get_database_pdb_conversion_history_entries_output(database_id: Optional[pul
     __args__['filters'] = filters
     __args__['pdbConversionAction'] = pdb_conversion_action
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries', __args__, opts=opts, typ=GetDatabasePdbConversionHistoryEntriesResult)
     return __ret__.apply(lambda __response__: GetDatabasePdbConversionHistoryEntriesResult(
         database_id=pulumi.get(__response__, 'database_id'),

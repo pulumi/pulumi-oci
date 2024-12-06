@@ -242,7 +242,7 @@ def get_security_zone(security_zone_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_security_zone_output(security_zone_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityZoneResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityZoneResult]:
     """
     This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -262,7 +262,7 @@ def get_security_zone_output(security_zone_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['securityZoneId'] = security_zone_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getSecurityZone:getSecurityZone', __args__, opts=opts, typ=GetSecurityZoneResult)
     return __ret__.apply(lambda __response__: GetSecurityZoneResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

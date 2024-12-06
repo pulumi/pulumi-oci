@@ -83,7 +83,7 @@ export interface GetScheduledRunResult {
  * });
  * ```
  */
-export function getScheduledRunOutput(args: GetScheduledRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScheduledRunResult> {
+export function getScheduledRunOutput(args: GetScheduledRunOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetScheduledRunResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MeteringComputation/getScheduledRun:getScheduledRun", {
         "scheduledRunId": args.scheduledRunId,

@@ -132,7 +132,7 @@ def get_network_security_group_security_rules(direction: Optional[str] = None,
 def get_network_security_group_security_rules_output(direction: Optional[pulumi.Input[Optional[str]]] = None,
                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityGroupSecurityRulesFilterArgs', 'GetNetworkSecurityGroupSecurityRulesFilterArgsDict']]]]] = None,
                                                      network_security_group_id: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityGroupSecurityRulesResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityGroupSecurityRulesResult]:
     """
     This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
 
@@ -156,7 +156,7 @@ def get_network_security_group_security_rules_output(direction: Optional[pulumi.
     __args__['direction'] = direction
     __args__['filters'] = filters
     __args__['networkSecurityGroupId'] = network_security_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules', __args__, opts=opts, typ=GetNetworkSecurityGroupSecurityRulesResult)
     return __ret__.apply(lambda __response__: GetNetworkSecurityGroupSecurityRulesResult(
         direction=pulumi.get(__response__, 'direction'),

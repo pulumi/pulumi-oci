@@ -174,7 +174,7 @@ def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetsFilterArgs', 'GetFleetsFilterArgsDict']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetsResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetsResult]:
     """
     This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
 
@@ -208,7 +208,7 @@ def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleets:getFleets', __args__, opts=opts, typ=GetFleetsResult)
     return __ret__.apply(lambda __response__: GetFleetsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

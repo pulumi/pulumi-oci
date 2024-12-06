@@ -116,7 +116,7 @@ export interface GetAlarmHistoryCollectionResult {
  * });
  * ```
  */
-export function getAlarmHistoryCollectionOutput(args: GetAlarmHistoryCollectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmHistoryCollectionResult> {
+export function getAlarmHistoryCollectionOutput(args: GetAlarmHistoryCollectionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAlarmHistoryCollectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", {
         "alarmHistorytype": args.alarmHistorytype,

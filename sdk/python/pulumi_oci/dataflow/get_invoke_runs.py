@@ -237,7 +237,7 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
                            pool_id: Optional[pulumi.Input[Optional[str]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            time_created_greater_than: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvokeRunsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvokeRunsResult]:
     """
     This data source provides the list of Invoke Runs in Oracle Cloud Infrastructure Data Flow service.
 
@@ -279,7 +279,7 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
     __args__['poolId'] = pool_id
     __args__['state'] = state
     __args__['timeCreatedGreaterThan'] = time_created_greater_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getInvokeRuns:getInvokeRuns', __args__, opts=opts, typ=GetInvokeRunsResult)
     return __ret__.apply(lambda __response__: GetInvokeRunsResult(
         application_id=pulumi.get(__response__, 'application_id'),

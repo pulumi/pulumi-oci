@@ -109,7 +109,7 @@ export interface GetFastConnectProviderServiceResult {
  * });
  * ```
  */
-export function getFastConnectProviderServiceOutput(args: GetFastConnectProviderServiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastConnectProviderServiceResult> {
+export function getFastConnectProviderServiceOutput(args: GetFastConnectProviderServiceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFastConnectProviderServiceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getFastConnectProviderService:getFastConnectProviderService", {
         "providerServiceId": args.providerServiceId,

@@ -113,7 +113,7 @@ export interface GetProtectionPoliciesResult {
  * });
  * ```
  */
-export function getProtectionPoliciesOutput(args: GetProtectionPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionPoliciesResult> {
+export function getProtectionPoliciesOutput(args: GetProtectionPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", {
         "compartmentId": args.compartmentId,

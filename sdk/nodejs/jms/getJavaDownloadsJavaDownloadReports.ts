@@ -105,7 +105,7 @@ export interface GetJavaDownloadsJavaDownloadReportsResult {
  * });
  * ```
  */
-export function getJavaDownloadsJavaDownloadReportsOutput(args: GetJavaDownloadsJavaDownloadReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaDownloadReportsResult> {
+export function getJavaDownloadsJavaDownloadReportsOutput(args: GetJavaDownloadsJavaDownloadReportsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJavaDownloadsJavaDownloadReportsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaDownloadReports:getJavaDownloadsJavaDownloadReports", {
         "compartmentId": args.compartmentId,

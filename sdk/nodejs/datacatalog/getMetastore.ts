@@ -113,7 +113,7 @@ export interface GetMetastoreResult {
  * });
  * ```
  */
-export function getMetastoreOutput(args: GetMetastoreOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetastoreResult> {
+export function getMetastoreOutput(args: GetMetastoreOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMetastoreResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataCatalog/getMetastore:getMetastore", {
         "metastoreId": args.metastoreId,

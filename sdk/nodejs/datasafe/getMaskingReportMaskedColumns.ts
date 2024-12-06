@@ -138,7 +138,7 @@ export interface GetMaskingReportMaskedColumnsResult {
  * });
  * ```
  */
-export function getMaskingReportMaskedColumnsOutput(args: GetMaskingReportMaskedColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingReportMaskedColumnsResult> {
+export function getMaskingReportMaskedColumnsOutput(args: GetMaskingReportMaskedColumnsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaskingReportMaskedColumnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingReportMaskedColumns:getMaskingReportMaskedColumns", {
         "columnNames": args.columnNames,

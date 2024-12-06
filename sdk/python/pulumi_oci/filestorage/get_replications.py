@@ -191,7 +191,7 @@ def get_replications_output(availability_domain: Optional[pulumi.Input[str]] = N
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationsFilterArgs', 'GetReplicationsFilterArgsDict']]]]] = None,
                             id: Optional[pulumi.Input[Optional[str]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationsResult]:
     """
     This data source provides the list of Replications in Oracle Cloud Infrastructure File Storage service.
 
@@ -227,7 +227,7 @@ def get_replications_output(availability_domain: Optional[pulumi.Input[str]] = N
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getReplications:getReplications', __args__, opts=opts, typ=GetReplicationsResult)
     return __ret__.apply(lambda __response__: GetReplicationsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -72,7 +72,7 @@ export interface GetModelEvaluationResultsResult {
  * });
  * ```
  */
-export function getModelEvaluationResultsOutput(args: GetModelEvaluationResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelEvaluationResultsResult> {
+export function getModelEvaluationResultsOutput(args: GetModelEvaluationResultsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelEvaluationResultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", {
         "filters": args.filters,

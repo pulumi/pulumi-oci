@@ -63,7 +63,7 @@ export interface GetNetworkFirewallPolicyAddressListResult {
  *
  * Get Address List by the given name in the context of network firewall policy.
  */
-export function getNetworkFirewallPolicyAddressListOutput(args: GetNetworkFirewallPolicyAddressListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyAddressListResult> {
+export function getNetworkFirewallPolicyAddressListOutput(args: GetNetworkFirewallPolicyAddressListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyAddressListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", {
         "name": args.name,

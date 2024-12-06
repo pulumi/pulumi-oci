@@ -143,7 +143,7 @@ export interface GetControlResult {
  * });
  * ```
  */
-export function getControlOutput(args: GetControlOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlResult> {
+export function getControlOutput(args: GetControlOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetControlResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getControl:getControl", {
         "operatorControlId": args.operatorControlId,

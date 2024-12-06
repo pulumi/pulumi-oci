@@ -239,7 +239,7 @@ def get_object_versions_output(bucket: Optional[pulumi.Input[str]] = None,
                                prefix: Optional[pulumi.Input[Optional[str]]] = None,
                                start: Optional[pulumi.Input[Optional[str]]] = None,
                                start_after: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetObjectVersionsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectVersionsResult]:
     """
     This data source provides the list of Object Versions in Oracle Cloud Infrastructure Object Storage service.
 
@@ -288,7 +288,7 @@ def get_object_versions_output(bucket: Optional[pulumi.Input[str]] = None,
     __args__['prefix'] = prefix
     __args__['start'] = start
     __args__['startAfter'] = start_after
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getObjectVersions:getObjectVersions', __args__, opts=opts, typ=GetObjectVersionsResult)
     return __ret__.apply(lambda __response__: GetObjectVersionsResult(
         bucket=pulumi.get(__response__, 'bucket'),

@@ -123,7 +123,7 @@ export interface GetOperationsInsightsPrivateEndpointResult {
  * });
  * ```
  */
-export function getOperationsInsightsPrivateEndpointOutput(args: GetOperationsInsightsPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsPrivateEndpointResult> {
+export function getOperationsInsightsPrivateEndpointOutput(args: GetOperationsInsightsPrivateEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOperationsInsightsPrivateEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", {
         "operationsInsightsPrivateEndpointId": args.operationsInsightsPrivateEndpointId,

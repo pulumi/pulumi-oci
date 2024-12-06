@@ -165,7 +165,7 @@ def get_compute_capacity_topology_compute_network_blocks_output(availability_dom
                                                                 compute_capacity_topology_id: Optional[pulumi.Input[str]] = None,
                                                                 compute_hpc_island_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologyComputeNetworkBlocksFilterArgs', 'GetComputeCapacityTopologyComputeNetworkBlocksFilterArgsDict']]]]] = None,
-                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeNetworkBlocksResult]:
+                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeNetworkBlocksResult]:
     """
     This data source provides the list of Compute Capacity Topology Compute Network Blocks in Oracle Cloud Infrastructure Core service.
 
@@ -195,7 +195,7 @@ def get_compute_capacity_topology_compute_network_blocks_output(availability_dom
     __args__['computeCapacityTopologyId'] = compute_capacity_topology_id
     __args__['computeHpcIslandId'] = compute_hpc_island_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks', __args__, opts=opts, typ=GetComputeCapacityTopologyComputeNetworkBlocksResult)
     return __ret__.apply(lambda __response__: GetComputeCapacityTopologyComputeNetworkBlocksResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

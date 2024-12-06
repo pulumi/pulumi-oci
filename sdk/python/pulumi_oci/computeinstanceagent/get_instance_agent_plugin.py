@@ -166,7 +166,7 @@ def get_instance_agent_plugin(compartment_id: Optional[str] = None,
 def get_instance_agent_plugin_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                      instanceagent_id: Optional[pulumi.Input[str]] = None,
                                      plugin_name: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceAgentPluginResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceAgentPluginResult]:
     """
     This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
 
@@ -190,7 +190,7 @@ def get_instance_agent_plugin_output(compartment_id: Optional[pulumi.Input[str]]
     __args__['compartmentId'] = compartment_id
     __args__['instanceagentId'] = instanceagent_id
     __args__['pluginName'] = plugin_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin', __args__, opts=opts, typ=GetInstanceAgentPluginResult)
     return __ret__.apply(lambda __response__: GetInstanceAgentPluginResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

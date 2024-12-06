@@ -207,7 +207,7 @@ def get_managed_instance_available_windows_updates_output(classification_types: 
                                                           is_installable: Optional[pulumi.Input[Optional[str]]] = None,
                                                           managed_instance_id: Optional[pulumi.Input[str]] = None,
                                                           names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceAvailableWindowsUpdatesResult]:
+                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceAvailableWindowsUpdatesResult]:
     """
     This data source provides the list of Managed Instance Available Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -246,7 +246,7 @@ def get_managed_instance_available_windows_updates_output(classification_types: 
     __args__['isInstallable'] = is_installable
     __args__['managedInstanceId'] = managed_instance_id
     __args__['names'] = names
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceAvailableWindowsUpdates:getManagedInstanceAvailableWindowsUpdates', __args__, opts=opts, typ=GetManagedInstanceAvailableWindowsUpdatesResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceAvailableWindowsUpdatesResult(
         available_windows_update_collections=pulumi.get(__response__, 'available_windows_update_collections'),

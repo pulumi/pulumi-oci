@@ -247,7 +247,7 @@ def get_domains_my_support_accounts_output(authorization: Optional[pulumi.Input[
                                            sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                                            sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                                            start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMySupportAccountsResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMySupportAccountsResult]:
     """
     This data source provides the list of My Support Accounts in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -285,7 +285,7 @@ def get_domains_my_support_accounts_output(authorization: Optional[pulumi.Input[
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsMySupportAccounts:getDomainsMySupportAccounts', __args__, opts=opts, typ=GetDomainsMySupportAccountsResult)
     return __ret__.apply(lambda __response__: GetDomainsMySupportAccountsResult(
         authorization=pulumi.get(__response__, 'authorization'),

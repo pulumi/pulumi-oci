@@ -113,7 +113,7 @@ export interface GetSupportedHostShapesResult {
  * });
  * ```
  */
-export function getSupportedHostShapesOutput(args: GetSupportedHostShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedHostShapesResult> {
+export function getSupportedHostShapesOutput(args: GetSupportedHostShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSupportedHostShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", {
         "compartmentId": args.compartmentId,

@@ -366,7 +366,7 @@ def get_ipsec_connection_tunnel(ipsec_id: Optional[str] = None,
         vpn_ip=pulumi.get(__ret__, 'vpn_ip'))
 def get_ipsec_connection_tunnel_output(ipsec_id: Optional[pulumi.Input[str]] = None,
                                        tunnel_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionTunnelResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionTunnelResult]:
     """
     This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.
 
@@ -389,7 +389,7 @@ def get_ipsec_connection_tunnel_output(ipsec_id: Optional[pulumi.Input[str]] = N
     __args__ = dict()
     __args__['ipsecId'] = ipsec_id
     __args__['tunnelId'] = tunnel_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel', __args__, opts=opts, typ=GetIpsecConnectionTunnelResult)
     return __ret__.apply(lambda __response__: GetIpsecConnectionTunnelResult(
         associated_virtual_circuits=pulumi.get(__response__, 'associated_virtual_circuits'),

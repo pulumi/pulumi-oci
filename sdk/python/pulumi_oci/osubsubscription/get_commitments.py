@@ -159,7 +159,7 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            subscribed_service_id: Optional[pulumi.Input[str]] = None,
                            x_one_gateway_subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
                            x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCommitmentsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCommitmentsResult]:
     """
     This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
 
@@ -189,7 +189,7 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['subscribedServiceId'] = subscribed_service_id
     __args__['xOneGatewaySubscriptionId'] = x_one_gateway_subscription_id
     __args__['xOneOriginRegion'] = x_one_origin_region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsubSubscription/getCommitments:getCommitments', __args__, opts=opts, typ=GetCommitmentsResult)
     return __ret__.apply(lambda __response__: GetCommitmentsResult(
         commitments=pulumi.get(__response__, 'commitments'),

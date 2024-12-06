@@ -242,7 +242,7 @@ def get_email_domain(email_domain_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_email_domain_output(email_domain_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEmailDomainResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEmailDomainResult]:
     """
     This data source provides details about a specific Email Domain resource in Oracle Cloud Infrastructure Email service.
 
@@ -262,7 +262,7 @@ def get_email_domain_output(email_domain_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['emailDomainId'] = email_domain_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Email/getEmailDomain:getEmailDomain', __args__, opts=opts, typ=GetEmailDomainResult)
     return __ret__.apply(lambda __response__: GetEmailDomainResult(
         active_dkim_id=pulumi.get(__response__, 'active_dkim_id'),

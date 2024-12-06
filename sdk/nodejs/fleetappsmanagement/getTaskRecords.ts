@@ -124,7 +124,7 @@ export interface GetTaskRecordsResult {
  * });
  * ```
  */
-export function getTaskRecordsOutput(args?: GetTaskRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTaskRecordsResult> {
+export function getTaskRecordsOutput(args?: GetTaskRecordsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTaskRecordsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getTaskRecords:getTaskRecords", {

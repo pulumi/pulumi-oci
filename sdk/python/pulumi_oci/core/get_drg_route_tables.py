@@ -173,7 +173,7 @@ def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[str
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteTablesFilterArgs', 'GetDrgRouteTablesFilterArgsDict']]]]] = None,
                                 import_drg_route_distribution_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteTablesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgRouteTablesResult]:
     """
     This data source provides the list of Drg Route Tables in Oracle Cloud Infrastructure Core service.
 
@@ -205,7 +205,7 @@ def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[str
     __args__['filters'] = filters
     __args__['importDrgRouteDistributionId'] = import_drg_route_distribution_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgRouteTables:getDrgRouteTables', __args__, opts=opts, typ=GetDrgRouteTablesResult)
     return __ret__.apply(lambda __response__: GetDrgRouteTablesResult(
         display_name=pulumi.get(__response__, 'display_name'),

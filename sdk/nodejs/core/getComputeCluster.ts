@@ -93,7 +93,7 @@ export interface GetComputeClusterResult {
  * });
  * ```
  */
-export function getComputeClusterOutput(args: GetComputeClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeClusterResult> {
+export function getComputeClusterOutput(args: GetComputeClusterOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetComputeClusterResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getComputeCluster:getComputeCluster", {
         "computeClusterId": args.computeClusterId,

@@ -233,14 +233,14 @@ def get_private_endpoint(name: Optional[str] = None,
         time_modified=pulumi.get(__ret__, 'time_modified'))
 def get_private_endpoint_output(name: Optional[pulumi.Input[str]] = None,
                                 namespace: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint', __args__, opts=opts, typ=GetPrivateEndpointResult)
     return __ret__.apply(lambda __response__: GetPrivateEndpointResult(
         access_targets=pulumi.get(__response__, 'access_targets'),

@@ -232,7 +232,7 @@ def get_fleet_export_setting(fleet_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
 def get_fleet_export_setting_output(fleet_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetExportSettingResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetExportSettingResult]:
     """
     This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
 
@@ -252,7 +252,7 @@ def get_fleet_export_setting_output(fleet_id: Optional[pulumi.Input[str]] = None
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetExportSetting:getFleetExportSetting', __args__, opts=opts, typ=GetFleetExportSettingResult)
     return __ret__.apply(lambda __response__: GetFleetExportSettingResult(
         export_duration=pulumi.get(__response__, 'export_duration'),

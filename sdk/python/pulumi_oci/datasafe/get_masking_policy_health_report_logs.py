@@ -132,7 +132,7 @@ def get_masking_policy_health_report_logs(filters: Optional[Sequence[Union['GetM
 def get_masking_policy_health_report_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPolicyHealthReportLogsFilterArgs', 'GetMaskingPolicyHealthReportLogsFilterArgsDict']]]]] = None,
                                                  masking_policy_health_report_id: Optional[pulumi.Input[str]] = None,
                                                  message_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPolicyHealthReportLogsResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyHealthReportLogsResult]:
     """
     This data source provides the list of Masking Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
 
@@ -156,7 +156,7 @@ def get_masking_policy_health_report_logs_output(filters: Optional[pulumi.Input[
     __args__['filters'] = filters
     __args__['maskingPolicyHealthReportId'] = masking_policy_health_report_id
     __args__['messageType'] = message_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPolicyHealthReportLogs:getMaskingPolicyHealthReportLogs', __args__, opts=opts, typ=GetMaskingPolicyHealthReportLogsResult)
     return __ret__.apply(lambda __response__: GetMaskingPolicyHealthReportLogsResult(
         filters=pulumi.get(__response__, 'filters'),

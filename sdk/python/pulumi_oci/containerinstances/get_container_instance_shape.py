@@ -115,7 +115,7 @@ def get_container_instance_shape(availability_domain: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'))
 def get_container_instance_shape_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                         compartment_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerInstanceShapeResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerInstanceShapeResult]:
     """
     This data source provides details about a specific Container Instance Shape resource in Oracle Cloud Infrastructure Container Instances service.
 
@@ -138,7 +138,7 @@ def get_container_instance_shape_output(availability_domain: Optional[pulumi.Inp
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape', __args__, opts=opts, typ=GetContainerInstanceShapeResult)
     return __ret__.apply(lambda __response__: GetContainerInstanceShapeResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -105,7 +105,7 @@ export interface GetNotificationTopicResult {
  * });
  * ```
  */
-export function getNotificationTopicOutput(args: GetNotificationTopicOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotificationTopicResult> {
+export function getNotificationTopicOutput(args: GetNotificationTopicOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNotificationTopicResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ons/getNotificationTopic:getNotificationTopic", {
         "topicId": args.topicId,

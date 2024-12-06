@@ -135,7 +135,7 @@ def get_compute_global_image_capability_schemas_versions(compute_global_image_ca
 def get_compute_global_image_capability_schemas_versions_output(compute_global_image_capability_schema_id: Optional[pulumi.Input[str]] = None,
                                                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs', 'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgsDict']]]]] = None,
-                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasVersionsResult]:
+                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasVersionsResult]:
     """
     This data source provides the list of Compute Global Image Capability Schemas Versions in Oracle Cloud Infrastructure Core service.
 
@@ -159,7 +159,7 @@ def get_compute_global_image_capability_schemas_versions_output(compute_global_i
     __args__['computeGlobalImageCapabilitySchemaId'] = compute_global_image_capability_schema_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeGlobalImageCapabilitySchemasVersions:getComputeGlobalImageCapabilitySchemasVersions', __args__, opts=opts, typ=GetComputeGlobalImageCapabilitySchemasVersionsResult)
     return __ret__.apply(lambda __response__: GetComputeGlobalImageCapabilitySchemasVersionsResult(
         compute_global_image_capability_schema_id=pulumi.get(__response__, 'compute_global_image_capability_schema_id'),

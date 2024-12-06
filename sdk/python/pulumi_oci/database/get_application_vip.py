@@ -226,7 +226,7 @@ def get_application_vip(application_vip_id: Optional[str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_assigned=pulumi.get(__ret__, 'time_assigned'))
 def get_application_vip_output(application_vip_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationVipResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplicationVipResult]:
     """
     This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
 
@@ -246,7 +246,7 @@ def get_application_vip_output(application_vip_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['applicationVipId'] = application_vip_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getApplicationVip:getApplicationVip', __args__, opts=opts, typ=GetApplicationVipResult)
     return __ret__.apply(lambda __response__: GetApplicationVipResult(
         application_vip_id=pulumi.get(__response__, 'application_vip_id'),

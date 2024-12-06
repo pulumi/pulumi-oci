@@ -100,7 +100,7 @@ export interface GetDrgRouteRuleResult {
  * });
  * ```
  */
-export function getDrgRouteRuleOutput(args: GetDrgRouteRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteRuleResult> {
+export function getDrgRouteRuleOutput(args: GetDrgRouteRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrgRouteRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDrgRouteRule:getDrgRouteRule", {
         "drgRouteTableId": args.drgRouteTableId,

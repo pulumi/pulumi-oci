@@ -80,7 +80,7 @@ export interface GetAddonOptionsResult {
  * });
  * ```
  */
-export function getAddonOptionsOutput(args: GetAddonOptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddonOptionsResult> {
+export function getAddonOptionsOutput(args: GetAddonOptionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddonOptionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getAddonOptions:getAddonOptions", {
         "addonName": args.addonName,

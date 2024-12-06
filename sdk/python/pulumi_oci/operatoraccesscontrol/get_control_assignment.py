@@ -473,7 +473,7 @@ def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
         unassigner_id=pulumi.get(__ret__, 'unassigner_id'),
         validate_assignment_trigger=pulumi.get(__ret__, 'validate_assignment_trigger'))
 def get_control_assignment_output(operator_control_assignment_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetControlAssignmentResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetControlAssignmentResult]:
     """
     This data source provides details about a specific Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
 
@@ -493,7 +493,7 @@ def get_control_assignment_output(operator_control_assignment_id: Optional[pulum
     """
     __args__ = dict()
     __args__['operatorControlAssignmentId'] = operator_control_assignment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getControlAssignment:getControlAssignment', __args__, opts=opts, typ=GetControlAssignmentResult)
     return __ret__.apply(lambda __response__: GetControlAssignmentResult(
         assigner_id=pulumi.get(__response__, 'assigner_id'),

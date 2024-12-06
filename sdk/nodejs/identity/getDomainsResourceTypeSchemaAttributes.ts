@@ -149,7 +149,7 @@ export interface GetDomainsResourceTypeSchemaAttributesResult {
  * });
  * ```
  */
-export function getDomainsResourceTypeSchemaAttributesOutput(args: GetDomainsResourceTypeSchemaAttributesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsResourceTypeSchemaAttributesResult> {
+export function getDomainsResourceTypeSchemaAttributesOutput(args: GetDomainsResourceTypeSchemaAttributesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsResourceTypeSchemaAttributesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", {
         "attributeSets": args.attributeSets,

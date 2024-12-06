@@ -77,7 +77,7 @@ export interface GetOperationsInsightsWarehouseResourceUsageSummaryResult {
  * });
  * ```
  */
-export function getOperationsInsightsWarehouseResourceUsageSummaryOutput(args: GetOperationsInsightsWarehouseResourceUsageSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> {
+export function getOperationsInsightsWarehouseResourceUsageSummaryOutput(args: GetOperationsInsightsWarehouseResourceUsageSummaryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", {
         "operationsInsightsWarehouseId": args.operationsInsightsWarehouseId,

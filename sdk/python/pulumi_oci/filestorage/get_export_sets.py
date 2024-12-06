@@ -176,7 +176,7 @@ def get_export_sets_output(availability_domain: Optional[pulumi.Input[str]] = No
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExportSetsFilterArgs', 'GetExportSetsFilterArgsDict']]]]] = None,
                            id: Optional[pulumi.Input[Optional[str]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExportSetsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExportSetsResult]:
     """
     This data source provides the list of Export Sets in Oracle Cloud Infrastructure File Storage service.
 
@@ -209,7 +209,7 @@ def get_export_sets_output(availability_domain: Optional[pulumi.Input[str]] = No
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getExportSets:getExportSets', __args__, opts=opts, typ=GetExportSetsResult)
     return __ret__.apply(lambda __response__: GetExportSetsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

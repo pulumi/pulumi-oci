@@ -162,7 +162,7 @@ def get_audit_event_output(access_level: Optional[pulumi.Input[Optional[str]]] =
                            compartment_id: Optional[pulumi.Input[str]] = None,
                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                            scim_query: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditEventResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditEventResult]:
     """
     This data source provides details about a specific Audit Event resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -205,7 +205,7 @@ def get_audit_event_output(access_level: Optional[pulumi.Input[Optional[str]]] =
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['scimQuery'] = scim_query
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditEvent:getAuditEvent', __args__, opts=opts, typ=GetAuditEventResult)
     return __ret__.apply(lambda __response__: GetAuditEventResult(
         access_level=pulumi.get(__response__, 'access_level'),

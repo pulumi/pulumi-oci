@@ -235,7 +235,7 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataSourcesFilterArgs', 'GetDataSourcesFilterArgsDict']]]]] = None,
                             logging_query_type: Optional[pulumi.Input[Optional[str]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSourcesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSourcesResult]:
     """
     This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -290,7 +290,7 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     __args__['filters'] = filters
     __args__['loggingQueryType'] = logging_query_type
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getDataSources:getDataSources', __args__, opts=opts, typ=GetDataSourcesResult)
     return __ret__.apply(lambda __response__: GetDataSourcesResult(
         access_level=pulumi.get(__response__, 'access_level'),

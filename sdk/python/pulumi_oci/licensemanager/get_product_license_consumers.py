@@ -130,7 +130,7 @@ def get_product_license_consumers(compartment_id: Optional[str] = None,
 def get_product_license_consumers_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                          product_license_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProductLicenseConsumersResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProductLicenseConsumersResult]:
     """
     This data source provides the list of Product License Consumers in Oracle Cloud Infrastructure License Manager service.
 
@@ -156,7 +156,7 @@ def get_product_license_consumers_output(compartment_id: Optional[pulumi.Input[s
     __args__['compartmentId'] = compartment_id
     __args__['isCompartmentIdInSubtree'] = is_compartment_id_in_subtree
     __args__['productLicenseId'] = product_license_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getProductLicenseConsumers:getProductLicenseConsumers', __args__, opts=opts, typ=GetProductLicenseConsumersResult)
     return __ret__.apply(lambda __response__: GetProductLicenseConsumersResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

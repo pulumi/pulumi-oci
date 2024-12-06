@@ -158,7 +158,7 @@ def get_db_systems_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]]]] = None,
                           id: Optional[pulumi.Input[Optional[str]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemsResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemsResult]:
     """
     This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
 
@@ -188,7 +188,7 @@ def get_db_systems_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystems:getDbSystems', __args__, opts=opts, typ=GetDbSystemsResult)
     return __ret__.apply(lambda __response__: GetDbSystemsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -52,7 +52,7 @@ export interface GetCleanEnergyUsageResult {
  *
  * Returns the clean energy usage summary by region.
  */
-export function getCleanEnergyUsageOutput(args: GetCleanEnergyUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCleanEnergyUsageResult> {
+export function getCleanEnergyUsageOutput(args: GetCleanEnergyUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCleanEnergyUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", {
         "region": args.region,

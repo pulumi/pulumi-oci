@@ -176,7 +176,7 @@ def get_datasets_output(annotation_format: Optional[pulumi.Input[Optional[str]]]
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatasetsFilterArgs', 'GetDatasetsFilterArgsDict']]]]] = None,
                         id: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatasetsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatasetsResult]:
     """
     This data source provides the list of Datasets in Oracle Cloud Infrastructure Data Labeling Service service.
 
@@ -209,7 +209,7 @@ def get_datasets_output(annotation_format: Optional[pulumi.Input[Optional[str]]]
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataLabellingService/getDatasets:getDatasets', __args__, opts=opts, typ=GetDatasetsResult)
     return __ret__.apply(lambda __response__: GetDatasetsResult(
         annotation_format=pulumi.get(__response__, 'annotation_format'),

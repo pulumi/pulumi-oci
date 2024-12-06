@@ -257,7 +257,7 @@ def get_security_policy(security_policy_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_security_policy_output(security_policy_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyResult]:
     """
     This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -279,7 +279,7 @@ def get_security_policy_output(security_policy_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getSecurityPolicy:getSecurityPolicy', __args__, opts=opts, typ=GetSecurityPolicyResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyResult(
         category=pulumi.get(__response__, 'category'),

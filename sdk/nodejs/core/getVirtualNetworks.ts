@@ -40,7 +40,7 @@ export interface GetVirtualNetworksResult {
     readonly state?: string;
     readonly virtualNetworks: outputs.Core.GetVirtualNetworksVirtualNetwork[];
 }
-export function getVirtualNetworksOutput(args: GetVirtualNetworksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualNetworksResult> {
+export function getVirtualNetworksOutput(args: GetVirtualNetworksOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualNetworksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVirtualNetworks:getVirtualNetworks", {
         "compartmentId": args.compartmentId,

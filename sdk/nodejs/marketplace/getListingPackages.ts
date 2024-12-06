@@ -128,7 +128,7 @@ export interface GetListingPackagesResult {
  * });
  * ```
  */
-export function getListingPackagesOutput(args: GetListingPackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingPackagesResult> {
+export function getListingPackagesOutput(args: GetListingPackagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetListingPackagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Marketplace/getListingPackages:getListingPackages", {
         "compartmentId": args.compartmentId,

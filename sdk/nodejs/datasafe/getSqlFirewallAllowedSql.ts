@@ -127,7 +127,7 @@ export interface GetSqlFirewallAllowedSqlResult {
  * });
  * ```
  */
-export function getSqlFirewallAllowedSqlOutput(args: GetSqlFirewallAllowedSqlOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSqlFirewallAllowedSqlResult> {
+export function getSqlFirewallAllowedSqlOutput(args: GetSqlFirewallAllowedSqlOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSqlFirewallAllowedSqlResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSqlFirewallAllowedSql:getSqlFirewallAllowedSql", {
         "sqlFirewallAllowedSqlId": args.sqlFirewallAllowedSqlId,

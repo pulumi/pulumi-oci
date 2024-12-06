@@ -113,7 +113,7 @@ def get_instance_credentials(instance_id: Optional[str] = None,
         password=pulumi.get(__ret__, 'password'),
         username=pulumi.get(__ret__, 'username'))
 def get_instance_credentials_output(instance_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceCredentialsResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceCredentialsResult]:
     """
     This data source provides details about a specific Instance Credential resource in Oracle Cloud Infrastructure Core service.
 
@@ -134,7 +134,7 @@ def get_instance_credentials_output(instance_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['instanceId'] = instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceCredentials:getInstanceCredentials', __args__, opts=opts, typ=GetInstanceCredentialsResult)
     return __ret__.apply(lambda __response__: GetInstanceCredentialsResult(
         id=pulumi.get(__response__, 'id'),

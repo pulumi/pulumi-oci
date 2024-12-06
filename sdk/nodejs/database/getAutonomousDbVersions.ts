@@ -87,7 +87,7 @@ export interface GetAutonomousDbVersionsResult {
  * });
  * ```
  */
-export function getAutonomousDbVersionsOutput(args: GetAutonomousDbVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDbVersionsResult> {
+export function getAutonomousDbVersionsOutput(args: GetAutonomousDbVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDbVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", {
         "compartmentId": args.compartmentId,

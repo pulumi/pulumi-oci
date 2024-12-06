@@ -183,7 +183,7 @@ def get_protection_policies_output(compartment_id: Optional[pulumi.Input[str]] =
                                    owner: Optional[pulumi.Input[Optional[str]]] = None,
                                    protection_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionPoliciesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionPoliciesResult]:
     """
     This data source provides the list of Protection Policies in Oracle Cloud Infrastructure Recovery service.
 
@@ -216,7 +216,7 @@ def get_protection_policies_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['owner'] = owner
     __args__['protectionPolicyId'] = protection_policy_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies', __args__, opts=opts, typ=GetProtectionPoliciesResult)
     return __ret__.apply(lambda __response__: GetProtectionPoliciesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

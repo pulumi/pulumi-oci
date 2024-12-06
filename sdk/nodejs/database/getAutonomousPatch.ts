@@ -103,7 +103,7 @@ export interface GetAutonomousPatchResult {
  * });
  * ```
  */
-export function getAutonomousPatchOutput(args: GetAutonomousPatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousPatchResult> {
+export function getAutonomousPatchOutput(args: GetAutonomousPatchOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousPatchResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousPatch:getAutonomousPatch", {
         "autonomousPatchId": args.autonomousPatchId,

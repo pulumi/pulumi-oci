@@ -97,7 +97,7 @@ export interface GetCatalogPrivateEndpointsResult {
  * });
  * ```
  */
-export function getCatalogPrivateEndpointsOutput(args: GetCatalogPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogPrivateEndpointsResult> {
+export function getCatalogPrivateEndpointsOutput(args: GetCatalogPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCatalogPrivateEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", {
         "compartmentId": args.compartmentId,

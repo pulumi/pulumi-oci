@@ -163,7 +163,7 @@ export interface GetPublicIpsResult {
  * });
  * ```
  */
-export function getPublicIpsOutput(args: GetPublicIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpsResult> {
+export function getPublicIpsOutput(args: GetPublicIpsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPublicIpsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getPublicIps:getPublicIps", {
         "availabilityDomain": args.availabilityDomain,

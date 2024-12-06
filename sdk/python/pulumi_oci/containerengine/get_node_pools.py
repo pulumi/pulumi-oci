@@ -171,7 +171,7 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNodePoolsFilterArgs', 'GetNodePoolsFilterArgsDict']]]]] = None,
                           name: Optional[pulumi.Input[Optional[str]]] = None,
                           states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNodePoolsResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNodePoolsResult]:
     """
     This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
 
@@ -201,7 +201,7 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['states'] = states
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getNodePools:getNodePools', __args__, opts=opts, typ=GetNodePoolsResult)
     return __ret__.apply(lambda __response__: GetNodePoolsResult(
         cluster_id=pulumi.get(__response__, 'cluster_id'),

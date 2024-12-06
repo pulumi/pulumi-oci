@@ -103,7 +103,7 @@ export interface GetOdaPrivateEndpointResult {
  * });
  * ```
  */
-export function getOdaPrivateEndpointOutput(args: GetOdaPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaPrivateEndpointResult> {
+export function getOdaPrivateEndpointOutput(args: GetOdaPrivateEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOdaPrivateEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", {
         "odaPrivateEndpointId": args.odaPrivateEndpointId,

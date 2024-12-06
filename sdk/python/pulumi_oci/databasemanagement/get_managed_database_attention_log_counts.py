@@ -222,7 +222,7 @@ def get_managed_database_attention_log_counts_output(filters: Optional[pulumi.In
                                                      time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                      type_filter: Optional[pulumi.Input[Optional[str]]] = None,
                                                      urgency_filter: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseAttentionLogCountsResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseAttentionLogCountsResult]:
     """
     This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
 
@@ -264,7 +264,7 @@ def get_managed_database_attention_log_counts_output(filters: Optional[pulumi.In
     __args__['timeLessThanOrEqualTo'] = time_less_than_or_equal_to
     __args__['typeFilter'] = type_filter
     __args__['urgencyFilter'] = urgency_filter
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts', __args__, opts=opts, typ=GetManagedDatabaseAttentionLogCountsResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseAttentionLogCountsResult(
         attention_log_counts_collections=pulumi.get(__response__, 'attention_log_counts_collections'),

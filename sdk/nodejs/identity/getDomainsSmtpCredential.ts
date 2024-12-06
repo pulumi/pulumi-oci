@@ -181,7 +181,7 @@ export interface GetDomainsSmtpCredentialResult {
  * });
  * ```
  */
-export function getDomainsSmtpCredentialOutput(args: GetDomainsSmtpCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSmtpCredentialResult> {
+export function getDomainsSmtpCredentialOutput(args: GetDomainsSmtpCredentialOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsSmtpCredentialResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSmtpCredential:getDomainsSmtpCredential", {
         "attributeSets": args.attributeSets,

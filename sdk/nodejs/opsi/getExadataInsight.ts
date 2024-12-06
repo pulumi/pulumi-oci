@@ -163,7 +163,7 @@ export interface GetExadataInsightResult {
  * });
  * ```
  */
-export function getExadataInsightOutput(args: GetExadataInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInsightResult> {
+export function getExadataInsightOutput(args: GetExadataInsightOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadataInsightResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getExadataInsight:getExadataInsight", {
         "exadataInsightId": args.exadataInsightId,

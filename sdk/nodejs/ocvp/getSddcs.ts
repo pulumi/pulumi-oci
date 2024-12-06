@@ -110,7 +110,7 @@ export interface GetSddcsResult {
  * });
  * ```
  */
-export function getSddcsOutput(args: GetSddcsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSddcsResult> {
+export function getSddcsOutput(args: GetSddcsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSddcsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getSddcs:getSddcs", {
         "compartmentId": args.compartmentId,

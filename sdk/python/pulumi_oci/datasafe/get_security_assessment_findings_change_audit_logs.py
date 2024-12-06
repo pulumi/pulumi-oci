@@ -268,7 +268,7 @@ def get_security_assessment_findings_change_audit_logs_output(filters: Optional[
                                                               time_updated_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                               time_valid_until_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                               time_valid_until_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentFindingsChangeAuditLogsResult]:
+                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentFindingsChangeAuditLogsResult]:
     """
     This data source provides the list of Security Assessment Findings Change Audit Logs in Oracle Cloud Infrastructure Data Safe service.
 
@@ -320,7 +320,7 @@ def get_security_assessment_findings_change_audit_logs_output(filters: Optional[
     __args__['timeUpdatedLessThan'] = time_updated_less_than
     __args__['timeValidUntilGreaterThanOrEqualTo'] = time_valid_until_greater_than_or_equal_to
     __args__['timeValidUntilLessThan'] = time_valid_until_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs', __args__, opts=opts, typ=GetSecurityAssessmentFindingsChangeAuditLogsResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentFindingsChangeAuditLogsResult(
         filters=pulumi.get(__response__, 'filters'),

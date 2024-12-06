@@ -147,7 +147,7 @@ def get_deployment_versions_output(compartment_id: Optional[pulumi.Input[str]] =
                                    deployment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    deployment_type: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentVersionsFilterArgs', 'GetDeploymentVersionsFilterArgsDict']]]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentVersionsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentVersionsResult]:
     """
     This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -174,7 +174,7 @@ def get_deployment_versions_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['deploymentId'] = deployment_id
     __args__['deploymentType'] = deployment_type
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentVersions:getDeploymentVersions', __args__, opts=opts, typ=GetDeploymentVersionsResult)
     return __ret__.apply(lambda __response__: GetDeploymentVersionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

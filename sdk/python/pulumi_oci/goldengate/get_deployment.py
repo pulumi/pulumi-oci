@@ -643,7 +643,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         time_upgrade_required=pulumi.get(__ret__, 'time_upgrade_required'))
 def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentResult]:
     """
     This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -663,7 +663,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['deploymentId'] = deployment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult)
     return __ret__.apply(lambda __response__: GetDeploymentResult(
         category=pulumi.get(__response__, 'category'),

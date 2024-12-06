@@ -137,7 +137,7 @@ export interface GetJavaDownloadsJavaDownloadTokenResult {
  * });
  * ```
  */
-export function getJavaDownloadsJavaDownloadTokenOutput(args: GetJavaDownloadsJavaDownloadTokenOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaDownloadTokenResult> {
+export function getJavaDownloadsJavaDownloadTokenOutput(args: GetJavaDownloadsJavaDownloadTokenOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJavaDownloadsJavaDownloadTokenResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", {
         "javaDownloadTokenId": args.javaDownloadTokenId,

@@ -109,7 +109,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult {
  * });
  * ```
  */
-export function getManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> {
+export function getManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", {
         "executionId": args.executionId,

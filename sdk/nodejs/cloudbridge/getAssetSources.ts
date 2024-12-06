@@ -105,7 +105,7 @@ export interface GetAssetSourcesResult {
  * });
  * ```
  */
-export function getAssetSourcesOutput(args: GetAssetSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssetSourcesResult> {
+export function getAssetSourcesOutput(args: GetAssetSourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAssetSourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudBridge/getAssetSources:getAssetSources", {
         "assetSourceId": args.assetSourceId,

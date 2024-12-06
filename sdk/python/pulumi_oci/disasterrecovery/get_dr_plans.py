@@ -183,7 +183,7 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
                         dr_protection_group_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrPlansFilterArgs', 'GetDrPlansFilterArgsDict']]]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrPlansResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrPlansResult]:
     """
     This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
 
@@ -216,7 +216,7 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
     __args__['drProtectionGroupId'] = dr_protection_group_id
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DisasterRecovery/getDrPlans:getDrPlans', __args__, opts=opts, typ=GetDrPlansResult)
     return __ret__.apply(lambda __response__: GetDrPlansResult(
         display_name=pulumi.get(__response__, 'display_name'),

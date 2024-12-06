@@ -115,7 +115,7 @@ def get_top_utilized_product_licenses(compartment_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'))
 def get_top_utilized_product_licenses_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                              is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTopUtilizedProductLicensesResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTopUtilizedProductLicensesResult]:
     """
     This data source provides the list of Top Utilized Product Licenses in Oracle Cloud Infrastructure License Manager service.
 
@@ -138,7 +138,7 @@ def get_top_utilized_product_licenses_output(compartment_id: Optional[pulumi.Inp
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['isCompartmentIdInSubtree'] = is_compartment_id_in_subtree
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getTopUtilizedProductLicenses:getTopUtilizedProductLicenses', __args__, opts=opts, typ=GetTopUtilizedProductLicensesResult)
     return __ret__.apply(lambda __response__: GetTopUtilizedProductLicensesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

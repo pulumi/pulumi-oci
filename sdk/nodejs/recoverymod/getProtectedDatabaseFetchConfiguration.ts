@@ -80,7 +80,7 @@ export interface GetProtectedDatabaseFetchConfigurationResult {
  * });
  * ```
  */
-export function getProtectedDatabaseFetchConfigurationOutput(args: GetProtectedDatabaseFetchConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectedDatabaseFetchConfigurationResult> {
+export function getProtectedDatabaseFetchConfigurationOutput(args: GetProtectedDatabaseFetchConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectedDatabaseFetchConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", {
         "base64EncodeContent": args.base64EncodeContent,

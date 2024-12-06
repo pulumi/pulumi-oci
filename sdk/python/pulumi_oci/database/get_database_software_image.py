@@ -304,7 +304,7 @@ def get_database_software_image(database_software_image_id: Optional[str] = None
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_database_software_image_output(database_software_image_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseSoftwareImageResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseSoftwareImageResult]:
     """
     This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.
 
@@ -324,7 +324,7 @@ def get_database_software_image_output(database_software_image_id: Optional[pulu
     """
     __args__ = dict()
     __args__['databaseSoftwareImageId'] = database_software_image_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage', __args__, opts=opts, typ=GetDatabaseSoftwareImageResult)
     return __ret__.apply(lambda __response__: GetDatabaseSoftwareImageResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -474,7 +474,7 @@ def get_maintenance_run(maintenance_run_id: Optional[str] = None,
         time_scheduled=pulumi.get(__ret__, 'time_scheduled'),
         time_started=pulumi.get(__ret__, 'time_started'))
 def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceRunResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceRunResult]:
     """
     This data source provides details about a specific Maintenance Run resource in Oracle Cloud Infrastructure Database service.
 
@@ -494,7 +494,7 @@ def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['maintenanceRunId'] = maintenance_run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getMaintenanceRun:getMaintenanceRun', __args__, opts=opts, typ=GetMaintenanceRunResult)
     return __ret__.apply(lambda __response__: GetMaintenanceRunResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

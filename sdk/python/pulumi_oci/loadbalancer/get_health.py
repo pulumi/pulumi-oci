@@ -159,7 +159,7 @@ def get_health(load_balancer_id: Optional[str] = None,
         unknown_state_backend_set_names=pulumi.get(__ret__, 'unknown_state_backend_set_names'),
         warning_state_backend_set_names=pulumi.get(__ret__, 'warning_state_backend_set_names'))
 def get_health_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHealthResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHealthResult]:
     """
     This data source provides details about a specific Load Balancer Health resource in Oracle Cloud Infrastructure Load Balancer service.
 
@@ -179,7 +179,7 @@ def get_health_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['loadBalancerId'] = load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getHealth:getHealth', __args__, opts=opts, typ=GetHealthResult)
     return __ret__.apply(lambda __response__: GetHealthResult(
         critical_state_backend_set_names=pulumi.get(__response__, 'critical_state_backend_set_names'),

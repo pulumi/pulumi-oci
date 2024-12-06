@@ -321,7 +321,7 @@ def get_external_container_database(external_container_database_id: Optional[str
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'))
 def get_external_container_database_output(external_container_database_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalContainerDatabaseResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalContainerDatabaseResult]:
     """
     This data source provides details about a specific External Container Database resource in Oracle Cloud Infrastructure Database service.
 
@@ -341,7 +341,7 @@ def get_external_container_database_output(external_container_database_id: Optio
     """
     __args__ = dict()
     __args__['externalContainerDatabaseId'] = external_container_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExternalContainerDatabase:getExternalContainerDatabase', __args__, opts=opts, typ=GetExternalContainerDatabaseResult)
     return __ret__.apply(lambda __response__: GetExternalContainerDatabaseResult(
         character_set=pulumi.get(__response__, 'character_set'),

@@ -86,7 +86,7 @@ export interface GetLogAnalyticsEntitiesSummaryResult {
  * });
  * ```
  */
-export function getLogAnalyticsEntitiesSummaryOutput(args: GetLogAnalyticsEntitiesSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntitiesSummaryResult> {
+export function getLogAnalyticsEntitiesSummaryOutput(args: GetLogAnalyticsEntitiesSummaryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsEntitiesSummaryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary", {
         "compartmentId": args.compartmentId,

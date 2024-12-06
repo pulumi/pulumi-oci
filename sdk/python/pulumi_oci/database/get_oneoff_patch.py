@@ -278,7 +278,7 @@ def get_oneoff_patch(oneoff_patch_id: Optional[str] = None,
         time_of_expiration=pulumi.get(__ret__, 'time_of_expiration'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_oneoff_patch_output(oneoff_patch_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOneoffPatchResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOneoffPatchResult]:
     """
     This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
 
@@ -298,7 +298,7 @@ def get_oneoff_patch_output(oneoff_patch_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['oneoffPatchId'] = oneoff_patch_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getOneoffPatch:getOneoffPatch', __args__, opts=opts, typ=GetOneoffPatchResult)
     return __ret__.apply(lambda __response__: GetOneoffPatchResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

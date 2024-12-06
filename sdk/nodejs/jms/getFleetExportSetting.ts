@@ -110,7 +110,7 @@ export interface GetFleetExportSettingResult {
  * });
  * ```
  */
-export function getFleetExportSettingOutput(args: GetFleetExportSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetExportSettingResult> {
+export function getFleetExportSettingOutput(args: GetFleetExportSettingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetExportSettingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetExportSetting:getFleetExportSetting", {
         "fleetId": args.fleetId,

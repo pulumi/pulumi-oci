@@ -147,7 +147,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
  * });
  * ```
  */
-export function getAutonomousContainerDatabaseDataguardAssociationOutput(args: GetAutonomousContainerDatabaseDataguardAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseDataguardAssociationResult> {
+export function getAutonomousContainerDatabaseDataguardAssociationOutput(args: GetAutonomousContainerDatabaseDataguardAssociationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousContainerDatabaseDataguardAssociationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation", {
         "autonomousContainerDatabaseDataguardAssociationId": args.autonomousContainerDatabaseDataguardAssociationId,

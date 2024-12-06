@@ -115,7 +115,7 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnResult {
  * });
  * ```
  */
-export function getSdmMaskingPolicyDifferenceDifferenceColumnOutput(args: GetSdmMaskingPolicyDifferenceDifferenceColumnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> {
+export function getSdmMaskingPolicyDifferenceDifferenceColumnOutput(args: GetSdmMaskingPolicyDifferenceDifferenceColumnOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumn:getSdmMaskingPolicyDifferenceDifferenceColumn", {
         "differenceColumnKey": args.differenceColumnKey,

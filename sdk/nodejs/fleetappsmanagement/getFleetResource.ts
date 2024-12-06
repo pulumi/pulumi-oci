@@ -147,7 +147,7 @@ export interface GetFleetResourceResult {
  * });
  * ```
  */
-export function getFleetResourceOutput(args: GetFleetResourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetResourceResult> {
+export function getFleetResourceOutput(args: GetFleetResourceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetResourceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getFleetResource:getFleetResource", {
         "fleetId": args.fleetId,

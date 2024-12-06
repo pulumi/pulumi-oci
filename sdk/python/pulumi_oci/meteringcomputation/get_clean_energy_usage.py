@@ -106,7 +106,7 @@ def get_clean_energy_usage(region: Optional[str] = None,
         region=pulumi.get(__ret__, 'region'),
         usage=pulumi.get(__ret__, 'usage'))
 def get_clean_energy_usage_output(region: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCleanEnergyUsageResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCleanEnergyUsageResult]:
     """
     This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -117,7 +117,7 @@ def get_clean_energy_usage_output(region: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['region'] = region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage', __args__, opts=opts, typ=GetCleanEnergyUsageResult)
     return __ret__.apply(lambda __response__: GetCleanEnergyUsageResult(
         ad=pulumi.get(__response__, 'ad'),

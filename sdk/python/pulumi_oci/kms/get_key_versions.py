@@ -138,7 +138,7 @@ def get_key_versions(filters: Optional[Sequence[Union['GetKeyVersionsFilterArgs'
 def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetKeyVersionsFilterArgs', 'GetKeyVersionsFilterArgsDict']]]]] = None,
                             key_id: Optional[pulumi.Input[str]] = None,
                             management_endpoint: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyVersionsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyVersionsResult]:
     """
     This data source provides the list of Key Versions in Oracle Cloud Infrastructure Kms service.
 
@@ -168,7 +168,7 @@ def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     __args__['filters'] = filters
     __args__['keyId'] = key_id
     __args__['managementEndpoint'] = management_endpoint
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getKeyVersions:getKeyVersions', __args__, opts=opts, typ=GetKeyVersionsResult)
     return __ret__.apply(lambda __response__: GetKeyVersionsResult(
         filters=pulumi.get(__response__, 'filters'),

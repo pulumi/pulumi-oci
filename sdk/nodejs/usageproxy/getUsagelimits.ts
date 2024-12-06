@@ -107,7 +107,7 @@ export interface GetUsagelimitsResult {
  * });
  * ```
  */
-export function getUsagelimitsOutput(args: GetUsagelimitsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsagelimitsResult> {
+export function getUsagelimitsOutput(args: GetUsagelimitsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUsagelimitsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:UsageProxy/getUsagelimits:getUsagelimits", {
         "compartmentId": args.compartmentId,

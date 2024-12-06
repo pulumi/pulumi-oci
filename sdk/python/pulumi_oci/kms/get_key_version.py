@@ -294,7 +294,7 @@ def get_key_version(key_id: Optional[str] = None,
 def get_key_version_output(key_id: Optional[pulumi.Input[str]] = None,
                            key_version_id: Optional[pulumi.Input[str]] = None,
                            management_endpoint: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyVersionResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyVersionResult]:
     """
     This data source provides details about a specific Key Version resource in Oracle Cloud Infrastructure Kms service.
 
@@ -325,7 +325,7 @@ def get_key_version_output(key_id: Optional[pulumi.Input[str]] = None,
     __args__['keyId'] = key_id
     __args__['keyVersionId'] = key_version_id
     __args__['managementEndpoint'] = management_endpoint
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getKeyVersion:getKeyVersion', __args__, opts=opts, typ=GetKeyVersionResult)
     return __ret__.apply(lambda __response__: GetKeyVersionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

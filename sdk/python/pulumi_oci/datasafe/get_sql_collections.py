@@ -281,7 +281,7 @@ def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[str]
                                target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlCollectionsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlCollectionsResult]:
     """
     This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
 
@@ -346,7 +346,7 @@ def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[str]
     __args__['targetId'] = target_id
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSqlCollections:getSqlCollections', __args__, opts=opts, typ=GetSqlCollectionsResult)
     return __ret__.apply(lambda __response__: GetSqlCollectionsResult(
         access_level=pulumi.get(__response__, 'access_level'),

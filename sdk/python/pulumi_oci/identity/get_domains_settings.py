@@ -216,7 +216,7 @@ def get_domains_settings_output(attribute_sets: Optional[pulumi.Input[Optional[S
                                 compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                 resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsSettingsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsSettingsResult]:
     """
     This data source provides the list of Settings in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -249,7 +249,7 @@ def get_domains_settings_output(attribute_sets: Optional[pulumi.Input[Optional[S
     __args__['compartmentId'] = compartment_id
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsSettings:getDomainsSettings', __args__, opts=opts, typ=GetDomainsSettingsResult)
     return __ret__.apply(lambda __response__: GetDomainsSettingsResult(
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),

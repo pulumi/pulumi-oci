@@ -177,7 +177,7 @@ def get_service_catalog(service_catalog_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceCatalogResult]:
     """
     This data source provides details about a specific Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
 
@@ -197,7 +197,7 @@ def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['serviceCatalogId'] = service_catalog_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getServiceCatalog:getServiceCatalog', __args__, opts=opts, typ=GetServiceCatalogResult)
     return __ret__.apply(lambda __response__: GetServiceCatalogResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -161,7 +161,7 @@ def get_model_provenance(model_id: Optional[str] = None,
         training_id=pulumi.get(__ret__, 'training_id'),
         training_script=pulumi.get(__ret__, 'training_script'))
 def get_model_provenance_output(model_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelProvenanceResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelProvenanceResult]:
     """
     This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
 
@@ -181,7 +181,7 @@ def get_model_provenance_output(model_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['modelId'] = model_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelProvenance:getModelProvenance', __args__, opts=opts, typ=GetModelProvenanceResult)
     return __ret__.apply(lambda __response__: GetModelProvenanceResult(
         git_branch=pulumi.get(__response__, 'git_branch'),

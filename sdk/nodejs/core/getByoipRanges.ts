@@ -99,7 +99,7 @@ export interface GetByoipRangesResult {
  * });
  * ```
  */
-export function getByoipRangesOutput(args: GetByoipRangesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipRangesResult> {
+export function getByoipRangesOutput(args: GetByoipRangesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetByoipRangesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getByoipRanges:getByoipRanges", {
         "compartmentId": args.compartmentId,

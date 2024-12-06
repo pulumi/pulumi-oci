@@ -80,7 +80,7 @@ export interface GetAutonomousExadataInfrastructureShapesResult {
  * });
  * ```
  */
-export function getAutonomousExadataInfrastructureShapesOutput(args: GetAutonomousExadataInfrastructureShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructureShapesResult> {
+export function getAutonomousExadataInfrastructureShapesOutput(args: GetAutonomousExadataInfrastructureShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousExadataInfrastructureShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", {
         "availabilityDomain": args.availabilityDomain,

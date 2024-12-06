@@ -137,7 +137,7 @@ export interface GetManagedDatabaseSqlPlanBaselinesResult {
  *
  * Lists the SQL plan baselines for the specified Managed Database.
  */
-export function getManagedDatabaseSqlPlanBaselinesOutput(args: GetManagedDatabaseSqlPlanBaselinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselinesResult> {
+export function getManagedDatabaseSqlPlanBaselinesOutput(args: GetManagedDatabaseSqlPlanBaselinesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselinesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", {
         "filters": args.filters,

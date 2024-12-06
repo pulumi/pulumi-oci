@@ -75,7 +75,7 @@ export interface GetClusterCredentialRotationStatusResult {
  * });
  * ```
  */
-export function getClusterCredentialRotationStatusOutput(args: GetClusterCredentialRotationStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterCredentialRotationStatusResult> {
+export function getClusterCredentialRotationStatusOutput(args: GetClusterCredentialRotationStatusOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClusterCredentialRotationStatusResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", {
         "clusterId": args.clusterId,

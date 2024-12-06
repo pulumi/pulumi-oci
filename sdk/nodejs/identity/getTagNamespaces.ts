@@ -94,7 +94,7 @@ export interface GetTagNamespacesResult {
  * });
  * ```
  */
-export function getTagNamespacesOutput(args: GetTagNamespacesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagNamespacesResult> {
+export function getTagNamespacesOutput(args: GetTagNamespacesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTagNamespacesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getTagNamespaces:getTagNamespaces", {
         "compartmentId": args.compartmentId,

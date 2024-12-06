@@ -239,7 +239,7 @@ export interface GetInvokeRunResult {
  * });
  * ```
  */
-export function getInvokeRunOutput(args: GetInvokeRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvokeRunResult> {
+export function getInvokeRunOutput(args: GetInvokeRunOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInvokeRunResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataFlow/getInvokeRun:getInvokeRun", {
         "runId": args.runId,

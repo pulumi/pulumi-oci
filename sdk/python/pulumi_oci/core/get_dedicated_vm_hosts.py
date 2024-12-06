@@ -219,7 +219,7 @@ def get_dedicated_vm_hosts_output(availability_domain: Optional[pulumi.Input[Opt
                                   remaining_memory_in_gbs_greater_than_or_equal_to: Optional[pulumi.Input[Optional[float]]] = None,
                                   remaining_ocpus_greater_than_or_equal_to: Optional[pulumi.Input[Optional[float]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVmHostsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostsResult]:
     """
     This data source provides the list of Dedicated Vm Hosts in Oracle Cloud Infrastructure Core service.
 
@@ -261,7 +261,7 @@ def get_dedicated_vm_hosts_output(availability_domain: Optional[pulumi.Input[Opt
     __args__['remainingMemoryInGbsGreaterThanOrEqualTo'] = remaining_memory_in_gbs_greater_than_or_equal_to
     __args__['remainingOcpusGreaterThanOrEqualTo'] = remaining_ocpus_greater_than_or_equal_to
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDedicatedVmHosts:getDedicatedVmHosts', __args__, opts=opts, typ=GetDedicatedVmHostsResult)
     return __ret__.apply(lambda __response__: GetDedicatedVmHostsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

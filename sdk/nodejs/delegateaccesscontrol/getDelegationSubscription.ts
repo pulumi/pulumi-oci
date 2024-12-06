@@ -111,7 +111,7 @@ export interface GetDelegationSubscriptionResult {
  * });
  * ```
  */
-export function getDelegationSubscriptionOutput(args: GetDelegationSubscriptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegationSubscriptionResult> {
+export function getDelegationSubscriptionOutput(args: GetDelegationSubscriptionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDelegationSubscriptionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", {
         "delegationSubscriptionId": args.delegationSubscriptionId,

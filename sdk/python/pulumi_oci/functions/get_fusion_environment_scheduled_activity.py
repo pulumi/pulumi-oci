@@ -261,7 +261,7 @@ def get_fusion_environment_scheduled_activity(fusion_environment_id: Optional[st
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_fusion_environment_scheduled_activity_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                      scheduled_activity_id: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentScheduledActivityResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentScheduledActivityResult]:
     """
     This data source provides details about a specific Fusion Environment Scheduled Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -284,7 +284,7 @@ def get_fusion_environment_scheduled_activity_output(fusion_environment_id: Opti
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
     __args__['scheduledActivityId'] = scheduled_activity_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity', __args__, opts=opts, typ=GetFusionEnvironmentScheduledActivityResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentScheduledActivityResult(
         actions=pulumi.get(__response__, 'actions'),

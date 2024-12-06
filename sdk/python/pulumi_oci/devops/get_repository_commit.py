@@ -208,7 +208,7 @@ def get_repository_commit(commit_id: Optional[str] = None,
         tree_id=pulumi.get(__ret__, 'tree_id'))
 def get_repository_commit_output(commit_id: Optional[pulumi.Input[str]] = None,
                                  repository_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryCommitResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryCommitResult]:
     """
     This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.
 
@@ -231,7 +231,7 @@ def get_repository_commit_output(commit_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['commitId'] = commit_id
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryCommit:getRepositoryCommit', __args__, opts=opts, typ=GetRepositoryCommitResult)
     return __ret__.apply(lambda __response__: GetRepositoryCommitResult(
         author_email=pulumi.get(__response__, 'author_email'),

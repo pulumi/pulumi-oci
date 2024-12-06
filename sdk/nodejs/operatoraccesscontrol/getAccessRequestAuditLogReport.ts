@@ -87,7 +87,7 @@ export interface GetAccessRequestAuditLogReportResult {
  * });
  * ```
  */
-export function getAccessRequestAuditLogReportOutput(args: GetAccessRequestAuditLogReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestAuditLogReportResult> {
+export function getAccessRequestAuditLogReportOutput(args: GetAccessRequestAuditLogReportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessRequestAuditLogReportResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", {
         "accessRequestId": args.accessRequestId,

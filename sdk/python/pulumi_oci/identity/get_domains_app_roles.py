@@ -277,7 +277,7 @@ def get_domains_app_roles_output(app_role_count: Optional[pulumi.Input[Optional[
                                  sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                                  sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                                  start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsAppRolesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsAppRolesResult]:
     """
     This data source provides the list of App Roles in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -321,7 +321,7 @@ def get_domains_app_roles_output(app_role_count: Optional[pulumi.Input[Optional[
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsAppRoles:getDomainsAppRoles', __args__, opts=opts, typ=GetDomainsAppRolesResult)
     return __ret__.apply(lambda __response__: GetDomainsAppRolesResult(
         app_role_count=pulumi.get(__response__, 'app_role_count'),

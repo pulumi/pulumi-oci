@@ -135,7 +135,7 @@ def get_security_attributes(filters: Optional[Sequence[Union['GetSecurityAttribu
 def get_security_attributes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAttributesFilterArgs', 'GetSecurityAttributesFilterArgsDict']]]]] = None,
                                    security_attribute_namespace_id: Optional[pulumi.Input[str]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAttributesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAttributesResult]:
     """
     This data source provides the list of Security Attributes in Oracle Cloud Infrastructure Security Attribute service.
 
@@ -159,7 +159,7 @@ def get_security_attributes_output(filters: Optional[pulumi.Input[Optional[Seque
     __args__['filters'] = filters
     __args__['securityAttributeNamespaceId'] = security_attribute_namespace_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:SecurityAttribute/getSecurityAttributes:getSecurityAttributes', __args__, opts=opts, typ=GetSecurityAttributesResult)
     return __ret__.apply(lambda __response__: GetSecurityAttributesResult(
         filters=pulumi.get(__response__, 'filters'),

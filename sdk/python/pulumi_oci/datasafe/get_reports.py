@@ -271,7 +271,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
                        time_generated_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                        time_generated_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                        type: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportsResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportsResult]:
     """
     This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
 
@@ -323,7 +323,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
     __args__['timeGeneratedGreaterThanOrEqualTo'] = time_generated_greater_than_or_equal_to
     __args__['timeGeneratedLessThan'] = time_generated_less_than
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getReports:getReports', __args__, opts=opts, typ=GetReportsResult)
     return __ret__.apply(lambda __response__: GetReportsResult(
         access_level=pulumi.get(__response__, 'access_level'),

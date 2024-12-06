@@ -114,7 +114,7 @@ export interface GetStacksResult {
  * });
  * ```
  */
-export function getStacksOutput(args: GetStacksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStacksResult> {
+export function getStacksOutput(args: GetStacksOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStacksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ResourceManager/getStacks:getStacks", {
         "compartmentId": args.compartmentId,

@@ -99,7 +99,7 @@ export interface GetLogAnalyticsLogGroupResult {
  * });
  * ```
  */
-export function getLogAnalyticsLogGroupOutput(args: GetLogAnalyticsLogGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsLogGroupResult> {
+export function getLogAnalyticsLogGroupOutput(args: GetLogAnalyticsLogGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsLogGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup", {
         "logAnalyticsLogGroupId": args.logAnalyticsLogGroupId,

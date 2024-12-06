@@ -81,7 +81,7 @@ export interface GetPublishersResult {
  * });
  * ```
  */
-export function getPublishersOutput(args?: GetPublishersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublishersResult> {
+export function getPublishersOutput(args?: GetPublishersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPublishersResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Marketplace/getPublishers:getPublishers", {

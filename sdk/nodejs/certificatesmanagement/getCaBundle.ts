@@ -96,7 +96,7 @@ export interface GetCaBundleResult {
  * });
  * ```
  */
-export function getCaBundleOutput(args: GetCaBundleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaBundleResult> {
+export function getCaBundleOutput(args: GetCaBundleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCaBundleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCaBundle:getCaBundle", {
         "caBundleId": args.caBundleId,

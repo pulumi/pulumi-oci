@@ -72,7 +72,7 @@ export interface GetSslCipherSuitesResult {
  * });
  * ```
  */
-export function getSslCipherSuitesOutput(args: GetSslCipherSuitesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSslCipherSuitesResult> {
+export function getSslCipherSuitesOutput(args: GetSslCipherSuitesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSslCipherSuitesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", {
         "filters": args.filters,

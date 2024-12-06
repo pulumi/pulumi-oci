@@ -97,7 +97,7 @@ export interface GetMetastoresResult {
  * });
  * ```
  */
-export function getMetastoresOutput(args: GetMetastoresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetastoresResult> {
+export function getMetastoresOutput(args: GetMetastoresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMetastoresResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataCatalog/getMetastores:getMetastores", {
         "compartmentId": args.compartmentId,

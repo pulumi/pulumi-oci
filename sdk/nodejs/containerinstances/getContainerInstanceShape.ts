@@ -77,7 +77,7 @@ export interface GetContainerInstanceShapeResult {
  * });
  * ```
  */
-export function getContainerInstanceShapeOutput(args: GetContainerInstanceShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerInstanceShapeResult> {
+export function getContainerInstanceShapeOutput(args: GetContainerInstanceShapeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetContainerInstanceShapeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape", {
         "availabilityDomain": args.availabilityDomain,

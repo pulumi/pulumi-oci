@@ -95,7 +95,7 @@ export interface GetDecryptedDataResult {
  * });
  * ```
  */
-export function getDecryptedDataOutput(args: GetDecryptedDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDecryptedDataResult> {
+export function getDecryptedDataOutput(args: GetDecryptedDataOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDecryptedDataResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Kms/getDecryptedData:getDecryptedData", {
         "associatedData": args.associatedData,

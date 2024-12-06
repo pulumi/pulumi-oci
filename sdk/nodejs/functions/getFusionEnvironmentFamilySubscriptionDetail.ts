@@ -69,7 +69,7 @@ export interface GetFusionEnvironmentFamilySubscriptionDetailResult {
  * });
  * ```
  */
-export function getFusionEnvironmentFamilySubscriptionDetailOutput(args: GetFusionEnvironmentFamilySubscriptionDetailOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamilySubscriptionDetailResult> {
+export function getFusionEnvironmentFamilySubscriptionDetailOutput(args: GetFusionEnvironmentFamilySubscriptionDetailOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentFamilySubscriptionDetailResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", {
         "fusionEnvironmentFamilyId": args.fusionEnvironmentFamilyId,

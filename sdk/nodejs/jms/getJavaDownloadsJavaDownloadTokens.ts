@@ -131,7 +131,7 @@ export interface GetJavaDownloadsJavaDownloadTokensResult {
  * });
  * ```
  */
-export function getJavaDownloadsJavaDownloadTokensOutput(args: GetJavaDownloadsJavaDownloadTokensOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaDownloadTokensResult> {
+export function getJavaDownloadsJavaDownloadTokensOutput(args: GetJavaDownloadsJavaDownloadTokensOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJavaDownloadsJavaDownloadTokensResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaDownloadTokens:getJavaDownloadsJavaDownloadTokens", {
         "compartmentId": args.compartmentId,

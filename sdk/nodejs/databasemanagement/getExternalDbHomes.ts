@@ -98,7 +98,7 @@ export interface GetExternalDbHomesResult {
  * });
  * ```
  */
-export function getExternalDbHomesOutput(args?: GetExternalDbHomesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbHomesResult> {
+export function getExternalDbHomesOutput(args?: GetExternalDbHomesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDbHomesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", {

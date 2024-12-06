@@ -81,7 +81,7 @@ export interface GetSystemMediaWorkflowResult {
  * });
  * ```
  */
-export function getSystemMediaWorkflowOutput(args?: GetSystemMediaWorkflowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSystemMediaWorkflowResult> {
+export function getSystemMediaWorkflowOutput(args?: GetSystemMediaWorkflowOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSystemMediaWorkflowResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow", {

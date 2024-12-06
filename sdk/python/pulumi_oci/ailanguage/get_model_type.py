@@ -112,7 +112,7 @@ def get_model_type(model_type: Optional[str] = None,
         model_type=pulumi.get(__ret__, 'model_type'),
         versions=pulumi.get(__ret__, 'versions'))
 def get_model_type_output(model_type: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelTypeResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelTypeResult]:
     """
     This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Language service.
 
@@ -132,7 +132,7 @@ def get_model_type_output(model_type: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['modelType'] = model_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:AiLanguage/getModelType:getModelType', __args__, opts=opts, typ=GetModelTypeResult)
     return __ret__.apply(lambda __response__: GetModelTypeResult(
         capabilities=pulumi.get(__response__, 'capabilities'),

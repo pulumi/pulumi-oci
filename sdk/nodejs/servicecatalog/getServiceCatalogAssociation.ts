@@ -79,7 +79,7 @@ export interface GetServiceCatalogAssociationResult {
  * });
  * ```
  */
-export function getServiceCatalogAssociationOutput(args: GetServiceCatalogAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceCatalogAssociationResult> {
+export function getServiceCatalogAssociationOutput(args: GetServiceCatalogAssociationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceCatalogAssociationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", {
         "serviceCatalogAssociationId": args.serviceCatalogAssociationId,

@@ -192,7 +192,7 @@ def get_log_analytics_log_group(log_analytics_log_group_id: Optional[str] = None
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_log_analytics_log_group_output(log_analytics_log_group_id: Optional[pulumi.Input[str]] = None,
                                        namespace: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsLogGroupResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsLogGroupResult]:
     """
     This data source provides details about a specific Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -215,7 +215,7 @@ def get_log_analytics_log_group_output(log_analytics_log_group_id: Optional[pulu
     __args__ = dict()
     __args__['logAnalyticsLogGroupId'] = log_analytics_log_group_id
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup', __args__, opts=opts, typ=GetLogAnalyticsLogGroupResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsLogGroupResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

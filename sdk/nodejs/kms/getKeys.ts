@@ -140,7 +140,7 @@ export interface GetKeysResult {
  * });
  * ```
  */
-export function getKeysOutput(args: GetKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeysResult> {
+export function getKeysOutput(args: GetKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Kms/getKeys:getKeys", {
         "algorithm": args.algorithm,

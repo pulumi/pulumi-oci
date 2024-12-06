@@ -124,7 +124,7 @@ export interface GetComputeCapacityTopologyComputeBareMetalHostsResult {
  * });
  * ```
  */
-export function getComputeCapacityTopologyComputeBareMetalHostsOutput(args: GetComputeCapacityTopologyComputeBareMetalHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> {
+export function getComputeCapacityTopologyComputeBareMetalHostsOutput(args: GetComputeCapacityTopologyComputeBareMetalHostsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", {
         "availabilityDomain": args.availabilityDomain,

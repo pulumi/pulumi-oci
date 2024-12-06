@@ -200,7 +200,7 @@ def get_ca_bundle(ca_bundle_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_ca_bundle_output(ca_bundle_id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaBundleResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCaBundleResult]:
     """
     This data source provides details about a specific Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
 
@@ -220,7 +220,7 @@ def get_ca_bundle_output(ca_bundle_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['caBundleId'] = ca_bundle_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCaBundle:getCaBundle', __args__, opts=opts, typ=GetCaBundleResult)
     return __ret__.apply(lambda __response__: GetCaBundleResult(
         ca_bundle_id=pulumi.get(__response__, 'ca_bundle_id'),

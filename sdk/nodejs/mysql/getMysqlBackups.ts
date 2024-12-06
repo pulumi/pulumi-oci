@@ -127,7 +127,7 @@ export interface GetMysqlBackupsResult {
  * });
  * ```
  */
-export function getMysqlBackupsOutput(args: GetMysqlBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlBackupsResult> {
+export function getMysqlBackupsOutput(args: GetMysqlBackupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMysqlBackupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlBackups:getMysqlBackups", {
         "backupId": args.backupId,

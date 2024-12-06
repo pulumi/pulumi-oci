@@ -216,7 +216,7 @@ export interface GetShardedDatabaseResult {
  * });
  * ```
  */
-export function getShardedDatabaseOutput(args: GetShardedDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShardedDatabaseResult> {
+export function getShardedDatabaseOutput(args: GetShardedDatabaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetShardedDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GloballyDistributedDatabase/getShardedDatabase:getShardedDatabase", {
         "metadata": args.metadata,

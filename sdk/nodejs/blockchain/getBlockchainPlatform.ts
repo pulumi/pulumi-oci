@@ -164,7 +164,7 @@ export interface GetBlockchainPlatformResult {
  * });
  * ```
  */
-export function getBlockchainPlatformOutput(args: GetBlockchainPlatformOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockchainPlatformResult> {
+export function getBlockchainPlatformOutput(args: GetBlockchainPlatformOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBlockchainPlatformResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", {
         "blockchainPlatformId": args.blockchainPlatformId,

@@ -282,7 +282,7 @@ def get_snapshot(snapshot_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_snapshot_output(snapshot_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSnapshotResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSnapshotResult]:
     """
     This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.
 
@@ -302,7 +302,7 @@ def get_snapshot_output(snapshot_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['snapshotId'] = snapshot_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getSnapshot:getSnapshot', __args__, opts=opts, typ=GetSnapshotResult)
     return __ret__.apply(lambda __response__: GetSnapshotResult(
         defined_tags=pulumi.get(__response__, 'defined_tags'),

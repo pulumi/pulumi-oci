@@ -205,7 +205,7 @@ def get_associations_output(associated_resource_id: Optional[pulumi.Input[Option
                             compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssociationsFilterArgs', 'GetAssociationsFilterArgsDict']]]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssociationsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssociationsResult]:
     """
     This data source provides the list of Associations in Oracle Cloud Infrastructure Certificates Management service.
 
@@ -242,7 +242,7 @@ def get_associations_output(associated_resource_id: Optional[pulumi.Input[Option
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getAssociations:getAssociations', __args__, opts=opts, typ=GetAssociationsResult)
     return __ret__.apply(lambda __response__: GetAssociationsResult(
         associated_resource_id=pulumi.get(__response__, 'associated_resource_id'),

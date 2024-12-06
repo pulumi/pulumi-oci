@@ -180,7 +180,7 @@ def get_budgets_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBudgetsFilterArgs', 'GetBudgetsFilterArgsDict']]]]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
                        target_type: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBudgetsResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBudgetsResult]:
     """
     This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
 
@@ -219,7 +219,7 @@ def get_budgets_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['targetType'] = target_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Budget/getBudgets:getBudgets', __args__, opts=opts, typ=GetBudgetsResult)
     return __ret__.apply(lambda __response__: GetBudgetsResult(
         budgets=pulumi.get(__response__, 'budgets'),

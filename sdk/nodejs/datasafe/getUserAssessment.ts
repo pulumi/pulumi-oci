@@ -158,7 +158,7 @@ export interface GetUserAssessmentResult {
  * });
  * ```
  */
-export function getUserAssessmentOutput(args: GetUserAssessmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentResult> {
+export function getUserAssessmentOutput(args: GetUserAssessmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserAssessmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessment:getUserAssessment", {
         "userAssessmentId": args.userAssessmentId,

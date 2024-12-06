@@ -168,7 +168,7 @@ def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Opti
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict']]]]] = None,
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
                                         stream_packaging_config_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamPackagingConfigsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamPackagingConfigsResult]:
     """
     This data source provides the list of Stream Packaging Configs in Oracle Cloud Infrastructure Media Services service.
 
@@ -198,7 +198,7 @@ def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Opti
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['streamPackagingConfigId'] = stream_packaging_config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs', __args__, opts=opts, typ=GetStreamPackagingConfigsResult)
     return __ret__.apply(lambda __response__: GetStreamPackagingConfigsResult(
         display_name=pulumi.get(__response__, 'display_name'),

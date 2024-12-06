@@ -145,7 +145,7 @@ export interface GetAutonomousVmClusterResourceUsageResult {
  * });
  * ```
  */
-export function getAutonomousVmClusterResourceUsageOutput(args: GetAutonomousVmClusterResourceUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousVmClusterResourceUsageResult> {
+export function getAutonomousVmClusterResourceUsageOutput(args: GetAutonomousVmClusterResourceUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousVmClusterResourceUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousVmClusterResourceUsage:getAutonomousVmClusterResourceUsage", {
         "autonomousVmClusterId": args.autonomousVmClusterId,

@@ -111,7 +111,7 @@ export interface GetVlanResult {
  * });
  * ```
  */
-export function getVlanOutput(args: GetVlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVlanResult> {
+export function getVlanOutput(args: GetVlanOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVlanResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVlan:getVlan", {
         "vlanId": args.vlanId,

@@ -157,7 +157,7 @@ export interface GetSqlEndpointResult {
  * });
  * ```
  */
-export function getSqlEndpointOutput(args: GetSqlEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSqlEndpointResult> {
+export function getSqlEndpointOutput(args: GetSqlEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSqlEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", {
         "sqlEndpointId": args.sqlEndpointId,

@@ -147,7 +147,7 @@ def get_db_systems_upgrade_history_entries_output(db_system_id: Optional[pulumi.
                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemsUpgradeHistoryEntriesFilterArgs', 'GetDbSystemsUpgradeHistoryEntriesFilterArgsDict']]]]] = None,
                                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                                   upgrade_action: Optional[pulumi.Input[Optional[str]]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemsUpgradeHistoryEntriesResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemsUpgradeHistoryEntriesResult]:
     """
     This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
 
@@ -174,7 +174,7 @@ def get_db_systems_upgrade_history_entries_output(db_system_id: Optional[pulumi.
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['upgradeAction'] = upgrade_action
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries', __args__, opts=opts, typ=GetDbSystemsUpgradeHistoryEntriesResult)
     return __ret__.apply(lambda __response__: GetDbSystemsUpgradeHistoryEntriesResult(
         db_system_id=pulumi.get(__response__, 'db_system_id'),

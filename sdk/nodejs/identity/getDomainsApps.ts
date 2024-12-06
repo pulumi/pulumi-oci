@@ -140,7 +140,7 @@ export interface GetDomainsAppsResult {
  * });
  * ```
  */
-export function getDomainsAppsOutput(args: GetDomainsAppsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAppsResult> {
+export function getDomainsAppsOutput(args: GetDomainsAppsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsAppsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsApps:getDomainsApps", {
         "appCount": args.appCount,

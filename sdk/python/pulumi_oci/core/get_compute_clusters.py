@@ -154,7 +154,7 @@ def get_compute_clusters_output(availability_domain: Optional[pulumi.Input[Optio
                                 compartment_id: Optional[pulumi.Input[str]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeClustersFilterArgs', 'GetComputeClustersFilterArgsDict']]]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeClustersResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeClustersResult]:
     """
     This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
 
@@ -182,7 +182,7 @@ def get_compute_clusters_output(availability_domain: Optional[pulumi.Input[Optio
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeClusters:getComputeClusters', __args__, opts=opts, typ=GetComputeClustersResult)
     return __ret__.apply(lambda __response__: GetComputeClustersResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

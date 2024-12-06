@@ -82,7 +82,7 @@ export interface GetVolumeBackupPoliciesResult {
  * });
  * ```
  */
-export function getVolumeBackupPoliciesOutput(args?: GetVolumeBackupPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeBackupPoliciesResult> {
+export function getVolumeBackupPoliciesOutput(args?: GetVolumeBackupPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeBackupPoliciesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", {

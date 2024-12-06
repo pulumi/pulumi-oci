@@ -229,7 +229,7 @@ def get_managed_lists_output(access_level: Optional[pulumi.Input[Optional[str]]]
                              list_type: Optional[pulumi.Input[Optional[str]]] = None,
                              resource_metadata_only: Optional[pulumi.Input[Optional[bool]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedListsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedListsResult]:
     """
     This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -281,7 +281,7 @@ def get_managed_lists_output(access_level: Optional[pulumi.Input[Optional[str]]]
     __args__['listType'] = list_type
     __args__['resourceMetadataOnly'] = resource_metadata_only
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getManagedLists:getManagedLists', __args__, opts=opts, typ=GetManagedListsResult)
     return __ret__.apply(lambda __response__: GetManagedListsResult(
         access_level=pulumi.get(__response__, 'access_level'),

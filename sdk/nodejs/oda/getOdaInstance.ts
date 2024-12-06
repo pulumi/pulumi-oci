@@ -153,7 +153,7 @@ export interface GetOdaInstanceResult {
  * });
  * ```
  */
-export function getOdaInstanceOutput(args: GetOdaInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaInstanceResult> {
+export function getOdaInstanceOutput(args: GetOdaInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOdaInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Oda/getOdaInstance:getOdaInstance", {
         "odaInstanceId": args.odaInstanceId,

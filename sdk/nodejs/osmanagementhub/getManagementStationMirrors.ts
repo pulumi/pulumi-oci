@@ -99,7 +99,7 @@ export interface GetManagementStationMirrorsResult {
  * });
  * ```
  */
-export function getManagementStationMirrorsOutput(args: GetManagementStationMirrorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementStationMirrorsResult> {
+export function getManagementStationMirrorsOutput(args: GetManagementStationMirrorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementStationMirrorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors", {
         "displayName": args.displayName,

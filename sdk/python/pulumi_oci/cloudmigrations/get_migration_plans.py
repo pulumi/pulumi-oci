@@ -186,7 +186,7 @@ def get_migration_plans_output(compartment_id: Optional[pulumi.Input[Optional[st
                                migration_id: Optional[pulumi.Input[Optional[str]]] = None,
                                migration_plan_id: Optional[pulumi.Input[Optional[str]]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationPlansResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationPlansResult]:
     """
     This data source provides the list of Migration Plans in Oracle Cloud Infrastructure Cloud Migrations service.
 
@@ -219,7 +219,7 @@ def get_migration_plans_output(compartment_id: Optional[pulumi.Input[Optional[st
     __args__['migrationId'] = migration_id
     __args__['migrationPlanId'] = migration_plan_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudMigrations/getMigrationPlans:getMigrationPlans', __args__, opts=opts, typ=GetMigrationPlansResult)
     return __ret__.apply(lambda __response__: GetMigrationPlansResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

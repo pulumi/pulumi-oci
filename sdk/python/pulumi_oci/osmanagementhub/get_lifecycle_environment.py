@@ -285,7 +285,7 @@ def get_lifecycle_environment(lifecycle_environment_id: Optional[str] = None,
         time_modified=pulumi.get(__ret__, 'time_modified'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
 def get_lifecycle_environment_output(lifecycle_environment_id: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLifecycleEnvironmentResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLifecycleEnvironmentResult]:
     """
     This data source provides details about a specific Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -305,7 +305,7 @@ def get_lifecycle_environment_output(lifecycle_environment_id: Optional[pulumi.I
     """
     __args__ = dict()
     __args__['lifecycleEnvironmentId'] = lifecycle_environment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment', __args__, opts=opts, typ=GetLifecycleEnvironmentResult)
     return __ret__.apply(lambda __response__: GetLifecycleEnvironmentResult(
         arch_type=pulumi.get(__response__, 'arch_type'),

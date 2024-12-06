@@ -219,7 +219,7 @@ def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[s
                                name: Optional[pulumi.Input[Optional[str]]] = None,
                                types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                workspace_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceTasksResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceTasksResult]:
     """
     This data source provides the list of Workspace Tasks in Oracle Cloud Infrastructure Data Integration service.
 
@@ -258,7 +258,7 @@ def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[s
     __args__['name'] = name
     __args__['types'] = types
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks', __args__, opts=opts, typ=GetWorkspaceTasksResult)
     return __ret__.apply(lambda __response__: GetWorkspaceTasksResult(
         fields=pulumi.get(__response__, 'fields'),

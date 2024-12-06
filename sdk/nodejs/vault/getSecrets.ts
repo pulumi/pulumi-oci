@@ -105,7 +105,7 @@ export interface GetSecretsResult {
  * });
  * ```
  */
-export function getSecretsOutput(args: GetSecretsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretsResult> {
+export function getSecretsOutput(args: GetSecretsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecretsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Vault/getSecrets:getSecrets", {
         "compartmentId": args.compartmentId,

@@ -43,7 +43,7 @@ export interface GetAutoScalingConfigurationsResult {
     readonly id: string;
     readonly state?: string;
 }
-export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationsResult> {
+export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigurationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutoScalingConfigurationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", {
         "bdsInstanceId": args.bdsInstanceId,

@@ -97,7 +97,7 @@ export interface GetDelegationSubscriptionsResult {
  * });
  * ```
  */
-export function getDelegationSubscriptionsOutput(args: GetDelegationSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegationSubscriptionsResult> {
+export function getDelegationSubscriptionsOutput(args: GetDelegationSubscriptionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDelegationSubscriptionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegationSubscriptions:getDelegationSubscriptions", {
         "compartmentId": args.compartmentId,

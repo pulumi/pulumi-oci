@@ -109,7 +109,7 @@ export interface GetRatecardsResult {
  * });
  * ```
  */
-export function getRatecardsOutput(args: GetRatecardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRatecardsResult> {
+export function getRatecardsOutput(args: GetRatecardsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRatecardsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OneSubsription/getRatecards:getRatecards", {
         "compartmentId": args.compartmentId,

@@ -245,7 +245,7 @@ def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
                           is_swap_billing_only: Optional[pulumi.Input[Optional[bool]]] = None,
                           sddc_id: Optional[pulumi.Input[Optional[str]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExsiHostsResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExsiHostsResult]:
     """
     This data source provides the list of Esxi Hosts in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
@@ -295,7 +295,7 @@ def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
     __args__['isSwapBillingOnly'] = is_swap_billing_only
     __args__['sddcId'] = sddc_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getExsiHosts:getExsiHosts', __args__, opts=opts, typ=GetExsiHostsResult)
     return __ret__.apply(lambda __response__: GetExsiHostsResult(
         cluster_id=pulumi.get(__response__, 'cluster_id'),

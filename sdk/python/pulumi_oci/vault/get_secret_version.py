@@ -195,7 +195,7 @@ def get_secret_version(secret_id: Optional[str] = None,
         version_number=pulumi.get(__ret__, 'version_number'))
 def get_secret_version_output(secret_id: Optional[pulumi.Input[str]] = None,
                               secret_version_number: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretVersionResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecretVersionResult]:
     """
     This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
 
@@ -218,7 +218,7 @@ def get_secret_version_output(secret_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['secretId'] = secret_id
     __args__['secretVersionNumber'] = secret_version_number
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Vault/getSecretVersion:getSecretVersion', __args__, opts=opts, typ=GetSecretVersionResult)
     return __ret__.apply(lambda __response__: GetSecretVersionResult(
         content_type=pulumi.get(__response__, 'content_type'),

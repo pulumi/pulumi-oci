@@ -352,7 +352,7 @@ def get_external_exadata_infrastructure(external_exadata_infrastructure_id: Opti
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
 def get_external_exadata_infrastructure_output(external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataInfrastructureResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataInfrastructureResult]:
     """
     This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -373,7 +373,7 @@ def get_external_exadata_infrastructure_output(external_exadata_infrastructure_i
     """
     __args__ = dict()
     __args__['externalExadataInfrastructureId'] = external_exadata_infrastructure_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure', __args__, opts=opts, typ=GetExternalExadataInfrastructureResult)
     return __ret__.apply(lambda __response__: GetExternalExadataInfrastructureResult(
         additional_details=pulumi.get(__response__, 'additional_details'),

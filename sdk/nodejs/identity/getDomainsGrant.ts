@@ -192,7 +192,7 @@ export interface GetDomainsGrantResult {
  * });
  * ```
  */
-export function getDomainsGrantOutput(args: GetDomainsGrantOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsGrantResult> {
+export function getDomainsGrantOutput(args: GetDomainsGrantOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsGrantResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsGrant:getDomainsGrant", {
         "attributeSets": args.attributeSets,

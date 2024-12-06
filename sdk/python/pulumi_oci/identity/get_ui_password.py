@@ -133,7 +133,7 @@ def get_ui_password(user_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         user_id=pulumi.get(__ret__, 'user_id'))
 def get_ui_password_output(user_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUiPasswordResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUiPasswordResult]:
     """
     This data source provides details about a specific Ui Password resource in Oracle Cloud Infrastructure Identity service.
 
@@ -154,7 +154,7 @@ def get_ui_password_output(user_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['userId'] = user_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getUiPassword:getUiPassword', __args__, opts=opts, typ=GetUiPasswordResult)
     return __ret__.apply(lambda __response__: GetUiPasswordResult(
         id=pulumi.get(__response__, 'id'),

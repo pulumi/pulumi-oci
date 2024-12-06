@@ -79,7 +79,7 @@ export interface GetManagementAgentPluginCountResult {
  * });
  * ```
  */
-export function getManagementAgentPluginCountOutput(args: GetManagementAgentPluginCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentPluginCountResult> {
+export function getManagementAgentPluginCountOutput(args: GetManagementAgentPluginCountOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentPluginCountResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", {
         "compartmentId": args.compartmentId,

@@ -135,7 +135,7 @@ def get_run_statements(filters: Optional[Sequence[Union['GetRunStatementsFilterA
 def get_run_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRunStatementsFilterArgs', 'GetRunStatementsFilterArgsDict']]]]] = None,
                               run_id: Optional[pulumi.Input[str]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunStatementsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunStatementsResult]:
     """
     This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
 
@@ -159,7 +159,7 @@ def get_run_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     __args__['filters'] = filters
     __args__['runId'] = run_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getRunStatements:getRunStatements', __args__, opts=opts, typ=GetRunStatementsResult)
     return __ret__.apply(lambda __response__: GetRunStatementsResult(
         filters=pulumi.get(__response__, 'filters'),

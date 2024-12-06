@@ -115,7 +115,7 @@ export interface GetAppAccelerationsResult {
  * });
  * ```
  */
-export function getAppAccelerationsOutput(args: GetAppAccelerationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppAccelerationsResult> {
+export function getAppAccelerationsOutput(args: GetAppAccelerationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppAccelerationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waa/getAppAccelerations:getAppAccelerations", {
         "compartmentId": args.compartmentId,

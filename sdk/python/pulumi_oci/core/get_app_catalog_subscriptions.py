@@ -135,7 +135,7 @@ def get_app_catalog_subscriptions(compartment_id: Optional[str] = None,
 def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogSubscriptionsFilterArgs', 'GetAppCatalogSubscriptionsFilterArgsDict']]]]] = None,
                                          listing_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogSubscriptionsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppCatalogSubscriptionsResult]:
     """
     This data source provides the list of App Catalog Subscriptions in Oracle Cloud Infrastructure Core service.
 
@@ -159,7 +159,7 @@ def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[s
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['listingId'] = listing_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions', __args__, opts=opts, typ=GetAppCatalogSubscriptionsResult)
     return __ret__.apply(lambda __response__: GetAppCatalogSubscriptionsResult(
         app_catalog_subscriptions=pulumi.get(__response__, 'app_catalog_subscriptions'),

@@ -148,7 +148,7 @@ def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict']]]]] = None,
                                 mod_security_rule_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 waas_policy_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionRulesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionRulesResult]:
     """
     This data source provides the list of Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
 
@@ -176,7 +176,7 @@ def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence
     __args__['filters'] = filters
     __args__['modSecurityRuleIds'] = mod_security_rule_ids
     __args__['waasPolicyId'] = waas_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waas/getProtectionRules:getProtectionRules', __args__, opts=opts, typ=GetProtectionRulesResult)
     return __ret__.apply(lambda __response__: GetProtectionRulesResult(
         actions=pulumi.get(__response__, 'actions'),

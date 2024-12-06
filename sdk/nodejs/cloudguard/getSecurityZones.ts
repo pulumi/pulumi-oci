@@ -122,7 +122,7 @@ export interface GetSecurityZonesResult {
  * });
  * ```
  */
-export function getSecurityZonesOutput(args: GetSecurityZonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityZonesResult> {
+export function getSecurityZonesOutput(args: GetSecurityZonesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityZonesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getSecurityZones:getSecurityZones", {
         "compartmentId": args.compartmentId,

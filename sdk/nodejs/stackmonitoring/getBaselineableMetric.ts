@@ -127,7 +127,7 @@ export interface GetBaselineableMetricResult {
  * });
  * ```
  */
-export function getBaselineableMetricOutput(args: GetBaselineableMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBaselineableMetricResult> {
+export function getBaselineableMetricOutput(args: GetBaselineableMetricOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBaselineableMetricResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", {
         "baselineableMetricId": args.baselineableMetricId,

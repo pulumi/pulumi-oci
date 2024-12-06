@@ -182,7 +182,7 @@ export interface GetResourceActionsResult {
  * });
  * ```
  */
-export function getResourceActionsOutput(args: GetResourceActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceActionsResult> {
+export function getResourceActionsOutput(args: GetResourceActionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResourceActionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getResourceActions:getResourceActions", {
         "childTenancyIds": args.childTenancyIds,

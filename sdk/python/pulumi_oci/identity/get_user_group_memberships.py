@@ -162,7 +162,7 @@ def get_user_group_memberships_output(compartment_id: Optional[pulumi.Input[str]
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUserGroupMembershipsFilterArgs', 'GetUserGroupMembershipsFilterArgsDict']]]]] = None,
                                       group_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       user_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserGroupMembershipsResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupMembershipsResult]:
     """
     This data source provides the list of User Group Memberships in Oracle Cloud Infrastructure Identity service.
 
@@ -198,7 +198,7 @@ def get_user_group_memberships_output(compartment_id: Optional[pulumi.Input[str]
     __args__['filters'] = filters
     __args__['groupId'] = group_id
     __args__['userId'] = user_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getUserGroupMemberships:getUserGroupMemberships', __args__, opts=opts, typ=GetUserGroupMembershipsResult)
     return __ret__.apply(lambda __response__: GetUserGroupMembershipsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

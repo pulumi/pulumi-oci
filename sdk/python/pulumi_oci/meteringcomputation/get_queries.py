@@ -121,7 +121,7 @@ def get_queries(compartment_id: Optional[str] = None,
         query_collections=pulumi.get(__ret__, 'query_collections'))
 def get_queries_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']]]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueriesResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQueriesResult]:
     """
     This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -143,7 +143,7 @@ def get_queries_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getQueries:getQueries', __args__, opts=opts, typ=GetQueriesResult)
     return __ret__.apply(lambda __response__: GetQueriesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

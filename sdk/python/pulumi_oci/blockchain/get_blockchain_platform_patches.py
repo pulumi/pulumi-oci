@@ -114,7 +114,7 @@ def get_blockchain_platform_patches(blockchain_platform_id: Optional[str] = None
         id=pulumi.get(__ret__, 'id'))
 def get_blockchain_platform_patches_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict']]]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockchainPlatformPatchesResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlockchainPlatformPatchesResult]:
     """
     This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
 
@@ -135,7 +135,7 @@ def get_blockchain_platform_patches_output(blockchain_platform_id: Optional[pulu
     __args__ = dict()
     __args__['blockchainPlatformId'] = blockchain_platform_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches', __args__, opts=opts, typ=GetBlockchainPlatformPatchesResult)
     return __ret__.apply(lambda __response__: GetBlockchainPlatformPatchesResult(
         blockchain_platform_id=pulumi.get(__response__, 'blockchain_platform_id'),

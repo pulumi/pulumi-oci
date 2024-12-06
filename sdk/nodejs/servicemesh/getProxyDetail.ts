@@ -51,7 +51,7 @@ export interface GetProxyDetailResult {
  * const testProxyDetail = oci.ServiceMesh.getProxyDetail({});
  * ```
  */
-export function getProxyDetailOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetProxyDetailResult> {
+export function getProxyDetailOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProxyDetailResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceMesh/getProxyDetail:getProxyDetail", {
     }, opts);

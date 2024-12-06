@@ -64,7 +64,7 @@ export interface GetMigrationObjectTypesResult {
  * });
  * ```
  */
-export function getMigrationObjectTypesOutput(args: GetMigrationObjectTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationObjectTypesResult> {
+export function getMigrationObjectTypesOutput(args: GetMigrationObjectTypesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMigrationObjectTypesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", {
         "connectionType": args.connectionType,

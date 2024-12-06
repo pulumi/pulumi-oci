@@ -114,7 +114,7 @@ export interface GetManagedInstanceGroupInstalledPackagesResult {
  * });
  * ```
  */
-export function getManagedInstanceGroupInstalledPackagesOutput(args: GetManagedInstanceGroupInstalledPackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupInstalledPackagesResult> {
+export function getManagedInstanceGroupInstalledPackagesOutput(args: GetManagedInstanceGroupInstalledPackagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceGroupInstalledPackagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceGroupInstalledPackages:getManagedInstanceGroupInstalledPackages", {
         "compartmentId": args.compartmentId,

@@ -453,7 +453,7 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         timezone=pulumi.get(__ret__, 'timezone'))
 def get_log_analytics_object_collection_rule_output(log_analytics_object_collection_rule_id: Optional[pulumi.Input[str]] = None,
                                                     namespace: Optional[pulumi.Input[str]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsObjectCollectionRuleResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsObjectCollectionRuleResult]:
     """
     This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -476,7 +476,7 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
     __args__ = dict()
     __args__['logAnalyticsObjectCollectionRuleId'] = log_analytics_object_collection_rule_id
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule', __args__, opts=opts, typ=GetLogAnalyticsObjectCollectionRuleResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsObjectCollectionRuleResult(
         char_encoding=pulumi.get(__response__, 'char_encoding'),

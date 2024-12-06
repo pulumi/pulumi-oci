@@ -268,7 +268,7 @@ def get_data_safe_private_endpoint(data_safe_private_endpoint_id: Optional[str] 
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_data_safe_private_endpoint_output(data_safe_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSafePrivateEndpointResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSafePrivateEndpointResult]:
     """
     This data source provides details about a specific Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -288,7 +288,7 @@ def get_data_safe_private_endpoint_output(data_safe_private_endpoint_id: Optiona
     """
     __args__ = dict()
     __args__['dataSafePrivateEndpointId'] = data_safe_private_endpoint_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint', __args__, opts=opts, typ=GetDataSafePrivateEndpointResult)
     return __ret__.apply(lambda __response__: GetDataSafePrivateEndpointResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

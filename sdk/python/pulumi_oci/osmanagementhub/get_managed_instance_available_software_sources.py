@@ -165,7 +165,7 @@ def get_managed_instance_available_software_sources_output(compartment_id: Optio
                                                            display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceAvailableSoftwareSourcesFilterArgs', 'GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict']]]]] = None,
                                                            managed_instance_id: Optional[pulumi.Input[str]] = None,
-                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceAvailableSoftwareSourcesResult]:
+                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceAvailableSoftwareSourcesResult]:
     """
     This data source provides the list of Managed Instance Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -195,7 +195,7 @@ def get_managed_instance_available_software_sources_output(compartment_id: Optio
     __args__['displayNames'] = display_names
     __args__['filters'] = filters
     __args__['managedInstanceId'] = managed_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceAvailableSoftwareSources:getManagedInstanceAvailableSoftwareSources', __args__, opts=opts, typ=GetManagedInstanceAvailableSoftwareSourcesResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceAvailableSoftwareSourcesResult(
         available_software_source_collections=pulumi.get(__response__, 'available_software_source_collections'),

@@ -114,7 +114,7 @@ def get_job_shapes(compartment_id: Optional[str] = None,
         job_shapes=pulumi.get(__ret__, 'job_shapes'))
 def get_job_shapes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJobShapesFilterArgs', 'GetJobShapesFilterArgsDict']]]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobShapesResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobShapesResult]:
     """
     This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.
 
@@ -135,7 +135,7 @@ def get_job_shapes_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getJobShapes:getJobShapes', __args__, opts=opts, typ=GetJobShapesResult)
     return __ret__.apply(lambda __response__: GetJobShapesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

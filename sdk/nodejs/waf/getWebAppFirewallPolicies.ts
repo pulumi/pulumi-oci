@@ -104,7 +104,7 @@ export interface GetWebAppFirewallPoliciesResult {
  * });
  * ```
  */
-export function getWebAppFirewallPoliciesOutput(args: GetWebAppFirewallPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWebAppFirewallPoliciesResult> {
+export function getWebAppFirewallPoliciesOutput(args: GetWebAppFirewallPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWebAppFirewallPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", {
         "compartmentId": args.compartmentId,

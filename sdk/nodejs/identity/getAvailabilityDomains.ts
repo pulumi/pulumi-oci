@@ -83,7 +83,7 @@ export interface GetAvailabilityDomainsResult {
  * });
  * ```
  */
-export function getAvailabilityDomainsOutput(args: GetAvailabilityDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAvailabilityDomainsResult> {
+export function getAvailabilityDomainsOutput(args: GetAvailabilityDomainsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAvailabilityDomainsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getAvailabilityDomains:getAvailabilityDomains", {
         "compartmentId": args.compartmentId,

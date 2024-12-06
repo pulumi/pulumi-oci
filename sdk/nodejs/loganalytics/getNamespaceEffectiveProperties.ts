@@ -123,7 +123,7 @@ export interface GetNamespaceEffectivePropertiesResult {
  * });
  * ```
  */
-export function getNamespaceEffectivePropertiesOutput(args: GetNamespaceEffectivePropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceEffectivePropertiesResult> {
+export function getNamespaceEffectivePropertiesOutput(args: GetNamespaceEffectivePropertiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceEffectivePropertiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", {
         "agentId": args.agentId,

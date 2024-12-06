@@ -133,7 +133,7 @@ export interface GetContainerRepositoryResult {
  * });
  * ```
  */
-export function getContainerRepositoryOutput(args: GetContainerRepositoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerRepositoryResult> {
+export function getContainerRepositoryOutput(args: GetContainerRepositoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetContainerRepositoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Artifacts/getContainerRepository:getContainerRepository", {
         "repositoryId": args.repositoryId,

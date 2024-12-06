@@ -281,7 +281,7 @@ def get_replication_target(replication_target_id: Optional[str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_replication_target_output(replication_target_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationTargetResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationTargetResult]:
     """
     This data source provides details about a specific Replication Target resource in Oracle Cloud Infrastructure File Storage service.
 
@@ -301,7 +301,7 @@ def get_replication_target_output(replication_target_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['replicationTargetId'] = replication_target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getReplicationTarget:getReplicationTarget', __args__, opts=opts, typ=GetReplicationTargetResult)
     return __ret__.apply(lambda __response__: GetReplicationTargetResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

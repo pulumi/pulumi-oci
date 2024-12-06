@@ -105,7 +105,7 @@ export interface GetManagedDatabaseGroupResult {
  * });
  * ```
  */
-export function getManagedDatabaseGroupOutput(args: GetManagedDatabaseGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseGroupResult> {
+export function getManagedDatabaseGroupOutput(args: GetManagedDatabaseGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseGroup:getManagedDatabaseGroup", {
         "managedDatabaseGroupId": args.managedDatabaseGroupId,

@@ -293,7 +293,7 @@ def get_backup_destination(backup_destination_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         vpc_users=pulumi.get(__ret__, 'vpc_users'))
 def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupDestinationResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupDestinationResult]:
     """
     This data source provides details about a specific Backup Destination resource in Oracle Cloud Infrastructure Database service.
 
@@ -313,7 +313,7 @@ def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['backupDestinationId'] = backup_destination_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getBackupDestination:getBackupDestination', __args__, opts=opts, typ=GetBackupDestinationResult)
     return __ret__.apply(lambda __response__: GetBackupDestinationResult(
         associated_databases=pulumi.get(__response__, 'associated_databases'),

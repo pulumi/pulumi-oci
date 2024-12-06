@@ -320,7 +320,7 @@ def get_maintenance_window(maintenance_window_id: Optional[str] = None,
         time_schedule_start=pulumi.get(__ret__, 'time_schedule_start'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_maintenance_window_output(maintenance_window_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceWindowResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceWindowResult]:
     """
     This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -340,7 +340,7 @@ def get_maintenance_window_output(maintenance_window_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['maintenanceWindowId'] = maintenance_window_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getMaintenanceWindow:getMaintenanceWindow', __args__, opts=opts, typ=GetMaintenanceWindowResult)
     return __ret__.apply(lambda __response__: GetMaintenanceWindowResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

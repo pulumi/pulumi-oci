@@ -84,7 +84,7 @@ export interface GetImportableComputeEntitiesResult {
  * });
  * ```
  */
-export function getImportableComputeEntitiesOutput(args: GetImportableComputeEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImportableComputeEntitiesResult> {
+export function getImportableComputeEntitiesOutput(args: GetImportableComputeEntitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImportableComputeEntitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", {
         "compartmentId": args.compartmentId,

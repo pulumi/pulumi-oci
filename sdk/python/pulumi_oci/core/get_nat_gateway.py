@@ -229,7 +229,7 @@ def get_nat_gateway(nat_gateway_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_nat_gateway_output(nat_gateway_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNatGatewayResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNatGatewayResult]:
     """
     This data source provides details about a specific Nat Gateway resource in Oracle Cloud Infrastructure Core service.
 
@@ -249,7 +249,7 @@ def get_nat_gateway_output(nat_gateway_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['natGatewayId'] = nat_gateway_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getNatGateway:getNatGateway', __args__, opts=opts, typ=GetNatGatewayResult)
     return __ret__.apply(lambda __response__: GetNatGatewayResult(
         block_traffic=pulumi.get(__response__, 'block_traffic'),

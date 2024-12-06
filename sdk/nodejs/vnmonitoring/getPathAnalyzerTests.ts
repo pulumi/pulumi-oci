@@ -97,7 +97,7 @@ export interface GetPathAnalyzerTestsResult {
  * });
  * ```
  */
-export function getPathAnalyzerTestsOutput(args: GetPathAnalyzerTestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPathAnalyzerTestsResult> {
+export function getPathAnalyzerTestsOutput(args: GetPathAnalyzerTestsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPathAnalyzerTestsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", {
         "compartmentId": args.compartmentId,

@@ -141,7 +141,7 @@ def get_ipsec_status(filters: Optional[Sequence[Union['GetIpsecStatusFilterArgs'
         tunnels=pulumi.get(__ret__, 'tunnels'))
 def get_ipsec_status_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpsecStatusFilterArgs', 'GetIpsecStatusFilterArgsDict']]]]] = None,
                             ipsec_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecStatusResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecStatusResult]:
     """
     This data source provides details about a specific Ip Sec Connection Device Status resource in Oracle Cloud Infrastructure Core service.
 
@@ -163,7 +163,7 @@ def get_ipsec_status_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     __args__ = dict()
     __args__['filters'] = filters
     __args__['ipsecId'] = ipsec_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecStatus:getIpsecStatus', __args__, opts=opts, typ=GetIpsecStatusResult)
     return __ret__.apply(lambda __response__: GetIpsecStatusResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

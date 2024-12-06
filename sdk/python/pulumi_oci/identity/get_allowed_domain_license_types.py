@@ -119,7 +119,7 @@ def get_allowed_domain_license_types(current_license_type_name: Optional[str] = 
         id=pulumi.get(__ret__, 'id'))
 def get_allowed_domain_license_types_output(current_license_type_name: Optional[pulumi.Input[Optional[str]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAllowedDomainLicenseTypesFilterArgs', 'GetAllowedDomainLicenseTypesFilterArgsDict']]]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAllowedDomainLicenseTypesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAllowedDomainLicenseTypesResult]:
     """
     This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
 
@@ -145,7 +145,7 @@ def get_allowed_domain_license_types_output(current_license_type_name: Optional[
     __args__ = dict()
     __args__['currentLicenseTypeName'] = current_license_type_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes', __args__, opts=opts, typ=GetAllowedDomainLicenseTypesResult)
     return __ret__.apply(lambda __response__: GetAllowedDomainLicenseTypesResult(
         allowed_domain_license_types=pulumi.get(__response__, 'allowed_domain_license_types'),

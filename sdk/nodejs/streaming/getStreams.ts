@@ -122,7 +122,7 @@ export interface GetStreamsResult {
  * });
  * ```
  */
-export function getStreamsOutput(args?: GetStreamsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamsResult> {
+export function getStreamsOutput(args?: GetStreamsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStreamsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Streaming/getStreams:getStreams", {

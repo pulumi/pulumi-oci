@@ -258,7 +258,7 @@ def get_private_ip(private_ip_id: Optional[str] = None,
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
 def get_private_ip_output(private_ip_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateIpResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateIpResult]:
     """
     This data source provides details about a specific Private Ip resource in Oracle Cloud Infrastructure Core service.
 
@@ -281,7 +281,7 @@ def get_private_ip_output(private_ip_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['privateIpId'] = private_ip_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getPrivateIp:getPrivateIp', __args__, opts=opts, typ=GetPrivateIpResult)
     return __ret__.apply(lambda __response__: GetPrivateIpResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -103,7 +103,7 @@ export interface GetNetworkFirewallPolicyResult {
  * });
  * ```
  */
-export function getNetworkFirewallPolicyOutput(args: GetNetworkFirewallPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyResult> {
+export function getNetworkFirewallPolicyOutput(args: GetNetworkFirewallPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicy:getNetworkFirewallPolicy", {
         "networkFirewallPolicyId": args.networkFirewallPolicyId,

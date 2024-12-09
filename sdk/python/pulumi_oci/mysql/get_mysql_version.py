@@ -116,7 +116,7 @@ def get_mysql_version(compartment_id: Optional[str] = None,
         versions=pulumi.get(__ret__, 'versions'))
 def get_mysql_version_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMysqlVersionFilterArgs', 'GetMysqlVersionFilterArgsDict']]]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlVersionResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlVersionResult]:
     """
     This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.
 
@@ -139,7 +139,7 @@ def get_mysql_version_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlVersion:getMysqlVersion', __args__, opts=opts, typ=GetMysqlVersionResult)
     return __ret__.apply(lambda __response__: GetMysqlVersionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

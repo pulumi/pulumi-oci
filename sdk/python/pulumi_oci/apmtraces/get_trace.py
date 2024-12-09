@@ -397,7 +397,7 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                      time_trace_started_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                      trace_key: Optional[pulumi.Input[str]] = None,
                      trace_namespace: Optional[pulumi.Input[Optional[str]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTraceResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTraceResult]:
     """
     This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
 
@@ -429,7 +429,7 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     __args__['timeTraceStartedLessThan'] = time_trace_started_less_than
     __args__['traceKey'] = trace_key
     __args__['traceNamespace'] = trace_namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmTraces/getTrace:getTrace', __args__, opts=opts, typ=GetTraceResult)
     return __ret__.apply(lambda __response__: GetTraceResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

@@ -73,7 +73,7 @@ export interface GetDatabaseMaintenanceRunHistoryResult {
  * });
  * ```
  */
-export function getDatabaseMaintenanceRunHistoryOutput(args: GetDatabaseMaintenanceRunHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseMaintenanceRunHistoryResult> {
+export function getDatabaseMaintenanceRunHistoryOutput(args: GetDatabaseMaintenanceRunHistoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseMaintenanceRunHistoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", {
         "maintenanceRunHistoryId": args.maintenanceRunHistoryId,

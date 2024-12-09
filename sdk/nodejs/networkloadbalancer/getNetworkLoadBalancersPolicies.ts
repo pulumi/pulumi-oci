@@ -63,7 +63,7 @@ export interface GetNetworkLoadBalancersPoliciesResult {
  * const testNetworkLoadBalancersPolicies = oci.NetworkLoadBalancer.getNetworkLoadBalancersPolicies({});
  * ```
  */
-export function getNetworkLoadBalancersPoliciesOutput(args?: GetNetworkLoadBalancersPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkLoadBalancersPoliciesResult> {
+export function getNetworkLoadBalancersPoliciesOutput(args?: GetNetworkLoadBalancersPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkLoadBalancersPoliciesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancersPolicies:getNetworkLoadBalancersPolicies", {

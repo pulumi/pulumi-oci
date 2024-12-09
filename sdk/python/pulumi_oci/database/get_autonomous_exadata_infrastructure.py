@@ -356,7 +356,7 @@ def get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id: 
         time_created=pulumi.get(__ret__, 'time_created'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
 def get_autonomous_exadata_infrastructure_output(autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureResult]:
     """
     This data source provides details about a specific Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
 
@@ -376,7 +376,7 @@ def get_autonomous_exadata_infrastructure_output(autonomous_exadata_infrastructu
     """
     __args__ = dict()
     __args__['autonomousExadataInfrastructureId'] = autonomous_exadata_infrastructure_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure', __args__, opts=opts, typ=GetAutonomousExadataInfrastructureResult)
     return __ret__.apply(lambda __response__: GetAutonomousExadataInfrastructureResult(
         autonomous_exadata_infrastructure_id=pulumi.get(__response__, 'autonomous_exadata_infrastructure_id'),

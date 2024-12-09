@@ -172,7 +172,7 @@ def get_load_balancers_output(compartment_id: Optional[pulumi.Input[str]] = None
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLoadBalancersFilterArgs', 'GetLoadBalancersFilterArgsDict']]]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLoadBalancersResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLoadBalancersResult]:
     """
     This data source provides the list of Load Balancers in Oracle Cloud Infrastructure Load Balancer service.
 
@@ -206,7 +206,7 @@ def get_load_balancers_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getLoadBalancers:getLoadBalancers', __args__, opts=opts, typ=GetLoadBalancersResult)
     return __ret__.apply(lambda __response__: GetLoadBalancersResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

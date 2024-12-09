@@ -346,7 +346,7 @@ def get_control(operator_control_id: Optional[str] = None,
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         time_of_modification=pulumi.get(__ret__, 'time_of_modification'))
 def get_control_output(operator_control_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetControlResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetControlResult]:
     """
     This data source provides details about a specific Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
 
@@ -366,7 +366,7 @@ def get_control_output(operator_control_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['operatorControlId'] = operator_control_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getControl:getControl', __args__, opts=opts, typ=GetControlResult)
     return __ret__.apply(lambda __response__: GetControlResult(
         approval_required_op_action_lists=pulumi.get(__response__, 'approval_required_op_action_lists'),

@@ -150,7 +150,7 @@ def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTagNamespacesFilterArgs', 'GetTagNamespacesFilterArgsDict']]]]] = None,
                               include_subcompartments: Optional[pulumi.Input[Optional[bool]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagNamespacesResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagNamespacesResult]:
     """
     This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
 
@@ -177,7 +177,7 @@ def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__['filters'] = filters
     __args__['includeSubcompartments'] = include_subcompartments
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTagNamespaces:getTagNamespaces', __args__, opts=opts, typ=GetTagNamespacesResult)
     return __ret__.apply(lambda __response__: GetTagNamespacesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

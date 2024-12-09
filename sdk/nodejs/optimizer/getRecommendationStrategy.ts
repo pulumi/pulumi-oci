@@ -98,7 +98,7 @@ export interface GetRecommendationStrategyResult {
  * });
  * ```
  */
-export function getRecommendationStrategyOutput(args: GetRecommendationStrategyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecommendationStrategyResult> {
+export function getRecommendationStrategyOutput(args: GetRecommendationStrategyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecommendationStrategyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", {
         "compartmentId": args.compartmentId,

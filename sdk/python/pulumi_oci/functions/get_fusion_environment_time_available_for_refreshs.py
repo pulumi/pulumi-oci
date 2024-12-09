@@ -114,7 +114,7 @@ def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequenc
         time_available_for_refresh_collections=pulumi.get(__ret__, 'time_available_for_refresh_collections'))
 def get_fusion_environment_time_available_for_refreshs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict']]]]] = None,
                                                               fusion_environment_id: Optional[pulumi.Input[str]] = None,
-                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentTimeAvailableForRefreshsResult]:
+                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentTimeAvailableForRefreshsResult]:
     """
     This data source provides the list of Fusion Environment Time Available For Refreshs in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -135,7 +135,7 @@ def get_fusion_environment_time_available_for_refreshs_output(filters: Optional[
     __args__ = dict()
     __args__['filters'] = filters
     __args__['fusionEnvironmentId'] = fusion_environment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs', __args__, opts=opts, typ=GetFusionEnvironmentTimeAvailableForRefreshsResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentTimeAvailableForRefreshsResult(
         filters=pulumi.get(__response__, 'filters'),

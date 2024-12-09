@@ -234,7 +234,7 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            technology_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionsResult]:
     """
     This data source provides the list of Connections in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -276,7 +276,7 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['technologyTypes'] = technology_types
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult)
     return __ret__.apply(lambda __response__: GetConnectionsResult(
         assignable_deployment_id=pulumi.get(__response__, 'assignable_deployment_id'),

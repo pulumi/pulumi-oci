@@ -234,7 +234,7 @@ def get_security_assessment_finding_analytics_output(access_level: Optional[pulu
                                                      is_top_finding: Optional[pulumi.Input[Optional[bool]]] = None,
                                                      severity: Optional[pulumi.Input[Optional[str]]] = None,
                                                      top_finding_status: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentFindingAnalyticsResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentFindingAnalyticsResult]:
     """
     This data source provides the list of Security Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
 
@@ -285,7 +285,7 @@ def get_security_assessment_finding_analytics_output(access_level: Optional[pulu
     __args__['isTopFinding'] = is_top_finding
     __args__['severity'] = severity
     __args__['topFindingStatus'] = top_finding_status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics', __args__, opts=opts, typ=GetSecurityAssessmentFindingAnalyticsResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentFindingAnalyticsResult(
         access_level=pulumi.get(__response__, 'access_level'),

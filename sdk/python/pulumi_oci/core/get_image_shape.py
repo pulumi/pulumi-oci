@@ -144,7 +144,7 @@ def get_image_shape(image_id: Optional[str] = None,
         shape_name=pulumi.get(__ret__, 'shape_name'))
 def get_image_shape_output(image_id: Optional[pulumi.Input[str]] = None,
                            shape_name: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImageShapeResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageShapeResult]:
     """
     This data source provides details about a specific Image Shape resource in Oracle Cloud Infrastructure Core service.
 
@@ -167,7 +167,7 @@ def get_image_shape_output(image_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['imageId'] = image_id
     __args__['shapeName'] = shape_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getImageShape:getImageShape', __args__, opts=opts, typ=GetImageShapeResult)
     return __ret__.apply(lambda __response__: GetImageShapeResult(
         id=pulumi.get(__response__, 'id'),

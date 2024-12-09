@@ -148,7 +148,7 @@ def get_billing_schedules_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBillingSchedulesFilterArgs', 'GetBillingSchedulesFilterArgsDict']]]]] = None,
                                  subscribed_service_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  subscription_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBillingSchedulesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBillingSchedulesResult]:
     """
     This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Onesubscription service.
 
@@ -176,7 +176,7 @@ def get_billing_schedules_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['filters'] = filters
     __args__['subscribedServiceId'] = subscribed_service_id
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getBillingSchedules:getBillingSchedules', __args__, opts=opts, typ=GetBillingSchedulesResult)
     return __ret__.apply(lambda __response__: GetBillingSchedulesResult(
         billing_schedules=pulumi.get(__response__, 'billing_schedules'),

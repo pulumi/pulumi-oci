@@ -84,7 +84,7 @@ export interface GetAvailabilityDomainResult {
  * });
  * ```
  */
-export function getAvailabilityDomainOutput(args: GetAvailabilityDomainOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAvailabilityDomainResult> {
+export function getAvailabilityDomainOutput(args: GetAvailabilityDomainOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAvailabilityDomainResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", {
         "adNumber": args.adNumber,

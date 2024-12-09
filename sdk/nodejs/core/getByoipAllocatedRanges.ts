@@ -74,7 +74,7 @@ export interface GetByoipAllocatedRangesResult {
  * });
  * ```
  */
-export function getByoipAllocatedRangesOutput(args: GetByoipAllocatedRangesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipAllocatedRangesResult> {
+export function getByoipAllocatedRangesOutput(args: GetByoipAllocatedRangesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetByoipAllocatedRangesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", {
         "byoipRangeId": args.byoipRangeId,

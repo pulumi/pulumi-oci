@@ -91,7 +91,7 @@ export interface GetManagementAgentAvailableHistoriesResult {
  * });
  * ```
  */
-export function getManagementAgentAvailableHistoriesOutput(args: GetManagementAgentAvailableHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentAvailableHistoriesResult> {
+export function getManagementAgentAvailableHistoriesOutput(args: GetManagementAgentAvailableHistoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentAvailableHistoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", {
         "filters": args.filters,

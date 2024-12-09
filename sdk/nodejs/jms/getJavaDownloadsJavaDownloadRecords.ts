@@ -147,7 +147,7 @@ export interface GetJavaDownloadsJavaDownloadRecordsResult {
  * });
  * ```
  */
-export function getJavaDownloadsJavaDownloadRecordsOutput(args: GetJavaDownloadsJavaDownloadRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaDownloadRecordsResult> {
+export function getJavaDownloadsJavaDownloadRecordsOutput(args: GetJavaDownloadsJavaDownloadRecordsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJavaDownloadsJavaDownloadRecordsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords", {
         "architecture": args.architecture,

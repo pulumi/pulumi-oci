@@ -266,7 +266,7 @@ def get_outbound_connector(outbound_connector_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOutboundConnectorResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOutboundConnectorResult]:
     """
     This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
 
@@ -286,7 +286,7 @@ def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['outboundConnectorId'] = outbound_connector_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getOutboundConnector:getOutboundConnector', __args__, opts=opts, typ=GetOutboundConnectorResult)
     return __ret__.apply(lambda __response__: GetOutboundConnectorResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

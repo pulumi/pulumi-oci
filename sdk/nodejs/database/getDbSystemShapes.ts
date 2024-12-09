@@ -80,7 +80,7 @@ export interface GetDbSystemShapesResult {
  * });
  * ```
  */
-export function getDbSystemShapesOutput(args: GetDbSystemShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemShapesResult> {
+export function getDbSystemShapesOutput(args: GetDbSystemShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbSystemShapes:getDbSystemShapes", {
         "availabilityDomain": args.availabilityDomain,

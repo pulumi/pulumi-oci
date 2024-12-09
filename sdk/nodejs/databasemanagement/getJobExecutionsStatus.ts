@@ -113,7 +113,7 @@ export interface GetJobExecutionsStatusResult {
  * });
  * ```
  */
-export function getJobExecutionsStatusOutput(args: GetJobExecutionsStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobExecutionsStatusResult> {
+export function getJobExecutionsStatusOutput(args: GetJobExecutionsStatusOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJobExecutionsStatusResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", {
         "compartmentId": args.compartmentId,

@@ -130,7 +130,7 @@ export interface GetAssociationsResult {
  * });
  * ```
  */
-export function getAssociationsOutput(args?: GetAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssociationsResult> {
+export function getAssociationsOutput(args?: GetAssociationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAssociationsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getAssociations:getAssociations", {

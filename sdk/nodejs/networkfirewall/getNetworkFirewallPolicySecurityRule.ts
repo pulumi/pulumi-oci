@@ -76,7 +76,7 @@ export interface GetNetworkFirewallPolicySecurityRuleResult {
  *
  * Get Security Rule by the given name in the context of network firewall policy.
  */
-export function getNetworkFirewallPolicySecurityRuleOutput(args: GetNetworkFirewallPolicySecurityRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicySecurityRuleResult> {
+export function getNetworkFirewallPolicySecurityRuleOutput(args: GetNetworkFirewallPolicySecurityRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicySecurityRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", {
         "name": args.name,

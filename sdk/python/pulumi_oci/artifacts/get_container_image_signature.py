@@ -268,7 +268,7 @@ def get_container_image_signature(image_signature_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_container_image_signature_output(image_signature_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerImageSignatureResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerImageSignatureResult]:
     """
     This data source provides details about a specific Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
 
@@ -288,7 +288,7 @@ def get_container_image_signature_output(image_signature_id: Optional[pulumi.Inp
     """
     __args__ = dict()
     __args__['imageSignatureId'] = image_signature_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerImageSignature:getContainerImageSignature', __args__, opts=opts, typ=GetContainerImageSignatureResult)
     return __ret__.apply(lambda __response__: GetContainerImageSignatureResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

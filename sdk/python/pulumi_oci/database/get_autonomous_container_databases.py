@@ -261,7 +261,7 @@ def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_
                                               infrastructure_type: Optional[pulumi.Input[Optional[str]]] = None,
                                               service_level_agreement_type: Optional[pulumi.Input[Optional[str]]] = None,
                                               state: Optional[pulumi.Input[Optional[str]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabasesResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabasesResult]:
     """
     This data source provides the list of Autonomous Container Databases in Oracle Cloud Infrastructure Database service.
 
@@ -306,7 +306,7 @@ def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_
     __args__['infrastructureType'] = infrastructure_type
     __args__['serviceLevelAgreementType'] = service_level_agreement_type
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases', __args__, opts=opts, typ=GetAutonomousContainerDatabasesResult)
     return __ret__.apply(lambda __response__: GetAutonomousContainerDatabasesResult(
         autonomous_container_databases=pulumi.get(__response__, 'autonomous_container_databases'),

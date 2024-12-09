@@ -237,7 +237,7 @@ def get_preauthrequest(bucket: Optional[str] = None,
 def get_preauthrequest_output(bucket: Optional[pulumi.Input[str]] = None,
                               namespace: Optional[pulumi.Input[str]] = None,
                               par_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPreauthrequestResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPreauthrequestResult]:
     """
     This data source provides details about a specific Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
 
@@ -263,7 +263,7 @@ def get_preauthrequest_output(bucket: Optional[pulumi.Input[str]] = None,
     __args__['bucket'] = bucket
     __args__['namespace'] = namespace
     __args__['parId'] = par_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getPreauthrequest:getPreauthrequest', __args__, opts=opts, typ=GetPreauthrequestResult)
     return __ret__.apply(lambda __response__: GetPreauthrequestResult(
         access_type=pulumi.get(__response__, 'access_type'),

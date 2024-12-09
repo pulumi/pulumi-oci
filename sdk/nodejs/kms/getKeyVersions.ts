@@ -95,7 +95,7 @@ export interface GetKeyVersionsResult {
  * });
  * ```
  */
-export function getKeyVersionsOutput(args: GetKeyVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyVersionsResult> {
+export function getKeyVersionsOutput(args: GetKeyVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKeyVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Kms/getKeyVersions:getKeyVersions", {
         "filters": args.filters,

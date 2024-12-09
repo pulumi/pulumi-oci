@@ -213,7 +213,7 @@ def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Inp
                                                display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAtCustomerCccInfrastructuresFilterArgs', 'GetAtCustomerCccInfrastructuresFilterArgsDict']]]]] = None,
                                                state: Optional[pulumi.Input[Optional[str]]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAtCustomerCccInfrastructuresResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAtCustomerCccInfrastructuresResult]:
     """
     This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
 
@@ -252,7 +252,7 @@ def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Inp
     __args__['displayNameContains'] = display_name_contains
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures', __args__, opts=opts, typ=GetAtCustomerCccInfrastructuresResult)
     return __ret__.apply(lambda __response__: GetAtCustomerCccInfrastructuresResult(
         access_level=pulumi.get(__response__, 'access_level'),

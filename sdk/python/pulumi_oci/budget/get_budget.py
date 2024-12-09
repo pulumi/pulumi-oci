@@ -373,7 +373,7 @@ def get_budget(budget_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
 def get_budget_output(budget_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBudgetResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBudgetResult]:
     """
     This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
 
@@ -393,7 +393,7 @@ def get_budget_output(budget_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['budgetId'] = budget_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Budget/getBudget:getBudget', __args__, opts=opts, typ=GetBudgetResult)
     return __ret__.apply(lambda __response__: GetBudgetResult(
         actual_spend=pulumi.get(__response__, 'actual_spend'),

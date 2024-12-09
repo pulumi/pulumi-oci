@@ -117,7 +117,7 @@ export interface GetCatalogPrivateEndpointResult {
  * });
  * ```
  */
-export function getCatalogPrivateEndpointOutput(args: GetCatalogPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogPrivateEndpointResult> {
+export function getCatalogPrivateEndpointOutput(args: GetCatalogPrivateEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCatalogPrivateEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", {
         "catalogPrivateEndpointId": args.catalogPrivateEndpointId,

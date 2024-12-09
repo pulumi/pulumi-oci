@@ -217,7 +217,7 @@ def get_cross_connect_group(cross_connect_group_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_cross_connect_group_output(cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectGroupResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCrossConnectGroupResult]:
     """
     This data source provides details about a specific Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
 
@@ -237,7 +237,7 @@ def get_cross_connect_group_output(cross_connect_group_id: Optional[pulumi.Input
     """
     __args__ = dict()
     __args__['crossConnectGroupId'] = cross_connect_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getCrossConnectGroup:getCrossConnectGroup', __args__, opts=opts, typ=GetCrossConnectGroupResult)
     return __ret__.apply(lambda __response__: GetCrossConnectGroupResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

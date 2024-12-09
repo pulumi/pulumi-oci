@@ -135,7 +135,7 @@ export interface GetWorkspaceTasksResult {
  * });
  * ```
  */
-export function getWorkspaceTasksOutput(args: GetWorkspaceTasksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceTasksResult> {
+export function getWorkspaceTasksOutput(args: GetWorkspaceTasksOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspaceTasksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks", {
         "fields": args.fields,

@@ -114,7 +114,7 @@ def get_repository_mirror_records(filters: Optional[Sequence[Union['GetRepositor
         repository_mirror_record_collections=pulumi.get(__ret__, 'repository_mirror_record_collections'))
 def get_repository_mirror_records_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryMirrorRecordsFilterArgs', 'GetRepositoryMirrorRecordsFilterArgsDict']]]]] = None,
                                          repository_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryMirrorRecordsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryMirrorRecordsResult]:
     """
     This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.
 
@@ -135,7 +135,7 @@ def get_repository_mirror_records_output(filters: Optional[pulumi.Input[Optional
     __args__ = dict()
     __args__['filters'] = filters
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords', __args__, opts=opts, typ=GetRepositoryMirrorRecordsResult)
     return __ret__.apply(lambda __response__: GetRepositoryMirrorRecordsResult(
         filters=pulumi.get(__response__, 'filters'),

@@ -282,7 +282,7 @@ def get_exascale_db_storage_vault(exascale_db_storage_vault_id: Optional[str] = 
         vm_cluster_count=pulumi.get(__ret__, 'vm_cluster_count'),
         vm_cluster_ids=pulumi.get(__ret__, 'vm_cluster_ids'))
 def get_exascale_db_storage_vault_output(exascale_db_storage_vault_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExascaleDbStorageVaultResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExascaleDbStorageVaultResult]:
     """
     This data source provides details about a specific Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
 
@@ -302,7 +302,7 @@ def get_exascale_db_storage_vault_output(exascale_db_storage_vault_id: Optional[
     """
     __args__ = dict()
     __args__['exascaleDbStorageVaultId'] = exascale_db_storage_vault_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExascaleDbStorageVault:getExascaleDbStorageVault', __args__, opts=opts, typ=GetExascaleDbStorageVaultResult)
     return __ret__.apply(lambda __response__: GetExascaleDbStorageVaultResult(
         additional_flash_cache_in_percent=pulumi.get(__response__, 'additional_flash_cache_in_percent'),

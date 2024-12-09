@@ -235,7 +235,7 @@ def get_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                        zone_name_or_id: Optional[pulumi.Input[str]] = None,
                        zone_version: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecordsResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecordsResult]:
     """
     **Deprecated. Use dns_get_rrsets instead.**
 
@@ -283,7 +283,7 @@ def get_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     __args__['sortOrder'] = sort_order
     __args__['zoneNameOrId'] = zone_name_or_id
     __args__['zoneVersion'] = zone_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getRecords:getRecords', __args__, opts=opts, typ=GetRecordsResult)
     return __ret__.apply(lambda __response__: GetRecordsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

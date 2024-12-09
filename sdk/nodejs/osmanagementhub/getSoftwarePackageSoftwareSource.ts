@@ -178,7 +178,7 @@ export interface GetSoftwarePackageSoftwareSourceResult {
  * });
  * ```
  */
-export function getSoftwarePackageSoftwareSourceOutput(args: GetSoftwarePackageSoftwareSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwarePackageSoftwareSourceResult> {
+export function getSoftwarePackageSoftwareSourceOutput(args: GetSoftwarePackageSoftwareSourceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSoftwarePackageSoftwareSourceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwarePackageSoftwareSource:getSoftwarePackageSoftwareSource", {
         "archTypes": args.archTypes,

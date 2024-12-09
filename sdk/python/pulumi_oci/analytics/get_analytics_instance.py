@@ -354,7 +354,7 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         update_channel=pulumi.get(__ret__, 'update_channel'))
 def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnalyticsInstanceResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnalyticsInstanceResult]:
     """
     This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
 
@@ -374,7 +374,7 @@ def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['analyticsInstanceId'] = analytics_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Analytics/getAnalyticsInstance:getAnalyticsInstance', __args__, opts=opts, typ=GetAnalyticsInstanceResult)
     return __ret__.apply(lambda __response__: GetAnalyticsInstanceResult(
         admin_user=pulumi.get(__response__, 'admin_user'),

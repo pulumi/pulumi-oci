@@ -159,7 +159,7 @@ def get_fusion_environment_admin_user(fusion_environment_id: Optional[str] = Non
         password=pulumi.get(__ret__, 'password'),
         username=pulumi.get(__ret__, 'username'))
 def get_fusion_environment_admin_user_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentAdminUserResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentAdminUserResult]:
     """
     This data source provides details about a specific Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -179,7 +179,7 @@ def get_fusion_environment_admin_user_output(fusion_environment_id: Optional[pul
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser', __args__, opts=opts, typ=GetFusionEnvironmentAdminUserResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentAdminUserResult(
         email_address=pulumi.get(__response__, 'email_address'),

@@ -168,7 +168,7 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
                                   resolver_id: Optional[pulumi.Input[str]] = None,
                                   scope: Optional[pulumi.Input[str]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResolverEndpointsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResolverEndpointsResult]:
     """
     This data source provides the list of Resolver Endpoints in Oracle Cloud Infrastructure DNS service.
 
@@ -201,7 +201,7 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
     __args__['resolverId'] = resolver_id
     __args__['scope'] = scope
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getResolverEndpoints:getResolverEndpoints', __args__, opts=opts, typ=GetResolverEndpointsResult)
     return __ret__.apply(lambda __response__: GetResolverEndpointsResult(
         filters=pulumi.get(__response__, 'filters'),

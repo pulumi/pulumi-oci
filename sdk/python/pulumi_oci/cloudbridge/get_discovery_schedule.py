@@ -216,7 +216,7 @@ def get_discovery_schedule(discovery_schedule_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_discovery_schedule_output(discovery_schedule_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryScheduleResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryScheduleResult]:
     """
     This data source provides details about a specific Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
 
@@ -236,7 +236,7 @@ def get_discovery_schedule_output(discovery_schedule_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['discoveryScheduleId'] = discovery_schedule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getDiscoverySchedule:getDiscoverySchedule', __args__, opts=opts, typ=GetDiscoveryScheduleResult)
     return __ret__.apply(lambda __response__: GetDiscoveryScheduleResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

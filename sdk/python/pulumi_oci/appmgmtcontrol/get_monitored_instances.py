@@ -135,7 +135,7 @@ def get_monitored_instances(compartment_id: Optional[str] = None,
 def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitoredInstancesFilterArgs', 'GetMonitoredInstancesFilterArgsDict']]]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredInstancesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredInstancesResult]:
     """
     This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
 
@@ -159,7 +159,7 @@ def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances', __args__, opts=opts, typ=GetMonitoredInstancesResult)
     return __ret__.apply(lambda __response__: GetMonitoredInstancesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

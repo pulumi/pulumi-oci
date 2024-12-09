@@ -174,7 +174,7 @@ export interface GetManagedInstanceGroupsResult {
  * });
  * ```
  */
-export function getManagedInstanceGroupsOutput(args?: GetManagedInstanceGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupsResult> {
+export function getManagedInstanceGroupsOutput(args?: GetManagedInstanceGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceGroupsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups", {

@@ -132,7 +132,7 @@ def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[Union[
 def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelSensitiveSchemasFilterArgs', 'GetSensitiveDataModelSensitiveSchemasFilterArgsDict']]]]] = None,
                                                       schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                       sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelSensitiveSchemasResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelSensitiveSchemasResult]:
     """
     This data source provides the list of Sensitive Data Model Sensitive Schemas in Oracle Cloud Infrastructure Data Safe service.
 
@@ -156,7 +156,7 @@ def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.I
     __args__['filters'] = filters
     __args__['schemaNames'] = schema_names
     __args__['sensitiveDataModelId'] = sensitive_data_model_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas', __args__, opts=opts, typ=GetSensitiveDataModelSensitiveSchemasResult)
     return __ret__.apply(lambda __response__: GetSensitiveDataModelSensitiveSchemasResult(
         filters=pulumi.get(__response__, 'filters'),

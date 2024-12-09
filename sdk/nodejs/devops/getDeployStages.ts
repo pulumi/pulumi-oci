@@ -116,7 +116,7 @@ export interface GetDeployStagesResult {
  * });
  * ```
  */
-export function getDeployStagesOutput(args?: GetDeployStagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployStagesResult> {
+export function getDeployStagesOutput(args?: GetDeployStagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDeployStagesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getDeployStages:getDeployStages", {

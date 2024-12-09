@@ -128,7 +128,7 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
 def get_vm_cluster_network_download_config_file_output(base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                                                        exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                                        vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterNetworkDownloadConfigFileResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterNetworkDownloadConfigFileResult]:
     """
     This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
 
@@ -153,7 +153,7 @@ def get_vm_cluster_network_download_config_file_output(base64_encode_content: Op
     __args__['base64EncodeContent'] = base64_encode_content
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
     __args__['vmClusterNetworkId'] = vm_cluster_network_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile', __args__, opts=opts, typ=GetVmClusterNetworkDownloadConfigFileResult)
     return __ret__.apply(lambda __response__: GetVmClusterNetworkDownloadConfigFileResult(
         base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),

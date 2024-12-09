@@ -164,7 +164,7 @@ export interface GetHostInsightResult {
  * });
  * ```
  */
-export function getHostInsightOutput(args: GetHostInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostInsightResult> {
+export function getHostInsightOutput(args: GetHostInsightOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHostInsightResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getHostInsight:getHostInsight", {
         "hostInsightId": args.hostInsightId,

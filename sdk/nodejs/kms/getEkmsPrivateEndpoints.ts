@@ -75,7 +75,7 @@ export interface GetEkmsPrivateEndpointsResult {
  * });
  * ```
  */
-export function getEkmsPrivateEndpointsOutput(args: GetEkmsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEkmsPrivateEndpointsResult> {
+export function getEkmsPrivateEndpointsOutput(args: GetEkmsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEkmsPrivateEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints", {
         "compartmentId": args.compartmentId,

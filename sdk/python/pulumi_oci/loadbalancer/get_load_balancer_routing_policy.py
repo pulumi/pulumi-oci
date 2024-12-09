@@ -148,7 +148,7 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
                                             routing_policy_name: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLoadBalancerRoutingPolicyResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLoadBalancerRoutingPolicyResult]:
     """
     This data source provides details about a specific Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
 
@@ -171,7 +171,7 @@ def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.In
     __args__ = dict()
     __args__['loadBalancerId'] = load_balancer_id
     __args__['routingPolicyName'] = routing_policy_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getLoadBalancerRoutingPolicy:getLoadBalancerRoutingPolicy', __args__, opts=opts, typ=GetLoadBalancerRoutingPolicyResult)
     return __ret__.apply(lambda __response__: GetLoadBalancerRoutingPolicyResult(
         condition_language_version=pulumi.get(__response__, 'condition_language_version'),

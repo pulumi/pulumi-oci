@@ -256,7 +256,7 @@ def get_instance_pool(instance_pool_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_instance_pool_output(instance_pool_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancePoolResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstancePoolResult]:
     """
     This data source provides details about a specific Instance Pool resource in Oracle Cloud Infrastructure Core service.
 
@@ -276,7 +276,7 @@ def get_instance_pool_output(instance_pool_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['instancePoolId'] = instance_pool_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstancePool:getInstancePool', __args__, opts=opts, typ=GetInstancePoolResult)
     return __ret__.apply(lambda __response__: GetInstancePoolResult(
         actual_size=pulumi.get(__response__, 'actual_size'),

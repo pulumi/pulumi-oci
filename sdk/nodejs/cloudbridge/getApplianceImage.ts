@@ -80,7 +80,7 @@ export interface GetApplianceImageResult {
  * });
  * ```
  */
-export function getApplianceImageOutput(args: GetApplianceImageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplianceImageResult> {
+export function getApplianceImageOutput(args: GetApplianceImageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApplianceImageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudBridge/getApplianceImage:getApplianceImage", {
         "compartmentId": args.compartmentId,

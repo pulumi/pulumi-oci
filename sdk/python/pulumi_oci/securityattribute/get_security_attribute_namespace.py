@@ -216,7 +216,7 @@ def get_security_attribute_namespace(security_attribute_namespace_id: Optional[s
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_security_attribute_namespace_output(security_attribute_namespace_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAttributeNamespaceResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAttributeNamespaceResult]:
     """
     This data source provides details about a specific Security Attribute Namespace resource in Oracle Cloud Infrastructure Security Attribute service.
 
@@ -236,7 +236,7 @@ def get_security_attribute_namespace_output(security_attribute_namespace_id: Opt
     """
     __args__ = dict()
     __args__['securityAttributeNamespaceId'] = security_attribute_namespace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:SecurityAttribute/getSecurityAttributeNamespace:getSecurityAttributeNamespace', __args__, opts=opts, typ=GetSecurityAttributeNamespaceResult)
     return __ret__.apply(lambda __response__: GetSecurityAttributeNamespaceResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

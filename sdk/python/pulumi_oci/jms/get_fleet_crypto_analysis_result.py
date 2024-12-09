@@ -325,7 +325,7 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
 def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[pulumi.Input[str]] = None,
                                             fleet_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultResult]:
     """
     This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
 
@@ -348,7 +348,7 @@ def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[
     __args__ = dict()
     __args__['cryptoAnalysisResultId'] = crypto_analysis_result_id
     __args__['fleetId'] = fleet_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult', __args__, opts=opts, typ=GetFleetCryptoAnalysisResultResult)
     return __ret__.apply(lambda __response__: GetFleetCryptoAnalysisResultResult(
         aggregation_mode=pulumi.get(__response__, 'aggregation_mode'),

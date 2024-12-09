@@ -140,7 +140,7 @@ export interface GetDomainsSmtpCredentialsResult {
  * });
  * ```
  */
-export function getDomainsSmtpCredentialsOutput(args: GetDomainsSmtpCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSmtpCredentialsResult> {
+export function getDomainsSmtpCredentialsOutput(args: GetDomainsSmtpCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsSmtpCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSmtpCredentials:getDomainsSmtpCredentials", {
         "attributeSets": args.attributeSets,

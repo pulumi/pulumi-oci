@@ -95,7 +95,7 @@ export interface GetVmClusterPatchHistoryEntryResult {
  * });
  * ```
  */
-export function getVmClusterPatchHistoryEntryOutput(args: GetVmClusterPatchHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterPatchHistoryEntryResult> {
+export function getVmClusterPatchHistoryEntryOutput(args: GetVmClusterPatchHistoryEntryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVmClusterPatchHistoryEntryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", {
         "patchHistoryEntryId": args.patchHistoryEntryId,

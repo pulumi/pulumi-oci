@@ -159,7 +159,7 @@ def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[
                                         tenancy_id: Optional[pulumi.Input[str]] = None,
                                         time_redeemed_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                         time_redeemed_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionRedemptionsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionRedemptionsResult]:
     """
     This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
 
@@ -189,7 +189,7 @@ def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[
     __args__['tenancyId'] = tenancy_id
     __args__['timeRedeemedGreaterThanOrEqualTo'] = time_redeemed_greater_than_or_equal_to
     __args__['timeRedeemedLessThan'] = time_redeemed_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions', __args__, opts=opts, typ=GetSubscriptionRedemptionsResult)
     return __ret__.apply(lambda __response__: GetSubscriptionRedemptionsResult(
         filters=pulumi.get(__response__, 'filters'),

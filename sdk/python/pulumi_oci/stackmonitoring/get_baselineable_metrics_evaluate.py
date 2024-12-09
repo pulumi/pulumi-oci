@@ -147,7 +147,7 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[str] = No
 def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pulumi.Input[str]] = None,
                                              items: Optional[pulumi.Input[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']]]] = None,
                                              resource_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBaselineableMetricsEvaluateResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBaselineableMetricsEvaluateResult]:
     """
     This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
@@ -183,7 +183,7 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pu
     __args__['baselineableMetricId'] = baselineable_metric_id
     __args__['items'] = items
     __args__['resourceId'] = resource_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate', __args__, opts=opts, typ=GetBaselineableMetricsEvaluateResult)
     return __ret__.apply(lambda __response__: GetBaselineableMetricsEvaluateResult(
         baselineable_metric_id=pulumi.get(__response__, 'baselineable_metric_id'),

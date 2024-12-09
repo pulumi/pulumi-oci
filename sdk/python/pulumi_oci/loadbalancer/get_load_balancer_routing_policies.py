@@ -114,7 +114,7 @@ def get_load_balancer_routing_policies(filters: Optional[Sequence[Union['GetLoad
         routing_policies=pulumi.get(__ret__, 'routing_policies'))
 def get_load_balancer_routing_policies_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLoadBalancerRoutingPoliciesFilterArgs', 'GetLoadBalancerRoutingPoliciesFilterArgsDict']]]]] = None,
                                               load_balancer_id: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLoadBalancerRoutingPoliciesResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLoadBalancerRoutingPoliciesResult]:
     """
     This data source provides the list of Load Balancer Routing Policies in Oracle Cloud Infrastructure Load Balancer service.
 
@@ -135,7 +135,7 @@ def get_load_balancer_routing_policies_output(filters: Optional[pulumi.Input[Opt
     __args__ = dict()
     __args__['filters'] = filters
     __args__['loadBalancerId'] = load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies', __args__, opts=opts, typ=GetLoadBalancerRoutingPoliciesResult)
     return __ret__.apply(lambda __response__: GetLoadBalancerRoutingPoliciesResult(
         filters=pulumi.get(__response__, 'filters'),

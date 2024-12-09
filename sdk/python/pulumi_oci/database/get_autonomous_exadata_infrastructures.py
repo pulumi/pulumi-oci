@@ -171,7 +171,7 @@ def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[
                                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousExadataInfrastructuresFilterArgs', 'GetAutonomousExadataInfrastructuresFilterArgsDict']]]]] = None,
                                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructuresResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousExadataInfrastructuresResult]:
     """
     This data source provides the list of Autonomous Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
 
@@ -201,7 +201,7 @@ def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures', __args__, opts=opts, typ=GetAutonomousExadataInfrastructuresResult)
     return __ret__.apply(lambda __response__: GetAutonomousExadataInfrastructuresResult(
         autonomous_exadata_infrastructures=pulumi.get(__response__, 'autonomous_exadata_infrastructures'),

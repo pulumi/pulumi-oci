@@ -139,7 +139,7 @@ export interface GetBastionResult {
  * });
  * ```
  */
-export function getBastionOutput(args: GetBastionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBastionResult> {
+export function getBastionOutput(args: GetBastionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBastionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Bastion/getBastion:getBastion", {
         "bastionId": args.bastionId,

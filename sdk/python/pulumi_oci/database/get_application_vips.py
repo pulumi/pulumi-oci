@@ -153,7 +153,7 @@ def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
                                 compartment_id: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApplicationVipsFilterArgs', 'GetApplicationVipsFilterArgsDict']]]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationVipsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplicationVipsResult]:
     """
     This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
 
@@ -180,7 +180,7 @@ def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getApplicationVips:getApplicationVips', __args__, opts=opts, typ=GetApplicationVipsResult)
     return __ret__.apply(lambda __response__: GetApplicationVipsResult(
         application_vips=pulumi.get(__response__, 'application_vips'),

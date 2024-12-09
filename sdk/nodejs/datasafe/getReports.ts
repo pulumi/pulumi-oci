@@ -166,7 +166,7 @@ export interface GetReportsResult {
  * });
  * ```
  */
-export function getReportsOutput(args: GetReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportsResult> {
+export function getReportsOutput(args: GetReportsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReportsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getReports:getReports", {
         "accessLevel": args.accessLevel,

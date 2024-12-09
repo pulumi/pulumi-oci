@@ -269,7 +269,7 @@ def get_notebook_session(notebook_session_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_notebook_session_output(notebook_session_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNotebookSessionResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNotebookSessionResult]:
     """
     This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
 
@@ -289,7 +289,7 @@ def get_notebook_session_output(notebook_session_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['notebookSessionId'] = notebook_session_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getNotebookSession:getNotebookSession', __args__, opts=opts, typ=GetNotebookSessionResult)
     return __ret__.apply(lambda __response__: GetNotebookSessionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

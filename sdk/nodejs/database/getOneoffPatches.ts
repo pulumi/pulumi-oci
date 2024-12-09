@@ -97,7 +97,7 @@ export interface GetOneoffPatchesResult {
  * });
  * ```
  */
-export function getOneoffPatchesOutput(args: GetOneoffPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOneoffPatchesResult> {
+export function getOneoffPatchesOutput(args: GetOneoffPatchesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOneoffPatchesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getOneoffPatches:getOneoffPatches", {
         "compartmentId": args.compartmentId,

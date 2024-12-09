@@ -115,7 +115,7 @@ export interface GetAtCustomerCccUpgradeScheduleResult {
  * });
  * ```
  */
-export function getAtCustomerCccUpgradeScheduleOutput(args: GetAtCustomerCccUpgradeScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccUpgradeScheduleResult> {
+export function getAtCustomerCccUpgradeScheduleOutput(args: GetAtCustomerCccUpgradeScheduleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAtCustomerCccUpgradeScheduleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", {
         "cccUpgradeScheduleId": args.cccUpgradeScheduleId,

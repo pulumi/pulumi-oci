@@ -211,7 +211,7 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[st
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]]]] = None,
                                  security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPoliciesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPoliciesResult]:
     """
     This data source provides the list of Security Policies in Oracle Cloud Infrastructure Data Safe service.
 
@@ -260,7 +260,7 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[st
     __args__['filters'] = filters
     __args__['securityPolicyId'] = security_policy_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicies:getSecurityPolicies', __args__, opts=opts, typ=GetSecurityPoliciesResult)
     return __ret__.apply(lambda __response__: GetSecurityPoliciesResult(
         access_level=pulumi.get(__response__, 'access_level'),

@@ -88,7 +88,7 @@ export interface GetGiVersionsResult {
  * });
  * ```
  */
-export function getGiVersionsOutput(args: GetGiVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGiVersionsResult> {
+export function getGiVersionsOutput(args: GetGiVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGiVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getGiVersions:getGiVersions", {
         "availabilityDomain": args.availabilityDomain,

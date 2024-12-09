@@ -75,7 +75,7 @@ export interface GetSubscriptionRedeemableUserResult {
  * });
  * ```
  */
-export function getSubscriptionRedeemableUserOutput(args: GetSubscriptionRedeemableUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionRedeemableUserResult> {
+export function getSubscriptionRedeemableUserOutput(args: GetSubscriptionRedeemableUserOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubscriptionRedeemableUserResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", {
         "subscriptionId": args.subscriptionId,

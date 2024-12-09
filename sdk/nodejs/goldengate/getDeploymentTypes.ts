@@ -105,7 +105,7 @@ export interface GetDeploymentTypesResult {
  * });
  * ```
  */
-export function getDeploymentTypesOutput(args: GetDeploymentTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentTypesResult> {
+export function getDeploymentTypesOutput(args: GetDeploymentTypesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDeploymentTypesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeploymentTypes:getDeploymentTypes", {
         "compartmentId": args.compartmentId,

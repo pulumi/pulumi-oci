@@ -218,7 +218,7 @@ export interface GetSecurityAssessmentsResult {
  * });
  * ```
  */
-export function getSecurityAssessmentsOutput(args: GetSecurityAssessmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentsResult> {
+export function getSecurityAssessmentsOutput(args: GetSecurityAssessmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAssessmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessments:getSecurityAssessments", {
         "accessLevel": args.accessLevel,

@@ -108,7 +108,7 @@ export interface GetAutonomousVmClustersResult {
  * });
  * ```
  */
-export function getAutonomousVmClustersOutput(args: GetAutonomousVmClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousVmClustersResult> {
+export function getAutonomousVmClustersOutput(args: GetAutonomousVmClustersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousVmClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousVmClusters:getAutonomousVmClusters", {
         "compartmentId": args.compartmentId,

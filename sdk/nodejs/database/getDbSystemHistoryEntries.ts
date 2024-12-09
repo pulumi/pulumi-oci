@@ -72,7 +72,7 @@ export interface GetDbSystemHistoryEntriesResult {
  * });
  * ```
  */
-export function getDbSystemHistoryEntriesOutput(args: GetDbSystemHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemHistoryEntriesResult> {
+export function getDbSystemHistoryEntriesOutput(args: GetDbSystemHistoryEntriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemHistoryEntriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", {
         "dbSystemId": args.dbSystemId,

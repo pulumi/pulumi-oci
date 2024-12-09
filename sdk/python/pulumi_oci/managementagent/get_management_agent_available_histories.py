@@ -147,7 +147,7 @@ def get_management_agent_available_histories_output(filters: Optional[pulumi.Inp
                                                     management_agent_id: Optional[pulumi.Input[str]] = None,
                                                     time_availability_status_ended_greater_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                     time_availability_status_started_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentAvailableHistoriesResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentAvailableHistoriesResult]:
     """
     This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
 
@@ -174,7 +174,7 @@ def get_management_agent_available_histories_output(filters: Optional[pulumi.Inp
     __args__['managementAgentId'] = management_agent_id
     __args__['timeAvailabilityStatusEndedGreaterThan'] = time_availability_status_ended_greater_than
     __args__['timeAvailabilityStatusStartedLessThan'] = time_availability_status_started_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories', __args__, opts=opts, typ=GetManagementAgentAvailableHistoriesResult)
     return __ret__.apply(lambda __response__: GetManagementAgentAvailableHistoriesResult(
         availability_histories=pulumi.get(__response__, 'availability_histories'),

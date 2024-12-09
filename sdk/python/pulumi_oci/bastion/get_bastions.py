@@ -165,7 +165,7 @@ def get_bastions_output(bastion_id: Optional[pulumi.Input[Optional[str]]] = None
                         compartment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBastionsFilterArgs', 'GetBastionsFilterArgsDict']]]]] = None,
                         name: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBastionsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBastionsResult]:
     """
     This data source provides the list of Bastions in Oracle Cloud Infrastructure Bastion service.
 
@@ -195,7 +195,7 @@ def get_bastions_output(bastion_id: Optional[pulumi.Input[Optional[str]]] = None
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Bastion/getBastions:getBastions', __args__, opts=opts, typ=GetBastionsResult)
     return __ret__.apply(lambda __response__: GetBastionsResult(
         bastion_id=pulumi.get(__response__, 'bastion_id'),

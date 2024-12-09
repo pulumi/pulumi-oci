@@ -129,7 +129,7 @@ def get_backends(backend_set_name: Optional[str] = None,
 def get_backends_output(backend_set_name: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackendsFilterArgs', 'GetBackendsFilterArgsDict']]]]] = None,
                         network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackendsResult]:
     """
     This data source provides the list of Backends in Oracle Cloud Infrastructure Network Load Balancer service.
 
@@ -153,7 +153,7 @@ def get_backends_output(backend_set_name: Optional[pulumi.Input[str]] = None,
     __args__['backendSetName'] = backend_set_name
     __args__['filters'] = filters
     __args__['networkLoadBalancerId'] = network_load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getBackends:getBackends', __args__, opts=opts, typ=GetBackendsResult)
     return __ret__.apply(lambda __response__: GetBackendsResult(
         backend_collections=pulumi.get(__response__, 'backend_collections'),

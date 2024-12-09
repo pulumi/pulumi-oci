@@ -101,7 +101,7 @@ export interface GetProtectionRuleResult {
  * });
  * ```
  */
-export function getProtectionRuleOutput(args: GetProtectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionRuleResult> {
+export function getProtectionRuleOutput(args: GetProtectionRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waas/getProtectionRule:getProtectionRule", {
         "protectionRuleKey": args.protectionRuleKey,

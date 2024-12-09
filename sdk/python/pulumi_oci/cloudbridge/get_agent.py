@@ -324,7 +324,7 @@ def get_agent(agent_id: Optional[str] = None,
         time_last_sync_received=pulumi.get(__ret__, 'time_last_sync_received'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_agent_output(agent_id: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentResult]:
     """
     This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
 
@@ -344,7 +344,7 @@ def get_agent_output(agent_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['agentId'] = agent_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAgent:getAgent', __args__, opts=opts, typ=GetAgentResult)
     return __ret__.apply(lambda __response__: GetAgentResult(
         agent_id=pulumi.get(__response__, 'agent_id'),

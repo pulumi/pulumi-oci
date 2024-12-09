@@ -374,7 +374,7 @@ def get_sensitive_data_models_sensitive_column(sensitive_column_key: Optional[st
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Optional[pulumi.Input[str]] = None,
                                                       sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelsSensitiveColumnResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelsSensitiveColumnResult]:
     """
     This data source provides details about a specific Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -397,7 +397,7 @@ def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Opti
     __args__ = dict()
     __args__['sensitiveColumnKey'] = sensitive_column_key
     __args__['sensitiveDataModelId'] = sensitive_data_model_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn', __args__, opts=opts, typ=GetSensitiveDataModelsSensitiveColumnResult)
     return __ret__.apply(lambda __response__: GetSensitiveDataModelsSensitiveColumnResult(
         app_defined_child_column_keys=pulumi.get(__response__, 'app_defined_child_column_keys'),

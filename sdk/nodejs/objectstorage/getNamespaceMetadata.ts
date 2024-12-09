@@ -30,7 +30,7 @@ export interface GetNamespaceMetadataResult {
     readonly id: string;
     readonly namespace: string;
 }
-export function getNamespaceMetadataOutput(args: GetNamespaceMetadataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceMetadataResult> {
+export function getNamespaceMetadataOutput(args: GetNamespaceMetadataOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceMetadataResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", {
         "namespace": args.namespace,

@@ -295,7 +295,7 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
         time_last_wallet_rotated=pulumi.get(__ret__, 'time_last_wallet_rotated'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_operations_insights_warehouse_output(operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsWarehouseResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsWarehouseResult]:
     """
     This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -316,7 +316,7 @@ def get_operations_insights_warehouse_output(operations_insights_warehouse_id: O
     """
     __args__ = dict()
     __args__['operationsInsightsWarehouseId'] = operations_insights_warehouse_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse', __args__, opts=opts, typ=GetOperationsInsightsWarehouseResult)
     return __ret__.apply(lambda __response__: GetOperationsInsightsWarehouseResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

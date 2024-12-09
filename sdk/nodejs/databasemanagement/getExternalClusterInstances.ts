@@ -98,7 +98,7 @@ export interface GetExternalClusterInstancesResult {
  * });
  * ```
  */
-export function getExternalClusterInstancesOutput(args?: GetExternalClusterInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalClusterInstancesResult> {
+export function getExternalClusterInstancesOutput(args?: GetExternalClusterInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalClusterInstancesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalClusterInstances:getExternalClusterInstances", {

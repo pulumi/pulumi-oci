@@ -107,7 +107,7 @@ export interface GetSecurityRecipeResult {
  * });
  * ```
  */
-export function getSecurityRecipeOutput(args: GetSecurityRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityRecipeResult> {
+export function getSecurityRecipeOutput(args: GetSecurityRecipeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityRecipeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", {
         "securityRecipeId": args.securityRecipeId,

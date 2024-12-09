@@ -150,7 +150,7 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
                                                                       gav: Optional[pulumi.Input[Optional[str]]] = None,
                                                                       purl: Optional[pulumi.Input[Optional[str]]] = None,
                                                                       remediation_run_id: Optional[pulumi.Input[str]] = None,
-                                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunApplicationDependencyRecommendationsResult]:
+                                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemediationRunApplicationDependencyRecommendationsResult]:
     """
     This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
 
@@ -177,7 +177,7 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
     __args__['gav'] = gav
     __args__['purl'] = purl
     __args__['remediationRunId'] = remediation_run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations', __args__, opts=opts, typ=GetRemediationRunApplicationDependencyRecommendationsResult)
     return __ret__.apply(lambda __response__: GetRemediationRunApplicationDependencyRecommendationsResult(
         application_dependency_recommendation_collections=pulumi.get(__response__, 'application_dependency_recommendation_collections'),

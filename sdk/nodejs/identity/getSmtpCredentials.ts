@@ -77,7 +77,7 @@ export interface GetSmtpCredentialsResult {
  * });
  * ```
  */
-export function getSmtpCredentialsOutput(args: GetSmtpCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSmtpCredentialsResult> {
+export function getSmtpCredentialsOutput(args: GetSmtpCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSmtpCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getSmtpCredentials:getSmtpCredentials", {
         "filters": args.filters,

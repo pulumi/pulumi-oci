@@ -357,7 +357,7 @@ def get_workspace(workspace_id: Optional[str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_output(workspace_id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceResult]:
     """
     This data source provides details about a specific Workspace resource in Oracle Cloud Infrastructure Data Integration service.
 
@@ -377,7 +377,7 @@ def get_workspace_output(workspace_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspace:getWorkspace', __args__, opts=opts, typ=GetWorkspaceResult)
     return __ret__.apply(lambda __response__: GetWorkspaceResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

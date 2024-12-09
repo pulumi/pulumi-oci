@@ -83,7 +83,7 @@ export interface GetLoadBalancerRoutingPolicyResult {
  * });
  * ```
  */
-export function getLoadBalancerRoutingPolicyOutput(args: GetLoadBalancerRoutingPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLoadBalancerRoutingPolicyResult> {
+export function getLoadBalancerRoutingPolicyOutput(args: GetLoadBalancerRoutingPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLoadBalancerRoutingPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getLoadBalancerRoutingPolicy:getLoadBalancerRoutingPolicy", {
         "loadBalancerId": args.loadBalancerId,

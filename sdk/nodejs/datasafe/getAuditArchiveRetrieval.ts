@@ -127,7 +127,7 @@ export interface GetAuditArchiveRetrievalResult {
  * });
  * ```
  */
-export function getAuditArchiveRetrievalOutput(args: GetAuditArchiveRetrievalOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditArchiveRetrievalResult> {
+export function getAuditArchiveRetrievalOutput(args: GetAuditArchiveRetrievalOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuditArchiveRetrievalResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", {
         "auditArchiveRetrievalId": args.auditArchiveRetrievalId,

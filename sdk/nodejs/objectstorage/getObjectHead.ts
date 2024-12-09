@@ -101,7 +101,7 @@ export interface GetObjectHeadResult {
  * });
  * ```
  */
-export function getObjectHeadOutput(args: GetObjectHeadOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectHeadResult> {
+export function getObjectHeadOutput(args: GetObjectHeadOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetObjectHeadResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObjectHead:getObjectHead", {
         "bucket": args.bucket,

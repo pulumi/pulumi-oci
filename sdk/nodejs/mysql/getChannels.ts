@@ -127,7 +127,7 @@ export interface GetChannelsResult {
  * });
  * ```
  */
-export function getChannelsOutput(args: GetChannelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetChannelsResult> {
+export function getChannelsOutput(args: GetChannelsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetChannelsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getChannels:getChannels", {
         "channelId": args.channelId,

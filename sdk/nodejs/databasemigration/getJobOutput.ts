@@ -69,7 +69,7 @@ export interface GetJobOutputResult {
  * });
  * ```
  */
-export function getJobOutputOutput(args: GetJobOutputOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobOutputResult> {
+export function getJobOutputOutput(args: GetJobOutputOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJobOutputResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseMigration/getJobOutput:getJobOutput", {
         "jobId": args.jobId,

@@ -247,7 +247,7 @@ def get_audit_trails_output(access_level: Optional[pulumi.Input[Optional[str]]] 
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             status: Optional[pulumi.Input[Optional[str]]] = None,
                             target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditTrailsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditTrailsResult]:
     """
     This data source provides the list of Audit Trails in Oracle Cloud Infrastructure Data Safe service.
 
@@ -302,7 +302,7 @@ def get_audit_trails_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     __args__['state'] = state
     __args__['status'] = status
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditTrails:getAuditTrails', __args__, opts=opts, typ=GetAuditTrailsResult)
     return __ret__.apply(lambda __response__: GetAuditTrailsResult(
         access_level=pulumi.get(__response__, 'access_level'),

@@ -99,7 +99,7 @@ export interface GetLogSavedSearchResult {
  * });
  * ```
  */
-export function getLogSavedSearchOutput(args: GetLogSavedSearchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogSavedSearchResult> {
+export function getLogSavedSearchOutput(args: GetLogSavedSearchOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogSavedSearchResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Logging/getLogSavedSearch:getLogSavedSearch", {
         "logSavedSearchId": args.logSavedSearchId,

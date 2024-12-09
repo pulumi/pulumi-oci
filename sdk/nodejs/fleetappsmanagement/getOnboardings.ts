@@ -94,7 +94,7 @@ export interface GetOnboardingsResult {
  * });
  * ```
  */
-export function getOnboardingsOutput(args?: GetOnboardingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnboardingsResult> {
+export function getOnboardingsOutput(args?: GetOnboardingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOnboardingsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getOnboardings:getOnboardings", {

@@ -110,7 +110,7 @@ export interface GetSubnetsResult {
  * });
  * ```
  */
-export function getSubnetsOutput(args: GetSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetsResult> {
+export function getSubnetsOutput(args: GetSubnetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubnetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getSubnets:getSubnets", {
         "compartmentId": args.compartmentId,

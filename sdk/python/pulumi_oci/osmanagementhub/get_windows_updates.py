@@ -162,7 +162,7 @@ def get_windows_updates_output(classification_types: Optional[pulumi.Input[Optio
                                display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWindowsUpdatesFilterArgs', 'GetWindowsUpdatesFilterArgsDict']]]]] = None,
                                names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWindowsUpdatesResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWindowsUpdatesResult]:
     """
     This data source provides the list of Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -192,7 +192,7 @@ def get_windows_updates_output(classification_types: Optional[pulumi.Input[Optio
     __args__['displayNameContains'] = display_name_contains
     __args__['filters'] = filters
     __args__['names'] = names
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getWindowsUpdates:getWindowsUpdates', __args__, opts=opts, typ=GetWindowsUpdatesResult)
     return __ret__.apply(lambda __response__: GetWindowsUpdatesResult(
         classification_types=pulumi.get(__response__, 'classification_types'),

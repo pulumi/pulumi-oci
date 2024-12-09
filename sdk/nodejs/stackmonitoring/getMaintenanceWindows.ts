@@ -105,7 +105,7 @@ export interface GetMaintenanceWindowsResult {
  * });
  * ```
  */
-export function getMaintenanceWindowsOutput(args: GetMaintenanceWindowsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceWindowsResult> {
+export function getMaintenanceWindowsOutput(args: GetMaintenanceWindowsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaintenanceWindowsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMaintenanceWindows:getMaintenanceWindows", {
         "compartmentId": args.compartmentId,

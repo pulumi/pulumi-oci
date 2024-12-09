@@ -198,7 +198,7 @@ def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Inpu
                                             is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                             log_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUnifiedAgentConfigurationsResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUnifiedAgentConfigurationsResult]:
     """
     This data source provides the list of Unified Agent Configurations in Oracle Cloud Infrastructure Logging service.
 
@@ -234,7 +234,7 @@ def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Inpu
     __args__['isCompartmentIdInSubtree'] = is_compartment_id_in_subtree
     __args__['logId'] = log_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations', __args__, opts=opts, typ=GetUnifiedAgentConfigurationsResult)
     return __ret__.apply(lambda __response__: GetUnifiedAgentConfigurationsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -77,7 +77,7 @@ export interface GetCustomerSecretKeysResult {
  * });
  * ```
  */
-export function getCustomerSecretKeysOutput(args: GetCustomerSecretKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomerSecretKeysResult> {
+export function getCustomerSecretKeysOutput(args: GetCustomerSecretKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCustomerSecretKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", {
         "filters": args.filters,

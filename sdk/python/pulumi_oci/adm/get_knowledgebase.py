@@ -190,7 +190,7 @@ def get_knowledgebase(knowledge_base_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_knowledgebase_output(knowledge_base_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKnowledgebaseResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKnowledgebaseResult]:
     """
     This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure ADM service.
 
@@ -210,7 +210,7 @@ def get_knowledgebase_output(knowledge_base_id: Optional[pulumi.Input[str]] = No
     """
     __args__ = dict()
     __args__['knowledgeBaseId'] = knowledge_base_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Adm/getKnowledgebase:getKnowledgebase', __args__, opts=opts, typ=GetKnowledgebaseResult)
     return __ret__.apply(lambda __response__: GetKnowledgebaseResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

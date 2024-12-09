@@ -251,7 +251,7 @@ def get_repository_file_diff_output(base_version: Optional[pulumi.Input[str]] = 
                                     is_comparison_from_merge_base: Optional[pulumi.Input[Optional[bool]]] = None,
                                     repository_id: Optional[pulumi.Input[str]] = None,
                                     target_version: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryFileDiffResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryFileDiffResult]:
     """
     This data source provides details about a specific Repository File Diff resource in Oracle Cloud Infrastructure Devops service.
 
@@ -283,7 +283,7 @@ def get_repository_file_diff_output(base_version: Optional[pulumi.Input[str]] = 
     __args__['isComparisonFromMergeBase'] = is_comparison_from_merge_base
     __args__['repositoryId'] = repository_id
     __args__['targetVersion'] = target_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff', __args__, opts=opts, typ=GetRepositoryFileDiffResult)
     return __ret__.apply(lambda __response__: GetRepositoryFileDiffResult(
         are_conflicts_in_file=pulumi.get(__response__, 'are_conflicts_in_file'),

@@ -87,7 +87,7 @@ export interface GetOpensearchVersionResult {
  * });
  * ```
  */
-export function getOpensearchVersionOutput(args: GetOpensearchVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchVersionResult> {
+export function getOpensearchVersionOutput(args: GetOpensearchVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOpensearchVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", {
         "compartmentId": args.compartmentId,

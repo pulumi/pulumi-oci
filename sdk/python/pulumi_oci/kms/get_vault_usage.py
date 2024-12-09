@@ -138,7 +138,7 @@ def get_vault_usage(vault_id: Optional[str] = None,
         software_key_version_count=pulumi.get(__ret__, 'software_key_version_count'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
 def get_vault_usage_output(vault_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultUsageResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVaultUsageResult]:
     """
     This data source provides details about a specific Vault Usage resource in Oracle Cloud Infrastructure Kms service.
 
@@ -158,7 +158,7 @@ def get_vault_usage_output(vault_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['vaultId'] = vault_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getVaultUsage:getVaultUsage', __args__, opts=opts, typ=GetVaultUsageResult)
     return __ret__.apply(lambda __response__: GetVaultUsageResult(
         id=pulumi.get(__response__, 'id'),

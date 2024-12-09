@@ -249,7 +249,7 @@ def get_inventory_resources_output(compartment_id: Optional[pulumi.Input[str]] =
                                    resource_compartment_id: Optional[pulumi.Input[str]] = None,
                                    resource_region: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInventoryResourcesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInventoryResourcesResult]:
     """
     This data source provides the list of Inventory Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -294,7 +294,7 @@ def get_inventory_resources_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['resourceCompartmentId'] = resource_compartment_id
     __args__['resourceRegion'] = resource_region
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getInventoryResources:getInventoryResources', __args__, opts=opts, typ=GetInventoryResourcesResult)
     return __ret__.apply(lambda __response__: GetInventoryResourcesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

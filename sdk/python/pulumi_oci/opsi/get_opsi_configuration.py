@@ -305,7 +305,7 @@ def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.I
                                   config_items_applicable_contexts: Optional[pulumi.Input[Sequence[str]]] = None,
                                   opsi_config_fields: Optional[pulumi.Input[Sequence[str]]] = None,
                                   opsi_configuration_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpsiConfigurationResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpsiConfigurationResult]:
     """
     This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -339,7 +339,7 @@ def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.I
     __args__['configItemsApplicableContexts'] = config_items_applicable_contexts
     __args__['opsiConfigFields'] = opsi_config_fields
     __args__['opsiConfigurationId'] = opsi_configuration_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOpsiConfiguration:getOpsiConfiguration', __args__, opts=opts, typ=GetOpsiConfigurationResult)
     return __ret__.apply(lambda __response__: GetOpsiConfigurationResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

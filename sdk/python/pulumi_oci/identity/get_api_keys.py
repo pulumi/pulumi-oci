@@ -120,7 +120,7 @@ def get_api_keys(filters: Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetAp
         user_id=pulumi.get(__ret__, 'user_id'))
 def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetApiKeysFilterArgsDict']]]]] = None,
                         user_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiKeysResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiKeysResult]:
     """
     This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity service.
 
@@ -144,7 +144,7 @@ def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['
     __args__ = dict()
     __args__['filters'] = filters
     __args__['userId'] = user_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getApiKeys:getApiKeys', __args__, opts=opts, typ=GetApiKeysResult)
     return __ret__.apply(lambda __response__: GetApiKeysResult(
         api_keys=pulumi.get(__response__, 'api_keys'),

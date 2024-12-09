@@ -203,7 +203,7 @@ def get_log_saved_search(log_saved_search_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
 def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogSavedSearchResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogSavedSearchResult]:
     """
     This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
 
@@ -223,7 +223,7 @@ def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['logSavedSearchId'] = log_saved_search_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Logging/getLogSavedSearch:getLogSavedSearch', __args__, opts=opts, typ=GetLogSavedSearchResult)
     return __ret__.apply(lambda __response__: GetLogSavedSearchResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

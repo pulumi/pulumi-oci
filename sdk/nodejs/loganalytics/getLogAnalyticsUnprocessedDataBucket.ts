@@ -82,7 +82,7 @@ export interface GetLogAnalyticsUnprocessedDataBucketResult {
  * });
  * ```
  */
-export function getLogAnalyticsUnprocessedDataBucketOutput(args: GetLogAnalyticsUnprocessedDataBucketOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsUnprocessedDataBucketResult> {
+export function getLogAnalyticsUnprocessedDataBucketOutput(args: GetLogAnalyticsUnprocessedDataBucketOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsUnprocessedDataBucketResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", {
         "namespace": args.namespace,

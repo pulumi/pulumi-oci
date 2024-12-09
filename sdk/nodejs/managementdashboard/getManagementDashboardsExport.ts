@@ -71,7 +71,7 @@ export interface GetManagementDashboardsExportResult {
  * });
  * ```
  */
-export function getManagementDashboardsExportOutput(args: GetManagementDashboardsExportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementDashboardsExportResult> {
+export function getManagementDashboardsExportOutput(args: GetManagementDashboardsExportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementDashboardsExportResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", {
         "exportDashboardId": args.exportDashboardId,

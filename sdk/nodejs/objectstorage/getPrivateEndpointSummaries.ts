@@ -37,7 +37,7 @@ export interface GetPrivateEndpointSummariesResult {
     readonly namespace: string;
     readonly privateEndpointSummaries: outputs.ObjectStorage.GetPrivateEndpointSummariesPrivateEndpointSummary[];
 }
-export function getPrivateEndpointSummariesOutput(args: GetPrivateEndpointSummariesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointSummariesResult> {
+export function getPrivateEndpointSummariesOutput(args: GetPrivateEndpointSummariesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPrivateEndpointSummariesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", {
         "compartmentId": args.compartmentId,

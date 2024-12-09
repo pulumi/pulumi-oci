@@ -177,7 +177,7 @@ export interface GetPrivateIpsResult {
  * });
  * ```
  */
-export function getPrivateIpsOutput(args?: GetPrivateIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateIpsResult> {
+export function getPrivateIpsOutput(args?: GetPrivateIpsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPrivateIpsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getPrivateIps:getPrivateIps", {

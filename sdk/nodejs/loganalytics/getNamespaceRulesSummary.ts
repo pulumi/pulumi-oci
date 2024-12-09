@@ -83,7 +83,7 @@ export interface GetNamespaceRulesSummaryResult {
  * });
  * ```
  */
-export function getNamespaceRulesSummaryOutput(args: GetNamespaceRulesSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceRulesSummaryResult> {
+export function getNamespaceRulesSummaryOutput(args: GetNamespaceRulesSummaryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceRulesSummaryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", {
         "compartmentId": args.compartmentId,

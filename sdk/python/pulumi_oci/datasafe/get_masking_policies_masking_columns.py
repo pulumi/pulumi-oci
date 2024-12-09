@@ -355,7 +355,7 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
                                                 time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                 time_updated_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                 time_updated_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPoliciesMaskingColumnsResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPoliciesMaskingColumnsResult]:
     """
     This data source provides the list of Masking Policies Masking Columns in Oracle Cloud Infrastructure Data Safe service.
 
@@ -422,7 +422,7 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
     __args__['timeCreatedLessThan'] = time_created_less_than
     __args__['timeUpdatedGreaterThanOrEqualTo'] = time_updated_greater_than_or_equal_to
     __args__['timeUpdatedLessThan'] = time_updated_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns', __args__, opts=opts, typ=GetMaskingPoliciesMaskingColumnsResult)
     return __ret__.apply(lambda __response__: GetMaskingPoliciesMaskingColumnsResult(
         column_names=pulumi.get(__response__, 'column_names'),

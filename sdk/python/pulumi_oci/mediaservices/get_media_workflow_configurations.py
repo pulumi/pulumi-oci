@@ -158,7 +158,7 @@ def get_media_workflow_configurations_output(compartment_id: Optional[pulumi.Inp
                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaWorkflowConfigurationsFilterArgs', 'GetMediaWorkflowConfigurationsFilterArgsDict']]]]] = None,
                                              id: Optional[pulumi.Input[Optional[str]]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowConfigurationsResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowConfigurationsResult]:
     """
     This data source provides the list of Media Workflow Configurations in Oracle Cloud Infrastructure Media Services service.
 
@@ -188,7 +188,7 @@ def get_media_workflow_configurations_output(compartment_id: Optional[pulumi.Inp
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaWorkflowConfigurations:getMediaWorkflowConfigurations', __args__, opts=opts, typ=GetMediaWorkflowConfigurationsResult)
     return __ret__.apply(lambda __response__: GetMediaWorkflowConfigurationsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

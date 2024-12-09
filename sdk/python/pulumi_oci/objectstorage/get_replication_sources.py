@@ -129,7 +129,7 @@ def get_replication_sources(bucket: Optional[str] = None,
 def get_replication_sources_output(bucket: Optional[pulumi.Input[str]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationSourcesFilterArgs', 'GetReplicationSourcesFilterArgsDict']]]]] = None,
                                    namespace: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationSourcesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationSourcesResult]:
     """
     This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.
 
@@ -153,7 +153,7 @@ def get_replication_sources_output(bucket: Optional[pulumi.Input[str]] = None,
     __args__['bucket'] = bucket
     __args__['filters'] = filters
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getReplicationSources:getReplicationSources', __args__, opts=opts, typ=GetReplicationSourcesResult)
     return __ret__.apply(lambda __response__: GetReplicationSourcesResult(
         bucket=pulumi.get(__response__, 'bucket'),

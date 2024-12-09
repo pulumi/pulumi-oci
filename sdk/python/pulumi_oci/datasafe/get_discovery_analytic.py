@@ -168,7 +168,7 @@ def get_discovery_analytic_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   group_by: Optional[pulumi.Input[Optional[str]]] = None,
                                   sensitive_data_model_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryAnalyticResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryAnalyticResult]:
     """
     This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -202,7 +202,7 @@ def get_discovery_analytic_output(compartment_id: Optional[pulumi.Input[str]] = 
     __args__['groupBy'] = group_by
     __args__['sensitiveDataModelId'] = sensitive_data_model_id
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDiscoveryAnalytic:getDiscoveryAnalytic', __args__, opts=opts, typ=GetDiscoveryAnalyticResult)
     return __ret__.apply(lambda __response__: GetDiscoveryAnalyticResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

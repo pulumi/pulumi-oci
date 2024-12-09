@@ -46,7 +46,7 @@ export interface GetTargetDatabaseRoleResult {
     readonly roles: outputs.DataSafe.GetTargetDatabaseRoleRole[];
     readonly targetDatabaseId: string;
 }
-export function getTargetDatabaseRoleOutput(args: GetTargetDatabaseRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabaseRoleResult> {
+export function getTargetDatabaseRoleOutput(args: GetTargetDatabaseRoleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetDatabaseRoleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", {
         "authenticationType": args.authenticationType,

@@ -173,7 +173,7 @@ def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict']]]]] = None,
                                                 managed_my_sql_database_id: Optional[pulumi.Input[str]] = None,
                                                 start_time: Optional[pulumi.Input[str]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabaseSqlDataResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseSqlDataResult]:
     """
     This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
 
@@ -217,7 +217,7 @@ def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[
     __args__['filters'] = filters
     __args__['managedMySqlDatabaseId'] = managed_my_sql_database_id
     __args__['startTime'] = start_time
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData', __args__, opts=opts, typ=GetManagedMySqlDatabaseSqlDataResult)
     return __ret__.apply(lambda __response__: GetManagedMySqlDatabaseSqlDataResult(
         end_time=pulumi.get(__response__, 'end_time'),

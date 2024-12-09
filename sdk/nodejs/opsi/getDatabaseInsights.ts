@@ -178,7 +178,7 @@ export interface GetDatabaseInsightsResult {
  * });
  * ```
  */
-export function getDatabaseInsightsOutput(args?: GetDatabaseInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseInsightsResult> {
+export function getDatabaseInsightsOutput(args?: GetDatabaseInsightsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseInsightsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getDatabaseInsights:getDatabaseInsights", {

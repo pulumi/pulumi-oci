@@ -841,7 +841,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
         total_container_databases=pulumi.get(__ret__, 'total_container_databases'),
         total_cpus=pulumi.get(__ret__, 'total_cpus'))
 def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudAutonomousVmClusterResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAutonomousVmClusterResult]:
     """
     This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
 
@@ -861,7 +861,7 @@ def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optio
     """
     __args__ = dict()
     __args__['cloudAutonomousVmClusterId'] = cloud_autonomous_vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster', __args__, opts=opts, typ=GetCloudAutonomousVmClusterResult)
     return __ret__.apply(lambda __response__: GetCloudAutonomousVmClusterResult(
         autonomous_data_storage_percentage=pulumi.get(__response__, 'autonomous_data_storage_percentage'),

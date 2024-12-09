@@ -99,7 +99,7 @@ export interface GetIpsecConnectionsResult {
  * });
  * ```
  */
-export function getIpsecConnectionsOutput(args: GetIpsecConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionsResult> {
+export function getIpsecConnectionsOutput(args: GetIpsecConnectionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpsecConnectionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpsecConnections:getIpsecConnections", {
         "compartmentId": args.compartmentId,

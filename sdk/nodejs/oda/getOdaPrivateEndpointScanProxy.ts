@@ -93,7 +93,7 @@ export interface GetOdaPrivateEndpointScanProxyResult {
  * });
  * ```
  */
-export function getOdaPrivateEndpointScanProxyOutput(args: GetOdaPrivateEndpointScanProxyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaPrivateEndpointScanProxyResult> {
+export function getOdaPrivateEndpointScanProxyOutput(args: GetOdaPrivateEndpointScanProxyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOdaPrivateEndpointScanProxyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", {
         "odaPrivateEndpointId": args.odaPrivateEndpointId,

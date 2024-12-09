@@ -134,7 +134,7 @@ export interface GetFleetJavaMigrationAnalysisResultResult {
  * });
  * ```
  */
-export function getFleetJavaMigrationAnalysisResultOutput(args: GetFleetJavaMigrationAnalysisResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetJavaMigrationAnalysisResultResult> {
+export function getFleetJavaMigrationAnalysisResultOutput(args: GetFleetJavaMigrationAnalysisResultOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetJavaMigrationAnalysisResultResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult", {
         "fleetId": args.fleetId,

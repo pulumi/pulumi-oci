@@ -135,7 +135,7 @@ def get_tags(filters: Optional[Sequence[Union['GetTagsFilterArgs', 'GetTagsFilte
 def get_tags_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTagsFilterArgs', 'GetTagsFilterArgsDict']]]]] = None,
                     state: Optional[pulumi.Input[Optional[str]]] = None,
                     tag_namespace_id: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagsResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagsResult]:
     """
     This data source provides the list of Tags in Oracle Cloud Infrastructure Identity service.
 
@@ -159,7 +159,7 @@ def get_tags_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetT
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['tagNamespaceId'] = tag_namespace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTags:getTags', __args__, opts=opts, typ=GetTagsResult)
     return __ret__.apply(lambda __response__: GetTagsResult(
         filters=pulumi.get(__response__, 'filters'),

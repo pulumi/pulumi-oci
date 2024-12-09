@@ -117,7 +117,7 @@ def get_app_catalog_listing_resource_versions(filters: Optional[Sequence[Union['
         listing_id=pulumi.get(__ret__, 'listing_id'))
 def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogListingResourceVersionsFilterArgs', 'GetAppCatalogListingResourceVersionsFilterArgsDict']]]]] = None,
                                                      listing_id: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingResourceVersionsResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppCatalogListingResourceVersionsResult]:
     """
     This data source provides the list of App Catalog Listing Resource Versions in Oracle Cloud Infrastructure Core service.
 
@@ -138,7 +138,7 @@ def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.In
     __args__ = dict()
     __args__['filters'] = filters
     __args__['listingId'] = listing_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions', __args__, opts=opts, typ=GetAppCatalogListingResourceVersionsResult)
     return __ret__.apply(lambda __response__: GetAppCatalogListingResourceVersionsResult(
         app_catalog_listing_resource_versions=pulumi.get(__response__, 'app_catalog_listing_resource_versions'),

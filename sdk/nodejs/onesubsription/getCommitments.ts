@@ -83,7 +83,7 @@ export interface GetCommitmentsResult {
  * });
  * ```
  */
-export function getCommitmentsOutput(args: GetCommitmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCommitmentsResult> {
+export function getCommitmentsOutput(args: GetCommitmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCommitmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OneSubsription/getCommitments:getCommitments", {
         "compartmentId": args.compartmentId,

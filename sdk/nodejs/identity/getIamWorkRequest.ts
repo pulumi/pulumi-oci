@@ -105,7 +105,7 @@ export interface GetIamWorkRequestResult {
  * });
  * ```
  */
-export function getIamWorkRequestOutput(args: GetIamWorkRequestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamWorkRequestResult> {
+export function getIamWorkRequestOutput(args: GetIamWorkRequestOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamWorkRequestResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getIamWorkRequest:getIamWorkRequest", {
         "iamWorkRequestId": args.iamWorkRequestId,

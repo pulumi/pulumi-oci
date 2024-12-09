@@ -129,7 +129,7 @@ def get_external_asm_disk_groups(external_asm_id: Optional[str] = None,
 def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[str]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalAsmDiskGroupsFilterArgs', 'GetExternalAsmDiskGroupsFilterArgsDict']]]]] = None,
                                         opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmDiskGroupsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalAsmDiskGroupsResult]:
     """
     This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
 
@@ -153,7 +153,7 @@ def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[s
     __args__['externalAsmId'] = external_asm_id
     __args__['filters'] = filters
     __args__['opcNamedCredentialId'] = opc_named_credential_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups', __args__, opts=opts, typ=GetExternalAsmDiskGroupsResult)
     return __ret__.apply(lambda __response__: GetExternalAsmDiskGroupsResult(
         external_asm_disk_group_collections=pulumi.get(__response__, 'external_asm_disk_group_collections'),

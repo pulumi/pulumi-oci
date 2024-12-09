@@ -136,7 +136,7 @@ def get_vantage_point(apm_domain_id: Optional[str] = None,
 def get_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              name: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVantagePointResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVantagePointResult]:
     """
     This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
 
@@ -162,7 +162,7 @@ def get_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     __args__['apmDomainId'] = apm_domain_id
     __args__['displayName'] = display_name
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getVantagePoint:getVantagePoint', __args__, opts=opts, typ=GetVantagePointResult)
     return __ret__.apply(lambda __response__: GetVantagePointResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

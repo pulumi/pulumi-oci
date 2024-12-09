@@ -159,7 +159,7 @@ def get_bds_instance_api_keys_output(bds_instance_id: Optional[pulumi.Input[str]
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceApiKeysFilterArgs', 'GetBdsInstanceApiKeysFilterArgsDict']]]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      user_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceApiKeysResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceApiKeysResult]:
     """
     This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
 
@@ -186,7 +186,7 @@ def get_bds_instance_api_keys_output(bds_instance_id: Optional[pulumi.Input[str]
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['userId'] = user_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys', __args__, opts=opts, typ=GetBdsInstanceApiKeysResult)
     return __ret__.apply(lambda __response__: GetBdsInstanceApiKeysResult(
         bds_api_keys=pulumi.get(__response__, 'bds_api_keys'),

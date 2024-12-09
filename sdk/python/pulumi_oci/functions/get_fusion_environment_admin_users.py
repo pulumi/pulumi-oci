@@ -114,7 +114,7 @@ def get_fusion_environment_admin_users(filters: Optional[Sequence[Union['GetFusi
         id=pulumi.get(__ret__, 'id'))
 def get_fusion_environment_admin_users_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentAdminUsersFilterArgs', 'GetFusionEnvironmentAdminUsersFilterArgsDict']]]]] = None,
                                               fusion_environment_id: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentAdminUsersResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentAdminUsersResult]:
     """
     This data source provides the list of Fusion Environment Admin Users in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -135,7 +135,7 @@ def get_fusion_environment_admin_users_output(filters: Optional[pulumi.Input[Opt
     __args__ = dict()
     __args__['filters'] = filters
     __args__['fusionEnvironmentId'] = fusion_environment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentAdminUsers:getFusionEnvironmentAdminUsers', __args__, opts=opts, typ=GetFusionEnvironmentAdminUsersResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentAdminUsersResult(
         admin_user_collections=pulumi.get(__response__, 'admin_user_collections'),

@@ -129,7 +129,7 @@ export interface GetDeployEnvironmentResult {
  * });
  * ```
  */
-export function getDeployEnvironmentOutput(args: GetDeployEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployEnvironmentResult> {
+export function getDeployEnvironmentOutput(args: GetDeployEnvironmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDeployEnvironmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getDeployEnvironment:getDeployEnvironment", {
         "deployEnvironmentId": args.deployEnvironmentId,

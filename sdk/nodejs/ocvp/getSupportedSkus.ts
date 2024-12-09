@@ -82,7 +82,7 @@ export interface GetSupportedSkusResult {
  * });
  * ```
  */
-export function getSupportedSkusOutput(args: GetSupportedSkusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedSkusResult> {
+export function getSupportedSkusOutput(args: GetSupportedSkusOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSupportedSkusResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getSupportedSkus:getSupportedSkus", {
         "compartmentId": args.compartmentId,

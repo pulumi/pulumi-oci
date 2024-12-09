@@ -113,7 +113,7 @@ export interface GetAgentAgentEndpointsResult {
  * });
  * ```
  */
-export function getAgentAgentEndpointsOutput(args?: GetAgentAgentEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentAgentEndpointsResult> {
+export function getAgentAgentEndpointsOutput(args?: GetAgentAgentEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAgentAgentEndpointsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getAgentAgentEndpoints:getAgentAgentEndpoints", {

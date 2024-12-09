@@ -98,7 +98,7 @@ export interface GetFleetDrsFileResult {
  * });
  * ```
  */
-export function getFleetDrsFileOutput(args: GetFleetDrsFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetDrsFileResult> {
+export function getFleetDrsFileOutput(args: GetFleetDrsFileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetDrsFileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetDrsFile:getFleetDrsFile", {
         "drsFileKey": args.drsFileKey,

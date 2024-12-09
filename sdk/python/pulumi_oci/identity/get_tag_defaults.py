@@ -158,7 +158,7 @@ def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[str]]
                             id: Optional[pulumi.Input[Optional[str]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             tag_definition_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagDefaultsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagDefaultsResult]:
     """
     This data source provides the list of Tag Defaults in Oracle Cloud Infrastructure Identity service.
 
@@ -188,7 +188,7 @@ def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[str]]
     __args__['id'] = id
     __args__['state'] = state
     __args__['tagDefinitionId'] = tag_definition_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTagDefaults:getTagDefaults', __args__, opts=opts, typ=GetTagDefaultsResult)
     return __ret__.apply(lambda __response__: GetTagDefaultsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

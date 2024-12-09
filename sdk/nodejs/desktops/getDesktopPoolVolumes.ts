@@ -117,7 +117,7 @@ export interface GetDesktopPoolVolumesResult {
  * });
  * ```
  */
-export function getDesktopPoolVolumesOutput(args: GetDesktopPoolVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDesktopPoolVolumesResult> {
+export function getDesktopPoolVolumesOutput(args: GetDesktopPoolVolumesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDesktopPoolVolumesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Desktops/getDesktopPoolVolumes:getDesktopPoolVolumes", {
         "availabilityDomain": args.availabilityDomain,

@@ -99,7 +99,7 @@ def get_db_system_primary_db_instance(db_system_id: Optional[str] = None,
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
         id=pulumi.get(__ret__, 'id'))
 def get_db_system_primary_db_instance_output(db_system_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemPrimaryDbInstanceResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemPrimaryDbInstanceResult]:
     """
     This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
 
@@ -119,7 +119,7 @@ def get_db_system_primary_db_instance_output(db_system_id: Optional[pulumi.Input
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance', __args__, opts=opts, typ=GetDbSystemPrimaryDbInstanceResult)
     return __ret__.apply(lambda __response__: GetDbSystemPrimaryDbInstanceResult(
         db_instance_id=pulumi.get(__response__, 'db_instance_id'),

@@ -91,7 +91,7 @@ export interface GetExternalExadataStorageConnectorsResult {
  * });
  * ```
  */
-export function getExternalExadataStorageConnectorsOutput(args: GetExternalExadataStorageConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageConnectorsResult> {
+export function getExternalExadataStorageConnectorsOutput(args: GetExternalExadataStorageConnectorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalExadataStorageConnectorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageConnectors:getExternalExadataStorageConnectors", {
         "compartmentId": args.compartmentId,

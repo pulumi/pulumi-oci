@@ -106,7 +106,7 @@ export interface GetFilesystemSnapshotPolicyResult {
  * });
  * ```
  */
-export function getFilesystemSnapshotPolicyOutput(args: GetFilesystemSnapshotPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFilesystemSnapshotPolicyResult> {
+export function getFilesystemSnapshotPolicyOutput(args: GetFilesystemSnapshotPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFilesystemSnapshotPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", {
         "filesystemSnapshotPolicyId": args.filesystemSnapshotPolicyId,

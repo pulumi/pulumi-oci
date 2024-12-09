@@ -83,7 +83,7 @@ export interface GetNamespaceStorageRecallCountResult {
  * });
  * ```
  */
-export function getNamespaceStorageRecallCountOutput(args: GetNamespaceStorageRecallCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageRecallCountResult> {
+export function getNamespaceStorageRecallCountOutput(args: GetNamespaceStorageRecallCountOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceStorageRecallCountResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", {
         "namespace": args.namespace,

@@ -104,7 +104,7 @@ export interface GetStreamCdnConfigsResult {
  * });
  * ```
  */
-export function getStreamCdnConfigsOutput(args: GetStreamCdnConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamCdnConfigsResult> {
+export function getStreamCdnConfigsOutput(args: GetStreamCdnConfigsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStreamCdnConfigsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs", {
         "displayName": args.displayName,

@@ -115,7 +115,7 @@ def get_external_asm_configuration(external_asm_id: Optional[str] = None,
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
 def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input[str]] = None,
                                           opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmConfigurationResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalAsmConfigurationResult]:
     """
     This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -138,7 +138,7 @@ def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input
     __args__ = dict()
     __args__['externalAsmId'] = external_asm_id
     __args__['opcNamedCredentialId'] = opc_named_credential_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration', __args__, opts=opts, typ=GetExternalAsmConfigurationResult)
     return __ret__.apply(lambda __response__: GetExternalAsmConfigurationResult(
         external_asm_id=pulumi.get(__response__, 'external_asm_id'),

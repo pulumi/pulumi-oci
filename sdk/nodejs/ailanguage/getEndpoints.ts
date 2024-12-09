@@ -94,7 +94,7 @@ export interface GetEndpointsResult {
  *
  * Returns a list of Endpoints.
  */
-export function getEndpointsOutput(args: GetEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEndpointsResult> {
+export function getEndpointsOutput(args: GetEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiLanguage/getEndpoints:getEndpoints", {
         "compartmentId": args.compartmentId,

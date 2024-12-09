@@ -147,7 +147,7 @@ export interface GetAdhocQueriesResult {
  * });
  * ```
  */
-export function getAdhocQueriesOutput(args: GetAdhocQueriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAdhocQueriesResult> {
+export function getAdhocQueriesOutput(args: GetAdhocQueriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAdhocQueriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getAdhocQueries:getAdhocQueries", {
         "accessLevel": args.accessLevel,

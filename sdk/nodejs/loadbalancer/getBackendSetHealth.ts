@@ -95,7 +95,7 @@ export interface GetBackendSetHealthResult {
  * });
  * ```
  */
-export function getBackendSetHealthOutput(args: GetBackendSetHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendSetHealthResult> {
+export function getBackendSetHealthOutput(args: GetBackendSetHealthOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBackendSetHealthResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", {
         "backendSetName": args.backendSetName,

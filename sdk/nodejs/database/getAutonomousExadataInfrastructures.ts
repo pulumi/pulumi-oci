@@ -108,7 +108,7 @@ export interface GetAutonomousExadataInfrastructuresResult {
  * });
  * ```
  */
-export function getAutonomousExadataInfrastructuresOutput(args: GetAutonomousExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructuresResult> {
+export function getAutonomousExadataInfrastructuresOutput(args: GetAutonomousExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousExadataInfrastructuresResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures", {
         "availabilityDomain": args.availabilityDomain,

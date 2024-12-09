@@ -165,7 +165,7 @@ def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[
                                         schema_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                         schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                         target_database_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasesSchemasResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasesSchemasResult]:
     """
     This data source provides the list of Target Databases Schemas in Oracle Cloud Infrastructure Data Safe service.
 
@@ -195,7 +195,7 @@ def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[
     __args__['schemaNameContains'] = schema_name_contains
     __args__['schemaNames'] = schema_names
     __args__['targetDatabaseId'] = target_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas', __args__, opts=opts, typ=GetTargetDatabasesSchemasResult)
     return __ret__.apply(lambda __response__: GetTargetDatabasesSchemasResult(
         filters=pulumi.get(__response__, 'filters'),

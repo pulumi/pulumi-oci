@@ -140,7 +140,7 @@ export interface GetDomainsOauth2clientCredentialsResult {
  * });
  * ```
  */
-export function getDomainsOauth2clientCredentialsOutput(args: GetDomainsOauth2clientCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsOauth2clientCredentialsResult> {
+export function getDomainsOauth2clientCredentialsOutput(args: GetDomainsOauth2clientCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsOauth2clientCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsOauth2clientCredentials:getDomainsOauth2clientCredentials", {
         "attributeSets": args.attributeSets,

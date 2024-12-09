@@ -147,7 +147,7 @@ export interface GetConfigResult {
  * });
  * ```
  */
-export function getConfigOutput(args: GetConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigResult> {
+export function getConfigOutput(args: GetConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConfigResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmConfig/getConfig:getConfig", {
         "apmDomainId": args.apmDomainId,

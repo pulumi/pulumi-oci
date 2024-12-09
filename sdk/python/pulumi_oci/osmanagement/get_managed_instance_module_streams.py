@@ -206,7 +206,7 @@ def get_managed_instance_module_streams_output(compartment_id: Optional[pulumi.I
                                                module_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                stream_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                stream_status: Optional[pulumi.Input[Optional[str]]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceModuleStreamsResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceModuleStreamsResult]:
     """
     This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
 
@@ -265,7 +265,7 @@ def get_managed_instance_module_streams_output(compartment_id: Optional[pulumi.I
     __args__['moduleName'] = module_name
     __args__['streamName'] = stream_name
     __args__['streamStatus'] = stream_status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams', __args__, opts=opts, typ=GetManagedInstanceModuleStreamsResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceModuleStreamsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

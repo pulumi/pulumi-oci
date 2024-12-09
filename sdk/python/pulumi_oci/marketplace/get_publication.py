@@ -289,7 +289,7 @@ def get_publication(publication_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_publication_output(publication_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicationResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicationResult]:
     """
     This data source provides details about a specific Publication resource in Oracle Cloud Infrastructure Marketplace service.
 
@@ -309,7 +309,7 @@ def get_publication_output(publication_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['publicationId'] = publication_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getPublication:getPublication', __args__, opts=opts, typ=GetPublicationResult)
     return __ret__.apply(lambda __response__: GetPublicationResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

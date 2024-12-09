@@ -118,7 +118,7 @@ def get_iam_work_request_logs(filters: Optional[Sequence[Union['GetIamWorkReques
         id=pulumi.get(__ret__, 'id'))
 def get_iam_work_request_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIamWorkRequestLogsFilterArgs', 'GetIamWorkRequestLogsFilterArgsDict']]]]] = None,
                                      iam_work_request_id: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamWorkRequestLogsResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamWorkRequestLogsResult]:
     """
     This data source provides the list of Iam Work Request Logs in Oracle Cloud Infrastructure Identity service.
 
@@ -143,7 +143,7 @@ def get_iam_work_request_logs_output(filters: Optional[pulumi.Input[Optional[Seq
     __args__ = dict()
     __args__['filters'] = filters
     __args__['iamWorkRequestId'] = iam_work_request_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs', __args__, opts=opts, typ=GetIamWorkRequestLogsResult)
     return __ret__.apply(lambda __response__: GetIamWorkRequestLogsResult(
         filters=pulumi.get(__response__, 'filters'),

@@ -192,7 +192,7 @@ def get_computed_usages_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                time_from: Optional[pulumi.Input[str]] = None,
                                time_to: Optional[pulumi.Input[str]] = None,
                                x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputedUsagesResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputedUsagesResult]:
     """
     This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Osub Usage service.
 
@@ -216,7 +216,7 @@ def get_computed_usages_output(compartment_id: Optional[pulumi.Input[str]] = Non
     __args__['timeFrom'] = time_from
     __args__['timeTo'] = time_to
     __args__['xOneOriginRegion'] = x_one_origin_region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsubUsage/getComputedUsages:getComputedUsages', __args__, opts=opts, typ=GetComputedUsagesResult)
     return __ret__.apply(lambda __response__: GetComputedUsagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

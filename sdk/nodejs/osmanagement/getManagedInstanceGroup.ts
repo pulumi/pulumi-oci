@@ -99,7 +99,7 @@ export interface GetManagedInstanceGroupResult {
  * });
  * ```
  */
-export function getManagedInstanceGroupOutput(args: GetManagedInstanceGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupResult> {
+export function getManagedInstanceGroupOutput(args: GetManagedInstanceGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", {
         "managedInstanceGroupId": args.managedInstanceGroupId,

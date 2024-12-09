@@ -240,7 +240,7 @@ def get_cluster_network(cluster_network_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_cluster_network_output(cluster_network_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterNetworkResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterNetworkResult]:
     """
     This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
 
@@ -260,7 +260,7 @@ def get_cluster_network_output(cluster_network_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['clusterNetworkId'] = cluster_network_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getClusterNetwork:getClusterNetwork', __args__, opts=opts, typ=GetClusterNetworkResult)
     return __ret__.apply(lambda __response__: GetClusterNetworkResult(
         cluster_configurations=pulumi.get(__response__, 'cluster_configurations'),

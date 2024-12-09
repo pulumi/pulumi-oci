@@ -80,7 +80,7 @@ export interface GetExternalAsmUsersResult {
  * });
  * ```
  */
-export function getExternalAsmUsersOutput(args: GetExternalAsmUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmUsersResult> {
+export function getExternalAsmUsersOutput(args: GetExternalAsmUsersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalAsmUsersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", {
         "externalAsmId": args.externalAsmId,

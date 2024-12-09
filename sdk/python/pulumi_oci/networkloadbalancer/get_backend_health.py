@@ -148,7 +148,7 @@ def get_backend_health(backend_name: Optional[str] = None,
 def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
                               backend_set_name: Optional[pulumi.Input[str]] = None,
                               network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendHealthResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackendHealthResult]:
     """
     This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
 
@@ -174,7 +174,7 @@ def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
     __args__['backendName'] = backend_name
     __args__['backendSetName'] = backend_set_name
     __args__['networkLoadBalancerId'] = network_load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth', __args__, opts=opts, typ=GetBackendHealthResult)
     return __ret__.apply(lambda __response__: GetBackendHealthResult(
         backend_name=pulumi.get(__response__, 'backend_name'),

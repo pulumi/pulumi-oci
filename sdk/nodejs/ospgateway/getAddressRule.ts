@@ -96,7 +96,7 @@ export interface GetAddressRuleResult {
  * });
  * ```
  */
-export function getAddressRuleOutput(args: GetAddressRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressRuleResult> {
+export function getAddressRuleOutput(args: GetAddressRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddressRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OspGateway/getAddressRule:getAddressRule", {
         "compartmentId": args.compartmentId,

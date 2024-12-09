@@ -97,7 +97,7 @@ export interface GetExadataInfrastructureUnAllocatedResourceResult {
  * });
  * ```
  */
-export function getExadataInfrastructureUnAllocatedResourceOutput(args: GetExadataInfrastructureUnAllocatedResourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureUnAllocatedResourceResult> {
+export function getExadataInfrastructureUnAllocatedResourceOutput(args: GetExadataInfrastructureUnAllocatedResourceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadataInfrastructureUnAllocatedResourceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", {
         "dbServers": args.dbServers,

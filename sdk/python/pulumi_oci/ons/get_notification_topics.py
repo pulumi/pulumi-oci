@@ -157,7 +157,7 @@ def get_notification_topics_output(compartment_id: Optional[pulumi.Input[str]] =
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNotificationTopicsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNotificationTopicsResult]:
     """
     This data source provides the list of Notification Topics in Oracle Cloud Infrastructure Notifications service.
 
@@ -189,7 +189,7 @@ def get_notification_topics_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['id'] = id
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ons/getNotificationTopics:getNotificationTopics', __args__, opts=opts, typ=GetNotificationTopicsResult)
     return __ret__.apply(lambda __response__: GetNotificationTopicsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

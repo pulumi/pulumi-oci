@@ -307,7 +307,7 @@ def get_external_db_node(external_db_node_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_external_db_node_output(external_db_node_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbNodeResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbNodeResult]:
     """
     This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -327,7 +327,7 @@ def get_external_db_node_output(external_db_node_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['externalDbNodeId'] = external_db_node_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalDbNode:getExternalDbNode', __args__, opts=opts, typ=GetExternalDbNodeResult)
     return __ret__.apply(lambda __response__: GetExternalDbNodeResult(
         additional_details=pulumi.get(__response__, 'additional_details'),

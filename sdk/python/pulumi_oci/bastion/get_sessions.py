@@ -165,7 +165,7 @@ def get_sessions_output(bastion_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSessionsFilterArgs', 'GetSessionsFilterArgsDict']]]]] = None,
                         session_id: Optional[pulumi.Input[Optional[str]]] = None,
                         session_lifecycle_state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSessionsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSessionsResult]:
     """
     This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
 
@@ -195,7 +195,7 @@ def get_sessions_output(bastion_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['sessionId'] = session_id
     __args__['sessionLifecycleState'] = session_lifecycle_state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Bastion/getSessions:getSessions', __args__, opts=opts, typ=GetSessionsResult)
     return __ret__.apply(lambda __response__: GetSessionsResult(
         bastion_id=pulumi.get(__response__, 'bastion_id'),

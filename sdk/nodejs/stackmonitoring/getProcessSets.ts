@@ -86,7 +86,7 @@ export interface GetProcessSetsResult {
  * });
  * ```
  */
-export function getProcessSetsOutput(args: GetProcessSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessSetsResult> {
+export function getProcessSetsOutput(args: GetProcessSetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProcessSetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getProcessSets:getProcessSets", {
         "compartmentId": args.compartmentId,

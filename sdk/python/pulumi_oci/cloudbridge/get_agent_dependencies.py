@@ -183,7 +183,7 @@ def get_agent_dependencies_output(agent_id: Optional[pulumi.Input[Optional[str]]
                                   environment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentDependenciesFilterArgs', 'GetAgentDependenciesFilterArgsDict']]]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentDependenciesResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentDependenciesResult]:
     """
     This data source provides the list of Agent Dependencies in Oracle Cloud Infrastructure Cloud Bridge service.
 
@@ -216,7 +216,7 @@ def get_agent_dependencies_output(agent_id: Optional[pulumi.Input[Optional[str]]
     __args__['environmentId'] = environment_id
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAgentDependencies:getAgentDependencies', __args__, opts=opts, typ=GetAgentDependenciesResult)
     return __ret__.apply(lambda __response__: GetAgentDependenciesResult(
         agent_dependency_collections=pulumi.get(__response__, 'agent_dependency_collections'),

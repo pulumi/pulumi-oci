@@ -189,7 +189,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: Optional[pulu
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseBackupsFilterArgs', 'GetAutonomousDatabaseBackupsFilterArgsDict']]]]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            type: Optional[pulumi.Input[Optional[str]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseBackupsResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseBackupsResult]:
     """
     This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
 
@@ -222,7 +222,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: Optional[pulu
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups', __args__, opts=opts, typ=GetAutonomousDatabaseBackupsResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabaseBackupsResult(
         autonomous_database_backups=pulumi.get(__response__, 'autonomous_database_backups'),

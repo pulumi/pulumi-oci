@@ -110,7 +110,7 @@ export interface GetInternetGatewaysResult {
  * });
  * ```
  */
-export function getInternetGatewaysOutput(args: GetInternetGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInternetGatewaysResult> {
+export function getInternetGatewaysOutput(args: GetInternetGatewaysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInternetGatewaysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInternetGateways:getInternetGateways", {
         "compartmentId": args.compartmentId,

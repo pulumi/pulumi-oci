@@ -117,7 +117,7 @@ def get_virtual_circuit_bandwidth_shapes(filters: Optional[Sequence[Union['GetVi
         virtual_circuit_bandwidth_shapes=pulumi.get(__ret__, 'virtual_circuit_bandwidth_shapes'))
 def get_virtual_circuit_bandwidth_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitBandwidthShapesFilterArgs', 'GetVirtualCircuitBandwidthShapesFilterArgsDict']]]]] = None,
                                                 provider_service_id: Optional[pulumi.Input[str]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitBandwidthShapesResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitBandwidthShapesResult]:
     """
     This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.
 
@@ -141,7 +141,7 @@ def get_virtual_circuit_bandwidth_shapes_output(filters: Optional[pulumi.Input[O
     __args__ = dict()
     __args__['filters'] = filters
     __args__['providerServiceId'] = provider_service_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes', __args__, opts=opts, typ=GetVirtualCircuitBandwidthShapesResult)
     return __ret__.apply(lambda __response__: GetVirtualCircuitBandwidthShapesResult(
         filters=pulumi.get(__response__, 'filters'),

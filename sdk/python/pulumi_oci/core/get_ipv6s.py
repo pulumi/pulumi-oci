@@ -160,7 +160,7 @@ def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['Get
                      ip_address: Optional[pulumi.Input[Optional[str]]] = None,
                      subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
                      vnic_id: Optional[pulumi.Input[Optional[str]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpv6sResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpv6sResult]:
     """
     This data source provides the list of Ipv6s in Oracle Cloud Infrastructure Core service.
 
@@ -194,7 +194,7 @@ def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['Get
     __args__['ipAddress'] = ip_address
     __args__['subnetId'] = subnet_id
     __args__['vnicId'] = vnic_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpv6s:getIpv6s', __args__, opts=opts, typ=GetIpv6sResult)
     return __ret__.apply(lambda __response__: GetIpv6sResult(
         filters=pulumi.get(__response__, 'filters'),

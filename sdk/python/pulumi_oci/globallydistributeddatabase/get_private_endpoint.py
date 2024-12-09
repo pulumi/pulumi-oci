@@ -304,7 +304,7 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
     This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
 
@@ -324,7 +324,7 @@ def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['privateEndpointId'] = private_endpoint_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GloballyDistributedDatabase/getPrivateEndpoint:getPrivateEndpoint', __args__, opts=opts, typ=GetPrivateEndpointResult)
     return __ret__.apply(lambda __response__: GetPrivateEndpointResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -452,7 +452,7 @@ def get_desktop_pool(desktop_pool_id: Optional[str] = None,
         time_stop_scheduled=pulumi.get(__ret__, 'time_stop_scheduled'),
         use_dedicated_vm_host=pulumi.get(__ret__, 'use_dedicated_vm_host'))
 def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDesktopPoolResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopPoolResult]:
     """
     This data source provides details about a specific Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
 
@@ -472,7 +472,7 @@ def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['desktopPoolId'] = desktop_pool_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Desktops/getDesktopPool:getDesktopPool', __args__, opts=opts, typ=GetDesktopPoolResult)
     return __ret__.apply(lambda __response__: GetDesktopPoolResult(
         active_desktops=pulumi.get(__response__, 'active_desktops'),

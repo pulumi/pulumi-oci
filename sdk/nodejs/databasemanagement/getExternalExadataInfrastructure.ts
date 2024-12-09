@@ -142,7 +142,7 @@ export interface GetExternalExadataInfrastructureResult {
  * });
  * ```
  */
-export function getExternalExadataInfrastructureOutput(args: GetExternalExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataInfrastructureResult> {
+export function getExternalExadataInfrastructureOutput(args: GetExternalExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalExadataInfrastructureResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", {
         "externalExadataInfrastructureId": args.externalExadataInfrastructureId,

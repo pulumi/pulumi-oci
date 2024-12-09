@@ -176,7 +176,7 @@ def get_awr_hubs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
                         id: Optional[pulumi.Input[Optional[str]]] = None,
                         operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
                         states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwrHubsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwrHubsResult]:
     """
     This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.
 
@@ -209,7 +209,7 @@ def get_awr_hubs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     __args__['id'] = id
     __args__['operationsInsightsWarehouseId'] = operations_insights_warehouse_id
     __args__['states'] = states
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getAwrHubs:getAwrHubs', __args__, opts=opts, typ=GetAwrHubsResult)
     return __ret__.apply(lambda __response__: GetAwrHubsResult(
         awr_hub_summary_collections=pulumi.get(__response__, 'awr_hub_summary_collections'),

@@ -269,7 +269,7 @@ def get_deploy_artifact(deploy_artifact_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_deploy_artifact_output(deploy_artifact_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployArtifactResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployArtifactResult]:
     """
     This data source provides details about a specific Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
 
@@ -289,7 +289,7 @@ def get_deploy_artifact_output(deploy_artifact_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['deployArtifactId'] = deploy_artifact_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployArtifact:getDeployArtifact', __args__, opts=opts, typ=GetDeployArtifactResult)
     return __ret__.apply(lambda __response__: GetDeployArtifactResult(
         argument_substitution_mode=pulumi.get(__response__, 'argument_substitution_mode'),

@@ -121,7 +121,7 @@ export interface GetWorkspaceFoldersResult {
  * });
  * ```
  */
-export function getWorkspaceFoldersOutput(args: GetWorkspaceFoldersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceFoldersResult> {
+export function getWorkspaceFoldersOutput(args: GetWorkspaceFoldersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspaceFoldersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders", {
         "aggregatorKey": args.aggregatorKey,

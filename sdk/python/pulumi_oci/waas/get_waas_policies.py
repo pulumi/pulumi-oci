@@ -192,7 +192,7 @@ def get_waas_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                              time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                              time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWaasPoliciesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWaasPoliciesResult]:
     """
     This data source provides the list of Waas Policies in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
 
@@ -228,7 +228,7 @@ def get_waas_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['states'] = states
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waas/getWaasPolicies:getWaasPolicies', __args__, opts=opts, typ=GetWaasPoliciesResult)
     return __ret__.apply(lambda __response__: GetWaasPoliciesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

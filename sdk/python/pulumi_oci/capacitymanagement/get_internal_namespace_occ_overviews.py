@@ -192,7 +192,7 @@ def get_internal_namespace_occ_overviews_output(compartment_id: Optional[pulumi.
                                                 occ_customer_group_id: Optional[pulumi.Input[str]] = None,
                                                 to: Optional[pulumi.Input[Optional[str]]] = None,
                                                 workload_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInternalNamespaceOccOverviewsResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalNamespaceOccOverviewsResult]:
     """
     This data source provides the list of Internal Namespace Occ Overviews in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -228,7 +228,7 @@ def get_internal_namespace_occ_overviews_output(compartment_id: Optional[pulumi.
     __args__['occCustomerGroupId'] = occ_customer_group_id
     __args__['to'] = to
     __args__['workloadType'] = workload_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews', __args__, opts=opts, typ=GetInternalNamespaceOccOverviewsResult)
     return __ret__.apply(lambda __response__: GetInternalNamespaceOccOverviewsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

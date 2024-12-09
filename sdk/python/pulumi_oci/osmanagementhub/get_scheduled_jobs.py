@@ -380,7 +380,7 @@ def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[str
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               time_end: Optional[pulumi.Input[Optional[str]]] = None,
                               time_start: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduledJobsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledJobsResult]:
     """
     This data source provides the list of Scheduled Jobs in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -452,7 +452,7 @@ def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[str
     __args__['state'] = state
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getScheduledJobs:getScheduledJobs', __args__, opts=opts, typ=GetScheduledJobsResult)
     return __ret__.apply(lambda __response__: GetScheduledJobsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

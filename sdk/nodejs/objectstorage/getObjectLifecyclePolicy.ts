@@ -78,7 +78,7 @@ export interface GetObjectLifecyclePolicyResult {
  * });
  * ```
  */
-export function getObjectLifecyclePolicyOutput(args: GetObjectLifecyclePolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectLifecyclePolicyResult> {
+export function getObjectLifecyclePolicyOutput(args: GetObjectLifecyclePolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetObjectLifecyclePolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", {
         "bucket": args.bucket,

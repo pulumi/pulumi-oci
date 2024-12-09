@@ -113,7 +113,7 @@ export interface GetBuildPipelineResult {
  * });
  * ```
  */
-export function getBuildPipelineOutput(args: GetBuildPipelineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildPipelineResult> {
+export function getBuildPipelineOutput(args: GetBuildPipelineOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBuildPipelineResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getBuildPipeline:getBuildPipeline", {
         "buildPipelineId": args.buildPipelineId,

@@ -153,7 +153,7 @@ def get_access_request_audit_log_report(access_request_id: Optional[str] = None,
         time_of_report_generation=pulumi.get(__ret__, 'time_of_report_generation'))
 def get_access_request_audit_log_report_output(access_request_id: Optional[pulumi.Input[str]] = None,
                                                enable_process_tree: Optional[pulumi.Input[Optional[int]]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestAuditLogReportResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessRequestAuditLogReportResult]:
     """
     This data source provides details about a specific Access Request Audit Log Report resource in Oracle Cloud Infrastructure Operator Access Control service.
 
@@ -176,7 +176,7 @@ def get_access_request_audit_log_report_output(access_request_id: Optional[pulum
     __args__ = dict()
     __args__['accessRequestId'] = access_request_id
     __args__['enableProcessTree'] = enable_process_tree
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport', __args__, opts=opts, typ=GetAccessRequestAuditLogReportResult)
     return __ret__.apply(lambda __response__: GetAccessRequestAuditLogReportResult(
         access_request_id=pulumi.get(__response__, 'access_request_id'),

@@ -125,7 +125,7 @@ export interface GetExternalDbSystemResult {
  * });
  * ```
  */
-export function getExternalDbSystemOutput(args: GetExternalDbSystemOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbSystemResult> {
+export function getExternalDbSystemOutput(args: GetExternalDbSystemOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDbSystemResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem", {
         "externalDbSystemId": args.externalDbSystemId,

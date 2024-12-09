@@ -150,7 +150,7 @@ def get_scripts_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        content_type: Optional[pulumi.Input[Optional[str]]] = None,
                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict']]]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScriptsResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScriptsResult]:
     """
     This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
 
@@ -177,7 +177,7 @@ def get_scripts_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     __args__['contentType'] = content_type
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getScripts:getScripts', __args__, opts=opts, typ=GetScriptsResult)
     return __ret__.apply(lambda __response__: GetScriptsResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

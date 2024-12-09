@@ -129,7 +129,7 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationResult 
  * });
  * ```
  */
-export function getManagedDatabaseOptimizerStatisticsCollectionOperationOutput(args: GetManagedDatabaseOptimizerStatisticsCollectionOperationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> {
+export function getManagedDatabaseOptimizerStatisticsCollectionOperationOutput(args: GetManagedDatabaseOptimizerStatisticsCollectionOperationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", {
         "managedDatabaseId": args.managedDatabaseId,

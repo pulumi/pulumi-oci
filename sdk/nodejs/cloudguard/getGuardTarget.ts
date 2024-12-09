@@ -133,7 +133,7 @@ export interface GetGuardTargetResult {
  * });
  * ```
  */
-export function getGuardTargetOutput(args: GetGuardTargetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGuardTargetResult> {
+export function getGuardTargetOutput(args: GetGuardTargetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGuardTargetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getGuardTarget:getGuardTarget", {
         "targetId": args.targetId,

@@ -198,7 +198,7 @@ def get_occ_handover_resource_blocks_output(compartment_id: Optional[pulumi.Inpu
                                             handover_resource_name: Optional[pulumi.Input[Optional[str]]] = None,
                                             namespace: Optional[pulumi.Input[Optional[str]]] = None,
                                             occ_handover_resource_block_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccHandoverResourceBlocksResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccHandoverResourceBlocksResult]:
     """
     This data source provides the list of Occ Handover Resource Blocks in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -234,7 +234,7 @@ def get_occ_handover_resource_blocks_output(compartment_id: Optional[pulumi.Inpu
     __args__['handoverResourceName'] = handover_resource_name
     __args__['namespace'] = namespace
     __args__['occHandoverResourceBlockId'] = occ_handover_resource_block_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks', __args__, opts=opts, typ=GetOccHandoverResourceBlocksResult)
     return __ret__.apply(lambda __response__: GetOccHandoverResourceBlocksResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

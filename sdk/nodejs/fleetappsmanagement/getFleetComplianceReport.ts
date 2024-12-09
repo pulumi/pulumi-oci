@@ -84,7 +84,7 @@ export interface GetFleetComplianceReportResult {
  * });
  * ```
  */
-export function getFleetComplianceReportOutput(args: GetFleetComplianceReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetComplianceReportResult> {
+export function getFleetComplianceReportOutput(args: GetFleetComplianceReportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetComplianceReportResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getFleetComplianceReport:getFleetComplianceReport", {
         "complianceReportId": args.complianceReportId,

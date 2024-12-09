@@ -147,7 +147,7 @@ def get_ipsec_connection_tunnel_routes_output(advertiser: Optional[pulumi.Input[
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpsecConnectionTunnelRoutesFilterArgs', 'GetIpsecConnectionTunnelRoutesFilterArgsDict']]]]] = None,
                                               ipsec_id: Optional[pulumi.Input[str]] = None,
                                               tunnel_id: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionTunnelRoutesResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionTunnelRoutesResult]:
     """
     This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.
 
@@ -174,7 +174,7 @@ def get_ipsec_connection_tunnel_routes_output(advertiser: Optional[pulumi.Input[
     __args__['filters'] = filters
     __args__['ipsecId'] = ipsec_id
     __args__['tunnelId'] = tunnel_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes', __args__, opts=opts, typ=GetIpsecConnectionTunnelRoutesResult)
     return __ret__.apply(lambda __response__: GetIpsecConnectionTunnelRoutesResult(
         advertiser=pulumi.get(__response__, 'advertiser'),

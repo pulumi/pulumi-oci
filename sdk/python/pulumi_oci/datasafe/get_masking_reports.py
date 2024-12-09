@@ -183,7 +183,7 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[str]
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingReportsFilterArgs', 'GetMaskingReportsFilterArgsDict']]]]] = None,
                                masking_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingReportsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportsResult]:
     """
     This data source provides the list of Masking Reports in Oracle Cloud Infrastructure Data Safe service.
 
@@ -216,7 +216,7 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[str]
     __args__['filters'] = filters
     __args__['maskingPolicyId'] = masking_policy_id
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingReports:getMaskingReports', __args__, opts=opts, typ=GetMaskingReportsResult)
     return __ret__.apply(lambda __response__: GetMaskingReportsResult(
         access_level=pulumi.get(__response__, 'access_level'),

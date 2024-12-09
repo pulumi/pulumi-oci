@@ -176,7 +176,7 @@ def get_desktop_pools_output(availability_domain: Optional[pulumi.Input[Optional
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDesktopPoolsFilterArgs', 'GetDesktopPoolsFilterArgsDict']]]]] = None,
                              id: Optional[pulumi.Input[Optional[str]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDesktopPoolsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopPoolsResult]:
     """
     This data source provides the list of Desktop Pools in Oracle Cloud Infrastructure Desktops service.
 
@@ -209,7 +209,7 @@ def get_desktop_pools_output(availability_domain: Optional[pulumi.Input[Optional
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Desktops/getDesktopPools:getDesktopPools', __args__, opts=opts, typ=GetDesktopPoolsResult)
     return __ret__.apply(lambda __response__: GetDesktopPoolsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

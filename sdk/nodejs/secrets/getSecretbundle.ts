@@ -125,7 +125,7 @@ export interface GetSecretbundleResult {
  * });
  * ```
  */
-export function getSecretbundleOutput(args: GetSecretbundleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretbundleResult> {
+export function getSecretbundleOutput(args: GetSecretbundleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecretbundleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Secrets/getSecretbundle:getSecretbundle", {
         "secretId": args.secretId,

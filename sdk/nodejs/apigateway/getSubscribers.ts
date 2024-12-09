@@ -97,7 +97,7 @@ export interface GetSubscribersResult {
  * });
  * ```
  */
-export function getSubscribersOutput(args: GetSubscribersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscribersResult> {
+export function getSubscribersOutput(args: GetSubscribersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubscribersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApiGateway/getSubscribers:getSubscribers", {
         "compartmentId": args.compartmentId,

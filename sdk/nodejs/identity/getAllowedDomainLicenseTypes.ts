@@ -83,7 +83,7 @@ export interface GetAllowedDomainLicenseTypesResult {
  * });
  * ```
  */
-export function getAllowedDomainLicenseTypesOutput(args?: GetAllowedDomainLicenseTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAllowedDomainLicenseTypesResult> {
+export function getAllowedDomainLicenseTypesOutput(args?: GetAllowedDomainLicenseTypesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAllowedDomainLicenseTypesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", {

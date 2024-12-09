@@ -256,7 +256,7 @@ def get_alarm_suppressions_output(alarm_id: Optional[pulumi.Input[Optional[str]]
                                   level: Optional[pulumi.Input[Optional[str]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   target_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmSuppressionsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlarmSuppressionsResult]:
     """
     This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
 
@@ -314,7 +314,7 @@ def get_alarm_suppressions_output(alarm_id: Optional[pulumi.Input[Optional[str]]
     __args__['level'] = level
     __args__['state'] = state
     __args__['targetType'] = target_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions', __args__, opts=opts, typ=GetAlarmSuppressionsResult)
     return __ret__.apply(lambda __response__: GetAlarmSuppressionsResult(
         alarm_id=pulumi.get(__response__, 'alarm_id'),

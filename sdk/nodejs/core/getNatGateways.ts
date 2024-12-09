@@ -110,7 +110,7 @@ export interface GetNatGatewaysResult {
  * });
  * ```
  */
-export function getNatGatewaysOutput(args: GetNatGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNatGatewaysResult> {
+export function getNatGatewaysOutput(args: GetNatGatewaysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNatGatewaysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getNatGateways:getNatGateways", {
         "compartmentId": args.compartmentId,

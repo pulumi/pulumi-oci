@@ -516,7 +516,7 @@ def get_delegated_resource_access_request(delegated_resource_access_request_id: 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_delegated_resource_access_request_output(delegated_resource_access_request_id: Optional[pulumi.Input[str]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestResult]:
     """
     This data source provides details about a specific Delegated Resource Access Request resource in Oracle Cloud Infrastructure Delegate Access Control service.
 
@@ -536,7 +536,7 @@ def get_delegated_resource_access_request_output(delegated_resource_access_reque
     """
     __args__ = dict()
     __args__['delegatedResourceAccessRequestId'] = delegated_resource_access_request_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegatedResourceAccessRequest:getDelegatedResourceAccessRequest', __args__, opts=opts, typ=GetDelegatedResourceAccessRequestResult)
     return __ret__.apply(lambda __response__: GetDelegatedResourceAccessRequestResult(
         approval_infos=pulumi.get(__response__, 'approval_infos'),

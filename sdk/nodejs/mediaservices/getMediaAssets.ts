@@ -194,7 +194,7 @@ export interface GetMediaAssetsResult {
  * });
  * ```
  */
-export function getMediaAssetsOutput(args?: GetMediaAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaAssetsResult> {
+export function getMediaAssetsOutput(args?: GetMediaAssetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMediaAssetsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaAssets:getMediaAssets", {

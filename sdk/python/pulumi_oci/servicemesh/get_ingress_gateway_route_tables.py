@@ -176,7 +176,7 @@ def get_ingress_gateway_route_tables_output(compartment_id: Optional[pulumi.Inpu
                                             ingress_gateway_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             name: Optional[pulumi.Input[Optional[str]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIngressGatewayRouteTablesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIngressGatewayRouteTablesResult]:
     """
     This data source provides the list of Ingress Gateway Route Tables in Oracle Cloud Infrastructure Service Mesh service.
 
@@ -209,7 +209,7 @@ def get_ingress_gateway_route_tables_output(compartment_id: Optional[pulumi.Inpu
     __args__['ingressGatewayId'] = ingress_gateway_id
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceMesh/getIngressGatewayRouteTables:getIngressGatewayRouteTables', __args__, opts=opts, typ=GetIngressGatewayRouteTablesResult)
     return __ret__.apply(lambda __response__: GetIngressGatewayRouteTablesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

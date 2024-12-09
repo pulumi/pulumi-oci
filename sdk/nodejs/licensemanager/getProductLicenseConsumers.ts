@@ -85,7 +85,7 @@ export interface GetProductLicenseConsumersResult {
  * });
  * ```
  */
-export function getProductLicenseConsumersOutput(args: GetProductLicenseConsumersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProductLicenseConsumersResult> {
+export function getProductLicenseConsumersOutput(args: GetProductLicenseConsumersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProductLicenseConsumersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LicenseManager/getProductLicenseConsumers:getProductLicenseConsumers", {
         "compartmentId": args.compartmentId,

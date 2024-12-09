@@ -126,7 +126,7 @@ export interface GetOccCapacityRequestsResult {
  * });
  * ```
  */
-export function getOccCapacityRequestsOutput(args: GetOccCapacityRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccCapacityRequestsResult> {
+export function getOccCapacityRequestsOutput(args: GetOccCapacityRequestsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOccCapacityRequestsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccCapacityRequests:getOccCapacityRequests", {
         "compartmentId": args.compartmentId,

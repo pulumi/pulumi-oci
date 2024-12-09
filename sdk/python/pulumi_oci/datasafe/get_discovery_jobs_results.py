@@ -225,7 +225,7 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
                                       objects: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                       planned_action: Optional[pulumi.Input[Optional[str]]] = None,
                                       schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobsResultsResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryJobsResultsResult]:
     """
     This data source provides the list of Discovery Jobs Results in Oracle Cloud Infrastructure Data Safe service.
 
@@ -264,7 +264,7 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
     __args__['objects'] = objects
     __args__['plannedAction'] = planned_action
     __args__['schemaNames'] = schema_names
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults', __args__, opts=opts, typ=GetDiscoveryJobsResultsResult)
     return __ret__.apply(lambda __response__: GetDiscoveryJobsResultsResult(
         column_names=pulumi.get(__response__, 'column_names'),

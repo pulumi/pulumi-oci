@@ -179,7 +179,7 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  group_by: Optional[pulumi.Input[Optional[str]]] = None,
                                  masking_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingAnalyticsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingAnalyticsResult]:
     """
     This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
 
@@ -214,7 +214,7 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['groupBy'] = group_by
     __args__['maskingPolicyId'] = masking_policy_id
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics', __args__, opts=opts, typ=GetMaskingAnalyticsResult)
     return __ret__.apply(lambda __response__: GetMaskingAnalyticsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

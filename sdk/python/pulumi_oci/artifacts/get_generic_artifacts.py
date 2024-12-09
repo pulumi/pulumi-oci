@@ -230,7 +230,7 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[s
                                  sha256: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  version: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGenericArtifactsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenericArtifactsResult]:
     """
     This data source provides the list of Generic Artifacts in Oracle Cloud Infrastructure Artifacts service.
 
@@ -272,7 +272,7 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[s
     __args__['sha256'] = sha256
     __args__['state'] = state
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getGenericArtifacts:getGenericArtifacts', __args__, opts=opts, typ=GetGenericArtifactsResult)
     return __ret__.apply(lambda __response__: GetGenericArtifactsResult(
         artifact_path=pulumi.get(__response__, 'artifact_path'),

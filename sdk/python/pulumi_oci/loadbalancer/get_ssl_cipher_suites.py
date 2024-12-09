@@ -114,7 +114,7 @@ def get_ssl_cipher_suites(filters: Optional[Sequence[Union['GetSslCipherSuitesFi
         ssl_cipher_suites=pulumi.get(__ret__, 'ssl_cipher_suites'))
 def get_ssl_cipher_suites_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSslCipherSuitesFilterArgs', 'GetSslCipherSuitesFilterArgsDict']]]]] = None,
                                  load_balancer_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSslCipherSuitesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSslCipherSuitesResult]:
     """
     This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
 
@@ -135,7 +135,7 @@ def get_ssl_cipher_suites_output(filters: Optional[pulumi.Input[Optional[Sequenc
     __args__ = dict()
     __args__['filters'] = filters
     __args__['loadBalancerId'] = load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites', __args__, opts=opts, typ=GetSslCipherSuitesResult)
     return __ret__.apply(lambda __response__: GetSslCipherSuitesResult(
         filters=pulumi.get(__response__, 'filters'),

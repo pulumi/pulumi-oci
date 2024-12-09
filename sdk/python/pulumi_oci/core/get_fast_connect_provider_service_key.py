@@ -141,7 +141,7 @@ def get_fast_connect_provider_service_key(provider_service_id: Optional[str] = N
         provider_service_key_name=pulumi.get(__ret__, 'provider_service_key_name'))
 def get_fast_connect_provider_service_key_output(provider_service_id: Optional[pulumi.Input[str]] = None,
                                                  provider_service_key_name: Optional[pulumi.Input[str]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFastConnectProviderServiceKeyResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFastConnectProviderServiceKeyResult]:
     """
     This data source provides details about a specific Fast Connect Provider Service Key resource in Oracle Cloud Infrastructure Core service.
 
@@ -165,7 +165,7 @@ def get_fast_connect_provider_service_key_output(provider_service_id: Optional[p
     __args__ = dict()
     __args__['providerServiceId'] = provider_service_id
     __args__['providerServiceKeyName'] = provider_service_key_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey', __args__, opts=opts, typ=GetFastConnectProviderServiceKeyResult)
     return __ret__.apply(lambda __response__: GetFastConnectProviderServiceKeyResult(
         bandwidth_shape_name=pulumi.get(__response__, 'bandwidth_shape_name'),

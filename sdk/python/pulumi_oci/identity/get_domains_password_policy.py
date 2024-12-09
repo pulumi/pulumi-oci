@@ -812,7 +812,7 @@ def get_domains_password_policy_output(attribute_sets: Optional[pulumi.Input[Opt
                                        idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                        password_policy_id: Optional[pulumi.Input[str]] = None,
                                        resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsPasswordPolicyResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsPasswordPolicyResult]:
     """
     This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -847,7 +847,7 @@ def get_domains_password_policy_output(attribute_sets: Optional[pulumi.Input[Opt
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['passwordPolicyId'] = password_policy_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsPasswordPolicy:getDomainsPasswordPolicy', __args__, opts=opts, typ=GetDomainsPasswordPolicyResult)
     return __ret__.apply(lambda __response__: GetDomainsPasswordPolicyResult(
         allowed_chars=pulumi.get(__response__, 'allowed_chars'),

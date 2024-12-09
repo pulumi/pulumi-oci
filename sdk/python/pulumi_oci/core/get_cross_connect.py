@@ -299,7 +299,7 @@ def get_cross_connect(cross_connect_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_cross_connect_output(cross_connect_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCrossConnectResult]:
     """
     This data source provides details about a specific Cross Connect resource in Oracle Cloud Infrastructure Core service.
 
@@ -319,7 +319,7 @@ def get_cross_connect_output(cross_connect_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['crossConnectId'] = cross_connect_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getCrossConnect:getCrossConnect', __args__, opts=opts, typ=GetCrossConnectResult)
     return __ret__.apply(lambda __response__: GetCrossConnectResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -177,7 +177,7 @@ def get_public_ip_pool(public_ip_pool_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_public_ip_pool_output(public_ip_pool_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicIpPoolResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicIpPoolResult]:
     """
     This data source provides details about a specific Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
 
@@ -197,7 +197,7 @@ def get_public_ip_pool_output(public_ip_pool_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['publicIpPoolId'] = public_ip_pool_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getPublicIpPool:getPublicIpPool', __args__, opts=opts, typ=GetPublicIpPoolResult)
     return __ret__.apply(lambda __response__: GetPublicIpPoolResult(
         cidr_blocks=pulumi.get(__response__, 'cidr_blocks'),

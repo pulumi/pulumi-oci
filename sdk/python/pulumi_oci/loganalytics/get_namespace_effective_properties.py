@@ -207,7 +207,7 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
                                               namespace: Optional[pulumi.Input[str]] = None,
                                               pattern_id: Optional[pulumi.Input[Optional[int]]] = None,
                                               source_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceEffectivePropertiesResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceEffectivePropertiesResult]:
     """
     This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -246,7 +246,7 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
     __args__['namespace'] = namespace
     __args__['patternId'] = pattern_id
     __args__['sourceName'] = source_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties', __args__, opts=opts, typ=GetNamespaceEffectivePropertiesResult)
     return __ret__.apply(lambda __response__: GetNamespaceEffectivePropertiesResult(
         agent_id=pulumi.get(__response__, 'agent_id'),

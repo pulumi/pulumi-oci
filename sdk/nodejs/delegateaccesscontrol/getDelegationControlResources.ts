@@ -72,7 +72,7 @@ export interface GetDelegationControlResourcesResult {
  * });
  * ```
  */
-export function getDelegationControlResourcesOutput(args: GetDelegationControlResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegationControlResourcesResult> {
+export function getDelegationControlResourcesOutput(args: GetDelegationControlResourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDelegationControlResourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegationControlResources:getDelegationControlResources", {
         "delegationControlId": args.delegationControlId,

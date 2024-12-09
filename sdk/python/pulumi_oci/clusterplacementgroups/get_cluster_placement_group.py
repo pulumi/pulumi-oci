@@ -279,7 +279,7 @@ def get_cluster_placement_group(cluster_placement_group_id: Optional[str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_cluster_placement_group_output(cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterPlacementGroupResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterPlacementGroupResult]:
     """
     This data source provides details about a specific Cluster Placement Group resource in Oracle Cloud Infrastructure Cluster Placement Groups service.
 
@@ -299,7 +299,7 @@ def get_cluster_placement_group_output(cluster_placement_group_id: Optional[pulu
     """
     __args__ = dict()
     __args__['clusterPlacementGroupId'] = cluster_placement_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ClusterPlacementGroups/getClusterPlacementGroup:getClusterPlacementGroup', __args__, opts=opts, typ=GetClusterPlacementGroupResult)
     return __ret__.apply(lambda __response__: GetClusterPlacementGroupResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -147,7 +147,7 @@ def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[st
                           compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPodShapesFilterArgs', 'GetPodShapesFilterArgsDict']]]]] = None,
                           name: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPodShapesResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPodShapesResult]:
     """
     This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
 
@@ -174,7 +174,7 @@ def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[st
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getPodShapes:getPodShapes', __args__, opts=opts, typ=GetPodShapesResult)
     return __ret__.apply(lambda __response__: GetPodShapesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

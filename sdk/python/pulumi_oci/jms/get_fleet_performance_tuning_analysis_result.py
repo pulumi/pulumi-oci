@@ -299,7 +299,7 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[str] = None,
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
 def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulumi.Input[str]] = None,
                                                         performance_tuning_analysis_result_id: Optional[pulumi.Input[str]] = None,
-                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetPerformanceTuningAnalysisResultResult]:
+                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetPerformanceTuningAnalysisResultResult]:
     """
     This data source provides details about a specific Fleet Performance Tuning Analysis Result resource in Oracle Cloud Infrastructure Jms service.
 
@@ -322,7 +322,7 @@ def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulum
     __args__ = dict()
     __args__['fleetId'] = fleet_id
     __args__['performanceTuningAnalysisResultId'] = performance_tuning_analysis_result_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult', __args__, opts=opts, typ=GetFleetPerformanceTuningAnalysisResultResult)
     return __ret__.apply(lambda __response__: GetFleetPerformanceTuningAnalysisResultResult(
         application_id=pulumi.get(__response__, 'application_id'),

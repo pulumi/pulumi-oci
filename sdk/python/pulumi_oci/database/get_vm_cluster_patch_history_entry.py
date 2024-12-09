@@ -179,7 +179,7 @@ def get_vm_cluster_patch_history_entry(patch_history_entry_id: Optional[str] = N
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 def get_vm_cluster_patch_history_entry_output(patch_history_entry_id: Optional[pulumi.Input[str]] = None,
                                               vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterPatchHistoryEntryResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterPatchHistoryEntryResult]:
     """
     This data source provides details about a specific Vm Cluster Patch History Entry resource in Oracle Cloud Infrastructure Database service.
 
@@ -202,7 +202,7 @@ def get_vm_cluster_patch_history_entry_output(patch_history_entry_id: Optional[p
     __args__ = dict()
     __args__['patchHistoryEntryId'] = patch_history_entry_id
     __args__['vmClusterId'] = vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry', __args__, opts=opts, typ=GetVmClusterPatchHistoryEntryResult)
     return __ret__.apply(lambda __response__: GetVmClusterPatchHistoryEntryResult(
         action=pulumi.get(__response__, 'action'),

@@ -168,7 +168,7 @@ def get_private_application_packages_output(display_name: Optional[pulumi.Input[
                                             package_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                             private_application_id: Optional[pulumi.Input[str]] = None,
                                             private_application_package_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateApplicationPackagesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateApplicationPackagesResult]:
     """
     This data source provides the list of Private Application Packages in Oracle Cloud Infrastructure Service Catalog service.
 
@@ -198,7 +198,7 @@ def get_private_application_packages_output(display_name: Optional[pulumi.Input[
     __args__['packageTypes'] = package_types
     __args__['privateApplicationId'] = private_application_id
     __args__['privateApplicationPackageId'] = private_application_package_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages', __args__, opts=opts, typ=GetPrivateApplicationPackagesResult)
     return __ret__.apply(lambda __response__: GetPrivateApplicationPackagesResult(
         display_name=pulumi.get(__response__, 'display_name'),

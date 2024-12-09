@@ -87,7 +87,7 @@ export interface GetCpeDeviceShapesResult {
  * const testCpeDeviceShapes = oci.Core.getCpeDeviceShapes({});
  * ```
  */
-export function getCpeDeviceShapesOutput(args?: GetCpeDeviceShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpeDeviceShapesResult> {
+export function getCpeDeviceShapesOutput(args?: GetCpeDeviceShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpeDeviceShapesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", {

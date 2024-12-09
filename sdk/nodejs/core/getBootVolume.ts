@@ -152,7 +152,7 @@ export interface GetBootVolumeResult {
  * });
  * ```
  */
-export function getBootVolumeOutput(args: GetBootVolumeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeResult> {
+export function getBootVolumeOutput(args: GetBootVolumeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBootVolumeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getBootVolume:getBootVolume", {
         "bootVolumeId": args.bootVolumeId,

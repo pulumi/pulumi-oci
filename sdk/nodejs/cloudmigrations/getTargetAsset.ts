@@ -145,7 +145,7 @@ export interface GetTargetAssetResult {
  * });
  * ```
  */
-export function getTargetAssetOutput(args: GetTargetAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetAssetResult> {
+export function getTargetAssetOutput(args: GetTargetAssetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetAssetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudMigrations/getTargetAsset:getTargetAsset", {
         "targetAssetId": args.targetAssetId,

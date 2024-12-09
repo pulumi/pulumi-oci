@@ -117,7 +117,7 @@ def get_wlp_agents(compartment_id: Optional[str] = None,
         wlp_agent_collections=pulumi.get(__ret__, 'wlp_agent_collections'))
 def get_wlp_agents_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWlpAgentsFilterArgs', 'GetWlpAgentsFilterArgsDict']]]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWlpAgentsResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlpAgentsResult]:
     """
     This data source provides the list of Wlp Agents in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -138,7 +138,7 @@ def get_wlp_agents_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getWlpAgents:getWlpAgents', __args__, opts=opts, typ=GetWlpAgentsResult)
     return __ret__.apply(lambda __response__: GetWlpAgentsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -282,7 +282,7 @@ def get_fsu_collection(fsu_collection_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
 def get_fsu_collection_output(fsu_collection_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFsuCollectionResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFsuCollectionResult]:
     """
     This data source provides details about a specific Fsu Collection resource in Oracle Cloud Infrastructure Fleet Software Update service.
 
@@ -302,7 +302,7 @@ def get_fsu_collection_output(fsu_collection_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['fsuCollectionId'] = fsu_collection_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetSoftwareUpdate/getFsuCollection:getFsuCollection', __args__, opts=opts, typ=GetFsuCollectionResult)
     return __ret__.apply(lambda __response__: GetFsuCollectionResult(
         active_fsu_cycles=pulumi.get(__response__, 'active_fsu_cycles'),

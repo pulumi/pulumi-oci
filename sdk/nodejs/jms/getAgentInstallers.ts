@@ -103,7 +103,7 @@ export interface GetAgentInstallersResult {
  * });
  * ```
  */
-export function getAgentInstallersOutput(args?: GetAgentInstallersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentInstallersResult> {
+export function getAgentInstallersOutput(args?: GetAgentInstallersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAgentInstallersResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getAgentInstallers:getAgentInstallers", {

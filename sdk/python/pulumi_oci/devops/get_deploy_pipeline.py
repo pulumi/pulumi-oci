@@ -269,7 +269,7 @@ def get_deploy_pipeline(deploy_pipeline_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_deploy_pipeline_output(deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployPipelineResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployPipelineResult]:
     """
     This data source provides details about a specific Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
 
@@ -289,7 +289,7 @@ def get_deploy_pipeline_output(deploy_pipeline_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['deployPipelineId'] = deploy_pipeline_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployPipeline:getDeployPipeline', __args__, opts=opts, typ=GetDeployPipelineResult)
     return __ret__.apply(lambda __response__: GetDeployPipelineResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

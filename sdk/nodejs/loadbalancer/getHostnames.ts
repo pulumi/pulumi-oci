@@ -72,7 +72,7 @@ export interface GetHostnamesResult {
  * });
  * ```
  */
-export function getHostnamesOutput(args: GetHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostnamesResult> {
+export function getHostnamesOutput(args: GetHostnamesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHostnamesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getHostnames:getHostnames", {
         "filters": args.filters,

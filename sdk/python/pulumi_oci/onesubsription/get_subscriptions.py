@@ -177,7 +177,7 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] 
                              is_commit_info_required: Optional[pulumi.Input[Optional[bool]]] = None,
                              plan_number: Optional[pulumi.Input[Optional[str]]] = None,
                              subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """
     This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
 
@@ -213,7 +213,7 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] 
     __args__['isCommitInfoRequired'] = is_commit_info_required
     __args__['planNumber'] = plan_number
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getSubscriptions:getSubscriptions', __args__, opts=opts, typ=GetSubscriptionsResult)
     return __ret__.apply(lambda __response__: GetSubscriptionsResult(
         buyer_email=pulumi.get(__response__, 'buyer_email'),

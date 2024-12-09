@@ -97,7 +97,7 @@ export interface GetBlockchainPlatformsResult {
  * });
  * ```
  */
-export function getBlockchainPlatformsOutput(args: GetBlockchainPlatformsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockchainPlatformsResult> {
+export function getBlockchainPlatformsOutput(args: GetBlockchainPlatformsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBlockchainPlatformsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Blockchain/getBlockchainPlatforms:getBlockchainPlatforms", {
         "compartmentId": args.compartmentId,

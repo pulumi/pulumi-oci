@@ -158,7 +158,7 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApplicationsFilterArgs', 'GetApplicationsFilterArgsDict']]]]] = None,
                             id: Optional[pulumi.Input[Optional[str]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplicationsResult]:
     """
     This data source provides the list of Applications in Oracle Cloud Infrastructure Functions service.
 
@@ -188,7 +188,7 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getApplications:getApplications', __args__, opts=opts, typ=GetApplicationsResult)
     return __ret__.apply(lambda __response__: GetApplicationsResult(
         applications=pulumi.get(__response__, 'applications'),

@@ -85,7 +85,7 @@ export interface GetVaultsResult {
  * });
  * ```
  */
-export function getVaultsOutput(args: GetVaultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVaultsResult> {
+export function getVaultsOutput(args: GetVaultsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVaultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Kms/getVaults:getVaults", {
         "compartmentId": args.compartmentId,

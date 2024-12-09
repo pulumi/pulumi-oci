@@ -124,7 +124,7 @@ export interface GetDomainsOauthPartnerCertificatesResult {
  * });
  * ```
  */
-export function getDomainsOauthPartnerCertificatesOutput(args: GetDomainsOauthPartnerCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsOauthPartnerCertificatesResult> {
+export function getDomainsOauthPartnerCertificatesOutput(args: GetDomainsOauthPartnerCertificatesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsOauthPartnerCertificatesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", {
         "authorization": args.authorization,

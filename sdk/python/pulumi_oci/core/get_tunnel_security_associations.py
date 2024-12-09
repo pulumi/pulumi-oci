@@ -129,7 +129,7 @@ def get_tunnel_security_associations(filters: Optional[Sequence[Union['GetTunnel
 def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTunnelSecurityAssociationsFilterArgs', 'GetTunnelSecurityAssociationsFilterArgsDict']]]]] = None,
                                             ipsec_id: Optional[pulumi.Input[str]] = None,
                                             tunnel_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTunnelSecurityAssociationsResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTunnelSecurityAssociationsResult]:
     """
     This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
 
@@ -153,7 +153,7 @@ def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optio
     __args__['filters'] = filters
     __args__['ipsecId'] = ipsec_id
     __args__['tunnelId'] = tunnel_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations', __args__, opts=opts, typ=GetTunnelSecurityAssociationsResult)
     return __ret__.apply(lambda __response__: GetTunnelSecurityAssociationsResult(
         filters=pulumi.get(__response__, 'filters'),

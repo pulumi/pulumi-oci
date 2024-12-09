@@ -126,7 +126,7 @@ export interface GetCatalogTypeResult {
  * });
  * ```
  */
-export function getCatalogTypeOutput(args: GetCatalogTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogTypeResult> {
+export function getCatalogTypeOutput(args: GetCatalogTypeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCatalogTypeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataCatalog/getCatalogType:getCatalogType", {
         "catalogId": args.catalogId,

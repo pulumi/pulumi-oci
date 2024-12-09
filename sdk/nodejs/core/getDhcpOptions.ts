@@ -114,7 +114,7 @@ export interface GetDhcpOptionsResult {
  * });
  * ```
  */
-export function getDhcpOptionsOutput(args: GetDhcpOptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDhcpOptionsResult> {
+export function getDhcpOptionsOutput(args: GetDhcpOptionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDhcpOptionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDhcpOptions:getDhcpOptions", {
         "compartmentId": args.compartmentId,

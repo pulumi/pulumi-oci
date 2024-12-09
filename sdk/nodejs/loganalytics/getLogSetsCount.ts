@@ -67,7 +67,7 @@ export interface GetLogSetsCountResult {
  * });
  * ```
  */
-export function getLogSetsCountOutput(args: GetLogSetsCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogSetsCountResult> {
+export function getLogSetsCountOutput(args: GetLogSetsCountOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogSetsCountResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", {
         "namespace": args.namespace,

@@ -93,7 +93,7 @@ export interface GetRepoFileLineResult {
  * });
  * ```
  */
-export function getRepoFileLineOutput(args: GetRepoFileLineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepoFileLineResult> {
+export function getRepoFileLineOutput(args: GetRepoFileLineOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepoFileLineResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepoFileLine:getRepoFileLine", {
         "filePath": args.filePath,

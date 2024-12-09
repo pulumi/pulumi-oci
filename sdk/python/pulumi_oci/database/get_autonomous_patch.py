@@ -216,7 +216,7 @@ def get_autonomous_patch(autonomous_patch_id: Optional[str] = None,
         version=pulumi.get(__ret__, 'version'),
         year=pulumi.get(__ret__, 'year'))
 def get_autonomous_patch_output(autonomous_patch_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousPatchResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousPatchResult]:
     """
     This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.
 
@@ -236,7 +236,7 @@ def get_autonomous_patch_output(autonomous_patch_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['autonomousPatchId'] = autonomous_patch_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousPatch:getAutonomousPatch', __args__, opts=opts, typ=GetAutonomousPatchResult)
     return __ret__.apply(lambda __response__: GetAutonomousPatchResult(
         autonomous_patch_id=pulumi.get(__response__, 'autonomous_patch_id'),

@@ -218,7 +218,7 @@ export interface GetUserAssessmentUserAnalyticsResult {
  * });
  * ```
  */
-export function getUserAssessmentUserAnalyticsOutput(args: GetUserAssessmentUserAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentUserAnalyticsResult> {
+export function getUserAssessmentUserAnalyticsOutput(args: GetUserAssessmentUserAnalyticsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserAssessmentUserAnalyticsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessmentUserAnalytics:getUserAssessmentUserAnalytics", {
         "accessLevel": args.accessLevel,

@@ -171,7 +171,7 @@ def get_managed_instance_groups_output(compartment_id: Optional[pulumi.Input[str
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceGroupsFilterArgs', 'GetManagedInstanceGroupsFilterArgsDict']]]]] = None,
                                        os_family: Optional[pulumi.Input[Optional[str]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupsResult]:
     """
     This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure OS Management service.
 
@@ -201,7 +201,7 @@ def get_managed_instance_groups_output(compartment_id: Optional[pulumi.Input[str
     __args__['filters'] = filters
     __args__['osFamily'] = os_family
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups', __args__, opts=opts, typ=GetManagedInstanceGroupsResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceGroupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

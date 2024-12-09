@@ -140,7 +140,7 @@ export interface GetDomainsAccountMgmtInfosResult {
  * });
  * ```
  */
-export function getDomainsAccountMgmtInfosOutput(args: GetDomainsAccountMgmtInfosOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAccountMgmtInfosResult> {
+export function getDomainsAccountMgmtInfosOutput(args: GetDomainsAccountMgmtInfosOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsAccountMgmtInfosResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAccountMgmtInfos:getDomainsAccountMgmtInfos", {
         "accountMgmtInfoCount": args.accountMgmtInfoCount,

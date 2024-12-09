@@ -193,7 +193,7 @@ export interface GetDomainsIdentitySettingResult {
  * });
  * ```
  */
-export function getDomainsIdentitySettingOutput(args: GetDomainsIdentitySettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsIdentitySettingResult> {
+export function getDomainsIdentitySettingOutput(args: GetDomainsIdentitySettingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsIdentitySettingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsIdentitySetting:getDomainsIdentitySetting", {
         "attributeSets": args.attributeSets,

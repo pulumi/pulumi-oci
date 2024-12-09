@@ -185,7 +185,7 @@ export interface GetVirtualCircuitResult {
  * });
  * ```
  */
-export function getVirtualCircuitOutput(args: GetVirtualCircuitOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitResult> {
+export function getVirtualCircuitOutput(args: GetVirtualCircuitOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualCircuitResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVirtualCircuit:getVirtualCircuit", {
         "virtualCircuitId": args.virtualCircuitId,

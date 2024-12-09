@@ -114,7 +114,7 @@ def get_autonomous_database_peers(autonomous_database_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_autonomous_database_peers_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict']]]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasePeersResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabasePeersResult]:
     """
     This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
 
@@ -135,7 +135,7 @@ def get_autonomous_database_peers_output(autonomous_database_id: Optional[pulumi
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers', __args__, opts=opts, typ=GetAutonomousDatabasePeersResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabasePeersResult(
         autonomous_database_id=pulumi.get(__response__, 'autonomous_database_id'),

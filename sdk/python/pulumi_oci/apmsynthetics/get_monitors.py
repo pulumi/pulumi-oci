@@ -231,7 +231,7 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                         script_id: Optional[pulumi.Input[Optional[str]]] = None,
                         status: Optional[pulumi.Input[Optional[str]]] = None,
                         vantage_point: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitorsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitorsResult]:
     """
     This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
 
@@ -273,7 +273,7 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     __args__['scriptId'] = script_id
     __args__['status'] = status
     __args__['vantagePoint'] = vantage_point
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getMonitors:getMonitors', __args__, opts=opts, typ=GetMonitorsResult)
     return __ret__.apply(lambda __response__: GetMonitorsResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

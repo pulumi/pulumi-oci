@@ -252,7 +252,7 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 repository_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 version: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerImagesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerImagesResult]:
     """
     This data source provides the list of Container Images in Oracle Cloud Infrastructure Artifacts service.
 
@@ -297,7 +297,7 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[str]] = No
     __args__['repositoryName'] = repository_name
     __args__['state'] = state
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerImages:getContainerImages', __args__, opts=opts, typ=GetContainerImagesResult)
     return __ret__.apply(lambda __response__: GetContainerImagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

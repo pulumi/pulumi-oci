@@ -117,7 +117,7 @@ def get_managed_my_sql_databases(compartment_id: Optional[str] = None,
         managed_my_sql_database_collections=pulumi.get(__ret__, 'managed_my_sql_database_collections'))
 def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabasesFilterArgs', 'GetManagedMySqlDatabasesFilterArgsDict']]]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabasesResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabasesResult]:
     """
     This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
 
@@ -138,7 +138,7 @@ def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[st
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases', __args__, opts=opts, typ=GetManagedMySqlDatabasesResult)
     return __ret__.apply(lambda __response__: GetManagedMySqlDatabasesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

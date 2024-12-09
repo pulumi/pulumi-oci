@@ -168,7 +168,7 @@ def get_replication_schedules_output(compartment_id: Optional[pulumi.Input[Optio
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationSchedulesFilterArgs', 'GetReplicationSchedulesFilterArgsDict']]]]] = None,
                                      replication_schedule_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationSchedulesResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationSchedulesResult]:
     """
     This data source provides the list of Replication Schedules in Oracle Cloud Infrastructure Cloud Migrations service.
 
@@ -198,7 +198,7 @@ def get_replication_schedules_output(compartment_id: Optional[pulumi.Input[Optio
     __args__['filters'] = filters
     __args__['replicationScheduleId'] = replication_schedule_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudMigrations/getReplicationSchedules:getReplicationSchedules', __args__, opts=opts, typ=GetReplicationSchedulesResult)
     return __ret__.apply(lambda __response__: GetReplicationSchedulesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

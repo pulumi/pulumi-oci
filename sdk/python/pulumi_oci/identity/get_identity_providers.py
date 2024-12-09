@@ -176,7 +176,7 @@ def get_identity_providers_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   protocol: Optional[pulumi.Input[str]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIdentityProvidersResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIdentityProvidersResult]:
     """
     This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity service.
 
@@ -211,7 +211,7 @@ def get_identity_providers_output(compartment_id: Optional[pulumi.Input[str]] = 
     __args__['name'] = name
     __args__['protocol'] = protocol
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getIdentityProviders:getIdentityProviders', __args__, opts=opts, typ=GetIdentityProvidersResult)
     return __ret__.apply(lambda __response__: GetIdentityProvidersResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

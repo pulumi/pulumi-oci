@@ -80,7 +80,7 @@ export interface GetDbManagementPrivateEndpointAssociatedDatabaseResult {
  * });
  * ```
  */
-export function getDbManagementPrivateEndpointAssociatedDatabaseOutput(args: GetDbManagementPrivateEndpointAssociatedDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbManagementPrivateEndpointAssociatedDatabaseResult> {
+export function getDbManagementPrivateEndpointAssociatedDatabaseOutput(args: GetDbManagementPrivateEndpointAssociatedDatabaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbManagementPrivateEndpointAssociatedDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", {
         "compartmentId": args.compartmentId,

@@ -171,7 +171,7 @@ def get_vm_cluster_networks_output(compartment_id: Optional[pulumi.Input[str]] =
                                    exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVmClusterNetworksFilterArgs', 'GetVmClusterNetworksFilterArgsDict']]]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterNetworksResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterNetworksResult]:
     """
     This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Database service.
 
@@ -201,7 +201,7 @@ def get_vm_cluster_networks_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterNetworks:getVmClusterNetworks', __args__, opts=opts, typ=GetVmClusterNetworksResult)
     return __ret__.apply(lambda __response__: GetVmClusterNetworksResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

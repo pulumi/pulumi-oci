@@ -246,7 +246,7 @@ def get_database_upgrade_history_entry(database_id: Optional[str] = None,
         upgrade_history_entry_id=pulumi.get(__ret__, 'upgrade_history_entry_id'))
 def get_database_upgrade_history_entry_output(database_id: Optional[pulumi.Input[str]] = None,
                                               upgrade_history_entry_id: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseUpgradeHistoryEntryResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseUpgradeHistoryEntryResult]:
     """
     This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
 
@@ -269,7 +269,7 @@ def get_database_upgrade_history_entry_output(database_id: Optional[pulumi.Input
     __args__ = dict()
     __args__['databaseId'] = database_id
     __args__['upgradeHistoryEntryId'] = upgrade_history_entry_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry', __args__, opts=opts, typ=GetDatabaseUpgradeHistoryEntryResult)
     return __ret__.apply(lambda __response__: GetDatabaseUpgradeHistoryEntryResult(
         action=pulumi.get(__response__, 'action'),

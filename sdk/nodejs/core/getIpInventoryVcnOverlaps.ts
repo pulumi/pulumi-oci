@@ -100,7 +100,7 @@ export interface GetIpInventoryVcnOverlapsResult {
  * });
  * ```
  */
-export function getIpInventoryVcnOverlapsOutput(args: GetIpInventoryVcnOverlapsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpInventoryVcnOverlapsResult> {
+export function getIpInventoryVcnOverlapsOutput(args: GetIpInventoryVcnOverlapsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpInventoryVcnOverlapsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", {
         "compartmentLists": args.compartmentLists,

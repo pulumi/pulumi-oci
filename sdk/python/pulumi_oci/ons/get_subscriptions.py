@@ -137,7 +137,7 @@ def get_subscriptions(compartment_id: Optional[str] = None,
 def get_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
                              topic_id: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """
     This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Notifications service.
 
@@ -163,7 +163,7 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['topicId'] = topic_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ons/getSubscriptions:getSubscriptions', __args__, opts=opts, typ=GetSubscriptionsResult)
     return __ret__.apply(lambda __response__: GetSubscriptionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

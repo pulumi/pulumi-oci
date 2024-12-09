@@ -154,7 +154,7 @@ def get_ipsec_connections_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  cpe_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  drg_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpsecConnectionsFilterArgs', 'GetIpsecConnectionsFilterArgsDict']]]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionsResult]:
     """
     This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
 
@@ -182,7 +182,7 @@ def get_ipsec_connections_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['cpeId'] = cpe_id
     __args__['drgId'] = drg_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecConnections:getIpsecConnections', __args__, opts=opts, typ=GetIpsecConnectionsResult)
     return __ret__.apply(lambda __response__: GetIpsecConnectionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

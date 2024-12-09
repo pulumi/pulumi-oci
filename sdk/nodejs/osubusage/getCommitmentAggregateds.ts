@@ -92,7 +92,7 @@ export interface GetCommitmentAggregatedsResult {
  *
  * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
  */
-export function getCommitmentAggregatedsOutput(args: GetCommitmentAggregatedsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCommitmentAggregatedsResult> {
+export function getCommitmentAggregatedsOutput(args: GetCommitmentAggregatedsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCommitmentAggregatedsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds", {
         "compartmentId": args.compartmentId,

@@ -108,7 +108,7 @@ export interface GetGatewaysResult {
  * });
  * ```
  */
-export function getGatewaysOutput(args: GetGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGatewaysResult> {
+export function getGatewaysOutput(args: GetGatewaysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGatewaysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApiGateway/getGateways:getGateways", {
         "certificateId": args.certificateId,

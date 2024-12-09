@@ -186,7 +186,7 @@ def get_block_volume_replicas_output(availability_domain: Optional[pulumi.Input[
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBlockVolumeReplicasFilterArgs', 'GetBlockVolumeReplicasFilterArgsDict']]]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      volume_group_replica_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockVolumeReplicasResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlockVolumeReplicasResult]:
     """
     This data source provides the list of Block Volume Replicas in Oracle Cloud Infrastructure Core service.
 
@@ -219,7 +219,7 @@ def get_block_volume_replicas_output(availability_domain: Optional[pulumi.Input[
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['volumeGroupReplicaId'] = volume_group_replica_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas', __args__, opts=opts, typ=GetBlockVolumeReplicasResult)
     return __ret__.apply(lambda __response__: GetBlockVolumeReplicasResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -308,7 +308,7 @@ def get_news_report(news_report_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNewsReportResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNewsReportResult]:
     """
     This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -328,7 +328,7 @@ def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['newsReportId'] = news_report_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getNewsReport:getNewsReport', __args__, opts=opts, typ=GetNewsReportResult)
     return __ret__.apply(lambda __response__: GetNewsReportResult(
         are_child_compartments_included=pulumi.get(__response__, 'are_child_compartments_included'),

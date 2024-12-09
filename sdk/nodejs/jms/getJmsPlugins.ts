@@ -159,7 +159,7 @@ export interface GetJmsPluginsResult {
  * });
  * ```
  */
-export function getJmsPluginsOutput(args?: GetJmsPluginsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJmsPluginsResult> {
+export function getJmsPluginsOutput(args?: GetJmsPluginsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJmsPluginsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJmsPlugins:getJmsPlugins", {

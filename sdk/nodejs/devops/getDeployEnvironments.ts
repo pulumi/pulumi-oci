@@ -116,7 +116,7 @@ export interface GetDeployEnvironmentsResult {
  * });
  * ```
  */
-export function getDeployEnvironmentsOutput(args?: GetDeployEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployEnvironmentsResult> {
+export function getDeployEnvironmentsOutput(args?: GetDeployEnvironmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDeployEnvironmentsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getDeployEnvironments:getDeployEnvironments", {

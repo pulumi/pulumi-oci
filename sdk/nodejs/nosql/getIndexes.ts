@@ -105,7 +105,7 @@ export interface GetIndexesResult {
  * });
  * ```
  */
-export function getIndexesOutput(args: GetIndexesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIndexesResult> {
+export function getIndexesOutput(args: GetIndexesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIndexesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Nosql/getIndexes:getIndexes", {
         "compartmentId": args.compartmentId,

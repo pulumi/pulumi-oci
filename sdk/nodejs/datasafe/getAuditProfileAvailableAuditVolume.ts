@@ -111,7 +111,7 @@ export interface GetAuditProfileAvailableAuditVolumeResult {
  * });
  * ```
  */
-export function getAuditProfileAvailableAuditVolumeOutput(args: GetAuditProfileAvailableAuditVolumeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileAvailableAuditVolumeResult> {
+export function getAuditProfileAvailableAuditVolumeOutput(args: GetAuditProfileAvailableAuditVolumeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuditProfileAvailableAuditVolumeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditProfileAvailableAuditVolume:getAuditProfileAvailableAuditVolume", {
         "auditProfileId": args.auditProfileId,

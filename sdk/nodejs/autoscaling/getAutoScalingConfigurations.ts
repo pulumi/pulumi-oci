@@ -86,7 +86,7 @@ export interface GetAutoScalingConfigurationsResult {
  * });
  * ```
  */
-export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationsResult> {
+export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigurationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutoScalingConfigurationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", {
         "compartmentId": args.compartmentId,

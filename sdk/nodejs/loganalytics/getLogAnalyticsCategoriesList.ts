@@ -96,7 +96,7 @@ export interface GetLogAnalyticsCategoriesListResult {
  * });
  * ```
  */
-export function getLogAnalyticsCategoriesListOutput(args: GetLogAnalyticsCategoriesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsCategoriesListResult> {
+export function getLogAnalyticsCategoriesListOutput(args: GetLogAnalyticsCategoriesListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsCategoriesListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", {
         "categoryDisplayText": args.categoryDisplayText,

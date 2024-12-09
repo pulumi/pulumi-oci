@@ -155,7 +155,7 @@ def get_security_policy_deployment_security_policy_entry_states_output(deploymen
                                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict']]]]] = None,
                                                                        security_policy_deployment_id: Optional[pulumi.Input[str]] = None,
                                                                        security_policy_entry_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult]:
+                                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult]:
     """
     This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
 
@@ -184,7 +184,7 @@ def get_security_policy_deployment_security_policy_entry_states_output(deploymen
     __args__['filters'] = filters
     __args__['securityPolicyDeploymentId'] = security_policy_deployment_id
     __args__['securityPolicyEntryId'] = security_policy_entry_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryStates:getSecurityPolicyDeploymentSecurityPolicyEntryStates', __args__, opts=opts, typ=GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult(
         deployment_status=pulumi.get(__response__, 'deployment_status'),

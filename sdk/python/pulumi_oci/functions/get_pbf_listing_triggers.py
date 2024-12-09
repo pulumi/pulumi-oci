@@ -117,7 +117,7 @@ def get_pbf_listing_triggers(filters: Optional[Sequence[Union['GetPbfListingTrig
         triggers_collections=pulumi.get(__ret__, 'triggers_collections'))
 def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict']]]]] = None,
                                     name: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingTriggersResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbfListingTriggersResult]:
     """
     This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
 
@@ -138,7 +138,7 @@ def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequ
     __args__ = dict()
     __args__['filters'] = filters
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getPbfListingTriggers:getPbfListingTriggers', __args__, opts=opts, typ=GetPbfListingTriggersResult)
     return __ret__.apply(lambda __response__: GetPbfListingTriggersResult(
         filters=pulumi.get(__response__, 'filters'),

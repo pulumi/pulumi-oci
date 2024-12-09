@@ -177,7 +177,7 @@ export interface GetDomainsDynamicResourceGroupResult {
  * });
  * ```
  */
-export function getDomainsDynamicResourceGroupOutput(args: GetDomainsDynamicResourceGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsDynamicResourceGroupResult> {
+export function getDomainsDynamicResourceGroupOutput(args: GetDomainsDynamicResourceGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsDynamicResourceGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsDynamicResourceGroup:getDomainsDynamicResourceGroup", {
         "attributeSets": args.attributeSets,

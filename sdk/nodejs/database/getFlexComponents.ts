@@ -83,7 +83,7 @@ export interface GetFlexComponentsResult {
  * });
  * ```
  */
-export function getFlexComponentsOutput(args: GetFlexComponentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFlexComponentsResult> {
+export function getFlexComponentsOutput(args: GetFlexComponentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFlexComponentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getFlexComponents:getFlexComponents", {
         "compartmentId": args.compartmentId,

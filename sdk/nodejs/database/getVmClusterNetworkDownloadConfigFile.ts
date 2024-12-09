@@ -80,7 +80,7 @@ export interface GetVmClusterNetworkDownloadConfigFileResult {
  * });
  * ```
  */
-export function getVmClusterNetworkDownloadConfigFileOutput(args: GetVmClusterNetworkDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterNetworkDownloadConfigFileResult> {
+export function getVmClusterNetworkDownloadConfigFileOutput(args: GetVmClusterNetworkDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVmClusterNetworkDownloadConfigFileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", {
         "base64EncodeContent": args.base64EncodeContent,

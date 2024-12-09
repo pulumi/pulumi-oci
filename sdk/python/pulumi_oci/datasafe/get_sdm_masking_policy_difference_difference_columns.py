@@ -222,7 +222,7 @@ def get_sdm_masking_policy_difference_difference_columns_output(column_names: Op
                                                                 schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                                 sdm_masking_policy_difference_id: Optional[pulumi.Input[str]] = None,
                                                                 sync_status: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsResult]:
+                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsResult]:
     """
     This data source provides the list of Sdm Masking Policy Difference Difference Columns in Oracle Cloud Infrastructure Data Safe service.
 
@@ -261,7 +261,7 @@ def get_sdm_masking_policy_difference_difference_columns_output(column_names: Op
     __args__['schemaNames'] = schema_names
     __args__['sdmMaskingPolicyDifferenceId'] = sdm_masking_policy_difference_id
     __args__['syncStatus'] = sync_status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns', __args__, opts=opts, typ=GetSdmMaskingPolicyDifferenceDifferenceColumnsResult)
     return __ret__.apply(lambda __response__: GetSdmMaskingPolicyDifferenceDifferenceColumnsResult(
         column_names=pulumi.get(__response__, 'column_names'),

@@ -242,7 +242,7 @@ def get_app_acceleration(web_app_acceleration_id: Optional[str] = None,
         web_app_acceleration_id=pulumi.get(__ret__, 'web_app_acceleration_id'),
         web_app_acceleration_policy_id=pulumi.get(__ret__, 'web_app_acceleration_policy_id'))
 def get_app_acceleration_output(web_app_acceleration_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppAccelerationResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppAccelerationResult]:
     """
     This data source provides details about a specific Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
 
@@ -262,7 +262,7 @@ def get_app_acceleration_output(web_app_acceleration_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['webAppAccelerationId'] = web_app_acceleration_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waa/getAppAcceleration:getAppAcceleration', __args__, opts=opts, typ=GetAppAccelerationResult)
     return __ret__.apply(lambda __response__: GetAppAccelerationResult(
         backend_type=pulumi.get(__response__, 'backend_type'),

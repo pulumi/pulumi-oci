@@ -100,7 +100,7 @@ def get_namespace_storage_encryption_key_info(namespace: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         namespace=pulumi.get(__ret__, 'namespace'))
 def get_namespace_storage_encryption_key_info_output(namespace: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageEncryptionKeyInfoResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceStorageEncryptionKeyInfoResult]:
     """
     This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -120,7 +120,7 @@ def get_namespace_storage_encryption_key_info_output(namespace: Optional[pulumi.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo', __args__, opts=opts, typ=GetNamespaceStorageEncryptionKeyInfoResult)
     return __ret__.apply(lambda __response__: GetNamespaceStorageEncryptionKeyInfoResult(
         id=pulumi.get(__response__, 'id'),

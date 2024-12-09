@@ -347,7 +347,7 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_database_tools_private_endpoint_output(database_tools_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointResult]:
     """
     This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
 
@@ -367,7 +367,7 @@ def get_database_tools_private_endpoint_output(database_tools_private_endpoint_i
     """
     __args__ = dict()
     __args__['databaseToolsPrivateEndpointId'] = database_tools_private_endpoint_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsPrivateEndpoint:getDatabaseToolsPrivateEndpoint', __args__, opts=opts, typ=GetDatabaseToolsPrivateEndpointResult)
     return __ret__.apply(lambda __response__: GetDatabaseToolsPrivateEndpointResult(
         additional_fqdns=pulumi.get(__response__, 'additional_fqdns'),

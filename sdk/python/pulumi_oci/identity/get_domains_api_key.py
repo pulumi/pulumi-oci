@@ -383,7 +383,7 @@ def get_domains_api_key_output(api_key_id: Optional[pulumi.Input[str]] = None,
                                authorization: Optional[pulumi.Input[Optional[str]]] = None,
                                idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsApiKeyResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsApiKeyResult]:
     """
     This data source provides details about a specific Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -418,7 +418,7 @@ def get_domains_api_key_output(api_key_id: Optional[pulumi.Input[str]] = None,
     __args__['authorization'] = authorization
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsApiKey:getDomainsApiKey', __args__, opts=opts, typ=GetDomainsApiKeyResult)
     return __ret__.apply(lambda __response__: GetDomainsApiKeyResult(
         api_key_id=pulumi.get(__response__, 'api_key_id'),

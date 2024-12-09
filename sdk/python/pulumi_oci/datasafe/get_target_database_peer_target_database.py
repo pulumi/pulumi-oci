@@ -242,7 +242,7 @@ def get_target_database_peer_target_database(peer_target_database_id: Optional[s
         tls_configs=pulumi.get(__ret__, 'tls_configs'))
 def get_target_database_peer_target_database_output(peer_target_database_id: Optional[pulumi.Input[str]] = None,
                                                     target_database_id: Optional[pulumi.Input[str]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasePeerTargetDatabaseResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasePeerTargetDatabaseResult]:
     """
     This data source provides details about a specific Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -265,7 +265,7 @@ def get_target_database_peer_target_database_output(peer_target_database_id: Opt
     __args__ = dict()
     __args__['peerTargetDatabaseId'] = peer_target_database_id
     __args__['targetDatabaseId'] = target_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabasePeerTargetDatabase:getTargetDatabasePeerTargetDatabase', __args__, opts=opts, typ=GetTargetDatabasePeerTargetDatabaseResult)
     return __ret__.apply(lambda __response__: GetTargetDatabasePeerTargetDatabaseResult(
         database_details=pulumi.get(__response__, 'database_details'),

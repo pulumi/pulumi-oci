@@ -360,7 +360,7 @@ def get_managed_instance_group(managed_instance_group_id: Optional[str] = None,
         time_modified=pulumi.get(__ret__, 'time_modified'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
 def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupResult]:
     """
     This data source provides details about a specific Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -380,7 +380,7 @@ def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi
     """
     __args__ = dict()
     __args__['managedInstanceGroupId'] = managed_instance_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceGroup:getManagedInstanceGroup', __args__, opts=opts, typ=GetManagedInstanceGroupResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceGroupResult(
         arch_type=pulumi.get(__response__, 'arch_type'),

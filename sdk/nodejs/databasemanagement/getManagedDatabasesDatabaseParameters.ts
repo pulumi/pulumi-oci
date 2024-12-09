@@ -107,7 +107,7 @@ export interface GetManagedDatabasesDatabaseParametersResult {
  * });
  * ```
  */
-export function getManagedDatabasesDatabaseParametersOutput(args: GetManagedDatabasesDatabaseParametersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesDatabaseParametersResult> {
+export function getManagedDatabasesDatabaseParametersOutput(args: GetManagedDatabasesDatabaseParametersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabasesDatabaseParametersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters", {
         "filters": args.filters,

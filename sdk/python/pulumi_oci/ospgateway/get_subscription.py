@@ -397,7 +397,7 @@ def get_subscription(compartment_id: Optional[str] = None,
 def get_subscription_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             osp_home_region: Optional[pulumi.Input[str]] = None,
                             subscription_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionResult]:
     """
     This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
 
@@ -423,7 +423,7 @@ def get_subscription_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['compartmentId'] = compartment_id
     __args__['ospHomeRegion'] = osp_home_region
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OspGateway/getSubscription:getSubscription', __args__, opts=opts, typ=GetSubscriptionResult)
     return __ret__.apply(lambda __response__: GetSubscriptionResult(
         account_type=pulumi.get(__response__, 'account_type'),

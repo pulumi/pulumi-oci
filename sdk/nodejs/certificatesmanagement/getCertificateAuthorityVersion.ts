@@ -88,7 +88,7 @@ export interface GetCertificateAuthorityVersionResult {
  * Lists all versions for the specified certificate authority (CA).
  * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
  */
-export function getCertificateAuthorityVersionOutput(args: GetCertificateAuthorityVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthorityVersionResult> {
+export function getCertificateAuthorityVersionOutput(args: GetCertificateAuthorityVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCertificateAuthorityVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", {
         "certificateAuthorityId": args.certificateAuthorityId,

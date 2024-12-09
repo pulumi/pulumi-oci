@@ -101,7 +101,7 @@ export interface GetManagementAgentCountResult {
  * });
  * ```
  */
-export function getManagementAgentCountOutput(args: GetManagementAgentCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentCountResult> {
+export function getManagementAgentCountOutput(args: GetManagementAgentCountOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentCountResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", {
         "compartmentId": args.compartmentId,

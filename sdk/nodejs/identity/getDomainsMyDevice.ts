@@ -257,7 +257,7 @@ export interface GetDomainsMyDeviceResult {
  * });
  * ```
  */
-export function getDomainsMyDeviceOutput(args: GetDomainsMyDeviceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyDeviceResult> {
+export function getDomainsMyDeviceOutput(args: GetDomainsMyDeviceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyDeviceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyDevice:getDomainsMyDevice", {
         "attributeSets": args.attributeSets,

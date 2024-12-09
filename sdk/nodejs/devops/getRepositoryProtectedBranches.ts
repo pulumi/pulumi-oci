@@ -80,7 +80,7 @@ export interface GetRepositoryProtectedBranchesResult {
  * });
  * ```
  */
-export function getRepositoryProtectedBranchesOutput(args: GetRepositoryProtectedBranchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryProtectedBranchesResult> {
+export function getRepositoryProtectedBranchesOutput(args: GetRepositoryProtectedBranchesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryProtectedBranchesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", {
         "filters": args.filters,

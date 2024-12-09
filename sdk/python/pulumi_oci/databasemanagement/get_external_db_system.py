@@ -282,7 +282,7 @@ def get_external_db_system(external_db_system_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_external_db_system_output(external_db_system_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbSystemResult]:
     """
     This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -302,7 +302,7 @@ def get_external_db_system_output(external_db_system_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['externalDbSystemId'] = external_db_system_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem', __args__, opts=opts, typ=GetExternalDbSystemResult)
     return __ret__.apply(lambda __response__: GetExternalDbSystemResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

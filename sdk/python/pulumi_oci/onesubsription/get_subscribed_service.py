@@ -1535,7 +1535,7 @@ def get_subscribed_service(fields: Optional[Sequence[str]] = None,
         used_amount=pulumi.get(__ret__, 'used_amount'))
 def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                   subscribed_service_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscribedServiceResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscribedServiceResult]:
     """
     This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
 
@@ -1558,7 +1558,7 @@ def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequenc
     __args__ = dict()
     __args__['fields'] = fields
     __args__['subscribedServiceId'] = subscribed_service_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getSubscribedService:getSubscribedService', __args__, opts=opts, typ=GetSubscribedServiceResult)
     return __ret__.apply(lambda __response__: GetSubscribedServiceResult(
         admin_email=pulumi.get(__response__, 'admin_email'),

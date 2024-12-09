@@ -219,7 +219,7 @@ def get_delegated_resource_access_requests_output(compartment_id: Optional[pulum
                                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                                   time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                                   time_start: Optional[pulumi.Input[Optional[str]]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestsResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestsResult]:
     """
     This data source provides the list of Delegated Resource Access Requests in Oracle Cloud Infrastructure Delegate Access Control service.
 
@@ -258,7 +258,7 @@ def get_delegated_resource_access_requests_output(compartment_id: Optional[pulum
     __args__['state'] = state
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegatedResourceAccessRequests:getDelegatedResourceAccessRequests', __args__, opts=opts, typ=GetDelegatedResourceAccessRequestsResult)
     return __ret__.apply(lambda __response__: GetDelegatedResourceAccessRequestsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

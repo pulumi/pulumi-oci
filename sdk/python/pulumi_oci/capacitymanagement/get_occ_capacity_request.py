@@ -344,7 +344,7 @@ def get_occ_capacity_request(occ_capacity_request_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_occ_capacity_request_output(occ_capacity_request_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccCapacityRequestResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccCapacityRequestResult]:
     """
     This data source provides details about a specific Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -364,7 +364,7 @@ def get_occ_capacity_request_output(occ_capacity_request_id: Optional[pulumi.Inp
     """
     __args__ = dict()
     __args__['occCapacityRequestId'] = occ_capacity_request_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest', __args__, opts=opts, typ=GetOccCapacityRequestResult)
     return __ret__.apply(lambda __response__: GetOccCapacityRequestResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

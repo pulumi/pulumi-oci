@@ -113,7 +113,7 @@ export interface GetStreamPoolResult {
  * });
  * ```
  */
-export function getStreamPoolOutput(args: GetStreamPoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamPoolResult> {
+export function getStreamPoolOutput(args: GetStreamPoolOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStreamPoolResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Streaming/getStreamPool:getStreamPool", {
         "streamPoolId": args.streamPoolId,

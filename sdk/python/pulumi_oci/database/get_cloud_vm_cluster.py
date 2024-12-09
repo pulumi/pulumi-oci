@@ -758,7 +758,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         vip_ids=pulumi.get(__ret__, 'vip_ids'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
 def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudVmClusterResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudVmClusterResult]:
     """
     This data source provides details about a specific Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
 
@@ -778,7 +778,7 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['cloudVmClusterId'] = cloud_vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getCloudVmCluster:getCloudVmCluster', __args__, opts=opts, typ=GetCloudVmClusterResult)
     return __ret__.apply(lambda __response__: GetCloudVmClusterResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

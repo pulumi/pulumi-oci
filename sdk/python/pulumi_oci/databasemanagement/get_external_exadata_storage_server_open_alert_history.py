@@ -100,7 +100,7 @@ def get_external_exadata_storage_server_open_alert_history(external_exadata_stor
         external_exadata_storage_server_id=pulumi.get(__ret__, 'external_exadata_storage_server_id'),
         id=pulumi.get(__ret__, 'id'))
 def get_external_exadata_storage_server_open_alert_history_output(external_exadata_storage_server_id: Optional[pulumi.Input[str]] = None,
-                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageServerOpenAlertHistoryResult]:
+                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageServerOpenAlertHistoryResult]:
     """
     This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -120,7 +120,7 @@ def get_external_exadata_storage_server_open_alert_history_output(external_exada
     """
     __args__ = dict()
     __args__['externalExadataStorageServerId'] = external_exadata_storage_server_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory', __args__, opts=opts, typ=GetExternalExadataStorageServerOpenAlertHistoryResult)
     return __ret__.apply(lambda __response__: GetExternalExadataStorageServerOpenAlertHistoryResult(
         alerts=pulumi.get(__response__, 'alerts'),

@@ -258,7 +258,7 @@ def get_service_connector(service_connector_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_service_connector_output(service_connector_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceConnectorResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceConnectorResult]:
     """
     This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
 
@@ -280,7 +280,7 @@ def get_service_connector_output(service_connector_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['serviceConnectorId'] = service_connector_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Sch/getServiceConnector:getServiceConnector', __args__, opts=opts, typ=GetServiceConnectorResult)
     return __ret__.apply(lambda __response__: GetServiceConnectorResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

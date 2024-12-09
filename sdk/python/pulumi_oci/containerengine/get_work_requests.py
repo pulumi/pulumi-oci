@@ -180,7 +180,7 @@ def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[str]]] =
                              resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                              resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                              statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkRequestsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkRequestsResult]:
     """
     This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
 
@@ -213,7 +213,7 @@ def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[str]]] =
     __args__['resourceId'] = resource_id
     __args__['resourceType'] = resource_type
     __args__['statuses'] = statuses
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getWorkRequests:getWorkRequests', __args__, opts=opts, typ=GetWorkRequestsResult)
     return __ret__.apply(lambda __response__: GetWorkRequestsResult(
         cluster_id=pulumi.get(__response__, 'cluster_id'),

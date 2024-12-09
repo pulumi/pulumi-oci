@@ -91,7 +91,7 @@ export interface GetIpsecConnectionTunnelErrorResult {
  * });
  * ```
  */
-export function getIpsecConnectionTunnelErrorOutput(args: GetIpsecConnectionTunnelErrorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelErrorResult> {
+export function getIpsecConnectionTunnelErrorOutput(args: GetIpsecConnectionTunnelErrorOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpsecConnectionTunnelErrorResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", {
         "ipsecId": args.ipsecId,

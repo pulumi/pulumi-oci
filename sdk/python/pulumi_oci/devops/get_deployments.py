@@ -224,7 +224,7 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                            time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentsResult]:
     """
     This data source provides the list of Deployments in Oracle Cloud Infrastructure Devops service.
 
@@ -266,7 +266,7 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
     __args__['state'] = state
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployments:getDeployments', __args__, opts=opts, typ=GetDeploymentsResult)
     return __ret__.apply(lambda __response__: GetDeploymentsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

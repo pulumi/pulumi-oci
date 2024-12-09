@@ -111,7 +111,7 @@ export interface GetDomainsBrandingSettingsResult {
  * });
  * ```
  */
-export function getDomainsBrandingSettingsOutput(args: GetDomainsBrandingSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsBrandingSettingsResult> {
+export function getDomainsBrandingSettingsOutput(args: GetDomainsBrandingSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsBrandingSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsBrandingSettings:getDomainsBrandingSettings", {
         "attributeSets": args.attributeSets,

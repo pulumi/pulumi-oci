@@ -147,7 +147,7 @@ def get_compute_capacity_topology_compute_hpc_islands_output(availability_domain
                                                              compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                              compute_capacity_topology_id: Optional[pulumi.Input[str]] = None,
                                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologyComputeHpcIslandsFilterArgs', 'GetComputeCapacityTopologyComputeHpcIslandsFilterArgsDict']]]]] = None,
-                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeHpcIslandsResult]:
+                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeHpcIslandsResult]:
     """
     This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.
 
@@ -174,7 +174,7 @@ def get_compute_capacity_topology_compute_hpc_islands_output(availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['computeCapacityTopologyId'] = compute_capacity_topology_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands', __args__, opts=opts, typ=GetComputeCapacityTopologyComputeHpcIslandsResult)
     return __ret__.apply(lambda __response__: GetComputeCapacityTopologyComputeHpcIslandsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -77,7 +77,7 @@ export interface GetImportableAgentEntitiesResult {
  * });
  * ```
  */
-export function getImportableAgentEntitiesOutput(args: GetImportableAgentEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImportableAgentEntitiesResult> {
+export function getImportableAgentEntitiesOutput(args: GetImportableAgentEntitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImportableAgentEntitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", {
         "compartmentId": args.compartmentId,

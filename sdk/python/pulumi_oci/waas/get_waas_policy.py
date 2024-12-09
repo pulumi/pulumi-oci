@@ -256,7 +256,7 @@ def get_waas_policy(waas_policy_id: Optional[str] = None,
         waas_policy_id=pulumi.get(__ret__, 'waas_policy_id'),
         waf_configs=pulumi.get(__ret__, 'waf_configs'))
 def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWaasPolicyResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWaasPolicyResult]:
     """
     This data source provides details about a specific Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
 
@@ -276,7 +276,7 @@ def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['waasPolicyId'] = waas_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waas/getWaasPolicy:getWaasPolicy', __args__, opts=opts, typ=GetWaasPolicyResult)
     return __ret__.apply(lambda __response__: GetWaasPolicyResult(
         additional_domains=pulumi.get(__response__, 'additional_domains'),

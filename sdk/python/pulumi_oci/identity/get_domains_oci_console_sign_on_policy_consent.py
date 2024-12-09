@@ -435,7 +435,7 @@ def get_domains_oci_console_sign_on_policy_consent_output(attribute_sets: Option
                                                           idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                                           oci_console_sign_on_policy_consent_id: Optional[pulumi.Input[str]] = None,
                                                           resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsOciConsoleSignOnPolicyConsentResult]:
+                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsOciConsoleSignOnPolicyConsentResult]:
     """
     This data source provides details about a specific Oci Console Sign On Policy Consent resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -470,7 +470,7 @@ def get_domains_oci_console_sign_on_policy_consent_output(attribute_sets: Option
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['ociConsoleSignOnPolicyConsentId'] = oci_console_sign_on_policy_consent_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsOciConsoleSignOnPolicyConsent:getDomainsOciConsoleSignOnPolicyConsent', __args__, opts=opts, typ=GetDomainsOciConsoleSignOnPolicyConsentResult)
     return __ret__.apply(lambda __response__: GetDomainsOciConsoleSignOnPolicyConsentResult(
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),

@@ -147,7 +147,7 @@ def get_listing_package_agreements_output(compartment_id: Optional[pulumi.Input[
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingPackageAgreementsFilterArgs', 'GetListingPackageAgreementsFilterArgsDict']]]]] = None,
                                           listing_id: Optional[pulumi.Input[str]] = None,
                                           package_version: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingPackageAgreementsResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingPackageAgreementsResult]:
     """
     This data source provides the list of Listing Package Agreements in Oracle Cloud Infrastructure Marketplace service.
 
@@ -174,7 +174,7 @@ def get_listing_package_agreements_output(compartment_id: Optional[pulumi.Input[
     __args__['filters'] = filters
     __args__['listingId'] = listing_id
     __args__['packageVersion'] = package_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements', __args__, opts=opts, typ=GetListingPackageAgreementsResult)
     return __ret__.apply(lambda __response__: GetListingPackageAgreementsResult(
         agreements=pulumi.get(__response__, 'agreements'),

@@ -498,7 +498,7 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_integration_instance_output(integration_instance_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIntegrationInstanceResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIntegrationInstanceResult]:
     """
     This data source provides details about a specific Integration Instance resource in Oracle Cloud Infrastructure Integration service.
 
@@ -518,7 +518,7 @@ def get_integration_instance_output(integration_instance_id: Optional[pulumi.Inp
     """
     __args__ = dict()
     __args__['integrationInstanceId'] = integration_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Integration/getIntegrationInstance:getIntegrationInstance', __args__, opts=opts, typ=GetIntegrationInstanceResult)
     return __ret__.apply(lambda __response__: GetIntegrationInstanceResult(
         alternate_custom_endpoints=pulumi.get(__response__, 'alternate_custom_endpoints'),

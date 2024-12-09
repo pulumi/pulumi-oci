@@ -230,7 +230,7 @@ def get_monitored_resource_task(monitored_resource_task_id: Optional[str] = None
         time_updated=pulumi.get(__ret__, 'time_updated'),
         work_request_ids=pulumi.get(__ret__, 'work_request_ids'))
 def get_monitored_resource_task_output(monitored_resource_task_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceTaskResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredResourceTaskResult]:
     """
     This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
@@ -250,7 +250,7 @@ def get_monitored_resource_task_output(monitored_resource_task_id: Optional[pulu
     """
     __args__ = dict()
     __args__['monitoredResourceTaskId'] = monitored_resource_task_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask', __args__, opts=opts, typ=GetMonitoredResourceTaskResult)
     return __ret__.apply(lambda __response__: GetMonitoredResourceTaskResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

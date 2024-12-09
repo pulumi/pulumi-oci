@@ -114,7 +114,7 @@ def get_notebook_session_shapes(compartment_id: Optional[str] = None,
         notebook_session_shapes=pulumi.get(__ret__, 'notebook_session_shapes'))
 def get_notebook_session_shapes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNotebookSessionShapesFilterArgs', 'GetNotebookSessionShapesFilterArgsDict']]]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNotebookSessionShapesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNotebookSessionShapesResult]:
     """
     This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.
 
@@ -135,7 +135,7 @@ def get_notebook_session_shapes_output(compartment_id: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes', __args__, opts=opts, typ=GetNotebookSessionShapesResult)
     return __ret__.apply(lambda __response__: GetNotebookSessionShapesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

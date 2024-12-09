@@ -63,7 +63,7 @@ export interface GetNetworkFirewallPolicyApplicationResult {
  *
  * Get Application by the given name in the context of network firewall policy.
  */
-export function getNetworkFirewallPolicyApplicationOutput(args: GetNetworkFirewallPolicyApplicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyApplicationResult> {
+export function getNetworkFirewallPolicyApplicationOutput(args: GetNetworkFirewallPolicyApplicationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyApplicationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", {
         "name": args.name,

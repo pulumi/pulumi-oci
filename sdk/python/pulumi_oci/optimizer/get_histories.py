@@ -258,7 +258,7 @@ def get_histories_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          status: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHistoriesResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHistoriesResult]:
     """
     This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
 
@@ -306,7 +306,7 @@ def get_histories_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['resourceType'] = resource_type
     __args__['state'] = state
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getHistories:getHistories', __args__, opts=opts, typ=GetHistoriesResult)
     return __ret__.apply(lambda __response__: GetHistoriesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -215,7 +215,7 @@ def get_bds_instance_resource_principal_configuration(bds_instance_id: Optional[
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_bds_instance_resource_principal_configuration_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                                                              resource_principal_configuration_id: Optional[pulumi.Input[str]] = None,
-                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceResourcePrincipalConfigurationResult]:
+                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceResourcePrincipalConfigurationResult]:
     """
     This data source provides details about a specific Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
 
@@ -238,7 +238,7 @@ def get_bds_instance_resource_principal_configuration_output(bds_instance_id: Op
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
     __args__['resourcePrincipalConfigurationId'] = resource_principal_configuration_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration', __args__, opts=opts, typ=GetBdsInstanceResourcePrincipalConfigurationResult)
     return __ret__.apply(lambda __response__: GetBdsInstanceResourcePrincipalConfigurationResult(
         bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),

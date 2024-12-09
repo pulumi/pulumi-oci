@@ -216,7 +216,7 @@ def get_tsig_key(tsig_key_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         tsig_key_id=pulumi.get(__ret__, 'tsig_key_id'))
 def get_tsig_key_output(tsig_key_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTsigKeyResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTsigKeyResult]:
     """
     This data source provides details about a specific Tsig Key resource in Oracle Cloud Infrastructure DNS service.
 
@@ -236,7 +236,7 @@ def get_tsig_key_output(tsig_key_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['tsigKeyId'] = tsig_key_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getTsigKey:getTsigKey', __args__, opts=opts, typ=GetTsigKeyResult)
     return __ret__.apply(lambda __response__: GetTsigKeyResult(
         algorithm=pulumi.get(__response__, 'algorithm'),

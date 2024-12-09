@@ -85,7 +85,7 @@ export interface GetDbSystemStoragePerformancesResult {
  * });
  * ```
  */
-export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePerformancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemStoragePerformancesResult> {
+export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePerformancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemStoragePerformancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", {
         "filters": args.filters,

@@ -122,7 +122,7 @@ export interface GetModelDeploymentResult {
  * });
  * ```
  */
-export function getModelDeploymentOutput(args: GetModelDeploymentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelDeploymentResult> {
+export function getModelDeploymentOutput(args: GetModelDeploymentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelDeploymentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getModelDeployment:getModelDeployment", {
         "modelDeploymentId": args.modelDeploymentId,

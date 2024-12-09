@@ -34,7 +34,7 @@ export interface GetListingResourceVersionsResult {
     readonly id: string;
     readonly listingId: string;
 }
-export function getListingResourceVersionsOutput(args: GetListingResourceVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingResourceVersionsResult> {
+export function getListingResourceVersionsOutput(args: GetListingResourceVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetListingResourceVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getListingResourceVersions:getListingResourceVersions", {
         "filters": args.filters,

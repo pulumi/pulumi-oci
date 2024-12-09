@@ -102,7 +102,7 @@ export interface GetBdsInstancePatchHistoriesResult {
  * });
  * ```
  */
-export function getBdsInstancePatchHistoriesOutput(args: GetBdsInstancePatchHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstancePatchHistoriesResult> {
+export function getBdsInstancePatchHistoriesOutput(args: GetBdsInstancePatchHistoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBdsInstancePatchHistoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", {
         "bdsInstanceId": args.bdsInstanceId,

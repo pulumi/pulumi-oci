@@ -110,7 +110,7 @@ export interface GetWorkspaceProjectsResult {
  * });
  * ```
  */
-export function getWorkspaceProjectsOutput(args: GetWorkspaceProjectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceProjectsResult> {
+export function getWorkspaceProjectsOutput(args: GetWorkspaceProjectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspaceProjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects", {
         "fields": args.fields,

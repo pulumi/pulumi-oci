@@ -167,7 +167,7 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  service_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLimitDefinitionsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLimitDefinitionsResult]:
     """
     This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
 
@@ -199,7 +199,7 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['name'] = name
     __args__['serviceName'] = service_name
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Limits/getLimitDefinitions:getLimitDefinitions', __args__, opts=opts, typ=GetLimitDefinitionsResult)
     return __ret__.apply(lambda __response__: GetLimitDefinitionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

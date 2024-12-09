@@ -375,7 +375,7 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[str] = None,
         timezone_region=pulumi.get(__ret__, 'timezone_region'))
 def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Input[str]] = None,
                                     namespace: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsEntityResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntityResult]:
     """
     This data source provides details about a specific Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -398,7 +398,7 @@ def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Inp
     __args__ = dict()
     __args__['logAnalyticsEntityId'] = log_analytics_entity_id
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity', __args__, opts=opts, typ=GetLogAnalyticsEntityResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsEntityResult(
         are_logs_collected=pulumi.get(__response__, 'are_logs_collected'),

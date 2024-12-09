@@ -117,7 +117,7 @@ export interface GetBlockVolumeReplicasResult {
  * });
  * ```
  */
-export function getBlockVolumeReplicasOutput(args?: GetBlockVolumeReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockVolumeReplicasResult> {
+export function getBlockVolumeReplicasOutput(args?: GetBlockVolumeReplicasOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBlockVolumeReplicasResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", {

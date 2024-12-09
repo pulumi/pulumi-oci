@@ -179,7 +179,7 @@ def get_streams_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        name: Optional[pulumi.Input[Optional[str]]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
                        stream_pool_id: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamsResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamsResult]:
     """
     This data source provides the list of Streams in Oracle Cloud Infrastructure Streaming service.
 
@@ -215,7 +215,7 @@ def get_streams_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     __args__['name'] = name
     __args__['state'] = state
     __args__['streamPoolId'] = stream_pool_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Streaming/getStreams:getStreams', __args__, opts=opts, typ=GetStreamsResult)
     return __ret__.apply(lambda __response__: GetStreamsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

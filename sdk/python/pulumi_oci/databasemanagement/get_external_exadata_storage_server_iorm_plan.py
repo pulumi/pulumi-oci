@@ -126,7 +126,7 @@ def get_external_exadata_storage_server_iorm_plan(external_exadata_storage_serve
         plan_objective=pulumi.get(__ret__, 'plan_objective'),
         plan_status=pulumi.get(__ret__, 'plan_status'))
 def get_external_exadata_storage_server_iorm_plan_output(external_exadata_storage_server_id: Optional[pulumi.Input[str]] = None,
-                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageServerIormPlanResult]:
+                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageServerIormPlanResult]:
     """
     This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -146,7 +146,7 @@ def get_external_exadata_storage_server_iorm_plan_output(external_exadata_storag
     """
     __args__ = dict()
     __args__['externalExadataStorageServerId'] = external_exadata_storage_server_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan', __args__, opts=opts, typ=GetExternalExadataStorageServerIormPlanResult)
     return __ret__.apply(lambda __response__: GetExternalExadataStorageServerIormPlanResult(
         db_plans=pulumi.get(__response__, 'db_plans'),

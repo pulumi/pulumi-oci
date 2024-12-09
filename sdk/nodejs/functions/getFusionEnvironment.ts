@@ -174,7 +174,7 @@ export interface GetFusionEnvironmentResult {
  * });
  * ```
  */
-export function getFusionEnvironmentOutput(args: GetFusionEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentResult> {
+export function getFusionEnvironmentOutput(args: GetFusionEnvironmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironment:getFusionEnvironment", {
         "fusionEnvironmentId": args.fusionEnvironmentId,

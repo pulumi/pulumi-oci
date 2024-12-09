@@ -115,7 +115,7 @@ def get_managed_databases_asm_property(managed_database_id: Optional[str] = None
         name=pulumi.get(__ret__, 'name'))
 def get_managed_databases_asm_property_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                               name: Optional[pulumi.Input[Optional[str]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesAsmPropertyResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabasesAsmPropertyResult]:
     """
     This data source provides details about a specific Managed Databases Asm Property resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -138,7 +138,7 @@ def get_managed_databases_asm_property_output(managed_database_id: Optional[pulu
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty', __args__, opts=opts, typ=GetManagedDatabasesAsmPropertyResult)
     return __ret__.apply(lambda __response__: GetManagedDatabasesAsmPropertyResult(
         id=pulumi.get(__response__, 'id'),

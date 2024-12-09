@@ -219,7 +219,7 @@ def get_instance_maintenance_events_output(compartment_id: Optional[pulumi.Input
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            time_window_start_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                            time_window_start_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceMaintenanceEventsResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceMaintenanceEventsResult]:
     """
     This data source provides the list of Instance Maintenance Events in Oracle Cloud Infrastructure Core service.
 
@@ -258,7 +258,7 @@ def get_instance_maintenance_events_output(compartment_id: Optional[pulumi.Input
     __args__['state'] = state
     __args__['timeWindowStartGreaterThanOrEqualTo'] = time_window_start_greater_than_or_equal_to
     __args__['timeWindowStartLessThanOrEqualTo'] = time_window_start_less_than_or_equal_to
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents', __args__, opts=opts, typ=GetInstanceMaintenanceEventsResult)
     return __ret__.apply(lambda __response__: GetInstanceMaintenanceEventsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

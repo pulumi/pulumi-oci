@@ -118,7 +118,7 @@ def get_namespaces(compartment_id: Optional[str] = None,
         namespace_collections=pulumi.get(__ret__, 'namespace_collections'))
 def get_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict']]]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespacesResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespacesResult]:
     """
     This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -140,7 +140,7 @@ def get_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaces:getNamespaces', __args__, opts=opts, typ=GetNamespacesResult)
     return __ret__.apply(lambda __response__: GetNamespacesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

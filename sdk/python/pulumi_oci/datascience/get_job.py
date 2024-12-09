@@ -352,7 +352,7 @@ def get_job(job_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_job_output(job_id: Optional[pulumi.Input[str]] = None,
-                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobResult]:
+                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobResult]:
     """
     This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Data Science service.
 
@@ -372,7 +372,7 @@ def get_job_output(job_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['jobId'] = job_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getJob:getJob', __args__, opts=opts, typ=GetJobResult)
     return __ret__.apply(lambda __response__: GetJobResult(
         artifact_content_disposition=pulumi.get(__response__, 'artifact_content_disposition'),

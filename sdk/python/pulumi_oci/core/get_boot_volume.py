@@ -388,7 +388,7 @@ def get_boot_volume(boot_volume_id: Optional[str] = None,
         vpus_per_gb=pulumi.get(__ret__, 'vpus_per_gb'),
         xrc_kms_key_id=pulumi.get(__ret__, 'xrc_kms_key_id'))
 def get_boot_volume_output(boot_volume_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeResult]:
     """
     This data source provides details about a specific Boot Volume resource in Oracle Cloud Infrastructure Core service.
 
@@ -408,7 +408,7 @@ def get_boot_volume_output(boot_volume_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['bootVolumeId'] = boot_volume_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getBootVolume:getBootVolume', __args__, opts=opts, typ=GetBootVolumeResult)
     return __ret__.apply(lambda __response__: GetBootVolumeResult(
         auto_tuned_vpus_per_gb=pulumi.get(__response__, 'auto_tuned_vpus_per_gb'),

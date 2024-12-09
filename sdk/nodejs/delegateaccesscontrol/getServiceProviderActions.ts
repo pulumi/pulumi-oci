@@ -113,7 +113,7 @@ export interface GetServiceProviderActionsResult {
  * });
  * ```
  */
-export function getServiceProviderActionsOutput(args: GetServiceProviderActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceProviderActionsResult> {
+export function getServiceProviderActionsOutput(args: GetServiceProviderActionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceProviderActionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getServiceProviderActions:getServiceProviderActions", {
         "compartmentId": args.compartmentId,

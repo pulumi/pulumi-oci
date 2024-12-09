@@ -75,7 +75,7 @@ export interface GetAutonomousDatabaseWalletResult {
  *
  * Creates and downloads a wallet for the specified Autonomous Database.
  */
-export function getAutonomousDatabaseWalletOutput(args: GetAutonomousDatabaseWalletOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseWalletResult> {
+export function getAutonomousDatabaseWalletOutput(args: GetAutonomousDatabaseWalletOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseWalletResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", {
         "autonomousDatabaseId": args.autonomousDatabaseId,

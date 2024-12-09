@@ -222,7 +222,7 @@ def get_tag(tag_name: Optional[str] = None,
         validators=pulumi.get(__ret__, 'validators'))
 def get_tag_output(tag_name: Optional[pulumi.Input[str]] = None,
                    tag_namespace_id: Optional[pulumi.Input[str]] = None,
-                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagResult]:
+                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagResult]:
     """
     This data source provides details about a specific Tag resource in Oracle Cloud Infrastructure Identity service.
 
@@ -245,7 +245,7 @@ def get_tag_output(tag_name: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['tagName'] = tag_name
     __args__['tagNamespaceId'] = tag_namespace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTag:getTag', __args__, opts=opts, typ=GetTagResult)
     return __ret__.apply(lambda __response__: GetTagResult(
         defined_tags=pulumi.get(__response__, 'defined_tags'),

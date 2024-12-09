@@ -295,7 +295,7 @@ def get_build_run(build_run_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_build_run_output(build_run_id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildRunResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBuildRunResult]:
     """
     This data source provides details about a specific Build Run resource in Oracle Cloud Infrastructure Devops service.
 
@@ -315,7 +315,7 @@ def get_build_run_output(build_run_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['buildRunId'] = build_run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getBuildRun:getBuildRun', __args__, opts=opts, typ=GetBuildRunResult)
     return __ret__.apply(lambda __response__: GetBuildRunResult(
         build_outputs=pulumi.get(__response__, 'build_outputs'),

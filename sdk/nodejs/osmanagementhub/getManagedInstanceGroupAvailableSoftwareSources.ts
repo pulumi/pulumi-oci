@@ -102,7 +102,7 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesResult {
  * });
  * ```
  */
-export function getManagedInstanceGroupAvailableSoftwareSourcesOutput(args: GetManagedInstanceGroupAvailableSoftwareSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupAvailableSoftwareSourcesResult> {
+export function getManagedInstanceGroupAvailableSoftwareSourcesOutput(args: GetManagedInstanceGroupAvailableSoftwareSourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceGroupAvailableSoftwareSourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceGroupAvailableSoftwareSources:getManagedInstanceGroupAvailableSoftwareSources", {
         "compartmentId": args.compartmentId,

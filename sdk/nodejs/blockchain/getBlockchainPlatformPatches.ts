@@ -72,7 +72,7 @@ export interface GetBlockchainPlatformPatchesResult {
  * });
  * ```
  */
-export function getBlockchainPlatformPatchesOutput(args: GetBlockchainPlatformPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockchainPlatformPatchesResult> {
+export function getBlockchainPlatformPatchesOutput(args: GetBlockchainPlatformPatchesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBlockchainPlatformPatchesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches", {
         "blockchainPlatformId": args.blockchainPlatformId,

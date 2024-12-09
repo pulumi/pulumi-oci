@@ -100,7 +100,7 @@ def get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_st
         external_exadata_storage_server_id=pulumi.get(__ret__, 'external_exadata_storage_server_id'),
         id=pulumi.get(__ret__, 'id'))
 def get_external_exadata_storage_server_top_sql_cpu_activity_output(external_exadata_storage_server_id: Optional[pulumi.Input[str]] = None,
-                                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageServerTopSqlCpuActivityResult]:
+                                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageServerTopSqlCpuActivityResult]:
     """
     This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -120,7 +120,7 @@ def get_external_exadata_storage_server_top_sql_cpu_activity_output(external_exa
     """
     __args__ = dict()
     __args__['externalExadataStorageServerId'] = external_exadata_storage_server_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity', __args__, opts=opts, typ=GetExternalExadataStorageServerTopSqlCpuActivityResult)
     return __ret__.apply(lambda __response__: GetExternalExadataStorageServerTopSqlCpuActivityResult(
         activities=pulumi.get(__response__, 'activities'),

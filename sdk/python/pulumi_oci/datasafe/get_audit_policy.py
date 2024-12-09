@@ -315,7 +315,7 @@ def get_audit_policy(audit_policy_id: Optional[str] = None,
         time_last_retrieved=pulumi.get(__ret__, 'time_last_retrieved'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_audit_policy_output(audit_policy_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditPolicyResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditPolicyResult]:
     """
     This data source provides details about a specific Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -335,7 +335,7 @@ def get_audit_policy_output(audit_policy_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['auditPolicyId'] = audit_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditPolicy:getAuditPolicy', __args__, opts=opts, typ=GetAuditPolicyResult)
     return __ret__.apply(lambda __response__: GetAuditPolicyResult(
         audit_conditions=pulumi.get(__response__, 'audit_conditions'),

@@ -160,7 +160,7 @@ def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[s
                                          name: Optional[pulumi.Input[Optional[str]]] = None,
                                          os_name: Optional[pulumi.Input[str]] = None,
                                          os_version: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceAvailablePluginResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceAvailablePluginResult]:
     """
     This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
 
@@ -188,7 +188,7 @@ def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[s
     __args__['name'] = name
     __args__['osName'] = os_name
     __args__['osVersion'] = os_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin', __args__, opts=opts, typ=GetInstanceAvailablePluginResult)
     return __ret__.apply(lambda __response__: GetInstanceAvailablePluginResult(
         available_plugins=pulumi.get(__response__, 'available_plugins'),

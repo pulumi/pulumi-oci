@@ -308,7 +308,7 @@ def get_guard_target(target_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_guard_target_output(target_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGuardTargetResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGuardTargetResult]:
     """
     This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -328,7 +328,7 @@ def get_guard_target_output(target_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getGuardTarget:getGuardTarget', __args__, opts=opts, typ=GetGuardTargetResult)
     return __ret__.apply(lambda __response__: GetGuardTargetResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -153,7 +153,7 @@ def get_exascale_db_storage_vaults_output(compartment_id: Optional[pulumi.Input[
                                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExascaleDbStorageVaultsFilterArgs', 'GetExascaleDbStorageVaultsFilterArgsDict']]]]] = None,
                                           state: Optional[pulumi.Input[Optional[str]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExascaleDbStorageVaultsResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExascaleDbStorageVaultsResult]:
     """
     This data source provides the list of Exascale Db Storage Vaults in Oracle Cloud Infrastructure Database service.
 
@@ -180,7 +180,7 @@ def get_exascale_db_storage_vaults_output(compartment_id: Optional[pulumi.Input[
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults', __args__, opts=opts, typ=GetExascaleDbStorageVaultsResult)
     return __ret__.apply(lambda __response__: GetExascaleDbStorageVaultsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

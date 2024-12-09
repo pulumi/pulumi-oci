@@ -133,7 +133,7 @@ def get_managed_databases_user_proxy_user(managed_database_id: Optional[str] = N
 def get_managed_databases_user_proxy_user_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                                  user_name: Optional[pulumi.Input[str]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesUserProxyUserResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabasesUserProxyUserResult]:
     """
     This data source provides details about a specific Managed Databases User Proxy User resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -159,7 +159,7 @@ def get_managed_databases_user_proxy_user_output(managed_database_id: Optional[p
     __args__['managedDatabaseId'] = managed_database_id
     __args__['name'] = name
     __args__['userName'] = user_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser', __args__, opts=opts, typ=GetManagedDatabasesUserProxyUserResult)
     return __ret__.apply(lambda __response__: GetManagedDatabasesUserProxyUserResult(
         id=pulumi.get(__response__, 'id'),

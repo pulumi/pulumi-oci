@@ -299,7 +299,7 @@ def get_sql_firewall_policies_output(access_level: Optional[pulumi.Input[Optiona
                                      time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                      time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                      violation_action: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlFirewallPoliciesResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallPoliciesResult]:
     """
     This data source provides the list of Sql Firewall Policies in Oracle Cloud Infrastructure Data Safe service.
 
@@ -367,7 +367,7 @@ def get_sql_firewall_policies_output(access_level: Optional[pulumi.Input[Optiona
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
     __args__['violationAction'] = violation_action
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSqlFirewallPolicies:getSqlFirewallPolicies', __args__, opts=opts, typ=GetSqlFirewallPoliciesResult)
     return __ret__.apply(lambda __response__: GetSqlFirewallPoliciesResult(
         access_level=pulumi.get(__response__, 'access_level'),

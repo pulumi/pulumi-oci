@@ -74,7 +74,7 @@ export interface GetManagedDatabaseTableStatisticsResult {
  * });
  * ```
  */
-export function getManagedDatabaseTableStatisticsOutput(args: GetManagedDatabaseTableStatisticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseTableStatisticsResult> {
+export function getManagedDatabaseTableStatisticsOutput(args: GetManagedDatabaseTableStatisticsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseTableStatisticsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", {
         "filters": args.filters,

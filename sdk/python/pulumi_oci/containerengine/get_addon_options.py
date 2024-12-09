@@ -129,7 +129,7 @@ def get_addon_options(addon_name: Optional[str] = None,
 def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict']]]]] = None,
                              kubernetes_version: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddonOptionsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddonOptionsResult]:
     """
     This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
 
@@ -153,7 +153,7 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[str]]] =
     __args__['addonName'] = addon_name
     __args__['filters'] = filters
     __args__['kubernetesVersion'] = kubernetes_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getAddonOptions:getAddonOptions', __args__, opts=opts, typ=GetAddonOptionsResult)
     return __ret__.apply(lambda __response__: GetAddonOptionsResult(
         addon_name=pulumi.get(__response__, 'addon_name'),

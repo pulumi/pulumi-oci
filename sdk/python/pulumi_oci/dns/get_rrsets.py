@@ -199,7 +199,7 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
                       scope: Optional[pulumi.Input[Optional[str]]] = None,
                       view_id: Optional[pulumi.Input[Optional[str]]] = None,
                       zone_name_or_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRrsetsResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRrsetsResult]:
     """
     This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
 
@@ -239,7 +239,7 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['scope'] = scope
     __args__['viewId'] = view_id
     __args__['zoneNameOrId'] = zone_name_or_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getRrsets:getRrsets', __args__, opts=opts, typ=GetRrsetsResult)
     return __ret__.apply(lambda __response__: GetRrsetsResult(
         domain=pulumi.get(__response__, 'domain'),

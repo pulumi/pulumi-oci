@@ -348,7 +348,7 @@ def get_at_customer_ccc_infrastructure(ccc_infrastructure_id: Optional[str] = No
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upgrade_informations=pulumi.get(__ret__, 'upgrade_informations'))
 def get_at_customer_ccc_infrastructure_output(ccc_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAtCustomerCccInfrastructureResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAtCustomerCccInfrastructureResult]:
     """
     This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
 
@@ -369,7 +369,7 @@ def get_at_customer_ccc_infrastructure_output(ccc_infrastructure_id: Optional[pu
     """
     __args__ = dict()
     __args__['cccInfrastructureId'] = ccc_infrastructure_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure', __args__, opts=opts, typ=GetAtCustomerCccInfrastructureResult)
     return __ret__.apply(lambda __response__: GetAtCustomerCccInfrastructureResult(
         ccc_infrastructure_id=pulumi.get(__response__, 'ccc_infrastructure_id'),

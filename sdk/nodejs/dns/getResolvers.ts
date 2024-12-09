@@ -122,7 +122,7 @@ export interface GetResolversResult {
  * });
  * ```
  */
-export function getResolversOutput(args: GetResolversOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolversResult> {
+export function getResolversOutput(args: GetResolversOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResolversResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getResolvers:getResolvers", {
         "compartmentId": args.compartmentId,

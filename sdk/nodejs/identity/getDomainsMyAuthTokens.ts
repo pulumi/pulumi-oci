@@ -124,7 +124,7 @@ export interface GetDomainsMyAuthTokensResult {
  * });
  * ```
  */
-export function getDomainsMyAuthTokensOutput(args: GetDomainsMyAuthTokensOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyAuthTokensResult> {
+export function getDomainsMyAuthTokensOutput(args: GetDomainsMyAuthTokensOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyAuthTokensResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyAuthTokens:getDomainsMyAuthTokens", {
         "authorization": args.authorization,

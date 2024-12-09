@@ -81,7 +81,7 @@ export interface GetDomainsUserAttributesSettingsResult {
  *
  * Search User Schema Attribute Settings
  */
-export function getDomainsUserAttributesSettingsOutput(args: GetDomainsUserAttributesSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsUserAttributesSettingsResult> {
+export function getDomainsUserAttributesSettingsOutput(args: GetDomainsUserAttributesSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsUserAttributesSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", {
         "attributeSets": args.attributeSets,

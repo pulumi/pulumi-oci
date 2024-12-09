@@ -132,7 +132,7 @@ def get_usage_statement_email_recipients_groups(compartment_id: Optional[str] = 
 def get_usage_statement_email_recipients_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUsageStatementEmailRecipientsGroupsFilterArgs', 'GetUsageStatementEmailRecipientsGroupsFilterArgsDict']]]]] = None,
                                                        subscription_id: Optional[pulumi.Input[str]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsageStatementEmailRecipientsGroupsResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsageStatementEmailRecipientsGroupsResult]:
     """
     This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -156,7 +156,7 @@ def get_usage_statement_email_recipients_groups_output(compartment_id: Optional[
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups', __args__, opts=opts, typ=GetUsageStatementEmailRecipientsGroupsResult)
     return __ret__.apply(lambda __response__: GetUsageStatementEmailRecipientsGroupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -136,7 +136,7 @@ def get_local_peering_gateways(compartment_id: Optional[str] = None,
 def get_local_peering_gateways_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLocalPeeringGatewaysFilterArgs', 'GetLocalPeeringGatewaysFilterArgsDict']]]]] = None,
                                       vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLocalPeeringGatewaysResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLocalPeeringGatewaysResult]:
     """
     This data source provides the list of Local Peering Gateways in Oracle Cloud Infrastructure Core service.
 
@@ -161,7 +161,7 @@ def get_local_peering_gateways_output(compartment_id: Optional[pulumi.Input[str]
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getLocalPeeringGateways:getLocalPeeringGateways', __args__, opts=opts, typ=GetLocalPeeringGatewaysResult)
     return __ret__.apply(lambda __response__: GetLocalPeeringGatewaysResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

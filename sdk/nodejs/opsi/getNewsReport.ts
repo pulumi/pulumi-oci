@@ -133,7 +133,7 @@ export interface GetNewsReportResult {
  * });
  * ```
  */
-export function getNewsReportOutput(args: GetNewsReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNewsReportResult> {
+export function getNewsReportOutput(args: GetNewsReportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNewsReportResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getNewsReport:getNewsReport", {
         "newsReportId": args.newsReportId,

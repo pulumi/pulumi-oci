@@ -101,7 +101,7 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
  * });
  * ```
  */
-export function getSupportedVmwareSoftwareVersionsOutput(args: GetSupportedVmwareSoftwareVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedVmwareSoftwareVersionsResult> {
+export function getSupportedVmwareSoftwareVersionsOutput(args: GetSupportedVmwareSoftwareVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSupportedVmwareSoftwareVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", {
         "compartmentId": args.compartmentId,

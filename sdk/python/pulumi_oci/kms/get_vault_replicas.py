@@ -119,7 +119,7 @@ def get_vault_replicas(filters: Optional[Sequence[Union['GetVaultReplicasFilterA
         vault_replicas=pulumi.get(__ret__, 'vault_replicas'))
 def get_vault_replicas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVaultReplicasFilterArgs', 'GetVaultReplicasFilterArgsDict']]]]] = None,
                               vault_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultReplicasResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVaultReplicasResult]:
     """
     This data source provides the list of Vault Replicas in Oracle Cloud Infrastructure Kms service.
 
@@ -145,7 +145,7 @@ def get_vault_replicas_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     __args__ = dict()
     __args__['filters'] = filters
     __args__['vaultId'] = vault_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getVaultReplicas:getVaultReplicas', __args__, opts=opts, typ=GetVaultReplicasResult)
     return __ret__.apply(lambda __response__: GetVaultReplicasResult(
         filters=pulumi.get(__response__, 'filters'),

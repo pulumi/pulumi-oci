@@ -79,7 +79,7 @@ export interface GetVaultUsageResult {
  * });
  * ```
  */
-export function getVaultUsageOutput(args: GetVaultUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVaultUsageResult> {
+export function getVaultUsageOutput(args: GetVaultUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVaultUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Kms/getVaultUsage:getVaultUsage", {
         "vaultId": args.vaultId,

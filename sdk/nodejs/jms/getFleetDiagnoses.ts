@@ -72,7 +72,7 @@ export interface GetFleetDiagnosesResult {
  * });
  * ```
  */
-export function getFleetDiagnosesOutput(args: GetFleetDiagnosesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetDiagnosesResult> {
+export function getFleetDiagnosesOutput(args: GetFleetDiagnosesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetDiagnosesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetDiagnoses:getFleetDiagnoses", {
         "filters": args.filters,

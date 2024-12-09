@@ -94,7 +94,7 @@ export interface GetWorkspacesResult {
  * });
  * ```
  */
-export function getWorkspacesOutput(args: GetWorkspacesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspacesResult> {
+export function getWorkspacesOutput(args: GetWorkspacesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspacesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaces:getWorkspaces", {
         "compartmentId": args.compartmentId,

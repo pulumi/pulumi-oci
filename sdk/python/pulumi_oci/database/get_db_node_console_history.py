@@ -195,7 +195,7 @@ def get_db_node_console_history(console_history_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_db_node_console_history_output(console_history_id: Optional[pulumi.Input[str]] = None,
                                        db_node_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeConsoleHistoryResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeConsoleHistoryResult]:
     """
     This data source provides details about a specific Db Node Console History resource in Oracle Cloud Infrastructure Database service.
 
@@ -218,7 +218,7 @@ def get_db_node_console_history_output(console_history_id: Optional[pulumi.Input
     __args__ = dict()
     __args__['consoleHistoryId'] = console_history_id
     __args__['dbNodeId'] = db_node_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbNodeConsoleHistory:getDbNodeConsoleHistory', __args__, opts=opts, typ=GetDbNodeConsoleHistoryResult)
     return __ret__.apply(lambda __response__: GetDbNodeConsoleHistoryResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

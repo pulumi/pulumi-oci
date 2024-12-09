@@ -219,7 +219,7 @@ def get_replicas_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         is_up_to_date: Optional[pulumi.Input[Optional[bool]]] = None,
                         replica_id: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicasResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicasResult]:
     """
     This data source provides the list of Replicas in Oracle Cloud Infrastructure MySQL Database service.
 
@@ -258,7 +258,7 @@ def get_replicas_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['isUpToDate'] = is_up_to_date
     __args__['replicaId'] = replica_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getReplicas:getReplicas', __args__, opts=opts, typ=GetReplicasResult)
     return __ret__.apply(lambda __response__: GetReplicasResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

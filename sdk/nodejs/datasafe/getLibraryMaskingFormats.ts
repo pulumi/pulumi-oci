@@ -152,7 +152,7 @@ export interface GetLibraryMaskingFormatsResult {
  * });
  * ```
  */
-export function getLibraryMaskingFormatsOutput(args: GetLibraryMaskingFormatsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLibraryMaskingFormatsResult> {
+export function getLibraryMaskingFormatsOutput(args: GetLibraryMaskingFormatsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLibraryMaskingFormatsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", {
         "accessLevel": args.accessLevel,

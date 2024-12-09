@@ -194,7 +194,7 @@ def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[str]]
                                      namespace: Optional[pulumi.Input[Optional[str]]] = None,
                                      occ_availability_catalog_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      request_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccCapacityRequestsResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccCapacityRequestsResult]:
     """
     This data source provides the list of Occ Capacity Requests in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -230,7 +230,7 @@ def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[str]]
     __args__['namespace'] = namespace
     __args__['occAvailabilityCatalogId'] = occ_availability_catalog_id
     __args__['requestType'] = request_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccCapacityRequests:getOccCapacityRequests', __args__, opts=opts, typ=GetOccCapacityRequestsResult)
     return __ret__.apply(lambda __response__: GetOccCapacityRequestsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

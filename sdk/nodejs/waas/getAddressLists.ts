@@ -115,7 +115,7 @@ export interface GetAddressListsResult {
  * });
  * ```
  */
-export function getAddressListsOutput(args: GetAddressListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressListsResult> {
+export function getAddressListsOutput(args: GetAddressListsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddressListsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waas/getAddressLists:getAddressLists", {
         "compartmentId": args.compartmentId,

@@ -120,7 +120,7 @@ export interface GetNamespaceIngestTimeRuleResult {
  * });
  * ```
  */
-export function getNamespaceIngestTimeRuleOutput(args: GetNamespaceIngestTimeRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceIngestTimeRuleResult> {
+export function getNamespaceIngestTimeRuleOutput(args: GetNamespaceIngestTimeRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceIngestTimeRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule", {
         "ingestTimeRuleId": args.ingestTimeRuleId,

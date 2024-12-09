@@ -383,7 +383,7 @@ def get_deployment_backup(deployment_backup_id: Optional[str] = None,
         time_of_backup=pulumi.get(__ret__, 'time_of_backup'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentBackupResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentBackupResult]:
     """
     This data source provides details about a specific Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -403,7 +403,7 @@ def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['deploymentBackupId'] = deployment_backup_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentBackup:getDeploymentBackup', __args__, opts=opts, typ=GetDeploymentBackupResult)
     return __ret__.apply(lambda __response__: GetDeploymentBackupResult(
         backup_type=pulumi.get(__response__, 'backup_type'),

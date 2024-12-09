@@ -137,7 +137,7 @@ export interface GetSoftwareSourceStreamProfileResult {
  * });
  * ```
  */
-export function getSoftwareSourceStreamProfileOutput(args: GetSoftwareSourceStreamProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceStreamProfileResult> {
+export function getSoftwareSourceStreamProfileOutput(args: GetSoftwareSourceStreamProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSoftwareSourceStreamProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", {
         "compartmentId": args.compartmentId,

@@ -134,7 +134,7 @@ def get_managed_database_addm_task(managed_database_id: Optional[str] = None,
 def get_managed_database_addm_task_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                           time_end: Optional[pulumi.Input[str]] = None,
                                           time_start: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseAddmTaskResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseAddmTaskResult]:
     """
     This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -161,7 +161,7 @@ def get_managed_database_addm_task_output(managed_database_id: Optional[pulumi.I
     __args__['managedDatabaseId'] = managed_database_id
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask', __args__, opts=opts, typ=GetManagedDatabaseAddmTaskResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseAddmTaskResult(
         id=pulumi.get(__response__, 'id'),

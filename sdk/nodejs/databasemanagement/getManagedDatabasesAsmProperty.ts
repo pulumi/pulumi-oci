@@ -77,7 +77,7 @@ export interface GetManagedDatabasesAsmPropertyResult {
  * });
  * ```
  */
-export function getManagedDatabasesAsmPropertyOutput(args: GetManagedDatabasesAsmPropertyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesAsmPropertyResult> {
+export function getManagedDatabasesAsmPropertyOutput(args: GetManagedDatabasesAsmPropertyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabasesAsmPropertyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty", {
         "managedDatabaseId": args.managedDatabaseId,

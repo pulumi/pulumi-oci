@@ -218,7 +218,7 @@ def get_replication_policy(bucket: Optional[str] = None,
 def get_replication_policy_output(bucket: Optional[pulumi.Input[str]] = None,
                                   namespace: Optional[pulumi.Input[str]] = None,
                                   replication_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationPolicyResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationPolicyResult]:
     """
     This data source provides details about a specific Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
 
@@ -244,7 +244,7 @@ def get_replication_policy_output(bucket: Optional[pulumi.Input[str]] = None,
     __args__['bucket'] = bucket
     __args__['namespace'] = namespace
     __args__['replicationId'] = replication_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getReplicationPolicy:getReplicationPolicy', __args__, opts=opts, typ=GetReplicationPolicyResult)
     return __ret__.apply(lambda __response__: GetReplicationPolicyResult(
         bucket=pulumi.get(__response__, 'bucket'),

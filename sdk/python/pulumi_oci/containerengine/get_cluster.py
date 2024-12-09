@@ -318,7 +318,7 @@ def get_cluster(cluster_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterResult]:
     """
     This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Container Engine service.
 
@@ -338,7 +338,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getCluster:getCluster', __args__, opts=opts, typ=GetClusterResult)
     return __ret__.apply(lambda __response__: GetClusterResult(
         available_kubernetes_upgrades=pulumi.get(__response__, 'available_kubernetes_upgrades'),

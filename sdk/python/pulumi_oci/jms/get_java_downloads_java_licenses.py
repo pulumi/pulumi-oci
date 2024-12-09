@@ -135,7 +135,7 @@ def get_java_downloads_java_licenses(display_name: Optional[str] = None,
 def get_java_downloads_java_licenses_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaLicensesFilterArgs', 'GetJavaDownloadsJavaLicensesFilterArgsDict']]]]] = None,
                                             license_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaLicensesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaLicensesResult]:
     """
     This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
 
@@ -159,7 +159,7 @@ def get_java_downloads_java_licenses_output(display_name: Optional[pulumi.Input[
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['licenseType'] = license_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaLicenses:getJavaDownloadsJavaLicenses', __args__, opts=opts, typ=GetJavaDownloadsJavaLicensesResult)
     return __ret__.apply(lambda __response__: GetJavaDownloadsJavaLicensesResult(
         display_name=pulumi.get(__response__, 'display_name'),

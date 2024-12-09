@@ -150,7 +150,7 @@ export interface GetVbInstanceResult {
  * });
  * ```
  */
-export function getVbInstanceOutput(args: GetVbInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstanceResult> {
+export function getVbInstanceOutput(args: GetVbInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVbInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:VisualBuilder/getVbInstance:getVbInstance", {
         "vbInstanceId": args.vbInstanceId,

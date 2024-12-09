@@ -181,7 +181,7 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[str
                               host_id: Optional[pulumi.Input[Optional[str]]] = None,
                               time_end: Optional[pulumi.Input[Optional[str]]] = None,
                               time_start: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListJreUsageResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListJreUsageResult]:
     """
     This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.
 
@@ -216,7 +216,7 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[str
     __args__['hostId'] = host_id
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getListJreUsage:getListJreUsage', __args__, opts=opts, typ=GetListJreUsageResult)
     return __ret__.apply(lambda __response__: GetListJreUsageResult(
         application_id=pulumi.get(__response__, 'application_id'),

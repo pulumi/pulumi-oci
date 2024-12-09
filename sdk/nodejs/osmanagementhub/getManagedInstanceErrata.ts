@@ -107,7 +107,7 @@ export interface GetManagedInstanceErrataResult {
  * });
  * ```
  */
-export function getManagedInstanceErrataOutput(args: GetManagedInstanceErrataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceErrataResult> {
+export function getManagedInstanceErrataOutput(args: GetManagedInstanceErrataOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceErrataResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceErrata:getManagedInstanceErrata", {
         "classificationTypes": args.classificationTypes,

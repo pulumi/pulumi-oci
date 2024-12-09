@@ -30,7 +30,7 @@ export interface GetMigrateToNativeVcnStatusResult {
     readonly state: string;
     readonly timeDecommissionScheduled: string;
 }
-export function getMigrateToNativeVcnStatusOutput(args: GetMigrateToNativeVcnStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrateToNativeVcnStatusResult> {
+export function getMigrateToNativeVcnStatusOutput(args: GetMigrateToNativeVcnStatusOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMigrateToNativeVcnStatusResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", {
         "clusterId": args.clusterId,

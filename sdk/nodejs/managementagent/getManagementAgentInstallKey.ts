@@ -111,7 +111,7 @@ export interface GetManagementAgentInstallKeyResult {
  * });
  * ```
  */
-export function getManagementAgentInstallKeyOutput(args: GetManagementAgentInstallKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentInstallKeyResult> {
+export function getManagementAgentInstallKeyOutput(args: GetManagementAgentInstallKeyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentInstallKeyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", {
         "managementAgentInstallKeyId": args.managementAgentInstallKeyId,

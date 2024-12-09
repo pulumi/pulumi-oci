@@ -128,7 +128,7 @@ export interface GetManagedDatabaseAttentionLogCountResult {
  * });
  * ```
  */
-export function getManagedDatabaseAttentionLogCountOutput(args: GetManagedDatabaseAttentionLogCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAttentionLogCountResult> {
+export function getManagedDatabaseAttentionLogCountOutput(args: GetManagedDatabaseAttentionLogCountOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseAttentionLogCountResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", {
         "groupBy": args.groupBy,

@@ -261,7 +261,7 @@ def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[str]]
                                name: Optional[pulumi.Input[Optional[str]]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                status: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecommendationsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecommendationsResult]:
     """
     This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
 
@@ -318,7 +318,7 @@ def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[str]]
     __args__['name'] = name
     __args__['state'] = state
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getRecommendations:getRecommendations', __args__, opts=opts, typ=GetRecommendationsResult)
     return __ret__.apply(lambda __response__: GetRecommendationsResult(
         category_id=pulumi.get(__response__, 'category_id'),

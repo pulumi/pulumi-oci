@@ -77,7 +77,7 @@ export interface GetNamespacesResult {
  * });
  * ```
  */
-export function getNamespacesOutput(args: GetNamespacesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespacesResult> {
+export function getNamespacesOutput(args: GetNamespacesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespacesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaces:getNamespaces", {
         "compartmentId": args.compartmentId,

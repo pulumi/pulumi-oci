@@ -98,7 +98,7 @@ export interface GetExternalListenersResult {
  * });
  * ```
  */
-export function getExternalListenersOutput(args?: GetExternalListenersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalListenersResult> {
+export function getExternalListenersOutput(args?: GetExternalListenersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalListenersResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalListeners:getExternalListeners", {

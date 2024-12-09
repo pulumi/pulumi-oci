@@ -107,7 +107,7 @@ export interface GetStreamResult {
  * });
  * ```
  */
-export function getStreamOutput(args: GetStreamOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamResult> {
+export function getStreamOutput(args: GetStreamOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStreamResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Streaming/getStream:getStream", {
         "streamId": args.streamId,

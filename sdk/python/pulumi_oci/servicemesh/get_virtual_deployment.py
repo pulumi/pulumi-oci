@@ -269,7 +269,7 @@ def get_virtual_deployment(virtual_deployment_id: Optional[str] = None,
         virtual_deployment_id=pulumi.get(__ret__, 'virtual_deployment_id'),
         virtual_service_id=pulumi.get(__ret__, 'virtual_service_id'))
 def get_virtual_deployment_output(virtual_deployment_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualDeploymentResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualDeploymentResult]:
     """
     This data source provides details about a specific Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
 
@@ -289,7 +289,7 @@ def get_virtual_deployment_output(virtual_deployment_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['virtualDeploymentId'] = virtual_deployment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment', __args__, opts=opts, typ=GetVirtualDeploymentResult)
     return __ret__.apply(lambda __response__: GetVirtualDeploymentResult(
         access_loggings=pulumi.get(__response__, 'access_loggings'),

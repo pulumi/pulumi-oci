@@ -154,7 +154,7 @@ def get_java_families_output(display_name: Optional[pulumi.Input[Optional[str]]]
                              family_version: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaFamiliesFilterArgs', 'GetJavaFamiliesFilterArgsDict']]]]] = None,
                              is_supported_version: Optional[pulumi.Input[Optional[bool]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaFamiliesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaFamiliesResult]:
     """
     This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
 
@@ -182,7 +182,7 @@ def get_java_families_output(display_name: Optional[pulumi.Input[Optional[str]]]
     __args__['familyVersion'] = family_version
     __args__['filters'] = filters
     __args__['isSupportedVersion'] = is_supported_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaFamilies:getJavaFamilies', __args__, opts=opts, typ=GetJavaFamiliesResult)
     return __ret__.apply(lambda __response__: GetJavaFamiliesResult(
         display_name=pulumi.get(__response__, 'display_name'),

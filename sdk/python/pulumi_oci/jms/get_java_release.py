@@ -259,7 +259,7 @@ def get_java_release(release_version: Optional[str] = None,
         release_version=pulumi.get(__ret__, 'release_version'),
         security_status=pulumi.get(__ret__, 'security_status'))
 def get_java_release_output(release_version: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaReleaseResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaReleaseResult]:
     """
     This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
 
@@ -279,7 +279,7 @@ def get_java_release_output(release_version: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['releaseVersion'] = release_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaRelease:getJavaRelease', __args__, opts=opts, typ=GetJavaReleaseResult)
     return __ret__.apply(lambda __response__: GetJavaReleaseResult(
         artifact_content_types=pulumi.get(__response__, 'artifact_content_types'),

@@ -103,7 +103,7 @@ export interface GetMaskingPolicyHealthReportResult {
  * });
  * ```
  */
-export function getMaskingPolicyHealthReportOutput(args: GetMaskingPolicyHealthReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPolicyHealthReportResult> {
+export function getMaskingPolicyHealthReportOutput(args: GetMaskingPolicyHealthReportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaskingPolicyHealthReportResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPolicyHealthReport:getMaskingPolicyHealthReport", {
         "maskingPolicyHealthReportId": args.maskingPolicyHealthReportId,

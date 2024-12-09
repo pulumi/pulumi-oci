@@ -87,7 +87,7 @@ export interface GetArtifactByPathResult {
  * });
  * ```
  */
-export function getArtifactByPathOutput(args: GetArtifactByPathOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetArtifactByPathResult> {
+export function getArtifactByPathOutput(args: GetArtifactByPathOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetArtifactByPathResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", {
         "artifactPath": args.artifactPath,

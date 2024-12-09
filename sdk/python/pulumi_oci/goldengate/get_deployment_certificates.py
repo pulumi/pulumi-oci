@@ -135,7 +135,7 @@ def get_deployment_certificates(deployment_id: Optional[str] = None,
 def get_deployment_certificates_output(deployment_id: Optional[pulumi.Input[str]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentCertificatesFilterArgs', 'GetDeploymentCertificatesFilterArgsDict']]]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentCertificatesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentCertificatesResult]:
     """
     This data source provides the list of Deployment Certificates in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -159,7 +159,7 @@ def get_deployment_certificates_output(deployment_id: Optional[pulumi.Input[str]
     __args__['deploymentId'] = deployment_id
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates', __args__, opts=opts, typ=GetDeploymentCertificatesResult)
     return __ret__.apply(lambda __response__: GetDeploymentCertificatesResult(
         certificate_collections=pulumi.get(__response__, 'certificate_collections'),

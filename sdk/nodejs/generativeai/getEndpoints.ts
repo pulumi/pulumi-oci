@@ -98,7 +98,7 @@ export interface GetEndpointsResult {
  * });
  * ```
  */
-export function getEndpointsOutput(args: GetEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEndpointsResult> {
+export function getEndpointsOutput(args: GetEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getEndpoints:getEndpoints", {
         "compartmentId": args.compartmentId,

@@ -110,7 +110,7 @@ def get_migration_object_types(connection_type: Optional[str] = None,
         migration_object_type_summary_collections=pulumi.get(__ret__, 'migration_object_type_summary_collections'))
 def get_migration_object_types_output(connection_type: Optional[pulumi.Input[str]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMigrationObjectTypesFilterArgs', 'GetMigrationObjectTypesFilterArgsDict']]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationObjectTypesResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationObjectTypesResult]:
     """
     ## Example Usage
 
@@ -127,7 +127,7 @@ def get_migration_object_types_output(connection_type: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['connectionType'] = connection_type
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes', __args__, opts=opts, typ=GetMigrationObjectTypesResult)
     return __ret__.apply(lambda __response__: GetMigrationObjectTypesResult(
         connection_type=pulumi.get(__response__, 'connection_type'),

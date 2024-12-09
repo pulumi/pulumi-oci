@@ -242,7 +242,7 @@ def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[s
                                network_id: Optional[pulumi.Input[Optional[str]]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgAttachmentsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgAttachmentsResult]:
     """
     This data source provides the list of Drg Attachments in Oracle Cloud Infrastructure Core service.
 
@@ -289,7 +289,7 @@ def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[s
     __args__['networkId'] = network_id
     __args__['state'] = state
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgAttachments:getDrgAttachments', __args__, opts=opts, typ=GetDrgAttachmentsResult)
     return __ret__.apply(lambda __response__: GetDrgAttachmentsResult(
         attachment_type=pulumi.get(__response__, 'attachment_type'),

@@ -150,7 +150,7 @@ def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogSavedSearchesFilterArgs', 'GetLogSavedSearchesFilterArgsDict']]]]] = None,
                                   log_saved_search_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogSavedSearchesResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogSavedSearchesResult]:
     """
     This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
 
@@ -177,7 +177,7 @@ def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[str]] = 
     __args__['filters'] = filters
     __args__['logSavedSearchId'] = log_saved_search_id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Logging/getLogSavedSearches:getLogSavedSearches', __args__, opts=opts, typ=GetLogSavedSearchesResult)
     return __ret__.apply(lambda __response__: GetLogSavedSearchesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

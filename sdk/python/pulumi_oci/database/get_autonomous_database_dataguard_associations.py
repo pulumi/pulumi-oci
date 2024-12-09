@@ -117,7 +117,7 @@ def get_autonomous_database_dataguard_associations(autonomous_database_id: Optio
         id=pulumi.get(__ret__, 'id'))
 def get_autonomous_database_dataguard_associations_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousDatabaseDataguardAssociationsFilterArgsDict']]]]] = None,
-                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationsResult]:
+                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationsResult]:
     """
     This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
 
@@ -138,7 +138,7 @@ def get_autonomous_database_dataguard_associations_output(autonomous_database_id
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseDataguardAssociations:getAutonomousDatabaseDataguardAssociations', __args__, opts=opts, typ=GetAutonomousDatabaseDataguardAssociationsResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabaseDataguardAssociationsResult(
         autonomous_database_dataguard_associations=pulumi.get(__response__, 'autonomous_database_dataguard_associations'),

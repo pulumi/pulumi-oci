@@ -97,7 +97,7 @@ export interface GetSecurityPolicyReportDatabaseViewAccessEntriesResult {
  * });
  * ```
  */
-export function getSecurityPolicyReportDatabaseViewAccessEntriesOutput(args: GetSecurityPolicyReportDatabaseViewAccessEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> {
+export function getSecurityPolicyReportDatabaseViewAccessEntriesOutput(args: GetSecurityPolicyReportDatabaseViewAccessEntriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntries:getSecurityPolicyReportDatabaseViewAccessEntries", {
         "filters": args.filters,

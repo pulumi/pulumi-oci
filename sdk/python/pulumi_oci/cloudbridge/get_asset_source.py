@@ -334,7 +334,7 @@ def get_asset_source(asset_source_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         vcenter_endpoint=pulumi.get(__ret__, 'vcenter_endpoint'))
 def get_asset_source_output(asset_source_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssetSourceResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssetSourceResult]:
     """
     This data source provides details about a specific Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
 
@@ -354,7 +354,7 @@ def get_asset_source_output(asset_source_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['assetSourceId'] = asset_source_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAssetSource:getAssetSource', __args__, opts=opts, typ=GetAssetSourceResult)
     return __ret__.apply(lambda __response__: GetAssetSourceResult(
         are_historical_metrics_collected=pulumi.get(__response__, 'are_historical_metrics_collected'),

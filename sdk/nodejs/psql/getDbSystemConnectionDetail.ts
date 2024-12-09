@@ -81,7 +81,7 @@ export interface GetDbSystemConnectionDetailResult {
  * });
  * ```
  */
-export function getDbSystemConnectionDetailOutput(args: GetDbSystemConnectionDetailOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemConnectionDetailResult> {
+export function getDbSystemConnectionDetailOutput(args: GetDbSystemConnectionDetailOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemConnectionDetailResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", {
         "dbSystemId": args.dbSystemId,

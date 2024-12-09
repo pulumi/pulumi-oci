@@ -109,7 +109,7 @@ def get_opensearch_version(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
 def get_opensearch_version_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchVersionResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpensearchVersionResult]:
     """
     This data source provides details about a specific Opensearch Version resource in Oracle Cloud Infrastructure Opensearch service.
 
@@ -138,7 +138,7 @@ def get_opensearch_version_output(compartment_id: Optional[pulumi.Input[str]] = 
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opensearch/getOpensearchVersion:getOpensearchVersion', __args__, opts=opts, typ=GetOpensearchVersionResult)
     return __ret__.apply(lambda __response__: GetOpensearchVersionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

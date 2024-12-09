@@ -176,7 +176,7 @@ def get_deploy_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[s
                                 id: Optional[pulumi.Input[Optional[str]]] = None,
                                 project_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployPipelinesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployPipelinesResult]:
     """
     This data source provides the list of Deploy Pipelines in Oracle Cloud Infrastructure Devops service.
 
@@ -209,7 +209,7 @@ def get_deploy_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[s
     __args__['id'] = id
     __args__['projectId'] = project_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployPipelines:getDeployPipelines', __args__, opts=opts, typ=GetDeployPipelinesResult)
     return __ret__.apply(lambda __response__: GetDeployPipelinesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

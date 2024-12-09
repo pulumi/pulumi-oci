@@ -112,7 +112,7 @@ export interface GetFleetPropertiesResult {
  * });
  * ```
  */
-export function getFleetPropertiesOutput(args: GetFleetPropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetPropertiesResult> {
+export function getFleetPropertiesOutput(args: GetFleetPropertiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetPropertiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getFleetProperties:getFleetProperties", {
         "compartmentId": args.compartmentId,

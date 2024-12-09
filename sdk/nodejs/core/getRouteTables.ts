@@ -114,7 +114,7 @@ export interface GetRouteTablesResult {
  * });
  * ```
  */
-export function getRouteTablesOutput(args: GetRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRouteTablesResult> {
+export function getRouteTablesOutput(args: GetRouteTablesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRouteTablesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getRouteTables:getRouteTables", {
         "compartmentId": args.compartmentId,

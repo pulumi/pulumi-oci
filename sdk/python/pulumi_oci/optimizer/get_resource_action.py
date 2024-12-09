@@ -323,7 +323,7 @@ def get_resource_action(include_resource_metadata: Optional[bool] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[Optional[bool]]] = None,
                                resource_action_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceActionResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceActionResult]:
     """
     This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
 
@@ -346,7 +346,7 @@ def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[
     __args__ = dict()
     __args__['includeResourceMetadata'] = include_resource_metadata
     __args__['resourceActionId'] = resource_action_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getResourceAction:getResourceAction', __args__, opts=opts, typ=GetResourceActionResult)
     return __ret__.apply(lambda __response__: GetResourceActionResult(
         actions=pulumi.get(__response__, 'actions'),

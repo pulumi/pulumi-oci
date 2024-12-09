@@ -126,7 +126,7 @@ export interface GetModelDeploymentsResult {
  * });
  * ```
  */
-export function getModelDeploymentsOutput(args: GetModelDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelDeploymentsResult> {
+export function getModelDeploymentsOutput(args: GetModelDeploymentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelDeploymentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getModelDeployments:getModelDeployments", {
         "compartmentId": args.compartmentId,

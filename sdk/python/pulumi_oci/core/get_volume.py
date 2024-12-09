@@ -389,7 +389,7 @@ def get_volume(volume_id: Optional[str] = None,
         vpus_per_gb=pulumi.get(__ret__, 'vpus_per_gb'),
         xrc_kms_key_id=pulumi.get(__ret__, 'xrc_kms_key_id'))
 def get_volume_output(volume_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeResult]:
     """
     This data source provides details about a specific Volume resource in Oracle Cloud Infrastructure Core service.
 
@@ -409,7 +409,7 @@ def get_volume_output(volume_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['volumeId'] = volume_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVolume:getVolume', __args__, opts=opts, typ=GetVolumeResult)
     return __ret__.apply(lambda __response__: GetVolumeResult(
         auto_tuned_vpus_per_gb=pulumi.get(__response__, 'auto_tuned_vpus_per_gb'),

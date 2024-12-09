@@ -167,7 +167,7 @@ export interface GetDataSourcesResult {
  * });
  * ```
  */
-export function getDataSourcesOutput(args: GetDataSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSourcesResult> {
+export function getDataSourcesOutput(args: GetDataSourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataSourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getDataSources:getDataSources", {
         "accessLevel": args.accessLevel,

@@ -144,7 +144,7 @@ def get_exadata_iorm_config(db_system_id: Optional[str] = None,
         objective=pulumi.get(__ret__, 'objective'),
         state=pulumi.get(__ret__, 'state'))
 def get_exadata_iorm_config_output(db_system_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataIormConfigResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadataIormConfigResult]:
     """
     This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
 
@@ -172,7 +172,7 @@ def get_exadata_iorm_config_output(db_system_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadataIormConfig:getExadataIormConfig', __args__, opts=opts, typ=GetExadataIormConfigResult)
     return __ret__.apply(lambda __response__: GetExadataIormConfigResult(
         db_plans=pulumi.get(__response__, 'db_plans'),

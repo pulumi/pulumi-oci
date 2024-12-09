@@ -75,7 +75,7 @@ export interface GetPrivateEndpointReachableIpResult {
  * });
  * ```
  */
-export function getPrivateEndpointReachableIpOutput(args: GetPrivateEndpointReachableIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointReachableIpResult> {
+export function getPrivateEndpointReachableIpOutput(args: GetPrivateEndpointReachableIpOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPrivateEndpointReachableIpResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", {
         "privateEndpointId": args.privateEndpointId,

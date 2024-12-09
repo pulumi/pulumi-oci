@@ -192,7 +192,7 @@ def get_object_head(bucket: Optional[str] = None,
 def get_object_head_output(bucket: Optional[pulumi.Input[str]] = None,
                            namespace: Optional[pulumi.Input[str]] = None,
                            object: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetObjectHeadResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectHeadResult]:
     """
     This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
 
@@ -218,7 +218,7 @@ def get_object_head_output(bucket: Optional[pulumi.Input[str]] = None,
     __args__['bucket'] = bucket
     __args__['namespace'] = namespace
     __args__['object'] = object
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getObjectHead:getObjectHead', __args__, opts=opts, typ=GetObjectHeadResult)
     return __ret__.apply(lambda __response__: GetObjectHeadResult(
         archival_state=pulumi.get(__response__, 'archival_state'),

@@ -180,7 +180,7 @@ def get_app_catalog_listing(listing_id: Optional[str] = None,
         summary=pulumi.get(__ret__, 'summary'),
         time_published=pulumi.get(__ret__, 'time_published'))
 def get_app_catalog_listing_output(listing_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppCatalogListingResult]:
     """
     This data source provides details about a specific App Catalog Listing resource in Oracle Cloud Infrastructure Core service.
 
@@ -200,7 +200,7 @@ def get_app_catalog_listing_output(listing_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['listingId'] = listing_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getAppCatalogListing:getAppCatalogListing', __args__, opts=opts, typ=GetAppCatalogListingResult)
     return __ret__.apply(lambda __response__: GetAppCatalogListingResult(
         contact_url=pulumi.get(__response__, 'contact_url'),

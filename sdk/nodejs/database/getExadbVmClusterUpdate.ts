@@ -103,7 +103,7 @@ export interface GetExadbVmClusterUpdateResult {
  * });
  * ```
  */
-export function getExadbVmClusterUpdateOutput(args: GetExadbVmClusterUpdateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadbVmClusterUpdateResult> {
+export function getExadbVmClusterUpdateOutput(args: GetExadbVmClusterUpdateOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadbVmClusterUpdateResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExadbVmClusterUpdate:getExadbVmClusterUpdate", {
         "exadbVmClusterId": args.exadbVmClusterId,

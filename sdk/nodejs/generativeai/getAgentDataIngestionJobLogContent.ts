@@ -67,7 +67,7 @@ export interface GetAgentDataIngestionJobLogContentResult {
  * });
  * ```
  */
-export function getAgentDataIngestionJobLogContentOutput(args: GetAgentDataIngestionJobLogContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentDataIngestionJobLogContentResult> {
+export function getAgentDataIngestionJobLogContentOutput(args: GetAgentDataIngestionJobLogContentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAgentDataIngestionJobLogContentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getAgentDataIngestionJobLogContent:getAgentDataIngestionJobLogContent", {
         "dataIngestionJobId": args.dataIngestionJobId,

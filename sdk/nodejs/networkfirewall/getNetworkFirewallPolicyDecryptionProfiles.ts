@@ -80,7 +80,7 @@ export interface GetNetworkFirewallPolicyDecryptionProfilesResult {
  * });
  * ```
  */
-export function getNetworkFirewallPolicyDecryptionProfilesOutput(args: GetNetworkFirewallPolicyDecryptionProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionProfilesResult> {
+export function getNetworkFirewallPolicyDecryptionProfilesOutput(args: GetNetworkFirewallPolicyDecryptionProfilesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionProfilesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfiles:getNetworkFirewallPolicyDecryptionProfiles", {
         "displayName": args.displayName,

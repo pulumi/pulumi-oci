@@ -373,7 +373,7 @@ def get_container_instance(container_instance_id: Optional[str] = None,
         volume_count=pulumi.get(__ret__, 'volume_count'),
         volumes=pulumi.get(__ret__, 'volumes'))
 def get_container_instance_output(container_instance_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerInstanceResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerInstanceResult]:
     """
     This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
 
@@ -393,7 +393,7 @@ def get_container_instance_output(container_instance_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['containerInstanceId'] = container_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerInstances/getContainerInstance:getContainerInstance', __args__, opts=opts, typ=GetContainerInstanceResult)
     return __ret__.apply(lambda __response__: GetContainerInstanceResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -201,7 +201,7 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
                            subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
                            vlan_id: Optional[pulumi.Input[Optional[str]]] = None,
                            vnic_id: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateIpsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateIpsResult]:
     """
     This data source provides the list of Private Ips in Oracle Cloud Infrastructure Core service.
 
@@ -261,7 +261,7 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
     __args__['subnetId'] = subnet_id
     __args__['vlanId'] = vlan_id
     __args__['vnicId'] = vnic_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getPrivateIps:getPrivateIps', __args__, opts=opts, typ=GetPrivateIpsResult)
     return __ret__.apply(lambda __response__: GetPrivateIpsResult(
         filters=pulumi.get(__response__, 'filters'),

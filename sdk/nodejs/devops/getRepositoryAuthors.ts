@@ -80,7 +80,7 @@ export interface GetRepositoryAuthorsResult {
  * });
  * ```
  */
-export function getRepositoryAuthorsOutput(args: GetRepositoryAuthorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryAuthorsResult> {
+export function getRepositoryAuthorsOutput(args: GetRepositoryAuthorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryAuthorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryAuthors:getRepositoryAuthors", {
         "filters": args.filters,

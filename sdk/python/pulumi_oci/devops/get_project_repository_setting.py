@@ -110,7 +110,7 @@ def get_project_repository_setting(project_id: Optional[str] = None,
         merge_settings=pulumi.get(__ret__, 'merge_settings'),
         project_id=pulumi.get(__ret__, 'project_id'))
 def get_project_repository_setting_output(project_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProjectRepositorySettingResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProjectRepositorySettingResult]:
     """
     This data source provides details about a specific Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
 
@@ -130,7 +130,7 @@ def get_project_repository_setting_output(project_id: Optional[pulumi.Input[str]
     """
     __args__ = dict()
     __args__['projectId'] = project_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting', __args__, opts=opts, typ=GetProjectRepositorySettingResult)
     return __ret__.apply(lambda __response__: GetProjectRepositorySettingResult(
         approval_rules=pulumi.get(__response__, 'approval_rules'),

@@ -92,7 +92,7 @@ export interface GetInstanceConfigurationResult {
  * });
  * ```
  */
-export function getInstanceConfigurationOutput(args: GetInstanceConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConfigurationResult> {
+export function getInstanceConfigurationOutput(args: GetInstanceConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstanceConfiguration:getInstanceConfiguration", {
         "instanceConfigurationId": args.instanceConfigurationId,

@@ -163,7 +163,7 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
                                                   host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                   version: Optional[pulumi.Input[Optional[str]]] = None,
                                                   version_to_upgrade: Optional[pulumi.Input[Optional[str]]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedVmwareSoftwareVersionsResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedVmwareSoftwareVersionsResult]:
     """
     This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
@@ -194,7 +194,7 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
     __args__['hostShapeName'] = host_shape_name
     __args__['version'] = version
     __args__['versionToUpgrade'] = version_to_upgrade
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions', __args__, opts=opts, typ=GetSupportedVmwareSoftwareVersionsResult)
     return __ret__.apply(lambda __response__: GetSupportedVmwareSoftwareVersionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -137,7 +137,7 @@ def get_instance_console_connections(compartment_id: Optional[str] = None,
 def get_instance_console_connections_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceConsoleConnectionsFilterArgs', 'GetInstanceConsoleConnectionsFilterArgsDict']]]]] = None,
                                             instance_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceConsoleConnectionsResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceConsoleConnectionsResult]:
     """
     This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
 
@@ -163,7 +163,7 @@ def get_instance_console_connections_output(compartment_id: Optional[pulumi.Inpu
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['instanceId'] = instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections', __args__, opts=opts, typ=GetInstanceConsoleConnectionsResult)
     return __ret__.apply(lambda __response__: GetInstanceConsoleConnectionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

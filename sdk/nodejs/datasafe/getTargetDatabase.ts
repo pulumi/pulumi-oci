@@ -130,7 +130,7 @@ export interface GetTargetDatabaseResult {
  * });
  * ```
  */
-export function getTargetDatabaseOutput(args: GetTargetDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabaseResult> {
+export function getTargetDatabaseOutput(args: GetTargetDatabaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabase:getTargetDatabase", {
         "targetDatabaseId": args.targetDatabaseId,

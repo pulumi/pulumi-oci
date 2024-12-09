@@ -72,7 +72,7 @@ export interface GetProtocolsResult {
  * });
  * ```
  */
-export function getProtocolsOutput(args: GetProtocolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtocolsResult> {
+export function getProtocolsOutput(args: GetProtocolsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtocolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getProtocols:getProtocols", {
         "compartmentId": args.compartmentId,

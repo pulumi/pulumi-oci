@@ -97,7 +97,7 @@ export interface GetClustersResult {
  * });
  * ```
  */
-export function getClustersOutput(args: GetClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClustersResult> {
+export function getClustersOutput(args: GetClustersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusters:getClusters", {
         "compartmentId": args.compartmentId,

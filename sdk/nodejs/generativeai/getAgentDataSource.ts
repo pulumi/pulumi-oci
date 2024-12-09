@@ -117,7 +117,7 @@ export interface GetAgentDataSourceResult {
  * });
  * ```
  */
-export function getAgentDataSourceOutput(args: GetAgentDataSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentDataSourceResult> {
+export function getAgentDataSourceOutput(args: GetAgentDataSourceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAgentDataSourceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getAgentDataSource:getAgentDataSource", {
         "dataSourceId": args.dataSourceId,

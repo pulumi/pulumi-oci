@@ -72,7 +72,7 @@ export interface GetRegionSubscriptionsResult {
  * });
  * ```
  */
-export function getRegionSubscriptionsOutput(args: GetRegionSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegionSubscriptionsResult> {
+export function getRegionSubscriptionsOutput(args: GetRegionSubscriptionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRegionSubscriptionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", {
         "filters": args.filters,

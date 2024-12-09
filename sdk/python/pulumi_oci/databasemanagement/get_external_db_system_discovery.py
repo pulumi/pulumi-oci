@@ -266,7 +266,7 @@ def get_external_db_system_discovery(external_db_system_discovery_id: Optional[s
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_external_db_system_discovery_output(external_db_system_discovery_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemDiscoveryResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbSystemDiscoveryResult]:
     """
     This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -286,7 +286,7 @@ def get_external_db_system_discovery_output(external_db_system_discovery_id: Opt
     """
     __args__ = dict()
     __args__['externalDbSystemDiscoveryId'] = external_db_system_discovery_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery', __args__, opts=opts, typ=GetExternalDbSystemDiscoveryResult)
     return __ret__.apply(lambda __response__: GetExternalDbSystemDiscoveryResult(
         agent_id=pulumi.get(__response__, 'agent_id'),

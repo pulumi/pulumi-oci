@@ -72,7 +72,7 @@ export interface GetExadataInfrastructureDownloadConfigFileResult {
  * });
  * ```
  */
-export function getExadataInfrastructureDownloadConfigFileOutput(args: GetExadataInfrastructureDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureDownloadConfigFileResult> {
+export function getExadataInfrastructureDownloadConfigFileOutput(args: GetExadataInfrastructureDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadataInfrastructureDownloadConfigFileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", {
         "base64EncodeContent": args.base64EncodeContent,

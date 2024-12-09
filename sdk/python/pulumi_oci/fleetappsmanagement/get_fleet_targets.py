@@ -186,7 +186,7 @@ def get_fleet_targets_output(display_name: Optional[pulumi.Input[Optional[str]]]
                              product: Optional[pulumi.Input[Optional[str]]] = None,
                              resource_display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              resource_id: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetTargetsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetTargetsResult]:
     """
     This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -219,7 +219,7 @@ def get_fleet_targets_output(display_name: Optional[pulumi.Input[Optional[str]]]
     __args__['product'] = product
     __args__['resourceDisplayName'] = resource_display_name
     __args__['resourceId'] = resource_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getFleetTargets:getFleetTargets', __args__, opts=opts, typ=GetFleetTargetsResult)
     return __ret__.apply(lambda __response__: GetFleetTargetsResult(
         display_name=pulumi.get(__response__, 'display_name'),

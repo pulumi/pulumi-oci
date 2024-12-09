@@ -129,7 +129,7 @@ def get_supported_commitments(compartment_id: Optional[str] = None,
 def get_supported_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedCommitmentsFilterArgs', 'GetSupportedCommitmentsFilterArgsDict']]]]] = None,
                                      host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedCommitmentsResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedCommitmentsResult]:
     """
     This data source provides the list of Supported Commitments in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
@@ -153,7 +153,7 @@ def get_supported_commitments_output(compartment_id: Optional[pulumi.Input[str]]
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['hostShapeName'] = host_shape_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getSupportedCommitments:getSupportedCommitments', __args__, opts=opts, typ=GetSupportedCommitmentsResult)
     return __ret__.apply(lambda __response__: GetSupportedCommitmentsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

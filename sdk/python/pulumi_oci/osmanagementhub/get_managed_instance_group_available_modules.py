@@ -162,7 +162,7 @@ def get_managed_instance_group_available_modules_output(compartment_id: Optional
                                                         managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                                                         name: Optional[pulumi.Input[Optional[str]]] = None,
                                                         name_contains: Optional[pulumi.Input[Optional[str]]] = None,
-                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupAvailableModulesResult]:
+                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupAvailableModulesResult]:
     """
     This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -192,7 +192,7 @@ def get_managed_instance_group_available_modules_output(compartment_id: Optional
     __args__['managedInstanceGroupId'] = managed_instance_group_id
     __args__['name'] = name
     __args__['nameContains'] = name_contains
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceGroupAvailableModules:getManagedInstanceGroupAvailableModules', __args__, opts=opts, typ=GetManagedInstanceGroupAvailableModulesResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceGroupAvailableModulesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -99,7 +99,7 @@ def get_peer_region_for_remote_peerings(filters: Optional[Sequence[Union['GetPee
         id=pulumi.get(__ret__, 'id'),
         peer_region_for_remote_peerings=pulumi.get(__ret__, 'peer_region_for_remote_peerings'))
 def get_peer_region_for_remote_peerings_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPeerRegionForRemotePeeringsFilterArgs', 'GetPeerRegionForRemotePeeringsFilterArgsDict']]]]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPeerRegionForRemotePeeringsResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPeerRegionForRemotePeeringsResult]:
     """
     This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
 
@@ -117,7 +117,7 @@ def get_peer_region_for_remote_peerings_output(filters: Optional[pulumi.Input[Op
     """
     __args__ = dict()
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings', __args__, opts=opts, typ=GetPeerRegionForRemotePeeringsResult)
     return __ret__.apply(lambda __response__: GetPeerRegionForRemotePeeringsResult(
         filters=pulumi.get(__response__, 'filters'),

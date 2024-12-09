@@ -129,7 +129,7 @@ def get_repository_protected_branches(filters: Optional[Sequence[Union['GetRepos
 def get_repository_protected_branches_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryProtectedBranchesFilterArgs', 'GetRepositoryProtectedBranchesFilterArgsDict']]]]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
                                              repository_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryProtectedBranchesResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryProtectedBranchesResult]:
     """
     This data source provides the list of Repository Protected Branches in Oracle Cloud Infrastructure Devops service.
 
@@ -153,7 +153,7 @@ def get_repository_protected_branches_output(filters: Optional[pulumi.Input[Opti
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches', __args__, opts=opts, typ=GetRepositoryProtectedBranchesResult)
     return __ret__.apply(lambda __response__: GetRepositoryProtectedBranchesResult(
         filters=pulumi.get(__response__, 'filters'),

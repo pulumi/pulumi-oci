@@ -150,7 +150,7 @@ export interface GetPipelineRunResult {
  * });
  * ```
  */
-export function getPipelineRunOutput(args: GetPipelineRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPipelineRunResult> {
+export function getPipelineRunOutput(args: GetPipelineRunOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPipelineRunResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getPipelineRun:getPipelineRun", {
         "pipelineRunId": args.pipelineRunId,

@@ -116,7 +116,7 @@ def get_repository_archive_content(format: Optional[str] = None,
 def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional[str]]] = None,
                                           ref_name: Optional[pulumi.Input[Optional[str]]] = None,
                                           repository_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryArchiveContentResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryArchiveContentResult]:
     """
     This data source provides details about a specific Repository Archive Content resource in Oracle Cloud Infrastructure Devops service.
 
@@ -142,7 +142,7 @@ def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional
     __args__['format'] = format
     __args__['refName'] = ref_name
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent', __args__, opts=opts, typ=GetRepositoryArchiveContentResult)
     return __ret__.apply(lambda __response__: GetRepositoryArchiveContentResult(
         format=pulumi.get(__response__, 'format'),

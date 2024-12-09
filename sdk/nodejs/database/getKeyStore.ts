@@ -102,7 +102,7 @@ export interface GetKeyStoreResult {
  * });
  * ```
  */
-export function getKeyStoreOutput(args: GetKeyStoreOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyStoreResult> {
+export function getKeyStoreOutput(args: GetKeyStoreOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKeyStoreResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getKeyStore:getKeyStore", {
         "keyStoreId": args.keyStoreId,

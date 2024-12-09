@@ -141,7 +141,7 @@ export interface GetDiscoveryJobsResultsResult {
  * });
  * ```
  */
-export function getDiscoveryJobsResultsOutput(args: GetDiscoveryJobsResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobsResultsResult> {
+export function getDiscoveryJobsResultsOutput(args: GetDiscoveryJobsResultsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDiscoveryJobsResultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", {
         "columnNames": args.columnNames,

@@ -114,7 +114,7 @@ def get_autonomous_database_refreshable_clones(autonomous_database_id: Optional[
         refreshable_clone_collections=pulumi.get(__ret__, 'refreshable_clone_collections'))
 def get_autonomous_database_refreshable_clones_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseRefreshableClonesFilterArgs', 'GetAutonomousDatabaseRefreshableClonesFilterArgsDict']]]]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseRefreshableClonesResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseRefreshableClonesResult]:
     """
     This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
 
@@ -135,7 +135,7 @@ def get_autonomous_database_refreshable_clones_output(autonomous_database_id: Op
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones', __args__, opts=opts, typ=GetAutonomousDatabaseRefreshableClonesResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabaseRefreshableClonesResult(
         autonomous_database_id=pulumi.get(__response__, 'autonomous_database_id'),

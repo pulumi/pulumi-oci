@@ -121,7 +121,7 @@ export interface GetIngressGatewayResult {
  * });
  * ```
  */
-export function getIngressGatewayOutput(args: GetIngressGatewayOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIngressGatewayResult> {
+export function getIngressGatewayOutput(args: GetIngressGatewayOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIngressGatewayResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceMesh/getIngressGateway:getIngressGateway", {
         "ingressGatewayId": args.ingressGatewayId,

@@ -516,7 +516,7 @@ export interface GetSubscribedServiceResult {
  * });
  * ```
  */
-export function getSubscribedServiceOutput(args: GetSubscribedServiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscribedServiceResult> {
+export function getSubscribedServiceOutput(args: GetSubscribedServiceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubscribedServiceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OneSubsription/getSubscribedService:getSubscribedService", {
         "fields": args.fields,

@@ -97,7 +97,7 @@ export interface GetShardedDatabasesResult {
  * });
  * ```
  */
-export function getShardedDatabasesOutput(args: GetShardedDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShardedDatabasesResult> {
+export function getShardedDatabasesOutput(args: GetShardedDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetShardedDatabasesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GloballyDistributedDatabase/getShardedDatabases:getShardedDatabases", {
         "compartmentId": args.compartmentId,

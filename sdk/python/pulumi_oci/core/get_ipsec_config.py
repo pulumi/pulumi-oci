@@ -143,7 +143,7 @@ def get_ipsec_config(filters: Optional[Sequence[Union['GetIpsecConfigFilterArgs'
         tunnels=pulumi.get(__ret__, 'tunnels'))
 def get_ipsec_config_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpsecConfigFilterArgs', 'GetIpsecConfigFilterArgsDict']]]]] = None,
                             ipsec_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConfigResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConfigResult]:
     """
     This data source provides details about a specific Ip Sec Connection Device Config resource in Oracle Cloud Infrastructure Core service.
 
@@ -167,7 +167,7 @@ def get_ipsec_config_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     __args__ = dict()
     __args__['filters'] = filters
     __args__['ipsecId'] = ipsec_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecConfig:getIpsecConfig', __args__, opts=opts, typ=GetIpsecConfigResult)
     return __ret__.apply(lambda __response__: GetIpsecConfigResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

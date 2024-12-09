@@ -334,7 +334,7 @@ def get_cloud_autonomous_vm_cluster_resource_usage(cloud_autonomous_vm_cluster_i
         used_autonomous_data_storage_size_in_tbs=pulumi.get(__ret__, 'used_autonomous_data_storage_size_in_tbs'),
         used_cpus=pulumi.get(__ret__, 'used_cpus'))
 def get_cloud_autonomous_vm_cluster_resource_usage_output(cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudAutonomousVmClusterResourceUsageResult]:
+                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAutonomousVmClusterResourceUsageResult]:
     """
     This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
 
@@ -354,7 +354,7 @@ def get_cloud_autonomous_vm_cluster_resource_usage_output(cloud_autonomous_vm_cl
     """
     __args__ = dict()
     __args__['cloudAutonomousVmClusterId'] = cloud_autonomous_vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage', __args__, opts=opts, typ=GetCloudAutonomousVmClusterResourceUsageResult)
     return __ret__.apply(lambda __response__: GetCloudAutonomousVmClusterResourceUsageResult(
         autonomous_data_storage_size_in_tbs=pulumi.get(__response__, 'autonomous_data_storage_size_in_tbs'),

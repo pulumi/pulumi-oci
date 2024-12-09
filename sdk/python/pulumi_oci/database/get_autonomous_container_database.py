@@ -838,7 +838,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         version_preference=pulumi.get(__ret__, 'version_preference'),
         vm_failover_reservation=pulumi.get(__ret__, 'vm_failover_reservation'))
 def get_autonomous_container_database_output(autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseResult]:
     """
     This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
 
@@ -858,7 +858,7 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase', __args__, opts=opts, typ=GetAutonomousContainerDatabaseResult)
     return __ret__.apply(lambda __response__: GetAutonomousContainerDatabaseResult(
         autonomous_container_database_id=pulumi.get(__response__, 'autonomous_container_database_id'),

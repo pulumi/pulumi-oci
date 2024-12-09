@@ -104,7 +104,7 @@ export interface GetEmailDomainsResult {
  * });
  * ```
  */
-export function getEmailDomainsOutput(args: GetEmailDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmailDomainsResult> {
+export function getEmailDomainsOutput(args: GetEmailDomainsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEmailDomainsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Email/getEmailDomains:getEmailDomains", {
         "compartmentId": args.compartmentId,

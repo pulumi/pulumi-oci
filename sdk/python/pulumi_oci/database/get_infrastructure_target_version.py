@@ -149,7 +149,7 @@ def get_infrastructure_target_version(compartment_id: Optional[str] = None,
 def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                              target_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                              target_resource_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInfrastructureTargetVersionResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInfrastructureTargetVersionResult]:
     """
     This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.
 
@@ -176,7 +176,7 @@ def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Inp
     __args__['compartmentId'] = compartment_id
     __args__['targetResourceId'] = target_resource_id
     __args__['targetResourceType'] = target_resource_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion', __args__, opts=opts, typ=GetInfrastructureTargetVersionResult)
     return __ret__.apply(lambda __response__: GetInfrastructureTargetVersionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

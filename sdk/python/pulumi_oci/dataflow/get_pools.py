@@ -186,7 +186,7 @@ def get_pools_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPoolsFilterArgs', 'GetPoolsFilterArgsDict']]]]] = None,
                      owner_principal_id: Optional[pulumi.Input[Optional[str]]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPoolsResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPoolsResult]:
     """
     This data source provides the list of Pools in Oracle Cloud Infrastructure Data Flow service.
 
@@ -219,7 +219,7 @@ def get_pools_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['ownerPrincipalId'] = owner_principal_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getPools:getPools', __args__, opts=opts, typ=GetPoolsResult)
     return __ret__.apply(lambda __response__: GetPoolsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -126,7 +126,7 @@ export interface GetNetworkFirewallsResult {
  * });
  * ```
  */
-export function getNetworkFirewallsOutput(args: GetNetworkFirewallsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallsResult> {
+export function getNetworkFirewallsOutput(args: GetNetworkFirewallsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls", {
         "availabilityDomain": args.availabilityDomain,

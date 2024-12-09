@@ -438,7 +438,7 @@ def get_external_listener(external_listener_id: Optional[str] = None,
         trace_directory=pulumi.get(__ret__, 'trace_directory'),
         version=pulumi.get(__ret__, 'version'))
 def get_external_listener_output(external_listener_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalListenerResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalListenerResult]:
     """
     This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -458,7 +458,7 @@ def get_external_listener_output(external_listener_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['externalListenerId'] = external_listener_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalListener:getExternalListener', __args__, opts=opts, typ=GetExternalListenerResult)
     return __ret__.apply(lambda __response__: GetExternalListenerResult(
         additional_details=pulumi.get(__response__, 'additional_details'),

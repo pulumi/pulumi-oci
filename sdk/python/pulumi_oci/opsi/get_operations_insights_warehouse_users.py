@@ -173,7 +173,7 @@ def get_operations_insights_warehouse_users_output(compartment_id: Optional[pulu
                                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                                    operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
                                                    states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsWarehouseUsersResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsWarehouseUsersResult]:
     """
     This data source provides the list of Operations Insights Warehouse Users in Oracle Cloud Infrastructure Opsi service.
 
@@ -206,7 +206,7 @@ def get_operations_insights_warehouse_users_output(compartment_id: Optional[pulu
     __args__['id'] = id
     __args__['operationsInsightsWarehouseId'] = operations_insights_warehouse_id
     __args__['states'] = states
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers', __args__, opts=opts, typ=GetOperationsInsightsWarehouseUsersResult)
     return __ret__.apply(lambda __response__: GetOperationsInsightsWarehouseUsersResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -178,7 +178,7 @@ def get_compute_cluster(compute_cluster_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_compute_cluster_output(compute_cluster_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeClusterResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeClusterResult]:
     """
     This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
 
@@ -199,7 +199,7 @@ def get_compute_cluster_output(compute_cluster_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['computeClusterId'] = compute_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeCluster:getComputeCluster', __args__, opts=opts, typ=GetComputeClusterResult)
     return __ret__.apply(lambda __response__: GetComputeClusterResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

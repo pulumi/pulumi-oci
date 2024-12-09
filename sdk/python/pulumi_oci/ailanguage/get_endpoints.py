@@ -180,7 +180,7 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          model_id: Optional[pulumi.Input[Optional[str]]] = None,
                          project_id: Optional[pulumi.Input[Optional[str]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEndpointsResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEndpointsResult]:
     """
     This data source provides the list of Endpoints in Oracle Cloud Infrastructure Ai Language service.
 
@@ -202,7 +202,7 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['modelId'] = model_id
     __args__['projectId'] = project_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:AiLanguage/getEndpoints:getEndpoints', __args__, opts=opts, typ=GetEndpointsResult)
     return __ret__.apply(lambda __response__: GetEndpointsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

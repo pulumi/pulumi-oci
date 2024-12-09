@@ -352,7 +352,7 @@ def get_db_server(db_server_id: Optional[str] = None,
         vm_cluster_ids=pulumi.get(__ret__, 'vm_cluster_ids'))
 def get_db_server_output(db_server_id: Optional[pulumi.Input[str]] = None,
                          exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbServerResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbServerResult]:
     """
     This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
 
@@ -375,7 +375,7 @@ def get_db_server_output(db_server_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['dbServerId'] = db_server_id
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbServer:getDbServer', __args__, opts=opts, typ=GetDbServerResult)
     return __ret__.apply(lambda __response__: GetDbServerResult(
         autonomous_virtual_machine_ids=pulumi.get(__response__, 'autonomous_virtual_machine_ids'),

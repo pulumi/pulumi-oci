@@ -150,7 +150,7 @@ def get_exadb_vm_cluster_updates_output(exadb_vm_cluster_id: Optional[pulumi.Inp
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExadbVmClusterUpdatesFilterArgs', 'GetExadbVmClusterUpdatesFilterArgsDict']]]]] = None,
                                         update_type: Optional[pulumi.Input[Optional[str]]] = None,
                                         version: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadbVmClusterUpdatesResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadbVmClusterUpdatesResult]:
     """
     This data source provides the list of Exadb Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
 
@@ -177,7 +177,7 @@ def get_exadb_vm_cluster_updates_output(exadb_vm_cluster_id: Optional[pulumi.Inp
     __args__['filters'] = filters
     __args__['updateType'] = update_type
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadbVmClusterUpdates:getExadbVmClusterUpdates', __args__, opts=opts, typ=GetExadbVmClusterUpdatesResult)
     return __ret__.apply(lambda __response__: GetExadbVmClusterUpdatesResult(
         exadb_vm_cluster_id=pulumi.get(__response__, 'exadb_vm_cluster_id'),

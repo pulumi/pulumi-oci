@@ -115,7 +115,7 @@ export interface GetDatasetsResult {
  * });
  * ```
  */
-export function getDatasetsOutput(args: GetDatasetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatasetsResult> {
+export function getDatasetsOutput(args: GetDatasetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatasetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataLabellingService/getDatasets:getDatasets", {
         "annotationFormat": args.annotationFormat,

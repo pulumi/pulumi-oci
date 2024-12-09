@@ -168,7 +168,7 @@ def get_fusion_environment_service_attachments_output(display_name: Optional[pul
                                                       fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                       service_instance_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentServiceAttachmentsResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentServiceAttachmentsResult]:
     """
     This data source provides the list of Fusion Environment Service Attachments in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -198,7 +198,7 @@ def get_fusion_environment_service_attachments_output(display_name: Optional[pul
     __args__['fusionEnvironmentId'] = fusion_environment_id
     __args__['serviceInstanceType'] = service_instance_type
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments', __args__, opts=opts, typ=GetFusionEnvironmentServiceAttachmentsResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentServiceAttachmentsResult(
         display_name=pulumi.get(__response__, 'display_name'),

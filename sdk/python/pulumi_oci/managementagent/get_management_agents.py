@@ -371,7 +371,7 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  versions: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  wait_for_host_id: Optional[pulumi.Input[Optional[int]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentsResult]:
     """
     This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
 
@@ -439,7 +439,7 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
     __args__['state'] = state
     __args__['versions'] = versions
     __args__['waitForHostId'] = wait_for_host_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgents:getManagementAgents', __args__, opts=opts, typ=GetManagementAgentsResult)
     return __ret__.apply(lambda __response__: GetManagementAgentsResult(
         access_level=pulumi.get(__response__, 'access_level'),

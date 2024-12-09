@@ -277,7 +277,7 @@ def get_domains_approval_workflow_assignments_output(approval_workflow_assignmen
                                                      sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                                                      sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                                                      start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsApprovalWorkflowAssignmentsResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsApprovalWorkflowAssignmentsResult]:
     """
     This data source provides the list of Approval Workflow Assignments in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -321,7 +321,7 @@ def get_domains_approval_workflow_assignments_output(approval_workflow_assignmen
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsApprovalWorkflowAssignments:getDomainsApprovalWorkflowAssignments', __args__, opts=opts, typ=GetDomainsApprovalWorkflowAssignmentsResult)
     return __ret__.apply(lambda __response__: GetDomainsApprovalWorkflowAssignmentsResult(
         approval_workflow_assignment_count=pulumi.get(__response__, 'approval_workflow_assignment_count'),

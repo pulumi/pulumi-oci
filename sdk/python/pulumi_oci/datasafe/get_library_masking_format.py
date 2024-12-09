@@ -233,7 +233,7 @@ def get_library_masking_format(library_masking_format_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_library_masking_format_output(library_masking_format_id: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLibraryMaskingFormatResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLibraryMaskingFormatResult]:
     """
     This data source provides details about a specific Library Masking Format resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -253,7 +253,7 @@ def get_library_masking_format_output(library_masking_format_id: Optional[pulumi
     """
     __args__ = dict()
     __args__['libraryMaskingFormatId'] = library_masking_format_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat', __args__, opts=opts, typ=GetLibraryMaskingFormatResult)
     return __ret__.apply(lambda __response__: GetLibraryMaskingFormatResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

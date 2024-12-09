@@ -94,7 +94,7 @@ export interface GetVantagePointsResult {
  * });
  * ```
  */
-export function getVantagePointsOutput(args: GetVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVantagePointsResult> {
+export function getVantagePointsOutput(args: GetVantagePointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVantagePointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getVantagePoints:getVantagePoints", {
         "apmDomainId": args.apmDomainId,

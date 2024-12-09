@@ -75,7 +75,7 @@ export interface GetLicenseRecordsResult {
  * });
  * ```
  */
-export function getLicenseRecordsOutput(args: GetLicenseRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLicenseRecordsResult> {
+export function getLicenseRecordsOutput(args: GetLicenseRecordsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLicenseRecordsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LicenseManager/getLicenseRecords:getLicenseRecords", {
         "filters": args.filters,

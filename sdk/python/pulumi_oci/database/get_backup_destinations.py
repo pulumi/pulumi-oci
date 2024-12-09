@@ -135,7 +135,7 @@ def get_backup_destinations(compartment_id: Optional[str] = None,
 def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict']]]]] = None,
                                    type: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupDestinationsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupDestinationsResult]:
     """
     This data source provides the list of Backup Destinations in Oracle Cloud Infrastructure Database service.
 
@@ -159,7 +159,7 @@ def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getBackupDestinations:getBackupDestinations', __args__, opts=opts, typ=GetBackupDestinationsResult)
     return __ret__.apply(lambda __response__: GetBackupDestinationsResult(
         backup_destinations=pulumi.get(__response__, 'backup_destinations'),

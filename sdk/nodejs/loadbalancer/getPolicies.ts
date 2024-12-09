@@ -72,7 +72,7 @@ export interface GetPoliciesResult {
  * });
  * ```
  */
-export function getPoliciesOutput(args: GetPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPoliciesResult> {
+export function getPoliciesOutput(args: GetPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getPolicies:getPolicies", {
         "compartmentId": args.compartmentId,

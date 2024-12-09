@@ -116,7 +116,7 @@ export interface GetFleetTargetsResult {
  * });
  * ```
  */
-export function getFleetTargetsOutput(args: GetFleetTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetTargetsResult> {
+export function getFleetTargetsOutput(args: GetFleetTargetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetTargetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getFleetTargets:getFleetTargets", {
         "displayName": args.displayName,

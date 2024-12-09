@@ -149,7 +149,7 @@ export interface GetResponderRecipesResult {
  * });
  * ```
  */
-export function getResponderRecipesOutput(args: GetResponderRecipesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResponderRecipesResult> {
+export function getResponderRecipesOutput(args: GetResponderRecipesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResponderRecipesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getResponderRecipes:getResponderRecipes", {
         "accessLevel": args.accessLevel,

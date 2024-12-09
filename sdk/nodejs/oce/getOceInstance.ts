@@ -164,7 +164,7 @@ export interface GetOceInstanceResult {
  * });
  * ```
  */
-export function getOceInstanceOutput(args: GetOceInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOceInstanceResult> {
+export function getOceInstanceOutput(args: GetOceInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOceInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Oce/getOceInstance:getOceInstance", {
         "oceInstanceId": args.oceInstanceId,

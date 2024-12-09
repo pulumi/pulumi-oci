@@ -294,7 +294,7 @@ def get_sql_firewall_allowed_sql(sql_firewall_allowed_sql_id: Optional[str] = No
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
 def get_sql_firewall_allowed_sql_output(sql_firewall_allowed_sql_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlFirewallAllowedSqlResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallAllowedSqlResult]:
     """
     This data source provides details about a specific Sql Firewall Allowed Sql resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -314,7 +314,7 @@ def get_sql_firewall_allowed_sql_output(sql_firewall_allowed_sql_id: Optional[pu
     """
     __args__ = dict()
     __args__['sqlFirewallAllowedSqlId'] = sql_firewall_allowed_sql_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSqlFirewallAllowedSql:getSqlFirewallAllowedSql', __args__, opts=opts, typ=GetSqlFirewallAllowedSqlResult)
     return __ret__.apply(lambda __response__: GetSqlFirewallAllowedSqlResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

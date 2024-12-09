@@ -146,7 +146,7 @@ def get_awr_hub_awr_snapshot_output(awr_hub_id: Optional[pulumi.Input[str]] = No
                                     awr_source_database_identifier: Optional[pulumi.Input[str]] = None,
                                     time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                     time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwrHubAwrSnapshotResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwrHubAwrSnapshotResult]:
     """
     This data source provides details about a specific Awr Hub Awr Snapshot resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -176,7 +176,7 @@ def get_awr_hub_awr_snapshot_output(awr_hub_id: Optional[pulumi.Input[str]] = No
     __args__['awrSourceDatabaseIdentifier'] = awr_source_database_identifier
     __args__['timeGreaterThanOrEqualTo'] = time_greater_than_or_equal_to
     __args__['timeLessThanOrEqualTo'] = time_less_than_or_equal_to
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getAwrHubAwrSnapshot:getAwrHubAwrSnapshot', __args__, opts=opts, typ=GetAwrHubAwrSnapshotResult)
     return __ret__.apply(lambda __response__: GetAwrHubAwrSnapshotResult(
         awr_hub_id=pulumi.get(__response__, 'awr_hub_id'),

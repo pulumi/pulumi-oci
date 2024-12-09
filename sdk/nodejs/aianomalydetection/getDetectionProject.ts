@@ -99,7 +99,7 @@ export interface GetDetectionProjectResult {
  * });
  * ```
  */
-export function getDetectionProjectOutput(args: GetDetectionProjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionProjectResult> {
+export function getDetectionProjectOutput(args: GetDetectionProjectOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDetectionProjectResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", {
         "projectId": args.projectId,

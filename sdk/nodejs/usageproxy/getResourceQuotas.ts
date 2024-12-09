@@ -90,7 +90,7 @@ export interface GetResourceQuotasResult {
  * });
  * ```
  */
-export function getResourceQuotasOutput(args: GetResourceQuotasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceQuotasResult> {
+export function getResourceQuotasOutput(args: GetResourceQuotasOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResourceQuotasResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:UsageProxy/getResourceQuotas:getResourceQuotas", {
         "compartmentId": args.compartmentId,

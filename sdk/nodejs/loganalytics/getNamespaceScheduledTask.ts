@@ -136,7 +136,7 @@ export interface GetNamespaceScheduledTaskResult {
  * });
  * ```
  */
-export function getNamespaceScheduledTaskOutput(args: GetNamespaceScheduledTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceScheduledTaskResult> {
+export function getNamespaceScheduledTaskOutput(args: GetNamespaceScheduledTaskOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceScheduledTaskResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask", {
         "namespace": args.namespace,

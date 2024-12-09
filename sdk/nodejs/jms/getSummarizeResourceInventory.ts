@@ -100,7 +100,7 @@ export interface GetSummarizeResourceInventoryResult {
  * });
  * ```
  */
-export function getSummarizeResourceInventoryOutput(args?: GetSummarizeResourceInventoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSummarizeResourceInventoryResult> {
+export function getSummarizeResourceInventoryOutput(args?: GetSummarizeResourceInventoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSummarizeResourceInventoryResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", {

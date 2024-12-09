@@ -75,7 +75,7 @@ export interface GetAutonomousDatabaseDataguardAssociationsResult {
  * });
  * ```
  */
-export function getAutonomousDatabaseDataguardAssociationsOutput(args: GetAutonomousDatabaseDataguardAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseDataguardAssociationsResult> {
+export function getAutonomousDatabaseDataguardAssociationsOutput(args: GetAutonomousDatabaseDataguardAssociationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseDataguardAssociationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseDataguardAssociations:getAutonomousDatabaseDataguardAssociations", {
         "autonomousDatabaseId": args.autonomousDatabaseId,

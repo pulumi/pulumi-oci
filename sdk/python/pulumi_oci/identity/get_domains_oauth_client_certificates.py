@@ -247,7 +247,7 @@ def get_domains_oauth_client_certificates_output(authorization: Optional[pulumi.
                                                  sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                                                  sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                                                  start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsOauthClientCertificatesResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsOauthClientCertificatesResult]:
     """
     This data source provides the list of O Auth Client Certificates in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -285,7 +285,7 @@ def get_domains_oauth_client_certificates_output(authorization: Optional[pulumi.
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates', __args__, opts=opts, typ=GetDomainsOauthClientCertificatesResult)
     return __ret__.apply(lambda __response__: GetDomainsOauthClientCertificatesResult(
         authorization=pulumi.get(__response__, 'authorization'),

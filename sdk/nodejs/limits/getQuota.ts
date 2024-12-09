@@ -102,7 +102,7 @@ export interface GetQuotaResult {
  * });
  * ```
  */
-export function getQuotaOutput(args: GetQuotaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQuotaResult> {
+export function getQuotaOutput(args: GetQuotaOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetQuotaResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Limits/getQuota:getQuota", {
         "quotaId": args.quotaId,

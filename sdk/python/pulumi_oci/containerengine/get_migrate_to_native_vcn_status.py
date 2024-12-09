@@ -92,13 +92,13 @@ def get_migrate_to_native_vcn_status(cluster_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_decommission_scheduled=pulumi.get(__ret__, 'time_decommission_scheduled'))
 def get_migrate_to_native_vcn_status_output(cluster_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrateToNativeVcnStatusResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrateToNativeVcnStatusResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus', __args__, opts=opts, typ=GetMigrateToNativeVcnStatusResult)
     return __ret__.apply(lambda __response__: GetMigrateToNativeVcnStatusResult(
         cluster_id=pulumi.get(__response__, 'cluster_id'),

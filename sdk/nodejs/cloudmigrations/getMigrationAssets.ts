@@ -106,7 +106,7 @@ export interface GetMigrationAssetsResult {
  * });
  * ```
  */
-export function getMigrationAssetsOutput(args?: GetMigrationAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationAssetsResult> {
+export function getMigrationAssetsOutput(args?: GetMigrationAssetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMigrationAssetsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudMigrations/getMigrationAssets:getMigrationAssets", {

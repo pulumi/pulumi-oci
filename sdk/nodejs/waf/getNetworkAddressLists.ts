@@ -104,7 +104,7 @@ export interface GetNetworkAddressListsResult {
  * });
  * ```
  */
-export function getNetworkAddressListsOutput(args: GetNetworkAddressListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkAddressListsResult> {
+export function getNetworkAddressListsOutput(args: GetNetworkAddressListsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkAddressListsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", {
         "compartmentId": args.compartmentId,

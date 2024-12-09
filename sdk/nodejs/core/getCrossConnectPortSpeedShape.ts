@@ -76,7 +76,7 @@ export interface GetCrossConnectPortSpeedShapeResult {
  * });
  * ```
  */
-export function getCrossConnectPortSpeedShapeOutput(args: GetCrossConnectPortSpeedShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectPortSpeedShapeResult> {
+export function getCrossConnectPortSpeedShapeOutput(args: GetCrossConnectPortSpeedShapeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCrossConnectPortSpeedShapeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", {
         "compartmentId": args.compartmentId,

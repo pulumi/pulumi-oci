@@ -283,7 +283,7 @@ def get_events_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
                       time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                       time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                       types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventsResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEventsResult]:
     """
     This data source provides the list of Events in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -334,7 +334,7 @@ def get_events_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
     __args__['types'] = types
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getEvents:getEvents', __args__, opts=opts, typ=GetEventsResult)
     return __ret__.apply(lambda __response__: GetEventsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

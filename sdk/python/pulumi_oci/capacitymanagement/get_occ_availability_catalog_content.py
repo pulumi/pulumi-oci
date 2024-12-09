@@ -86,7 +86,7 @@ def get_occ_availability_catalog_content(occ_availability_catalog_id: Optional[s
         id=pulumi.get(__ret__, 'id'),
         occ_availability_catalog_id=pulumi.get(__ret__, 'occ_availability_catalog_id'))
 def get_occ_availability_catalog_content_output(occ_availability_catalog_id: Optional[pulumi.Input[str]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccAvailabilityCatalogContentResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccAvailabilityCatalogContentResult]:
     """
     This data source provides details about a specific Occ Availability Catalog Content resource in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -106,7 +106,7 @@ def get_occ_availability_catalog_content_output(occ_availability_catalog_id: Opt
     """
     __args__ = dict()
     __args__['occAvailabilityCatalogId'] = occ_availability_catalog_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccAvailabilityCatalogContent:getOccAvailabilityCatalogContent', __args__, opts=opts, typ=GetOccAvailabilityCatalogContentResult)
     return __ret__.apply(lambda __response__: GetOccAvailabilityCatalogContentResult(
         id=pulumi.get(__response__, 'id'),

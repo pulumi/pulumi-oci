@@ -126,7 +126,7 @@ export interface GetAlertRuleResult {
  * });
  * ```
  */
-export function getAlertRuleOutput(args: GetAlertRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertRuleResult> {
+export function getAlertRuleOutput(args: GetAlertRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAlertRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Budget/getAlertRule:getAlertRule", {
         "alertRuleId": args.alertRuleId,

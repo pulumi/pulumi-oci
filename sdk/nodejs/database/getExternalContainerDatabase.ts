@@ -137,7 +137,7 @@ export interface GetExternalContainerDatabaseResult {
  * });
  * ```
  */
-export function getExternalContainerDatabaseOutput(args: GetExternalContainerDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalContainerDatabaseResult> {
+export function getExternalContainerDatabaseOutput(args: GetExternalContainerDatabaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalContainerDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExternalContainerDatabase:getExternalContainerDatabase", {
         "externalContainerDatabaseId": args.externalContainerDatabaseId,

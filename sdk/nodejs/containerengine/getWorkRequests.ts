@@ -110,7 +110,7 @@ export interface GetWorkRequestsResult {
  * });
  * ```
  */
-export function getWorkRequestsOutput(args: GetWorkRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkRequestsResult> {
+export function getWorkRequestsOutput(args: GetWorkRequestsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkRequestsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getWorkRequests:getWorkRequests", {
         "clusterId": args.clusterId,

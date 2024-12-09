@@ -242,7 +242,7 @@ def get_management_agent_install_key(management_agent_install_key_id: Optional[s
         time_expires=pulumi.get(__ret__, 'time_expires'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_management_agent_install_key_output(management_agent_install_key_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentInstallKeyResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentInstallKeyResult]:
     """
     This data source provides details about a specific Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
 
@@ -262,7 +262,7 @@ def get_management_agent_install_key_output(management_agent_install_key_id: Opt
     """
     __args__ = dict()
     __args__['managementAgentInstallKeyId'] = management_agent_install_key_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey', __args__, opts=opts, typ=GetManagementAgentInstallKeyResult)
     return __ret__.apply(lambda __response__: GetManagementAgentInstallKeyResult(
         allowed_key_install_count=pulumi.get(__response__, 'allowed_key_install_count'),

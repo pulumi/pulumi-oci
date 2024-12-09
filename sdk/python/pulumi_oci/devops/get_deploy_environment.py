@@ -295,7 +295,7 @@ def get_deploy_environment(deploy_environment_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_deploy_environment_output(deploy_environment_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployEnvironmentResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployEnvironmentResult]:
     """
     This data source provides details about a specific Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
 
@@ -315,7 +315,7 @@ def get_deploy_environment_output(deploy_environment_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['deployEnvironmentId'] = deploy_environment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployEnvironment:getDeployEnvironment', __args__, opts=opts, typ=GetDeployEnvironmentResult)
     return __ret__.apply(lambda __response__: GetDeployEnvironmentResult(
         cluster_id=pulumi.get(__response__, 'cluster_id'),

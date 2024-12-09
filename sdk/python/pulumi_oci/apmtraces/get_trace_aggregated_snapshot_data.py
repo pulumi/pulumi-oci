@@ -175,7 +175,7 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
                                               span_key: Optional[pulumi.Input[Optional[str]]] = None,
                                               span_name: Optional[pulumi.Input[Optional[str]]] = None,
                                               trace_key: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTraceAggregatedSnapshotDataResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTraceAggregatedSnapshotDataResult]:
     """
     This data source provides details about a specific Trace Aggregated Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
 
@@ -210,7 +210,7 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
     __args__['spanKey'] = span_key
     __args__['spanName'] = span_name
     __args__['traceKey'] = trace_key
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData', __args__, opts=opts, typ=GetTraceAggregatedSnapshotDataResult)
     return __ret__.apply(lambda __response__: GetTraceAggregatedSnapshotDataResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

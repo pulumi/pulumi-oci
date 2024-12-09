@@ -117,7 +117,7 @@ def get_cpes(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_cpes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCpesFilterArgs', 'GetCpesFilterArgsDict']]]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpesResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpesResult]:
     """
     This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.
 
@@ -138,7 +138,7 @@ def get_cpes_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getCpes:getCpes', __args__, opts=opts, typ=GetCpesResult)
     return __ret__.apply(lambda __response__: GetCpesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

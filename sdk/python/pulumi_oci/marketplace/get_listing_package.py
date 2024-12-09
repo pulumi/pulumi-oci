@@ -302,7 +302,7 @@ def get_listing_package(compartment_id: Optional[str] = None,
 def get_listing_package_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                listing_id: Optional[pulumi.Input[str]] = None,
                                package_version: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingPackageResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingPackageResult]:
     """
     This data source provides details about a specific Listing Package resource in Oracle Cloud Infrastructure Marketplace service.
 
@@ -341,7 +341,7 @@ def get_listing_package_output(compartment_id: Optional[pulumi.Input[Optional[st
     __args__['compartmentId'] = compartment_id
     __args__['listingId'] = listing_id
     __args__['packageVersion'] = package_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getListingPackage:getListingPackage', __args__, opts=opts, typ=GetListingPackageResult)
     return __ret__.apply(lambda __response__: GetListingPackageResult(
         app_catalog_listing_id=pulumi.get(__response__, 'app_catalog_listing_id'),

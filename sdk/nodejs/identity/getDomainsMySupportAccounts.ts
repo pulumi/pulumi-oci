@@ -124,7 +124,7 @@ export interface GetDomainsMySupportAccountsResult {
  * });
  * ```
  */
-export function getDomainsMySupportAccountsOutput(args: GetDomainsMySupportAccountsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMySupportAccountsResult> {
+export function getDomainsMySupportAccountsOutput(args: GetDomainsMySupportAccountsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMySupportAccountsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMySupportAccounts:getDomainsMySupportAccounts", {
         "authorization": args.authorization,

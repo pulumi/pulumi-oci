@@ -90,7 +90,7 @@ export interface GetFaultDomainsResult {
  * });
  * ```
  */
-export function getFaultDomainsOutput(args: GetFaultDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFaultDomainsResult> {
+export function getFaultDomainsOutput(args: GetFaultDomainsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFaultDomainsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getFaultDomains:getFaultDomains", {
         "availabilityDomain": args.availabilityDomain,

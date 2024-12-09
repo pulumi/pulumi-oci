@@ -85,7 +85,7 @@ export interface GetIpInventorySubnetResult {
  * });
  * ```
  */
-export function getIpInventorySubnetOutput(args: GetIpInventorySubnetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpInventorySubnetResult> {
+export function getIpInventorySubnetOutput(args: GetIpInventorySubnetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpInventorySubnetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpInventorySubnet:getIpInventorySubnet", {
         "subnetId": args.subnetId,

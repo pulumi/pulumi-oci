@@ -147,7 +147,7 @@ export interface GetAtCustomerCccInfrastructureResult {
  * });
  * ```
  */
-export function getAtCustomerCccInfrastructureOutput(args: GetAtCustomerCccInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccInfrastructureResult> {
+export function getAtCustomerCccInfrastructureOutput(args: GetAtCustomerCccInfrastructureOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAtCustomerCccInfrastructureResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", {
         "cccInfrastructureId": args.cccInfrastructureId,

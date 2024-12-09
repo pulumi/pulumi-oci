@@ -668,7 +668,7 @@ def get_sharded_database(metadata: Optional[str] = None,
         validate_network_trigger=pulumi.get(__ret__, 'validate_network_trigger'))
 def get_sharded_database_output(metadata: Optional[pulumi.Input[Optional[str]]] = None,
                                 sharded_database_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetShardedDatabaseResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShardedDatabaseResult]:
     """
     This data source provides details about a specific Sharded Database resource in Oracle Cloud Infrastructure Globally Distributed Database service.
 
@@ -691,7 +691,7 @@ def get_sharded_database_output(metadata: Optional[pulumi.Input[Optional[str]]] 
     __args__ = dict()
     __args__['metadata'] = metadata
     __args__['shardedDatabaseId'] = sharded_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GloballyDistributedDatabase/getShardedDatabase:getShardedDatabase', __args__, opts=opts, typ=GetShardedDatabaseResult)
     return __ret__.apply(lambda __response__: GetShardedDatabaseResult(
         ca_signed_certificate=pulumi.get(__response__, 'ca_signed_certificate'),

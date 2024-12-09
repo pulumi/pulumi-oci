@@ -192,7 +192,7 @@ def get_managed_instance_updatable_packages_output(advisory_names: Optional[pulu
                                                    display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceUpdatablePackagesFilterArgs', 'GetManagedInstanceUpdatablePackagesFilterArgsDict']]]]] = None,
                                                    managed_instance_id: Optional[pulumi.Input[str]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceUpdatablePackagesResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceUpdatablePackagesResult]:
     """
     This data source provides the list of Managed Instance Updatable Packages in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -228,7 +228,7 @@ def get_managed_instance_updatable_packages_output(advisory_names: Optional[pulu
     __args__['displayNames'] = display_names
     __args__['filters'] = filters
     __args__['managedInstanceId'] = managed_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages', __args__, opts=opts, typ=GetManagedInstanceUpdatablePackagesResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceUpdatablePackagesResult(
         advisory_names=pulumi.get(__response__, 'advisory_names'),

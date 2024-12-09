@@ -132,7 +132,7 @@ def get_discovery_job_logs(discovery_job_id: Optional[str] = None,
 def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryJobLogsFilterArgs', 'GetDiscoveryJobLogsFilterArgsDict']]]]] = None,
                                   log_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobLogsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryJobLogsResult]:
     """
     This data source provides the list of Discovery Job Logs in Oracle Cloud Infrastructure Stack Monitoring service.
 
@@ -156,7 +156,7 @@ def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[str]] 
     __args__['discoveryJobId'] = discovery_job_id
     __args__['filters'] = filters
     __args__['logType'] = log_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs', __args__, opts=opts, typ=GetDiscoveryJobLogsResult)
     return __ret__.apply(lambda __response__: GetDiscoveryJobLogsResult(
         discovery_job_id=pulumi.get(__response__, 'discovery_job_id'),

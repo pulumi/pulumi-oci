@@ -229,7 +229,7 @@ def get_generic_artifact(artifact_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         version=pulumi.get(__ret__, 'version'))
 def get_generic_artifact_output(artifact_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGenericArtifactResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenericArtifactResult]:
     """
     This data source provides details about a specific Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
 
@@ -249,7 +249,7 @@ def get_generic_artifact_output(artifact_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['artifactId'] = artifact_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getGenericArtifact:getGenericArtifact', __args__, opts=opts, typ=GetGenericArtifactResult)
     return __ret__.apply(lambda __response__: GetGenericArtifactResult(
         artifact_id=pulumi.get(__response__, 'artifact_id'),

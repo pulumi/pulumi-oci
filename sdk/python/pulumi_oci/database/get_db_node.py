@@ -399,7 +399,7 @@ def get_db_node(db_node_id: Optional[str] = None,
         vnic2id=pulumi.get(__ret__, 'vnic2id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
 def get_db_node_output(db_node_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeResult]:
     """
     This data source provides details about a specific Db Node resource in Oracle Cloud Infrastructure Database service.
 
@@ -419,7 +419,7 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['dbNodeId'] = db_node_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbNode:getDbNode', __args__, opts=opts, typ=GetDbNodeResult)
     return __ret__.apply(lambda __response__: GetDbNodeResult(
         additional_details=pulumi.get(__response__, 'additional_details'),

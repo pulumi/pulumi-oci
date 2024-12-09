@@ -116,7 +116,7 @@ export interface GetFleetProductsResult {
  * });
  * ```
  */
-export function getFleetProductsOutput(args: GetFleetProductsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetProductsResult> {
+export function getFleetProductsOutput(args: GetFleetProductsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetProductsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getFleetProducts:getFleetProducts", {
         "compartmentId": args.compartmentId,

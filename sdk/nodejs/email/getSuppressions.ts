@@ -110,7 +110,7 @@ export interface GetSuppressionsResult {
  * });
  * ```
  */
-export function getSuppressionsOutput(args: GetSuppressionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSuppressionsResult> {
+export function getSuppressionsOutput(args: GetSuppressionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSuppressionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Email/getSuppressions:getSuppressions", {
         "compartmentId": args.compartmentId,

@@ -201,7 +201,7 @@ def get_fusion_environment_scheduled_activities_output(display_name: Optional[pu
                                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                                        time_expected_finish_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                        time_scheduled_start_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentScheduledActivitiesResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentScheduledActivitiesResult]:
     """
     This data source provides the list of Fusion Environment Scheduled Activities in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -237,7 +237,7 @@ def get_fusion_environment_scheduled_activities_output(display_name: Optional[pu
     __args__['state'] = state
     __args__['timeExpectedFinishLessThanOrEqualTo'] = time_expected_finish_less_than_or_equal_to
     __args__['timeScheduledStartGreaterThanOrEqualTo'] = time_scheduled_start_greater_than_or_equal_to
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities', __args__, opts=opts, typ=GetFusionEnvironmentScheduledActivitiesResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentScheduledActivitiesResult(
         display_name=pulumi.get(__response__, 'display_name'),

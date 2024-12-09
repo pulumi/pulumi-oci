@@ -81,7 +81,7 @@ export interface GetApiKeysResult {
  * });
  * ```
  */
-export function getApiKeysOutput(args: GetApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiKeysResult> {
+export function getApiKeysOutput(args: GetApiKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApiKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getApiKeys:getApiKeys", {
         "filters": args.filters,

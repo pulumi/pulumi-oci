@@ -174,7 +174,7 @@ def get_repository_paths_output(display_name: Optional[pulumi.Input[Optional[str
                                 paths_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                 ref: Optional[pulumi.Input[Optional[str]]] = None,
                                 repository_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryPathsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryPathsResult]:
     """
     This data source provides the list of Repository Paths in Oracle Cloud Infrastructure Devops service.
 
@@ -207,7 +207,7 @@ def get_repository_paths_output(display_name: Optional[pulumi.Input[Optional[str
     __args__['pathsInSubtree'] = paths_in_subtree
     __args__['ref'] = ref
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryPaths:getRepositoryPaths', __args__, opts=opts, typ=GetRepositoryPathsResult)
     return __ret__.apply(lambda __response__: GetRepositoryPathsResult(
         display_name=pulumi.get(__response__, 'display_name'),

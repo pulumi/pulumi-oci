@@ -97,7 +97,7 @@ export interface GetManagedInstancesResult {
  * });
  * ```
  */
-export function getManagedInstancesOutput(args: GetManagedInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstancesResult> {
+export function getManagedInstancesOutput(args: GetManagedInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagement/getManagedInstances:getManagedInstances", {
         "compartmentId": args.compartmentId,

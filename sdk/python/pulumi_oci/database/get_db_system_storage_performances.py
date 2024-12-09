@@ -134,7 +134,7 @@ def get_db_system_storage_performances(filters: Optional[Sequence[Union['GetDbSy
 def get_db_system_storage_performances_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict']]]]] = None,
                                               shape_type: Optional[pulumi.Input[Optional[str]]] = None,
                                               storage_management: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemStoragePerformancesResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemStoragePerformancesResult]:
     """
     This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
 
@@ -160,7 +160,7 @@ def get_db_system_storage_performances_output(filters: Optional[pulumi.Input[Opt
     __args__['filters'] = filters
     __args__['shapeType'] = shape_type
     __args__['storageManagement'] = storage_management
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances', __args__, opts=opts, typ=GetDbSystemStoragePerformancesResult)
     return __ret__.apply(lambda __response__: GetDbSystemStoragePerformancesResult(
         db_system_storage_performances=pulumi.get(__response__, 'db_system_storage_performances'),

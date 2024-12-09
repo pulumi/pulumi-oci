@@ -256,7 +256,7 @@ def get_managed_my_sql_database(managed_my_sql_database_id: Optional[str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_created_heat_wave=pulumi.get(__ret__, 'time_created_heat_wave'))
 def get_managed_my_sql_database_output(managed_my_sql_database_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabaseResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseResult]:
     """
     This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -276,7 +276,7 @@ def get_managed_my_sql_database_output(managed_my_sql_database_id: Optional[pulu
     """
     __args__ = dict()
     __args__['managedMySqlDatabaseId'] = managed_my_sql_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase', __args__, opts=opts, typ=GetManagedMySqlDatabaseResult)
     return __ret__.apply(lambda __response__: GetManagedMySqlDatabaseResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -336,7 +336,7 @@ def get_vault(vault_id: Optional[str] = None,
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vault_type=pulumi.get(__ret__, 'vault_type'))
 def get_vault_output(vault_id: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVaultResult]:
     """
     This data source provides details about a specific Vault resource in Oracle Cloud Infrastructure Kms service.
 
@@ -361,7 +361,7 @@ def get_vault_output(vault_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['vaultId'] = vault_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getVault:getVault', __args__, opts=opts, typ=GetVaultResult)
     return __ret__.apply(lambda __response__: GetVaultResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

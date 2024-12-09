@@ -269,7 +269,7 @@ def get_remediation_run(remediation_run_id: Optional[str] = None,
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_remediation_run_output(remediation_run_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemediationRunResult]:
     """
     This data source provides details about a specific Remediation Run resource in Oracle Cloud Infrastructure Adm service.
 
@@ -289,7 +289,7 @@ def get_remediation_run_output(remediation_run_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['remediationRunId'] = remediation_run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Adm/getRemediationRun:getRemediationRun', __args__, opts=opts, typ=GetRemediationRunResult)
     return __ret__.apply(lambda __response__: GetRemediationRunResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

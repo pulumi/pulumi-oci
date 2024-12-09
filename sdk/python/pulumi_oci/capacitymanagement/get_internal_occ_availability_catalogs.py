@@ -194,7 +194,7 @@ def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi
                                                   id: Optional[pulumi.Input[Optional[str]]] = None,
                                                   namespace: Optional[pulumi.Input[Optional[str]]] = None,
                                                   occ_customer_group_id: Optional[pulumi.Input[str]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInternalOccAvailabilityCatalogsResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccAvailabilityCatalogsResult]:
     """
     This data source provides the list of Internal Occ Availability Catalogs in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -230,7 +230,7 @@ def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi
     __args__['id'] = id
     __args__['namespace'] = namespace
     __args__['occCustomerGroupId'] = occ_customer_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getInternalOccAvailabilityCatalogs:getInternalOccAvailabilityCatalogs', __args__, opts=opts, typ=GetInternalOccAvailabilityCatalogsResult)
     return __ret__.apply(lambda __response__: GetInternalOccAvailabilityCatalogsResult(
         catalog_state=pulumi.get(__response__, 'catalog_state'),

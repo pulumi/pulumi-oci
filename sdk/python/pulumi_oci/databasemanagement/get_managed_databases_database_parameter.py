@@ -200,7 +200,7 @@ def get_managed_databases_database_parameter_output(is_allowed_values_included: 
                                                     managed_database_id: Optional[pulumi.Input[str]] = None,
                                                     name: Optional[pulumi.Input[Optional[str]]] = None,
                                                     source: Optional[pulumi.Input[Optional[str]]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesDatabaseParameterResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabasesDatabaseParameterResult]:
     """
     This data source provides details about a specific Managed Databases Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -229,7 +229,7 @@ def get_managed_databases_database_parameter_output(is_allowed_values_included: 
     __args__['managedDatabaseId'] = managed_database_id
     __args__['name'] = name
     __args__['source'] = source
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter', __args__, opts=opts, typ=GetManagedDatabasesDatabaseParameterResult)
     return __ret__.apply(lambda __response__: GetManagedDatabasesDatabaseParameterResult(
         database_name=pulumi.get(__response__, 'database_name'),

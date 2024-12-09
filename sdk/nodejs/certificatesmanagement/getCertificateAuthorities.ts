@@ -122,7 +122,7 @@ export interface GetCertificateAuthoritiesResult {
  * });
  * ```
  */
-export function getCertificateAuthoritiesOutput(args?: GetCertificateAuthoritiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthoritiesResult> {
+export function getCertificateAuthoritiesOutput(args?: GetCertificateAuthoritiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCertificateAuthoritiesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", {

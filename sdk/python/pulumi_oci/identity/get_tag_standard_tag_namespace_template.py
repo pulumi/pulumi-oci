@@ -144,7 +144,7 @@ def get_tag_standard_tag_namespace_template(compartment_id: Optional[str] = None
         tag_definition_templates=pulumi.get(__ret__, 'tag_definition_templates'))
 def get_tag_standard_tag_namespace_template_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                    standard_tag_namespace_name: Optional[pulumi.Input[str]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagStandardTagNamespaceTemplateResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagStandardTagNamespaceTemplateResult]:
     """
     This data source provides details about a specific Tag Standard Tag Namespace Template resource in Oracle Cloud Infrastructure Identity service.
 
@@ -167,7 +167,7 @@ def get_tag_standard_tag_namespace_template_output(compartment_id: Optional[pulu
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['standardTagNamespaceName'] = standard_tag_namespace_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate', __args__, opts=opts, typ=GetTagStandardTagNamespaceTemplateResult)
     return __ret__.apply(lambda __response__: GetTagStandardTagNamespaceTemplateResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

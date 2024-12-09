@@ -176,7 +176,7 @@ def get_media_workflow_jobs_output(compartment_id: Optional[pulumi.Input[Optiona
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    media_workflow_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowJobsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowJobsResult]:
     """
     This data source provides the list of Media Workflow Jobs in Oracle Cloud Infrastructure Media Services service.
 
@@ -209,7 +209,7 @@ def get_media_workflow_jobs_output(compartment_id: Optional[pulumi.Input[Optiona
     __args__['id'] = id
     __args__['mediaWorkflowId'] = media_workflow_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaWorkflowJobs:getMediaWorkflowJobs', __args__, opts=opts, typ=GetMediaWorkflowJobsResult)
     return __ret__.apply(lambda __response__: GetMediaWorkflowJobsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

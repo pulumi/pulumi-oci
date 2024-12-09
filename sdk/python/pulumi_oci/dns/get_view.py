@@ -222,7 +222,7 @@ def get_view(scope: Optional[str] = None,
         view_id=pulumi.get(__ret__, 'view_id'))
 def get_view_output(scope: Optional[pulumi.Input[Optional[str]]] = None,
                     view_id: Optional[pulumi.Input[Optional[str]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetViewResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetViewResult]:
     """
     This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
 
@@ -249,7 +249,7 @@ def get_view_output(scope: Optional[pulumi.Input[Optional[str]]] = None,
     __args__ = dict()
     __args__['scope'] = scope
     __args__['viewId'] = view_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getView:getView', __args__, opts=opts, typ=GetViewResult)
     return __ret__.apply(lambda __response__: GetViewResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -171,7 +171,7 @@ def get_ping_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
                                   start_time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[float]]] = None,
                                   start_time_less_than_or_equal_to: Optional[pulumi.Input[Optional[float]]] = None,
                                   target: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPingProbeResultsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPingProbeResultsResult]:
     """
     This data source provides the list of Ping Probe Results in Oracle Cloud Infrastructure Health Checks service.
 
@@ -207,7 +207,7 @@ def get_ping_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
     __args__['startTimeGreaterThanOrEqualTo'] = start_time_greater_than_or_equal_to
     __args__['startTimeLessThanOrEqualTo'] = start_time_less_than_or_equal_to
     __args__['target'] = target
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:HealthChecks/getPingProbeResults:getPingProbeResults', __args__, opts=opts, typ=GetPingProbeResultsResult)
     return __ret__.apply(lambda __response__: GetPingProbeResultsResult(
         filters=pulumi.get(__response__, 'filters'),

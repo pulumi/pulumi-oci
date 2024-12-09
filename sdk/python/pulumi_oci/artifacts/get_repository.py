@@ -203,7 +203,7 @@ def get_repository(repository_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_repository_output(repository_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryResult]:
     """
     This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Artifacts service.
 
@@ -223,7 +223,7 @@ def get_repository_output(repository_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getRepository:getRepository', __args__, opts=opts, typ=GetRepositoryResult)
     return __ret__.apply(lambda __response__: GetRepositoryResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

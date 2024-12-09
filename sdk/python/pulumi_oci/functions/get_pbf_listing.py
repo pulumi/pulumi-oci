@@ -217,7 +217,7 @@ def get_pbf_listing(pbf_listing_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         triggers=pulumi.get(__ret__, 'triggers'))
 def get_pbf_listing_output(pbf_listing_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbfListingResult]:
     """
     This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
 
@@ -237,7 +237,7 @@ def get_pbf_listing_output(pbf_listing_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['pbfListingId'] = pbf_listing_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getPbfListing:getPbfListing', __args__, opts=opts, typ=GetPbfListingResult)
     return __ret__.apply(lambda __response__: GetPbfListingResult(
         defined_tags=pulumi.get(__response__, 'defined_tags'),

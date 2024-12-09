@@ -114,7 +114,7 @@ export interface GetPingProbeResultsResult {
  * });
  * ```
  */
-export function getPingProbeResultsOutput(args: GetPingProbeResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPingProbeResultsResult> {
+export function getPingProbeResultsOutput(args: GetPingProbeResultsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPingProbeResultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:HealthChecks/getPingProbeResults:getPingProbeResults", {
         "filters": args.filters,

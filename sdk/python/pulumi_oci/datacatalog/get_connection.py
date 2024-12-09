@@ -323,7 +323,7 @@ def get_connection_output(catalog_id: Optional[pulumi.Input[str]] = None,
                           connection_key: Optional[pulumi.Input[str]] = None,
                           data_asset_key: Optional[pulumi.Input[str]] = None,
                           fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionResult]:
     """
     This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Data Catalog service.
 
@@ -352,7 +352,7 @@ def get_connection_output(catalog_id: Optional[pulumi.Input[str]] = None,
     __args__['connectionKey'] = connection_key
     __args__['dataAssetKey'] = data_asset_key
     __args__['fields'] = fields
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getConnection:getConnection', __args__, opts=opts, typ=GetConnectionResult)
     return __ret__.apply(lambda __response__: GetConnectionResult(
         catalog_id=pulumi.get(__response__, 'catalog_id'),

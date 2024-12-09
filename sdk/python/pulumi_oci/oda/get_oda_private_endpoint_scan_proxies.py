@@ -137,7 +137,7 @@ def get_oda_private_endpoint_scan_proxies(filters: Optional[Sequence[Union['GetO
 def get_oda_private_endpoint_scan_proxies_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOdaPrivateEndpointScanProxiesFilterArgs', 'GetOdaPrivateEndpointScanProxiesFilterArgsDict']]]]] = None,
                                                  oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaPrivateEndpointScanProxiesResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointScanProxiesResult]:
     """
     This data source provides the list of Oda Private Endpoint Scan Proxies in Oracle Cloud Infrastructure Digital Assistant service.
 
@@ -166,7 +166,7 @@ def get_oda_private_endpoint_scan_proxies_output(filters: Optional[pulumi.Input[
     __args__['filters'] = filters
     __args__['odaPrivateEndpointId'] = oda_private_endpoint_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies', __args__, opts=opts, typ=GetOdaPrivateEndpointScanProxiesResult)
     return __ret__.apply(lambda __response__: GetOdaPrivateEndpointScanProxiesResult(
         filters=pulumi.get(__response__, 'filters'),

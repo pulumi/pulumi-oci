@@ -147,7 +147,7 @@ def get_autonomous_container_patches_output(autonomous_container_database_id: Op
                                             autonomous_patch_type: Optional[pulumi.Input[Optional[str]]] = None,
                                             compartment_id: Optional[pulumi.Input[str]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousContainerPatchesFilterArgs', 'GetAutonomousContainerPatchesFilterArgsDict']]]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerPatchesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerPatchesResult]:
     """
     This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
 
@@ -174,7 +174,7 @@ def get_autonomous_container_patches_output(autonomous_container_database_id: Op
     __args__['autonomousPatchType'] = autonomous_patch_type
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches', __args__, opts=opts, typ=GetAutonomousContainerPatchesResult)
     return __ret__.apply(lambda __response__: GetAutonomousContainerPatchesResult(
         autonomous_container_database_id=pulumi.get(__response__, 'autonomous_container_database_id'),

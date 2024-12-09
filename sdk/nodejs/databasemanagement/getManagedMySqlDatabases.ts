@@ -75,7 +75,7 @@ export interface GetManagedMySqlDatabasesResult {
  * });
  * ```
  */
-export function getManagedMySqlDatabasesOutput(args: GetManagedMySqlDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedMySqlDatabasesResult> {
+export function getManagedMySqlDatabasesOutput(args: GetManagedMySqlDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedMySqlDatabasesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases", {
         "compartmentId": args.compartmentId,

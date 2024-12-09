@@ -97,7 +97,7 @@ export interface GetApplicationVipsResult {
  * });
  * ```
  */
-export function getApplicationVipsOutput(args: GetApplicationVipsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationVipsResult> {
+export function getApplicationVipsOutput(args: GetApplicationVipsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApplicationVipsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getApplicationVips:getApplicationVips", {
         "cloudVmClusterId": args.cloudVmClusterId,

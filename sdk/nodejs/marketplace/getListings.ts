@@ -190,7 +190,7 @@ export interface GetListingsResult {
  * });
  * ```
  */
-export function getListingsOutput(args?: GetListingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingsResult> {
+export function getListingsOutput(args?: GetListingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetListingsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Marketplace/getListings:getListings", {

@@ -183,7 +183,7 @@ export interface GetAddressResult {
  * });
  * ```
  */
-export function getAddressOutput(args: GetAddressOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressResult> {
+export function getAddressOutput(args: GetAddressOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddressResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OspGateway/getAddress:getAddress", {
         "addressId": args.addressId,

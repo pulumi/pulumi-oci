@@ -84,7 +84,7 @@ export interface GetCloudVmClusterIormConfigResult {
  * });
  * ```
  */
-export function getCloudVmClusterIormConfigOutput(args: GetCloudVmClusterIormConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudVmClusterIormConfigResult> {
+export function getCloudVmClusterIormConfigOutput(args: GetCloudVmClusterIormConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudVmClusterIormConfigResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", {
         "cloudVmClusterId": args.cloudVmClusterId,

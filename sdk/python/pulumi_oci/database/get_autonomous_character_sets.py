@@ -146,7 +146,7 @@ def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Inp
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousCharacterSetsFilterArgs', 'GetAutonomousCharacterSetsFilterArgsDict']]]]] = None,
                                          is_dedicated: Optional[pulumi.Input[Optional[bool]]] = None,
                                          is_shared: Optional[pulumi.Input[Optional[bool]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousCharacterSetsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousCharacterSetsResult]:
     """
     This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
 
@@ -175,7 +175,7 @@ def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Inp
     __args__['filters'] = filters
     __args__['isDedicated'] = is_dedicated
     __args__['isShared'] = is_shared
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets', __args__, opts=opts, typ=GetAutonomousCharacterSetsResult)
     return __ret__.apply(lambda __response__: GetAutonomousCharacterSetsResult(
         autonomous_database_character_sets=pulumi.get(__response__, 'autonomous_database_character_sets'),

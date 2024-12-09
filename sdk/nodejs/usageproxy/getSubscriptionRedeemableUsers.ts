@@ -80,7 +80,7 @@ export interface GetSubscriptionRedeemableUsersResult {
  * });
  * ```
  */
-export function getSubscriptionRedeemableUsersOutput(args: GetSubscriptionRedeemableUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionRedeemableUsersResult> {
+export function getSubscriptionRedeemableUsersOutput(args: GetSubscriptionRedeemableUsersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubscriptionRedeemableUsersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", {
         "filters": args.filters,

@@ -177,7 +177,7 @@ def get_commitment(commitment_id: Optional[str] = None,
         time_start=pulumi.get(__ret__, 'time_start'),
         used_amount=pulumi.get(__ret__, 'used_amount'))
 def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCommitmentResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCommitmentResult]:
     """
     This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
 
@@ -197,7 +197,7 @@ def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['commitmentId'] = commitment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getCommitment:getCommitment', __args__, opts=opts, typ=GetCommitmentResult)
     return __ret__.apply(lambda __response__: GetCommitmentResult(
         available_amount=pulumi.get(__response__, 'available_amount'),

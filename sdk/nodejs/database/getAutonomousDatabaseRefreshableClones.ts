@@ -72,7 +72,7 @@ export interface GetAutonomousDatabaseRefreshableClonesResult {
  * });
  * ```
  */
-export function getAutonomousDatabaseRefreshableClonesOutput(args: GetAutonomousDatabaseRefreshableClonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseRefreshableClonesResult> {
+export function getAutonomousDatabaseRefreshableClonesOutput(args: GetAutonomousDatabaseRefreshableClonesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseRefreshableClonesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", {
         "autonomousDatabaseId": args.autonomousDatabaseId,

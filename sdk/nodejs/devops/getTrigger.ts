@@ -126,7 +126,7 @@ export interface GetTriggerResult {
  * });
  * ```
  */
-export function getTriggerOutput(args: GetTriggerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTriggerResult> {
+export function getTriggerOutput(args: GetTriggerOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTriggerResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getTrigger:getTrigger", {
         "triggerId": args.triggerId,

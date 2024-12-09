@@ -72,7 +72,7 @@ export interface GetListenersResult {
  * });
  * ```
  */
-export function getListenersOutput(args: GetListenersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListenersResult> {
+export function getListenersOutput(args: GetListenersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetListenersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getListeners:getListeners", {
         "filters": args.filters,

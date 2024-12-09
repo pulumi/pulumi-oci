@@ -157,7 +157,7 @@ export interface GetDomainsUserAttributesSettingResult {
  * });
  * ```
  */
-export function getDomainsUserAttributesSettingOutput(args: GetDomainsUserAttributesSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsUserAttributesSettingResult> {
+export function getDomainsUserAttributesSettingOutput(args: GetDomainsUserAttributesSettingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsUserAttributesSettingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsUserAttributesSetting:getDomainsUserAttributesSetting", {
         "attributeSets": args.attributeSets,

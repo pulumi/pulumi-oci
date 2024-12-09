@@ -207,7 +207,7 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
                                         image_type: Optional[pulumi.Input[Optional[str]]] = None,
                                         is_upgrade_supported: Optional[pulumi.Input[Optional[bool]]] = None,
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseSoftwareImagesResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseSoftwareImagesResult]:
     """
     This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
 
@@ -243,7 +243,7 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
     __args__['imageType'] = image_type
     __args__['isUpgradeSupported'] = is_upgrade_supported
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages', __args__, opts=opts, typ=GetDatabaseSoftwareImagesResult)
     return __ret__.apply(lambda __response__: GetDatabaseSoftwareImagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

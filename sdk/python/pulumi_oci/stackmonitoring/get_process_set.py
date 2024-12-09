@@ -217,7 +217,7 @@ def get_process_set(process_set_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_process_set_output(process_set_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProcessSetResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProcessSetResult]:
     """
     This data source provides details about a specific Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
@@ -237,7 +237,7 @@ def get_process_set_output(process_set_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['processSetId'] = process_set_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getProcessSet:getProcessSet', __args__, opts=opts, typ=GetProcessSetResult)
     return __ret__.apply(lambda __response__: GetProcessSetResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

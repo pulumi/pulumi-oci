@@ -98,7 +98,7 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
  * });
  * ```
  */
-export function getFleetAdvancedFeatureConfigurationOutput(args: GetFleetAdvancedFeatureConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetAdvancedFeatureConfigurationResult> {
+export function getFleetAdvancedFeatureConfigurationOutput(args: GetFleetAdvancedFeatureConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetAdvancedFeatureConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", {
         "fleetId": args.fleetId,

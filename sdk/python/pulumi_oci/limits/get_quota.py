@@ -214,7 +214,7 @@ def get_quota(quota_id: Optional[str] = None,
         statements=pulumi.get(__ret__, 'statements'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_quota_output(quota_id: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQuotaResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQuotaResult]:
     """
     This data source provides details about a specific Quota resource in Oracle Cloud Infrastructure Limits service.
 
@@ -234,7 +234,7 @@ def get_quota_output(quota_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['quotaId'] = quota_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Limits/getQuota:getQuota', __args__, opts=opts, typ=GetQuotaResult)
     return __ret__.apply(lambda __response__: GetQuotaResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

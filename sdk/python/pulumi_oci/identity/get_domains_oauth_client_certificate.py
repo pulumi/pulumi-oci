@@ -431,7 +431,7 @@ def get_domains_oauth_client_certificate_output(authorization: Optional[pulumi.I
                                                 idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                                 o_auth_client_certificate_id: Optional[pulumi.Input[str]] = None,
                                                 resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsOauthClientCertificateResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsOauthClientCertificateResult]:
     """
     This data source provides details about a specific O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -460,7 +460,7 @@ def get_domains_oauth_client_certificate_output(authorization: Optional[pulumi.I
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['oAuthClientCertificateId'] = o_auth_client_certificate_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsOauthClientCertificate:getDomainsOauthClientCertificate', __args__, opts=opts, typ=GetDomainsOauthClientCertificateResult)
     return __ret__.apply(lambda __response__: GetDomainsOauthClientCertificateResult(
         authorization=pulumi.get(__response__, 'authorization'),

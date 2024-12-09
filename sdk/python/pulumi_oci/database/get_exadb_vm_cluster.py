@@ -608,7 +608,7 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[str] = None,
         vip_ids=pulumi.get(__ret__, 'vip_ids'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
 def get_exadb_vm_cluster_output(exadb_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadbVmClusterResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadbVmClusterResult]:
     """
     This data source provides details about a specific Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
 
@@ -628,7 +628,7 @@ def get_exadb_vm_cluster_output(exadb_vm_cluster_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['exadbVmClusterId'] = exadb_vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadbVmCluster:getExadbVmCluster', __args__, opts=opts, typ=GetExadbVmClusterResult)
     return __ret__.apply(lambda __response__: GetExadbVmClusterResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

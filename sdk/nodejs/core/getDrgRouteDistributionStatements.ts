@@ -72,7 +72,7 @@ export interface GetDrgRouteDistributionStatementsResult {
  * });
  * ```
  */
-export function getDrgRouteDistributionStatementsOutput(args: GetDrgRouteDistributionStatementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteDistributionStatementsResult> {
+export function getDrgRouteDistributionStatementsOutput(args: GetDrgRouteDistributionStatementsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrgRouteDistributionStatementsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", {
         "drgRouteDistributionId": args.drgRouteDistributionId,

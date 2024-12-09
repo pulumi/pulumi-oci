@@ -102,7 +102,7 @@ export interface GetComputeCapacityTopologyComputeNetworkBlocksResult {
  * });
  * ```
  */
-export function getComputeCapacityTopologyComputeNetworkBlocksOutput(args: GetComputeCapacityTopologyComputeNetworkBlocksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> {
+export function getComputeCapacityTopologyComputeNetworkBlocksOutput(args: GetComputeCapacityTopologyComputeNetworkBlocksOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", {
         "availabilityDomain": args.availabilityDomain,

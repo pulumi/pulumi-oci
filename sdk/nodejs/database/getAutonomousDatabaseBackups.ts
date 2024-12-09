@@ -120,7 +120,7 @@ export interface GetAutonomousDatabaseBackupsResult {
  * });
  * ```
  */
-export function getAutonomousDatabaseBackupsOutput(args?: GetAutonomousDatabaseBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseBackupsResult> {
+export function getAutonomousDatabaseBackupsOutput(args?: GetAutonomousDatabaseBackupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseBackupsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", {

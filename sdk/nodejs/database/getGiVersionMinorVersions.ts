@@ -115,7 +115,7 @@ export interface GetGiVersionMinorVersionsResult {
  * });
  * ```
  */
-export function getGiVersionMinorVersionsOutput(args: GetGiVersionMinorVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGiVersionMinorVersionsResult> {
+export function getGiVersionMinorVersionsOutput(args: GetGiVersionMinorVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGiVersionMinorVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", {
         "availabilityDomain": args.availabilityDomain,

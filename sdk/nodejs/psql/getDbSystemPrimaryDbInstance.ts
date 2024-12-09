@@ -67,7 +67,7 @@ export interface GetDbSystemPrimaryDbInstanceResult {
  * });
  * ```
  */
-export function getDbSystemPrimaryDbInstanceOutput(args: GetDbSystemPrimaryDbInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemPrimaryDbInstanceResult> {
+export function getDbSystemPrimaryDbInstanceOutput(args: GetDbSystemPrimaryDbInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemPrimaryDbInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", {
         "dbSystemId": args.dbSystemId,

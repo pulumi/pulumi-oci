@@ -255,7 +255,7 @@ def get_service_provider(service_provider_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_service_provider_output(service_provider_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceProviderResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceProviderResult]:
     """
     This data source provides details about a specific Service Provider resource in Oracle Cloud Infrastructure Delegate Access Control service.
 
@@ -275,7 +275,7 @@ def get_service_provider_output(service_provider_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['serviceProviderId'] = service_provider_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getServiceProvider:getServiceProvider', __args__, opts=opts, typ=GetServiceProviderResult)
     return __ret__.apply(lambda __response__: GetServiceProviderResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

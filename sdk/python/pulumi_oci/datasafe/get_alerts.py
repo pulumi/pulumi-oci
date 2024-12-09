@@ -184,7 +184,7 @@ def get_alerts_output(access_level: Optional[pulumi.Input[Optional[str]]] = None
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlertsFilterArgs', 'GetAlertsFilterArgsDict']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       scim_query: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertsResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertsResult]:
     """
     This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
 
@@ -222,7 +222,7 @@ def get_alerts_output(access_level: Optional[pulumi.Input[Optional[str]]] = None
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['scimQuery'] = scim_query
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAlerts:getAlerts', __args__, opts=opts, typ=GetAlertsResult)
     return __ret__.apply(lambda __response__: GetAlertsResult(
         access_level=pulumi.get(__response__, 'access_level'),

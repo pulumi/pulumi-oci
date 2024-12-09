@@ -97,7 +97,7 @@ export interface GetSoftwareSourcesResult {
  * });
  * ```
  */
-export function getSoftwareSourcesOutput(args: GetSoftwareSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourcesResult> {
+export function getSoftwareSourcesOutput(args: GetSoftwareSourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSoftwareSourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagement/getSoftwareSources:getSoftwareSources", {
         "compartmentId": args.compartmentId,

@@ -216,7 +216,7 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_analytics_instance_private_access_channel_output(analytics_instance_id: Optional[pulumi.Input[str]] = None,
                                                          private_access_channel_key: Optional[pulumi.Input[str]] = None,
-                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnalyticsInstancePrivateAccessChannelResult]:
+                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnalyticsInstancePrivateAccessChannelResult]:
     """
     This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
 
@@ -239,7 +239,7 @@ def get_analytics_instance_private_access_channel_output(analytics_instance_id: 
     __args__ = dict()
     __args__['analyticsInstanceId'] = analytics_instance_id
     __args__['privateAccessChannelKey'] = private_access_channel_key
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel', __args__, opts=opts, typ=GetAnalyticsInstancePrivateAccessChannelResult)
     return __ret__.apply(lambda __response__: GetAnalyticsInstancePrivateAccessChannelResult(
         analytics_instance_id=pulumi.get(__response__, 'analytics_instance_id'),

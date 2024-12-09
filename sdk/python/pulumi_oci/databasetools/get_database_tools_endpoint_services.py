@@ -171,7 +171,7 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsEndpointServicesFilterArgs', 'GetDatabaseToolsEndpointServicesFilterArgsDict']]]]] = None,
                                                 name: Optional[pulumi.Input[Optional[str]]] = None,
                                                 state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsEndpointServicesResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsEndpointServicesResult]:
     """
     This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
 
@@ -201,7 +201,7 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsEndpointServices:getDatabaseToolsEndpointServices', __args__, opts=opts, typ=GetDatabaseToolsEndpointServicesResult)
     return __ret__.apply(lambda __response__: GetDatabaseToolsEndpointServicesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

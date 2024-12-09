@@ -130,7 +130,7 @@ def get_services(compartment_id: Optional[str] = None,
 def get_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]]]] = None,
                         subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServicesResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServicesResult]:
     """
     This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
 
@@ -155,7 +155,7 @@ def get_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Limits/getServices:getServices', __args__, opts=opts, typ=GetServicesResult)
     return __ret__.apply(lambda __response__: GetServicesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

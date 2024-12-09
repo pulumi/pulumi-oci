@@ -113,7 +113,7 @@ export interface GetTargetDatabaseRolesResult {
  * });
  * ```
  */
-export function getTargetDatabaseRolesOutput(args: GetTargetDatabaseRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabaseRolesResult> {
+export function getTargetDatabaseRolesOutput(args: GetTargetDatabaseRolesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetDatabaseRolesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabaseRoles:getTargetDatabaseRoles", {
         "authenticationType": args.authenticationType,

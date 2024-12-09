@@ -121,7 +121,7 @@ export interface GetRemediationRecipeResult {
  * });
  * ```
  */
-export function getRemediationRecipeOutput(args: GetRemediationRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRecipeResult> {
+export function getRemediationRecipeOutput(args: GetRemediationRecipeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRemediationRecipeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Adm/getRemediationRecipe:getRemediationRecipe", {
         "remediationRecipeId": args.remediationRecipeId,

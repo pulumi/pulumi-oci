@@ -128,7 +128,7 @@ def get_cluster_option(cluster_option_id: Optional[str] = None,
         kubernetes_versions=pulumi.get(__ret__, 'kubernetes_versions'))
 def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[str]] = None,
                               compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterOptionResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterOptionResult]:
     """
     This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
 
@@ -151,7 +151,7 @@ def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[str]] = N
     __args__ = dict()
     __args__['clusterOptionId'] = cluster_option_id
     __args__['compartmentId'] = compartment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusterOption:getClusterOption', __args__, opts=opts, typ=GetClusterOptionResult)
     return __ret__.apply(lambda __response__: GetClusterOptionResult(
         cluster_option_id=pulumi.get(__response__, 'cluster_option_id'),

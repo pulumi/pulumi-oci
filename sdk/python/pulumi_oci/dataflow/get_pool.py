@@ -282,7 +282,7 @@ def get_pool(pool_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_pool_output(pool_id: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPoolResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPoolResult]:
     """
     This data source provides details about a specific Pool resource in Oracle Cloud Infrastructure Data Flow service.
 
@@ -302,7 +302,7 @@ def get_pool_output(pool_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['poolId'] = pool_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getPool:getPool', __args__, opts=opts, typ=GetPoolResult)
     return __ret__.apply(lambda __response__: GetPoolResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

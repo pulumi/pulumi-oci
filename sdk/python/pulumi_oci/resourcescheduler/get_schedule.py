@@ -321,7 +321,7 @@ def get_schedule(schedule_id: Optional[str] = None,
         time_starts=pulumi.get(__ret__, 'time_starts'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_schedule_output(schedule_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduleResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduleResult]:
     """
     This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
 
@@ -341,7 +341,7 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['scheduleId'] = schedule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ResourceScheduler/getSchedule:getSchedule', __args__, opts=opts, typ=GetScheduleResult)
     return __ret__.apply(lambda __response__: GetScheduleResult(
         action=pulumi.get(__response__, 'action'),

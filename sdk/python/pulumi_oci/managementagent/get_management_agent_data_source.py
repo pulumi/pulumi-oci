@@ -330,7 +330,7 @@ def get_management_agent_data_source(data_source_key: Optional[str] = None,
         url=pulumi.get(__ret__, 'url'))
 def get_management_agent_data_source_output(data_source_key: Optional[pulumi.Input[str]] = None,
                                             management_agent_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentDataSourceResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentDataSourceResult]:
     """
     This data source provides details about a specific Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
 
@@ -353,7 +353,7 @@ def get_management_agent_data_source_output(data_source_key: Optional[pulumi.Inp
     __args__ = dict()
     __args__['dataSourceKey'] = data_source_key
     __args__['managementAgentId'] = management_agent_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource', __args__, opts=opts, typ=GetManagementAgentDataSourceResult)
     return __ret__.apply(lambda __response__: GetManagementAgentDataSourceResult(
         allow_metrics=pulumi.get(__response__, 'allow_metrics'),

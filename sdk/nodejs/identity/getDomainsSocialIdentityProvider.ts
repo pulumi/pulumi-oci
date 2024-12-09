@@ -245,7 +245,7 @@ export interface GetDomainsSocialIdentityProviderResult {
  * });
  * ```
  */
-export function getDomainsSocialIdentityProviderOutput(args: GetDomainsSocialIdentityProviderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSocialIdentityProviderResult> {
+export function getDomainsSocialIdentityProviderOutput(args: GetDomainsSocialIdentityProviderOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsSocialIdentityProviderResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSocialIdentityProvider:getDomainsSocialIdentityProvider", {
         "authorization": args.authorization,

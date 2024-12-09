@@ -126,7 +126,7 @@ export interface GetSubscriptionsResult {
  * });
  * ```
  */
-export function getSubscriptionsOutput(args: GetSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionsResult> {
+export function getSubscriptionsOutput(args: GetSubscriptionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubscriptionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsubSubscription/getSubscriptions:getSubscriptions", {
         "buyerEmail": args.buyerEmail,

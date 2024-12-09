@@ -104,7 +104,7 @@ export interface GetInstVbsInstancesResult {
  * });
  * ```
  */
-export function getInstVbsInstancesOutput(args: GetInstVbsInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstVbsInstancesResult> {
+export function getInstVbsInstancesOutput(args: GetInstVbsInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstVbsInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Vbs/getInstVbsInstances:getInstVbsInstances", {
         "compartmentId": args.compartmentId,

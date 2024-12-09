@@ -115,7 +115,7 @@ export interface GetCustomProtectionRulesResult {
  * });
  * ```
  */
-export function getCustomProtectionRulesOutput(args: GetCustomProtectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomProtectionRulesResult> {
+export function getCustomProtectionRulesOutput(args: GetCustomProtectionRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCustomProtectionRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waas/getCustomProtectionRules:getCustomProtectionRules", {
         "compartmentId": args.compartmentId,

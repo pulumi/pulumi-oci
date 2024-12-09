@@ -82,7 +82,7 @@ export interface GetVaultReplicasResult {
  * });
  * ```
  */
-export function getVaultReplicasOutput(args: GetVaultReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVaultReplicasResult> {
+export function getVaultReplicasOutput(args: GetVaultReplicasOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVaultReplicasResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Kms/getVaultReplicas:getVaultReplicas", {
         "filters": args.filters,

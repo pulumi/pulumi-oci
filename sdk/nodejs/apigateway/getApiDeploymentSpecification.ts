@@ -77,7 +77,7 @@ export interface GetApiDeploymentSpecificationResult {
  * });
  * ```
  */
-export function getApiDeploymentSpecificationOutput(args: GetApiDeploymentSpecificationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiDeploymentSpecificationResult> {
+export function getApiDeploymentSpecificationOutput(args: GetApiDeploymentSpecificationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApiDeploymentSpecificationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", {
         "apiId": args.apiId,

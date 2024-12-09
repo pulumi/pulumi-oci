@@ -189,7 +189,7 @@ def get_boot_volume_backups_output(boot_volume_id: Optional[pulumi.Input[Optiona
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumeBackupsFilterArgs', 'GetBootVolumeBackupsFilterArgsDict']]]]] = None,
                                    source_boot_volume_backup_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeBackupsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeBackupsResult]:
     """
     This data source provides the list of Boot Volume Backups in Oracle Cloud Infrastructure Core service.
 
@@ -222,7 +222,7 @@ def get_boot_volume_backups_output(boot_volume_id: Optional[pulumi.Input[Optiona
     __args__['filters'] = filters
     __args__['sourceBootVolumeBackupId'] = source_boot_volume_backup_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getBootVolumeBackups:getBootVolumeBackups', __args__, opts=opts, typ=GetBootVolumeBackupsResult)
     return __ret__.apply(lambda __response__: GetBootVolumeBackupsResult(
         boot_volume_backups=pulumi.get(__response__, 'boot_volume_backups'),

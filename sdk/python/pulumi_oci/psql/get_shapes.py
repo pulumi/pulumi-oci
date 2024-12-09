@@ -119,7 +119,7 @@ def get_shapes(compartment_id: Optional[str] = None,
 def get_shapes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetShapesResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShapesResult]:
     """
     This data source provides the list of Shapes in Oracle Cloud Infrastructure Psql service.
 
@@ -143,7 +143,7 @@ def get_shapes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['id'] = id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getShapes:getShapes', __args__, opts=opts, typ=GetShapesResult)
     return __ret__.apply(lambda __response__: GetShapesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

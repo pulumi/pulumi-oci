@@ -527,7 +527,7 @@ def get_database(database_id: Optional[str] = None,
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 def get_database_output(database_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseResult]:
     """
     This data source provides details about a specific Database resource in Oracle Cloud Infrastructure Database service.
 
@@ -547,7 +547,7 @@ def get_database_output(database_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['databaseId'] = database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabase:getDatabase', __args__, opts=opts, typ=GetDatabaseResult)
     return __ret__.apply(lambda __response__: GetDatabaseResult(
         character_set=pulumi.get(__response__, 'character_set'),

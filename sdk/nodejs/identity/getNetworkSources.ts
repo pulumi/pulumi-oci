@@ -101,7 +101,7 @@ export interface GetNetworkSourcesResult {
  * });
  * ```
  */
-export function getNetworkSourcesOutput(args: GetNetworkSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSourcesResult> {
+export function getNetworkSourcesOutput(args: GetNetworkSourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkSourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getNetworkSources:getNetworkSources", {
         "compartmentId": args.compartmentId,

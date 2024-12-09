@@ -73,7 +73,7 @@ export interface GetExadataInfrastructuresResult {
  * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
  * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
  */
-export function getExadataInfrastructuresOutput(args: GetExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructuresResult> {
+export function getExadataInfrastructuresOutput(args: GetExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadataInfrastructuresResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExadataInfrastructures:getExadataInfrastructures", {
         "compartmentId": args.compartmentId,

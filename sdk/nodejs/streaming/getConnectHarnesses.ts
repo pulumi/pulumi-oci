@@ -104,7 +104,7 @@ export interface GetConnectHarnessesResult {
  * });
  * ```
  */
-export function getConnectHarnessesOutput(args: GetConnectHarnessesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectHarnessesResult> {
+export function getConnectHarnessesOutput(args: GetConnectHarnessesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConnectHarnessesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Streaming/getConnectHarnesses:getConnectHarnesses", {
         "compartmentId": args.compartmentId,

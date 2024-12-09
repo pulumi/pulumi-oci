@@ -77,7 +77,7 @@ export interface GetAuthTokensResult {
  * });
  * ```
  */
-export function getAuthTokensOutput(args: GetAuthTokensOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthTokensResult> {
+export function getAuthTokensOutput(args: GetAuthTokensOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuthTokensResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getAuthTokens:getAuthTokens", {
         "filters": args.filters,

@@ -143,7 +143,7 @@ def get_bucket_summaries(compartment_id: Optional[str] = None,
 def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBucketSummariesFilterArgs', 'GetBucketSummariesFilterArgsDict']]]]] = None,
                                 namespace: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBucketSummariesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBucketSummariesResult]:
     """
     This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
 
@@ -175,7 +175,7 @@ def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[str]] = No
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getBucketSummaries:getBucketSummaries', __args__, opts=opts, typ=GetBucketSummariesResult)
     return __ret__.apply(lambda __response__: GetBucketSummariesResult(
         bucket_summaries=pulumi.get(__response__, 'bucket_summaries'),

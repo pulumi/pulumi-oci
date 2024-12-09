@@ -220,7 +220,7 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[st
                                         metric_namespace: Optional[pulumi.Input[Optional[str]]] = None,
                                         name: Optional[pulumi.Input[Optional[str]]] = None,
                                         status: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceTypesResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredResourceTypesResult]:
     """
     This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
 
@@ -266,7 +266,7 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[st
     __args__['metricNamespace'] = metric_namespace
     __args__['name'] = name
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes', __args__, opts=opts, typ=GetMonitoredResourceTypesResult)
     return __ret__.apply(lambda __response__: GetMonitoredResourceTypesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

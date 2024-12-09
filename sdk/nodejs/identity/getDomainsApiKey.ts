@@ -173,7 +173,7 @@ export interface GetDomainsApiKeyResult {
  * });
  * ```
  */
-export function getDomainsApiKeyOutput(args: GetDomainsApiKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsApiKeyResult> {
+export function getDomainsApiKeyOutput(args: GetDomainsApiKeyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsApiKeyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsApiKey:getDomainsApiKey", {
         "apiKeyId": args.apiKeyId,

@@ -129,7 +129,7 @@ export interface GetDetectAnomalyJobResult {
  * });
  * ```
  */
-export function getDetectAnomalyJobOutput(args: GetDetectAnomalyJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectAnomalyJobResult> {
+export function getDetectAnomalyJobOutput(args: GetDetectAnomalyJobOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDetectAnomalyJobResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob", {
         "detectAnomalyJobId": args.detectAnomalyJobId,

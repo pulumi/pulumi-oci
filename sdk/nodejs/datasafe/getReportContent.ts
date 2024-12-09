@@ -63,7 +63,7 @@ export interface GetReportContentResult {
  * });
  * ```
  */
-export function getReportContentOutput(args: GetReportContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportContentResult> {
+export function getReportContentOutput(args: GetReportContentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReportContentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getReportContent:getReportContent", {
         "reportId": args.reportId,

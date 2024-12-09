@@ -204,7 +204,7 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
                                     lifecycle_sub_state: Optional[pulumi.Input[Optional[str]]] = None,
                                     role: Optional[pulumi.Input[Optional[str]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrProtectionGroupsResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrProtectionGroupsResult]:
     """
     This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
 
@@ -240,7 +240,7 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
     __args__['lifecycleSubState'] = lifecycle_sub_state
     __args__['role'] = role
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups', __args__, opts=opts, typ=GetDrProtectionGroupsResult)
     return __ret__.apply(lambda __response__: GetDrProtectionGroupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

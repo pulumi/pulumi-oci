@@ -149,7 +149,7 @@ def get_dedicated_ai_clusters_output(compartment_id: Optional[pulumi.Input[str]]
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedAiClustersFilterArgs', 'GetDedicatedAiClustersFilterArgsDict']]]]] = None,
                                      id: Optional[pulumi.Input[Optional[str]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedAiClustersResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedAiClustersResult]:
     """
     This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
 
@@ -179,7 +179,7 @@ def get_dedicated_ai_clusters_output(compartment_id: Optional[pulumi.Input[str]]
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters', __args__, opts=opts, typ=GetDedicatedAiClustersResult)
     return __ret__.apply(lambda __response__: GetDedicatedAiClustersResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

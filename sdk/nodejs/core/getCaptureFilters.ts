@@ -108,7 +108,7 @@ export interface GetCaptureFiltersResult {
  * });
  * ```
  */
-export function getCaptureFiltersOutput(args: GetCaptureFiltersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaptureFiltersResult> {
+export function getCaptureFiltersOutput(args: GetCaptureFiltersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCaptureFiltersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getCaptureFilters:getCaptureFilters", {
         "compartmentId": args.compartmentId,

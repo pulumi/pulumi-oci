@@ -83,7 +83,7 @@ export interface GetDiscoveryJobLogsResult {
  * });
  * ```
  */
-export function getDiscoveryJobLogsOutput(args: GetDiscoveryJobLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobLogsResult> {
+export function getDiscoveryJobLogsOutput(args: GetDiscoveryJobLogsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDiscoveryJobLogsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", {
         "discoveryJobId": args.discoveryJobId,

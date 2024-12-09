@@ -240,7 +240,7 @@ def get_fusion_environment_family(fusion_environment_family_id: Optional[str] = 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_fusion_environment_family_output(fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentFamilyResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentFamilyResult]:
     """
     This data source provides details about a specific Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -260,7 +260,7 @@ def get_fusion_environment_family_output(fusion_environment_family_id: Optional[
     """
     __args__ = dict()
     __args__['fusionEnvironmentFamilyId'] = fusion_environment_family_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily', __args__, opts=opts, typ=GetFusionEnvironmentFamilyResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentFamilyResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

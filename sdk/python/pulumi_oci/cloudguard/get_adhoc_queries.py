@@ -208,7 +208,7 @@ def get_adhoc_queries_output(access_level: Optional[pulumi.Input[Optional[str]]]
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAdhocQueriesFilterArgs', 'GetAdhocQueriesFilterArgsDict']]]]] = None,
                              time_ended_filter_query_param: Optional[pulumi.Input[Optional[str]]] = None,
                              time_started_filter_query_param: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAdhocQueriesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAdhocQueriesResult]:
     """
     This data source provides the list of Adhoc Queries in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -260,7 +260,7 @@ def get_adhoc_queries_output(access_level: Optional[pulumi.Input[Optional[str]]]
     __args__['filters'] = filters
     __args__['timeEndedFilterQueryParam'] = time_ended_filter_query_param
     __args__['timeStartedFilterQueryParam'] = time_started_filter_query_param
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getAdhocQueries:getAdhocQueries', __args__, opts=opts, typ=GetAdhocQueriesResult)
     return __ret__.apply(lambda __response__: GetAdhocQueriesResult(
         access_level=pulumi.get(__response__, 'access_level'),

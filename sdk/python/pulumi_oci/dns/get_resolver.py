@@ -287,7 +287,7 @@ def get_resolver(resolver_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_resolver_output(resolver_id: Optional[pulumi.Input[str]] = None,
                         scope: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResolverResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResolverResult]:
     """
     This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
 
@@ -313,7 +313,7 @@ def get_resolver_output(resolver_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['resolverId'] = resolver_id
     __args__['scope'] = scope
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getResolver:getResolver', __args__, opts=opts, typ=GetResolverResult)
     return __ret__.apply(lambda __response__: GetResolverResult(
         attached_vcn_id=pulumi.get(__response__, 'attached_vcn_id'),

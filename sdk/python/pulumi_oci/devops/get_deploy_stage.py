@@ -997,7 +997,7 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         values_artifact_ids=pulumi.get(__ret__, 'values_artifact_ids'),
         wait_criterias=pulumi.get(__ret__, 'wait_criterias'))
 def get_deploy_stage_output(deploy_stage_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployStageResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployStageResult]:
     """
     This data source provides details about a specific Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
 
@@ -1017,7 +1017,7 @@ def get_deploy_stage_output(deploy_stage_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['deployStageId'] = deploy_stage_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployStage:getDeployStage', __args__, opts=opts, typ=GetDeployStageResult)
     return __ret__.apply(lambda __response__: GetDeployStageResult(
         approval_policies=pulumi.get(__response__, 'approval_policies'),

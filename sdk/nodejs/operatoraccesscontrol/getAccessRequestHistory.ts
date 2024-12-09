@@ -69,7 +69,7 @@ export interface GetAccessRequestHistoryResult {
  * });
  * ```
  */
-export function getAccessRequestHistoryOutput(args: GetAccessRequestHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestHistoryResult> {
+export function getAccessRequestHistoryOutput(args: GetAccessRequestHistoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessRequestHistoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", {
         "accessRequestId": args.accessRequestId,

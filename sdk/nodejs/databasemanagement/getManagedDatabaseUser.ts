@@ -175,7 +175,7 @@ export interface GetManagedDatabaseUserResult {
  * });
  * ```
  */
-export function getManagedDatabaseUserOutput(args: GetManagedDatabaseUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserResult> {
+export function getManagedDatabaseUserOutput(args: GetManagedDatabaseUserOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseUserResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUser:getManagedDatabaseUser", {
         "managedDatabaseId": args.managedDatabaseId,

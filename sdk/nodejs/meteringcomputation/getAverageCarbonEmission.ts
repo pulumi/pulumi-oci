@@ -70,7 +70,7 @@ export interface GetAverageCarbonEmissionResult {
  * });
  * ```
  */
-export function getAverageCarbonEmissionOutput(args: GetAverageCarbonEmissionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAverageCarbonEmissionResult> {
+export function getAverageCarbonEmissionOutput(args: GetAverageCarbonEmissionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAverageCarbonEmissionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission", {
         "skuPartNumber": args.skuPartNumber,

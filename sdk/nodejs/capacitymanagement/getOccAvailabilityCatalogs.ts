@@ -115,7 +115,7 @@ export interface GetOccAvailabilityCatalogsResult {
  * });
  * ```
  */
-export function getOccAvailabilityCatalogsOutput(args: GetOccAvailabilityCatalogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccAvailabilityCatalogsResult> {
+export function getOccAvailabilityCatalogsOutput(args: GetOccAvailabilityCatalogsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOccAvailabilityCatalogsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccAvailabilityCatalogs:getOccAvailabilityCatalogs", {
         "catalogState": args.catalogState,

@@ -108,7 +108,7 @@ export interface GetCloudExadataInfrastructuresResult {
  * });
  * ```
  */
-export function getCloudExadataInfrastructuresOutput(args: GetCloudExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudExadataInfrastructuresResult> {
+export function getCloudExadataInfrastructuresOutput(args: GetCloudExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudExadataInfrastructuresResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", {
         "clusterPlacementGroupId": args.clusterPlacementGroupId,

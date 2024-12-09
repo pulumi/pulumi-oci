@@ -154,7 +154,7 @@ def get_volume_group_backups_output(compartment_id: Optional[pulumi.Input[str]] 
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeGroupBackupsFilterArgs', 'GetVolumeGroupBackupsFilterArgsDict']]]]] = None,
                                     volume_group_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeGroupBackupsResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupBackupsResult]:
     """
     This data source provides the list of Volume Group Backups in Oracle Cloud Infrastructure Core service.
 
@@ -182,7 +182,7 @@ def get_volume_group_backups_output(compartment_id: Optional[pulumi.Input[str]] 
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['volumeGroupId'] = volume_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVolumeGroupBackups:getVolumeGroupBackups', __args__, opts=opts, typ=GetVolumeGroupBackupsResult)
     return __ret__.apply(lambda __response__: GetVolumeGroupBackupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

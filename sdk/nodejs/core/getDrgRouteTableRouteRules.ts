@@ -83,7 +83,7 @@ export interface GetDrgRouteTableRouteRulesResult {
  * });
  * ```
  */
-export function getDrgRouteTableRouteRulesOutput(args: GetDrgRouteTableRouteRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteTableRouteRulesResult> {
+export function getDrgRouteTableRouteRulesOutput(args: GetDrgRouteTableRouteRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrgRouteTableRouteRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules", {
         "drgRouteTableId": args.drgRouteTableId,

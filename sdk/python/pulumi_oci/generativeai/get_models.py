@@ -191,7 +191,7 @@ def get_models_output(capabilities: Optional[pulumi.Input[Optional[Sequence[str]
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       vendor: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelsResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelsResult]:
     """
     This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
 
@@ -227,7 +227,7 @@ def get_models_output(capabilities: Optional[pulumi.Input[Optional[Sequence[str]
     __args__['id'] = id
     __args__['state'] = state
     __args__['vendor'] = vendor
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getModels:getModels', __args__, opts=opts, typ=GetModelsResult)
     return __ret__.apply(lambda __response__: GetModelsResult(
         capabilities=pulumi.get(__response__, 'capabilities'),

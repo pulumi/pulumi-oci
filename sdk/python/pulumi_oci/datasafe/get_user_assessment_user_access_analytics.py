@@ -114,7 +114,7 @@ def get_user_assessment_user_access_analytics(filters: Optional[Sequence[Union['
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
 def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUserAssessmentUserAccessAnalyticsFilterArgs', 'GetUserAssessmentUserAccessAnalyticsFilterArgsDict']]]]] = None,
                                                      user_assessment_id: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentUserAccessAnalyticsResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserAssessmentUserAccessAnalyticsResult]:
     """
     This data source provides the list of User Assessment User Access Analytics in Oracle Cloud Infrastructure Data Safe service.
 
@@ -135,7 +135,7 @@ def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.In
     __args__ = dict()
     __args__['filters'] = filters
     __args__['userAssessmentId'] = user_assessment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getUserAssessmentUserAccessAnalytics:getUserAssessmentUserAccessAnalytics', __args__, opts=opts, typ=GetUserAssessmentUserAccessAnalyticsResult)
     return __ret__.apply(lambda __response__: GetUserAssessmentUserAccessAnalyticsResult(
         filters=pulumi.get(__response__, 'filters'),

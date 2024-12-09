@@ -158,7 +158,7 @@ export interface GetMediaAssetResult {
  * });
  * ```
  */
-export function getMediaAssetOutput(args: GetMediaAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaAssetResult> {
+export function getMediaAssetOutput(args: GetMediaAssetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMediaAssetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaAsset:getMediaAsset", {
         "mediaAssetId": args.mediaAssetId,

@@ -180,7 +180,7 @@ export interface GetControlAssignmentResult {
  * });
  * ```
  */
-export function getControlAssignmentOutput(args: GetControlAssignmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlAssignmentResult> {
+export function getControlAssignmentOutput(args: GetControlAssignmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetControlAssignmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", {
         "operatorControlAssignmentId": args.operatorControlAssignmentId,

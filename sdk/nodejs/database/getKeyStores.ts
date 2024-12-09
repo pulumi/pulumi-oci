@@ -75,7 +75,7 @@ export interface GetKeyStoresResult {
  * });
  * ```
  */
-export function getKeyStoresOutput(args: GetKeyStoresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyStoresResult> {
+export function getKeyStoresOutput(args: GetKeyStoresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKeyStoresResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getKeyStores:getKeyStores", {
         "compartmentId": args.compartmentId,

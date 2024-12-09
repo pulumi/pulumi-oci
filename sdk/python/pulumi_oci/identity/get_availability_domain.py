@@ -123,7 +123,7 @@ def get_availability_domain(ad_number: Optional[int] = None,
 def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[int]]] = None,
                                    compartment_id: Optional[pulumi.Input[str]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAvailabilityDomainResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAvailabilityDomainResult]:
     """
     This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
 
@@ -147,7 +147,7 @@ def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[int
     __args__['adNumber'] = ad_number
     __args__['compartmentId'] = compartment_id
     __args__['id'] = id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getAvailabilityDomain:getAvailabilityDomain', __args__, opts=opts, typ=GetAvailabilityDomainResult)
     return __ret__.apply(lambda __response__: GetAvailabilityDomainResult(
         ad_number=pulumi.get(__response__, 'ad_number'),

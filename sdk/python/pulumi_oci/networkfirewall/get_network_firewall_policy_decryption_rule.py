@@ -182,7 +182,7 @@ def get_network_firewall_policy_decryption_rule(name: Optional[str] = None,
         secret=pulumi.get(__ret__, 'secret'))
 def get_network_firewall_policy_decryption_rule_output(name: Optional[pulumi.Input[str]] = None,
                                                        network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRuleResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRuleResult]:
     """
     This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
 
@@ -195,7 +195,7 @@ def get_network_firewall_policy_decryption_rule_output(name: Optional[pulumi.Inp
     __args__ = dict()
     __args__['name'] = name
     __args__['networkFirewallPolicyId'] = network_firewall_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule', __args__, opts=opts, typ=GetNetworkFirewallPolicyDecryptionRuleResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyDecryptionRuleResult(
         action=pulumi.get(__response__, 'action'),

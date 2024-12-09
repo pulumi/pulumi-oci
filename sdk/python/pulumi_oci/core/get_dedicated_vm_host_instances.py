@@ -150,7 +150,7 @@ def get_dedicated_vm_host_instances_output(availability_domain: Optional[pulumi.
                                            compartment_id: Optional[pulumi.Input[str]] = None,
                                            dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedVmHostInstancesFilterArgs', 'GetDedicatedVmHostInstancesFilterArgsDict']]]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVmHostInstancesResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostInstancesResult]:
     """
     This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
 
@@ -177,7 +177,7 @@ def get_dedicated_vm_host_instances_output(availability_domain: Optional[pulumi.
     __args__['compartmentId'] = compartment_id
     __args__['dedicatedVmHostId'] = dedicated_vm_host_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances', __args__, opts=opts, typ=GetDedicatedVmHostInstancesResult)
     return __ret__.apply(lambda __response__: GetDedicatedVmHostInstancesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

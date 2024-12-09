@@ -303,7 +303,7 @@ def get_event(event_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
 def get_event_output(event_id: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEventResult]:
     """
     This data source provides details about a specific Event resource in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -323,7 +323,7 @@ def get_event_output(event_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['eventId'] = event_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getEvent:getEvent', __args__, opts=opts, typ=GetEventResult)
     return __ret__.apply(lambda __response__: GetEventResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

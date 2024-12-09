@@ -91,7 +91,7 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
  * });
  * ```
  */
-export function getManagedDatabaseSqlPlanBaselineJobsOutput(args: GetManagedDatabaseSqlPlanBaselineJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselineJobsResult> {
+export function getManagedDatabaseSqlPlanBaselineJobsOutput(args: GetManagedDatabaseSqlPlanBaselineJobsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselineJobsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", {
         "filters": args.filters,

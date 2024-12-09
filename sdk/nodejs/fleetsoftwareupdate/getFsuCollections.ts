@@ -108,7 +108,7 @@ export interface GetFsuCollectionsResult {
  * });
  * ```
  */
-export function getFsuCollectionsOutput(args: GetFsuCollectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFsuCollectionsResult> {
+export function getFsuCollectionsOutput(args: GetFsuCollectionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFsuCollectionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetSoftwareUpdate/getFsuCollections:getFsuCollections", {
         "compartmentId": args.compartmentId,

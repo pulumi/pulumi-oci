@@ -204,7 +204,7 @@ def get_channels_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetChannelsFilterArgs', 'GetChannelsFilterArgsDict']]]]] = None,
                         is_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetChannelsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetChannelsResult]:
     """
     This data source provides the list of Channels in Oracle Cloud Infrastructure MySQL Database service.
 
@@ -240,7 +240,7 @@ def get_channels_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None
     __args__['filters'] = filters
     __args__['isEnabled'] = is_enabled
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getChannels:getChannels', __args__, opts=opts, typ=GetChannelsResult)
     return __ret__.apply(lambda __response__: GetChannelsResult(
         channel_id=pulumi.get(__response__, 'channel_id'),

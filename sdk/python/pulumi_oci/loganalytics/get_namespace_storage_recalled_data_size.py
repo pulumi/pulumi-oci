@@ -148,7 +148,7 @@ def get_namespace_storage_recalled_data_size(namespace: Optional[str] = None,
 def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.Input[str]] = None,
                                                     time_data_ended: Optional[pulumi.Input[Optional[str]]] = None,
                                                     time_data_started: Optional[pulumi.Input[Optional[str]]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageRecalledDataSizeResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceStorageRecalledDataSizeResult]:
     """
     This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -174,7 +174,7 @@ def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.I
     __args__['namespace'] = namespace
     __args__['timeDataEnded'] = time_data_ended
     __args__['timeDataStarted'] = time_data_started
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize', __args__, opts=opts, typ=GetNamespaceStorageRecalledDataSizeResult)
     return __ret__.apply(lambda __response__: GetNamespaceStorageRecalledDataSizeResult(
         id=pulumi.get(__response__, 'id'),

@@ -91,7 +91,7 @@ export interface GetNetworkLoadBalancerHealthResult {
  * });
  * ```
  */
-export function getNetworkLoadBalancerHealthOutput(args: GetNetworkLoadBalancerHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkLoadBalancerHealthResult> {
+export function getNetworkLoadBalancerHealthOutput(args: GetNetworkLoadBalancerHealthOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkLoadBalancerHealthResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", {
         "networkLoadBalancerId": args.networkLoadBalancerId,

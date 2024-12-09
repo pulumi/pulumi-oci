@@ -100,7 +100,7 @@ def get_configuration(tenant_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
 def get_configuration_output(tenant_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigurationResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigurationResult]:
     """
     This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -120,7 +120,7 @@ def get_configuration_output(tenant_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['tenantId'] = tenant_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getConfiguration:getConfiguration', __args__, opts=opts, typ=GetConfigurationResult)
     return __ret__.apply(lambda __response__: GetConfigurationResult(
         id=pulumi.get(__response__, 'id'),

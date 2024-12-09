@@ -204,7 +204,7 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                namespace: Optional[pulumi.Input[str]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                target_service: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceRulesResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceRulesResult]:
     """
     This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -240,7 +240,7 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = Non
     __args__['namespace'] = namespace
     __args__['state'] = state
     __args__['targetService'] = target_service
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceRules:getNamespaceRules', __args__, opts=opts, typ=GetNamespaceRulesResult)
     return __ret__.apply(lambda __response__: GetNamespaceRulesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

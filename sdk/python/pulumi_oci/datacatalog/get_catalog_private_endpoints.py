@@ -153,7 +153,7 @@ def get_catalog_private_endpoints_output(compartment_id: Optional[pulumi.Input[s
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCatalogPrivateEndpointsFilterArgs', 'GetCatalogPrivateEndpointsFilterArgsDict']]]]] = None,
                                          state: Optional[pulumi.Input[Optional[str]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogPrivateEndpointsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogPrivateEndpointsResult]:
     """
     This data source provides the list of Catalog Private Endpoints in Oracle Cloud Infrastructure Data Catalog service.
 
@@ -180,7 +180,7 @@ def get_catalog_private_endpoints_output(compartment_id: Optional[pulumi.Input[s
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints', __args__, opts=opts, typ=GetCatalogPrivateEndpointsResult)
     return __ret__.apply(lambda __response__: GetCatalogPrivateEndpointsResult(
         catalog_private_endpoints=pulumi.get(__response__, 'catalog_private_endpoints'),

@@ -80,7 +80,7 @@ export interface GetIamWorkRequestErrorsResult {
  * });
  * ```
  */
-export function getIamWorkRequestErrorsOutput(args: GetIamWorkRequestErrorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamWorkRequestErrorsResult> {
+export function getIamWorkRequestErrorsOutput(args: GetIamWorkRequestErrorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamWorkRequestErrorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", {
         "filters": args.filters,

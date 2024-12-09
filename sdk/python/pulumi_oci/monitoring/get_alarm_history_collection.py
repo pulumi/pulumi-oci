@@ -169,7 +169,7 @@ def get_alarm_history_collection_output(alarm_historytype: Optional[pulumi.Input
                                         alarm_id: Optional[pulumi.Input[str]] = None,
                                         timestamp_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                         timestamp_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmHistoryCollectionResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlarmHistoryCollectionResult]:
     """
     This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
 
@@ -206,7 +206,7 @@ def get_alarm_history_collection_output(alarm_historytype: Optional[pulumi.Input
     __args__['alarmId'] = alarm_id
     __args__['timestampGreaterThanOrEqualTo'] = timestamp_greater_than_or_equal_to
     __args__['timestampLessThan'] = timestamp_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection', __args__, opts=opts, typ=GetAlarmHistoryCollectionResult)
     return __ret__.apply(lambda __response__: GetAlarmHistoryCollectionResult(
         alarm_historytype=pulumi.get(__response__, 'alarm_historytype'),

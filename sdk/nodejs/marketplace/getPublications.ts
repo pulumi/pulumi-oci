@@ -113,7 +113,7 @@ export interface GetPublicationsResult {
  * });
  * ```
  */
-export function getPublicationsOutput(args: GetPublicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicationsResult> {
+export function getPublicationsOutput(args: GetPublicationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPublicationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Marketplace/getPublications:getPublications", {
         "compartmentId": args.compartmentId,

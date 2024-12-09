@@ -99,7 +99,7 @@ export interface GetClusterNetworksResult {
  * });
  * ```
  */
-export function getClusterNetworksOutput(args: GetClusterNetworksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterNetworksResult> {
+export function getClusterNetworksOutput(args: GetClusterNetworksOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClusterNetworksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getClusterNetworks:getClusterNetworks", {
         "compartmentId": args.compartmentId,

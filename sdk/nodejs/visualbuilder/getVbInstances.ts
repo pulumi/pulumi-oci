@@ -97,7 +97,7 @@ export interface GetVbInstancesResult {
  * });
  * ```
  */
-export function getVbInstancesOutput(args: GetVbInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstancesResult> {
+export function getVbInstancesOutput(args: GetVbInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVbInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:VisualBuilder/getVbInstances:getVbInstances", {
         "compartmentId": args.compartmentId,

@@ -125,7 +125,7 @@ export interface GetRecommendationResult {
  * });
  * ```
  */
-export function getRecommendationOutput(args: GetRecommendationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecommendationResult> {
+export function getRecommendationOutput(args: GetRecommendationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecommendationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getRecommendation:getRecommendation", {
         "recommendationId": args.recommendationId,

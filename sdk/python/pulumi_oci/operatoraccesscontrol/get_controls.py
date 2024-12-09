@@ -168,7 +168,7 @@ def get_controls_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetControlsFilterArgs', 'GetControlsFilterArgsDict']]]]] = None,
                         resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetControlsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetControlsResult]:
     """
     This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
 
@@ -198,7 +198,7 @@ def get_controls_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['resourceType'] = resource_type
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getControls:getControls', __args__, opts=opts, typ=GetControlsResult)
     return __ret__.apply(lambda __response__: GetControlsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

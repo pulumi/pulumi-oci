@@ -120,7 +120,7 @@ export interface GetOneoffPatchResult {
  * });
  * ```
  */
-export function getOneoffPatchOutput(args: GetOneoffPatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOneoffPatchResult> {
+export function getOneoffPatchOutput(args: GetOneoffPatchOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOneoffPatchResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getOneoffPatch:getOneoffPatch", {
         "oneoffPatchId": args.oneoffPatchId,

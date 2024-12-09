@@ -268,7 +268,7 @@ def get_dkim(dkim_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         txt_record_value=pulumi.get(__ret__, 'txt_record_value'))
 def get_dkim_output(dkim_id: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDkimResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDkimResult]:
     """
     This data source provides details about a specific Dkim resource in Oracle Cloud Infrastructure Email service.
 
@@ -288,7 +288,7 @@ def get_dkim_output(dkim_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['dkimId'] = dkim_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Email/getDkim:getDkim', __args__, opts=opts, typ=GetDkimResult)
     return __ret__.apply(lambda __response__: GetDkimResult(
         cname_record_value=pulumi.get(__response__, 'cname_record_value'),

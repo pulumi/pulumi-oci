@@ -225,7 +225,7 @@ def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.I
                                                profile_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                profile_status: Optional[pulumi.Input[Optional[str]]] = None,
                                                stream_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceStreamProfileResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceStreamProfileResult]:
     """
     This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
 
@@ -288,7 +288,7 @@ def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.I
     __args__['profileName'] = profile_name
     __args__['profileStatus'] = profile_status
     __args__['streamName'] = stream_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile', __args__, opts=opts, typ=GetManagedInstanceStreamProfileResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceStreamProfileResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

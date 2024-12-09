@@ -193,7 +193,7 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = Non
                      view_id: Optional[pulumi.Input[Optional[str]]] = None,
                      zone_name_or_id: Optional[pulumi.Input[str]] = None,
                      zone_version: Optional[pulumi.Input[Optional[str]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRrsetResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRrsetResult]:
     """
     This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
 
@@ -234,7 +234,7 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = Non
     __args__['viewId'] = view_id
     __args__['zoneNameOrId'] = zone_name_or_id
     __args__['zoneVersion'] = zone_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getRrset:getRrset', __args__, opts=opts, typ=GetRrsetResult)
     return __ret__.apply(lambda __response__: GetRrsetResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

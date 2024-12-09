@@ -144,7 +144,7 @@ def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority
                                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionRulesFilterArgs', 'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict']]]]] = None,
                                                         network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRulesResult]:
+                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRulesResult]:
     """
     This data source provides the list of Network Firewall Policy Decryption Rules in Oracle Cloud Infrastructure Network Firewall service.
 
@@ -171,7 +171,7 @@ def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['networkFirewallPolicyId'] = network_firewall_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRules:getNetworkFirewallPolicyDecryptionRules', __args__, opts=opts, typ=GetNetworkFirewallPolicyDecryptionRulesResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyDecryptionRulesResult(
         decryption_rule_priority_order=pulumi.get(__response__, 'decryption_rule_priority_order'),

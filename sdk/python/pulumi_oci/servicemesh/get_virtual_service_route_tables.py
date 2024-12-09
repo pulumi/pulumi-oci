@@ -176,7 +176,7 @@ def get_virtual_service_route_tables_output(compartment_id: Optional[pulumi.Inpu
                                             name: Optional[pulumi.Input[Optional[str]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             virtual_service_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualServiceRouteTablesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualServiceRouteTablesResult]:
     """
     This data source provides the list of Virtual Service Route Tables in Oracle Cloud Infrastructure Service Mesh service.
 
@@ -209,7 +209,7 @@ def get_virtual_service_route_tables_output(compartment_id: Optional[pulumi.Inpu
     __args__['name'] = name
     __args__['state'] = state
     __args__['virtualServiceId'] = virtual_service_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceMesh/getVirtualServiceRouteTables:getVirtualServiceRouteTables', __args__, opts=opts, typ=GetVirtualServiceRouteTablesResult)
     return __ret__.apply(lambda __response__: GetVirtualServiceRouteTablesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

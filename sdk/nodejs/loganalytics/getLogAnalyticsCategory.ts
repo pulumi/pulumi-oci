@@ -90,7 +90,7 @@ export interface GetLogAnalyticsCategoryResult {
  * });
  * ```
  */
-export function getLogAnalyticsCategoryOutput(args: GetLogAnalyticsCategoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsCategoryResult> {
+export function getLogAnalyticsCategoryOutput(args: GetLogAnalyticsCategoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsCategoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsCategory:getLogAnalyticsCategory", {
         "name": args.name,

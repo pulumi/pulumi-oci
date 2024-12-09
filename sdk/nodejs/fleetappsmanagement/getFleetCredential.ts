@@ -113,7 +113,7 @@ export interface GetFleetCredentialResult {
  * });
  * ```
  */
-export function getFleetCredentialOutput(args: GetFleetCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetCredentialResult> {
+export function getFleetCredentialOutput(args: GetFleetCredentialOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetCredentialResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getFleetCredential:getFleetCredential", {
         "fleetCredentialId": args.fleetCredentialId,

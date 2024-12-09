@@ -231,7 +231,7 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
  * });
  * ```
  */
-export function getSensitiveDataModelsSensitiveColumnsOutput(args: GetSensitiveDataModelsSensitiveColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelsSensitiveColumnsResult> {
+export function getSensitiveDataModelsSensitiveColumnsOutput(args: GetSensitiveDataModelsSensitiveColumnsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSensitiveDataModelsSensitiveColumnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns", {
         "columnGroup": args.columnGroup,

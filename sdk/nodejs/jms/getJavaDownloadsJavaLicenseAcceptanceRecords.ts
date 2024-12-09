@@ -109,7 +109,7 @@ export interface GetJavaDownloadsJavaLicenseAcceptanceRecordsResult {
  * });
  * ```
  */
-export function getJavaDownloadsJavaLicenseAcceptanceRecordsOutput(args: GetJavaDownloadsJavaLicenseAcceptanceRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> {
+export function getJavaDownloadsJavaLicenseAcceptanceRecordsOutput(args: GetJavaDownloadsJavaLicenseAcceptanceRecordsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecords:getJavaDownloadsJavaLicenseAcceptanceRecords", {
         "compartmentId": args.compartmentId,

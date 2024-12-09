@@ -171,7 +171,7 @@ def get_capture_filters_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                filter_type: Optional[pulumi.Input[Optional[str]]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCaptureFiltersFilterArgs', 'GetCaptureFiltersFilterArgsDict']]]]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaptureFiltersResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCaptureFiltersResult]:
     """
     This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
 
@@ -201,7 +201,7 @@ def get_capture_filters_output(compartment_id: Optional[pulumi.Input[str]] = Non
     __args__['filterType'] = filter_type
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getCaptureFilters:getCaptureFilters', __args__, opts=opts, typ=GetCaptureFiltersResult)
     return __ret__.apply(lambda __response__: GetCaptureFiltersResult(
         capture_filters=pulumi.get(__response__, 'capture_filters'),

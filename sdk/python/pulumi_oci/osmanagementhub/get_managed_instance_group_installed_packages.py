@@ -190,7 +190,7 @@ def get_managed_instance_group_installed_packages_output(compartment_id: Optiona
                                                          managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                                                          time_install_date_end: Optional[pulumi.Input[Optional[str]]] = None,
                                                          time_install_date_start: Optional[pulumi.Input[Optional[str]]] = None,
-                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupInstalledPackagesResult]:
+                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupInstalledPackagesResult]:
     """
     This data source provides the list of Managed Instance Group Installed Packages in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -227,7 +227,7 @@ def get_managed_instance_group_installed_packages_output(compartment_id: Optiona
     __args__['managedInstanceGroupId'] = managed_instance_group_id
     __args__['timeInstallDateEnd'] = time_install_date_end
     __args__['timeInstallDateStart'] = time_install_date_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceGroupInstalledPackages:getManagedInstanceGroupInstalledPackages', __args__, opts=opts, typ=GetManagedInstanceGroupInstalledPackagesResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceGroupInstalledPackagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

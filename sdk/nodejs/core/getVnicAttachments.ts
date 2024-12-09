@@ -112,7 +112,7 @@ export interface GetVnicAttachmentsResult {
  * });
  * ```
  */
-export function getVnicAttachmentsOutput(args: GetVnicAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVnicAttachmentsResult> {
+export function getVnicAttachmentsOutput(args: GetVnicAttachmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVnicAttachmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVnicAttachments:getVnicAttachments", {
         "availabilityDomain": args.availabilityDomain,

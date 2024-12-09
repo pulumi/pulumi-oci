@@ -99,7 +99,7 @@ export interface GetManagedDatabaseUserDataAccessContainersResult {
  * });
  * ```
  */
-export function getManagedDatabaseUserDataAccessContainersOutput(args: GetManagedDatabaseUserDataAccessContainersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserDataAccessContainersResult> {
+export function getManagedDatabaseUserDataAccessContainersOutput(args: GetManagedDatabaseUserDataAccessContainersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseUserDataAccessContainersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainers:getManagedDatabaseUserDataAccessContainers", {
         "filters": args.filters,

@@ -167,7 +167,7 @@ def get_profile_levels_output(compartment_id: Optional[pulumi.Input[str]] = None
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProfileLevelsFilterArgs', 'GetProfileLevelsFilterArgsDict']]]]] = None,
                               name: Optional[pulumi.Input[Optional[str]]] = None,
                               recommendation_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProfileLevelsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfileLevelsResult]:
     """
     This data source provides the list of Profile Levels in Oracle Cloud Infrastructure Optimizer service.
 
@@ -199,7 +199,7 @@ def get_profile_levels_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['recommendationName'] = recommendation_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getProfileLevels:getProfileLevels', __args__, opts=opts, typ=GetProfileLevelsResult)
     return __ret__.apply(lambda __response__: GetProfileLevelsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

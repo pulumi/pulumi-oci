@@ -105,7 +105,7 @@ export interface GetSubscriberResult {
  * });
  * ```
  */
-export function getSubscriberOutput(args: GetSubscriberOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriberResult> {
+export function getSubscriberOutput(args: GetSubscriberOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubscriberResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApiGateway/getSubscriber:getSubscriber", {
         "subscriberId": args.subscriberId,

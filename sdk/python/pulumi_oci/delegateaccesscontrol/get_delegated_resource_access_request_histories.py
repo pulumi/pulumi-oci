@@ -114,7 +114,7 @@ def get_delegated_resource_access_request_histories(delegated_resource_access_re
         id=pulumi.get(__ret__, 'id'))
 def get_delegated_resource_access_request_histories_output(delegated_resource_access_request_id: Optional[pulumi.Input[str]] = None,
                                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDelegatedResourceAccessRequestHistoriesFilterArgs', 'GetDelegatedResourceAccessRequestHistoriesFilterArgsDict']]]]] = None,
-                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestHistoriesResult]:
+                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestHistoriesResult]:
     """
     This data source provides the list of Delegated Resource Access Request Histories in Oracle Cloud Infrastructure Delegate Access Control service.
 
@@ -135,7 +135,7 @@ def get_delegated_resource_access_request_histories_output(delegated_resource_ac
     __args__ = dict()
     __args__['delegatedResourceAccessRequestId'] = delegated_resource_access_request_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories', __args__, opts=opts, typ=GetDelegatedResourceAccessRequestHistoriesResult)
     return __ret__.apply(lambda __response__: GetDelegatedResourceAccessRequestHistoriesResult(
         delegated_resource_access_request_history_collections=pulumi.get(__response__, 'delegated_resource_access_request_history_collections'),

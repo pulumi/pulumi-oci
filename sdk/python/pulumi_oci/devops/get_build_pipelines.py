@@ -176,7 +176,7 @@ def get_build_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[st
                                id: Optional[pulumi.Input[Optional[str]]] = None,
                                project_id: Optional[pulumi.Input[Optional[str]]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildPipelinesResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBuildPipelinesResult]:
     """
     This data source provides the list of Build Pipelines in Oracle Cloud Infrastructure Devops service.
 
@@ -209,7 +209,7 @@ def get_build_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[st
     __args__['id'] = id
     __args__['projectId'] = project_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getBuildPipelines:getBuildPipelines', __args__, opts=opts, typ=GetBuildPipelinesResult)
     return __ret__.apply(lambda __response__: GetBuildPipelinesResult(
         build_pipeline_collections=pulumi.get(__response__, 'build_pipeline_collections'),

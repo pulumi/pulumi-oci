@@ -321,7 +321,7 @@ def get_sensitive_data_model(sensitive_data_model_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_sensitive_data_model_output(sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelResult]:
     """
     This data source provides details about a specific Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -341,7 +341,7 @@ def get_sensitive_data_model_output(sensitive_data_model_id: Optional[pulumi.Inp
     """
     __args__ = dict()
     __args__['sensitiveDataModelId'] = sensitive_data_model_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModel:getSensitiveDataModel', __args__, opts=opts, typ=GetSensitiveDataModelResult)
     return __ret__.apply(lambda __response__: GetSensitiveDataModelResult(
         app_suite_name=pulumi.get(__response__, 'app_suite_name'),

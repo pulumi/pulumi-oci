@@ -360,7 +360,7 @@ def get_software_source(software_source_id: Optional[str] = None,
         status=pulumi.get(__ret__, 'status'),
         url=pulumi.get(__ret__, 'url'))
 def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceResult]:
     """
     This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.
 
@@ -380,7 +380,7 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['softwareSourceId'] = software_source_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getSoftwareSource:getSoftwareSource', __args__, opts=opts, typ=GetSoftwareSourceResult)
     return __ret__.apply(lambda __response__: GetSoftwareSourceResult(
         arch_type=pulumi.get(__response__, 'arch_type'),

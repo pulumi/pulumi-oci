@@ -243,7 +243,7 @@ def get_network_address_list(network_address_list_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         vcn_addresses=pulumi.get(__ret__, 'vcn_addresses'))
 def get_network_address_list_output(network_address_list_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkAddressListResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkAddressListResult]:
     """
     This data source provides details about a specific Network Address List resource in Oracle Cloud Infrastructure Waf service.
 
@@ -263,7 +263,7 @@ def get_network_address_list_output(network_address_list_id: Optional[pulumi.Inp
     """
     __args__ = dict()
     __args__['networkAddressListId'] = network_address_list_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waf/getNetworkAddressList:getNetworkAddressList', __args__, opts=opts, typ=GetNetworkAddressListResult)
     return __ret__.apply(lambda __response__: GetNetworkAddressListResult(
         addresses=pulumi.get(__response__, 'addresses'),

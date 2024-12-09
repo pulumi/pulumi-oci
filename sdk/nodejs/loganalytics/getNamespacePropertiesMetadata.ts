@@ -110,7 +110,7 @@ export interface GetNamespacePropertiesMetadataResult {
  * });
  * ```
  */
-export function getNamespacePropertiesMetadataOutput(args: GetNamespacePropertiesMetadataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespacePropertiesMetadataResult> {
+export function getNamespacePropertiesMetadataOutput(args: GetNamespacePropertiesMetadataOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespacePropertiesMetadataResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", {
         "constraints": args.constraints,

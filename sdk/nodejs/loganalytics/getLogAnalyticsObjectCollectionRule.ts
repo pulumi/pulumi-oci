@@ -181,7 +181,7 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
  * });
  * ```
  */
-export function getLogAnalyticsObjectCollectionRuleOutput(args: GetLogAnalyticsObjectCollectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsObjectCollectionRuleResult> {
+export function getLogAnalyticsObjectCollectionRuleOutput(args: GetLogAnalyticsObjectCollectionRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsObjectCollectionRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", {
         "logAnalyticsObjectCollectionRuleId": args.logAnalyticsObjectCollectionRuleId,

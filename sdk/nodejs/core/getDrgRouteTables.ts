@@ -112,7 +112,7 @@ export interface GetDrgRouteTablesResult {
  * });
  * ```
  */
-export function getDrgRouteTablesOutput(args: GetDrgRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteTablesResult> {
+export function getDrgRouteTablesOutput(args: GetDrgRouteTablesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrgRouteTablesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDrgRouteTables:getDrgRouteTables", {
         "displayName": args.displayName,

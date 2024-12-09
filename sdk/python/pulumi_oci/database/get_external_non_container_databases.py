@@ -153,7 +153,7 @@ def get_external_non_container_databases_output(compartment_id: Optional[pulumi.
                                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalNonContainerDatabasesFilterArgs', 'GetExternalNonContainerDatabasesFilterArgsDict']]]]] = None,
                                                 state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalNonContainerDatabasesResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalNonContainerDatabasesResult]:
     """
     This data source provides the list of External Non Container Databases in Oracle Cloud Infrastructure Database service.
 
@@ -180,7 +180,7 @@ def get_external_non_container_databases_output(compartment_id: Optional[pulumi.
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExternalNonContainerDatabases:getExternalNonContainerDatabases', __args__, opts=opts, typ=GetExternalNonContainerDatabasesResult)
     return __ret__.apply(lambda __response__: GetExternalNonContainerDatabasesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

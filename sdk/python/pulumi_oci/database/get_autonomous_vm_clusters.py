@@ -171,7 +171,7 @@ def get_autonomous_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]
                                       exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousVmClustersFilterArgs', 'GetAutonomousVmClustersFilterArgsDict']]]]] = None,
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVmClustersResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVmClustersResult]:
     """
     This data source provides the list of Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
 
@@ -201,7 +201,7 @@ def get_autonomous_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousVmClusters:getAutonomousVmClusters', __args__, opts=opts, typ=GetAutonomousVmClustersResult)
     return __ret__.apply(lambda __response__: GetAutonomousVmClustersResult(
         autonomous_vm_clusters=pulumi.get(__response__, 'autonomous_vm_clusters'),

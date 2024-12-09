@@ -154,7 +154,7 @@ export interface GetContainerImagesResult {
  * });
  * ```
  */
-export function getContainerImagesOutput(args: GetContainerImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerImagesResult> {
+export function getContainerImagesOutput(args: GetContainerImagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetContainerImagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Artifacts/getContainerImages:getContainerImages", {
         "compartmentId": args.compartmentId,

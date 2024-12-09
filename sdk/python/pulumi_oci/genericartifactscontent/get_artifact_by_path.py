@@ -223,7 +223,7 @@ def get_artifact_by_path(artifact_path: Optional[str] = None,
 def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[str]] = None,
                                 repository_id: Optional[pulumi.Input[str]] = None,
                                 version: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetArtifactByPathResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetArtifactByPathResult]:
     """
     This data source provides details about a specific Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
 
@@ -249,7 +249,7 @@ def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[str]] = Non
     __args__['artifactPath'] = artifact_path
     __args__['repositoryId'] = repository_id
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath', __args__, opts=opts, typ=GetArtifactByPathResult)
     return __ret__.apply(lambda __response__: GetArtifactByPathResult(
         artifact_id=pulumi.get(__response__, 'artifact_id'),

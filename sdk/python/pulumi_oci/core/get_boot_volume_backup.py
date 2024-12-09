@@ -318,7 +318,7 @@ def get_boot_volume_backup(boot_volume_backup_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         unique_size_in_gbs=pulumi.get(__ret__, 'unique_size_in_gbs'))
 def get_boot_volume_backup_output(boot_volume_backup_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeBackupResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeBackupResult]:
     """
     This data source provides details about a specific Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
 
@@ -338,7 +338,7 @@ def get_boot_volume_backup_output(boot_volume_backup_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['bootVolumeBackupId'] = boot_volume_backup_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getBootVolumeBackup:getBootVolumeBackup', __args__, opts=opts, typ=GetBootVolumeBackupResult)
     return __ret__.apply(lambda __response__: GetBootVolumeBackupResult(
         boot_volume_backup_id=pulumi.get(__response__, 'boot_volume_backup_id'),

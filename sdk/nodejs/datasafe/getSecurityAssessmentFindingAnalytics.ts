@@ -152,7 +152,7 @@ export interface GetSecurityAssessmentFindingAnalyticsResult {
  * });
  * ```
  */
-export function getSecurityAssessmentFindingAnalyticsOutput(args: GetSecurityAssessmentFindingAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingAnalyticsResult> {
+export function getSecurityAssessmentFindingAnalyticsOutput(args: GetSecurityAssessmentFindingAnalyticsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAssessmentFindingAnalyticsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", {
         "accessLevel": args.accessLevel,

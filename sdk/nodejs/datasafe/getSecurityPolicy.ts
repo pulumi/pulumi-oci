@@ -103,7 +103,7 @@ export interface GetSecurityPolicyResult {
  * });
  * ```
  */
-export function getSecurityPolicyOutput(args: GetSecurityPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyResult> {
+export function getSecurityPolicyOutput(args: GetSecurityPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicy:getSecurityPolicy", {
         "securityPolicyId": args.securityPolicyId,

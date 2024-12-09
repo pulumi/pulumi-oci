@@ -117,7 +117,7 @@ def get_data_guard_associations(database_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_data_guard_associations_output(database_id: Optional[pulumi.Input[str]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataGuardAssociationsFilterArgs', 'GetDataGuardAssociationsFilterArgsDict']]]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataGuardAssociationsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataGuardAssociationsResult]:
     """
     This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.
 
@@ -138,7 +138,7 @@ def get_data_guard_associations_output(database_id: Optional[pulumi.Input[str]] 
     __args__ = dict()
     __args__['databaseId'] = database_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDataGuardAssociations:getDataGuardAssociations', __args__, opts=opts, typ=GetDataGuardAssociationsResult)
     return __ret__.apply(lambda __response__: GetDataGuardAssociationsResult(
         data_guard_associations=pulumi.get(__response__, 'data_guard_associations'),

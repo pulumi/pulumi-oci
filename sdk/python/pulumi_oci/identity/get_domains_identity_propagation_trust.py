@@ -552,7 +552,7 @@ def get_domains_identity_propagation_trust_output(attribute_sets: Optional[pulum
                                                   idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                                   identity_propagation_trust_id: Optional[pulumi.Input[str]] = None,
                                                   resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsIdentityPropagationTrustResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsIdentityPropagationTrustResult]:
     """
     This data source provides details about a specific Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -587,7 +587,7 @@ def get_domains_identity_propagation_trust_output(attribute_sets: Optional[pulum
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['identityPropagationTrustId'] = identity_propagation_trust_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust', __args__, opts=opts, typ=GetDomainsIdentityPropagationTrustResult)
     return __ret__.apply(lambda __response__: GetDomainsIdentityPropagationTrustResult(
         account_id=pulumi.get(__response__, 'account_id'),

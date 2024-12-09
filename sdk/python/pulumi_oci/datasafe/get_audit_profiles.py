@@ -284,7 +284,7 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[str]]
                               is_paid_usage_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditProfilesResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditProfilesResult]:
     """
     This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
 
@@ -346,7 +346,7 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[str]]
     __args__['isPaidUsageEnabled'] = is_paid_usage_enabled
     __args__['state'] = state
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditProfiles:getAuditProfiles', __args__, opts=opts, typ=GetAuditProfilesResult)
     return __ret__.apply(lambda __response__: GetAuditProfilesResult(
         access_level=pulumi.get(__response__, 'access_level'),

@@ -118,7 +118,7 @@ export interface GetExternalDbSystemDiscoveryResult {
  * });
  * ```
  */
-export function getExternalDbSystemDiscoveryOutput(args: GetExternalDbSystemDiscoveryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbSystemDiscoveryResult> {
+export function getExternalDbSystemDiscoveryOutput(args: GetExternalDbSystemDiscoveryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDbSystemDiscoveryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", {
         "externalDbSystemDiscoveryId": args.externalDbSystemDiscoveryId,

@@ -131,7 +131,7 @@ export interface GetExternalDbNodeResult {
  * });
  * ```
  */
-export function getExternalDbNodeOutput(args: GetExternalDbNodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbNodeResult> {
+export function getExternalDbNodeOutput(args: GetExternalDbNodeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDbNodeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", {
         "externalDbNodeId": args.externalDbNodeId,

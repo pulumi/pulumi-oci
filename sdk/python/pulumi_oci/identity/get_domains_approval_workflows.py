@@ -251,7 +251,7 @@ def get_domains_approval_workflows_output(approval_workflow_count: Optional[pulu
                                           idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                           resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                           start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsApprovalWorkflowsResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsApprovalWorkflowsResult]:
     """
     This data source provides the list of Approval Workflows in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -293,7 +293,7 @@ def get_domains_approval_workflows_output(approval_workflow_count: Optional[pulu
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows', __args__, opts=opts, typ=GetDomainsApprovalWorkflowsResult)
     return __ret__.apply(lambda __response__: GetDomainsApprovalWorkflowsResult(
         approval_workflow_count=pulumi.get(__response__, 'approval_workflow_count'),

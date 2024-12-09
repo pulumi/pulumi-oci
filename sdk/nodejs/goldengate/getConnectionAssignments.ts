@@ -116,7 +116,7 @@ export interface GetConnectionAssignmentsResult {
  * });
  * ```
  */
-export function getConnectionAssignmentsOutput(args: GetConnectionAssignmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionAssignmentsResult> {
+export function getConnectionAssignmentsOutput(args: GetConnectionAssignmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConnectionAssignmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", {
         "compartmentId": args.compartmentId,

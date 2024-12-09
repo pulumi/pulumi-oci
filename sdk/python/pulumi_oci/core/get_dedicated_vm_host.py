@@ -255,7 +255,7 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[str] = None,
         total_memory_in_gbs=pulumi.get(__ret__, 'total_memory_in_gbs'),
         total_ocpus=pulumi.get(__ret__, 'total_ocpus'))
 def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVmHostResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostResult]:
     """
     This data source provides details about a specific Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
 
@@ -275,7 +275,7 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['dedicatedVmHostId'] = dedicated_vm_host_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDedicatedVmHost:getDedicatedVmHost', __args__, opts=opts, typ=GetDedicatedVmHostResult)
     return __ret__.apply(lambda __response__: GetDedicatedVmHostResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -75,7 +75,7 @@ export interface GetDbNodeConsoleConnectionsResult {
  * });
  * ```
  */
-export function getDbNodeConsoleConnectionsOutput(args: GetDbNodeConsoleConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeConsoleConnectionsResult> {
+export function getDbNodeConsoleConnectionsOutput(args: GetDbNodeConsoleConnectionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbNodeConsoleConnectionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", {
         "dbNodeId": args.dbNodeId,

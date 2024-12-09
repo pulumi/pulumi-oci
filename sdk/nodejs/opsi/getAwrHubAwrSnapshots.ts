@@ -98,7 +98,7 @@ export interface GetAwrHubAwrSnapshotsResult {
  * });
  * ```
  */
-export function getAwrHubAwrSnapshotsOutput(args: GetAwrHubAwrSnapshotsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwrHubAwrSnapshotsResult> {
+export function getAwrHubAwrSnapshotsOutput(args: GetAwrHubAwrSnapshotsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAwrHubAwrSnapshotsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getAwrHubAwrSnapshots:getAwrHubAwrSnapshots", {
         "awrHubId": args.awrHubId,

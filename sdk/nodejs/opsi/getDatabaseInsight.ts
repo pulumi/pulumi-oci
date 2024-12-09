@@ -212,7 +212,7 @@ export interface GetDatabaseInsightResult {
  * });
  * ```
  */
-export function getDatabaseInsightOutput(args: GetDatabaseInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseInsightResult> {
+export function getDatabaseInsightOutput(args: GetDatabaseInsightOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseInsightResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getDatabaseInsight:getDatabaseInsight", {
         "databaseInsightId": args.databaseInsightId,

@@ -230,7 +230,7 @@ def get_default_configuration(default_configuration_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_default_configuration_output(default_configuration_id: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDefaultConfigurationResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDefaultConfigurationResult]:
     """
     This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
 
@@ -250,7 +250,7 @@ def get_default_configuration_output(default_configuration_id: Optional[pulumi.I
     """
     __args__ = dict()
     __args__['defaultConfigurationId'] = default_configuration_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDefaultConfiguration:getDefaultConfiguration', __args__, opts=opts, typ=GetDefaultConfigurationResult)
     return __ret__.apply(lambda __response__: GetDefaultConfigurationResult(
         configuration_details=pulumi.get(__response__, 'configuration_details'),

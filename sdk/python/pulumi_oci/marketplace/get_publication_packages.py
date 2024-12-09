@@ -147,7 +147,7 @@ def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequ
                                     package_type: Optional[pulumi.Input[Optional[str]]] = None,
                                     package_version: Optional[pulumi.Input[Optional[str]]] = None,
                                     publication_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicationPackagesResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicationPackagesResult]:
     """
     This data source provides the list of Publication Packages in Oracle Cloud Infrastructure Marketplace service.
 
@@ -174,7 +174,7 @@ def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequ
     __args__['packageType'] = package_type
     __args__['packageVersion'] = package_version
     __args__['publicationId'] = publication_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getPublicationPackages:getPublicationPackages', __args__, opts=opts, typ=GetPublicationPackagesResult)
     return __ret__.apply(lambda __response__: GetPublicationPackagesResult(
         filters=pulumi.get(__response__, 'filters'),

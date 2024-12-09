@@ -191,7 +191,7 @@ def get_task_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]
                             platform: Optional[pulumi.Input[Optional[str]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             type: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTaskRecordsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTaskRecordsResult]:
     """
     This data source provides the list of Task Records in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -227,7 +227,7 @@ def get_task_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]
     __args__['platform'] = platform
     __args__['state'] = state
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getTaskRecords:getTaskRecords', __args__, opts=opts, typ=GetTaskRecordsResult)
     return __ret__.apply(lambda __response__: GetTaskRecordsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -99,7 +99,7 @@ export interface GetCustomProtectionRuleResult {
  * });
  * ```
  */
-export function getCustomProtectionRuleOutput(args: GetCustomProtectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomProtectionRuleResult> {
+export function getCustomProtectionRuleOutput(args: GetCustomProtectionRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCustomProtectionRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waas/getCustomProtectionRule:getCustomProtectionRule", {
         "customProtectionRuleId": args.customProtectionRuleId,

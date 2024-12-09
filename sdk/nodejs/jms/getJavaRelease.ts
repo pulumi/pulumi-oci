@@ -120,7 +120,7 @@ export interface GetJavaReleaseResult {
  * });
  * ```
  */
-export function getJavaReleaseOutput(args: GetJavaReleaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaReleaseResult> {
+export function getJavaReleaseOutput(args: GetJavaReleaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJavaReleaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJavaRelease:getJavaRelease", {
         "releaseVersion": args.releaseVersion,

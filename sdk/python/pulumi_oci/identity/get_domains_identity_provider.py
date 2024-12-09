@@ -916,7 +916,7 @@ def get_domains_identity_provider_output(attribute_sets: Optional[pulumi.Input[O
                                          idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                          identity_provider_id: Optional[pulumi.Input[str]] = None,
                                          resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsIdentityProviderResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsIdentityProviderResult]:
     """
     This data source provides details about a specific Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -951,7 +951,7 @@ def get_domains_identity_provider_output(attribute_sets: Optional[pulumi.Input[O
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['identityProviderId'] = identity_provider_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsIdentityProvider:getDomainsIdentityProvider', __args__, opts=opts, typ=GetDomainsIdentityProviderResult)
     return __ret__.apply(lambda __response__: GetDomainsIdentityProviderResult(
         assertion_attribute=pulumi.get(__response__, 'assertion_attribute'),

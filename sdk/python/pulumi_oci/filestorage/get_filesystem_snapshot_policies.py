@@ -176,7 +176,7 @@ def get_filesystem_snapshot_policies_output(availability_domain: Optional[pulumi
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFilesystemSnapshotPoliciesFilterArgs', 'GetFilesystemSnapshotPoliciesFilterArgsDict']]]]] = None,
                                             id: Optional[pulumi.Input[Optional[str]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFilesystemSnapshotPoliciesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFilesystemSnapshotPoliciesResult]:
     """
     This data source provides the list of Filesystem Snapshot Policies in Oracle Cloud Infrastructure File Storage service.
 
@@ -209,7 +209,7 @@ def get_filesystem_snapshot_policies_output(availability_domain: Optional[pulumi
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies', __args__, opts=opts, typ=GetFilesystemSnapshotPoliciesResult)
     return __ret__.apply(lambda __response__: GetFilesystemSnapshotPoliciesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

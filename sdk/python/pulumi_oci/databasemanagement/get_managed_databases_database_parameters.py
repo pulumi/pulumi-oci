@@ -177,7 +177,7 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
                                                      name: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                      source: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesDatabaseParametersResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabasesDatabaseParametersResult]:
     """
     This data source provides the list of Managed Databases Database Parameters in Oracle Cloud Infrastructure Database Management service.
 
@@ -210,7 +210,7 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
     __args__['name'] = name
     __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['source'] = source
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters', __args__, opts=opts, typ=GetManagedDatabasesDatabaseParametersResult)
     return __ret__.apply(lambda __response__: GetManagedDatabasesDatabaseParametersResult(
         database_parameters_collections=pulumi.get(__response__, 'database_parameters_collections'),

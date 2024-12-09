@@ -92,7 +92,7 @@ export interface GetConnectionAssignmentResult {
  * });
  * ```
  */
-export function getConnectionAssignmentOutput(args: GetConnectionAssignmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionAssignmentResult> {
+export function getConnectionAssignmentOutput(args: GetConnectionAssignmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConnectionAssignmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getConnectionAssignment:getConnectionAssignment", {
         "connectionAssignmentId": args.connectionAssignmentId,

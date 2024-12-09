@@ -72,7 +72,7 @@ export interface GetRuleSetsResult {
  * });
  * ```
  */
-export function getRuleSetsOutput(args: GetRuleSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRuleSetsResult> {
+export function getRuleSetsOutput(args: GetRuleSetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRuleSetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getRuleSets:getRuleSets", {
         "filters": args.filters,

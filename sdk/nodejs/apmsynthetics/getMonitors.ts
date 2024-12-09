@@ -140,7 +140,7 @@ export interface GetMonitorsResult {
  * });
  * ```
  */
-export function getMonitorsOutput(args: GetMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitorsResult> {
+export function getMonitorsOutput(args: GetMonitorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMonitorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getMonitors:getMonitors", {
         "apmDomainId": args.apmDomainId,

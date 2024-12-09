@@ -102,7 +102,7 @@ export interface GetAgentAgentsResult {
  * });
  * ```
  */
-export function getAgentAgentsOutput(args?: GetAgentAgentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentAgentsResult> {
+export function getAgentAgentsOutput(args?: GetAgentAgentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAgentAgentsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getAgentAgents:getAgentAgents", {

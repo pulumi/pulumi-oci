@@ -115,7 +115,7 @@ export interface GetAwrHubResult {
  * });
  * ```
  */
-export function getAwrHubOutput(args: GetAwrHubOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwrHubResult> {
+export function getAwrHubOutput(args: GetAwrHubOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAwrHubResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getAwrHub:getAwrHub", {
         "awrHubId": args.awrHubId,

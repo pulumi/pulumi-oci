@@ -152,7 +152,7 @@ export interface GetDbServerResult {
  * });
  * ```
  */
-export function getDbServerOutput(args: GetDbServerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbServerResult> {
+export function getDbServerOutput(args: GetDbServerOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbServerResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbServer:getDbServer", {
         "dbServerId": args.dbServerId,

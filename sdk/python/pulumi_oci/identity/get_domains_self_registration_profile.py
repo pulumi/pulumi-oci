@@ -594,7 +594,7 @@ def get_domains_self_registration_profile_output(attribute_sets: Optional[pulumi
                                                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                                  resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                                  self_registration_profile_id: Optional[pulumi.Input[str]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsSelfRegistrationProfileResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsSelfRegistrationProfileResult]:
     """
     This data source provides details about a specific Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -629,7 +629,7 @@ def get_domains_self_registration_profile_output(attribute_sets: Optional[pulumi
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
     __args__['selfRegistrationProfileId'] = self_registration_profile_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile', __args__, opts=opts, typ=GetDomainsSelfRegistrationProfileResult)
     return __ret__.apply(lambda __response__: GetDomainsSelfRegistrationProfileResult(
         activation_email_required=pulumi.get(__response__, 'activation_email_required'),

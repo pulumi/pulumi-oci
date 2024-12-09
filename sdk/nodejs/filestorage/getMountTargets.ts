@@ -126,7 +126,7 @@ export interface GetMountTargetsResult {
  * });
  * ```
  */
-export function getMountTargetsOutput(args: GetMountTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMountTargetsResult> {
+export function getMountTargetsOutput(args: GetMountTargetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMountTargetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FileStorage/getMountTargets:getMountTargets", {
         "availabilityDomain": args.availabilityDomain,

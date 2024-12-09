@@ -72,7 +72,7 @@ export interface GetPathRouteSetsResult {
  * });
  * ```
  */
-export function getPathRouteSetsOutput(args: GetPathRouteSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPathRouteSetsResult> {
+export function getPathRouteSetsOutput(args: GetPathRouteSetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPathRouteSetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", {
         "filters": args.filters,

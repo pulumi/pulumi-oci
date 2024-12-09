@@ -114,7 +114,7 @@ def get_db_system_history_entries(db_system_id: Optional[str] = None,
         patch_history_entries=pulumi.get(__ret__, 'patch_history_entries'))
 def get_db_system_history_entries_output(db_system_id: Optional[pulumi.Input[str]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemHistoryEntriesFilterArgs', 'GetDbSystemHistoryEntriesFilterArgsDict']]]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemHistoryEntriesResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemHistoryEntriesResult]:
     """
     This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
 
@@ -135,7 +135,7 @@ def get_db_system_history_entries_output(db_system_id: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries', __args__, opts=opts, typ=GetDbSystemHistoryEntriesResult)
     return __ret__.apply(lambda __response__: GetDbSystemHistoryEntriesResult(
         db_system_id=pulumi.get(__response__, 'db_system_id'),

@@ -201,7 +201,7 @@ def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[O
                                            severity: Optional[pulumi.Input[Optional[str]]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentFindingResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentFindingResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -216,7 +216,7 @@ def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[O
     __args__['severity'] = severity
     __args__['state'] = state
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding', __args__, opts=opts, typ=GetSecurityAssessmentFindingResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentFindingResult(
         access_level=pulumi.get(__response__, 'access_level'),

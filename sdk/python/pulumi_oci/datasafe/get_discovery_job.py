@@ -399,7 +399,7 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
         total_objects_scanned=pulumi.get(__ret__, 'total_objects_scanned'),
         total_schemas_scanned=pulumi.get(__ret__, 'total_schemas_scanned'))
 def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryJobResult]:
     """
     This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -419,7 +419,7 @@ def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['discoveryJobId'] = discovery_job_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDiscoveryJob:getDiscoveryJob', __args__, opts=opts, typ=GetDiscoveryJobResult)
     return __ret__.apply(lambda __response__: GetDiscoveryJobResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

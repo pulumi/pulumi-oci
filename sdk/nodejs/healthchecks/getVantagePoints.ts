@@ -87,7 +87,7 @@ export interface GetVantagePointsResult {
  * });
  * ```
  */
-export function getVantagePointsOutput(args?: GetVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVantagePointsResult> {
+export function getVantagePointsOutput(args?: GetVantagePointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVantagePointsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:HealthChecks/getVantagePoints:getVantagePoints", {

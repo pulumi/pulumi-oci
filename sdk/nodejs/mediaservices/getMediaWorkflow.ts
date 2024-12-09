@@ -122,7 +122,7 @@ export interface GetMediaWorkflowResult {
  * });
  * ```
  */
-export function getMediaWorkflowOutput(args: GetMediaWorkflowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaWorkflowResult> {
+export function getMediaWorkflowOutput(args: GetMediaWorkflowOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMediaWorkflowResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaWorkflow:getMediaWorkflow", {
         "mediaWorkflowId": args.mediaWorkflowId,

@@ -321,7 +321,7 @@ def get_function(function_id: Optional[str] = None,
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         trace_configs=pulumi.get(__ret__, 'trace_configs'))
 def get_function_output(function_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFunctionResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFunctionResult]:
     """
     This data source provides details about a specific Function resource in Oracle Cloud Infrastructure Functions service.
 
@@ -341,7 +341,7 @@ def get_function_output(function_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['functionId'] = function_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFunction:getFunction', __args__, opts=opts, typ=GetFunctionResult)
     return __ret__.apply(lambda __response__: GetFunctionResult(
         application_id=pulumi.get(__response__, 'application_id'),

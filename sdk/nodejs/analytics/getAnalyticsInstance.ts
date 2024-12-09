@@ -143,7 +143,7 @@ export interface GetAnalyticsInstanceResult {
  * });
  * ```
  */
-export function getAnalyticsInstanceOutput(args: GetAnalyticsInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstanceResult> {
+export function getAnalyticsInstanceOutput(args: GetAnalyticsInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAnalyticsInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", {
         "analyticsInstanceId": args.analyticsInstanceId,

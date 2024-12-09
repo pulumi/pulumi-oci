@@ -237,7 +237,7 @@ export interface GetOpensearchClusterResult {
  * });
  * ```
  */
-export function getOpensearchClusterOutput(args: GetOpensearchClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchClusterResult> {
+export function getOpensearchClusterOutput(args: GetOpensearchClusterOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOpensearchClusterResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", {
         "opensearchClusterId": args.opensearchClusterId,

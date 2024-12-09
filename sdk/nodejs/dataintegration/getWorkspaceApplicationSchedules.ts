@@ -124,7 +124,7 @@ export interface GetWorkspaceApplicationSchedulesResult {
  * });
  * ```
  */
-export function getWorkspaceApplicationSchedulesOutput(args: GetWorkspaceApplicationSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceApplicationSchedulesResult> {
+export function getWorkspaceApplicationSchedulesOutput(args: GetWorkspaceApplicationSchedulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspaceApplicationSchedulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceApplicationSchedules:getWorkspaceApplicationSchedules", {
         "applicationKey": args.applicationKey,

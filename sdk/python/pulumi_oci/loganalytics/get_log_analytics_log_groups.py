@@ -150,7 +150,7 @@ def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[st
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsLogGroupsFilterArgs', 'GetLogAnalyticsLogGroupsFilterArgsDict']]]]] = None,
                                         namespace: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsResult]:
     """
     This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -177,7 +177,7 @@ def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[st
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups', __args__, opts=opts, typ=GetLogAnalyticsLogGroupsResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsLogGroupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

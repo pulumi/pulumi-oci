@@ -115,7 +115,7 @@ export interface GetVirtualDeploymentsResult {
  * });
  * ```
  */
-export function getVirtualDeploymentsOutput(args: GetVirtualDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualDeploymentsResult> {
+export function getVirtualDeploymentsOutput(args: GetVirtualDeploymentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualDeploymentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceMesh/getVirtualDeployments:getVirtualDeployments", {
         "compartmentId": args.compartmentId,

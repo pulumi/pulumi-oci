@@ -409,7 +409,7 @@ def get_domains_policy_output(attribute_sets: Optional[pulumi.Input[Optional[Seq
                               idcs_endpoint: Optional[pulumi.Input[str]] = None,
                               policy_id: Optional[pulumi.Input[str]] = None,
                               resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsPolicyResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsPolicyResult]:
     """
     This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -444,7 +444,7 @@ def get_domains_policy_output(attribute_sets: Optional[pulumi.Input[Optional[Seq
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['policyId'] = policy_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsPolicy:getDomainsPolicy', __args__, opts=opts, typ=GetDomainsPolicyResult)
     return __ret__.apply(lambda __response__: GetDomainsPolicyResult(
         active=pulumi.get(__response__, 'active'),

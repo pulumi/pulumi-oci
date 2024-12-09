@@ -70,7 +70,7 @@ export interface GetProjectRepositorySettingResult {
  * });
  * ```
  */
-export function getProjectRepositorySettingOutput(args: GetProjectRepositorySettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProjectRepositorySettingResult> {
+export function getProjectRepositorySettingOutput(args: GetProjectRepositorySettingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProjectRepositorySettingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", {
         "projectId": args.projectId,

@@ -140,7 +140,7 @@ export interface GetMediaWorkflowJobResult {
  * });
  * ```
  */
-export function getMediaWorkflowJobOutput(args: GetMediaWorkflowJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaWorkflowJobResult> {
+export function getMediaWorkflowJobOutput(args: GetMediaWorkflowJobOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMediaWorkflowJobResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaWorkflowJob:getMediaWorkflowJob", {
         "mediaWorkflowJobId": args.mediaWorkflowJobId,

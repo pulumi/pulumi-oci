@@ -159,7 +159,7 @@ def get_virtual_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualNodePoolsFilterArgs', 'GetVirtualNodePoolsFilterArgsDict']]]]] = None,
                                   states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualNodePoolsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualNodePoolsResult]:
     """
     This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
 
@@ -177,7 +177,7 @@ def get_virtual_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['states'] = states
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools', __args__, opts=opts, typ=GetVirtualNodePoolsResult)
     return __ret__.apply(lambda __response__: GetVirtualNodePoolsResult(
         cluster_id=pulumi.get(__response__, 'cluster_id'),

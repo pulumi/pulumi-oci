@@ -194,7 +194,7 @@ def get_job_runs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         id: Optional[pulumi.Input[Optional[str]]] = None,
                         job_id: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobRunsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobRunsResult]:
     """
     This data source provides the list of Job Runs in Oracle Cloud Infrastructure Data Science service.
 
@@ -230,7 +230,7 @@ def get_job_runs_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['id'] = id
     __args__['jobId'] = job_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getJobRuns:getJobRuns', __args__, opts=opts, typ=GetJobRunsResult)
     return __ret__.apply(lambda __response__: GetJobRunsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

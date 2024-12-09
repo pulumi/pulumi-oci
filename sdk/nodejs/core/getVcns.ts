@@ -105,7 +105,7 @@ export interface GetVcnsResult {
  * });
  * ```
  */
-export function getVcnsOutput(args: GetVcnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVcnsResult> {
+export function getVcnsOutput(args: GetVcnsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVcnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVcns:getVcns", {
         "compartmentId": args.compartmentId,

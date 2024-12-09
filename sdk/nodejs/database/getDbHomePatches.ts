@@ -72,7 +72,7 @@ export interface GetDbHomePatchesResult {
  * });
  * ```
  */
-export function getDbHomePatchesOutput(args: GetDbHomePatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomePatchesResult> {
+export function getDbHomePatchesOutput(args: GetDbHomePatchesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbHomePatchesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbHomePatches:getDbHomePatches", {
         "dbHomeId": args.dbHomeId,

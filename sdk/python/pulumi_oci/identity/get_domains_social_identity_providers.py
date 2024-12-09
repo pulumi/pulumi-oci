@@ -247,7 +247,7 @@ def get_domains_social_identity_providers_output(authorization: Optional[pulumi.
                                                  sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                                                  sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                                                  start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsSocialIdentityProvidersResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsSocialIdentityProvidersResult]:
     """
     This data source provides the list of Social Identity Providers in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -285,7 +285,7 @@ def get_domains_social_identity_providers_output(authorization: Optional[pulumi.
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders', __args__, opts=opts, typ=GetDomainsSocialIdentityProvidersResult)
     return __ret__.apply(lambda __response__: GetDomainsSocialIdentityProvidersResult(
         authorization=pulumi.get(__response__, 'authorization'),

@@ -132,7 +132,7 @@ def get_product_licenses(compartment_id: Optional[str] = None,
 def get_product_licenses_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProductLicensesFilterArgs', 'GetProductLicensesFilterArgsDict']]]]] = None,
                                 is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProductLicensesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProductLicensesResult]:
     """
     This data source provides the list of Product Licenses in Oracle Cloud Infrastructure License Manager service.
 
@@ -156,7 +156,7 @@ def get_product_licenses_output(compartment_id: Optional[pulumi.Input[str]] = No
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['isCompartmentIdInSubtree'] = is_compartment_id_in_subtree
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getProductLicenses:getProductLicenses', __args__, opts=opts, typ=GetProductLicensesResult)
     return __ret__.apply(lambda __response__: GetProductLicensesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

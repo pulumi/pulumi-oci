@@ -114,7 +114,7 @@ def get_target_database_peer_target_databases(filters: Optional[Sequence[Union['
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
 def get_target_database_peer_target_databases_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabasePeerTargetDatabasesFilterArgs', 'GetTargetDatabasePeerTargetDatabasesFilterArgsDict']]]]] = None,
                                                      target_database_id: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasePeerTargetDatabasesResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasePeerTargetDatabasesResult]:
     """
     This data source provides the list of Target Database Peer Target Databases in Oracle Cloud Infrastructure Data Safe service.
 
@@ -135,7 +135,7 @@ def get_target_database_peer_target_databases_output(filters: Optional[pulumi.In
     __args__ = dict()
     __args__['filters'] = filters
     __args__['targetDatabaseId'] = target_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases', __args__, opts=opts, typ=GetTargetDatabasePeerTargetDatabasesResult)
     return __ret__.apply(lambda __response__: GetTargetDatabasePeerTargetDatabasesResult(
         filters=pulumi.get(__response__, 'filters'),

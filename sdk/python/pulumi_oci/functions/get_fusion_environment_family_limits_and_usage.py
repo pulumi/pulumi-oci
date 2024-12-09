@@ -126,7 +126,7 @@ def get_fusion_environment_family_limits_and_usage(fusion_environment_family_id:
         production_limit_and_usages=pulumi.get(__ret__, 'production_limit_and_usages'),
         test_limit_and_usages=pulumi.get(__ret__, 'test_limit_and_usages'))
 def get_fusion_environment_family_limits_and_usage_output(fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
-                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentFamilyLimitsAndUsageResult]:
+                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentFamilyLimitsAndUsageResult]:
     """
     This data source provides details about a specific Fusion Environment Family Limits And Usage resource in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -146,7 +146,7 @@ def get_fusion_environment_family_limits_and_usage_output(fusion_environment_fam
     """
     __args__ = dict()
     __args__['fusionEnvironmentFamilyId'] = fusion_environment_family_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage', __args__, opts=opts, typ=GetFusionEnvironmentFamilyLimitsAndUsageResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentFamilyLimitsAndUsageResult(
         development_limit_and_usages=pulumi.get(__response__, 'development_limit_and_usages'),

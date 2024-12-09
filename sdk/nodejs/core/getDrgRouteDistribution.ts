@@ -95,7 +95,7 @@ export interface GetDrgRouteDistributionResult {
  * });
  * ```
  */
-export function getDrgRouteDistributionOutput(args: GetDrgRouteDistributionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteDistributionResult> {
+export function getDrgRouteDistributionOutput(args: GetDrgRouteDistributionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrgRouteDistributionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDrgRouteDistribution:getDrgRouteDistribution", {
         "drgRouteDistributionId": args.drgRouteDistributionId,

@@ -189,7 +189,7 @@ def get_sql_firewall_allowed_sql_analytics_output(access_level: Optional[pulumi.
                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlFirewallAllowedSqlAnalyticsFilterArgs', 'GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict']]]]] = None,
                                                   group_bies: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                   scim_query: Optional[pulumi.Input[Optional[str]]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlFirewallAllowedSqlAnalyticsResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallAllowedSqlAnalyticsResult]:
     """
     This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.
 
@@ -237,7 +237,7 @@ def get_sql_firewall_allowed_sql_analytics_output(access_level: Optional[pulumi.
     __args__['filters'] = filters
     __args__['groupBies'] = group_bies
     __args__['scimQuery'] = scim_query
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSqlFirewallAllowedSqlAnalytics:getSqlFirewallAllowedSqlAnalytics', __args__, opts=opts, typ=GetSqlFirewallAllowedSqlAnalyticsResult)
     return __ret__.apply(lambda __response__: GetSqlFirewallAllowedSqlAnalyticsResult(
         access_level=pulumi.get(__response__, 'access_level'),

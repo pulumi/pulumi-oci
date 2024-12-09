@@ -242,7 +242,7 @@ def get_autonomous_virtual_machine(autonomous_virtual_machine_id: Optional[str] 
         state=pulumi.get(__ret__, 'state'),
         vm_name=pulumi.get(__ret__, 'vm_name'))
 def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVirtualMachineResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVirtualMachineResult]:
     """
     This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
 
@@ -262,7 +262,7 @@ def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: Optiona
     """
     __args__ = dict()
     __args__['autonomousVirtualMachineId'] = autonomous_virtual_machine_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousVirtualMachine:getAutonomousVirtualMachine', __args__, opts=opts, typ=GetAutonomousVirtualMachineResult)
     return __ret__.apply(lambda __response__: GetAutonomousVirtualMachineResult(
         autonomous_virtual_machine_id=pulumi.get(__response__, 'autonomous_virtual_machine_id'),

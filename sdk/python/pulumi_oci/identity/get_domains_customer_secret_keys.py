@@ -277,7 +277,7 @@ def get_domains_customer_secret_keys_output(attribute_sets: Optional[pulumi.Inpu
                                             sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                                             sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                                             start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsCustomerSecretKeysResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsCustomerSecretKeysResult]:
     """
     This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -321,7 +321,7 @@ def get_domains_customer_secret_keys_output(attribute_sets: Optional[pulumi.Inpu
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys', __args__, opts=opts, typ=GetDomainsCustomerSecretKeysResult)
     return __ret__.apply(lambda __response__: GetDomainsCustomerSecretKeysResult(
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),

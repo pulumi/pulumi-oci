@@ -190,7 +190,7 @@ def get_db_systems_output(availability_domain: Optional[pulumi.Input[Optional[st
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemsResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemsResult]:
     """
     This data source provides the list of Db Systems in Oracle Cloud Infrastructure Database service.
 
@@ -227,7 +227,7 @@ def get_db_systems_output(availability_domain: Optional[pulumi.Input[Optional[st
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbSystems:getDbSystems', __args__, opts=opts, typ=GetDbSystemsResult)
     return __ret__.apply(lambda __response__: GetDbSystemsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

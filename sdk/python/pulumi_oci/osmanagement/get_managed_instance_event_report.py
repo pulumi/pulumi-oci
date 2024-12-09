@@ -141,7 +141,7 @@ def get_managed_instance_event_report_output(compartment_id: Optional[pulumi.Inp
                                              latest_timestamp_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                              latest_timestamp_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                              managed_instance_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceEventReportResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceEventReportResult]:
     """
     This data source provides details about a specific Managed Instance Event Report resource in Oracle Cloud Infrastructure OS Management service.
 
@@ -170,7 +170,7 @@ def get_managed_instance_event_report_output(compartment_id: Optional[pulumi.Inp
     __args__['latestTimestampGreaterThanOrEqualTo'] = latest_timestamp_greater_than_or_equal_to
     __args__['latestTimestampLessThan'] = latest_timestamp_less_than
     __args__['managedInstanceId'] = managed_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport', __args__, opts=opts, typ=GetManagedInstanceEventReportResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceEventReportResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

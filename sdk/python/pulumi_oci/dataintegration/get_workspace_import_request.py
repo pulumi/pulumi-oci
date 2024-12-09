@@ -307,7 +307,7 @@ def get_workspace_import_request(import_request_key: Optional[str] = None,
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_import_request_output(import_request_key: Optional[pulumi.Input[str]] = None,
                                         workspace_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceImportRequestResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceImportRequestResult]:
     """
     This data source provides details about a specific Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
 
@@ -330,7 +330,7 @@ def get_workspace_import_request_output(import_request_key: Optional[pulumi.Inpu
     __args__ = dict()
     __args__['importRequestKey'] = import_request_key
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceImportRequest:getWorkspaceImportRequest', __args__, opts=opts, typ=GetWorkspaceImportRequestResult)
     return __ret__.apply(lambda __response__: GetWorkspaceImportRequestResult(
         are_data_asset_references_included=pulumi.get(__response__, 'are_data_asset_references_included'),

@@ -88,7 +88,7 @@ export interface GetRemotePeeringConnectionsResult {
  * });
  * ```
  */
-export function getRemotePeeringConnectionsOutput(args: GetRemotePeeringConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemotePeeringConnectionsResult> {
+export function getRemotePeeringConnectionsOutput(args: GetRemotePeeringConnectionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRemotePeeringConnectionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", {
         "compartmentId": args.compartmentId,

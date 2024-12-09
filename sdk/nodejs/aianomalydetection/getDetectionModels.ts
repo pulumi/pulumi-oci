@@ -108,7 +108,7 @@ export interface GetDetectionModelsResult {
  * });
  * ```
  */
-export function getDetectionModelsOutput(args: GetDetectionModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionModelsResult> {
+export function getDetectionModelsOutput(args: GetDetectionModelsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDetectionModelsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", {
         "compartmentId": args.compartmentId,

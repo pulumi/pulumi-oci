@@ -308,7 +308,7 @@ def get_backup(backup_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupResult]:
     """
     This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
 
@@ -328,7 +328,7 @@ def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['backupId'] = backup_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getBackup:getBackup', __args__, opts=opts, typ=GetBackupResult)
     return __ret__.apply(lambda __response__: GetBackupResult(
         backup_id=pulumi.get(__response__, 'backup_id'),

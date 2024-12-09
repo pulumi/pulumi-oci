@@ -88,7 +88,7 @@ export interface GetImageShapeResult {
  * });
  * ```
  */
-export function getImageShapeOutput(args: GetImageShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImageShapeResult> {
+export function getImageShapeOutput(args: GetImageShapeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImageShapeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getImageShape:getImageShape", {
         "imageId": args.imageId,

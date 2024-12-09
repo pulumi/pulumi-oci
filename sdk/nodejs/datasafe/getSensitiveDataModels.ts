@@ -152,7 +152,7 @@ export interface GetSensitiveDataModelsResult {
  * });
  * ```
  */
-export function getSensitiveDataModelsOutput(args: GetSensitiveDataModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelsResult> {
+export function getSensitiveDataModelsOutput(args: GetSensitiveDataModelsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSensitiveDataModelsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", {
         "accessLevel": args.accessLevel,

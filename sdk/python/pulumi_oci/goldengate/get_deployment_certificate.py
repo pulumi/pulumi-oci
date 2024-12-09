@@ -358,7 +358,7 @@ def get_deployment_certificate(certificate_key: Optional[str] = None,
         version=pulumi.get(__ret__, 'version'))
 def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[str]] = None,
                                       deployment_id: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentCertificateResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentCertificateResult]:
     """
     This data source provides details about a specific Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -381,7 +381,7 @@ def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['certificateKey'] = certificate_key
     __args__['deploymentId'] = deployment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate', __args__, opts=opts, typ=GetDeploymentCertificateResult)
     return __ret__.apply(lambda __response__: GetDeploymentCertificateResult(
         authority_key_id=pulumi.get(__response__, 'authority_key_id'),

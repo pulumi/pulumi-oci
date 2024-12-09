@@ -90,7 +90,7 @@ export interface GetResourcesResult {
  * });
  * ```
  */
-export function getResourcesOutput(args: GetResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourcesResult> {
+export function getResourcesOutput(args: GetResourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:UsageProxy/getResources:getResources", {
         "compartmentId": args.compartmentId,

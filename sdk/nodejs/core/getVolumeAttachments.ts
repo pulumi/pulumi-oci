@@ -116,7 +116,7 @@ export interface GetVolumeAttachmentsResult {
  * });
  * ```
  */
-export function getVolumeAttachmentsOutput(args: GetVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeAttachmentsResult> {
+export function getVolumeAttachmentsOutput(args: GetVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeAttachmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVolumeAttachments:getVolumeAttachments", {
         "availabilityDomain": args.availabilityDomain,

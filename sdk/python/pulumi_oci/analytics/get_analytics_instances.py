@@ -189,7 +189,7 @@ def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnalyticsInstancesFilterArgs', 'GetAnalyticsInstancesFilterArgsDict']]]]] = None,
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnalyticsInstancesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnalyticsInstancesResult]:
     """
     This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
 
@@ -222,7 +222,7 @@ def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Analytics/getAnalyticsInstances:getAnalyticsInstances', __args__, opts=opts, typ=GetAnalyticsInstancesResult)
     return __ret__.apply(lambda __response__: GetAnalyticsInstancesResult(
         analytics_instances=pulumi.get(__response__, 'analytics_instances'),

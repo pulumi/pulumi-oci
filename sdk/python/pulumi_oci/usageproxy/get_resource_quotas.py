@@ -145,7 +145,7 @@ def get_resource_quotas_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResourceQuotasFilterArgs', 'GetResourceQuotasFilterArgsDict']]]]] = None,
                                service_entitlement: Optional[pulumi.Input[Optional[str]]] = None,
                                service_name: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceQuotasResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceQuotasResult]:
     """
     This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
 
@@ -173,7 +173,7 @@ def get_resource_quotas_output(compartment_id: Optional[pulumi.Input[str]] = Non
     __args__['filters'] = filters
     __args__['serviceEntitlement'] = service_entitlement
     __args__['serviceName'] = service_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getResourceQuotas:getResourceQuotas', __args__, opts=opts, typ=GetResourceQuotasResult)
     return __ret__.apply(lambda __response__: GetResourceQuotasResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

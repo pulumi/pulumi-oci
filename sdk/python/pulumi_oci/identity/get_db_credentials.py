@@ -150,7 +150,7 @@ def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[U
                               name: Optional[pulumi.Input[Optional[str]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               user_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbCredentialsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbCredentialsResult]:
     """
     This data source provides the list of Db Credentials in Oracle Cloud Infrastructure Identity service.
 
@@ -177,7 +177,7 @@ def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     __args__['name'] = name
     __args__['state'] = state
     __args__['userId'] = user_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDbCredentials:getDbCredentials', __args__, opts=opts, typ=GetDbCredentialsResult)
     return __ret__.apply(lambda __response__: GetDbCredentialsResult(
         db_credentials=pulumi.get(__response__, 'db_credentials'),

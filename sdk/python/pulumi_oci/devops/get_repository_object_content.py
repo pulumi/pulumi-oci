@@ -116,7 +116,7 @@ def get_repository_object_content(file_path: Optional[str] = None,
 def get_repository_object_content_output(file_path: Optional[pulumi.Input[Optional[str]]] = None,
                                          repository_id: Optional[pulumi.Input[str]] = None,
                                          sha: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryObjectContentResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryObjectContentResult]:
     """
     This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
 
@@ -142,7 +142,7 @@ def get_repository_object_content_output(file_path: Optional[pulumi.Input[Option
     __args__['filePath'] = file_path
     __args__['repositoryId'] = repository_id
     __args__['sha'] = sha
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent', __args__, opts=opts, typ=GetRepositoryObjectContentResult)
     return __ret__.apply(lambda __response__: GetRepositoryObjectContentResult(
         file_path=pulumi.get(__response__, 'file_path'),

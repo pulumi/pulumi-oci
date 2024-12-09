@@ -258,7 +258,7 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[str]
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_fusion_environment_refresh_activity_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                    refresh_activity_id: Optional[pulumi.Input[str]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentRefreshActivityResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentRefreshActivityResult]:
     """
     This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -281,7 +281,7 @@ def get_fusion_environment_refresh_activity_output(fusion_environment_id: Option
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
     __args__['refreshActivityId'] = refresh_activity_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity', __args__, opts=opts, typ=GetFusionEnvironmentRefreshActivityResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentRefreshActivityResult(
         display_name=pulumi.get(__response__, 'display_name'),

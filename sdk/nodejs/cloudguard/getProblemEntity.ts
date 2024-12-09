@@ -72,7 +72,7 @@ export interface GetProblemEntityResult {
  * });
  * ```
  */
-export function getProblemEntityOutput(args: GetProblemEntityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProblemEntityResult> {
+export function getProblemEntityOutput(args: GetProblemEntityOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProblemEntityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getProblemEntity:getProblemEntity", {
         "problemId": args.problemId,

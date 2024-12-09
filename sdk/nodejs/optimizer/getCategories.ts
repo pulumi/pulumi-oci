@@ -133,7 +133,7 @@ export interface GetCategoriesResult {
  * });
  * ```
  */
-export function getCategoriesOutput(args: GetCategoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoriesResult> {
+export function getCategoriesOutput(args: GetCategoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCategoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getCategories:getCategories", {
         "childTenancyIds": args.childTenancyIds,

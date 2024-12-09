@@ -165,7 +165,7 @@ export interface GetBuildPipelineStageResult {
  * });
  * ```
  */
-export function getBuildPipelineStageOutput(args: GetBuildPipelineStageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildPipelineStageResult> {
+export function getBuildPipelineStageOutput(args: GetBuildPipelineStageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBuildPipelineStageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getBuildPipelineStage:getBuildPipelineStage", {
         "buildPipelineStageId": args.buildPipelineStageId,

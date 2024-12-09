@@ -87,7 +87,7 @@ export interface GetConsoleHistoryDataResult {
  * });
  * ```
  */
-export function getConsoleHistoryDataOutput(args: GetConsoleHistoryDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConsoleHistoryDataResult> {
+export function getConsoleHistoryDataOutput(args: GetConsoleHistoryDataOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConsoleHistoryDataResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getConsoleHistoryData:getConsoleHistoryData", {
         "consoleHistoryId": args.consoleHistoryId,

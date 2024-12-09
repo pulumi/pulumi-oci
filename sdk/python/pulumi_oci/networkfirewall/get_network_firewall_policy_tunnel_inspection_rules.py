@@ -144,7 +144,7 @@ def get_network_firewall_policy_tunnel_inspection_rules_output(display_name: Opt
                                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs', 'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict']]]]] = None,
                                                                network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                                tunnel_inspection_rule_priority_order: Optional[pulumi.Input[Optional[int]]] = None,
-                                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyTunnelInspectionRulesResult]:
+                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyTunnelInspectionRulesResult]:
     """
     This data source provides the list of Network Firewall Policy Tunnel Inspection Rules in Oracle Cloud Infrastructure Network Firewall service.
 
@@ -171,7 +171,7 @@ def get_network_firewall_policy_tunnel_inspection_rules_output(display_name: Opt
     __args__['filters'] = filters
     __args__['networkFirewallPolicyId'] = network_firewall_policy_id
     __args__['tunnelInspectionRulePriorityOrder'] = tunnel_inspection_rule_priority_order
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRules:getNetworkFirewallPolicyTunnelInspectionRules', __args__, opts=opts, typ=GetNetworkFirewallPolicyTunnelInspectionRulesResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyTunnelInspectionRulesResult(
         display_name=pulumi.get(__response__, 'display_name'),

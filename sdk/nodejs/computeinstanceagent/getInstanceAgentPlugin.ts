@@ -90,7 +90,7 @@ export interface GetInstanceAgentPluginResult {
  * });
  * ```
  */
-export function getInstanceAgentPluginOutput(args: GetInstanceAgentPluginOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceAgentPluginResult> {
+export function getInstanceAgentPluginOutput(args: GetInstanceAgentPluginOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceAgentPluginResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin", {
         "compartmentId": args.compartmentId,

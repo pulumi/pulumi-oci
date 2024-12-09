@@ -148,7 +148,7 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
                                              category_type: Optional[pulumi.Input[Optional[str]]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
                                              namespace: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsCategoriesListResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsCategoriesListResult]:
     """
     This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -177,7 +177,7 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
     __args__['categoryType'] = category_type
     __args__['name'] = name
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList', __args__, opts=opts, typ=GetLogAnalyticsCategoriesListResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsCategoriesListResult(
         category_display_text=pulumi.get(__response__, 'category_display_text'),

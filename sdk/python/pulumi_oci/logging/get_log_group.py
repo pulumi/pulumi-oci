@@ -190,7 +190,7 @@ def get_log_group(log_group_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
 def get_log_group_output(log_group_id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogGroupResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogGroupResult]:
     """
     This data source provides details about a specific Log Group resource in Oracle Cloud Infrastructure Logging service.
 
@@ -210,7 +210,7 @@ def get_log_group_output(log_group_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['logGroupId'] = log_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Logging/getLogGroup:getLogGroup', __args__, opts=opts, typ=GetLogGroupResult)
     return __ret__.apply(lambda __response__: GetLogGroupResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

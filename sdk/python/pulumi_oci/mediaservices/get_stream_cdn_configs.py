@@ -158,7 +158,7 @@ def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[s
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamCdnConfigsFilterArgs', 'GetStreamCdnConfigsFilterArgsDict']]]]] = None,
                                   id: Optional[pulumi.Input[Optional[str]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamCdnConfigsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamCdnConfigsResult]:
     """
     This data source provides the list of Stream Cdn Configs in Oracle Cloud Infrastructure Media Services service.
 
@@ -188,7 +188,7 @@ def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[s
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs', __args__, opts=opts, typ=GetStreamCdnConfigsResult)
     return __ret__.apply(lambda __response__: GetStreamCdnConfigsResult(
         display_name=pulumi.get(__response__, 'display_name'),

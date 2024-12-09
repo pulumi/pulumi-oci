@@ -104,7 +104,7 @@ export interface GetRepositoryDiffsResult {
  * });
  * ```
  */
-export function getRepositoryDiffsOutput(args: GetRepositoryDiffsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryDiffsResult> {
+export function getRepositoryDiffsOutput(args: GetRepositoryDiffsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryDiffsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", {
         "baseVersion": args.baseVersion,

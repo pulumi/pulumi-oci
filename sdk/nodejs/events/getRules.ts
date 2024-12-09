@@ -97,7 +97,7 @@ export interface GetRulesResult {
  * });
  * ```
  */
-export function getRulesOutput(args: GetRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRulesResult> {
+export function getRulesOutput(args: GetRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Events/getRules:getRules", {
         "compartmentId": args.compartmentId,

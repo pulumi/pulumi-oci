@@ -74,7 +74,7 @@ export interface GetQueryQuickPicksResult {
  * });
  * ```
  */
-export function getQueryQuickPicksOutput(args: GetQueryQuickPicksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueryQuickPicksResult> {
+export function getQueryQuickPicksOutput(args: GetQueryQuickPicksOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetQueryQuickPicksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", {
         "apmDomainId": args.apmDomainId,

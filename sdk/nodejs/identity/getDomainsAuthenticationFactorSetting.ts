@@ -253,7 +253,7 @@ export interface GetDomainsAuthenticationFactorSettingResult {
  * });
  * ```
  */
-export function getDomainsAuthenticationFactorSettingOutput(args: GetDomainsAuthenticationFactorSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAuthenticationFactorSettingResult> {
+export function getDomainsAuthenticationFactorSettingOutput(args: GetDomainsAuthenticationFactorSettingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsAuthenticationFactorSettingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", {
         "attributeSets": args.attributeSets,

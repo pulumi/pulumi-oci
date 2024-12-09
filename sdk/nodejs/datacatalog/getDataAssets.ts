@@ -110,7 +110,7 @@ export interface GetDataAssetsResult {
  *
  * Returns a list of data assets within a data catalog.
  */
-export function getDataAssetsOutput(args: GetDataAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataAssetsResult> {
+export function getDataAssetsOutput(args: GetDataAssetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataAssetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataCatalog/getDataAssets:getDataAssets", {
         "catalogId": args.catalogId,

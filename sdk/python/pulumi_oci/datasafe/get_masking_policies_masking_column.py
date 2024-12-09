@@ -297,7 +297,7 @@ def get_masking_policies_masking_column(masking_column_key: Optional[str] = None
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_masking_policies_masking_column_output(masking_column_key: Optional[pulumi.Input[str]] = None,
                                                masking_policy_id: Optional[pulumi.Input[str]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPoliciesMaskingColumnResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPoliciesMaskingColumnResult]:
     """
     This data source provides details about a specific Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -320,7 +320,7 @@ def get_masking_policies_masking_column_output(masking_column_key: Optional[pulu
     __args__ = dict()
     __args__['maskingColumnKey'] = masking_column_key
     __args__['maskingPolicyId'] = masking_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPoliciesMaskingColumn:getMaskingPoliciesMaskingColumn', __args__, opts=opts, typ=GetMaskingPoliciesMaskingColumnResult)
     return __ret__.apply(lambda __response__: GetMaskingPoliciesMaskingColumnResult(
         child_columns=pulumi.get(__response__, 'child_columns'),

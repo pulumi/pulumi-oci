@@ -197,7 +197,7 @@ export interface GetDomainsCloudGateResult {
  * });
  * ```
  */
-export function getDomainsCloudGateOutput(args: GetDomainsCloudGateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsCloudGateResult> {
+export function getDomainsCloudGateOutput(args: GetDomainsCloudGateOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsCloudGateResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsCloudGate:getDomainsCloudGate", {
         "attributeSets": args.attributeSets,

@@ -123,7 +123,7 @@ export interface GetManagedListResult {
  * });
  * ```
  */
-export function getManagedListOutput(args: GetManagedListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedListResult> {
+export function getManagedListOutput(args: GetManagedListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getManagedList:getManagedList", {
         "managedListId": args.managedListId,

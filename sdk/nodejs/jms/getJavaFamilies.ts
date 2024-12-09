@@ -100,7 +100,7 @@ export interface GetJavaFamiliesResult {
  * });
  * ```
  */
-export function getJavaFamiliesOutput(args?: GetJavaFamiliesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaFamiliesResult> {
+export function getJavaFamiliesOutput(args?: GetJavaFamiliesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJavaFamiliesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJavaFamilies:getJavaFamilies", {

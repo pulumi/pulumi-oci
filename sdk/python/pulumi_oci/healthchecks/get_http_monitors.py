@@ -153,7 +153,7 @@ def get_http_monitors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetHttpMonitorsFilterArgs', 'GetHttpMonitorsFilterArgsDict']]]]] = None,
                              home_region: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHttpMonitorsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHttpMonitorsResult]:
     """
     This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.
 
@@ -180,7 +180,7 @@ def get_http_monitors_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['homeRegion'] = home_region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:HealthChecks/getHttpMonitors:getHttpMonitors', __args__, opts=opts, typ=GetHttpMonitorsResult)
     return __ret__.apply(lambda __response__: GetHttpMonitorsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

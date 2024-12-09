@@ -135,7 +135,7 @@ export interface GetDataAssetResult {
  * });
  * ```
  */
-export function getDataAssetOutput(args: GetDataAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataAssetResult> {
+export function getDataAssetOutput(args: GetDataAssetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataAssetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataCatalog/getDataAsset:getDataAsset", {
         "catalogId": args.catalogId,

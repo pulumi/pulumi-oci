@@ -200,7 +200,7 @@ def get_compartment(id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_compartment_output(id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCompartmentResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompartmentResult]:
     """
     This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.
 
@@ -227,7 +227,7 @@ def get_compartment_output(id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['id'] = id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getCompartment:getCompartment', __args__, opts=opts, typ=GetCompartmentResult)
     return __ret__.apply(lambda __response__: GetCompartmentResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

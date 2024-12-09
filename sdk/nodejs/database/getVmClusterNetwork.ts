@@ -132,7 +132,7 @@ export interface GetVmClusterNetworkResult {
  * });
  * ```
  */
-export function getVmClusterNetworkOutput(args: GetVmClusterNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterNetworkResult> {
+export function getVmClusterNetworkOutput(args: GetVmClusterNetworkOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVmClusterNetworkResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getVmClusterNetwork:getVmClusterNetwork", {
         "exadataInfrastructureId": args.exadataInfrastructureId,

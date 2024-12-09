@@ -65,7 +65,7 @@ export interface GetPeerRegionForRemotePeeringsResult {
  * const testPeerRegionForRemotePeerings = oci.Core.getPeerRegionForRemotePeerings({});
  * ```
  */
-export function getPeerRegionForRemotePeeringsOutput(args?: GetPeerRegionForRemotePeeringsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPeerRegionForRemotePeeringsResult> {
+export function getPeerRegionForRemotePeeringsOutput(args?: GetPeerRegionForRemotePeeringsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPeerRegionForRemotePeeringsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", {

@@ -140,7 +140,7 @@ export interface GetDomainsApprovalWorkflowStepsResult {
  * });
  * ```
  */
-export function getDomainsApprovalWorkflowStepsOutput(args: GetDomainsApprovalWorkflowStepsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsApprovalWorkflowStepsResult> {
+export function getDomainsApprovalWorkflowStepsOutput(args: GetDomainsApprovalWorkflowStepsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsApprovalWorkflowStepsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsApprovalWorkflowSteps:getDomainsApprovalWorkflowSteps", {
         "approvalWorkflowStepCount": args.approvalWorkflowStepCount,

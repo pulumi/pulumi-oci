@@ -69,7 +69,7 @@ export interface GetManagementAgentGetAutoUpgradableConfigResult {
  * });
  * ```
  */
-export function getManagementAgentGetAutoUpgradableConfigOutput(args: GetManagementAgentGetAutoUpgradableConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentGetAutoUpgradableConfigResult> {
+export function getManagementAgentGetAutoUpgradableConfigOutput(args: GetManagementAgentGetAutoUpgradableConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentGetAutoUpgradableConfigResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", {
         "compartmentId": args.compartmentId,

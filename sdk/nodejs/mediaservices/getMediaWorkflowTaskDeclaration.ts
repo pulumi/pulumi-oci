@@ -100,7 +100,7 @@ export interface GetMediaWorkflowTaskDeclarationResult {
  * });
  * ```
  */
-export function getMediaWorkflowTaskDeclarationOutput(args?: GetMediaWorkflowTaskDeclarationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaWorkflowTaskDeclarationResult> {
+export function getMediaWorkflowTaskDeclarationOutput(args?: GetMediaWorkflowTaskDeclarationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMediaWorkflowTaskDeclarationResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration", {

@@ -107,7 +107,7 @@ export interface GetNamespaceOccOverviewsResult {
  * });
  * ```
  */
-export function getNamespaceOccOverviewsOutput(args: GetNamespaceOccOverviewsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceOccOverviewsResult> {
+export function getNamespaceOccOverviewsOutput(args: GetNamespaceOccOverviewsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceOccOverviewsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CapacityManagement/getNamespaceOccOverviews:getNamespaceOccOverviews", {
         "compartmentId": args.compartmentId,

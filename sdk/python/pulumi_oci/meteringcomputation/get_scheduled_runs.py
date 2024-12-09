@@ -117,7 +117,7 @@ def get_scheduled_runs(filters: Optional[Sequence[Union['GetScheduledRunsFilterA
         scheduled_run_collections=pulumi.get(__ret__, 'scheduled_run_collections'))
 def get_scheduled_runs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScheduledRunsFilterArgs', 'GetScheduledRunsFilterArgsDict']]]]] = None,
                               schedule_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduledRunsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledRunsResult]:
     """
     This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -138,7 +138,7 @@ def get_scheduled_runs_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     __args__ = dict()
     __args__['filters'] = filters
     __args__['scheduleId'] = schedule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getScheduledRuns:getScheduledRuns', __args__, opts=opts, typ=GetScheduledRunsResult)
     return __ret__.apply(lambda __response__: GetScheduledRunsResult(
         filters=pulumi.get(__response__, 'filters'),

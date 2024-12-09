@@ -110,7 +110,7 @@ export interface GetManagedDatabaseGroupsResult {
  * });
  * ```
  */
-export function getManagedDatabaseGroupsOutput(args: GetManagedDatabaseGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseGroupsResult> {
+export function getManagedDatabaseGroupsOutput(args: GetManagedDatabaseGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", {
         "compartmentId": args.compartmentId,

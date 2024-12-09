@@ -656,7 +656,7 @@ def get_domains_my_device_output(attribute_sets: Optional[pulumi.Input[Optional[
                                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                  my_device_id: Optional[pulumi.Input[str]] = None,
                                  resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyDeviceResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyDeviceResult]:
     """
     This data source provides details about a specific My Device resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -691,7 +691,7 @@ def get_domains_my_device_output(attribute_sets: Optional[pulumi.Input[Optional[
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['myDeviceId'] = my_device_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsMyDevice:getDomainsMyDevice', __args__, opts=opts, typ=GetDomainsMyDeviceResult)
     return __ret__.apply(lambda __response__: GetDomainsMyDeviceResult(
         additional_attributes=pulumi.get(__response__, 'additional_attributes'),

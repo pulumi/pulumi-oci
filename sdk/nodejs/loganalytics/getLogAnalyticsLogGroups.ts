@@ -94,7 +94,7 @@ export interface GetLogAnalyticsLogGroupsResult {
  * });
  * ```
  */
-export function getLogAnalyticsLogGroupsOutput(args: GetLogAnalyticsLogGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsLogGroupsResult> {
+export function getLogAnalyticsLogGroupsOutput(args: GetLogAnalyticsLogGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsLogGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", {
         "compartmentId": args.compartmentId,

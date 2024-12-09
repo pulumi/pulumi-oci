@@ -104,7 +104,7 @@ export interface GetAppAccelerationPoliciesResult {
  * });
  * ```
  */
-export function getAppAccelerationPoliciesOutput(args: GetAppAccelerationPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppAccelerationPoliciesResult> {
+export function getAppAccelerationPoliciesOutput(args: GetAppAccelerationPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppAccelerationPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waa/getAppAccelerationPolicies:getAppAccelerationPolicies", {
         "compartmentId": args.compartmentId,

@@ -108,7 +108,7 @@ export interface GetOpsiConfigurationsResult {
  * });
  * ```
  */
-export function getOpsiConfigurationsOutput(args: GetOpsiConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpsiConfigurationsResult> {
+export function getOpsiConfigurationsOutput(args: GetOpsiConfigurationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOpsiConfigurationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getOpsiConfigurations:getOpsiConfigurations", {
         "compartmentId": args.compartmentId,

@@ -129,7 +129,7 @@ def get_repository_authors(filters: Optional[Sequence[Union['GetRepositoryAuthor
 def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict']]]]] = None,
                                   ref_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   repository_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryAuthorsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryAuthorsResult]:
     """
     This data source provides the list of Repository Authors in Oracle Cloud Infrastructure Devops service.
 
@@ -153,7 +153,7 @@ def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequen
     __args__['filters'] = filters
     __args__['refName'] = ref_name
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryAuthors:getRepositoryAuthors', __args__, opts=opts, typ=GetRepositoryAuthorsResult)
     return __ret__.apply(lambda __response__: GetRepositoryAuthorsResult(
         filters=pulumi.get(__response__, 'filters'),

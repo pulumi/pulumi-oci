@@ -267,7 +267,7 @@ export interface GetAutonomousContainerDatabaseResult {
  * });
  * ```
  */
-export function getAutonomousContainerDatabaseOutput(args: GetAutonomousContainerDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseResult> {
+export function getAutonomousContainerDatabaseOutput(args: GetAutonomousContainerDatabaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousContainerDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", {
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,

@@ -338,7 +338,7 @@ def get_vcn(vcn_id: Optional[str] = None,
         vcn_domain_name=pulumi.get(__ret__, 'vcn_domain_name'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_vcn_output(vcn_id: Optional[pulumi.Input[str]] = None,
-                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVcnResult]:
+                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVcnResult]:
     """
     This data source provides details about a specific Vcn resource in Oracle Cloud Infrastructure Core service.
 
@@ -358,7 +358,7 @@ def get_vcn_output(vcn_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVcn:getVcn', __args__, opts=opts, typ=GetVcnResult)
     return __ret__.apply(lambda __response__: GetVcnResult(
         byoipv6cidr_blocks=pulumi.get(__response__, 'byoipv6cidr_blocks'),

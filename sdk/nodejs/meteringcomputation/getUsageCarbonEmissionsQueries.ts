@@ -75,7 +75,7 @@ export interface GetUsageCarbonEmissionsQueriesResult {
  * });
  * ```
  */
-export function getUsageCarbonEmissionsQueriesOutput(args: GetUsageCarbonEmissionsQueriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsageCarbonEmissionsQueriesResult> {
+export function getUsageCarbonEmissionsQueriesOutput(args: GetUsageCarbonEmissionsQueriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUsageCarbonEmissionsQueriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries", {
         "compartmentId": args.compartmentId,

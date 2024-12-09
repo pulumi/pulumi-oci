@@ -91,7 +91,7 @@ export interface GetPodShapesResult {
  * });
  * ```
  */
-export function getPodShapesOutput(args: GetPodShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPodShapesResult> {
+export function getPodShapesOutput(args: GetPodShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPodShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getPodShapes:getPodShapes", {
         "availabilityDomain": args.availabilityDomain,

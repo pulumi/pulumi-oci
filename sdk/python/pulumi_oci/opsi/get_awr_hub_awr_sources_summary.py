@@ -136,7 +136,7 @@ def get_awr_hub_awr_sources_summary(awr_hub_id: Optional[str] = None,
 def get_awr_hub_awr_sources_summary_output(awr_hub_id: Optional[pulumi.Input[str]] = None,
                                            compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            name: Optional[pulumi.Input[Optional[str]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwrHubAwrSourcesSummaryResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwrHubAwrSourcesSummaryResult]:
     """
     This data source provides details about a specific Awr Hub Awr Sources Summary resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -162,7 +162,7 @@ def get_awr_hub_awr_sources_summary_output(awr_hub_id: Optional[pulumi.Input[str
     __args__['awrHubId'] = awr_hub_id
     __args__['compartmentId'] = compartment_id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getAwrHubAwrSourcesSummary:getAwrHubAwrSourcesSummary', __args__, opts=opts, typ=GetAwrHubAwrSourcesSummaryResult)
     return __ret__.apply(lambda __response__: GetAwrHubAwrSourcesSummaryResult(
         awr_hub_id=pulumi.get(__response__, 'awr_hub_id'),

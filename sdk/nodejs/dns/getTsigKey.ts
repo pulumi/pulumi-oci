@@ -103,7 +103,7 @@ export interface GetTsigKeyResult {
  * });
  * ```
  */
-export function getTsigKeyOutput(args: GetTsigKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTsigKeyResult> {
+export function getTsigKeyOutput(args: GetTsigKeyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTsigKeyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getTsigKey:getTsigKey", {
         "tsigKeyId": args.tsigKeyId,

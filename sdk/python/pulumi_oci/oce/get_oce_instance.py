@@ -421,7 +421,7 @@ def get_oce_instance(oce_instance_id: Optional[str] = None,
         upgrade_schedule=pulumi.get(__ret__, 'upgrade_schedule'),
         waf_primary_domain=pulumi.get(__ret__, 'waf_primary_domain'))
 def get_oce_instance_output(oce_instance_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOceInstanceResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOceInstanceResult]:
     """
     This data source provides details about a specific Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
 
@@ -441,7 +441,7 @@ def get_oce_instance_output(oce_instance_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['oceInstanceId'] = oce_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Oce/getOceInstance:getOceInstance', __args__, opts=opts, typ=GetOceInstanceResult)
     return __ret__.apply(lambda __response__: GetOceInstanceResult(
         add_on_features=pulumi.get(__response__, 'add_on_features'),

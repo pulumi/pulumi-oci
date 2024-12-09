@@ -140,7 +140,7 @@ export interface GetDomainsUserDbCredentialsResult {
  * });
  * ```
  */
-export function getDomainsUserDbCredentialsOutput(args: GetDomainsUserDbCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsUserDbCredentialsResult> {
+export function getDomainsUserDbCredentialsOutput(args: GetDomainsUserDbCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsUserDbCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsUserDbCredentials:getDomainsUserDbCredentials", {
         "attributeSets": args.attributeSets,

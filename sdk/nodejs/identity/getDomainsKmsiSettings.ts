@@ -111,7 +111,7 @@ export interface GetDomainsKmsiSettingsResult {
  * });
  * ```
  */
-export function getDomainsKmsiSettingsOutput(args: GetDomainsKmsiSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsKmsiSettingsResult> {
+export function getDomainsKmsiSettingsOutput(args: GetDomainsKmsiSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsKmsiSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsKmsiSettings:getDomainsKmsiSettings", {
         "attributeSets": args.attributeSets,

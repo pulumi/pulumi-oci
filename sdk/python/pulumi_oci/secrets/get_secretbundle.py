@@ -230,7 +230,7 @@ def get_secretbundle_output(secret_id: Optional[pulumi.Input[str]] = None,
                             secret_version_name: Optional[pulumi.Input[Optional[str]]] = None,
                             stage: Optional[pulumi.Input[Optional[str]]] = None,
                             version_number: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretbundleResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecretbundleResult]:
     """
     This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
 
@@ -260,7 +260,7 @@ def get_secretbundle_output(secret_id: Optional[pulumi.Input[str]] = None,
     __args__['secretVersionName'] = secret_version_name
     __args__['stage'] = stage
     __args__['versionNumber'] = version_number
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Secrets/getSecretbundle:getSecretbundle', __args__, opts=opts, typ=GetSecretbundleResult)
     return __ret__.apply(lambda __response__: GetSecretbundleResult(
         id=pulumi.get(__response__, 'id'),

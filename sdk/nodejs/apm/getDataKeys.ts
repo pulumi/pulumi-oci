@@ -82,7 +82,7 @@ export interface GetDataKeysResult {
  * });
  * ```
  */
-export function getDataKeysOutput(args: GetDataKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataKeysResult> {
+export function getDataKeysOutput(args: GetDataKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Apm/getDataKeys:getDataKeys", {
         "apmDomainId": args.apmDomainId,

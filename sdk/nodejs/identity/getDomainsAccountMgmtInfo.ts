@@ -237,7 +237,7 @@ export interface GetDomainsAccountMgmtInfoResult {
  * });
  * ```
  */
-export function getDomainsAccountMgmtInfoOutput(args: GetDomainsAccountMgmtInfoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAccountMgmtInfoResult> {
+export function getDomainsAccountMgmtInfoOutput(args: GetDomainsAccountMgmtInfoOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsAccountMgmtInfoResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAccountMgmtInfo:getDomainsAccountMgmtInfo", {
         "accountMgmtInfoId": args.accountMgmtInfoId,

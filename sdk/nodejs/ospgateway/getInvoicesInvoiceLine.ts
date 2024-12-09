@@ -85,7 +85,7 @@ export interface GetInvoicesInvoiceLineResult {
  * });
  * ```
  */
-export function getInvoicesInvoiceLineOutput(args: GetInvoicesInvoiceLineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoicesInvoiceLineResult> {
+export function getInvoicesInvoiceLineOutput(args: GetInvoicesInvoiceLineOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInvoicesInvoiceLineResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OspGateway/getInvoicesInvoiceLine:getInvoicesInvoiceLine", {
         "compartmentId": args.compartmentId,

@@ -104,7 +104,7 @@ export interface GetMeshesResult {
  * });
  * ```
  */
-export function getMeshesOutput(args: GetMeshesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMeshesResult> {
+export function getMeshesOutput(args: GetMeshesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMeshesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceMesh/getMeshes:getMeshes", {
         "compartmentId": args.compartmentId,

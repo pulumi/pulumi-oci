@@ -75,7 +75,7 @@ export interface GetAuthenticationPolicyResult {
  * });
  * ```
  */
-export function getAuthenticationPolicyOutput(args: GetAuthenticationPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthenticationPolicyResult> {
+export function getAuthenticationPolicyOutput(args: GetAuthenticationPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuthenticationPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", {
         "compartmentId": args.compartmentId,

@@ -110,7 +110,7 @@ export interface GetManagedMySqlDatabaseSqlDataResult {
  * });
  * ```
  */
-export function getManagedMySqlDatabaseSqlDataOutput(args: GetManagedMySqlDatabaseSqlDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedMySqlDatabaseSqlDataResult> {
+export function getManagedMySqlDatabaseSqlDataOutput(args: GetManagedMySqlDatabaseSqlDataOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedMySqlDatabaseSqlDataResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData", {
         "endTime": args.endTime,

@@ -238,7 +238,7 @@ def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Opti
                                         target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         time_ended: Optional[pulumi.Input[Optional[str]]] = None,
                                         time_started: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlCollectionAnalyticsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlCollectionAnalyticsResult]:
     """
     This data source provides the list of Sql Collection Analytics in Oracle Cloud Infrastructure Data Safe service.
 
@@ -293,7 +293,7 @@ def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Opti
     __args__['targetId'] = target_id
     __args__['timeEnded'] = time_ended
     __args__['timeStarted'] = time_started
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSqlCollectionAnalytics:getSqlCollectionAnalytics', __args__, opts=opts, typ=GetSqlCollectionAnalyticsResult)
     return __ret__.apply(lambda __response__: GetSqlCollectionAnalyticsResult(
         access_level=pulumi.get(__response__, 'access_level'),

@@ -347,7 +347,7 @@ def get_product_license(product_license_id: Optional[str] = None,
         total_license_units_consumed=pulumi.get(__ret__, 'total_license_units_consumed'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
 def get_product_license_output(product_license_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProductLicenseResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProductLicenseResult]:
     """
     This data source provides details about a specific Product License resource in Oracle Cloud Infrastructure License Manager service.
 
@@ -367,7 +367,7 @@ def get_product_license_output(product_license_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['productLicenseId'] = product_license_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getProductLicense:getProductLicense', __args__, opts=opts, typ=GetProductLicenseResult)
     return __ret__.apply(lambda __response__: GetProductLicenseResult(
         active_license_record_count=pulumi.get(__response__, 'active_license_record_count'),

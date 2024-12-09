@@ -340,7 +340,7 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
                                 software_source_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 vendor_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourcesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourcesResult]:
     """
     This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -401,7 +401,7 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
     __args__['softwareSourceTypes'] = software_source_types
     __args__['states'] = states
     __args__['vendorName'] = vendor_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSources:getSoftwareSources', __args__, opts=opts, typ=GetSoftwareSourcesResult)
     return __ret__.apply(lambda __response__: GetSoftwareSourcesResult(
         arch_types=pulumi.get(__response__, 'arch_types'),

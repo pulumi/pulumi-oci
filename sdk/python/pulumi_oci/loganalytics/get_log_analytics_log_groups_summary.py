@@ -111,7 +111,7 @@ def get_log_analytics_log_groups_summary(compartment_id: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'))
 def get_log_analytics_log_groups_summary_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                 namespace: Optional[pulumi.Input[str]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsSummaryResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsSummaryResult]:
     """
     This data source provides details about a specific Log Analytics Log Groups Summary resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -134,7 +134,7 @@ def get_log_analytics_log_groups_summary_output(compartment_id: Optional[pulumi.
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary', __args__, opts=opts, typ=GetLogAnalyticsLogGroupsSummaryResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsLogGroupsSummaryResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -91,7 +91,7 @@ export interface GetHealthResult {
  * });
  * ```
  */
-export function getHealthOutput(args: GetHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHealthResult> {
+export function getHealthOutput(args: GetHealthOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHealthResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LoadBalancer/getHealth:getHealth", {
         "loadBalancerId": args.loadBalancerId,

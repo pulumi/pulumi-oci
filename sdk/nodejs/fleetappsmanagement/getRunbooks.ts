@@ -146,7 +146,7 @@ export interface GetRunbooksResult {
  * });
  * ```
  */
-export function getRunbooksOutput(args?: GetRunbooksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunbooksResult> {
+export function getRunbooksOutput(args?: GetRunbooksOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRunbooksResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getRunbooks:getRunbooks", {

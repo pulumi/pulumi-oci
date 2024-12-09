@@ -102,7 +102,7 @@ export interface GetSessionsResult {
  * });
  * ```
  */
-export function getSessionsOutput(args: GetSessionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSessionsResult> {
+export function getSessionsOutput(args: GetSessionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSessionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Bastion/getSessions:getSessions", {
         "bastionId": args.bastionId,

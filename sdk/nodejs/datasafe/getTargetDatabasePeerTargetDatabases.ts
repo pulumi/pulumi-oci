@@ -72,7 +72,7 @@ export interface GetTargetDatabasePeerTargetDatabasesResult {
  * });
  * ```
  */
-export function getTargetDatabasePeerTargetDatabasesOutput(args: GetTargetDatabasePeerTargetDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasePeerTargetDatabasesResult> {
+export function getTargetDatabasePeerTargetDatabasesOutput(args: GetTargetDatabasePeerTargetDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetDatabasePeerTargetDatabasesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", {
         "filters": args.filters,

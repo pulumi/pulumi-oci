@@ -172,7 +172,7 @@ def get_service_environment(compartment_id: Optional[str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
 def get_service_environment_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    service_environment_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceEnvironmentResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceEnvironmentResult]:
     """
     This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.
 
@@ -197,7 +197,7 @@ def get_service_environment_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['serviceEnvironmentId'] = service_environment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment', __args__, opts=opts, typ=GetServiceEnvironmentResult)
     return __ret__.apply(lambda __response__: GetServiceEnvironmentResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

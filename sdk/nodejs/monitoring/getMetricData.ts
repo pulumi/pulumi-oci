@@ -164,7 +164,7 @@ export interface GetMetricDataResult {
  * });
  * ```
  */
-export function getMetricDataOutput(args: GetMetricDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricDataResult> {
+export function getMetricDataOutput(args: GetMetricDataOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMetricDataResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Monitoring/getMetricData:getMetricData", {
         "compartmentId": args.compartmentId,

@@ -74,7 +74,7 @@ export interface GetCloudGuardConfigurationResult {
  * });
  * ```
  */
-export function getCloudGuardConfigurationOutput(args: GetCloudGuardConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudGuardConfigurationResult> {
+export function getCloudGuardConfigurationOutput(args: GetCloudGuardConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudGuardConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", {
         "compartmentId": args.compartmentId,

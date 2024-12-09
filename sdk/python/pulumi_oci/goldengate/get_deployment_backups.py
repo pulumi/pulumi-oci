@@ -171,7 +171,7 @@ def get_deployment_backups_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentBackupsFilterArgs', 'GetDeploymentBackupsFilterArgsDict']]]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentBackupsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentBackupsResult]:
     """
     This data source provides the list of Deployment Backups in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -201,7 +201,7 @@ def get_deployment_backups_output(compartment_id: Optional[pulumi.Input[str]] = 
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentBackups:getDeploymentBackups', __args__, opts=opts, typ=GetDeploymentBackupsResult)
     return __ret__.apply(lambda __response__: GetDeploymentBackupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

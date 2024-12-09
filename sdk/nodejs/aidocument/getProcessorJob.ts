@@ -109,7 +109,7 @@ export interface GetProcessorJobResult {
  * });
  * ```
  */
-export function getProcessorJobOutput(args: GetProcessorJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessorJobResult> {
+export function getProcessorJobOutput(args: GetProcessorJobOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProcessorJobResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiDocument/getProcessorJob:getProcessorJob", {
         "processorJobId": args.processorJobId,

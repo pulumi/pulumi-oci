@@ -139,7 +139,7 @@ export interface GetJobRunResult {
  * });
  * ```
  */
-export function getJobRunOutput(args: GetJobRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobRunResult> {
+export function getJobRunOutput(args: GetJobRunOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJobRunResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getJobRun:getJobRun", {
         "jobRunId": args.jobRunId,

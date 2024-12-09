@@ -168,7 +168,7 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] 
                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict']]]]] = None,
                                     service_environment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     service_environment_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceEnvironmentsResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceEnvironmentsResult]:
     """
     This data source provides the list of Service Environments in Oracle Cloud Infrastructure Service Manager Proxy service.
 
@@ -201,7 +201,7 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] 
     __args__['filters'] = filters
     __args__['serviceEnvironmentId'] = service_environment_id
     __args__['serviceEnvironmentType'] = service_environment_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments', __args__, opts=opts, typ=GetServiceEnvironmentsResult)
     return __ret__.apply(lambda __response__: GetServiceEnvironmentsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

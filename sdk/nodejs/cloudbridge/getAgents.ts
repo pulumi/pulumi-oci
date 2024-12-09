@@ -119,7 +119,7 @@ export interface GetAgentsResult {
  * });
  * ```
  */
-export function getAgentsOutput(args: GetAgentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentsResult> {
+export function getAgentsOutput(args: GetAgentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAgentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudBridge/getAgents:getAgents", {
         "agentId": args.agentId,

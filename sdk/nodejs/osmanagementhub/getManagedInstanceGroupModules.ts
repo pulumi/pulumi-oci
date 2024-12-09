@@ -147,7 +147,7 @@ export interface GetManagedInstanceGroupModulesResult {
  * });
  * ```
  */
-export function getManagedInstanceGroupModulesOutput(args: GetManagedInstanceGroupModulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupModulesResult> {
+export function getManagedInstanceGroupModulesOutput(args: GetManagedInstanceGroupModulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceGroupModulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceGroupModules:getManagedInstanceGroupModules", {
         "compartmentId": args.compartmentId,

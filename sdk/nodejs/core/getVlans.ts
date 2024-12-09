@@ -108,7 +108,7 @@ export interface GetVlansResult {
  * });
  * ```
  */
-export function getVlansOutput(args: GetVlansOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVlansResult> {
+export function getVlansOutput(args: GetVlansOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVlansResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVlans:getVlans", {
         "compartmentId": args.compartmentId,

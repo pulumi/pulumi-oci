@@ -58,7 +58,7 @@ export interface GetStackTfStateResult {
  * });
  * ```
  */
-export function getStackTfStateOutput(args: GetStackTfStateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStackTfStateResult> {
+export function getStackTfStateOutput(args: GetStackTfStateOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStackTfStateResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ResourceManager/getStackTfState:getStackTfState", {
         "localPath": args.localPath,

@@ -82,7 +82,7 @@ export interface GetIpsecStatusResult {
  * });
  * ```
  */
-export function getIpsecStatusOutput(args: GetIpsecStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecStatusResult> {
+export function getIpsecStatusOutput(args: GetIpsecStatusOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpsecStatusResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpsecStatus:getIpsecStatus", {
         "filters": args.filters,

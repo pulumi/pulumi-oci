@@ -77,7 +77,7 @@ export interface GetExternalAsmConfigurationResult {
  * });
  * ```
  */
-export function getExternalAsmConfigurationOutput(args: GetExternalAsmConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmConfigurationResult> {
+export function getExternalAsmConfigurationOutput(args: GetExternalAsmConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalAsmConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", {
         "externalAsmId": args.externalAsmId,

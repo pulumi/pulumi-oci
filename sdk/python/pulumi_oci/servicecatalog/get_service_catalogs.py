@@ -150,7 +150,7 @@ def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceCatalogsFilterArgs', 'GetServiceCatalogsFilterArgsDict']]]]] = None,
                                 service_catalog_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceCatalogsResult]:
     """
     This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
 
@@ -177,7 +177,7 @@ def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[str]] = No
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['serviceCatalogId'] = service_catalog_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs', __args__, opts=opts, typ=GetServiceCatalogsResult)
     return __ret__.apply(lambda __response__: GetServiceCatalogsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

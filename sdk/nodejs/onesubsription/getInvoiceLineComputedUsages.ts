@@ -88,7 +88,7 @@ export interface GetInvoiceLineComputedUsagesResult {
  * });
  * ```
  */
-export function getInvoiceLineComputedUsagesOutput(args: GetInvoiceLineComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoiceLineComputedUsagesResult> {
+export function getInvoiceLineComputedUsagesOutput(args: GetInvoiceLineComputedUsagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInvoiceLineComputedUsagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", {
         "compartmentId": args.compartmentId,

@@ -180,7 +180,7 @@ export interface GetInvoiceResult {
  * });
  * ```
  */
-export function getInvoiceOutput(args: GetInvoiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoiceResult> {
+export function getInvoiceOutput(args: GetInvoiceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInvoiceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OspGateway/getInvoice:getInvoice", {
         "compartmentId": args.compartmentId,

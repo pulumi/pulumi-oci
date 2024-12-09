@@ -153,7 +153,7 @@ export interface GetVtapsResult {
  * });
  * ```
  */
-export function getVtapsOutput(args: GetVtapsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVtapsResult> {
+export function getVtapsOutput(args: GetVtapsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVtapsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVtaps:getVtaps", {
         "compartmentId": args.compartmentId,

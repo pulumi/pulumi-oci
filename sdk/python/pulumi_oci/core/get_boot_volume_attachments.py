@@ -173,7 +173,7 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
                                        compartment_id: Optional[pulumi.Input[str]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumeAttachmentsFilterArgs', 'GetBootVolumeAttachmentsFilterArgsDict']]]]] = None,
                                        instance_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeAttachmentsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeAttachmentsResult]:
     """
     This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
 
@@ -205,7 +205,7 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['instanceId'] = instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getBootVolumeAttachments:getBootVolumeAttachments', __args__, opts=opts, typ=GetBootVolumeAttachmentsResult)
     return __ret__.apply(lambda __response__: GetBootVolumeAttachmentsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

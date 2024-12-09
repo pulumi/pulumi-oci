@@ -127,7 +127,7 @@ export interface GetDatabaseMaintenanceRunHistoriesResult {
  * });
  * ```
  */
-export function getDatabaseMaintenanceRunHistoriesOutput(args: GetDatabaseMaintenanceRunHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseMaintenanceRunHistoriesResult> {
+export function getDatabaseMaintenanceRunHistoriesOutput(args: GetDatabaseMaintenanceRunHistoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseMaintenanceRunHistoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", {
         "availabilityDomain": args.availabilityDomain,

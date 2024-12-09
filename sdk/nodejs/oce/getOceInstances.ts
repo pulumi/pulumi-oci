@@ -105,7 +105,7 @@ export interface GetOceInstancesResult {
  * });
  * ```
  */
-export function getOceInstancesOutput(args: GetOceInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOceInstancesResult> {
+export function getOceInstancesOutput(args: GetOceInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOceInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Oce/getOceInstances:getOceInstances", {
         "compartmentId": args.compartmentId,

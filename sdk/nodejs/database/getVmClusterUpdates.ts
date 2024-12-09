@@ -94,7 +94,7 @@ export interface GetVmClusterUpdatesResult {
  * });
  * ```
  */
-export function getVmClusterUpdatesOutput(args: GetVmClusterUpdatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterUpdatesResult> {
+export function getVmClusterUpdatesOutput(args: GetVmClusterUpdatesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVmClusterUpdatesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getVmClusterUpdates:getVmClusterUpdates", {
         "filters": args.filters,

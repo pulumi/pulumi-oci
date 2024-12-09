@@ -189,7 +189,7 @@ export interface GetDomainsOciConsoleSignOnPolicyConsentResult {
  * });
  * ```
  */
-export function getDomainsOciConsoleSignOnPolicyConsentOutput(args: GetDomainsOciConsoleSignOnPolicyConsentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsOciConsoleSignOnPolicyConsentResult> {
+export function getDomainsOciConsoleSignOnPolicyConsentOutput(args: GetDomainsOciConsoleSignOnPolicyConsentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsOciConsoleSignOnPolicyConsentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsOciConsoleSignOnPolicyConsent:getDomainsOciConsoleSignOnPolicyConsent", {
         "attributeSets": args.attributeSets,

@@ -91,7 +91,7 @@ export interface GetNetworkFirewallPolicyDecryptionProfileResult {
  *
  * Get Decryption Profile by the given name in the context of network firewall policy.
  */
-export function getNetworkFirewallPolicyDecryptionProfileOutput(args: GetNetworkFirewallPolicyDecryptionProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionProfileResult> {
+export function getNetworkFirewallPolicyDecryptionProfileOutput(args: GetNetworkFirewallPolicyDecryptionProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", {
         "name": args.name,

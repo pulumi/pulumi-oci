@@ -135,7 +135,7 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[Union['GetVir
 def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict']]]]] = None,
                                                verification_state: Optional[pulumi.Input[Optional[str]]] = None,
                                                virtual_circuit_id: Optional[pulumi.Input[str]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitPublicPrefixesResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitPublicPrefixesResult]:
     """
     This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
 
@@ -162,7 +162,7 @@ def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Op
     __args__['filters'] = filters
     __args__['verificationState'] = verification_state
     __args__['virtualCircuitId'] = virtual_circuit_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes', __args__, opts=opts, typ=GetVirtualCircuitPublicPrefixesResult)
     return __ret__.apply(lambda __response__: GetVirtualCircuitPublicPrefixesResult(
         filters=pulumi.get(__response__, 'filters'),

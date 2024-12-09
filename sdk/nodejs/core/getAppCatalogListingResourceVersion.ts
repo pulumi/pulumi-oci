@@ -102,7 +102,7 @@ export interface GetAppCatalogListingResourceVersionResult {
  * });
  * ```
  */
-export function getAppCatalogListingResourceVersionOutput(args: GetAppCatalogListingResourceVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingResourceVersionResult> {
+export function getAppCatalogListingResourceVersionOutput(args: GetAppCatalogListingResourceVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppCatalogListingResourceVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", {
         "listingId": args.listingId,

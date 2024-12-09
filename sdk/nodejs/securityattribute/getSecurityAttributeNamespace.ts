@@ -103,7 +103,7 @@ export interface GetSecurityAttributeNamespaceResult {
  * });
  * ```
  */
-export function getSecurityAttributeNamespaceOutput(args: GetSecurityAttributeNamespaceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAttributeNamespaceResult> {
+export function getSecurityAttributeNamespaceOutput(args: GetSecurityAttributeNamespaceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAttributeNamespaceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:SecurityAttribute/getSecurityAttributeNamespace:getSecurityAttributeNamespace", {
         "securityAttributeNamespaceId": args.securityAttributeNamespaceId,

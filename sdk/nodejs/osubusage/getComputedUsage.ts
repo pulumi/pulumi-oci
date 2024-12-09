@@ -185,7 +185,7 @@ export interface GetComputedUsageResult {
  * });
  * ```
  */
-export function getComputedUsageOutput(args: GetComputedUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputedUsageResult> {
+export function getComputedUsageOutput(args: GetComputedUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetComputedUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsubUsage/getComputedUsage:getComputedUsage", {
         "compartmentId": args.compartmentId,

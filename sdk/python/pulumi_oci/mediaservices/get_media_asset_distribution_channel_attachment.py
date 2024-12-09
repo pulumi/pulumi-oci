@@ -191,7 +191,7 @@ def get_media_asset_distribution_channel_attachment_output(distribution_channel_
                                                            is_lock_override: Optional[pulumi.Input[Optional[bool]]] = None,
                                                            locks: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaAssetDistributionChannelAttachmentLockArgs', 'GetMediaAssetDistributionChannelAttachmentLockArgsDict']]]]] = None,
                                                            media_asset_id: Optional[pulumi.Input[str]] = None,
-                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaAssetDistributionChannelAttachmentResult]:
+                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaAssetDistributionChannelAttachmentResult]:
     """
     This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
 
@@ -207,7 +207,7 @@ def get_media_asset_distribution_channel_attachment_output(distribution_channel_
     __args__['isLockOverride'] = is_lock_override
     __args__['locks'] = locks
     __args__['mediaAssetId'] = media_asset_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment', __args__, opts=opts, typ=GetMediaAssetDistributionChannelAttachmentResult)
     return __ret__.apply(lambda __response__: GetMediaAssetDistributionChannelAttachmentResult(
         display_name=pulumi.get(__response__, 'display_name'),

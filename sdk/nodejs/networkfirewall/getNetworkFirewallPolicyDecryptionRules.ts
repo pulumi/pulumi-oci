@@ -88,7 +88,7 @@ export interface GetNetworkFirewallPolicyDecryptionRulesResult {
  * });
  * ```
  */
-export function getNetworkFirewallPolicyDecryptionRulesOutput(args: GetNetworkFirewallPolicyDecryptionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionRulesResult> {
+export function getNetworkFirewallPolicyDecryptionRulesOutput(args: GetNetworkFirewallPolicyDecryptionRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRules:getNetworkFirewallPolicyDecryptionRules", {
         "decryptionRulePriorityOrder": args.decryptionRulePriorityOrder,

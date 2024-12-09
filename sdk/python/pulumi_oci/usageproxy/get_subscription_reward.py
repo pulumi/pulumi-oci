@@ -134,7 +134,7 @@ def get_subscription_reward(subscription_id: Optional[str] = None,
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
 def get_subscription_reward_output(subscription_id: Optional[pulumi.Input[str]] = None,
                                    tenancy_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionRewardResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionRewardResult]:
     """
     This data source provides details about a specific Subscription Reward resource in Oracle Cloud Infrastructure Usage Proxy service.
 
@@ -157,7 +157,7 @@ def get_subscription_reward_output(subscription_id: Optional[pulumi.Input[str]] 
     __args__ = dict()
     __args__['subscriptionId'] = subscription_id
     __args__['tenancyId'] = tenancy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getSubscriptionReward:getSubscriptionReward', __args__, opts=opts, typ=GetSubscriptionRewardResult)
     return __ret__.apply(lambda __response__: GetSubscriptionRewardResult(
         id=pulumi.get(__response__, 'id'),

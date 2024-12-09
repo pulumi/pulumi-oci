@@ -114,7 +114,7 @@ def get_annotation_formats(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_annotation_formats_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnnotationFormatsFilterArgs', 'GetAnnotationFormatsFilterArgsDict']]]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnnotationFormatsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnnotationFormatsResult]:
     """
     This data source provides the list of Annotation Formats in Oracle Cloud Infrastructure Data Labeling Service service.
 
@@ -135,7 +135,7 @@ def get_annotation_formats_output(compartment_id: Optional[pulumi.Input[str]] = 
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataLabellingService/getAnnotationFormats:getAnnotationFormats', __args__, opts=opts, typ=GetAnnotationFormatsResult)
     return __ret__.apply(lambda __response__: GetAnnotationFormatsResult(
         annotation_format_collections=pulumi.get(__response__, 'annotation_format_collections'),

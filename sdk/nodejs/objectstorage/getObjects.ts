@@ -105,7 +105,7 @@ export interface GetObjectsResult {
  * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  */
-export function getObjectsOutput(args: GetObjectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectsResult> {
+export function getObjectsOutput(args: GetObjectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetObjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObjects:getObjects", {
         "bucket": args.bucket,

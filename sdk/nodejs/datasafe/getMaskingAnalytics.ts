@@ -111,7 +111,7 @@ export interface GetMaskingAnalyticsResult {
  * });
  * ```
  */
-export function getMaskingAnalyticsOutput(args: GetMaskingAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingAnalyticsResult> {
+export function getMaskingAnalyticsOutput(args: GetMaskingAnalyticsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaskingAnalyticsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics", {
         "compartmentId": args.compartmentId,

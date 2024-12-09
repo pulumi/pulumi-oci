@@ -114,7 +114,7 @@ def get_fleet_drs_files(filters: Optional[Sequence[Union['GetFleetDrsFilesFilter
         id=pulumi.get(__ret__, 'id'))
 def get_fleet_drs_files_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetDrsFilesFilterArgs', 'GetFleetDrsFilesFilterArgsDict']]]]] = None,
                                fleet_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetDrsFilesResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetDrsFilesResult]:
     """
     This data source provides the list of Fleet Drs Files in Oracle Cloud Infrastructure Jms service.
 
@@ -135,7 +135,7 @@ def get_fleet_drs_files_output(filters: Optional[pulumi.Input[Optional[Sequence[
     __args__ = dict()
     __args__['filters'] = filters
     __args__['fleetId'] = fleet_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetDrsFiles:getFleetDrsFiles', __args__, opts=opts, typ=GetFleetDrsFilesResult)
     return __ret__.apply(lambda __response__: GetFleetDrsFilesResult(
         drs_file_collections=pulumi.get(__response__, 'drs_file_collections'),

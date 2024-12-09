@@ -231,7 +231,7 @@ def get_file_systems_output(availability_domain: Optional[pulumi.Input[str]] = N
                             parent_file_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                             source_snapshot_id: Optional[pulumi.Input[Optional[str]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFileSystemsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileSystemsResult]:
     """
     This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
 
@@ -274,7 +274,7 @@ def get_file_systems_output(availability_domain: Optional[pulumi.Input[str]] = N
     __args__['parentFileSystemId'] = parent_file_system_id
     __args__['sourceSnapshotId'] = source_snapshot_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getFileSystems:getFileSystems', __args__, opts=opts, typ=GetFileSystemsResult)
     return __ret__.apply(lambda __response__: GetFileSystemsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -658,7 +658,7 @@ def get_instance(instance_id: Optional[str] = None,
         time_maintenance_reboot_due=pulumi.get(__ret__, 'time_maintenance_reboot_due'),
         update_operation_constraint=pulumi.get(__ret__, 'update_operation_constraint'))
 def get_instance_output(instance_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceResult]:
     """
     This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
 
@@ -681,7 +681,7 @@ def get_instance_output(instance_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['instanceId'] = instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstance:getInstance', __args__, opts=opts, typ=GetInstanceResult)
     return __ret__.apply(lambda __response__: GetInstanceResult(
         agent_configs=pulumi.get(__response__, 'agent_configs'),

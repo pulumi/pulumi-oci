@@ -453,7 +453,7 @@ def get_workspace_application_task_schedule(application_key: Optional[str] = Non
 def get_workspace_application_task_schedule_output(application_key: Optional[pulumi.Input[str]] = None,
                                                    task_schedule_key: Optional[pulumi.Input[str]] = None,
                                                    workspace_id: Optional[pulumi.Input[str]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceApplicationTaskScheduleResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationTaskScheduleResult]:
     """
     This data source provides details about a specific Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
 
@@ -479,7 +479,7 @@ def get_workspace_application_task_schedule_output(application_key: Optional[pul
     __args__['applicationKey'] = application_key
     __args__['taskScheduleKey'] = task_schedule_key
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule', __args__, opts=opts, typ=GetWorkspaceApplicationTaskScheduleResult)
     return __ret__.apply(lambda __response__: GetWorkspaceApplicationTaskScheduleResult(
         application_key=pulumi.get(__response__, 'application_key'),

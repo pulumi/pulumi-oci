@@ -73,7 +73,7 @@ export interface GetDbSystemComputePerformancesResult {
  * });
  * ```
  */
-export function getDbSystemComputePerformancesOutput(args?: GetDbSystemComputePerformancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemComputePerformancesResult> {
+export function getDbSystemComputePerformancesOutput(args?: GetDbSystemComputePerformancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemComputePerformancesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", {

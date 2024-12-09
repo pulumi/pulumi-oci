@@ -164,7 +164,7 @@ def get_compute_global_image_capability_schema(compute_global_image_capability_s
         id=pulumi.get(__ret__, 'id'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_compute_global_image_capability_schema_output(compute_global_image_capability_schema_id: Optional[pulumi.Input[str]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemaResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemaResult]:
     """
     This data source provides details about a specific Compute Global Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
 
@@ -184,7 +184,7 @@ def get_compute_global_image_capability_schema_output(compute_global_image_capab
     """
     __args__ = dict()
     __args__['computeGlobalImageCapabilitySchemaId'] = compute_global_image_capability_schema_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeGlobalImageCapabilitySchema:getComputeGlobalImageCapabilitySchema', __args__, opts=opts, typ=GetComputeGlobalImageCapabilitySchemaResult)
     return __ret__.apply(lambda __response__: GetComputeGlobalImageCapabilitySchemaResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

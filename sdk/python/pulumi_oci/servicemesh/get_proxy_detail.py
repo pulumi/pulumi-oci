@@ -83,7 +83,7 @@ def get_proxy_detail(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     return AwaitableGetProxyDetailResult(
         id=pulumi.get(__ret__, 'id'),
         proxy_image=pulumi.get(__ret__, 'proxy_image'))
-def get_proxy_detail_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProxyDetailResult]:
+def get_proxy_detail_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProxyDetailResult]:
     """
     This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
 
@@ -99,7 +99,7 @@ def get_proxy_detail_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulu
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceMesh/getProxyDetail:getProxyDetail', __args__, opts=opts, typ=GetProxyDetailResult)
     return __ret__.apply(lambda __response__: GetProxyDetailResult(
         id=pulumi.get(__response__, 'id'),

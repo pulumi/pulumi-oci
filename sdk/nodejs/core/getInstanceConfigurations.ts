@@ -75,7 +75,7 @@ export interface GetInstanceConfigurationsResult {
  * });
  * ```
  */
-export function getInstanceConfigurationsOutput(args: GetInstanceConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConfigurationsResult> {
+export function getInstanceConfigurationsOutput(args: GetInstanceConfigurationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceConfigurationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstanceConfigurations:getInstanceConfigurations", {
         "compartmentId": args.compartmentId,

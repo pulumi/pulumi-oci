@@ -353,7 +353,7 @@ def get_domains_my_smtp_credential_output(authorization: Optional[pulumi.Input[O
                                           idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                           my_smtp_credential_id: Optional[pulumi.Input[str]] = None,
                                           resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMySmtpCredentialResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMySmtpCredentialResult]:
     """
     This data source provides details about a specific My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -382,7 +382,7 @@ def get_domains_my_smtp_credential_output(authorization: Optional[pulumi.Input[O
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['mySmtpCredentialId'] = my_smtp_credential_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsMySmtpCredential:getDomainsMySmtpCredential', __args__, opts=opts, typ=GetDomainsMySmtpCredentialResult)
     return __ret__.apply(lambda __response__: GetDomainsMySmtpCredentialResult(
         authorization=pulumi.get(__response__, 'authorization'),

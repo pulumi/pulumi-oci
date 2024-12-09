@@ -183,7 +183,7 @@ def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input
                                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentInstallKeysFilterArgs', 'GetManagementAgentInstallKeysFilterArgsDict']]]]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentInstallKeysResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentInstallKeysResult]:
     """
     This data source provides the list of Management Agent Install Keys in Oracle Cloud Infrastructure Management Agent service.
 
@@ -216,7 +216,7 @@ def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys', __args__, opts=opts, typ=GetManagementAgentInstallKeysResult)
     return __ret__.apply(lambda __response__: GetManagementAgentInstallKeysResult(
         access_level=pulumi.get(__response__, 'access_level'),

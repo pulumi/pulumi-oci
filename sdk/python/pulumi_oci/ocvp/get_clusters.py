@@ -171,7 +171,7 @@ def get_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetClustersFilterArgs', 'GetClustersFilterArgsDict']]]]] = None,
                         sddc_id: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClustersResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClustersResult]:
     """
     This data source provides the list of Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
@@ -201,7 +201,7 @@ def get_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     __args__['filters'] = filters
     __args__['sddcId'] = sddc_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getClusters:getClusters', __args__, opts=opts, typ=GetClustersResult)
     return __ret__.apply(lambda __response__: GetClustersResult(
         cluster_collections=pulumi.get(__response__, 'cluster_collections'),

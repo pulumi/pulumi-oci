@@ -75,7 +75,7 @@ export interface GetCpesResult {
  * });
  * ```
  */
-export function getCpesOutput(args: GetCpesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpesResult> {
+export function getCpesOutput(args: GetCpesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getCpes:getCpes", {
         "compartmentId": args.compartmentId,

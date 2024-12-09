@@ -166,7 +166,7 @@ export interface GetLifecycleStagesResult {
  * });
  * ```
  */
-export function getLifecycleStagesOutput(args?: GetLifecycleStagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLifecycleStagesResult> {
+export function getLifecycleStagesOutput(args?: GetLifecycleStagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLifecycleStagesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", {

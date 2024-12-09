@@ -81,7 +81,7 @@ export interface GetJobAdvisorReportResult {
  * });
  * ```
  */
-export function getJobAdvisorReportOutput(args: GetJobAdvisorReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobAdvisorReportResult> {
+export function getJobAdvisorReportOutput(args: GetJobAdvisorReportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJobAdvisorReportResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", {
         "jobId": args.jobId,

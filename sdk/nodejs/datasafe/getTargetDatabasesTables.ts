@@ -110,7 +110,7 @@ export interface GetTargetDatabasesTablesResult {
  * });
  * ```
  */
-export function getTargetDatabasesTablesOutput(args: GetTargetDatabasesTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesTablesResult> {
+export function getTargetDatabasesTablesOutput(args: GetTargetDatabasesTablesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetDatabasesTablesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", {
         "filters": args.filters,

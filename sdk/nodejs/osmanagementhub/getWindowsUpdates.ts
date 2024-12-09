@@ -99,7 +99,7 @@ export interface GetWindowsUpdatesResult {
  * });
  * ```
  */
-export function getWindowsUpdatesOutput(args: GetWindowsUpdatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWindowsUpdatesResult> {
+export function getWindowsUpdatesOutput(args: GetWindowsUpdatesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWindowsUpdatesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getWindowsUpdates:getWindowsUpdates", {
         "classificationTypes": args.classificationTypes,

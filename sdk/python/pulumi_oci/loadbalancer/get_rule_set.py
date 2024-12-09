@@ -125,7 +125,7 @@ def get_rule_set(load_balancer_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_rule_set_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
                         name: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRuleSetResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuleSetResult]:
     """
     This data source provides details about a specific Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
 
@@ -148,7 +148,7 @@ def get_rule_set_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['loadBalancerId'] = load_balancer_id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getRuleSet:getRuleSet', __args__, opts=opts, typ=GetRuleSetResult)
     return __ret__.apply(lambda __response__: GetRuleSetResult(
         id=pulumi.get(__response__, 'id'),

@@ -99,7 +99,7 @@ export interface GetVolumeGroupBackupsResult {
  * });
  * ```
  */
-export function getVolumeGroupBackupsOutput(args: GetVolumeGroupBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupBackupsResult> {
+export function getVolumeGroupBackupsOutput(args: GetVolumeGroupBackupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeGroupBackupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", {
         "compartmentId": args.compartmentId,

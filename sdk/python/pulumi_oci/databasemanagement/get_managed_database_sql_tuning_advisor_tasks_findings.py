@@ -237,7 +237,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id:
                                                                   search_period: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   sql_tuning_advisor_task_id: Optional[pulumi.Input[str]] = None,
                                                                   stats_hash_filter: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult]:
+                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult]:
     """
     This data source provides the list of Managed Database Sql Tuning Advisor Tasks Findings in Oracle Cloud Infrastructure Database Management service.
 
@@ -282,7 +282,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id:
     __args__['searchPeriod'] = search_period
     __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
     __args__['statsHashFilter'] = stats_hash_filter
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult(
         begin_exec_id=pulumi.get(__response__, 'begin_exec_id'),

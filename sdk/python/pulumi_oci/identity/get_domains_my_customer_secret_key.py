@@ -366,7 +366,7 @@ def get_domains_my_customer_secret_key_output(authorization: Optional[pulumi.Inp
                                               idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                               my_customer_secret_key_id: Optional[pulumi.Input[str]] = None,
                                               resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyCustomerSecretKeyResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyCustomerSecretKeyResult]:
     """
     This data source provides details about a specific My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -395,7 +395,7 @@ def get_domains_my_customer_secret_key_output(authorization: Optional[pulumi.Inp
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['myCustomerSecretKeyId'] = my_customer_secret_key_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsMyCustomerSecretKey:getDomainsMyCustomerSecretKey', __args__, opts=opts, typ=GetDomainsMyCustomerSecretKeyResult)
     return __ret__.apply(lambda __response__: GetDomainsMyCustomerSecretKeyResult(
         access_key=pulumi.get(__response__, 'access_key'),

@@ -109,7 +109,7 @@ export interface GetAppAccelerationPolicyResult {
  * });
  * ```
  */
-export function getAppAccelerationPolicyOutput(args: GetAppAccelerationPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppAccelerationPolicyResult> {
+export function getAppAccelerationPolicyOutput(args: GetAppAccelerationPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppAccelerationPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy", {
         "webAppAccelerationPolicyId": args.webAppAccelerationPolicyId,

@@ -159,7 +159,7 @@ def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Seq
                                      subscription_id: Optional[pulumi.Input[str]] = None,
                                      tenancy_id: Optional[pulumi.Input[str]] = None,
                                      usage_period_key: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionProductsResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionProductsResult]:
     """
     This data source provides the list of Subscription Products in Oracle Cloud Infrastructure Usage Proxy service.
 
@@ -189,7 +189,7 @@ def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Seq
     __args__['subscriptionId'] = subscription_id
     __args__['tenancyId'] = tenancy_id
     __args__['usagePeriodKey'] = usage_period_key
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts', __args__, opts=opts, typ=GetSubscriptionProductsResult)
     return __ret__.apply(lambda __response__: GetSubscriptionProductsResult(
         filters=pulumi.get(__response__, 'filters'),

@@ -187,7 +187,7 @@ export interface GetObjectResult {
  * });
  * ```
  */
-export function getObjectOutput(args: GetObjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectResult> {
+export function getObjectOutput(args: GetObjectOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetObjectResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObject:getObject", {
         "base64EncodeContent": args.base64EncodeContent,

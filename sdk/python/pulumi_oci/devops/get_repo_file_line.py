@@ -145,7 +145,7 @@ def get_repo_file_line_output(file_path: Optional[pulumi.Input[str]] = None,
                               repository_id: Optional[pulumi.Input[str]] = None,
                               revision: Optional[pulumi.Input[str]] = None,
                               start_line_number: Optional[pulumi.Input[Optional[int]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepoFileLineResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepoFileLineResult]:
     """
     This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
 
@@ -174,7 +174,7 @@ def get_repo_file_line_output(file_path: Optional[pulumi.Input[str]] = None,
     __args__['repositoryId'] = repository_id
     __args__['revision'] = revision
     __args__['startLineNumber'] = start_line_number
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepoFileLine:getRepoFileLine', __args__, opts=opts, typ=GetRepoFileLineResult)
     return __ret__.apply(lambda __response__: GetRepoFileLineResult(
         file_path=pulumi.get(__response__, 'file_path'),

@@ -123,7 +123,7 @@ export interface GetBudgetsResult {
  * });
  * ```
  */
-export function getBudgetsOutput(args: GetBudgetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBudgetsResult> {
+export function getBudgetsOutput(args: GetBudgetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBudgetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Budget/getBudgets:getBudgets", {
         "compartmentId": args.compartmentId,

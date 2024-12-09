@@ -129,7 +129,7 @@ def get_work_request_errors(compartment_id: Optional[str] = None,
 def get_work_request_errors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkRequestErrorsFilterArgs', 'GetWorkRequestErrorsFilterArgsDict']]]]] = None,
                                    work_request_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkRequestErrorsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkRequestErrorsResult]:
     """
     This data source provides the list of Work Request Errors in Oracle Cloud Infrastructure Container Engine service.
 
@@ -153,7 +153,7 @@ def get_work_request_errors_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['workRequestId'] = work_request_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors', __args__, opts=opts, typ=GetWorkRequestErrorsResult)
     return __ret__.apply(lambda __response__: GetWorkRequestErrorsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

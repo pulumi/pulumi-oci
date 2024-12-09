@@ -266,7 +266,7 @@ def get_database_security_config(database_security_config_id: Optional[str] = No
         time_last_refreshed=pulumi.get(__ret__, 'time_last_refreshed'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_database_security_config_output(database_security_config_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseSecurityConfigResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseSecurityConfigResult]:
     """
     This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -286,7 +286,7 @@ def get_database_security_config_output(database_security_config_id: Optional[pu
     """
     __args__ = dict()
     __args__['databaseSecurityConfigId'] = database_security_config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDatabaseSecurityConfig:getDatabaseSecurityConfig', __args__, opts=opts, typ=GetDatabaseSecurityConfigResult)
     return __ret__.apply(lambda __response__: GetDatabaseSecurityConfigResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -105,7 +105,7 @@ export interface GetMaintenanceWindowResult {
  * });
  * ```
  */
-export function getMaintenanceWindowOutput(args: GetMaintenanceWindowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceWindowResult> {
+export function getMaintenanceWindowOutput(args: GetMaintenanceWindowOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaintenanceWindowResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow", {
         "maintenanceWindowId": args.maintenanceWindowId,

@@ -72,7 +72,7 @@ export interface GetAnnotationFormatsResult {
  * });
  * ```
  */
-export function getAnnotationFormatsOutput(args: GetAnnotationFormatsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnotationFormatsResult> {
+export function getAnnotationFormatsOutput(args: GetAnnotationFormatsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAnnotationFormatsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataLabellingService/getAnnotationFormats:getAnnotationFormats", {
         "compartmentId": args.compartmentId,

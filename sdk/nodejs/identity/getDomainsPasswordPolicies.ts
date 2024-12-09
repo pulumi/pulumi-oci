@@ -140,7 +140,7 @@ export interface GetDomainsPasswordPoliciesResult {
  * });
  * ```
  */
-export function getDomainsPasswordPoliciesOutput(args: GetDomainsPasswordPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsPasswordPoliciesResult> {
+export function getDomainsPasswordPoliciesOutput(args: GetDomainsPasswordPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsPasswordPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsPasswordPolicies:getDomainsPasswordPolicies", {
         "attributeSets": args.attributeSets,

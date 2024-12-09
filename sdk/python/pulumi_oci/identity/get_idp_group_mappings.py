@@ -119,7 +119,7 @@ def get_idp_group_mappings(filters: Optional[Sequence[Union['GetIdpGroupMappings
         idp_group_mappings=pulumi.get(__ret__, 'idp_group_mappings'))
 def get_idp_group_mappings_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIdpGroupMappingsFilterArgs', 'GetIdpGroupMappingsFilterArgsDict']]]]] = None,
                                   identity_provider_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIdpGroupMappingsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIdpGroupMappingsResult]:
     """
     This data source provides the list of Idp Group Mappings in Oracle Cloud Infrastructure Identity service.
 
@@ -142,7 +142,7 @@ def get_idp_group_mappings_output(filters: Optional[pulumi.Input[Optional[Sequen
     __args__ = dict()
     __args__['filters'] = filters
     __args__['identityProviderId'] = identity_provider_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getIdpGroupMappings:getIdpGroupMappings', __args__, opts=opts, typ=GetIdpGroupMappingsResult)
     return __ret__.apply(lambda __response__: GetIdpGroupMappingsResult(
         filters=pulumi.get(__response__, 'filters'),

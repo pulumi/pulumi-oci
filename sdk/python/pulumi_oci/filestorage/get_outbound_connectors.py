@@ -176,7 +176,7 @@ def get_outbound_connectors_output(availability_domain: Optional[pulumi.Input[st
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOutboundConnectorsFilterArgs', 'GetOutboundConnectorsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOutboundConnectorsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOutboundConnectorsResult]:
     """
     This data source provides the list of Outbound Connectors in Oracle Cloud Infrastructure File Storage service.
 
@@ -209,7 +209,7 @@ def get_outbound_connectors_output(availability_domain: Optional[pulumi.Input[st
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getOutboundConnectors:getOutboundConnectors', __args__, opts=opts, typ=GetOutboundConnectorsResult)
     return __ret__.apply(lambda __response__: GetOutboundConnectorsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

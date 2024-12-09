@@ -435,7 +435,7 @@ def get_domains_my_trusted_user_agent_output(attribute_sets: Optional[pulumi.Inp
                                              idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                              my_trusted_user_agent_id: Optional[pulumi.Input[str]] = None,
                                              resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyTrustedUserAgentResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyTrustedUserAgentResult]:
     """
     This data source provides details about a specific My Trusted User Agent resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -470,7 +470,7 @@ def get_domains_my_trusted_user_agent_output(attribute_sets: Optional[pulumi.Inp
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['myTrustedUserAgentId'] = my_trusted_user_agent_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsMyTrustedUserAgent:getDomainsMyTrustedUserAgent', __args__, opts=opts, typ=GetDomainsMyTrustedUserAgentResult)
     return __ret__.apply(lambda __response__: GetDomainsMyTrustedUserAgentResult(
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),

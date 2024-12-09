@@ -421,7 +421,7 @@ def get_host_insight(host_insight_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_host_insight_output(host_insight_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostInsightResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostInsightResult]:
     """
     This data source provides details about a specific Host Insight resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -441,7 +441,7 @@ def get_host_insight_output(host_insight_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['hostInsightId'] = host_insight_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getHostInsight:getHostInsight', __args__, opts=opts, typ=GetHostInsightResult)
     return __ret__.apply(lambda __response__: GetHostInsightResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

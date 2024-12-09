@@ -80,7 +80,7 @@ export interface GetNetworkFirewallPolicyApplicationsResult {
  * });
  * ```
  */
-export function getNetworkFirewallPolicyApplicationsOutput(args: GetNetworkFirewallPolicyApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyApplicationsResult> {
+export function getNetworkFirewallPolicyApplicationsOutput(args: GetNetworkFirewallPolicyApplicationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyApplicationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyApplications:getNetworkFirewallPolicyApplications", {
         "displayName": args.displayName,

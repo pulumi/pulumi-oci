@@ -305,7 +305,7 @@ def get_target_database(target_database_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         tls_configs=pulumi.get(__ret__, 'tls_configs'))
 def get_target_database_output(target_database_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabaseResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabaseResult]:
     """
     This data source provides details about a specific Target Database resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -325,7 +325,7 @@ def get_target_database_output(target_database_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['targetDatabaseId'] = target_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabase:getTargetDatabase', __args__, opts=opts, typ=GetTargetDatabaseResult)
     return __ret__.apply(lambda __response__: GetTargetDatabaseResult(
         associated_resource_ids=pulumi.get(__response__, 'associated_resource_ids'),

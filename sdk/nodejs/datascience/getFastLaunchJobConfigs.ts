@@ -72,7 +72,7 @@ export interface GetFastLaunchJobConfigsResult {
  * });
  * ```
  */
-export function getFastLaunchJobConfigsOutput(args: GetFastLaunchJobConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastLaunchJobConfigsResult> {
+export function getFastLaunchJobConfigsOutput(args: GetFastLaunchJobConfigsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFastLaunchJobConfigsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", {
         "compartmentId": args.compartmentId,

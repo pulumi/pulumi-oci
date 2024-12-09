@@ -73,7 +73,7 @@ export interface GetQueryResult {
  * });
  * ```
  */
-export function getQueryOutput(args: GetQueryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueryResult> {
+export function getQueryOutput(args: GetQueryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetQueryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MeteringComputation/getQuery:getQuery", {
         "queryId": args.queryId,

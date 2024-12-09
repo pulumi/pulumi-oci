@@ -171,7 +171,7 @@ def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optiona
                                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudExadataInfrastructuresFilterArgs', 'GetCloudExadataInfrastructuresFilterArgsDict']]]]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudExadataInfrastructuresResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataInfrastructuresResult]:
     """
     This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
 
@@ -201,7 +201,7 @@ def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optiona
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures', __args__, opts=opts, typ=GetCloudExadataInfrastructuresResult)
     return __ret__.apply(lambda __response__: GetCloudExadataInfrastructuresResult(
         cloud_exadata_infrastructures=pulumi.get(__response__, 'cloud_exadata_infrastructures'),

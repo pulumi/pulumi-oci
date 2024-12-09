@@ -114,7 +114,7 @@ def get_region_subscriptions(filters: Optional[Sequence[Union['GetRegionSubscrip
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
 def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRegionSubscriptionsFilterArgs', 'GetRegionSubscriptionsFilterArgsDict']]]]] = None,
                                     tenancy_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRegionSubscriptionsResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRegionSubscriptionsResult]:
     """
     This data source provides the list of Region Subscriptions in Oracle Cloud Infrastructure Identity service.
 
@@ -135,7 +135,7 @@ def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequ
     __args__ = dict()
     __args__['filters'] = filters
     __args__['tenancyId'] = tenancy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getRegionSubscriptions:getRegionSubscriptions', __args__, opts=opts, typ=GetRegionSubscriptionsResult)
     return __ret__.apply(lambda __response__: GetRegionSubscriptionsResult(
         filters=pulumi.get(__response__, 'filters'),

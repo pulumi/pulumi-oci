@@ -222,7 +222,7 @@ def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None
                               resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                               service_name: Optional[pulumi.Input[Optional[str]]] = None,
                               status: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmStatusesResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlarmStatusesResult]:
     """
     This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
 
@@ -273,7 +273,7 @@ def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__['resourceId'] = resource_id
     __args__['serviceName'] = service_name
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Monitoring/getAlarmStatuses:getAlarmStatuses', __args__, opts=opts, typ=GetAlarmStatusesResult)
     return __ret__.apply(lambda __response__: GetAlarmStatusesResult(
         alarm_statuses=pulumi.get(__response__, 'alarm_statuses'),

@@ -74,7 +74,7 @@ export interface GetRepositorySettingResult {
  * });
  * ```
  */
-export function getRepositorySettingOutput(args: GetRepositorySettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositorySettingResult> {
+export function getRepositorySettingOutput(args: GetRepositorySettingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositorySettingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositorySetting:getRepositorySetting", {
         "repositoryId": args.repositoryId,

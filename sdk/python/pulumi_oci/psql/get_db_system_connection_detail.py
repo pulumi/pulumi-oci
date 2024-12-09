@@ -139,7 +139,7 @@ def get_db_system_connection_detail(db_system_id: Optional[str] = None,
         primary_db_endpoints=pulumi.get(__ret__, 'primary_db_endpoints'),
         reader_endpoints=pulumi.get(__ret__, 'reader_endpoints'))
 def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemConnectionDetailResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemConnectionDetailResult]:
     """
     This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
 
@@ -159,7 +159,7 @@ def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail', __args__, opts=opts, typ=GetDbSystemConnectionDetailResult)
     return __ret__.apply(lambda __response__: GetDbSystemConnectionDetailResult(
         ca_certificate=pulumi.get(__response__, 'ca_certificate'),

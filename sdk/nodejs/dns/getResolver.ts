@@ -135,7 +135,7 @@ export interface GetResolverResult {
  * });
  * ```
  */
-export function getResolverOutput(args: GetResolverOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolverResult> {
+export function getResolverOutput(args: GetResolverOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResolverResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getResolver:getResolver", {
         "resolverId": args.resolverId,

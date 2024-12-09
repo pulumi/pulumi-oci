@@ -643,7 +643,7 @@ def get_domains_authentication_factor_setting_output(attribute_sets: Optional[pu
                                                      authorization: Optional[pulumi.Input[Optional[str]]] = None,
                                                      idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                                      resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsAuthenticationFactorSettingResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsAuthenticationFactorSettingResult]:
     """
     This data source provides details about a specific Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -678,7 +678,7 @@ def get_domains_authentication_factor_setting_output(attribute_sets: Optional[pu
     __args__['authorization'] = authorization
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting', __args__, opts=opts, typ=GetDomainsAuthenticationFactorSettingResult)
     return __ret__.apply(lambda __response__: GetDomainsAuthenticationFactorSettingResult(
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),

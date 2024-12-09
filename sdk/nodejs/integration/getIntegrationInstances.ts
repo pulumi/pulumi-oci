@@ -97,7 +97,7 @@ export interface GetIntegrationInstancesResult {
  * });
  * ```
  */
-export function getIntegrationInstancesOutput(args: GetIntegrationInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIntegrationInstancesResult> {
+export function getIntegrationInstancesOutput(args: GetIntegrationInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIntegrationInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Integration/getIntegrationInstances:getIntegrationInstances", {
         "compartmentId": args.compartmentId,

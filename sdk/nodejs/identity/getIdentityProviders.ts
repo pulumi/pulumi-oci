@@ -118,7 +118,7 @@ export interface GetIdentityProvidersResult {
  * });
  * ```
  */
-export function getIdentityProvidersOutput(args: GetIdentityProvidersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdentityProvidersResult> {
+export function getIdentityProvidersOutput(args: GetIdentityProvidersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIdentityProvidersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getIdentityProviders:getIdentityProviders", {
         "compartmentId": args.compartmentId,

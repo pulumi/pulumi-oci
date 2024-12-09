@@ -107,7 +107,7 @@ export interface GetManagedInstanceInstalledWindowsUpdatesResult {
  * });
  * ```
  */
-export function getManagedInstanceInstalledWindowsUpdatesOutput(args: GetManagedInstanceInstalledWindowsUpdatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceInstalledWindowsUpdatesResult> {
+export function getManagedInstanceInstalledWindowsUpdatesOutput(args: GetManagedInstanceInstalledWindowsUpdatesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceInstalledWindowsUpdatesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceInstalledWindowsUpdates:getManagedInstanceInstalledWindowsUpdates", {
         "compartmentId": args.compartmentId,

@@ -97,7 +97,7 @@ export interface GetFleetBlocklistsResult {
  * });
  * ```
  */
-export function getFleetBlocklistsOutput(args: GetFleetBlocklistsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetBlocklistsResult> {
+export function getFleetBlocklistsOutput(args: GetFleetBlocklistsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetBlocklistsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetBlocklists:getFleetBlocklists", {
         "filters": args.filters,

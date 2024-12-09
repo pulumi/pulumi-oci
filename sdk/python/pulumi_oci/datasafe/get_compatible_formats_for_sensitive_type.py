@@ -133,7 +133,7 @@ def get_compatible_formats_for_sensitive_type(access_level: Optional[str] = None
 def get_compatible_formats_for_sensitive_type_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                                      compartment_id: Optional[pulumi.Input[str]] = None,
                                                      compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCompatibleFormatsForSensitiveTypeResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompatibleFormatsForSensitiveTypeResult]:
     """
     This data source provides details about a specific Compatible Formats For Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -162,7 +162,7 @@ def get_compatible_formats_for_sensitive_type_output(access_level: Optional[pulu
     __args__['accessLevel'] = access_level
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType', __args__, opts=opts, typ=GetCompatibleFormatsForSensitiveTypeResult)
     return __ret__.apply(lambda __response__: GetCompatibleFormatsForSensitiveTypeResult(
         access_level=pulumi.get(__response__, 'access_level'),

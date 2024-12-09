@@ -242,7 +242,7 @@ def get_vlan(vlan_id: Optional[str] = None,
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vlan_tag=pulumi.get(__ret__, 'vlan_tag'))
 def get_vlan_output(vlan_id: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVlanResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVlanResult]:
     """
     This data source provides details about a specific Vlan resource in Oracle Cloud Infrastructure Core service.
 
@@ -262,7 +262,7 @@ def get_vlan_output(vlan_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['vlanId'] = vlan_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVlan:getVlan', __args__, opts=opts, typ=GetVlanResult)
     return __ret__.apply(lambda __response__: GetVlanResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

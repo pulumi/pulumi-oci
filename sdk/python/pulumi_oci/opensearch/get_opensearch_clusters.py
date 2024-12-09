@@ -167,7 +167,7 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] =
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpensearchClustersFilterArgs', 'GetOpensearchClustersFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchClustersResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpensearchClustersResult]:
     """
     This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
 
@@ -206,7 +206,7 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opensearch/getOpensearchClusters:getOpensearchClusters', __args__, opts=opts, typ=GetOpensearchClustersResult)
     return __ret__.apply(lambda __response__: GetOpensearchClustersResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

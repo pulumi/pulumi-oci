@@ -115,7 +115,7 @@ export interface GetEmailReturnPathResult {
  * });
  * ```
  */
-export function getEmailReturnPathOutput(args: GetEmailReturnPathOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmailReturnPathResult> {
+export function getEmailReturnPathOutput(args: GetEmailReturnPathOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEmailReturnPathResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Email/getEmailReturnPath:getEmailReturnPath", {
         "emailReturnPathId": args.emailReturnPathId,

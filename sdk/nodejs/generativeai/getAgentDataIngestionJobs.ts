@@ -113,7 +113,7 @@ export interface GetAgentDataIngestionJobsResult {
  * });
  * ```
  */
-export function getAgentDataIngestionJobsOutput(args?: GetAgentDataIngestionJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentDataIngestionJobsResult> {
+export function getAgentDataIngestionJobsOutput(args?: GetAgentDataIngestionJobsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAgentDataIngestionJobsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getAgentDataIngestionJobs:getAgentDataIngestionJobs", {

@@ -152,7 +152,7 @@ export interface GetWorkspaceApplicationPatchResult {
  * });
  * ```
  */
-export function getWorkspaceApplicationPatchOutput(args: GetWorkspaceApplicationPatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceApplicationPatchResult> {
+export function getWorkspaceApplicationPatchOutput(args: GetWorkspaceApplicationPatchOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspaceApplicationPatchResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceApplicationPatch:getWorkspaceApplicationPatch", {
         "applicationKey": args.applicationKey,

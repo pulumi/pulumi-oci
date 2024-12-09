@@ -153,7 +153,7 @@ def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence
                                 fleet_id: Optional[pulumi.Input[str]] = None,
                                 managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 operation: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetBlocklistsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetBlocklistsResult]:
     """
     This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
 
@@ -180,7 +180,7 @@ def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence
     __args__['fleetId'] = fleet_id
     __args__['managedInstanceId'] = managed_instance_id
     __args__['operation'] = operation
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetBlocklists:getFleetBlocklists', __args__, opts=opts, typ=GetFleetBlocklistsResult)
     return __ret__.apply(lambda __response__: GetFleetBlocklistsResult(
         filters=pulumi.get(__response__, 'filters'),

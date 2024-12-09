@@ -113,7 +113,7 @@ def get_exadata_infrastructure_download_config_file(base64_encode_content: Optio
         id=pulumi.get(__ret__, 'id'))
 def get_exadata_infrastructure_download_config_file_output(base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                                                            exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInfrastructureDownloadConfigFileResult]:
+                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadataInfrastructureDownloadConfigFileResult]:
     """
     This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.
 
@@ -135,7 +135,7 @@ def get_exadata_infrastructure_download_config_file_output(base64_encode_content
     __args__ = dict()
     __args__['base64EncodeContent'] = base64_encode_content
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile', __args__, opts=opts, typ=GetExadataInfrastructureDownloadConfigFileResult)
     return __ret__.apply(lambda __response__: GetExadataInfrastructureDownloadConfigFileResult(
         base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),

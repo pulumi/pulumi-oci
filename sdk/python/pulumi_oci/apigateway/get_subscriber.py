@@ -217,7 +217,7 @@ def get_subscriber(subscriber_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         usage_plans=pulumi.get(__ret__, 'usage_plans'))
 def get_subscriber_output(subscriber_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriberResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriberResult]:
     """
     This data source provides details about a specific Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
 
@@ -237,7 +237,7 @@ def get_subscriber_output(subscriber_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['subscriberId'] = subscriber_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApiGateway/getSubscriber:getSubscriber', __args__, opts=opts, typ=GetSubscriberResult)
     return __ret__.apply(lambda __response__: GetSubscriberResult(
         clients=pulumi.get(__response__, 'clients'),

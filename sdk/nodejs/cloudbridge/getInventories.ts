@@ -86,7 +86,7 @@ export interface GetInventoriesResult {
  * });
  * ```
  */
-export function getInventoriesOutput(args: GetInventoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInventoriesResult> {
+export function getInventoriesOutput(args: GetInventoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInventoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudBridge/getInventories:getInventories", {
         "compartmentId": args.compartmentId,

@@ -240,7 +240,7 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[str]]] = None,
                       inventory_id: Optional[pulumi.Input[Optional[str]]] = None,
                       source_key: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssetsResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssetsResult]:
     """
     This data source provides the list of Assets in Oracle Cloud Infrastructure Cloud Bridge service.
 
@@ -282,7 +282,7 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['inventoryId'] = inventory_id
     __args__['sourceKey'] = source_key
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAssets:getAssets', __args__, opts=opts, typ=GetAssetsResult)
     return __ret__.apply(lambda __response__: GetAssetsResult(
         asset_collections=pulumi.get(__response__, 'asset_collections'),

@@ -102,7 +102,7 @@ export interface GetBucketSummariesResult {
  * });
  * ```
  */
-export function getBucketSummariesOutput(args: GetBucketSummariesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBucketSummariesResult> {
+export function getBucketSummariesOutput(args: GetBucketSummariesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBucketSummariesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", {
         "compartmentId": args.compartmentId,

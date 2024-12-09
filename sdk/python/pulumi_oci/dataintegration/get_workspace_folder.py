@@ -265,7 +265,7 @@ def get_workspace_folder(folder_key: Optional[str] = None,
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_folder_output(folder_key: Optional[pulumi.Input[str]] = None,
                                 workspace_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceFolderResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceFolderResult]:
     """
     This data source provides details about a specific Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
 
@@ -288,7 +288,7 @@ def get_workspace_folder_output(folder_key: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['folderKey'] = folder_key
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder', __args__, opts=opts, typ=GetWorkspaceFolderResult)
     return __ret__.apply(lambda __response__: GetWorkspaceFolderResult(
         category_name=pulumi.get(__response__, 'category_name'),

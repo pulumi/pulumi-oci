@@ -75,7 +75,7 @@ export interface GetDataGuardAssociationsResult {
  * });
  * ```
  */
-export function getDataGuardAssociationsOutput(args: GetDataGuardAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataGuardAssociationsResult> {
+export function getDataGuardAssociationsOutput(args: GetDataGuardAssociationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataGuardAssociationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDataGuardAssociations:getDataGuardAssociations", {
         "databaseId": args.databaseId,

@@ -146,7 +146,7 @@ def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
                               crypto_endpoint: Optional[pulumi.Input[str]] = None,
                               key_id: Optional[pulumi.Input[str]] = None,
                               plaintext: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEncryptedDataResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEncryptedDataResult]:
     """
     The `Kms.EncryptedData` data source provides details about a specific EncryptedData
 
@@ -177,7 +177,7 @@ def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
     __args__['cryptoEndpoint'] = crypto_endpoint
     __args__['keyId'] = key_id
     __args__['plaintext'] = plaintext
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getEncryptedData:getEncryptedData', __args__, opts=opts, typ=GetEncryptedDataResult)
     return __ret__.apply(lambda __response__: GetEncryptedDataResult(
         associated_data=pulumi.get(__response__, 'associated_data'),

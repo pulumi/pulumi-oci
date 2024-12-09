@@ -157,7 +157,7 @@ def get_audit_profile_analytic_output(access_level: Optional[pulumi.Input[Option
                                       compartment_id: Optional[pulumi.Input[str]] = None,
                                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                       group_bies: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditProfileAnalyticResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditProfileAnalyticResult]:
     """
     This data source provides details about a specific Audit Profile Analytic resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -198,7 +198,7 @@ def get_audit_profile_analytic_output(access_level: Optional[pulumi.Input[Option
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['groupBies'] = group_bies
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic', __args__, opts=opts, typ=GetAuditProfileAnalyticResult)
     return __ret__.apply(lambda __response__: GetAuditProfileAnalyticResult(
         access_level=pulumi.get(__response__, 'access_level'),

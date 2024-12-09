@@ -80,7 +80,7 @@ export interface GetAutonomousVmClusterAcdResourceUsagesResult {
  * });
  * ```
  */
-export function getAutonomousVmClusterAcdResourceUsagesOutput(args: GetAutonomousVmClusterAcdResourceUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousVmClusterAcdResourceUsagesResult> {
+export function getAutonomousVmClusterAcdResourceUsagesOutput(args: GetAutonomousVmClusterAcdResourceUsagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousVmClusterAcdResourceUsagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", {
         "autonomousVmClusterId": args.autonomousVmClusterId,

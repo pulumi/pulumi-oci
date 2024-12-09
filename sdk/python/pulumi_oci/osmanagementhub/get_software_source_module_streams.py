@@ -187,7 +187,7 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
                                               module_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                               name: Optional[pulumi.Input[Optional[str]]] = None,
                                               software_source_id: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamsResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamsResult]:
     """
     This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -221,7 +221,7 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
     __args__['moduleNameContains'] = module_name_contains
     __args__['name'] = name
     __args__['softwareSourceId'] = software_source_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourceModuleStreams:getSoftwareSourceModuleStreams', __args__, opts=opts, typ=GetSoftwareSourceModuleStreamsResult)
     return __ret__.apply(lambda __response__: GetSoftwareSourceModuleStreamsResult(
         filters=pulumi.get(__response__, 'filters'),

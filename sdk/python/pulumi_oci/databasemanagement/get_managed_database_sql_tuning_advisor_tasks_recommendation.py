@@ -149,7 +149,7 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation_output(executio
                                                                         managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                         sql_object_id: Optional[pulumi.Input[str]] = None,
                                                                         sql_tuning_advisor_task_id: Optional[pulumi.Input[str]] = None,
-                                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult]:
+                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult]:
     """
     This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Recommendation resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -179,7 +179,7 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation_output(executio
     __args__['managedDatabaseId'] = managed_database_id
     __args__['sqlObjectId'] = sql_object_id
     __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendation:getManagedDatabaseSqlTuningAdvisorTasksRecommendation', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult(
         execution_id=pulumi.get(__response__, 'execution_id'),

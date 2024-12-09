@@ -112,7 +112,7 @@ export interface GetBootVolumeAttachmentsResult {
  * ```
  * For more detailed implementation refer the instance example
  */
-export function getBootVolumeAttachmentsOutput(args: GetBootVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeAttachmentsResult> {
+export function getBootVolumeAttachmentsOutput(args: GetBootVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBootVolumeAttachmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", {
         "availabilityDomain": args.availabilityDomain,

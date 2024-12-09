@@ -105,7 +105,7 @@ export interface GetDiscoverySchedulesResult {
  * });
  * ```
  */
-export function getDiscoverySchedulesOutput(args: GetDiscoverySchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoverySchedulesResult> {
+export function getDiscoverySchedulesOutput(args: GetDiscoverySchedulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDiscoverySchedulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", {
         "compartmentId": args.compartmentId,

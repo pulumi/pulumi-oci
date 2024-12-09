@@ -106,7 +106,7 @@ export interface GetHttpProbeResultsResult {
  * });
  * ```
  */
-export function getHttpProbeResultsOutput(args: GetHttpProbeResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpProbeResultsResult> {
+export function getHttpProbeResultsOutput(args: GetHttpProbeResultsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHttpProbeResultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", {
         "filters": args.filters,

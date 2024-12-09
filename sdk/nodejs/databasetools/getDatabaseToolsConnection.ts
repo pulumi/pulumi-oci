@@ -149,7 +149,7 @@ export interface GetDatabaseToolsConnectionResult {
  * });
  * ```
  */
-export function getDatabaseToolsConnectionOutput(args: GetDatabaseToolsConnectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsConnectionResult> {
+export function getDatabaseToolsConnectionOutput(args: GetDatabaseToolsConnectionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseToolsConnectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection", {
         "databaseToolsConnectionId": args.databaseToolsConnectionId,

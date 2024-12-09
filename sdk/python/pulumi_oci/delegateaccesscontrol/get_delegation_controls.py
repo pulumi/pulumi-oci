@@ -186,7 +186,7 @@ def get_delegation_controls_output(compartment_id: Optional[pulumi.Input[str]] =
                                    resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegationControlsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegationControlsResult]:
     """
     This data source provides the list of Delegation Controls in Oracle Cloud Infrastructure Delegate Access Control service.
 
@@ -219,7 +219,7 @@ def get_delegation_controls_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['resourceId'] = resource_id
     __args__['resourceType'] = resource_type
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegationControls:getDelegationControls', __args__, opts=opts, typ=GetDelegationControlsResult)
     return __ret__.apply(lambda __response__: GetDelegationControlsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

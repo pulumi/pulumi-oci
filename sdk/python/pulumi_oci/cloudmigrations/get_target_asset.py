@@ -347,7 +347,7 @@ def get_target_asset(target_asset_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         user_specs=pulumi.get(__ret__, 'user_specs'))
 def get_target_asset_output(target_asset_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetAssetResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetAssetResult]:
     """
     This data source provides details about a specific Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
 
@@ -367,7 +367,7 @@ def get_target_asset_output(target_asset_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['targetAssetId'] = target_asset_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudMigrations/getTargetAsset:getTargetAsset', __args__, opts=opts, typ=GetTargetAssetResult)
     return __ret__.apply(lambda __response__: GetTargetAssetResult(
         block_volumes_performance=pulumi.get(__response__, 'block_volumes_performance'),

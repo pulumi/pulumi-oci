@@ -190,7 +190,7 @@ def get_connector_plugin(connector_plugin_name: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_connector_plugin_output(connector_plugin_name: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectorPluginResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectorPluginResult]:
     """
     This data source provides details about a specific Connector Plugin resource in Oracle Cloud Infrastructure Service Connector Hub service.
 
@@ -210,7 +210,7 @@ def get_connector_plugin_output(connector_plugin_name: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['connectorPluginName'] = connector_plugin_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Sch/getConnectorPlugin:getConnectorPlugin', __args__, opts=opts, typ=GetConnectorPluginResult)
     return __ret__.apply(lambda __response__: GetConnectorPluginResult(
         connector_plugin_name=pulumi.get(__response__, 'connector_plugin_name'),

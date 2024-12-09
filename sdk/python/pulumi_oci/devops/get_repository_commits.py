@@ -225,7 +225,7 @@ def get_repository_commits_output(author_name: Optional[pulumi.Input[Optional[st
                                   repository_id: Optional[pulumi.Input[str]] = None,
                                   timestamp_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                   timestamp_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryCommitsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryCommitsResult]:
     """
     This data source provides the list of Repository Commits in Oracle Cloud Infrastructure Devops service.
 
@@ -267,7 +267,7 @@ def get_repository_commits_output(author_name: Optional[pulumi.Input[Optional[st
     __args__['repositoryId'] = repository_id
     __args__['timestampGreaterThanOrEqualTo'] = timestamp_greater_than_or_equal_to
     __args__['timestampLessThanOrEqualTo'] = timestamp_less_than_or_equal_to
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryCommits:getRepositoryCommits', __args__, opts=opts, typ=GetRepositoryCommitsResult)
     return __ret__.apply(lambda __response__: GetRepositoryCommitsResult(
         author_name=pulumi.get(__response__, 'author_name'),

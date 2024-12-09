@@ -133,7 +133,7 @@ export interface GetDomainsMyRequestableGroupsResult {
  * });
  * ```
  */
-export function getDomainsMyRequestableGroupsOutput(args: GetDomainsMyRequestableGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyRequestableGroupsResult> {
+export function getDomainsMyRequestableGroupsOutput(args: GetDomainsMyRequestableGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyRequestableGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyRequestableGroups:getDomainsMyRequestableGroups", {
         "authorization": args.authorization,

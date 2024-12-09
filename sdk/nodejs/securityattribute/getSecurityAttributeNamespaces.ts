@@ -106,7 +106,7 @@ export interface GetSecurityAttributeNamespacesResult {
  * });
  * ```
  */
-export function getSecurityAttributeNamespacesOutput(args?: GetSecurityAttributeNamespacesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAttributeNamespacesResult> {
+export function getSecurityAttributeNamespacesOutput(args?: GetSecurityAttributeNamespacesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAttributeNamespacesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:SecurityAttribute/getSecurityAttributeNamespaces:getSecurityAttributeNamespaces", {

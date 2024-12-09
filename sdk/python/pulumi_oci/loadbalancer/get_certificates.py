@@ -114,7 +114,7 @@ def get_certificates(filters: Optional[Sequence[Union['GetCertificatesFilterArgs
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
 def get_certificates_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]]]] = None,
                             load_balancer_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificatesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificatesResult]:
     """
     This data source provides the list of Certificates in Oracle Cloud Infrastructure Load Balancer service.
 
@@ -135,7 +135,7 @@ def get_certificates_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     __args__ = dict()
     __args__['filters'] = filters
     __args__['loadBalancerId'] = load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getCertificates:getCertificates', __args__, opts=opts, typ=GetCertificatesResult)
     return __ret__.apply(lambda __response__: GetCertificatesResult(
         certificates=pulumi.get(__response__, 'certificates'),

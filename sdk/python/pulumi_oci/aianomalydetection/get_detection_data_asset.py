@@ -243,7 +243,7 @@ def get_detection_data_asset(data_asset_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_detection_data_asset_output(data_asset_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectionDataAssetResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDetectionDataAssetResult]:
     """
     This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
 
@@ -263,7 +263,7 @@ def get_detection_data_asset_output(data_asset_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['dataAssetId'] = data_asset_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset', __args__, opts=opts, typ=GetDetectionDataAssetResult)
     return __ret__.apply(lambda __response__: GetDetectionDataAssetResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

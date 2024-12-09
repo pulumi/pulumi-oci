@@ -153,7 +153,7 @@ def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[st
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict']]]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectorPluginsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectorPluginsResult]:
     """
     This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
 
@@ -180,7 +180,7 @@ def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[st
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Sch/getConnectorPlugins:getConnectorPlugins', __args__, opts=opts, typ=GetConnectorPluginsResult)
     return __ret__.apply(lambda __response__: GetConnectorPluginsResult(
         connector_plugin_collections=pulumi.get(__response__, 'connector_plugin_collections'),

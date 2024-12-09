@@ -319,7 +319,7 @@ def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[str]
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveTypesResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveTypesResult]:
     """
     This data source provides the list of Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
 
@@ -380,7 +380,7 @@ def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[str]
     __args__['state'] = state
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveTypes:getSensitiveTypes', __args__, opts=opts, typ=GetSensitiveTypesResult)
     return __ret__.apply(lambda __response__: GetSensitiveTypesResult(
         access_level=pulumi.get(__response__, 'access_level'),

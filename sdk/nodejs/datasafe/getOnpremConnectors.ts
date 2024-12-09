@@ -118,7 +118,7 @@ export interface GetOnpremConnectorsResult {
  * });
  * ```
  */
-export function getOnpremConnectorsOutput(args: GetOnpremConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnpremConnectorsResult> {
+export function getOnpremConnectorsOutput(args: GetOnpremConnectorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOnpremConnectorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getOnpremConnectors:getOnpremConnectors", {
         "accessLevel": args.accessLevel,

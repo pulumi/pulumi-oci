@@ -81,7 +81,7 @@ export interface GetClusterOptionResult {
  * });
  * ```
  */
-export function getClusterOptionOutput(args: GetClusterOptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterOptionResult> {
+export function getClusterOptionOutput(args: GetClusterOptionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClusterOptionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusterOption:getClusterOption", {
         "clusterOptionId": args.clusterOptionId,

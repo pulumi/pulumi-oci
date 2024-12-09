@@ -142,7 +142,7 @@ export interface GetMetricExtensionResult {
  * });
  * ```
  */
-export function getMetricExtensionOutput(args: GetMetricExtensionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricExtensionResult> {
+export function getMetricExtensionOutput(args: GetMetricExtensionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMetricExtensionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMetricExtension:getMetricExtension", {
         "metricExtensionId": args.metricExtensionId,

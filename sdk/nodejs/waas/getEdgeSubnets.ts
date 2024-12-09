@@ -63,7 +63,7 @@ export interface GetEdgeSubnetsResult {
  * const testEdgeSubnets = oci.Waas.getEdgeSubnets({});
  * ```
  */
-export function getEdgeSubnetsOutput(args?: GetEdgeSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeSubnetsResult> {
+export function getEdgeSubnetsOutput(args?: GetEdgeSubnetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEdgeSubnetsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waas/getEdgeSubnets:getEdgeSubnets", {

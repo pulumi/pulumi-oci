@@ -148,7 +148,7 @@ export interface GetIpsecConnectionTunnelResult {
  * });
  * ```
  */
-export function getIpsecConnectionTunnelOutput(args: GetIpsecConnectionTunnelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelResult> {
+export function getIpsecConnectionTunnelOutput(args: GetIpsecConnectionTunnelOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpsecConnectionTunnelResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", {
         "ipsecId": args.ipsecId,

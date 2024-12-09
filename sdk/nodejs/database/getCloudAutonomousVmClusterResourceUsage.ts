@@ -141,7 +141,7 @@ export interface GetCloudAutonomousVmClusterResourceUsageResult {
  * });
  * ```
  */
-export function getCloudAutonomousVmClusterResourceUsageOutput(args: GetCloudAutonomousVmClusterResourceUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudAutonomousVmClusterResourceUsageResult> {
+export function getCloudAutonomousVmClusterResourceUsageOutput(args: GetCloudAutonomousVmClusterResourceUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudAutonomousVmClusterResourceUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", {
         "cloudAutonomousVmClusterId": args.cloudAutonomousVmClusterId,

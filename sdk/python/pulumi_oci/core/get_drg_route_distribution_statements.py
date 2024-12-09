@@ -114,7 +114,7 @@ def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[st
         id=pulumi.get(__ret__, 'id'))
 def get_drg_route_distribution_statements_output(drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict']]]]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteDistributionStatementsResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgRouteDistributionStatementsResult]:
     """
     This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.
 
@@ -135,7 +135,7 @@ def get_drg_route_distribution_statements_output(drg_route_distribution_id: Opti
     __args__ = dict()
     __args__['drgRouteDistributionId'] = drg_route_distribution_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements', __args__, opts=opts, typ=GetDrgRouteDistributionStatementsResult)
     return __ret__.apply(lambda __response__: GetDrgRouteDistributionStatementsResult(
         drg_route_distribution_id=pulumi.get(__response__, 'drg_route_distribution_id'),

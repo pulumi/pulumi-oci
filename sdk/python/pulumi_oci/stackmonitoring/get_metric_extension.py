@@ -344,7 +344,7 @@ def get_metric_extension(metric_extension_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_metric_extension_output(metric_extension_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetricExtensionResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMetricExtensionResult]:
     """
     This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
@@ -364,7 +364,7 @@ def get_metric_extension_output(metric_extension_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['metricExtensionId'] = metric_extension_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMetricExtension:getMetricExtension', __args__, opts=opts, typ=GetMetricExtensionResult)
     return __ret__.apply(lambda __response__: GetMetricExtensionResult(
         collection_method=pulumi.get(__response__, 'collection_method'),

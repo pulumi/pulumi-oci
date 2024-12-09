@@ -243,7 +243,7 @@ def get_compute_capacity_reservation(capacity_reservation_id: Optional[str] = No
         time_updated=pulumi.get(__ret__, 'time_updated'),
         used_instance_count=pulumi.get(__ret__, 'used_instance_count'))
 def get_compute_capacity_reservation_output(capacity_reservation_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityReservationResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityReservationResult]:
     """
     This data source provides details about a specific Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
 
@@ -263,7 +263,7 @@ def get_compute_capacity_reservation_output(capacity_reservation_id: Optional[pu
     """
     __args__ = dict()
     __args__['capacityReservationId'] = capacity_reservation_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeCapacityReservation:getComputeCapacityReservation', __args__, opts=opts, typ=GetComputeCapacityReservationResult)
     return __ret__.apply(lambda __response__: GetComputeCapacityReservationResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

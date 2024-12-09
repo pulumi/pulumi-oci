@@ -193,7 +193,7 @@ def get_backend_set(backend_set_name: Optional[str] = None,
         policy=pulumi.get(__ret__, 'policy'))
 def get_backend_set_output(backend_set_name: Optional[pulumi.Input[str]] = None,
                            network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendSetResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackendSetResult]:
     """
     This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
 
@@ -206,7 +206,7 @@ def get_backend_set_output(backend_set_name: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['backendSetName'] = backend_set_name
     __args__['networkLoadBalancerId'] = network_load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getBackendSet:getBackendSet', __args__, opts=opts, typ=GetBackendSetResult)
     return __ret__.apply(lambda __response__: GetBackendSetResult(
         backend_set_name=pulumi.get(__response__, 'backend_set_name'),

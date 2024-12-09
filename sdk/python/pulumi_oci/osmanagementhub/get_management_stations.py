@@ -191,7 +191,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementStationsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementStationsResult]:
     """
     This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -227,7 +227,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     __args__['id'] = id
     __args__['managedInstanceId'] = managed_instance_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagementStations:getManagementStations', __args__, opts=opts, typ=GetManagementStationsResult)
     return __ret__.apply(lambda __response__: GetManagementStationsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

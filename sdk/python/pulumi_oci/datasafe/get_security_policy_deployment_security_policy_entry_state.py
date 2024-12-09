@@ -144,7 +144,7 @@ def get_security_policy_deployment_security_policy_entry_state(security_policy_d
         security_policy_entry_state_id=pulumi.get(__ret__, 'security_policy_entry_state_id'))
 def get_security_policy_deployment_security_policy_entry_state_output(security_policy_deployment_id: Optional[pulumi.Input[str]] = None,
                                                                       security_policy_entry_state_id: Optional[pulumi.Input[str]] = None,
-                                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult]:
+                                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult]:
     """
     This data source provides details about a specific Security Policy Deployment Security Policy Entry State resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -167,7 +167,7 @@ def get_security_policy_deployment_security_policy_entry_state_output(security_p
     __args__ = dict()
     __args__['securityPolicyDeploymentId'] = security_policy_deployment_id
     __args__['securityPolicyEntryStateId'] = security_policy_entry_state_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState', __args__, opts=opts, typ=GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult(
         deployment_status=pulumi.get(__response__, 'deployment_status'),

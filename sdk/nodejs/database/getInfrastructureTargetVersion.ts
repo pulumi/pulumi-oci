@@ -95,7 +95,7 @@ export interface GetInfrastructureTargetVersionResult {
  * });
  * ```
  */
-export function getInfrastructureTargetVersionOutput(args: GetInfrastructureTargetVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInfrastructureTargetVersionResult> {
+export function getInfrastructureTargetVersionOutput(args: GetInfrastructureTargetVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInfrastructureTargetVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", {
         "compartmentId": args.compartmentId,

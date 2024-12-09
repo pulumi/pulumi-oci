@@ -124,7 +124,7 @@ export interface GetResultResult {
  * });
  * ```
  */
-export function getResultOutput(args: GetResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResultResult> {
+export function getResultOutput(args: GetResultOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResultResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getResult:getResult", {
         "apmDomainId": args.apmDomainId,

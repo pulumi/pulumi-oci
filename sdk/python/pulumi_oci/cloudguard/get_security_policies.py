@@ -159,7 +159,7 @@ def get_security_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]]]] = None,
                                  id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPoliciesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPoliciesResult]:
     """
     This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -190,7 +190,7 @@ def get_security_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getSecurityPolicies:getSecurityPolicies', __args__, opts=opts, typ=GetSecurityPoliciesResult)
     return __ret__.apply(lambda __response__: GetSecurityPoliciesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

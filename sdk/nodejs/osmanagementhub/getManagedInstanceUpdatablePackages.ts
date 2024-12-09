@@ -115,7 +115,7 @@ export interface GetManagedInstanceUpdatablePackagesResult {
  * });
  * ```
  */
-export function getManagedInstanceUpdatablePackagesOutput(args: GetManagedInstanceUpdatablePackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceUpdatablePackagesResult> {
+export function getManagedInstanceUpdatablePackagesOutput(args: GetManagedInstanceUpdatablePackagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceUpdatablePackagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages", {
         "advisoryNames": args.advisoryNames,

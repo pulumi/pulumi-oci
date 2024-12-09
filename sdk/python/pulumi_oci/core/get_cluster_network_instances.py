@@ -150,7 +150,7 @@ def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Inp
                                          compartment_id: Optional[pulumi.Input[str]] = None,
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterNetworkInstancesFilterArgs', 'GetClusterNetworkInstancesFilterArgsDict']]]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterNetworkInstancesResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterNetworkInstancesResult]:
     """
     This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
 
@@ -177,7 +177,7 @@ def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Inp
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getClusterNetworkInstances:getClusterNetworkInstances', __args__, opts=opts, typ=GetClusterNetworkInstancesResult)
     return __ret__.apply(lambda __response__: GetClusterNetworkInstancesResult(
         cluster_network_id=pulumi.get(__response__, 'cluster_network_id'),

@@ -318,7 +318,7 @@ def get_pipeline(pipeline_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_pipeline_output(pipeline_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPipelineResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineResult]:
     """
     This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
 
@@ -338,7 +338,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['pipelineId'] = pipeline_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getPipeline:getPipeline', __args__, opts=opts, typ=GetPipelineResult)
     return __ret__.apply(lambda __response__: GetPipelineResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

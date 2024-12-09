@@ -150,7 +150,7 @@ def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.In
                                                      namespace: Optional[pulumi.Input[str]] = None,
                                                      time_data_ended: Optional[pulumi.Input[Optional[str]]] = None,
                                                      time_data_started: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageOverlappingRecallsResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceStorageOverlappingRecallsResult]:
     """
     This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -177,7 +177,7 @@ def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.In
     __args__['namespace'] = namespace
     __args__['timeDataEnded'] = time_data_ended
     __args__['timeDataStarted'] = time_data_started
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls', __args__, opts=opts, typ=GetNamespaceStorageOverlappingRecallsResult)
     return __ret__.apply(lambda __response__: GetNamespaceStorageOverlappingRecallsResult(
         filters=pulumi.get(__response__, 'filters'),

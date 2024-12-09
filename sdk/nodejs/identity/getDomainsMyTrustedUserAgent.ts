@@ -189,7 +189,7 @@ export interface GetDomainsMyTrustedUserAgentResult {
  * });
  * ```
  */
-export function getDomainsMyTrustedUserAgentOutput(args: GetDomainsMyTrustedUserAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyTrustedUserAgentResult> {
+export function getDomainsMyTrustedUserAgentOutput(args: GetDomainsMyTrustedUserAgentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyTrustedUserAgentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyTrustedUserAgent:getDomainsMyTrustedUserAgent", {
         "attributeSets": args.attributeSets,

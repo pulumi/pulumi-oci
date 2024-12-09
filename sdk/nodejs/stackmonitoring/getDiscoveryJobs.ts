@@ -83,7 +83,7 @@ export interface GetDiscoveryJobsResult {
  * });
  * ```
  */
-export function getDiscoveryJobsOutput(args: GetDiscoveryJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobsResult> {
+export function getDiscoveryJobsOutput(args: GetDiscoveryJobsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDiscoveryJobsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getDiscoveryJobs:getDiscoveryJobs", {
         "compartmentId": args.compartmentId,

@@ -79,7 +79,7 @@ export interface GetRepositoryArchiveContentResult {
  * });
  * ```
  */
-export function getRepositoryArchiveContentOutput(args: GetRepositoryArchiveContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryArchiveContentResult> {
+export function getRepositoryArchiveContentOutput(args: GetRepositoryArchiveContentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryArchiveContentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", {
         "format": args.format,

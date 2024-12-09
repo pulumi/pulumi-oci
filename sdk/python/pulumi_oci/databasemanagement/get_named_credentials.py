@@ -189,7 +189,7 @@ def get_named_credentials_output(associated_resource: Optional[pulumi.Input[Opti
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  scope: Optional[pulumi.Input[Optional[str]]] = None,
                                  type: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamedCredentialsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamedCredentialsResult]:
     """
     This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Database Management service.
 
@@ -222,7 +222,7 @@ def get_named_credentials_output(associated_resource: Optional[pulumi.Input[Opti
     __args__['name'] = name
     __args__['scope'] = scope
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getNamedCredentials:getNamedCredentials', __args__, opts=opts, typ=GetNamedCredentialsResult)
     return __ret__.apply(lambda __response__: GetNamedCredentialsResult(
         associated_resource=pulumi.get(__response__, 'associated_resource'),

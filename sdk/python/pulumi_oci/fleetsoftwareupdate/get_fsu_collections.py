@@ -171,7 +171,7 @@ def get_fsu_collections_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFsuCollectionsFilterArgs', 'GetFsuCollectionsFilterArgsDict']]]]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                type: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFsuCollectionsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFsuCollectionsResult]:
     """
     This data source provides the list of Fsu Collections in Oracle Cloud Infrastructure Fleet Software Update service.
 
@@ -201,7 +201,7 @@ def get_fsu_collections_output(compartment_id: Optional[pulumi.Input[str]] = Non
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetSoftwareUpdate/getFsuCollections:getFsuCollections', __args__, opts=opts, typ=GetFsuCollectionsResult)
     return __ret__.apply(lambda __response__: GetFsuCollectionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

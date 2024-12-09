@@ -105,7 +105,7 @@ export interface GetPbfListingResult {
  * });
  * ```
  */
-export function getPbfListingOutput(args: GetPbfListingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbfListingResult> {
+export function getPbfListingOutput(args: GetPbfListingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPbfListingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getPbfListing:getPbfListing", {
         "pbfListingId": args.pbfListingId,

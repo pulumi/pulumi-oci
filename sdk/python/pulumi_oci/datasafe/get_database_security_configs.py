@@ -263,7 +263,7 @@ def get_database_security_configs_output(access_level: Optional[pulumi.Input[Opt
                                          target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                          time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                          time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseSecurityConfigsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseSecurityConfigsResult]:
     """
     This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
 
@@ -325,7 +325,7 @@ def get_database_security_configs_output(access_level: Optional[pulumi.Input[Opt
     __args__['targetId'] = target_id
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDatabaseSecurityConfigs:getDatabaseSecurityConfigs', __args__, opts=opts, typ=GetDatabaseSecurityConfigsResult)
     return __ret__.apply(lambda __response__: GetDatabaseSecurityConfigsResult(
         access_level=pulumi.get(__response__, 'access_level'),

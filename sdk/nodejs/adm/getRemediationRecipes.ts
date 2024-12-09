@@ -107,7 +107,7 @@ export interface GetRemediationRecipesResult {
  * });
  * ```
  */
-export function getRemediationRecipesOutput(args?: GetRemediationRecipesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRecipesResult> {
+export function getRemediationRecipesOutput(args?: GetRemediationRecipesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRemediationRecipesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Adm/getRemediationRecipes:getRemediationRecipes", {

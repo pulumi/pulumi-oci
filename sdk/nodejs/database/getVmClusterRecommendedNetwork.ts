@@ -145,7 +145,7 @@ export interface GetVmClusterRecommendedNetworkResult {
  *
  * Generates a recommended Cloud@Customer VM cluster network configuration.
  */
-export function getVmClusterRecommendedNetworkOutput(args: GetVmClusterRecommendedNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterRecommendedNetworkResult> {
+export function getVmClusterRecommendedNetworkOutput(args: GetVmClusterRecommendedNetworkOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVmClusterRecommendedNetworkResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", {
         "compartmentId": args.compartmentId,

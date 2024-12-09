@@ -115,7 +115,7 @@ export interface GetDedicatedVmHostResult {
  * });
  * ```
  */
-export function getDedicatedVmHostOutput(args: GetDedicatedVmHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostResult> {
+export function getDedicatedVmHostOutput(args: GetDedicatedVmHostOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDedicatedVmHostResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDedicatedVmHost:getDedicatedVmHost", {
         "dedicatedVmHostId": args.dedicatedVmHostId,

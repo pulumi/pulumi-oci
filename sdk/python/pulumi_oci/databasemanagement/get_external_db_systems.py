@@ -135,7 +135,7 @@ def get_external_db_systems(compartment_id: Optional[str] = None,
 def get_external_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDbSystemsFilterArgs', 'GetExternalDbSystemsFilterArgsDict']]]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbSystemsResult]:
     """
     This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
 
@@ -159,7 +159,7 @@ def get_external_db_systems_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems', __args__, opts=opts, typ=GetExternalDbSystemsResult)
     return __ret__.apply(lambda __response__: GetExternalDbSystemsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

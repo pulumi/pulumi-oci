@@ -178,7 +178,7 @@ export interface GetDesktopPoolResult {
  * });
  * ```
  */
-export function getDesktopPoolOutput(args: GetDesktopPoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDesktopPoolResult> {
+export function getDesktopPoolOutput(args: GetDesktopPoolOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDesktopPoolResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Desktops/getDesktopPool:getDesktopPool", {
         "desktopPoolId": args.desktopPoolId,

@@ -160,7 +160,7 @@ export interface GetAlertPoliciesResult {
  * });
  * ```
  */
-export function getAlertPoliciesOutput(args: GetAlertPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertPoliciesResult> {
+export function getAlertPoliciesOutput(args: GetAlertPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAlertPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAlertPolicies:getAlertPolicies", {
         "accessLevel": args.accessLevel,

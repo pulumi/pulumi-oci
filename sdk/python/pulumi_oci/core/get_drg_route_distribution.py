@@ -190,7 +190,7 @@ def get_drg_route_distribution(drg_route_distribution_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_drg_route_distribution_output(drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteDistributionResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgRouteDistributionResult]:
     """
     This data source provides details about a specific Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.
 
@@ -210,7 +210,7 @@ def get_drg_route_distribution_output(drg_route_distribution_id: Optional[pulumi
     """
     __args__ = dict()
     __args__['drgRouteDistributionId'] = drg_route_distribution_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgRouteDistribution:getDrgRouteDistribution', __args__, opts=opts, typ=GetDrgRouteDistributionResult)
     return __ret__.apply(lambda __response__: GetDrgRouteDistributionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

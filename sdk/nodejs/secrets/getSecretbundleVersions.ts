@@ -75,7 +75,7 @@ export interface GetSecretbundleVersionsResult {
  * });
  * ```
  */
-export function getSecretbundleVersionsOutput(args: GetSecretbundleVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretbundleVersionsResult> {
+export function getSecretbundleVersionsOutput(args: GetSecretbundleVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecretbundleVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", {
         "filters": args.filters,

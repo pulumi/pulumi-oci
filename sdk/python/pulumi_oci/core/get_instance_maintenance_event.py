@@ -395,7 +395,7 @@ def get_instance_maintenance_event(instance_maintenance_event_id: Optional[str] 
         time_started=pulumi.get(__ret__, 'time_started'),
         time_window_start=pulumi.get(__ret__, 'time_window_start'))
 def get_instance_maintenance_event_output(instance_maintenance_event_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceMaintenanceEventResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceMaintenanceEventResult]:
     """
     This data source provides details about a specific Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
 
@@ -415,7 +415,7 @@ def get_instance_maintenance_event_output(instance_maintenance_event_id: Optiona
     """
     __args__ = dict()
     __args__['instanceMaintenanceEventId'] = instance_maintenance_event_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent', __args__, opts=opts, typ=GetInstanceMaintenanceEventResult)
     return __ret__.apply(lambda __response__: GetInstanceMaintenanceEventResult(
         additional_details=pulumi.get(__response__, 'additional_details'),

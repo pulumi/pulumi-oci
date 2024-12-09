@@ -155,7 +155,7 @@ def get_network_sources_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSourcesFilterArgs', 'GetNetworkSourcesFilterArgsDict']]]]] = None,
                                name: Optional[pulumi.Input[Optional[str]]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSourcesResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSourcesResult]:
     """
     This data source provides the list of Network Sources in Oracle Cloud Infrastructure Identity service.
 
@@ -184,7 +184,7 @@ def get_network_sources_output(compartment_id: Optional[pulumi.Input[str]] = Non
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getNetworkSources:getNetworkSources', __args__, opts=opts, typ=GetNetworkSourcesResult)
     return __ret__.apply(lambda __response__: GetNetworkSourcesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

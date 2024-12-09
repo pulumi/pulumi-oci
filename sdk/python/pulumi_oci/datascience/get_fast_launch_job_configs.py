@@ -114,7 +114,7 @@ def get_fast_launch_job_configs(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_fast_launch_job_configs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFastLaunchJobConfigsFilterArgs', 'GetFastLaunchJobConfigsFilterArgsDict']]]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFastLaunchJobConfigsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFastLaunchJobConfigsResult]:
     """
     This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.
 
@@ -135,7 +135,7 @@ def get_fast_launch_job_configs_output(compartment_id: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs', __args__, opts=opts, typ=GetFastLaunchJobConfigsResult)
     return __ret__.apply(lambda __response__: GetFastLaunchJobConfigsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -115,7 +115,7 @@ export interface GetAgentAgentResult {
  * });
  * ```
  */
-export function getAgentAgentOutput(args: GetAgentAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentAgentResult> {
+export function getAgentAgentOutput(args: GetAgentAgentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAgentAgentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getAgentAgent:getAgentAgent", {
         "agentId": args.agentId,

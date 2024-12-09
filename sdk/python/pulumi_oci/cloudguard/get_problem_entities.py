@@ -118,7 +118,7 @@ def get_problem_entities(filters: Optional[Sequence[Union['GetProblemEntitiesFil
         problem_id=pulumi.get(__ret__, 'problem_id'))
 def get_problem_entities_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProblemEntitiesFilterArgs', 'GetProblemEntitiesFilterArgsDict']]]]] = None,
                                 problem_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProblemEntitiesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProblemEntitiesResult]:
     """
     This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -140,7 +140,7 @@ def get_problem_entities_output(filters: Optional[pulumi.Input[Optional[Sequence
     __args__ = dict()
     __args__['filters'] = filters
     __args__['problemId'] = problem_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getProblemEntities:getProblemEntities', __args__, opts=opts, typ=GetProblemEntitiesResult)
     return __ret__.apply(lambda __response__: GetProblemEntitiesResult(
         filters=pulumi.get(__response__, 'filters'),

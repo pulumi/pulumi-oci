@@ -321,7 +321,7 @@ def get_certificate_authority(certificate_authority_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'))
 def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateAuthorityResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateAuthorityResult]:
     """
     This data source provides details about a specific Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
 
@@ -341,7 +341,7 @@ def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.I
     """
     __args__ = dict()
     __args__['certificateAuthorityId'] = certificate_authority_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCertificateAuthority:getCertificateAuthority', __args__, opts=opts, typ=GetCertificateAuthorityResult)
     return __ret__.apply(lambda __response__: GetCertificateAuthorityResult(
         certificate_authority_configs=pulumi.get(__response__, 'certificate_authority_configs'),

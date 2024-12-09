@@ -135,7 +135,7 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[Un
 def get_fusion_environment_data_masking_activities_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict']]]]] = None,
                                                           fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                           state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivitiesResult]:
+                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivitiesResult]:
     """
     This data source provides the list of Fusion Environment Data Masking Activities in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -159,7 +159,7 @@ def get_fusion_environment_data_masking_activities_output(filters: Optional[pulu
     __args__['filters'] = filters
     __args__['fusionEnvironmentId'] = fusion_environment_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities', __args__, opts=opts, typ=GetFusionEnvironmentDataMaskingActivitiesResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentDataMaskingActivitiesResult(
         data_masking_activity_collections=pulumi.get(__response__, 'data_masking_activity_collections'),

@@ -204,7 +204,7 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
                                           runtime_supports: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                           state: Optional[pulumi.Input[Optional[str]]] = None,
                                           types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsConnectionsResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsConnectionsResult]:
     """
     This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
 
@@ -240,7 +240,7 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
     __args__['runtimeSupports'] = runtime_supports
     __args__['state'] = state
     __args__['types'] = types
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections', __args__, opts=opts, typ=GetDatabaseToolsConnectionsResult)
     return __ret__.apply(lambda __response__: GetDatabaseToolsConnectionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

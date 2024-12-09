@@ -115,7 +115,7 @@ def get_alert_policy_rules(alert_policy_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_alert_policy_rules_output(alert_policy_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlertPolicyRulesFilterArgs', 'GetAlertPolicyRulesFilterArgsDict']]]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertPolicyRulesResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertPolicyRulesResult]:
     """
     This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.
 
@@ -137,7 +137,7 @@ def get_alert_policy_rules_output(alert_policy_id: Optional[pulumi.Input[str]] =
     __args__ = dict()
     __args__['alertPolicyId'] = alert_policy_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAlertPolicyRules:getAlertPolicyRules', __args__, opts=opts, typ=GetAlertPolicyRulesResult)
     return __ret__.apply(lambda __response__: GetAlertPolicyRulesResult(
         alert_policy_id=pulumi.get(__response__, 'alert_policy_id'),

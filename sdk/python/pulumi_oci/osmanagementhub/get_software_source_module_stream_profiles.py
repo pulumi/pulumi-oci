@@ -169,7 +169,7 @@ def get_software_source_module_stream_profiles_output(filters: Optional[pulumi.I
                                                       name: Optional[pulumi.Input[Optional[str]]] = None,
                                                       software_source_id: Optional[pulumi.Input[str]] = None,
                                                       stream_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamProfilesResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamProfilesResult]:
     """
     This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -200,7 +200,7 @@ def get_software_source_module_stream_profiles_output(filters: Optional[pulumi.I
     __args__['name'] = name
     __args__['softwareSourceId'] = software_source_id
     __args__['streamName'] = stream_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourceModuleStreamProfiles:getSoftwareSourceModuleStreamProfiles', __args__, opts=opts, typ=GetSoftwareSourceModuleStreamProfilesResult)
     return __ret__.apply(lambda __response__: GetSoftwareSourceModuleStreamProfilesResult(
         filters=pulumi.get(__response__, 'filters'),

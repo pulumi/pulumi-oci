@@ -98,7 +98,7 @@ export interface GetSecurityPolicyReportRoleGrantPathsResult {
  * });
  * ```
  */
-export function getSecurityPolicyReportRoleGrantPathsOutput(args: GetSecurityPolicyReportRoleGrantPathsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportRoleGrantPathsResult> {
+export function getSecurityPolicyReportRoleGrantPathsOutput(args: GetSecurityPolicyReportRoleGrantPathsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityPolicyReportRoleGrantPathsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", {
         "filters": args.filters,

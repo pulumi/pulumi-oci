@@ -125,7 +125,7 @@ export interface GetAuditEventsResult {
  * });
  * ```
  */
-export function getAuditEventsOutput(args: GetAuditEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditEventsResult> {
+export function getAuditEventsOutput(args: GetAuditEventsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuditEventsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditEvents:getAuditEvents", {
         "accessLevel": args.accessLevel,

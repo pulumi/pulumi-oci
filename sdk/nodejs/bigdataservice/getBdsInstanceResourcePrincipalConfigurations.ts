@@ -97,7 +97,7 @@ export interface GetBdsInstanceResourcePrincipalConfigurationsResult {
  * });
  * ```
  */
-export function getBdsInstanceResourcePrincipalConfigurationsOutput(args: GetBdsInstanceResourcePrincipalConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceResourcePrincipalConfigurationsResult> {
+export function getBdsInstanceResourcePrincipalConfigurationsOutput(args: GetBdsInstanceResourcePrincipalConfigurationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBdsInstanceResourcePrincipalConfigurationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", {
         "bdsInstanceId": args.bdsInstanceId,

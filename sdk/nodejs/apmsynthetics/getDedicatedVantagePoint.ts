@@ -113,7 +113,7 @@ export interface GetDedicatedVantagePointResult {
  * });
  * ```
  */
-export function getDedicatedVantagePointOutput(args: GetDedicatedVantagePointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVantagePointResult> {
+export function getDedicatedVantagePointOutput(args: GetDedicatedVantagePointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDedicatedVantagePointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", {
         "apmDomainId": args.apmDomainId,

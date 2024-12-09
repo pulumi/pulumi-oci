@@ -321,7 +321,7 @@ def get_java_downloads_java_download_token(java_download_token_id: Optional[str]
         time_updated=pulumi.get(__ret__, 'time_updated'),
         value=pulumi.get(__ret__, 'value'))
 def get_java_downloads_java_download_token_output(java_download_token_id: Optional[pulumi.Input[str]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadTokenResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadTokenResult]:
     """
     This data source provides details about a specific Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
 
@@ -341,7 +341,7 @@ def get_java_downloads_java_download_token_output(java_download_token_id: Option
     """
     __args__ = dict()
     __args__['javaDownloadTokenId'] = java_download_token_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken', __args__, opts=opts, typ=GetJavaDownloadsJavaDownloadTokenResult)
     return __ret__.apply(lambda __response__: GetJavaDownloadsJavaDownloadTokenResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

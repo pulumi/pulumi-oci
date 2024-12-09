@@ -126,7 +126,7 @@ export interface GetRrsetsResult {
  * });
  * ```
  */
-export function getRrsetsOutput(args: GetRrsetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRrsetsResult> {
+export function getRrsetsOutput(args: GetRrsetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRrsetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getRrsets:getRrsets", {
         "domain": args.domain,

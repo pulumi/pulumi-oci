@@ -201,7 +201,7 @@ def get_data_safe_private_endpoints_output(access_level: Optional[pulumi.Input[O
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataSafePrivateEndpointsFilterArgs', 'GetDataSafePrivateEndpointsFilterArgsDict']]]]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSafePrivateEndpointsResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSafePrivateEndpointsResult]:
     """
     This data source provides the list of Data Safe Private Endpoints in Oracle Cloud Infrastructure Data Safe service.
 
@@ -237,7 +237,7 @@ def get_data_safe_private_endpoints_output(access_level: Optional[pulumi.Input[O
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints', __args__, opts=opts, typ=GetDataSafePrivateEndpointsResult)
     return __ret__.apply(lambda __response__: GetDataSafePrivateEndpointsResult(
         access_level=pulumi.get(__response__, 'access_level'),

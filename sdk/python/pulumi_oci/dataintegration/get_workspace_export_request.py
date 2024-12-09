@@ -333,7 +333,7 @@ def get_workspace_export_request(export_request_key: Optional[str] = None,
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_export_request_output(export_request_key: Optional[pulumi.Input[str]] = None,
                                         workspace_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceExportRequestResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceExportRequestResult]:
     """
     This data source provides details about a specific Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
 
@@ -356,7 +356,7 @@ def get_workspace_export_request_output(export_request_key: Optional[pulumi.Inpu
     __args__ = dict()
     __args__['exportRequestKey'] = export_request_key
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceExportRequest:getWorkspaceExportRequest', __args__, opts=opts, typ=GetWorkspaceExportRequestResult)
     return __ret__.apply(lambda __response__: GetWorkspaceExportRequestResult(
         are_references_included=pulumi.get(__response__, 'are_references_included'),

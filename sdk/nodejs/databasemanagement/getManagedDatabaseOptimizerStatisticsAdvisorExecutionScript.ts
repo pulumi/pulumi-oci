@@ -83,7 +83,7 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResu
  * });
  * ```
  */
-export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutput(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> {
+export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutput(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", {
         "executionName": args.executionName,

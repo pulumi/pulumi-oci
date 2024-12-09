@@ -142,7 +142,7 @@ export interface GetFleetCryptoAnalysisResultResult {
  * });
  * ```
  */
-export function getFleetCryptoAnalysisResultOutput(args: GetFleetCryptoAnalysisResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetCryptoAnalysisResultResult> {
+export function getFleetCryptoAnalysisResultOutput(args: GetFleetCryptoAnalysisResultOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetCryptoAnalysisResultResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", {
         "cryptoAnalysisResultId": args.cryptoAnalysisResultId,

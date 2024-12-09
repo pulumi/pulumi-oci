@@ -80,7 +80,7 @@ export interface GetExternalAsmDiskGroupsResult {
  * });
  * ```
  */
-export function getExternalAsmDiskGroupsOutput(args: GetExternalAsmDiskGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmDiskGroupsResult> {
+export function getExternalAsmDiskGroupsOutput(args: GetExternalAsmDiskGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalAsmDiskGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", {
         "externalAsmId": args.externalAsmId,

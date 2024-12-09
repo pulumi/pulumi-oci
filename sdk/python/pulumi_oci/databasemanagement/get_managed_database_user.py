@@ -428,7 +428,7 @@ def get_managed_database_user(managed_database_id: Optional[str] = None,
 def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                      opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      user_name: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUserResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseUserResult]:
     """
     This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -454,7 +454,7 @@ def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[
     __args__['managedDatabaseId'] = managed_database_id
     __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['userName'] = user_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseUser:getManagedDatabaseUser', __args__, opts=opts, typ=GetManagedDatabaseUserResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseUserResult(
         all_shared=pulumi.get(__response__, 'all_shared'),

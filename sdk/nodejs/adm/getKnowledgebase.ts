@@ -95,7 +95,7 @@ export interface GetKnowledgebaseResult {
  * });
  * ```
  */
-export function getKnowledgebaseOutput(args: GetKnowledgebaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKnowledgebaseResult> {
+export function getKnowledgebaseOutput(args: GetKnowledgebaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKnowledgebaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Adm/getKnowledgebase:getKnowledgebase", {
         "knowledgeBaseId": args.knowledgeBaseId,

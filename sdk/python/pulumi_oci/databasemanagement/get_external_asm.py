@@ -321,7 +321,7 @@ def get_external_asm(external_asm_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
 def get_external_asm_output(external_asm_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalAsmResult]:
     """
     This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -341,7 +341,7 @@ def get_external_asm_output(external_asm_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['externalAsmId'] = external_asm_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalAsm:getExternalAsm', __args__, opts=opts, typ=GetExternalAsmResult)
     return __ret__.apply(lambda __response__: GetExternalAsmResult(
         additional_details=pulumi.get(__response__, 'additional_details'),

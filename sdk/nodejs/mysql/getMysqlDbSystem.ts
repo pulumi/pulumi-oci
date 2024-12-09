@@ -215,7 +215,7 @@ export interface GetMysqlDbSystemResult {
  * });
  * ```
  */
-export function getMysqlDbSystemOutput(args: GetMysqlDbSystemOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlDbSystemResult> {
+export function getMysqlDbSystemOutput(args: GetMysqlDbSystemOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMysqlDbSystemResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", {
         "dbSystemId": args.dbSystemId,

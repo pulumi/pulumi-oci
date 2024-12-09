@@ -97,7 +97,7 @@ export interface GetQuotasResult {
  * });
  * ```
  */
-export function getQuotasOutput(args: GetQuotasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQuotasResult> {
+export function getQuotasOutput(args: GetQuotasOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetQuotasResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Limits/getQuotas:getQuotas", {
         "compartmentId": args.compartmentId,

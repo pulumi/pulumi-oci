@@ -101,7 +101,7 @@ export interface GetDesktopResult {
  * });
  * ```
  */
-export function getDesktopOutput(args: GetDesktopOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDesktopResult> {
+export function getDesktopOutput(args: GetDesktopOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDesktopResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Desktops/getDesktop:getDesktop", {
         "desktopId": args.desktopId,

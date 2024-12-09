@@ -207,7 +207,7 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] 
                              subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
                              x_one_gateway_subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
                              x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """
     This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osub Subscription service.
 
@@ -249,7 +249,7 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] 
     __args__['subscriptionId'] = subscription_id
     __args__['xOneGatewaySubscriptionId'] = x_one_gateway_subscription_id
     __args__['xOneOriginRegion'] = x_one_origin_region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsubSubscription/getSubscriptions:getSubscriptions', __args__, opts=opts, typ=GetSubscriptionsResult)
     return __ret__.apply(lambda __response__: GetSubscriptionsResult(
         buyer_email=pulumi.get(__response__, 'buyer_email'),

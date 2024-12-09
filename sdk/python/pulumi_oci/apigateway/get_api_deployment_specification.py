@@ -126,7 +126,7 @@ def get_api_deployment_specification(api_id: Optional[str] = None,
         request_policies=pulumi.get(__ret__, 'request_policies'),
         routes=pulumi.get(__ret__, 'routes'))
 def get_api_deployment_specification_output(api_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiDeploymentSpecificationResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiDeploymentSpecificationResult]:
     """
     This data source provides details about a specific Api Deployment Specification resource in Oracle Cloud Infrastructure API Gateway service.
 
@@ -146,7 +146,7 @@ def get_api_deployment_specification_output(api_id: Optional[pulumi.Input[str]] 
     """
     __args__ = dict()
     __args__['apiId'] = api_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification', __args__, opts=opts, typ=GetApiDeploymentSpecificationResult)
     return __ret__.apply(lambda __response__: GetApiDeploymentSpecificationResult(
         api_id=pulumi.get(__response__, 'api_id'),

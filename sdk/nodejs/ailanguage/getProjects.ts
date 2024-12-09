@@ -76,7 +76,7 @@ export interface GetProjectsResult {
  *
  * Returns a list of  Projects.
  */
-export function getProjectsOutput(args: GetProjectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProjectsResult> {
+export function getProjectsOutput(args: GetProjectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiLanguage/getProjects:getProjects", {
         "compartmentId": args.compartmentId,

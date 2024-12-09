@@ -126,7 +126,7 @@ export interface GetJobsResult {
  * });
  * ```
  */
-export function getJobsOutput(args: GetJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobsResult> {
+export function getJobsOutput(args: GetJobsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJobsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getJobs:getJobs", {
         "compartmentId": args.compartmentId,

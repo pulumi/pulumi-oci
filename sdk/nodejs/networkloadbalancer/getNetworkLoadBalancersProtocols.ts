@@ -65,7 +65,7 @@ export interface GetNetworkLoadBalancersProtocolsResult {
  * const testNetworkLoadBalancersProtocols = oci.NetworkLoadBalancer.getNetworkLoadBalancersProtocols({});
  * ```
  */
-export function getNetworkLoadBalancersProtocolsOutput(args?: GetNetworkLoadBalancersProtocolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkLoadBalancersProtocolsResult> {
+export function getNetworkLoadBalancersProtocolsOutput(args?: GetNetworkLoadBalancersProtocolsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkLoadBalancersProtocolsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", {

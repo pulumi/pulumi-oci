@@ -102,7 +102,7 @@ export interface GetAgentKnowledgeBasesResult {
  * });
  * ```
  */
-export function getAgentKnowledgeBasesOutput(args?: GetAgentKnowledgeBasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentKnowledgeBasesResult> {
+export function getAgentKnowledgeBasesOutput(args?: GetAgentKnowledgeBasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAgentKnowledgeBasesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", {

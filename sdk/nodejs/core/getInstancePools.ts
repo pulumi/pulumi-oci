@@ -97,7 +97,7 @@ export interface GetInstancePoolsResult {
  * });
  * ```
  */
-export function getInstancePoolsOutput(args: GetInstancePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancePoolsResult> {
+export function getInstancePoolsOutput(args: GetInstancePoolsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstancePoolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstancePools:getInstancePools", {
         "compartmentId": args.compartmentId,

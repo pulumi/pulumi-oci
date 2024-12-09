@@ -151,7 +151,7 @@ export interface GetTargetDatabasesResult {
  * });
  * ```
  */
-export function getTargetDatabasesOutput(args: GetTargetDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesResult> {
+export function getTargetDatabasesOutput(args: GetTargetDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetDatabasesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabases:getTargetDatabases", {
         "accessLevel": args.accessLevel,

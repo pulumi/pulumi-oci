@@ -321,7 +321,7 @@ def get_audit_profile(audit_profile_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditProfileResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditProfileResult]:
     """
     This data source provides details about a specific Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -341,7 +341,7 @@ def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['auditProfileId'] = audit_profile_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditProfile:getAuditProfile', __args__, opts=opts, typ=GetAuditProfileResult)
     return __ret__.apply(lambda __response__: GetAuditProfileResult(
         audit_collected_volume=pulumi.get(__response__, 'audit_collected_volume'),

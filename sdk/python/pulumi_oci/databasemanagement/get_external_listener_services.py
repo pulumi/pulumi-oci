@@ -148,7 +148,7 @@ def get_external_listener_services_output(external_listener_id: Optional[pulumi.
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalListenerServicesFilterArgs', 'GetExternalListenerServicesFilterArgsDict']]]]] = None,
                                           managed_database_id: Optional[pulumi.Input[str]] = None,
                                           opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalListenerServicesResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalListenerServicesResult]:
     """
     This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
 
@@ -176,7 +176,7 @@ def get_external_listener_services_output(external_listener_id: Optional[pulumi.
     __args__['filters'] = filters
     __args__['managedDatabaseId'] = managed_database_id
     __args__['opcNamedCredentialId'] = opc_named_credential_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices', __args__, opts=opts, typ=GetExternalListenerServicesResult)
     return __ret__.apply(lambda __response__: GetExternalListenerServicesResult(
         external_listener_id=pulumi.get(__response__, 'external_listener_id'),

@@ -88,7 +88,7 @@ export interface GetTagStandardTagNamespaceTemplateResult {
  * });
  * ```
  */
-export function getTagStandardTagNamespaceTemplateOutput(args: GetTagStandardTagNamespaceTemplateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagStandardTagNamespaceTemplateResult> {
+export function getTagStandardTagNamespaceTemplateOutput(args: GetTagStandardTagNamespaceTemplateOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTagStandardTagNamespaceTemplateResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", {
         "compartmentId": args.compartmentId,

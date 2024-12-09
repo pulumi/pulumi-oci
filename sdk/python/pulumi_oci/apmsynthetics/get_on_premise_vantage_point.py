@@ -219,7 +219,7 @@ def get_on_premise_vantage_point(apm_domain_id: Optional[str] = None,
         workers_summaries=pulumi.get(__ret__, 'workers_summaries'))
 def get_on_premise_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                         on_premise_vantage_point_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOnPremiseVantagePointResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnPremiseVantagePointResult]:
     """
     This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
 
@@ -242,7 +242,7 @@ def get_on_premise_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
     __args__['onPremiseVantagePointId'] = on_premise_vantage_point_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint', __args__, opts=opts, typ=GetOnPremiseVantagePointResult)
     return __ret__.apply(lambda __response__: GetOnPremiseVantagePointResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

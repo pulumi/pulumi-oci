@@ -94,7 +94,7 @@ export interface GetPreauthrequestsResult {
  * });
  * ```
  */
-export function getPreauthrequestsOutput(args: GetPreauthrequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPreauthrequestsResult> {
+export function getPreauthrequestsOutput(args: GetPreauthrequestsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPreauthrequestsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getPreauthrequests:getPreauthrequests", {
         "bucket": args.bucket,

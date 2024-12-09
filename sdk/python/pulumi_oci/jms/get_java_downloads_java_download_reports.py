@@ -168,7 +168,7 @@ def get_java_downloads_java_download_reports_output(compartment_id: Optional[pul
                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadReportsFilterArgs', 'GetJavaDownloadsJavaDownloadReportsFilterArgsDict']]]]] = None,
                                                     java_download_report_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                     state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadReportsResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadReportsResult]:
     """
     This data source provides the list of Java Download Reports in Oracle Cloud Infrastructure Jms Java Downloads service.
 
@@ -198,7 +198,7 @@ def get_java_downloads_java_download_reports_output(compartment_id: Optional[pul
     __args__['filters'] = filters
     __args__['javaDownloadReportId'] = java_download_report_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaDownloadReports:getJavaDownloadsJavaDownloadReports', __args__, opts=opts, typ=GetJavaDownloadsJavaDownloadReportsResult)
     return __ret__.apply(lambda __response__: GetJavaDownloadsJavaDownloadReportsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -105,7 +105,7 @@ export interface GetStreamDistributionChannelsResult {
  * });
  * ```
  */
-export function getStreamDistributionChannelsOutput(args?: GetStreamDistributionChannelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamDistributionChannelsResult> {
+export function getStreamDistributionChannelsOutput(args?: GetStreamDistributionChannelsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStreamDistributionChannelsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", {

@@ -215,7 +215,7 @@ def get_listener(listener_name: Optional[str] = None,
         udp_idle_timeout=pulumi.get(__ret__, 'udp_idle_timeout'))
 def get_listener_output(listener_name: Optional[pulumi.Input[str]] = None,
                         network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListenerResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListenerResult]:
     """
     This data source provides details about a specific Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
 
@@ -238,7 +238,7 @@ def get_listener_output(listener_name: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['listenerName'] = listener_name
     __args__['networkLoadBalancerId'] = network_load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getListener:getListener', __args__, opts=opts, typ=GetListenerResult)
     return __ret__.apply(lambda __response__: GetListenerResult(
         default_backend_set_name=pulumi.get(__response__, 'default_backend_set_name'),

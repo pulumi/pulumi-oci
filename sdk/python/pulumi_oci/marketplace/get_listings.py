@@ -287,7 +287,7 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]
                         package_type: Optional[pulumi.Input[Optional[str]]] = None,
                         pricings: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                         publisher_id: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingsResult]:
     """
     This data source provides the list of Listings in Oracle Cloud Infrastructure Marketplace service.
 
@@ -352,7 +352,7 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]
     __args__['packageType'] = package_type
     __args__['pricings'] = pricings
     __args__['publisherId'] = publisher_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getListings:getListings', __args__, opts=opts, typ=GetListingsResult)
     return __ret__.apply(lambda __response__: GetListingsResult(
         categories=pulumi.get(__response__, 'categories'),

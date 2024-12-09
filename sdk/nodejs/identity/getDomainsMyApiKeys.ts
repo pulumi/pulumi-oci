@@ -124,7 +124,7 @@ export interface GetDomainsMyApiKeysResult {
  * });
  * ```
  */
-export function getDomainsMyApiKeysOutput(args: GetDomainsMyApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyApiKeysResult> {
+export function getDomainsMyApiKeysOutput(args: GetDomainsMyApiKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyApiKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyApiKeys:getDomainsMyApiKeys", {
         "authorization": args.authorization,

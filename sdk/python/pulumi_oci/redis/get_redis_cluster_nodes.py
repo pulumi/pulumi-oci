@@ -135,7 +135,7 @@ def get_redis_cluster_nodes(display_name: Optional[str] = None,
 def get_redis_cluster_nodes_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRedisClusterNodesFilterArgs', 'GetRedisClusterNodesFilterArgsDict']]]]] = None,
                                    redis_cluster_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRedisClusterNodesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRedisClusterNodesResult]:
     """
     This data source provides the list of Redis Cluster Nodes in Oracle Cloud Infrastructure Redis service.
 
@@ -159,7 +159,7 @@ def get_redis_cluster_nodes_output(display_name: Optional[pulumi.Input[Optional[
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['redisClusterId'] = redis_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Redis/getRedisClusterNodes:getRedisClusterNodes', __args__, opts=opts, typ=GetRedisClusterNodesResult)
     return __ret__.apply(lambda __response__: GetRedisClusterNodesResult(
         display_name=pulumi.get(__response__, 'display_name'),

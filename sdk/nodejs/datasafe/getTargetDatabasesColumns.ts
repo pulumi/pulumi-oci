@@ -137,7 +137,7 @@ export interface GetTargetDatabasesColumnsResult {
  * });
  * ```
  */
-export function getTargetDatabasesColumnsOutput(args: GetTargetDatabasesColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesColumnsResult> {
+export function getTargetDatabasesColumnsOutput(args: GetTargetDatabasesColumnsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetDatabasesColumnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", {
         "columnNameContains": args.columnNameContains,

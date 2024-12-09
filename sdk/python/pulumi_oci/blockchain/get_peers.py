@@ -129,7 +129,7 @@ def get_peers(blockchain_platform_id: Optional[str] = None,
 def get_peers_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPeersFilterArgs', 'GetPeersFilterArgsDict']]]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPeersResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPeersResult]:
     """
     This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.
 
@@ -153,7 +153,7 @@ def get_peers_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     __args__['blockchainPlatformId'] = blockchain_platform_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Blockchain/getPeers:getPeers', __args__, opts=opts, typ=GetPeersResult)
     return __ret__.apply(lambda __response__: GetPeersResult(
         blockchain_platform_id=pulumi.get(__response__, 'blockchain_platform_id'),

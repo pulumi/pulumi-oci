@@ -139,7 +139,7 @@ export interface GetSensitiveTypeResult {
  * });
  * ```
  */
-export function getSensitiveTypeOutput(args: GetSensitiveTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveTypeResult> {
+export function getSensitiveTypeOutput(args: GetSensitiveTypeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSensitiveTypeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveType:getSensitiveType", {
         "sensitiveTypeId": args.sensitiveTypeId,

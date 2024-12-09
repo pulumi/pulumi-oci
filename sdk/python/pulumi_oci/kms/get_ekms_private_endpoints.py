@@ -117,7 +117,7 @@ def get_ekms_private_endpoints(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_ekms_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEkmsPrivateEndpointsFilterArgs', 'GetEkmsPrivateEndpointsFilterArgsDict']]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEkmsPrivateEndpointsResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEkmsPrivateEndpointsResult]:
     """
     This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
 
@@ -138,7 +138,7 @@ def get_ekms_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints', __args__, opts=opts, typ=GetEkmsPrivateEndpointsResult)
     return __ret__.apply(lambda __response__: GetEkmsPrivateEndpointsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

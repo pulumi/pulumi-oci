@@ -190,7 +190,7 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       result_content_type: Optional[pulumi.Input[str]] = None,
                       result_type: Optional[pulumi.Input[str]] = None,
                       vantage_point: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResultResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResultResult]:
     """
     This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
 
@@ -225,7 +225,7 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     __args__['resultContentType'] = result_content_type
     __args__['resultType'] = result_type
     __args__['vantagePoint'] = vantage_point
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getResult:getResult', __args__, opts=opts, typ=GetResultResult)
     return __ret__.apply(lambda __response__: GetResultResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

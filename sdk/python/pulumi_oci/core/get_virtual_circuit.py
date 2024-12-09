@@ -466,7 +466,7 @@ def get_virtual_circuit(virtual_circuit_id: Optional[str] = None,
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'),
         virtual_circuit_redundancy_metadatas=pulumi.get(__ret__, 'virtual_circuit_redundancy_metadatas'))
 def get_virtual_circuit_output(virtual_circuit_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitResult]:
     """
     This data source provides details about a specific Virtual Circuit resource in Oracle Cloud Infrastructure Core service.
 
@@ -486,7 +486,7 @@ def get_virtual_circuit_output(virtual_circuit_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['virtualCircuitId'] = virtual_circuit_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVirtualCircuit:getVirtualCircuit', __args__, opts=opts, typ=GetVirtualCircuitResult)
     return __ret__.apply(lambda __response__: GetVirtualCircuitResult(
         bandwidth_shape_name=pulumi.get(__response__, 'bandwidth_shape_name'),

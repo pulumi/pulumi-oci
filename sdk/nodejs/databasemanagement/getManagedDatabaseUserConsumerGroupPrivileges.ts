@@ -99,7 +99,7 @@ export interface GetManagedDatabaseUserConsumerGroupPrivilegesResult {
  * });
  * ```
  */
-export function getManagedDatabaseUserConsumerGroupPrivilegesOutput(args: GetManagedDatabaseUserConsumerGroupPrivilegesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserConsumerGroupPrivilegesResult> {
+export function getManagedDatabaseUserConsumerGroupPrivilegesOutput(args: GetManagedDatabaseUserConsumerGroupPrivilegesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseUserConsumerGroupPrivilegesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivileges:getManagedDatabaseUserConsumerGroupPrivileges", {
         "filters": args.filters,

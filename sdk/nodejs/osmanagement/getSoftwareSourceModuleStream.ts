@@ -108,7 +108,7 @@ export interface GetSoftwareSourceModuleStreamResult {
  * });
  * ```
  */
-export function getSoftwareSourceModuleStreamOutput(args: GetSoftwareSourceModuleStreamOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceModuleStreamResult> {
+export function getSoftwareSourceModuleStreamOutput(args: GetSoftwareSourceModuleStreamOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSoftwareSourceModuleStreamResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagement/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", {
         "moduleName": args.moduleName,

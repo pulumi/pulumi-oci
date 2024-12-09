@@ -144,7 +144,7 @@ def get_gi_versions_output(availability_domain: Optional[pulumi.Input[Optional[s
                            compartment_id: Optional[pulumi.Input[str]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGiVersionsFilterArgs', 'GetGiVersionsFilterArgsDict']]]]] = None,
                            shape: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGiVersionsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGiVersionsResult]:
     """
     This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
 
@@ -171,7 +171,7 @@ def get_gi_versions_output(availability_domain: Optional[pulumi.Input[Optional[s
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['shape'] = shape
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getGiVersions:getGiVersions', __args__, opts=opts, typ=GetGiVersionsResult)
     return __ret__.apply(lambda __response__: GetGiVersionsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

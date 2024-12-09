@@ -133,7 +133,7 @@ def get_security_policy_report_database_table_access_entries(filters: Optional[S
 def get_security_policy_report_database_table_access_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgsDict']]]]] = None,
                                                                     scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                                                                     security_policy_report_id: Optional[pulumi.Input[str]] = None,
-                                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseTableAccessEntriesResult]:
+                                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseTableAccessEntriesResult]:
     """
     This data source provides the list of Security Policy Report Database Table Access Entries in Oracle Cloud Infrastructure Data Safe service.
 
@@ -161,7 +161,7 @@ def get_security_policy_report_database_table_access_entries_output(filters: Opt
     __args__['filters'] = filters
     __args__['scimQuery'] = scim_query
     __args__['securityPolicyReportId'] = security_policy_report_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntries:getSecurityPolicyReportDatabaseTableAccessEntries', __args__, opts=opts, typ=GetSecurityPolicyReportDatabaseTableAccessEntriesResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyReportDatabaseTableAccessEntriesResult(
         database_table_access_entry_collections=pulumi.get(__response__, 'database_table_access_entry_collections'),

@@ -80,7 +80,7 @@ export interface GetSupportedCommitmentsResult {
  * });
  * ```
  */
-export function getSupportedCommitmentsOutput(args: GetSupportedCommitmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedCommitmentsResult> {
+export function getSupportedCommitmentsOutput(args: GetSupportedCommitmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSupportedCommitmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getSupportedCommitments:getSupportedCommitments", {
         "compartmentId": args.compartmentId,

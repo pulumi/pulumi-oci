@@ -380,7 +380,7 @@ def get_mysql_backup(backup_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_mysql_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlBackupResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlBackupResult]:
     """
     This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
 
@@ -400,7 +400,7 @@ def get_mysql_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['backupId'] = backup_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlBackup:getMysqlBackup', __args__, opts=opts, typ=GetMysqlBackupResult)
     return __ret__.apply(lambda __response__: GetMysqlBackupResult(
         backup_id=pulumi.get(__response__, 'backup_id'),

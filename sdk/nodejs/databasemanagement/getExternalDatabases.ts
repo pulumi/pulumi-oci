@@ -103,7 +103,7 @@ export interface GetExternalDatabasesResult {
  * });
  * ```
  */
-export function getExternalDatabasesOutput(args?: GetExternalDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDatabasesResult> {
+export function getExternalDatabasesOutput(args?: GetExternalDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDatabasesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", {

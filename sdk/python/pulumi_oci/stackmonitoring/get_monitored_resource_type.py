@@ -269,7 +269,7 @@ def get_monitored_resource_type(monitored_resource_type_id: Optional[str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceTypeResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredResourceTypeResult]:
     """
     This data source provides details about a specific Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
 
@@ -289,7 +289,7 @@ def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulu
     """
     __args__ = dict()
     __args__['monitoredResourceTypeId'] = monitored_resource_type_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType', __args__, opts=opts, typ=GetMonitoredResourceTypeResult)
     return __ret__.apply(lambda __response__: GetMonitoredResourceTypeResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

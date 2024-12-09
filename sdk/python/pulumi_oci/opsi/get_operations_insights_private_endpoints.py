@@ -219,7 +219,7 @@ def get_operations_insights_private_endpoints_output(compartment_id: Optional[pu
                                                      opsi_private_endpoint_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                      states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                      vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsPrivateEndpointsResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsPrivateEndpointsResult]:
     """
     This data source provides the list of Operations Insights Private Endpoints in Oracle Cloud Infrastructure Opsi service.
 
@@ -258,7 +258,7 @@ def get_operations_insights_private_endpoints_output(compartment_id: Optional[pu
     __args__['opsiPrivateEndpointId'] = opsi_private_endpoint_id
     __args__['states'] = states
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints', __args__, opts=opts, typ=GetOperationsInsightsPrivateEndpointsResult)
     return __ret__.apply(lambda __response__: GetOperationsInsightsPrivateEndpointsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

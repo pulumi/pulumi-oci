@@ -131,7 +131,7 @@ export interface GetHttpMonitorResult {
  * });
  * ```
  */
-export function getHttpMonitorOutput(args: GetHttpMonitorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpMonitorResult> {
+export function getHttpMonitorOutput(args: GetHttpMonitorOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHttpMonitorResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:HealthChecks/getHttpMonitor:getHttpMonitor", {
         "monitorId": args.monitorId,

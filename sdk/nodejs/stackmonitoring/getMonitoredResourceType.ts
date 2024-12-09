@@ -121,7 +121,7 @@ export interface GetMonitoredResourceTypeResult {
  * });
  * ```
  */
-export function getMonitoredResourceTypeOutput(args: GetMonitoredResourceTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredResourceTypeResult> {
+export function getMonitoredResourceTypeOutput(args: GetMonitoredResourceTypeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMonitoredResourceTypeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType", {
         "monitoredResourceTypeId": args.monitoredResourceTypeId,

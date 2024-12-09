@@ -277,7 +277,7 @@ def get_domains_users_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
                              start_index: Optional[pulumi.Input[Optional[int]]] = None,
                              user_count: Optional[pulumi.Input[Optional[int]]] = None,
                              user_filter: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsUsersResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsUsersResult]:
     """
     This data source provides the list of Users in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -321,7 +321,7 @@ def get_domains_users_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     __args__['startIndex'] = start_index
     __args__['userCount'] = user_count
     __args__['userFilter'] = user_filter
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsUsers:getDomainsUsers', __args__, opts=opts, typ=GetDomainsUsersResult)
     return __ret__.apply(lambda __response__: GetDomainsUsersResult(
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),

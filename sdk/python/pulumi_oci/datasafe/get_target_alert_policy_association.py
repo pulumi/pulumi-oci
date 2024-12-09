@@ -255,7 +255,7 @@ def get_target_alert_policy_association(target_alert_policy_association_id: Opti
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_target_alert_policy_association_output(target_alert_policy_association_id: Optional[pulumi.Input[str]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationResult]:
     """
     This data source provides details about a specific Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -275,7 +275,7 @@ def get_target_alert_policy_association_output(target_alert_policy_association_i
     """
     __args__ = dict()
     __args__['targetAlertPolicyAssociationId'] = target_alert_policy_association_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation', __args__, opts=opts, typ=GetTargetAlertPolicyAssociationResult)
     return __ret__.apply(lambda __response__: GetTargetAlertPolicyAssociationResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -155,7 +155,7 @@ def get_agent_agents_output(compartment_id: Optional[pulumi.Input[Optional[str]]
                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentAgentsFilterArgs', 'GetAgentAgentsFilterArgsDict']]]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentAgentsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentAgentsResult]:
     """
     This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
 
@@ -184,7 +184,7 @@ def get_agent_agents_output(compartment_id: Optional[pulumi.Input[Optional[str]]
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getAgentAgents:getAgentAgents', __args__, opts=opts, typ=GetAgentAgentsResult)
     return __ret__.apply(lambda __response__: GetAgentAgentsResult(
         agent_collections=pulumi.get(__response__, 'agent_collections'),

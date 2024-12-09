@@ -86,7 +86,7 @@ def get_report_content(report_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         report_id=pulumi.get(__ret__, 'report_id'))
 def get_report_content_output(report_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportContentResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportContentResult]:
     """
     This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -106,7 +106,7 @@ def get_report_content_output(report_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['reportId'] = report_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getReportContent:getReportContent', __args__, opts=opts, typ=GetReportContentResult)
     return __ret__.apply(lambda __response__: GetReportContentResult(
         id=pulumi.get(__response__, 'id'),

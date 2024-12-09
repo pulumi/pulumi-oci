@@ -448,7 +448,7 @@ def get_fusion_environment(fusion_environment_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
 def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentResult]:
     """
     This data source provides details about a specific Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -468,7 +468,7 @@ def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironment:getFusionEnvironment', __args__, opts=opts, typ=GetFusionEnvironmentResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentResult(
         additional_language_packs=pulumi.get(__response__, 'additional_language_packs'),

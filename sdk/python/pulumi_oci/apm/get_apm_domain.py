@@ -216,7 +216,7 @@ def get_apm_domain(apm_domain_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_apm_domain_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApmDomainResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApmDomainResult]:
     """
     This data source provides details about a specific Apm Domain resource in Oracle Cloud Infrastructure Apm service.
 
@@ -236,7 +236,7 @@ def get_apm_domain_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Apm/getApmDomain:getApmDomain', __args__, opts=opts, typ=GetApmDomainResult)
     return __ret__.apply(lambda __response__: GetApmDomainResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

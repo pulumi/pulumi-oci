@@ -54,7 +54,7 @@ export interface GetAutonomousDatabaseRegionalWalletManagementResult {
  * const testAutonomousDatabaseRegionalWalletManagement = oci.Database.getAutonomousDatabaseRegionalWalletManagement({});
  * ```
  */
-export function getAutonomousDatabaseRegionalWalletManagementOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseRegionalWalletManagementResult> {
+export function getAutonomousDatabaseRegionalWalletManagementOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseRegionalWalletManagementResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", {
     }, opts);

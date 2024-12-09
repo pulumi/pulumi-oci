@@ -72,7 +72,7 @@ export interface GetAddonsResult {
  * });
  * ```
  */
-export function getAddonsOutput(args: GetAddonsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddonsResult> {
+export function getAddonsOutput(args: GetAddonsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddonsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getAddons:getAddons", {
         "clusterId": args.clusterId,

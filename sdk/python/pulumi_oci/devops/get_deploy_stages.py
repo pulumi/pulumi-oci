@@ -176,7 +176,7 @@ def get_deploy_stages_output(compartment_id: Optional[pulumi.Input[Optional[str]
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeployStagesFilterArgs', 'GetDeployStagesFilterArgsDict']]]]] = None,
                              id: Optional[pulumi.Input[Optional[str]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployStagesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployStagesResult]:
     """
     This data source provides the list of Deploy Stages in Oracle Cloud Infrastructure Devops service.
 
@@ -209,7 +209,7 @@ def get_deploy_stages_output(compartment_id: Optional[pulumi.Input[Optional[str]
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployStages:getDeployStages', __args__, opts=opts, typ=GetDeployStagesResult)
     return __ret__.apply(lambda __response__: GetDeployStagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

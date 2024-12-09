@@ -72,7 +72,7 @@ export interface GetDbSystemPatchesResult {
  * });
  * ```
  */
-export function getDbSystemPatchesOutput(args: GetDbSystemPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemPatchesResult> {
+export function getDbSystemPatchesOutput(args: GetDbSystemPatchesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemPatchesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbSystemPatches:getDbSystemPatches", {
         "dbSystemId": args.dbSystemId,

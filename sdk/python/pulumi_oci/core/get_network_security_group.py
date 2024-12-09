@@ -183,7 +183,7 @@ def get_network_security_group(network_security_group_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_network_security_group_output(network_security_group_id: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityGroupResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityGroupResult]:
     """
     This data source provides details about a specific Network Security Group resource in Oracle Cloud Infrastructure Core service.
 
@@ -209,7 +209,7 @@ def get_network_security_group_output(network_security_group_id: Optional[pulumi
     """
     __args__ = dict()
     __args__['networkSecurityGroupId'] = network_security_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getNetworkSecurityGroup:getNetworkSecurityGroup', __args__, opts=opts, typ=GetNetworkSecurityGroupResult)
     return __ret__.apply(lambda __response__: GetNetworkSecurityGroupResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

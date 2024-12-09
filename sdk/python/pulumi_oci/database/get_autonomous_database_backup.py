@@ -370,7 +370,7 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[str] 
         type=pulumi.get(__ret__, 'type'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
 def get_autonomous_database_backup_output(autonomous_database_backup_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseBackupResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseBackupResult]:
     """
     This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
 
@@ -390,7 +390,7 @@ def get_autonomous_database_backup_output(autonomous_database_backup_id: Optiona
     """
     __args__ = dict()
     __args__['autonomousDatabaseBackupId'] = autonomous_database_backup_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseBackup:getAutonomousDatabaseBackup', __args__, opts=opts, typ=GetAutonomousDatabaseBackupResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabaseBackupResult(
         autonomous_database_backup_id=pulumi.get(__response__, 'autonomous_database_backup_id'),

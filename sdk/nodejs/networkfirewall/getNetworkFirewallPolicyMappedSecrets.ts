@@ -77,7 +77,7 @@ export interface GetNetworkFirewallPolicyMappedSecretsResult {
  * });
  * ```
  */
-export function getNetworkFirewallPolicyMappedSecretsOutput(args: GetNetworkFirewallPolicyMappedSecretsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallPolicyMappedSecretsResult> {
+export function getNetworkFirewallPolicyMappedSecretsOutput(args: GetNetworkFirewallPolicyMappedSecretsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyMappedSecretsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecrets:getNetworkFirewallPolicyMappedSecrets", {
         "displayName": args.displayName,

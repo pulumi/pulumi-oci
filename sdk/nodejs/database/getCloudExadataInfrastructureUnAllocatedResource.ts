@@ -100,7 +100,7 @@ export interface GetCloudExadataInfrastructureUnAllocatedResourceResult {
  * });
  * ```
  */
-export function getCloudExadataInfrastructureUnAllocatedResourceOutput(args: GetCloudExadataInfrastructureUnAllocatedResourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> {
+export function getCloudExadataInfrastructureUnAllocatedResourceOutput(args: GetCloudExadataInfrastructureUnAllocatedResourceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getCloudExadataInfrastructureUnAllocatedResource:getCloudExadataInfrastructureUnAllocatedResource", {
         "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,

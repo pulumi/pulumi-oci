@@ -243,7 +243,7 @@ def get_steering_policy(steering_policy_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         ttl=pulumi.get(__ret__, 'ttl'))
 def get_steering_policy_output(steering_policy_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSteeringPolicyResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSteeringPolicyResult]:
     """
     This data source provides details about a specific Steering Policy resource in Oracle Cloud Infrastructure DNS service.
 
@@ -263,7 +263,7 @@ def get_steering_policy_output(steering_policy_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['steeringPolicyId'] = steering_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getSteeringPolicy:getSteeringPolicy', __args__, opts=opts, typ=GetSteeringPolicyResult)
     return __ret__.apply(lambda __response__: GetSteeringPolicyResult(
         answers=pulumi.get(__response__, 'answers'),

@@ -152,7 +152,7 @@ def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       end_time: Optional[pulumi.Input[str]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict']]]]] = None,
                       start_time: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventsResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEventsResult]:
     """
     This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
 
@@ -184,7 +184,7 @@ def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['endTime'] = end_time
     __args__['filters'] = filters
     __args__['startTime'] = start_time
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Audit/getEvents:getEvents', __args__, opts=opts, typ=GetEventsResult)
     return __ret__.apply(lambda __response__: GetEventsResult(
         audit_events=pulumi.get(__response__, 'audit_events'),

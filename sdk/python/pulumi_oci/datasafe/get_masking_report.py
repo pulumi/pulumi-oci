@@ -320,7 +320,7 @@ def get_masking_report(masking_report_id: Optional[str] = None,
         total_masked_sensitive_types=pulumi.get(__ret__, 'total_masked_sensitive_types'),
         total_masked_values=pulumi.get(__ret__, 'total_masked_values'))
 def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingReportResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportResult]:
     """
     This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -340,7 +340,7 @@ def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['maskingReportId'] = masking_report_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingReport:getMaskingReport', __args__, opts=opts, typ=GetMaskingReportResult)
     return __ret__.apply(lambda __response__: GetMaskingReportResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

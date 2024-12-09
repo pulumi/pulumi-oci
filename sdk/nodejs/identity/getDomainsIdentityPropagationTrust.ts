@@ -225,7 +225,7 @@ export interface GetDomainsIdentityPropagationTrustResult {
  * });
  * ```
  */
-export function getDomainsIdentityPropagationTrustOutput(args: GetDomainsIdentityPropagationTrustOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsIdentityPropagationTrustResult> {
+export function getDomainsIdentityPropagationTrustOutput(args: GetDomainsIdentityPropagationTrustOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsIdentityPropagationTrustResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", {
         "attributeSets": args.attributeSets,

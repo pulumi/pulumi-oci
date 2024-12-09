@@ -222,7 +222,7 @@ def get_security_attribute(security_attribute_name: Optional[str] = None,
         validators=pulumi.get(__ret__, 'validators'))
 def get_security_attribute_output(security_attribute_name: Optional[pulumi.Input[str]] = None,
                                   security_attribute_namespace_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAttributeResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAttributeResult]:
     """
     This data source provides details about a specific Security Attribute resource in Oracle Cloud Infrastructure Security Attribute service.
 
@@ -245,7 +245,7 @@ def get_security_attribute_output(security_attribute_name: Optional[pulumi.Input
     __args__ = dict()
     __args__['securityAttributeName'] = security_attribute_name
     __args__['securityAttributeNamespaceId'] = security_attribute_namespace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:SecurityAttribute/getSecurityAttribute:getSecurityAttribute', __args__, opts=opts, typ=GetSecurityAttributeResult)
     return __ret__.apply(lambda __response__: GetSecurityAttributeResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

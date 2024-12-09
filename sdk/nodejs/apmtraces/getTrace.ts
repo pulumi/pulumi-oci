@@ -176,7 +176,7 @@ export interface GetTraceResult {
  * });
  * ```
  */
-export function getTraceOutput(args: GetTraceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceResult> {
+export function getTraceOutput(args: GetTraceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTraceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmTraces/getTrace:getTrace", {
         "apmDomainId": args.apmDomainId,

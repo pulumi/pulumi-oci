@@ -76,7 +76,7 @@ export interface GetAutonomousDatabaseInstanceWalletManagementResult {
  * });
  * ```
  */
-export function getAutonomousDatabaseInstanceWalletManagementOutput(args: GetAutonomousDatabaseInstanceWalletManagementOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseInstanceWalletManagementResult> {
+export function getAutonomousDatabaseInstanceWalletManagementOutput(args: GetAutonomousDatabaseInstanceWalletManagementOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseInstanceWalletManagementResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", {
         "autonomousDatabaseId": args.autonomousDatabaseId,

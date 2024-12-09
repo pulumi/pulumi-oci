@@ -108,7 +108,7 @@ export interface GetAnnouncementSubscriptionsResult {
  * });
  * ```
  */
-export function getAnnouncementSubscriptionsOutput(args: GetAnnouncementSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnouncementSubscriptionsResult> {
+export function getAnnouncementSubscriptionsOutput(args: GetAnnouncementSubscriptionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAnnouncementSubscriptionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", {
         "compartmentId": args.compartmentId,

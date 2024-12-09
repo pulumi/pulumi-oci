@@ -113,7 +113,7 @@ export interface GetSecurityAssessmentFindingsResult {
  *
  * List all the findings from all the targets in the specified compartment.
  */
-export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentFindingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingsResult> {
+export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentFindingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAssessmentFindingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", {
         "accessLevel": args.accessLevel,

@@ -119,7 +119,7 @@ export interface GetPrivateEndpointsResult {
  * });
  * ```
  */
-export function getPrivateEndpointsOutput(args: GetPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointsResult> {
+export function getPrivateEndpointsOutput(args: GetPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPrivateEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getPrivateEndpoints:getPrivateEndpoints", {
         "compartmentId": args.compartmentId,

@@ -244,7 +244,7 @@ def get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id: Optional[str] 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_at_customer_ccc_upgrade_schedule_output(ccc_upgrade_schedule_id: Optional[pulumi.Input[str]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAtCustomerCccUpgradeScheduleResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAtCustomerCccUpgradeScheduleResult]:
     """
     This data source provides details about a specific Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
 
@@ -265,7 +265,7 @@ def get_at_customer_ccc_upgrade_schedule_output(ccc_upgrade_schedule_id: Optiona
     """
     __args__ = dict()
     __args__['cccUpgradeScheduleId'] = ccc_upgrade_schedule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule', __args__, opts=opts, typ=GetAtCustomerCccUpgradeScheduleResult)
     return __ret__.apply(lambda __response__: GetAtCustomerCccUpgradeScheduleResult(
         ccc_upgrade_schedule_id=pulumi.get(__response__, 'ccc_upgrade_schedule_id'),

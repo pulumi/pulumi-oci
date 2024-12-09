@@ -108,7 +108,7 @@ export interface GetResolverEndpointsResult {
  * });
  * ```
  */
-export function getResolverEndpointsOutput(args: GetResolverEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolverEndpointsResult> {
+export function getResolverEndpointsOutput(args: GetResolverEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResolverEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getResolverEndpoints:getResolverEndpoints", {
         "filters": args.filters,

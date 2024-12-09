@@ -144,7 +144,7 @@ def get_invoices_invoice_lines_output(compartment_id: Optional[pulumi.Input[str]
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvoicesInvoiceLinesFilterArgs', 'GetInvoicesInvoiceLinesFilterArgsDict']]]]] = None,
                                       internal_invoice_id: Optional[pulumi.Input[str]] = None,
                                       osp_home_region: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoicesInvoiceLinesResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvoicesInvoiceLinesResult]:
     """
     This data source provides the list of Invoices Invoice Lines in Oracle Cloud Infrastructure Osp Gateway service.
 
@@ -171,7 +171,7 @@ def get_invoices_invoice_lines_output(compartment_id: Optional[pulumi.Input[str]
     __args__['filters'] = filters
     __args__['internalInvoiceId'] = internal_invoice_id
     __args__['ospHomeRegion'] = osp_home_region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OspGateway/getInvoicesInvoiceLines:getInvoicesInvoiceLines', __args__, opts=opts, typ=GetInvoicesInvoiceLinesResult)
     return __ret__.apply(lambda __response__: GetInvoicesInvoiceLinesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

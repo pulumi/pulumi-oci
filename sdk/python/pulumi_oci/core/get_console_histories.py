@@ -171,7 +171,7 @@ def get_console_histories_output(availability_domain: Optional[pulumi.Input[Opti
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConsoleHistoriesFilterArgs', 'GetConsoleHistoriesFilterArgsDict']]]]] = None,
                                  instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConsoleHistoriesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConsoleHistoriesResult]:
     """
     This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
 
@@ -201,7 +201,7 @@ def get_console_histories_output(availability_domain: Optional[pulumi.Input[Opti
     __args__['filters'] = filters
     __args__['instanceId'] = instance_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getConsoleHistories:getConsoleHistories', __args__, opts=opts, typ=GetConsoleHistoriesResult)
     return __ret__.apply(lambda __response__: GetConsoleHistoriesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

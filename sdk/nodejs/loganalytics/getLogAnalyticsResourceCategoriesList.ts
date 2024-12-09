@@ -97,7 +97,7 @@ export interface GetLogAnalyticsResourceCategoriesListResult {
  * });
  * ```
  */
-export function getLogAnalyticsResourceCategoriesListOutput(args: GetLogAnalyticsResourceCategoriesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsResourceCategoriesListResult> {
+export function getLogAnalyticsResourceCategoriesListOutput(args: GetLogAnalyticsResourceCategoriesListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsResourceCategoriesListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", {
         "namespace": args.namespace,

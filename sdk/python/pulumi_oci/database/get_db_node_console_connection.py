@@ -208,7 +208,7 @@ def get_db_node_console_connection(db_node_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_db_node_console_connection_output(db_node_id: Optional[pulumi.Input[str]] = None,
                                           id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeConsoleConnectionResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeConsoleConnectionResult]:
     """
     This data source provides details about a specific Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
 
@@ -231,7 +231,7 @@ def get_db_node_console_connection_output(db_node_id: Optional[pulumi.Input[str]
     __args__ = dict()
     __args__['dbNodeId'] = db_node_id
     __args__['id'] = id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbNodeConsoleConnection:getDbNodeConsoleConnection', __args__, opts=opts, typ=GetDbNodeConsoleConnectionResult)
     return __ret__.apply(lambda __response__: GetDbNodeConsoleConnectionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

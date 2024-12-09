@@ -126,7 +126,7 @@ def get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure
         id=pulumi.get(__ret__, 'id'),
         total_cpu=pulumi.get(__ret__, 'total_cpu'))
 def get_autonomous_exadata_infrastructure_ocpu_output(autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureOcpuResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureOcpuResult]:
     """
     This data source provides details about a specific Autonomous Exadata Infrastructure Ocpu resource in Oracle Cloud Infrastructure Database service.
 
@@ -146,7 +146,7 @@ def get_autonomous_exadata_infrastructure_ocpu_output(autonomous_exadata_infrast
     """
     __args__ = dict()
     __args__['autonomousExadataInfrastructureId'] = autonomous_exadata_infrastructure_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu', __args__, opts=opts, typ=GetAutonomousExadataInfrastructureOcpuResult)
     return __ret__.apply(lambda __response__: GetAutonomousExadataInfrastructureOcpuResult(
         autonomous_exadata_infrastructure_id=pulumi.get(__response__, 'autonomous_exadata_infrastructure_id'),

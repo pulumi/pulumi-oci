@@ -169,7 +169,7 @@ export interface GetAuditTrailsResult {
  * });
  * ```
  */
-export function getAuditTrailsOutput(args: GetAuditTrailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditTrailsResult> {
+export function getAuditTrailsOutput(args: GetAuditTrailsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuditTrailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditTrails:getAuditTrails", {
         "accessLevel": args.accessLevel,

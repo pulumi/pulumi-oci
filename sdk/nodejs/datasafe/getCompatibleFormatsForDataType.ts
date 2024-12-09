@@ -65,7 +65,7 @@ export interface GetCompatibleFormatsForDataTypeResult {
  * const testCompatibleFormatsForDataType = oci.DataSafe.getCompatibleFormatsForDataType({});
  * ```
  */
-export function getCompatibleFormatsForDataTypeOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetCompatibleFormatsForDataTypeResult> {
+export function getCompatibleFormatsForDataTypeOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCompatibleFormatsForDataTypeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", {
     }, opts);

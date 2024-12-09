@@ -169,7 +169,7 @@ export interface GetDbSystemResult {
  * });
  * ```
  */
-export function getDbSystemOutput(args: GetDbSystemOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemResult> {
+export function getDbSystemOutput(args: GetDbSystemOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Psql/getDbSystem:getDbSystem", {
         "dbSystemId": args.dbSystemId,

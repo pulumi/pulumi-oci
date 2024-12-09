@@ -183,7 +183,7 @@ def get_workspace_applications_output(fields: Optional[pulumi.Input[Optional[Seq
                                       name: Optional[pulumi.Input[Optional[str]]] = None,
                                       name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                       workspace_id: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceApplicationsResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationsResult]:
     """
     This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
 
@@ -216,7 +216,7 @@ def get_workspace_applications_output(fields: Optional[pulumi.Input[Optional[Seq
     __args__['name'] = name
     __args__['nameContains'] = name_contains
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications', __args__, opts=opts, typ=GetWorkspaceApplicationsResult)
     return __ret__.apply(lambda __response__: GetWorkspaceApplicationsResult(
         application_summary_collections=pulumi.get(__response__, 'application_summary_collections'),

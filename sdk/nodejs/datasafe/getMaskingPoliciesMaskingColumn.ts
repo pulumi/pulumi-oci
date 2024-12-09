@@ -133,7 +133,7 @@ export interface GetMaskingPoliciesMaskingColumnResult {
  * });
  * ```
  */
-export function getMaskingPoliciesMaskingColumnOutput(args: GetMaskingPoliciesMaskingColumnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPoliciesMaskingColumnResult> {
+export function getMaskingPoliciesMaskingColumnOutput(args: GetMaskingPoliciesMaskingColumnOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaskingPoliciesMaskingColumnResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingPoliciesMaskingColumn:getMaskingPoliciesMaskingColumn", {
         "maskingColumnKey": args.maskingColumnKey,

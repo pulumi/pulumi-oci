@@ -201,7 +201,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_d
                                                                   compute_local_block_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   compute_network_block_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs', 'GetComputeCapacityTopologyComputeBareMetalHostsFilterArgsDict']]]]] = None,
-                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeBareMetalHostsResult]:
+                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeBareMetalHostsResult]:
     """
     This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.
 
@@ -237,7 +237,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_d
     __args__['computeLocalBlockId'] = compute_local_block_id
     __args__['computeNetworkBlockId'] = compute_network_block_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts', __args__, opts=opts, typ=GetComputeCapacityTopologyComputeBareMetalHostsResult)
     return __ret__.apply(lambda __response__: GetComputeCapacityTopologyComputeBareMetalHostsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

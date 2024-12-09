@@ -134,7 +134,7 @@ export interface GetFleetPerformanceTuningAnalysisResultResult {
  * });
  * ```
  */
-export function getFleetPerformanceTuningAnalysisResultOutput(args: GetFleetPerformanceTuningAnalysisResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetPerformanceTuningAnalysisResultResult> {
+export function getFleetPerformanceTuningAnalysisResultOutput(args: GetFleetPerformanceTuningAnalysisResultOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetPerformanceTuningAnalysisResultResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult", {
         "fleetId": args.fleetId,

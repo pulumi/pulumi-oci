@@ -129,7 +129,7 @@ def get_container_instance_shapes(availability_domain: Optional[str] = None,
 def get_container_instance_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                          compartment_id: Optional[pulumi.Input[str]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetContainerInstanceShapesFilterArgs', 'GetContainerInstanceShapesFilterArgsDict']]]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerInstanceShapesResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerInstanceShapesResult]:
     """
     This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
 
@@ -153,7 +153,7 @@ def get_container_instance_shapes_output(availability_domain: Optional[pulumi.In
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes', __args__, opts=opts, typ=GetContainerInstanceShapesResult)
     return __ret__.apply(lambda __response__: GetContainerInstanceShapesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

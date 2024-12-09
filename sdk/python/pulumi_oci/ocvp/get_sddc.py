@@ -915,7 +915,7 @@ def get_sddc(sddc_id: Optional[str] = None,
         vsphere_vlan_id=pulumi.get(__ret__, 'vsphere_vlan_id'),
         workload_network_cidr=pulumi.get(__ret__, 'workload_network_cidr'))
 def get_sddc_output(sddc_id: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSddcResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSddcResult]:
     """
     This data source provides details about a specific Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
@@ -935,7 +935,7 @@ def get_sddc_output(sddc_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['sddcId'] = sddc_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getSddc:getSddc', __args__, opts=opts, typ=GetSddcResult)
     return __ret__.apply(lambda __response__: GetSddcResult(
         actual_esxi_hosts_count=pulumi.get(__response__, 'actual_esxi_hosts_count'),

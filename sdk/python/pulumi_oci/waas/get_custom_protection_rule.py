@@ -203,7 +203,7 @@ def get_custom_protection_rule(custom_protection_rule_id: Optional[str] = None,
         template=pulumi.get(__ret__, 'template'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_custom_protection_rule_output(custom_protection_rule_id: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCustomProtectionRuleResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCustomProtectionRuleResult]:
     """
     This data source provides details about a specific Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
 
@@ -223,7 +223,7 @@ def get_custom_protection_rule_output(custom_protection_rule_id: Optional[pulumi
     """
     __args__ = dict()
     __args__['customProtectionRuleId'] = custom_protection_rule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waas/getCustomProtectionRule:getCustomProtectionRule', __args__, opts=opts, typ=GetCustomProtectionRuleResult)
     return __ret__.apply(lambda __response__: GetCustomProtectionRuleResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

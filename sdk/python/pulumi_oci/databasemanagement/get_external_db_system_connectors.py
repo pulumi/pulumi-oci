@@ -153,7 +153,7 @@ def get_external_db_system_connectors_output(compartment_id: Optional[pulumi.Inp
                                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                              external_db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDbSystemConnectorsFilterArgs', 'GetExternalDbSystemConnectorsFilterArgsDict']]]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemConnectorsResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbSystemConnectorsResult]:
     """
     This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.
 
@@ -180,7 +180,7 @@ def get_external_db_system_connectors_output(compartment_id: Optional[pulumi.Inp
     __args__['displayName'] = display_name
     __args__['externalDbSystemId'] = external_db_system_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalDbSystemConnectors:getExternalDbSystemConnectors', __args__, opts=opts, typ=GetExternalDbSystemConnectorsResult)
     return __ret__.apply(lambda __response__: GetExternalDbSystemConnectorsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

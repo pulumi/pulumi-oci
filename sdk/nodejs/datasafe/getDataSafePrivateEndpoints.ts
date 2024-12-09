@@ -124,7 +124,7 @@ export interface GetDataSafePrivateEndpointsResult {
  * });
  * ```
  */
-export function getDataSafePrivateEndpointsOutput(args: GetDataSafePrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSafePrivateEndpointsResult> {
+export function getDataSafePrivateEndpointsOutput(args: GetDataSafePrivateEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataSafePrivateEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints", {
         "accessLevel": args.accessLevel,

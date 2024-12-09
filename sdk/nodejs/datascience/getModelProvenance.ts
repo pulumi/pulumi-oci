@@ -84,7 +84,7 @@ export interface GetModelProvenanceResult {
  * });
  * ```
  */
-export function getModelProvenanceOutput(args: GetModelProvenanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelProvenanceResult> {
+export function getModelProvenanceOutput(args: GetModelProvenanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelProvenanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getModelProvenance:getModelProvenance", {
         "modelId": args.modelId,

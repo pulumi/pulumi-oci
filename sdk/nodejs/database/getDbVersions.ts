@@ -117,7 +117,7 @@ export interface GetDbVersionsResult {
  * });
  * ```
  */
-export function getDbVersionsOutput(args: GetDbVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbVersionsResult> {
+export function getDbVersionsOutput(args: GetDbVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbVersions:getDbVersions", {
         "compartmentId": args.compartmentId,

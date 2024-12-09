@@ -258,7 +258,7 @@ def get_catalog_types_output(catalog_id: Optional[pulumi.Input[str]] = None,
                              name: Optional[pulumi.Input[Optional[str]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              type_category: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogTypesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogTypesResult]:
     """
     This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
 
@@ -303,7 +303,7 @@ def get_catalog_types_output(catalog_id: Optional[pulumi.Input[str]] = None,
     __args__['name'] = name
     __args__['state'] = state
     __args__['typeCategory'] = type_category
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getCatalogTypes:getCatalogTypes', __args__, opts=opts, typ=GetCatalogTypesResult)
     return __ret__.apply(lambda __response__: GetCatalogTypesResult(
         catalog_id=pulumi.get(__response__, 'catalog_id'),

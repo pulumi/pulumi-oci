@@ -153,7 +153,7 @@ def get_profiles_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]]]] = None,
                         name: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProfilesResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfilesResult]:
     """
     This data source provides the list of Profiles in Oracle Cloud Infrastructure Optimizer service.
 
@@ -180,7 +180,7 @@ def get_profiles_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getProfiles:getProfiles', __args__, opts=opts, typ=GetProfilesResult)
     return __ret__.apply(lambda __response__: GetProfilesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

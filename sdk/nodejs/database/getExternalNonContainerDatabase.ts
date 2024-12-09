@@ -141,7 +141,7 @@ export interface GetExternalNonContainerDatabaseResult {
  * });
  * ```
  */
-export function getExternalNonContainerDatabaseOutput(args: GetExternalNonContainerDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalNonContainerDatabaseResult> {
+export function getExternalNonContainerDatabaseOutput(args: GetExternalNonContainerDatabaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalNonContainerDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", {
         "externalNonContainerDatabaseId": args.externalNonContainerDatabaseId,

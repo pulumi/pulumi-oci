@@ -97,7 +97,7 @@ export interface GetHeatWaveClusterResult {
  * });
  * ```
  */
-export function getHeatWaveClusterOutput(args: GetHeatWaveClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHeatWaveClusterResult> {
+export function getHeatWaveClusterOutput(args: GetHeatWaveClusterOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHeatWaveClusterResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", {
         "dbSystemId": args.dbSystemId,

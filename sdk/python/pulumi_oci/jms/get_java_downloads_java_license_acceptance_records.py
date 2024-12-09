@@ -170,7 +170,7 @@ def get_java_downloads_java_license_acceptance_records_output(compartment_id: Op
                                                               license_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                               search_by_user: Optional[pulumi.Input[Optional[str]]] = None,
                                                               status: Optional[pulumi.Input[Optional[str]]] = None,
-                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaLicenseAcceptanceRecordsResult]:
+                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaLicenseAcceptanceRecordsResult]:
     """
     This data source provides the list of Java License Acceptance Records in Oracle Cloud Infrastructure Jms Java Downloads service.
 
@@ -203,7 +203,7 @@ def get_java_downloads_java_license_acceptance_records_output(compartment_id: Op
     __args__['licenseType'] = license_type
     __args__['searchByUser'] = search_by_user
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecords:getJavaDownloadsJavaLicenseAcceptanceRecords', __args__, opts=opts, typ=GetJavaDownloadsJavaLicenseAcceptanceRecordsResult)
     return __ret__.apply(lambda __response__: GetJavaDownloadsJavaLicenseAcceptanceRecordsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

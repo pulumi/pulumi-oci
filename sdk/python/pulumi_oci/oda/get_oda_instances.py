@@ -158,7 +158,7 @@ def get_oda_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOdaInstancesFilterArgs', 'GetOdaInstancesFilterArgsDict']]]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaInstancesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaInstancesResult]:
     """
     This data source provides the list of Oda Instances in Oracle Cloud Infrastructure Digital Assistant service.
 
@@ -190,7 +190,7 @@ def get_oda_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Oda/getOdaInstances:getOdaInstances', __args__, opts=opts, typ=GetOdaInstancesResult)
     return __ret__.apply(lambda __response__: GetOdaInstancesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

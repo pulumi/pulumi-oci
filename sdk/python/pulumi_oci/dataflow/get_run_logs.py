@@ -114,7 +114,7 @@ def get_run_logs(filters: Optional[Sequence[Union['GetRunLogsFilterArgs', 'GetRu
         run_logs=pulumi.get(__ret__, 'run_logs'))
 def get_run_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRunLogsFilterArgs', 'GetRunLogsFilterArgsDict']]]]] = None,
                         run_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunLogsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunLogsResult]:
     """
     This data source provides the list of Run Logs in Oracle Cloud Infrastructure Data Flow service.
 
@@ -135,7 +135,7 @@ def get_run_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['
     __args__ = dict()
     __args__['filters'] = filters
     __args__['runId'] = run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getRunLogs:getRunLogs', __args__, opts=opts, typ=GetRunLogsResult)
     return __ret__.apply(lambda __response__: GetRunLogsResult(
         filters=pulumi.get(__response__, 'filters'),

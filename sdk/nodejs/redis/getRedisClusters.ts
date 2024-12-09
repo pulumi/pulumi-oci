@@ -105,7 +105,7 @@ export interface GetRedisClustersResult {
  * });
  * ```
  */
-export function getRedisClustersOutput(args?: GetRedisClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRedisClustersResult> {
+export function getRedisClustersOutput(args?: GetRedisClustersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRedisClustersResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Redis/getRedisClusters:getRedisClusters", {

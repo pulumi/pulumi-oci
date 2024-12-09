@@ -269,7 +269,7 @@ def get_external_database_connector(external_database_connector_id: Optional[str
         time_connection_status_last_updated=pulumi.get(__ret__, 'time_connection_status_last_updated'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_external_database_connector_output(external_database_connector_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDatabaseConnectorResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDatabaseConnectorResult]:
     """
     This data source provides details about a specific External Database Connector resource in Oracle Cloud Infrastructure Database service.
 
@@ -289,7 +289,7 @@ def get_external_database_connector_output(external_database_connector_id: Optio
     """
     __args__ = dict()
     __args__['externalDatabaseConnectorId'] = external_database_connector_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector', __args__, opts=opts, typ=GetExternalDatabaseConnectorResult)
     return __ret__.apply(lambda __response__: GetExternalDatabaseConnectorResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

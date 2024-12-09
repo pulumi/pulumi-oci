@@ -242,7 +242,7 @@ def get_ai_private_endpoint(ai_private_endpoint_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_ai_private_endpoint_output(ai_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAiPrivateEndpointResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAiPrivateEndpointResult]:
     """
     This data source provides details about a specific Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
 
@@ -262,7 +262,7 @@ def get_ai_private_endpoint_output(ai_private_endpoint_id: Optional[pulumi.Input
     """
     __args__ = dict()
     __args__['aiPrivateEndpointId'] = ai_private_endpoint_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint', __args__, opts=opts, typ=GetAiPrivateEndpointResult)
     return __ret__.apply(lambda __response__: GetAiPrivateEndpointResult(
         ai_private_endpoint_id=pulumi.get(__response__, 'ai_private_endpoint_id'),

@@ -150,7 +150,7 @@ def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        database_id: Optional[pulumi.Input[Optional[str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackupsFilterArgs', 'GetBackupsFilterArgsDict']]]]] = None,
                        shape_family: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupsResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupsResult]:
     """
     This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
 
@@ -177,7 +177,7 @@ def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     __args__['databaseId'] = database_id
     __args__['filters'] = filters
     __args__['shapeFamily'] = shape_family
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getBackups:getBackups', __args__, opts=opts, typ=GetBackupsResult)
     return __ret__.apply(lambda __response__: GetBackupsResult(
         backups=pulumi.get(__response__, 'backups'),

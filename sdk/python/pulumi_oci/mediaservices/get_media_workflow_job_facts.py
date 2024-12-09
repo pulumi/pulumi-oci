@@ -154,7 +154,7 @@ def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[
                                         key: Optional[pulumi.Input[Optional[str]]] = None,
                                         media_workflow_job_id: Optional[pulumi.Input[str]] = None,
                                         type: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowJobFactsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowJobFactsResult]:
     """
     > **_NOTE:_** This data source has been deprecated and is no longer supported.
     This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
@@ -182,7 +182,7 @@ def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[
     __args__['key'] = key
     __args__['mediaWorkflowJobId'] = media_workflow_job_id
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts', __args__, opts=opts, typ=GetMediaWorkflowJobFactsResult)
     return __ret__.apply(lambda __response__: GetMediaWorkflowJobFactsResult(
         filters=pulumi.get(__response__, 'filters'),

@@ -92,13 +92,13 @@ def get_namespace_metadata(namespace: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'))
 def get_namespace_metadata_output(namespace: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceMetadataResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceMetadataResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata', __args__, opts=opts, typ=GetNamespaceMetadataResult)
     return __ret__.apply(lambda __response__: GetNamespaceMetadataResult(
         default_s3compartment_id=pulumi.get(__response__, 'default_s3compartment_id'),

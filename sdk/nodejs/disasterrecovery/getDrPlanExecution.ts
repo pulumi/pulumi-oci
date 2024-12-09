@@ -145,7 +145,7 @@ export interface GetDrPlanExecutionResult {
  * });
  * ```
  */
-export function getDrPlanExecutionOutput(args: GetDrPlanExecutionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrPlanExecutionResult> {
+export function getDrPlanExecutionOutput(args: GetDrPlanExecutionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrPlanExecutionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution", {
         "drPlanExecutionId": args.drPlanExecutionId,

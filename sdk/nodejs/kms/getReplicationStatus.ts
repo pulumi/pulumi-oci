@@ -83,7 +83,7 @@ export interface GetReplicationStatusResult {
  * });
  * ```
  */
-export function getReplicationStatusOutput(args: GetReplicationStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationStatusResult> {
+export function getReplicationStatusOutput(args: GetReplicationStatusOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReplicationStatusResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Kms/getReplicationStatus:getReplicationStatus", {
         "managementEndpoint": args.managementEndpoint,

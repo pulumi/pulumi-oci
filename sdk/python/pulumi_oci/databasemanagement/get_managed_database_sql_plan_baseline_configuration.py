@@ -234,7 +234,7 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
         space_used_mb=pulumi.get(__ret__, 'space_used_mb'))
 def get_managed_database_sql_plan_baseline_configuration_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                 opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult]:
+                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult]:
     """
     This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -259,7 +259,7 @@ def get_managed_database_sql_plan_baseline_configuration_output(managed_database
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
     __args__['opcNamedCredentialId'] = opc_named_credential_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselineConfigurationResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseSqlPlanBaselineConfigurationResult(
         auto_capture_filters=pulumi.get(__response__, 'auto_capture_filters'),

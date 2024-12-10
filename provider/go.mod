@@ -15,7 +15,7 @@ replace github.com/oracle/oci-go-sdk/v65 => github.com/oracle/oci-go-sdk/v65 v65
 require (
 	github.com/oracle/terraform-provider-oci v1.0.19-0.20241121072340-30d6d2363b1a // indirect
 	github.com/oracle/terraform-provider-oci/shim v0.0.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.97.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.97.1
 	github.com/pulumi/pulumi/pkg/v3 v3.142.0 // indirect
 	github.com/pulumi/pulumi/sdk/v3 v3.142.0
 )

@@ -585,7 +585,7 @@ def get_database_insight(database_insight_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_database_insight_output(database_insight_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseInsightResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseInsightResult]:
     """
     This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -605,7 +605,7 @@ def get_database_insight_output(database_insight_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['databaseInsightId'] = database_insight_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getDatabaseInsight:getDatabaseInsight', __args__, opts=opts, typ=GetDatabaseInsightResult)
     return __ret__.apply(lambda __response__: GetDatabaseInsightResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

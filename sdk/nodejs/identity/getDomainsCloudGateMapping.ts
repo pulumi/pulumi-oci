@@ -193,7 +193,7 @@ export interface GetDomainsCloudGateMappingResult {
  * });
  * ```
  */
-export function getDomainsCloudGateMappingOutput(args: GetDomainsCloudGateMappingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsCloudGateMappingResult> {
+export function getDomainsCloudGateMappingOutput(args: GetDomainsCloudGateMappingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsCloudGateMappingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsCloudGateMapping:getDomainsCloudGateMapping", {
         "attributeSets": args.attributeSets,

@@ -154,7 +154,7 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_security_assessment_comparison_output(comparison_security_assessment_id: Optional[pulumi.Input[str]] = None,
                                               security_assessment_id: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentComparisonResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentComparisonResult]:
     """
     This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -177,7 +177,7 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
     __args__ = dict()
     __args__['comparisonSecurityAssessmentId'] = comparison_security_assessment_id
     __args__['securityAssessmentId'] = security_assessment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison', __args__, opts=opts, typ=GetSecurityAssessmentComparisonResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentComparisonResult(
         baseline_id=pulumi.get(__response__, 'baseline_id'),

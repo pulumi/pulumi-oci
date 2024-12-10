@@ -63,7 +63,7 @@ export interface GetJavaDownloadsJavaDownloadReportContentResult {
  * });
  * ```
  */
-export function getJavaDownloadsJavaDownloadReportContentOutput(args: GetJavaDownloadsJavaDownloadReportContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaDownloadReportContentResult> {
+export function getJavaDownloadsJavaDownloadReportContentOutput(args: GetJavaDownloadsJavaDownloadReportContentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJavaDownloadsJavaDownloadReportContentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaDownloadReportContent:getJavaDownloadsJavaDownloadReportContent", {
         "javaDownloadReportId": args.javaDownloadReportId,

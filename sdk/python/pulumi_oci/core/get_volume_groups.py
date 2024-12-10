@@ -172,7 +172,7 @@ def get_volume_groups_output(availability_domain: Optional[pulumi.Input[Optional
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeGroupsFilterArgs', 'GetVolumeGroupsFilterArgsDict']]]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeGroupsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupsResult]:
     """
     This data source provides the list of Volume Groups in Oracle Cloud Infrastructure Core service.
 
@@ -203,7 +203,7 @@ def get_volume_groups_output(availability_domain: Optional[pulumi.Input[Optional
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVolumeGroups:getVolumeGroups', __args__, opts=opts, typ=GetVolumeGroupsResult)
     return __ret__.apply(lambda __response__: GetVolumeGroupsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

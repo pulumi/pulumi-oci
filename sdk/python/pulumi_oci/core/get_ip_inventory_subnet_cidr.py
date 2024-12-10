@@ -152,7 +152,7 @@ def get_ip_inventory_subnet_cidr(subnet_id: Optional[str] = None,
         message=pulumi.get(__ret__, 'message'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'))
 def get_ip_inventory_subnet_cidr_output(subnet_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpInventorySubnetCidrResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpInventorySubnetCidrResult]:
     """
     This data source provides details about a specific Ip Inventory Subnet Cidr resource in Oracle Cloud Infrastructure Core service.
 
@@ -172,7 +172,7 @@ def get_ip_inventory_subnet_cidr_output(subnet_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['subnetId'] = subnet_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr', __args__, opts=opts, typ=GetIpInventorySubnetCidrResult)
     return __ret__.apply(lambda __response__: GetIpInventorySubnetCidrResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

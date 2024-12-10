@@ -198,7 +198,7 @@ def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Op
                                          time_ended_in_millis: Optional[pulumi.Input[Optional[str]]] = None,
                                          time_started_in_millis: Optional[pulumi.Input[Optional[str]]] = None,
                                          workspace_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceExportRequestsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceExportRequestsResult]:
     """
     This data source provides the list of Workspace Export Requests in Oracle Cloud Infrastructure Data Integration service.
 
@@ -234,7 +234,7 @@ def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Op
     __args__['timeEndedInMillis'] = time_ended_in_millis
     __args__['timeStartedInMillis'] = time_started_in_millis
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceExportRequests:getWorkspaceExportRequests', __args__, opts=opts, typ=GetWorkspaceExportRequestsResult)
     return __ret__.apply(lambda __response__: GetWorkspaceExportRequestsResult(
         export_request_summary_collections=pulumi.get(__response__, 'export_request_summary_collections'),

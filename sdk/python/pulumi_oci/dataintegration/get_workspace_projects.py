@@ -180,7 +180,7 @@ def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequenc
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                   workspace_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceProjectsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceProjectsResult]:
     """
     This data source provides the list of Workspace Projects in Oracle Cloud Infrastructure Data Integration service.
 
@@ -213,7 +213,7 @@ def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequenc
     __args__['name'] = name
     __args__['nameContains'] = name_contains
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects', __args__, opts=opts, typ=GetWorkspaceProjectsResult)
     return __ret__.apply(lambda __response__: GetWorkspaceProjectsResult(
         fields=pulumi.get(__response__, 'fields'),

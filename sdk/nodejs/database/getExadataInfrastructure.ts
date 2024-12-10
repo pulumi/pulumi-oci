@@ -231,7 +231,7 @@ export interface GetExadataInfrastructureResult {
  * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
  * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
  */
-export function getExadataInfrastructureOutput(args: GetExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureResult> {
+export function getExadataInfrastructureOutput(args: GetExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadataInfrastructureResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExadataInfrastructure:getExadataInfrastructure", {
         "exadataInfrastructureId": args.exadataInfrastructureId,

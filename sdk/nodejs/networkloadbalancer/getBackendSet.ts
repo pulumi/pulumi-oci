@@ -78,7 +78,7 @@ export interface GetBackendSetResult {
  *
  * Retrieves the configuration information for the specified backend set.
  */
-export function getBackendSetOutput(args: GetBackendSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendSetResult> {
+export function getBackendSetOutput(args: GetBackendSetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBackendSetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", {
         "backendSetName": args.backendSetName,

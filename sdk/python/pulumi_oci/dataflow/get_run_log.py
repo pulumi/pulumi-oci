@@ -140,7 +140,7 @@ def get_run_log(base64_encode_content: Optional[bool] = None,
 def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                        name: Optional[pulumi.Input[str]] = None,
                        run_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunLogResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunLogResult]:
     """
     This data source provides details about a specific Run Log resource in Oracle Cloud Infrastructure Data Flow service.
 
@@ -164,7 +164,7 @@ def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[boo
     __args__['base64EncodeContent'] = base64_encode_content
     __args__['name'] = name
     __args__['runId'] = run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getRunLog:getRunLog', __args__, opts=opts, typ=GetRunLogResult)
     return __ret__.apply(lambda __response__: GetRunLogResult(
         base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),

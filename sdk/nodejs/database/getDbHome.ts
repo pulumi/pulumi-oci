@@ -130,7 +130,7 @@ export interface GetDbHomeResult {
  * });
  * ```
  */
-export function getDbHomeOutput(args: GetDbHomeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomeResult> {
+export function getDbHomeOutput(args: GetDbHomeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbHomeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbHome:getDbHome", {
         "dbHomeId": args.dbHomeId,

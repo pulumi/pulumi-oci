@@ -119,7 +119,7 @@ export interface GetAnalyticsInstancesResult {
  * });
  * ```
  */
-export function getAnalyticsInstancesOutput(args: GetAnalyticsInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstancesResult> {
+export function getAnalyticsInstancesOutput(args: GetAnalyticsInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAnalyticsInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", {
         "capacityType": args.capacityType,

@@ -172,7 +172,7 @@ def get_nat_gateways_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNatGatewaysFilterArgs', 'GetNatGatewaysFilterArgsDict']]]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNatGatewaysResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNatGatewaysResult]:
     """
     This data source provides the list of Nat Gateways in Oracle Cloud Infrastructure Core service.
 
@@ -203,7 +203,7 @@ def get_nat_gateways_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getNatGateways:getNatGateways', __args__, opts=opts, typ=GetNatGatewaysResult)
     return __ret__.apply(lambda __response__: GetNatGatewaysResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

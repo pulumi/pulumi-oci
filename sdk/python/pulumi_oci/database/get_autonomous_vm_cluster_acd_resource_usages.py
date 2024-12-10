@@ -129,7 +129,7 @@ def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Opti
 def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                                          compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]]]] = None,
-                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVmClusterAcdResourceUsagesResult]:
+                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVmClusterAcdResourceUsagesResult]:
     """
     This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
 
@@ -153,7 +153,7 @@ def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_i
     __args__['autonomousVmClusterId'] = autonomous_vm_cluster_id
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages', __args__, opts=opts, typ=GetAutonomousVmClusterAcdResourceUsagesResult)
     return __ret__.apply(lambda __response__: GetAutonomousVmClusterAcdResourceUsagesResult(
         autonomous_container_database_resource_usages=pulumi.get(__response__, 'autonomous_container_database_resource_usages'),

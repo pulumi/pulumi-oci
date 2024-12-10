@@ -150,7 +150,7 @@ def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence
                                 instance_id: Optional[pulumi.Input[str]] = None,
                                 is_available: Optional[pulumi.Input[Optional[bool]]] = None,
                                 name: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceDevicesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceDevicesResult]:
     """
     This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
 
@@ -177,7 +177,7 @@ def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence
     __args__['instanceId'] = instance_id
     __args__['isAvailable'] = is_available
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceDevices:getInstanceDevices', __args__, opts=opts, typ=GetInstanceDevicesResult)
     return __ret__.apply(lambda __response__: GetInstanceDevicesResult(
         devices=pulumi.get(__response__, 'devices'),

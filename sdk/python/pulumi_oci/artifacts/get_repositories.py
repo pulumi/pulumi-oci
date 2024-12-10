@@ -176,7 +176,7 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             id: Optional[pulumi.Input[Optional[str]]] = None,
                             is_immutable: Optional[pulumi.Input[Optional[bool]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoriesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoriesResult]:
     """
     This data source provides the list of Repositories in Oracle Cloud Infrastructure Artifacts service.
 
@@ -209,7 +209,7 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['id'] = id
     __args__['isImmutable'] = is_immutable
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getRepositories:getRepositories', __args__, opts=opts, typ=GetRepositoriesResult)
     return __ret__.apply(lambda __response__: GetRepositoriesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

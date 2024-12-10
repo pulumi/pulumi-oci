@@ -150,7 +150,7 @@ export interface GetReportDefinitionsResult {
  * });
  * ```
  */
-export function getReportDefinitionsOutput(args: GetReportDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportDefinitionsResult> {
+export function getReportDefinitionsOutput(args: GetReportDefinitionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReportDefinitionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getReportDefinitions:getReportDefinitions", {
         "accessLevel": args.accessLevel,

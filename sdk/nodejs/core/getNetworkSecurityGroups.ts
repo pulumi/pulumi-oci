@@ -119,7 +119,7 @@ export interface GetNetworkSecurityGroupsResult {
  * });
  * ```
  */
-export function getNetworkSecurityGroupsOutput(args?: GetNetworkSecurityGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupsResult> {
+export function getNetworkSecurityGroupsOutput(args?: GetNetworkSecurityGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkSecurityGroupsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", {

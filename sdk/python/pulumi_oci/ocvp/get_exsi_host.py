@@ -482,7 +482,7 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
         upgraded_replacement_esxi_host_id=pulumi.get(__ret__, 'upgraded_replacement_esxi_host_id'),
         vmware_software_version=pulumi.get(__ret__, 'vmware_software_version'))
 def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExsiHostResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExsiHostResult]:
     """
     This data source provides details about a specific Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
@@ -502,7 +502,7 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['esxiHostId'] = esxi_host_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getExsiHost:getExsiHost', __args__, opts=opts, typ=GetExsiHostResult)
     return __ret__.apply(lambda __response__: GetExsiHostResult(
         billing_contract_end_date=pulumi.get(__response__, 'billing_contract_end_date'),

@@ -185,7 +185,7 @@ def get_desktops_output(availability_domain: Optional[pulumi.Input[Optional[str]
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDesktopsFilterArgs', 'GetDesktopsFilterArgsDict']]]]] = None,
                         id: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDesktopsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopsResult]:
     """
     This data source provides the list of Desktops in Oracle Cloud Infrastructure Desktops service.
 
@@ -221,7 +221,7 @@ def get_desktops_output(availability_domain: Optional[pulumi.Input[Optional[str]
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Desktops/getDesktops:getDesktops', __args__, opts=opts, typ=GetDesktopsResult)
     return __ret__.apply(lambda __response__: GetDesktopsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

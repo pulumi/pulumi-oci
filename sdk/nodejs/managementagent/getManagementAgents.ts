@@ -226,7 +226,7 @@ export interface GetManagementAgentsResult {
  * });
  * ```
  */
-export function getManagementAgentsOutput(args: GetManagementAgentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentsResult> {
+export function getManagementAgentsOutput(args: GetManagementAgentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgents:getManagementAgents", {
         "accessLevel": args.accessLevel,

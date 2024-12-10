@@ -162,7 +162,7 @@ def get_managed_database_user_roles_output(filters: Optional[pulumi.Input[Option
                                            name: Optional[pulumi.Input[Optional[str]]] = None,
                                            opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            user_name: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUserRolesResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseUserRolesResult]:
     """
     This data source provides the list of Managed Database User Roles in Oracle Cloud Infrastructure Database Management service.
 
@@ -192,7 +192,7 @@ def get_managed_database_user_roles_output(filters: Optional[pulumi.Input[Option
     __args__['name'] = name
     __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['userName'] = user_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles', __args__, opts=opts, typ=GetManagedDatabaseUserRolesResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseUserRolesResult(
         filters=pulumi.get(__response__, 'filters'),

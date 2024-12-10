@@ -115,7 +115,7 @@ def get_vb_instance_applications(idcs_open_id: Optional[str] = None,
         vb_instance_id=pulumi.get(__ret__, 'vb_instance_id'))
 def get_vb_instance_applications_output(idcs_open_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         vb_instance_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVbInstanceApplicationsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVbInstanceApplicationsResult]:
     """
     This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
 
@@ -138,7 +138,7 @@ def get_vb_instance_applications_output(idcs_open_id: Optional[pulumi.Input[Opti
     __args__ = dict()
     __args__['idcsOpenId'] = idcs_open_id
     __args__['vbInstanceId'] = vb_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications', __args__, opts=opts, typ=GetVbInstanceApplicationsResult)
     return __ret__.apply(lambda __response__: GetVbInstanceApplicationsResult(
         application_summary_collections=pulumi.get(__response__, 'application_summary_collections'),

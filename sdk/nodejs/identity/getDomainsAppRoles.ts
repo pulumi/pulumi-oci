@@ -140,7 +140,7 @@ export interface GetDomainsAppRolesResult {
  * });
  * ```
  */
-export function getDomainsAppRolesOutput(args: GetDomainsAppRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAppRolesResult> {
+export function getDomainsAppRolesOutput(args: GetDomainsAppRolesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsAppRolesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAppRoles:getDomainsAppRoles", {
         "appRoleCount": args.appRoleCount,

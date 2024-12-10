@@ -150,7 +150,7 @@ def get_workspaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspacesFilterArgs', 'GetWorkspacesFilterArgsDict']]]]] = None,
                           name: Optional[pulumi.Input[Optional[str]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspacesResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspacesResult]:
     """
     This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.
 
@@ -177,7 +177,7 @@ def get_workspaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaces:getWorkspaces', __args__, opts=opts, typ=GetWorkspacesResult)
     return __ret__.apply(lambda __response__: GetWorkspacesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

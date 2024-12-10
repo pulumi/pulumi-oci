@@ -228,7 +228,7 @@ def get_configs_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        freeform_tag_equals: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                        freeform_tag_exists: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                        options_group: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigsResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigsResult]:
     """
     This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
 
@@ -270,7 +270,7 @@ def get_configs_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     __args__['freeformTagEquals'] = freeform_tag_equals
     __args__['freeformTagExists'] = freeform_tag_exists
     __args__['optionsGroup'] = options_group
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmConfig/getConfigs:getConfigs', __args__, opts=opts, typ=GetConfigsResult)
     return __ret__.apply(lambda __response__: GetConfigsResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

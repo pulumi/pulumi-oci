@@ -173,7 +173,7 @@ def get_fleet_properties_output(compartment_id: Optional[pulumi.Input[Optional[s
                                 fleet_id: Optional[pulumi.Input[str]] = None,
                                 id: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetPropertiesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetPropertiesResult]:
     """
     This data source provides the list of Fleet Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -206,7 +206,7 @@ def get_fleet_properties_output(compartment_id: Optional[pulumi.Input[Optional[s
     __args__['fleetId'] = fleet_id
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getFleetProperties:getFleetProperties', __args__, opts=opts, typ=GetFleetPropertiesResult)
     return __ret__.apply(lambda __response__: GetFleetPropertiesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

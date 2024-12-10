@@ -93,7 +93,7 @@ export interface GetDedicatedVmHostInstanceShapesResult {
  * });
  * ```
  */
-export function getDedicatedVmHostInstanceShapesOutput(args: GetDedicatedVmHostInstanceShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostInstanceShapesResult> {
+export function getDedicatedVmHostInstanceShapesOutput(args: GetDedicatedVmHostInstanceShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDedicatedVmHostInstanceShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", {
         "availabilityDomain": args.availabilityDomain,

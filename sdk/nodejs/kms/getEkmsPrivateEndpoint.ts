@@ -115,7 +115,7 @@ export interface GetEkmsPrivateEndpointResult {
  * });
  * ```
  */
-export function getEkmsPrivateEndpointOutput(args: GetEkmsPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEkmsPrivateEndpointResult> {
+export function getEkmsPrivateEndpointOutput(args: GetEkmsPrivateEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEkmsPrivateEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", {
         "ekmsPrivateEndpointId": args.ekmsPrivateEndpointId,

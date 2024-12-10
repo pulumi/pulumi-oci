@@ -83,7 +83,7 @@ export interface GetNetworkSecurityGroupSecurityRulesResult {
  * });
  * ```
  */
-export function getNetworkSecurityGroupSecurityRulesOutput(args: GetNetworkSecurityGroupSecurityRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupSecurityRulesResult> {
+export function getNetworkSecurityGroupSecurityRulesOutput(args: GetNetworkSecurityGroupSecurityRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkSecurityGroupSecurityRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", {
         "direction": args.direction,

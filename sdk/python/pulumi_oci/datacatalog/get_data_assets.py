@@ -221,7 +221,7 @@ def get_data_assets_output(catalog_id: Optional[pulumi.Input[str]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataAssetsFilterArgs', 'GetDataAssetsFilterArgsDict']]]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            type_key: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataAssetsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataAssetsResult]:
     """
     This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
 
@@ -247,7 +247,7 @@ def get_data_assets_output(catalog_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['typeKey'] = type_key
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getDataAssets:getDataAssets', __args__, opts=opts, typ=GetDataAssetsResult)
     return __ret__.apply(lambda __response__: GetDataAssetsResult(
         catalog_id=pulumi.get(__response__, 'catalog_id'),

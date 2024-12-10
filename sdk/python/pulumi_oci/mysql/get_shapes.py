@@ -168,7 +168,7 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
                       is_supported_fors: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                       name: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetShapesResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShapesResult]:
     """
     This data source provides the list of Shapes in Oracle Cloud Infrastructure MySQL Database service.
 
@@ -201,7 +201,7 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
     __args__['filters'] = filters
     __args__['isSupportedFors'] = is_supported_fors
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getShapes:getShapes', __args__, opts=opts, typ=GetShapesResult)
     return __ret__.apply(lambda __response__: GetShapesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

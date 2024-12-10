@@ -115,7 +115,7 @@ def get_byoip_allocated_ranges(byoip_range_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_byoip_allocated_ranges_output(byoip_range_id: Optional[pulumi.Input[str]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetByoipAllocatedRangesFilterArgs', 'GetByoipAllocatedRangesFilterArgsDict']]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetByoipAllocatedRangesResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByoipAllocatedRangesResult]:
     """
     This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
 
@@ -137,7 +137,7 @@ def get_byoip_allocated_ranges_output(byoip_range_id: Optional[pulumi.Input[str]
     __args__ = dict()
     __args__['byoipRangeId'] = byoip_range_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges', __args__, opts=opts, typ=GetByoipAllocatedRangesResult)
     return __ret__.apply(lambda __response__: GetByoipAllocatedRangesResult(
         byoip_allocated_range_collections=pulumi.get(__response__, 'byoip_allocated_range_collections'),

@@ -138,7 +138,7 @@ export interface GetDedicatedVmHostsResult {
  * });
  * ```
  */
-export function getDedicatedVmHostsOutput(args: GetDedicatedVmHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostsResult> {
+export function getDedicatedVmHostsOutput(args: GetDedicatedVmHostsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDedicatedVmHostsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", {
         "availabilityDomain": args.availabilityDomain,

@@ -98,7 +98,7 @@ export interface GetServiceEnvironmentResult {
  * });
  * ```
  */
-export function getServiceEnvironmentOutput(args: GetServiceEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceEnvironmentResult> {
+export function getServiceEnvironmentOutput(args: GetServiceEnvironmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceEnvironmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", {
         "compartmentId": args.compartmentId,

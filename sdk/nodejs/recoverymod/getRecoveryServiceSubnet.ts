@@ -117,7 +117,7 @@ export interface GetRecoveryServiceSubnetResult {
  * });
  * ```
  */
-export function getRecoveryServiceSubnetOutput(args: GetRecoveryServiceSubnetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecoveryServiceSubnetResult> {
+export function getRecoveryServiceSubnetOutput(args: GetRecoveryServiceSubnetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryServiceSubnetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet", {
         "recoveryServiceSubnetId": args.recoveryServiceSubnetId,

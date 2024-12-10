@@ -219,7 +219,7 @@ def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Inpu
                                     name: Optional[pulumi.Input[Optional[str]]] = None,
                                     resource_group: Optional[pulumi.Input[Optional[str]]] = None,
                                     resource_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBaselineableMetricsResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBaselineableMetricsResult]:
     """
     This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
 
@@ -258,7 +258,7 @@ def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Inpu
     __args__['name'] = name
     __args__['resourceGroup'] = resource_group
     __args__['resourceType'] = resource_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics', __args__, opts=opts, typ=GetBaselineableMetricsResult)
     return __ret__.apply(lambda __response__: GetBaselineableMetricsResult(
         baselineable_metric_id=pulumi.get(__response__, 'baselineable_metric_id'),

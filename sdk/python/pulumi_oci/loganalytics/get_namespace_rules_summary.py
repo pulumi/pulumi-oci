@@ -140,7 +140,7 @@ def get_namespace_rules_summary(compartment_id: Optional[str] = None,
         total_count=pulumi.get(__ret__, 'total_count'))
 def get_namespace_rules_summary_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        namespace: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceRulesSummaryResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceRulesSummaryResult]:
     """
     This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -163,7 +163,7 @@ def get_namespace_rules_summary_output(compartment_id: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary', __args__, opts=opts, typ=GetNamespaceRulesSummaryResult)
     return __ret__.apply(lambda __response__: GetNamespaceRulesSummaryResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

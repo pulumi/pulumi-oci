@@ -75,7 +75,7 @@ export interface GetAppCatalogListingResourceVersionsResult {
  * });
  * ```
  */
-export function getAppCatalogListingResourceVersionsOutput(args: GetAppCatalogListingResourceVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingResourceVersionsResult> {
+export function getAppCatalogListingResourceVersionsOutput(args: GetAppCatalogListingResourceVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppCatalogListingResourceVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", {
         "filters": args.filters,

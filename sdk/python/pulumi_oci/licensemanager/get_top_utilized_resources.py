@@ -130,7 +130,7 @@ def get_top_utilized_resources(compartment_id: Optional[str] = None,
 def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                       resource_unit_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTopUtilizedResourcesResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTopUtilizedResourcesResult]:
     """
     This data source provides the list of Top Utilized Resources in Oracle Cloud Infrastructure License Manager service.
 
@@ -156,7 +156,7 @@ def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[str]
     __args__['compartmentId'] = compartment_id
     __args__['isCompartmentIdInSubtree'] = is_compartment_id_in_subtree
     __args__['resourceUnitType'] = resource_unit_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources', __args__, opts=opts, typ=GetTopUtilizedResourcesResult)
     return __ret__.apply(lambda __response__: GetTopUtilizedResourcesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

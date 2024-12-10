@@ -137,7 +137,7 @@ export interface GetAuditProfileResult {
  * });
  * ```
  */
-export function getAuditProfileOutput(args: GetAuditProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileResult> {
+export function getAuditProfileOutput(args: GetAuditProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuditProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditProfile:getAuditProfile", {
         "auditProfileId": args.auditProfileId,

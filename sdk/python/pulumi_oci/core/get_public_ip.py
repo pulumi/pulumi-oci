@@ -297,7 +297,7 @@ def get_public_ip(id: Optional[str] = None,
 def get_public_ip_output(id: Optional[pulumi.Input[Optional[str]]] = None,
                          ip_address: Optional[pulumi.Input[Optional[str]]] = None,
                          private_ip_id: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicIpResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicIpResult]:
     """
     This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.
 
@@ -348,7 +348,7 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['id'] = id
     __args__['ipAddress'] = ip_address
     __args__['privateIpId'] = private_ip_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getPublicIp:getPublicIp', __args__, opts=opts, typ=GetPublicIpResult)
     return __ret__.apply(lambda __response__: GetPublicIpResult(
         assigned_entity_id=pulumi.get(__response__, 'assigned_entity_id'),

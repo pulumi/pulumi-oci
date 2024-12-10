@@ -351,7 +351,7 @@ def get_discovery_jobs_result(discovery_job_id: Optional[str] = None,
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
 def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[str]] = None,
                                      result_key: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobsResultResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryJobsResultResult]:
     """
     This data source provides details about a specific Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -374,7 +374,7 @@ def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['discoveryJobId'] = discovery_job_id
     __args__['resultKey'] = result_key
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult', __args__, opts=opts, typ=GetDiscoveryJobsResultResult)
     return __ret__.apply(lambda __response__: GetDiscoveryJobsResultResult(
         app_defined_child_column_keys=pulumi.get(__response__, 'app_defined_child_column_keys'),

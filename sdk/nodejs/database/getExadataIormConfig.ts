@@ -94,7 +94,7 @@ export interface GetExadataIormConfigResult {
  * });
  * ```
  */
-export function getExadataIormConfigOutput(args: GetExadataIormConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataIormConfigResult> {
+export function getExadataIormConfigOutput(args: GetExadataIormConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadataIormConfigResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExadataIormConfig:getExadataIormConfig", {
         "dbSystemId": args.dbSystemId,

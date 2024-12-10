@@ -294,7 +294,7 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
                                 resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 status: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceActionsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceActionsResult]:
     """
     This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
 
@@ -357,7 +357,7 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
     __args__['resourceType'] = resource_type
     __args__['state'] = state
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getResourceActions:getResourceActions', __args__, opts=opts, typ=GetResourceActionsResult)
     return __ret__.apply(lambda __response__: GetResourceActionsResult(
         child_tenancy_ids=pulumi.get(__response__, 'child_tenancy_ids'),

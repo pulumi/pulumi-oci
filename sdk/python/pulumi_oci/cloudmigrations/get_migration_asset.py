@@ -340,7 +340,7 @@ def get_migration_asset(migration_asset_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
 def get_migration_asset_output(migration_asset_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationAssetResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationAssetResult]:
     """
     This data source provides details about a specific Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
 
@@ -360,7 +360,7 @@ def get_migration_asset_output(migration_asset_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['migrationAssetId'] = migration_asset_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudMigrations/getMigrationAsset:getMigrationAsset', __args__, opts=opts, typ=GetMigrationAssetResult)
     return __ret__.apply(lambda __response__: GetMigrationAssetResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

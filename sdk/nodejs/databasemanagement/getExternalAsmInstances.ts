@@ -98,7 +98,7 @@ export interface GetExternalAsmInstancesResult {
  * });
  * ```
  */
-export function getExternalAsmInstancesOutput(args?: GetExternalAsmInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmInstancesResult> {
+export function getExternalAsmInstancesOutput(args?: GetExternalAsmInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalAsmInstancesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsmInstances:getExternalAsmInstances", {

@@ -360,7 +360,7 @@ def get_database_tools_connection(database_tools_connection_id: Optional[str] = 
         user_name=pulumi.get(__ret__, 'user_name'),
         user_passwords=pulumi.get(__ret__, 'user_passwords'))
 def get_database_tools_connection_output(database_tools_connection_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsConnectionResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsConnectionResult]:
     """
     This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
 
@@ -380,7 +380,7 @@ def get_database_tools_connection_output(database_tools_connection_id: Optional[
     """
     __args__ = dict()
     __args__['databaseToolsConnectionId'] = database_tools_connection_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection', __args__, opts=opts, typ=GetDatabaseToolsConnectionResult)
     return __ret__.apply(lambda __response__: GetDatabaseToolsConnectionResult(
         advanced_properties=pulumi.get(__response__, 'advanced_properties'),

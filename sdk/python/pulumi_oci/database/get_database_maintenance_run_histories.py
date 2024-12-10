@@ -204,7 +204,7 @@ def get_database_maintenance_run_histories_output(availability_domain: Optional[
                                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                                   target_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                   target_resource_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseMaintenanceRunHistoriesResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseMaintenanceRunHistoriesResult]:
     """
     This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
 
@@ -240,7 +240,7 @@ def get_database_maintenance_run_histories_output(availability_domain: Optional[
     __args__['state'] = state
     __args__['targetResourceId'] = target_resource_id
     __args__['targetResourceType'] = target_resource_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories', __args__, opts=opts, typ=GetDatabaseMaintenanceRunHistoriesResult)
     return __ret__.apply(lambda __response__: GetDatabaseMaintenanceRunHistoriesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

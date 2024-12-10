@@ -104,7 +104,7 @@ export interface GetAiPrivateEndpointsResult {
  * });
  * ```
  */
-export function getAiPrivateEndpointsOutput(args: GetAiPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAiPrivateEndpointsResult> {
+export function getAiPrivateEndpointsOutput(args: GetAiPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAiPrivateEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", {
         "compartmentId": args.compartmentId,

@@ -205,7 +205,7 @@ def get_vm_cluster_update(update_id: Optional[str] = None,
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 def get_vm_cluster_update_output(update_id: Optional[pulumi.Input[str]] = None,
                                  vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterUpdateResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterUpdateResult]:
     """
     This data source provides details about a specific Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
 
@@ -228,7 +228,7 @@ def get_vm_cluster_update_output(update_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['updateId'] = update_id
     __args__['vmClusterId'] = vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterUpdate:getVmClusterUpdate', __args__, opts=opts, typ=GetVmClusterUpdateResult)
     return __ret__.apply(lambda __response__: GetVmClusterUpdateResult(
         available_actions=pulumi.get(__response__, 'available_actions'),

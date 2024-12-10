@@ -269,7 +269,7 @@ def get_ingress_gateway(ingress_gateway_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_ingress_gateway_output(ingress_gateway_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIngressGatewayResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIngressGatewayResult]:
     """
     This data source provides details about a specific Ingress Gateway resource in Oracle Cloud Infrastructure Service Mesh service.
 
@@ -289,7 +289,7 @@ def get_ingress_gateway_output(ingress_gateway_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['ingressGatewayId'] = ingress_gateway_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceMesh/getIngressGateway:getIngressGateway', __args__, opts=opts, typ=GetIngressGatewayResult)
     return __ret__.apply(lambda __response__: GetIngressGatewayResult(
         access_loggings=pulumi.get(__response__, 'access_loggings'),

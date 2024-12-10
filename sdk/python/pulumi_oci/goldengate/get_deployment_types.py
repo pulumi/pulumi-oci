@@ -168,7 +168,7 @@ def get_deployment_types_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentTypesFilterArgs', 'GetDeploymentTypesFilterArgsDict']]]]] = None,
                                 ogg_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentTypesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentTypesResult]:
     """
     This data source provides the list of Deployment Types in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -198,7 +198,7 @@ def get_deployment_types_output(compartment_id: Optional[pulumi.Input[str]] = No
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['oggVersion'] = ogg_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeploymentTypes:getDeploymentTypes', __args__, opts=opts, typ=GetDeploymentTypesResult)
     return __ret__.apply(lambda __response__: GetDeploymentTypesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

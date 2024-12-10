@@ -121,7 +121,7 @@ export interface GetNotebookSessionResult {
  * });
  * ```
  */
-export function getNotebookSessionOutput(args: GetNotebookSessionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotebookSessionResult> {
+export function getNotebookSessionOutput(args: GetNotebookSessionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNotebookSessionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getNotebookSession:getNotebookSession", {
         "notebookSessionId": args.notebookSessionId,

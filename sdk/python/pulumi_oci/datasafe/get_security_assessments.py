@@ -330,7 +330,7 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
                                     time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                     triggered_by: Optional[pulumi.Input[Optional[str]]] = None,
                                     type: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentsResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentsResult]:
     """
     This data source provides the list of Security Assessments in Oracle Cloud Infrastructure Data Safe service.
 
@@ -405,7 +405,7 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
     __args__['timeCreatedLessThan'] = time_created_less_than
     __args__['triggeredBy'] = triggered_by
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessments:getSecurityAssessments', __args__, opts=opts, typ=GetSecurityAssessmentsResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentsResult(
         access_level=pulumi.get(__response__, 'access_level'),

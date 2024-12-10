@@ -189,7 +189,7 @@ def get_volume_backups_output(compartment_id: Optional[pulumi.Input[str]] = None
                               source_volume_backup_id: Optional[pulumi.Input[Optional[str]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               volume_id: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeBackupsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeBackupsResult]:
     """
     This data source provides the list of Volume Backups in Oracle Cloud Infrastructure Core service.
 
@@ -222,7 +222,7 @@ def get_volume_backups_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__['sourceVolumeBackupId'] = source_volume_backup_id
     __args__['state'] = state
     __args__['volumeId'] = volume_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVolumeBackups:getVolumeBackups', __args__, opts=opts, typ=GetVolumeBackupsResult)
     return __ret__.apply(lambda __response__: GetVolumeBackupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

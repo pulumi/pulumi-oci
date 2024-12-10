@@ -128,7 +128,7 @@ export interface GetLifecycleEnvironmentResult {
  * });
  * ```
  */
-export function getLifecycleEnvironmentOutput(args: GetLifecycleEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLifecycleEnvironmentResult> {
+export function getLifecycleEnvironmentOutput(args: GetLifecycleEnvironmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLifecycleEnvironmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment", {
         "lifecycleEnvironmentId": args.lifecycleEnvironmentId,

@@ -180,7 +180,7 @@ def get_workspace_application_patches_output(application_key: Optional[pulumi.In
                                              identifiers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
                                              workspace_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceApplicationPatchesResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationPatchesResult]:
     """
     This data source provides the list of Workspace Application Patches in Oracle Cloud Infrastructure Data Integration service.
 
@@ -213,7 +213,7 @@ def get_workspace_application_patches_output(application_key: Optional[pulumi.In
     __args__['identifiers'] = identifiers
     __args__['name'] = name
     __args__['workspaceId'] = workspace_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches', __args__, opts=opts, typ=GetWorkspaceApplicationPatchesResult)
     return __ret__.apply(lambda __response__: GetWorkspaceApplicationPatchesResult(
         application_key=pulumi.get(__response__, 'application_key'),

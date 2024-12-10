@@ -269,7 +269,7 @@ def get_catalog(catalog_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_catalog_output(catalog_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogResult]:
     """
     This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
 
@@ -289,7 +289,7 @@ def get_catalog_output(catalog_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['catalogId'] = catalog_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getCatalog:getCatalog', __args__, opts=opts, typ=GetCatalogResult)
     return __ret__.apply(lambda __response__: GetCatalogResult(
         attached_catalog_private_endpoints=pulumi.get(__response__, 'attached_catalog_private_endpoints'),

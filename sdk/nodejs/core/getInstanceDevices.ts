@@ -94,7 +94,7 @@ export interface GetInstanceDevicesResult {
  * });
  * ```
  */
-export function getInstanceDevicesOutput(args: GetInstanceDevicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceDevicesResult> {
+export function getInstanceDevicesOutput(args: GetInstanceDevicesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceDevicesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstanceDevices:getInstanceDevices", {
         "filters": args.filters,

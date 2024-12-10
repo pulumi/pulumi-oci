@@ -174,7 +174,7 @@ def get_route_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRouteTablesFilterArgs', 'GetRouteTablesFilterArgsDict']]]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRouteTablesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRouteTablesResult]:
     """
     This data source provides the list of Route Tables in Oracle Cloud Infrastructure Core service.
 
@@ -207,7 +207,7 @@ def get_route_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getRouteTables:getRouteTables', __args__, opts=opts, typ=GetRouteTablesResult)
     return __ret__.apply(lambda __response__: GetRouteTablesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

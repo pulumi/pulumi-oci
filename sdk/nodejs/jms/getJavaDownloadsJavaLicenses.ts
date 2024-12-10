@@ -87,7 +87,7 @@ export interface GetJavaDownloadsJavaLicensesResult {
  * });
  * ```
  */
-export function getJavaDownloadsJavaLicensesOutput(args?: GetJavaDownloadsJavaLicensesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaLicensesResult> {
+export function getJavaDownloadsJavaLicensesOutput(args?: GetJavaDownloadsJavaLicensesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJavaDownloadsJavaLicensesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getJavaDownloadsJavaLicenses:getJavaDownloadsJavaLicenses", {

@@ -158,7 +158,7 @@ def get_network_address_lists_output(compartment_id: Optional[pulumi.Input[str]]
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkAddressListsFilterArgs', 'GetNetworkAddressListsFilterArgsDict']]]]] = None,
                                      id: Optional[pulumi.Input[Optional[str]]] = None,
                                      states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkAddressListsResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkAddressListsResult]:
     """
     This data source provides the list of Network Address Lists in Oracle Cloud Infrastructure Waf service.
 
@@ -188,7 +188,7 @@ def get_network_address_lists_output(compartment_id: Optional[pulumi.Input[str]]
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['states'] = states
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waf/getNetworkAddressLists:getNetworkAddressLists', __args__, opts=opts, typ=GetNetworkAddressListsResult)
     return __ret__.apply(lambda __response__: GetNetworkAddressListsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

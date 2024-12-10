@@ -85,7 +85,7 @@ export interface GetModelsResult {
  *
  * Returns a list of models.
  */
-export function getModelsOutput(args: GetModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelsResult> {
+export function getModelsOutput(args: GetModelsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiLanguage/getModels:getModels", {
         "compartmentId": args.compartmentId,

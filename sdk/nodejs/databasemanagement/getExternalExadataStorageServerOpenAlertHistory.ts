@@ -69,7 +69,7 @@ export interface GetExternalExadataStorageServerOpenAlertHistoryResult {
  * });
  * ```
  */
-export function getExternalExadataStorageServerOpenAlertHistoryOutput(args: GetExternalExadataStorageServerOpenAlertHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerOpenAlertHistoryResult> {
+export function getExternalExadataStorageServerOpenAlertHistoryOutput(args: GetExternalExadataStorageServerOpenAlertHistoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalExadataStorageServerOpenAlertHistoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", {
         "externalExadataStorageServerId": args.externalExadataStorageServerId,

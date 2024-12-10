@@ -124,7 +124,7 @@ export interface GetLogsResult {
  * });
  * ```
  */
-export function getLogsOutput(args: GetLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogsResult> {
+export function getLogsOutput(args: GetLogsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Logging/getLogs:getLogs", {
         "displayName": args.displayName,

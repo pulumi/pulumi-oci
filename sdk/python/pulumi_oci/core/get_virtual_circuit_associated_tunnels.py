@@ -114,7 +114,7 @@ def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[Union['Get
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'))
 def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitAssociatedTunnelsFilterArgs', 'GetVirtualCircuitAssociatedTunnelsFilterArgsDict']]]]] = None,
                                                   virtual_circuit_id: Optional[pulumi.Input[str]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitAssociatedTunnelsResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitAssociatedTunnelsResult]:
     """
     This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
 
@@ -135,7 +135,7 @@ def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input
     __args__ = dict()
     __args__['filters'] = filters
     __args__['virtualCircuitId'] = virtual_circuit_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels', __args__, opts=opts, typ=GetVirtualCircuitAssociatedTunnelsResult)
     return __ret__.apply(lambda __response__: GetVirtualCircuitAssociatedTunnelsResult(
         filters=pulumi.get(__response__, 'filters'),

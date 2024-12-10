@@ -247,7 +247,7 @@ def get_autonomous_database_dataguard_association(autonomous_database_dataguard_
         time_last_role_changed=pulumi.get(__ret__, 'time_last_role_changed'))
 def get_autonomous_database_dataguard_association_output(autonomous_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                                                          autonomous_database_id: Optional[pulumi.Input[str]] = None,
-                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationResult]:
+                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationResult]:
     """
     This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
 
@@ -270,7 +270,7 @@ def get_autonomous_database_dataguard_association_output(autonomous_database_dat
     __args__ = dict()
     __args__['autonomousDatabaseDataguardAssociationId'] = autonomous_database_dataguard_association_id
     __args__['autonomousDatabaseId'] = autonomous_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation', __args__, opts=opts, typ=GetAutonomousDatabaseDataguardAssociationResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabaseDataguardAssociationResult(
         apply_lag=pulumi.get(__response__, 'apply_lag'),

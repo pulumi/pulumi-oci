@@ -129,7 +129,7 @@ export interface GetPrivateEndpointResult {
  * });
  * ```
  */
-export function getPrivateEndpointOutput(args: GetPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointResult> {
+export function getPrivateEndpointOutput(args: GetPrivateEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPrivateEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataFlow/getPrivateEndpoint:getPrivateEndpoint", {
         "privateEndpointId": args.privateEndpointId,

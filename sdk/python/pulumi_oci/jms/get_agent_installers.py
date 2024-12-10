@@ -165,7 +165,7 @@ def get_agent_installers_output(compartment_id: Optional[pulumi.Input[Optional[s
                                 fleet_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 os_family: Optional[pulumi.Input[Optional[str]]] = None,
                                 platform_architecture: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentInstallersResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentInstallersResult]:
     """
     This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
 
@@ -195,7 +195,7 @@ def get_agent_installers_output(compartment_id: Optional[pulumi.Input[Optional[s
     __args__['fleetId'] = fleet_id
     __args__['osFamily'] = os_family
     __args__['platformArchitecture'] = platform_architecture
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getAgentInstallers:getAgentInstallers', __args__, opts=opts, typ=GetAgentInstallersResult)
     return __ret__.apply(lambda __response__: GetAgentInstallersResult(
         agent_installer_collections=pulumi.get(__response__, 'agent_installer_collections'),

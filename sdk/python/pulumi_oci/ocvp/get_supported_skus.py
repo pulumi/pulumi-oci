@@ -130,7 +130,7 @@ def get_supported_skus(compartment_id: Optional[str] = None,
 def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedSkusFilterArgs', 'GetSupportedSkusFilterArgsDict']]]]] = None,
                               host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedSkusResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedSkusResult]:
     """
     This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\\
     !> **WARNING:** This data source is deprecated and will be removed, please use "ocvp_get_supported_commitments" instead.
@@ -155,7 +155,7 @@ def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['hostShapeName'] = host_shape_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getSupportedSkus:getSupportedSkus', __args__, opts=opts, typ=GetSupportedSkusResult)
     return __ret__.apply(lambda __response__: GetSupportedSkusResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

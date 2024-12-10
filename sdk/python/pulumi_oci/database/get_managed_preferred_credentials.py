@@ -114,7 +114,7 @@ def get_managed_preferred_credentials(filters: Optional[Sequence[Union['GetManag
         preferred_credential_collections=pulumi.get(__ret__, 'preferred_credential_collections'))
 def get_managed_preferred_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedPreferredCredentialsFilterArgs', 'GetManagedPreferredCredentialsFilterArgsDict']]]]] = None,
                                              managed_database_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedPreferredCredentialsResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedPreferredCredentialsResult]:
     """
     This data source provides the list of Managed Database Preferred Credentials in Oracle Cloud Infrastructure Database Management service.
 
@@ -135,7 +135,7 @@ def get_managed_preferred_credentials_output(filters: Optional[pulumi.Input[Opti
     __args__ = dict()
     __args__['filters'] = filters
     __args__['managedDatabaseId'] = managed_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials', __args__, opts=opts, typ=GetManagedPreferredCredentialsResult)
     return __ret__.apply(lambda __response__: GetManagedPreferredCredentialsResult(
         filters=pulumi.get(__response__, 'filters'),

@@ -448,7 +448,7 @@ def get_domains_rule_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
                             idcs_endpoint: Optional[pulumi.Input[str]] = None,
                             resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                             rule_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsRuleResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsRuleResult]:
     """
     This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -483,7 +483,7 @@ def get_domains_rule_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
     __args__['ruleId'] = rule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsRule:getDomainsRule', __args__, opts=opts, typ=GetDomainsRuleResult)
     return __ret__.apply(lambda __response__: GetDomainsRuleResult(
         active=pulumi.get(__response__, 'active'),

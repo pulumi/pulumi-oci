@@ -116,7 +116,7 @@ export interface GetControlAssignmentsResult {
  * });
  * ```
  */
-export function getControlAssignmentsOutput(args: GetControlAssignmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlAssignmentsResult> {
+export function getControlAssignmentsOutput(args: GetControlAssignmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetControlAssignmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getControlAssignments:getControlAssignments", {
         "compartmentId": args.compartmentId,

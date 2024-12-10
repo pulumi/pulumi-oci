@@ -195,7 +195,7 @@ def get_commitment_aggregateds_output(compartment_id: Optional[pulumi.Input[str]
                                       time_from: Optional[pulumi.Input[str]] = None,
                                       time_to: Optional[pulumi.Input[str]] = None,
                                       x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCommitmentAggregatedsResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCommitmentAggregatedsResult]:
     """
     This data source provides the list of Computed Usage Aggregateds in Oracle Cloud Infrastructure Osub Usage service.
 
@@ -219,7 +219,7 @@ def get_commitment_aggregateds_output(compartment_id: Optional[pulumi.Input[str]
     __args__['timeFrom'] = time_from
     __args__['timeTo'] = time_to
     __args__['xOneOriginRegion'] = x_one_origin_region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds', __args__, opts=opts, typ=GetCommitmentAggregatedsResult)
     return __ret__.apply(lambda __response__: GetCommitmentAggregatedsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

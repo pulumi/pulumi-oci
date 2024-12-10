@@ -114,7 +114,7 @@ def get_authentication_policy(compartment_id: Optional[str] = None,
         network_policies=pulumi.get(__ret__, 'network_policies'),
         password_policies=pulumi.get(__ret__, 'password_policies'))
 def get_authentication_policy_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuthenticationPolicyResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuthenticationPolicyResult]:
     """
     This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
 
@@ -135,7 +135,7 @@ def get_authentication_policy_output(compartment_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy', __args__, opts=opts, typ=GetAuthenticationPolicyResult)
     return __ret__.apply(lambda __response__: GetAuthenticationPolicyResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

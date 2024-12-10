@@ -203,7 +203,7 @@ def get_steering_policy_attachment(steering_policy_attachment_id: Optional[str] 
         time_created=pulumi.get(__ret__, 'time_created'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
 def get_steering_policy_attachment_output(steering_policy_attachment_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSteeringPolicyAttachmentResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSteeringPolicyAttachmentResult]:
     """
     This data source provides details about a specific Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
 
@@ -223,7 +223,7 @@ def get_steering_policy_attachment_output(steering_policy_attachment_id: Optiona
     """
     __args__ = dict()
     __args__['steeringPolicyAttachmentId'] = steering_policy_attachment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment', __args__, opts=opts, typ=GetSteeringPolicyAttachmentResult)
     return __ret__.apply(lambda __response__: GetSteeringPolicyAttachmentResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

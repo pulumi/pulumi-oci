@@ -80,7 +80,7 @@ export interface GetPeersResult {
  * });
  * ```
  */
-export function getPeersOutput(args: GetPeersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPeersResult> {
+export function getPeersOutput(args: GetPeersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPeersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Blockchain/getPeers:getPeers", {
         "blockchainPlatformId": args.blockchainPlatformId,

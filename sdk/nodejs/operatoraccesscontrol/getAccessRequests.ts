@@ -124,7 +124,7 @@ export interface GetAccessRequestsResult {
  * });
  * ```
  */
-export function getAccessRequestsOutput(args: GetAccessRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestsResult> {
+export function getAccessRequestsOutput(args: GetAccessRequestsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessRequestsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", {
         "compartmentId": args.compartmentId,

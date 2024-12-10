@@ -137,7 +137,7 @@ export interface GetVirtualNodePoolResult {
  * });
  * ```
  */
-export function getVirtualNodePoolOutput(args: GetVirtualNodePoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualNodePoolResult> {
+export function getVirtualNodePoolOutput(args: GetVirtualNodePoolOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualNodePoolResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", {
         "virtualNodePoolId": args.virtualNodePoolId,

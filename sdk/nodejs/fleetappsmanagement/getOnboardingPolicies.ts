@@ -63,7 +63,7 @@ export interface GetOnboardingPoliciesResult {
  * const testOnboardingPolicies = oci.FleetAppsManagement.getOnboardingPolicies({});
  * ```
  */
-export function getOnboardingPoliciesOutput(args?: GetOnboardingPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnboardingPoliciesResult> {
+export function getOnboardingPoliciesOutput(args?: GetOnboardingPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOnboardingPoliciesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies", {

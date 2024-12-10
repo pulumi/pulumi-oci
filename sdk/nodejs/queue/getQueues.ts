@@ -105,7 +105,7 @@ export interface GetQueuesResult {
  * });
  * ```
  */
-export function getQueuesOutput(args?: GetQueuesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueuesResult> {
+export function getQueuesOutput(args?: GetQueuesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetQueuesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Queue/getQueues:getQueues", {

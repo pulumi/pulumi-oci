@@ -195,7 +195,7 @@ export interface GetExsiHostResult {
  * });
  * ```
  */
-export function getExsiHostOutput(args: GetExsiHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExsiHostResult> {
+export function getExsiHostOutput(args: GetExsiHostOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExsiHostResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getExsiHost:getExsiHost", {
         "esxiHostId": args.esxiHostId,

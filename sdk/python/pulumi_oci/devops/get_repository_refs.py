@@ -171,7 +171,7 @@ def get_repository_refs_output(commit_id: Optional[pulumi.Input[Optional[str]]] 
                                ref_name: Optional[pulumi.Input[Optional[str]]] = None,
                                ref_type: Optional[pulumi.Input[Optional[str]]] = None,
                                repository_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryRefsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryRefsResult]:
     """
     This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
 
@@ -201,7 +201,7 @@ def get_repository_refs_output(commit_id: Optional[pulumi.Input[Optional[str]]] 
     __args__['refName'] = ref_name
     __args__['refType'] = ref_type
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryRefs:getRepositoryRefs', __args__, opts=opts, typ=GetRepositoryRefsResult)
     return __ret__.apply(lambda __response__: GetRepositoryRefsResult(
         commit_id=pulumi.get(__response__, 'commit_id'),

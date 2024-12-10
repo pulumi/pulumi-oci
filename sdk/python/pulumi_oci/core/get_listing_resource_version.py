@@ -155,14 +155,14 @@ def get_listing_resource_version(listing_id: Optional[str] = None,
         time_published=pulumi.get(__ret__, 'time_published'))
 def get_listing_resource_version_output(listing_id: Optional[pulumi.Input[str]] = None,
                                         resource_version: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingResourceVersionResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingResourceVersionResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['listingId'] = listing_id
     __args__['resourceVersion'] = resource_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getListingResourceVersion:getListingResourceVersion', __args__, opts=opts, typ=GetListingResourceVersionResult)
     return __ret__.apply(lambda __response__: GetListingResourceVersionResult(
         accessible_ports=pulumi.get(__response__, 'accessible_ports'),

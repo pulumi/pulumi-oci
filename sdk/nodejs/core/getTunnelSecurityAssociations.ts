@@ -80,7 +80,7 @@ export interface GetTunnelSecurityAssociationsResult {
  * });
  * ```
  */
-export function getTunnelSecurityAssociationsOutput(args: GetTunnelSecurityAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTunnelSecurityAssociationsResult> {
+export function getTunnelSecurityAssociationsOutput(args: GetTunnelSecurityAssociationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTunnelSecurityAssociationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", {
         "filters": args.filters,

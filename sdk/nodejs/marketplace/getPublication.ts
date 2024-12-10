@@ -123,7 +123,7 @@ export interface GetPublicationResult {
  * });
  * ```
  */
-export function getPublicationOutput(args: GetPublicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicationResult> {
+export function getPublicationOutput(args: GetPublicationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPublicationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Marketplace/getPublication:getPublication", {
         "publicationId": args.publicationId,

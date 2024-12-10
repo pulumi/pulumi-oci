@@ -100,7 +100,7 @@ def get_job_output(job_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         job_id=pulumi.get(__ret__, 'job_id'))
 def get_job_output_output(job_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobOutputResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobOutputResult]:
     """
     This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
 
@@ -120,7 +120,7 @@ def get_job_output_output(job_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['jobId'] = job_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseMigration/getJobOutput:getJobOutput', __args__, opts=opts, typ=GetJobOutputResult)
     return __ret__.apply(lambda __response__: GetJobOutputResult(
         id=pulumi.get(__response__, 'id'),

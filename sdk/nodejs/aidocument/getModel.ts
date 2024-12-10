@@ -164,7 +164,7 @@ export interface GetModelResult {
  * });
  * ```
  */
-export function getModelOutput(args: GetModelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelResult> {
+export function getModelOutput(args: GetModelOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiDocument/getModel:getModel", {
         "modelId": args.modelId,

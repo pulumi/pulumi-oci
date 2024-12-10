@@ -45,7 +45,7 @@ export interface GetPrivateEndpointResult {
     readonly timeCreated: string;
     readonly timeModified: string;
 }
-export function getPrivateEndpointOutput(args: GetPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointResult> {
+export function getPrivateEndpointOutput(args: GetPrivateEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPrivateEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", {
         "name": args.name,

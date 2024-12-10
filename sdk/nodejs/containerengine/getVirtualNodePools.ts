@@ -80,7 +80,7 @@ export interface GetVirtualNodePoolsResult {
  *
  * List all the virtual node pools in a compartment, and optionally filter by cluster.
  */
-export function getVirtualNodePoolsOutput(args: GetVirtualNodePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualNodePoolsResult> {
+export function getVirtualNodePoolsOutput(args: GetVirtualNodePoolsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualNodePoolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", {
         "clusterId": args.clusterId,

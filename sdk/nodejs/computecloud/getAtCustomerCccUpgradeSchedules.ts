@@ -130,7 +130,7 @@ export interface GetAtCustomerCccUpgradeSchedulesResult {
  * });
  * ```
  */
-export function getAtCustomerCccUpgradeSchedulesOutput(args?: GetAtCustomerCccUpgradeSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccUpgradeSchedulesResult> {
+export function getAtCustomerCccUpgradeSchedulesOutput(args?: GetAtCustomerCccUpgradeSchedulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAtCustomerCccUpgradeSchedulesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ComputeCloud/getAtCustomerCccUpgradeSchedules:getAtCustomerCccUpgradeSchedules", {

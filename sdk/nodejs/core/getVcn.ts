@@ -136,7 +136,7 @@ export interface GetVcnResult {
  * });
  * ```
  */
-export function getVcnOutput(args: GetVcnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVcnResult> {
+export function getVcnOutput(args: GetVcnOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVcnResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVcn:getVcn", {
         "vcnId": args.vcnId,

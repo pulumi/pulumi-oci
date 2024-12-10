@@ -128,7 +128,7 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[b
 def get_protected_database_fetch_configuration_output(base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                                                       configuration_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                       protected_database_id: Optional[pulumi.Input[str]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectedDatabaseFetchConfigurationResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectedDatabaseFetchConfigurationResult]:
     """
     This data source provides details about a specific Protected Database Fetch Configuration resource in Oracle Cloud Infrastructure Recovery service.
 
@@ -153,7 +153,7 @@ def get_protected_database_fetch_configuration_output(base64_encode_content: Opt
     __args__['base64EncodeContent'] = base64_encode_content
     __args__['configurationType'] = configuration_type
     __args__['protectedDatabaseId'] = protected_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration', __args__, opts=opts, typ=GetProtectedDatabaseFetchConfigurationResult)
     return __ret__.apply(lambda __response__: GetProtectedDatabaseFetchConfigurationResult(
         base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),

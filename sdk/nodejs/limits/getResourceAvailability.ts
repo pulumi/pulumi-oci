@@ -123,7 +123,7 @@ export interface GetResourceAvailabilityResult {
  * });
  * ```
  */
-export function getResourceAvailabilityOutput(args: GetResourceAvailabilityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceAvailabilityResult> {
+export function getResourceAvailabilityOutput(args: GetResourceAvailabilityOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResourceAvailabilityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Limits/getResourceAvailability:getResourceAvailability", {
         "availabilityDomain": args.availabilityDomain,

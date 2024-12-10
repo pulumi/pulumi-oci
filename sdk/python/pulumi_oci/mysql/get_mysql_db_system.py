@@ -588,7 +588,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlDbSystemResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlDbSystemResult]:
     """
     This data source provides details about a specific Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
 
@@ -608,7 +608,7 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlDbSystem:getMysqlDbSystem', __args__, opts=opts, typ=GetMysqlDbSystemResult)
     return __ret__.apply(lambda __response__: GetMysqlDbSystemResult(
         admin_password=pulumi.get(__response__, 'admin_password'),

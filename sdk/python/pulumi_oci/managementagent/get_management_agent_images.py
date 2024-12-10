@@ -162,7 +162,7 @@ def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[str
                                        install_type: Optional[pulumi.Input[Optional[str]]] = None,
                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentImagesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentImagesResult]:
     """
     This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
 
@@ -192,7 +192,7 @@ def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[str
     __args__['installType'] = install_type
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages', __args__, opts=opts, typ=GetManagementAgentImagesResult)
     return __ret__.apply(lambda __response__: GetManagementAgentImagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

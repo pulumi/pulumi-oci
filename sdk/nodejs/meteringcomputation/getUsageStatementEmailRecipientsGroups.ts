@@ -83,7 +83,7 @@ export interface GetUsageStatementEmailRecipientsGroupsResult {
  * });
  * ```
  */
-export function getUsageStatementEmailRecipientsGroupsOutput(args: GetUsageStatementEmailRecipientsGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsageStatementEmailRecipientsGroupsResult> {
+export function getUsageStatementEmailRecipientsGroupsOutput(args: GetUsageStatementEmailRecipientsGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUsageStatementEmailRecipientsGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", {
         "compartmentId": args.compartmentId,

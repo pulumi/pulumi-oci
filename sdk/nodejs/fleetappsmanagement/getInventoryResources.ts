@@ -151,7 +151,7 @@ export interface GetInventoryResourcesResult {
  * });
  * ```
  */
-export function getInventoryResourcesOutput(args: GetInventoryResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInventoryResourcesResult> {
+export function getInventoryResourcesOutput(args: GetInventoryResourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInventoryResourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getInventoryResources:getInventoryResources", {
         "compartmentId": args.compartmentId,

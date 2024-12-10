@@ -99,7 +99,7 @@ export interface GetEntitlementsResult {
  * });
  * ```
  */
-export function getEntitlementsOutput(args: GetEntitlementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEntitlementsResult> {
+export function getEntitlementsOutput(args: GetEntitlementsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEntitlementsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getEntitlements:getEntitlements", {
         "compartmentId": args.compartmentId,

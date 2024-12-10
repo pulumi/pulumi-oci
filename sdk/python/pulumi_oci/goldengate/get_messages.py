@@ -114,7 +114,7 @@ def get_messages(deployment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_messages_output(deployment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMessagesFilterArgs', 'GetMessagesFilterArgsDict']]]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMessagesResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMessagesResult]:
     """
     This data source provides the list of Messages in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -135,7 +135,7 @@ def get_messages_output(deployment_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['deploymentId'] = deployment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getMessages:getMessages', __args__, opts=opts, typ=GetMessagesResult)
     return __ret__.apply(lambda __response__: GetMessagesResult(
         deployment_id=pulumi.get(__response__, 'deployment_id'),

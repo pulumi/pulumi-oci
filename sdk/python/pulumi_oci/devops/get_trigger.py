@@ -292,7 +292,7 @@ def get_trigger(trigger_id: Optional[str] = None,
         trigger_source=pulumi.get(__ret__, 'trigger_source'),
         trigger_url=pulumi.get(__ret__, 'trigger_url'))
 def get_trigger_output(trigger_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTriggerResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTriggerResult]:
     """
     This data source provides details about a specific Trigger resource in Oracle Cloud Infrastructure Devops service.
 
@@ -312,7 +312,7 @@ def get_trigger_output(trigger_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['triggerId'] = trigger_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getTrigger:getTrigger', __args__, opts=opts, typ=GetTriggerResult)
     return __ret__.apply(lambda __response__: GetTriggerResult(
         actions=pulumi.get(__response__, 'actions'),

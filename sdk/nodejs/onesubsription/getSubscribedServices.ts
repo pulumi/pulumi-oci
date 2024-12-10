@@ -105,7 +105,7 @@ export interface GetSubscribedServicesResult {
  * });
  * ```
  */
-export function getSubscribedServicesOutput(args: GetSubscribedServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscribedServicesResult> {
+export function getSubscribedServicesOutput(args: GetSubscribedServicesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubscribedServicesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OneSubsription/getSubscribedServices:getSubscribedServices", {
         "compartmentId": args.compartmentId,

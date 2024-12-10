@@ -109,7 +109,7 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
  * });
  * ```
  */
-export function getAutonomousContainerDatabaseResourceUsageOutput(args: GetAutonomousContainerDatabaseResourceUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseResourceUsageResult> {
+export function getAutonomousContainerDatabaseResourceUsageOutput(args: GetAutonomousContainerDatabaseResourceUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousContainerDatabaseResourceUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", {
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,

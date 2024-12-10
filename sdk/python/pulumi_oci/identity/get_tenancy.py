@@ -164,7 +164,7 @@ def get_tenancy(tenancy_id: Optional[str] = None,
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         upi_idcs_compatibility_layer_endpoint=pulumi.get(__ret__, 'upi_idcs_compatibility_layer_endpoint'))
 def get_tenancy_output(tenancy_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTenancyResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTenancyResult]:
     """
     This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.
 
@@ -184,7 +184,7 @@ def get_tenancy_output(tenancy_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['tenancyId'] = tenancy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTenancy:getTenancy', __args__, opts=opts, typ=GetTenancyResult)
     return __ret__.apply(lambda __response__: GetTenancyResult(
         defined_tags=pulumi.get(__response__, 'defined_tags'),

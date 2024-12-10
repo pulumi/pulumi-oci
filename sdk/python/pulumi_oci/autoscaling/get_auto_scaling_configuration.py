@@ -230,7 +230,7 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
         policies=pulumi.get(__ret__, 'policies'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutoScalingConfigurationResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutoScalingConfigurationResult]:
     """
     This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
 
@@ -250,7 +250,7 @@ def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optiona
     """
     __args__ = dict()
     __args__['autoScalingConfigurationId'] = auto_scaling_configuration_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration', __args__, opts=opts, typ=GetAutoScalingConfigurationResult)
     return __ret__.apply(lambda __response__: GetAutoScalingConfigurationResult(
         auto_scaling_configuration_id=pulumi.get(__response__, 'auto_scaling_configuration_id'),

@@ -154,7 +154,7 @@ def get_compute_capacity_topologies_output(availability_domain: Optional[pulumi.
                                            compartment_id: Optional[pulumi.Input[str]] = None,
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologiesFilterArgs', 'GetComputeCapacityTopologiesFilterArgsDict']]]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityTopologiesResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityTopologiesResult]:
     """
     This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.
 
@@ -182,7 +182,7 @@ def get_compute_capacity_topologies_output(availability_domain: Optional[pulumi.
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies', __args__, opts=opts, typ=GetComputeCapacityTopologiesResult)
     return __ret__.apply(lambda __response__: GetComputeCapacityTopologiesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

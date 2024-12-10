@@ -111,7 +111,7 @@ export interface GetDomainsSecurityQuestionSettingsResult {
  * });
  * ```
  */
-export function getDomainsSecurityQuestionSettingsOutput(args: GetDomainsSecurityQuestionSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSecurityQuestionSettingsResult> {
+export function getDomainsSecurityQuestionSettingsOutput(args: GetDomainsSecurityQuestionSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsSecurityQuestionSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsSecurityQuestionSettings:getDomainsSecurityQuestionSettings", {
         "attributeSets": args.attributeSets,

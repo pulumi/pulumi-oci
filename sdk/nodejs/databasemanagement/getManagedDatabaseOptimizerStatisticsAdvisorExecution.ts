@@ -121,7 +121,7 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult {
  * });
  * ```
  */
-export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionOutput(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> {
+export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionOutput(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution", {
         "executionName": args.executionName,

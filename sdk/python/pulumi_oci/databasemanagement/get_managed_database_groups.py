@@ -161,7 +161,7 @@ def get_managed_database_groups_output(compartment_id: Optional[pulumi.Input[str
                                        id: Optional[pulumi.Input[Optional[str]]] = None,
                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseGroupsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseGroupsResult]:
     """
     This data source provides the list of Managed Database Groups in Oracle Cloud Infrastructure Database Management service.
 
@@ -194,7 +194,7 @@ def get_managed_database_groups_output(compartment_id: Optional[pulumi.Input[str
     __args__['id'] = id
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups', __args__, opts=opts, typ=GetManagedDatabaseGroupsResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseGroupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -116,7 +116,7 @@ export interface GetListJreUsageResult {
  * });
  * ```
  */
-export function getListJreUsageOutput(args?: GetListJreUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListJreUsageResult> {
+export function getListJreUsageOutput(args?: GetListJreUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetListJreUsageResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getListJreUsage:getListJreUsage", {

@@ -117,7 +117,7 @@ export interface GetExportsResult {
  * });
  * ```
  */
-export function getExportsOutput(args?: GetExportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExportsResult> {
+export function getExportsOutput(args?: GetExportsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExportsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FileStorage/getExports:getExports", {

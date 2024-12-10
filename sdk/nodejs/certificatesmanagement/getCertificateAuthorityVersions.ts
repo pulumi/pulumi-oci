@@ -88,7 +88,7 @@ export interface GetCertificateAuthorityVersionsResult {
  * });
  * ```
  */
-export function getCertificateAuthorityVersionsOutput(args: GetCertificateAuthorityVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthorityVersionsResult> {
+export function getCertificateAuthorityVersionsOutput(args: GetCertificateAuthorityVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCertificateAuthorityVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", {
         "certificateAuthorityId": args.certificateAuthorityId,

@@ -110,7 +110,7 @@ export interface GetFusionEnvironmentFamilyResult {
  * });
  * ```
  */
-export function getFusionEnvironmentFamilyOutput(args: GetFusionEnvironmentFamilyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamilyResult> {
+export function getFusionEnvironmentFamilyOutput(args: GetFusionEnvironmentFamilyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentFamilyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily", {
         "fusionEnvironmentFamilyId": args.fusionEnvironmentFamilyId,

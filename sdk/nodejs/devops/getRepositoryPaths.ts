@@ -104,7 +104,7 @@ export interface GetRepositoryPathsResult {
  * });
  * ```
  */
-export function getRepositoryPathsOutput(args: GetRepositoryPathsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryPathsResult> {
+export function getRepositoryPathsOutput(args: GetRepositoryPathsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryPathsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryPaths:getRepositoryPaths", {
         "displayName": args.displayName,

@@ -77,7 +77,7 @@ export interface GetCostTrackingTagsResult {
  * });
  * ```
  */
-export function getCostTrackingTagsOutput(args: GetCostTrackingTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCostTrackingTagsResult> {
+export function getCostTrackingTagsOutput(args: GetCostTrackingTagsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCostTrackingTagsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getCostTrackingTags:getCostTrackingTags", {
         "compartmentId": args.compartmentId,

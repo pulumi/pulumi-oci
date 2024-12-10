@@ -102,7 +102,7 @@ export interface GetSecretVersionResult {
  * });
  * ```
  */
-export function getSecretVersionOutput(args: GetSecretVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretVersionResult> {
+export function getSecretVersionOutput(args: GetSecretVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecretVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Vault/getSecretVersion:getSecretVersion", {
         "secretId": args.secretId,

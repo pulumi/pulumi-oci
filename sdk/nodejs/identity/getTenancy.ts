@@ -87,7 +87,7 @@ export interface GetTenancyResult {
  * });
  * ```
  */
-export function getTenancyOutput(args: GetTenancyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTenancyResult> {
+export function getTenancyOutput(args: GetTenancyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTenancyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getTenancy:getTenancy", {
         "tenancyId": args.tenancyId,

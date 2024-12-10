@@ -98,7 +98,7 @@ export interface GetExternalAsmsResult {
  * });
  * ```
  */
-export function getExternalAsmsOutput(args?: GetExternalAsmsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmsResult> {
+export function getExternalAsmsOutput(args?: GetExternalAsmsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalAsmsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalAsms:getExternalAsms", {

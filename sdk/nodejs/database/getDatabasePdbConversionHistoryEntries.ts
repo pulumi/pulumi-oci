@@ -91,7 +91,7 @@ export interface GetDatabasePdbConversionHistoryEntriesResult {
  * });
  * ```
  */
-export function getDatabasePdbConversionHistoryEntriesOutput(args: GetDatabasePdbConversionHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabasePdbConversionHistoryEntriesResult> {
+export function getDatabasePdbConversionHistoryEntriesOutput(args: GetDatabasePdbConversionHistoryEntriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabasePdbConversionHistoryEntriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries", {
         "databaseId": args.databaseId,

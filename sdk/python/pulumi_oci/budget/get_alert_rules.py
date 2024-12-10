@@ -153,7 +153,7 @@ def get_alert_rules_output(budget_id: Optional[pulumi.Input[str]] = None,
                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlertRulesFilterArgs', 'GetAlertRulesFilterArgsDict']]]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertRulesResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertRulesResult]:
     """
     This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
 
@@ -180,7 +180,7 @@ def get_alert_rules_output(budget_id: Optional[pulumi.Input[str]] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Budget/getAlertRules:getAlertRules', __args__, opts=opts, typ=GetAlertRulesResult)
     return __ret__.apply(lambda __response__: GetAlertRulesResult(
         alert_rules=pulumi.get(__response__, 'alert_rules'),

@@ -99,7 +99,7 @@ export interface GetComputeClustersResult {
  * });
  * ```
  */
-export function getComputeClustersOutput(args: GetComputeClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeClustersResult> {
+export function getComputeClustersOutput(args: GetComputeClustersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetComputeClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getComputeClusters:getComputeClusters", {
         "availabilityDomain": args.availabilityDomain,

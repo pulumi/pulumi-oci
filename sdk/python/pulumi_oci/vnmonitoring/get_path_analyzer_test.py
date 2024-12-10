@@ -256,7 +256,7 @@ def get_path_analyzer_test(path_analyzer_test_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_path_analyzer_test_output(path_analyzer_test_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPathAnalyzerTestResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPathAnalyzerTestResult]:
     """
     This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
 
@@ -276,7 +276,7 @@ def get_path_analyzer_test_output(path_analyzer_test_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['pathAnalyzerTestId'] = path_analyzer_test_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest', __args__, opts=opts, typ=GetPathAnalyzerTestResult)
     return __ret__.apply(lambda __response__: GetPathAnalyzerTestResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

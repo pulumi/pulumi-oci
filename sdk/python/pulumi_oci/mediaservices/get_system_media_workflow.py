@@ -118,7 +118,7 @@ def get_system_media_workflow(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'))
 def get_system_media_workflow_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      name: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSystemMediaWorkflowResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSystemMediaWorkflowResult]:
     """
     This data source provides details about a specific System Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
 
@@ -141,7 +141,7 @@ def get_system_media_workflow_output(compartment_id: Optional[pulumi.Input[Optio
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow', __args__, opts=opts, typ=GetSystemMediaWorkflowResult)
     return __ret__.apply(lambda __response__: GetSystemMediaWorkflowResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

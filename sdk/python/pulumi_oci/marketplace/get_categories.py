@@ -115,7 +115,7 @@ def get_categories(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_categories_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCategoriesFilterArgs', 'GetCategoriesFilterArgsDict']]]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCategoriesResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoriesResult]:
     """
     This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.
 
@@ -137,7 +137,7 @@ def get_categories_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getCategories:getCategories', __args__, opts=opts, typ=GetCategoriesResult)
     return __ret__.apply(lambda __response__: GetCategoriesResult(
         categories=pulumi.get(__response__, 'categories'),

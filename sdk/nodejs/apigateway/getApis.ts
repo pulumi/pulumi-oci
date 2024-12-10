@@ -97,7 +97,7 @@ export interface GetApisResult {
  * });
  * ```
  */
-export function getApisOutput(args: GetApisOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApisResult> {
+export function getApisOutput(args: GetApisOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApisResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApiGateway/getApis:getApis", {
         "compartmentId": args.compartmentId,

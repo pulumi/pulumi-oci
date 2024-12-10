@@ -226,7 +226,7 @@ def get_zpr_policy(zpr_policy_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         zpr_policy_id=pulumi.get(__ret__, 'zpr_policy_id'))
 def get_zpr_policy_output(zpr_policy_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetZprPolicyResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetZprPolicyResult]:
     """
     This data source provides details about a specific Zpr Policy resource in Oracle Cloud Infrastructure Zpr service.
 
@@ -246,7 +246,7 @@ def get_zpr_policy_output(zpr_policy_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['zprPolicyId'] = zpr_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Zpr/getZprPolicy:getZprPolicy', __args__, opts=opts, typ=GetZprPolicyResult)
     return __ret__.apply(lambda __response__: GetZprPolicyResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

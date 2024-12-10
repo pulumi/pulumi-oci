@@ -172,7 +172,7 @@ def get_internet_gateways_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternetGatewaysFilterArgs', 'GetInternetGatewaysFilterArgsDict']]]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInternetGatewaysResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternetGatewaysResult]:
     """
     This data source provides the list of Internet Gateways in Oracle Cloud Infrastructure Core service.
 
@@ -203,7 +203,7 @@ def get_internet_gateways_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInternetGateways:getInternetGateways', __args__, opts=opts, typ=GetInternetGatewaysResult)
     return __ret__.apply(lambda __response__: GetInternetGatewaysResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

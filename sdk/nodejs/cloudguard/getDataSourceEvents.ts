@@ -90,7 +90,7 @@ export interface GetDataSourceEventsResult {
  * });
  * ```
  */
-export function getDataSourceEventsOutput(args: GetDataSourceEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSourceEventsResult> {
+export function getDataSourceEventsOutput(args: GetDataSourceEventsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataSourceEventsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getDataSourceEvents:getDataSourceEvents", {
         "dataSourceId": args.dataSourceId,

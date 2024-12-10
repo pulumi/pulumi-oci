@@ -568,7 +568,7 @@ def get_access_request(access_request_id: Optional[str] = None,
         user_id=pulumi.get(__ret__, 'user_id'),
         workflow_ids=pulumi.get(__ret__, 'workflow_ids'))
 def get_access_request_output(access_request_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessRequestResult]:
     """
     This data source provides details about a specific Access Request resource in Oracle Cloud Infrastructure Operator Access Control service.
 
@@ -588,7 +588,7 @@ def get_access_request_output(access_request_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['accessRequestId'] = access_request_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getAccessRequest:getAccessRequest', __args__, opts=opts, typ=GetAccessRequestResult)
     return __ret__.apply(lambda __response__: GetAccessRequestResult(
         access_reason_summary=pulumi.get(__response__, 'access_reason_summary'),

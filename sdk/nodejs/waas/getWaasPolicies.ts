@@ -115,7 +115,7 @@ export interface GetWaasPoliciesResult {
  * });
  * ```
  */
-export function getWaasPoliciesOutput(args: GetWaasPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWaasPoliciesResult> {
+export function getWaasPoliciesOutput(args: GetWaasPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWaasPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waas/getWaasPolicies:getWaasPolicies", {
         "compartmentId": args.compartmentId,

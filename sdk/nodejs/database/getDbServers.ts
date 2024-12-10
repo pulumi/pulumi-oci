@@ -108,7 +108,7 @@ export interface GetDbServersResult {
  * });
  * ```
  */
-export function getDbServersOutput(args: GetDbServersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbServersResult> {
+export function getDbServersOutput(args: GetDbServersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbServersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbServers:getDbServers", {
         "compartmentId": args.compartmentId,

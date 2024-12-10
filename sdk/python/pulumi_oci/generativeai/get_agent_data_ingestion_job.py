@@ -245,7 +245,7 @@ def get_agent_data_ingestion_job(data_ingestion_job_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_agent_data_ingestion_job_output(data_ingestion_job_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentDataIngestionJobResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentDataIngestionJobResult]:
     """
     This data source provides details about a specific Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 
@@ -267,7 +267,7 @@ def get_agent_data_ingestion_job_output(data_ingestion_job_id: Optional[pulumi.I
     """
     __args__ = dict()
     __args__['dataIngestionJobId'] = data_ingestion_job_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getAgentDataIngestionJob:getAgentDataIngestionJob', __args__, opts=opts, typ=GetAgentDataIngestionJobResult)
     return __ret__.apply(lambda __response__: GetAgentDataIngestionJobResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

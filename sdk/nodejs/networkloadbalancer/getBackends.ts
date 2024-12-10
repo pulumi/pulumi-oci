@@ -80,7 +80,7 @@ export interface GetBackendsResult {
  * });
  * ```
  */
-export function getBackendsOutput(args: GetBackendsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendsResult> {
+export function getBackendsOutput(args: GetBackendsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBackendsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:NetworkLoadBalancer/getBackends:getBackends", {
         "backendSetName": args.backendSetName,

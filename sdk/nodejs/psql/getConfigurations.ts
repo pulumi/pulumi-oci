@@ -128,7 +128,7 @@ export interface GetConfigurationsResult {
  * });
  * ```
  */
-export function getConfigurationsOutput(args?: GetConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigurationsResult> {
+export function getConfigurationsOutput(args?: GetConfigurationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConfigurationsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Psql/getConfigurations:getConfigurations", {

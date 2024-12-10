@@ -121,7 +121,7 @@ export interface GetRrsetResult {
  * });
  * ```
  */
-export function getRrsetOutput(args: GetRrsetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRrsetResult> {
+export function getRrsetOutput(args: GetRrsetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRrsetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getRrset:getRrset", {
         "compartmentId": args.compartmentId,

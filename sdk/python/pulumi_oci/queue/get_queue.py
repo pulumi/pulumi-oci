@@ -314,7 +314,7 @@ def get_queue(queue_id: Optional[str] = None,
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         visibility_in_seconds=pulumi.get(__ret__, 'visibility_in_seconds'))
 def get_queue_output(queue_id: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueueResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQueueResult]:
     """
     This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
 
@@ -334,7 +334,7 @@ def get_queue_output(queue_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['queueId'] = queue_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Queue/getQueue:getQueue', __args__, opts=opts, typ=GetQueueResult)
     return __ret__.apply(lambda __response__: GetQueueResult(
         channel_consumption_limit=pulumi.get(__response__, 'channel_consumption_limit'),

@@ -132,7 +132,7 @@ export interface GetSqlCollectionResult {
  * });
  * ```
  */
-export function getSqlCollectionOutput(args: GetSqlCollectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSqlCollectionResult> {
+export function getSqlCollectionOutput(args: GetSqlCollectionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSqlCollectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSqlCollection:getSqlCollection", {
         "sqlCollectionId": args.sqlCollectionId,

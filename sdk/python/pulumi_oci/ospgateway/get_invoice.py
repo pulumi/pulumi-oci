@@ -432,7 +432,7 @@ def get_invoice(compartment_id: Optional[str] = None,
 def get_invoice_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        internal_invoice_id: Optional[pulumi.Input[str]] = None,
                        osp_home_region: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoiceResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvoiceResult]:
     """
     This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
 
@@ -458,7 +458,7 @@ def get_invoice_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['compartmentId'] = compartment_id
     __args__['internalInvoiceId'] = internal_invoice_id
     __args__['ospHomeRegion'] = osp_home_region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OspGateway/getInvoice:getInvoice', __args__, opts=opts, typ=GetInvoiceResult)
     return __ret__.apply(lambda __response__: GetInvoiceResult(
         bill_to_addresses=pulumi.get(__response__, 'bill_to_addresses'),

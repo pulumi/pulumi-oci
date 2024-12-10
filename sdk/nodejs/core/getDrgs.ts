@@ -75,7 +75,7 @@ export interface GetDrgsResult {
  * });
  * ```
  */
-export function getDrgsOutput(args: GetDrgsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgsResult> {
+export function getDrgsOutput(args: GetDrgsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrgsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDrgs:getDrgs", {
         "compartmentId": args.compartmentId,

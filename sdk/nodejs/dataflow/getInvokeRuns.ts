@@ -146,7 +146,7 @@ export interface GetInvokeRunsResult {
  * });
  * ```
  */
-export function getInvokeRunsOutput(args: GetInvokeRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvokeRunsResult> {
+export function getInvokeRunsOutput(args: GetInvokeRunsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInvokeRunsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataFlow/getInvokeRuns:getInvokeRuns", {
         "applicationId": args.applicationId,

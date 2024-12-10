@@ -80,7 +80,7 @@ export interface GetOsnsResult {
  * });
  * ```
  */
-export function getOsnsOutput(args: GetOsnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOsnsResult> {
+export function getOsnsOutput(args: GetOsnsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOsnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Blockchain/getOsns:getOsns", {
         "blockchainPlatformId": args.blockchainPlatformId,

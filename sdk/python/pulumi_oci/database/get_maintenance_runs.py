@@ -222,7 +222,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 target_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 target_resource_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceRunsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceRunsResult]:
     """
     This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
 
@@ -261,7 +261,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
     __args__['state'] = state
     __args__['targetResourceId'] = target_resource_id
     __args__['targetResourceType'] = target_resource_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getMaintenanceRuns:getMaintenanceRuns', __args__, opts=opts, typ=GetMaintenanceRunsResult)
     return __ret__.apply(lambda __response__: GetMaintenanceRunsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

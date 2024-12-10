@@ -156,7 +156,7 @@ export interface GetManagedInstanceModuleStreamsResult {
  * });
  * ```
  */
-export function getManagedInstanceModuleStreamsOutput(args: GetManagedInstanceModuleStreamsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceModuleStreamsResult> {
+export function getManagedInstanceModuleStreamsOutput(args: GetManagedInstanceModuleStreamsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceModuleStreamsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", {
         "compartmentId": args.compartmentId,

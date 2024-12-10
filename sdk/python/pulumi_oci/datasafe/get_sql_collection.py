@@ -344,7 +344,7 @@ def get_sql_collection(sql_collection_id: Optional[str] = None,
         time_last_stopped=pulumi.get(__ret__, 'time_last_stopped'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_sql_collection_output(sql_collection_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlCollectionResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlCollectionResult]:
     """
     This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -364,7 +364,7 @@ def get_sql_collection_output(sql_collection_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['sqlCollectionId'] = sql_collection_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSqlCollection:getSqlCollection', __args__, opts=opts, typ=GetSqlCollectionResult)
     return __ret__.apply(lambda __response__: GetSqlCollectionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -77,7 +77,7 @@ export interface GetAutonomousExadataInfrastructureOcpuResult {
  * });
  * ```
  */
-export function getAutonomousExadataInfrastructureOcpuOutput(args: GetAutonomousExadataInfrastructureOcpuOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructureOcpuResult> {
+export function getAutonomousExadataInfrastructureOcpuOutput(args: GetAutonomousExadataInfrastructureOcpuOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousExadataInfrastructureOcpuResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu", {
         "autonomousExadataInfrastructureId": args.autonomousExadataInfrastructureId,

@@ -99,7 +99,7 @@ export interface GetCpeDeviceShapeResult {
  * });
  * ```
  */
-export function getCpeDeviceShapeOutput(args: GetCpeDeviceShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpeDeviceShapeResult> {
+export function getCpeDeviceShapeOutput(args: GetCpeDeviceShapeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpeDeviceShapeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getCpeDeviceShape:getCpeDeviceShape", {
         "cpeDeviceShapeId": args.cpeDeviceShapeId,

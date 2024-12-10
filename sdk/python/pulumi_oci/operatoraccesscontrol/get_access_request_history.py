@@ -100,7 +100,7 @@ def get_access_request_history(access_request_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
 def get_access_request_history_output(access_request_id: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestHistoryResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessRequestHistoryResult]:
     """
     This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.
 
@@ -120,7 +120,7 @@ def get_access_request_history_output(access_request_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['accessRequestId'] = access_request_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory', __args__, opts=opts, typ=GetAccessRequestHistoryResult)
     return __ret__.apply(lambda __response__: GetAccessRequestHistoryResult(
         access_request_id=pulumi.get(__response__, 'access_request_id'),

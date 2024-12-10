@@ -105,7 +105,7 @@ export interface GetSendersResult {
  * });
  * ```
  */
-export function getSendersOutput(args: GetSendersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSendersResult> {
+export function getSendersOutput(args: GetSendersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSendersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Email/getSenders:getSenders", {
         "compartmentId": args.compartmentId,

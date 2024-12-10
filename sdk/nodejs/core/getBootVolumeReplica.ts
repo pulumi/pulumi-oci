@@ -112,7 +112,7 @@ export interface GetBootVolumeReplicaResult {
  * });
  * ```
  */
-export function getBootVolumeReplicaOutput(args: GetBootVolumeReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeReplicaResult> {
+export function getBootVolumeReplicaOutput(args: GetBootVolumeReplicaOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBootVolumeReplicaResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getBootVolumeReplica:getBootVolumeReplica", {
         "bootVolumeReplicaId": args.bootVolumeReplicaId,

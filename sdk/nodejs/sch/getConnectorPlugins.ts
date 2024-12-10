@@ -98,7 +98,7 @@ export interface GetConnectorPluginsResult {
  * });
  * ```
  */
-export function getConnectorPluginsOutput(args?: GetConnectorPluginsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectorPluginsResult> {
+export function getConnectorPluginsOutput(args?: GetConnectorPluginsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConnectorPluginsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Sch/getConnectorPlugins:getConnectorPlugins", {

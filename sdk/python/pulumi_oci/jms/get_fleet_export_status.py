@@ -128,7 +128,7 @@ def get_fleet_export_status(fleet_id: Optional[str] = None,
         time_last_run=pulumi.get(__ret__, 'time_last_run'),
         time_next_run=pulumi.get(__ret__, 'time_next_run'))
 def get_fleet_export_status_output(fleet_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetExportStatusResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetExportStatusResult]:
     """
     This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
 
@@ -148,7 +148,7 @@ def get_fleet_export_status_output(fleet_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetExportStatus:getFleetExportStatus', __args__, opts=opts, typ=GetFleetExportStatusResult)
     return __ret__.apply(lambda __response__: GetFleetExportStatusResult(
         fleet_id=pulumi.get(__response__, 'fleet_id'),

@@ -83,7 +83,7 @@ export interface GetProductLicensesResult {
  * });
  * ```
  */
-export function getProductLicensesOutput(args: GetProductLicensesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProductLicensesResult> {
+export function getProductLicensesOutput(args: GetProductLicensesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProductLicensesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LicenseManager/getProductLicenses:getProductLicenses", {
         "compartmentId": args.compartmentId,

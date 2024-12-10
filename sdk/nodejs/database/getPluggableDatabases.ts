@@ -106,7 +106,7 @@ export interface GetPluggableDatabasesResult {
  * });
  * ```
  */
-export function getPluggableDatabasesOutput(args?: GetPluggableDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPluggableDatabasesResult> {
+export function getPluggableDatabasesOutput(args?: GetPluggableDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPluggableDatabasesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getPluggableDatabases:getPluggableDatabases", {

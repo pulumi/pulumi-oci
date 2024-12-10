@@ -94,7 +94,7 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
  * });
  * ```
  */
-export function getRemediationRunApplicationDependencyRecommendationsOutput(args: GetRemediationRunApplicationDependencyRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRunApplicationDependencyRecommendationsResult> {
+export function getRemediationRunApplicationDependencyRecommendationsOutput(args: GetRemediationRunApplicationDependencyRecommendationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRemediationRunApplicationDependencyRecommendationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", {
         "filters": args.filters,

@@ -67,7 +67,7 @@ export interface GetFusionEnvironmentStatusResult {
  * });
  * ```
  */
-export function getFusionEnvironmentStatusOutput(args: GetFusionEnvironmentStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentStatusResult> {
+export function getFusionEnvironmentStatusOutput(args: GetFusionEnvironmentStatusOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentStatusResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", {
         "fusionEnvironmentId": args.fusionEnvironmentId,

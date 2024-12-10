@@ -183,7 +183,7 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabasesClonesFilterArgs', 'GetAutonomousDatabasesClonesFilterArgsDict']]]]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesClonesResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabasesClonesResult]:
     """
     This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
 
@@ -216,7 +216,7 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones', __args__, opts=opts, typ=GetAutonomousDatabasesClonesResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabasesClonesResult(
         autonomous_database_id=pulumi.get(__response__, 'autonomous_database_id'),

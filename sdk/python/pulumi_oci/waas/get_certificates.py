@@ -192,7 +192,7 @@ def get_certificates_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                             time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificatesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificatesResult]:
     """
     This data source provides the list of Certificates in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
 
@@ -228,7 +228,7 @@ def get_certificates_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['states'] = states
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waas/getCertificates:getCertificates', __args__, opts=opts, typ=GetCertificatesResult)
     return __ret__.apply(lambda __response__: GetCertificatesResult(
         certificates=pulumi.get(__response__, 'certificates'),

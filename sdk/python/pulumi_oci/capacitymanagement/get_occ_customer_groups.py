@@ -158,7 +158,7 @@ def get_occ_customer_groups_output(compartment_id: Optional[pulumi.Input[str]] =
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccCustomerGroupsFilterArgs', 'GetOccCustomerGroupsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    status: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccCustomerGroupsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccCustomerGroupsResult]:
     """
     This data source provides the list of Occ Customer Groups in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -188,7 +188,7 @@ def get_occ_customer_groups_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccCustomerGroups:getOccCustomerGroups', __args__, opts=opts, typ=GetOccCustomerGroupsResult)
     return __ret__.apply(lambda __response__: GetOccCustomerGroupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

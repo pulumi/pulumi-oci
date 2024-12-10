@@ -135,7 +135,7 @@ export interface GetReplicasResult {
  * });
  * ```
  */
-export function getReplicasOutput(args: GetReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicasResult> {
+export function getReplicasOutput(args: GetReplicasOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReplicasResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getReplicas:getReplicas", {
         "compartmentId": args.compartmentId,

@@ -383,7 +383,7 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
         transport_lag=pulumi.get(__ret__, 'transport_lag'))
 def get_autonomous_container_database_dataguard_association_output(autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                                                                    autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
-                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseDataguardAssociationResult]:
+                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseDataguardAssociationResult]:
     """
     This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
 
@@ -406,7 +406,7 @@ def get_autonomous_container_database_dataguard_association_output(autonomous_co
     __args__ = dict()
     __args__['autonomousContainerDatabaseDataguardAssociationId'] = autonomous_container_database_dataguard_association_id
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation', __args__, opts=opts, typ=GetAutonomousContainerDatabaseDataguardAssociationResult)
     return __ret__.apply(lambda __response__: GetAutonomousContainerDatabaseDataguardAssociationResult(
         apply_lag=pulumi.get(__response__, 'apply_lag'),

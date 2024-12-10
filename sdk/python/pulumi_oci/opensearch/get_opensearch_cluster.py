@@ -602,7 +602,7 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
         vcn_compartment_id=pulumi.get(__ret__, 'vcn_compartment_id'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchClusterResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpensearchClusterResult]:
     """
     This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
 
@@ -631,7 +631,7 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['opensearchClusterId'] = opensearch_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opensearch/getOpensearchCluster:getOpensearchCluster', __args__, opts=opts, typ=GetOpensearchClusterResult)
     return __ret__.apply(lambda __response__: GetOpensearchClusterResult(
         availability_domains=pulumi.get(__response__, 'availability_domains'),

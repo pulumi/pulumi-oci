@@ -151,7 +151,7 @@ def get_namespace_storage_recall_count(namespace: Optional[str] = None,
         recall_pending=pulumi.get(__ret__, 'recall_pending'),
         recall_succeeded=pulumi.get(__ret__, 'recall_succeeded'))
 def get_namespace_storage_recall_count_output(namespace: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageRecallCountResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceStorageRecallCountResult]:
     """
     This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -171,7 +171,7 @@ def get_namespace_storage_recall_count_output(namespace: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount', __args__, opts=opts, typ=GetNamespaceStorageRecallCountResult)
     return __ret__.apply(lambda __response__: GetNamespaceStorageRecallCountResult(
         id=pulumi.get(__response__, 'id'),

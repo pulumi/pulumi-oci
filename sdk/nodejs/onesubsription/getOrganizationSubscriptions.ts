@@ -72,7 +72,7 @@ export interface GetOrganizationSubscriptionsResult {
  * });
  * ```
  */
-export function getOrganizationSubscriptionsOutput(args: GetOrganizationSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOrganizationSubscriptionsResult> {
+export function getOrganizationSubscriptionsOutput(args: GetOrganizationSubscriptionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOrganizationSubscriptionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", {
         "compartmentId": args.compartmentId,

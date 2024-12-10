@@ -149,7 +149,7 @@ export interface GetGuardTargetsResult {
  * });
  * ```
  */
-export function getGuardTargetsOutput(args: GetGuardTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGuardTargetsResult> {
+export function getGuardTargetsOutput(args: GetGuardTargetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGuardTargetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getGuardTargets:getGuardTargets", {
         "accessLevel": args.accessLevel,

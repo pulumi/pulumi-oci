@@ -89,7 +89,7 @@ export interface GetComputedUsagesResult {
  *
  * This is a collection API which returns a list of Computed Usages for given filters.
  */
-export function getComputedUsagesOutput(args: GetComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputedUsagesResult> {
+export function getComputedUsagesOutput(args: GetComputedUsagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetComputedUsagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsubUsage/getComputedUsages:getComputedUsages", {
         "compartmentId": args.compartmentId,

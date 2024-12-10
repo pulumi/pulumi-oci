@@ -100,7 +100,7 @@ def get_annotation_format(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
 def get_annotation_format_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnnotationFormatResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnnotationFormatResult]:
     """
     This data source provides details about a specific Annotation Format resource in Oracle Cloud Infrastructure Data Labeling Service service.
 
@@ -120,7 +120,7 @@ def get_annotation_format_output(compartment_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat', __args__, opts=opts, typ=GetAnnotationFormatResult)
     return __ret__.apply(lambda __response__: GetAnnotationFormatResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

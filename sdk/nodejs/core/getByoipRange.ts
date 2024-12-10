@@ -124,7 +124,7 @@ export interface GetByoipRangeResult {
  * });
  * ```
  */
-export function getByoipRangeOutput(args: GetByoipRangeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipRangeResult> {
+export function getByoipRangeOutput(args: GetByoipRangeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetByoipRangeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getByoipRange:getByoipRange", {
         "byoipRangeId": args.byoipRangeId,

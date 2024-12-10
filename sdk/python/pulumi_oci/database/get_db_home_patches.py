@@ -114,7 +114,7 @@ def get_db_home_patches(db_home_id: Optional[str] = None,
         patches=pulumi.get(__ret__, 'patches'))
 def get_db_home_patches_output(db_home_id: Optional[pulumi.Input[str]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict']]]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbHomePatchesResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbHomePatchesResult]:
     """
     This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
 
@@ -135,7 +135,7 @@ def get_db_home_patches_output(db_home_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['dbHomeId'] = db_home_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbHomePatches:getDbHomePatches', __args__, opts=opts, typ=GetDbHomePatchesResult)
     return __ret__.apply(lambda __response__: GetDbHomePatchesResult(
         db_home_id=pulumi.get(__response__, 'db_home_id'),

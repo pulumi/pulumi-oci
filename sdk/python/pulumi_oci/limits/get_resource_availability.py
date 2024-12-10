@@ -215,7 +215,7 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
                                      limit_name: Optional[pulumi.Input[str]] = None,
                                      service_name: Optional[pulumi.Input[str]] = None,
                                      subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceAvailabilityResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceAvailabilityResult]:
     """
     This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
 
@@ -251,7 +251,7 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
     __args__['limitName'] = limit_name
     __args__['serviceName'] = service_name
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Limits/getResourceAvailability:getResourceAvailability', __args__, opts=opts, typ=GetResourceAvailabilityResult)
     return __ret__.apply(lambda __response__: GetResourceAvailabilityResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

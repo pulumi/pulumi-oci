@@ -92,7 +92,7 @@ export interface GetAlertPolicyRuleResult {
  * });
  * ```
  */
-export function getAlertPolicyRuleOutput(args: GetAlertPolicyRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertPolicyRuleResult> {
+export function getAlertPolicyRuleOutput(args: GetAlertPolicyRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAlertPolicyRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAlertPolicyRule:getAlertPolicyRule", {
         "alertPolicyId": args.alertPolicyId,

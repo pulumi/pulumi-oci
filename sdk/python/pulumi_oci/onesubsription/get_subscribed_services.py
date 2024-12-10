@@ -168,7 +168,7 @@ def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[str]] =
                                    order_line_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    status: Optional[pulumi.Input[Optional[str]]] = None,
                                    subscription_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscribedServicesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscribedServicesResult]:
     """
     This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
 
@@ -198,7 +198,7 @@ def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['orderLineId'] = order_line_id
     __args__['status'] = status
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getSubscribedServices:getSubscribedServices', __args__, opts=opts, typ=GetSubscribedServicesResult)
     return __ret__.apply(lambda __response__: GetSubscribedServicesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

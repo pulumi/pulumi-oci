@@ -91,7 +91,7 @@ export interface GetAssociationResult {
  * });
  * ```
  */
-export function getAssociationOutput(args: GetAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssociationResult> {
+export function getAssociationOutput(args: GetAssociationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAssociationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CertificatesManagement/getAssociation:getAssociation", {
         "associationId": args.associationId,

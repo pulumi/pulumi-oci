@@ -73,7 +73,7 @@ export interface GetInstanceMeasuredBootReportResult {
  * });
  * ```
  */
-export function getInstanceMeasuredBootReportOutput(args: GetInstanceMeasuredBootReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMeasuredBootReportResult> {
+export function getInstanceMeasuredBootReportOutput(args: GetInstanceMeasuredBootReportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceMeasuredBootReportResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", {
         "instanceId": args.instanceId,

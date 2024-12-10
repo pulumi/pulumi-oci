@@ -121,7 +121,7 @@ export interface GetPublicationPackageResult {
  * });
  * ```
  */
-export function getPublicationPackageOutput(args: GetPublicationPackageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicationPackageResult> {
+export function getPublicationPackageOutput(args: GetPublicationPackageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPublicationPackageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Marketplace/getPublicationPackage:getPublicationPackage", {
         "packageVersion": args.packageVersion,

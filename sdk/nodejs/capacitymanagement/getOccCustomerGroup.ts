@@ -116,7 +116,7 @@ export interface GetOccCustomerGroupResult {
  * });
  * ```
  */
-export function getOccCustomerGroupOutput(args: GetOccCustomerGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccCustomerGroupResult> {
+export function getOccCustomerGroupOutput(args: GetOccCustomerGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOccCustomerGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", {
         "occCustomerGroupId": args.occCustomerGroupId,

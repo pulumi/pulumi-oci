@@ -146,7 +146,7 @@ export interface GetObjectVersionsResult {
  * });
  * ```
  */
-export function getObjectVersionsOutput(args: GetObjectVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectVersionsResult> {
+export function getObjectVersionsOutput(args: GetObjectVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetObjectVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getObjectVersions:getObjectVersions", {
         "bucket": args.bucket,

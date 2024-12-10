@@ -204,7 +204,7 @@ def get_desktop(desktop_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         user_name=pulumi.get(__ret__, 'user_name'))
 def get_desktop_output(desktop_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDesktopResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopResult]:
     """
     This data source provides details about a specific Desktop resource in Oracle Cloud Infrastructure Desktops service.
 
@@ -224,7 +224,7 @@ def get_desktop_output(desktop_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['desktopId'] = desktop_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Desktops/getDesktop:getDesktop', __args__, opts=opts, typ=GetDesktopResult)
     return __ret__.apply(lambda __response__: GetDesktopResult(
         defined_tags=pulumi.get(__response__, 'defined_tags'),

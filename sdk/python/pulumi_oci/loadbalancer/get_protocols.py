@@ -114,7 +114,7 @@ def get_protocols(compartment_id: Optional[str] = None,
         protocols=pulumi.get(__ret__, 'protocols'))
 def get_protocols_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtocolsFilterArgs', 'GetProtocolsFilterArgsDict']]]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtocolsResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtocolsResult]:
     """
     This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.
 
@@ -135,7 +135,7 @@ def get_protocols_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getProtocols:getProtocols', __args__, opts=opts, typ=GetProtocolsResult)
     return __ret__.apply(lambda __response__: GetProtocolsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

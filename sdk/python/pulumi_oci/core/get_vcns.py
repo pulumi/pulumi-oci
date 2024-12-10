@@ -157,7 +157,7 @@ def get_vcns_output(compartment_id: Optional[pulumi.Input[str]] = None,
                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVcnsFilterArgs', 'GetVcnsFilterArgsDict']]]]] = None,
                     state: Optional[pulumi.Input[Optional[str]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVcnsResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVcnsResult]:
     """
     This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.
 
@@ -188,7 +188,7 @@ def get_vcns_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVcns:getVcns', __args__, opts=opts, typ=GetVcnsResult)
     return __ret__.apply(lambda __response__: GetVcnsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

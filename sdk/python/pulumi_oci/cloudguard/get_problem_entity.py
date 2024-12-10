@@ -103,7 +103,7 @@ def get_problem_entity(problem_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         problem_id=pulumi.get(__ret__, 'problem_id'))
 def get_problem_entity_output(problem_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProblemEntityResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProblemEntityResult]:
     """
     This data source provides details about a specific Problem Entity resource in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -123,7 +123,7 @@ def get_problem_entity_output(problem_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['problemId'] = problem_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getProblemEntity:getProblemEntity', __args__, opts=opts, typ=GetProblemEntityResult)
     return __ret__.apply(lambda __response__: GetProblemEntityResult(
         id=pulumi.get(__response__, 'id'),

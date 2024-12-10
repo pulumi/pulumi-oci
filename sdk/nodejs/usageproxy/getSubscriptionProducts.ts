@@ -96,7 +96,7 @@ export interface GetSubscriptionProductsResult {
  * });
  * ```
  */
-export function getSubscriptionProductsOutput(args: GetSubscriptionProductsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionProductsResult> {
+export function getSubscriptionProductsOutput(args: GetSubscriptionProductsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubscriptionProductsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts", {
         "filters": args.filters,

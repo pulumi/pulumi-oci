@@ -156,7 +156,7 @@ def get_log_analytics_category(name: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_log_analytics_category_output(name: Optional[pulumi.Input[str]] = None,
                                       namespace: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsCategoryResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsCategoryResult]:
     """
     This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -179,7 +179,7 @@ def get_log_analytics_category_output(name: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['name'] = name
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsCategory:getLogAnalyticsCategory', __args__, opts=opts, typ=GetLogAnalyticsCategoryResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsCategoryResult(
         description=pulumi.get(__response__, 'description'),

@@ -97,7 +97,7 @@ export interface GetProfilesResult {
  * });
  * ```
  */
-export function getProfilesOutput(args: GetProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProfilesResult> {
+export function getProfilesOutput(args: GetProfilesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProfilesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getProfiles:getProfiles", {
         "compartmentId": args.compartmentId,

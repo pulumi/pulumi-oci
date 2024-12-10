@@ -126,7 +126,7 @@ export interface GetProtectionCapabilitiesResult {
  * });
  * ```
  */
-export function getProtectionCapabilitiesOutput(args: GetProtectionCapabilitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionCapabilitiesResult> {
+export function getProtectionCapabilitiesOutput(args: GetProtectionCapabilitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionCapabilitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", {
         "compartmentId": args.compartmentId,

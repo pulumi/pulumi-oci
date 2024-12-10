@@ -169,7 +169,7 @@ export interface GetDomainsNetworkPerimeterResult {
  * });
  * ```
  */
-export function getDomainsNetworkPerimeterOutput(args: GetDomainsNetworkPerimeterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsNetworkPerimeterResult> {
+export function getDomainsNetworkPerimeterOutput(args: GetDomainsNetworkPerimeterOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsNetworkPerimeterResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsNetworkPerimeter:getDomainsNetworkPerimeter", {
         "attributeSets": args.attributeSets,

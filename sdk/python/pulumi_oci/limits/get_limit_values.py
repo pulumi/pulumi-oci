@@ -198,7 +198,7 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
                             scope_type: Optional[pulumi.Input[Optional[str]]] = None,
                             service_name: Optional[pulumi.Input[str]] = None,
                             subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLimitValuesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLimitValuesResult]:
     """
     This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
 
@@ -234,7 +234,7 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
     __args__['scopeType'] = scope_type
     __args__['serviceName'] = service_name
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Limits/getLimitValues:getLimitValues', __args__, opts=opts, typ=GetLimitValuesResult)
     return __ret__.apply(lambda __response__: GetLimitValuesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

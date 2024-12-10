@@ -40,7 +40,7 @@ export interface GetShapeResult {
     readonly imageId?: string;
     readonly shapes: outputs.Core.GetShapeShape[];
 }
-export function getShapeOutput(args: GetShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapeResult> {
+export function getShapeOutput(args: GetShapeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetShapeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getShape:getShape", {
         "availabilityDomain": args.availabilityDomain,

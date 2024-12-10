@@ -218,7 +218,7 @@ def get_compute_image_capability_schema(compute_image_capability_schema_id: Opti
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_compute_image_capability_schema_output(compute_image_capability_schema_id: Optional[pulumi.Input[str]] = None,
                                                is_merge_enabled: Optional[pulumi.Input[Optional[str]]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeImageCapabilitySchemaResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeImageCapabilitySchemaResult]:
     """
     This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
 
@@ -241,7 +241,7 @@ def get_compute_image_capability_schema_output(compute_image_capability_schema_i
     __args__ = dict()
     __args__['computeImageCapabilitySchemaId'] = compute_image_capability_schema_id
     __args__['isMergeEnabled'] = is_merge_enabled
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema', __args__, opts=opts, typ=GetComputeImageCapabilitySchemaResult)
     return __ret__.apply(lambda __response__: GetComputeImageCapabilitySchemaResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

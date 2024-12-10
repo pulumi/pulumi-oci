@@ -267,7 +267,7 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
                                              non_compliant_finding_count_greater_than: Optional[pulumi.Input[Optional[int]]] = None,
                                              time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                              time_start: Optional[pulumi.Input[Optional[str]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultsResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultsResult]:
     """
     This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
 
@@ -315,7 +315,7 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
     __args__['nonCompliantFindingCountGreaterThan'] = non_compliant_finding_count_greater_than
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults', __args__, opts=opts, typ=GetFleetCryptoAnalysisResultsResult)
     return __ret__.apply(lambda __response__: GetFleetCryptoAnalysisResultsResult(
         aggregation_mode=pulumi.get(__response__, 'aggregation_mode'),

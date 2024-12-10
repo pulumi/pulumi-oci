@@ -86,7 +86,7 @@ export interface GetAggregatedComputedUsagesResult {
  *
  * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
  */
-export function getAggregatedComputedUsagesOutput(args: GetAggregatedComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAggregatedComputedUsagesResult> {
+export function getAggregatedComputedUsagesOutput(args: GetAggregatedComputedUsagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAggregatedComputedUsagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", {
         "compartmentId": args.compartmentId,

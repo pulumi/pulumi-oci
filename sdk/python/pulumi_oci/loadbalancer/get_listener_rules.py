@@ -135,7 +135,7 @@ def get_listener_rules(filters: Optional[Sequence[Union['GetListenerRulesFilterA
 def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListenerRulesFilterArgs', 'GetListenerRulesFilterArgsDict']]]]] = None,
                               listener_name: Optional[pulumi.Input[str]] = None,
                               load_balancer_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListenerRulesResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListenerRulesResult]:
     """
     This data source provides the list of Listener Rules in Oracle Cloud Infrastructure Load Balancer service.
 
@@ -165,7 +165,7 @@ def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     __args__['filters'] = filters
     __args__['listenerName'] = listener_name
     __args__['loadBalancerId'] = load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getListenerRules:getListenerRules', __args__, opts=opts, typ=GetListenerRulesResult)
     return __ret__.apply(lambda __response__: GetListenerRulesResult(
         filters=pulumi.get(__response__, 'filters'),

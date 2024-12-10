@@ -151,7 +151,7 @@ def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.I
                                                is_current: Optional[pulumi.Input[Optional[bool]]] = None,
                                                name: Optional[pulumi.Input[Optional[str]]] = None,
                                                version: Optional[pulumi.Input[Optional[int]]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowTaskDeclarationResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowTaskDeclarationResult]:
     """
     This data source provides details about a specific Media Workflow Task Declaration resource in Oracle Cloud Infrastructure Media Services service.
 
@@ -180,7 +180,7 @@ def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.I
     __args__['isCurrent'] = is_current
     __args__['name'] = name
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration', __args__, opts=opts, typ=GetMediaWorkflowTaskDeclarationResult)
     return __ret__.apply(lambda __response__: GetMediaWorkflowTaskDeclarationResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

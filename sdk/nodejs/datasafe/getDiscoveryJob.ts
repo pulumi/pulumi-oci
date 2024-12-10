@@ -161,7 +161,7 @@ export interface GetDiscoveryJobResult {
  * });
  * ```
  */
-export function getDiscoveryJobOutput(args: GetDiscoveryJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobResult> {
+export function getDiscoveryJobOutput(args: GetDiscoveryJobOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDiscoveryJobResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", {
         "discoveryJobId": args.discoveryJobId,

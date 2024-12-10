@@ -125,7 +125,7 @@ def get_cluster_credential_rotation_status(cluster_id: Optional[str] = None,
         status_details=pulumi.get(__ret__, 'status_details'),
         time_auto_completion_scheduled=pulumi.get(__ret__, 'time_auto_completion_scheduled'))
 def get_cluster_credential_rotation_status_output(cluster_id: Optional[pulumi.Input[str]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterCredentialRotationStatusResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterCredentialRotationStatusResult]:
     """
     This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
 
@@ -145,7 +145,7 @@ def get_cluster_credential_rotation_status_output(cluster_id: Optional[pulumi.In
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus', __args__, opts=opts, typ=GetClusterCredentialRotationStatusResult)
     return __ret__.apply(lambda __response__: GetClusterCredentialRotationStatusResult(
         cluster_id=pulumi.get(__response__, 'cluster_id'),

@@ -429,7 +429,7 @@ def get_computed_usage(compartment_id: Optional[str] = None,
 def get_computed_usage_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               computed_usage_id: Optional[pulumi.Input[str]] = None,
                               fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputedUsageResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputedUsageResult]:
     """
     This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Onesubscription service.
 
@@ -455,7 +455,7 @@ def get_computed_usage_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__['compartmentId'] = compartment_id
     __args__['computedUsageId'] = computed_usage_id
     __args__['fields'] = fields
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getComputedUsage:getComputedUsage', __args__, opts=opts, typ=GetComputedUsageResult)
     return __ret__.apply(lambda __response__: GetComputedUsageResult(
         commitment_service_id=pulumi.get(__response__, 'commitment_service_id'),

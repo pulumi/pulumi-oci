@@ -193,7 +193,7 @@ export interface GetAuditProfilesResult {
  * });
  * ```
  */
-export function getAuditProfilesOutput(args: GetAuditProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfilesResult> {
+export function getAuditProfilesOutput(args: GetAuditProfilesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuditProfilesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditProfiles:getAuditProfiles", {
         "accessLevel": args.accessLevel,

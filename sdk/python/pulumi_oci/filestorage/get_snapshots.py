@@ -179,7 +179,7 @@ def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSnapshotsFilterArgs', 'GetSnapshotsFilterArgsDict']]]]] = None,
                          id: Optional[pulumi.Input[Optional[str]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSnapshotsResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSnapshotsResult]:
     """
     This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
 
@@ -218,7 +218,7 @@ def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getSnapshots:getSnapshots', __args__, opts=opts, typ=GetSnapshotsResult)
     return __ret__.apply(lambda __response__: GetSnapshotsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

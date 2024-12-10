@@ -104,7 +104,7 @@ export interface GetApplicationVipResult {
  * });
  * ```
  */
-export function getApplicationVipOutput(args: GetApplicationVipOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationVipResult> {
+export function getApplicationVipOutput(args: GetApplicationVipOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApplicationVipResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getApplicationVip:getApplicationVip", {
         "applicationVipId": args.applicationVipId,

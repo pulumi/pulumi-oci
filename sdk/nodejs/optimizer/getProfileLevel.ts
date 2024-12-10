@@ -101,7 +101,7 @@ export interface GetProfileLevelResult {
  * });
  * ```
  */
-export function getProfileLevelOutput(args: GetProfileLevelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProfileLevelResult> {
+export function getProfileLevelOutput(args: GetProfileLevelOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProfileLevelResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getProfileLevel:getProfileLevel", {
         "compartmentId": args.compartmentId,

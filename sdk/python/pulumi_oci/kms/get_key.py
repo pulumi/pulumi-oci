@@ -387,7 +387,7 @@ def get_key(key_id: Optional[str] = None,
         vault_id=pulumi.get(__ret__, 'vault_id'))
 def get_key_output(key_id: Optional[pulumi.Input[str]] = None,
                    management_endpoint: Optional[pulumi.Input[str]] = None,
-                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyResult]:
+                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyResult]:
     """
     This data source provides details about a specific Key resource in Oracle Cloud Infrastructure Kms service.
 
@@ -415,7 +415,7 @@ def get_key_output(key_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['keyId'] = key_id
     __args__['managementEndpoint'] = management_endpoint
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getKey:getKey', __args__, opts=opts, typ=GetKeyResult)
     return __ret__.apply(lambda __response__: GetKeyResult(
         auto_key_rotation_details=pulumi.get(__response__, 'auto_key_rotation_details'),

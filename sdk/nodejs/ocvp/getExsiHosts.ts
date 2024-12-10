@@ -163,7 +163,7 @@ export interface GetExsiHostsResult {
  * });
  * ```
  */
-export function getExsiHostsOutput(args?: GetExsiHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExsiHostsResult> {
+export function getExsiHostsOutput(args?: GetExsiHostsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExsiHostsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getExsiHosts:getExsiHosts", {

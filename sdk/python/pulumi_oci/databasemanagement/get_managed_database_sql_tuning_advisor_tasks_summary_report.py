@@ -244,7 +244,7 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_ex
                                                                         sql_tuning_advisor_task_id: Optional[pulumi.Input[str]] = None,
                                                                         time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                                         time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult]:
+                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult]:
     """
     This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Summary Report resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -285,7 +285,7 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_ex
     __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
     __args__['timeGreaterThanOrEqualTo'] = time_greater_than_or_equal_to
     __args__['timeLessThanOrEqualTo'] = time_less_than_or_equal_to
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSummaryReport:getManagedDatabaseSqlTuningAdvisorTasksSummaryReport', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult(
         begin_exec_id_greater_than_or_equal_to=pulumi.get(__response__, 'begin_exec_id_greater_than_or_equal_to'),

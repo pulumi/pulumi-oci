@@ -158,7 +158,7 @@ def get_functions_output(application_id: Optional[pulumi.Input[str]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFunctionsFilterArgs', 'GetFunctionsFilterArgsDict']]]]] = None,
                          id: Optional[pulumi.Input[Optional[str]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFunctionsResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFunctionsResult]:
     """
     This data source provides the list of Functions in Oracle Cloud Infrastructure Functions service.
 
@@ -188,7 +188,7 @@ def get_functions_output(application_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFunctions:getFunctions', __args__, opts=opts, typ=GetFunctionsResult)
     return __ret__.apply(lambda __response__: GetFunctionsResult(
         application_id=pulumi.get(__response__, 'application_id'),

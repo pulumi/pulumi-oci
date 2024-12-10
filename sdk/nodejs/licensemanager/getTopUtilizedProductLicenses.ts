@@ -77,7 +77,7 @@ export interface GetTopUtilizedProductLicensesResult {
  * });
  * ```
  */
-export function getTopUtilizedProductLicensesOutput(args: GetTopUtilizedProductLicensesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTopUtilizedProductLicensesResult> {
+export function getTopUtilizedProductLicensesOutput(args: GetTopUtilizedProductLicensesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTopUtilizedProductLicensesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LicenseManager/getTopUtilizedProductLicenses:getTopUtilizedProductLicenses", {
         "compartmentId": args.compartmentId,

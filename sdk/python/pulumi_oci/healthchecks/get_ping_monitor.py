@@ -268,7 +268,7 @@ def get_ping_monitor(monitor_id: Optional[str] = None,
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         vantage_point_names=pulumi.get(__ret__, 'vantage_point_names'))
 def get_ping_monitor_output(monitor_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPingMonitorResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPingMonitorResult]:
     """
     This data source provides details about a specific Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
 
@@ -288,7 +288,7 @@ def get_ping_monitor_output(monitor_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['monitorId'] = monitor_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:HealthChecks/getPingMonitor:getPingMonitor', __args__, opts=opts, typ=GetPingMonitorResult)
     return __ret__.apply(lambda __response__: GetPingMonitorResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

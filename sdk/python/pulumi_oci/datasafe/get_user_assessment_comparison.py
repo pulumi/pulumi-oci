@@ -141,7 +141,7 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[str] 
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
 def get_user_assessment_comparison_output(comparison_user_assessment_id: Optional[pulumi.Input[str]] = None,
                                           user_assessment_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentComparisonResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserAssessmentComparisonResult]:
     """
     This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -164,7 +164,7 @@ def get_user_assessment_comparison_output(comparison_user_assessment_id: Optiona
     __args__ = dict()
     __args__['comparisonUserAssessmentId'] = comparison_user_assessment_id
     __args__['userAssessmentId'] = user_assessment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getUserAssessmentComparison:getUserAssessmentComparison', __args__, opts=opts, typ=GetUserAssessmentComparisonResult)
     return __ret__.apply(lambda __response__: GetUserAssessmentComparisonResult(
         comparison_user_assessment_id=pulumi.get(__response__, 'comparison_user_assessment_id'),

@@ -360,7 +360,7 @@ def get_redis_cluster(redis_cluster_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRedisClusterResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRedisClusterResult]:
     """
     This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
 
@@ -380,7 +380,7 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['redisClusterId'] = redis_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Redis/getRedisCluster:getRedisCluster', __args__, opts=opts, typ=GetRedisClusterResult)
     return __ret__.apply(lambda __response__: GetRedisClusterResult(
         cluster_mode=pulumi.get(__response__, 'cluster_mode'),

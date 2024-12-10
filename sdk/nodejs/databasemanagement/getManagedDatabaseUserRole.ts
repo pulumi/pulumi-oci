@@ -88,7 +88,7 @@ export interface GetManagedDatabaseUserRoleResult {
  * });
  * ```
  */
-export function getManagedDatabaseUserRoleOutput(args: GetManagedDatabaseUserRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserRoleResult> {
+export function getManagedDatabaseUserRoleOutput(args: GetManagedDatabaseUserRoleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseUserRoleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUserRole:getManagedDatabaseUserRole", {
         "managedDatabaseId": args.managedDatabaseId,

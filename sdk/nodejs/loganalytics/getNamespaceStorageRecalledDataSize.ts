@@ -93,7 +93,7 @@ export interface GetNamespaceStorageRecalledDataSizeResult {
  * });
  * ```
  */
-export function getNamespaceStorageRecalledDataSizeOutput(args: GetNamespaceStorageRecalledDataSizeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageRecalledDataSizeResult> {
+export function getNamespaceStorageRecalledDataSizeOutput(args: GetNamespaceStorageRecalledDataSizeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamespaceStorageRecalledDataSizeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", {
         "namespace": args.namespace,

@@ -113,7 +113,7 @@ export interface GetNetworkAddressListResult {
  * });
  * ```
  */
-export function getNetworkAddressListOutput(args: GetNetworkAddressListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkAddressListResult> {
+export function getNetworkAddressListOutput(args: GetNetworkAddressListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkAddressListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waf/getNetworkAddressList:getNetworkAddressList", {
         "networkAddressListId": args.networkAddressListId,

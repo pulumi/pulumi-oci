@@ -132,7 +132,7 @@ def get_db_management_private_endpoint_associated_databases(compartment_id: Opti
 def get_db_management_private_endpoint_associated_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                                    db_management_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs', 'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict']]]]] = None,
-                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbManagementPrivateEndpointAssociatedDatabasesResult]:
+                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbManagementPrivateEndpointAssociatedDatabasesResult]:
     """
     This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.
 
@@ -156,7 +156,7 @@ def get_db_management_private_endpoint_associated_databases_output(compartment_i
     __args__['compartmentId'] = compartment_id
     __args__['dbManagementPrivateEndpointId'] = db_management_private_endpoint_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases', __args__, opts=opts, typ=GetDbManagementPrivateEndpointAssociatedDatabasesResult)
     return __ret__.apply(lambda __response__: GetDbManagementPrivateEndpointAssociatedDatabasesResult(
         associated_database_collections=pulumi.get(__response__, 'associated_database_collections'),

@@ -256,7 +256,7 @@ def get_domains_my_apps_output(authorization: Optional[pulumi.Input[Optional[str
                                sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                                sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                                start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyAppsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyAppsResult]:
     """
     This data source provides the list of My Apps in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -294,7 +294,7 @@ def get_domains_my_apps_output(authorization: Optional[pulumi.Input[Optional[str
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsMyApps:getDomainsMyApps', __args__, opts=opts, typ=GetDomainsMyAppsResult)
     return __ret__.apply(lambda __response__: GetDomainsMyAppsResult(
         authorization=pulumi.get(__response__, 'authorization'),

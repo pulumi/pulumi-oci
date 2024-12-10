@@ -149,7 +149,7 @@ def get_trail_file(deployment_id: Optional[str] = None,
 def get_trail_file_output(deployment_id: Optional[pulumi.Input[str]] = None,
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                           trail_file_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTrailFileResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTrailFileResult]:
     """
     This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -175,7 +175,7 @@ def get_trail_file_output(deployment_id: Optional[pulumi.Input[str]] = None,
     __args__['deploymentId'] = deployment_id
     __args__['displayName'] = display_name
     __args__['trailFileId'] = trail_file_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getTrailFile:getTrailFile', __args__, opts=opts, typ=GetTrailFileResult)
     return __ret__.apply(lambda __response__: GetTrailFileResult(
         deployment_id=pulumi.get(__response__, 'deployment_id'),

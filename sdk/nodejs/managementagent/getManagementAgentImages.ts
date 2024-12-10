@@ -99,7 +99,7 @@ export interface GetManagementAgentImagesResult {
  * });
  * ```
  */
-export function getManagementAgentImagesOutput(args: GetManagementAgentImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentImagesResult> {
+export function getManagementAgentImagesOutput(args: GetManagementAgentImagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentImagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", {
         "compartmentId": args.compartmentId,

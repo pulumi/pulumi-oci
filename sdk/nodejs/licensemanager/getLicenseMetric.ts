@@ -87,7 +87,7 @@ export interface GetLicenseMetricResult {
  * });
  * ```
  */
-export function getLicenseMetricOutput(args: GetLicenseMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLicenseMetricResult> {
+export function getLicenseMetricOutput(args: GetLicenseMetricOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLicenseMetricResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LicenseManager/getLicenseMetric:getLicenseMetric", {
         "compartmentId": args.compartmentId,

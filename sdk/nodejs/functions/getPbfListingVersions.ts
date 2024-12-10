@@ -121,7 +121,7 @@ export interface GetPbfListingVersionsResult {
  * });
  * ```
  */
-export function getPbfListingVersionsOutput(args: GetPbfListingVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbfListingVersionsResult> {
+export function getPbfListingVersionsOutput(args: GetPbfListingVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPbfListingVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getPbfListingVersions:getPbfListingVersions", {
         "filters": args.filters,

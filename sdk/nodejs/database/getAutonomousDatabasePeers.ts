@@ -72,7 +72,7 @@ export interface GetAutonomousDatabasePeersResult {
  * });
  * ```
  */
-export function getAutonomousDatabasePeersOutput(args: GetAutonomousDatabasePeersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabasePeersResult> {
+export function getAutonomousDatabasePeersOutput(args: GetAutonomousDatabasePeersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabasePeersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", {
         "autonomousDatabaseId": args.autonomousDatabaseId,

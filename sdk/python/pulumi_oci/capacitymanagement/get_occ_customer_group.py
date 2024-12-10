@@ -246,7 +246,7 @@ def get_occ_customer_group(occ_customer_group_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_occ_customer_group_output(occ_customer_group_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccCustomerGroupResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccCustomerGroupResult]:
     """
     This data source provides details about a specific Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -266,7 +266,7 @@ def get_occ_customer_group_output(occ_customer_group_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['occCustomerGroupId'] = occ_customer_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup', __args__, opts=opts, typ=GetOccCustomerGroupResult)
     return __ret__.apply(lambda __response__: GetOccCustomerGroupResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

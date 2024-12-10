@@ -133,7 +133,7 @@ export interface GetManagedDatabasesResult {
  * });
  * ```
  */
-export function getManagedDatabasesOutput(args: GetManagedDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesResult> {
+export function getManagedDatabasesOutput(args: GetManagedDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabasesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", {
         "compartmentId": args.compartmentId,

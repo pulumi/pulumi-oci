@@ -126,7 +126,7 @@ export interface GetProtectedDatabasesResult {
  * });
  * ```
  */
-export function getProtectedDatabasesOutput(args: GetProtectedDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectedDatabasesResult> {
+export function getProtectedDatabasesOutput(args: GetProtectedDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectedDatabasesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", {
         "compartmentId": args.compartmentId,

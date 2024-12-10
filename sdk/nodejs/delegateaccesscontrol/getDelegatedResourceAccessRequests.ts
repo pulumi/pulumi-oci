@@ -135,7 +135,7 @@ export interface GetDelegatedResourceAccessRequestsResult {
  * });
  * ```
  */
-export function getDelegatedResourceAccessRequestsOutput(args: GetDelegatedResourceAccessRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegatedResourceAccessRequestsResult> {
+export function getDelegatedResourceAccessRequestsOutput(args: GetDelegatedResourceAccessRequestsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDelegatedResourceAccessRequestsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequests:getDelegatedResourceAccessRequests", {
         "compartmentId": args.compartmentId,

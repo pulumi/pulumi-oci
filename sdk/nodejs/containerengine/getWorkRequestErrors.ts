@@ -80,7 +80,7 @@ export interface GetWorkRequestErrorsResult {
  * });
  * ```
  */
-export function getWorkRequestErrorsOutput(args: GetWorkRequestErrorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkRequestErrorsResult> {
+export function getWorkRequestErrorsOutput(args: GetWorkRequestErrorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkRequestErrorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", {
         "compartmentId": args.compartmentId,

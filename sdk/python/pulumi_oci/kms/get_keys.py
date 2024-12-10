@@ -212,7 +212,7 @@ def get_keys_output(algorithm: Optional[pulumi.Input[Optional[str]]] = None,
                     length: Optional[pulumi.Input[Optional[int]]] = None,
                     management_endpoint: Optional[pulumi.Input[str]] = None,
                     protection_mode: Optional[pulumi.Input[Optional[str]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeysResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeysResult]:
     """
     This data source provides the list of Keys in Oracle Cloud Infrastructure Kms service.
 
@@ -253,7 +253,7 @@ def get_keys_output(algorithm: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['length'] = length
     __args__['managementEndpoint'] = management_endpoint
     __args__['protectionMode'] = protection_mode
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getKeys:getKeys', __args__, opts=opts, typ=GetKeysResult)
     return __ret__.apply(lambda __response__: GetKeysResult(
         algorithm=pulumi.get(__response__, 'algorithm'),

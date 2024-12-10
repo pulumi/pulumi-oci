@@ -153,7 +153,7 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
         time_masking_start=pulumi.get(__ret__, 'time_masking_start'))
 def get_fusion_environment_data_masking_activity_output(data_masking_activity_id: Optional[pulumi.Input[str]] = None,
                                                         fusion_environment_id: Optional[pulumi.Input[str]] = None,
-                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivityResult]:
+                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivityResult]:
     """
     This data source provides details about a specific Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -176,7 +176,7 @@ def get_fusion_environment_data_masking_activity_output(data_masking_activity_id
     __args__ = dict()
     __args__['dataMaskingActivityId'] = data_masking_activity_id
     __args__['fusionEnvironmentId'] = fusion_environment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity', __args__, opts=opts, typ=GetFusionEnvironmentDataMaskingActivityResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentDataMaskingActivityResult(
         data_masking_activity_id=pulumi.get(__response__, 'data_masking_activity_id'),

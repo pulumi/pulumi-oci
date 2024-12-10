@@ -201,7 +201,7 @@ def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                     source_resource: Optional[pulumi.Input[Optional[str]]] = None,
                     source_service: Optional[pulumi.Input[Optional[str]]] = None,
                     state: Optional[pulumi.Input[Optional[str]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogsResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogsResult]:
     """
     This data source provides the list of Logs in Oracle Cloud Infrastructure Logging service.
 
@@ -237,7 +237,7 @@ def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['sourceResource'] = source_resource
     __args__['sourceService'] = source_service
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Logging/getLogs:getLogs', __args__, opts=opts, typ=GetLogsResult)
     return __ret__.apply(lambda __response__: GetLogsResult(
         display_name=pulumi.get(__response__, 'display_name'),

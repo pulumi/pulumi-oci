@@ -97,7 +97,7 @@ export interface GetCrossConnectGroupsResult {
  * });
  * ```
  */
-export function getCrossConnectGroupsOutput(args: GetCrossConnectGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectGroupsResult> {
+export function getCrossConnectGroupsOutput(args: GetCrossConnectGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCrossConnectGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getCrossConnectGroups:getCrossConnectGroups", {
         "compartmentId": args.compartmentId,

@@ -200,7 +200,7 @@ def get_addon(addon_name: Optional[str] = None,
         version=pulumi.get(__ret__, 'version'))
 def get_addon_output(addon_name: Optional[pulumi.Input[str]] = None,
                      cluster_id: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddonResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddonResult]:
     """
     This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
 
@@ -223,7 +223,7 @@ def get_addon_output(addon_name: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['addonName'] = addon_name
     __args__['clusterId'] = cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getAddon:getAddon', __args__, opts=opts, typ=GetAddonResult)
     return __ret__.apply(lambda __response__: GetAddonResult(
         addon_errors=pulumi.get(__response__, 'addon_errors'),

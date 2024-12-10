@@ -177,7 +177,7 @@ def get_namespace_occ_overviews_output(compartment_id: Optional[pulumi.Input[str
                                        namespace: Optional[pulumi.Input[str]] = None,
                                        to: Optional[pulumi.Input[Optional[str]]] = None,
                                        workload_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceOccOverviewsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceOccOverviewsResult]:
     """
     This data source provides the list of Namespace Occ Overviews in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -210,7 +210,7 @@ def get_namespace_occ_overviews_output(compartment_id: Optional[pulumi.Input[str
     __args__['namespace'] = namespace
     __args__['to'] = to
     __args__['workloadType'] = workload_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getNamespaceOccOverviews:getNamespaceOccOverviews', __args__, opts=opts, typ=GetNamespaceOccOverviewsResult)
     return __ret__.apply(lambda __response__: GetNamespaceOccOverviewsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

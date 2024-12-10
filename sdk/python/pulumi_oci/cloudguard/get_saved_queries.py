@@ -165,7 +165,7 @@ def get_saved_queries_output(access_level: Optional[pulumi.Input[Optional[str]]]
                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSavedQueriesFilterArgs', 'GetSavedQueriesFilterArgsDict']]]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSavedQueriesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSavedQueriesResult]:
     """
     This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -195,7 +195,7 @@ def get_saved_queries_output(access_level: Optional[pulumi.Input[Optional[str]]]
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getSavedQueries:getSavedQueries', __args__, opts=opts, typ=GetSavedQueriesResult)
     return __ret__.apply(lambda __response__: GetSavedQueriesResult(
         access_level=pulumi.get(__response__, 'access_level'),

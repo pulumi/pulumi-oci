@@ -308,7 +308,7 @@ def get_container_repository(repository_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_pushed=pulumi.get(__ret__, 'time_last_pushed'))
 def get_container_repository_output(repository_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerRepositoryResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerRepositoryResult]:
     """
     This data source provides details about a specific Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
 
@@ -328,7 +328,7 @@ def get_container_repository_output(repository_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerRepository:getContainerRepository', __args__, opts=opts, typ=GetContainerRepositoryResult)
     return __ret__.apply(lambda __response__: GetContainerRepositoryResult(
         billable_size_in_gbs=pulumi.get(__response__, 'billable_size_in_gbs'),

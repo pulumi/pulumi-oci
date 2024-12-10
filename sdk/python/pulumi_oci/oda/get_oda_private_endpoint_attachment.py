@@ -164,7 +164,7 @@ def get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id: Opti
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_oda_private_endpoint_attachment_output(oda_private_endpoint_attachment_id: Optional[pulumi.Input[str]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaPrivateEndpointAttachmentResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointAttachmentResult]:
     """
     This data source provides details about a specific Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
 
@@ -184,7 +184,7 @@ def get_oda_private_endpoint_attachment_output(oda_private_endpoint_attachment_i
     """
     __args__ = dict()
     __args__['odaPrivateEndpointAttachmentId'] = oda_private_endpoint_attachment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment', __args__, opts=opts, typ=GetOdaPrivateEndpointAttachmentResult)
     return __ret__.apply(lambda __response__: GetOdaPrivateEndpointAttachmentResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

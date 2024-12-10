@@ -141,7 +141,7 @@ export interface GetResourceActionResult {
  * });
  * ```
  */
-export function getResourceActionOutput(args: GetResourceActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceActionResult> {
+export function getResourceActionOutput(args: GetResourceActionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResourceActionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getResourceAction:getResourceAction", {
         "includeResourceMetadata": args.includeResourceMetadata,

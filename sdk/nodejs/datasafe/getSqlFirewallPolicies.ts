@@ -200,7 +200,7 @@ export interface GetSqlFirewallPoliciesResult {
  * });
  * ```
  */
-export function getSqlFirewallPoliciesOutput(args: GetSqlFirewallPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSqlFirewallPoliciesResult> {
+export function getSqlFirewallPoliciesOutput(args: GetSqlFirewallPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSqlFirewallPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSqlFirewallPolicies:getSqlFirewallPolicies", {
         "accessLevel": args.accessLevel,

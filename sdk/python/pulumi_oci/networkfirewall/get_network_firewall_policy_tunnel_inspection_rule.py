@@ -206,7 +206,7 @@ def get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_i
         tunnel_inspection_rule_name=pulumi.get(__ret__, 'tunnel_inspection_rule_name'))
 def get_network_firewall_policy_tunnel_inspection_rule_output(network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                               tunnel_inspection_rule_name: Optional[pulumi.Input[str]] = None,
-                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyTunnelInspectionRuleResult]:
+                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyTunnelInspectionRuleResult]:
     """
     This data source provides details about a specific Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
 
@@ -229,7 +229,7 @@ def get_network_firewall_policy_tunnel_inspection_rule_output(network_firewall_p
     __args__ = dict()
     __args__['networkFirewallPolicyId'] = network_firewall_policy_id
     __args__['tunnelInspectionRuleName'] = tunnel_inspection_rule_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRule:getNetworkFirewallPolicyTunnelInspectionRule', __args__, opts=opts, typ=GetNetworkFirewallPolicyTunnelInspectionRuleResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyTunnelInspectionRuleResult(
         action=pulumi.get(__response__, 'action'),

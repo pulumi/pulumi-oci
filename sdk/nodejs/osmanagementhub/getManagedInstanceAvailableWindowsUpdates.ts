@@ -123,7 +123,7 @@ export interface GetManagedInstanceAvailableWindowsUpdatesResult {
  * });
  * ```
  */
-export function getManagedInstanceAvailableWindowsUpdatesOutput(args: GetManagedInstanceAvailableWindowsUpdatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceAvailableWindowsUpdatesResult> {
+export function getManagedInstanceAvailableWindowsUpdatesOutput(args: GetManagedInstanceAvailableWindowsUpdatesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceAvailableWindowsUpdatesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceAvailableWindowsUpdates:getManagedInstanceAvailableWindowsUpdates", {
         "classificationTypes": args.classificationTypes,

@@ -176,7 +176,7 @@ def get_email_return_paths_output(compartment_id: Optional[pulumi.Input[Optional
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   parent_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEmailReturnPathsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEmailReturnPathsResult]:
     """
     This data source provides the list of Email Return Paths in Oracle Cloud Infrastructure Email service.
 
@@ -209,7 +209,7 @@ def get_email_return_paths_output(compartment_id: Optional[pulumi.Input[Optional
     __args__['name'] = name
     __args__['parentResourceId'] = parent_resource_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Email/getEmailReturnPaths:getEmailReturnPaths', __args__, opts=opts, typ=GetEmailReturnPathsResult)
     return __ret__.apply(lambda __response__: GetEmailReturnPathsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

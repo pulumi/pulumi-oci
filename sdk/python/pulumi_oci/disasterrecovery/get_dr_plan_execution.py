@@ -347,7 +347,7 @@ def get_dr_plan_execution(dr_plan_execution_id: Optional[str] = None,
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_dr_plan_execution_output(dr_plan_execution_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrPlanExecutionResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrPlanExecutionResult]:
     """
     This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
 
@@ -367,7 +367,7 @@ def get_dr_plan_execution_output(dr_plan_execution_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['drPlanExecutionId'] = dr_plan_execution_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution', __args__, opts=opts, typ=GetDrPlanExecutionResult)
     return __ret__.apply(lambda __response__: GetDrPlanExecutionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

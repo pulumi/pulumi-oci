@@ -77,7 +77,7 @@ export interface GetCustomTableResult {
  * });
  * ```
  */
-export function getCustomTableOutput(args: GetCustomTableOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomTableResult> {
+export function getCustomTableOutput(args: GetCustomTableOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCustomTableResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MeteringComputation/getCustomTable:getCustomTable", {
         "customTableId": args.customTableId,

@@ -158,7 +158,7 @@ def get_inst_vbs_instances_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   id: Optional[pulumi.Input[Optional[str]]] = None,
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstVbsInstancesResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstVbsInstancesResult]:
     """
     This data source provides the list of Vbs Instances in Oracle Cloud Infrastructure Vbs Inst service.
 
@@ -188,7 +188,7 @@ def get_inst_vbs_instances_output(compartment_id: Optional[pulumi.Input[str]] = 
     __args__['id'] = id
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Vbs/getInstVbsInstances:getInstVbsInstances', __args__, opts=opts, typ=GetInstVbsInstancesResult)
     return __ret__.apply(lambda __response__: GetInstVbsInstancesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

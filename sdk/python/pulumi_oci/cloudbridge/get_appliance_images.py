@@ -132,7 +132,7 @@ def get_appliance_images(compartment_id: Optional[str] = None,
 def get_appliance_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApplianceImagesFilterArgs', 'GetApplianceImagesFilterArgsDict']]]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplianceImagesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplianceImagesResult]:
     """
     This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.
 
@@ -156,7 +156,7 @@ def get_appliance_images_output(compartment_id: Optional[pulumi.Input[str]] = No
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getApplianceImages:getApplianceImages', __args__, opts=opts, typ=GetApplianceImagesResult)
     return __ret__.apply(lambda __response__: GetApplianceImagesResult(
         appliance_image_collections=pulumi.get(__response__, 'appliance_image_collections'),

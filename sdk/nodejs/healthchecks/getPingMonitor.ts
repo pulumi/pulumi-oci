@@ -119,7 +119,7 @@ export interface GetPingMonitorResult {
  * });
  * ```
  */
-export function getPingMonitorOutput(args: GetPingMonitorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPingMonitorResult> {
+export function getPingMonitorOutput(args: GetPingMonitorOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPingMonitorResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:HealthChecks/getPingMonitor:getPingMonitor", {
         "monitorId": args.monitorId,

@@ -180,7 +180,7 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
                                      is_single_host_sddc_supported: Optional[pulumi.Input[Optional[bool]]] = None,
                                      name: Optional[pulumi.Input[Optional[str]]] = None,
                                      sddc_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedHostShapesResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedHostShapesResult]:
     """
     This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
@@ -212,7 +212,7 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
     __args__['isSingleHostSddcSupported'] = is_single_host_sddc_supported
     __args__['name'] = name
     __args__['sddcType'] = sddc_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes', __args__, opts=opts, typ=GetSupportedHostShapesResult)
     return __ret__.apply(lambda __response__: GetSupportedHostShapesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

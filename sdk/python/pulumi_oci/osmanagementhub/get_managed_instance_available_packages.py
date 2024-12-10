@@ -162,7 +162,7 @@ def get_managed_instance_available_packages_output(compartment_id: Optional[pulu
                                                    display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceAvailablePackagesFilterArgs', 'GetManagedInstanceAvailablePackagesFilterArgsDict']]]]] = None,
                                                    managed_instance_id: Optional[pulumi.Input[str]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceAvailablePackagesResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceAvailablePackagesResult]:
     """
     This data source provides the list of Managed Instance Available Packages in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -192,7 +192,7 @@ def get_managed_instance_available_packages_output(compartment_id: Optional[pulu
     __args__['displayNames'] = display_names
     __args__['filters'] = filters
     __args__['managedInstanceId'] = managed_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceAvailablePackages:getManagedInstanceAvailablePackages', __args__, opts=opts, typ=GetManagedInstanceAvailablePackagesResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceAvailablePackagesResult(
         available_package_collections=pulumi.get(__response__, 'available_package_collections'),

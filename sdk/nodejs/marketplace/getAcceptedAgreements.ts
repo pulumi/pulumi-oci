@@ -118,7 +118,7 @@ export interface GetAcceptedAgreementsResult {
  * });
  * ```
  */
-export function getAcceptedAgreementsOutput(args: GetAcceptedAgreementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAcceptedAgreementsResult> {
+export function getAcceptedAgreementsOutput(args: GetAcceptedAgreementsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAcceptedAgreementsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", {
         "acceptedAgreementId": args.acceptedAgreementId,

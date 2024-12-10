@@ -86,7 +86,7 @@ export interface GetFusionEnvironmentDataMaskingActivitiesResult {
  * });
  * ```
  */
-export function getFusionEnvironmentDataMaskingActivitiesOutput(args: GetFusionEnvironmentDataMaskingActivitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentDataMaskingActivitiesResult> {
+export function getFusionEnvironmentDataMaskingActivitiesOutput(args: GetFusionEnvironmentDataMaskingActivitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentDataMaskingActivitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities", {
         "filters": args.filters,

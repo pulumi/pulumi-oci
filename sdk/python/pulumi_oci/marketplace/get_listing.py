@@ -493,7 +493,7 @@ def get_listing(compartment_id: Optional[str] = None,
         videos=pulumi.get(__ret__, 'videos'))
 def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        listing_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingResult]:
     """
     This data source provides details about a specific Listing resource in Oracle Cloud Infrastructure Marketplace service.
 
@@ -530,7 +530,7 @@ def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['listingId'] = listing_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getListing:getListing', __args__, opts=opts, typ=GetListingResult)
     return __ret__.apply(lambda __response__: GetListingResult(
         banners=pulumi.get(__response__, 'banners'),

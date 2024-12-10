@@ -158,7 +158,7 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          id: Optional[pulumi.Input[Optional[str]]] = None,
                          name: Optional[pulumi.Input[Optional[str]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTsigKeysResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTsigKeysResult]:
     """
     This data source provides the list of Tsig Keys in Oracle Cloud Infrastructure DNS service.
 
@@ -188,7 +188,7 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['id'] = id
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getTsigKeys:getTsigKeys', __args__, opts=opts, typ=GetTsigKeysResult)
     return __ret__.apply(lambda __response__: GetTsigKeysResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

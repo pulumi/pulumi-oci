@@ -100,7 +100,7 @@ export interface GetAuditProfileCollectedAuditVolumeResult {
  * });
  * ```
  */
-export function getAuditProfileCollectedAuditVolumeOutput(args: GetAuditProfileCollectedAuditVolumeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileCollectedAuditVolumeResult> {
+export function getAuditProfileCollectedAuditVolumeOutput(args: GetAuditProfileCollectedAuditVolumeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuditProfileCollectedAuditVolumeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getAuditProfileCollectedAuditVolume:getAuditProfileCollectedAuditVolume", {
         "auditProfileId": args.auditProfileId,

@@ -194,7 +194,7 @@ def get_network_firewalls_output(availability_domain: Optional[pulumi.Input[Opti
                                  id: Optional[pulumi.Input[Optional[str]]] = None,
                                  network_firewall_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallsResult]:
     """
     This data source provides the list of Network Firewalls in Oracle Cloud Infrastructure Network Firewall service.
 
@@ -230,7 +230,7 @@ def get_network_firewalls_output(availability_domain: Optional[pulumi.Input[Opti
     __args__['id'] = id
     __args__['networkFirewallPolicyId'] = network_firewall_policy_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls', __args__, opts=opts, typ=GetNetworkFirewallsResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

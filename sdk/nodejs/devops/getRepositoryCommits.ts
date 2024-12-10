@@ -134,7 +134,7 @@ export interface GetRepositoryCommitsResult {
  * });
  * ```
  */
-export function getRepositoryCommitsOutput(args: GetRepositoryCommitsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryCommitsResult> {
+export function getRepositoryCommitsOutput(args: GetRepositoryCommitsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryCommitsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryCommits:getRepositoryCommits", {
         "authorName": args.authorName,

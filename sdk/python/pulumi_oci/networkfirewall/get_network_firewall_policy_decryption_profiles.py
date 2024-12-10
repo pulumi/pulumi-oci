@@ -129,7 +129,7 @@ def get_network_firewall_policy_decryption_profiles(display_name: Optional[str] 
 def get_network_firewall_policy_decryption_profiles_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionProfilesFilterArgs', 'GetNetworkFirewallPolicyDecryptionProfilesFilterArgsDict']]]]] = None,
                                                            network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionProfilesResult]:
+                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionProfilesResult]:
     """
     This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
 
@@ -153,7 +153,7 @@ def get_network_firewall_policy_decryption_profiles_output(display_name: Optiona
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['networkFirewallPolicyId'] = network_firewall_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfiles:getNetworkFirewallPolicyDecryptionProfiles', __args__, opts=opts, typ=GetNetworkFirewallPolicyDecryptionProfilesResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyDecryptionProfilesResult(
         decryption_profile_summary_collections=pulumi.get(__response__, 'decryption_profile_summary_collections'),

@@ -154,7 +154,7 @@ export interface GetListUserGrantsResult {
  * });
  * ```
  */
-export function getListUserGrantsOutput(args: GetListUserGrantsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListUserGrantsResult> {
+export function getListUserGrantsOutput(args: GetListUserGrantsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetListUserGrantsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getListUserGrants:getListUserGrants", {
         "depthLevel": args.depthLevel,

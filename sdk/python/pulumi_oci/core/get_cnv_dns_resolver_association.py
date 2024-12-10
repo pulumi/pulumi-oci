@@ -113,7 +113,7 @@ def get_cnv_dns_resolver_association(vcn_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_cnv_dns_resolver_association_output(vcn_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCnvDnsResolverAssociationResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCnvDnsResolverAssociationResult]:
     """
     This data source provides details about a specific Vcn Dns Resolver Association resource in Oracle Cloud Infrastructure Core service.
 
@@ -133,7 +133,7 @@ def get_cnv_dns_resolver_association_output(vcn_id: Optional[pulumi.Input[str]] 
     """
     __args__ = dict()
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation', __args__, opts=opts, typ=GetCnvDnsResolverAssociationResult)
     return __ret__.apply(lambda __response__: GetCnvDnsResolverAssociationResult(
         dns_resolver_id=pulumi.get(__response__, 'dns_resolver_id'),

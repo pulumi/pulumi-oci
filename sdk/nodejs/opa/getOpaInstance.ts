@@ -142,7 +142,7 @@ export interface GetOpaInstanceResult {
  * });
  * ```
  */
-export function getOpaInstanceOutput(args: GetOpaInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpaInstanceResult> {
+export function getOpaInstanceOutput(args: GetOpaInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOpaInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opa/getOpaInstance:getOpaInstance", {
         "opaInstanceId": args.opaInstanceId,

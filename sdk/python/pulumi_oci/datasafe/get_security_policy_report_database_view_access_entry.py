@@ -361,7 +361,7 @@ def get_security_policy_report_database_view_access_entry(database_view_access_e
         view_text=pulumi.get(__ret__, 'view_text'))
 def get_security_policy_report_database_view_access_entry_output(database_view_access_entry_key: Optional[pulumi.Input[str]] = None,
                                                                  security_policy_report_id: Optional[pulumi.Input[str]] = None,
-                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseViewAccessEntryResult]:
+                                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseViewAccessEntryResult]:
     """
     This data source provides details about a specific Security Policy Report Database View Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -384,7 +384,7 @@ def get_security_policy_report_database_view_access_entry_output(database_view_a
     __args__ = dict()
     __args__['databaseViewAccessEntryKey'] = database_view_access_entry_key
     __args__['securityPolicyReportId'] = security_policy_report_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntry:getSecurityPolicyReportDatabaseViewAccessEntry', __args__, opts=opts, typ=GetSecurityPolicyReportDatabaseViewAccessEntryResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyReportDatabaseViewAccessEntryResult(
         access_type=pulumi.get(__response__, 'access_type'),

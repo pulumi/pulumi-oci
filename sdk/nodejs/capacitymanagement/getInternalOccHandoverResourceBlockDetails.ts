@@ -80,7 +80,7 @@ export interface GetInternalOccHandoverResourceBlockDetailsResult {
  * });
  * ```
  */
-export function getInternalOccHandoverResourceBlockDetailsOutput(args: GetInternalOccHandoverResourceBlockDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInternalOccHandoverResourceBlockDetailsResult> {
+export function getInternalOccHandoverResourceBlockDetailsOutput(args: GetInternalOccHandoverResourceBlockDetailsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInternalOccHandoverResourceBlockDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CapacityManagement/getInternalOccHandoverResourceBlockDetails:getInternalOccHandoverResourceBlockDetails", {
         "filters": args.filters,

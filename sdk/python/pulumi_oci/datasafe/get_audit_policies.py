@@ -230,7 +230,7 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[str]]
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditPoliciesFilterArgs', 'GetAuditPoliciesFilterArgsDict']]]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditPoliciesResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditPoliciesResult]:
     """
     This data source provides the list of Audit Policies in Oracle Cloud Infrastructure Data Safe service.
 
@@ -283,7 +283,7 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[str]]
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditPolicies:getAuditPolicies', __args__, opts=opts, typ=GetAuditPoliciesResult)
     return __ret__.apply(lambda __response__: GetAuditPoliciesResult(
         access_level=pulumi.get(__response__, 'access_level'),

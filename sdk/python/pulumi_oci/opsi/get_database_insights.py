@@ -279,7 +279,7 @@ def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[
                                  opsi_private_endpoint_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseInsightsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseInsightsResult]:
     """
     This data source provides the list of Database Insights in Oracle Cloud Infrastructure Opsi service.
 
@@ -331,7 +331,7 @@ def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[
     __args__['opsiPrivateEndpointId'] = opsi_private_endpoint_id
     __args__['states'] = states
     __args__['statuses'] = statuses
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getDatabaseInsights:getDatabaseInsights', __args__, opts=opts, typ=GetDatabaseInsightsResult)
     return __ret__.apply(lambda __response__: GetDatabaseInsightsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -128,7 +128,7 @@ export interface GetManagedDatabaseAlertLogCountResult {
  * });
  * ```
  */
-export function getManagedDatabaseAlertLogCountOutput(args: GetManagedDatabaseAlertLogCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAlertLogCountResult> {
+export function getManagedDatabaseAlertLogCountOutput(args: GetManagedDatabaseAlertLogCountOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseAlertLogCountResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", {
         "groupBy": args.groupBy,

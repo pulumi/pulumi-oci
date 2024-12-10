@@ -298,7 +298,7 @@ def get_managed_database_sql_plan_baselines_output(filters: Optional[pulumi.Inpu
                                                    plan_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                    sql_handle: Optional[pulumi.Input[Optional[str]]] = None,
                                                    sql_text: Optional[pulumi.Input[Optional[str]]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselinesResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselinesResult]:
     """
     This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
 
@@ -335,7 +335,7 @@ def get_managed_database_sql_plan_baselines_output(filters: Optional[pulumi.Inpu
     __args__['planName'] = plan_name
     __args__['sqlHandle'] = sql_handle
     __args__['sqlText'] = sql_text
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselinesResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseSqlPlanBaselinesResult(
         filters=pulumi.get(__response__, 'filters'),

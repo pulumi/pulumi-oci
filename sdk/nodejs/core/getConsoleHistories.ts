@@ -108,7 +108,7 @@ export interface GetConsoleHistoriesResult {
  * });
  * ```
  */
-export function getConsoleHistoriesOutput(args: GetConsoleHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConsoleHistoriesResult> {
+export function getConsoleHistoriesOutput(args: GetConsoleHistoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConsoleHistoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getConsoleHistories:getConsoleHistories", {
         "availabilityDomain": args.availabilityDomain,

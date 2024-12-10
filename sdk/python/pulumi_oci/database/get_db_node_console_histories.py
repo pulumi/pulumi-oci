@@ -153,7 +153,7 @@ def get_db_node_console_histories_output(db_node_id: Optional[pulumi.Input[str]]
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbNodeConsoleHistoriesFilterArgs', 'GetDbNodeConsoleHistoriesFilterArgsDict']]]]] = None,
                                          state: Optional[pulumi.Input[Optional[str]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeConsoleHistoriesResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeConsoleHistoriesResult]:
     """
     This data source provides the list of Db Node Console Histories in Oracle Cloud Infrastructure Database service.
 
@@ -180,7 +180,7 @@ def get_db_node_console_histories_output(db_node_id: Optional[pulumi.Input[str]]
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories', __args__, opts=opts, typ=GetDbNodeConsoleHistoriesResult)
     return __ret__.apply(lambda __response__: GetDbNodeConsoleHistoriesResult(
         console_history_collections=pulumi.get(__response__, 'console_history_collections'),

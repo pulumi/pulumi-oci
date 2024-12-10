@@ -112,7 +112,7 @@ export interface GetSecurityAttributeResult {
  * });
  * ```
  */
-export function getSecurityAttributeOutput(args: GetSecurityAttributeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAttributeResult> {
+export function getSecurityAttributeOutput(args: GetSecurityAttributeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAttributeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:SecurityAttribute/getSecurityAttribute:getSecurityAttribute", {
         "securityAttributeName": args.securityAttributeName,

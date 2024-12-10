@@ -112,7 +112,7 @@ export interface GetIpv6sResult {
  * });
  * ```
  */
-export function getIpv6sOutput(args?: GetIpv6sOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpv6sResult> {
+export function getIpv6sOutput(args?: GetIpv6sOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpv6sResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpv6s:getIpv6s", {

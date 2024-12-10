@@ -153,7 +153,7 @@ def get_delegation_subscriptions_output(compartment_id: Optional[pulumi.Input[st
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDelegationSubscriptionsFilterArgs', 'GetDelegationSubscriptionsFilterArgsDict']]]]] = None,
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegationSubscriptionsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegationSubscriptionsResult]:
     """
     This data source provides the list of Delegation Subscriptions in Oracle Cloud Infrastructure Delegate Access Control service.
 
@@ -180,7 +180,7 @@ def get_delegation_subscriptions_output(compartment_id: Optional[pulumi.Input[st
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegationSubscriptions:getDelegationSubscriptions', __args__, opts=opts, typ=GetDelegationSubscriptionsResult)
     return __ret__.apply(lambda __response__: GetDelegationSubscriptionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

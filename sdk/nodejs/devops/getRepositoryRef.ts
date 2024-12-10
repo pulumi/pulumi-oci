@@ -98,7 +98,7 @@ export interface GetRepositoryRefResult {
  * });
  * ```
  */
-export function getRepositoryRefOutput(args: GetRepositoryRefOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryRefResult> {
+export function getRepositoryRefOutput(args: GetRepositoryRefOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryRefResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryRef:getRepositoryRef", {
         "refName": args.refName,

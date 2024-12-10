@@ -72,7 +72,7 @@ export interface GetNotebookSessionShapesResult {
  * });
  * ```
  */
-export function getNotebookSessionShapesOutput(args: GetNotebookSessionShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotebookSessionShapesResult> {
+export function getNotebookSessionShapesOutput(args: GetNotebookSessionShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNotebookSessionShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", {
         "compartmentId": args.compartmentId,

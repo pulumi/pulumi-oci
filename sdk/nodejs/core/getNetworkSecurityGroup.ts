@@ -103,7 +103,7 @@ export interface GetNetworkSecurityGroupResult {
  * });
  * ```
  */
-export function getNetworkSecurityGroupOutput(args: GetNetworkSecurityGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupResult> {
+export function getNetworkSecurityGroupOutput(args: GetNetworkSecurityGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkSecurityGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getNetworkSecurityGroup:getNetworkSecurityGroup", {
         "networkSecurityGroupId": args.networkSecurityGroupId,

@@ -136,7 +136,7 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
  * });
  * ```
  */
-export function getOperationsInsightsPrivateEndpointsOutput(args?: GetOperationsInsightsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsPrivateEndpointsResult> {
+export function getOperationsInsightsPrivateEndpointsOutput(args?: GetOperationsInsightsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOperationsInsightsPrivateEndpointsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints", {

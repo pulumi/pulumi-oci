@@ -76,7 +76,7 @@ export interface GetMysqlVersionResult {
  * });
  * ```
  */
-export function getMysqlVersionOutput(args: GetMysqlVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlVersionResult> {
+export function getMysqlVersionOutput(args: GetMysqlVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMysqlVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlVersion:getMysqlVersion", {
         "compartmentId": args.compartmentId,

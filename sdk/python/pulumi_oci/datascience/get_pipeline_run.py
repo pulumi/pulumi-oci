@@ -370,7 +370,7 @@ def get_pipeline_run(pipeline_run_id: Optional[str] = None,
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_pipeline_run_output(pipeline_run_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPipelineRunResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineRunResult]:
     """
     This data source provides details about a specific Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
 
@@ -390,7 +390,7 @@ def get_pipeline_run_output(pipeline_run_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['pipelineRunId'] = pipeline_run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getPipelineRun:getPipelineRun', __args__, opts=opts, typ=GetPipelineRunResult)
     return __ret__.apply(lambda __response__: GetPipelineRunResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

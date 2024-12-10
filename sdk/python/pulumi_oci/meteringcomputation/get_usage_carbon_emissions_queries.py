@@ -117,7 +117,7 @@ def get_usage_carbon_emissions_queries(compartment_id: Optional[str] = None,
         usage_carbon_emissions_query_collections=pulumi.get(__ret__, 'usage_carbon_emissions_query_collections'))
 def get_usage_carbon_emissions_queries_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUsageCarbonEmissionsQueriesFilterArgs', 'GetUsageCarbonEmissionsQueriesFilterArgsDict']]]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsageCarbonEmissionsQueriesResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsageCarbonEmissionsQueriesResult]:
     """
     This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -138,7 +138,7 @@ def get_usage_carbon_emissions_queries_output(compartment_id: Optional[pulumi.In
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries', __args__, opts=opts, typ=GetUsageCarbonEmissionsQueriesResult)
     return __ret__.apply(lambda __response__: GetUsageCarbonEmissionsQueriesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

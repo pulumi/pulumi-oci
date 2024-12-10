@@ -205,7 +205,7 @@ export interface GetCloudExadataInfrastructureResult {
  * });
  * ```
  */
-export function getCloudExadataInfrastructureOutput(args: GetCloudExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudExadataInfrastructureResult> {
+export function getCloudExadataInfrastructureOutput(args: GetCloudExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudExadataInfrastructureResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", {
         "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,

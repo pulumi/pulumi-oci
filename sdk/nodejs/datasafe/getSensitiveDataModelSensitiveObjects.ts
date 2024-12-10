@@ -105,7 +105,7 @@ export interface GetSensitiveDataModelSensitiveObjectsResult {
  * });
  * ```
  */
-export function getSensitiveDataModelSensitiveObjectsOutput(args: GetSensitiveDataModelSensitiveObjectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelSensitiveObjectsResult> {
+export function getSensitiveDataModelSensitiveObjectsOutput(args: GetSensitiveDataModelSensitiveObjectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSensitiveDataModelSensitiveObjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveDataModelSensitiveObjects:getSensitiveDataModelSensitiveObjects", {
         "filters": args.filters,

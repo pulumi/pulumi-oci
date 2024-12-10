@@ -143,7 +143,7 @@ def get_log_analytics_entities_summary(compartment_id: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'))
 def get_log_analytics_entities_summary_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                               namespace: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsEntitiesSummaryResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntitiesSummaryResult]:
     """
     This data source provides details about a specific Log Analytics Entities Summary resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -166,7 +166,7 @@ def get_log_analytics_entities_summary_output(compartment_id: Optional[pulumi.In
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary', __args__, opts=opts, typ=GetLogAnalyticsEntitiesSummaryResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsEntitiesSummaryResult(
         active_entities_count=pulumi.get(__response__, 'active_entities_count'),

@@ -141,7 +141,7 @@ export interface GetVnicResult {
  * });
  * ```
  */
-export function getVnicOutput(args: GetVnicOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVnicResult> {
+export function getVnicOutput(args: GetVnicOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVnicResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVnic:getVnic", {
         "vnicId": args.vnicId,

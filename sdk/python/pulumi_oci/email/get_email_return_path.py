@@ -255,7 +255,7 @@ def get_email_return_path(email_return_path_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_email_return_path_output(email_return_path_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEmailReturnPathResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEmailReturnPathResult]:
     """
     This data source provides details about a specific Email Return Path resource in Oracle Cloud Infrastructure Email service.
 
@@ -275,7 +275,7 @@ def get_email_return_path_output(email_return_path_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['emailReturnPathId'] = email_return_path_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Email/getEmailReturnPath:getEmailReturnPath', __args__, opts=opts, typ=GetEmailReturnPathResult)
     return __ret__.apply(lambda __response__: GetEmailReturnPathResult(
         cname_record_value=pulumi.get(__response__, 'cname_record_value'),

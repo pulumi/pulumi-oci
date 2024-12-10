@@ -330,7 +330,7 @@ def get_security_assessment_security_features_output(access_level: Optional[pulu
                                                      targets_with_tablespace_encryption: Optional[pulumi.Input[Optional[str]]] = None,
                                                      targets_with_traditional_audit: Optional[pulumi.Input[Optional[str]]] = None,
                                                      targets_with_unified_audit: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentSecurityFeaturesResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentSecurityFeaturesResult]:
     """
     This data source provides the list of Security Assessment Security Features in Oracle Cloud Infrastructure Data Safe service.
 
@@ -393,7 +393,7 @@ def get_security_assessment_security_features_output(access_level: Optional[pulu
     __args__['targetsWithTablespaceEncryption'] = targets_with_tablespace_encryption
     __args__['targetsWithTraditionalAudit'] = targets_with_traditional_audit
     __args__['targetsWithUnifiedAudit'] = targets_with_unified_audit
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures', __args__, opts=opts, typ=GetSecurityAssessmentSecurityFeaturesResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentSecurityFeaturesResult(
         access_level=pulumi.get(__response__, 'access_level'),

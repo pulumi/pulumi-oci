@@ -192,7 +192,7 @@ def get_vm_cluster_update_history_entry(update_history_entry_id: Optional[str] =
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 def get_vm_cluster_update_history_entry_output(update_history_entry_id: Optional[pulumi.Input[str]] = None,
                                                vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterUpdateHistoryEntryResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterUpdateHistoryEntryResult]:
     """
     This data source provides details about a specific Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
 
@@ -215,7 +215,7 @@ def get_vm_cluster_update_history_entry_output(update_history_entry_id: Optional
     __args__ = dict()
     __args__['updateHistoryEntryId'] = update_history_entry_id
     __args__['vmClusterId'] = vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry', __args__, opts=opts, typ=GetVmClusterUpdateHistoryEntryResult)
     return __ret__.apply(lambda __response__: GetVmClusterUpdateHistoryEntryResult(
         id=pulumi.get(__response__, 'id'),

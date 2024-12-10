@@ -110,7 +110,7 @@ export interface GetOccDemandSignalResult {
  * });
  * ```
  */
-export function getOccDemandSignalOutput(args: GetOccDemandSignalOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccDemandSignalResult> {
+export function getOccDemandSignalOutput(args: GetOccDemandSignalOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOccDemandSignalResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", {
         "occDemandSignalId": args.occDemandSignalId,

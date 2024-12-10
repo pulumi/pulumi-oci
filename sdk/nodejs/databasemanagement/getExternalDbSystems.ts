@@ -86,7 +86,7 @@ export interface GetExternalDbSystemsResult {
  * });
  * ```
  */
-export function getExternalDbSystemsOutput(args: GetExternalDbSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbSystemsResult> {
+export function getExternalDbSystemsOutput(args: GetExternalDbSystemsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDbSystemsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems", {
         "compartmentId": args.compartmentId,

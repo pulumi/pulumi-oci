@@ -135,7 +135,7 @@ export interface GetSdmMaskingPolicyDifferencesResult {
  * });
  * ```
  */
-export function getSdmMaskingPolicyDifferencesOutput(args: GetSdmMaskingPolicyDifferencesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSdmMaskingPolicyDifferencesResult> {
+export function getSdmMaskingPolicyDifferencesOutput(args: GetSdmMaskingPolicyDifferencesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSdmMaskingPolicyDifferencesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSdmMaskingPolicyDifferences:getSdmMaskingPolicyDifferences", {
         "compartmentId": args.compartmentId,

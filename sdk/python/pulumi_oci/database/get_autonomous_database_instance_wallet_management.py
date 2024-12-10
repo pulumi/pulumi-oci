@@ -135,7 +135,7 @@ def get_autonomous_database_instance_wallet_management(autonomous_database_id: O
         state=pulumi.get(__ret__, 'state'),
         time_rotated=pulumi.get(__ret__, 'time_rotated'))
 def get_autonomous_database_instance_wallet_management_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
-                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseInstanceWalletManagementResult]:
+                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseInstanceWalletManagementResult]:
     """
     This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
 
@@ -155,7 +155,7 @@ def get_autonomous_database_instance_wallet_management_output(autonomous_databas
     """
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement', __args__, opts=opts, typ=GetAutonomousDatabaseInstanceWalletManagementResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabaseInstanceWalletManagementResult(
         autonomous_database_id=pulumi.get(__response__, 'autonomous_database_id'),

@@ -91,7 +91,7 @@ export interface GetAutonomousCharacterSetsResult {
  * });
  * ```
  */
-export function getAutonomousCharacterSetsOutput(args?: GetAutonomousCharacterSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousCharacterSetsResult> {
+export function getAutonomousCharacterSetsOutput(args?: GetAutonomousCharacterSetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousCharacterSetsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", {

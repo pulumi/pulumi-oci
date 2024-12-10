@@ -115,7 +115,7 @@ export interface GetRepositoriesResult {
  * });
  * ```
  */
-export function getRepositoriesOutput(args: GetRepositoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoriesResult> {
+export function getRepositoriesOutput(args: GetRepositoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Artifacts/getRepositories:getRepositories", {
         "compartmentId": args.compartmentId,

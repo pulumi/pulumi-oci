@@ -229,7 +229,7 @@ def get_security_policy_reports_output(access_level: Optional[pulumi.Input[Optio
                                        security_policy_report_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyReportsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportsResult]:
     """
     This data source provides the list of Security Policy Reports in Oracle Cloud Infrastructure Data Safe service.
 
@@ -281,7 +281,7 @@ def get_security_policy_reports_output(access_level: Optional[pulumi.Input[Optio
     __args__['securityPolicyReportId'] = security_policy_report_id
     __args__['state'] = state
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReports:getSecurityPolicyReports', __args__, opts=opts, typ=GetSecurityPolicyReportsResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyReportsResult(
         access_level=pulumi.get(__response__, 'access_level'),

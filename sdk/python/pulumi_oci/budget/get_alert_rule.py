@@ -273,7 +273,7 @@ def get_alert_rule(alert_rule_id: Optional[str] = None,
         version=pulumi.get(__ret__, 'version'))
 def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[str]] = None,
                           budget_id: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertRuleResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertRuleResult]:
     """
     This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
 
@@ -296,7 +296,7 @@ def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['alertRuleId'] = alert_rule_id
     __args__['budgetId'] = budget_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Budget/getAlertRule:getAlertRule', __args__, opts=opts, typ=GetAlertRuleResult)
     return __ret__.apply(lambda __response__: GetAlertRuleResult(
         alert_rule_id=pulumi.get(__response__, 'alert_rule_id'),

@@ -119,7 +119,7 @@ export interface GetDbManagementPrivateEndpointResult {
  * });
  * ```
  */
-export function getDbManagementPrivateEndpointOutput(args: GetDbManagementPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbManagementPrivateEndpointResult> {
+export function getDbManagementPrivateEndpointOutput(args: GetDbManagementPrivateEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbManagementPrivateEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint", {
         "dbManagementPrivateEndpointId": args.dbManagementPrivateEndpointId,

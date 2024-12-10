@@ -124,7 +124,7 @@ export interface GetDomainsMyCompletedApprovalsResult {
  * });
  * ```
  */
-export function getDomainsMyCompletedApprovalsOutput(args: GetDomainsMyCompletedApprovalsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyCompletedApprovalsResult> {
+export function getDomainsMyCompletedApprovalsOutput(args: GetDomainsMyCompletedApprovalsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyCompletedApprovalsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyCompletedApprovals:getDomainsMyCompletedApprovals", {
         "authorization": args.authorization,

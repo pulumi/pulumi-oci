@@ -231,7 +231,7 @@ def get_rule(rule_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_rule_output(rule_id: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRuleResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuleResult]:
     """
     This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Events service.
 
@@ -251,7 +251,7 @@ def get_rule_output(rule_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['ruleId'] = rule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Events/getRule:getRule', __args__, opts=opts, typ=GetRuleResult)
     return __ret__.apply(lambda __response__: GetRuleResult(
         actions=pulumi.get(__response__, 'actions'),

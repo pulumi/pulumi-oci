@@ -395,7 +395,7 @@ def get_audit_trail(audit_trail_id: Optional[str] = None,
         trail_source=pulumi.get(__ret__, 'trail_source'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
 def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditTrailResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditTrailResult]:
     """
     This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -415,7 +415,7 @@ def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['auditTrailId'] = audit_trail_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditTrail:getAuditTrail', __args__, opts=opts, typ=GetAuditTrailResult)
     return __ret__.apply(lambda __response__: GetAuditTrailResult(
         audit_collection_start_time=pulumi.get(__response__, 'audit_collection_start_time'),

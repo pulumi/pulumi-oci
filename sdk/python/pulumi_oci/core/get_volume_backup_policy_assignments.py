@@ -119,7 +119,7 @@ def get_volume_backup_policy_assignments(asset_id: Optional[str] = None,
         volume_backup_policy_assignments=pulumi.get(__ret__, 'volume_backup_policy_assignments'))
 def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[str]] = None,
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict']]]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeBackupPolicyAssignmentsResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeBackupPolicyAssignmentsResult]:
     """
     This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
 
@@ -142,7 +142,7 @@ def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[
     __args__ = dict()
     __args__['assetId'] = asset_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments', __args__, opts=opts, typ=GetVolumeBackupPolicyAssignmentsResult)
     return __ret__.apply(lambda __response__: GetVolumeBackupPolicyAssignmentsResult(
         asset_id=pulumi.get(__response__, 'asset_id'),

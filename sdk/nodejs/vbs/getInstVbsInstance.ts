@@ -116,7 +116,7 @@ export interface GetInstVbsInstanceResult {
  * });
  * ```
  */
-export function getInstVbsInstanceOutput(args: GetInstVbsInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstVbsInstanceResult> {
+export function getInstVbsInstanceOutput(args: GetInstVbsInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstVbsInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Vbs/getInstVbsInstance:getInstVbsInstance", {
         "vbsInstanceId": args.vbsInstanceId,

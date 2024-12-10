@@ -157,7 +157,7 @@ export interface GetLogAnalyticsEntityResult {
  * });
  * ```
  */
-export function getLogAnalyticsEntityOutput(args: GetLogAnalyticsEntityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntityResult> {
+export function getLogAnalyticsEntityOutput(args: GetLogAnalyticsEntityOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsEntityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", {
         "logAnalyticsEntityId": args.logAnalyticsEntityId,

@@ -176,7 +176,7 @@ def get_occ_availability_catalogs_output(catalog_state: Optional[pulumi.Input[Op
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccAvailabilityCatalogsFilterArgs', 'GetOccAvailabilityCatalogsFilterArgsDict']]]]] = None,
                                          id: Optional[pulumi.Input[Optional[str]]] = None,
                                          namespace: Optional[pulumi.Input[Optional[str]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccAvailabilityCatalogsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccAvailabilityCatalogsResult]:
     """
     This data source provides the list of Occ Availability Catalogs in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -209,7 +209,7 @@ def get_occ_availability_catalogs_output(catalog_state: Optional[pulumi.Input[Op
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccAvailabilityCatalogs:getOccAvailabilityCatalogs', __args__, opts=opts, typ=GetOccAvailabilityCatalogsResult)
     return __ret__.apply(lambda __response__: GetOccAvailabilityCatalogsResult(
         catalog_state=pulumi.get(__response__, 'catalog_state'),

@@ -108,7 +108,7 @@ export interface GetAutonomousDatabaseSoftwareImageResult {
  * });
  * ```
  */
-export function getAutonomousDatabaseSoftwareImageOutput(args: GetAutonomousDatabaseSoftwareImageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseSoftwareImageResult> {
+export function getAutonomousDatabaseSoftwareImageOutput(args: GetAutonomousDatabaseSoftwareImageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseSoftwareImageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage", {
         "autonomousDatabaseSoftwareImageId": args.autonomousDatabaseSoftwareImageId,

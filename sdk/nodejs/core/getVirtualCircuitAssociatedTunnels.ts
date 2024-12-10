@@ -72,7 +72,7 @@ export interface GetVirtualCircuitAssociatedTunnelsResult {
  * });
  * ```
  */
-export function getVirtualCircuitAssociatedTunnelsOutput(args: GetVirtualCircuitAssociatedTunnelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitAssociatedTunnelsResult> {
+export function getVirtualCircuitAssociatedTunnelsOutput(args: GetVirtualCircuitAssociatedTunnelsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualCircuitAssociatedTunnelsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", {
         "filters": args.filters,

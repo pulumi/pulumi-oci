@@ -97,7 +97,7 @@ export interface GetDbNodeConsoleHistoriesResult {
  * });
  * ```
  */
-export function getDbNodeConsoleHistoriesOutput(args: GetDbNodeConsoleHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeConsoleHistoriesResult> {
+export function getDbNodeConsoleHistoriesOutput(args: GetDbNodeConsoleHistoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbNodeConsoleHistoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories", {
         "dbNodeId": args.dbNodeId,

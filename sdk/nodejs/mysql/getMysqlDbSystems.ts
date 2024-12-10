@@ -151,7 +151,7 @@ export interface GetMysqlDbSystemsResult {
  * });
  * ```
  */
-export function getMysqlDbSystemsOutput(args: GetMysqlDbSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlDbSystemsResult> {
+export function getMysqlDbSystemsOutput(args: GetMysqlDbSystemsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMysqlDbSystemsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", {
         "compartmentId": args.compartmentId,

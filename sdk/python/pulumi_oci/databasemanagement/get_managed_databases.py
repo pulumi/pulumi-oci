@@ -196,7 +196,7 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  id: Optional[pulumi.Input[Optional[str]]] = None,
                                  management_option: Optional[pulumi.Input[Optional[str]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabasesResult]:
     """
     This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
 
@@ -237,7 +237,7 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['id'] = id
     __args__['managementOption'] = management_option
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabases:getManagedDatabases', __args__, opts=opts, typ=GetManagedDatabasesResult)
     return __ret__.apply(lambda __response__: GetManagedDatabasesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

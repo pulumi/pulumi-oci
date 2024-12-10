@@ -115,7 +115,7 @@ export interface GetExternalDbHomeResult {
  * });
  * ```
  */
-export function getExternalDbHomeOutput(args: GetExternalDbHomeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbHomeResult> {
+export function getExternalDbHomeOutput(args: GetExternalDbHomeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDbHomeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", {
         "externalDbHomeId": args.externalDbHomeId,

@@ -279,7 +279,7 @@ def get_media_workflow(media_workflow_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
 def get_media_workflow_output(media_workflow_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowResult]:
     """
     This data source provides details about a specific Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
 
@@ -299,7 +299,7 @@ def get_media_workflow_output(media_workflow_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['mediaWorkflowId'] = media_workflow_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaWorkflow:getMediaWorkflow', __args__, opts=opts, typ=GetMediaWorkflowResult)
     return __ret__.apply(lambda __response__: GetMediaWorkflowResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

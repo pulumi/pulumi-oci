@@ -106,7 +106,7 @@ export interface GetRepositoryCommitResult {
  * });
  * ```
  */
-export function getRepositoryCommitOutput(args: GetRepositoryCommitOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryCommitResult> {
+export function getRepositoryCommitOutput(args: GetRepositoryCommitOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryCommitResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryCommit:getRepositoryCommit", {
         "commitId": args.commitId,

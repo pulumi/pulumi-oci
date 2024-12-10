@@ -259,7 +259,7 @@ def get_domains_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
                        type: Optional[pulumi.Input[Optional[str]]] = None,
                        url: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsResult]:
     """
     This data source provides the list of Domains in Oracle Cloud Infrastructure Identity service.
 
@@ -305,7 +305,7 @@ def get_domains_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['state'] = state
     __args__['type'] = type
     __args__['url'] = url
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomains:getDomains', __args__, opts=opts, typ=GetDomainsResult)
     return __ret__.apply(lambda __response__: GetDomainsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

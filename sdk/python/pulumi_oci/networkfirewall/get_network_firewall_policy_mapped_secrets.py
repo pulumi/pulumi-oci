@@ -115,7 +115,7 @@ def get_network_firewall_policy_mapped_secrets(display_name: Optional[str] = Non
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
 def get_network_firewall_policy_mapped_secrets_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                       network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyMappedSecretsResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyMappedSecretsResult]:
     """
     This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
 
@@ -138,7 +138,7 @@ def get_network_firewall_policy_mapped_secrets_output(display_name: Optional[pul
     __args__ = dict()
     __args__['displayName'] = display_name
     __args__['networkFirewallPolicyId'] = network_firewall_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecrets:getNetworkFirewallPolicyMappedSecrets', __args__, opts=opts, typ=GetNetworkFirewallPolicyMappedSecretsResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyMappedSecretsResult(
         display_name=pulumi.get(__response__, 'display_name'),

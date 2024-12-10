@@ -160,7 +160,7 @@ export interface GetDbNodeResult {
  * });
  * ```
  */
-export function getDbNodeOutput(args: GetDbNodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeResult> {
+export function getDbNodeOutput(args: GetDbNodeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbNodeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbNode:getDbNode", {
         "dbNodeId": args.dbNodeId,

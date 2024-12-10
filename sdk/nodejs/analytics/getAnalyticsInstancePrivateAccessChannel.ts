@@ -106,7 +106,7 @@ export interface GetAnalyticsInstancePrivateAccessChannelResult {
  * });
  * ```
  */
-export function getAnalyticsInstancePrivateAccessChannelOutput(args: GetAnalyticsInstancePrivateAccessChannelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstancePrivateAccessChannelResult> {
+export function getAnalyticsInstancePrivateAccessChannelOutput(args: GetAnalyticsInstancePrivateAccessChannelOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAnalyticsInstancePrivateAccessChannelResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", {
         "analyticsInstanceId": args.analyticsInstanceId,

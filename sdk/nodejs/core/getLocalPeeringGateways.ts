@@ -88,7 +88,7 @@ export interface GetLocalPeeringGatewaysResult {
  * });
  * ```
  */
-export function getLocalPeeringGatewaysOutput(args: GetLocalPeeringGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLocalPeeringGatewaysResult> {
+export function getLocalPeeringGatewaysOutput(args: GetLocalPeeringGatewaysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLocalPeeringGatewaysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", {
         "compartmentId": args.compartmentId,

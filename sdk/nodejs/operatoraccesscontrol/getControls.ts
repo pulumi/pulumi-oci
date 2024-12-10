@@ -105,7 +105,7 @@ export interface GetControlsResult {
  * });
  * ```
  */
-export function getControlsOutput(args: GetControlsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlsResult> {
+export function getControlsOutput(args: GetControlsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetControlsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getControls:getControls", {
         "compartmentId": args.compartmentId,

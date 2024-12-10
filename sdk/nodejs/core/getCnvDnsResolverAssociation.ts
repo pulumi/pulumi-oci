@@ -72,7 +72,7 @@ export interface GetCnvDnsResolverAssociationResult {
  * });
  * ```
  */
-export function getCnvDnsResolverAssociationOutput(args: GetCnvDnsResolverAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCnvDnsResolverAssociationResult> {
+export function getCnvDnsResolverAssociationOutput(args: GetCnvDnsResolverAssociationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCnvDnsResolverAssociationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", {
         "vcnId": args.vcnId,

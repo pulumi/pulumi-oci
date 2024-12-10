@@ -150,7 +150,7 @@ export interface GetFileSystemsResult {
  * });
  * ```
  */
-export function getFileSystemsOutput(args: GetFileSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFileSystemsResult> {
+export function getFileSystemsOutput(args: GetFileSystemsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFileSystemsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FileStorage/getFileSystems:getFileSystems", {
         "availabilityDomain": args.availabilityDomain,

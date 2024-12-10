@@ -230,7 +230,7 @@ def get_fast_connect_provider_service(provider_service_id: Optional[str] = None,
         supported_virtual_circuit_types=pulumi.get(__ret__, 'supported_virtual_circuit_types'),
         type=pulumi.get(__ret__, 'type'))
 def get_fast_connect_provider_service_output(provider_service_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFastConnectProviderServiceResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFastConnectProviderServiceResult]:
     """
     This data source provides details about a specific Fast Connect Provider Service resource in Oracle Cloud Infrastructure Core service.
 
@@ -251,7 +251,7 @@ def get_fast_connect_provider_service_output(provider_service_id: Optional[pulum
     """
     __args__ = dict()
     __args__['providerServiceId'] = provider_service_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getFastConnectProviderService:getFastConnectProviderService', __args__, opts=opts, typ=GetFastConnectProviderServiceResult)
     return __ret__.apply(lambda __response__: GetFastConnectProviderServiceResult(
         bandwith_shape_management=pulumi.get(__response__, 'bandwith_shape_management'),

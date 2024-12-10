@@ -347,7 +347,7 @@ def get_external_cluster(external_cluster_id: Optional[str] = None,
         version=pulumi.get(__ret__, 'version'),
         vip_configurations=pulumi.get(__ret__, 'vip_configurations'))
 def get_external_cluster_output(external_cluster_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClusterResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalClusterResult]:
     """
     This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -367,7 +367,7 @@ def get_external_cluster_output(external_cluster_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['externalClusterId'] = external_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalCluster:getExternalCluster', __args__, opts=opts, typ=GetExternalClusterResult)
     return __ret__.apply(lambda __response__: GetExternalClusterResult(
         additional_details=pulumi.get(__response__, 'additional_details'),

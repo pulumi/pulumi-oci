@@ -91,7 +91,7 @@ export interface GetClusterKubeConfigResult {
  * });
  * ```
  */
-export function getClusterKubeConfigOutput(args: GetClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterKubeConfigResult> {
+export function getClusterKubeConfigOutput(args: GetClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClusterKubeConfigResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", {
         "clusterId": args.clusterId,

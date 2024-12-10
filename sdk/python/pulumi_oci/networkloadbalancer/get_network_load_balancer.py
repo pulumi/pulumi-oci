@@ -348,7 +348,7 @@ def get_network_load_balancer(network_load_balancer_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_network_load_balancer_output(network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancerResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkLoadBalancerResult]:
     """
     This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
 
@@ -368,7 +368,7 @@ def get_network_load_balancer_output(network_load_balancer_id: Optional[pulumi.I
     """
     __args__ = dict()
     __args__['networkLoadBalancerId'] = network_load_balancer_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer', __args__, opts=opts, typ=GetNetworkLoadBalancerResult)
     return __ret__.apply(lambda __response__: GetNetworkLoadBalancerResult(
         assigned_ipv6=pulumi.get(__response__, 'assigned_ipv6'),

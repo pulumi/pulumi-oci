@@ -101,7 +101,7 @@ export interface GetDynamicGroupsResult {
  * });
  * ```
  */
-export function getDynamicGroupsOutput(args: GetDynamicGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDynamicGroupsResult> {
+export function getDynamicGroupsOutput(args: GetDynamicGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDynamicGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDynamicGroups:getDynamicGroups", {
         "compartmentId": args.compartmentId,

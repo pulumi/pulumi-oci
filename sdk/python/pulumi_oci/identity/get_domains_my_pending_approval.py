@@ -418,7 +418,7 @@ def get_domains_my_pending_approval_output(authorization: Optional[pulumi.Input[
                                            idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                            my_pending_approval_id: Optional[pulumi.Input[str]] = None,
                                            resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyPendingApprovalResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyPendingApprovalResult]:
     """
     This data source provides details about a specific My Pending Approval resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -447,7 +447,7 @@ def get_domains_my_pending_approval_output(authorization: Optional[pulumi.Input[
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['myPendingApprovalId'] = my_pending_approval_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsMyPendingApproval:getDomainsMyPendingApproval', __args__, opts=opts, typ=GetDomainsMyPendingApprovalResult)
     return __ret__.apply(lambda __response__: GetDomainsMyPendingApprovalResult(
         authorization=pulumi.get(__response__, 'authorization'),

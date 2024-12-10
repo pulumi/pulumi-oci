@@ -110,7 +110,7 @@ export interface GetSecurityListsResult {
  * });
  * ```
  */
-export function getSecurityListsOutput(args: GetSecurityListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityListsResult> {
+export function getSecurityListsOutput(args: GetSecurityListsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityListsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getSecurityLists:getSecurityLists", {
         "compartmentId": args.compartmentId,

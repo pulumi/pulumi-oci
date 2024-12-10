@@ -101,7 +101,7 @@ export interface GetServiceConnectorsResult {
  * });
  * ```
  */
-export function getServiceConnectorsOutput(args: GetServiceConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceConnectorsResult> {
+export function getServiceConnectorsOutput(args: GetServiceConnectorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceConnectorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Sch/getServiceConnectors:getServiceConnectors", {
         "compartmentId": args.compartmentId,

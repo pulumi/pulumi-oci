@@ -99,7 +99,7 @@ export interface GetSenderResult {
  * });
  * ```
  */
-export function getSenderOutput(args: GetSenderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSenderResult> {
+export function getSenderOutput(args: GetSenderOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSenderResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Email/getSender:getSender", {
         "senderId": args.senderId,

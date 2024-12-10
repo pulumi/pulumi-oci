@@ -122,7 +122,7 @@ def get_subscription_redeemable_user(subscription_id: Optional[str] = None,
         user_id=pulumi.get(__ret__, 'user_id'))
 def get_subscription_redeemable_user_output(subscription_id: Optional[pulumi.Input[str]] = None,
                                             tenancy_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionRedeemableUserResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionRedeemableUserResult]:
     """
     This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
 
@@ -145,7 +145,7 @@ def get_subscription_redeemable_user_output(subscription_id: Optional[pulumi.Inp
     __args__ = dict()
     __args__['subscriptionId'] = subscription_id
     __args__['tenancyId'] = tenancy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser', __args__, opts=opts, typ=GetSubscriptionRedeemableUserResult)
     return __ret__.apply(lambda __response__: GetSubscriptionRedeemableUserResult(
         id=pulumi.get(__response__, 'id'),

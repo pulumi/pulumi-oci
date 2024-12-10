@@ -130,7 +130,7 @@ export interface GetAtCustomerCccInfrastructuresResult {
  * });
  * ```
  */
-export function getAtCustomerCccInfrastructuresOutput(args?: GetAtCustomerCccInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccInfrastructuresResult> {
+export function getAtCustomerCccInfrastructuresOutput(args?: GetAtCustomerCccInfrastructuresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAtCustomerCccInfrastructuresResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", {

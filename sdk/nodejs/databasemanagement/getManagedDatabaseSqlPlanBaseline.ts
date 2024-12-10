@@ -142,7 +142,7 @@ export interface GetManagedDatabaseSqlPlanBaselineResult {
  * });
  * ```
  */
-export function getManagedDatabaseSqlPlanBaselineOutput(args: GetManagedDatabaseSqlPlanBaselineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselineResult> {
+export function getManagedDatabaseSqlPlanBaselineOutput(args: GetManagedDatabaseSqlPlanBaselineOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselineResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", {
         "managedDatabaseId": args.managedDatabaseId,

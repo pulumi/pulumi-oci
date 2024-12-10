@@ -84,7 +84,7 @@ export interface GetAnnouncementsResult {
  * });
  * ```
  */
-export function getAnnouncementsOutput(args?: GetAnnouncementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnouncementsResult> {
+export function getAnnouncementsOutput(args?: GetAnnouncementsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAnnouncementsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getAnnouncements:getAnnouncements", {

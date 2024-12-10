@@ -102,7 +102,7 @@ export interface GetActionsResult {
  * });
  * ```
  */
-export function getActionsOutput(args: GetActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetActionsResult> {
+export function getActionsOutput(args: GetActionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetActionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getActions:getActions", {
         "compartmentId": args.compartmentId,

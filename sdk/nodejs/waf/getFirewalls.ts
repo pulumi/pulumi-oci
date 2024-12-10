@@ -115,7 +115,7 @@ export interface GetFirewallsResult {
  * });
  * ```
  */
-export function getFirewallsOutput(args: GetFirewallsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFirewallsResult> {
+export function getFirewallsOutput(args: GetFirewallsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFirewallsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waf/getFirewalls:getFirewalls", {
         "compartmentId": args.compartmentId,

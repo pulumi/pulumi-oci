@@ -99,7 +99,7 @@ def get_fusion_environment_status(fusion_environment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         status=pulumi.get(__ret__, 'status'))
 def get_fusion_environment_status_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentStatusResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentStatusResult]:
     """
     This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
 
@@ -119,7 +119,7 @@ def get_fusion_environment_status_output(fusion_environment_id: Optional[pulumi.
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus', __args__, opts=opts, typ=GetFusionEnvironmentStatusResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentStatusResult(
         fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),

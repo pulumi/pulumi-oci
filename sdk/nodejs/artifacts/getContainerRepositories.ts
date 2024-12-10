@@ -124,7 +124,7 @@ export interface GetContainerRepositoriesResult {
  * });
  * ```
  */
-export function getContainerRepositoriesOutput(args: GetContainerRepositoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerRepositoriesResult> {
+export function getContainerRepositoriesOutput(args: GetContainerRepositoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetContainerRepositoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Artifacts/getContainerRepositories:getContainerRepositories", {
         "compartmentId": args.compartmentId,

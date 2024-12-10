@@ -385,7 +385,7 @@ def get_alert(alert_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_alert_output(alert_id: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertResult]:
     """
     This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -405,7 +405,7 @@ def get_alert_output(alert_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['alertId'] = alert_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAlert:getAlert', __args__, opts=opts, typ=GetAlertResult)
     return __ret__.apply(lambda __response__: GetAlertResult(
         alert_id=pulumi.get(__response__, 'alert_id'),

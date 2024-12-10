@@ -150,7 +150,7 @@ export interface GetSteeringPoliciesResult {
  * });
  * ```
  */
-export function getSteeringPoliciesOutput(args: GetSteeringPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPoliciesResult> {
+export function getSteeringPoliciesOutput(args: GetSteeringPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSteeringPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getSteeringPolicies:getSteeringPolicies", {
         "compartmentId": args.compartmentId,

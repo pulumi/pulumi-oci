@@ -101,7 +101,7 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
  * });
  * ```
  */
-export function getSecurityPolicyDeploymentSecurityPolicyEntryStatesOutput(args: GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> {
+export function getSecurityPolicyDeploymentSecurityPolicyEntryStatesOutput(args: GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryStates:getSecurityPolicyDeploymentSecurityPolicyEntryStates", {
         "deploymentStatus": args.deploymentStatus,

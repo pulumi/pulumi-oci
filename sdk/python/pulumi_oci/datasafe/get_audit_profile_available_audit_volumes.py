@@ -184,7 +184,7 @@ def get_audit_profile_available_audit_volumes_output(audit_profile_id: Optional[
                                                      month_in_consideration_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                      trail_location: Optional[pulumi.Input[Optional[str]]] = None,
                                                      work_request_id: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditProfileAvailableAuditVolumesResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditProfileAvailableAuditVolumesResult]:
     """
     This data source provides the list of Audit Profile Available Audit Volumes in Oracle Cloud Infrastructure Data Safe service.
 
@@ -221,7 +221,7 @@ def get_audit_profile_available_audit_volumes_output(audit_profile_id: Optional[
     __args__['monthInConsiderationLessThan'] = month_in_consideration_less_than
     __args__['trailLocation'] = trail_location
     __args__['workRequestId'] = work_request_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes', __args__, opts=opts, typ=GetAuditProfileAvailableAuditVolumesResult)
     return __ret__.apply(lambda __response__: GetAuditProfileAvailableAuditVolumesResult(
         audit_profile_id=pulumi.get(__response__, 'audit_profile_id'),

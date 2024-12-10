@@ -149,7 +149,7 @@ export interface GetOpsiConfigurationResult {
  * });
  * ```
  */
-export function getOpsiConfigurationOutput(args: GetOpsiConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpsiConfigurationResult> {
+export function getOpsiConfigurationOutput(args: GetOpsiConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOpsiConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getOpsiConfiguration:getOpsiConfiguration", {
         "configItemCustomStatuses": args.configItemCustomStatuses,

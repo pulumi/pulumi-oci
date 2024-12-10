@@ -199,7 +199,7 @@ def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = 
                                    snapshot_time: Optional[pulumi.Input[Optional[str]]] = None,
                                    thread_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    trace_key: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTraceSnapshotDataResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTraceSnapshotDataResult]:
     """
     This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
 
@@ -231,7 +231,7 @@ def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = 
     __args__['snapshotTime'] = snapshot_time
     __args__['threadId'] = thread_id
     __args__['traceKey'] = trace_key
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData', __args__, opts=opts, typ=GetTraceSnapshotDataResult)
     return __ret__.apply(lambda __response__: GetTraceSnapshotDataResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

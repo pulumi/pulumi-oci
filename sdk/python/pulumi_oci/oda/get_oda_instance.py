@@ -373,7 +373,7 @@ def get_oda_instance(oda_instance_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         web_app_url=pulumi.get(__ret__, 'web_app_url'))
 def get_oda_instance_output(oda_instance_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaInstanceResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaInstanceResult]:
     """
     This data source provides details about a specific Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
 
@@ -393,7 +393,7 @@ def get_oda_instance_output(oda_instance_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['odaInstanceId'] = oda_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Oda/getOdaInstance:getOdaInstance', __args__, opts=opts, typ=GetOdaInstanceResult)
     return __ret__.apply(lambda __response__: GetOdaInstanceResult(
         attachment_ids=pulumi.get(__response__, 'attachment_ids'),

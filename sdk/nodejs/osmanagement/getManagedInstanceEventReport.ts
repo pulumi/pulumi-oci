@@ -88,7 +88,7 @@ export interface GetManagedInstanceEventReportResult {
  * });
  * ```
  */
-export function getManagedInstanceEventReportOutput(args: GetManagedInstanceEventReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceEventReportResult> {
+export function getManagedInstanceEventReportOutput(args: GetManagedInstanceEventReportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceEventReportResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", {
         "compartmentId": args.compartmentId,

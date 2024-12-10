@@ -119,7 +119,7 @@ export interface GetNamedCredentialsResult {
  * });
  * ```
  */
-export function getNamedCredentialsOutput(args: GetNamedCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamedCredentialsResult> {
+export function getNamedCredentialsOutput(args: GetNamedCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNamedCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getNamedCredentials:getNamedCredentials", {
         "associatedResource": args.associatedResource,

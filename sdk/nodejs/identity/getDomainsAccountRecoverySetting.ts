@@ -169,7 +169,7 @@ export interface GetDomainsAccountRecoverySettingResult {
  * });
  * ```
  */
-export function getDomainsAccountRecoverySettingOutput(args: GetDomainsAccountRecoverySettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAccountRecoverySettingResult> {
+export function getDomainsAccountRecoverySettingOutput(args: GetDomainsAccountRecoverySettingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsAccountRecoverySettingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAccountRecoverySetting:getDomainsAccountRecoverySetting", {
         "accountRecoverySettingId": args.accountRecoverySettingId,

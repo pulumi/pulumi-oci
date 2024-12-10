@@ -171,7 +171,7 @@ def get_gateways_output(certificate_id: Optional[pulumi.Input[Optional[str]]] = 
                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGatewaysFilterArgs', 'GetGatewaysFilterArgsDict']]]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGatewaysResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGatewaysResult]:
     """
     This data source provides the list of Gateways in Oracle Cloud Infrastructure API Gateway service.
 
@@ -201,7 +201,7 @@ def get_gateways_output(certificate_id: Optional[pulumi.Input[Optional[str]]] = 
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApiGateway/getGateways:getGateways', __args__, opts=opts, typ=GetGatewaysResult)
     return __ret__.apply(lambda __response__: GetGatewaysResult(
         certificate_id=pulumi.get(__response__, 'certificate_id'),

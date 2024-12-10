@@ -201,7 +201,7 @@ def get_fleet_java_migration_analysis_results_output(application_name: Optional[
                                                      managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                      time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                                      time_start: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetJavaMigrationAnalysisResultsResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetJavaMigrationAnalysisResultsResult]:
     """
     This data source provides the list of Fleet Java Migration Analysis Results in Oracle Cloud Infrastructure Jms service.
 
@@ -237,7 +237,7 @@ def get_fleet_java_migration_analysis_results_output(application_name: Optional[
     __args__['managedInstanceId'] = managed_instance_id
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults', __args__, opts=opts, typ=GetFleetJavaMigrationAnalysisResultsResult)
     return __ret__.apply(lambda __response__: GetFleetJavaMigrationAnalysisResultsResult(
         application_name=pulumi.get(__response__, 'application_name'),

@@ -91,7 +91,7 @@ export interface GetSchedulerDefinitionScheduledFleetsResult {
  * });
  * ```
  */
-export function getSchedulerDefinitionScheduledFleetsOutput(args: GetSchedulerDefinitionScheduledFleetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSchedulerDefinitionScheduledFleetsResult> {
+export function getSchedulerDefinitionScheduledFleetsOutput(args: GetSchedulerDefinitionScheduledFleetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSchedulerDefinitionScheduledFleetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getSchedulerDefinitionScheduledFleets:getSchedulerDefinitionScheduledFleets", {
         "compartmentId": args.compartmentId,

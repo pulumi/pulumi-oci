@@ -86,7 +86,7 @@ export interface GetIpsecConfigResult {
  * });
  * ```
  */
-export function getIpsecConfigOutput(args: GetIpsecConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConfigResult> {
+export function getIpsecConfigOutput(args: GetIpsecConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpsecConfigResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpsecConfig:getIpsecConfig", {
         "filters": args.filters,

@@ -97,14 +97,14 @@ def get_listing_resource_versions(filters: Optional[Sequence[Union['GetListingRe
         listing_id=pulumi.get(__ret__, 'listing_id'))
 def get_listing_resource_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingResourceVersionsFilterArgs', 'GetListingResourceVersionsFilterArgsDict']]]]] = None,
                                          listing_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingResourceVersionsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingResourceVersionsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
     __args__['listingId'] = listing_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getListingResourceVersions:getListingResourceVersions', __args__, opts=opts, typ=GetListingResourceVersionsResult)
     return __ret__.apply(lambda __response__: GetListingResourceVersionsResult(
         app_catalog_listing_resource_versions=pulumi.get(__response__, 'app_catalog_listing_resource_versions'),

@@ -189,7 +189,7 @@ export interface GetLogAnalyticsEntitiesResult {
  * });
  * ```
  */
-export function getLogAnalyticsEntitiesOutput(args: GetLogAnalyticsEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntitiesResult> {
+export function getLogAnalyticsEntitiesOutput(args: GetLogAnalyticsEntitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsEntitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", {
         "cloudResourceId": args.cloudResourceId,

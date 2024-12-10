@@ -144,7 +144,7 @@ def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Inpu
                                             fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict']]]]] = None,
                                             invoice_line_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoiceLineComputedUsagesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvoiceLineComputedUsagesResult]:
     """
     This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
 
@@ -171,7 +171,7 @@ def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Inpu
     __args__['fields'] = fields
     __args__['filters'] = filters
     __args__['invoiceLineId'] = invoice_line_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages', __args__, opts=opts, typ=GetInvoiceLineComputedUsagesResult)
     return __ret__.apply(lambda __response__: GetInvoiceLineComputedUsagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

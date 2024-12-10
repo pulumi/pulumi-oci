@@ -87,7 +87,7 @@ export interface GetEnrollmentStatusResult {
  * });
  * ```
  */
-export function getEnrollmentStatusOutput(args: GetEnrollmentStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnrollmentStatusResult> {
+export function getEnrollmentStatusOutput(args: GetEnrollmentStatusOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEnrollmentStatusResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", {
         "enrollmentStatusId": args.enrollmentStatusId,

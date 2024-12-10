@@ -153,7 +153,7 @@ def get_integration_instances_output(compartment_id: Optional[pulumi.Input[str]]
                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIntegrationInstancesFilterArgs', 'GetIntegrationInstancesFilterArgsDict']]]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIntegrationInstancesResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIntegrationInstancesResult]:
     """
     This data source provides the list of Integration Instances in Oracle Cloud Infrastructure Integration service.
 
@@ -180,7 +180,7 @@ def get_integration_instances_output(compartment_id: Optional[pulumi.Input[str]]
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Integration/getIntegrationInstances:getIntegrationInstances', __args__, opts=opts, typ=GetIntegrationInstancesResult)
     return __ret__.apply(lambda __response__: GetIntegrationInstancesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -123,7 +123,7 @@ def get_ipsec_algorithm(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
         default_phase_one_parameters=pulumi.get(__ret__, 'default_phase_one_parameters'),
         default_phase_two_parameters=pulumi.get(__ret__, 'default_phase_two_parameters'),
         id=pulumi.get(__ret__, 'id'))
-def get_ipsec_algorithm_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecAlgorithmResult]:
+def get_ipsec_algorithm_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecAlgorithmResult]:
     """
     This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
 
@@ -139,7 +139,7 @@ def get_ipsec_algorithm_output(opts: Optional[pulumi.InvokeOptions] = None) -> p
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecAlgorithm:getIpsecAlgorithm', __args__, opts=opts, typ=GetIpsecAlgorithmResult)
     return __ret__.apply(lambda __response__: GetIpsecAlgorithmResult(
         allowed_phase_one_parameters=pulumi.get(__response__, 'allowed_phase_one_parameters'),

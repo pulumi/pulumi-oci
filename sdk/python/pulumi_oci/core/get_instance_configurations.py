@@ -117,7 +117,7 @@ def get_instance_configurations(compartment_id: Optional[str] = None,
         instance_configurations=pulumi.get(__ret__, 'instance_configurations'))
 def get_instance_configurations_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceConfigurationsFilterArgs', 'GetInstanceConfigurationsFilterArgsDict']]]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceConfigurationsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceConfigurationsResult]:
     """
     This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.
 
@@ -138,7 +138,7 @@ def get_instance_configurations_output(compartment_id: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceConfigurations:getInstanceConfigurations', __args__, opts=opts, typ=GetInstanceConfigurationsResult)
     return __ret__.apply(lambda __response__: GetInstanceConfigurationsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

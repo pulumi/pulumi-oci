@@ -162,7 +162,7 @@ export interface GetContainerSignaturesResult {
  * });
  * ```
  */
-export function getContainerSignaturesOutput(args: GetContainerSignaturesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerSignaturesResult> {
+export function getContainerSignaturesOutput(args: GetContainerSignaturesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetContainerSignaturesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Artifacts/getContainerSignatures:getContainerSignatures", {
         "compartmentId": args.compartmentId,

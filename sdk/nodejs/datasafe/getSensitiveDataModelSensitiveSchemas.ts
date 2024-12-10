@@ -83,7 +83,7 @@ export interface GetSensitiveDataModelSensitiveSchemasResult {
  * });
  * ```
  */
-export function getSensitiveDataModelSensitiveSchemasOutput(args: GetSensitiveDataModelSensitiveSchemasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelSensitiveSchemasResult> {
+export function getSensitiveDataModelSensitiveSchemasOutput(args: GetSensitiveDataModelSensitiveSchemasOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSensitiveDataModelSensitiveSchemasResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas", {
         "filters": args.filters,

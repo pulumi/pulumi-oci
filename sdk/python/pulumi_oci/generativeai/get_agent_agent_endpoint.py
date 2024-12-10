@@ -297,7 +297,7 @@ def get_agent_agent_endpoint(agent_endpoint_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_agent_agent_endpoint_output(agent_endpoint_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentAgentEndpointResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentAgentEndpointResult]:
     """
     This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 
@@ -319,7 +319,7 @@ def get_agent_agent_endpoint_output(agent_endpoint_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['agentEndpointId'] = agent_endpoint_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getAgentAgentEndpoint:getAgentAgentEndpoint', __args__, opts=opts, typ=GetAgentAgentEndpointResult)
     return __ret__.apply(lambda __response__: GetAgentAgentEndpointResult(
         agent_endpoint_id=pulumi.get(__response__, 'agent_endpoint_id'),

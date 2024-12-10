@@ -187,7 +187,7 @@ def get_connection_assignment(connection_assignment_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_connection_assignment_output(connection_assignment_id: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionAssignmentResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionAssignmentResult]:
     """
     This data source provides details about a specific Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -207,7 +207,7 @@ def get_connection_assignment_output(connection_assignment_id: Optional[pulumi.I
     """
     __args__ = dict()
     __args__['connectionAssignmentId'] = connection_assignment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getConnectionAssignment:getConnectionAssignment', __args__, opts=opts, typ=GetConnectionAssignmentResult)
     return __ret__.apply(lambda __response__: GetConnectionAssignmentResult(
         alias_name=pulumi.get(__response__, 'alias_name'),

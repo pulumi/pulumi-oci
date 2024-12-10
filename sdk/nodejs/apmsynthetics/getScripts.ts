@@ -94,7 +94,7 @@ export interface GetScriptsResult {
  * });
  * ```
  */
-export function getScriptsOutput(args: GetScriptsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScriptsResult> {
+export function getScriptsOutput(args: GetScriptsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetScriptsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getScripts:getScripts", {
         "apmDomainId": args.apmDomainId,

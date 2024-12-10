@@ -115,7 +115,7 @@ export interface GetExportSetsResult {
  * });
  * ```
  */
-export function getExportSetsOutput(args: GetExportSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExportSetsResult> {
+export function getExportSetsOutput(args: GetExportSetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExportSetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FileStorage/getExportSets:getExportSets", {
         "availabilityDomain": args.availabilityDomain,

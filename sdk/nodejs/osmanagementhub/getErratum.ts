@@ -132,7 +132,7 @@ export interface GetErratumResult {
  * });
  * ```
  */
-export function getErratumOutput(args: GetErratumOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetErratumResult> {
+export function getErratumOutput(args: GetErratumOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetErratumResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getErratum:getErratum", {
         "compartmentId": args.compartmentId,

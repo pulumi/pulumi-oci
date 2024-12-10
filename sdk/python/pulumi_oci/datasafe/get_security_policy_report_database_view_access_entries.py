@@ -151,7 +151,7 @@ def get_security_policy_report_database_view_access_entries_output(filters: Opti
                                                                    scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                                                                    security_policy_report_id: Optional[pulumi.Input[str]] = None,
                                                                    target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseViewAccessEntriesResult]:
+                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseViewAccessEntriesResult]:
     """
     This data source provides the list of Security Policy Report Database View Access Entries in Oracle Cloud Infrastructure Data Safe service.
 
@@ -182,7 +182,7 @@ def get_security_policy_report_database_view_access_entries_output(filters: Opti
     __args__['scimQuery'] = scim_query
     __args__['securityPolicyReportId'] = security_policy_report_id
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntries:getSecurityPolicyReportDatabaseViewAccessEntries', __args__, opts=opts, typ=GetSecurityPolicyReportDatabaseViewAccessEntriesResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyReportDatabaseViewAccessEntriesResult(
         database_view_access_entry_collections=pulumi.get(__response__, 'database_view_access_entry_collections'),

@@ -159,7 +159,7 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOperationsInsightsWarehousesFilterArgs', 'GetOperationsInsightsWarehousesFilterArgsDict']]]]] = None,
                                               id: Optional[pulumi.Input[Optional[str]]] = None,
                                               states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsWarehousesResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsWarehousesResult]:
     """
     This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
 
@@ -190,7 +190,7 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['states'] = states
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses', __args__, opts=opts, typ=GetOperationsInsightsWarehousesResult)
     return __ret__.apply(lambda __response__: GetOperationsInsightsWarehousesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

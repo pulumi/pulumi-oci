@@ -208,7 +208,7 @@ def get_managed_database_alert_log_count_output(group_by: Optional[pulumi.Input[
                                                 time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                 time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                 type_filter: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseAlertLogCountResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseAlertLogCountResult]:
     """
     This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -249,7 +249,7 @@ def get_managed_database_alert_log_count_output(group_by: Optional[pulumi.Input[
     __args__['timeGreaterThanOrEqualTo'] = time_greater_than_or_equal_to
     __args__['timeLessThanOrEqualTo'] = time_less_than_or_equal_to
     __args__['typeFilter'] = type_filter
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount', __args__, opts=opts, typ=GetManagedDatabaseAlertLogCountResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseAlertLogCountResult(
         group_by=pulumi.get(__response__, 'group_by'),

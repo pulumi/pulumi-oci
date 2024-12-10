@@ -162,7 +162,7 @@ def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Op
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementStationMirrorsFilterArgs', 'GetManagementStationMirrorsFilterArgsDict']]]]] = None,
                                           management_station_id: Optional[pulumi.Input[str]] = None,
                                           mirror_states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementStationMirrorsResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementStationMirrorsResult]:
     """
     This data source provides the list of Management Station Mirrors in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -192,7 +192,7 @@ def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Op
     __args__['filters'] = filters
     __args__['managementStationId'] = management_station_id
     __args__['mirrorStates'] = mirror_states
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors', __args__, opts=opts, typ=GetManagementStationMirrorsResult)
     return __ret__.apply(lambda __response__: GetManagementStationMirrorsResult(
         display_name=pulumi.get(__response__, 'display_name'),

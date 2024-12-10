@@ -153,7 +153,7 @@ def get_enrollment_statuses_output(compartment_id: Optional[pulumi.Input[str]] =
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEnrollmentStatusesFilterArgs', 'GetEnrollmentStatusesFilterArgsDict']]]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    status: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnrollmentStatusesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEnrollmentStatusesResult]:
     """
     This data source provides the list of Enrollment Statuses in Oracle Cloud Infrastructure Optimizer service.
 
@@ -180,7 +180,7 @@ def get_enrollment_statuses_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses', __args__, opts=opts, typ=GetEnrollmentStatusesResult)
     return __ret__.apply(lambda __response__: GetEnrollmentStatusesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

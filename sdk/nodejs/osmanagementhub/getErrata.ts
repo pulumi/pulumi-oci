@@ -150,7 +150,7 @@ export interface GetErrataResult {
  * });
  * ```
  */
-export function getErrataOutput(args: GetErrataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetErrataResult> {
+export function getErrataOutput(args: GetErrataOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetErrataResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getErrata:getErrata", {
         "advisorySeverities": args.advisorySeverities,

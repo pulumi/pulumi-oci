@@ -86,7 +86,7 @@ export interface GetAppCatalogSubscriptionsResult {
  * });
  * ```
  */
-export function getAppCatalogSubscriptionsOutput(args: GetAppCatalogSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogSubscriptionsResult> {
+export function getAppCatalogSubscriptionsOutput(args: GetAppCatalogSubscriptionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppCatalogSubscriptionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", {
         "compartmentId": args.compartmentId,

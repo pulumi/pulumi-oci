@@ -117,7 +117,7 @@ export interface GetVirtualServiceRouteTableResult {
  * });
  * ```
  */
-export function getVirtualServiceRouteTableOutput(args: GetVirtualServiceRouteTableOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServiceRouteTableResult> {
+export function getVirtualServiceRouteTableOutput(args: GetVirtualServiceRouteTableOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualServiceRouteTableResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", {
         "virtualServiceRouteTableId": args.virtualServiceRouteTableId,

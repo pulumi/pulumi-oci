@@ -121,7 +121,7 @@ export interface GetClusterPlacementGroupsResult {
  * });
  * ```
  */
-export function getClusterPlacementGroupsOutput(args?: GetClusterPlacementGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterPlacementGroupsResult> {
+export function getClusterPlacementGroupsOutput(args?: GetClusterPlacementGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClusterPlacementGroupsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", {

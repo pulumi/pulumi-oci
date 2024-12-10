@@ -174,7 +174,7 @@ export interface GetAlarmSuppressionsResult {
  * });
  * ```
  */
-export function getAlarmSuppressionsOutput(args?: GetAlarmSuppressionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmSuppressionsResult> {
+export function getAlarmSuppressionsOutput(args?: GetAlarmSuppressionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAlarmSuppressionsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", {

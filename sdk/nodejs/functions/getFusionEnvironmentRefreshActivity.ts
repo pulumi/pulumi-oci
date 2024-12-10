@@ -121,7 +121,7 @@ export interface GetFusionEnvironmentRefreshActivityResult {
  * });
  * ```
  */
-export function getFusionEnvironmentRefreshActivityOutput(args: GetFusionEnvironmentRefreshActivityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentRefreshActivityResult> {
+export function getFusionEnvironmentRefreshActivityOutput(args: GetFusionEnvironmentRefreshActivityOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentRefreshActivityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", {
         "fusionEnvironmentId": args.fusionEnvironmentId,

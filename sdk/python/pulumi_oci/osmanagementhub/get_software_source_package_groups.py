@@ -181,7 +181,7 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
                                               name: Optional[pulumi.Input[Optional[str]]] = None,
                                               name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                               software_source_id: Optional[pulumi.Input[str]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourcePackageGroupsResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourcePackageGroupsResult]:
     """
     This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -215,7 +215,7 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
     __args__['name'] = name
     __args__['nameContains'] = name_contains
     __args__['softwareSourceId'] = software_source_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourcePackageGroups:getSoftwareSourcePackageGroups', __args__, opts=opts, typ=GetSoftwareSourcePackageGroupsResult)
     return __ret__.apply(lambda __response__: GetSoftwareSourcePackageGroupsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

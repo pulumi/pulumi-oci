@@ -150,7 +150,7 @@ export interface GetMetricsResult {
  * });
  * ```
  */
-export function getMetricsOutput(args: GetMetricsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricsResult> {
+export function getMetricsOutput(args: GetMetricsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMetricsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Monitoring/getMetrics:getMetrics", {
         "compartmentId": args.compartmentId,

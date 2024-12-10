@@ -187,7 +187,7 @@ def get_accepted_agreements_output(accepted_agreement_id: Optional[pulumi.Input[
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAcceptedAgreementsFilterArgs', 'GetAcceptedAgreementsFilterArgsDict']]]]] = None,
                                    listing_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    package_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAcceptedAgreementsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAcceptedAgreementsResult]:
     """
     This data source provides the list of Accepted Agreements in Oracle Cloud Infrastructure Marketplace service.
 
@@ -221,7 +221,7 @@ def get_accepted_agreements_output(accepted_agreement_id: Optional[pulumi.Input[
     __args__['filters'] = filters
     __args__['listingId'] = listing_id
     __args__['packageVersion'] = package_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements', __args__, opts=opts, typ=GetAcceptedAgreementsResult)
     return __ret__.apply(lambda __response__: GetAcceptedAgreementsResult(
         accepted_agreement_id=pulumi.get(__response__, 'accepted_agreement_id'),

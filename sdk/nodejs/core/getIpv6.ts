@@ -106,7 +106,7 @@ export interface GetIpv6Result {
  * });
  * ```
  */
-export function getIpv6Output(args: GetIpv6OutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpv6Result> {
+export function getIpv6Output(args: GetIpv6OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpv6Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpv6:getIpv6", {
         "ipv6id": args.ipv6id,

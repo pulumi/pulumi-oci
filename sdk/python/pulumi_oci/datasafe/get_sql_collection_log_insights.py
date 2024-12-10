@@ -165,7 +165,7 @@ def get_sql_collection_log_insights_output(filters: Optional[pulumi.Input[Option
                                            sql_collection_id: Optional[pulumi.Input[str]] = None,
                                            time_ended: Optional[pulumi.Input[str]] = None,
                                            time_started: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlCollectionLogInsightsResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlCollectionLogInsightsResult]:
     """
     This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
 
@@ -195,7 +195,7 @@ def get_sql_collection_log_insights_output(filters: Optional[pulumi.Input[Option
     __args__['sqlCollectionId'] = sql_collection_id
     __args__['timeEnded'] = time_ended
     __args__['timeStarted'] = time_started
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights', __args__, opts=opts, typ=GetSqlCollectionLogInsightsResult)
     return __ret__.apply(lambda __response__: GetSqlCollectionLogInsightsResult(
         filters=pulumi.get(__response__, 'filters'),

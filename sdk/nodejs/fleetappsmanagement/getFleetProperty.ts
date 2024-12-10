@@ -115,7 +115,7 @@ export interface GetFleetPropertyResult {
  * });
  * ```
  */
-export function getFleetPropertyOutput(args: GetFleetPropertyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetPropertyResult> {
+export function getFleetPropertyOutput(args: GetFleetPropertyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetPropertyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getFleetProperty:getFleetProperty", {
         "fleetId": args.fleetId,

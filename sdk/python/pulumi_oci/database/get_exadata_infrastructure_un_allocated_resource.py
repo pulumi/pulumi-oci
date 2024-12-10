@@ -180,7 +180,7 @@ def get_exadata_infrastructure_un_allocated_resource(db_servers: Optional[Sequen
         ocpus=pulumi.get(__ret__, 'ocpus'))
 def get_exadata_infrastructure_un_allocated_resource_output(db_servers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInfrastructureUnAllocatedResourceResult]:
+                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadataInfrastructureUnAllocatedResourceResult]:
     """
     This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
 
@@ -203,7 +203,7 @@ def get_exadata_infrastructure_un_allocated_resource_output(db_servers: Optional
     __args__ = dict()
     __args__['dbServers'] = db_servers
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource', __args__, opts=opts, typ=GetExadataInfrastructureUnAllocatedResourceResult)
     return __ret__.apply(lambda __response__: GetExadataInfrastructureUnAllocatedResourceResult(
         autonomous_vm_clusters=pulumi.get(__response__, 'autonomous_vm_clusters'),

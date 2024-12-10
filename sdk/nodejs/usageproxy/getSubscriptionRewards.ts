@@ -86,7 +86,7 @@ export interface GetSubscriptionRewardsResult {
  * });
  * ```
  */
-export function getSubscriptionRewardsOutput(args: GetSubscriptionRewardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionRewardsResult> {
+export function getSubscriptionRewardsOutput(args: GetSubscriptionRewardsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubscriptionRewardsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", {
         "filters": args.filters,

@@ -65,7 +65,7 @@ export interface GetIpsecAlgorithmResult {
  * const testIpsecAlgorithm = oci.Core.getIpsecAlgorithm({});
  * ```
  */
-export function getIpsecAlgorithmOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecAlgorithmResult> {
+export function getIpsecAlgorithmOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpsecAlgorithmResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", {
     }, opts);

@@ -117,7 +117,7 @@ export interface GetDefaultConfigurationsResult {
  * });
  * ```
  */
-export function getDefaultConfigurationsOutput(args?: GetDefaultConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDefaultConfigurationsResult> {
+export function getDefaultConfigurationsOutput(args?: GetDefaultConfigurationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDefaultConfigurationsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Psql/getDefaultConfigurations:getDefaultConfigurations", {

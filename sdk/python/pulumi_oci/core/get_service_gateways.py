@@ -154,7 +154,7 @@ def get_service_gateways_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceGatewaysFilterArgs', 'GetServiceGatewaysFilterArgsDict']]]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceGatewaysResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceGatewaysResult]:
     """
     This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
 
@@ -182,7 +182,7 @@ def get_service_gateways_output(compartment_id: Optional[pulumi.Input[str]] = No
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getServiceGateways:getServiceGateways', __args__, opts=opts, typ=GetServiceGatewaysResult)
     return __ret__.apply(lambda __response__: GetServiceGatewaysResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

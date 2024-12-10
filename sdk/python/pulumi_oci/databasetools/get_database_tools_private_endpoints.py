@@ -189,7 +189,7 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsPrivateEndpointsFilterArgs', 'GetDatabaseToolsPrivateEndpointsFilterArgsDict']]]]] = None,
                                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                                 subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointsResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointsResult]:
     """
     This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
 
@@ -222,7 +222,7 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['subnetId'] = subnet_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints', __args__, opts=opts, typ=GetDatabaseToolsPrivateEndpointsResult)
     return __ret__.apply(lambda __response__: GetDatabaseToolsPrivateEndpointsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

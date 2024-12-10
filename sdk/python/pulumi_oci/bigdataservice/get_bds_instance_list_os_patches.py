@@ -114,7 +114,7 @@ def get_bds_instance_list_os_patches(bds_instance_id: Optional[str] = None,
         os_patches=pulumi.get(__ret__, 'os_patches'))
 def get_bds_instance_list_os_patches_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceListOsPatchesFilterArgs', 'GetBdsInstanceListOsPatchesFilterArgsDict']]]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceListOsPatchesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceListOsPatchesResult]:
     """
     This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
 
@@ -135,7 +135,7 @@ def get_bds_instance_list_os_patches_output(bds_instance_id: Optional[pulumi.Inp
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches', __args__, opts=opts, typ=GetBdsInstanceListOsPatchesResult)
     return __ret__.apply(lambda __response__: GetBdsInstanceListOsPatchesResult(
         bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),

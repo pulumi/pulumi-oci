@@ -344,7 +344,7 @@ def get_secret(secret_id: Optional[str] = None,
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
 def get_secret_output(secret_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecretResult]:
     """
     This data source provides details about a specific Secret resource in Oracle Cloud Infrastructure Vault service.
 
@@ -364,7 +364,7 @@ def get_secret_output(secret_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['secretId'] = secret_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Vault/getSecret:getSecret', __args__, opts=opts, typ=GetSecretResult)
     return __ret__.apply(lambda __response__: GetSecretResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

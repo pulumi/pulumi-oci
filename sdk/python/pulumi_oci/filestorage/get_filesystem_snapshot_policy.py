@@ -227,7 +227,7 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[str] 
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFilesystemSnapshotPolicyResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFilesystemSnapshotPolicyResult]:
     """
     This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
 
@@ -247,7 +247,7 @@ def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optiona
     """
     __args__ = dict()
     __args__['filesystemSnapshotPolicyId'] = filesystem_snapshot_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy', __args__, opts=opts, typ=GetFilesystemSnapshotPolicyResult)
     return __ret__.apply(lambda __response__: GetFilesystemSnapshotPolicyResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

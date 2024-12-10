@@ -200,7 +200,7 @@ def get_accepted_agreement(accepted_agreement_id: Optional[str] = None,
         signature=pulumi.get(__ret__, 'signature'),
         time_accepted=pulumi.get(__ret__, 'time_accepted'))
 def get_accepted_agreement_output(accepted_agreement_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAcceptedAgreementResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAcceptedAgreementResult]:
     """
     This data source provides details about a specific Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
 
@@ -220,7 +220,7 @@ def get_accepted_agreement_output(accepted_agreement_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['acceptedAgreementId'] = accepted_agreement_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement', __args__, opts=opts, typ=GetAcceptedAgreementResult)
     return __ret__.apply(lambda __response__: GetAcceptedAgreementResult(
         accepted_agreement_id=pulumi.get(__response__, 'accepted_agreement_id'),

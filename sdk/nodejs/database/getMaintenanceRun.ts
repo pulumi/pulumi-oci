@@ -182,7 +182,7 @@ export interface GetMaintenanceRunResult {
  * });
  * ```
  */
-export function getMaintenanceRunOutput(args: GetMaintenanceRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceRunResult> {
+export function getMaintenanceRunOutput(args: GetMaintenanceRunOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaintenanceRunResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getMaintenanceRun:getMaintenanceRun", {
         "maintenanceRunId": args.maintenanceRunId,

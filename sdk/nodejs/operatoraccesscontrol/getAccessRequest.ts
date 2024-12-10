@@ -213,7 +213,7 @@ export interface GetAccessRequestResult {
  * });
  * ```
  */
-export function getAccessRequestOutput(args: GetAccessRequestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestResult> {
+export function getAccessRequestOutput(args: GetAccessRequestOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessRequestResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", {
         "accessRequestId": args.accessRequestId,

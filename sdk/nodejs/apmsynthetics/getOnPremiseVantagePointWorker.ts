@@ -158,7 +158,7 @@ export interface GetOnPremiseVantagePointWorkerResult {
  * });
  * ```
  */
-export function getOnPremiseVantagePointWorkerOutput(args: GetOnPremiseVantagePointWorkerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnPremiseVantagePointWorkerResult> {
+export function getOnPremiseVantagePointWorkerOutput(args: GetOnPremiseVantagePointWorkerOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOnPremiseVantagePointWorkerResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", {
         "apmDomainId": args.apmDomainId,

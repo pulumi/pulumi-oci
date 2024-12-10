@@ -120,7 +120,7 @@ export interface GetFleetResourcesResult {
  * });
  * ```
  */
-export function getFleetResourcesOutput(args: GetFleetResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetResourcesResult> {
+export function getFleetResourcesOutput(args: GetFleetResourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetResourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getFleetResources:getFleetResources", {
         "displayName": args.displayName,

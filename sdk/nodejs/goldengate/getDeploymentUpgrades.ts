@@ -108,7 +108,7 @@ export interface GetDeploymentUpgradesResult {
  * });
  * ```
  */
-export function getDeploymentUpgradesOutput(args: GetDeploymentUpgradesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentUpgradesResult> {
+export function getDeploymentUpgradesOutput(args: GetDeploymentUpgradesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDeploymentUpgradesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", {
         "compartmentId": args.compartmentId,

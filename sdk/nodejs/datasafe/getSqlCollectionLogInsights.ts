@@ -102,7 +102,7 @@ export interface GetSqlCollectionLogInsightsResult {
  * });
  * ```
  */
-export function getSqlCollectionLogInsightsOutput(args: GetSqlCollectionLogInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSqlCollectionLogInsightsResult> {
+export function getSqlCollectionLogInsightsOutput(args: GetSqlCollectionLogInsightsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSqlCollectionLogInsightsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights", {
         "filters": args.filters,

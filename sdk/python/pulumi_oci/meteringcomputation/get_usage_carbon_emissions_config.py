@@ -100,7 +100,7 @@ def get_usage_carbon_emissions_config(tenant_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
 def get_usage_carbon_emissions_config_output(tenant_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsageCarbonEmissionsConfigResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsageCarbonEmissionsConfigResult]:
     """
     This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -120,7 +120,7 @@ def get_usage_carbon_emissions_config_output(tenant_id: Optional[pulumi.Input[st
     """
     __args__ = dict()
     __args__['tenantId'] = tenant_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getUsageCarbonEmissionsConfig:getUsageCarbonEmissionsConfig', __args__, opts=opts, typ=GetUsageCarbonEmissionsConfigResult)
     return __ret__.apply(lambda __response__: GetUsageCarbonEmissionsConfigResult(
         id=pulumi.get(__response__, 'id'),

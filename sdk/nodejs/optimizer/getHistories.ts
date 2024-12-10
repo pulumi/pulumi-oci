@@ -161,7 +161,7 @@ export interface GetHistoriesResult {
  * });
  * ```
  */
-export function getHistoriesOutput(args: GetHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHistoriesResult> {
+export function getHistoriesOutput(args: GetHistoriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHistoriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getHistories:getHistories", {
         "compartmentId": args.compartmentId,

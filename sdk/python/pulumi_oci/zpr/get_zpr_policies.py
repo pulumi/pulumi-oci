@@ -153,7 +153,7 @@ def get_zpr_policies_output(compartment_id: Optional[pulumi.Input[Optional[str]]
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetZprPoliciesFilterArgs', 'GetZprPoliciesFilterArgsDict']]]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetZprPoliciesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetZprPoliciesResult]:
     """
     This data source provides the list of Zpr Policies in Oracle Cloud Infrastructure Zpr service.
 
@@ -180,7 +180,7 @@ def get_zpr_policies_output(compartment_id: Optional[pulumi.Input[Optional[str]]
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Zpr/getZprPolicies:getZprPolicies', __args__, opts=opts, typ=GetZprPoliciesResult)
     return __ret__.apply(lambda __response__: GetZprPoliciesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

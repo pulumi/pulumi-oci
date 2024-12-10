@@ -151,7 +151,7 @@ def get_scheduled_run(scheduled_run_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_finished=pulumi.get(__ret__, 'time_finished'))
 def get_scheduled_run_output(scheduled_run_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduledRunResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledRunResult]:
     """
     This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -171,7 +171,7 @@ def get_scheduled_run_output(scheduled_run_id: Optional[pulumi.Input[str]] = Non
     """
     __args__ = dict()
     __args__['scheduledRunId'] = scheduled_run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getScheduledRun:getScheduledRun', __args__, opts=opts, typ=GetScheduledRunResult)
     return __ret__.apply(lambda __response__: GetScheduledRunResult(
         id=pulumi.get(__response__, 'id'),

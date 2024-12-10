@@ -71,7 +71,7 @@ export interface GetDbNodeConsoleHistoryContentResult {
  * });
  * ```
  */
-export function getDbNodeConsoleHistoryContentOutput(args: GetDbNodeConsoleHistoryContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeConsoleHistoryContentResult> {
+export function getDbNodeConsoleHistoryContentOutput(args: GetDbNodeConsoleHistoryContentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbNodeConsoleHistoryContentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", {
         "consoleHistoryId": args.consoleHistoryId,

@@ -153,7 +153,7 @@ def get_virtual_circuits_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitsFilterArgs', 'GetVirtualCircuitsFilterArgsDict']]]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitsResult]:
     """
     This data source provides the list of Virtual Circuits in Oracle Cloud Infrastructure Core service.
 
@@ -180,7 +180,7 @@ def get_virtual_circuits_output(compartment_id: Optional[pulumi.Input[str]] = No
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getVirtualCircuits:getVirtualCircuits', __args__, opts=opts, typ=GetVirtualCircuitsResult)
     return __ret__.apply(lambda __response__: GetVirtualCircuitsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

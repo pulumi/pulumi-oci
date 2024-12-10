@@ -124,7 +124,7 @@ export interface GetDomainsMyCustomerSecretKeysResult {
  * });
  * ```
  */
-export function getDomainsMyCustomerSecretKeysOutput(args: GetDomainsMyCustomerSecretKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyCustomerSecretKeysResult> {
+export function getDomainsMyCustomerSecretKeysOutput(args: GetDomainsMyCustomerSecretKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyCustomerSecretKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyCustomerSecretKeys:getDomainsMyCustomerSecretKeys", {
         "authorization": args.authorization,

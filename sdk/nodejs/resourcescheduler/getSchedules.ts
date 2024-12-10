@@ -106,7 +106,7 @@ export interface GetSchedulesResult {
  * });
  * ```
  */
-export function getSchedulesOutput(args?: GetSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSchedulesResult> {
+export function getSchedulesOutput(args?: GetSchedulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSchedulesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ResourceScheduler/getSchedules:getSchedules", {

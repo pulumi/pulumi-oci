@@ -161,7 +161,7 @@ def get_trail_sequence_output(deployment_id: Optional[pulumi.Input[str]] = None,
                               display_name: Optional[pulumi.Input[str]] = None,
                               trail_file_id: Optional[pulumi.Input[str]] = None,
                               trail_sequence_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTrailSequenceResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTrailSequenceResult]:
     """
     This data source provides details about a specific Trail Sequence resource in Oracle Cloud Infrastructure Golden Gate service.
 
@@ -190,7 +190,7 @@ def get_trail_sequence_output(deployment_id: Optional[pulumi.Input[str]] = None,
     __args__['displayName'] = display_name
     __args__['trailFileId'] = trail_file_id
     __args__['trailSequenceId'] = trail_sequence_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getTrailSequence:getTrailSequence', __args__, opts=opts, typ=GetTrailSequenceResult)
     return __ret__.apply(lambda __response__: GetTrailSequenceResult(
         deployment_id=pulumi.get(__response__, 'deployment_id'),

@@ -231,7 +231,7 @@ def get_alert_analytic_output(access_level: Optional[pulumi.Input[Optional[str]]
                               summary_fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                               time_ended: Optional[pulumi.Input[Optional[str]]] = None,
                               time_started: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertAnalyticResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertAnalyticResult]:
     """
     This data source provides details about a specific Alert Analytic resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -277,7 +277,7 @@ def get_alert_analytic_output(access_level: Optional[pulumi.Input[Optional[str]]
     __args__['summaryFields'] = summary_fields
     __args__['timeEnded'] = time_ended
     __args__['timeStarted'] = time_started
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAlertAnalytic:getAlertAnalytic', __args__, opts=opts, typ=GetAlertAnalyticResult)
     return __ret__.apply(lambda __response__: GetAlertAnalyticResult(
         access_level=pulumi.get(__response__, 'access_level'),

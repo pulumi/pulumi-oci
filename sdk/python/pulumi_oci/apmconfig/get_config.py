@@ -356,7 +356,7 @@ def get_config(apm_domain_id: Optional[str] = None,
         updated_by=pulumi.get(__ret__, 'updated_by'))
 def get_config_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       config_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigResult]:
     """
     This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
 
@@ -379,7 +379,7 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
     __args__['configId'] = config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmConfig/getConfig:getConfig', __args__, opts=opts, typ=GetConfigResult)
     return __ret__.apply(lambda __response__: GetConfigResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

@@ -127,7 +127,7 @@ export interface GetFsuCyclesResult {
  * });
  * ```
  */
-export function getFsuCyclesOutput(args: GetFsuCyclesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFsuCyclesResult> {
+export function getFsuCyclesOutput(args: GetFsuCyclesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFsuCyclesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", {
         "collectionType": args.collectionType,

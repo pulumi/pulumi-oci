@@ -366,7 +366,7 @@ export interface GetSddcResult {
  * });
  * ```
  */
-export function getSddcOutput(args: GetSddcOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSddcResult> {
+export function getSddcOutput(args: GetSddcOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSddcResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getSddc:getSddc", {
         "sddcId": args.sddcId,

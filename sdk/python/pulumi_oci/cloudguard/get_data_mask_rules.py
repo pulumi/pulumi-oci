@@ -234,7 +234,7 @@ def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[str]
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                target_type: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataMaskRulesResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataMaskRulesResult]:
     """
     This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -276,7 +276,7 @@ def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[str]
     __args__['state'] = state
     __args__['targetId'] = target_id
     __args__['targetType'] = target_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getDataMaskRules:getDataMaskRules', __args__, opts=opts, typ=GetDataMaskRulesResult)
     return __ret__.apply(lambda __response__: GetDataMaskRulesResult(
         access_level=pulumi.get(__response__, 'access_level'),

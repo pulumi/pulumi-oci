@@ -128,7 +128,7 @@ export interface GetDatabaseSoftwareImageResult {
  * });
  * ```
  */
-export function getDatabaseSoftwareImageOutput(args: GetDatabaseSoftwareImageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseSoftwareImageResult> {
+export function getDatabaseSoftwareImageOutput(args: GetDatabaseSoftwareImageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseSoftwareImageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", {
         "databaseSoftwareImageId": args.databaseSoftwareImageId,

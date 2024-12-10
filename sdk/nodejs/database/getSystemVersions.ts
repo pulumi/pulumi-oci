@@ -94,7 +94,7 @@ export interface GetSystemVersionsResult {
  * });
  * ```
  */
-export function getSystemVersionsOutput(args: GetSystemVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSystemVersionsResult> {
+export function getSystemVersionsOutput(args: GetSystemVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSystemVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getSystemVersions:getSystemVersions", {
         "compartmentId": args.compartmentId,

@@ -186,7 +186,7 @@ def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[str]
                              license_type: Optional[pulumi.Input[Optional[str]]] = None,
                              release_type: Optional[pulumi.Input[Optional[str]]] = None,
                              release_version: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaReleasesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaReleasesResult]:
     """
     This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
 
@@ -219,7 +219,7 @@ def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[str]
     __args__['licenseType'] = license_type
     __args__['releaseType'] = release_type
     __args__['releaseVersion'] = release_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaReleases:getJavaReleases', __args__, opts=opts, typ=GetJavaReleasesResult)
     return __ret__.apply(lambda __response__: GetJavaReleasesResult(
         family_version=pulumi.get(__response__, 'family_version'),

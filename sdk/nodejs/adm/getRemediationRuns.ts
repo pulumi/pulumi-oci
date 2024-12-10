@@ -118,7 +118,7 @@ export interface GetRemediationRunsResult {
  * });
  * ```
  */
-export function getRemediationRunsOutput(args?: GetRemediationRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRunsResult> {
+export function getRemediationRunsOutput(args?: GetRemediationRunsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRemediationRunsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Adm/getRemediationRuns:getRemediationRuns", {

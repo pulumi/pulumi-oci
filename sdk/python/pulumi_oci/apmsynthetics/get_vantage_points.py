@@ -150,7 +150,7 @@ def get_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict']]]]] = None,
                               name: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVantagePointsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVantagePointsResult]:
     """
     This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
 
@@ -177,7 +177,7 @@ def get_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getVantagePoints:getVantagePoints', __args__, opts=opts, typ=GetVantagePointsResult)
     return __ret__.apply(lambda __response__: GetVantagePointsResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

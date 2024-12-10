@@ -64,7 +64,7 @@ export interface GetApiContentResult {
  * });
  * ```
  */
-export function getApiContentOutput(args: GetApiContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiContentResult> {
+export function getApiContentOutput(args: GetApiContentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApiContentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ApiGateway/getApiContent:getApiContent", {
         "apiId": args.apiId,

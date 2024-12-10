@@ -167,7 +167,7 @@ def get_letter_of_authority(cross_connect_id: Optional[str] = None,
         time_expires=pulumi.get(__ret__, 'time_expires'),
         time_issued=pulumi.get(__ret__, 'time_issued'))
 def get_letter_of_authority_output(cross_connect_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLetterOfAuthorityResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLetterOfAuthorityResult]:
     """
     This data source provides details about a specific Letter Of Authority resource in Oracle Cloud Infrastructure Core service.
 
@@ -187,7 +187,7 @@ def get_letter_of_authority_output(cross_connect_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['crossConnectId'] = cross_connect_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getLetterOfAuthority:getLetterOfAuthority', __args__, opts=opts, typ=GetLetterOfAuthorityResult)
     return __ret__.apply(lambda __response__: GetLetterOfAuthorityResult(
         authorized_entity_name=pulumi.get(__response__, 'authorized_entity_name'),

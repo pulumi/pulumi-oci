@@ -98,7 +98,7 @@ export interface GetBillingScheduleResult {
  * });
  * ```
  */
-export function getBillingScheduleOutput(args: GetBillingScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBillingScheduleResult> {
+export function getBillingScheduleOutput(args: GetBillingScheduleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBillingScheduleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", {
         "compartmentId": args.compartmentId,

@@ -107,7 +107,7 @@ export interface GetManagedPreferredCredentialResult {
  * });
  * ```
  */
-export function getManagedPreferredCredentialOutput(args: GetManagedPreferredCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedPreferredCredentialResult> {
+export function getManagedPreferredCredentialOutput(args: GetManagedPreferredCredentialOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedPreferredCredentialResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", {
         "credentialName": args.credentialName,

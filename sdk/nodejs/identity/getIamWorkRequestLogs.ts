@@ -80,7 +80,7 @@ export interface GetIamWorkRequestLogsResult {
  * });
  * ```
  */
-export function getIamWorkRequestLogsOutput(args: GetIamWorkRequestLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamWorkRequestLogsResult> {
+export function getIamWorkRequestLogsOutput(args: GetIamWorkRequestLogsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamWorkRequestLogsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", {
         "filters": args.filters,

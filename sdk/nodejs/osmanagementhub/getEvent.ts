@@ -137,7 +137,7 @@ export interface GetEventResult {
  * });
  * ```
  */
-export function getEventOutput(args: GetEventOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventResult> {
+export function getEventOutput(args: GetEventOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEventResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getEvent:getEvent", {
         "eventId": args.eventId,

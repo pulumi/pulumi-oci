@@ -133,7 +133,7 @@ export interface GetDiscoveryAnalyticsResult {
  * });
  * ```
  */
-export function getDiscoveryAnalyticsOutput(args: GetDiscoveryAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryAnalyticsResult> {
+export function getDiscoveryAnalyticsOutput(args: GetDiscoveryAnalyticsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDiscoveryAnalyticsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", {
         "compartmentId": args.compartmentId,

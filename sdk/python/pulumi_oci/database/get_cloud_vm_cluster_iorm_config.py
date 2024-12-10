@@ -139,7 +139,7 @@ def get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id: Optional[str] = None,
         objective=pulumi.get(__ret__, 'objective'),
         state=pulumi.get(__ret__, 'state'))
 def get_cloud_vm_cluster_iorm_config_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudVmClusterIormConfigResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudVmClusterIormConfigResult]:
     """
     This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
 
@@ -162,7 +162,7 @@ def get_cloud_vm_cluster_iorm_config_output(cloud_vm_cluster_id: Optional[pulumi
     """
     __args__ = dict()
     __args__['cloudVmClusterId'] = cloud_vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig', __args__, opts=opts, typ=GetCloudVmClusterIormConfigResult)
     return __ret__.apply(lambda __response__: GetCloudVmClusterIormConfigResult(
         cloud_vm_cluster_id=pulumi.get(__response__, 'cloud_vm_cluster_id'),

@@ -85,7 +85,7 @@ export interface GetIpInventorySubnetCidrResult {
  * });
  * ```
  */
-export function getIpInventorySubnetCidrOutput(args: GetIpInventorySubnetCidrOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpInventorySubnetCidrResult> {
+export function getIpInventorySubnetCidrOutput(args: GetIpInventorySubnetCidrOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpInventorySubnetCidrResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", {
         "subnetId": args.subnetId,

@@ -158,7 +158,7 @@ def get_connect_harnesses_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  id: Optional[pulumi.Input[Optional[str]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectHarnessesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectHarnessesResult]:
     """
     This data source provides the list of Connect Harnesses in Oracle Cloud Infrastructure Streaming service.
 
@@ -188,7 +188,7 @@ def get_connect_harnesses_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['id'] = id
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Streaming/getConnectHarnesses:getConnectHarnesses', __args__, opts=opts, typ=GetConnectHarnessesResult)
     return __ret__.apply(lambda __response__: GetConnectHarnessesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

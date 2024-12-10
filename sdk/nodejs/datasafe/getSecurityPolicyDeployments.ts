@@ -169,7 +169,7 @@ export interface GetSecurityPolicyDeploymentsResult {
  * });
  * ```
  */
-export function getSecurityPolicyDeploymentsOutput(args: GetSecurityPolicyDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyDeploymentsResult> {
+export function getSecurityPolicyDeploymentsOutput(args: GetSecurityPolicyDeploymentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityPolicyDeploymentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityPolicyDeployments:getSecurityPolicyDeployments", {
         "accessLevel": args.accessLevel,

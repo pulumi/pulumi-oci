@@ -83,7 +83,7 @@ export interface GetExadbVmClusterUpdateHistoryEntriesResult {
  * });
  * ```
  */
-export function getExadbVmClusterUpdateHistoryEntriesOutput(args: GetExadbVmClusterUpdateHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadbVmClusterUpdateHistoryEntriesResult> {
+export function getExadbVmClusterUpdateHistoryEntriesOutput(args: GetExadbVmClusterUpdateHistoryEntriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadbVmClusterUpdateHistoryEntriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", {
         "exadbVmClusterId": args.exadbVmClusterId,

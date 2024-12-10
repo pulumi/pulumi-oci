@@ -105,7 +105,7 @@ export interface GetEnvironmentsResult {
  * });
  * ```
  */
-export function getEnvironmentsOutput(args: GetEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnvironmentsResult> {
+export function getEnvironmentsOutput(args: GetEnvironmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEnvironmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudBridge/getEnvironments:getEnvironments", {
         "compartmentId": args.compartmentId,

@@ -247,7 +247,7 @@ def get_domains_my_user_db_credentials_output(authorization: Optional[pulumi.Inp
                                               sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                                               sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                                               start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyUserDbCredentialsResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyUserDbCredentialsResult]:
     """
     This data source provides the list of My User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -285,7 +285,7 @@ def get_domains_my_user_db_credentials_output(authorization: Optional[pulumi.Inp
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsMyUserDbCredentials:getDomainsMyUserDbCredentials', __args__, opts=opts, typ=GetDomainsMyUserDbCredentialsResult)
     return __ret__.apply(lambda __response__: GetDomainsMyUserDbCredentialsResult(
         authorization=pulumi.get(__response__, 'authorization'),

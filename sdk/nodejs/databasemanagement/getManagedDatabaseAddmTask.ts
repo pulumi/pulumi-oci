@@ -90,7 +90,7 @@ export interface GetManagedDatabaseAddmTaskResult {
  * });
  * ```
  */
-export function getManagedDatabaseAddmTaskOutput(args: GetManagedDatabaseAddmTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAddmTaskResult> {
+export function getManagedDatabaseAddmTaskOutput(args: GetManagedDatabaseAddmTaskOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseAddmTaskResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", {
         "managedDatabaseId": args.managedDatabaseId,

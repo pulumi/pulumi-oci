@@ -177,7 +177,7 @@ def get_managed_instance_errata_output(classification_types: Optional[pulumi.Inp
                                        managed_instance_id: Optional[pulumi.Input[str]] = None,
                                        name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                        names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceErrataResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceErrataResult]:
     """
     This data source provides the list of Managed Instance Errata in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -210,7 +210,7 @@ def get_managed_instance_errata_output(classification_types: Optional[pulumi.Inp
     __args__['managedInstanceId'] = managed_instance_id
     __args__['nameContains'] = name_contains
     __args__['names'] = names
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceErrata:getManagedInstanceErrata', __args__, opts=opts, typ=GetManagedInstanceErrataResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceErrataResult(
         classification_types=pulumi.get(__response__, 'classification_types'),

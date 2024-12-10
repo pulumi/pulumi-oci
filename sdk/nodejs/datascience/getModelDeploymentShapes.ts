@@ -72,7 +72,7 @@ export interface GetModelDeploymentShapesResult {
  * });
  * ```
  */
-export function getModelDeploymentShapesOutput(args: GetModelDeploymentShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelDeploymentShapesResult> {
+export function getModelDeploymentShapesOutput(args: GetModelDeploymentShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelDeploymentShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", {
         "compartmentId": args.compartmentId,

@@ -86,7 +86,7 @@ export interface GetMonitoredInstancesResult {
  * });
  * ```
  */
-export function getMonitoredInstancesOutput(args: GetMonitoredInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredInstancesResult> {
+export function getMonitoredInstancesOutput(args: GetMonitoredInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMonitoredInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", {
         "compartmentId": args.compartmentId,

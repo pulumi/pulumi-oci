@@ -242,7 +242,7 @@ def get_sql_firewall_violation_analytics_output(access_level: Optional[pulumi.In
                                                 summary_fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                 time_ended: Optional[pulumi.Input[Optional[str]]] = None,
                                                 time_started: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlFirewallViolationAnalyticsResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallViolationAnalyticsResult]:
     """
     This data source provides the list of Sql Firewall Violation Analytics in Oracle Cloud Infrastructure Data Safe service.
 
@@ -289,7 +289,7 @@ def get_sql_firewall_violation_analytics_output(access_level: Optional[pulumi.In
     __args__['summaryFields'] = summary_fields
     __args__['timeEnded'] = time_ended
     __args__['timeStarted'] = time_started
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSqlFirewallViolationAnalytics:getSqlFirewallViolationAnalytics', __args__, opts=opts, typ=GetSqlFirewallViolationAnalyticsResult)
     return __ret__.apply(lambda __response__: GetSqlFirewallViolationAnalyticsResult(
         access_level=pulumi.get(__response__, 'access_level'),

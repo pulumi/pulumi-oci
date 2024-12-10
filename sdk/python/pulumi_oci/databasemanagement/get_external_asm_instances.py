@@ -153,7 +153,7 @@ def get_external_asm_instances_output(compartment_id: Optional[pulumi.Input[Opti
                                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                       external_asm_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalAsmInstancesFilterArgs', 'GetExternalAsmInstancesFilterArgsDict']]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmInstancesResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalAsmInstancesResult]:
     """
     This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
 
@@ -180,7 +180,7 @@ def get_external_asm_instances_output(compartment_id: Optional[pulumi.Input[Opti
     __args__['displayName'] = display_name
     __args__['externalAsmId'] = external_asm_id
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalAsmInstances:getExternalAsmInstances', __args__, opts=opts, typ=GetExternalAsmInstancesResult)
     return __ret__.apply(lambda __response__: GetExternalAsmInstancesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -109,7 +109,7 @@ export interface GetAutoScalingConfigurationResult {
  * });
  * ```
  */
-export function getAutoScalingConfigurationOutput(args: GetAutoScalingConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationResult> {
+export function getAutoScalingConfigurationOutput(args: GetAutoScalingConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutoScalingConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration", {
         "autoScalingConfigurationId": args.autoScalingConfigurationId,

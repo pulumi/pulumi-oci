@@ -97,7 +97,7 @@ export interface GetExascaleDbStorageVaultsResult {
  * });
  * ```
  */
-export function getExascaleDbStorageVaultsOutput(args: GetExascaleDbStorageVaultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExascaleDbStorageVaultsResult> {
+export function getExascaleDbStorageVaultsOutput(args: GetExascaleDbStorageVaultsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExascaleDbStorageVaultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", {
         "compartmentId": args.compartmentId,

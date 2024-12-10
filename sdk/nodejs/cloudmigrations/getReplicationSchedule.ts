@@ -103,7 +103,7 @@ export interface GetReplicationScheduleResult {
  * });
  * ```
  */
-export function getReplicationScheduleOutput(args: GetReplicationScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationScheduleResult> {
+export function getReplicationScheduleOutput(args: GetReplicationScheduleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReplicationScheduleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudMigrations/getReplicationSchedule:getReplicationSchedule", {
         "replicationScheduleId": args.replicationScheduleId,

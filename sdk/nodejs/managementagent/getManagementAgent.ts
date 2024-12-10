@@ -168,7 +168,7 @@ export interface GetManagementAgentResult {
  * });
  * ```
  */
-export function getManagementAgentOutput(args: GetManagementAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentResult> {
+export function getManagementAgentOutput(args: GetManagementAgentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgent:getManagementAgent", {
         "managementAgentId": args.managementAgentId,

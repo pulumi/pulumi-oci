@@ -109,7 +109,7 @@ export interface GetCategoryResult {
  * });
  * ```
  */
-export function getCategoryOutput(args: GetCategoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoryResult> {
+export function getCategoryOutput(args: GetCategoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCategoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Optimizer/getCategory:getCategory", {
         "categoryId": args.categoryId,

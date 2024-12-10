@@ -186,7 +186,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]]]] = None,
                                  owner_principal_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointsResult]:
     """
     This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
 
@@ -219,7 +219,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['filters'] = filters
     __args__['ownerPrincipalId'] = owner_principal_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints', __args__, opts=opts, typ=GetPrivateEndpointsResult)
     return __ret__.apply(lambda __response__: GetPrivateEndpointsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

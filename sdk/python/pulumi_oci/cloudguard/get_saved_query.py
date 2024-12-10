@@ -216,7 +216,7 @@ def get_saved_query(saved_query_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_saved_query_output(saved_query_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSavedQueryResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSavedQueryResult]:
     """
     This data source provides details about a specific Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -236,7 +236,7 @@ def get_saved_query_output(saved_query_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['savedQueryId'] = saved_query_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getSavedQuery:getSavedQuery', __args__, opts=opts, typ=GetSavedQueryResult)
     return __ret__.apply(lambda __response__: GetSavedQueryResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

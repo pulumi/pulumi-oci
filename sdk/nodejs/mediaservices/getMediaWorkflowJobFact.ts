@@ -91,7 +91,7 @@ export interface GetMediaWorkflowJobFactResult {
  * });
  * ```
  */
-export function getMediaWorkflowJobFactOutput(args: GetMediaWorkflowJobFactOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaWorkflowJobFactResult> {
+export function getMediaWorkflowJobFactOutput(args: GetMediaWorkflowJobFactOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMediaWorkflowJobFactResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", {
         "key": args.key,

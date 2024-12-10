@@ -194,7 +194,7 @@ def get_model_deployments_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  id: Optional[pulumi.Input[Optional[str]]] = None,
                                  project_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelDeploymentsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelDeploymentsResult]:
     """
     This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
 
@@ -230,7 +230,7 @@ def get_model_deployments_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['id'] = id
     __args__['projectId'] = project_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelDeployments:getModelDeployments', __args__, opts=opts, typ=GetModelDeploymentsResult)
     return __ret__.apply(lambda __response__: GetModelDeploymentsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -124,7 +124,7 @@ export interface GetFusionEnvironmentScheduledActivitiesResult {
  * });
  * ```
  */
-export function getFusionEnvironmentScheduledActivitiesOutput(args: GetFusionEnvironmentScheduledActivitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentScheduledActivitiesResult> {
+export function getFusionEnvironmentScheduledActivitiesOutput(args: GetFusionEnvironmentScheduledActivitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentScheduledActivitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities", {
         "displayName": args.displayName,

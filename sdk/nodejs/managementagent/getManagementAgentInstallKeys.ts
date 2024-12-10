@@ -113,7 +113,7 @@ export interface GetManagementAgentInstallKeysResult {
  * });
  * ```
  */
-export function getManagementAgentInstallKeysOutput(args: GetManagementAgentInstallKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentInstallKeysResult> {
+export function getManagementAgentInstallKeysOutput(args: GetManagementAgentInstallKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentInstallKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", {
         "accessLevel": args.accessLevel,

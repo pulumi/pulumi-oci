@@ -148,7 +148,7 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
                                              metadata_equals: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              namespace: Optional[pulumi.Input[str]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsEntityTopologyResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntityTopologyResult]:
     """
     This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -177,7 +177,7 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
     __args__['metadataEquals'] = metadata_equals
     __args__['namespace'] = namespace
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology', __args__, opts=opts, typ=GetLogAnalyticsEntityTopologyResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsEntityTopologyResult(
         id=pulumi.get(__response__, 'id'),

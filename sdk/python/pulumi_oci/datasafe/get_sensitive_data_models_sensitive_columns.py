@@ -385,7 +385,7 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
                                                        time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                        time_updated_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                        time_updated_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelsSensitiveColumnsResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelsSensitiveColumnsResult]:
     """
     This data source provides the list of Sensitive Data Models Sensitive Columns in Oracle Cloud Infrastructure Data Safe service.
 
@@ -458,7 +458,7 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
     __args__['timeCreatedLessThan'] = time_created_less_than
     __args__['timeUpdatedGreaterThanOrEqualTo'] = time_updated_greater_than_or_equal_to
     __args__['timeUpdatedLessThan'] = time_updated_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns', __args__, opts=opts, typ=GetSensitiveDataModelsSensitiveColumnsResult)
     return __ret__.apply(lambda __response__: GetSensitiveDataModelsSensitiveColumnsResult(
         column_group=pulumi.get(__response__, 'column_group'),

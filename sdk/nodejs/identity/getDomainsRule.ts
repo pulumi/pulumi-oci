@@ -193,7 +193,7 @@ export interface GetDomainsRuleResult {
  * });
  * ```
  */
-export function getDomainsRuleOutput(args: GetDomainsRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsRuleResult> {
+export function getDomainsRuleOutput(args: GetDomainsRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsRule:getDomainsRule", {
         "attributeSets": args.attributeSets,

@@ -102,7 +102,7 @@ export interface GetBdsInstanceMetastoreConfigResult {
  * });
  * ```
  */
-export function getBdsInstanceMetastoreConfigOutput(args: GetBdsInstanceMetastoreConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceMetastoreConfigResult> {
+export function getBdsInstanceMetastoreConfigOutput(args: GetBdsInstanceMetastoreConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBdsInstanceMetastoreConfigResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", {
         "bdsInstanceId": args.bdsInstanceId,

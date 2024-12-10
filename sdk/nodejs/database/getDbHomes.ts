@@ -104,7 +104,7 @@ export interface GetDbHomesResult {
  *
  * Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
  */
-export function getDbHomesOutput(args: GetDbHomesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomesResult> {
+export function getDbHomesOutput(args: GetDbHomesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbHomesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbHomes:getDbHomes", {
         "backupId": args.backupId,

@@ -143,7 +143,7 @@ export interface GetDeploymentsResult {
  * });
  * ```
  */
-export function getDeploymentsOutput(args: GetDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentsResult> {
+export function getDeploymentsOutput(args: GetDeploymentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDeploymentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeployments:getDeployments", {
         "assignableConnectionId": args.assignableConnectionId,

@@ -99,7 +99,7 @@ export interface GetManagedInstanceAvailablePackagesResult {
  * });
  * ```
  */
-export function getManagedInstanceAvailablePackagesOutput(args: GetManagedInstanceAvailablePackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceAvailablePackagesResult> {
+export function getManagedInstanceAvailablePackagesOutput(args: GetManagedInstanceAvailablePackagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceAvailablePackagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceAvailablePackages:getManagedInstanceAvailablePackages", {
         "compartmentId": args.compartmentId,

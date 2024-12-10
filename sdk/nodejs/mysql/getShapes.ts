@@ -108,7 +108,7 @@ export interface GetShapesResult {
  * });
  * ```
  */
-export function getShapesOutput(args: GetShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapesResult> {
+export function getShapesOutput(args: GetShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Mysql/getShapes:getShapes", {
         "availabilityDomain": args.availabilityDomain,

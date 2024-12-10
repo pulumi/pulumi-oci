@@ -205,7 +205,7 @@ def get_index(compartment_id: Optional[str] = None,
 def get_index_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      index_name: Optional[pulumi.Input[str]] = None,
                      table_name_or_id: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIndexResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIndexResult]:
     """
     This data source provides details about a specific Index resource in Oracle Cloud Infrastructure NoSQL Database service.
 
@@ -231,7 +231,7 @@ def get_index_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['compartmentId'] = compartment_id
     __args__['indexName'] = index_name
     __args__['tableNameOrId'] = table_name_or_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Nosql/getIndex:getIndex', __args__, opts=opts, typ=GetIndexResult)
     return __ret__.apply(lambda __response__: GetIndexResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

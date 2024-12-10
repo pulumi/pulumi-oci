@@ -135,7 +135,7 @@ def get_custom_tables(compartment_id: Optional[str] = None,
 def get_custom_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCustomTablesFilterArgs', 'GetCustomTablesFilterArgsDict']]]]] = None,
                              saved_report_id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCustomTablesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCustomTablesResult]:
     """
     This data source provides the list of Custom Tables in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -159,7 +159,7 @@ def get_custom_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['savedReportId'] = saved_report_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getCustomTables:getCustomTables', __args__, opts=opts, typ=GetCustomTablesResult)
     return __ret__.apply(lambda __response__: GetCustomTablesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

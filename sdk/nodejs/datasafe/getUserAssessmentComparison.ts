@@ -85,7 +85,7 @@ export interface GetUserAssessmentComparisonResult {
  * });
  * ```
  */
-export function getUserAssessmentComparisonOutput(args: GetUserAssessmentComparisonOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentComparisonResult> {
+export function getUserAssessmentComparisonOutput(args: GetUserAssessmentComparisonOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserAssessmentComparisonResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getUserAssessmentComparison:getUserAssessmentComparison", {
         "comparisonUserAssessmentId": args.comparisonUserAssessmentId,

@@ -345,7 +345,7 @@ def get_domain(domain_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         url=pulumi.get(__ret__, 'url'))
 def get_domain_output(domain_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainResult]:
     """
     This data source provides details about a specific Domain resource in Oracle Cloud Infrastructure Identity service.
 
@@ -368,7 +368,7 @@ def get_domain_output(domain_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['domainId'] = domain_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomain:getDomain', __args__, opts=opts, typ=GetDomainResult)
     return __ret__.apply(lambda __response__: GetDomainResult(
         admin_email=pulumi.get(__response__, 'admin_email'),

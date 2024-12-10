@@ -201,7 +201,7 @@ def get_access_requests_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                time_start: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessRequestsResult]:
     """
     This data source provides the list of Access Requests in Oracle Cloud Infrastructure Operator Access Control service.
 
@@ -237,7 +237,7 @@ def get_access_requests_output(compartment_id: Optional[pulumi.Input[str]] = Non
     __args__['state'] = state
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getAccessRequests:getAccessRequests', __args__, opts=opts, typ=GetAccessRequestsResult)
     return __ret__.apply(lambda __response__: GetAccessRequestsResult(
         access_request_collections=pulumi.get(__response__, 'access_request_collections'),

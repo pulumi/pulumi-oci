@@ -110,7 +110,7 @@ def get_cpe_device_shapes(filters: Optional[Sequence[Union['GetCpeDeviceShapesFi
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_cpe_device_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCpeDeviceShapesFilterArgs', 'GetCpeDeviceShapesFilterArgsDict']]]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpeDeviceShapesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpeDeviceShapesResult]:
     """
     This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
 
@@ -139,7 +139,7 @@ def get_cpe_device_shapes_output(filters: Optional[pulumi.Input[Optional[Sequenc
     """
     __args__ = dict()
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getCpeDeviceShapes:getCpeDeviceShapes', __args__, opts=opts, typ=GetCpeDeviceShapesResult)
     return __ret__.apply(lambda __response__: GetCpeDeviceShapesResult(
         cpe_device_shapes=pulumi.get(__response__, 'cpe_device_shapes'),

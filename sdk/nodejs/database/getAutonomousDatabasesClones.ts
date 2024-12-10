@@ -113,7 +113,7 @@ export interface GetAutonomousDatabasesClonesResult {
  * });
  * ```
  */
-export function getAutonomousDatabasesClonesOutput(args: GetAutonomousDatabasesClonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabasesClonesResult> {
+export function getAutonomousDatabasesClonesOutput(args: GetAutonomousDatabasesClonesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabasesClonesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", {
         "autonomousDatabaseId": args.autonomousDatabaseId,

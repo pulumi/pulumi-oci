@@ -191,7 +191,7 @@ def get_data_safe_configuration(compartment_id: Optional[str] = None,
         time_enabled=pulumi.get(__ret__, 'time_enabled'),
         url=pulumi.get(__ret__, 'url'))
 def get_data_safe_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSafeConfigurationResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSafeConfigurationResult]:
     """
     This data source provides details about a specific Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -211,7 +211,7 @@ def get_data_safe_configuration_output(compartment_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration', __args__, opts=opts, typ=GetDataSafeConfigurationResult)
     return __ret__.apply(lambda __response__: GetDataSafeConfigurationResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

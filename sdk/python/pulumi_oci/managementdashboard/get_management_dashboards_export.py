@@ -101,7 +101,7 @@ def get_management_dashboards_export(export_dashboard_id: Optional[str] = None,
         export_details=pulumi.get(__ret__, 'export_details'),
         id=pulumi.get(__ret__, 'id'))
 def get_management_dashboards_export_output(export_dashboard_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementDashboardsExportResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementDashboardsExportResult]:
     """
     This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
 
@@ -123,7 +123,7 @@ def get_management_dashboards_export_output(export_dashboard_id: Optional[pulumi
     """
     __args__ = dict()
     __args__['exportDashboardId'] = export_dashboard_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport', __args__, opts=opts, typ=GetManagementDashboardsExportResult)
     return __ret__.apply(lambda __response__: GetManagementDashboardsExportResult(
         export_dashboard_id=pulumi.get(__response__, 'export_dashboard_id'),

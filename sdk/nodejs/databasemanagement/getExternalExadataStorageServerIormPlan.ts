@@ -77,7 +77,7 @@ export interface GetExternalExadataStorageServerIormPlanResult {
  * });
  * ```
  */
-export function getExternalExadataStorageServerIormPlanOutput(args: GetExternalExadataStorageServerIormPlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerIormPlanResult> {
+export function getExternalExadataStorageServerIormPlanOutput(args: GetExternalExadataStorageServerIormPlanOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalExadataStorageServerIormPlanResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", {
         "externalExadataStorageServerId": args.externalExadataStorageServerId,

@@ -96,7 +96,7 @@ def get_api_content(api_id: Optional[str] = None,
         content=pulumi.get(__ret__, 'content'),
         id=pulumi.get(__ret__, 'id'))
 def get_api_content_output(api_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiContentResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiContentResult]:
     """
     This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.
 
@@ -116,7 +116,7 @@ def get_api_content_output(api_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['apiId'] = api_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApiGateway/getApiContent:getApiContent', __args__, opts=opts, typ=GetApiContentResult)
     return __ret__.apply(lambda __response__: GetApiContentResult(
         api_id=pulumi.get(__response__, 'api_id'),

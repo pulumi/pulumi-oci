@@ -90,7 +90,7 @@ export interface GetOpensearchVersionsResult {
  * });
  * ```
  */
-export function getOpensearchVersionsOutput(args: GetOpensearchVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchVersionsResult> {
+export function getOpensearchVersionsOutput(args: GetOpensearchVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOpensearchVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", {
         "compartmentId": args.compartmentId,

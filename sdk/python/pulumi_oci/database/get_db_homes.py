@@ -207,7 +207,7 @@ def get_db_homes_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbHomesFilterArgs', 'GetDbHomesFilterArgsDict']]]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         vm_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbHomesResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbHomesResult]:
     """
     This data source provides the list of Db Homes in Oracle Cloud Infrastructure Database service.
 
@@ -231,7 +231,7 @@ def get_db_homes_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['filters'] = filters
     __args__['state'] = state
     __args__['vmClusterId'] = vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbHomes:getDbHomes', __args__, opts=opts, typ=GetDbHomesResult)
     return __ret__.apply(lambda __response__: GetDbHomesResult(
         backup_id=pulumi.get(__response__, 'backup_id'),

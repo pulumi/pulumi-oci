@@ -435,7 +435,7 @@ def get_domains_oauth2client_credential_output(attribute_sets: Optional[pulumi.I
                                                idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                                o_auth2client_credential_id: Optional[pulumi.Input[str]] = None,
                                                resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsOauth2clientCredentialResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsOauth2clientCredentialResult]:
     """
     This data source provides details about a specific O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -470,7 +470,7 @@ def get_domains_oauth2client_credential_output(attribute_sets: Optional[pulumi.I
     __args__['idcsEndpoint'] = idcs_endpoint
     __args__['oAuth2clientCredentialId'] = o_auth2client_credential_id
     __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsOauth2clientCredential:getDomainsOauth2clientCredential', __args__, opts=opts, typ=GetDomainsOauth2clientCredentialResult)
     return __ret__.apply(lambda __response__: GetDomainsOauth2clientCredentialResult(
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),

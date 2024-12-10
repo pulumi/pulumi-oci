@@ -203,7 +203,7 @@ def get_sender(sender_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_sender_output(sender_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSenderResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSenderResult]:
     """
     This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.
 
@@ -223,7 +223,7 @@ def get_sender_output(sender_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['senderId'] = sender_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Email/getSender:getSender', __args__, opts=opts, typ=GetSenderResult)
     return __ret__.apply(lambda __response__: GetSenderResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

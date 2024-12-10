@@ -166,7 +166,7 @@ def get_software_source_software_packages_output(display_name: Optional[pulumi.I
                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourceSoftwarePackagesFilterArgs', 'GetSoftwareSourceSoftwarePackagesFilterArgsDict']]]]] = None,
                                                  is_latest: Optional[pulumi.Input[Optional[bool]]] = None,
                                                  software_source_id: Optional[pulumi.Input[str]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceSoftwarePackagesResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceSoftwarePackagesResult]:
     """
     This data source provides the list of Software Source Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -197,7 +197,7 @@ def get_software_source_software_packages_output(display_name: Optional[pulumi.I
     __args__['filters'] = filters
     __args__['isLatest'] = is_latest
     __args__['softwareSourceId'] = software_source_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourceSoftwarePackages:getSoftwareSourceSoftwarePackages', __args__, opts=opts, typ=GetSoftwareSourceSoftwarePackagesResult)
     return __ret__.apply(lambda __response__: GetSoftwareSourceSoftwarePackagesResult(
         display_name=pulumi.get(__response__, 'display_name'),

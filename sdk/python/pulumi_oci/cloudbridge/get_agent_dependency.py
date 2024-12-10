@@ -294,7 +294,7 @@ def get_agent_dependency(agent_dependency_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_agent_dependency_output(agent_dependency_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentDependencyResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentDependencyResult]:
     """
     This data source provides details about a specific Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
 
@@ -314,7 +314,7 @@ def get_agent_dependency_output(agent_dependency_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['agentDependencyId'] = agent_dependency_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAgentDependency:getAgentDependency', __args__, opts=opts, typ=GetAgentDependencyResult)
     return __ret__.apply(lambda __response__: GetAgentDependencyResult(
         agent_dependency_id=pulumi.get(__response__, 'agent_dependency_id'),

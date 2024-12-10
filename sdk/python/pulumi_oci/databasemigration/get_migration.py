@@ -425,7 +425,7 @@ def get_migration(migration_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         wait_after=pulumi.get(__ret__, 'wait_after'))
 def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationResult]:
     """
     ## Example Usage
 
@@ -441,7 +441,7 @@ def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['migrationId'] = migration_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseMigration/getMigration:getMigration', __args__, opts=opts, typ=GetMigrationResult)
     return __ret__.apply(lambda __response__: GetMigrationResult(
         advanced_parameters=pulumi.get(__response__, 'advanced_parameters'),

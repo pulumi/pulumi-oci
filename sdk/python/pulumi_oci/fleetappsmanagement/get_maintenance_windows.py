@@ -158,7 +158,7 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[Optiona
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceWindowsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceWindowsResult]:
     """
     This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -188,7 +188,7 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[Optiona
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getMaintenanceWindows:getMaintenanceWindows', __args__, opts=opts, typ=GetMaintenanceWindowsResult)
     return __ret__.apply(lambda __response__: GetMaintenanceWindowsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

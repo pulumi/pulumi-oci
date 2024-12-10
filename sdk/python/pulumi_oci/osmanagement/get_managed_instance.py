@@ -412,7 +412,7 @@ def get_managed_instance(managed_instance_id: Optional[str] = None,
         updates_available=pulumi.get(__ret__, 'updates_available'),
         work_request_count=pulumi.get(__ret__, 'work_request_count'))
 def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceResult]:
     """
     This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure OS Management service.
 
@@ -432,7 +432,7 @@ def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['managedInstanceId'] = managed_instance_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstance:getManagedInstance', __args__, opts=opts, typ=GetManagedInstanceResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceResult(
         autonomouses=pulumi.get(__response__, 'autonomouses'),

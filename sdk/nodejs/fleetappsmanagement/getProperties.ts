@@ -116,7 +116,7 @@ export interface GetPropertiesResult {
  * });
  * ```
  */
-export function getPropertiesOutput(args?: GetPropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertiesResult> {
+export function getPropertiesOutput(args?: GetPropertiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertiesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getProperties:getProperties", {

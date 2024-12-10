@@ -140,7 +140,7 @@ export interface GetDomainsPoliciesResult {
  * });
  * ```
  */
-export function getDomainsPoliciesOutput(args: GetDomainsPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsPoliciesResult> {
+export function getDomainsPoliciesOutput(args: GetDomainsPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsPolicies:getDomainsPolicies", {
         "attributeSets": args.attributeSets,

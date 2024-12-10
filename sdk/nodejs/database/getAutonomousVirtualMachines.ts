@@ -97,7 +97,7 @@ export interface GetAutonomousVirtualMachinesResult {
  * });
  * ```
  */
-export function getAutonomousVirtualMachinesOutput(args: GetAutonomousVirtualMachinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousVirtualMachinesResult> {
+export function getAutonomousVirtualMachinesOutput(args: GetAutonomousVirtualMachinesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousVirtualMachinesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", {
         "autonomousVmClusterId": args.autonomousVmClusterId,

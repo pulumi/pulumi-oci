@@ -169,7 +169,7 @@ def get_ca_bundles_output(ca_bundle_id: Optional[pulumi.Input[Optional[str]]] = 
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCaBundlesFilterArgs', 'GetCaBundlesFilterArgsDict']]]]] = None,
                           name: Optional[pulumi.Input[Optional[str]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaBundlesResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCaBundlesResult]:
     """
     This data source provides the list of Ca Bundles in Oracle Cloud Infrastructure Certificates Management service.
 
@@ -200,7 +200,7 @@ def get_ca_bundles_output(ca_bundle_id: Optional[pulumi.Input[Optional[str]]] = 
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCaBundles:getCaBundles', __args__, opts=opts, typ=GetCaBundlesResult)
     return __ret__.apply(lambda __response__: GetCaBundlesResult(
         ca_bundle_collections=pulumi.get(__response__, 'ca_bundle_collections'),

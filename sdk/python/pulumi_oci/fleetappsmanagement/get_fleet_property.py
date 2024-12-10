@@ -244,7 +244,7 @@ def get_fleet_property(fleet_id: Optional[str] = None,
         value_type=pulumi.get(__ret__, 'value_type'))
 def get_fleet_property_output(fleet_id: Optional[pulumi.Input[str]] = None,
                               fleet_property_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetPropertyResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetPropertyResult]:
     """
     This data source provides details about a specific Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -267,7 +267,7 @@ def get_fleet_property_output(fleet_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['fleetId'] = fleet_id
     __args__['fleetPropertyId'] = fleet_property_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getFleetProperty:getFleetProperty', __args__, opts=opts, typ=GetFleetPropertyResult)
     return __ret__.apply(lambda __response__: GetFleetPropertyResult(
         allowed_values=pulumi.get(__response__, 'allowed_values'),

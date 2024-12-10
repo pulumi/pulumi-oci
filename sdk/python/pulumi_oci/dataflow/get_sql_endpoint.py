@@ -386,7 +386,7 @@ def get_sql_endpoint(sql_endpoint_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         warehouse_bucket_uri=pulumi.get(__ret__, 'warehouse_bucket_uri'))
 def get_sql_endpoint_output(sql_endpoint_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlEndpointResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlEndpointResult]:
     """
     This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
 
@@ -406,7 +406,7 @@ def get_sql_endpoint_output(sql_endpoint_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['sqlEndpointId'] = sql_endpoint_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getSqlEndpoint:getSqlEndpoint', __args__, opts=opts, typ=GetSqlEndpointResult)
     return __ret__.apply(lambda __response__: GetSqlEndpointResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

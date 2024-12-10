@@ -324,7 +324,7 @@ def get_connections_output(catalog_id: Optional[pulumi.Input[str]] = None,
                            time_status_updated: Optional[pulumi.Input[Optional[str]]] = None,
                            time_updated: Optional[pulumi.Input[Optional[str]]] = None,
                            updated_by_id: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionsResult]:
     """
     This data source provides the list of Connections in Oracle Cloud Infrastructure Data Catalog service.
 
@@ -381,7 +381,7 @@ def get_connections_output(catalog_id: Optional[pulumi.Input[str]] = None,
     __args__['timeStatusUpdated'] = time_status_updated
     __args__['timeUpdated'] = time_updated
     __args__['updatedById'] = updated_by_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult)
     return __ret__.apply(lambda __response__: GetConnectionsResult(
         catalog_id=pulumi.get(__response__, 'catalog_id'),

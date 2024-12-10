@@ -119,7 +119,7 @@ export interface GetWorkspaceFolderResult {
  * });
  * ```
  */
-export function getWorkspaceFolderOutput(args: GetWorkspaceFolderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceFolderResult> {
+export function getWorkspaceFolderOutput(args: GetWorkspaceFolderOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspaceFolderResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", {
         "folderKey": args.folderKey,

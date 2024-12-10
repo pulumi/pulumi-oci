@@ -203,7 +203,7 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str
                                        is_latest_versions: Optional[pulumi.Input[Optional[Sequence[bool]]]] = None,
                                        key: Optional[pulumi.Input[Optional[str]]] = None,
                                        type: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionCapabilitiesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionCapabilitiesResult]:
     """
     This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
 
@@ -239,7 +239,7 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str
     __args__['isLatestVersions'] = is_latest_versions
     __args__['key'] = key
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waf/getProtectionCapabilities:getProtectionCapabilities', __args__, opts=opts, typ=GetProtectionCapabilitiesResult)
     return __ret__.apply(lambda __response__: GetProtectionCapabilitiesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

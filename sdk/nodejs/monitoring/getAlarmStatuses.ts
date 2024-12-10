@@ -150,7 +150,7 @@ export interface GetAlarmStatusesResult {
  * });
  * ```
  */
-export function getAlarmStatusesOutput(args: GetAlarmStatusesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmStatusesResult> {
+export function getAlarmStatusesOutput(args: GetAlarmStatusesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAlarmStatusesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", {
         "compartmentId": args.compartmentId,

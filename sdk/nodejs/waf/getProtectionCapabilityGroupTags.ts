@@ -91,7 +91,7 @@ export interface GetProtectionCapabilityGroupTagsResult {
  * });
  * ```
  */
-export function getProtectionCapabilityGroupTagsOutput(args: GetProtectionCapabilityGroupTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionCapabilityGroupTagsResult> {
+export function getProtectionCapabilityGroupTagsOutput(args: GetProtectionCapabilityGroupTagsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionCapabilityGroupTagsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", {
         "compartmentId": args.compartmentId,

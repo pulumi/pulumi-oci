@@ -156,7 +156,7 @@ export interface GetDrgAttachmentsResult {
  * });
  * ```
  */
-export function getDrgAttachmentsOutput(args: GetDrgAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgAttachmentsResult> {
+export function getDrgAttachmentsOutput(args: GetDrgAttachmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrgAttachmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getDrgAttachments:getDrgAttachments", {
         "attachmentType": args.attachmentType,

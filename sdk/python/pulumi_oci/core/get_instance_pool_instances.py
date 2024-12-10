@@ -150,7 +150,7 @@ def get_instance_pool_instances_output(compartment_id: Optional[pulumi.Input[str
                                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstancePoolInstancesFilterArgs', 'GetInstancePoolInstancesFilterArgsDict']]]]] = None,
                                        instance_pool_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancePoolInstancesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstancePoolInstancesResult]:
     """
     This data source provides the list of Instance Pool Instances in Oracle Cloud Infrastructure Core service.
 
@@ -177,7 +177,7 @@ def get_instance_pool_instances_output(compartment_id: Optional[pulumi.Input[str
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['instancePoolId'] = instance_pool_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstancePoolInstances:getInstancePoolInstances', __args__, opts=opts, typ=GetInstancePoolInstancesResult)
     return __ret__.apply(lambda __response__: GetInstancePoolInstancesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

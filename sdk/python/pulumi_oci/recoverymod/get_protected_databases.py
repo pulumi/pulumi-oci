@@ -194,7 +194,7 @@ def get_protected_databases_output(compartment_id: Optional[pulumi.Input[str]] =
                                    protection_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    recovery_service_subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectedDatabasesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectedDatabasesResult]:
     """
     This data source provides the list of Protected Databases in Oracle Cloud Infrastructure Recovery service.
 
@@ -230,7 +230,7 @@ def get_protected_databases_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['protectionPolicyId'] = protection_policy_id
     __args__['recoveryServiceSubnetId'] = recovery_service_subnet_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases', __args__, opts=opts, typ=GetProtectedDatabasesResult)
     return __ret__.apply(lambda __response__: GetProtectedDatabasesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -234,7 +234,7 @@ def get_audit_archive_retrievals_output(access_level: Optional[pulumi.Input[Opti
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
                                         target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         time_of_expiry: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditArchiveRetrievalsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditArchiveRetrievalsResult]:
     """
     This data source provides the list of Audit Archive Retrievals in Oracle Cloud Infrastructure Data Safe service.
 
@@ -276,7 +276,7 @@ def get_audit_archive_retrievals_output(access_level: Optional[pulumi.Input[Opti
     __args__['state'] = state
     __args__['targetId'] = target_id
     __args__['timeOfExpiry'] = time_of_expiry
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals', __args__, opts=opts, typ=GetAuditArchiveRetrievalsResult)
     return __ret__.apply(lambda __response__: GetAuditArchiveRetrievalsResult(
         access_level=pulumi.get(__response__, 'access_level'),

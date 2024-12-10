@@ -108,7 +108,7 @@ export interface GetDetectionDataAssetsResult {
  * });
  * ```
  */
-export function getDetectionDataAssetsOutput(args: GetDetectionDataAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionDataAssetsResult> {
+export function getDetectionDataAssetsOutput(args: GetDetectionDataAssetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDetectionDataAssetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getDetectionDataAssets:getDetectionDataAssets", {
         "compartmentId": args.compartmentId,

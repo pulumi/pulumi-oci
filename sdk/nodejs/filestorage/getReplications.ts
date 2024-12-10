@@ -123,7 +123,7 @@ export interface GetReplicationsResult {
  * });
  * ```
  */
-export function getReplicationsOutput(args: GetReplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationsResult> {
+export function getReplicationsOutput(args: GetReplicationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReplicationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FileStorage/getReplications:getReplications", {
         "availabilityDomain": args.availabilityDomain,

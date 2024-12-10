@@ -118,7 +118,7 @@ def get_smtp_credentials(filters: Optional[Sequence[Union['GetSmtpCredentialsFil
         user_id=pulumi.get(__ret__, 'user_id'))
 def get_smtp_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSmtpCredentialsFilterArgs', 'GetSmtpCredentialsFilterArgsDict']]]]] = None,
                                 user_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSmtpCredentialsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSmtpCredentialsResult]:
     """
     This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity service.
 
@@ -140,7 +140,7 @@ def get_smtp_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence
     __args__ = dict()
     __args__['filters'] = filters
     __args__['userId'] = user_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getSmtpCredentials:getSmtpCredentials', __args__, opts=opts, typ=GetSmtpCredentialsResult)
     return __ret__.apply(lambda __response__: GetSmtpCredentialsResult(
         filters=pulumi.get(__response__, 'filters'),

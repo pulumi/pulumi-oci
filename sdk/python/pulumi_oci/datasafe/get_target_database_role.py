@@ -149,7 +149,7 @@ def get_target_database_role_output(authentication_type: Optional[pulumi.Input[O
                                     role_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                     role_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                     target_database_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabaseRoleResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabaseRoleResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -160,7 +160,7 @@ def get_target_database_role_output(authentication_type: Optional[pulumi.Input[O
     __args__['roleNameContains'] = role_name_contains
     __args__['roleNames'] = role_names
     __args__['targetDatabaseId'] = target_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole', __args__, opts=opts, typ=GetTargetDatabaseRoleResult)
     return __ret__.apply(lambda __response__: GetTargetDatabaseRoleResult(
         authentication_type=pulumi.get(__response__, 'authentication_type'),

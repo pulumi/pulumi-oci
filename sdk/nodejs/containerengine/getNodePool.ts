@@ -164,7 +164,7 @@ export interface GetNodePoolResult {
  * });
  * ```
  */
-export function getNodePoolOutput(args: GetNodePoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNodePoolResult> {
+export function getNodePoolOutput(args: GetNodePoolOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNodePoolResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getNodePool:getNodePool", {
         "nodePoolId": args.nodePoolId,

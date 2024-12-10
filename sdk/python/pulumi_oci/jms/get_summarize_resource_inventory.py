@@ -181,7 +181,7 @@ def get_summarize_resource_inventory(compartment_id: Optional[str] = None,
 def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                             time_start: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSummarizeResourceInventoryResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSummarizeResourceInventoryResult]:
     """
     This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
 
@@ -207,7 +207,7 @@ def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Inpu
     __args__['compartmentId'] = compartment_id
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory', __args__, opts=opts, typ=GetSummarizeResourceInventoryResult)
     return __ret__.apply(lambda __response__: GetSummarizeResourceInventoryResult(
         active_fleet_count=pulumi.get(__response__, 'active_fleet_count'),

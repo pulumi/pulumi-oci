@@ -135,7 +135,7 @@ def get_inventories(compartment_id: Optional[str] = None,
 def get_inventories_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInventoriesFilterArgs', 'GetInventoriesFilterArgsDict']]]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInventoriesResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInventoriesResult]:
     """
     This data source provides the list of Inventories in Oracle Cloud Infrastructure Cloud Bridge service.
 
@@ -159,7 +159,7 @@ def get_inventories_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getInventories:getInventories', __args__, opts=opts, typ=GetInventoriesResult)
     return __ret__.apply(lambda __response__: GetInventoriesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

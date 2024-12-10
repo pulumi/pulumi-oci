@@ -121,7 +121,7 @@ export interface GetResponderRecipeResult {
  * });
  * ```
  */
-export function getResponderRecipeOutput(args: GetResponderRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResponderRecipeResult> {
+export function getResponderRecipeOutput(args: GetResponderRecipeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetResponderRecipeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getResponderRecipe:getResponderRecipe", {
         "responderRecipeId": args.responderRecipeId,

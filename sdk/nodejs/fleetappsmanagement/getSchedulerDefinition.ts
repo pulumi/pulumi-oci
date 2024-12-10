@@ -157,7 +157,7 @@ export interface GetSchedulerDefinitionResult {
  * });
  * ```
  */
-export function getSchedulerDefinitionOutput(args: GetSchedulerDefinitionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSchedulerDefinitionResult> {
+export function getSchedulerDefinitionOutput(args: GetSchedulerDefinitionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSchedulerDefinitionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getSchedulerDefinition:getSchedulerDefinition", {
         "schedulerDefinitionId": args.schedulerDefinitionId,

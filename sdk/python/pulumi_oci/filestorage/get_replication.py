@@ -318,7 +318,7 @@ def get_replication(replication_id: Optional[str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_replication_output(replication_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationResult]:
     """
     This data source provides details about a specific Replication resource in Oracle Cloud Infrastructure File Storage service.
 
@@ -338,7 +338,7 @@ def get_replication_output(replication_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['replicationId'] = replication_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getReplication:getReplication', __args__, opts=opts, typ=GetReplicationResult)
     return __ret__.apply(lambda __response__: GetReplicationResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

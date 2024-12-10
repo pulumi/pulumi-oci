@@ -115,7 +115,7 @@ export interface GetReplicationTargetsResult {
  * });
  * ```
  */
-export function getReplicationTargetsOutput(args: GetReplicationTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationTargetsResult> {
+export function getReplicationTargetsOutput(args: GetReplicationTargetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReplicationTargetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FileStorage/getReplicationTargets:getReplicationTargets", {
         "availabilityDomain": args.availabilityDomain,

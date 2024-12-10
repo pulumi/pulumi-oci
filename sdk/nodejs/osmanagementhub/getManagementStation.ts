@@ -142,7 +142,7 @@ export interface GetManagementStationResult {
  * });
  * ```
  */
-export function getManagementStationOutput(args: GetManagementStationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementStationResult> {
+export function getManagementStationOutput(args: GetManagementStationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementStationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagementStation:getManagementStation", {
         "managementStationId": args.managementStationId,

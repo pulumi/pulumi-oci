@@ -104,7 +104,7 @@ export interface GetTsigKeysResult {
  * });
  * ```
  */
-export function getTsigKeysOutput(args: GetTsigKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTsigKeysResult> {
+export function getTsigKeysOutput(args: GetTsigKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTsigKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getTsigKeys:getTsigKeys", {
         "compartmentId": args.compartmentId,

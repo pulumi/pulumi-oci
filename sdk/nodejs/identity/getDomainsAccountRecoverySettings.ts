@@ -111,7 +111,7 @@ export interface GetDomainsAccountRecoverySettingsResult {
  * });
  * ```
  */
-export function getDomainsAccountRecoverySettingsOutput(args: GetDomainsAccountRecoverySettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAccountRecoverySettingsResult> {
+export function getDomainsAccountRecoverySettingsOutput(args: GetDomainsAccountRecoverySettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsAccountRecoverySettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", {
         "attributeSets": args.attributeSets,

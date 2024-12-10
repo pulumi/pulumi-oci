@@ -315,7 +315,7 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
                                       namespace: Optional[pulumi.Input[str]] = None,
                                       source_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsEntitiesResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntitiesResult]:
     """
     This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -372,7 +372,7 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
     __args__['namespace'] = namespace
     __args__['sourceId'] = source_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities', __args__, opts=opts, typ=GetLogAnalyticsEntitiesResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsEntitiesResult(
         cloud_resource_id=pulumi.get(__response__, 'cloud_resource_id'),

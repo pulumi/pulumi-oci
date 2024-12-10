@@ -73,7 +73,7 @@ export interface GetInstanceCredentialsResult {
  * });
  * ```
  */
-export function getInstanceCredentialsOutput(args: GetInstanceCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceCredentialsResult> {
+export function getInstanceCredentialsOutput(args: GetInstanceCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstanceCredentials:getInstanceCredentials", {
         "instanceId": args.instanceId,

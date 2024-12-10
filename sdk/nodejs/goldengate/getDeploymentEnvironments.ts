@@ -72,7 +72,7 @@ export interface GetDeploymentEnvironmentsResult {
  * });
  * ```
  */
-export function getDeploymentEnvironmentsOutput(args: GetDeploymentEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentEnvironmentsResult> {
+export function getDeploymentEnvironmentsOutput(args: GetDeploymentEnvironmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDeploymentEnvironmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeploymentEnvironments:getDeploymentEnvironments", {
         "compartmentId": args.compartmentId,

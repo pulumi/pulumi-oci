@@ -422,7 +422,7 @@ def get_security_assessment(security_assessment_id: Optional[str] = None,
         triggered_by=pulumi.get(__ret__, 'triggered_by'),
         type=pulumi.get(__ret__, 'type'))
 def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentResult]:
     """
     This data source provides details about a specific Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -442,7 +442,7 @@ def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input
     """
     __args__ = dict()
     __args__['securityAssessmentId'] = security_assessment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessment:getSecurityAssessment', __args__, opts=opts, typ=GetSecurityAssessmentResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

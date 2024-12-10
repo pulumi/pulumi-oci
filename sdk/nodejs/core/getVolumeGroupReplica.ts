@@ -109,7 +109,7 @@ export interface GetVolumeGroupReplicaResult {
  * });
  * ```
  */
-export function getVolumeGroupReplicaOutput(args: GetVolumeGroupReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupReplicaResult> {
+export function getVolumeGroupReplicaOutput(args: GetVolumeGroupReplicaOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeGroupReplicaResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVolumeGroupReplica:getVolumeGroupReplica", {
         "volumeGroupReplicaId": args.volumeGroupReplicaId,

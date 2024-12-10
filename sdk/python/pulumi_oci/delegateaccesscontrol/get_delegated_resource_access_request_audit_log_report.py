@@ -153,7 +153,7 @@ def get_delegated_resource_access_request_audit_log_report(delegated_resource_ac
         time_report_generated=pulumi.get(__ret__, 'time_report_generated'))
 def get_delegated_resource_access_request_audit_log_report_output(delegated_resource_access_request_id: Optional[pulumi.Input[str]] = None,
                                                                   is_process_tree_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
-                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestAuditLogReportResult]:
+                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestAuditLogReportResult]:
     """
     This data source provides details about a specific Delegated Resource Access Request Audit Log Report resource in Oracle Cloud Infrastructure Delegate Access Control service.
 
@@ -176,7 +176,7 @@ def get_delegated_resource_access_request_audit_log_report_output(delegated_reso
     __args__ = dict()
     __args__['delegatedResourceAccessRequestId'] = delegated_resource_access_request_id
     __args__['isProcessTreeEnabled'] = is_process_tree_enabled
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport', __args__, opts=opts, typ=GetDelegatedResourceAccessRequestAuditLogReportResult)
     return __ret__.apply(lambda __response__: GetDelegatedResourceAccessRequestAuditLogReportResult(
         audit_report_status=pulumi.get(__response__, 'audit_report_status'),

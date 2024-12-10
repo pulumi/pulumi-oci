@@ -204,7 +204,7 @@ def get_fsu_cycles_output(collection_type: Optional[pulumi.Input[Optional[str]]]
                           fsu_collection_id: Optional[pulumi.Input[Optional[str]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           target_version: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFsuCyclesResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFsuCyclesResult]:
     """
     This data source provides the list of Fsu Cycles in Oracle Cloud Infrastructure Fleet Software Update service.
 
@@ -240,7 +240,7 @@ def get_fsu_cycles_output(collection_type: Optional[pulumi.Input[Optional[str]]]
     __args__['fsuCollectionId'] = fsu_collection_id
     __args__['state'] = state
     __args__['targetVersion'] = target_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles', __args__, opts=opts, typ=GetFsuCyclesResult)
     return __ret__.apply(lambda __response__: GetFsuCyclesResult(
         collection_type=pulumi.get(__response__, 'collection_type'),

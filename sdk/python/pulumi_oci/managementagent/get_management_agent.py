@@ -442,7 +442,7 @@ def get_management_agent(management_agent_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
 def get_management_agent_output(management_agent_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentResult]:
     """
     This data source provides details about a specific Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
 
@@ -462,7 +462,7 @@ def get_management_agent_output(management_agent_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['managementAgentId'] = management_agent_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgent:getManagementAgent', __args__, opts=opts, typ=GetManagementAgentResult)
     return __ret__.apply(lambda __response__: GetManagementAgentResult(
         availability_status=pulumi.get(__response__, 'availability_status'),

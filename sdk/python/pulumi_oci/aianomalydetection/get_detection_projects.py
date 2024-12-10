@@ -153,7 +153,7 @@ def get_detection_projects_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDetectionProjectsFilterArgs', 'GetDetectionProjectsFilterArgsDict']]]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectionProjectsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDetectionProjectsResult]:
     """
     This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Anomaly Detection service.
 
@@ -180,7 +180,7 @@ def get_detection_projects_output(compartment_id: Optional[pulumi.Input[str]] = 
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:AiAnomalyDetection/getDetectionProjects:getDetectionProjects', __args__, opts=opts, typ=GetDetectionProjectsResult)
     return __ret__.apply(lambda __response__: GetDetectionProjectsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

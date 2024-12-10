@@ -90,7 +90,7 @@ def get_compatible_formats_for_data_type(opts: Optional[pulumi.InvokeOptions] = 
     return AwaitableGetCompatibleFormatsForDataTypeResult(
         formats_for_data_types=pulumi.get(__ret__, 'formats_for_data_types'),
         id=pulumi.get(__ret__, 'id'))
-def get_compatible_formats_for_data_type_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCompatibleFormatsForDataTypeResult]:
+def get_compatible_formats_for_data_type_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompatibleFormatsForDataTypeResult]:
     """
     This data source provides details about a specific Compatible Formats For Data Type resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -112,7 +112,7 @@ def get_compatible_formats_for_data_type_output(opts: Optional[pulumi.InvokeOpti
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType', __args__, opts=opts, typ=GetCompatibleFormatsForDataTypeResult)
     return __ret__.apply(lambda __response__: GetCompatibleFormatsForDataTypeResult(
         formats_for_data_types=pulumi.get(__response__, 'formats_for_data_types'),

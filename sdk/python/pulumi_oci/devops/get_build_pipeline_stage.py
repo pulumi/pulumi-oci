@@ -412,7 +412,7 @@ def get_build_pipeline_stage(build_pipeline_stage_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         wait_criterias=pulumi.get(__ret__, 'wait_criterias'))
 def get_build_pipeline_stage_output(build_pipeline_stage_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildPipelineStageResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBuildPipelineStageResult]:
     """
     This data source provides details about a specific Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
 
@@ -432,7 +432,7 @@ def get_build_pipeline_stage_output(build_pipeline_stage_id: Optional[pulumi.Inp
     """
     __args__ = dict()
     __args__['buildPipelineStageId'] = build_pipeline_stage_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getBuildPipelineStage:getBuildPipelineStage', __args__, opts=opts, typ=GetBuildPipelineStageResult)
     return __ret__.apply(lambda __response__: GetBuildPipelineStageResult(
         build_pipeline_id=pulumi.get(__response__, 'build_pipeline_id'),

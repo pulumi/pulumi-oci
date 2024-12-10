@@ -577,7 +577,7 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
         transport_type=pulumi.get(__ret__, 'transport_type'))
 def get_data_guard_association_output(data_guard_association_id: Optional[pulumi.Input[str]] = None,
                                       database_id: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataGuardAssociationResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataGuardAssociationResult]:
     """
     This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.
 
@@ -600,7 +600,7 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
     __args__ = dict()
     __args__['dataGuardAssociationId'] = data_guard_association_id
     __args__['databaseId'] = database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDataGuardAssociation:getDataGuardAssociation', __args__, opts=opts, typ=GetDataGuardAssociationResult)
     return __ret__.apply(lambda __response__: GetDataGuardAssociationResult(
         apply_lag=pulumi.get(__response__, 'apply_lag'),

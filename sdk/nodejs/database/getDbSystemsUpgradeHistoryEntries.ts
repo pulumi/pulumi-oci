@@ -91,7 +91,7 @@ export interface GetDbSystemsUpgradeHistoryEntriesResult {
  * });
  * ```
  */
-export function getDbSystemsUpgradeHistoryEntriesOutput(args: GetDbSystemsUpgradeHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemsUpgradeHistoryEntriesResult> {
+export function getDbSystemsUpgradeHistoryEntriesOutput(args: GetDbSystemsUpgradeHistoryEntriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemsUpgradeHistoryEntriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", {
         "dbSystemId": args.dbSystemId,

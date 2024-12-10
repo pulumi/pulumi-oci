@@ -139,7 +139,7 @@ def get_schedules(compartment_id: Optional[str] = None,
 def get_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]]]] = None,
                          name: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSchedulesResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulesResult]:
     """
     This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -164,7 +164,7 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getSchedules:getSchedules', __args__, opts=opts, typ=GetSchedulesResult)
     return __ret__.apply(lambda __response__: GetSchedulesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

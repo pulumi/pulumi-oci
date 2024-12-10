@@ -438,7 +438,7 @@ def get_report_definition(report_definition_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_report_definition_output(report_definition_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportDefinitionResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportDefinitionResult]:
     """
     This data source provides details about a specific Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -458,7 +458,7 @@ def get_report_definition_output(report_definition_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['reportDefinitionId'] = report_definition_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getReportDefinition:getReportDefinition', __args__, opts=opts, typ=GetReportDefinitionResult)
     return __ret__.apply(lambda __response__: GetReportDefinitionResult(
         category=pulumi.get(__response__, 'category'),

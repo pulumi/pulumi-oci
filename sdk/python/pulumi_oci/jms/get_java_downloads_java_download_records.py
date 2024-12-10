@@ -236,7 +236,7 @@ def get_java_downloads_java_download_records_output(architecture: Optional[pulum
                                                     release_version: Optional[pulumi.Input[Optional[str]]] = None,
                                                     time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                                     time_start: Optional[pulumi.Input[Optional[str]]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadRecordsResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadRecordsResult]:
     """
     This data source provides the list of Java Download Records in Oracle Cloud Infrastructure Jms Java Downloads service.
 
@@ -280,7 +280,7 @@ def get_java_downloads_java_download_records_output(architecture: Optional[pulum
     __args__['releaseVersion'] = release_version
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords', __args__, opts=opts, typ=GetJavaDownloadsJavaDownloadRecordsResult)
     return __ret__.apply(lambda __response__: GetJavaDownloadsJavaDownloadRecordsResult(
         architecture=pulumi.get(__response__, 'architecture'),

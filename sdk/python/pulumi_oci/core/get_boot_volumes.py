@@ -153,7 +153,7 @@ def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[
                             compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumesFilterArgs', 'GetBootVolumesFilterArgsDict']]]]] = None,
                             volume_group_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumesResult]:
     """
     This data source provides the list of Boot Volumes in Oracle Cloud Infrastructure Core service.
 
@@ -180,7 +180,7 @@ def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['volumeGroupId'] = volume_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getBootVolumes:getBootVolumes', __args__, opts=opts, typ=GetBootVolumesResult)
     return __ret__.apply(lambda __response__: GetBootVolumesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

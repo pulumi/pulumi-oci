@@ -119,7 +119,7 @@ export interface GetDkimResult {
  * });
  * ```
  */
-export function getDkimOutput(args: GetDkimOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDkimResult> {
+export function getDkimOutput(args: GetDkimOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDkimResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Email/getDkim:getDkim", {
         "dkimId": args.dkimId,

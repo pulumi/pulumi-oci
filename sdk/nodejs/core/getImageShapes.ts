@@ -75,7 +75,7 @@ export interface GetImageShapesResult {
  * });
  * ```
  */
-export function getImageShapesOutput(args: GetImageShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImageShapesResult> {
+export function getImageShapesOutput(args: GetImageShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImageShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getImageShapes:getImageShapes", {
         "filters": args.filters,

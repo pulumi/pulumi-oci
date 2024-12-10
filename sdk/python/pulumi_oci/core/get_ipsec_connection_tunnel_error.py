@@ -166,7 +166,7 @@ def get_ipsec_connection_tunnel_error(ipsec_id: Optional[str] = None,
         tunnel_id=pulumi.get(__ret__, 'tunnel_id'))
 def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[str]] = None,
                                              tunnel_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionTunnelErrorResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionTunnelErrorResult]:
     """
     This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
 
@@ -189,7 +189,7 @@ def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['ipsecId'] = ipsec_id
     __args__['tunnelId'] = tunnel_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError', __args__, opts=opts, typ=GetIpsecConnectionTunnelErrorResult)
     return __ret__.apply(lambda __response__: GetIpsecConnectionTunnelErrorResult(
         error_code=pulumi.get(__response__, 'error_code'),

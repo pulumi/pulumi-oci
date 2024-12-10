@@ -80,7 +80,7 @@ export interface GetAutonomousContainerDatabaseVersionsResult {
  * });
  * ```
  */
-export function getAutonomousContainerDatabaseVersionsOutput(args: GetAutonomousContainerDatabaseVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseVersionsResult> {
+export function getAutonomousContainerDatabaseVersionsOutput(args: GetAutonomousContainerDatabaseVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousContainerDatabaseVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", {
         "compartmentId": args.compartmentId,

@@ -105,7 +105,7 @@ export interface GetDbSystemsResult {
  * });
  * ```
  */
-export function getDbSystemsOutput(args?: GetDbSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemsResult> {
+export function getDbSystemsOutput(args?: GetDbSystemsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Psql/getDbSystems:getDbSystems", {

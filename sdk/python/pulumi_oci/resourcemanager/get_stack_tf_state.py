@@ -95,7 +95,7 @@ def get_stack_tf_state(local_path: Optional[str] = None,
         stack_id=pulumi.get(__ret__, 'stack_id'))
 def get_stack_tf_state_output(local_path: Optional[pulumi.Input[str]] = None,
                               stack_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStackTfStateResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStackTfStateResult]:
     """
     ## Example Usage
 
@@ -112,7 +112,7 @@ def get_stack_tf_state_output(local_path: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['localPath'] = local_path
     __args__['stackId'] = stack_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ResourceManager/getStackTfState:getStackTfState', __args__, opts=opts, typ=GetStackTfStateResult)
     return __ret__.apply(lambda __response__: GetStackTfStateResult(
         id=pulumi.get(__response__, 'id'),

@@ -108,7 +108,7 @@ export interface GetWlpAgentResult {
  * });
  * ```
  */
-export function getWlpAgentOutput(args: GetWlpAgentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWlpAgentResult> {
+export function getWlpAgentOutput(args: GetWlpAgentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWlpAgentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getWlpAgent:getWlpAgent", {
         "wlpAgentId": args.wlpAgentId,

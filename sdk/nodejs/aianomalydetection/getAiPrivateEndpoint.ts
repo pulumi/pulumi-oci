@@ -111,7 +111,7 @@ export interface GetAiPrivateEndpointResult {
  * });
  * ```
  */
-export function getAiPrivateEndpointOutput(args: GetAiPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAiPrivateEndpointResult> {
+export function getAiPrivateEndpointOutput(args: GetAiPrivateEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAiPrivateEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", {
         "aiPrivateEndpointId": args.aiPrivateEndpointId,

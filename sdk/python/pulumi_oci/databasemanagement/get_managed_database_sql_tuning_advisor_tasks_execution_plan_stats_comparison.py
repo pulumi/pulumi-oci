@@ -175,7 +175,7 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
                                                                                          opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                                          sql_object_id: Optional[pulumi.Input[str]] = None,
                                                                                          sql_tuning_advisor_task_id: Optional[pulumi.Input[str]] = None,
-                                                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult]:
+                                                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult]:
     """
     This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Execution Plan Stats Comparision resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -209,7 +209,7 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
     __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['sqlObjectId'] = sql_object_id
     __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult(
         execution_id=pulumi.get(__response__, 'execution_id'),

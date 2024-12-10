@@ -151,7 +151,7 @@ def get_osn(blockchain_platform_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_osn_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                    osn_id: Optional[pulumi.Input[str]] = None,
-                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOsnResult]:
+                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOsnResult]:
     """
     This data source provides details about a specific Osn resource in Oracle Cloud Infrastructure Blockchain service.
 
@@ -174,7 +174,7 @@ def get_osn_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['blockchainPlatformId'] = blockchain_platform_id
     __args__['osnId'] = osn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Blockchain/getOsn:getOsn', __args__, opts=opts, typ=GetOsnResult)
     return __ret__.apply(lambda __response__: GetOsnResult(
         ad=pulumi.get(__response__, 'ad'),

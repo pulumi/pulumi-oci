@@ -123,7 +123,7 @@ export interface GetPropertyResult {
  * });
  * ```
  */
-export function getPropertyOutput(args: GetPropertyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyResult> {
+export function getPropertyOutput(args: GetPropertyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getProperty:getProperty", {
         "propertyId": args.propertyId,

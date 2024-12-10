@@ -110,7 +110,7 @@ export interface GetManagementAgentPluginsResult {
  * });
  * ```
  */
-export function getManagementAgentPluginsOutput(args: GetManagementAgentPluginsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentPluginsResult> {
+export function getManagementAgentPluginsOutput(args: GetManagementAgentPluginsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentPluginsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", {
         "agentId": args.agentId,

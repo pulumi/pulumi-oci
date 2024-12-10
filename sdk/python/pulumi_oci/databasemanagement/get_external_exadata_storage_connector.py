@@ -315,7 +315,7 @@ def get_external_exadata_storage_connector(external_exadata_storage_connector_id
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
 def get_external_exadata_storage_connector_output(external_exadata_storage_connector_id: Optional[pulumi.Input[str]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageConnectorResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageConnectorResult]:
     """
     This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -335,7 +335,7 @@ def get_external_exadata_storage_connector_output(external_exadata_storage_conne
     """
     __args__ = dict()
     __args__['externalExadataStorageConnectorId'] = external_exadata_storage_connector_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector', __args__, opts=opts, typ=GetExternalExadataStorageConnectorResult)
     return __ret__.apply(lambda __response__: GetExternalExadataStorageConnectorResult(
         additional_details=pulumi.get(__response__, 'additional_details'),

@@ -113,7 +113,7 @@ export interface GetMaskingReportsResult {
  * });
  * ```
  */
-export function getMaskingReportsOutput(args: GetMaskingReportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingReportsResult> {
+export function getMaskingReportsOutput(args: GetMaskingReportsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaskingReportsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getMaskingReports:getMaskingReports", {
         "accessLevel": args.accessLevel,

@@ -118,7 +118,7 @@ def get_iam_work_request_errors(filters: Optional[Sequence[Union['GetIamWorkRequ
         id=pulumi.get(__ret__, 'id'))
 def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIamWorkRequestErrorsFilterArgs', 'GetIamWorkRequestErrorsFilterArgsDict']]]]] = None,
                                        iam_work_request_id: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamWorkRequestErrorsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamWorkRequestErrorsResult]:
     """
     This data source provides the list of Iam Work Request Errors in Oracle Cloud Infrastructure Identity service.
 
@@ -143,7 +143,7 @@ def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[S
     __args__ = dict()
     __args__['filters'] = filters
     __args__['iamWorkRequestId'] = iam_work_request_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors', __args__, opts=opts, typ=GetIamWorkRequestErrorsResult)
     return __ret__.apply(lambda __response__: GetIamWorkRequestErrorsResult(
         filters=pulumi.get(__response__, 'filters'),

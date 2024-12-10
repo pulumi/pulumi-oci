@@ -108,7 +108,7 @@ export interface GetExternalDatabaseConnectorsResult {
  * });
  * ```
  */
-export function getExternalDatabaseConnectorsOutput(args: GetExternalDatabaseConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDatabaseConnectorsResult> {
+export function getExternalDatabaseConnectorsOutput(args: GetExternalDatabaseConnectorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDatabaseConnectorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors", {
         "compartmentId": args.compartmentId,

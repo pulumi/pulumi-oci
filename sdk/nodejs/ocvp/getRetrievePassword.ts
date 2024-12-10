@@ -72,7 +72,7 @@ export interface GetRetrievePasswordResult {
  * });
  * ```
  */
-export function getRetrievePasswordOutput(args: GetRetrievePasswordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRetrievePasswordResult> {
+export function getRetrievePasswordOutput(args: GetRetrievePasswordOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRetrievePasswordResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getRetrievePassword:getRetrievePassword", {
         "sddcId": args.sddcId,

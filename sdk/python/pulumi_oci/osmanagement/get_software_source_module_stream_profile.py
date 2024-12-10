@@ -179,7 +179,7 @@ def get_software_source_module_stream_profile_output(module_name: Optional[pulum
                                                      profile_name: Optional[pulumi.Input[str]] = None,
                                                      software_source_id: Optional[pulumi.Input[str]] = None,
                                                      stream_name: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamProfileResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamProfileResult]:
     """
     This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure OS Management service.
 
@@ -208,7 +208,7 @@ def get_software_source_module_stream_profile_output(module_name: Optional[pulum
     __args__['profileName'] = profile_name
     __args__['softwareSourceId'] = software_source_id
     __args__['streamName'] = stream_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile', __args__, opts=opts, typ=GetSoftwareSourceModuleStreamProfileResult)
     return __ret__.apply(lambda __response__: GetSoftwareSourceModuleStreamProfileResult(
         description=pulumi.get(__response__, 'description'),

@@ -136,7 +136,7 @@ def get_autonomous_db_versions(compartment_id: Optional[str] = None,
 def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       db_workload: Optional[pulumi.Input[Optional[str]]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDbVersionsFilterArgs', 'GetAutonomousDbVersionsFilterArgsDict']]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDbVersionsResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDbVersionsResult]:
     """
     This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
 
@@ -160,7 +160,7 @@ def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[str]
     __args__['compartmentId'] = compartment_id
     __args__['dbWorkload'] = db_workload
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDbVersions:getAutonomousDbVersions', __args__, opts=opts, typ=GetAutonomousDbVersionsResult)
     return __ret__.apply(lambda __response__: GetAutonomousDbVersionsResult(
         autonomous_db_versions=pulumi.get(__response__, 'autonomous_db_versions'),

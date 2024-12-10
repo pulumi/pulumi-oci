@@ -132,7 +132,7 @@ export interface GetInternalOccHandoverResourceBlocksResult {
  * });
  * ```
  */
-export function getInternalOccHandoverResourceBlocksOutput(args: GetInternalOccHandoverResourceBlocksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInternalOccHandoverResourceBlocksResult> {
+export function getInternalOccHandoverResourceBlocksOutput(args: GetInternalOccHandoverResourceBlocksOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInternalOccHandoverResourceBlocksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", {
         "compartmentId": args.compartmentId,

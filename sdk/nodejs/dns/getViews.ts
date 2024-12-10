@@ -122,7 +122,7 @@ export interface GetViewsResult {
  * });
  * ```
  */
-export function getViewsOutput(args: GetViewsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetViewsResult> {
+export function getViewsOutput(args: GetViewsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetViewsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getViews:getViews", {
         "compartmentId": args.compartmentId,

@@ -109,7 +109,7 @@ def get_importable_compute_entity(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
 def get_importable_compute_entity_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImportableComputeEntityResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImportableComputeEntityResult]:
     """
     This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.
 
@@ -135,7 +135,7 @@ def get_importable_compute_entity_output(compartment_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getImportableComputeEntity:getImportableComputeEntity', __args__, opts=opts, typ=GetImportableComputeEntityResult)
     return __ret__.apply(lambda __response__: GetImportableComputeEntityResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

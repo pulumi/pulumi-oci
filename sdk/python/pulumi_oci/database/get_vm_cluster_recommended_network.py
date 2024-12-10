@@ -296,7 +296,7 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
                                               ntps: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               scan_listener_port_tcp: Optional[pulumi.Input[Optional[int]]] = None,
                                               scan_listener_port_tcp_ssl: Optional[pulumi.Input[Optional[int]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterRecommendedNetworkResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterRecommendedNetworkResult]:
     """
     This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.
 
@@ -329,7 +329,7 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
     __args__['ntps'] = ntps
     __args__['scanListenerPortTcp'] = scan_listener_port_tcp
     __args__['scanListenerPortTcpSsl'] = scan_listener_port_tcp_ssl
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork', __args__, opts=opts, typ=GetVmClusterRecommendedNetworkResult)
     return __ret__.apply(lambda __response__: GetVmClusterRecommendedNetworkResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

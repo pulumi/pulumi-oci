@@ -212,7 +212,7 @@ def get_responder_recipes_output(access_level: Optional[pulumi.Input[Optional[st
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResponderRecipesFilterArgs', 'GetResponderRecipesFilterArgsDict']]]]] = None,
                                  resource_metadata_only: Optional[pulumi.Input[Optional[bool]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResponderRecipesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResponderRecipesResult]:
     """
     This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -262,7 +262,7 @@ def get_responder_recipes_output(access_level: Optional[pulumi.Input[Optional[st
     __args__['filters'] = filters
     __args__['resourceMetadataOnly'] = resource_metadata_only
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getResponderRecipes:getResponderRecipes', __args__, opts=opts, typ=GetResponderRecipesResult)
     return __ret__.apply(lambda __response__: GetResponderRecipesResult(
         access_level=pulumi.get(__response__, 'access_level'),

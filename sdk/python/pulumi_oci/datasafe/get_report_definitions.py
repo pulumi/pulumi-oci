@@ -239,7 +239,7 @@ def get_report_definitions_output(access_level: Optional[pulumi.Input[Optional[s
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReportDefinitionsFilterArgs', 'GetReportDefinitionsFilterArgsDict']]]]] = None,
                                   is_seeded: Optional[pulumi.Input[Optional[bool]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportDefinitionsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportDefinitionsResult]:
     """
     This data source provides the list of Report Definitions in Oracle Cloud Infrastructure Data Safe service.
 
@@ -283,7 +283,7 @@ def get_report_definitions_output(access_level: Optional[pulumi.Input[Optional[s
     __args__['filters'] = filters
     __args__['isSeeded'] = is_seeded
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getReportDefinitions:getReportDefinitions', __args__, opts=opts, typ=GetReportDefinitionsResult)
     return __ret__.apply(lambda __response__: GetReportDefinitionsResult(
         access_level=pulumi.get(__response__, 'access_level'),

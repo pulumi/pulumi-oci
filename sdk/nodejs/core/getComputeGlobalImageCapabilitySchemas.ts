@@ -87,7 +87,7 @@ export interface GetComputeGlobalImageCapabilitySchemasResult {
  * });
  * ```
  */
-export function getComputeGlobalImageCapabilitySchemasOutput(args?: GetComputeGlobalImageCapabilitySchemasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeGlobalImageCapabilitySchemasResult> {
+export function getComputeGlobalImageCapabilitySchemasOutput(args?: GetComputeGlobalImageCapabilitySchemasOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetComputeGlobalImageCapabilitySchemasResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas", {

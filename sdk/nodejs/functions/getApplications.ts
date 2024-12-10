@@ -104,7 +104,7 @@ export interface GetApplicationsResult {
  * });
  * ```
  */
-export function getApplicationsOutput(args: GetApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationsResult> {
+export function getApplicationsOutput(args: GetApplicationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetApplicationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getApplications:getApplications", {
         "compartmentId": args.compartmentId,

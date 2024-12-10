@@ -441,7 +441,7 @@ def get_db_system(db_system_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
                          excluded_fields: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemResult]:
     """
     This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
 
@@ -464,7 +464,7 @@ def get_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
     __args__['excludedFields'] = excluded_fields
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystem:getDbSystem', __args__, opts=opts, typ=GetDbSystemResult)
     return __ret__.apply(lambda __response__: GetDbSystemResult(
         admin_username=pulumi.get(__response__, 'admin_username'),

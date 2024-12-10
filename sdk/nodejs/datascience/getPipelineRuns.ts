@@ -126,7 +126,7 @@ export interface GetPipelineRunsResult {
  * });
  * ```
  */
-export function getPipelineRunsOutput(args: GetPipelineRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPipelineRunsResult> {
+export function getPipelineRunsOutput(args: GetPipelineRunsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPipelineRunsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getPipelineRuns:getPipelineRuns", {
         "compartmentId": args.compartmentId,

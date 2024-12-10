@@ -77,7 +77,7 @@ export interface GetVbInstanceApplicationsResult {
  * });
  * ```
  */
-export function getVbInstanceApplicationsOutput(args: GetVbInstanceApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstanceApplicationsResult> {
+export function getVbInstanceApplicationsOutput(args: GetVbInstanceApplicationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVbInstanceApplicationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", {
         "idcsOpenId": args.idcsOpenId,

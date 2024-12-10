@@ -69,7 +69,7 @@ export interface GetExternalExadataStorageServerTopSqlCpuActivityResult {
  * });
  * ```
  */
-export function getExternalExadataStorageServerTopSqlCpuActivityOutput(args: GetExternalExadataStorageServerTopSqlCpuActivityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> {
+export function getExternalExadataStorageServerTopSqlCpuActivityOutput(args: GetExternalExadataStorageServerTopSqlCpuActivityOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", {
         "externalExadataStorageServerId": args.externalExadataStorageServerId,

@@ -229,7 +229,7 @@ def get_onprem_connector(on_prem_connector_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_onprem_connector_output(on_prem_connector_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOnpremConnectorResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnpremConnectorResult]:
     """
     This data source provides details about a specific On Prem Connector resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -249,7 +249,7 @@ def get_onprem_connector_output(on_prem_connector_id: Optional[pulumi.Input[str]
     """
     __args__ = dict()
     __args__['onPremConnectorId'] = on_prem_connector_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getOnpremConnector:getOnpremConnector', __args__, opts=opts, typ=GetOnpremConnectorResult)
     return __ret__.apply(lambda __response__: GetOnpremConnectorResult(
         available_version=pulumi.get(__response__, 'available_version'),

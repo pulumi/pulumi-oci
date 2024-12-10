@@ -163,7 +163,7 @@ def get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan_output(attr
                                                                             opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                             sql_object_id: Optional[pulumi.Input[str]] = None,
                                                                             sql_tuning_advisor_task_id: Optional[pulumi.Input[str]] = None,
-                                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult]:
+                                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult]:
     """
     This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Sql Execution Plan resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -195,7 +195,7 @@ def get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan_output(attr
     __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['sqlObjectId'] = sql_object_id
     __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult(
         attribute=pulumi.get(__response__, 'attribute'),

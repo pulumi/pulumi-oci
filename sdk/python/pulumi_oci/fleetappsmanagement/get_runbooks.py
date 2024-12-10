@@ -227,7 +227,7 @@ def get_runbooks_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
                         runbook_relevance: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         type: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunbooksResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunbooksResult]:
     """
     This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -269,7 +269,7 @@ def get_runbooks_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     __args__['runbookRelevance'] = runbook_relevance
     __args__['state'] = state
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getRunbooks:getRunbooks', __args__, opts=opts, typ=GetRunbooksResult)
     return __ret__.apply(lambda __response__: GetRunbooksResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

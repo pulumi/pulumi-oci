@@ -247,7 +247,7 @@ def get_target_alert_policy_associations_output(access_level: Optional[pulumi.In
                                                 target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                 time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                 time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationsResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationsResult]:
     """
     This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
 
@@ -296,7 +296,7 @@ def get_target_alert_policy_associations_output(access_level: Optional[pulumi.In
     __args__['targetId'] = target_id
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations', __args__, opts=opts, typ=GetTargetAlertPolicyAssociationsResult)
     return __ret__.apply(lambda __response__: GetTargetAlertPolicyAssociationsResult(
         access_level=pulumi.get(__response__, 'access_level'),

@@ -153,7 +153,7 @@ def get_sharded_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShardedDatabasesFilterArgs', 'GetShardedDatabasesFilterArgsDict']]]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetShardedDatabasesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShardedDatabasesResult]:
     """
     This data source provides the list of Sharded Databases in Oracle Cloud Infrastructure Globally Distributed Database service.
 
@@ -180,7 +180,7 @@ def get_sharded_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GloballyDistributedDatabase/getShardedDatabases:getShardedDatabases', __args__, opts=opts, typ=GetShardedDatabasesResult)
     return __ret__.apply(lambda __response__: GetShardedDatabasesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

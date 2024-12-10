@@ -277,7 +277,7 @@ def get_domains_api_keys_output(api_key_count: Optional[pulumi.Input[Optional[in
                                 sort_by: Optional[pulumi.Input[Optional[str]]] = None,
                                 sort_order: Optional[pulumi.Input[Optional[str]]] = None,
                                 start_index: Optional[pulumi.Input[Optional[int]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsApiKeysResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsApiKeysResult]:
     """
     This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity Domains service.
 
@@ -321,7 +321,7 @@ def get_domains_api_keys_output(api_key_count: Optional[pulumi.Input[Optional[in
     __args__['sortBy'] = sort_by
     __args__['sortOrder'] = sort_order
     __args__['startIndex'] = start_index
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsApiKeys:getDomainsApiKeys', __args__, opts=opts, typ=GetDomainsApiKeysResult)
     return __ret__.apply(lambda __response__: GetDomainsApiKeysResult(
         api_key_count=pulumi.get(__response__, 'api_key_count'),

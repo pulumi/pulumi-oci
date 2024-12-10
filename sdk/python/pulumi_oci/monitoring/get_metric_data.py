@@ -247,7 +247,7 @@ def get_metric_data_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            resolution: Optional[pulumi.Input[Optional[str]]] = None,
                            resource_group: Optional[pulumi.Input[Optional[str]]] = None,
                            start_time: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetricDataResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMetricDataResult]:
     """
     This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
 
@@ -305,7 +305,7 @@ def get_metric_data_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['resolution'] = resolution
     __args__['resourceGroup'] = resource_group
     __args__['startTime'] = start_time
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Monitoring/getMetricData:getMetricData', __args__, opts=opts, typ=GetMetricDataResult)
     return __ret__.apply(lambda __response__: GetMetricDataResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

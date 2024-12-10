@@ -111,7 +111,7 @@ export interface GetPrivateApplicationResult {
  * });
  * ```
  */
-export function getPrivateApplicationOutput(args: GetPrivateApplicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateApplicationResult> {
+export function getPrivateApplicationOutput(args: GetPrivateApplicationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPrivateApplicationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceCatalog/getPrivateApplication:getPrivateApplication", {
         "privateApplicationId": args.privateApplicationId,

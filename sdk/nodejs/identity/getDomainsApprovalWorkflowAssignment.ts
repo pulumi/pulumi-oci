@@ -165,7 +165,7 @@ export interface GetDomainsApprovalWorkflowAssignmentResult {
  * });
  * ```
  */
-export function getDomainsApprovalWorkflowAssignmentOutput(args: GetDomainsApprovalWorkflowAssignmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsApprovalWorkflowAssignmentResult> {
+export function getDomainsApprovalWorkflowAssignmentOutput(args: GetDomainsApprovalWorkflowAssignmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsApprovalWorkflowAssignmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsApprovalWorkflowAssignment:getDomainsApprovalWorkflowAssignment", {
         "approvalWorkflowAssignmentId": args.approvalWorkflowAssignmentId,

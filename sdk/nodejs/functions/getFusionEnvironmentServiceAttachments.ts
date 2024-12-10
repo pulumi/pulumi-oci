@@ -105,7 +105,7 @@ export interface GetFusionEnvironmentServiceAttachmentsResult {
  * });
  * ```
  */
-export function getFusionEnvironmentServiceAttachmentsOutput(args: GetFusionEnvironmentServiceAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentServiceAttachmentsResult> {
+export function getFusionEnvironmentServiceAttachmentsOutput(args: GetFusionEnvironmentServiceAttachmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentServiceAttachmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments", {
         "displayName": args.displayName,

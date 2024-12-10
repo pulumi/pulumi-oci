@@ -135,7 +135,7 @@ def get_vantage_points(display_name: Optional[str] = None,
 def get_vantage_points_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict']]]]] = None,
                               name: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVantagePointsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVantagePointsResult]:
     """
     This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
 
@@ -159,7 +159,7 @@ def get_vantage_points_output(display_name: Optional[pulumi.Input[Optional[str]]
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:HealthChecks/getVantagePoints:getVantagePoints', __args__, opts=opts, typ=GetVantagePointsResult)
     return __ret__.apply(lambda __response__: GetVantagePointsResult(
         display_name=pulumi.get(__response__, 'display_name'),

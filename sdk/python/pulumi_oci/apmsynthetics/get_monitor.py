@@ -427,7 +427,7 @@ def get_monitor(apm_domain_id: Optional[str] = None,
         vantage_points=pulumi.get(__ret__, 'vantage_points'))
 def get_monitor_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        monitor_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitorResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitorResult]:
     """
     This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
 
@@ -450,7 +450,7 @@ def get_monitor_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
     __args__['monitorId'] = monitor_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getMonitor:getMonitor', __args__, opts=opts, typ=GetMonitorResult)
     return __ret__.apply(lambda __response__: GetMonitorResult(
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),

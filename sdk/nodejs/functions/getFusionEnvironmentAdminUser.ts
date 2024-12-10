@@ -83,7 +83,7 @@ export interface GetFusionEnvironmentAdminUserResult {
  * });
  * ```
  */
-export function getFusionEnvironmentAdminUserOutput(args: GetFusionEnvironmentAdminUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentAdminUserResult> {
+export function getFusionEnvironmentAdminUserOutput(args: GetFusionEnvironmentAdminUserOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentAdminUserResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser", {
         "fusionEnvironmentId": args.fusionEnvironmentId,

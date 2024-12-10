@@ -129,7 +129,7 @@ def get_autonomous_container_database_versions(compartment_id: Optional[str] = N
 def get_autonomous_container_database_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousContainerDatabaseVersionsFilterArgs', 'GetAutonomousContainerDatabaseVersionsFilterArgsDict']]]]] = None,
                                                       service_component: Optional[pulumi.Input[str]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseVersionsResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseVersionsResult]:
     """
     This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
 
@@ -153,7 +153,7 @@ def get_autonomous_container_database_versions_output(compartment_id: Optional[p
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['serviceComponent'] = service_component
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions', __args__, opts=opts, typ=GetAutonomousContainerDatabaseVersionsResult)
     return __ret__.apply(lambda __response__: GetAutonomousContainerDatabaseVersionsResult(
         autonomous_container_database_versions=pulumi.get(__response__, 'autonomous_container_database_versions'),

@@ -194,7 +194,7 @@ def get_pipelines_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          id: Optional[pulumi.Input[Optional[str]]] = None,
                          project_id: Optional[pulumi.Input[Optional[str]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPipelinesResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelinesResult]:
     """
     This data source provides the list of Pipelines in Oracle Cloud Infrastructure Data Science service.
 
@@ -230,7 +230,7 @@ def get_pipelines_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['id'] = id
     __args__['projectId'] = project_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getPipelines:getPipelines', __args__, opts=opts, typ=GetPipelinesResult)
     return __ret__.apply(lambda __response__: GetPipelinesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

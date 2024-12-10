@@ -193,7 +193,7 @@ def get_ratecards_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          time_from: Optional[pulumi.Input[Optional[str]]] = None,
                          time_to: Optional[pulumi.Input[Optional[str]]] = None,
                          x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRatecardsResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRatecardsResult]:
     """
     This data source provides the list of Ratecards in Oracle Cloud Infrastructure Osub Subscription service.
 
@@ -230,7 +230,7 @@ def get_ratecards_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['timeFrom'] = time_from
     __args__['timeTo'] = time_to
     __args__['xOneOriginRegion'] = x_one_origin_region
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsubSubscription/getRatecards:getRatecards', __args__, opts=opts, typ=GetRatecardsResult)
     return __ret__.apply(lambda __response__: GetRatecardsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

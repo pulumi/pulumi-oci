@@ -189,7 +189,7 @@ def get_security_zones_output(compartment_id: Optional[pulumi.Input[str]] = None
                               is_required_security_zones_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                               security_recipe_id: Optional[pulumi.Input[Optional[str]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityZonesResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityZonesResult]:
     """
     This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -226,7 +226,7 @@ def get_security_zones_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__['isRequiredSecurityZonesInSubtree'] = is_required_security_zones_in_subtree
     __args__['securityRecipeId'] = security_recipe_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getSecurityZones:getSecurityZones', __args__, opts=opts, typ=GetSecurityZonesResult)
     return __ret__.apply(lambda __response__: GetSecurityZonesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

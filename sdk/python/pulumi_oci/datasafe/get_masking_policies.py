@@ -268,7 +268,7 @@ def get_masking_policies_output(access_level: Optional[pulumi.Input[Optional[str
                                 target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                 time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPoliciesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPoliciesResult]:
     """
     This data source provides the list of Masking Policies in Oracle Cloud Infrastructure Data Safe service.
 
@@ -320,7 +320,7 @@ def get_masking_policies_output(access_level: Optional[pulumi.Input[Optional[str
     __args__['targetId'] = target_id
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPolicies:getMaskingPolicies', __args__, opts=opts, typ=GetMaskingPoliciesResult)
     return __ret__.apply(lambda __response__: GetMaskingPoliciesResult(
         access_level=pulumi.get(__response__, 'access_level'),

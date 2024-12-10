@@ -142,7 +142,7 @@ export interface GetOccCapacityRequestResult {
  * });
  * ```
  */
-export function getOccCapacityRequestOutput(args: GetOccCapacityRequestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccCapacityRequestResult> {
+export function getOccCapacityRequestOutput(args: GetOccCapacityRequestOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOccCapacityRequestResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest", {
         "occCapacityRequestId": args.occCapacityRequestId,

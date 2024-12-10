@@ -114,7 +114,7 @@ def get_db_system_compute_performances(db_system_shape: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_db_system_compute_performances_output(db_system_shape: Optional[pulumi.Input[Optional[str]]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemComputePerformancesFilterArgs', 'GetDbSystemComputePerformancesFilterArgsDict']]]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemComputePerformancesResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemComputePerformancesResult]:
     """
     This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
 
@@ -135,7 +135,7 @@ def get_db_system_compute_performances_output(db_system_shape: Optional[pulumi.I
     __args__ = dict()
     __args__['dbSystemShape'] = db_system_shape
     __args__['filters'] = filters
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances', __args__, opts=opts, typ=GetDbSystemComputePerformancesResult)
     return __ret__.apply(lambda __response__: GetDbSystemComputePerformancesResult(
         db_system_compute_performances=pulumi.get(__response__, 'db_system_compute_performances'),

@@ -88,7 +88,7 @@ export interface GetManagedDatabaseUserProxiedForUserResult {
  * });
  * ```
  */
-export function getManagedDatabaseUserProxiedForUserOutput(args: GetManagedDatabaseUserProxiedForUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserProxiedForUserResult> {
+export function getManagedDatabaseUserProxiedForUserOutput(args: GetManagedDatabaseUserProxiedForUserOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseUserProxiedForUserResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUser:getManagedDatabaseUserProxiedForUser", {
         "managedDatabaseId": args.managedDatabaseId,

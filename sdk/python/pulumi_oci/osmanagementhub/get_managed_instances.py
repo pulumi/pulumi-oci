@@ -474,7 +474,7 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
                                  profiles: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  software_source_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstancesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstancesResult]:
     """
     This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -561,7 +561,7 @@ def get_managed_instances_output(advisory_names: Optional[pulumi.Input[Optional[
     __args__['profiles'] = profiles
     __args__['softwareSourceId'] = software_source_id
     __args__['statuses'] = statuses
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstances:getManagedInstances', __args__, opts=opts, typ=GetManagedInstancesResult)
     return __ret__.apply(lambda __response__: GetManagedInstancesResult(
         advisory_names=pulumi.get(__response__, 'advisory_names'),

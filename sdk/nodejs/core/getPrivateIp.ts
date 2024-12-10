@@ -121,7 +121,7 @@ export interface GetPrivateIpResult {
  * });
  * ```
  */
-export function getPrivateIpOutput(args: GetPrivateIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateIpResult> {
+export function getPrivateIpOutput(args: GetPrivateIpOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPrivateIpResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getPrivateIp:getPrivateIp", {
         "privateIpId": args.privateIpId,

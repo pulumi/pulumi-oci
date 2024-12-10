@@ -101,7 +101,7 @@ export interface GetHttpRedirectResult {
  * });
  * ```
  */
-export function getHttpRedirectOutput(args: GetHttpRedirectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpRedirectResult> {
+export function getHttpRedirectOutput(args: GetHttpRedirectOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHttpRedirectResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waas/getHttpRedirect:getHttpRedirect", {
         "httpRedirectId": args.httpRedirectId,

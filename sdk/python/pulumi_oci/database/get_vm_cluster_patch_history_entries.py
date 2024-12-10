@@ -114,7 +114,7 @@ def get_vm_cluster_patch_history_entries(filters: Optional[Sequence[Union['GetVm
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 def get_vm_cluster_patch_history_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVmClusterPatchHistoryEntriesFilterArgs', 'GetVmClusterPatchHistoryEntriesFilterArgsDict']]]]] = None,
                                                 vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterPatchHistoryEntriesResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterPatchHistoryEntriesResult]:
     """
     This data source provides the list of Vm Cluster Patch History Entries in Oracle Cloud Infrastructure Database service.
 
@@ -135,7 +135,7 @@ def get_vm_cluster_patch_history_entries_output(filters: Optional[pulumi.Input[O
     __args__ = dict()
     __args__['filters'] = filters
     __args__['vmClusterId'] = vm_cluster_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries', __args__, opts=opts, typ=GetVmClusterPatchHistoryEntriesResult)
     return __ret__.apply(lambda __response__: GetVmClusterPatchHistoryEntriesResult(
         filters=pulumi.get(__response__, 'filters'),

@@ -72,7 +72,7 @@ export interface GetRunLogsResult {
  * });
  * ```
  */
-export function getRunLogsOutput(args: GetRunLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunLogsResult> {
+export function getRunLogsOutput(args: GetRunLogsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRunLogsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataFlow/getRunLogs:getRunLogs", {
         "filters": args.filters,

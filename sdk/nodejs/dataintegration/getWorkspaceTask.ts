@@ -155,7 +155,7 @@ export interface GetWorkspaceTaskResult {
  *
  * Retrieves a task using the specified identifier.
  */
-export function getWorkspaceTaskOutput(args: GetWorkspaceTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceTaskResult> {
+export function getWorkspaceTaskOutput(args: GetWorkspaceTaskOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspaceTaskResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", {
         "expandReferences": args.expandReferences,

@@ -203,7 +203,7 @@ def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.I
                                                  profile_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                  target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                  user_assessment_id: Optional[pulumi.Input[str]] = None,
-                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentProfileAnalyticsResult]:
+                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserAssessmentProfileAnalyticsResult]:
     """
     This data source provides the list of User Assessment Profile Analytics in Oracle Cloud Infrastructure Data Safe service.
 
@@ -253,7 +253,7 @@ def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.I
     __args__['profileName'] = profile_name
     __args__['targetId'] = target_id
     __args__['userAssessmentId'] = user_assessment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics', __args__, opts=opts, typ=GetUserAssessmentProfileAnalyticsResult)
     return __ret__.apply(lambda __response__: GetUserAssessmentProfileAnalyticsResult(
         access_level=pulumi.get(__response__, 'access_level'),

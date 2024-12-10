@@ -121,7 +121,7 @@ export interface GetLimitValuesResult {
  * });
  * ```
  */
-export function getLimitValuesOutput(args: GetLimitValuesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLimitValuesResult> {
+export function getLimitValuesOutput(args: GetLimitValuesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLimitValuesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Limits/getLimitValues:getLimitValues", {
         "availabilityDomain": args.availabilityDomain,

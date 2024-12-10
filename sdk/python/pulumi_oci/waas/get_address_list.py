@@ -190,7 +190,7 @@ def get_address_list(address_list_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_address_list_output(address_list_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddressListResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressListResult]:
     """
     This data source provides details about a specific Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
 
@@ -210,7 +210,7 @@ def get_address_list_output(address_list_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['addressListId'] = address_list_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waas/getAddressList:getAddressList', __args__, opts=opts, typ=GetAddressListResult)
     return __ret__.apply(lambda __response__: GetAddressListResult(
         address_count=pulumi.get(__response__, 'address_count'),

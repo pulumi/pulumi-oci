@@ -149,7 +149,7 @@ export interface GetDomainsMyGroupsResult {
  * });
  * ```
  */
-export function getDomainsMyGroupsOutput(args: GetDomainsMyGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyGroupsResult> {
+export function getDomainsMyGroupsOutput(args: GetDomainsMyGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyGroups:getDomainsMyGroups", {
         "attributeSets": args.attributeSets,

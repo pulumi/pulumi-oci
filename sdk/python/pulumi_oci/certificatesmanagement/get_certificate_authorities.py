@@ -190,7 +190,7 @@ def get_certificate_authorities_output(certificate_authority_id: Optional[pulumi
                                        issuer_certificate_authority_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateAuthoritiesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateAuthoritiesResult]:
     """
     This data source provides the list of Certificate Authorities in Oracle Cloud Infrastructure Certificates Management service.
 
@@ -224,7 +224,7 @@ def get_certificate_authorities_output(certificate_authority_id: Optional[pulumi
     __args__['issuerCertificateAuthorityId'] = issuer_certificate_authority_id
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities', __args__, opts=opts, typ=GetCertificateAuthoritiesResult)
     return __ret__.apply(lambda __response__: GetCertificateAuthoritiesResult(
         certificate_authority_collections=pulumi.get(__response__, 'certificate_authority_collections'),

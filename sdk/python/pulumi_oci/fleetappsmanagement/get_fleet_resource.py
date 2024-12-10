@@ -348,7 +348,7 @@ def get_fleet_resource(fleet_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_fleet_resource_output(fleet_id: Optional[pulumi.Input[str]] = None,
                               fleet_resource_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetResourceResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetResourceResult]:
     """
     This data source provides details about a specific Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -371,7 +371,7 @@ def get_fleet_resource_output(fleet_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['fleetId'] = fleet_id
     __args__['fleetResourceId'] = fleet_resource_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getFleetResource:getFleetResource', __args__, opts=opts, typ=GetFleetResourceResult)
     return __ret__.apply(lambda __response__: GetFleetResourceResult(
         application_type=pulumi.get(__response__, 'application_type'),

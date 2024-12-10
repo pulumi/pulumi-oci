@@ -166,7 +166,7 @@ def get_repository_mirror_record(mirror_record_type: Optional[str] = None,
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
 def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Input[str]] = None,
                                         repository_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryMirrorRecordResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryMirrorRecordResult]:
     """
     This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
 
@@ -189,7 +189,7 @@ def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Inpu
     __args__ = dict()
     __args__['mirrorRecordType'] = mirror_record_type
     __args__['repositoryId'] = repository_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord', __args__, opts=opts, typ=GetRepositoryMirrorRecordResult)
     return __ret__.apply(lambda __response__: GetRepositoryMirrorRecordResult(
         id=pulumi.get(__response__, 'id'),

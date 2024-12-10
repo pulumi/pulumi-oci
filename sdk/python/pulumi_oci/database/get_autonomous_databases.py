@@ -340,7 +340,7 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
                                     lifecycle_state_not_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                     resource_pool_leader_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabasesResult]:
     """
     ## 
 
@@ -409,7 +409,7 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     __args__['lifecycleStateNotEqualTo'] = lifecycle_state_not_equal_to
     __args__['resourcePoolLeaderId'] = resource_pool_leader_id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabases:getAutonomousDatabases', __args__, opts=opts, typ=GetAutonomousDatabasesResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabasesResult(
         autonomous_container_database_id=pulumi.get(__response__, 'autonomous_container_database_id'),

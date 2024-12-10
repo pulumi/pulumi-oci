@@ -160,7 +160,7 @@ export interface GetLifecycleEnvironmentsResult {
  * });
  * ```
  */
-export function getLifecycleEnvironmentsOutput(args?: GetLifecycleEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLifecycleEnvironmentsResult> {
+export function getLifecycleEnvironmentsOutput(args?: GetLifecycleEnvironmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLifecycleEnvironmentsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getLifecycleEnvironments:getLifecycleEnvironments", {

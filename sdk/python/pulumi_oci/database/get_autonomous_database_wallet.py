@@ -140,7 +140,7 @@ def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulum
                                           base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                                           generate_type: Optional[pulumi.Input[Optional[str]]] = None,
                                           password: Optional[pulumi.Input[str]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseWalletResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseWalletResult]:
     """
     **Deprecated. Use Database.AutonomousDatabaseWallet instead.**
 
@@ -164,7 +164,7 @@ def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulum
     __args__['base64EncodeContent'] = base64_encode_content
     __args__['generateType'] = generate_type
     __args__['password'] = password
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet', __args__, opts=opts, typ=GetAutonomousDatabaseWalletResult)
     return __ret__.apply(lambda __response__: GetAutonomousDatabaseWalletResult(
         autonomous_database_id=pulumi.get(__response__, 'autonomous_database_id'),

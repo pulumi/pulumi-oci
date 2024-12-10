@@ -148,7 +148,7 @@ export interface GetDeploymentCertificateResult {
  * });
  * ```
  */
-export function getDeploymentCertificateOutput(args: GetDeploymentCertificateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentCertificateResult> {
+export function getDeploymentCertificateOutput(args: GetDeploymentCertificateOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDeploymentCertificateResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", {
         "certificateKey": args.certificateKey,

@@ -72,7 +72,7 @@ export interface GetJobShapesResult {
  * });
  * ```
  */
-export function getJobShapesOutput(args: GetJobShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobShapesResult> {
+export function getJobShapesOutput(args: GetJobShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetJobShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataScience/getJobShapes:getJobShapes", {
         "compartmentId": args.compartmentId,

@@ -166,7 +166,7 @@ def get_stacks_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStacksFilterArgs', 'GetStacksFilterArgsDict']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStacksResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStacksResult]:
     """
     This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
 
@@ -204,7 +204,7 @@ def get_stacks_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ResourceManager/getStacks:getStacks', __args__, opts=opts, typ=GetStacksResult)
     return __ret__.apply(lambda __response__: GetStacksResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

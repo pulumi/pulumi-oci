@@ -156,7 +156,7 @@ export interface GetSqlFirewallPolicyAnalyticsResult {
  * });
  * ```
  */
-export function getSqlFirewallPolicyAnalyticsOutput(args: GetSqlFirewallPolicyAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSqlFirewallPolicyAnalyticsResult> {
+export function getSqlFirewallPolicyAnalyticsOutput(args: GetSqlFirewallPolicyAnalyticsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSqlFirewallPolicyAnalyticsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSqlFirewallPolicyAnalytics:getSqlFirewallPolicyAnalytics", {
         "accessLevel": args.accessLevel,

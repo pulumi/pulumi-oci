@@ -250,7 +250,7 @@ def get_library_masking_formats_output(access_level: Optional[pulumi.Input[Optio
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                        time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLibraryMaskingFormatsResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLibraryMaskingFormatsResult]:
     """
     This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
 
@@ -299,7 +299,7 @@ def get_library_masking_formats_output(access_level: Optional[pulumi.Input[Optio
     __args__['state'] = state
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats', __args__, opts=opts, typ=GetLibraryMaskingFormatsResult)
     return __ret__.apply(lambda __response__: GetLibraryMaskingFormatsResult(
         access_level=pulumi.get(__response__, 'access_level'),

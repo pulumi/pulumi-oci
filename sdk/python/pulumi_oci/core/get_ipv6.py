@@ -216,7 +216,7 @@ def get_ipv6(ipv6id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
 def get_ipv6_output(ipv6id: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpv6Result]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpv6Result]:
     """
     This data source provides details about a specific Ipv6 resource in Oracle Cloud Infrastructure Core service.
 
@@ -239,7 +239,7 @@ def get_ipv6_output(ipv6id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['ipv6id'] = ipv6id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpv6:getIpv6', __args__, opts=opts, typ=GetIpv6Result)
     return __ret__.apply(lambda __response__: GetIpv6Result(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

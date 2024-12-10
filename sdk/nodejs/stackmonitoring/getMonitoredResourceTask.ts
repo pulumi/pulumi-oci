@@ -109,7 +109,7 @@ export interface GetMonitoredResourceTaskResult {
  * });
  * ```
  */
-export function getMonitoredResourceTaskOutput(args: GetMonitoredResourceTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredResourceTaskResult> {
+export function getMonitoredResourceTaskOutput(args: GetMonitoredResourceTaskOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMonitoredResourceTaskResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", {
         "monitoredResourceTaskId": args.monitoredResourceTaskId,

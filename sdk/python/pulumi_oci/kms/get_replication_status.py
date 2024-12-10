@@ -118,7 +118,7 @@ def get_replication_status(management_endpoint: Optional[str] = None,
         replication_id=pulumi.get(__ret__, 'replication_id'))
 def get_replication_status_output(management_endpoint: Optional[pulumi.Input[str]] = None,
                                   replication_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationStatusResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationStatusResult]:
     """
     This data source provides details about a specific Replication Status resource in Oracle Cloud Infrastructure Kms service.
 
@@ -144,7 +144,7 @@ def get_replication_status_output(management_endpoint: Optional[pulumi.Input[str
     __args__ = dict()
     __args__['managementEndpoint'] = management_endpoint
     __args__['replicationId'] = replication_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Kms/getReplicationStatus:getReplicationStatus', __args__, opts=opts, typ=GetReplicationStatusResult)
     return __ret__.apply(lambda __response__: GetReplicationStatusResult(
         id=pulumi.get(__response__, 'id'),

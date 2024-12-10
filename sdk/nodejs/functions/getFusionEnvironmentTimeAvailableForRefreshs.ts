@@ -72,7 +72,7 @@ export interface GetFusionEnvironmentTimeAvailableForRefreshsResult {
  * });
  * ```
  */
-export function getFusionEnvironmentTimeAvailableForRefreshsOutput(args: GetFusionEnvironmentTimeAvailableForRefreshsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentTimeAvailableForRefreshsResult> {
+export function getFusionEnvironmentTimeAvailableForRefreshsOutput(args: GetFusionEnvironmentTimeAvailableForRefreshsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFusionEnvironmentTimeAvailableForRefreshsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", {
         "filters": args.filters,

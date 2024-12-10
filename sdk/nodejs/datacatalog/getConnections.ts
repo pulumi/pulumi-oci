@@ -198,7 +198,7 @@ export interface GetConnectionsResult {
  * });
  * ```
  */
-export function getConnectionsOutput(args: GetConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionsResult> {
+export function getConnectionsOutput(args: GetConnectionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConnectionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataCatalog/getConnections:getConnections", {
         "catalogId": args.catalogId,

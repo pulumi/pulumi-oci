@@ -249,7 +249,7 @@ def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[int]
                                 privilege_type: Optional[pulumi.Input[Optional[str]]] = None,
                                 user_assessment_id: Optional[pulumi.Input[str]] = None,
                                 user_key: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListUserGrantsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListUserGrantsResult]:
     """
     This data source provides the list of List User Grants in Oracle Cloud Infrastructure Data Safe service.
 
@@ -297,7 +297,7 @@ def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[int]
     __args__['privilegeType'] = privilege_type
     __args__['userAssessmentId'] = user_assessment_id
     __args__['userKey'] = user_key
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getListUserGrants:getListUserGrants', __args__, opts=opts, typ=GetListUserGrantsResult)
     return __ret__.apply(lambda __response__: GetListUserGrantsResult(
         depth_level=pulumi.get(__response__, 'depth_level'),

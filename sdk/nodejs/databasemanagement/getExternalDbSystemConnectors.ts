@@ -98,7 +98,7 @@ export interface GetExternalDbSystemConnectorsResult {
  * });
  * ```
  */
-export function getExternalDbSystemConnectorsOutput(args?: GetExternalDbSystemConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbSystemConnectorsResult> {
+export function getExternalDbSystemConnectorsOutput(args?: GetExternalDbSystemConnectorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDbSystemConnectorsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbSystemConnectors:getExternalDbSystemConnectors", {

@@ -127,7 +127,7 @@ export interface GetBuildRunsResult {
  * });
  * ```
  */
-export function getBuildRunsOutput(args?: GetBuildRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildRunsResult> {
+export function getBuildRunsOutput(args?: GetBuildRunsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBuildRunsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getBuildRuns:getBuildRuns", {

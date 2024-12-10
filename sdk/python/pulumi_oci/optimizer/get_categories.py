@@ -210,7 +210,7 @@ def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequ
                           include_organization: Optional[pulumi.Input[Optional[bool]]] = None,
                           name: Optional[pulumi.Input[Optional[str]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCategoriesResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoriesResult]:
     """
     This data source provides the list of Categories in Oracle Cloud Infrastructure Optimizer service.
 
@@ -258,7 +258,7 @@ def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequ
     __args__['includeOrganization'] = include_organization
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getCategories:getCategories', __args__, opts=opts, typ=GetCategoriesResult)
     return __ret__.apply(lambda __response__: GetCategoriesResult(
         category_collections=pulumi.get(__response__, 'category_collections'),

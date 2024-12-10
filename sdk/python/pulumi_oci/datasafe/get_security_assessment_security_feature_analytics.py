@@ -166,7 +166,7 @@ def get_security_assessment_security_feature_analytics_output(access_level: Opti
                                                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs', 'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict']]]]] = None,
                                                               target_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentSecurityFeatureAnalyticsResult]:
+                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentSecurityFeatureAnalyticsResult]:
     """
     This data source provides the list of Security Assessment Security Feature Analytics in Oracle Cloud Infrastructure Data Safe service.
 
@@ -203,7 +203,7 @@ def get_security_assessment_security_feature_analytics_output(access_level: Opti
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['targetId'] = target_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentSecurityFeatureAnalytics:getSecurityAssessmentSecurityFeatureAnalytics', __args__, opts=opts, typ=GetSecurityAssessmentSecurityFeatureAnalyticsResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentSecurityFeatureAnalyticsResult(
         access_level=pulumi.get(__response__, 'access_level'),

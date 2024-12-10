@@ -108,7 +108,7 @@ export interface GetVmClusterNetworksResult {
  * });
  * ```
  */
-export function getVmClusterNetworksOutput(args: GetVmClusterNetworksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterNetworksResult> {
+export function getVmClusterNetworksOutput(args: GetVmClusterNetworksOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVmClusterNetworksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getVmClusterNetworks:getVmClusterNetworks", {
         "compartmentId": args.compartmentId,

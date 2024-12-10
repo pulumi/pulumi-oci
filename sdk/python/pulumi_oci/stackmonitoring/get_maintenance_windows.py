@@ -168,7 +168,7 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[str]] =
                                    lifecycle_details: Optional[pulumi.Input[Optional[str]]] = None,
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
                                    status: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceWindowsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceWindowsResult]:
     """
     This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Stack Monitoring service.
 
@@ -198,7 +198,7 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[str]] =
     __args__['lifecycleDetails'] = lifecycle_details
     __args__['name'] = name
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMaintenanceWindows:getMaintenanceWindows', __args__, opts=opts, typ=GetMaintenanceWindowsResult)
     return __ret__.apply(lambda __response__: GetMaintenanceWindowsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

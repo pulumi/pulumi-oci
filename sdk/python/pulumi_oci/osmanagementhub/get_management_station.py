@@ -344,7 +344,7 @@ def get_management_station(management_station_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         total_mirrors=pulumi.get(__ret__, 'total_mirrors'))
 def get_management_station_output(management_station_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementStationResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementStationResult]:
     """
     This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -364,7 +364,7 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[s
     """
     __args__ = dict()
     __args__['managementStationId'] = management_station_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagementStation:getManagementStation', __args__, opts=opts, typ=GetManagementStationResult)
     return __ret__.apply(lambda __response__: GetManagementStationResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

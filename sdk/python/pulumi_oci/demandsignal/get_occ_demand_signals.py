@@ -158,7 +158,7 @@ def get_occ_demand_signals_output(compartment_id: Optional[pulumi.Input[Optional
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccDemandSignalsFilterArgs', 'GetOccDemandSignalsFilterArgsDict']]]]] = None,
                                   id: Optional[pulumi.Input[Optional[str]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccDemandSignalsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccDemandSignalsResult]:
     """
     This data source provides the list of Occ Demand Signals in Oracle Cloud Infrastructure Demand Signal service.
 
@@ -188,7 +188,7 @@ def get_occ_demand_signals_output(compartment_id: Optional[pulumi.Input[Optional
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DemandSignal/getOccDemandSignals:getOccDemandSignals', __args__, opts=opts, typ=GetOccDemandSignalsResult)
     return __ret__.apply(lambda __response__: GetOccDemandSignalsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

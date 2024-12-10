@@ -174,7 +174,7 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[str]] = None
                                 repository_id: Optional[pulumi.Input[str]] = None,
                                 target_repository_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 target_version: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryDiffsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryDiffsResult]:
     """
     This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
 
@@ -207,7 +207,7 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[str]] = None
     __args__['repositoryId'] = repository_id
     __args__['targetRepositoryId'] = target_repository_id
     __args__['targetVersion'] = target_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryDiffs:getRepositoryDiffs', __args__, opts=opts, typ=GetRepositoryDiffsResult)
     return __ret__.apply(lambda __response__: GetRepositoryDiffsResult(
         base_version=pulumi.get(__response__, 'base_version'),

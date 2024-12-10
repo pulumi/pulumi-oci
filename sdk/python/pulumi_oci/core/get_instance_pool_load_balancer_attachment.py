@@ -169,7 +169,7 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[str] =
         vnic_selection=pulumi.get(__ret__, 'vnic_selection'))
 def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional[pulumi.Input[str]] = None,
                                                       instance_pool_load_balancer_attachment_id: Optional[pulumi.Input[str]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancePoolLoadBalancerAttachmentResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstancePoolLoadBalancerAttachmentResult]:
     """
     This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
 
@@ -192,7 +192,7 @@ def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional
     __args__ = dict()
     __args__['instancePoolId'] = instance_pool_id
     __args__['instancePoolLoadBalancerAttachmentId'] = instance_pool_load_balancer_attachment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment', __args__, opts=opts, typ=GetInstancePoolLoadBalancerAttachmentResult)
     return __ret__.apply(lambda __response__: GetInstancePoolLoadBalancerAttachmentResult(
         backend_set_name=pulumi.get(__response__, 'backend_set_name'),

@@ -179,7 +179,7 @@ export interface GetIntegrationInstanceResult {
  * });
  * ```
  */
-export function getIntegrationInstanceOutput(args: GetIntegrationInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIntegrationInstanceResult> {
+export function getIntegrationInstanceOutput(args: GetIntegrationInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIntegrationInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Integration/getIntegrationInstance:getIntegrationInstance", {
         "integrationInstanceId": args.integrationInstanceId,

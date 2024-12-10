@@ -131,7 +131,7 @@ def get_console_history_data(console_history_id: Optional[str] = None,
 def get_console_history_data_output(console_history_id: Optional[pulumi.Input[str]] = None,
                                     length: Optional[pulumi.Input[Optional[int]]] = None,
                                     offset: Optional[pulumi.Input[Optional[int]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConsoleHistoryDataResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConsoleHistoryDataResult]:
     """
     This data source provides details about a specific Console History Content resource in Oracle Cloud Infrastructure Core service.
 
@@ -159,7 +159,7 @@ def get_console_history_data_output(console_history_id: Optional[pulumi.Input[st
     __args__['consoleHistoryId'] = console_history_id
     __args__['length'] = length
     __args__['offset'] = offset
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getConsoleHistoryData:getConsoleHistoryData', __args__, opts=opts, typ=GetConsoleHistoryDataResult)
     return __ret__.apply(lambda __response__: GetConsoleHistoryDataResult(
         console_history_id=pulumi.get(__response__, 'console_history_id'),

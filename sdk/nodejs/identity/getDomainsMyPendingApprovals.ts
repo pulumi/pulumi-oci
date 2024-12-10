@@ -124,7 +124,7 @@ export interface GetDomainsMyPendingApprovalsResult {
  * });
  * ```
  */
-export function getDomainsMyPendingApprovalsOutput(args: GetDomainsMyPendingApprovalsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyPendingApprovalsResult> {
+export function getDomainsMyPendingApprovalsOutput(args: GetDomainsMyPendingApprovalsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsMyPendingApprovalsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsMyPendingApprovals:getDomainsMyPendingApprovals", {
         "authorization": args.authorization,

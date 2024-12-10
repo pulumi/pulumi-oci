@@ -208,7 +208,7 @@ def get_masking_reports_masked_column_output(column_names: Optional[pulumi.Input
                                              objects: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              sensitive_type_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingReportsMaskedColumnResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportsMaskedColumnResult]:
     """
     This data source provides details about a specific Masking Reports Masked Column resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -246,7 +246,7 @@ def get_masking_reports_masked_column_output(column_names: Optional[pulumi.Input
     __args__['objects'] = objects
     __args__['schemaNames'] = schema_names
     __args__['sensitiveTypeId'] = sensitive_type_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingReportsMaskedColumn:getMaskingReportsMaskedColumn', __args__, opts=opts, typ=GetMaskingReportsMaskedColumnResult)
     return __ret__.apply(lambda __response__: GetMaskingReportsMaskedColumnResult(
         column_names=pulumi.get(__response__, 'column_names'),

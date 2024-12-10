@@ -69,7 +69,7 @@ export interface GetLogAnalyticsPreferenceResult {
  * });
  * ```
  */
-export function getLogAnalyticsPreferenceOutput(args: GetLogAnalyticsPreferenceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsPreferenceResult> {
+export function getLogAnalyticsPreferenceOutput(args: GetLogAnalyticsPreferenceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsPreferenceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", {
         "namespace": args.namespace,

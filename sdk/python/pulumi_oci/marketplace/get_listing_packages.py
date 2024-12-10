@@ -178,7 +178,7 @@ def get_listing_packages_output(compartment_id: Optional[pulumi.Input[Optional[s
                                 listing_id: Optional[pulumi.Input[str]] = None,
                                 package_type: Optional[pulumi.Input[Optional[str]]] = None,
                                 package_version: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingPackagesResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingPackagesResult]:
     """
     This data source provides the list of Listing Packages in Oracle Cloud Infrastructure Marketplace service.
 
@@ -221,7 +221,7 @@ def get_listing_packages_output(compartment_id: Optional[pulumi.Input[Optional[s
     __args__['listingId'] = listing_id
     __args__['packageType'] = package_type
     __args__['packageVersion'] = package_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getListingPackages:getListingPackages', __args__, opts=opts, typ=GetListingPackagesResult)
     return __ret__.apply(lambda __response__: GetListingPackagesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

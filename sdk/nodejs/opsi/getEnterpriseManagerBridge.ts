@@ -115,7 +115,7 @@ export interface GetEnterpriseManagerBridgeResult {
  * });
  * ```
  */
-export function getEnterpriseManagerBridgeOutput(args: GetEnterpriseManagerBridgeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnterpriseManagerBridgeResult> {
+export function getEnterpriseManagerBridgeOutput(args: GetEnterpriseManagerBridgeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEnterpriseManagerBridgeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", {
         "enterpriseManagerBridgeId": args.enterpriseManagerBridgeId,

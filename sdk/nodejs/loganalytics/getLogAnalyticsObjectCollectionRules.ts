@@ -105,7 +105,7 @@ export interface GetLogAnalyticsObjectCollectionRulesResult {
  * });
  * ```
  */
-export function getLogAnalyticsObjectCollectionRulesOutput(args: GetLogAnalyticsObjectCollectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsObjectCollectionRulesResult> {
+export function getLogAnalyticsObjectCollectionRulesOutput(args: GetLogAnalyticsObjectCollectionRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsObjectCollectionRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", {
         "compartmentId": args.compartmentId,

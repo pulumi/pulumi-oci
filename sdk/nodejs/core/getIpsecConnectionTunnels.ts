@@ -72,7 +72,7 @@ export interface GetIpsecConnectionTunnelsResult {
  * });
  * ```
  */
-export function getIpsecConnectionTunnelsOutput(args: GetIpsecConnectionTunnelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelsResult> {
+export function getIpsecConnectionTunnelsOutput(args: GetIpsecConnectionTunnelsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpsecConnectionTunnelsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getIpsecConnectionTunnels:getIpsecConnectionTunnels", {
         "filters": args.filters,

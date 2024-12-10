@@ -228,7 +228,7 @@ def get_managed_database_optimizer_statistics_advisor_execution(execution_name: 
 def get_managed_database_optimizer_statistics_advisor_execution_output(execution_name: Optional[pulumi.Input[str]] = None,
                                                                        managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                        task_name: Optional[pulumi.Input[str]] = None,
-                                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult]:
+                                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult]:
     """
     This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -255,7 +255,7 @@ def get_managed_database_optimizer_statistics_advisor_execution_output(execution
     __args__['executionName'] = execution_name
     __args__['managedDatabaseId'] = managed_database_id
     __args__['taskName'] = task_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult(
         databases=pulumi.get(__response__, 'databases'),

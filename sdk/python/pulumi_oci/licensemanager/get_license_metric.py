@@ -153,7 +153,7 @@ def get_license_metric(compartment_id: Optional[str] = None,
         total_product_license_count=pulumi.get(__ret__, 'total_product_license_count'))
 def get_license_metric_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLicenseMetricResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLicenseMetricResult]:
     """
     This data source provides details about a specific License Metric resource in Oracle Cloud Infrastructure License Manager service.
 
@@ -176,7 +176,7 @@ def get_license_metric_output(compartment_id: Optional[pulumi.Input[str]] = None
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['isCompartmentIdInSubtree'] = is_compartment_id_in_subtree
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getLicenseMetric:getLicenseMetric', __args__, opts=opts, typ=GetLicenseMetricResult)
     return __ret__.apply(lambda __response__: GetLicenseMetricResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

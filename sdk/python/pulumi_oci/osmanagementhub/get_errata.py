@@ -247,7 +247,7 @@ def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequen
                       os_family: Optional[pulumi.Input[Optional[str]]] = None,
                       time_issue_date_end: Optional[pulumi.Input[Optional[str]]] = None,
                       time_issue_date_start: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetErrataResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetErrataResult]:
     """
     This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -293,7 +293,7 @@ def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequen
     __args__['osFamily'] = os_family
     __args__['timeIssueDateEnd'] = time_issue_date_end
     __args__['timeIssueDateStart'] = time_issue_date_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getErrata:getErrata', __args__, opts=opts, typ=GetErrataResult)
     return __ret__.apply(lambda __response__: GetErrataResult(
         advisory_severities=pulumi.get(__response__, 'advisory_severities'),

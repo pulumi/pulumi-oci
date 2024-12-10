@@ -91,7 +91,7 @@ export interface GetCompatibleFormatsForSensitiveTypeResult {
  * });
  * ```
  */
-export function getCompatibleFormatsForSensitiveTypeOutput(args: GetCompatibleFormatsForSensitiveTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCompatibleFormatsForSensitiveTypeResult> {
+export function getCompatibleFormatsForSensitiveTypeOutput(args: GetCompatibleFormatsForSensitiveTypeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCompatibleFormatsForSensitiveTypeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", {
         "accessLevel": args.accessLevel,

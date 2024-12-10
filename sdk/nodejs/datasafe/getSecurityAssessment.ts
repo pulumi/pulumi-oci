@@ -166,7 +166,7 @@ export interface GetSecurityAssessmentResult {
  * });
  * ```
  */
-export function getSecurityAssessmentOutput(args: GetSecurityAssessmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentResult> {
+export function getSecurityAssessmentOutput(args: GetSecurityAssessmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAssessmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessment:getSecurityAssessment", {
         "securityAssessmentId": args.securityAssessmentId,

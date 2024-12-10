@@ -229,7 +229,7 @@ def get_model_version_set(model_version_set_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_model_version_set_output(model_version_set_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelVersionSetResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelVersionSetResult]:
     """
     This data source provides details about a specific Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
 
@@ -249,7 +249,7 @@ def get_model_version_set_output(model_version_set_id: Optional[pulumi.Input[str
     """
     __args__ = dict()
     __args__['modelVersionSetId'] = model_version_set_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelVersionSet:getModelVersionSet', __args__, opts=opts, typ=GetModelVersionSetResult)
     return __ret__.apply(lambda __response__: GetModelVersionSetResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -130,7 +130,7 @@ def get_network_firewall_policy_service_list(name: Optional[str] = None,
         total_services=pulumi.get(__ret__, 'total_services'))
 def get_network_firewall_policy_service_list_output(name: Optional[pulumi.Input[str]] = None,
                                                     network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyServiceListResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyServiceListResult]:
     """
     This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
 
@@ -143,7 +143,7 @@ def get_network_firewall_policy_service_list_output(name: Optional[pulumi.Input[
     __args__ = dict()
     __args__['name'] = name
     __args__['networkFirewallPolicyId'] = network_firewall_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList', __args__, opts=opts, typ=GetNetworkFirewallPolicyServiceListResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyServiceListResult(
         id=pulumi.get(__response__, 'id'),

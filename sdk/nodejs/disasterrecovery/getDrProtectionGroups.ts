@@ -127,7 +127,7 @@ export interface GetDrProtectionGroupsResult {
  * });
  * ```
  */
-export function getDrProtectionGroupsOutput(args: GetDrProtectionGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrProtectionGroupsResult> {
+export function getDrProtectionGroupsOutput(args: GetDrProtectionGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrProtectionGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", {
         "compartmentId": args.compartmentId,

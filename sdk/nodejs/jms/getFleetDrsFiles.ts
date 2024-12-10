@@ -72,7 +72,7 @@ export interface GetFleetDrsFilesResult {
  * });
  * ```
  */
-export function getFleetDrsFilesOutput(args: GetFleetDrsFilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetDrsFilesResult> {
+export function getFleetDrsFilesOutput(args: GetFleetDrsFilesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFleetDrsFilesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getFleetDrsFiles:getFleetDrsFiles", {
         "filters": args.filters,

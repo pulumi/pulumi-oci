@@ -156,7 +156,7 @@ export interface GetInstanceMaintenanceEventResult {
  * });
  * ```
  */
-export function getInstanceMaintenanceEventOutput(args: GetInstanceMaintenanceEventOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMaintenanceEventResult> {
+export function getInstanceMaintenanceEventOutput(args: GetInstanceMaintenanceEventOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstanceMaintenanceEventResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", {
         "instanceMaintenanceEventId": args.instanceMaintenanceEventId,

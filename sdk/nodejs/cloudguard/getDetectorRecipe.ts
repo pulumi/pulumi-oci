@@ -129,7 +129,7 @@ export interface GetDetectorRecipeResult {
  * });
  * ```
  */
-export function getDetectorRecipeOutput(args: GetDetectorRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectorRecipeResult> {
+export function getDetectorRecipeOutput(args: GetDetectorRecipeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDetectorRecipeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", {
         "detectorRecipeId": args.detectorRecipeId,

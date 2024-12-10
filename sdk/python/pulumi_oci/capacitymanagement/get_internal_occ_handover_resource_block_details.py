@@ -129,7 +129,7 @@ def get_internal_occ_handover_resource_block_details(filters: Optional[Sequence[
 def get_internal_occ_handover_resource_block_details_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternalOccHandoverResourceBlockDetailsFilterArgs', 'GetInternalOccHandoverResourceBlockDetailsFilterArgsDict']]]]] = None,
                                                             host_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                             occ_handover_resource_block_id: Optional[pulumi.Input[str]] = None,
-                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInternalOccHandoverResourceBlockDetailsResult]:
+                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccHandoverResourceBlockDetailsResult]:
     """
     This data source provides the list of Internal Occ Handover Resource Block Details in Oracle Cloud Infrastructure Capacity Management service.
 
@@ -153,7 +153,7 @@ def get_internal_occ_handover_resource_block_details_output(filters: Optional[pu
     __args__['filters'] = filters
     __args__['hostId'] = host_id
     __args__['occHandoverResourceBlockId'] = occ_handover_resource_block_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getInternalOccHandoverResourceBlockDetails:getInternalOccHandoverResourceBlockDetails', __args__, opts=opts, typ=GetInternalOccHandoverResourceBlockDetailsResult)
     return __ret__.apply(lambda __response__: GetInternalOccHandoverResourceBlockDetailsResult(
         filters=pulumi.get(__response__, 'filters'),

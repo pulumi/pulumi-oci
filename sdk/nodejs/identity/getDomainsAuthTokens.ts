@@ -140,7 +140,7 @@ export interface GetDomainsAuthTokensResult {
  * });
  * ```
  */
-export function getDomainsAuthTokensOutput(args: GetDomainsAuthTokensOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAuthTokensResult> {
+export function getDomainsAuthTokensOutput(args: GetDomainsAuthTokensOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsAuthTokensResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsAuthTokens:getDomainsAuthTokens", {
         "attributeSets": args.attributeSets,

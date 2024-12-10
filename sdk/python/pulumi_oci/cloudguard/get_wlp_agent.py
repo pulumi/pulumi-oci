@@ -239,7 +239,7 @@ def get_wlp_agent(wlp_agent_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         wlp_agent_id=pulumi.get(__ret__, 'wlp_agent_id'))
 def get_wlp_agent_output(wlp_agent_id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWlpAgentResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlpAgentResult]:
     """
     This data source provides details about a specific Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -259,7 +259,7 @@ def get_wlp_agent_output(wlp_agent_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['wlpAgentId'] = wlp_agent_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getWlpAgent:getWlpAgent', __args__, opts=opts, typ=GetWlpAgentResult)
     return __ret__.apply(lambda __response__: GetWlpAgentResult(
         agent_version=pulumi.get(__response__, 'agent_version'),

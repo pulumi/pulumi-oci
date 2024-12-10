@@ -85,7 +85,7 @@ export interface GetSoftwareSourceVendorsResult {
  * });
  * ```
  */
-export function getSoftwareSourceVendorsOutput(args: GetSoftwareSourceVendorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceVendorsResult> {
+export function getSoftwareSourceVendorsOutput(args: GetSoftwareSourceVendorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSoftwareSourceVendorsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getSoftwareSourceVendors:getSoftwareSourceVendors", {
         "compartmentId": args.compartmentId,

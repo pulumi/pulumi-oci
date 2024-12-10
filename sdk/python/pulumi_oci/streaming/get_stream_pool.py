@@ -243,7 +243,7 @@ def get_stream_pool(stream_pool_id: Optional[str] = None,
         stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_stream_pool_output(stream_pool_id: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamPoolResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamPoolResult]:
     """
     This data source provides details about a specific Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
 
@@ -263,7 +263,7 @@ def get_stream_pool_output(stream_pool_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['streamPoolId'] = stream_pool_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Streaming/getStreamPool:getStreamPool', __args__, opts=opts, typ=GetStreamPoolResult)
     return __ret__.apply(lambda __response__: GetStreamPoolResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

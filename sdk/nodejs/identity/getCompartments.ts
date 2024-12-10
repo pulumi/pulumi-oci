@@ -149,7 +149,7 @@ export interface GetCompartmentsResult {
  * });
  * ```
  */
-export function getCompartmentsOutput(args: GetCompartmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCompartmentsResult> {
+export function getCompartmentsOutput(args: GetCompartmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCompartmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getCompartments:getCompartments", {
         "accessLevel": args.accessLevel,

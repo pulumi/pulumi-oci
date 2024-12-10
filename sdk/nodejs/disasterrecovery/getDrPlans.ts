@@ -113,7 +113,7 @@ export interface GetDrPlansResult {
  * });
  * ```
  */
-export function getDrPlansOutput(args: GetDrPlansOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrPlansResult> {
+export function getDrPlansOutput(args: GetDrPlansOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDrPlansResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DisasterRecovery/getDrPlans:getDrPlans", {
         "displayName": args.displayName,

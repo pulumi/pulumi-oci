@@ -104,7 +104,7 @@ export interface GetDkimsResult {
  * });
  * ```
  */
-export function getDkimsOutput(args: GetDkimsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDkimsResult> {
+export function getDkimsOutput(args: GetDkimsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDkimsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Email/getDkims:getDkims", {
         "emailDomainId": args.emailDomainId,

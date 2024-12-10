@@ -103,7 +103,7 @@ export interface GetSavedQueryResult {
  * });
  * ```
  */
-export function getSavedQueryOutput(args: GetSavedQueryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSavedQueryResult> {
+export function getSavedQueryOutput(args: GetSavedQueryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSavedQueryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getSavedQuery:getSavedQuery", {
         "savedQueryId": args.savedQueryId,

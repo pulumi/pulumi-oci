@@ -72,7 +72,7 @@ export interface GetNetworkSecurityGroupVnicsResult {
  * });
  * ```
  */
-export function getNetworkSecurityGroupVnicsOutput(args: GetNetworkSecurityGroupVnicsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupVnicsResult> {
+export function getNetworkSecurityGroupVnicsOutput(args: GetNetworkSecurityGroupVnicsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkSecurityGroupVnicsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", {
         "filters": args.filters,

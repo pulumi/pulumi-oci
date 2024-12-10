@@ -108,7 +108,7 @@ export interface GetContainerInstancesResult {
  * });
  * ```
  */
-export function getContainerInstancesOutput(args: GetContainerInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerInstancesResult> {
+export function getContainerInstancesOutput(args: GetContainerInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetContainerInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerInstances/getContainerInstances:getContainerInstances", {
         "availabilityDomain": args.availabilityDomain,

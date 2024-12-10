@@ -282,7 +282,7 @@ def get_schedule(schedule_id: Optional[str] = None,
         time_next_run=pulumi.get(__ret__, 'time_next_run'),
         time_scheduled=pulumi.get(__ret__, 'time_scheduled'))
 def get_schedule_output(schedule_id: Optional[pulumi.Input[str]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduleResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduleResult]:
     """
     This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
 
@@ -302,7 +302,7 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['scheduleId'] = schedule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getSchedule:getSchedule', __args__, opts=opts, typ=GetScheduleResult)
     return __ret__.apply(lambda __response__: GetScheduleResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -269,7 +269,7 @@ def get_responder_recipe(responder_recipe_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_responder_recipe_output(responder_recipe_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResponderRecipeResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResponderRecipeResult]:
     """
     This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 
@@ -289,7 +289,7 @@ def get_responder_recipe_output(responder_recipe_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['responderRecipeId'] = responder_recipe_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getResponderRecipe:getResponderRecipe', __args__, opts=opts, typ=GetResponderRecipeResult)
     return __ret__.apply(lambda __response__: GetResponderRecipeResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

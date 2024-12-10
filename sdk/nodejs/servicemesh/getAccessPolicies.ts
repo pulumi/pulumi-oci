@@ -115,7 +115,7 @@ export interface GetAccessPoliciesResult {
  * });
  * ```
  */
-export function getAccessPoliciesOutput(args: GetAccessPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessPoliciesResult> {
+export function getAccessPoliciesOutput(args: GetAccessPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", {
         "compartmentId": args.compartmentId,

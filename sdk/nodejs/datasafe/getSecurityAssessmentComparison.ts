@@ -89,7 +89,7 @@ export interface GetSecurityAssessmentComparisonResult {
  * });
  * ```
  */
-export function getSecurityAssessmentComparisonOutput(args: GetSecurityAssessmentComparisonOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentComparisonResult> {
+export function getSecurityAssessmentComparisonOutput(args: GetSecurityAssessmentComparisonOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAssessmentComparisonResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", {
         "comparisonSecurityAssessmentId": args.comparisonSecurityAssessmentId,

@@ -139,7 +139,7 @@ export interface GetManagementAgentDataSourceResult {
  * });
  * ```
  */
-export function getManagementAgentDataSourceOutput(args: GetManagementAgentDataSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentDataSourceResult> {
+export function getManagementAgentDataSourceOutput(args: GetManagementAgentDataSourceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagementAgentDataSourceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource", {
         "dataSourceKey": args.dataSourceKey,

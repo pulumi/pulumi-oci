@@ -147,7 +147,7 @@ def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionCapabilityGroupTagsFilterArgs', 'GetProtectionCapabilityGroupTagsFilterArgsDict']]]]] = None,
                                                 name: Optional[pulumi.Input[Optional[str]]] = None,
                                                 type: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionCapabilityGroupTagsResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionCapabilityGroupTagsResult]:
     """
     This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
 
@@ -174,7 +174,7 @@ def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags', __args__, opts=opts, typ=GetProtectionCapabilityGroupTagsResult)
     return __ret__.apply(lambda __response__: GetProtectionCapabilityGroupTagsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

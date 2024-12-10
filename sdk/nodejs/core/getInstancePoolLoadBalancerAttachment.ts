@@ -94,7 +94,7 @@ export interface GetInstancePoolLoadBalancerAttachmentResult {
  * });
  * ```
  */
-export function getInstancePoolLoadBalancerAttachmentOutput(args: GetInstancePoolLoadBalancerAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancePoolLoadBalancerAttachmentResult> {
+export function getInstancePoolLoadBalancerAttachmentOutput(args: GetInstancePoolLoadBalancerAttachmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstancePoolLoadBalancerAttachmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", {
         "instancePoolId": args.instancePoolId,

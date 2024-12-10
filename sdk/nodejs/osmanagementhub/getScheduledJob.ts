@@ -169,7 +169,7 @@ export interface GetScheduledJobResult {
  * });
  * ```
  */
-export function getScheduledJobOutput(args: GetScheduledJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScheduledJobResult> {
+export function getScheduledJobOutput(args: GetScheduledJobOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetScheduledJobResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getScheduledJob:getScheduledJob", {
         "scheduledJobId": args.scheduledJobId,

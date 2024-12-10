@@ -154,7 +154,7 @@ def get_node_pool_option(compartment_id: Optional[str] = None,
         sources=pulumi.get(__ret__, 'sources'))
 def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 node_pool_option_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNodePoolOptionResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNodePoolOptionResult]:
     """
     This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
 
@@ -177,7 +177,7 @@ def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[s
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['nodePoolOptionId'] = node_pool_option_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getNodePoolOption:getNodePoolOption', __args__, opts=opts, typ=GetNodePoolOptionResult)
     return __ret__.apply(lambda __response__: GetNodePoolOptionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

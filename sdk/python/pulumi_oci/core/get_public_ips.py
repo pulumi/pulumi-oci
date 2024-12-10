@@ -214,7 +214,7 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[st
                           lifetime: Optional[pulumi.Input[Optional[str]]] = None,
                           public_ip_pool_id: Optional[pulumi.Input[Optional[str]]] = None,
                           scope: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicIpsResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicIpsResult]:
     """
     This data source provides the list of Public Ips in Oracle Cloud Infrastructure Core service.
 
@@ -268,7 +268,7 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[st
     __args__['lifetime'] = lifetime
     __args__['publicIpPoolId'] = public_ip_pool_id
     __args__['scope'] = scope
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getPublicIps:getPublicIps', __args__, opts=opts, typ=GetPublicIpsResult)
     return __ret__.apply(lambda __response__: GetPublicIpsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

@@ -158,7 +158,7 @@ def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi
                                                       resource_categories: Optional[pulumi.Input[Optional[str]]] = None,
                                                       resource_ids: Optional[pulumi.Input[Optional[str]]] = None,
                                                       resource_types: Optional[pulumi.Input[Optional[str]]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsResourceCategoriesListResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsResourceCategoriesListResult]:
     """
     This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -187,7 +187,7 @@ def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi
     __args__['resourceCategories'] = resource_categories
     __args__['resourceIds'] = resource_ids
     __args__['resourceTypes'] = resource_types
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList', __args__, opts=opts, typ=GetLogAnalyticsResourceCategoriesListResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsResourceCategoriesListResult(
         categories=pulumi.get(__response__, 'categories'),

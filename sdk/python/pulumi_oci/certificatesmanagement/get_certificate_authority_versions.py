@@ -136,7 +136,7 @@ def get_certificate_authority_versions(certificate_authority_id: Optional[str] =
 def get_certificate_authority_versions_output(certificate_authority_id: Optional[pulumi.Input[str]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCertificateAuthorityVersionsFilterArgs', 'GetCertificateAuthorityVersionsFilterArgsDict']]]]] = None,
                                               version_number: Optional[pulumi.Input[Optional[str]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateAuthorityVersionsResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateAuthorityVersionsResult]:
     """
     This data source provides the list of Certificate Authority Versions in Oracle Cloud Infrastructure Certificates Management service.
 
@@ -161,7 +161,7 @@ def get_certificate_authority_versions_output(certificate_authority_id: Optional
     __args__['certificateAuthorityId'] = certificate_authority_id
     __args__['filters'] = filters
     __args__['versionNumber'] = version_number
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions', __args__, opts=opts, typ=GetCertificateAuthorityVersionsResult)
     return __ret__.apply(lambda __response__: GetCertificateAuthorityVersionsResult(
         certificate_authority_id=pulumi.get(__response__, 'certificate_authority_id'),

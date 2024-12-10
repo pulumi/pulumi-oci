@@ -99,7 +99,7 @@ export interface GetManagedInstanceGroupAvailableModulesResult {
  * });
  * ```
  */
-export function getManagedInstanceGroupAvailableModulesOutput(args: GetManagedInstanceGroupAvailableModulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupAvailableModulesResult> {
+export function getManagedInstanceGroupAvailableModulesOutput(args: GetManagedInstanceGroupAvailableModulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstanceGroupAvailableModulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceGroupAvailableModules:getManagedInstanceGroupAvailableModules", {
         "compartmentId": args.compartmentId,

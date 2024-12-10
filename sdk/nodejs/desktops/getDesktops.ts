@@ -117,7 +117,7 @@ export interface GetDesktopsResult {
  * });
  * ```
  */
-export function getDesktopsOutput(args: GetDesktopsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDesktopsResult> {
+export function getDesktopsOutput(args: GetDesktopsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDesktopsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Desktops/getDesktops:getDesktops", {
         "availabilityDomain": args.availabilityDomain,

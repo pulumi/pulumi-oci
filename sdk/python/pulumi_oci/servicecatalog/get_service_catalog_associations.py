@@ -168,7 +168,7 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict']]]]] = None,
                                             service_catalog_association_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             service_catalog_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogAssociationsResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceCatalogAssociationsResult]:
     """
     This data source provides the list of Service Catalog Associations in Oracle Cloud Infrastructure Service Catalog service.
 
@@ -198,7 +198,7 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
     __args__['filters'] = filters
     __args__['serviceCatalogAssociationId'] = service_catalog_association_id
     __args__['serviceCatalogId'] = service_catalog_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations', __args__, opts=opts, typ=GetServiceCatalogAssociationsResult)
     return __ret__.apply(lambda __response__: GetServiceCatalogAssociationsResult(
         entity_id=pulumi.get(__response__, 'entity_id'),

@@ -211,7 +211,7 @@ def get_mysql_configurations_output(compartment_id: Optional[pulumi.Input[str]] 
                                     shape_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlConfigurationsResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlConfigurationsResult]:
     """
     This data source provides the list of Mysql Configurations in Oracle Cloud Infrastructure MySQL Database service.
 
@@ -254,7 +254,7 @@ def get_mysql_configurations_output(compartment_id: Optional[pulumi.Input[str]] 
     __args__['shapeName'] = shape_name
     __args__['state'] = state
     __args__['types'] = types
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlConfigurations:getMysqlConfigurations', __args__, opts=opts, typ=GetMysqlConfigurationsResult)
     return __ret__.apply(lambda __response__: GetMysqlConfigurationsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

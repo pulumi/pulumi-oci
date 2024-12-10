@@ -174,7 +174,7 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEnterpriseManagerBridgesFilterArgs', 'GetEnterpriseManagerBridgesFilterArgsDict']]]]] = None,
                                           id: Optional[pulumi.Input[Optional[str]]] = None,
                                           states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnterpriseManagerBridgesResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEnterpriseManagerBridgesResult]:
     """
     This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
 
@@ -208,7 +208,7 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['states'] = states
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges', __args__, opts=opts, typ=GetEnterpriseManagerBridgesResult)
     return __ret__.apply(lambda __response__: GetEnterpriseManagerBridgesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

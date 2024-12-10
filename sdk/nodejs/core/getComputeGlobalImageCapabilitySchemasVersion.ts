@@ -90,7 +90,7 @@ export interface GetComputeGlobalImageCapabilitySchemasVersionResult {
  * });
  * ```
  */
-export function getComputeGlobalImageCapabilitySchemasVersionOutput(args: GetComputeGlobalImageCapabilitySchemasVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeGlobalImageCapabilitySchemasVersionResult> {
+export function getComputeGlobalImageCapabilitySchemasVersionOutput(args: GetComputeGlobalImageCapabilitySchemasVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetComputeGlobalImageCapabilitySchemasVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", {
         "computeGlobalImageCapabilitySchemaId": args.computeGlobalImageCapabilitySchemaId,

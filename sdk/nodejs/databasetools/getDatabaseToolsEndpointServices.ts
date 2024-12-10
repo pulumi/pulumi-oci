@@ -108,7 +108,7 @@ export interface GetDatabaseToolsEndpointServicesResult {
  * });
  * ```
  */
-export function getDatabaseToolsEndpointServicesOutput(args: GetDatabaseToolsEndpointServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsEndpointServicesResult> {
+export function getDatabaseToolsEndpointServicesOutput(args: GetDatabaseToolsEndpointServicesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseToolsEndpointServicesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseTools/getDatabaseToolsEndpointServices:getDatabaseToolsEndpointServices", {
         "compartmentId": args.compartmentId,

@@ -105,7 +105,7 @@ export interface GetStreamPackagingConfigsResult {
  * });
  * ```
  */
-export function getStreamPackagingConfigsOutput(args: GetStreamPackagingConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamPackagingConfigsResult> {
+export function getStreamPackagingConfigsOutput(args: GetStreamPackagingConfigsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStreamPackagingConfigsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs", {
         "displayName": args.displayName,

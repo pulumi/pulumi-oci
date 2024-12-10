@@ -93,7 +93,7 @@ export interface GetBillingSchedulesResult {
  * });
  * ```
  */
-export function getBillingSchedulesOutput(args: GetBillingSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBillingSchedulesResult> {
+export function getBillingSchedulesOutput(args: GetBillingSchedulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBillingSchedulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OneSubsription/getBillingSchedules:getBillingSchedules", {
         "compartmentId": args.compartmentId,

@@ -207,7 +207,7 @@ def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.I
                                                name: Optional[pulumi.Input[Optional[str]]] = None,
                                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                                vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbManagementPrivateEndpointsResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbManagementPrivateEndpointsResult]:
     """
     This data source provides the list of Db Management Private Endpoints in Oracle Cloud Infrastructure Database Management service.
 
@@ -243,7 +243,7 @@ def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.I
     __args__['name'] = name
     __args__['state'] = state
     __args__['vcnId'] = vcn_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints', __args__, opts=opts, typ=GetDbManagementPrivateEndpointsResult)
     return __ret__.apply(lambda __response__: GetDbManagementPrivateEndpointsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

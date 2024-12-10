@@ -114,7 +114,7 @@ def get_network_security_group_vnics(filters: Optional[Sequence[Union['GetNetwor
         network_security_group_vnics=pulumi.get(__ret__, 'network_security_group_vnics'))
 def get_network_security_group_vnics_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityGroupVnicsFilterArgs', 'GetNetworkSecurityGroupVnicsFilterArgsDict']]]]] = None,
                                             network_security_group_id: Optional[pulumi.Input[str]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityGroupVnicsResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityGroupVnicsResult]:
     """
     This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
 
@@ -135,7 +135,7 @@ def get_network_security_group_vnics_output(filters: Optional[pulumi.Input[Optio
     __args__ = dict()
     __args__['filters'] = filters
     __args__['networkSecurityGroupId'] = network_security_group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics', __args__, opts=opts, typ=GetNetworkSecurityGroupVnicsResult)
     return __ret__.apply(lambda __response__: GetNetworkSecurityGroupVnicsResult(
         filters=pulumi.get(__response__, 'filters'),

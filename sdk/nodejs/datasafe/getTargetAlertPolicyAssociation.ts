@@ -115,7 +115,7 @@ export interface GetTargetAlertPolicyAssociationResult {
  * });
  * ```
  */
-export function getTargetAlertPolicyAssociationOutput(args: GetTargetAlertPolicyAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetAlertPolicyAssociationResult> {
+export function getTargetAlertPolicyAssociationOutput(args: GetTargetAlertPolicyAssociationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetAlertPolicyAssociationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation", {
         "targetAlertPolicyAssociationId": args.targetAlertPolicyAssociationId,

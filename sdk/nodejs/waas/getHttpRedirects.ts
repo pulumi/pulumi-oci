@@ -115,7 +115,7 @@ export interface GetHttpRedirectsResult {
  * });
  * ```
  */
-export function getHttpRedirectsOutput(args: GetHttpRedirectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpRedirectsResult> {
+export function getHttpRedirectsOutput(args: GetHttpRedirectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHttpRedirectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Waas/getHttpRedirects:getHttpRedirects", {
         "compartmentId": args.compartmentId,

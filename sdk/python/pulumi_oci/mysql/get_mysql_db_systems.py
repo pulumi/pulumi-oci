@@ -241,7 +241,7 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 is_heat_wave_cluster_attached: Optional[pulumi.Input[Optional[bool]]] = None,
                                 is_up_to_date: Optional[pulumi.Input[Optional[bool]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlDbSystemsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlDbSystemsResult]:
     """
     This data source provides the list of Mysql Db Systems in Oracle Cloud Infrastructure MySQL Database service.
 
@@ -284,7 +284,7 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
     __args__['isHeatWaveClusterAttached'] = is_heat_wave_cluster_attached
     __args__['isUpToDate'] = is_up_to_date
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlDbSystems:getMysqlDbSystems', __args__, opts=opts, typ=GetMysqlDbSystemsResult)
     return __ret__.apply(lambda __response__: GetMysqlDbSystemsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

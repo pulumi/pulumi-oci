@@ -97,7 +97,7 @@ export interface GetDataSafeConfigurationResult {
  * });
  * ```
  */
-export function getDataSafeConfigurationOutput(args: GetDataSafeConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSafeConfigurationResult> {
+export function getDataSafeConfigurationOutput(args: GetDataSafeConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataSafeConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration", {
         "compartmentId": args.compartmentId,

@@ -191,7 +191,7 @@ def get_job_executions_statuses_output(compartment_id: Optional[pulumi.Input[str
                                        managed_database_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                        start_time: Optional[pulumi.Input[str]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobExecutionsStatusesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobExecutionsStatusesResult]:
     """
     This data source provides the list of Job Executions Statuses in Oracle Cloud Infrastructure Database Management service.
 
@@ -230,7 +230,7 @@ def get_job_executions_statuses_output(compartment_id: Optional[pulumi.Input[str
     __args__['managedDatabaseId'] = managed_database_id
     __args__['name'] = name
     __args__['startTime'] = start_time
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getJobExecutionsStatuses:getJobExecutionsStatuses', __args__, opts=opts, typ=GetJobExecutionsStatusesResult)
     return __ret__.apply(lambda __response__: GetJobExecutionsStatusesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

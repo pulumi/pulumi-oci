@@ -168,7 +168,7 @@ def get_pluggable_databases_output(compartment_id: Optional[pulumi.Input[Optiona
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPluggableDatabasesFilterArgs', 'GetPluggableDatabasesFilterArgsDict']]]]] = None,
                                    pdb_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPluggableDatabasesResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPluggableDatabasesResult]:
     """
     This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
 
@@ -198,7 +198,7 @@ def get_pluggable_databases_output(compartment_id: Optional[pulumi.Input[Optiona
     __args__['filters'] = filters
     __args__['pdbName'] = pdb_name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getPluggableDatabases:getPluggableDatabases', __args__, opts=opts, typ=GetPluggableDatabasesResult)
     return __ret__.apply(lambda __response__: GetPluggableDatabasesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

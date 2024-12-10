@@ -165,7 +165,7 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
                                             patch_type: Optional[pulumi.Input[Optional[str]]] = None,
                                             patch_version: Optional[pulumi.Input[Optional[str]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstancePatchHistoriesResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstancePatchHistoriesResult]:
     """
     This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
 
@@ -195,7 +195,7 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
     __args__['patchType'] = patch_type
     __args__['patchVersion'] = patch_version
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories', __args__, opts=opts, typ=GetBdsInstancePatchHistoriesResult)
     return __ret__.apply(lambda __response__: GetBdsInstancePatchHistoriesResult(
         bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),

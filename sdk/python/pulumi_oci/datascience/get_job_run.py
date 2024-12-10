@@ -341,7 +341,7 @@ def get_job_run(job_run_id: Optional[str] = None,
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'))
 def get_job_run_output(job_run_id: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobRunResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobRunResult]:
     """
     This data source provides details about a specific Job Run resource in Oracle Cloud Infrastructure Data Science service.
 
@@ -361,7 +361,7 @@ def get_job_run_output(job_run_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['jobRunId'] = job_run_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getJobRun:getJobRun', __args__, opts=opts, typ=GetJobRunResult)
     return __ret__.apply(lambda __response__: GetJobRunResult(
         asynchronous=pulumi.get(__response__, 'asynchronous'),

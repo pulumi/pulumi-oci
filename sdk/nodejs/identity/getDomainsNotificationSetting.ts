@@ -185,7 +185,7 @@ export interface GetDomainsNotificationSettingResult {
  * });
  * ```
  */
-export function getDomainsNotificationSettingOutput(args: GetDomainsNotificationSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsNotificationSettingResult> {
+export function getDomainsNotificationSettingOutput(args: GetDomainsNotificationSettingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsNotificationSettingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getDomainsNotificationSetting:getDomainsNotificationSetting", {
         "attributeSets": args.attributeSets,

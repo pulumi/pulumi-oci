@@ -84,7 +84,7 @@ export interface GetMediaAssetDistributionChannelAttachmentResult {
  *
  * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
  */
-export function getMediaAssetDistributionChannelAttachmentOutput(args: GetMediaAssetDistributionChannelAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMediaAssetDistributionChannelAttachmentResult> {
+export function getMediaAssetDistributionChannelAttachmentOutput(args: GetMediaAssetDistributionChannelAttachmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMediaAssetDistributionChannelAttachmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", {
         "distributionChannelId": args.distributionChannelId,

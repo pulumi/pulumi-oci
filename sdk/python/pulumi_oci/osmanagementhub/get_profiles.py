@@ -310,7 +310,7 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
                         registration_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         vendor_name: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProfilesResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfilesResult]:
     """
     This data source provides the list of Profiles in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -365,7 +365,7 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['registrationTypes'] = registration_types
     __args__['state'] = state
     __args__['vendorName'] = vendor_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getProfiles:getProfiles', __args__, opts=opts, typ=GetProfilesResult)
     return __ret__.apply(lambda __response__: GetProfilesResult(
         arch_type=pulumi.get(__response__, 'arch_type'),

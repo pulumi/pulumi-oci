@@ -158,7 +158,7 @@ def get_dkims_output(email_domain_id: Optional[pulumi.Input[str]] = None,
                      id: Optional[pulumi.Input[Optional[str]]] = None,
                      name: Optional[pulumi.Input[Optional[str]]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDkimsResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDkimsResult]:
     """
     This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
 
@@ -188,7 +188,7 @@ def get_dkims_output(email_domain_id: Optional[pulumi.Input[str]] = None,
     __args__['id'] = id
     __args__['name'] = name
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Email/getDkims:getDkims', __args__, opts=opts, typ=GetDkimsResult)
     return __ret__.apply(lambda __response__: GetDkimsResult(
         dkim_collections=pulumi.get(__response__, 'dkim_collections'),

@@ -91,7 +91,7 @@ export interface GetDatabaseUpgradeHistoryEntriesResult {
  * });
  * ```
  */
-export function getDatabaseUpgradeHistoryEntriesOutput(args: GetDatabaseUpgradeHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseUpgradeHistoryEntriesResult> {
+export function getDatabaseUpgradeHistoryEntriesOutput(args: GetDatabaseUpgradeHistoryEntriesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatabaseUpgradeHistoryEntriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries", {
         "databaseId": args.databaseId,

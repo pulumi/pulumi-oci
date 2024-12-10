@@ -279,7 +279,7 @@ export interface GetManagedInstancesResult {
  * });
  * ```
  */
-export function getManagedInstancesOutput(args?: GetManagedInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstancesResult> {
+export function getManagedInstancesOutput(args?: GetManagedInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedInstancesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstances:getManagedInstances", {

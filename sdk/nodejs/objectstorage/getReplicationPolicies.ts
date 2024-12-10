@@ -80,7 +80,7 @@ export interface GetReplicationPoliciesResult {
  * });
  * ```
  */
-export function getReplicationPoliciesOutput(args: GetReplicationPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationPoliciesResult> {
+export function getReplicationPoliciesOutput(args: GetReplicationPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetReplicationPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", {
         "bucket": args.bucket,

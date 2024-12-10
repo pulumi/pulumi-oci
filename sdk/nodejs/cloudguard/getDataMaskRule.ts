@@ -121,7 +121,7 @@ export interface GetDataMaskRuleResult {
  * });
  * ```
  */
-export function getDataMaskRuleOutput(args: GetDataMaskRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataMaskRuleResult> {
+export function getDataMaskRuleOutput(args: GetDataMaskRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataMaskRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudGuard/getDataMaskRule:getDataMaskRule", {
         "dataMaskRuleId": args.dataMaskRuleId,

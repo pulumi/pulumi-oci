@@ -128,7 +128,7 @@ export interface GetBackupDestinationResult {
  * });
  * ```
  */
-export function getBackupDestinationOutput(args: GetBackupDestinationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupDestinationResult> {
+export function getBackupDestinationOutput(args: GetBackupDestinationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBackupDestinationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getBackupDestination:getBackupDestination", {
         "backupDestinationId": args.backupDestinationId,

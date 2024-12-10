@@ -129,7 +129,7 @@ export interface GetMigrationPlanResult {
  * });
  * ```
  */
-export function getMigrationPlanOutput(args: GetMigrationPlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationPlanResult> {
+export function getMigrationPlanOutput(args: GetMigrationPlanOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMigrationPlanResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", {
         "migrationPlanId": args.migrationPlanId,

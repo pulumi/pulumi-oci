@@ -100,7 +100,7 @@ export interface GetTrailSequenceResult {
  * });
  * ```
  */
-export function getTrailSequenceOutput(args: GetTrailSequenceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTrailSequenceResult> {
+export function getTrailSequenceOutput(args: GetTrailSequenceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTrailSequenceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getTrailSequence:getTrailSequence", {
         "deploymentId": args.deploymentId,

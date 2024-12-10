@@ -97,7 +97,7 @@ export interface GetEventsResult {
  * });
  * ```
  */
-export function getEventsOutput(args: GetEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventsResult> {
+export function getEventsOutput(args: GetEventsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEventsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Audit/getEvents:getEvents", {
         "compartmentId": args.compartmentId,

@@ -98,7 +98,7 @@ export interface GetExternalDbNodesResult {
  * });
  * ```
  */
-export function getExternalDbNodesOutput(args?: GetExternalDbNodesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbNodesResult> {
+export function getExternalDbNodesOutput(args?: GetExternalDbNodesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalDbNodesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", {

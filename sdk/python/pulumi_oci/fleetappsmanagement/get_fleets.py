@@ -227,7 +227,7 @@ def get_fleets_output(application_type: Optional[pulumi.Input[Optional[str]]] = 
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       product: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetsResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetsResult]:
     """
     This data source provides the list of Fleets in Oracle Cloud Infrastructure Fleet Apps Management service.
 
@@ -269,7 +269,7 @@ def get_fleets_output(application_type: Optional[pulumi.Input[Optional[str]]] = 
     __args__['id'] = id
     __args__['product'] = product
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getFleets:getFleets', __args__, opts=opts, typ=GetFleetsResult)
     return __ret__.apply(lambda __response__: GetFleetsResult(
         application_type=pulumi.get(__response__, 'application_type'),

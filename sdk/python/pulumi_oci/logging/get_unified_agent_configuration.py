@@ -243,7 +243,7 @@ def get_unified_agent_configuration(unified_agent_configuration_id: Optional[str
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'),
         unified_agent_configuration_id=pulumi.get(__ret__, 'unified_agent_configuration_id'))
 def get_unified_agent_configuration_output(unified_agent_configuration_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUnifiedAgentConfigurationResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUnifiedAgentConfigurationResult]:
     """
     This data source provides details about a specific Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
 
@@ -263,7 +263,7 @@ def get_unified_agent_configuration_output(unified_agent_configuration_id: Optio
     """
     __args__ = dict()
     __args__['unifiedAgentConfigurationId'] = unified_agent_configuration_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration', __args__, opts=opts, typ=GetUnifiedAgentConfigurationResult)
     return __ret__.apply(lambda __response__: GetUnifiedAgentConfigurationResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

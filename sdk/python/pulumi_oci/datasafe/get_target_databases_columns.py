@@ -228,7 +228,7 @@ def get_target_databases_columns_output(column_name_contains: Optional[pulumi.In
                                         table_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                         table_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                         target_database_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasesColumnsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasesColumnsResult]:
     """
     This data source provides the list of Target Databases Columns in Oracle Cloud Infrastructure Data Safe service.
 
@@ -270,7 +270,7 @@ def get_target_databases_columns_output(column_name_contains: Optional[pulumi.In
     __args__['tableNameContains'] = table_name_contains
     __args__['tableNames'] = table_names
     __args__['targetDatabaseId'] = target_database_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns', __args__, opts=opts, typ=GetTargetDatabasesColumnsResult)
     return __ret__.apply(lambda __response__: GetTargetDatabasesColumnsResult(
         column_name_contains=pulumi.get(__response__, 'column_name_contains'),

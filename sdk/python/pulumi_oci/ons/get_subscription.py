@@ -218,7 +218,7 @@ def get_subscription(subscription_id: Optional[str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         topic_id=pulumi.get(__ret__, 'topic_id'))
 def get_subscription_output(subscription_id: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionResult]:
     """
     This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Notifications service.
 
@@ -240,7 +240,7 @@ def get_subscription_output(subscription_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['subscriptionId'] = subscription_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ons/getSubscription:getSubscription', __args__, opts=opts, typ=GetSubscriptionResult)
     return __ret__.apply(lambda __response__: GetSubscriptionResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

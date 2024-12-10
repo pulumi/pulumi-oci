@@ -89,7 +89,7 @@ export interface GetNodePoolOptionResult {
  * });
  * ```
  */
-export function getNodePoolOptionOutput(args: GetNodePoolOptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNodePoolOptionResult> {
+export function getNodePoolOptionOutput(args: GetNodePoolOptionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNodePoolOptionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", {
         "compartmentId": args.compartmentId,

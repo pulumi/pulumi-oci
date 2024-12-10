@@ -106,7 +106,7 @@ export interface GetMigrationsResult {
  * });
  * ```
  */
-export function getMigrationsOutput(args?: GetMigrationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationsResult> {
+export function getMigrationsOutput(args?: GetMigrationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMigrationsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudMigrations/getMigrations:getMigrations", {

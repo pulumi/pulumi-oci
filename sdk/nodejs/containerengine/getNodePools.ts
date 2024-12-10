@@ -108,7 +108,7 @@ export interface GetNodePoolsResult {
  * });
  * ```
  */
-export function getNodePoolsOutput(args: GetNodePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNodePoolsResult> {
+export function getNodePoolsOutput(args: GetNodePoolsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNodePoolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getNodePools:getNodePools", {
         "clusterId": args.clusterId,

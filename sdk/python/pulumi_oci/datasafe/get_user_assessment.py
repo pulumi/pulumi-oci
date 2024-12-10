@@ -396,7 +396,7 @@ def get_user_assessment(user_assessment_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
 def get_user_assessment_output(user_assessment_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserAssessmentResult]:
     """
     This data source provides details about a specific User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -416,7 +416,7 @@ def get_user_assessment_output(user_assessment_id: Optional[pulumi.Input[str]] =
     """
     __args__ = dict()
     __args__['userAssessmentId'] = user_assessment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getUserAssessment:getUserAssessment', __args__, opts=opts, typ=GetUserAssessmentResult)
     return __ret__.apply(lambda __response__: GetUserAssessmentResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

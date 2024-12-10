@@ -204,7 +204,7 @@ def get_capture_filter(capture_filter_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vtap_capture_filter_rules=pulumi.get(__ret__, 'vtap_capture_filter_rules'))
 def get_capture_filter_output(capture_filter_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaptureFilterResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCaptureFilterResult]:
     """
     This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
 
@@ -224,7 +224,7 @@ def get_capture_filter_output(capture_filter_id: Optional[pulumi.Input[str]] = N
     """
     __args__ = dict()
     __args__['captureFilterId'] = capture_filter_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getCaptureFilter:getCaptureFilter', __args__, opts=opts, typ=GetCaptureFilterResult)
     return __ret__.apply(lambda __response__: GetCaptureFilterResult(
         capture_filter_id=pulumi.get(__response__, 'capture_filter_id'),

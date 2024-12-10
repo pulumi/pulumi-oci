@@ -158,7 +158,7 @@ def get_opa_instances_output(compartment_id: Optional[pulumi.Input[Optional[str]
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpaInstancesFilterArgs', 'GetOpaInstancesFilterArgsDict']]]]] = None,
                              id: Optional[pulumi.Input[Optional[str]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpaInstancesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpaInstancesResult]:
     """
     This data source provides the list of Opa Instances in Oracle Cloud Infrastructure Opa service.
 
@@ -188,7 +188,7 @@ def get_opa_instances_output(compartment_id: Optional[pulumi.Input[Optional[str]
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opa/getOpaInstances:getOpaInstances', __args__, opts=opts, typ=GetOpaInstancesResult)
     return __ret__.apply(lambda __response__: GetOpaInstancesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

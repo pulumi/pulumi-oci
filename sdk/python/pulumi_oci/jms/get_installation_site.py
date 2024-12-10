@@ -268,7 +268,7 @@ def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[
                                  path_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                  time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                  time_start: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstallationSiteResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstallationSiteResult]:
     """
     This data source provides details about a specific Fleet Installation Site resource in Oracle Cloud Infrastructure Jms service.
 
@@ -321,7 +321,7 @@ def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[
     __args__['pathContains'] = path_contains
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getInstallationSite:getInstallationSite', __args__, opts=opts, typ=GetInstallationSiteResult)
     return __ret__.apply(lambda __response__: GetInstallationSiteResult(
         application_id=pulumi.get(__response__, 'application_id'),

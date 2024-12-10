@@ -97,7 +97,7 @@ export interface GetTagDefaultResult {
  * });
  * ```
  */
-export function getTagDefaultOutput(args: GetTagDefaultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagDefaultResult> {
+export function getTagDefaultOutput(args: GetTagDefaultOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTagDefaultResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Identity/getTagDefault:getTagDefault", {
         "tagDefaultId": args.tagDefaultId,

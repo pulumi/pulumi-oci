@@ -399,7 +399,7 @@ def get_external_exadata_storage_server(external_exadata_storage_server_id: Opti
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
 def get_external_exadata_storage_server_output(external_exadata_storage_server_id: Optional[pulumi.Input[str]] = None,
-                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageServerResult]:
+                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageServerResult]:
     """
     This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
 
@@ -419,7 +419,7 @@ def get_external_exadata_storage_server_output(external_exadata_storage_server_i
     """
     __args__ = dict()
     __args__['externalExadataStorageServerId'] = external_exadata_storage_server_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer', __args__, opts=opts, typ=GetExternalExadataStorageServerResult)
     return __ret__.apply(lambda __response__: GetExternalExadataStorageServerResult(
         additional_details=pulumi.get(__response__, 'additional_details'),

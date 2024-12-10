@@ -114,7 +114,7 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[str] = None,
         private_ip=pulumi.get(__ret__, 'private_ip'))
 def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                              private_ip: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointReachableIpResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointReachableIpResult]:
     """
     This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
 
@@ -137,7 +137,7 @@ def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulum
     __args__ = dict()
     __args__['privateEndpointId'] = private_endpoint_id
     __args__['privateIp'] = private_ip
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp', __args__, opts=opts, typ=GetPrivateEndpointReachableIpResult)
     return __ret__.apply(lambda __response__: GetPrivateEndpointReachableIpResult(
         id=pulumi.get(__response__, 'id'),

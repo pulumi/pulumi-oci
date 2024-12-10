@@ -162,7 +162,7 @@ def get_managed_database_user_proxied_for_users_output(filters: Optional[pulumi.
                                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                                        opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                        user_name: Optional[pulumi.Input[str]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUserProxiedForUsersResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseUserProxiedForUsersResult]:
     """
     This data source provides the list of Managed Database User Proxied For Users in Oracle Cloud Infrastructure Database Management service.
 
@@ -192,7 +192,7 @@ def get_managed_database_user_proxied_for_users_output(filters: Optional[pulumi.
     __args__['name'] = name
     __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['userName'] = user_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers', __args__, opts=opts, typ=GetManagedDatabaseUserProxiedForUsersResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseUserProxiedForUsersResult(
         filters=pulumi.get(__response__, 'filters'),

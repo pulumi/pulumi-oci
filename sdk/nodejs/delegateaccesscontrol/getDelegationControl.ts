@@ -147,7 +147,7 @@ export interface GetDelegationControlResult {
  * });
  * ```
  */
-export function getDelegationControlOutput(args: GetDelegationControlOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDelegationControlResult> {
+export function getDelegationControlOutput(args: GetDelegationControlOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDelegationControlResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DelegateAccessControl/getDelegationControl:getDelegationControl", {
         "delegationControlId": args.delegationControlId,

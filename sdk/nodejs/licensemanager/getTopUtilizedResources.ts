@@ -85,7 +85,7 @@ export interface GetTopUtilizedResourcesResult {
  * });
  * ```
  */
-export function getTopUtilizedResourcesOutput(args: GetTopUtilizedResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTopUtilizedResourcesResult> {
+export function getTopUtilizedResourcesOutput(args: GetTopUtilizedResourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTopUtilizedResourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", {
         "compartmentId": args.compartmentId,

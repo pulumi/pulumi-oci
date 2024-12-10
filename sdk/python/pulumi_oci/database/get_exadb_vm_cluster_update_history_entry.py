@@ -205,7 +205,7 @@ def get_exadb_vm_cluster_update_history_entry(exadb_vm_cluster_id: Optional[str]
         version=pulumi.get(__ret__, 'version'))
 def get_exadb_vm_cluster_update_history_entry_output(exadb_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                                      update_history_entry_id: Optional[pulumi.Input[str]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadbVmClusterUpdateHistoryEntryResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadbVmClusterUpdateHistoryEntryResult]:
     """
     This data source provides details about a specific Exadb Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
 
@@ -228,7 +228,7 @@ def get_exadb_vm_cluster_update_history_entry_output(exadb_vm_cluster_id: Option
     __args__ = dict()
     __args__['exadbVmClusterId'] = exadb_vm_cluster_id
     __args__['updateHistoryEntryId'] = update_history_entry_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadbVmClusterUpdateHistoryEntry:getExadbVmClusterUpdateHistoryEntry', __args__, opts=opts, typ=GetExadbVmClusterUpdateHistoryEntryResult)
     return __ret__.apply(lambda __response__: GetExadbVmClusterUpdateHistoryEntryResult(
         exadb_vm_cluster_id=pulumi.get(__response__, 'exadb_vm_cluster_id'),

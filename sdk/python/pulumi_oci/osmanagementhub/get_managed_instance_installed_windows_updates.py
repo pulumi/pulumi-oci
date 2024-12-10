@@ -177,7 +177,7 @@ def get_managed_instance_installed_windows_updates_output(compartment_id: Option
                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceInstalledWindowsUpdatesFilterArgs', 'GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict']]]]] = None,
                                                           managed_instance_id: Optional[pulumi.Input[str]] = None,
                                                           names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceInstalledWindowsUpdatesResult]:
+                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceInstalledWindowsUpdatesResult]:
     """
     This data source provides the list of Managed Instance Installed Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
 
@@ -210,7 +210,7 @@ def get_managed_instance_installed_windows_updates_output(compartment_id: Option
     __args__['filters'] = filters
     __args__['managedInstanceId'] = managed_instance_id
     __args__['names'] = names
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceInstalledWindowsUpdates:getManagedInstanceInstalledWindowsUpdates', __args__, opts=opts, typ=GetManagedInstanceInstalledWindowsUpdatesResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceInstalledWindowsUpdatesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

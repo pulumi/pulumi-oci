@@ -106,7 +106,7 @@ export interface GetLimitDefinitionsResult {
  * });
  * ```
  */
-export function getLimitDefinitionsOutput(args: GetLimitDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLimitDefinitionsResult> {
+export function getLimitDefinitionsOutput(args: GetLimitDefinitionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLimitDefinitionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Limits/getLimitDefinitions:getLimitDefinitions", {
         "compartmentId": args.compartmentId,

@@ -168,7 +168,7 @@ def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pu
                                                      name: Optional[pulumi.Input[Optional[str]]] = None,
                                                      namespace: Optional[pulumi.Input[str]] = None,
                                                      state: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsObjectCollectionRulesResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsObjectCollectionRulesResult]:
     """
     This data source provides the list of Log Analytics Object Collection Rules in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -198,7 +198,7 @@ def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pu
     __args__['name'] = name
     __args__['namespace'] = namespace
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules', __args__, opts=opts, typ=GetLogAnalyticsObjectCollectionRulesResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsObjectCollectionRulesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

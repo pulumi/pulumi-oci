@@ -233,7 +233,7 @@ def get_audit_event_analytic_output(access_level: Optional[pulumi.Input[Optional
                                     summary_fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                     time_ended: Optional[pulumi.Input[Optional[str]]] = None,
                                     time_started: Optional[pulumi.Input[Optional[str]]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditEventAnalyticResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditEventAnalyticResult]:
     """
     This data source provides details about a specific Audit Event Analytic resource in Oracle Cloud Infrastructure Data Safe service.
 
@@ -284,7 +284,7 @@ def get_audit_event_analytic_output(access_level: Optional[pulumi.Input[Optional
     __args__['summaryFields'] = summary_fields
     __args__['timeEnded'] = time_ended
     __args__['timeStarted'] = time_started
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic', __args__, opts=opts, typ=GetAuditEventAnalyticResult)
     return __ret__.apply(lambda __response__: GetAuditEventAnalyticResult(
         access_level=pulumi.get(__response__, 'access_level'),

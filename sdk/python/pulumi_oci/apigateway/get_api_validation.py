@@ -100,7 +100,7 @@ def get_api_validation(api_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         validations=pulumi.get(__ret__, 'validations'))
 def get_api_validation_output(api_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiValidationResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiValidationResult]:
     """
     This data source provides details about a specific Api Validation resource in Oracle Cloud Infrastructure API Gateway service.
 
@@ -120,7 +120,7 @@ def get_api_validation_output(api_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['apiId'] = api_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApiGateway/getApiValidation:getApiValidation', __args__, opts=opts, typ=GetApiValidationResult)
     return __ret__.apply(lambda __response__: GetApiValidationResult(
         api_id=pulumi.get(__response__, 'api_id'),

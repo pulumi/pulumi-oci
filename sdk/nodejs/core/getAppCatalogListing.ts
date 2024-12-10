@@ -94,7 +94,7 @@ export interface GetAppCatalogListingResult {
  * });
  * ```
  */
-export function getAppCatalogListingOutput(args: GetAppCatalogListingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingResult> {
+export function getAppCatalogListingOutput(args: GetAppCatalogListingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppCatalogListingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getAppCatalogListing:getAppCatalogListing", {
         "listingId": args.listingId,

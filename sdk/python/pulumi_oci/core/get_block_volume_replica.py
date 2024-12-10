@@ -239,7 +239,7 @@ def get_block_volume_replica(block_volume_replica_id: Optional[str] = None,
         time_last_synced=pulumi.get(__ret__, 'time_last_synced'),
         volume_group_replica_id=pulumi.get(__ret__, 'volume_group_replica_id'))
 def get_block_volume_replica_output(block_volume_replica_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockVolumeReplicaResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlockVolumeReplicaResult]:
     """
     This data source provides details about a specific Block Volume Replica resource in Oracle Cloud Infrastructure Core service.
 
@@ -259,7 +259,7 @@ def get_block_volume_replica_output(block_volume_replica_id: Optional[pulumi.Inp
     """
     __args__ = dict()
     __args__['blockVolumeReplicaId'] = block_volume_replica_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getBlockVolumeReplica:getBlockVolumeReplica', __args__, opts=opts, typ=GetBlockVolumeReplicaResult)
     return __ret__.apply(lambda __response__: GetBlockVolumeReplicaResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

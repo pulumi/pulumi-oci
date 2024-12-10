@@ -78,7 +78,7 @@ export interface GetVirtualCircuitBandwidthShapesResult {
  * });
  * ```
  */
-export function getVirtualCircuitBandwidthShapesOutput(args: GetVirtualCircuitBandwidthShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitBandwidthShapesResult> {
+export function getVirtualCircuitBandwidthShapesOutput(args: GetVirtualCircuitBandwidthShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualCircuitBandwidthShapesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", {
         "filters": args.filters,

@@ -192,7 +192,7 @@ def get_gi_version_minor_versions_output(availability_domain: Optional[pulumi.In
                                          shape: Optional[pulumi.Input[Optional[str]]] = None,
                                          shape_family: Optional[pulumi.Input[Optional[str]]] = None,
                                          version: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGiVersionMinorVersionsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGiVersionMinorVersionsResult]:
     """
     This data source provides the list of Gi Version Minor Versions in Oracle Cloud Infrastructure Database service.
 
@@ -228,7 +228,7 @@ def get_gi_version_minor_versions_output(availability_domain: Optional[pulumi.In
     __args__['shape'] = shape
     __args__['shapeFamily'] = shape_family
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions', __args__, opts=opts, typ=GetGiVersionMinorVersionsResult)
     return __ret__.apply(lambda __response__: GetGiVersionMinorVersionsResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

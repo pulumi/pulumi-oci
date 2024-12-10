@@ -252,7 +252,7 @@ def get_boot_volume_replica(boot_volume_replica_id: Optional[str] = None,
         time_last_synced=pulumi.get(__ret__, 'time_last_synced'),
         volume_group_replica_id=pulumi.get(__ret__, 'volume_group_replica_id'))
 def get_boot_volume_replica_output(boot_volume_replica_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeReplicaResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeReplicaResult]:
     """
     This data source provides details about a specific Boot Volume Replica resource in Oracle Cloud Infrastructure Core service.
 
@@ -272,7 +272,7 @@ def get_boot_volume_replica_output(boot_volume_replica_id: Optional[pulumi.Input
     """
     __args__ = dict()
     __args__['bootVolumeReplicaId'] = boot_volume_replica_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getBootVolumeReplica:getBootVolumeReplica', __args__, opts=opts, typ=GetBootVolumeReplicaResult)
     return __ret__.apply(lambda __response__: GetBootVolumeReplicaResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),

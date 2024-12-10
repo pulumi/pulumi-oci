@@ -77,7 +77,7 @@ export interface GetRepositoryAuthorResult {
  * });
  * ```
  */
-export function getRepositoryAuthorOutput(args: GetRepositoryAuthorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryAuthorResult> {
+export function getRepositoryAuthorOutput(args: GetRepositoryAuthorOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRepositoryAuthorResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", {
         "refName": args.refName,

@@ -204,7 +204,7 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConfigurationsFilterArgs', 'GetConfigurationsFilterArgsDict']]]]] = None,
                               shape: Optional[pulumi.Input[Optional[str]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigurationsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigurationsResult]:
     """
     This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
 
@@ -240,7 +240,7 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
     __args__['filters'] = filters
     __args__['shape'] = shape
     __args__['state'] = state
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getConfigurations:getConfigurations', __args__, opts=opts, typ=GetConfigurationsResult)
     return __ret__.apply(lambda __response__: GetConfigurationsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),

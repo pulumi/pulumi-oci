@@ -137,7 +137,7 @@ export interface GetInstancesResult {
  * });
  * ```
  */
-export function getInstancesOutput(args: GetInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancesResult> {
+export function getInstancesOutput(args: GetInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getInstances:getInstances", {
         "availabilityDomain": args.availabilityDomain,

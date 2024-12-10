@@ -165,7 +165,7 @@ def get_action(operator_action_id: Optional[str] = None,
         properties=pulumi.get(__ret__, 'properties'),
         resource_type=pulumi.get(__ret__, 'resource_type'))
 def get_action_output(operator_action_id: Optional[pulumi.Input[str]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetActionResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetActionResult]:
     """
     This data source provides details about a specific Operator Action resource in Oracle Cloud Infrastructure Operator Access Control service.
 
@@ -185,7 +185,7 @@ def get_action_output(operator_action_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['operatorActionId'] = operator_action_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getAction:getAction', __args__, opts=opts, typ=GetActionResult)
     return __ret__.apply(lambda __response__: GetActionResult(
         component=pulumi.get(__response__, 'component'),

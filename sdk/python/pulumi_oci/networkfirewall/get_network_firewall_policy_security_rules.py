@@ -144,7 +144,7 @@ def get_network_firewall_policy_security_rules_output(display_name: Optional[pul
                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicySecurityRulesFilterArgs', 'GetNetworkFirewallPolicySecurityRulesFilterArgsDict']]]]] = None,
                                                       network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                       security_rule_priority_order: Optional[pulumi.Input[Optional[int]]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicySecurityRulesResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicySecurityRulesResult]:
     """
     This data source provides the list of Network Firewall Policy Security Rules in Oracle Cloud Infrastructure Network Firewall service.
 
@@ -171,7 +171,7 @@ def get_network_firewall_policy_security_rules_output(display_name: Optional[pul
     __args__['filters'] = filters
     __args__['networkFirewallPolicyId'] = network_firewall_policy_id
     __args__['securityRulePriorityOrder'] = security_rule_priority_order
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicySecurityRules:getNetworkFirewallPolicySecurityRules', __args__, opts=opts, typ=GetNetworkFirewallPolicySecurityRulesResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicySecurityRulesResult(
         display_name=pulumi.get(__response__, 'display_name'),

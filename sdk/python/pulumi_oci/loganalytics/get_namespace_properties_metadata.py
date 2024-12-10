@@ -180,7 +180,7 @@ def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[
                                              level: Optional[pulumi.Input[Optional[str]]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
                                              namespace: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespacePropertiesMetadataResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespacePropertiesMetadataResult]:
     """
     This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
 
@@ -213,7 +213,7 @@ def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[
     __args__['level'] = level
     __args__['name'] = name
     __args__['namespace'] = namespace
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata', __args__, opts=opts, typ=GetNamespacePropertiesMetadataResult)
     return __ret__.apply(lambda __response__: GetNamespacePropertiesMetadataResult(
         constraints=pulumi.get(__response__, 'constraints'),

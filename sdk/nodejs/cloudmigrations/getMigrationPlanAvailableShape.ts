@@ -104,7 +104,7 @@ export interface GetMigrationPlanAvailableShapeResult {
  * });
  * ```
  */
-export function getMigrationPlanAvailableShapeOutput(args: GetMigrationPlanAvailableShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationPlanAvailableShapeResult> {
+export function getMigrationPlanAvailableShapeOutput(args: GetMigrationPlanAvailableShapeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMigrationPlanAvailableShapeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudMigrations/getMigrationPlanAvailableShape:getMigrationPlanAvailableShape", {
         "availabilityDomain": args.availabilityDomain,

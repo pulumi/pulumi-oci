@@ -99,7 +99,7 @@ export interface GetServiceGatewaysResult {
  * });
  * ```
  */
-export function getServiceGatewaysOutput(args: GetServiceGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceGatewaysResult> {
+export function getServiceGatewaysOutput(args: GetServiceGatewaysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceGatewaysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Core/getServiceGateways:getServiceGateways", {
         "compartmentId": args.compartmentId,

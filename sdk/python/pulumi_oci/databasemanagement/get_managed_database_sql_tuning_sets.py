@@ -165,7 +165,7 @@ def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[O
                                                 name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                 owner: Optional[pulumi.Input[Optional[str]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningSetsResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningSetsResult]:
     """
     This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
 
@@ -195,7 +195,7 @@ def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[O
     __args__['nameContains'] = name_contains
     __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['owner'] = owner
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningSetsResult)
     return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningSetsResult(
         filters=pulumi.get(__response__, 'filters'),

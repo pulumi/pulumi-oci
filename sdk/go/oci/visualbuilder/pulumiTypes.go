@@ -128,148 +128,6 @@ func (o VbInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) V
 	}).(VbInstanceAlternateCustomEndpointOutput)
 }
 
-type VbInstanceAttachment struct {
-	// * If role == `PARENT`, the attached instance was created by this service instance
-	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit *bool `pulumi:"isImplicit"`
-	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId *string `pulumi:"targetId"`
-	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
-	// The role of the target attachment.
-	// * `PARENT` - The target instance is the parent of this attachment.
-	// * `CHILD` - The target instance is the child of this attachment.
-	TargetRole *string `pulumi:"targetRole"`
-	// The type of the target instance, such as "FUSION".
-	TargetServiceType *string `pulumi:"targetServiceType"`
-}
-
-// VbInstanceAttachmentInput is an input type that accepts VbInstanceAttachmentArgs and VbInstanceAttachmentOutput values.
-// You can construct a concrete instance of `VbInstanceAttachmentInput` via:
-//
-//	VbInstanceAttachmentArgs{...}
-type VbInstanceAttachmentInput interface {
-	pulumi.Input
-
-	ToVbInstanceAttachmentOutput() VbInstanceAttachmentOutput
-	ToVbInstanceAttachmentOutputWithContext(context.Context) VbInstanceAttachmentOutput
-}
-
-type VbInstanceAttachmentArgs struct {
-	// * If role == `PARENT`, the attached instance was created by this service instance
-	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit pulumi.BoolPtrInput `pulumi:"isImplicit"`
-	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
-	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
-	// The role of the target attachment.
-	// * `PARENT` - The target instance is the parent of this attachment.
-	// * `CHILD` - The target instance is the child of this attachment.
-	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
-	// The type of the target instance, such as "FUSION".
-	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
-}
-
-func (VbInstanceAttachmentArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VbInstanceAttachment)(nil)).Elem()
-}
-
-func (i VbInstanceAttachmentArgs) ToVbInstanceAttachmentOutput() VbInstanceAttachmentOutput {
-	return i.ToVbInstanceAttachmentOutputWithContext(context.Background())
-}
-
-func (i VbInstanceAttachmentArgs) ToVbInstanceAttachmentOutputWithContext(ctx context.Context) VbInstanceAttachmentOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAttachmentOutput)
-}
-
-// VbInstanceAttachmentArrayInput is an input type that accepts VbInstanceAttachmentArray and VbInstanceAttachmentArrayOutput values.
-// You can construct a concrete instance of `VbInstanceAttachmentArrayInput` via:
-//
-//	VbInstanceAttachmentArray{ VbInstanceAttachmentArgs{...} }
-type VbInstanceAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToVbInstanceAttachmentArrayOutput() VbInstanceAttachmentArrayOutput
-	ToVbInstanceAttachmentArrayOutputWithContext(context.Context) VbInstanceAttachmentArrayOutput
-}
-
-type VbInstanceAttachmentArray []VbInstanceAttachmentInput
-
-func (VbInstanceAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VbInstanceAttachment)(nil)).Elem()
-}
-
-func (i VbInstanceAttachmentArray) ToVbInstanceAttachmentArrayOutput() VbInstanceAttachmentArrayOutput {
-	return i.ToVbInstanceAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i VbInstanceAttachmentArray) ToVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) VbInstanceAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAttachmentArrayOutput)
-}
-
-type VbInstanceAttachmentOutput struct{ *pulumi.OutputState }
-
-func (VbInstanceAttachmentOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VbInstanceAttachment)(nil)).Elem()
-}
-
-func (o VbInstanceAttachmentOutput) ToVbInstanceAttachmentOutput() VbInstanceAttachmentOutput {
-	return o
-}
-
-func (o VbInstanceAttachmentOutput) ToVbInstanceAttachmentOutputWithContext(ctx context.Context) VbInstanceAttachmentOutput {
-	return o
-}
-
-// * If role == `PARENT`, the attached instance was created by this service instance
-// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-func (o VbInstanceAttachmentOutput) IsImplicit() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v VbInstanceAttachment) *bool { return v.IsImplicit }).(pulumi.BoolPtrOutput)
-}
-
-// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-func (o VbInstanceAttachmentOutput) TargetId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VbInstanceAttachment) *string { return v.TargetId }).(pulumi.StringPtrOutput)
-}
-
-// The dataplane instance URL of the attached instance
-func (o VbInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VbInstanceAttachment) *string { return v.TargetInstanceUrl }).(pulumi.StringPtrOutput)
-}
-
-// The role of the target attachment.
-// * `PARENT` - The target instance is the parent of this attachment.
-// * `CHILD` - The target instance is the child of this attachment.
-func (o VbInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VbInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
-}
-
-// The type of the target instance, such as "FUSION".
-func (o VbInstanceAttachmentOutput) TargetServiceType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VbInstanceAttachment) *string { return v.TargetServiceType }).(pulumi.StringPtrOutput)
-}
-
-type VbInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (VbInstanceAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VbInstanceAttachment)(nil)).Elem()
-}
-
-func (o VbInstanceAttachmentArrayOutput) ToVbInstanceAttachmentArrayOutput() VbInstanceAttachmentArrayOutput {
-	return o
-}
-
-func (o VbInstanceAttachmentArrayOutput) ToVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) VbInstanceAttachmentArrayOutput {
-	return o
-}
-
-func (o VbInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) VbInstanceAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VbInstanceAttachment {
-		return vs[0].([]VbInstanceAttachment)[vs[1].(int)]
-	}).(VbInstanceAttachmentOutput)
-}
-
 type VbInstanceCustomEndpoint struct {
 	// (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
 	CertificateSecretId *string `pulumi:"certificateSecretId"`
@@ -445,137 +303,198 @@ func (o VbInstanceCustomEndpointPtrOutput) Hostname() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-type VbInstanceIdcsInfo struct {
-	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName *string `pulumi:"idcsAppDisplayName"`
-	// The IDCS application ID associated with the instance
-	IdcsAppId *string `pulumi:"idcsAppId"`
-	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl *string `pulumi:"idcsAppLocationUrl"`
-	// The IDCS application name associated with the instance
-	IdcsAppName *string `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl *string `pulumi:"instancePrimaryAudienceUrl"`
+type VbInstanceNetworkEndpointDetails struct {
+	// (Updatable) The type of network endpoint.
+	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	// (Updatable) Network Security Group OCIDs for the Private Endpoint.
+	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// The IP address to be assigned to Private Endpoint
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
+	// (Updatable) The subnet OCID for the private endpoint.
+	SubnetId string `pulumi:"subnetId"`
 }
 
-// VbInstanceIdcsInfoInput is an input type that accepts VbInstanceIdcsInfoArgs and VbInstanceIdcsInfoOutput values.
-// You can construct a concrete instance of `VbInstanceIdcsInfoInput` via:
+// VbInstanceNetworkEndpointDetailsInput is an input type that accepts VbInstanceNetworkEndpointDetailsArgs and VbInstanceNetworkEndpointDetailsOutput values.
+// You can construct a concrete instance of `VbInstanceNetworkEndpointDetailsInput` via:
 //
-//	VbInstanceIdcsInfoArgs{...}
-type VbInstanceIdcsInfoInput interface {
+//	VbInstanceNetworkEndpointDetailsArgs{...}
+type VbInstanceNetworkEndpointDetailsInput interface {
 	pulumi.Input
 
-	ToVbInstanceIdcsInfoOutput() VbInstanceIdcsInfoOutput
-	ToVbInstanceIdcsInfoOutputWithContext(context.Context) VbInstanceIdcsInfoOutput
+	ToVbInstanceNetworkEndpointDetailsOutput() VbInstanceNetworkEndpointDetailsOutput
+	ToVbInstanceNetworkEndpointDetailsOutputWithContext(context.Context) VbInstanceNetworkEndpointDetailsOutput
 }
 
-type VbInstanceIdcsInfoArgs struct {
-	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName pulumi.StringPtrInput `pulumi:"idcsAppDisplayName"`
-	// The IDCS application ID associated with the instance
-	IdcsAppId pulumi.StringPtrInput `pulumi:"idcsAppId"`
-	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl pulumi.StringPtrInput `pulumi:"idcsAppLocationUrl"`
-	// The IDCS application name associated with the instance
-	IdcsAppName pulumi.StringPtrInput `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl pulumi.StringPtrInput `pulumi:"instancePrimaryAudienceUrl"`
+type VbInstanceNetworkEndpointDetailsArgs struct {
+	// (Updatable) The type of network endpoint.
+	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	// (Updatable) Network Security Group OCIDs for the Private Endpoint.
+	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
+	// The IP address to be assigned to Private Endpoint
+	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
+	// (Updatable) The subnet OCID for the private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
-func (VbInstanceIdcsInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VbInstanceIdcsInfo)(nil)).Elem()
+func (VbInstanceNetworkEndpointDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VbInstanceNetworkEndpointDetails)(nil)).Elem()
 }
 
-func (i VbInstanceIdcsInfoArgs) ToVbInstanceIdcsInfoOutput() VbInstanceIdcsInfoOutput {
-	return i.ToVbInstanceIdcsInfoOutputWithContext(context.Background())
+func (i VbInstanceNetworkEndpointDetailsArgs) ToVbInstanceNetworkEndpointDetailsOutput() VbInstanceNetworkEndpointDetailsOutput {
+	return i.ToVbInstanceNetworkEndpointDetailsOutputWithContext(context.Background())
 }
 
-func (i VbInstanceIdcsInfoArgs) ToVbInstanceIdcsInfoOutputWithContext(ctx context.Context) VbInstanceIdcsInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceIdcsInfoOutput)
+func (i VbInstanceNetworkEndpointDetailsArgs) ToVbInstanceNetworkEndpointDetailsOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceNetworkEndpointDetailsOutput)
 }
 
-// VbInstanceIdcsInfoArrayInput is an input type that accepts VbInstanceIdcsInfoArray and VbInstanceIdcsInfoArrayOutput values.
-// You can construct a concrete instance of `VbInstanceIdcsInfoArrayInput` via:
+func (i VbInstanceNetworkEndpointDetailsArgs) ToVbInstanceNetworkEndpointDetailsPtrOutput() VbInstanceNetworkEndpointDetailsPtrOutput {
+	return i.ToVbInstanceNetworkEndpointDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i VbInstanceNetworkEndpointDetailsArgs) ToVbInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceNetworkEndpointDetailsOutput).ToVbInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx)
+}
+
+// VbInstanceNetworkEndpointDetailsPtrInput is an input type that accepts VbInstanceNetworkEndpointDetailsArgs, VbInstanceNetworkEndpointDetailsPtr and VbInstanceNetworkEndpointDetailsPtrOutput values.
+// You can construct a concrete instance of `VbInstanceNetworkEndpointDetailsPtrInput` via:
 //
-//	VbInstanceIdcsInfoArray{ VbInstanceIdcsInfoArgs{...} }
-type VbInstanceIdcsInfoArrayInput interface {
+//	        VbInstanceNetworkEndpointDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type VbInstanceNetworkEndpointDetailsPtrInput interface {
 	pulumi.Input
 
-	ToVbInstanceIdcsInfoArrayOutput() VbInstanceIdcsInfoArrayOutput
-	ToVbInstanceIdcsInfoArrayOutputWithContext(context.Context) VbInstanceIdcsInfoArrayOutput
+	ToVbInstanceNetworkEndpointDetailsPtrOutput() VbInstanceNetworkEndpointDetailsPtrOutput
+	ToVbInstanceNetworkEndpointDetailsPtrOutputWithContext(context.Context) VbInstanceNetworkEndpointDetailsPtrOutput
 }
 
-type VbInstanceIdcsInfoArray []VbInstanceIdcsInfoInput
+type vbInstanceNetworkEndpointDetailsPtrType VbInstanceNetworkEndpointDetailsArgs
 
-func (VbInstanceIdcsInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VbInstanceIdcsInfo)(nil)).Elem()
+func VbInstanceNetworkEndpointDetailsPtr(v *VbInstanceNetworkEndpointDetailsArgs) VbInstanceNetworkEndpointDetailsPtrInput {
+	return (*vbInstanceNetworkEndpointDetailsPtrType)(v)
 }
 
-func (i VbInstanceIdcsInfoArray) ToVbInstanceIdcsInfoArrayOutput() VbInstanceIdcsInfoArrayOutput {
-	return i.ToVbInstanceIdcsInfoArrayOutputWithContext(context.Background())
+func (*vbInstanceNetworkEndpointDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VbInstanceNetworkEndpointDetails)(nil)).Elem()
 }
 
-func (i VbInstanceIdcsInfoArray) ToVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) VbInstanceIdcsInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceIdcsInfoArrayOutput)
+func (i *vbInstanceNetworkEndpointDetailsPtrType) ToVbInstanceNetworkEndpointDetailsPtrOutput() VbInstanceNetworkEndpointDetailsPtrOutput {
+	return i.ToVbInstanceNetworkEndpointDetailsPtrOutputWithContext(context.Background())
 }
 
-type VbInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
-
-func (VbInstanceIdcsInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VbInstanceIdcsInfo)(nil)).Elem()
+func (i *vbInstanceNetworkEndpointDetailsPtrType) ToVbInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceNetworkEndpointDetailsPtrOutput)
 }
 
-func (o VbInstanceIdcsInfoOutput) ToVbInstanceIdcsInfoOutput() VbInstanceIdcsInfoOutput {
+type VbInstanceNetworkEndpointDetailsOutput struct{ *pulumi.OutputState }
+
+func (VbInstanceNetworkEndpointDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VbInstanceNetworkEndpointDetails)(nil)).Elem()
+}
+
+func (o VbInstanceNetworkEndpointDetailsOutput) ToVbInstanceNetworkEndpointDetailsOutput() VbInstanceNetworkEndpointDetailsOutput {
 	return o
 }
 
-func (o VbInstanceIdcsInfoOutput) ToVbInstanceIdcsInfoOutputWithContext(ctx context.Context) VbInstanceIdcsInfoOutput {
+func (o VbInstanceNetworkEndpointDetailsOutput) ToVbInstanceNetworkEndpointDetailsOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsOutput {
 	return o
 }
 
-// The IDCS application display name associated with the instance
-func (o VbInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.IdcsAppDisplayName }).(pulumi.StringPtrOutput)
+func (o VbInstanceNetworkEndpointDetailsOutput) ToVbInstanceNetworkEndpointDetailsPtrOutput() VbInstanceNetworkEndpointDetailsPtrOutput {
+	return o.ToVbInstanceNetworkEndpointDetailsPtrOutputWithContext(context.Background())
 }
 
-// The IDCS application ID associated with the instance
-func (o VbInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.IdcsAppId }).(pulumi.StringPtrOutput)
+func (o VbInstanceNetworkEndpointDetailsOutput) ToVbInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VbInstanceNetworkEndpointDetails) *VbInstanceNetworkEndpointDetails {
+		return &v
+	}).(VbInstanceNetworkEndpointDetailsPtrOutput)
 }
 
-// URL for the location of the IDCS Application (used by IDCS APIs)
-func (o VbInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.IdcsAppLocationUrl }).(pulumi.StringPtrOutput)
+// (Updatable) The type of network endpoint.
+func (o VbInstanceNetworkEndpointDetailsOutput) NetworkEndpointType() pulumi.StringOutput {
+	return o.ApplyT(func(v VbInstanceNetworkEndpointDetails) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
 }
 
-// The IDCS application name associated with the instance
-func (o VbInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.IdcsAppName }).(pulumi.StringPtrOutput)
+// (Updatable) Network Security Group OCIDs for the Private Endpoint.
+func (o VbInstanceNetworkEndpointDetailsOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v VbInstanceNetworkEndpointDetails) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// The URL used as the primary audience for visual builder flows in this instance type: string
-func (o VbInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VbInstanceIdcsInfo) *string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringPtrOutput)
+// The IP address to be assigned to Private Endpoint
+func (o VbInstanceNetworkEndpointDetailsOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceNetworkEndpointDetails) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
-type VbInstanceIdcsInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (VbInstanceIdcsInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VbInstanceIdcsInfo)(nil)).Elem()
+// (Updatable) The subnet OCID for the private endpoint.
+func (o VbInstanceNetworkEndpointDetailsOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v VbInstanceNetworkEndpointDetails) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-func (o VbInstanceIdcsInfoArrayOutput) ToVbInstanceIdcsInfoArrayOutput() VbInstanceIdcsInfoArrayOutput {
+type VbInstanceNetworkEndpointDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (VbInstanceNetworkEndpointDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VbInstanceNetworkEndpointDetails)(nil)).Elem()
+}
+
+func (o VbInstanceNetworkEndpointDetailsPtrOutput) ToVbInstanceNetworkEndpointDetailsPtrOutput() VbInstanceNetworkEndpointDetailsPtrOutput {
 	return o
 }
 
-func (o VbInstanceIdcsInfoArrayOutput) ToVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) VbInstanceIdcsInfoArrayOutput {
+func (o VbInstanceNetworkEndpointDetailsPtrOutput) ToVbInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsPtrOutput {
 	return o
 }
 
-func (o VbInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) VbInstanceIdcsInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VbInstanceIdcsInfo {
-		return vs[0].([]VbInstanceIdcsInfo)[vs[1].(int)]
-	}).(VbInstanceIdcsInfoOutput)
+func (o VbInstanceNetworkEndpointDetailsPtrOutput) Elem() VbInstanceNetworkEndpointDetailsOutput {
+	return o.ApplyT(func(v *VbInstanceNetworkEndpointDetails) VbInstanceNetworkEndpointDetails {
+		if v != nil {
+			return *v
+		}
+		var ret VbInstanceNetworkEndpointDetails
+		return ret
+	}).(VbInstanceNetworkEndpointDetailsOutput)
+}
+
+// (Updatable) The type of network endpoint.
+func (o VbInstanceNetworkEndpointDetailsPtrOutput) NetworkEndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VbInstanceNetworkEndpointDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkEndpointType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Network Security Group OCIDs for the Private Endpoint.
+func (o VbInstanceNetworkEndpointDetailsPtrOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *VbInstanceNetworkEndpointDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkSecurityGroupIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The IP address to be assigned to Private Endpoint
+func (o VbInstanceNetworkEndpointDetailsPtrOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VbInstanceNetworkEndpointDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateEndpointIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The subnet OCID for the private endpoint.
+func (o VbInstanceNetworkEndpointDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VbInstanceNetworkEndpointDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstanceAlternateCustomEndpoint struct {
@@ -913,148 +832,6 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) In
 	}).(GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput)
 }
 
-type GetVbInstanceAttachment struct {
-	// * If role == `PARENT`, the attached instance was created by this service instance
-	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit bool `pulumi:"isImplicit"`
-	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId string `pulumi:"targetId"`
-	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
-	// The role of the target attachment.
-	// * `PARENT` - The target instance is the parent of this attachment.
-	// * `CHILD` - The target instance is the child of this attachment.
-	TargetRole string `pulumi:"targetRole"`
-	// The type of the target instance, such as "FUSION".
-	TargetServiceType string `pulumi:"targetServiceType"`
-}
-
-// GetVbInstanceAttachmentInput is an input type that accepts GetVbInstanceAttachmentArgs and GetVbInstanceAttachmentOutput values.
-// You can construct a concrete instance of `GetVbInstanceAttachmentInput` via:
-//
-//	GetVbInstanceAttachmentArgs{...}
-type GetVbInstanceAttachmentInput interface {
-	pulumi.Input
-
-	ToGetVbInstanceAttachmentOutput() GetVbInstanceAttachmentOutput
-	ToGetVbInstanceAttachmentOutputWithContext(context.Context) GetVbInstanceAttachmentOutput
-}
-
-type GetVbInstanceAttachmentArgs struct {
-	// * If role == `PARENT`, the attached instance was created by this service instance
-	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
-	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
-	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
-	// The role of the target attachment.
-	// * `PARENT` - The target instance is the parent of this attachment.
-	// * `CHILD` - The target instance is the child of this attachment.
-	TargetRole pulumi.StringInput `pulumi:"targetRole"`
-	// The type of the target instance, such as "FUSION".
-	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
-}
-
-func (GetVbInstanceAttachmentArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVbInstanceAttachment)(nil)).Elem()
-}
-
-func (i GetVbInstanceAttachmentArgs) ToGetVbInstanceAttachmentOutput() GetVbInstanceAttachmentOutput {
-	return i.ToGetVbInstanceAttachmentOutputWithContext(context.Background())
-}
-
-func (i GetVbInstanceAttachmentArgs) ToGetVbInstanceAttachmentOutputWithContext(ctx context.Context) GetVbInstanceAttachmentOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAttachmentOutput)
-}
-
-// GetVbInstanceAttachmentArrayInput is an input type that accepts GetVbInstanceAttachmentArray and GetVbInstanceAttachmentArrayOutput values.
-// You can construct a concrete instance of `GetVbInstanceAttachmentArrayInput` via:
-//
-//	GetVbInstanceAttachmentArray{ GetVbInstanceAttachmentArgs{...} }
-type GetVbInstanceAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToGetVbInstanceAttachmentArrayOutput() GetVbInstanceAttachmentArrayOutput
-	ToGetVbInstanceAttachmentArrayOutputWithContext(context.Context) GetVbInstanceAttachmentArrayOutput
-}
-
-type GetVbInstanceAttachmentArray []GetVbInstanceAttachmentInput
-
-func (GetVbInstanceAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVbInstanceAttachment)(nil)).Elem()
-}
-
-func (i GetVbInstanceAttachmentArray) ToGetVbInstanceAttachmentArrayOutput() GetVbInstanceAttachmentArrayOutput {
-	return i.ToGetVbInstanceAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i GetVbInstanceAttachmentArray) ToGetVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstanceAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAttachmentArrayOutput)
-}
-
-type GetVbInstanceAttachmentOutput struct{ *pulumi.OutputState }
-
-func (GetVbInstanceAttachmentOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVbInstanceAttachment)(nil)).Elem()
-}
-
-func (o GetVbInstanceAttachmentOutput) ToGetVbInstanceAttachmentOutput() GetVbInstanceAttachmentOutput {
-	return o
-}
-
-func (o GetVbInstanceAttachmentOutput) ToGetVbInstanceAttachmentOutputWithContext(ctx context.Context) GetVbInstanceAttachmentOutput {
-	return o
-}
-
-// * If role == `PARENT`, the attached instance was created by this service instance
-// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-func (o GetVbInstanceAttachmentOutput) IsImplicit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
-}
-
-// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-func (o GetVbInstanceAttachmentOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetId }).(pulumi.StringOutput)
-}
-
-// The dataplane instance URL of the attached instance
-func (o GetVbInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
-}
-
-// The role of the target attachment.
-// * `PARENT` - The target instance is the parent of this attachment.
-// * `CHILD` - The target instance is the child of this attachment.
-func (o GetVbInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
-}
-
-// The type of the target instance, such as "FUSION".
-func (o GetVbInstanceAttachmentOutput) TargetServiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
-}
-
-type GetVbInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (GetVbInstanceAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVbInstanceAttachment)(nil)).Elem()
-}
-
-func (o GetVbInstanceAttachmentArrayOutput) ToGetVbInstanceAttachmentArrayOutput() GetVbInstanceAttachmentArrayOutput {
-	return o
-}
-
-func (o GetVbInstanceAttachmentArrayOutput) ToGetVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstanceAttachmentArrayOutput {
-	return o
-}
-
-func (o GetVbInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetVbInstanceAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceAttachment {
-		return vs[0].([]GetVbInstanceAttachment)[vs[1].(int)]
-	}).(GetVbInstanceAttachmentOutput)
-}
-
 type GetVbInstanceCustomEndpoint struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId string `pulumi:"certificateSecretId"`
@@ -1170,137 +947,128 @@ func (o GetVbInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbIn
 	}).(GetVbInstanceCustomEndpointOutput)
 }
 
-type GetVbInstanceIdcsInfo struct {
-	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
-	// The IDCS application ID associated with the instance
-	IdcsAppId string `pulumi:"idcsAppId"`
-	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
-	// The IDCS application name associated with the instance
-	IdcsAppName string `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
+type GetVbInstanceNetworkEndpointDetail struct {
+	// The type of network endpoint.
+	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for the Private Endpoint.
+	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// The IP address to be assigned to Private Endpoint
+	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	// The subnet OCID for the private endpoint.
+	SubnetId string `pulumi:"subnetId"`
 }
 
-// GetVbInstanceIdcsInfoInput is an input type that accepts GetVbInstanceIdcsInfoArgs and GetVbInstanceIdcsInfoOutput values.
-// You can construct a concrete instance of `GetVbInstanceIdcsInfoInput` via:
+// GetVbInstanceNetworkEndpointDetailInput is an input type that accepts GetVbInstanceNetworkEndpointDetailArgs and GetVbInstanceNetworkEndpointDetailOutput values.
+// You can construct a concrete instance of `GetVbInstanceNetworkEndpointDetailInput` via:
 //
-//	GetVbInstanceIdcsInfoArgs{...}
-type GetVbInstanceIdcsInfoInput interface {
+//	GetVbInstanceNetworkEndpointDetailArgs{...}
+type GetVbInstanceNetworkEndpointDetailInput interface {
 	pulumi.Input
 
-	ToGetVbInstanceIdcsInfoOutput() GetVbInstanceIdcsInfoOutput
-	ToGetVbInstanceIdcsInfoOutputWithContext(context.Context) GetVbInstanceIdcsInfoOutput
+	ToGetVbInstanceNetworkEndpointDetailOutput() GetVbInstanceNetworkEndpointDetailOutput
+	ToGetVbInstanceNetworkEndpointDetailOutputWithContext(context.Context) GetVbInstanceNetworkEndpointDetailOutput
 }
 
-type GetVbInstanceIdcsInfoArgs struct {
-	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName pulumi.StringInput `pulumi:"idcsAppDisplayName"`
-	// The IDCS application ID associated with the instance
-	IdcsAppId pulumi.StringInput `pulumi:"idcsAppId"`
-	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
-	// The IDCS application name associated with the instance
-	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
+type GetVbInstanceNetworkEndpointDetailArgs struct {
+	// The type of network endpoint.
+	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for the Private Endpoint.
+	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
+	// The IP address to be assigned to Private Endpoint
+	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	// The subnet OCID for the private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
-func (GetVbInstanceIdcsInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVbInstanceIdcsInfo)(nil)).Elem()
+func (GetVbInstanceNetworkEndpointDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstanceNetworkEndpointDetail)(nil)).Elem()
 }
 
-func (i GetVbInstanceIdcsInfoArgs) ToGetVbInstanceIdcsInfoOutput() GetVbInstanceIdcsInfoOutput {
-	return i.ToGetVbInstanceIdcsInfoOutputWithContext(context.Background())
+func (i GetVbInstanceNetworkEndpointDetailArgs) ToGetVbInstanceNetworkEndpointDetailOutput() GetVbInstanceNetworkEndpointDetailOutput {
+	return i.ToGetVbInstanceNetworkEndpointDetailOutputWithContext(context.Background())
 }
 
-func (i GetVbInstanceIdcsInfoArgs) ToGetVbInstanceIdcsInfoOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceIdcsInfoOutput)
+func (i GetVbInstanceNetworkEndpointDetailArgs) ToGetVbInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetVbInstanceNetworkEndpointDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceNetworkEndpointDetailOutput)
 }
 
-// GetVbInstanceIdcsInfoArrayInput is an input type that accepts GetVbInstanceIdcsInfoArray and GetVbInstanceIdcsInfoArrayOutput values.
-// You can construct a concrete instance of `GetVbInstanceIdcsInfoArrayInput` via:
+// GetVbInstanceNetworkEndpointDetailArrayInput is an input type that accepts GetVbInstanceNetworkEndpointDetailArray and GetVbInstanceNetworkEndpointDetailArrayOutput values.
+// You can construct a concrete instance of `GetVbInstanceNetworkEndpointDetailArrayInput` via:
 //
-//	GetVbInstanceIdcsInfoArray{ GetVbInstanceIdcsInfoArgs{...} }
-type GetVbInstanceIdcsInfoArrayInput interface {
+//	GetVbInstanceNetworkEndpointDetailArray{ GetVbInstanceNetworkEndpointDetailArgs{...} }
+type GetVbInstanceNetworkEndpointDetailArrayInput interface {
 	pulumi.Input
 
-	ToGetVbInstanceIdcsInfoArrayOutput() GetVbInstanceIdcsInfoArrayOutput
-	ToGetVbInstanceIdcsInfoArrayOutputWithContext(context.Context) GetVbInstanceIdcsInfoArrayOutput
+	ToGetVbInstanceNetworkEndpointDetailArrayOutput() GetVbInstanceNetworkEndpointDetailArrayOutput
+	ToGetVbInstanceNetworkEndpointDetailArrayOutputWithContext(context.Context) GetVbInstanceNetworkEndpointDetailArrayOutput
 }
 
-type GetVbInstanceIdcsInfoArray []GetVbInstanceIdcsInfoInput
+type GetVbInstanceNetworkEndpointDetailArray []GetVbInstanceNetworkEndpointDetailInput
 
-func (GetVbInstanceIdcsInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVbInstanceIdcsInfo)(nil)).Elem()
+func (GetVbInstanceNetworkEndpointDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstanceNetworkEndpointDetail)(nil)).Elem()
 }
 
-func (i GetVbInstanceIdcsInfoArray) ToGetVbInstanceIdcsInfoArrayOutput() GetVbInstanceIdcsInfoArrayOutput {
-	return i.ToGetVbInstanceIdcsInfoArrayOutputWithContext(context.Background())
+func (i GetVbInstanceNetworkEndpointDetailArray) ToGetVbInstanceNetworkEndpointDetailArrayOutput() GetVbInstanceNetworkEndpointDetailArrayOutput {
+	return i.ToGetVbInstanceNetworkEndpointDetailArrayOutputWithContext(context.Background())
 }
 
-func (i GetVbInstanceIdcsInfoArray) ToGetVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceIdcsInfoArrayOutput)
+func (i GetVbInstanceNetworkEndpointDetailArray) ToGetVbInstanceNetworkEndpointDetailArrayOutputWithContext(ctx context.Context) GetVbInstanceNetworkEndpointDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceNetworkEndpointDetailArrayOutput)
 }
 
-type GetVbInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
+type GetVbInstanceNetworkEndpointDetailOutput struct{ *pulumi.OutputState }
 
-func (GetVbInstanceIdcsInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVbInstanceIdcsInfo)(nil)).Elem()
+func (GetVbInstanceNetworkEndpointDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstanceNetworkEndpointDetail)(nil)).Elem()
 }
 
-func (o GetVbInstanceIdcsInfoOutput) ToGetVbInstanceIdcsInfoOutput() GetVbInstanceIdcsInfoOutput {
+func (o GetVbInstanceNetworkEndpointDetailOutput) ToGetVbInstanceNetworkEndpointDetailOutput() GetVbInstanceNetworkEndpointDetailOutput {
 	return o
 }
 
-func (o GetVbInstanceIdcsInfoOutput) ToGetVbInstanceIdcsInfoOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoOutput {
+func (o GetVbInstanceNetworkEndpointDetailOutput) ToGetVbInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetVbInstanceNetworkEndpointDetailOutput {
 	return o
 }
 
-// The IDCS application display name associated with the instance
-func (o GetVbInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppDisplayName }).(pulumi.StringOutput)
+// The type of network endpoint.
+func (o GetVbInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceNetworkEndpointDetail) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
 }
 
-// The IDCS application ID associated with the instance
-func (o GetVbInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppId }).(pulumi.StringOutput)
+// Network Security Group OCIDs for the Private Endpoint.
+func (o GetVbInstanceNetworkEndpointDetailOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVbInstanceNetworkEndpointDetail) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// URL for the location of the IDCS Application (used by IDCS APIs)
-func (o GetVbInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppLocationUrl }).(pulumi.StringOutput)
+// The IP address to be assigned to Private Endpoint
+func (o GetVbInstanceNetworkEndpointDetailOutput) PrivateEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceNetworkEndpointDetail) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
 }
 
-// The IDCS application name associated with the instance
-func (o GetVbInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
+// The subnet OCID for the private endpoint.
+func (o GetVbInstanceNetworkEndpointDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceNetworkEndpointDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The URL used as the primary audience for visual builder flows in this instance type: string
-func (o GetVbInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringOutput)
+type GetVbInstanceNetworkEndpointDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstanceNetworkEndpointDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstanceNetworkEndpointDetail)(nil)).Elem()
 }
 
-type GetVbInstanceIdcsInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (GetVbInstanceIdcsInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVbInstanceIdcsInfo)(nil)).Elem()
-}
-
-func (o GetVbInstanceIdcsInfoArrayOutput) ToGetVbInstanceIdcsInfoArrayOutput() GetVbInstanceIdcsInfoArrayOutput {
+func (o GetVbInstanceNetworkEndpointDetailArrayOutput) ToGetVbInstanceNetworkEndpointDetailArrayOutput() GetVbInstanceNetworkEndpointDetailArrayOutput {
 	return o
 }
 
-func (o GetVbInstanceIdcsInfoArrayOutput) ToGetVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoArrayOutput {
+func (o GetVbInstanceNetworkEndpointDetailArrayOutput) ToGetVbInstanceNetworkEndpointDetailArrayOutputWithContext(ctx context.Context) GetVbInstanceNetworkEndpointDetailArrayOutput {
 	return o
 }
 
-func (o GetVbInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetVbInstanceIdcsInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceIdcsInfo {
-		return vs[0].([]GetVbInstanceIdcsInfo)[vs[1].(int)]
-	}).(GetVbInstanceIdcsInfoOutput)
+func (o GetVbInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetVbInstanceNetworkEndpointDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceNetworkEndpointDetail {
+		return vs[0].([]GetVbInstanceNetworkEndpointDetail)[vs[1].(int)]
+	}).(GetVbInstanceNetworkEndpointDetailOutput)
 }
 
 type GetVbInstancesFilter struct {
@@ -1508,8 +1276,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionArrayOutput) Index(i pulumi.Int
 type GetVbInstancesVbInstanceSummaryCollectionItem struct {
 	// A list of alternate custom endpoints used for the vb instance URL.
 	AlternateCustomEndpoints []GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
-	// A list of associated attachments to other services
-	Attachments []GetVbInstancesVbInstanceSummaryCollectionItemAttachment `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
@@ -1523,10 +1289,8 @@ type GetVbInstancesVbInstanceSummaryCollectionItem struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
-	// Information for IDCS access
-	IdcsInfos  []GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo `pulumi:"idcsInfos"`
-	IdcsOpenId string                                                  `pulumi:"idcsOpenId"`
+	Id         string `pulumi:"id"`
+	IdcsOpenId string `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
 	InstanceUrl string `pulumi:"instanceUrl"`
 	// Visual Builder is enabled or not.
@@ -1535,6 +1299,8 @@ type GetVbInstancesVbInstanceSummaryCollectionItem struct {
 	ManagementNatGatewayIp string `pulumi:"managementNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 	ManagementVcnId string `pulumi:"managementVcnId"`
+	// Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+	NetworkEndpointDetails []GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// The number of Nodes
 	NodeCount int `pulumi:"nodeCount"`
 	// The NAT gateway IP address for the VB service VCN
@@ -1567,8 +1333,6 @@ type GetVbInstancesVbInstanceSummaryCollectionItemInput interface {
 type GetVbInstancesVbInstanceSummaryCollectionItemArgs struct {
 	// A list of alternate custom endpoints used for the vb instance URL.
 	AlternateCustomEndpoints GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput `pulumi:"alternateCustomEndpoints"`
-	// A list of associated attachments to other services
-	Attachments GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
@@ -1582,10 +1346,8 @@ type GetVbInstancesVbInstanceSummaryCollectionItemArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
-	// Information for IDCS access
-	IdcsInfos  GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput `pulumi:"idcsInfos"`
-	IdcsOpenId pulumi.StringInput                                              `pulumi:"idcsOpenId"`
+	Id         pulumi.StringInput `pulumi:"id"`
+	IdcsOpenId pulumi.StringInput `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
 	InstanceUrl pulumi.StringInput `pulumi:"instanceUrl"`
 	// Visual Builder is enabled or not.
@@ -1594,6 +1356,8 @@ type GetVbInstancesVbInstanceSummaryCollectionItemArgs struct {
 	ManagementNatGatewayIp pulumi.StringInput `pulumi:"managementNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 	ManagementVcnId pulumi.StringInput `pulumi:"managementVcnId"`
+	// Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+	NetworkEndpointDetails GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayInput `pulumi:"networkEndpointDetails"`
 	// The number of Nodes
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
 	// The NAT gateway IP address for the VB service VCN
@@ -1670,13 +1434,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) AlternateCustomEndp
 	}).(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput)
 }
 
-// A list of associated attachments to other services
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) Attachments() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) []GetVbInstancesVbInstanceSummaryCollectionItemAttachment {
-		return v.Attachments
-	}).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput)
-}
-
 // The ID of the compartment in which to list resources.
 func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -1714,13 +1471,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) Id() pulumi.StringO
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Information for IDCS access
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IdcsInfos() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) []GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo {
-		return v.IdcsInfos
-	}).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput)
-}
-
 func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IdcsOpenId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.IdcsOpenId }).(pulumi.StringOutput)
 }
@@ -1743,6 +1493,13 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ManagementNatGatewa
 // The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ManagementVcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ManagementVcnId }).(pulumi.StringOutput)
+}
+
+// Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) NetworkEndpointDetails() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) []GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail {
+		return v.NetworkEndpointDetails
+	}).(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput)
 }
 
 // The number of Nodes
@@ -1924,148 +1681,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArra
 	}).(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput)
 }
 
-type GetVbInstancesVbInstanceSummaryCollectionItemAttachment struct {
-	// * If role == `PARENT`, the attached instance was created by this service instance
-	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit bool `pulumi:"isImplicit"`
-	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId string `pulumi:"targetId"`
-	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
-	// The role of the target attachment.
-	// * `PARENT` - The target instance is the parent of this attachment.
-	// * `CHILD` - The target instance is the child of this attachment.
-	TargetRole string `pulumi:"targetRole"`
-	// The type of the target instance, such as "FUSION".
-	TargetServiceType string `pulumi:"targetServiceType"`
-}
-
-// GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs and GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput values.
-// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput` via:
-//
-//	GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs{...}
-type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput interface {
-	pulumi.Input
-
-	ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput
-	ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput
-}
-
-type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs struct {
-	// * If role == `PARENT`, the attached instance was created by this service instance
-	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
-	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
-	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
-	// The role of the target attachment.
-	// * `PARENT` - The target instance is the parent of this attachment.
-	// * `CHILD` - The target instance is the child of this attachment.
-	TargetRole pulumi.StringInput `pulumi:"targetRole"`
-	// The type of the target instance, such as "FUSION".
-	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
-}
-
-func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAttachment)(nil)).Elem()
-}
-
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
-	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(context.Background())
-}
-
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput)
-}
-
-// GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray and GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput values.
-// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput` via:
-//
-//	GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray{ GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs{...} }
-type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput
-	ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput
-}
-
-type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray []GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput
-
-func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment)(nil)).Elem()
-}
-
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
-	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput)
-}
-
-type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput struct{ *pulumi.OutputState }
-
-func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAttachment)(nil)).Elem()
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
-	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
-	return o
-}
-
-// * If role == `PARENT`, the attached instance was created by this service instance
-// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) IsImplicit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
-}
-
-// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetId }).(pulumi.StringOutput)
-}
-
-// The dataplane instance URL of the attached instance
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
-}
-
-// The role of the target attachment.
-// * `PARENT` - The target instance is the parent of this attachment.
-// * `CHILD` - The target instance is the child of this attachment.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetRole() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
-}
-
-// The type of the target instance, such as "FUSION".
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetServiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
-}
-
-type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment)(nil)).Elem()
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
-	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
-	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItemAttachment {
-		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItemAttachment)[vs[1].(int)]
-	}).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput)
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId string `pulumi:"certificateSecretId"`
@@ -2185,162 +1800,153 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) 
 	}).(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput)
 }
 
-type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo struct {
-	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
-	// The IDCS application ID associated with the instance
-	IdcsAppId string `pulumi:"idcsAppId"`
-	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
-	// The IDCS application name associated with the instance
-	IdcsAppName string `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail struct {
+	// The type of network endpoint.
+	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for the Private Endpoint.
+	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// The IP address to be assigned to Private Endpoint
+	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	// The subnet OCID for the private endpoint.
+	SubnetId string `pulumi:"subnetId"`
 }
 
-// GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs and GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput values.
-// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput` via:
+// GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs and GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput values.
+// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailInput` via:
 //
-//	GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs{...}
-type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput interface {
+//	GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs{...}
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailInput interface {
 	pulumi.Input
 
-	ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput
-	ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput
 }
 
-type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs struct {
-	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName pulumi.StringInput `pulumi:"idcsAppDisplayName"`
-	// The IDCS application ID associated with the instance
-	IdcsAppId pulumi.StringInput `pulumi:"idcsAppId"`
-	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
-	// The IDCS application name associated with the instance
-	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs struct {
+	// The type of network endpoint.
+	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for the Private Endpoint.
+	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
+	// The IP address to be assigned to Private Endpoint
+	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	// The subnet OCID for the private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
-func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)(nil)).Elem()
+func (GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail)(nil)).Elem()
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
-	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(context.Background())
+func (i GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput {
+	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutputWithContext(context.Background())
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput)
+func (i GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput)
 }
 
-// GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray and GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput values.
-// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput` via:
+// GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArray and GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput values.
+// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayInput` via:
 //
-//	GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray{ GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs{...} }
-type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput interface {
+//	GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArray{ GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs{...} }
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayInput interface {
 	pulumi.Input
 
-	ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput
-	ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput
 }
 
-type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray []GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArray []GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailInput
 
-func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)(nil)).Elem()
+func (GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail)(nil)).Elem()
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
-	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(context.Background())
+func (i GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArray) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput {
+	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutputWithContext(context.Background())
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput)
+func (i GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArray) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput)
 }
 
-type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput struct{ *pulumi.OutputState }
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput struct{ *pulumi.OutputState }
 
-func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)(nil)).Elem()
+func (GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail)(nil)).Elem()
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput {
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput {
 	return o
 }
 
-// The IDCS application display name associated with the instance
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppDisplayName }).(pulumi.StringOutput)
-}
-
-// The IDCS application ID associated with the instance
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppId }).(pulumi.StringOutput)
-}
-
-// URL for the location of the IDCS Application (used by IDCS APIs)
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppLocationUrl }).(pulumi.StringOutput)
-}
-
-// The IDCS application name associated with the instance
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
-}
-
-// The URL used as the primary audience for visual builder flows in this instance type: string
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string {
-		return v.InstancePrimaryAudienceUrl
+// The type of network endpoint.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail) string {
+		return v.NetworkEndpointType
 	}).(pulumi.StringOutput)
 }
 
-type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)(nil)).Elem()
+// Network Security Group OCIDs for the Private Endpoint.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail) []string {
+		return v.NetworkSecurityGroupIds
+	}).(pulumi.StringArrayOutput)
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
+// The IP address to be assigned to Private Endpoint
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) PrivateEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail) string {
+		return v.PrivateEndpointIp
+	}).(pulumi.StringOutput)
+}
+
+// The subnet OCID for the private endpoint.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail)(nil)).Elem()
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput {
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput {
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo {
-		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo)[vs[1].(int)]
-	}).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail {
+		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail)[vs[1].(int)]
+	}).(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAlternateCustomEndpointInput)(nil)).Elem(), VbInstanceAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAlternateCustomEndpointArrayInput)(nil)).Elem(), VbInstanceAlternateCustomEndpointArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAttachmentInput)(nil)).Elem(), VbInstanceAttachmentArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAttachmentArrayInput)(nil)).Elem(), VbInstanceAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceCustomEndpointInput)(nil)).Elem(), VbInstanceCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceCustomEndpointPtrInput)(nil)).Elem(), VbInstanceCustomEndpointArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceIdcsInfoInput)(nil)).Elem(), VbInstanceIdcsInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceIdcsInfoArrayInput)(nil)).Elem(), VbInstanceIdcsInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceNetworkEndpointDetailsInput)(nil)).Elem(), VbInstanceNetworkEndpointDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceNetworkEndpointDetailsPtrInput)(nil)).Elem(), VbInstanceNetworkEndpointDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAlternateCustomEndpointInput)(nil)).Elem(), GetVbInstanceAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAlternateCustomEndpointArrayInput)(nil)).Elem(), GetVbInstanceAlternateCustomEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceApplicationsApplicationSummaryCollectionInput)(nil)).Elem(), GetVbInstanceApplicationsApplicationSummaryCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceApplicationsApplicationSummaryCollectionArrayInput)(nil)).Elem(), GetVbInstanceApplicationsApplicationSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceApplicationsApplicationSummaryCollectionItemInput)(nil)).Elem(), GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayInput)(nil)).Elem(), GetVbInstanceApplicationsApplicationSummaryCollectionItemArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAttachmentInput)(nil)).Elem(), GetVbInstanceAttachmentArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAttachmentArrayInput)(nil)).Elem(), GetVbInstanceAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceCustomEndpointInput)(nil)).Elem(), GetVbInstanceCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceCustomEndpointArrayInput)(nil)).Elem(), GetVbInstanceCustomEndpointArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceIdcsInfoInput)(nil)).Elem(), GetVbInstanceIdcsInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceIdcsInfoArrayInput)(nil)).Elem(), GetVbInstanceIdcsInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceNetworkEndpointDetailInput)(nil)).Elem(), GetVbInstanceNetworkEndpointDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceNetworkEndpointDetailArrayInput)(nil)).Elem(), GetVbInstanceNetworkEndpointDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesFilterInput)(nil)).Elem(), GetVbInstancesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesFilterArrayInput)(nil)).Elem(), GetVbInstancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionArgs{})
@@ -2349,32 +1955,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArray{})
 	pulumi.RegisterOutputType(VbInstanceAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(VbInstanceAlternateCustomEndpointArrayOutput{})
-	pulumi.RegisterOutputType(VbInstanceAttachmentOutput{})
-	pulumi.RegisterOutputType(VbInstanceAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(VbInstanceCustomEndpointOutput{})
 	pulumi.RegisterOutputType(VbInstanceCustomEndpointPtrOutput{})
-	pulumi.RegisterOutputType(VbInstanceIdcsInfoOutput{})
-	pulumi.RegisterOutputType(VbInstanceIdcsInfoArrayOutput{})
+	pulumi.RegisterOutputType(VbInstanceNetworkEndpointDetailsOutput{})
+	pulumi.RegisterOutputType(VbInstanceNetworkEndpointDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceAlternateCustomEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceApplicationsApplicationSummaryCollectionOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput{})
-	pulumi.RegisterOutputType(GetVbInstanceAttachmentOutput{})
-	pulumi.RegisterOutputType(GetVbInstanceAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceCustomEndpointArrayOutput{})
-	pulumi.RegisterOutputType(GetVbInstanceIdcsInfoOutput{})
-	pulumi.RegisterOutputType(GetVbInstanceIdcsInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetVbInstanceNetworkEndpointDetailOutput{})
+	pulumi.RegisterOutputType(GetVbInstanceNetworkEndpointDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesFilterOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionOutput{})
@@ -2383,10 +1983,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput{})
-	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput{})
-	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput{})
-	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput{})
-	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput{})
+	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput{})
 }

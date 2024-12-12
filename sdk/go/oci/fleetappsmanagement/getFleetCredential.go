@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// # Gets a FleetCredential by identifier
+// Gets a FleetCredential by identifier.
 //
 // ## Example Usage
 //
@@ -55,7 +55,7 @@ func LookupFleetCredential(ctx *pulumi.Context, args *LookupFleetCredentialArgs,
 type LookupFleetCredentialArgs struct {
 	// unique FleetCredential identifier
 	FleetCredentialId string `pulumi:"fleetCredentialId"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
 }
 
@@ -65,7 +65,7 @@ type LookupFleetCredentialResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
-	// Credential Details
+	// Credential specific Details.
 	EntitySpecifics   []GetFleetCredentialEntitySpecific `pulumi:"entitySpecifics"`
 	FleetCredentialId string                             `pulumi:"fleetCredentialId"`
 	FleetId           string                             `pulumi:"fleetId"`
@@ -73,7 +73,7 @@ type LookupFleetCredentialResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Credential Details
+	// Credential Details.
 	Passwords []GetFleetCredentialPassword `pulumi:"passwords"`
 	// The current state of the FleetCredential.
 	State string `pulumi:"state"`
@@ -83,7 +83,7 @@ type LookupFleetCredentialResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Credential Details
+	// Credential Details.
 	Users []GetFleetCredentialUser `pulumi:"users"`
 }
 
@@ -110,7 +110,7 @@ func LookupFleetCredentialOutput(ctx *pulumi.Context, args LookupFleetCredential
 type LookupFleetCredentialOutputArgs struct {
 	// unique FleetCredential identifier
 	FleetCredentialId pulumi.StringInput `pulumi:"fleetCredentialId"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
 }
 
@@ -143,7 +143,7 @@ func (o LookupFleetCredentialResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetCredentialResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Credential Details
+// Credential specific Details.
 func (o LookupFleetCredentialResultOutput) EntitySpecifics() GetFleetCredentialEntitySpecificArrayOutput {
 	return o.ApplyT(func(v LookupFleetCredentialResult) []GetFleetCredentialEntitySpecific { return v.EntitySpecifics }).(GetFleetCredentialEntitySpecificArrayOutput)
 }
@@ -166,7 +166,7 @@ func (o LookupFleetCredentialResultOutput) LifecycleDetails() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupFleetCredentialResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Credential Details
+// Credential Details.
 func (o LookupFleetCredentialResultOutput) Passwords() GetFleetCredentialPasswordArrayOutput {
 	return o.ApplyT(func(v LookupFleetCredentialResult) []GetFleetCredentialPassword { return v.Passwords }).(GetFleetCredentialPasswordArrayOutput)
 }
@@ -191,7 +191,7 @@ func (o LookupFleetCredentialResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetCredentialResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Credential Details
+// Credential Details.
 func (o LookupFleetCredentialResultOutput) Users() GetFleetCredentialUserArrayOutput {
 	return o.ApplyT(func(v LookupFleetCredentialResult) []GetFleetCredentialUser { return v.Users }).(GetFleetCredentialUserArrayOutput)
 }

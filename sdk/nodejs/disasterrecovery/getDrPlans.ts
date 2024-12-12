@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     displayName: drPlanDisplayName,
  *     drPlanId: testDrPlan.id,
  *     drPlanType: drPlanDrPlanType,
+ *     lifecycleSubState: drPlanLifecycleSubState,
  *     state: drPlanState,
  * });
  * ```
@@ -34,6 +35,7 @@ export function getDrPlans(args: GetDrPlansArgs, opts?: pulumi.InvokeOptions): P
         "drPlanType": args.drPlanType,
         "drProtectionGroupId": args.drProtectionGroupId,
         "filters": args.filters,
+        "lifecycleSubState": args.lifecycleSubState,
         "state": args.state,
     }, opts);
 }
@@ -59,6 +61,10 @@ export interface GetDrPlansArgs {
      */
     drProtectionGroupId: string;
     filters?: inputs.DisasterRecovery.GetDrPlansFilter[];
+    /**
+     * A filter to return only DR plans that match the given lifecycle sub-state.
+     */
+    lifecycleSubState?: string;
     /**
      * A filter to return only DR plans that match the given lifecycle state.
      */
@@ -91,6 +97,10 @@ export interface GetDrPlansResult {
     /**
      * The current state of the DR plan.
      */
+    readonly lifecycleSubState?: string;
+    /**
+     * The current state of the DR plan.
+     */
     readonly state?: string;
 }
 /**
@@ -109,6 +119,7 @@ export interface GetDrPlansResult {
  *     displayName: drPlanDisplayName,
  *     drPlanId: testDrPlan.id,
  *     drPlanType: drPlanDrPlanType,
+ *     lifecycleSubState: drPlanLifecycleSubState,
  *     state: drPlanState,
  * });
  * ```
@@ -121,6 +132,7 @@ export function getDrPlansOutput(args: GetDrPlansOutputArgs, opts?: pulumi.Invok
         "drPlanType": args.drPlanType,
         "drProtectionGroupId": args.drProtectionGroupId,
         "filters": args.filters,
+        "lifecycleSubState": args.lifecycleSubState,
         "state": args.state,
     }, opts);
 }
@@ -146,6 +158,10 @@ export interface GetDrPlansOutputArgs {
      */
     drProtectionGroupId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrPlansFilterArgs>[]>;
+    /**
+     * A filter to return only DR plans that match the given lifecycle sub-state.
+     */
+    lifecycleSubState?: pulumi.Input<string>;
     /**
      * A filter to return only DR plans that match the given lifecycle state.
      */

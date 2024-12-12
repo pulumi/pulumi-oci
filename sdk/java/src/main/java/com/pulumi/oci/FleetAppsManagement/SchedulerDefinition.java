@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  * 
- * Creates a new SchedulerDefinition.
+ * Create a SchedulerDefinition to perform lifecycle operations.
  * 
  * ## Example Usage
  * 
@@ -106,14 +106,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition")
 public class SchedulerDefinition extends com.pulumi.resources.CustomResource {
     /**
-     * All ActionGroup Types part of the schedule.
+     * All ActionGroup Types that are part of the schedule.
      * 
      */
     @Export(name="actionGroupTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> actionGroupTypes;
 
     /**
-     * @return All ActionGroup Types part of the schedule.
+     * @return All ActionGroup Types that are part of the schedule.
      * 
      */
     public Output<List<String>> actionGroupTypes() {
@@ -148,14 +148,14 @@ public class SchedulerDefinition extends com.pulumi.resources.CustomResource {
         return this.activityInitiationCutOff;
     }
     /**
-     * All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
      * 
      */
     @Export(name="applicationTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> applicationTypes;
 
     /**
-     * @return All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * @return All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
      * 
      */
     public Output<List<String>> applicationTypes() {
@@ -190,28 +190,28 @@ public class SchedulerDefinition extends com.pulumi.resources.CustomResource {
         return this.countOfAffectedActionGroups;
     }
     /**
-     * Count of Resources affected by the Schedule
+     * Count of Resources affected by the Schedule.
      * 
      */
     @Export(name="countOfAffectedResources", refs={Integer.class}, tree="[0]")
     private Output<Integer> countOfAffectedResources;
 
     /**
-     * @return Count of Resources affected by the Schedule
+     * @return Count of Resources affected by the Schedule.
      * 
      */
     public Output<Integer> countOfAffectedResources() {
         return this.countOfAffectedResources;
     }
     /**
-     * Count of Targets affected by the Schedule
+     * Count of Targets affected by the Schedule.
      * 
      */
     @Export(name="countOfAffectedTargets", refs={Integer.class}, tree="[0]")
     private Output<Integer> countOfAffectedTargets;
 
     /**
-     * @return Count of Targets affected by the Schedule
+     * @return Count of Targets affected by the Schedule.
      * 
      */
     public Output<Integer> countOfAffectedTargets() {
@@ -288,28 +288,28 @@ public class SchedulerDefinition extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * All LifeCycle Operations part of the schedule
+     * All LifeCycle Operations that are part of the schedule.
      * 
      */
     @Export(name="lifecycleOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> lifecycleOperations;
 
     /**
-     * @return All LifeCycle Operations part of the schedule
+     * @return All LifeCycle Operations that are part of the schedule.
      * 
      */
     public Output<List<String>> lifecycleOperations() {
         return this.lifecycleOperations;
     }
     /**
-     * All products part of the schedule for PRODUCT ActionGroup Type.
+     * All products that are part of the schedule for PRODUCT ActionGroup Type.
      * 
      */
     @Export(name="products", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> products;
 
     /**
-     * @return All products part of the schedule for PRODUCT ActionGroup Type.
+     * @return All products that are part of the schedule for PRODUCT ActionGroup Type.
      * 
      */
     public Output<List<String>> products() {
@@ -400,14 +400,14 @@ public class SchedulerDefinition extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
-     * Scheduled date for the next run of the Job.
+     * The scheduled date for the next run of the Job.
      * 
      */
     @Export(name="timeOfNextRun", refs={String.class}, tree="[0]")
     private Output<String> timeOfNextRun;
 
     /**
-     * @return Scheduled date for the next run of the Job.
+     * @return The scheduled date for the next run of the Job.
      * 
      */
     public Output<String> timeOfNextRun() {

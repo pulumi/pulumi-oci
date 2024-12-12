@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow {
     /**
-     * @return Provide the name of the group.
+     * @return Name of the group.
      * 
      */
     private String groupName;
     /**
-     * @return Tasks within the Group. Provide the stepName for all tasks that are applicable
+     * @return Tasks within the Group. Provide the stepName for all applicable tasks.
      * 
      */
     private List<GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowStep> steps;
     /**
-     * @return The ID of the runbook type.
+     * @return A filter to return runbooks whose type matches the given type.
      * 
      */
     private String type;
 
     private GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow() {}
     /**
-     * @return Provide the name of the group.
+     * @return Name of the group.
      * 
      */
     public String groupName() {
         return this.groupName;
     }
     /**
-     * @return Tasks within the Group. Provide the stepName for all tasks that are applicable
+     * @return Tasks within the Group. Provide the stepName for all applicable tasks.
      * 
      */
     public List<GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowStep> steps() {
         return this.steps;
     }
     /**
-     * @return The ID of the runbook type.
+     * @return A filter to return runbooks whose type matches the given type.
      * 
      */
     public String type() {

@@ -22,14 +22,14 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
     public static final SchedulerDefinitionState Empty = new SchedulerDefinitionState();
 
     /**
-     * All ActionGroup Types part of the schedule.
+     * All ActionGroup Types that are part of the schedule.
      * 
      */
     @Import(name="actionGroupTypes")
     private @Nullable Output<List<String>> actionGroupTypes;
 
     /**
-     * @return All ActionGroup Types part of the schedule.
+     * @return All ActionGroup Types that are part of the schedule.
      * 
      */
     public Optional<Output<List<String>>> actionGroupTypes() {
@@ -67,14 +67,14 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
      * 
      */
     @Import(name="applicationTypes")
     private @Nullable Output<List<String>> applicationTypes;
 
     /**
-     * @return All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * @return All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
      * 
      */
     public Optional<Output<List<String>>> applicationTypes() {
@@ -112,14 +112,14 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Count of Resources affected by the Schedule
+     * Count of Resources affected by the Schedule.
      * 
      */
     @Import(name="countOfAffectedResources")
     private @Nullable Output<Integer> countOfAffectedResources;
 
     /**
-     * @return Count of Resources affected by the Schedule
+     * @return Count of Resources affected by the Schedule.
      * 
      */
     public Optional<Output<Integer>> countOfAffectedResources() {
@@ -127,14 +127,14 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Count of Targets affected by the Schedule
+     * Count of Targets affected by the Schedule.
      * 
      */
     @Import(name="countOfAffectedTargets")
     private @Nullable Output<Integer> countOfAffectedTargets;
 
     /**
-     * @return Count of Targets affected by the Schedule
+     * @return Count of Targets affected by the Schedule.
      * 
      */
     public Optional<Output<Integer>> countOfAffectedTargets() {
@@ -217,14 +217,14 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * All LifeCycle Operations part of the schedule
+     * All LifeCycle Operations that are part of the schedule.
      * 
      */
     @Import(name="lifecycleOperations")
     private @Nullable Output<List<String>> lifecycleOperations;
 
     /**
-     * @return All LifeCycle Operations part of the schedule
+     * @return All LifeCycle Operations that are part of the schedule.
      * 
      */
     public Optional<Output<List<String>>> lifecycleOperations() {
@@ -232,14 +232,14 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * All products part of the schedule for PRODUCT ActionGroup Type.
+     * All products that are part of the schedule for PRODUCT ActionGroup Type.
      * 
      */
     @Import(name="products")
     private @Nullable Output<List<String>> products;
 
     /**
-     * @return All products part of the schedule for PRODUCT ActionGroup Type.
+     * @return All products that are part of the schedule for PRODUCT ActionGroup Type.
      * 
      */
     public Optional<Output<List<String>>> products() {
@@ -337,14 +337,14 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Scheduled date for the next run of the Job.
+     * The scheduled date for the next run of the Job.
      * 
      */
     @Import(name="timeOfNextRun")
     private @Nullable Output<String> timeOfNextRun;
 
     /**
-     * @return Scheduled date for the next run of the Job.
+     * @return The scheduled date for the next run of the Job.
      * 
      */
     public Optional<Output<String>> timeOfNextRun() {
@@ -413,7 +413,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param actionGroupTypes All ActionGroup Types part of the schedule.
+         * @param actionGroupTypes All ActionGroup Types that are part of the schedule.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param actionGroupTypes All ActionGroup Types part of the schedule.
+         * @param actionGroupTypes All ActionGroup Types that are part of the schedule.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param actionGroupTypes All ActionGroup Types part of the schedule.
+         * @param actionGroupTypes All ActionGroup Types that are part of the schedule.
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param applicationTypes All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+         * @param applicationTypes All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param applicationTypes All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+         * @param applicationTypes All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
          * 
          * @return builder
          * 
@@ -517,7 +517,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param applicationTypes All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+         * @param applicationTypes All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
          * 
          * @return builder
          * 
@@ -569,7 +569,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param countOfAffectedResources Count of Resources affected by the Schedule
+         * @param countOfAffectedResources Count of Resources affected by the Schedule.
          * 
          * @return builder
          * 
@@ -580,7 +580,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param countOfAffectedResources Count of Resources affected by the Schedule
+         * @param countOfAffectedResources Count of Resources affected by the Schedule.
          * 
          * @return builder
          * 
@@ -590,7 +590,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param countOfAffectedTargets Count of Targets affected by the Schedule
+         * @param countOfAffectedTargets Count of Targets affected by the Schedule.
          * 
          * @return builder
          * 
@@ -601,7 +601,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param countOfAffectedTargets Count of Targets affected by the Schedule
+         * @param countOfAffectedTargets Count of Targets affected by the Schedule.
          * 
          * @return builder
          * 
@@ -716,7 +716,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleOperations All LifeCycle Operations part of the schedule
+         * @param lifecycleOperations All LifeCycle Operations that are part of the schedule.
          * 
          * @return builder
          * 
@@ -727,7 +727,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleOperations All LifeCycle Operations part of the schedule
+         * @param lifecycleOperations All LifeCycle Operations that are part of the schedule.
          * 
          * @return builder
          * 
@@ -737,7 +737,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleOperations All LifeCycle Operations part of the schedule
+         * @param lifecycleOperations All LifeCycle Operations that are part of the schedule.
          * 
          * @return builder
          * 
@@ -747,7 +747,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param products All products part of the schedule for PRODUCT ActionGroup Type.
+         * @param products All products that are part of the schedule for PRODUCT ActionGroup Type.
          * 
          * @return builder
          * 
@@ -758,7 +758,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param products All products part of the schedule for PRODUCT ActionGroup Type.
+         * @param products All products that are part of the schedule for PRODUCT ActionGroup Type.
          * 
          * @return builder
          * 
@@ -768,7 +768,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param products All products part of the schedule for PRODUCT ActionGroup Type.
+         * @param products All products that are part of the schedule for PRODUCT ActionGroup Type.
          * 
          * @return builder
          * 
@@ -914,7 +914,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param timeOfNextRun Scheduled date for the next run of the Job.
+         * @param timeOfNextRun The scheduled date for the next run of the Job.
          * 
          * @return builder
          * 
@@ -925,7 +925,7 @@ public final class SchedulerDefinitionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param timeOfNextRun Scheduled date for the next run of the Job.
+         * @param timeOfNextRun The scheduled date for the next run of the Job.
          * 
          * @return builder
          * 

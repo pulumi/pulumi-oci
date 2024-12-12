@@ -14,7 +14,7 @@ import java.util.Objects;
 public final class GetFleetComplianceReportResult {
     private String complianceReportId;
     /**
-     * @return Last known compliance state of target.
+     * @return The last known compliance state of the target.
      * 
      */
     private String complianceState;
@@ -29,7 +29,7 @@ public final class GetFleetComplianceReportResult {
      */
     private String id;
     /**
-     * @return Resources assocaited with the Fleet.
+     * @return Resources associated with the Fleet.
      * 
      */
     private List<GetFleetComplianceReportResource> resources;
@@ -39,7 +39,7 @@ public final class GetFleetComplianceReportResult {
         return this.complianceReportId;
     }
     /**
-     * @return Last known compliance state of target.
+     * @return The last known compliance state of the target.
      * 
      */
     public String complianceState() {
@@ -60,7 +60,7 @@ public final class GetFleetComplianceReportResult {
         return this.id;
     }
     /**
-     * @return Resources assocaited with the Fleet.
+     * @return Resources associated with the Fleet.
      * 
      */
     public List<GetFleetComplianceReportResource> resources() {

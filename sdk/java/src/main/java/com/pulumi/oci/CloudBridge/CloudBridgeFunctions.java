@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.CloudBridge.inputs.GetAgentArgs;
 import com.pulumi.oci.CloudBridge.inputs.GetAgentDependenciesArgs;
 import com.pulumi.oci.CloudBridge.inputs.GetAgentDependenciesPlainArgs;
@@ -192,6 +193,50 @@ public final class CloudBridgeFunctions {
      * 
      */
     public static Output<GetAgentResult> getAgent(GetAgentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getAgent:getAgent", TypeShape.of(GetAgentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Gets an Agent by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgent = CloudBridgeFunctions.getAgent(GetAgentArgs.builder()
+     *             .agentId(testAgentOciCloudBridgeAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentResult> getAgent(GetAgentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudBridge/getAgent:getAgent", TypeShape.of(GetAgentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -427,6 +472,54 @@ public final class CloudBridgeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAgentDependenciesResult> getAgentDependencies(GetAgentDependenciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getAgentDependencies:getAgentDependencies", TypeShape.of(GetAgentDependenciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Agent Dependencies in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Returns a list of AgentDependencies such as AgentDependencyCollection.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependenciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentDependencies = CloudBridgeFunctions.getAgentDependencies(GetAgentDependenciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDependencyDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentDependencyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAgentDependenciesResult> getAgentDependenciesPlain(GetAgentDependenciesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudBridge/getAgentDependencies:getAgentDependencies", TypeShape.of(GetAgentDependenciesResult.class), args, Utilities.withVersion(options));
     }
@@ -560,6 +653,50 @@ public final class CloudBridgeFunctions {
      * 
      */
     public static Output<GetAgentDependencyResult> getAgentDependency(GetAgentDependencyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getAgentDependency:getAgentDependency", TypeShape.of(GetAgentDependencyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Gets an AgentDependency by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetAgentDependencyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentDependency = CloudBridgeFunctions.getAgentDependency(GetAgentDependencyArgs.builder()
+     *             .agentDependencyId(testAgentDependencyOciCloudBridgeAgentDependency.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentDependencyResult> getAgentDependency(GetAgentDependencyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudBridge/getAgentDependency:getAgentDependency", TypeShape.of(GetAgentDependencyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -739,6 +876,51 @@ public final class CloudBridgeFunctions {
      * 
      */
     public static Output<GetAgentPluginResult> getAgentPlugin(GetAgentPluginArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getAgentPlugin:getAgentPlugin", TypeShape.of(GetAgentPluginResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Gets a plugin by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetAgentPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentPlugin = CloudBridgeFunctions.getAgentPlugin(GetAgentPluginArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .pluginName(agentPluginPluginName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentPluginResult> getAgentPlugin(GetAgentPluginArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudBridge/getAgentPlugin:getAgentPlugin", TypeShape.of(GetAgentPluginResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -975,6 +1157,54 @@ public final class CloudBridgeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAgentsResult> getAgents(GetAgentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getAgents:getAgents", TypeShape.of(GetAgentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Agents in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Returns a list of Agents.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = CloudBridgeFunctions.getAgents(GetAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAgentsResult> getAgentsPlain(GetAgentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudBridge/getAgents:getAgents", TypeShape.of(GetAgentsResult.class), args, Utilities.withVersion(options));
     }
@@ -1111,6 +1341,51 @@ public final class CloudBridgeFunctions {
      * 
      */
     public static Output<GetApplianceImageResult> getApplianceImage(GetApplianceImageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getApplianceImage:getApplianceImage", TypeShape.of(GetApplianceImageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Appliance Image resource in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Returns a list of Appliance Images.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplianceImage = CloudBridgeFunctions.getApplianceImage(GetApplianceImageArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApplianceImageResult> getApplianceImage(GetApplianceImageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudBridge/getApplianceImage:getApplianceImage", TypeShape.of(GetApplianceImageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1335,6 +1610,51 @@ public final class CloudBridgeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetApplianceImagesResult> getApplianceImages(GetApplianceImagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getApplianceImages:getApplianceImages", TypeShape.of(GetApplianceImagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Returns a list of Appliance Images.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetApplianceImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplianceImages = CloudBridgeFunctions.getApplianceImages(GetApplianceImagesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetApplianceImagesResult> getApplianceImagesPlain(GetApplianceImagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudBridge/getApplianceImages:getApplianceImages", TypeShape.of(GetApplianceImagesResult.class), args, Utilities.withVersion(options));
     }
@@ -1468,6 +1788,50 @@ public final class CloudBridgeFunctions {
      * 
      */
     public static Output<GetAssetResult> getAsset(GetAssetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getAsset:getAsset", TypeShape.of(GetAssetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Gets an asset by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAsset = CloudBridgeFunctions.getAsset(GetAssetArgs.builder()
+     *             .assetId(testAssetOciCloudBridgeAsset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAssetResult> getAsset(GetAssetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudBridge/getAsset:getAsset", TypeShape.of(GetAssetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1687,6 +2051,50 @@ public final class CloudBridgeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAssetSourceResult> getAssetSource(GetAssetSourceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getAssetSource:getAssetSource", TypeShape.of(GetAssetSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Gets the asset source by ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssetSource = CloudBridgeFunctions.getAssetSource(GetAssetSourceArgs.builder()
+     *             .assetSourceId(testAssetSourceOciCloudBridgeAssetSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAssetSourceResult> getAssetSourcePlain(GetAssetSourcePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudBridge/getAssetSource:getAssetSource", TypeShape.of(GetAssetSourceResult.class), args, Utilities.withVersion(options));
     }
@@ -1829,6 +2237,53 @@ public final class CloudBridgeFunctions {
      * 
      */
     public static Output<GetAssetSourcesResult> getAssetSources(GetAssetSourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getAssetSources:getAssetSources", TypeShape.of(GetAssetSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Asset Sources in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Returns a list of asset sources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetAssetSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssetSources = CloudBridgeFunctions.getAssetSources(GetAssetSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .assetSourceId(testAssetSource.id())
+     *             .displayName(assetSourceDisplayName)
+     *             .state(assetSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAssetSourcesResult> getAssetSources(GetAssetSourcesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudBridge/getAssetSources:getAssetSources", TypeShape.of(GetAssetSourcesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2079,6 +2534,57 @@ public final class CloudBridgeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAssetsResult> getAssets(GetAssetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getAssets:getAssets", TypeShape.of(GetAssetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assets in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Returns a list of assets.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .assetId(testAsset.id())
+     *             .assetType(assetAssetType)
+     *             .displayName(assetDisplayName)
+     *             .externalAssetKey(assetExternalAssetKey)
+     *             .inventoryId(testInventory.id())
+     *             .sourceKey(assetSourceKey)
+     *             .state(assetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAssetsResult> getAssetsPlain(GetAssetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudBridge/getAssets:getAssets", TypeShape.of(GetAssetsResult.class), args, Utilities.withVersion(options));
     }
@@ -2212,6 +2718,50 @@ public final class CloudBridgeFunctions {
      * 
      */
     public static Output<GetDiscoveryScheduleResult> getDiscoverySchedule(GetDiscoveryScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getDiscoverySchedule:getDiscoverySchedule", TypeShape.of(GetDiscoveryScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Reads information about the specified discovery schedule.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetDiscoveryScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoverySchedule = CloudBridgeFunctions.getDiscoverySchedule(GetDiscoveryScheduleArgs.builder()
+     *             .discoveryScheduleId(testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDiscoveryScheduleResult> getDiscoverySchedule(GetDiscoveryScheduleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudBridge/getDiscoverySchedule:getDiscoverySchedule", TypeShape.of(GetDiscoveryScheduleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2443,6 +2993,53 @@ public final class CloudBridgeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDiscoverySchedulesResult> getDiscoverySchedules(GetDiscoverySchedulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", TypeShape.of(GetDiscoverySchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Discovery Schedules in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Lists discovery schedules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetDiscoverySchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoverySchedules = CloudBridgeFunctions.getDiscoverySchedules(GetDiscoverySchedulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .discoveryScheduleId(testDiscoverySchedule.id())
+     *             .displayName(discoveryScheduleDisplayName)
+     *             .state(discoveryScheduleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDiscoverySchedulesResult> getDiscoverySchedulesPlain(GetDiscoverySchedulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", TypeShape.of(GetDiscoverySchedulesResult.class), args, Utilities.withVersion(options));
     }
@@ -2576,6 +3173,50 @@ public final class CloudBridgeFunctions {
      * 
      */
     public static Output<GetEnvironmentResult> getEnvironment(GetEnvironmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getEnvironment:getEnvironment", TypeShape.of(GetEnvironmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Gets a source environment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnvironment = CloudBridgeFunctions.getEnvironment(GetEnvironmentArgs.builder()
+     *             .environmentId(testEnvironmentOciCloudBridgeEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEnvironmentResult> getEnvironment(GetEnvironmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudBridge/getEnvironment:getEnvironment", TypeShape.of(GetEnvironmentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2807,6 +3448,53 @@ public final class CloudBridgeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetEnvironmentsResult> getEnvironments(GetEnvironmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getEnvironments:getEnvironments", TypeShape.of(GetEnvironmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Environments in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Returns a list of source environments.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnvironments = CloudBridgeFunctions.getEnvironments(GetEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(environmentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(environmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetEnvironmentsResult> getEnvironmentsPlain(GetEnvironmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudBridge/getEnvironments:getEnvironments", TypeShape.of(GetEnvironmentsResult.class), args, Utilities.withVersion(options));
     }
@@ -2987,6 +3675,51 @@ public final class CloudBridgeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInventoriesResult> getInventories(GetInventoriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getInventories:getInventories", TypeShape.of(GetInventoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Inventories in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Returns a list of inventories.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetInventoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInventories = CloudBridgeFunctions.getInventories(GetInventoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .state(inventoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInventoriesResult> getInventoriesPlain(GetInventoriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudBridge/getInventories:getInventories", TypeShape.of(GetInventoriesResult.class), args, Utilities.withVersion(options));
     }
@@ -3120,6 +3853,50 @@ public final class CloudBridgeFunctions {
      * 
      */
     public static Output<GetInventoryResult> getInventory(GetInventoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getInventory:getInventory", TypeShape.of(GetInventoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
+     * 
+     * Gets an inventory by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudBridge.CloudBridgeFunctions;
+     * import com.pulumi.oci.CloudBridge.inputs.GetInventoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInventory = CloudBridgeFunctions.getInventory(GetInventoryArgs.builder()
+     *             .inventoryId(testInventoryOciCloudBridgeInventory.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInventoryResult> getInventory(GetInventoryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudBridge/getInventory:getInventory", TypeShape.of(GetInventoryResult.class), args, Utilities.withVersion(options));
     }
     /**

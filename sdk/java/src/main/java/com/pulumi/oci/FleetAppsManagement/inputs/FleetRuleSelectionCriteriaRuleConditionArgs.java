@@ -15,14 +15,14 @@ public final class FleetRuleSelectionCriteriaRuleConditionArgs extends com.pulum
     public static final FleetRuleSelectionCriteriaRuleConditionArgs Empty = new FleetRuleSelectionCriteriaRuleConditionArgs();
 
     /**
-     * (Updatable) Attribute Group.
+     * (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
      * 
      */
     @Import(name="attrGroup", required=true)
     private Output<String> attrGroup;
 
     /**
-     * @return (Updatable) Attribute Group.
+     * @return (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
      * 
      */
     public Output<String> attrGroup() {
@@ -30,14 +30,14 @@ public final class FleetRuleSelectionCriteriaRuleConditionArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Attribute Key.
+     * (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
      * 
      */
     @Import(name="attrKey", required=true)
     private Output<String> attrKey;
 
     /**
-     * @return (Updatable) Attribute Key.
+     * @return (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
      * 
      */
     public Output<String> attrKey() {
@@ -45,14 +45,14 @@ public final class FleetRuleSelectionCriteriaRuleConditionArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Attribute Value.
+     * (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
      * 
      */
     @Import(name="attrValue", required=true)
     private Output<String> attrValue;
 
     /**
-     * @return (Updatable) Attribute Value.
+     * @return (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
      * 
      */
     public Output<String> attrValue() {
@@ -86,7 +86,7 @@ public final class FleetRuleSelectionCriteriaRuleConditionArgs extends com.pulum
         }
 
         /**
-         * @param attrGroup (Updatable) Attribute Group.
+         * @param attrGroup (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class FleetRuleSelectionCriteriaRuleConditionArgs extends com.pulum
         }
 
         /**
-         * @param attrGroup (Updatable) Attribute Group.
+         * @param attrGroup (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class FleetRuleSelectionCriteriaRuleConditionArgs extends com.pulum
         }
 
         /**
-         * @param attrKey (Updatable) Attribute Key.
+         * @param attrKey (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class FleetRuleSelectionCriteriaRuleConditionArgs extends com.pulum
         }
 
         /**
-         * @param attrKey (Updatable) Attribute Key.
+         * @param attrKey (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class FleetRuleSelectionCriteriaRuleConditionArgs extends com.pulum
         }
 
         /**
-         * @param attrValue (Updatable) Attribute Value.
+         * @param attrValue (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class FleetRuleSelectionCriteriaRuleConditionArgs extends com.pulum
         }
 
         /**
-         * @param attrValue (Updatable) Attribute Value.
+         * @param attrValue (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
          * 
          * @return builder
          * 

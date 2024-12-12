@@ -17,14 +17,14 @@ public final class FleetRuleSelectionCriteriaArgs extends com.pulumi.resources.R
     public static final FleetRuleSelectionCriteriaArgs Empty = new FleetRuleSelectionCriteriaArgs();
 
     /**
-     * (Updatable) Rule selection match condition.
+     * (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
      * 
      */
     @Import(name="matchCondition", required=true)
     private Output<String> matchCondition;
 
     /**
-     * @return (Updatable) Rule selection match condition.
+     * @return (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
      * 
      */
     public Output<String> matchCondition() {
@@ -72,7 +72,7 @@ public final class FleetRuleSelectionCriteriaArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param matchCondition (Updatable) Rule selection match condition.
+         * @param matchCondition (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class FleetRuleSelectionCriteriaArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param matchCondition (Updatable) Rule selection match condition.
+         * @param matchCondition (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
          * 
          * @return builder
          * 

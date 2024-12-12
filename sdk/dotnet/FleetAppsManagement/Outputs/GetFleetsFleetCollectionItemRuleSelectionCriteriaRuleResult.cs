@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleResult
     {
         /// <summary>
-        /// Rule to be be applied on.
+        /// Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
         /// </summary>
         public readonly string Basis;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleConditionResult> Conditions;
         /// <summary>
-        /// Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        /// The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
         /// </summary>
         public readonly string ResourceCompartmentId;
 

@@ -18,14 +18,14 @@ public final class FleetNotificationPreferencesArgs extends com.pulumi.resources
     public static final FleetNotificationPreferencesArgs Empty = new FleetNotificationPreferencesArgs();
 
     /**
-     * (Updatable) Copartment Id of the topic where the notifications will be directed
+     * (Updatable) Compartment ID the topic belongs to.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Copartment Id of the topic where the notifications will be directed
+     * @return (Updatable) Compartment ID the topic belongs to.
      * 
      */
     public Output<String> compartmentId() {
@@ -33,14 +33,14 @@ public final class FleetNotificationPreferencesArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Preferences to send notifications on the fleet activities
+     * (Updatable) Preferences to send notifications on the fleet activities.
      * 
      */
     @Import(name="preferences")
     private @Nullable Output<FleetNotificationPreferencesPreferencesArgs> preferences;
 
     /**
-     * @return (Updatable) Preferences to send notifications on the fleet activities
+     * @return (Updatable) Preferences to send notifications on the fleet activities.
      * 
      */
     public Optional<Output<FleetNotificationPreferencesPreferencesArgs>> preferences() {
@@ -48,14 +48,14 @@ public final class FleetNotificationPreferencesArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Topic Id where the notifications will be directed
+     * (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
      * 
      */
     @Import(name="topicId", required=true)
     private Output<String> topicId;
 
     /**
-     * @return (Updatable) Topic Id where the notifications will be directed
+     * @return (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
      * 
      */
     public Output<String> topicId() {
@@ -89,7 +89,7 @@ public final class FleetNotificationPreferencesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId (Updatable) Copartment Id of the topic where the notifications will be directed
+         * @param compartmentId (Updatable) Compartment ID the topic belongs to.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class FleetNotificationPreferencesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId (Updatable) Copartment Id of the topic where the notifications will be directed
+         * @param compartmentId (Updatable) Compartment ID the topic belongs to.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class FleetNotificationPreferencesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param preferences (Updatable) Preferences to send notifications on the fleet activities
+         * @param preferences (Updatable) Preferences to send notifications on the fleet activities.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class FleetNotificationPreferencesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param preferences (Updatable) Preferences to send notifications on the fleet activities
+         * @param preferences (Updatable) Preferences to send notifications on the fleet activities.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class FleetNotificationPreferencesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param topicId (Updatable) Topic Id where the notifications will be directed
+         * @param topicId (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class FleetNotificationPreferencesArgs extends com.pulumi.resources
         }
 
         /**
-         * @param topicId (Updatable) Topic Id where the notifications will be directed
+         * @param topicId (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
          * 
          * @return builder
          * 

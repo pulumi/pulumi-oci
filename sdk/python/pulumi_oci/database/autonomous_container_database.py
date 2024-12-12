@@ -40,6 +40,7 @@ class AutonomousContainerDatabaseArgs:
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
+                 key_version_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  maintenance_window_details: Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] = None,
                  net_services_architecture: Optional[pulumi.Input[str]] = None,
@@ -77,6 +78,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param pulumi.Input[str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
@@ -132,6 +134,8 @@ class AutonomousContainerDatabaseArgs:
             pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         if key_store_id is not None:
             pulumi.set(__self__, "key_store_id", key_store_id)
+        if key_version_id is not None:
+            pulumi.set(__self__, "key_version_id", key_version_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if maintenance_window_details is not None:
@@ -393,6 +397,18 @@ class AutonomousContainerDatabaseArgs:
         pulumi.set(self, "key_store_id", value)
 
     @property
+    @pulumi.getter(name="keyVersionId")
+    def key_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the key version that is used in rotate key operations.
+        """
+        return pulumi.get(self, "key_version_id")
+
+    @key_version_id.setter
+    def key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_version_id", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -622,6 +638,7 @@ class _AutonomousContainerDatabaseState:
                  key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+                 key_version_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  largest_provisionable_autonomous_database_in_cpus: Optional[pulumi.Input[float]] = None,
                  last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
@@ -684,6 +701,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]] key_history_entries: Key History Entry.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
+        :param pulumi.Input[str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -776,6 +794,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "key_store_id", key_store_id)
         if key_store_wallet_name is not None:
             pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+        if key_version_id is not None:
+            pulumi.set(__self__, "key_version_id", key_version_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if largest_provisionable_autonomous_database_in_cpus is not None:
@@ -1145,6 +1165,18 @@ class _AutonomousContainerDatabaseState:
     @key_store_wallet_name.setter
     def key_store_wallet_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key_store_wallet_name", value)
+
+    @property
+    @pulumi.getter(name="keyVersionId")
+    def key_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the key version that is used in rotate key operations.
+        """
+        return pulumi.get(self, "key_version_id")
+
+    @key_version_id.setter
+    def key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_version_id", value)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -1603,6 +1635,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
+                 key_version_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
                  net_services_architecture: Optional[pulumi.Input[str]] = None,
@@ -1654,6 +1687,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param pulumi.Input[str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
@@ -1726,6 +1760,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
+                 key_version_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
                  net_services_architecture: Optional[pulumi.Input[str]] = None,
@@ -1773,6 +1808,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["is_automatic_failover_enabled"] = is_automatic_failover_enabled
             __props__.__dict__["is_dst_file_update_enabled"] = is_dst_file_update_enabled
             __props__.__dict__["key_store_id"] = key_store_id
+            __props__.__dict__["key_version_id"] = key_version_id
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             __props__.__dict__["net_services_architecture"] = net_services_architecture
@@ -1853,6 +1889,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseKeyHistoryEntryArgs', 'AutonomousContainerDatabaseKeyHistoryEntryArgsDict']]]]] = None,
             key_store_id: Optional[pulumi.Input[str]] = None,
             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+            key_version_id: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             largest_provisionable_autonomous_database_in_cpus: Optional[pulumi.Input[float]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
@@ -1920,6 +1957,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseKeyHistoryEntryArgs', 'AutonomousContainerDatabaseKeyHistoryEntryArgsDict']]]] key_history_entries: Key History Entry.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
+        :param pulumi.Input[str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -1991,6 +2029,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["key_history_entries"] = key_history_entries
         __props__.__dict__["key_store_id"] = key_store_id
         __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
+        __props__.__dict__["key_version_id"] = key_version_id
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["largest_provisionable_autonomous_database_in_cpus"] = largest_provisionable_autonomous_database_in_cpus
         __props__.__dict__["last_maintenance_run_id"] = last_maintenance_run_id
@@ -2225,6 +2264,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         The wallet name for Oracle Key Vault.
         """
         return pulumi.get(self, "key_store_wallet_name")
+
+    @property
+    @pulumi.getter(name="keyVersionId")
+    def key_version_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        The OCID of the key version that is used in rotate key operations.
+        """
+        return pulumi.get(self, "key_version_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")

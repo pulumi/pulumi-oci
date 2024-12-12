@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FleetAppsManagement.FleetArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.FleetState;
+import com.pulumi.oci.FleetAppsManagement.outputs.FleetCredential;
 import com.pulumi.oci.FleetAppsManagement.outputs.FleetNotificationPreferences;
 import com.pulumi.oci.FleetAppsManagement.outputs.FleetRuleSelectionCriteria;
 import com.pulumi.oci.Utilities;
@@ -21,8 +22,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  * 
- * Creates a new fleet instance that includes fleet resources and properties.
- * For more information, please see the documentation.
+ * Create a product, environment, group, or generic type of fleet in Fleet Application Management.
  * 
  * ## Example Usage
  * 
@@ -41,14 +41,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:FleetAppsManagement/fleet:Fleet")
 public class Fleet extends com.pulumi.resources.CustomResource {
     /**
-     * Application Type associated with the Fleet.Applicable for Environment fleet types.
+     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     @Export(name="applicationType", refs={String.class}, tree="[0]")
     private Output<String> applicationType;
 
     /**
-     * @return Application Type associated with the Fleet.Applicable for Environment fleet types.
+     * @return Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public Output<String> applicationType() {
@@ -67,6 +67,20 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * Credentials associated with the Fleet.
+     * 
+     */
+    @Export(name="credentials", refs={List.class,FleetCredential.class}, tree="[0,1]")
+    private Output<List<FleetCredential>> credentials;
+
+    /**
+     * @return Credentials associated with the Fleet.
+     * 
+     */
+    public Output<List<FleetCredential>> credentials() {
+        return this.credentials;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -111,28 +125,28 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * Environment Type associated with the Fleet.Applicable for Environment fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     @Export(name="environmentType", refs={String.class}, tree="[0]")
     private Output<String> environmentType;
 
     /**
-     * @return Environment Type associated with the Fleet.Applicable for Environment fleet types.
+     * @return Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public Output<String> environmentType() {
         return this.environmentType;
     }
     /**
-     * Type of the Fleet
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      * 
      */
     @Export(name="fleetType", refs={String.class}, tree="[0]")
     private Output<String> fleetType;
 
     /**
-     * @return Type of the Fleet
+     * @return Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      * 
      */
     public Output<String> fleetType() {
@@ -153,28 +167,28 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Group Type associated with Group Fleet.Applicable for Group fleet types.
+     * Group Type associated with Group Fleet.
      * 
      */
     @Export(name="groupType", refs={String.class}, tree="[0]")
     private Output<String> groupType;
 
     /**
-     * @return Group Type associated with Group Fleet.Applicable for Group fleet types.
+     * @return Group Type associated with Group Fleet.
      * 
      */
     public Output<String> groupType() {
         return this.groupType;
     }
     /**
-     * (Updatable) A value which represents if auto confirming of the targets can be enabled
+     * (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      * 
      */
     @Export(name="isTargetAutoConfirm", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isTargetAutoConfirm;
 
     /**
-     * @return (Updatable) A value which represents if auto confirming of the targets can be enabled
+     * @return (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      * 
      */
     public Output<Boolean> isTargetAutoConfirm() {
@@ -195,28 +209,28 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) Conditions when met to send notifications on the fleet activities
+     * (Updatable) Notification information to get notified when the fleet status changes.
      * 
      */
     @Export(name="notificationPreferences", refs={FleetNotificationPreferences.class}, tree="[0]")
     private Output<FleetNotificationPreferences> notificationPreferences;
 
     /**
-     * @return (Updatable) Conditions when met to send notifications on the fleet activities
+     * @return (Updatable) Notification information to get notified when the fleet status changes.
      * 
      */
     public Output<FleetNotificationPreferences> notificationPreferences() {
         return this.notificationPreferences;
     }
     /**
-     * Products associated with the Fleet
+     * Products associated with the Fleet.
      * 
      */
     @Export(name="products", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> products;
 
     /**
-     * @return Products associated with the Fleet
+     * @return Products associated with the Fleet.
      * 
      */
     public Output<List<String>> products() {
@@ -237,28 +251,28 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.resourceRegion;
     }
     /**
-     * Type of resource selection in a fleet
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      * 
      */
     @Export(name="resourceSelectionType", refs={String.class}, tree="[0]")
     private Output<String> resourceSelectionType;
 
     /**
-     * @return Type of resource selection in a fleet
+     * @return Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      * 
      */
     public Output<String> resourceSelectionType() {
         return this.resourceSelectionType;
     }
     /**
-     * (Updatable) Rule Selection Criteria
+     * (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      * 
      */
     @Export(name="ruleSelectionCriteria", refs={FleetRuleSelectionCriteria.class}, tree="[0]")
     private Output<FleetRuleSelectionCriteria> ruleSelectionCriteria;
 
     /**
-     * @return (Updatable) Rule Selection Criteria
+     * @return (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      * 
      */
     public Output<FleetRuleSelectionCriteria> ruleSelectionCriteria() {

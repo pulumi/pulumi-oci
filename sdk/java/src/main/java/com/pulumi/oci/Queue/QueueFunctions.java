@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Queue.inputs.GetQueueArgs;
 import com.pulumi.oci.Queue.inputs.GetQueuePlainArgs;
 import com.pulumi.oci.Queue.inputs.GetQueuesArgs;
@@ -147,6 +148,50 @@ public final class QueueFunctions {
      * 
      */
     public static Output<GetQueueResult> getQueue(GetQueueArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Queue/getQueue:getQueue", TypeShape.of(GetQueueResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Gets a queue by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetQueueArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
+     *             .queueId(testQueueOciQueueQueue.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetQueueResult> getQueue(GetQueueArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Queue/getQueue:getQueue", TypeShape.of(GetQueueResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -426,6 +471,53 @@ public final class QueueFunctions {
      * 
      */
     public static Output<GetQueuesResult> getQueues(GetQueuesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Queue/getQueues:getQueues", TypeShape.of(GetQueuesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Returns a list of queues.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetQueuesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueues = QueueFunctions.getQueues(GetQueuesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(queueDisplayName)
+     *             .id(queueId)
+     *             .state(queueState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetQueuesResult> getQueues(GetQueuesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Queue/getQueues:getQueues", TypeShape.of(GetQueuesResult.class), args, Utilities.withVersion(options));
     }
     /**

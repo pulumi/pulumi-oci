@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetAnnouncementsAnnouncementCollectionItem {
     /**
-     * @return Date to end displaying annonucement to user
+     * @return Announcement end date
      * 
      */
     private String announcementEnd;
     /**
-     * @return Date to start displaying announcement to user
+     * @return Announcement start date.
      * 
      */
     private String announcementStart;
@@ -37,7 +37,7 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
      */
     private String description;
     /**
-     * @return Details of the announcement
+     * @return Announcement Details.
      * 
      */
     private String details;
@@ -67,7 +67,7 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
      */
     private String state;
     /**
-     * @return Summary of the announcement
+     * @return Summary of the announcement.
      * 
      */
     private String summary;
@@ -87,26 +87,26 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return Type of announcement
+     * @return Type of announcement.
      * 
      */
     private String type;
     /**
-     * @return URL to the announcement
+     * @return URL to the announcement.
      * 
      */
     private String url;
 
     private GetAnnouncementsAnnouncementCollectionItem() {}
     /**
-     * @return Date to end displaying annonucement to user
+     * @return Announcement end date
      * 
      */
     public String announcementEnd() {
         return this.announcementEnd;
     }
     /**
-     * @return Date to start displaying announcement to user
+     * @return Announcement start date.
      * 
      */
     public String announcementStart() {
@@ -134,7 +134,7 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
         return this.description;
     }
     /**
-     * @return Details of the announcement
+     * @return Announcement Details.
      * 
      */
     public String details() {
@@ -176,7 +176,7 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
         return this.state;
     }
     /**
-     * @return Summary of the announcement
+     * @return Summary of the announcement.
      * 
      */
     public String summary() {
@@ -204,14 +204,14 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return Type of announcement
+     * @return Type of announcement.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return URL to the announcement
+     * @return URL to the announcement.
      * 
      */
     public String url() {

@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VisualBuilder.inputs.VbInstanceAlternateCustomEndpointArgs;
 import com.pulumi.oci.VisualBuilder.inputs.VbInstanceCustomEndpointArgs;
+import com.pulumi.oci.VisualBuilder.inputs.VbInstanceNetworkEndpointDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -158,6 +159,21 @@ public final class VbInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    @Import(name="networkEndpointDetails")
+    private @Nullable Output<VbInstanceNetworkEndpointDetailsArgs> networkEndpointDetails;
+
+    /**
+     * @return (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    public Optional<Output<VbInstanceNetworkEndpointDetailsArgs>> networkEndpointDetails() {
+        return Optional.ofNullable(this.networkEndpointDetails);
+    }
+
+    /**
      * (Updatable) The number of Nodes
      * 
      * ** IMPORTANT **
@@ -190,6 +206,7 @@ public final class VbInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.idcsOpenId = $.idcsOpenId;
         this.isVisualBuilderEnabled = $.isVisualBuilderEnabled;
+        this.networkEndpointDetails = $.networkEndpointDetails;
         this.nodeCount = $.nodeCount;
     }
 
@@ -408,6 +425,27 @@ public final class VbInstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
             return isVisualBuilderEnabled(Output.of(isVisualBuilderEnabled));
+        }
+
+        /**
+         * @param networkEndpointDetails (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkEndpointDetails(@Nullable Output<VbInstanceNetworkEndpointDetailsArgs> networkEndpointDetails) {
+            $.networkEndpointDetails = networkEndpointDetails;
+            return this;
+        }
+
+        /**
+         * @param networkEndpointDetails (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkEndpointDetails(VbInstanceNetworkEndpointDetailsArgs networkEndpointDetails) {
+            return networkEndpointDetails(Output.of(networkEndpointDetails));
         }
 
         /**

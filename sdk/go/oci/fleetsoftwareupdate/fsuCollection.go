@@ -98,6 +98,8 @@ type FsuCollection struct {
 	FleetDiscovery FsuCollectionFleetDiscoveryOutput `pulumi:"fleetDiscovery"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+	LastCompletedFsuCycleId pulumi.StringOutput `pulumi:"lastCompletedFsuCycleId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Exadata service type for the target resource members.
@@ -175,6 +177,8 @@ type fsuCollectionState struct {
 	FleetDiscovery *FsuCollectionFleetDiscovery `pulumi:"fleetDiscovery"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+	LastCompletedFsuCycleId *string `pulumi:"lastCompletedFsuCycleId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Exadata service type for the target resource members.
@@ -211,6 +215,8 @@ type FsuCollectionState struct {
 	FleetDiscovery FsuCollectionFleetDiscoveryPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+	LastCompletedFsuCycleId pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Exadata service type for the target resource members.
@@ -398,6 +404,11 @@ func (o FsuCollectionOutput) FleetDiscovery() FsuCollectionFleetDiscoveryOutput 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o FsuCollectionOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *FsuCollection) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+func (o FsuCollectionOutput) LastCompletedFsuCycleId() pulumi.StringOutput {
+	return o.ApplyT(func(v *FsuCollection) pulumi.StringOutput { return v.LastCompletedFsuCycleId }).(pulumi.StringOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

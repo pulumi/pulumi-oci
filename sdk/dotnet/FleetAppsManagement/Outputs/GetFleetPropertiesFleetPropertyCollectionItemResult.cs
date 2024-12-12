@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetPropertiesFleetPropertyCollectionItemResult
     {
         /// <summary>
-        /// Values of the category (must be a single value if selection = 'single choice')
+        /// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         /// </summary>
         public readonly ImmutableArray<string> AllowedValues;
         /// <summary>
@@ -26,23 +26,23 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         public readonly string FleetId;
         /// <summary>
-        /// unique FleetProperty identifier
+        /// A filter to return only resources whose fleetProperty identifier matches the given identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Property Id Ocid.
+        /// OCID referring to global level metadata property.
         /// </summary>
         public readonly string PropertyId;
         /// <summary>
-        /// Text selection of the category
+        /// Text selection of the property.
         /// </summary>
         public readonly string SelectionType;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -58,11 +58,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Value of the Property
+        /// Value of the Property.
         /// </summary>
         public readonly string Value;
         /// <summary>
-        /// Format of the value
+        /// Format of the value.
         /// </summary>
         public readonly string ValueType;
 

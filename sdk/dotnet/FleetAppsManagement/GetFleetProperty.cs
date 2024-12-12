@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a FleetProperty by identifier
+        /// Gets a Fleet Property by identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a FleetProperty by identifier
+        /// Gets a Fleet Property by identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -70,13 +70,13 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetPropertyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
 
         /// <summary>
-        /// unique FleetProperty identifier
+        /// unique FleetProperty identifier.
         /// </summary>
         [Input("fleetPropertyId", required: true)]
         public string FleetPropertyId { get; set; } = null!;
@@ -90,13 +90,13 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetPropertyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
 
         /// <summary>
-        /// unique FleetProperty identifier
+        /// unique FleetProperty identifier.
         /// </summary>
         [Input("fleetPropertyId", required: true)]
         public Input<string> FleetPropertyId { get; set; } = null!;
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetPropertyResult
     {
         /// <summary>
-        /// Values of the category (must be a single value if selection = 'single choice')
+        /// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         /// </summary>
         public readonly ImmutableArray<string> AllowedValues;
         /// <summary>
@@ -130,11 +130,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Property Id Ocid.
+        /// OCID referring to global level metadata property.
         /// </summary>
         public readonly string PropertyId;
         /// <summary>
-        /// Text selection of the category
+        /// Text selection of the property.
         /// </summary>
         public readonly string SelectionType;
         /// <summary>
@@ -154,11 +154,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Value of the Property
+        /// Value of the Property.
         /// </summary>
         public readonly string Value;
         /// <summary>
-        /// Format of the value
+        /// Format of the value.
         /// </summary>
         public readonly string ValueType;
 

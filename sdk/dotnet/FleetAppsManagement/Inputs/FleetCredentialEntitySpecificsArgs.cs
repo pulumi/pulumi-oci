@@ -13,22 +13,34 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class FleetCredentialEntitySpecificsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Credential Level.
+        /// (Updatable) At what level the credential is provided?
         /// </summary>
         [Input("credentialLevel", required: true)]
         public Input<string> CredentialLevel { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) OCID of the resource associated with the target for which credential is created
+        /// (Updatable) OCID of the resource associated with the target for which the credential is created.
         /// </summary>
-        [Input("resourceId", required: true)]
-        public Input<string> ResourceId { get; set; } = null!;
+        [Input("resourceId")]
+        public Input<string>? ResourceId { get; set; }
 
         /// <summary>
-        /// (Updatable) Target associated with the Credential
+        /// (Updatable) Target name for which the credential is provided.
         /// </summary>
-        [Input("target", required: true)]
-        public Input<string> Target { get; set; } = null!;
+        [Input("target")]
+        public Input<string>? Target { get; set; }
+
+        [Input("variables")]
+        private InputList<Inputs.FleetCredentialEntitySpecificsVariableArgs>? _variables;
+
+        /// <summary>
+        /// (Updatable) List of fleet credential variables.
+        /// </summary>
+        public InputList<Inputs.FleetCredentialEntitySpecificsVariableArgs> Variables
+        {
+            get => _variables ?? (_variables = new InputList<Inputs.FleetCredentialEntitySpecificsVariableArgs>());
+            set => _variables = value;
+        }
 
         public FleetCredentialEntitySpecificsArgs()
         {

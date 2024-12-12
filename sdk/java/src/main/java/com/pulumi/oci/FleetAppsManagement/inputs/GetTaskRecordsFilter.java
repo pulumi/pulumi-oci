@@ -18,14 +18,14 @@ public final class GetTaskRecordsFilter extends com.pulumi.resources.InvokeArgs 
     public static final GetTaskRecordsFilter Empty = new GetTaskRecordsFilter();
 
     /**
-     * The name of the argument
+     * The name of the argument.
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return The name of the argument
+     * @return The name of the argument.
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetTaskRecordsFilter extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param name The name of the argument
+         * @param name The name of the argument.
          * 
          * @return builder
          * 

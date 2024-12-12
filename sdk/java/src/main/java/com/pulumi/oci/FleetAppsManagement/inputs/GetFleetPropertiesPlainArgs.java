@@ -55,14 +55,14 @@ public final class GetFleetPropertiesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private String fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
@@ -70,14 +70,14 @@ public final class GetFleetPropertiesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * unique FleetProperty identifier
+     * A filter to return only resources whose fleetProperty identifier matches the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return unique FleetProperty identifier
+     * @return A filter to return only resources whose fleetProperty identifier matches the given identifier.
      * 
      */
     public Optional<String> id() {
@@ -85,14 +85,14 @@ public final class GetFleetPropertiesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<String> state() {
@@ -160,7 +160,7 @@ public final class GetFleetPropertiesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -171,7 +171,7 @@ public final class GetFleetPropertiesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param id unique FleetProperty identifier
+         * @param id A filter to return only resources whose fleetProperty identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class GetFleetPropertiesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 

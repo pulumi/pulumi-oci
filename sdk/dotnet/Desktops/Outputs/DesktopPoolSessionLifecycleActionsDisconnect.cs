@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Desktops.Outputs
     public sealed class DesktopPoolSessionLifecycleActionsDisconnect
     {
         /// <summary>
-        /// (Updatable) a disconnect action to be triggered
+        /// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
         /// </summary>
         public readonly string Action;
         /// <summary>

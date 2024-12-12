@@ -17,7 +17,7 @@ public final class GetPropertiesFilter {
     private String name;
     private @Nullable Boolean regex;
     /**
-     * @return Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     private List<String> values;
@@ -30,7 +30,7 @@ public final class GetPropertiesFilter {
         return Optional.ofNullable(this.regex);
     }
     /**
-     * @return Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     public List<String> values() {

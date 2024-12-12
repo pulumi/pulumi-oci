@@ -14,11 +14,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetRunbookAssociationExecutionWorkflowDetailWorkflowResult
     {
         /// <summary>
-        /// Provide the name of the group.
+        /// Name of the group.
         /// </summary>
         public readonly string GroupName;
         /// <summary>
-        /// Tasks within the Group. Provide the stepName for all tasks that are applicable
+        /// Tasks within the Group. Provide the stepName for all applicable tasks.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbookAssociationExecutionWorkflowDetailWorkflowStepResult> Steps;
         /// <summary>

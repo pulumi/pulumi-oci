@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetOnboardingsOnboardingCollectionResult
     {
         /// <summary>
-        /// List of FleetAppManagementService Onboardings.
+        /// List of Fleet Application Management Onboardings.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetOnboardingsOnboardingCollectionItemResult> Items;
 

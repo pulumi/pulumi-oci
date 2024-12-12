@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
 import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetJobArgs;
@@ -259,6 +260,50 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", TypeShape.of(GetFastLaunchJobConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List fast launch capable job configs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastLaunchJobConfigs = DataScienceFunctions.getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigsPlain(GetFastLaunchJobConfigsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", TypeShape.of(GetFastLaunchJobConfigsResult.class), args, Utilities.withVersion(options));
     }
@@ -435,6 +480,50 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetJobResult> getJob(GetJobArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getJob:getJob", TypeShape.of(GetJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(testJobOciDatascienceJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetJobResult> getJobPlain(GetJobPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getJob:getJob", TypeShape.of(GetJobResult.class), args, Utilities.withVersion(options));
     }
@@ -568,6 +657,50 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetJobRunResult> getJobRun(GetJobRunArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getJobRun:getJobRun", TypeShape.of(GetJobRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Job Run resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a job run.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
+     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetJobRunResult> getJobRun(GetJobRunArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getJobRun:getJobRun", TypeShape.of(GetJobRunResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -807,6 +940,55 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetJobRunsResult> getJobRuns(GetJobRunsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getJobRuns:getJobRuns", TypeShape.of(GetJobRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Job Runs in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List out job runs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRuns = DataScienceFunctions.getJobRuns(GetJobRunsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobRunCreatedBy)
+     *             .displayName(jobRunDisplayName)
+     *             .id(jobRunId)
+     *             .jobId(testJob.id())
+     *             .state(jobRunState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetJobRunsResult> getJobRunsPlain(GetJobRunsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getJobRuns:getJobRuns", TypeShape.of(GetJobRunsResult.class), args, Utilities.withVersion(options));
     }
@@ -940,6 +1122,50 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetJobShapesResult> getJobShapes(GetJobShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getJobShapes:getJobShapes", TypeShape.of(GetJobShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List job shapes available in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobShapes = DataScienceFunctions.getJobShapes(GetJobShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetJobShapesResult> getJobShapes(GetJobShapesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getJobShapes:getJobShapes", TypeShape.of(GetJobShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1179,6 +1405,55 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetJobsResult> getJobs(GetJobsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getJobs:getJobs", TypeShape.of(GetJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Jobs in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List jobs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = DataScienceFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobCreatedBy)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .projectId(testProject.id())
+     *             .state(jobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetJobsResult> getJobsPlain(GetJobsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getJobs:getJobs", TypeShape.of(GetJobsResult.class), args, Utilities.withVersion(options));
     }
@@ -1312,6 +1587,50 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified model&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(testModelOciDatascienceModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1531,6 +1850,50 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetModelDeploymentResult> getModelDeployment(GetModelDeploymentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelDeployment:getModelDeployment", TypeShape.of(GetModelDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
+     * 
+     * Retrieves the model deployment for the specified `modelDeploymentId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetModelDeploymentResult> getModelDeploymentPlain(GetModelDeploymentPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getModelDeployment:getModelDeployment", TypeShape.of(GetModelDeploymentResult.class), args, Utilities.withVersion(options));
     }
@@ -1664,6 +2027,50 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetModelDeploymentShapesResult> getModelDeploymentShapes(GetModelDeploymentShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", TypeShape.of(GetModelDeploymentShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.
+     * 
+     * Lists the valid model deployment shapes.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentShapes = DataScienceFunctions.getModelDeploymentShapes(GetModelDeploymentShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelDeploymentShapesResult> getModelDeploymentShapes(GetModelDeploymentShapesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", TypeShape.of(GetModelDeploymentShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1903,6 +2310,55 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetModelDeploymentsResult> getModelDeployments(GetModelDeploymentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelDeployments:getModelDeployments", TypeShape.of(GetModelDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
+     * 
+     * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployments = DataScienceFunctions.getModelDeployments(GetModelDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelDeploymentCreatedBy)
+     *             .displayName(modelDeploymentDisplayName)
+     *             .id(modelDeploymentId)
+     *             .projectId(testProject.id())
+     *             .state(modelDeploymentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetModelDeploymentsResult> getModelDeploymentsPlain(GetModelDeploymentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getModelDeployments:getModelDeployments", TypeShape.of(GetModelDeploymentsResult.class), args, Utilities.withVersion(options));
     }
@@ -2036,6 +2492,50 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetModelProvenanceResult> getModelProvenance(GetModelProvenanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelProvenance:getModelProvenance", TypeShape.of(GetModelProvenanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets provenance information for specified model.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
+     *             .modelId(testModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelProvenanceResult> getModelProvenance(GetModelProvenanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getModelProvenance:getModelProvenance", TypeShape.of(GetModelProvenanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2255,6 +2755,50 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetModelVersionSetResult> getModelVersionSet(GetModelVersionSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelVersionSet:getModelVersionSet", TypeShape.of(GetModelVersionSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified model version set information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetModelVersionSetResult> getModelVersionSetPlain(GetModelVersionSetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getModelVersionSet:getModelVersionSet", TypeShape.of(GetModelVersionSetResult.class), args, Utilities.withVersion(options));
     }
@@ -2403,6 +2947,55 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetModelVersionSetsResult> getModelVersionSets(GetModelVersionSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelVersionSets:getModelVersionSets", TypeShape.of(GetModelVersionSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists model version sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelVersionSetCreatedBy)
+     *             .id(modelVersionSetId)
+     *             .name(modelVersionSetName)
+     *             .projectId(testProject.id())
+     *             .state(modelVersionSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelVersionSetsResult> getModelVersionSets(GetModelVersionSetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getModelVersionSets:getModelVersionSets", TypeShape.of(GetModelVersionSetsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2651,6 +3244,56 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Models in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists models in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelCreatedBy)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .modelVersionSetName(testModelVersionSet.name())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
     }
@@ -2827,6 +3470,50 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNotebookSessionResult> getNotebookSession(GetNotebookSessionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getNotebookSession:getNotebookSession", TypeShape.of(GetNotebookSessionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified notebook session&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNotebookSessionResult> getNotebookSessionPlain(GetNotebookSessionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getNotebookSession:getNotebookSession", TypeShape.of(GetNotebookSessionResult.class), args, Utilities.withVersion(options));
     }
@@ -2960,6 +3647,50 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetNotebookSessionShapesResult> getNotebookSessionShapes(GetNotebookSessionShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", TypeShape.of(GetNotebookSessionShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the valid notebook session shapes.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessionShapes = DataScienceFunctions.getNotebookSessionShapes(GetNotebookSessionShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNotebookSessionShapesResult> getNotebookSessionShapes(GetNotebookSessionShapesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", TypeShape.of(GetNotebookSessionShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3199,6 +3930,55 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNotebookSessionsResult> getNotebookSessions(GetNotebookSessionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getNotebookSessions:getNotebookSessions", TypeShape.of(GetNotebookSessionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Notebook Sessions in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the notebook sessions in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessions = DataScienceFunctions.getNotebookSessions(GetNotebookSessionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(notebookSessionCreatedBy)
+     *             .displayName(notebookSessionDisplayName)
+     *             .id(notebookSessionId)
+     *             .projectId(testProject.id())
+     *             .state(notebookSessionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNotebookSessionsResult> getNotebookSessionsPlain(GetNotebookSessionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getNotebookSessions:getNotebookSessions", TypeShape.of(GetNotebookSessionsResult.class), args, Utilities.withVersion(options));
     }
@@ -3332,6 +4112,50 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetPipelineResult> getPipeline(GetPipelineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPipeline:getPipeline", TypeShape.of(GetPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Pipeline by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineResult> getPipeline(GetPipelineArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getPipeline:getPipeline", TypeShape.of(GetPipelineResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3551,6 +4375,50 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPipelineRunResult> getPipelineRun(GetPipelineRunArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPipelineRun:getPipelineRun", TypeShape.of(GetPipelineRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a PipelineRun by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPipelineRunResult> getPipelineRunPlain(GetPipelineRunPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getPipelineRun:getPipelineRun", TypeShape.of(GetPipelineRunResult.class), args, Utilities.withVersion(options));
     }
@@ -3699,6 +4567,55 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetPipelineRunsResult> getPipelineRuns(GetPipelineRunsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPipelineRuns:getPipelineRuns", TypeShape.of(GetPipelineRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Runs in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of PipelineRuns.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRuns = DataScienceFunctions.getPipelineRuns(GetPipelineRunsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineRunCreatedBy)
+     *             .displayName(pipelineRunDisplayName)
+     *             .id(pipelineRunId)
+     *             .pipelineId(testPipeline.id())
+     *             .state(pipelineRunState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineRunsResult> getPipelineRuns(GetPipelineRunsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getPipelineRuns:getPipelineRuns", TypeShape.of(GetPipelineRunsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3943,6 +4860,55 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPipelinesResult> getPipelines(GetPipelinesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPipelines:getPipelines", TypeShape.of(GetPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = DataScienceFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineCreatedBy)
+     *             .displayName(pipelineDisplayName)
+     *             .id(pipelineId)
+     *             .projectId(testProject.id())
+     *             .state(pipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPipelinesResult> getPipelinesPlain(GetPipelinesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getPipelines:getPipelines", TypeShape.of(GetPipelinesResult.class), args, Utilities.withVersion(options));
     }
@@ -4076,6 +5042,50 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves an private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4311,6 +5321,54 @@ public final class DataScienceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn&#39;t include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoints = DataScienceFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(dataSciencePrivateEndpointCreatedBy)
+     *             .dataScienceResourceType(dataSciencePrivateEndpointDataScienceResourceType)
+     *             .displayName(dataSciencePrivateEndpointDisplayName)
+     *             .state(dataSciencePrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
@@ -4444,6 +5502,50 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified project&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(testProjectOciDatascienceProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4632,6 +5734,54 @@ public final class DataScienceFunctions {
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists projects in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DataScienceFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(projectCreatedBy)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
     }
     /**

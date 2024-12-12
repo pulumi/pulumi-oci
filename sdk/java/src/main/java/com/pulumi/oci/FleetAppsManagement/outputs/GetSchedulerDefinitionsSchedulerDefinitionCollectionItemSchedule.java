@@ -21,7 +21,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemSched
      */
     private String executionStartdate;
     /**
-     * @return unique MaintenanceWindow identifier
+     * @return A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
      * 
      */
     private String maintenanceWindowId;
@@ -52,7 +52,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemSched
         return this.executionStartdate;
     }
     /**
-     * @return unique MaintenanceWindow identifier
+     * @return A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
      * 
      */
     public String maintenanceWindowId() {

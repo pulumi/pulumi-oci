@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.AiDocument.inputs.GetModelArgs;
 import com.pulumi.oci.AiDocument.inputs.GetModelPlainArgs;
 import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
@@ -156,6 +157,50 @@ public final class AiDocumentFunctions {
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiDocument/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Get a model by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiDocumentFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(testModelOciAiDocumentModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiDocument/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -487,6 +532,54 @@ public final class AiDocumentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiDocument/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Returns a list of models in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiDocumentFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .projectId(testProject.id())
+     *             .state(modelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiDocument/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
     }
@@ -663,6 +756,50 @@ public final class AiDocumentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProcessorJobResult> getProcessorJob(GetProcessorJobArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiDocument/getProcessorJob:getProcessorJob", TypeShape.of(GetProcessorJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Get the details of a processor job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetProcessorJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessorJob = AiDocumentFunctions.getProcessorJob(GetProcessorJobArgs.builder()
+     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProcessorJobResult> getProcessorJobPlain(GetProcessorJobPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiDocument/getProcessorJob:getProcessorJob", TypeShape.of(GetProcessorJobResult.class), args, Utilities.withVersion(options));
     }
@@ -796,6 +933,50 @@ public final class AiDocumentFunctions {
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiDocument/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Get a project by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiDocumentFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(testProjectOciAiDocumentProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiDocument/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1075,6 +1256,53 @@ public final class AiDocumentFunctions {
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiDocument/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Returns a list of projects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiDocumentFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiDocument/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
     }
     /**

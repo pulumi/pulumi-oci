@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     sourcePlanId: testSourcePlan.id,
  * });
  * ```
  *
@@ -91,6 +92,10 @@ export class DrPlan extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string>;
     /**
+     * The current state of the DR plan.
+     */
+    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    /**
      * The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     public /*out*/ readonly peerDrProtectionGroupId!: pulumi.Output<string>;
@@ -102,6 +107,14 @@ export class DrPlan extends pulumi.CustomResource {
      * The list of groups in this DR plan.
      */
     public /*out*/ readonly planGroups!: pulumi.Output<outputs.DisasterRecovery.DrPlanPlanGroup[]>;
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     */
+    public readonly refreshTrigger!: pulumi.Output<number | undefined>;
+    /**
+     * The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+     */
+    public readonly sourcePlanId!: pulumi.Output<string>;
     /**
      * The current state of the DR plan.
      */
@@ -119,13 +132,17 @@ export class DrPlan extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * The type of DR plan to be created. 
+     * The type of DR plan to be created.
+     */
+    public readonly type!: pulumi.Output<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    public readonly verifyTrigger!: pulumi.Output<number | undefined>;
 
     /**
      * Create a DrPlan resource with the given unique name, arguments, and options.
@@ -146,14 +163,18 @@ export class DrPlan extends pulumi.CustomResource {
             resourceInputs["drProtectionGroupId"] = state ? state.drProtectionGroupId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifeCycleDetails"] = state ? state.lifeCycleDetails : undefined;
+            resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
             resourceInputs["peerDrProtectionGroupId"] = state ? state.peerDrProtectionGroupId : undefined;
             resourceInputs["peerRegion"] = state ? state.peerRegion : undefined;
             resourceInputs["planGroups"] = state ? state.planGroups : undefined;
+            resourceInputs["refreshTrigger"] = state ? state.refreshTrigger : undefined;
+            resourceInputs["sourcePlanId"] = state ? state.sourcePlanId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["verifyTrigger"] = state ? state.verifyTrigger : undefined;
         } else {
             const args = argsOrState as DrPlanArgs | undefined;
             if ((!args || args.displayName === undefined) && !opts.urn) {
@@ -169,9 +190,13 @@ export class DrPlan extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["drProtectionGroupId"] = args ? args.drProtectionGroupId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["refreshTrigger"] = args ? args.refreshTrigger : undefined;
+            resourceInputs["sourcePlanId"] = args ? args.sourcePlanId : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["verifyTrigger"] = args ? args.verifyTrigger : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifeCycleDetails"] = undefined /*out*/;
+            resourceInputs["lifecycleSubState"] = undefined /*out*/;
             resourceInputs["peerDrProtectionGroupId"] = undefined /*out*/;
             resourceInputs["peerRegion"] = undefined /*out*/;
             resourceInputs["planGroups"] = undefined /*out*/;
@@ -214,6 +239,10 @@ export interface DrPlanState {
      */
     lifeCycleDetails?: pulumi.Input<string>;
     /**
+     * The current state of the DR plan.
+     */
+    lifecycleSubState?: pulumi.Input<string>;
+    /**
      * The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     peerDrProtectionGroupId?: pulumi.Input<string>;
@@ -225,6 +254,14 @@ export interface DrPlanState {
      * The list of groups in this DR plan.
      */
     planGroups?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanPlanGroup>[]>;
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     */
+    refreshTrigger?: pulumi.Input<number>;
+    /**
+     * The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+     */
+    sourcePlanId?: pulumi.Input<string>;
     /**
      * The current state of the DR plan.
      */
@@ -242,13 +279,17 @@ export interface DrPlanState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * The type of DR plan to be created. 
+     * The type of DR plan to be created.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    verifyTrigger?: pulumi.Input<number>;
 }
 
 /**
@@ -272,11 +313,23 @@ export interface DrPlanArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The type of DR plan to be created. 
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     */
+    refreshTrigger?: pulumi.Input<number>;
+    /**
+     * The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+     */
+    sourcePlanId?: pulumi.Input<string>;
+    /**
+     * The type of DR plan to be created.
+     */
+    type: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type: pulumi.Input<string>;
+    verifyTrigger?: pulumi.Input<number>;
 }

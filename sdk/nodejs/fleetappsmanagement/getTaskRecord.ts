@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a TaskRecord by identifier
+ * Gets a Task by identifier
  *
  * ## Example Usage
  *
@@ -65,7 +65,7 @@ export interface GetTaskRecordResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * The OCID of the resource.
      */
     readonly id: string;
     /**
@@ -105,7 +105,7 @@ export interface GetTaskRecordResult {
 /**
  * This data source provides details about a specific Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a TaskRecord by identifier
+ * Gets a Task by identifier
  *
  * ## Example Usage
  *

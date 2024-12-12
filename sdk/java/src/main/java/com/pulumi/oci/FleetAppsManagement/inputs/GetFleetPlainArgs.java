@@ -14,14 +14,14 @@ public final class GetFleetPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetFleetPlainArgs Empty = new GetFleetPlainArgs();
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private String fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
@@ -53,7 +53,7 @@ public final class GetFleetPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 

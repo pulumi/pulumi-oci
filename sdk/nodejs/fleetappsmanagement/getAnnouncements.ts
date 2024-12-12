@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Return a list of AnnouncementSummary items
+ * Return a list of AnnouncementSummary items.
  *
  * ## Example Usage
  *
@@ -43,7 +43,7 @@ export interface GetAnnouncementsArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetAnnouncementsFilter[];
     /**
-     * Filter the list with summary contains the given value.
+     * Filter the list of announcements that contains the given summary value.
      */
     summaryContains?: string;
 }
@@ -70,7 +70,7 @@ export interface GetAnnouncementsResult {
 /**
  * This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Return a list of AnnouncementSummary items
+ * Return a list of AnnouncementSummary items.
  *
  * ## Example Usage
  *
@@ -104,7 +104,7 @@ export interface GetAnnouncementsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetAnnouncementsFilterArgs>[]>;
     /**
-     * Filter the list with summary contains the given value.
+     * Filter the list of announcements that contains the given summary value.
      */
     summaryContains?: pulumi.Input<string>;
 }

@@ -16,7 +16,7 @@ public final class GetTaskRecordDetailExecutionDetailVariableInputVariable {
      */
     private String description;
     /**
-     * @return The name of the argument
+     * @return The name of the argument.
      * 
      */
     private String name;
@@ -35,7 +35,7 @@ public final class GetTaskRecordDetailExecutionDetailVariableInputVariable {
         return this.description;
     }
     /**
-     * @return The name of the argument
+     * @return The name of the argument.
      * 
      */
     public String name() {

@@ -5,40 +5,58 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetOnboardingsOnboardingCollectionItemAppliedPolicy;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetOnboardingsOnboardingCollectionItemItem;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetOnboardingsOnboardingCollectionItem {
     /**
+     * @return Summary of the Fleet Application Management Onboard Policy.
+     * 
+     */
+    private List<GetOnboardingsOnboardingCollectionItemAppliedPolicy> appliedPolicies;
+    /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
+    /**
+     * @return Provide discovery frequency.
+     * 
+     */
+    private String discoveryFrequency;
     /**
      * @return unique onboarding identifier
      * 
      */
     private String id;
     /**
-     * @return A value determining if cost tracking tag is enabled or not
+     * @return A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
      * 
      */
     private Boolean isCostTrackingTagEnabled;
     /**
-     * @return A value determining FAMS tag is enabled or not
+     * @return A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
      * 
      */
     private Boolean isFamsTagEnabled;
+    /**
+     * @return List of Fleet Application Management Onboardings.
+     * 
+     */
+    private List<GetOnboardingsOnboardingCollectionItemItem> items;
     /**
      * @return Associated region
      * 
      */
     private String resourceRegion;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
@@ -58,18 +76,32 @@ public final class GetOnboardingsOnboardingCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return Version of FAMS the tenant is onboarded to.
+     * @return The version of Fleet Application Management that the tenant is onboarded to.
      * 
      */
     private String version;
 
     private GetOnboardingsOnboardingCollectionItem() {}
     /**
+     * @return Summary of the Fleet Application Management Onboard Policy.
+     * 
+     */
+    public List<GetOnboardingsOnboardingCollectionItemAppliedPolicy> appliedPolicies() {
+        return this.appliedPolicies;
+    }
+    /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return Provide discovery frequency.
+     * 
+     */
+    public String discoveryFrequency() {
+        return this.discoveryFrequency;
     }
     /**
      * @return unique onboarding identifier
@@ -79,18 +111,25 @@ public final class GetOnboardingsOnboardingCollectionItem {
         return this.id;
     }
     /**
-     * @return A value determining if cost tracking tag is enabled or not
+     * @return A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
      * 
      */
     public Boolean isCostTrackingTagEnabled() {
         return this.isCostTrackingTagEnabled;
     }
     /**
-     * @return A value determining FAMS tag is enabled or not
+     * @return A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
      * 
      */
     public Boolean isFamsTagEnabled() {
         return this.isFamsTagEnabled;
+    }
+    /**
+     * @return List of Fleet Application Management Onboardings.
+     * 
+     */
+    public List<GetOnboardingsOnboardingCollectionItemItem> items() {
+        return this.items;
     }
     /**
      * @return Associated region
@@ -100,7 +139,7 @@ public final class GetOnboardingsOnboardingCollectionItem {
         return this.resourceRegion;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public String state() {
@@ -128,7 +167,7 @@ public final class GetOnboardingsOnboardingCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return Version of FAMS the tenant is onboarded to.
+     * @return The version of Fleet Application Management that the tenant is onboarded to.
      * 
      */
     public String version() {
@@ -144,10 +183,13 @@ public final class GetOnboardingsOnboardingCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetOnboardingsOnboardingCollectionItemAppliedPolicy> appliedPolicies;
         private String compartmentId;
+        private String discoveryFrequency;
         private String id;
         private Boolean isCostTrackingTagEnabled;
         private Boolean isFamsTagEnabled;
+        private List<GetOnboardingsOnboardingCollectionItemItem> items;
         private String resourceRegion;
         private String state;
         private Map<String,String> systemTags;
@@ -157,10 +199,13 @@ public final class GetOnboardingsOnboardingCollectionItem {
         public Builder() {}
         public Builder(GetOnboardingsOnboardingCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.appliedPolicies = defaults.appliedPolicies;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.discoveryFrequency = defaults.discoveryFrequency;
     	      this.id = defaults.id;
     	      this.isCostTrackingTagEnabled = defaults.isCostTrackingTagEnabled;
     	      this.isFamsTagEnabled = defaults.isFamsTagEnabled;
+    	      this.items = defaults.items;
     	      this.resourceRegion = defaults.resourceRegion;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -170,11 +215,30 @@ public final class GetOnboardingsOnboardingCollectionItem {
         }
 
         @CustomType.Setter
+        public Builder appliedPolicies(List<GetOnboardingsOnboardingCollectionItemAppliedPolicy> appliedPolicies) {
+            if (appliedPolicies == null) {
+              throw new MissingRequiredPropertyException("GetOnboardingsOnboardingCollectionItem", "appliedPolicies");
+            }
+            this.appliedPolicies = appliedPolicies;
+            return this;
+        }
+        public Builder appliedPolicies(GetOnboardingsOnboardingCollectionItemAppliedPolicy... appliedPolicies) {
+            return appliedPolicies(List.of(appliedPolicies));
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
               throw new MissingRequiredPropertyException("GetOnboardingsOnboardingCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder discoveryFrequency(String discoveryFrequency) {
+            if (discoveryFrequency == null) {
+              throw new MissingRequiredPropertyException("GetOnboardingsOnboardingCollectionItem", "discoveryFrequency");
+            }
+            this.discoveryFrequency = discoveryFrequency;
             return this;
         }
         @CustomType.Setter
@@ -200,6 +264,17 @@ public final class GetOnboardingsOnboardingCollectionItem {
             }
             this.isFamsTagEnabled = isFamsTagEnabled;
             return this;
+        }
+        @CustomType.Setter
+        public Builder items(List<GetOnboardingsOnboardingCollectionItemItem> items) {
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetOnboardingsOnboardingCollectionItem", "items");
+            }
+            this.items = items;
+            return this;
+        }
+        public Builder items(GetOnboardingsOnboardingCollectionItemItem... items) {
+            return items(List.of(items));
         }
         @CustomType.Setter
         public Builder resourceRegion(String resourceRegion) {
@@ -251,10 +326,13 @@ public final class GetOnboardingsOnboardingCollectionItem {
         }
         public GetOnboardingsOnboardingCollectionItem build() {
             final var _resultValue = new GetOnboardingsOnboardingCollectionItem();
+            _resultValue.appliedPolicies = appliedPolicies;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.discoveryFrequency = discoveryFrequency;
             _resultValue.id = id;
             _resultValue.isCostTrackingTagEnabled = isCostTrackingTagEnabled;
             _resultValue.isFamsTagEnabled = isFamsTagEnabled;
+            _resultValue.items = items;
             _resultValue.resourceRegion = resourceRegion;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

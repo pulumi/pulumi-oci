@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a FleetCredential by identifier
+ * Gets a FleetCredential by identifier.
  *
  * ## Example Usage
  *
@@ -40,7 +40,7 @@ export interface GetFleetCredentialArgs {
      */
     fleetCredentialId: string;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
 }
@@ -58,7 +58,7 @@ export interface GetFleetCredentialResult {
      */
     readonly displayName: string;
     /**
-     * Credential Details
+     * Credential specific Details.
      */
     readonly entitySpecifics: outputs.FleetAppsManagement.GetFleetCredentialEntitySpecific[];
     readonly fleetCredentialId: string;
@@ -72,7 +72,7 @@ export interface GetFleetCredentialResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * Credential Details
+     * Credential Details.
      */
     readonly passwords: outputs.FleetAppsManagement.GetFleetCredentialPassword[];
     /**
@@ -92,14 +92,14 @@ export interface GetFleetCredentialResult {
      */
     readonly timeUpdated: string;
     /**
-     * Credential Details
+     * Credential Details.
      */
     readonly users: outputs.FleetAppsManagement.GetFleetCredentialUser[];
 }
 /**
  * This data source provides details about a specific Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a FleetCredential by identifier
+ * Gets a FleetCredential by identifier.
  *
  * ## Example Usage
  *
@@ -130,7 +130,7 @@ export interface GetFleetCredentialOutputArgs {
      */
     fleetCredentialId: pulumi.Input<string>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
 }

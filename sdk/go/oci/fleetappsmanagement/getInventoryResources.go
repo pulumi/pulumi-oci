@@ -60,20 +60,20 @@ func GetInventoryResources(ctx *pulumi.Context, args *GetInventoryResourcesArgs,
 
 // A collection of arguments for invoking getInventoryResources.
 type GetInventoryResourcesArgs struct {
-	// The ID of the compartment in which to list resources.
+	// A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+	// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND". Example: Identification.Development=Yes
 	DefinedTagEquals []string `pulumi:"definedTagEquals"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetInventoryResourcesFilter `pulumi:"filters"`
 	// A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
 	FreeformTagEquals []string `pulumi:"freeformTagEquals"`
-	// A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}".
+	// A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example: Instance.displayName=TEST_INSTANCE
 	InventoryProperties []string `pulumi:"inventoryProperties"`
-	// Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties"
+	// Fetch resources matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties". Example: matchingCriteria=ANY
 	MatchingCriteria *string `pulumi:"matchingCriteria"`
-	// Resource Compartment ID
+	// A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
 	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
 	// Resource Region
 	ResourceRegion *string `pulumi:"resourceRegion"`
@@ -96,9 +96,9 @@ type GetInventoryResourcesResult struct {
 	// The list of inventory_resource_collection.
 	InventoryResourceCollections []GetInventoryResourcesInventoryResourceCollection `pulumi:"inventoryResourceCollections"`
 	MatchingCriteria             *string                                            `pulumi:"matchingCriteria"`
-	// Compartment Id of the resource
+	// Compartment Id of the resource.
 	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
-	// Region the resource belongs to
+	// The region the resource belongs to.
 	ResourceRegion *string `pulumi:"resourceRegion"`
 	// The current state of the Resource.
 	State *string `pulumi:"state"`
@@ -125,20 +125,20 @@ func GetInventoryResourcesOutput(ctx *pulumi.Context, args GetInventoryResources
 
 // A collection of arguments for invoking getInventoryResources.
 type GetInventoryResourcesOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+	// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND". Example: Identification.Development=Yes
 	DefinedTagEquals pulumi.StringArrayInput `pulumi:"definedTagEquals"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput                 `pulumi:"displayName"`
 	Filters     GetInventoryResourcesFilterArrayInput `pulumi:"filters"`
 	// A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
 	FreeformTagEquals pulumi.StringArrayInput `pulumi:"freeformTagEquals"`
-	// A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}".
+	// A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example: Instance.displayName=TEST_INSTANCE
 	InventoryProperties pulumi.StringArrayInput `pulumi:"inventoryProperties"`
-	// Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties"
+	// Fetch resources matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties". Example: matchingCriteria=ANY
 	MatchingCriteria pulumi.StringPtrInput `pulumi:"matchingCriteria"`
-	// Resource Compartment ID
+	// A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
 	ResourceCompartmentId pulumi.StringInput `pulumi:"resourceCompartmentId"`
 	// Resource Region
 	ResourceRegion pulumi.StringPtrInput `pulumi:"resourceRegion"`
@@ -207,12 +207,12 @@ func (o GetInventoryResourcesResultOutput) MatchingCriteria() pulumi.StringPtrOu
 	return o.ApplyT(func(v GetInventoryResourcesResult) *string { return v.MatchingCriteria }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Id of the resource
+// Compartment Id of the resource.
 func (o GetInventoryResourcesResultOutput) ResourceCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInventoryResourcesResult) string { return v.ResourceCompartmentId }).(pulumi.StringOutput)
 }
 
-// Region the resource belongs to
+// The region the resource belongs to.
 func (o GetInventoryResourcesResultOutput) ResourceRegion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetInventoryResourcesResult) *string { return v.ResourceRegion }).(pulumi.StringPtrOutput)
 }

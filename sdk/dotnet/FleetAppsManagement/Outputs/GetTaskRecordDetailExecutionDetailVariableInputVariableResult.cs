@@ -18,7 +18,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The name of the argument
+        /// The name of the argument.
         /// </summary>
         public readonly string Name;
         /// <summary>

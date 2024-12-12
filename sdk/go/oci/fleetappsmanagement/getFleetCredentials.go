@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Fleet Credentials in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Returns a list of FleetCredentials.
+// List credentials in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -35,7 +35,9 @@ import (
 //				CredentialLevel: pulumi.StringRef(fleetCredentialCredentialLevel),
 //				DisplayName:     pulumi.StringRef(fleetCredentialDisplayName),
 //				Id:              pulumi.StringRef(fleetCredentialId),
+//				ResourceId:      pulumi.StringRef(testResource.Id),
 //				State:           pulumi.StringRef(fleetCredentialState),
+//				Target:          pulumi.StringRef(fleetCredentialTarget),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,24 +61,28 @@ func GetFleetCredentials(ctx *pulumi.Context, args *GetFleetCredentialsArgs, opt
 type GetFleetCredentialsArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Credential Level.
+	// A filter to return only resources whose credentialLevel matches the given credentialLevel.
 	CredentialLevel *string `pulumi:"credentialLevel"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetFleetCredentialsFilter `pulumi:"filters"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
-	// unique FleetCredential identifier
+	// A filter to return only resources whose credential identifier matches the given identifier.
 	Id *string `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// Resource Identifier
+	ResourceId *string `pulumi:"resourceId"`
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
+	// A filter to return only resources whose target matches the given target name.
+	Target *string `pulumi:"target"`
 }
 
 // A collection of values returned by getFleetCredentials.
 type GetFleetCredentialsResult struct {
 	// Tenancy OCID
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Credential Level.
+	// At what level the credential is provided?
 	CredentialLevel *string `pulumi:"credentialLevel"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string                     `pulumi:"displayName"`
@@ -86,8 +92,12 @@ type GetFleetCredentialsResult struct {
 	FleetId                    string                                         `pulumi:"fleetId"`
 	// The unique id of the resource.
 	Id *string `pulumi:"id"`
+	// OCID of the resource associated with the target for which the credential is created.
+	ResourceId *string `pulumi:"resourceId"`
 	// The current state of the FleetCredential.
 	State *string `pulumi:"state"`
+	// Target name for which the credential is provided.
+	Target *string `pulumi:"target"`
 }
 
 func GetFleetCredentialsOutput(ctx *pulumi.Context, args GetFleetCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetFleetCredentialsResultOutput {
@@ -113,17 +123,21 @@ func GetFleetCredentialsOutput(ctx *pulumi.Context, args GetFleetCredentialsOutp
 type GetFleetCredentialsOutputArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// Credential Level.
+	// A filter to return only resources whose credentialLevel matches the given credentialLevel.
 	CredentialLevel pulumi.StringPtrInput `pulumi:"credentialLevel"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput               `pulumi:"displayName"`
 	Filters     GetFleetCredentialsFilterArrayInput `pulumi:"filters"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
-	// unique FleetCredential identifier
+	// A filter to return only resources whose credential identifier matches the given identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// Resource Identifier
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return only resources whose target matches the given target name.
+	Target pulumi.StringPtrInput `pulumi:"target"`
 }
 
 func (GetFleetCredentialsOutputArgs) ElementType() reflect.Type {
@@ -150,7 +164,7 @@ func (o GetFleetCredentialsResultOutput) CompartmentId() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v GetFleetCredentialsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// Credential Level.
+// At what level the credential is provided?
 func (o GetFleetCredentialsResultOutput) CredentialLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetCredentialsResult) *string { return v.CredentialLevel }).(pulumi.StringPtrOutput)
 }
@@ -180,9 +194,19 @@ func (o GetFleetCredentialsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetCredentialsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// OCID of the resource associated with the target for which the credential is created.
+func (o GetFleetCredentialsResultOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCredentialsResult) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
 // The current state of the FleetCredential.
 func (o GetFleetCredentialsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetCredentialsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// Target name for which the credential is provided.
+func (o GetFleetCredentialsResultOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCredentialsResult) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -12,7 +12,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
     /// 
-    /// Creates a new FleetProperty.
+    /// Add an existing global property to a fleet in Fleet Application Management.
     /// 
     /// ## Example Usage
     /// 
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public partial class FleetProperty : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Values of the category (must be a single value if selection = 'single choice')
+        /// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         /// </summary>
         [Output("allowedValues")]
         public Output<ImmutableArray<string>> AllowedValues { get; private set; } = null!;
@@ -61,19 +61,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Output("fleetId")]
         public Output<string> FleetId { get; private set; } = null!;
 
         /// <summary>
-        /// Property Id.
+        /// OCID referring to global level metadata property.
         /// </summary>
         [Output("propertyId")]
         public Output<string> PropertyId { get; private set; } = null!;
 
         /// <summary>
-        /// Text selection of the category
+        /// Text selection of the property.
         /// </summary>
         [Output("selectionType")]
         public Output<string> SelectionType { get; private set; } = null!;
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Value of the Property
+        /// (Updatable) Value of the Property.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> Value { get; private set; } = null!;
 
         /// <summary>
-        /// Format of the value
+        /// Format of the value.
         /// </summary>
         [Output("valueType")]
         public Output<string> ValueType { get; private set; } = null!;
@@ -171,19 +171,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
 
         /// <summary>
-        /// Property Id.
+        /// OCID referring to global level metadata property.
         /// </summary>
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Value of the Property
+        /// (Updatable) Value of the Property.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -204,7 +204,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _allowedValues;
 
         /// <summary>
-        /// Values of the category (must be a single value if selection = 'single choice')
+        /// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         /// </summary>
         public InputList<string> AllowedValues
         {
@@ -225,19 +225,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId")]
         public Input<string>? FleetId { get; set; }
 
         /// <summary>
-        /// Property Id.
+        /// OCID referring to global level metadata property.
         /// </summary>
         [Input("propertyId")]
         public Input<string>? PropertyId { get; set; }
 
         /// <summary>
-        /// Text selection of the category
+        /// Text selection of the property.
         /// </summary>
         [Input("selectionType")]
         public Input<string>? SelectionType { get; set; }
@@ -273,7 +273,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the Property
+        /// (Updatable) Value of the Property.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -283,7 +283,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? Value { get; set; }
 
         /// <summary>
-        /// Format of the value
+        /// Format of the value.
         /// </summary>
         [Input("valueType")]
         public Input<string>? ValueType { get; set; }

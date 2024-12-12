@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { CompliancePolicyRuleArgs, CompliancePolicyRuleState } from "./compliancePolicyRule";
+export type CompliancePolicyRule = import("./compliancePolicyRule").CompliancePolicyRule;
+export const CompliancePolicyRule: typeof import("./compliancePolicyRule").CompliancePolicyRule = null as any;
+utilities.lazyLoad(exports, ["CompliancePolicyRule"], () => require("./compliancePolicyRule"));
+
 export { FleetArgs, FleetState } from "./fleet";
 export type Fleet = import("./fleet").Fleet;
 export const Fleet: typeof import("./fleet").Fleet = null as any;
@@ -29,6 +34,36 @@ export { GetAnnouncementsArgs, GetAnnouncementsResult, GetAnnouncementsOutputArg
 export const getAnnouncements: typeof import("./getAnnouncements").getAnnouncements = null as any;
 export const getAnnouncementsOutput: typeof import("./getAnnouncements").getAnnouncementsOutput = null as any;
 utilities.lazyLoad(exports, ["getAnnouncements","getAnnouncementsOutput"], () => require("./getAnnouncements"));
+
+export { GetCompliancePoliciesArgs, GetCompliancePoliciesResult, GetCompliancePoliciesOutputArgs } from "./getCompliancePolicies";
+export const getCompliancePolicies: typeof import("./getCompliancePolicies").getCompliancePolicies = null as any;
+export const getCompliancePoliciesOutput: typeof import("./getCompliancePolicies").getCompliancePoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getCompliancePolicies","getCompliancePoliciesOutput"], () => require("./getCompliancePolicies"));
+
+export { GetCompliancePolicyArgs, GetCompliancePolicyResult, GetCompliancePolicyOutputArgs } from "./getCompliancePolicy";
+export const getCompliancePolicy: typeof import("./getCompliancePolicy").getCompliancePolicy = null as any;
+export const getCompliancePolicyOutput: typeof import("./getCompliancePolicy").getCompliancePolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getCompliancePolicy","getCompliancePolicyOutput"], () => require("./getCompliancePolicy"));
+
+export { GetCompliancePolicyRuleArgs, GetCompliancePolicyRuleResult, GetCompliancePolicyRuleOutputArgs } from "./getCompliancePolicyRule";
+export const getCompliancePolicyRule: typeof import("./getCompliancePolicyRule").getCompliancePolicyRule = null as any;
+export const getCompliancePolicyRuleOutput: typeof import("./getCompliancePolicyRule").getCompliancePolicyRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCompliancePolicyRule","getCompliancePolicyRuleOutput"], () => require("./getCompliancePolicyRule"));
+
+export { GetCompliancePolicyRulesArgs, GetCompliancePolicyRulesResult, GetCompliancePolicyRulesOutputArgs } from "./getCompliancePolicyRules";
+export const getCompliancePolicyRules: typeof import("./getCompliancePolicyRules").getCompliancePolicyRules = null as any;
+export const getCompliancePolicyRulesOutput: typeof import("./getCompliancePolicyRules").getCompliancePolicyRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getCompliancePolicyRules","getCompliancePolicyRulesOutput"], () => require("./getCompliancePolicyRules"));
+
+export { GetComplianceRecordCountsArgs, GetComplianceRecordCountsResult, GetComplianceRecordCountsOutputArgs } from "./getComplianceRecordCounts";
+export const getComplianceRecordCounts: typeof import("./getComplianceRecordCounts").getComplianceRecordCounts = null as any;
+export const getComplianceRecordCountsOutput: typeof import("./getComplianceRecordCounts").getComplianceRecordCountsOutput = null as any;
+utilities.lazyLoad(exports, ["getComplianceRecordCounts","getComplianceRecordCountsOutput"], () => require("./getComplianceRecordCounts"));
+
+export { GetComplianceRecordsArgs, GetComplianceRecordsResult, GetComplianceRecordsOutputArgs } from "./getComplianceRecords";
+export const getComplianceRecords: typeof import("./getComplianceRecords").getComplianceRecords = null as any;
+export const getComplianceRecordsOutput: typeof import("./getComplianceRecords").getComplianceRecordsOutput = null as any;
+utilities.lazyLoad(exports, ["getComplianceRecords","getComplianceRecordsOutput"], () => require("./getComplianceRecords"));
 
 export { GetFleetArgs, GetFleetResult, GetFleetOutputArgs } from "./getFleet";
 export const getFleet: typeof import("./getFleet").getFleet = null as any;
@@ -100,6 +135,11 @@ export const getMaintenanceWindows: typeof import("./getMaintenanceWindows").get
 export const getMaintenanceWindowsOutput: typeof import("./getMaintenanceWindows").getMaintenanceWindowsOutput = null as any;
 utilities.lazyLoad(exports, ["getMaintenanceWindows","getMaintenanceWindowsOutput"], () => require("./getMaintenanceWindows"));
 
+export { GetManagedEntityCountsArgs, GetManagedEntityCountsResult, GetManagedEntityCountsOutputArgs } from "./getManagedEntityCounts";
+export const getManagedEntityCounts: typeof import("./getManagedEntityCounts").getManagedEntityCounts = null as any;
+export const getManagedEntityCountsOutput: typeof import("./getManagedEntityCounts").getManagedEntityCountsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedEntityCounts","getManagedEntityCountsOutput"], () => require("./getManagedEntityCounts"));
+
 export { GetOnboardingPoliciesArgs, GetOnboardingPoliciesResult, GetOnboardingPoliciesOutputArgs } from "./getOnboardingPolicies";
 export const getOnboardingPolicies: typeof import("./getOnboardingPolicies").getOnboardingPolicies = null as any;
 export const getOnboardingPoliciesOutput: typeof import("./getOnboardingPolicies").getOnboardingPoliciesOutput = null as any;
@@ -109,6 +149,26 @@ export { GetOnboardingsArgs, GetOnboardingsResult, GetOnboardingsOutputArgs } fr
 export const getOnboardings: typeof import("./getOnboardings").getOnboardings = null as any;
 export const getOnboardingsOutput: typeof import("./getOnboardings").getOnboardingsOutput = null as any;
 utilities.lazyLoad(exports, ["getOnboardings","getOnboardingsOutput"], () => require("./getOnboardings"));
+
+export { GetPatchArgs, GetPatchResult, GetPatchOutputArgs } from "./getPatch";
+export const getPatch: typeof import("./getPatch").getPatch = null as any;
+export const getPatchOutput: typeof import("./getPatch").getPatchOutput = null as any;
+utilities.lazyLoad(exports, ["getPatch","getPatchOutput"], () => require("./getPatch"));
+
+export { GetPatchesArgs, GetPatchesResult, GetPatchesOutputArgs } from "./getPatches";
+export const getPatches: typeof import("./getPatches").getPatches = null as any;
+export const getPatchesOutput: typeof import("./getPatches").getPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getPatches","getPatchesOutput"], () => require("./getPatches"));
+
+export { GetPlatformConfigurationArgs, GetPlatformConfigurationResult, GetPlatformConfigurationOutputArgs } from "./getPlatformConfiguration";
+export const getPlatformConfiguration: typeof import("./getPlatformConfiguration").getPlatformConfiguration = null as any;
+export const getPlatformConfigurationOutput: typeof import("./getPlatformConfiguration").getPlatformConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getPlatformConfiguration","getPlatformConfigurationOutput"], () => require("./getPlatformConfiguration"));
+
+export { GetPlatformConfigurationsArgs, GetPlatformConfigurationsResult, GetPlatformConfigurationsOutputArgs } from "./getPlatformConfigurations";
+export const getPlatformConfigurations: typeof import("./getPlatformConfigurations").getPlatformConfigurations = null as any;
+export const getPlatformConfigurationsOutput: typeof import("./getPlatformConfigurations").getPlatformConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getPlatformConfigurations","getPlatformConfigurationsOutput"], () => require("./getPlatformConfigurations"));
 
 export { GetPropertiesArgs, GetPropertiesResult, GetPropertiesOutputArgs } from "./getProperties";
 export const getProperties: typeof import("./getProperties").getProperties = null as any;
@@ -145,6 +205,21 @@ export const getSchedulerDefinitions: typeof import("./getSchedulerDefinitions")
 export const getSchedulerDefinitionsOutput: typeof import("./getSchedulerDefinitions").getSchedulerDefinitionsOutput = null as any;
 utilities.lazyLoad(exports, ["getSchedulerDefinitions","getSchedulerDefinitionsOutput"], () => require("./getSchedulerDefinitions"));
 
+export { GetSchedulerJobCountsArgs, GetSchedulerJobCountsResult, GetSchedulerJobCountsOutputArgs } from "./getSchedulerJobCounts";
+export const getSchedulerJobCounts: typeof import("./getSchedulerJobCounts").getSchedulerJobCounts = null as any;
+export const getSchedulerJobCountsOutput: typeof import("./getSchedulerJobCounts").getSchedulerJobCountsOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulerJobCounts","getSchedulerJobCountsOutput"], () => require("./getSchedulerJobCounts"));
+
+export { GetSchedulerJobJobActivityResourcesArgs, GetSchedulerJobJobActivityResourcesResult, GetSchedulerJobJobActivityResourcesOutputArgs } from "./getSchedulerJobJobActivityResources";
+export const getSchedulerJobJobActivityResources: typeof import("./getSchedulerJobJobActivityResources").getSchedulerJobJobActivityResources = null as any;
+export const getSchedulerJobJobActivityResourcesOutput: typeof import("./getSchedulerJobJobActivityResources").getSchedulerJobJobActivityResourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulerJobJobActivityResources","getSchedulerJobJobActivityResourcesOutput"], () => require("./getSchedulerJobJobActivityResources"));
+
+export { GetSchedulerJobJobActivityStepsArgs, GetSchedulerJobJobActivityStepsResult, GetSchedulerJobJobActivityStepsOutputArgs } from "./getSchedulerJobJobActivitySteps";
+export const getSchedulerJobJobActivitySteps: typeof import("./getSchedulerJobJobActivitySteps").getSchedulerJobJobActivitySteps = null as any;
+export const getSchedulerJobJobActivityStepsOutput: typeof import("./getSchedulerJobJobActivitySteps").getSchedulerJobJobActivityStepsOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulerJobJobActivitySteps","getSchedulerJobJobActivityStepsOutput"], () => require("./getSchedulerJobJobActivitySteps"));
+
 export { GetTaskRecordArgs, GetTaskRecordResult, GetTaskRecordOutputArgs } from "./getTaskRecord";
 export const getTaskRecord: typeof import("./getTaskRecord").getTaskRecord = null as any;
 export const getTaskRecordOutput: typeof import("./getTaskRecord").getTaskRecordOutput = null as any;
@@ -165,21 +240,43 @@ export type Onboarding = import("./onboarding").Onboarding;
 export const Onboarding: typeof import("./onboarding").Onboarding = null as any;
 utilities.lazyLoad(exports, ["Onboarding"], () => require("./onboarding"));
 
+export { PatchArgs, PatchState } from "./patch";
+export type Patch = import("./patch").Patch;
+export const Patch: typeof import("./patch").Patch = null as any;
+utilities.lazyLoad(exports, ["Patch"], () => require("./patch"));
+
+export { PlatformConfigurationArgs, PlatformConfigurationState } from "./platformConfiguration";
+export type PlatformConfiguration = import("./platformConfiguration").PlatformConfiguration;
+export const PlatformConfiguration: typeof import("./platformConfiguration").PlatformConfiguration = null as any;
+utilities.lazyLoad(exports, ["PlatformConfiguration"], () => require("./platformConfiguration"));
+
 export { PropertyArgs, PropertyState } from "./property";
 export type Property = import("./property").Property;
 export const Property: typeof import("./property").Property = null as any;
 utilities.lazyLoad(exports, ["Property"], () => require("./property"));
+
+export { RunbookArgs, RunbookState } from "./runbook";
+export type Runbook = import("./runbook").Runbook;
+export const Runbook: typeof import("./runbook").Runbook = null as any;
+utilities.lazyLoad(exports, ["Runbook"], () => require("./runbook"));
 
 export { SchedulerDefinitionArgs, SchedulerDefinitionState } from "./schedulerDefinition";
 export type SchedulerDefinition = import("./schedulerDefinition").SchedulerDefinition;
 export const SchedulerDefinition: typeof import("./schedulerDefinition").SchedulerDefinition = null as any;
 utilities.lazyLoad(exports, ["SchedulerDefinition"], () => require("./schedulerDefinition"));
 
+export { TaskRecordArgs, TaskRecordState } from "./taskRecord";
+export type TaskRecord = import("./taskRecord").TaskRecord;
+export const TaskRecord: typeof import("./taskRecord").TaskRecord = null as any;
+utilities.lazyLoad(exports, ["TaskRecord"], () => require("./taskRecord"));
+
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule":
+                return new CompliancePolicyRule(name, <any>undefined, { urn })
             case "oci:FleetAppsManagement/fleet:Fleet":
                 return new Fleet(name, <any>undefined, { urn })
             case "oci:FleetAppsManagement/fleetCredential:FleetCredential":
@@ -192,20 +289,33 @@ const _module = {
                 return new MaintenanceWindow(name, <any>undefined, { urn })
             case "oci:FleetAppsManagement/onboarding:Onboarding":
                 return new Onboarding(name, <any>undefined, { urn })
+            case "oci:FleetAppsManagement/patch:Patch":
+                return new Patch(name, <any>undefined, { urn })
+            case "oci:FleetAppsManagement/platformConfiguration:PlatformConfiguration":
+                return new PlatformConfiguration(name, <any>undefined, { urn })
             case "oci:FleetAppsManagement/property:Property":
                 return new Property(name, <any>undefined, { urn })
+            case "oci:FleetAppsManagement/runbook:Runbook":
+                return new Runbook(name, <any>undefined, { urn })
             case "oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition":
                 return new SchedulerDefinition(name, <any>undefined, { urn })
+            case "oci:FleetAppsManagement/taskRecord:TaskRecord":
+                return new TaskRecord(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/compliancePolicyRule", _module)
 pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/fleet", _module)
 pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/fleetCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/fleetProperty", _module)
 pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/fleetResource", _module)
 pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/maintenanceWindow", _module)
 pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/onboarding", _module)
+pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/patch", _module)
+pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/platformConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/property", _module)
+pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/runbook", _module)
 pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/schedulerDefinition", _module)
+pulumi.runtime.registerResourceModule("oci", "FleetAppsManagement/taskRecord", _module)

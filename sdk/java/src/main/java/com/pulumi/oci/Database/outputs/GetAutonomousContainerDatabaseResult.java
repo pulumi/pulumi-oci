@@ -136,6 +136,11 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String keyStoreWalletName;
     /**
+     * @return (Optional) The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    private String keyVersionId;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -447,6 +452,13 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.keyStoreWalletName;
     }
     /**
+     * @return (Optional) The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    public String keyVersionId() {
+        return this.keyVersionId;
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -695,6 +707,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private List<GetAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
         private String keyStoreId;
         private String keyStoreWalletName;
+        private String keyVersionId;
         private String kmsKeyId;
         private Double largestProvisionableAutonomousDatabaseInCpus;
         private String lastMaintenanceRunId;
@@ -761,6 +774,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
+    	      this.keyVersionId = defaults.keyVersionId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.largestProvisionableAutonomousDatabaseInCpus = defaults.largestProvisionableAutonomousDatabaseInCpus;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
@@ -1019,6 +1033,14 @@ public final class GetAutonomousContainerDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "keyStoreWalletName");
             }
             this.keyStoreWalletName = keyStoreWalletName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyVersionId(String keyVersionId) {
+            if (keyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "keyVersionId");
+            }
+            this.keyVersionId = keyVersionId;
             return this;
         }
         @CustomType.Setter
@@ -1353,6 +1375,7 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.keyHistoryEntries = keyHistoryEntries;
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.keyStoreWalletName = keyStoreWalletName;
+            _resultValue.keyVersionId = keyVersionId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.largestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;

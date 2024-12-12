@@ -73,12 +73,17 @@ type LookupDrPlanResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
+	// The current state of the DR plan.
+	LifecycleSubState string `pulumi:"lifecycleSubState"`
 	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
 	// The list of groups in this DR plan.
-	PlanGroups []GetDrPlanPlanGroup `pulumi:"planGroups"`
+	PlanGroups     []GetDrPlanPlanGroup `pulumi:"planGroups"`
+	RefreshTrigger int                  `pulumi:"refreshTrigger"`
+	// If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+	SourcePlanId string `pulumi:"sourcePlanId"`
 	// The current state of the DR plan.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -88,7 +93,8 @@ type LookupDrPlanResult struct {
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The type of the DR plan.
-	Type string `pulumi:"type"`
+	Type          string `pulumi:"type"`
+	VerifyTrigger int    `pulumi:"verifyTrigger"`
 }
 
 func LookupDrPlanOutput(ctx *pulumi.Context, args LookupDrPlanOutputArgs, opts ...pulumi.InvokeOption) LookupDrPlanResultOutput {
@@ -174,6 +180,11 @@ func (o LookupDrPlanResultOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
+// The current state of the DR plan.
+func (o LookupDrPlanResultOutput) LifecycleSubState() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
 // The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o LookupDrPlanResultOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
@@ -187,6 +198,15 @@ func (o LookupDrPlanResultOutput) PeerRegion() pulumi.StringOutput {
 // The list of groups in this DR plan.
 func (o LookupDrPlanResultOutput) PlanGroups() GetDrPlanPlanGroupArrayOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) []GetDrPlanPlanGroup { return v.PlanGroups }).(GetDrPlanPlanGroupArrayOutput)
+}
+
+func (o LookupDrPlanResultOutput) RefreshTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) int { return v.RefreshTrigger }).(pulumi.IntOutput)
+}
+
+// If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+func (o LookupDrPlanResultOutput) SourcePlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) string { return v.SourcePlanId }).(pulumi.StringOutput)
 }
 
 // The current state of the DR plan.
@@ -212,6 +232,10 @@ func (o LookupDrPlanResultOutput) TimeUpdated() pulumi.StringOutput {
 // The type of the DR plan.
 func (o LookupDrPlanResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanResult) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o LookupDrPlanResultOutput) VerifyTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) int { return v.VerifyTrigger }).(pulumi.IntOutput)
 }
 
 func init() {

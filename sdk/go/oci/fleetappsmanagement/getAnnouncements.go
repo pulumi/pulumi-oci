@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// # Return a list of AnnouncementSummary items
+// Return a list of AnnouncementSummary items.
 //
 // ## Example Usage
 //
@@ -56,7 +56,7 @@ type GetAnnouncementsArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetAnnouncementsFilter `pulumi:"filters"`
-	// Filter the list with summary contains the given value.
+	// Filter the list of announcements that contains the given summary value.
 	SummaryContains *string `pulumi:"summaryContains"`
 }
 
@@ -96,7 +96,7 @@ type GetAnnouncementsOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput            `pulumi:"displayName"`
 	Filters     GetAnnouncementsFilterArrayInput `pulumi:"filters"`
-	// Filter the list with summary contains the given value.
+	// Filter the list of announcements that contains the given summary value.
 	SummaryContains pulumi.StringPtrInput `pulumi:"summaryContains"`
 }
 

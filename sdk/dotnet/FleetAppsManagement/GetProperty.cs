@@ -127,11 +127,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string ResourceRegion;
         /// <summary>
-        /// The scope of the property
+        /// The scope of the property.
         /// </summary>
         public readonly string Scope;
         /// <summary>
-        /// Text selection of the category
+        /// Text selection of the property.
         /// </summary>
         public readonly string Selection;
         /// <summary>
@@ -155,11 +155,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Format of the value
+        /// Format of the value.
         /// </summary>
         public readonly string ValueType;
         /// <summary>
-        /// Values of the property (must be a single value if selection = 'single choice')
+        /// Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

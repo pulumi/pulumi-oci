@@ -53,7 +53,7 @@ class GetFleetComplianceReportResult:
     @pulumi.getter(name="complianceState")
     def compliance_state(self) -> str:
         """
-        Last known compliance state of target.
+        The last known compliance state of the target.
         """
         return pulumi.get(self, "compliance_state")
 
@@ -77,7 +77,7 @@ class GetFleetComplianceReportResult:
     @pulumi.getter
     def resources(self) -> Sequence['outputs.GetFleetComplianceReportResourceResult']:
         """
-        Resources assocaited with the Fleet.
+        Resources associated with the Fleet.
         """
         return pulumi.get(self, "resources")
 
@@ -101,7 +101,7 @@ def get_fleet_compliance_report(compliance_report_id: Optional[str] = None,
     """
     This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Retrieve compiane report for a Fleet
+    Retrieve compliance report for a fleet.
 
     ## Example Usage
 
@@ -114,8 +114,8 @@ def get_fleet_compliance_report(compliance_report_id: Optional[str] = None,
     ```
 
 
-    :param str compliance_report_id: compliance report identifier
-    :param str fleet_id: unique Fleet identifier
+    :param str compliance_report_id: compliance report identifier.
+    :param str fleet_id: Unique Fleet identifier.
     """
     __args__ = dict()
     __args__['complianceReportId'] = compliance_report_id
@@ -135,7 +135,7 @@ def get_fleet_compliance_report_output(compliance_report_id: Optional[pulumi.Inp
     """
     This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Retrieve compiane report for a Fleet
+    Retrieve compliance report for a fleet.
 
     ## Example Usage
 
@@ -148,8 +148,8 @@ def get_fleet_compliance_report_output(compliance_report_id: Optional[pulumi.Inp
     ```
 
 
-    :param str compliance_report_id: compliance report identifier
-    :param str fleet_id: unique Fleet identifier
+    :param str compliance_report_id: compliance report identifier.
+    :param str fleet_id: Unique Fleet identifier.
     """
     __args__ = dict()
     __args__['complianceReportId'] = compliance_report_id

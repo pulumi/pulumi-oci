@@ -127,7 +127,7 @@ class GetInventoryResourcesResult:
     @pulumi.getter(name="resourceCompartmentId")
     def resource_compartment_id(self) -> str:
         """
-        Compartment Id of the resource
+        Compartment Id of the resource.
         """
         return pulumi.get(self, "resource_compartment_id")
 
@@ -135,7 +135,7 @@ class GetInventoryResourcesResult:
     @pulumi.getter(name="resourceRegion")
     def resource_region(self) -> Optional[str]:
         """
-        Region the resource belongs to
+        The region the resource belongs to.
         """
         return pulumi.get(self, "resource_region")
 
@@ -202,13 +202,13 @@ def get_inventory_resources(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param Sequence[str] defined_tag_equals: A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+    :param str compartment_id: A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
+    :param Sequence[str] defined_tag_equals: A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND". Example: Identification.Development=Yes
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param Sequence[str] freeform_tag_equals: A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-    :param Sequence[str] inventory_properties: A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}".
-    :param str matching_criteria: Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties"
-    :param str resource_compartment_id: Resource Compartment ID
+    :param Sequence[str] inventory_properties: A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example: Instance.displayName=TEST_INSTANCE
+    :param str matching_criteria: Fetch resources matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties". Example: matchingCriteria=ANY
+    :param str resource_compartment_id: A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
     :param str resource_region: Resource Region
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     """
@@ -273,13 +273,13 @@ def get_inventory_resources_output(compartment_id: Optional[pulumi.Input[str]] =
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param Sequence[str] defined_tag_equals: A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+    :param str compartment_id: A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
+    :param Sequence[str] defined_tag_equals: A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND". Example: Identification.Development=Yes
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param Sequence[str] freeform_tag_equals: A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-    :param Sequence[str] inventory_properties: A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}".
-    :param str matching_criteria: Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties"
-    :param str resource_compartment_id: Resource Compartment ID
+    :param Sequence[str] inventory_properties: A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example: Instance.displayName=TEST_INSTANCE
+    :param str matching_criteria: Fetch resources matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties". Example: matchingCriteria=ANY
+    :param str resource_compartment_id: A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
     :param str resource_region: Resource Region
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     """

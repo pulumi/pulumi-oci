@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Fleet Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetResources.
+ * List resources for a fleet in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -50,19 +50,19 @@ export interface GetFleetResourcesArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetFleetResourcesFilter[];
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
     /**
-     * A filter to return resources that match the Type
+     * A filter to return only resources whose resourceType matches the given resourceType.
      */
     fleetResourceType?: string;
     /**
-     * unique FleetResource identifier
+     * A filter to return only resources whose identifier matches the given identifier.
      */
     id?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: string;
     /**
@@ -102,7 +102,7 @@ export interface GetFleetResourcesResult {
 /**
  * This data source provides the list of Fleet Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetResources.
+ * List resources for a fleet in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -143,19 +143,19 @@ export interface GetFleetResourcesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetResourcesFilterArgs>[]>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**
-     * A filter to return resources that match the Type
+     * A filter to return only resources whose resourceType matches the given resourceType.
      */
     fleetResourceType?: pulumi.Input<string>;
     /**
-     * unique FleetResource identifier
+     * A filter to return only resources whose identifier matches the given identifier.
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: pulumi.Input<string>;
     /**

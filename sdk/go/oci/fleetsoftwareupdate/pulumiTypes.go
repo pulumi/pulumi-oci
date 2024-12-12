@@ -2309,6 +2309,8 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID identifier for the Exadata Fleet Update Collection.
 	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+	LastCompletedFsuCycleId string `pulumi:"lastCompletedFsuCycleId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Exadata service type for the target resource members.
@@ -2355,6 +2357,8 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// OCID identifier for the Exadata Fleet Update Collection.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+	LastCompletedFsuCycleId pulumi.StringInput `pulumi:"lastCompletedFsuCycleId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Exadata service type for the target resource members.
@@ -2463,6 +2467,11 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) FreeformTags(
 // OCID identifier for the Exadata Fleet Update Collection.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) LastCompletedFsuCycleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) string { return v.LastCompletedFsuCycleId }).(pulumi.StringOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -3973,12 +3982,16 @@ type GetFsuCyclesFsuCycleSummaryCollectionItem struct {
 	IsKeepPlacement bool `pulumi:"isKeepPlacement"`
 	// The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
 	LastCompletedAction string `pulumi:"lastCompletedAction"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+	LastCompletedActionId string `pulumi:"lastCompletedActionId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Service drain timeout specified in seconds.
 	MaxDrainTimeoutInSeconds int `pulumi:"maxDrainTimeoutInSeconds"`
 	// In this array all the possible actions will be listed. The first element is the suggested Action.
 	NextActionToExecutes []GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecute `pulumi:"nextActionToExecutes"`
+	// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+	RollbackCycleState string `pulumi:"rollbackCycleState"`
 	// Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.
 	StageActionSchedules []GetFsuCyclesFsuCycleSummaryCollectionItemStageActionSchedule `pulumi:"stageActionSchedules"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
@@ -4039,12 +4052,16 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemArgs struct {
 	IsKeepPlacement pulumi.BoolInput `pulumi:"isKeepPlacement"`
 	// The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
 	LastCompletedAction pulumi.StringInput `pulumi:"lastCompletedAction"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+	LastCompletedActionId pulumi.StringInput `pulumi:"lastCompletedActionId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Service drain timeout specified in seconds.
 	MaxDrainTimeoutInSeconds pulumi.IntInput `pulumi:"maxDrainTimeoutInSeconds"`
 	// In this array all the possible actions will be listed. The first element is the suggested Action.
 	NextActionToExecutes GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArrayInput `pulumi:"nextActionToExecutes"`
+	// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+	RollbackCycleState pulumi.StringInput `pulumi:"rollbackCycleState"`
 	// Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.
 	StageActionSchedules GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArrayInput `pulumi:"stageActionSchedules"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
@@ -4200,6 +4217,11 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) LastCompletedAction() p
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.LastCompletedAction }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) LastCompletedActionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.LastCompletedActionId }).(pulumi.StringOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -4215,6 +4237,11 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) NextActionToExecutes() 
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) []GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecute {
 		return v.NextActionToExecutes
 	}).(GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArrayOutput)
+}
+
+// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) RollbackCycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.RollbackCycleState }).(pulumi.StringOutput)
 }
 
 // Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.

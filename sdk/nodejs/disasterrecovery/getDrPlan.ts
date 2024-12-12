@@ -73,6 +73,10 @@ export interface GetDrPlanResult {
      */
     readonly lifeCycleDetails: string;
     /**
+     * The current state of the DR plan.
+     */
+    readonly lifecycleSubState: string;
+    /**
      * The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     readonly peerDrProtectionGroupId: string;
@@ -84,6 +88,11 @@ export interface GetDrPlanResult {
      * The list of groups in this DR plan.
      */
     readonly planGroups: outputs.DisasterRecovery.GetDrPlanPlanGroup[];
+    readonly refreshTrigger: number;
+    /**
+     * If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+     */
+    readonly sourcePlanId: string;
     /**
      * The current state of the DR plan.
      */
@@ -104,6 +113,7 @@ export interface GetDrPlanResult {
      * The type of the DR plan.
      */
     readonly type: string;
+    readonly verifyTrigger: number;
 }
 /**
  * This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.

@@ -137,6 +137,10 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly keyStoreWalletName: string;
     /**
+     * (Optional) The OCID of the key version that is used in rotate key operations.
+     */
+    readonly keyVersionId: string;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     readonly kmsKeyId: string;

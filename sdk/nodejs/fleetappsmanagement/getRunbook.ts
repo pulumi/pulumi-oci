@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a Runbook by identifier
+ * Get the details of a runbook in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -44,7 +44,7 @@ export interface GetRunbookArgs {
  */
 export interface GetRunbookResult {
     /**
-     * JSON content with required associations
+     * Associations for the runbook.
      */
     readonly associations: outputs.FleetAppsManagement.GetRunbookAssociation[];
     readonly compartmentId: string;
@@ -61,7 +61,7 @@ export interface GetRunbookResult {
      */
     readonly displayName: string;
     /**
-     * Estimated time to successfully complete the runbook execution
+     * Estimated time to successfully complete the runbook execution.
      */
     readonly estimatedTime: string;
     /**
@@ -69,11 +69,11 @@ export interface GetRunbookResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * The OCID of the resource.
      */
     readonly id: string;
     /**
-     * Is the runbook default?
+     * Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
      */
     readonly isDefault: boolean;
     /**
@@ -81,7 +81,7 @@ export interface GetRunbookResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * The lifecycle operation performed by the task.
+     * The lifecycle operation performed by the runbook.
      */
     readonly operation: string;
     /**
@@ -98,7 +98,7 @@ export interface GetRunbookResult {
     readonly resourceRegion: string;
     readonly runbookId: string;
     /**
-     * Type of runbook structure.
+     * Relevance of the runbook.
      */
     readonly runbookRelevance: string;
     /**
@@ -125,7 +125,7 @@ export interface GetRunbookResult {
 /**
  * This data source provides details about a specific Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a Runbook by identifier
+ * Get the details of a runbook in Fleet Application Management.
  *
  * ## Example Usage
  *

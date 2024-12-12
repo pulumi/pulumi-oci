@@ -6,8 +6,12 @@ package com.pulumi.oci.FleetAppsManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetAppsManagement.inputs.FleetCredentialEntitySpecificsVariableArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class FleetCredentialEntitySpecificsArgs extends com.pulumi.resources.ResourceArgs {
@@ -15,14 +19,14 @@ public final class FleetCredentialEntitySpecificsArgs extends com.pulumi.resourc
     public static final FleetCredentialEntitySpecificsArgs Empty = new FleetCredentialEntitySpecificsArgs();
 
     /**
-     * (Updatable) Credential Level.
+     * (Updatable) At what level the credential is provided?
      * 
      */
     @Import(name="credentialLevel", required=true)
     private Output<String> credentialLevel;
 
     /**
-     * @return (Updatable) Credential Level.
+     * @return (Updatable) At what level the credential is provided?
      * 
      */
     public Output<String> credentialLevel() {
@@ -30,33 +34,48 @@ public final class FleetCredentialEntitySpecificsArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) OCID of the resource associated with the target for which credential is created
+     * (Updatable) OCID of the resource associated with the target for which the credential is created.
      * 
      */
-    @Import(name="resourceId", required=true)
-    private Output<String> resourceId;
+    @Import(name="resourceId")
+    private @Nullable Output<String> resourceId;
 
     /**
-     * @return (Updatable) OCID of the resource associated with the target for which credential is created
+     * @return (Updatable) OCID of the resource associated with the target for which the credential is created.
      * 
      */
-    public Output<String> resourceId() {
-        return this.resourceId;
+    public Optional<Output<String>> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
 
     /**
-     * (Updatable) Target associated with the Credential
+     * (Updatable) Target name for which the credential is provided.
      * 
      */
-    @Import(name="target", required=true)
-    private Output<String> target;
+    @Import(name="target")
+    private @Nullable Output<String> target;
 
     /**
-     * @return (Updatable) Target associated with the Credential
+     * @return (Updatable) Target name for which the credential is provided.
      * 
      */
-    public Output<String> target() {
-        return this.target;
+    public Optional<Output<String>> target() {
+        return Optional.ofNullable(this.target);
+    }
+
+    /**
+     * (Updatable) List of fleet credential variables.
+     * 
+     */
+    @Import(name="variables")
+    private @Nullable Output<List<FleetCredentialEntitySpecificsVariableArgs>> variables;
+
+    /**
+     * @return (Updatable) List of fleet credential variables.
+     * 
+     */
+    public Optional<Output<List<FleetCredentialEntitySpecificsVariableArgs>>> variables() {
+        return Optional.ofNullable(this.variables);
     }
 
     private FleetCredentialEntitySpecificsArgs() {}
@@ -65,6 +84,7 @@ public final class FleetCredentialEntitySpecificsArgs extends com.pulumi.resourc
         this.credentialLevel = $.credentialLevel;
         this.resourceId = $.resourceId;
         this.target = $.target;
+        this.variables = $.variables;
     }
 
     public static Builder builder() {
@@ -86,7 +106,7 @@ public final class FleetCredentialEntitySpecificsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param credentialLevel (Updatable) Credential Level.
+         * @param credentialLevel (Updatable) At what level the credential is provided?
          * 
          * @return builder
          * 
@@ -97,7 +117,7 @@ public final class FleetCredentialEntitySpecificsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param credentialLevel (Updatable) Credential Level.
+         * @param credentialLevel (Updatable) At what level the credential is provided?
          * 
          * @return builder
          * 
@@ -107,18 +127,18 @@ public final class FleetCredentialEntitySpecificsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param resourceId (Updatable) OCID of the resource associated with the target for which credential is created
+         * @param resourceId (Updatable) OCID of the resource associated with the target for which the credential is created.
          * 
          * @return builder
          * 
          */
-        public Builder resourceId(Output<String> resourceId) {
+        public Builder resourceId(@Nullable Output<String> resourceId) {
             $.resourceId = resourceId;
             return this;
         }
 
         /**
-         * @param resourceId (Updatable) OCID of the resource associated with the target for which credential is created
+         * @param resourceId (Updatable) OCID of the resource associated with the target for which the credential is created.
          * 
          * @return builder
          * 
@@ -128,18 +148,18 @@ public final class FleetCredentialEntitySpecificsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param target (Updatable) Target associated with the Credential
+         * @param target (Updatable) Target name for which the credential is provided.
          * 
          * @return builder
          * 
          */
-        public Builder target(Output<String> target) {
+        public Builder target(@Nullable Output<String> target) {
             $.target = target;
             return this;
         }
 
         /**
-         * @param target (Updatable) Target associated with the Credential
+         * @param target (Updatable) Target name for which the credential is provided.
          * 
          * @return builder
          * 
@@ -148,15 +168,40 @@ public final class FleetCredentialEntitySpecificsArgs extends com.pulumi.resourc
             return target(Output.of(target));
         }
 
+        /**
+         * @param variables (Updatable) List of fleet credential variables.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder variables(@Nullable Output<List<FleetCredentialEntitySpecificsVariableArgs>> variables) {
+            $.variables = variables;
+            return this;
+        }
+
+        /**
+         * @param variables (Updatable) List of fleet credential variables.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder variables(List<FleetCredentialEntitySpecificsVariableArgs> variables) {
+            return variables(Output.of(variables));
+        }
+
+        /**
+         * @param variables (Updatable) List of fleet credential variables.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder variables(FleetCredentialEntitySpecificsVariableArgs... variables) {
+            return variables(List.of(variables));
+        }
+
         public FleetCredentialEntitySpecificsArgs build() {
             if ($.credentialLevel == null) {
                 throw new MissingRequiredPropertyException("FleetCredentialEntitySpecificsArgs", "credentialLevel");
-            }
-            if ($.resourceId == null) {
-                throw new MissingRequiredPropertyException("FleetCredentialEntitySpecificsArgs", "resourceId");
-            }
-            if ($.target == null) {
-                throw new MissingRequiredPropertyException("FleetCredentialEntitySpecificsArgs", "target");
             }
             return $;
         }

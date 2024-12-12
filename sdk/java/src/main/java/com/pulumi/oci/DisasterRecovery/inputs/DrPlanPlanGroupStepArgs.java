@@ -110,6 +110,21 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    @Import(name="refreshStatus")
+    private @Nullable Output<String> refreshStatus;
+
+    /**
+     * @return The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    public Optional<Output<String>> refreshStatus() {
+        return Optional.ofNullable(this.refreshStatus);
+    }
+
+    /**
      * The timeout in seconds for executing this step.  Example: `600`
      * 
      */
@@ -127,18 +142,12 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     /**
      * The type of DR plan to be created.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return The type of DR plan to be created.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> type() {
@@ -169,6 +178,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         this.id = $.id;
         this.isEnabled = $.isEnabled;
         this.memberId = $.memberId;
+        this.refreshStatus = $.refreshStatus;
         this.timeout = $.timeout;
         this.type = $.type;
         this.userDefinedSteps = $.userDefinedSteps;
@@ -319,6 +329,27 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param refreshStatus The DR plan step refresh status.  Example: `STEP_ADDED`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshStatus(@Nullable Output<String> refreshStatus) {
+            $.refreshStatus = refreshStatus;
+            return this;
+        }
+
+        /**
+         * @param refreshStatus The DR plan step refresh status.  Example: `STEP_ADDED`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshStatus(String refreshStatus) {
+            return refreshStatus(Output.of(refreshStatus));
+        }
+
+        /**
          * @param timeout The timeout in seconds for executing this step.  Example: `600`
          * 
          * @return builder
@@ -342,9 +373,6 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         /**
          * @param type The type of DR plan to be created.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -355,9 +383,6 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
 
         /**
          * @param type The type of DR plan to be created.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

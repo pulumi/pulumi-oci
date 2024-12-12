@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Creates a new FleetProperty.
+ * Add an existing global property to a fleet in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -56,7 +56,7 @@ export class FleetProperty extends pulumi.CustomResource {
     }
 
     /**
-     * Values of the category (must be a single value if selection = 'single choice')
+     * Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
      */
     public /*out*/ readonly allowedValues!: pulumi.Output<string[]>;
     /**
@@ -68,15 +68,15 @@ export class FleetProperty extends pulumi.CustomResource {
      */
     public /*out*/ readonly displayName!: pulumi.Output<string>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     public readonly fleetId!: pulumi.Output<string>;
     /**
-     * Property Id.
+     * OCID referring to global level metadata property.
      */
     public readonly propertyId!: pulumi.Output<string>;
     /**
-     * Text selection of the category
+     * Text selection of the property.
      */
     public /*out*/ readonly selectionType!: pulumi.Output<string>;
     /**
@@ -96,7 +96,7 @@ export class FleetProperty extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Value of the Property
+     * (Updatable) Value of the Property.
      *
      *
      * ** IMPORTANT **
@@ -104,7 +104,7 @@ export class FleetProperty extends pulumi.CustomResource {
      */
     public readonly value!: pulumi.Output<string>;
     /**
-     * Format of the value
+     * Format of the value.
      */
     public /*out*/ readonly valueType!: pulumi.Output<string>;
 
@@ -170,7 +170,7 @@ export class FleetProperty extends pulumi.CustomResource {
  */
 export interface FleetPropertyState {
     /**
-     * Values of the category (must be a single value if selection = 'single choice')
+     * Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
      */
     allowedValues?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -182,15 +182,15 @@ export interface FleetPropertyState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId?: pulumi.Input<string>;
     /**
-     * Property Id.
+     * OCID referring to global level metadata property.
      */
     propertyId?: pulumi.Input<string>;
     /**
-     * Text selection of the category
+     * Text selection of the property.
      */
     selectionType?: pulumi.Input<string>;
     /**
@@ -210,7 +210,7 @@ export interface FleetPropertyState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Value of the Property
+     * (Updatable) Value of the Property.
      *
      *
      * ** IMPORTANT **
@@ -218,7 +218,7 @@ export interface FleetPropertyState {
      */
     value?: pulumi.Input<string>;
     /**
-     * Format of the value
+     * Format of the value.
      */
     valueType?: pulumi.Input<string>;
 }
@@ -232,15 +232,15 @@ export interface FleetPropertyArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**
-     * Property Id.
+     * OCID referring to global level metadata property.
      */
     propertyId: pulumi.Input<string>;
     /**
-     * (Updatable) Value of the Property
+     * (Updatable) Value of the Property.
      *
      *
      * ** IMPORTANT **

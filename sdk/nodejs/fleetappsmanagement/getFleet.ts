@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a Fleet by identifier
+ * Get the details of a fleet in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -34,7 +34,7 @@ export function getFleet(args: GetFleetArgs, opts?: pulumi.InvokeOptions): Promi
  */
 export interface GetFleetArgs {
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
 }
@@ -44,13 +44,17 @@ export interface GetFleetArgs {
  */
 export interface GetFleetResult {
     /**
-     * Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     readonly applicationType: string;
     /**
-     * Please provide the root compartmentId (TenancyId).
+     * Tenancy Id (Root Compartment Id)for which the rule is created.
      */
     readonly compartmentId: string;
+    /**
+     * Credentials associated with the Fleet.
+     */
+    readonly credentials: outputs.FleetAppsManagement.GetFleetCredential[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -64,12 +68,12 @@ export interface GetFleetResult {
      */
     readonly displayName: string;
     /**
-     * Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     readonly environmentType: string;
     readonly fleetId: string;
     /**
-     * Type of the Fleet.
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      */
     readonly fleetType: string;
     /**
@@ -77,7 +81,7 @@ export interface GetFleetResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+     * Group Type associated with Group Fleet. Applicable for GROUP fleet types.
      */
     readonly groupType: string;
     /**
@@ -85,7 +89,7 @@ export interface GetFleetResult {
      */
     readonly id: string;
     /**
-     * A value which represents if auto confirming of the targets can be enabled
+     * A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      */
     readonly isTargetAutoConfirm: boolean;
     /**
@@ -93,11 +97,11 @@ export interface GetFleetResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * Conditions when met to send notifications on the fleet activities
+     * Notification information to get notified when the fleet status changes.
      */
     readonly notificationPreferences: outputs.FleetAppsManagement.GetFleetNotificationPreference[];
     /**
-     * Products associated with the Fleet
+     * Products associated with the Fleet.
      */
     readonly products: string[];
     /**
@@ -105,11 +109,11 @@ export interface GetFleetResult {
      */
     readonly resourceRegion: string;
     /**
-     * Type of resource selection in a fleet.
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      */
     readonly resourceSelectionType: string;
     /**
-     * Rule Selection Criteria
+     * Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      */
     readonly ruleSelectionCriterias: outputs.FleetAppsManagement.GetFleetRuleSelectionCriteria[];
     /**
@@ -132,7 +136,7 @@ export interface GetFleetResult {
 /**
  * This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a Fleet by identifier
+ * Get the details of a fleet in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -157,7 +161,7 @@ export function getFleetOutput(args: GetFleetOutputArgs, opts?: pulumi.InvokeOut
  */
 export interface GetFleetOutputArgs {
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
 }

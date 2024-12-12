@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class FleetRuleSelectionCriteriaRuleCondition {
     /**
-     * @return (Updatable) Attribute Group.
+     * @return (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
      * 
      */
     private String attrGroup;
     /**
-     * @return (Updatable) Attribute Key.
+     * @return (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
      * 
      */
     private String attrKey;
     /**
-     * @return (Updatable) Attribute Value.
+     * @return (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
      * 
      */
     private String attrValue;
 
     private FleetRuleSelectionCriteriaRuleCondition() {}
     /**
-     * @return (Updatable) Attribute Group.
+     * @return (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
      * 
      */
     public String attrGroup() {
         return this.attrGroup;
     }
     /**
-     * @return (Updatable) Attribute Key.
+     * @return (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
      * 
      */
     public String attrKey() {
         return this.attrKey;
     }
     /**
-     * @return (Updatable) Attribute Value.
+     * @return (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
      * 
      */
     public String attrValue() {

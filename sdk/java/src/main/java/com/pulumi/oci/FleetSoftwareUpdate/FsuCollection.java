@@ -181,6 +181,20 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     * 
+     */
+    @Export(name="lastCompletedFsuCycleId", refs={String.class}, tree="[0]")
+    private Output<String> lastCompletedFsuCycleId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     * 
+     */
+    public Output<String> lastCompletedFsuCycleId() {
+        return this.lastCompletedFsuCycleId;
+    }
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */

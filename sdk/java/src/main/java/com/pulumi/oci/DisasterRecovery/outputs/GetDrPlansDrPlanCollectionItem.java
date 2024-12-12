@@ -6,6 +6,7 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlansDrPlanCollectionItemPlanGroup;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +50,11 @@ public final class GetDrPlansDrPlanCollectionItem {
      */
     private String lifeCycleDetails;
     /**
+     * @return A filter to return only DR plans that match the given lifecycle sub-state.
+     * 
+     */
+    private String lifecycleSubState;
+    /**
      * @return The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
@@ -63,6 +69,12 @@ public final class GetDrPlansDrPlanCollectionItem {
      * 
      */
     private List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups;
+    private Integer refreshTrigger;
+    /**
+     * @return If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+     * 
+     */
+    private String sourcePlanId;
     /**
      * @return A filter to return only DR plans that match the given lifecycle state.
      * 
@@ -88,6 +100,7 @@ public final class GetDrPlansDrPlanCollectionItem {
      * 
      */
     private String type;
+    private Integer verifyTrigger;
 
     private GetDrPlansDrPlanCollectionItem() {}
     /**
@@ -140,6 +153,13 @@ public final class GetDrPlansDrPlanCollectionItem {
         return this.lifeCycleDetails;
     }
     /**
+     * @return A filter to return only DR plans that match the given lifecycle sub-state.
+     * 
+     */
+    public String lifecycleSubState() {
+        return this.lifecycleSubState;
+    }
+    /**
      * @return The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
@@ -159,6 +179,16 @@ public final class GetDrPlansDrPlanCollectionItem {
      */
     public List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups() {
         return this.planGroups;
+    }
+    public Integer refreshTrigger() {
+        return this.refreshTrigger;
+    }
+    /**
+     * @return If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+     * 
+     */
+    public String sourcePlanId() {
+        return this.sourcePlanId;
     }
     /**
      * @return A filter to return only DR plans that match the given lifecycle state.
@@ -195,6 +225,9 @@ public final class GetDrPlansDrPlanCollectionItem {
     public String type() {
         return this.type;
     }
+    public Integer verifyTrigger() {
+        return this.verifyTrigger;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -212,14 +245,18 @@ public final class GetDrPlansDrPlanCollectionItem {
         private Map<String,String> freeformTags;
         private String id;
         private String lifeCycleDetails;
+        private String lifecycleSubState;
         private String peerDrProtectionGroupId;
         private String peerRegion;
         private List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups;
+        private Integer refreshTrigger;
+        private String sourcePlanId;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String type;
+        private Integer verifyTrigger;
         public Builder() {}
         public Builder(GetDrPlansDrPlanCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -230,14 +267,18 @@ public final class GetDrPlansDrPlanCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifeCycleDetails = defaults.lifeCycleDetails;
+    	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.peerDrProtectionGroupId = defaults.peerDrProtectionGroupId;
     	      this.peerRegion = defaults.peerRegion;
     	      this.planGroups = defaults.planGroups;
+    	      this.refreshTrigger = defaults.refreshTrigger;
+    	      this.sourcePlanId = defaults.sourcePlanId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
+    	      this.verifyTrigger = defaults.verifyTrigger;
         }
 
         @CustomType.Setter
@@ -297,6 +338,14 @@ public final class GetDrPlansDrPlanCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleSubState(String lifecycleSubState) {
+            if (lifecycleSubState == null) {
+              throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItem", "lifecycleSubState");
+            }
+            this.lifecycleSubState = lifecycleSubState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder peerDrProtectionGroupId(String peerDrProtectionGroupId) {
             if (peerDrProtectionGroupId == null) {
               throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItem", "peerDrProtectionGroupId");
@@ -322,6 +371,22 @@ public final class GetDrPlansDrPlanCollectionItem {
         }
         public Builder planGroups(GetDrPlansDrPlanCollectionItemPlanGroup... planGroups) {
             return planGroups(List.of(planGroups));
+        }
+        @CustomType.Setter
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            if (refreshTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItem", "refreshTrigger");
+            }
+            this.refreshTrigger = refreshTrigger;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourcePlanId(String sourcePlanId) {
+            if (sourcePlanId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItem", "sourcePlanId");
+            }
+            this.sourcePlanId = sourcePlanId;
+            return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -363,6 +428,14 @@ public final class GetDrPlansDrPlanCollectionItem {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
+        public Builder verifyTrigger(Integer verifyTrigger) {
+            if (verifyTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItem", "verifyTrigger");
+            }
+            this.verifyTrigger = verifyTrigger;
+            return this;
+        }
         public GetDrPlansDrPlanCollectionItem build() {
             final var _resultValue = new GetDrPlansDrPlanCollectionItem();
             _resultValue.compartmentId = compartmentId;
@@ -372,14 +445,18 @@ public final class GetDrPlansDrPlanCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifeCycleDetails = lifeCycleDetails;
+            _resultValue.lifecycleSubState = lifecycleSubState;
             _resultValue.peerDrProtectionGroupId = peerDrProtectionGroupId;
             _resultValue.peerRegion = peerRegion;
             _resultValue.planGroups = planGroups;
+            _resultValue.refreshTrigger = refreshTrigger;
+            _resultValue.sourcePlanId = sourcePlanId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;
+            _resultValue.verifyTrigger = verifyTrigger;
             return _resultValue;
         }
     }

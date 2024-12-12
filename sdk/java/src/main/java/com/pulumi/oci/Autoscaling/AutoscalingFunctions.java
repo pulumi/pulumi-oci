@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
 import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationPlainArgs;
 import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationsArgs;
@@ -190,6 +191,50 @@ public final class AutoscalingFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration", TypeShape.of(GetAutoScalingConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
+     * 
+     * Gets information about the specified autoscaling configuration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = AutoscalingFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration", TypeShape.of(GetAutoScalingConfigurationResult.class), args, Utilities.withVersion(options));
     }
@@ -326,6 +371,51 @@ public final class AutoscalingFunctions {
      * 
      */
     public static Output<GetAutoScalingConfigurationsResult> getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", TypeShape.of(GetAutoScalingConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.
+     * 
+     * Lists autoscaling configurations in the specifed compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfigurations = AutoscalingFunctions.getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(autoScalingConfigurationDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutoScalingConfigurationsResult> getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", TypeShape.of(GetAutoScalingConfigurationsResult.class), args, Utilities.withVersion(options));
     }
     /**

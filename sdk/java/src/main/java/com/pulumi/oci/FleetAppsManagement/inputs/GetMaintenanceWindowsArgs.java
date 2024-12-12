@@ -55,14 +55,14 @@ public final class GetMaintenanceWindowsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * unique MaintenanceWindow identifier
+     * A filter to return only the Maintenance Windows whose identifier matches the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return unique MaintenanceWindow identifier
+     * @return A filter to return only the Maintenance Windows whose identifier matches the given identifier.
      * 
      */
     public Optional<Output<String>> id() {
@@ -70,18 +70,33 @@ public final class GetMaintenanceWindowsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
+    }
+
+    /**
+     * A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+     * 
+     */
+    @Import(name="timeScheduleStartGreaterThanOrEqualTo")
+    private @Nullable Output<String> timeScheduleStartGreaterThanOrEqualTo;
+
+    /**
+     * @return A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+     * 
+     */
+    public Optional<Output<String>> timeScheduleStartGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeScheduleStartGreaterThanOrEqualTo);
     }
 
     private GetMaintenanceWindowsArgs() {}
@@ -92,6 +107,7 @@ public final class GetMaintenanceWindowsArgs extends com.pulumi.resources.Invoke
         this.filters = $.filters;
         this.id = $.id;
         this.state = $.state;
+        this.timeScheduleStartGreaterThanOrEqualTo = $.timeScheduleStartGreaterThanOrEqualTo;
     }
 
     public static Builder builder() {
@@ -168,7 +184,7 @@ public final class GetMaintenanceWindowsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param id unique MaintenanceWindow identifier
+         * @param id A filter to return only the Maintenance Windows whose identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -179,7 +195,7 @@ public final class GetMaintenanceWindowsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param id unique MaintenanceWindow identifier
+         * @param id A filter to return only the Maintenance Windows whose identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -189,7 +205,7 @@ public final class GetMaintenanceWindowsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
@@ -200,13 +216,34 @@ public final class GetMaintenanceWindowsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param timeScheduleStartGreaterThanOrEqualTo A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeScheduleStartGreaterThanOrEqualTo(@Nullable Output<String> timeScheduleStartGreaterThanOrEqualTo) {
+            $.timeScheduleStartGreaterThanOrEqualTo = timeScheduleStartGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * @param timeScheduleStartGreaterThanOrEqualTo A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeScheduleStartGreaterThanOrEqualTo(String timeScheduleStartGreaterThanOrEqualTo) {
+            return timeScheduleStartGreaterThanOrEqualTo(Output.of(timeScheduleStartGreaterThanOrEqualTo));
         }
 
         public GetMaintenanceWindowsArgs build() {

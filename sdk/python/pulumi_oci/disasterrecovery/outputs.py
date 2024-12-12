@@ -550,6 +550,8 @@ class DrPlanPlanGroup(dict):
             suggest = "display_name"
         elif key == "isPauseEnabled":
             suggest = "is_pause_enabled"
+        elif key == "refreshStatus":
+            suggest = "refresh_status"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DrPlanPlanGroup. Access the value via the '{suggest}' property getter instead.")
@@ -566,18 +568,16 @@ class DrPlanPlanGroup(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None,
                  is_pause_enabled: Optional[bool] = None,
+                 refresh_status: Optional[str] = None,
                  steps: Optional[Sequence['outputs.DrPlanPlanGroupStep']] = None,
                  type: Optional[str] = None):
         """
         :param str display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param bool is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        :param str refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param Sequence['DrPlanPlanGroupStepArgs'] steps: The list of steps in the group.
-        :param str type: The type of DR plan to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str type: The type of DR plan to be created.
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -585,6 +585,8 @@ class DrPlanPlanGroup(dict):
             pulumi.set(__self__, "id", id)
         if is_pause_enabled is not None:
             pulumi.set(__self__, "is_pause_enabled", is_pause_enabled)
+        if refresh_status is not None:
+            pulumi.set(__self__, "refresh_status", refresh_status)
         if steps is not None:
             pulumi.set(__self__, "steps", steps)
         if type is not None:
@@ -615,6 +617,14 @@ class DrPlanPlanGroup(dict):
         return pulumi.get(self, "is_pause_enabled")
 
     @property
+    @pulumi.getter(name="refreshStatus")
+    def refresh_status(self) -> Optional[str]:
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
+        return pulumi.get(self, "refresh_status")
+
+    @property
     @pulumi.getter
     def steps(self) -> Optional[Sequence['outputs.DrPlanPlanGroupStep']]:
         """
@@ -626,11 +636,7 @@ class DrPlanPlanGroup(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of DR plan to be created.
         """
         return pulumi.get(self, "type")
 
@@ -650,6 +656,8 @@ class DrPlanPlanGroupStep(dict):
             suggest = "is_enabled"
         elif key == "memberId":
             suggest = "member_id"
+        elif key == "refreshStatus":
+            suggest = "refresh_status"
         elif key == "userDefinedSteps":
             suggest = "user_defined_steps"
 
@@ -671,6 +679,7 @@ class DrPlanPlanGroupStep(dict):
                  id: Optional[str] = None,
                  is_enabled: Optional[bool] = None,
                  member_id: Optional[str] = None,
+                 refresh_status: Optional[str] = None,
                  timeout: Optional[int] = None,
                  type: Optional[str] = None,
                  user_defined_steps: Optional[Sequence['outputs.DrPlanPlanGroupStepUserDefinedStep']] = None):
@@ -681,12 +690,9 @@ class DrPlanPlanGroupStep(dict):
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param bool is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
         :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
+        :param str refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param int timeout: The timeout in seconds for executing this step.  Example: `600`
-        :param str type: The type of DR plan to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str type: The type of DR plan to be created.
         :param Sequence['DrPlanPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR plan.
         """
         if display_name is not None:
@@ -701,6 +707,8 @@ class DrPlanPlanGroupStep(dict):
             pulumi.set(__self__, "is_enabled", is_enabled)
         if member_id is not None:
             pulumi.set(__self__, "member_id", member_id)
+        if refresh_status is not None:
+            pulumi.set(__self__, "refresh_status", refresh_status)
         if timeout is not None:
             pulumi.set(__self__, "timeout", timeout)
         if type is not None:
@@ -757,6 +765,14 @@ class DrPlanPlanGroupStep(dict):
         return pulumi.get(self, "member_id")
 
     @property
+    @pulumi.getter(name="refreshStatus")
+    def refresh_status(self) -> Optional[str]:
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
+        return pulumi.get(self, "refresh_status")
+
+    @property
     @pulumi.getter
     def timeout(self) -> Optional[int]:
         """
@@ -768,11 +784,7 @@ class DrPlanPlanGroupStep(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of DR plan to be created.
         """
         return pulumi.get(self, "type")
 
@@ -2877,18 +2889,21 @@ class GetDrPlanPlanGroupResult(dict):
                  display_name: str,
                  id: str,
                  is_pause_enabled: bool,
+                 refresh_status: str,
                  steps: Sequence['outputs.GetDrPlanPlanGroupStepResult'],
                  type: str):
         """
         :param str display_name: The display name of the group.  Example: `DATABASE_SWITCHOVER`
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param bool is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        :param str refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param Sequence['GetDrPlanPlanGroupStepArgs'] steps: The list of steps in the group.
         :param str type: The type of the DR plan.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_pause_enabled", is_pause_enabled)
+        pulumi.set(__self__, "refresh_status", refresh_status)
         pulumi.set(__self__, "steps", steps)
         pulumi.set(__self__, "type", type)
 
@@ -2917,6 +2932,14 @@ class GetDrPlanPlanGroupResult(dict):
         return pulumi.get(self, "is_pause_enabled")
 
     @property
+    @pulumi.getter(name="refreshStatus")
+    def refresh_status(self) -> str:
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
+        return pulumi.get(self, "refresh_status")
+
+    @property
     @pulumi.getter
     def steps(self) -> Sequence['outputs.GetDrPlanPlanGroupStepResult']:
         """
@@ -2942,6 +2965,7 @@ class GetDrPlanPlanGroupStepResult(dict):
                  id: str,
                  is_enabled: bool,
                  member_id: str,
+                 refresh_status: str,
                  timeout: int,
                  type: str,
                  user_defined_steps: Sequence['outputs.GetDrPlanPlanGroupStepUserDefinedStepResult']):
@@ -2952,6 +2976,7 @@ class GetDrPlanPlanGroupStepResult(dict):
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param bool is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
         :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
+        :param str refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param int timeout: The timeout in seconds for executing this step.  Example: `600`
         :param str type: The type of the DR plan.
         :param Sequence['GetDrPlanPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR plan.
@@ -2962,6 +2987,7 @@ class GetDrPlanPlanGroupStepResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "refresh_status", refresh_status)
         pulumi.set(__self__, "timeout", timeout)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "user_defined_steps", user_defined_steps)
@@ -3013,6 +3039,14 @@ class GetDrPlanPlanGroupStepResult(dict):
         The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         """
         return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="refreshStatus")
+    def refresh_status(self) -> str:
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
+        return pulumi.get(self, "refresh_status")
 
     @property
     @pulumi.getter
@@ -3207,14 +3241,18 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
                  freeform_tags: Mapping[str, str],
                  id: str,
                  life_cycle_details: str,
+                 lifecycle_sub_state: str,
                  peer_dr_protection_group_id: str,
                  peer_region: str,
                  plan_groups: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupResult'],
+                 refresh_trigger: int,
+                 source_plan_id: str,
                  state: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
-                 type: str):
+                 type: str,
+                 verify_trigger: int):
         """
         :param str compartment_id: The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -3223,9 +3261,11 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param str life_cycle_details: A message describing the DR plan's current state in more detail.
+        :param str lifecycle_sub_state: A filter to return only DR plans that match the given lifecycle sub-state.
         :param str peer_dr_protection_group_id: The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param str peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupArgs'] plan_groups: The list of groups in this DR plan.
+        :param str source_plan_id: If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
         :param str state: A filter to return only DR plans that match the given lifecycle state.
         :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -3239,14 +3279,18 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "life_cycle_details", life_cycle_details)
+        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         pulumi.set(__self__, "peer_dr_protection_group_id", peer_dr_protection_group_id)
         pulumi.set(__self__, "peer_region", peer_region)
         pulumi.set(__self__, "plan_groups", plan_groups)
+        pulumi.set(__self__, "refresh_trigger", refresh_trigger)
+        pulumi.set(__self__, "source_plan_id", source_plan_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "verify_trigger", verify_trigger)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3305,6 +3349,14 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
         return pulumi.get(self, "life_cycle_details")
 
     @property
+    @pulumi.getter(name="lifecycleSubState")
+    def lifecycle_sub_state(self) -> str:
+        """
+        A filter to return only DR plans that match the given lifecycle sub-state.
+        """
+        return pulumi.get(self, "lifecycle_sub_state")
+
+    @property
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> str:
         """
@@ -3327,6 +3379,19 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
         The list of groups in this DR plan.
         """
         return pulumi.get(self, "plan_groups")
+
+    @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> int:
+        return pulumi.get(self, "refresh_trigger")
+
+    @property
+    @pulumi.getter(name="sourcePlanId")
+    def source_plan_id(self) -> str:
+        """
+        If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_plan_id")
 
     @property
     @pulumi.getter
@@ -3368,6 +3433,11 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
         """
         return pulumi.get(self, "type")
 
+    @property
+    @pulumi.getter(name="verifyTrigger")
+    def verify_trigger(self) -> int:
+        return pulumi.get(self, "verify_trigger")
+
 
 @pulumi.output_type
 class GetDrPlansDrPlanCollectionItemPlanGroupResult(dict):
@@ -3375,18 +3445,21 @@ class GetDrPlansDrPlanCollectionItemPlanGroupResult(dict):
                  display_name: str,
                  id: str,
                  is_pause_enabled: bool,
+                 refresh_status: str,
                  steps: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepResult'],
                  type: str):
         """
         :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param bool is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        :param str refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupStepArgs'] steps: The list of steps in the group.
         :param str type: The type of the DR plan.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_pause_enabled", is_pause_enabled)
+        pulumi.set(__self__, "refresh_status", refresh_status)
         pulumi.set(__self__, "steps", steps)
         pulumi.set(__self__, "type", type)
 
@@ -3415,6 +3488,14 @@ class GetDrPlansDrPlanCollectionItemPlanGroupResult(dict):
         return pulumi.get(self, "is_pause_enabled")
 
     @property
+    @pulumi.getter(name="refreshStatus")
+    def refresh_status(self) -> str:
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
+        return pulumi.get(self, "refresh_status")
+
+    @property
     @pulumi.getter
     def steps(self) -> Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepResult']:
         """
@@ -3440,6 +3521,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
                  id: str,
                  is_enabled: bool,
                  member_id: str,
+                 refresh_status: str,
                  timeout: int,
                  type: str,
                  user_defined_steps: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepResult']):
@@ -3450,6 +3532,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param bool is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
         :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
+        :param str refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param int timeout: The timeout in seconds for executing this step.  Example: `600`
         :param str type: The type of the DR plan.
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR plan.
@@ -3460,6 +3543,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "refresh_status", refresh_status)
         pulumi.set(__self__, "timeout", timeout)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "user_defined_steps", user_defined_steps)
@@ -3511,6 +3595,14 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
         The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         """
         return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="refreshStatus")
+    def refresh_status(self) -> str:
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
+        return pulumi.get(self, "refresh_status")
 
     @property
     @pulumi.getter

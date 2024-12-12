@@ -288,9 +288,11 @@ class _FsuCycleState:
                  is_ignore_patches: Optional[pulumi.Input[bool]] = None,
                  is_keep_placement: Optional[pulumi.Input[bool]] = None,
                  last_completed_action: Optional[pulumi.Input[str]] = None,
+                 last_completed_action_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  max_drain_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  next_action_to_executes: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCycleNextActionToExecuteArgs']]]] = None,
+                 rollback_cycle_state: Optional[pulumi.Input[str]] = None,
                  stage_action_schedule: Optional[pulumi.Input['FsuCycleStageActionScheduleArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -315,9 +317,11 @@ class _FsuCycleState:
         :param pulumi.Input[bool] is_ignore_patches: (Updatable) Ignore all patches between the source and target homes during patching.
         :param pulumi.Input[bool] is_keep_placement: (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
         :param pulumi.Input[str] last_completed_action: The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
+        :param pulumi.Input[str] last_completed_action_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds.
         :param pulumi.Input[Sequence[pulumi.Input['FsuCycleNextActionToExecuteArgs']]] next_action_to_executes: In this array all the possible actions will be listed. The first element is the suggested Action.
+        :param pulumi.Input[str] rollback_cycle_state: Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
         :param pulumi.Input['FsuCycleStageActionScheduleArgs'] stage_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input[str] state: The current state of the Exadata Fleet Update Cycle.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -360,12 +364,16 @@ class _FsuCycleState:
             pulumi.set(__self__, "is_keep_placement", is_keep_placement)
         if last_completed_action is not None:
             pulumi.set(__self__, "last_completed_action", last_completed_action)
+        if last_completed_action_id is not None:
+            pulumi.set(__self__, "last_completed_action_id", last_completed_action_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if max_drain_timeout_in_seconds is not None:
             pulumi.set(__self__, "max_drain_timeout_in_seconds", max_drain_timeout_in_seconds)
         if next_action_to_executes is not None:
             pulumi.set(__self__, "next_action_to_executes", next_action_to_executes)
+        if rollback_cycle_state is not None:
+            pulumi.set(__self__, "rollback_cycle_state", rollback_cycle_state)
         if stage_action_schedule is not None:
             pulumi.set(__self__, "stage_action_schedule", stage_action_schedule)
         if state is not None:
@@ -562,6 +570,18 @@ class _FsuCycleState:
         pulumi.set(self, "last_completed_action", value)
 
     @property
+    @pulumi.getter(name="lastCompletedActionId")
+    def last_completed_action_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+        """
+        return pulumi.get(self, "last_completed_action_id")
+
+    @last_completed_action_id.setter
+    def last_completed_action_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_completed_action_id", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -596,6 +616,18 @@ class _FsuCycleState:
     @next_action_to_executes.setter
     def next_action_to_executes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCycleNextActionToExecuteArgs']]]]):
         pulumi.set(self, "next_action_to_executes", value)
+
+    @property
+    @pulumi.getter(name="rollbackCycleState")
+    def rollback_cycle_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+        """
+        return pulumi.get(self, "rollback_cycle_state")
+
+    @rollback_cycle_state.setter
+    def rollback_cycle_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rollback_cycle_state", value)
 
     @property
     @pulumi.getter(name="stageActionSchedule")
@@ -920,8 +952,10 @@ class FsuCycle(pulumi.CustomResource):
             __props__.__dict__["collection_type"] = None
             __props__.__dict__["executing_fsu_action_id"] = None
             __props__.__dict__["last_completed_action"] = None
+            __props__.__dict__["last_completed_action_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["next_action_to_executes"] = None
+            __props__.__dict__["rollback_cycle_state"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -952,9 +986,11 @@ class FsuCycle(pulumi.CustomResource):
             is_ignore_patches: Optional[pulumi.Input[bool]] = None,
             is_keep_placement: Optional[pulumi.Input[bool]] = None,
             last_completed_action: Optional[pulumi.Input[str]] = None,
+            last_completed_action_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             max_drain_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
             next_action_to_executes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FsuCycleNextActionToExecuteArgs', 'FsuCycleNextActionToExecuteArgsDict']]]]] = None,
+            rollback_cycle_state: Optional[pulumi.Input[str]] = None,
             stage_action_schedule: Optional[pulumi.Input[Union['FsuCycleStageActionScheduleArgs', 'FsuCycleStageActionScheduleArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -984,9 +1020,11 @@ class FsuCycle(pulumi.CustomResource):
         :param pulumi.Input[bool] is_ignore_patches: (Updatable) Ignore all patches between the source and target homes during patching.
         :param pulumi.Input[bool] is_keep_placement: (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
         :param pulumi.Input[str] last_completed_action: The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
+        :param pulumi.Input[str] last_completed_action_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FsuCycleNextActionToExecuteArgs', 'FsuCycleNextActionToExecuteArgsDict']]]] next_action_to_executes: In this array all the possible actions will be listed. The first element is the suggested Action.
+        :param pulumi.Input[str] rollback_cycle_state: Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
         :param pulumi.Input[Union['FsuCycleStageActionScheduleArgs', 'FsuCycleStageActionScheduleArgsDict']] stage_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input[str] state: The current state of the Exadata Fleet Update Cycle.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1018,9 +1056,11 @@ class FsuCycle(pulumi.CustomResource):
         __props__.__dict__["is_ignore_patches"] = is_ignore_patches
         __props__.__dict__["is_keep_placement"] = is_keep_placement
         __props__.__dict__["last_completed_action"] = last_completed_action
+        __props__.__dict__["last_completed_action_id"] = last_completed_action_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["max_drain_timeout_in_seconds"] = max_drain_timeout_in_seconds
         __props__.__dict__["next_action_to_executes"] = next_action_to_executes
+        __props__.__dict__["rollback_cycle_state"] = rollback_cycle_state
         __props__.__dict__["stage_action_schedule"] = stage_action_schedule
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -1151,6 +1191,14 @@ class FsuCycle(pulumi.CustomResource):
         return pulumi.get(self, "last_completed_action")
 
     @property
+    @pulumi.getter(name="lastCompletedActionId")
+    def last_completed_action_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+        """
+        return pulumi.get(self, "last_completed_action_id")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
@@ -1173,6 +1221,14 @@ class FsuCycle(pulumi.CustomResource):
         In this array all the possible actions will be listed. The first element is the suggested Action.
         """
         return pulumi.get(self, "next_action_to_executes")
+
+    @property
+    @pulumi.getter(name="rollbackCycleState")
+    def rollback_cycle_state(self) -> pulumi.Output[str]:
+        """
+        Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+        """
+        return pulumi.get(self, "rollback_cycle_state")
 
     @property
     @pulumi.getter(name="stageActionSchedule")

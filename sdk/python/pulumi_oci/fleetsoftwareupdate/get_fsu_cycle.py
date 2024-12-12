@@ -27,7 +27,7 @@ class GetFsuCycleResult:
     """
     A collection of values returned by getFsuCycle.
     """
-    def __init__(__self__, apply_action_schedules=None, batching_strategies=None, collection_type=None, compartment_id=None, defined_tags=None, diagnostics_collections=None, display_name=None, executing_fsu_action_id=None, freeform_tags=None, fsu_collection_id=None, fsu_cycle_id=None, goal_version_details=None, id=None, is_ignore_missing_patches=None, is_ignore_patches=None, is_keep_placement=None, last_completed_action=None, lifecycle_details=None, max_drain_timeout_in_seconds=None, next_action_to_executes=None, stage_action_schedules=None, state=None, system_tags=None, time_created=None, time_finished=None, time_updated=None, type=None):
+    def __init__(__self__, apply_action_schedules=None, batching_strategies=None, collection_type=None, compartment_id=None, defined_tags=None, diagnostics_collections=None, display_name=None, executing_fsu_action_id=None, freeform_tags=None, fsu_collection_id=None, fsu_cycle_id=None, goal_version_details=None, id=None, is_ignore_missing_patches=None, is_ignore_patches=None, is_keep_placement=None, last_completed_action=None, last_completed_action_id=None, lifecycle_details=None, max_drain_timeout_in_seconds=None, next_action_to_executes=None, rollback_cycle_state=None, stage_action_schedules=None, state=None, system_tags=None, time_created=None, time_finished=None, time_updated=None, type=None):
         if apply_action_schedules and not isinstance(apply_action_schedules, list):
             raise TypeError("Expected argument 'apply_action_schedules' to be a list")
         pulumi.set(__self__, "apply_action_schedules", apply_action_schedules)
@@ -79,6 +79,9 @@ class GetFsuCycleResult:
         if last_completed_action and not isinstance(last_completed_action, str):
             raise TypeError("Expected argument 'last_completed_action' to be a str")
         pulumi.set(__self__, "last_completed_action", last_completed_action)
+        if last_completed_action_id and not isinstance(last_completed_action_id, str):
+            raise TypeError("Expected argument 'last_completed_action_id' to be a str")
+        pulumi.set(__self__, "last_completed_action_id", last_completed_action_id)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -88,6 +91,9 @@ class GetFsuCycleResult:
         if next_action_to_executes and not isinstance(next_action_to_executes, list):
             raise TypeError("Expected argument 'next_action_to_executes' to be a list")
         pulumi.set(__self__, "next_action_to_executes", next_action_to_executes)
+        if rollback_cycle_state and not isinstance(rollback_cycle_state, str):
+            raise TypeError("Expected argument 'rollback_cycle_state' to be a str")
+        pulumi.set(__self__, "rollback_cycle_state", rollback_cycle_state)
         if stage_action_schedules and not isinstance(stage_action_schedules, list):
             raise TypeError("Expected argument 'stage_action_schedules' to be a list")
         pulumi.set(__self__, "stage_action_schedules", stage_action_schedules)
@@ -244,6 +250,14 @@ class GetFsuCycleResult:
         return pulumi.get(self, "last_completed_action")
 
     @property
+    @pulumi.getter(name="lastCompletedActionId")
+    def last_completed_action_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+        """
+        return pulumi.get(self, "last_completed_action_id")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -266,6 +280,14 @@ class GetFsuCycleResult:
         In this array all the possible actions will be listed. The first element is the suggested Action.
         """
         return pulumi.get(self, "next_action_to_executes")
+
+    @property
+    @pulumi.getter(name="rollbackCycleState")
+    def rollback_cycle_state(self) -> str:
+        """
+        Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+        """
+        return pulumi.get(self, "rollback_cycle_state")
 
     @property
     @pulumi.getter(name="stageActionSchedules")
@@ -347,9 +369,11 @@ class AwaitableGetFsuCycleResult(GetFsuCycleResult):
             is_ignore_patches=self.is_ignore_patches,
             is_keep_placement=self.is_keep_placement,
             last_completed_action=self.last_completed_action,
+            last_completed_action_id=self.last_completed_action_id,
             lifecycle_details=self.lifecycle_details,
             max_drain_timeout_in_seconds=self.max_drain_timeout_in_seconds,
             next_action_to_executes=self.next_action_to_executes,
+            rollback_cycle_state=self.rollback_cycle_state,
             stage_action_schedules=self.stage_action_schedules,
             state=self.state,
             system_tags=self.system_tags,
@@ -401,9 +425,11 @@ def get_fsu_cycle(fsu_cycle_id: Optional[str] = None,
         is_ignore_patches=pulumi.get(__ret__, 'is_ignore_patches'),
         is_keep_placement=pulumi.get(__ret__, 'is_keep_placement'),
         last_completed_action=pulumi.get(__ret__, 'last_completed_action'),
+        last_completed_action_id=pulumi.get(__ret__, 'last_completed_action_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         max_drain_timeout_in_seconds=pulumi.get(__ret__, 'max_drain_timeout_in_seconds'),
         next_action_to_executes=pulumi.get(__ret__, 'next_action_to_executes'),
+        rollback_cycle_state=pulumi.get(__ret__, 'rollback_cycle_state'),
         stage_action_schedules=pulumi.get(__ret__, 'stage_action_schedules'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -452,9 +478,11 @@ def get_fsu_cycle_output(fsu_cycle_id: Optional[pulumi.Input[str]] = None,
         is_ignore_patches=pulumi.get(__response__, 'is_ignore_patches'),
         is_keep_placement=pulumi.get(__response__, 'is_keep_placement'),
         last_completed_action=pulumi.get(__response__, 'last_completed_action'),
+        last_completed_action_id=pulumi.get(__response__, 'last_completed_action_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         max_drain_timeout_in_seconds=pulumi.get(__response__, 'max_drain_timeout_in_seconds'),
         next_action_to_executes=pulumi.get(__response__, 'next_action_to_executes'),
+        rollback_cycle_state=pulumi.get(__response__, 'rollback_cycle_state'),
         stage_action_schedules=pulumi.get(__response__, 'stage_action_schedules'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

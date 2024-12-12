@@ -79,14 +79,14 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Duration if schedule type is Custom
+     * (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      * 
      */
     @Import(name="duration")
     private @Nullable Output<String> duration;
 
     /**
-     * @return (Updatable) Duration if schedule type is Custom
+     * @return (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      * 
      */
     public Optional<Output<String>> duration() {
@@ -109,14 +109,14 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Does the maintenenace window cause outage?
+     * (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      * 
      */
     @Import(name="isOutage")
     private @Nullable Output<Boolean> isOutage;
 
     /**
-     * @return (Updatable) Does the maintenenace window cause outage?
+     * @return (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      * 
      */
     public Optional<Output<Boolean>> isOutage() {
@@ -124,14 +124,14 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Is this is a recurring maintenance window
+     * (Updatable) Is this a recurring maintenance window?
      * 
      */
     @Import(name="isRecurring")
     private @Nullable Output<Boolean> isRecurring;
 
     /**
-     * @return (Updatable) Is this is a recurring maintenance window
+     * @return (Updatable) Is this a recurring maintenance window?
      * 
      */
     public Optional<Output<Boolean>> isRecurring() {
@@ -169,14 +169,14 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Recurrence rule specification if recurring
+     * (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      * 
      */
     @Import(name="recurrences")
     private @Nullable Output<String> recurrences;
 
     /**
-     * @return (Updatable) Recurrence rule specification if recurring
+     * @return (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      * 
      */
     public Optional<Output<String>> recurrences() {
@@ -229,14 +229,14 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Task initiation cutoff
+     * (Updatable) Task initiation cutoff time for the maintenance window.
      * 
      */
     @Import(name="taskInitiationCutoff")
     private @Nullable Output<Integer> taskInitiationCutoff;
 
     /**
-     * @return (Updatable) Task initiation cutoff
+     * @return (Updatable) Task initiation cutoff time for the maintenance window.
      * 
      */
     public Optional<Output<Integer>> taskInitiationCutoff() {
@@ -259,7 +259,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Start time of schedule
+     * (Updatable) Specify the date and time of the day that the maintenance window starts.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -269,7 +269,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> timeScheduleStart;
 
     /**
-     * @return (Updatable) Start time of schedule
+     * @return (Updatable) Specify the date and time of the day that the maintenance window starts.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -420,7 +420,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param duration (Updatable) Duration if schedule type is Custom
+         * @param duration (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param duration (Updatable) Duration if schedule type is Custom
+         * @param duration (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
          * 
          * @return builder
          * 
@@ -462,7 +462,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isOutage (Updatable) Does the maintenenace window cause outage?
+         * @param isOutage (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isOutage (Updatable) Does the maintenenace window cause outage?
+         * @param isOutage (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isRecurring (Updatable) Is this is a recurring maintenance window
+         * @param isRecurring (Updatable) Is this a recurring maintenance window?
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isRecurring (Updatable) Is this is a recurring maintenance window
+         * @param isRecurring (Updatable) Is this a recurring maintenance window?
          * 
          * @return builder
          * 
@@ -546,7 +546,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param recurrences (Updatable) Recurrence rule specification if recurring
+         * @param recurrences (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
          * 
          * @return builder
          * 
@@ -557,7 +557,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param recurrences (Updatable) Recurrence rule specification if recurring
+         * @param recurrences (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
          * 
          * @return builder
          * 
@@ -630,7 +630,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param taskInitiationCutoff (Updatable) Task initiation cutoff
+         * @param taskInitiationCutoff (Updatable) Task initiation cutoff time for the maintenance window.
          * 
          * @return builder
          * 
@@ -641,7 +641,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param taskInitiationCutoff (Updatable) Task initiation cutoff
+         * @param taskInitiationCutoff (Updatable) Task initiation cutoff time for the maintenance window.
          * 
          * @return builder
          * 
@@ -672,7 +672,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeScheduleStart (Updatable) Start time of schedule
+         * @param timeScheduleStart (Updatable) Specify the date and time of the day that the maintenance window starts.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -686,7 +686,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeScheduleStart (Updatable) Start time of schedule
+         * @param timeScheduleStart (Updatable) Specify the date and time of the day that the maintenance window starts.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

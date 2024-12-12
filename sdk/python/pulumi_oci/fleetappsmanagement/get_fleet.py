@@ -27,13 +27,16 @@ class GetFleetResult:
     """
     A collection of values returned by getFleet.
     """
-    def __init__(__self__, application_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, environment_type=None, fleet_id=None, fleet_type=None, freeform_tags=None, group_type=None, id=None, is_target_auto_confirm=None, lifecycle_details=None, notification_preferences=None, products=None, resource_region=None, resource_selection_type=None, rule_selection_criterias=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, application_type=None, compartment_id=None, credentials=None, defined_tags=None, description=None, display_name=None, environment_type=None, fleet_id=None, fleet_type=None, freeform_tags=None, group_type=None, id=None, is_target_auto_confirm=None, lifecycle_details=None, notification_preferences=None, products=None, resource_region=None, resource_selection_type=None, rule_selection_criterias=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if application_type and not isinstance(application_type, str):
             raise TypeError("Expected argument 'application_type' to be a str")
         pulumi.set(__self__, "application_type", application_type)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if credentials and not isinstance(credentials, list):
+            raise TypeError("Expected argument 'credentials' to be a list")
+        pulumi.set(__self__, "credentials", credentials)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -99,7 +102,7 @@ class GetFleetResult:
     @pulumi.getter(name="applicationType")
     def application_type(self) -> str:
         """
-        Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "application_type")
 
@@ -107,9 +110,17 @@ class GetFleetResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Please provide the root compartmentId (TenancyId).
+        Tenancy Id (Root Compartment Id)for which the rule is created.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetFleetCredentialResult']:
+        """
+        Credentials associated with the Fleet.
+        """
+        return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -139,7 +150,7 @@ class GetFleetResult:
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> str:
         """
-        Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
@@ -152,7 +163,7 @@ class GetFleetResult:
     @pulumi.getter(name="fleetType")
     def fleet_type(self) -> str:
         """
-        Type of the Fleet.
+        Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         """
         return pulumi.get(self, "fleet_type")
 
@@ -168,7 +179,7 @@ class GetFleetResult:
     @pulumi.getter(name="groupType")
     def group_type(self) -> str:
         """
-        Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+        Group Type associated with Group Fleet. Applicable for GROUP fleet types.
         """
         return pulumi.get(self, "group_type")
 
@@ -184,7 +195,7 @@ class GetFleetResult:
     @pulumi.getter(name="isTargetAutoConfirm")
     def is_target_auto_confirm(self) -> bool:
         """
-        A value which represents if auto confirming of the targets can be enabled
+        A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         """
         return pulumi.get(self, "is_target_auto_confirm")
 
@@ -200,7 +211,7 @@ class GetFleetResult:
     @pulumi.getter(name="notificationPreferences")
     def notification_preferences(self) -> Sequence['outputs.GetFleetNotificationPreferenceResult']:
         """
-        Conditions when met to send notifications on the fleet activities
+        Notification information to get notified when the fleet status changes.
         """
         return pulumi.get(self, "notification_preferences")
 
@@ -208,7 +219,7 @@ class GetFleetResult:
     @pulumi.getter
     def products(self) -> Sequence[str]:
         """
-        Products associated with the Fleet
+        Products associated with the Fleet.
         """
         return pulumi.get(self, "products")
 
@@ -224,7 +235,7 @@ class GetFleetResult:
     @pulumi.getter(name="resourceSelectionType")
     def resource_selection_type(self) -> str:
         """
-        Type of resource selection in a fleet.
+        Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         """
         return pulumi.get(self, "resource_selection_type")
 
@@ -232,7 +243,7 @@ class GetFleetResult:
     @pulumi.getter(name="ruleSelectionCriterias")
     def rule_selection_criterias(self) -> Sequence['outputs.GetFleetRuleSelectionCriteriaResult']:
         """
-        Rule Selection Criteria
+        Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         """
         return pulumi.get(self, "rule_selection_criterias")
 
@@ -277,6 +288,7 @@ class AwaitableGetFleetResult(GetFleetResult):
         return GetFleetResult(
             application_type=self.application_type,
             compartment_id=self.compartment_id,
+            credentials=self.credentials,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
@@ -304,7 +316,7 @@ def get_fleet(fleet_id: Optional[str] = None,
     """
     This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a Fleet by identifier
+    Get the details of a fleet in Fleet Application Management.
 
     ## Example Usage
 
@@ -316,7 +328,7 @@ def get_fleet(fleet_id: Optional[str] = None,
     ```
 
 
-    :param str fleet_id: unique Fleet identifier
+    :param str fleet_id: Unique Fleet identifier.
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id
@@ -326,6 +338,7 @@ def get_fleet(fleet_id: Optional[str] = None,
     return AwaitableGetFleetResult(
         application_type=pulumi.get(__ret__, 'application_type'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        credentials=pulumi.get(__ret__, 'credentials'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -351,7 +364,7 @@ def get_fleet_output(fleet_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a Fleet by identifier
+    Get the details of a fleet in Fleet Application Management.
 
     ## Example Usage
 
@@ -363,7 +376,7 @@ def get_fleet_output(fleet_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str fleet_id: unique Fleet identifier
+    :param str fleet_id: Unique Fleet identifier.
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id
@@ -372,6 +385,7 @@ def get_fleet_output(fleet_id: Optional[pulumi.Input[str]] = None,
     return __ret__.apply(lambda __response__: GetFleetResult(
         application_type=pulumi.get(__response__, 'application_type'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        credentials=pulumi.get(__response__, 'credentials'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),

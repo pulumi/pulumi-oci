@@ -92,7 +92,7 @@ class GetPropertiesResult:
     @pulumi.getter
     def scope(self) -> Optional[str]:
         """
-        The scope of the property
+        The scope of the property.
         """
         return pulumi.get(self, "scope")
 
@@ -130,7 +130,7 @@ def get_properties(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of Properties for Tenancy.
+    List properties and their values for a tenancy in Fleet Application Management.
 
     ## Example Usage
 
@@ -148,9 +148,9 @@ def get_properties(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique Property identifier
-    :param str scope: A filter to return only resources their scope matches the given lifecycleState.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str id: A filter to return only resources whose Property identifier matches the given identifier.
+    :param str scope: A filter to return only resources their scope matches the given scope.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -180,7 +180,7 @@ def get_properties_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
     """
     This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of Properties for Tenancy.
+    List properties and their values for a tenancy in Fleet Application Management.
 
     ## Example Usage
 
@@ -198,9 +198,9 @@ def get_properties_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique Property identifier
-    :param str scope: A filter to return only resources their scope matches the given lifecycleState.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str id: A filter to return only resources whose Property identifier matches the given identifier.
+    :param str scope: A filter to return only resources their scope matches the given scope.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

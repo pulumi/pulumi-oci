@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionPlainArgs;
@@ -240,6 +241,58 @@ public final class MonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAlarmResult> getAlarm(GetAlarmArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getAlarm:getAlarm", TypeShape.of(GetAlarmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Gets the specified alarm.
+     * For more information, see
+     * [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
+     *             .alarmId(testAlarmOciMonitoringAlarm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAlarmResult> getAlarmPlain(GetAlarmPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Monitoring/getAlarm:getAlarm", TypeShape.of(GetAlarmResult.class), args, Utilities.withVersion(options));
     }
@@ -406,6 +459,61 @@ public final class MonitoringFunctions {
      * 
      */
     public static Output<GetAlarmHistoryCollectionResult> getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", TypeShape.of(GetAlarmHistoryCollectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Get the history of the specified alarm.
+     * For more information, see
+     * [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
+     *             .alarmId(testAlarm.id())
+     *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
+     *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
+     *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAlarmHistoryCollectionResult> getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", TypeShape.of(GetAlarmHistoryCollectionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -708,6 +816,68 @@ public final class MonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAlarmStatusesResult> getAlarmStatuses(GetAlarmStatusesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", TypeShape.of(GetAlarmStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * List the status of each alarm in the specified compartment.
+     * Status is collective, across all metric streams in the alarm.
+     * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * Optionally filter by resource or status value.
+     * 
+     * For more information, see
+     * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmStatuses = MonitoringFunctions.getAlarmStatuses(GetAlarmStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
+     *             .displayName(alarmStatusDisplayName)
+     *             .entityId(testEntity.id())
+     *             .resourceId(testResource.id())
+     *             .serviceName(testService.name())
+     *             .status(alarmStatusStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAlarmStatusesResult> getAlarmStatusesPlain(GetAlarmStatusesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", TypeShape.of(GetAlarmStatusesResult.class), args, Utilities.withVersion(options));
     }
@@ -865,6 +1035,58 @@ public final class MonitoringFunctions {
      * 
      */
     public static Output<GetAlarmSuppressionResult> getAlarmSuppression(GetAlarmSuppressionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getAlarmSuppression:getAlarmSuppression", TypeShape.of(GetAlarmSuppressionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Gets the specified alarm suppression. For more information, see
+     * [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAlarmSuppressionResult> getAlarmSuppression(GetAlarmSuppressionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Monitoring/getAlarmSuppression:getAlarmSuppression", TypeShape.of(GetAlarmSuppressionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1270,6 +1492,65 @@ public final class MonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAlarmSuppressionsResult> getAlarmSuppressions(GetAlarmSuppressionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", TypeShape.of(GetAlarmSuppressionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Lists alarm suppressions for the specified alarm. For more information, see
+     * [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
+     *             .alarmId(testAlarm.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
+     *             .displayName(alarmSuppressionDisplayName)
+     *             .isAllSuppressions(alarmSuppressionIsAllSuppressions)
+     *             .level(alarmSuppressionLevel)
+     *             .state(alarmSuppressionState)
+     *             .targetType(alarmSuppressionTargetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAlarmSuppressionsResult> getAlarmSuppressionsPlain(GetAlarmSuppressionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", TypeShape.of(GetAlarmSuppressionsResult.class), args, Utilities.withVersion(options));
     }
@@ -1436,6 +1717,61 @@ public final class MonitoringFunctions {
      * 
      */
     public static Output<GetAlarmsResult> getAlarms(GetAlarmsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getAlarms:getAlarms", TypeShape.of(GetAlarmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Lists the alarms for the specified compartment.
+     * For more information, see
+     * [Listing Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarms = MonitoringFunctions.getAlarms(GetAlarmsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmCompartmentIdInSubtree)
+     *             .displayName(alarmDisplayName)
+     *             .state(alarmState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAlarmsResult> getAlarms(GetAlarmsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Monitoring/getAlarms:getAlarms", TypeShape.of(GetAlarmsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1726,6 +2062,65 @@ public final class MonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMetricDataResult> getMetricData(GetMetricDataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getMetricData:getMetricData", TypeShape.of(GetMetricDataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
+     * For more information, see
+     * [Querying Metric Data](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm)
+     * and
+     * [Creating a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricData = MonitoringFunctions.getMetricData(GetMetricDataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(metricDataNamespace)
+     *             .query(metricDataQuery)
+     *             .compartmentIdInSubtree(metricDataCompartmentIdInSubtree)
+     *             .endTime(metricDataEndTime)
+     *             .resolution(metricDataResolution)
+     *             .resourceGroup(metricDataResourceGroup)
+     *             .startTime(metricDataStartTime)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMetricDataResult> getMetricDataPlain(GetMetricDataPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Monitoring/getMetricData:getMetricData", TypeShape.of(GetMetricDataResult.class), args, Utilities.withVersion(options));
     }
@@ -1901,6 +2296,64 @@ public final class MonitoringFunctions {
      * 
      */
     public static Output<GetMetricsResult> getMetrics(GetMetricsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getMetrics:getMetrics", TypeShape.of(GetMetricsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
+     * For more information, see
+     * [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+     * For information about metrics, see
+     * [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetrics = MonitoringFunctions.getMetrics(GetMetricsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(metricCompartmentIdInSubtree)
+     *             .dimensionFilters(metricDimensionFilters)
+     *             .groupBies(metricGroupBy)
+     *             .name(metricName)
+     *             .namespace(metricNamespace)
+     *             .resourceGroup(metricResourceGroup)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMetricsResult> getMetrics(GetMetricsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Monitoring/getMetrics:getMetrics", TypeShape.of(GetMetricsResult.class), args, Utilities.withVersion(options));
     }
     /**

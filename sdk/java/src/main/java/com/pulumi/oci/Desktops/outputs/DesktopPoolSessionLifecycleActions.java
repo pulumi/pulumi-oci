@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DesktopPoolSessionLifecycleActions {
     /**
-     * @return (Updatable) Action and grace period for disconnect
+     * @return (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
      * 
      */
     private @Nullable DesktopPoolSessionLifecycleActionsDisconnect disconnect;
@@ -25,7 +25,7 @@ public final class DesktopPoolSessionLifecycleActions {
 
     private DesktopPoolSessionLifecycleActions() {}
     /**
-     * @return (Updatable) Action and grace period for disconnect
+     * @return (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
      * 
      */
     public Optional<DesktopPoolSessionLifecycleActionsDisconnect> disconnect() {

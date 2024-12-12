@@ -49,7 +49,7 @@ export interface GetOnboardingsArgs {
      */
     id?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: string;
 }
@@ -119,7 +119,7 @@ export interface GetOnboardingsOutputArgs {
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: pulumi.Input<string>;
 }

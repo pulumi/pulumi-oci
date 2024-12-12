@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalArgs;
 import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalPlainArgs;
 import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
@@ -147,6 +148,50 @@ public final class DemandSignalFunctions {
      * 
      */
     public static Output<GetOccDemandSignalResult> getOccDemandSignal(GetOccDemandSignalArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", TypeShape.of(GetOccDemandSignalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Gets information about a OccDemandSignal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccDemandSignal = DemandSignalFunctions.getOccDemandSignal(GetOccDemandSignalArgs.builder()
+     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccDemandSignalResult> getOccDemandSignal(GetOccDemandSignalArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", TypeShape.of(GetOccDemandSignalResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -426,6 +471,53 @@ public final class DemandSignalFunctions {
      * 
      */
     public static Output<GetOccDemandSignalsResult> getOccDemandSignals(GetOccDemandSignalsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DemandSignal/getOccDemandSignals:getOccDemandSignals", TypeShape.of(GetOccDemandSignalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Demand Signals in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Gets a list of OccDemandSignals.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccDemandSignals = DemandSignalFunctions.getOccDemandSignals(GetOccDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occDemandSignalDisplayName)
+     *             .id(occDemandSignalId)
+     *             .state(occDemandSignalState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccDemandSignalsResult> getOccDemandSignals(GetOccDemandSignalsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DemandSignal/getOccDemandSignals:getOccDemandSignals", TypeShape.of(GetOccDemandSignalsResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// Values of the property (must be a single value if selection = 'single choice')
+        /// Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         /// </summary>
         public InputList<string> Values
         {

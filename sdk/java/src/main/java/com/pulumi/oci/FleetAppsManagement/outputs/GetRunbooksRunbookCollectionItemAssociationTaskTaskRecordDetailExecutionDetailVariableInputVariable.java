@@ -21,7 +21,7 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
      */
     private String name;
     /**
-     * @return The ID of the runbook type.
+     * @return A filter to return runbooks whose type matches the given type.
      * 
      */
     private String type;
@@ -42,7 +42,7 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
         return this.name;
     }
     /**
-     * @return The ID of the runbook type.
+     * @return A filter to return runbooks whose type matches the given type.
      * 
      */
     public String type() {

@@ -100,7 +100,7 @@ def get_announcements(display_name: Optional[str] = None,
     """
     This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Return a list of AnnouncementSummary items
+    Return a list of AnnouncementSummary items.
 
     ## Example Usage
 
@@ -114,7 +114,7 @@ def get_announcements(display_name: Optional[str] = None,
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str summary_contains: Filter the list with summary contains the given value.
+    :param str summary_contains: Filter the list of announcements that contains the given summary value.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -136,7 +136,7 @@ def get_announcements_output(display_name: Optional[pulumi.Input[Optional[str]]]
     """
     This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Return a list of AnnouncementSummary items
+    Return a list of AnnouncementSummary items.
 
     ## Example Usage
 
@@ -150,7 +150,7 @@ def get_announcements_output(display_name: Optional[pulumi.Input[Optional[str]]]
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str summary_contains: Filter the list with summary contains the given value.
+    :param str summary_contains: Filter the list of announcements that contains the given summary value.
     """
     __args__ = dict()
     __args__['displayName'] = display_name

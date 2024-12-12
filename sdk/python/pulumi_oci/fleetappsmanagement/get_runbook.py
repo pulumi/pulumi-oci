@@ -96,7 +96,7 @@ class GetRunbookResult:
     @pulumi.getter
     def associations(self) -> Sequence['outputs.GetRunbookAssociationResult']:
         """
-        JSON content with required associations
+        Associations for the runbook.
         """
         return pulumi.get(self, "associations")
 
@@ -133,7 +133,7 @@ class GetRunbookResult:
     @pulumi.getter(name="estimatedTime")
     def estimated_time(self) -> str:
         """
-        Estimated time to successfully complete the runbook execution
+        Estimated time to successfully complete the runbook execution.
         """
         return pulumi.get(self, "estimated_time")
 
@@ -149,7 +149,7 @@ class GetRunbookResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The OCID of the resource.
         """
         return pulumi.get(self, "id")
 
@@ -157,7 +157,7 @@ class GetRunbookResult:
     @pulumi.getter(name="isDefault")
     def is_default(self) -> bool:
         """
-        Is the runbook default?
+        Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
         """
         return pulumi.get(self, "is_default")
 
@@ -173,7 +173,7 @@ class GetRunbookResult:
     @pulumi.getter
     def operation(self) -> str:
         """
-        The lifecycle operation performed by the task.
+        The lifecycle operation performed by the runbook.
         """
         return pulumi.get(self, "operation")
 
@@ -210,7 +210,7 @@ class GetRunbookResult:
     @pulumi.getter(name="runbookRelevance")
     def runbook_relevance(self) -> str:
         """
-        Type of runbook structure.
+        Relevance of the runbook.
         """
         return pulumi.get(self, "runbook_relevance")
 
@@ -289,7 +289,7 @@ def get_runbook(runbook_id: Optional[str] = None,
     """
     This data source provides details about a specific Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a Runbook by identifier
+    Get the details of a runbook in Fleet Application Management.
 
     ## Example Usage
 
@@ -335,7 +335,7 @@ def get_runbook_output(runbook_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a Runbook by identifier
+    Get the details of a runbook in Fleet Application Management.
 
     ## Example Usage
 

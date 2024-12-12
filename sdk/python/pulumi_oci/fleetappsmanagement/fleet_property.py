@@ -26,9 +26,9 @@ class FleetPropertyArgs:
         """
         The set of arguments for constructing a FleetProperty resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
-        :param pulumi.Input[str] property_id: Property Id.
-        :param pulumi.Input[str] value: (Updatable) Value of the Property
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
+        :param pulumi.Input[str] property_id: OCID referring to global level metadata property.
+        :param pulumi.Input[str] value: (Updatable) Value of the Property.
                
                
                ** IMPORTANT **
@@ -55,7 +55,7 @@ class FleetPropertyArgs:
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> pulumi.Input[str]:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -67,7 +67,7 @@ class FleetPropertyArgs:
     @pulumi.getter(name="propertyId")
     def property_id(self) -> pulumi.Input[str]:
         """
-        Property Id.
+        OCID referring to global level metadata property.
         """
         return pulumi.get(self, "property_id")
 
@@ -79,7 +79,7 @@ class FleetPropertyArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        (Updatable) Value of the Property
+        (Updatable) Value of the Property.
 
 
         ** IMPORTANT **
@@ -109,22 +109,22 @@ class _FleetPropertyState:
                  value_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FleetProperty resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_values: Values of the category (must be a single value if selection = 'single choice')
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_values: Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         :param pulumi.Input[str] compartment_id: Tenancy OCID
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
-        :param pulumi.Input[str] property_id: Property Id.
-        :param pulumi.Input[str] selection_type: Text selection of the category
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
+        :param pulumi.Input[str] property_id: OCID referring to global level metadata property.
+        :param pulumi.Input[str] selection_type: Text selection of the property.
         :param pulumi.Input[str] state: The current state of the FleetProperty.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] value: (Updatable) Value of the Property
+        :param pulumi.Input[str] value: (Updatable) Value of the Property.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] value_type: Format of the value
+        :param pulumi.Input[str] value_type: Format of the value.
         """
         if allowed_values is not None:
             pulumi.set(__self__, "allowed_values", allowed_values)
@@ -155,7 +155,7 @@ class _FleetPropertyState:
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Values of the category (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         """
         return pulumi.get(self, "allowed_values")
 
@@ -191,7 +191,7 @@ class _FleetPropertyState:
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -203,7 +203,7 @@ class _FleetPropertyState:
     @pulumi.getter(name="propertyId")
     def property_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Property Id.
+        OCID referring to global level metadata property.
         """
         return pulumi.get(self, "property_id")
 
@@ -215,7 +215,7 @@ class _FleetPropertyState:
     @pulumi.getter(name="selectionType")
     def selection_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Text selection of the category
+        Text selection of the property.
         """
         return pulumi.get(self, "selection_type")
 
@@ -275,7 +275,7 @@ class _FleetPropertyState:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value of the Property
+        (Updatable) Value of the Property.
 
 
         ** IMPORTANT **
@@ -291,7 +291,7 @@ class _FleetPropertyState:
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Format of the value
+        Format of the value.
         """
         return pulumi.get(self, "value_type")
 
@@ -313,7 +313,7 @@ class FleetProperty(pulumi.CustomResource):
         """
         This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new FleetProperty.
+        Add an existing global property to a fleet in Fleet Application Management.
 
         ## Example Usage
 
@@ -335,9 +335,9 @@ class FleetProperty(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
-        :param pulumi.Input[str] property_id: Property Id.
-        :param pulumi.Input[str] value: (Updatable) Value of the Property
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
+        :param pulumi.Input[str] property_id: OCID referring to global level metadata property.
+        :param pulumi.Input[str] value: (Updatable) Value of the Property.
                
                
                ** IMPORTANT **
@@ -352,7 +352,7 @@ class FleetProperty(pulumi.CustomResource):
         """
         This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new FleetProperty.
+        Add an existing global property to a fleet in Fleet Application Management.
 
         ## Example Usage
 
@@ -448,22 +448,22 @@ class FleetProperty(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_values: Values of the category (must be a single value if selection = 'single choice')
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_values: Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         :param pulumi.Input[str] compartment_id: Tenancy OCID
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
-        :param pulumi.Input[str] property_id: Property Id.
-        :param pulumi.Input[str] selection_type: Text selection of the category
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
+        :param pulumi.Input[str] property_id: OCID referring to global level metadata property.
+        :param pulumi.Input[str] selection_type: Text selection of the property.
         :param pulumi.Input[str] state: The current state of the FleetProperty.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] value: (Updatable) Value of the Property
+        :param pulumi.Input[str] value: (Updatable) Value of the Property.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] value_type: Format of the value
+        :param pulumi.Input[str] value_type: Format of the value.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -487,7 +487,7 @@ class FleetProperty(pulumi.CustomResource):
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> pulumi.Output[Sequence[str]]:
         """
-        Values of the category (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         """
         return pulumi.get(self, "allowed_values")
 
@@ -511,7 +511,7 @@ class FleetProperty(pulumi.CustomResource):
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> pulumi.Output[str]:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -519,7 +519,7 @@ class FleetProperty(pulumi.CustomResource):
     @pulumi.getter(name="propertyId")
     def property_id(self) -> pulumi.Output[str]:
         """
-        Property Id.
+        OCID referring to global level metadata property.
         """
         return pulumi.get(self, "property_id")
 
@@ -527,7 +527,7 @@ class FleetProperty(pulumi.CustomResource):
     @pulumi.getter(name="selectionType")
     def selection_type(self) -> pulumi.Output[str]:
         """
-        Text selection of the category
+        Text selection of the property.
         """
         return pulumi.get(self, "selection_type")
 
@@ -567,7 +567,7 @@ class FleetProperty(pulumi.CustomResource):
     @pulumi.getter
     def value(self) -> pulumi.Output[str]:
         """
-        (Updatable) Value of the Property
+        (Updatable) Value of the Property.
 
 
         ** IMPORTANT **
@@ -579,7 +579,7 @@ class FleetProperty(pulumi.CustomResource):
     @pulumi.getter(name="valueType")
     def value_type(self) -> pulumi.Output[str]:
         """
-        Format of the value
+        Format of the value.
         """
         return pulumi.get(self, "value_type")
 

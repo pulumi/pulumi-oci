@@ -14,15 +14,23 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetRunbooksRunbookCollectionItemAssociationGroupPropertyResult
     {
         /// <summary>
-        /// The action to be taken in case of task failure.
+        /// The action to be taken in case of a failure.
         /// </summary>
         public readonly string ActionOnFailure;
         /// <summary>
-        /// The condition in which the task is to be executed.
+        /// Build control flow conditions that determine the relevance of the task execution.
         /// </summary>
         public readonly string Condition;
         /// <summary>
-        /// The hosts to execute on.
+        /// Preferences to send notifications on the task activities.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationGroupPropertyNotificationPreferenceResult> NotificationPreferences;
+        /// <summary>
+        /// Pause Details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationGroupPropertyPauseDetailResult> PauseDetails;
+        /// <summary>
+        /// The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
         /// </summary>
         public readonly string RunOn;
 
@@ -32,10 +40,16 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             string condition,
 
+            ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationGroupPropertyNotificationPreferenceResult> notificationPreferences,
+
+            ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationGroupPropertyPauseDetailResult> pauseDetails,
+
             string runOn)
         {
             ActionOnFailure = actionOnFailure;
             Condition = condition;
+            NotificationPreferences = notificationPreferences;
+            PauseDetails = pauseDetails;
             RunOn = runOn;
         }
     }

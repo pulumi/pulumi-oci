@@ -2,12 +2,15 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
  * This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Onboard a tenant to Fleet Application Management Service
+ * Onboard a tenant to Fleet Application Management.
+ * The onboarding process lets Fleet Application Management create a few required policies that you need to start using it and its features.
  *
  * ## Example Usage
  *
@@ -55,21 +58,33 @@ export class Onboarding extends pulumi.CustomResource {
     }
 
     /**
+     * Summary of the Fleet Application Management Onboard Policy.
+     */
+    public /*out*/ readonly appliedPolicies!: pulumi.Output<outputs.FleetAppsManagement.OnboardingAppliedPolicy[]>;
+    /**
      * Tenancy OCID
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * A value determining if cost tracking tag is enabled or not
+     * Provide discovery frequency.
+     */
+    public /*out*/ readonly discoveryFrequency!: pulumi.Output<string>;
+    /**
+     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
      */
     public readonly isCostTrackingTagEnabled!: pulumi.Output<boolean>;
     /**
-     * A value determining FAMS tag is enabled or not
+     * A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly isFamsTagEnabled!: pulumi.Output<boolean>;
+    /**
+     * List of Fleet Application Management Onboardings.
+     */
+    public /*out*/ readonly items!: pulumi.Output<outputs.FleetAppsManagement.OnboardingItem[]>;
     /**
      * Associated region
      */
@@ -91,7 +106,7 @@ export class Onboarding extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * Version of FAMS the tenant is onboarded to.
+     * The version of Fleet Application Management that the tenant is onboarded to.
      */
     public /*out*/ readonly version!: pulumi.Output<string>;
 
@@ -108,9 +123,12 @@ export class Onboarding extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OnboardingState | undefined;
+            resourceInputs["appliedPolicies"] = state ? state.appliedPolicies : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["discoveryFrequency"] = state ? state.discoveryFrequency : undefined;
             resourceInputs["isCostTrackingTagEnabled"] = state ? state.isCostTrackingTagEnabled : undefined;
             resourceInputs["isFamsTagEnabled"] = state ? state.isFamsTagEnabled : undefined;
+            resourceInputs["items"] = state ? state.items : undefined;
             resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -125,6 +143,9 @@ export class Onboarding extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["isCostTrackingTagEnabled"] = args ? args.isCostTrackingTagEnabled : undefined;
             resourceInputs["isFamsTagEnabled"] = args ? args.isFamsTagEnabled : undefined;
+            resourceInputs["appliedPolicies"] = undefined /*out*/;
+            resourceInputs["discoveryFrequency"] = undefined /*out*/;
+            resourceInputs["items"] = undefined /*out*/;
             resourceInputs["resourceRegion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -142,21 +163,33 @@ export class Onboarding extends pulumi.CustomResource {
  */
 export interface OnboardingState {
     /**
+     * Summary of the Fleet Application Management Onboard Policy.
+     */
+    appliedPolicies?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.OnboardingAppliedPolicy>[]>;
+    /**
      * Tenancy OCID
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * A value determining if cost tracking tag is enabled or not
+     * Provide discovery frequency.
+     */
+    discoveryFrequency?: pulumi.Input<string>;
+    /**
+     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
      */
     isCostTrackingTagEnabled?: pulumi.Input<boolean>;
     /**
-     * A value determining FAMS tag is enabled or not
+     * A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isFamsTagEnabled?: pulumi.Input<boolean>;
+    /**
+     * List of Fleet Application Management Onboardings.
+     */
+    items?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.OnboardingItem>[]>;
     /**
      * Associated region
      */
@@ -178,7 +211,7 @@ export interface OnboardingState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * Version of FAMS the tenant is onboarded to.
+     * The version of Fleet Application Management that the tenant is onboarded to.
      */
     version?: pulumi.Input<string>;
 }
@@ -192,11 +225,11 @@ export interface OnboardingArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A value determining if cost tracking tag is enabled or not
+     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
      */
     isCostTrackingTagEnabled?: pulumi.Input<boolean>;
     /**
-     * A value determining FAMS tag is enabled or not
+     * A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
      *
      *
      * ** IMPORTANT **

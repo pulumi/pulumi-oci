@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
 import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsPlainArgs;
@@ -150,6 +151,50 @@ public final class VisualBuilderFunctions {
      * 
      */
     public static Output<GetVbInstanceResult> getVbInstance(GetVbInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:VisualBuilder/getVbInstance:getVbInstance", TypeShape.of(GetVbInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
+     * 
+     * Gets a VbInstance by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVbInstanceResult> getVbInstance(GetVbInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:VisualBuilder/getVbInstance:getVbInstance", TypeShape.of(GetVbInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -373,6 +418,51 @@ public final class VisualBuilderFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVbInstanceApplicationsResult> getVbInstanceApplications(GetVbInstanceApplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", TypeShape.of(GetVbInstanceApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
+     * 
+     * Returns a list of published and staged applications of a Visual Builder instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
+     *             .vbInstanceId(testVbInstance.id())
+     *             .idcsOpenId("idcs_open_id_value")
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVbInstanceApplicationsResult> getVbInstanceApplicationsPlain(GetVbInstanceApplicationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", TypeShape.of(GetVbInstanceApplicationsResult.class), args, Utilities.withVersion(options));
     }
@@ -512,6 +602,52 @@ public final class VisualBuilderFunctions {
      * 
      */
     public static Output<GetVbInstancesResult> getVbInstances(GetVbInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:VisualBuilder/getVbInstances:getVbInstances", TypeShape.of(GetVbInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vb Instances in Oracle Cloud Infrastructure Visual Builder service.
+     * 
+     * Returns a list of Vb Instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstances = VisualBuilderFunctions.getVbInstances(GetVbInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vbInstanceDisplayName)
+     *             .state(vbInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVbInstancesResult> getVbInstances(GetVbInstancesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:VisualBuilder/getVbInstances:getVbInstances", TypeShape.of(GetVbInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**

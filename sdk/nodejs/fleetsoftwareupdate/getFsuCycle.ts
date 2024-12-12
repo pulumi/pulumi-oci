@@ -109,6 +109,10 @@ export interface GetFsuCycleResult {
      */
     readonly lastCompletedAction: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+     */
+    readonly lastCompletedActionId: string;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     readonly lifecycleDetails: string;
@@ -120,6 +124,10 @@ export interface GetFsuCycleResult {
      * In this array all the possible actions will be listed. The first element is the suggested Action.
      */
     readonly nextActionToExecutes: outputs.FleetSoftwareUpdate.GetFsuCycleNextActionToExecute[];
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     */
+    readonly rollbackCycleState: string;
     /**
      * Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.
      */

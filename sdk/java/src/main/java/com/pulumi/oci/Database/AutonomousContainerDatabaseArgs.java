@@ -285,6 +285,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
+     * The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    @Import(name="keyVersionId")
+    private @Nullable Output<String> keyVersionId;
+
+    /**
+     * @return The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    public Optional<Output<String>> keyVersionId() {
+        return Optional.ofNullable(this.keyVersionId);
+    }
+
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -565,6 +580,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.isAutomaticFailoverEnabled = $.isAutomaticFailoverEnabled;
         this.isDstFileUpdateEnabled = $.isDstFileUpdateEnabled;
         this.keyStoreId = $.keyStoreId;
+        this.keyVersionId = $.keyVersionId;
         this.kmsKeyId = $.kmsKeyId;
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
         this.netServicesArchitecture = $.netServicesArchitecture;
@@ -967,6 +983,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder keyStoreId(String keyStoreId) {
             return keyStoreId(Output.of(keyStoreId));
+        }
+
+        /**
+         * @param keyVersionId The OCID of the key version that is used in rotate key operations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyVersionId(@Nullable Output<String> keyVersionId) {
+            $.keyVersionId = keyVersionId;
+            return this;
+        }
+
+        /**
+         * @param keyVersionId The OCID of the key version that is used in rotate key operations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyVersionId(String keyVersionId) {
+            return keyVersionId(Output.of(keyVersionId));
         }
 
         /**

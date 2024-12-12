@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetTaskRecordsFilterResult
     {
         /// <summary>
-        /// The name of the argument
+        /// The name of the argument.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetail {
     /**
-     * @return Execution Workflow for the runbook.
+     * @return Rollback Workflow for the runbook.
      * 
      */
     private List<GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow> workflows;
 
     private GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetail() {}
     /**
-     * @return Execution Workflow for the runbook.
+     * @return Rollback Workflow for the runbook.
      * 
      */
     public List<GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow> workflows() {

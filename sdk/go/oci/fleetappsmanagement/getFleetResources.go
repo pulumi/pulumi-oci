@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Fleet Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Returns a list of FleetResources.
+// List resources for a fleet in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -60,13 +60,13 @@ type GetFleetResourcesArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetFleetResourcesFilter `pulumi:"filters"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
-	// A filter to return resources that match the Type
+	// A filter to return only resources whose resourceType matches the given resourceType.
 	FleetResourceType *string `pulumi:"fleetResourceType"`
-	// unique FleetResource identifier
+	// A filter to return only resources whose identifier matches the given identifier.
 	Id *string `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
 	// Resource Tenancy Id
 	TenancyId *string `pulumi:"tenancyId"`
@@ -113,13 +113,13 @@ type GetFleetResourcesOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput             `pulumi:"displayName"`
 	Filters     GetFleetResourcesFilterArrayInput `pulumi:"filters"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
-	// A filter to return resources that match the Type
+	// A filter to return only resources whose resourceType matches the given resourceType.
 	FleetResourceType pulumi.StringPtrInput `pulumi:"fleetResourceType"`
-	// unique FleetResource identifier
+	// A filter to return only resources whose identifier matches the given identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Resource Tenancy Id
 	TenancyId pulumi.StringPtrInput `pulumi:"tenancyId"`

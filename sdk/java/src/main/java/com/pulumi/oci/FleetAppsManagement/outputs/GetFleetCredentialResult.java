@@ -26,7 +26,7 @@ public final class GetFleetCredentialResult {
      */
     private String displayName;
     /**
-     * @return Credential Details
+     * @return Credential specific Details.
      * 
      */
     private List<GetFleetCredentialEntitySpecific> entitySpecifics;
@@ -43,7 +43,7 @@ public final class GetFleetCredentialResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Credential Details
+     * @return Credential Details.
      * 
      */
     private List<GetFleetCredentialPassword> passwords;
@@ -68,7 +68,7 @@ public final class GetFleetCredentialResult {
      */
     private String timeUpdated;
     /**
-     * @return Credential Details
+     * @return Credential Details.
      * 
      */
     private List<GetFleetCredentialUser> users;
@@ -89,7 +89,7 @@ public final class GetFleetCredentialResult {
         return this.displayName;
     }
     /**
-     * @return Credential Details
+     * @return Credential specific Details.
      * 
      */
     public List<GetFleetCredentialEntitySpecific> entitySpecifics() {
@@ -116,7 +116,7 @@ public final class GetFleetCredentialResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Credential Details
+     * @return Credential Details.
      * 
      */
     public List<GetFleetCredentialPassword> passwords() {
@@ -151,7 +151,7 @@ public final class GetFleetCredentialResult {
         return this.timeUpdated;
     }
     /**
-     * @return Credential Details
+     * @return Credential Details.
      * 
      */
     public List<GetFleetCredentialUser> users() {

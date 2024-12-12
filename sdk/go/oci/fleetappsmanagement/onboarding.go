@@ -14,7 +14,8 @@ import (
 
 // This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// # Onboard a tenant to Fleet Application Management Service
+// Onboard a tenant to Fleet Application Management.
+// The onboarding process lets Fleet Application Management create a few required policies that you need to start using it and its features.
 //
 // ## Example Usage
 //
@@ -50,15 +51,21 @@ import (
 type Onboarding struct {
 	pulumi.CustomResourceState
 
+	// Summary of the Fleet Application Management Onboard Policy.
+	AppliedPolicies OnboardingAppliedPolicyArrayOutput `pulumi:"appliedPolicies"`
 	// Tenancy OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// A value determining if cost tracking tag is enabled or not
+	// Provide discovery frequency.
+	DiscoveryFrequency pulumi.StringOutput `pulumi:"discoveryFrequency"`
+	// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled pulumi.BoolOutput `pulumi:"isCostTrackingTagEnabled"`
-	// A value determining FAMS tag is enabled or not
+	// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsFamsTagEnabled pulumi.BoolOutput `pulumi:"isFamsTagEnabled"`
+	// List of Fleet Application Management Onboardings.
+	Items OnboardingItemArrayOutput `pulumi:"items"`
 	// Associated region
 	ResourceRegion pulumi.StringOutput `pulumi:"resourceRegion"`
 	// The current state of the Onboarding.
@@ -69,7 +76,7 @@ type Onboarding struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// Version of FAMS the tenant is onboarded to.
+	// The version of Fleet Application Management that the tenant is onboarded to.
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -106,15 +113,21 @@ func GetOnboarding(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Onboarding resources.
 type onboardingState struct {
+	// Summary of the Fleet Application Management Onboard Policy.
+	AppliedPolicies []OnboardingAppliedPolicy `pulumi:"appliedPolicies"`
 	// Tenancy OCID
 	CompartmentId *string `pulumi:"compartmentId"`
-	// A value determining if cost tracking tag is enabled or not
+	// Provide discovery frequency.
+	DiscoveryFrequency *string `pulumi:"discoveryFrequency"`
+	// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled *bool `pulumi:"isCostTrackingTagEnabled"`
-	// A value determining FAMS tag is enabled or not
+	// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsFamsTagEnabled *bool `pulumi:"isFamsTagEnabled"`
+	// List of Fleet Application Management Onboardings.
+	Items []OnboardingItem `pulumi:"items"`
 	// Associated region
 	ResourceRegion *string `pulumi:"resourceRegion"`
 	// The current state of the Onboarding.
@@ -125,20 +138,26 @@ type onboardingState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// Version of FAMS the tenant is onboarded to.
+	// The version of Fleet Application Management that the tenant is onboarded to.
 	Version *string `pulumi:"version"`
 }
 
 type OnboardingState struct {
+	// Summary of the Fleet Application Management Onboard Policy.
+	AppliedPolicies OnboardingAppliedPolicyArrayInput
 	// Tenancy OCID
 	CompartmentId pulumi.StringPtrInput
-	// A value determining if cost tracking tag is enabled or not
+	// Provide discovery frequency.
+	DiscoveryFrequency pulumi.StringPtrInput
+	// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled pulumi.BoolPtrInput
-	// A value determining FAMS tag is enabled or not
+	// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsFamsTagEnabled pulumi.BoolPtrInput
+	// List of Fleet Application Management Onboardings.
+	Items OnboardingItemArrayInput
 	// Associated region
 	ResourceRegion pulumi.StringPtrInput
 	// The current state of the Onboarding.
@@ -149,7 +168,7 @@ type OnboardingState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
-	// Version of FAMS the tenant is onboarded to.
+	// The version of Fleet Application Management that the tenant is onboarded to.
 	Version pulumi.StringPtrInput
 }
 
@@ -160,9 +179,9 @@ func (OnboardingState) ElementType() reflect.Type {
 type onboardingArgs struct {
 	// Tenancy OCID
 	CompartmentId string `pulumi:"compartmentId"`
-	// A value determining if cost tracking tag is enabled or not
+	// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled *bool `pulumi:"isCostTrackingTagEnabled"`
-	// A value determining FAMS tag is enabled or not
+	// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -173,9 +192,9 @@ type onboardingArgs struct {
 type OnboardingArgs struct {
 	// Tenancy OCID
 	CompartmentId pulumi.StringInput
-	// A value determining if cost tracking tag is enabled or not
+	// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled pulumi.BoolPtrInput
-	// A value determining FAMS tag is enabled or not
+	// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -269,22 +288,37 @@ func (o OnboardingOutput) ToOnboardingOutputWithContext(ctx context.Context) Onb
 	return o
 }
 
+// Summary of the Fleet Application Management Onboard Policy.
+func (o OnboardingOutput) AppliedPolicies() OnboardingAppliedPolicyArrayOutput {
+	return o.ApplyT(func(v *Onboarding) OnboardingAppliedPolicyArrayOutput { return v.AppliedPolicies }).(OnboardingAppliedPolicyArrayOutput)
+}
+
 // Tenancy OCID
 func (o OnboardingOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Onboarding) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// A value determining if cost tracking tag is enabled or not
+// Provide discovery frequency.
+func (o OnboardingOutput) DiscoveryFrequency() pulumi.StringOutput {
+	return o.ApplyT(func(v *Onboarding) pulumi.StringOutput { return v.DiscoveryFrequency }).(pulumi.StringOutput)
+}
+
+// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 func (o OnboardingOutput) IsCostTrackingTagEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Onboarding) pulumi.BoolOutput { return v.IsCostTrackingTagEnabled }).(pulumi.BoolOutput)
 }
 
-// A value determining FAMS tag is enabled or not
+// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OnboardingOutput) IsFamsTagEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Onboarding) pulumi.BoolOutput { return v.IsFamsTagEnabled }).(pulumi.BoolOutput)
+}
+
+// List of Fleet Application Management Onboardings.
+func (o OnboardingOutput) Items() OnboardingItemArrayOutput {
+	return o.ApplyT(func(v *Onboarding) OnboardingItemArrayOutput { return v.Items }).(OnboardingItemArrayOutput)
 }
 
 // Associated region
@@ -312,7 +346,7 @@ func (o OnboardingOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Onboarding) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Version of FAMS the tenant is onboarded to.
+// The version of Fleet Application Management that the tenant is onboarded to.
 func (o OnboardingOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *Onboarding) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

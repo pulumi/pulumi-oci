@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetsFleetCollectionItemRuleSelectionCriteriaRule {
     /**
-     * @return Rule to be be applied on.
+     * @return Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
      * 
      */
     private String basis;
@@ -28,14 +28,14 @@ public final class GetFleetsFleetCollectionItemRuleSelectionCriteriaRule {
      */
     private List<GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleCondition> conditions;
     /**
-     * @return Resource Compartment Id.Provide the compartmentId the resource belongs to.
+     * @return The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
      * 
      */
     private String resourceCompartmentId;
 
     private GetFleetsFleetCollectionItemRuleSelectionCriteriaRule() {}
     /**
-     * @return Rule to be be applied on.
+     * @return Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
      * 
      */
     public String basis() {
@@ -56,7 +56,7 @@ public final class GetFleetsFleetCollectionItemRuleSelectionCriteriaRule {
         return this.conditions;
     }
     /**
-     * @return Resource Compartment Id.Provide the compartmentId the resource belongs to.
+     * @return The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
      * 
      */
     public String resourceCompartmentId() {

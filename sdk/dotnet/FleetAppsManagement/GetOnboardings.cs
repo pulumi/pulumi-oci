@@ -94,7 +94,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -128,7 +128,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

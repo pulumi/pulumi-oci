@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetail;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbooksRunbookCollectionItemAssociationGroup;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetail;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbooksRunbookCollectionItemAssociationTask;
 import java.lang.String;
 import java.util.List;
@@ -15,17 +16,22 @@ import java.util.Objects;
 @CustomType
 public final class GetRunbooksRunbookCollectionItemAssociation {
     /**
-     * @return Execution Workflow.
+     * @return Execution Workflow details.
      * 
      */
     private List<GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetail> executionWorkflowDetails;
     /**
-     * @return The groups of the runbook
+     * @return The groups of the runbook.
      * 
      */
     private List<GetRunbooksRunbookCollectionItemAssociationGroup> groups;
     /**
-     * @return A set of tasks to execute in the runbook
+     * @return Rollback Workflow details.
+     * 
+     */
+    private List<GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetail> rollbackWorkflowDetails;
+    /**
+     * @return A set of tasks to execute in the runbook.
      * 
      */
     private List<GetRunbooksRunbookCollectionItemAssociationTask> tasks;
@@ -37,21 +43,28 @@ public final class GetRunbooksRunbookCollectionItemAssociation {
 
     private GetRunbooksRunbookCollectionItemAssociation() {}
     /**
-     * @return Execution Workflow.
+     * @return Execution Workflow details.
      * 
      */
     public List<GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetail> executionWorkflowDetails() {
         return this.executionWorkflowDetails;
     }
     /**
-     * @return The groups of the runbook
+     * @return The groups of the runbook.
      * 
      */
     public List<GetRunbooksRunbookCollectionItemAssociationGroup> groups() {
         return this.groups;
     }
     /**
-     * @return A set of tasks to execute in the runbook
+     * @return Rollback Workflow details.
+     * 
+     */
+    public List<GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetail> rollbackWorkflowDetails() {
+        return this.rollbackWorkflowDetails;
+    }
+    /**
+     * @return A set of tasks to execute in the runbook.
      * 
      */
     public List<GetRunbooksRunbookCollectionItemAssociationTask> tasks() {
@@ -76,6 +89,7 @@ public final class GetRunbooksRunbookCollectionItemAssociation {
     public static final class Builder {
         private List<GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetail> executionWorkflowDetails;
         private List<GetRunbooksRunbookCollectionItemAssociationGroup> groups;
+        private List<GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetail> rollbackWorkflowDetails;
         private List<GetRunbooksRunbookCollectionItemAssociationTask> tasks;
         private String version;
         public Builder() {}
@@ -83,6 +97,7 @@ public final class GetRunbooksRunbookCollectionItemAssociation {
     	      Objects.requireNonNull(defaults);
     	      this.executionWorkflowDetails = defaults.executionWorkflowDetails;
     	      this.groups = defaults.groups;
+    	      this.rollbackWorkflowDetails = defaults.rollbackWorkflowDetails;
     	      this.tasks = defaults.tasks;
     	      this.version = defaults.version;
         }
@@ -110,6 +125,17 @@ public final class GetRunbooksRunbookCollectionItemAssociation {
             return groups(List.of(groups));
         }
         @CustomType.Setter
+        public Builder rollbackWorkflowDetails(List<GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetail> rollbackWorkflowDetails) {
+            if (rollbackWorkflowDetails == null) {
+              throw new MissingRequiredPropertyException("GetRunbooksRunbookCollectionItemAssociation", "rollbackWorkflowDetails");
+            }
+            this.rollbackWorkflowDetails = rollbackWorkflowDetails;
+            return this;
+        }
+        public Builder rollbackWorkflowDetails(GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetail... rollbackWorkflowDetails) {
+            return rollbackWorkflowDetails(List.of(rollbackWorkflowDetails));
+        }
+        @CustomType.Setter
         public Builder tasks(List<GetRunbooksRunbookCollectionItemAssociationTask> tasks) {
             if (tasks == null) {
               throw new MissingRequiredPropertyException("GetRunbooksRunbookCollectionItemAssociation", "tasks");
@@ -132,6 +158,7 @@ public final class GetRunbooksRunbookCollectionItemAssociation {
             final var _resultValue = new GetRunbooksRunbookCollectionItemAssociation();
             _resultValue.executionWorkflowDetails = executionWorkflowDetails;
             _resultValue.groups = groups;
+            _resultValue.rollbackWorkflowDetails = rollbackWorkflowDetails;
             _resultValue.tasks = tasks;
             _resultValue.version = version;
             return _resultValue;

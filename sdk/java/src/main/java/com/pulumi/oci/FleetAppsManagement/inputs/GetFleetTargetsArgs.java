@@ -41,14 +41,14 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Output<String> fleetId() {
@@ -56,14 +56,14 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Product Name
+     * Product Name.
      * 
      */
     @Import(name="product")
     private @Nullable Output<String> product;
 
     /**
-     * @return Product Name
+     * @return Product Name.
      * 
      */
     public Optional<Output<String>> product() {
@@ -71,14 +71,14 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Resource Display Name
+     * Resource Display Name.
      * 
      */
     @Import(name="resourceDisplayName")
     private @Nullable Output<String> resourceDisplayName;
 
     /**
-     * @return Resource Display Name
+     * @return Resource Display Name.
      * 
      */
     public Optional<Output<String>> resourceDisplayName() {
@@ -164,7 +164,7 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param product Product Name
+         * @param product Product Name.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param product Product Name
+         * @param product Product Name.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resourceDisplayName Resource Display Name
+         * @param resourceDisplayName Resource Display Name.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resourceDisplayName Resource Display Name
+         * @param resourceDisplayName Resource Display Name.
          * 
          * @return builder
          * 

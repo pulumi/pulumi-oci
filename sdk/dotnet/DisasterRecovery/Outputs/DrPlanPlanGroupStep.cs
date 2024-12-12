@@ -38,15 +38,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? MemberId;
         /// <summary>
+        /// The DR plan step refresh status.  Example: `STEP_ADDED`
+        /// </summary>
+        public readonly string? RefreshStatus;
+        /// <summary>
         /// The timeout in seconds for executing this step.  Example: `600`
         /// </summary>
         public readonly int? Timeout;
         /// <summary>
-        /// The type of DR plan to be created. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The type of DR plan to be created.
         /// </summary>
         public readonly string? Type;
         /// <summary>
@@ -68,6 +68,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string? memberId,
 
+            string? refreshStatus,
+
             int? timeout,
 
             string? type,
@@ -80,6 +82,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             Id = id;
             IsEnabled = isEnabled;
             MemberId = memberId;
+            RefreshStatus = refreshStatus;
             Timeout = timeout;
             Type = type;
             UserDefinedSteps = userDefinedSteps;

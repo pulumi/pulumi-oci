@@ -18,14 +18,14 @@ public final class DesktopPoolSessionLifecycleActionsDisconnectArgs extends com.
     public static final DesktopPoolSessionLifecycleActionsDisconnectArgs Empty = new DesktopPoolSessionLifecycleActionsDisconnectArgs();
 
     /**
-     * (Updatable) a disconnect action to be triggered
+     * (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
      * 
      */
     @Import(name="action", required=true)
     private Output<String> action;
 
     /**
-     * @return (Updatable) a disconnect action to be triggered
+     * @return (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
      * 
      */
     public Output<String> action() {
@@ -73,7 +73,7 @@ public final class DesktopPoolSessionLifecycleActionsDisconnectArgs extends com.
         }
 
         /**
-         * @param action (Updatable) a disconnect action to be triggered
+         * @param action (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class DesktopPoolSessionLifecycleActionsDisconnectArgs extends com.
         }
 
         /**
-         * @param action (Updatable) a disconnect action to be triggered
+         * @param action (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
          * 
          * @return builder
          * 

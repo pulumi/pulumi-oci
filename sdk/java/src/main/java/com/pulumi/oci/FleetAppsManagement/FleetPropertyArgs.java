@@ -30,14 +30,14 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Output<String> fleetId() {
@@ -45,14 +45,14 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Property Id.
+     * OCID referring to global level metadata property.
      * 
      */
     @Import(name="propertyId", required=true)
     private Output<String> propertyId;
 
     /**
-     * @return Property Id.
+     * @return OCID referring to global level metadata property.
      * 
      */
     public Output<String> propertyId() {
@@ -60,7 +60,7 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Value of the Property
+     * (Updatable) Value of the Property.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -70,7 +70,7 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the Property
+     * @return (Updatable) Value of the Property.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -129,7 +129,7 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -150,7 +150,7 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param propertyId Property Id.
+         * @param propertyId OCID referring to global level metadata property.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param propertyId Property Id.
+         * @param propertyId OCID referring to global level metadata property.
          * 
          * @return builder
          * 
@@ -171,7 +171,7 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value (Updatable) Value of the Property
+         * @param value (Updatable) Value of the Property.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,7 +185,7 @@ public final class FleetPropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value (Updatable) Value of the Property
+         * @param value (Updatable) Value of the Property.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

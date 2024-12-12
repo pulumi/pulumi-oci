@@ -79,6 +79,7 @@ namespace Pulumi.Oci.DataFlow
     ///         PrivateEndpointId = testPrivateEndpoint.Id,
     ///         Type = applicationType,
     ///         WarehouseBucketUri = applicationWarehouseBucketUri,
+    ///         TerminateRunsOnDeletion = true,
     ///     });
     /// 
     /// });
@@ -270,6 +271,15 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("terminateRunsOnDeletion")]
+        public Output<bool?> TerminateRunsOnDeletion { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
@@ -288,11 +298,7 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         [Output("warehouseBucketUri")]
         public Output<string> WarehouseBucketUri { get; private set; } = null!;
@@ -530,17 +536,22 @@ namespace Pulumi.Oci.DataFlow
         public Input<string> SparkVersion { get; set; } = null!;
 
         /// <summary>
+        /// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("terminateRunsOnDeletion")]
+        public Input<bool>? TerminateRunsOnDeletion { get; set; }
+
+        /// <summary>
         /// The Spark application processing type.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         [Input("warehouseBucketUri")]
         public Input<string>? WarehouseBucketUri { get; set; }
@@ -758,6 +769,15 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("terminateRunsOnDeletion")]
+        public Input<bool>? TerminateRunsOnDeletion { get; set; }
+
+        /// <summary>
         /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
@@ -776,11 +796,7 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         [Input("warehouseBucketUri")]
         public Input<string>? WarehouseBucketUri { get; set; }

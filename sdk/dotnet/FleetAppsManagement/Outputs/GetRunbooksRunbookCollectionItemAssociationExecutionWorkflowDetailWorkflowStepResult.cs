@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowStepResult
     {
         /// <summary>
-        /// Provide the name of the group.
+        /// Name of the group.
         /// </summary>
         public readonly string GroupName;
         /// <summary>
@@ -22,11 +22,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string StepName;
         /// <summary>
-        /// Tasks within the Group. Provide the stepName for all tasks that are applicable
+        /// Tasks within the Group. Provide the stepName for all applicable tasks.
         /// </summary>
         public readonly ImmutableArray<string> Steps;
         /// <summary>
-        /// The ID of the runbook type.
+        /// A filter to return runbooks whose type matches the given type.
         /// </summary>
         public readonly string Type;
 

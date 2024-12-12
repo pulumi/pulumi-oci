@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Creates a new FleetCredential.
+ * Add credentials to a fleet in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -24,6 +24,10 @@ import * as utilities from "../utilities";
  *         credentialLevel: fleetCredentialEntitySpecificsCredentialLevel,
  *         resourceId: testResource.id,
  *         target: fleetCredentialEntitySpecificsTarget,
+ *         variables: [{
+ *             name: fleetCredentialEntitySpecificsVariablesName,
+ *             value: fleetCredentialEntitySpecificsVariablesValue,
+ *         }],
  *     },
  *     fleetId: testFleet.id,
  *     password: {
@@ -88,11 +92,11 @@ export class FleetCredential extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential specific Details.
      */
     public readonly entitySpecifics!: pulumi.Output<outputs.FleetAppsManagement.FleetCredentialEntitySpecifics>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     public readonly fleetId!: pulumi.Output<string>;
     /**
@@ -100,7 +104,7 @@ export class FleetCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      */
     public readonly password!: pulumi.Output<outputs.FleetAppsManagement.FleetCredentialPassword>;
     /**
@@ -120,7 +124,7 @@ export class FleetCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      */
     public readonly user!: pulumi.Output<outputs.FleetAppsManagement.FleetCredentialUser>;
 
@@ -198,11 +202,11 @@ export interface FleetCredentialState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential specific Details.
      */
     entitySpecifics?: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialEntitySpecifics>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId?: pulumi.Input<string>;
     /**
@@ -210,7 +214,7 @@ export interface FleetCredentialState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      */
     password?: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialPassword>;
     /**
@@ -230,7 +234,7 @@ export interface FleetCredentialState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      */
     user?: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialUser>;
 }
@@ -248,19 +252,19 @@ export interface FleetCredentialArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential specific Details.
      */
     entitySpecifics: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialEntitySpecifics>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      */
     password: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialPassword>;
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      */
     user: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialUser>;
 }

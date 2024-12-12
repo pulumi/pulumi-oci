@@ -16,7 +16,7 @@ public final class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailConte
      */
     private String bucket;
     /**
-     * @return SHA256 checksum of the artifact.
+     * @return md5 checksum of the artifact.
      * 
      */
     private String checksum;
@@ -31,7 +31,7 @@ public final class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailConte
      */
     private String object;
     /**
-     * @return Content Source Details.
+     * @return Content Source type details.
      * 
      */
     private String sourceType;
@@ -45,7 +45,7 @@ public final class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailConte
         return this.bucket;
     }
     /**
-     * @return SHA256 checksum of the artifact.
+     * @return md5 checksum of the artifact.
      * 
      */
     public String checksum() {
@@ -66,7 +66,7 @@ public final class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailConte
         return this.object;
     }
     /**
-     * @return Content Source Details.
+     * @return Content Source type details.
      * 
      */
     public String sourceType() {

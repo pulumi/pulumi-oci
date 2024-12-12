@@ -14,13 +14,17 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult
     {
         /// <summary>
-        /// Optional Command to execute the content.
+        /// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         /// </summary>
         public readonly string Command;
         /// <summary>
-        /// Content Source Details.
+        /// Content Source details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult> Contents;
+        /// <summary>
+        /// Credentials required for executing the task.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredentialResult> Credentials;
         /// <summary>
         /// Endpoint to be invoked.
         /// </summary>
@@ -30,7 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ExecutionType;
         /// <summary>
-        /// The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+        /// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableResult> Variables;
 
@@ -40,6 +44,8 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             ImmutableArray<Outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult> contents,
 
+            ImmutableArray<Outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredentialResult> credentials,
+
             string endpoint,
 
             string executionType,
@@ -48,6 +54,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         {
             Command = command;
             Contents = contents;
+            Credentials = credentials;
             Endpoint = endpoint;
             ExecutionType = executionType;
             Variables = variables;

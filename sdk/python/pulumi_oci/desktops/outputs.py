@@ -528,7 +528,7 @@ class DesktopPoolSessionLifecycleActions(dict):
                  disconnect: Optional['outputs.DesktopPoolSessionLifecycleActionsDisconnect'] = None,
                  inactivity: Optional['outputs.DesktopPoolSessionLifecycleActionsInactivity'] = None):
         """
-        :param 'DesktopPoolSessionLifecycleActionsDisconnectArgs' disconnect: (Updatable) Action and grace period for disconnect
+        :param 'DesktopPoolSessionLifecycleActionsDisconnectArgs' disconnect: (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
         :param 'DesktopPoolSessionLifecycleActionsInactivityArgs' inactivity: (Updatable) Action and grace period for inactivity
         """
         if disconnect is not None:
@@ -540,7 +540,7 @@ class DesktopPoolSessionLifecycleActions(dict):
     @pulumi.getter
     def disconnect(self) -> Optional['outputs.DesktopPoolSessionLifecycleActionsDisconnect']:
         """
-        (Updatable) Action and grace period for disconnect
+        (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
         """
         return pulumi.get(self, "disconnect")
 
@@ -576,7 +576,7 @@ class DesktopPoolSessionLifecycleActionsDisconnect(dict):
                  action: str,
                  grace_period_in_minutes: Optional[int] = None):
         """
-        :param str action: (Updatable) a disconnect action to be triggered
+        :param str action: (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
         :param int grace_period_in_minutes: (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
         """
         pulumi.set(__self__, "action", action)
@@ -587,7 +587,7 @@ class DesktopPoolSessionLifecycleActionsDisconnect(dict):
     @pulumi.getter
     def action(self) -> str:
         """
-        (Updatable) a disconnect action to be triggered
+        (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
         """
         return pulumi.get(self, "action")
 
@@ -623,7 +623,7 @@ class DesktopPoolSessionLifecycleActionsInactivity(dict):
                  action: str,
                  grace_period_in_minutes: Optional[int] = None):
         """
-        :param str action: (Updatable) an inactivity action to be triggered
+        :param str action: (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
         :param int grace_period_in_minutes: (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
         """
         pulumi.set(__self__, "action", action)
@@ -634,7 +634,7 @@ class DesktopPoolSessionLifecycleActionsInactivity(dict):
     @pulumi.getter
     def action(self) -> str:
         """
-        (Updatable) an inactivity action to be triggered
+        (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
         """
         return pulumi.get(self, "action")
 
@@ -1606,6 +1606,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
     def __init__(__self__, *,
                  active_desktops: int,
                  are_privileged_users: bool,
+                 are_volumes_preserved: bool,
                  availability_domain: str,
                  availability_policies: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicyResult'],
                  compartment_id: str,
@@ -1666,6 +1667,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         """
         pulumi.set(__self__, "active_desktops", active_desktops)
         pulumi.set(__self__, "are_privileged_users", are_privileged_users)
+        pulumi.set(__self__, "are_volumes_preserved", are_volumes_preserved)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "availability_policies", availability_policies)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -1709,6 +1711,11 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         Indicates whether desktop pool users have administrative privileges on their desktop.
         """
         return pulumi.get(self, "are_privileged_users")
+
+    @property
+    @pulumi.getter(name="areVolumesPreserved")
+    def are_volumes_preserved(self) -> bool:
+        return pulumi.get(self, "are_volumes_preserved")
 
     @property
     @pulumi.getter(name="availabilityDomain")

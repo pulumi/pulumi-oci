@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
 import com.pulumi.oci.Bastion.inputs.GetBastionPlainArgs;
 import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
@@ -153,6 +154,50 @@ public final class BastionFunctions {
      * 
      */
     public static Output<GetBastionResult> getBastion(GetBastionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Bastion/getBastion:getBastion", TypeShape.of(GetBastionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bastion resource in Oracle Cloud Infrastructure Bastion service.
+     * 
+     * Retrieves a bastion identified by the bastion ID. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
+     *             .bastionId(testBastionOciBastionBastion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBastionResult> getBastion(GetBastionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Bastion/getBastion:getBastion", TypeShape.of(GetBastionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -384,6 +429,53 @@ public final class BastionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBastionsResult> getBastions(GetBastionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Bastion/getBastions:getBastions", TypeShape.of(GetBastionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bastions in Oracle Cloud Infrastructure Bastion service.
+     * 
+     * Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .bastionId(testBastion.id())
+     *             .bastionLifecycleState(bastionBastionLifecycleState)
+     *             .name(bastionName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBastionsResult> getBastionsPlain(GetBastionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Bastion/getBastions:getBastions", TypeShape.of(GetBastionsResult.class), args, Utilities.withVersion(options));
     }
@@ -517,6 +609,50 @@ public final class BastionFunctions {
      * 
      */
     public static Output<GetSessionResult> getSession(GetSessionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Bastion/getSession:getSession", TypeShape.of(GetSessionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Session resource in Oracle Cloud Infrastructure Bastion service.
+     * 
+     * Retrieves a session identified by the session ID. A bastion session lets authorized users connect to a target resource for a predetermined amount of time.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
+     *             .sessionId(testSessionOciBastionSession.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSessionResult> getSession(GetSessionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Bastion/getSession:getSession", TypeShape.of(GetSessionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -702,6 +838,53 @@ public final class BastionFunctions {
      * 
      */
     public static Output<GetSessionsResult> getSessions(GetSessionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Bastion/getSessions:getSessions", TypeShape.of(GetSessionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
+     * 
+     * Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
+     *             .bastionId(testBastion.id())
+     *             .displayName(sessionDisplayName)
+     *             .sessionId(testSession.id())
+     *             .sessionLifecycleState(sessionSessionLifecycleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSessionsResult> getSessions(GetSessionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Bastion/getSessions:getSessions", TypeShape.of(GetSessionsResult.class), args, Utilities.withVersion(options));
     }
     /**

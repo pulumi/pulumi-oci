@@ -38,6 +38,12 @@ import * as utilities from "../utilities";
  *     },
  *     idcsOpenId: testIdcsOpen.id,
  *     isVisualBuilderEnabled: vbInstanceIsVisualBuilderEnabled,
+ *     networkEndpointDetails: {
+ *         networkEndpointType: vbInstanceNetworkEndpointDetailsNetworkEndpointType,
+ *         subnetId: testSubnet.id,
+ *         networkSecurityGroupIds: vbInstanceNetworkEndpointDetailsNetworkSecurityGroupIds,
+ *         privateEndpointIp: vbInstanceNetworkEndpointDetailsPrivateEndpointIp,
+ *     },
  * });
  * ```
  *
@@ -82,10 +88,6 @@ export class VbInstance extends pulumi.CustomResource {
      */
     public readonly alternateCustomEndpoints!: pulumi.Output<outputs.VisualBuilder.VbInstanceAlternateCustomEndpoint[]>;
     /**
-     * A list of associated attachments to other services
-     */
-    public /*out*/ readonly attachments!: pulumi.Output<outputs.VisualBuilder.VbInstanceAttachment[]>;
-    /**
      * (Updatable) Compartment Identifier.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -110,10 +112,6 @@ export class VbInstance extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * Information for IDCS access
-     */
-    public /*out*/ readonly idcsInfos!: pulumi.Output<outputs.VisualBuilder.VbInstanceIdcsInfo[]>;
-    /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      */
     public readonly idcsOpenId!: pulumi.Output<string | undefined>;
@@ -133,6 +131,10 @@ export class VbInstance extends pulumi.CustomResource {
      * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      */
     public /*out*/ readonly managementVcnId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     */
+    public readonly networkEndpointDetails!: pulumi.Output<outputs.VisualBuilder.VbInstanceNetworkEndpointDetails>;
     /**
      * (Updatable) The number of Nodes
      *
@@ -184,19 +186,18 @@ export class VbInstance extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as VbInstanceState | undefined;
             resourceInputs["alternateCustomEndpoints"] = state ? state.alternateCustomEndpoints : undefined;
-            resourceInputs["attachments"] = state ? state.attachments : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["consumptionModel"] = state ? state.consumptionModel : undefined;
             resourceInputs["customEndpoint"] = state ? state.customEndpoint : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["idcsInfos"] = state ? state.idcsInfos : undefined;
             resourceInputs["idcsOpenId"] = state ? state.idcsOpenId : undefined;
             resourceInputs["instanceUrl"] = state ? state.instanceUrl : undefined;
             resourceInputs["isVisualBuilderEnabled"] = state ? state.isVisualBuilderEnabled : undefined;
             resourceInputs["managementNatGatewayIp"] = state ? state.managementNatGatewayIp : undefined;
             resourceInputs["managementVcnId"] = state ? state.managementVcnId : undefined;
+            resourceInputs["networkEndpointDetails"] = state ? state.networkEndpointDetails : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["serviceNatGatewayIp"] = state ? state.serviceNatGatewayIp : undefined;
             resourceInputs["serviceVcnId"] = state ? state.serviceVcnId : undefined;
@@ -225,9 +226,8 @@ export class VbInstance extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["idcsOpenId"] = args?.idcsOpenId ? pulumi.secret(args.idcsOpenId) : undefined;
             resourceInputs["isVisualBuilderEnabled"] = args ? args.isVisualBuilderEnabled : undefined;
+            resourceInputs["networkEndpointDetails"] = args ? args.networkEndpointDetails : undefined;
             resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
-            resourceInputs["attachments"] = undefined /*out*/;
-            resourceInputs["idcsInfos"] = undefined /*out*/;
             resourceInputs["instanceUrl"] = undefined /*out*/;
             resourceInputs["managementNatGatewayIp"] = undefined /*out*/;
             resourceInputs["managementVcnId"] = undefined /*out*/;
@@ -255,10 +255,6 @@ export interface VbInstanceState {
      */
     alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceAlternateCustomEndpoint>[]>;
     /**
-     * A list of associated attachments to other services
-     */
-    attachments?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceAttachment>[]>;
-    /**
      * (Updatable) Compartment Identifier.
      */
     compartmentId?: pulumi.Input<string>;
@@ -283,10 +279,6 @@ export interface VbInstanceState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Information for IDCS access
-     */
-    idcsInfos?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceIdcsInfo>[]>;
-    /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      */
     idcsOpenId?: pulumi.Input<string>;
@@ -306,6 +298,10 @@ export interface VbInstanceState {
      * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      */
     managementVcnId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     */
+    networkEndpointDetails?: pulumi.Input<inputs.VisualBuilder.VbInstanceNetworkEndpointDetails>;
     /**
      * (Updatable) The number of Nodes
      *
@@ -384,6 +380,10 @@ export interface VbInstanceArgs {
      * (Updatable) Visual Builder is enabled or not.
      */
     isVisualBuilderEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     */
+    networkEndpointDetails?: pulumi.Input<inputs.VisualBuilder.VbInstanceNetworkEndpointDetails>;
     /**
      * (Updatable) The number of Nodes
      *

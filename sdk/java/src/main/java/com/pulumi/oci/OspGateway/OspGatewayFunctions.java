@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.OspGateway.inputs.GetAddressArgs;
 import com.pulumi.oci.OspGateway.inputs.GetAddressPlainArgs;
 import com.pulumi.oci.OspGateway.inputs.GetAddressRuleArgs;
@@ -171,6 +172,52 @@ public final class OspGatewayFunctions {
      * 
      */
     public static Output<GetAddressResult> getAddress(GetAddressArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getAddress:getAddress", TypeShape.of(GetAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address by id for the compartment
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
+     *             .addressId(testAddres.id())
+     *             .compartmentId(compartmentId)
+     *             .ospHomeRegion(addressOspHomeRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAddressResult> getAddress(GetAddressArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OspGateway/getAddress:getAddress", TypeShape.of(GetAddressResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -400,6 +447,52 @@ public final class OspGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAddressRuleResult> getAddressRule(GetAddressRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getAddressRule:getAddressRule", TypeShape.of(GetAddressRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address rule for the compartment based on the country code
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressRule = OspGatewayFunctions.getAddressRule(GetAddressRuleArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .countryCode(addressRuleCountryCode)
+     *             .ospHomeRegion(addressRuleOspHomeRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAddressRuleResult> getAddressRulePlain(GetAddressRulePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OspGateway/getAddressRule:getAddressRule", TypeShape.of(GetAddressRuleResult.class), args, Utilities.withVersion(options));
     }
@@ -539,6 +632,52 @@ public final class OspGatewayFunctions {
      * 
      */
     public static Output<GetInvoiceResult> getInvoice(GetInvoiceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getInvoice:getInvoice", TypeShape.of(GetInvoiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Returns an invoice by invoice id
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.id())
+     *             .ospHomeRegion(invoiceOspHomeRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInvoiceResult> getInvoice(GetInvoiceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OspGateway/getInvoice:getInvoice", TypeShape.of(GetInvoiceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -796,6 +935,59 @@ public final class OspGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getInvoices:getInvoices", TypeShape.of(GetInvoicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Invoices in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Returns a list of invoices
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .ospHomeRegion(invoiceOspHomeRegion)
+     *             .invoiceId(testInvoice.id())
+     *             .searchText(invoiceSearchText)
+     *             .statuses(invoiceStatus)
+     *             .timeInvoiceEnd(invoiceTimeInvoiceEnd)
+     *             .timeInvoiceStart(invoiceTimeInvoiceStart)
+     *             .timePaymentEnd(invoiceTimePaymentEnd)
+     *             .timePaymentStart(invoiceTimePaymentStart)
+     *             .types(invoiceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OspGateway/getInvoices:getInvoices", TypeShape.of(GetInvoicesResult.class), args, Utilities.withVersion(options));
     }
@@ -935,6 +1127,52 @@ public final class OspGatewayFunctions {
      * 
      */
     public static Output<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getInvoicesInvoiceLine:getInvoicesInvoiceLine", TypeShape.of(GetInvoicesInvoiceLineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Invoices Invoice Line resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Returns the invoice product list by invoice id
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .internalInvoiceId(testInvoice.id())
+     *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OspGateway/getInvoicesInvoiceLine:getInvoicesInvoiceLine", TypeShape.of(GetInvoicesInvoiceLineResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1164,6 +1402,52 @@ public final class OspGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getInvoicesInvoiceLines:getInvoicesInvoiceLines", TypeShape.of(GetInvoicesInvoiceLinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Invoices Invoice Lines in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Returns the invoice product list by invoice id
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .internalInvoiceId(testInvoice.id())
+     *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLinesPlain(GetInvoicesInvoiceLinesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OspGateway/getInvoicesInvoiceLines:getInvoicesInvoiceLines", TypeShape.of(GetInvoicesInvoiceLinesResult.class), args, Utilities.withVersion(options));
     }
@@ -1348,6 +1632,52 @@ public final class OspGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSubscriptionResult> getSubscription(GetSubscriptionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getSubscription:getSubscription", TypeShape.of(GetSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the subscription plan.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .ospHomeRegion(subscriptionOspHomeRegion)
+     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSubscriptionResult> getSubscriptionPlain(GetSubscriptionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OspGateway/getSubscription:getSubscription", TypeShape.of(GetSubscriptionResult.class), args, Utilities.withVersion(options));
     }
@@ -1484,6 +1814,51 @@ public final class OspGatewayFunctions {
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getSubscriptions:getSubscriptions", TypeShape.of(GetSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the subscription data for the compartment
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OspGatewayFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .ospHomeRegion(subscriptionOspHomeRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OspGateway/getSubscriptions:getSubscriptions", TypeShape.of(GetSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
     /**

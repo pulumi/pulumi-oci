@@ -55,14 +55,14 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * unique Property identifier
+     * A filter to return only resources whose Property identifier matches the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return unique Property identifier
+     * @return A filter to return only resources whose Property identifier matches the given identifier.
      * 
      */
     public Optional<Output<String>> id() {
@@ -70,14 +70,14 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their scope matches the given lifecycleState.
+     * A filter to return only resources their scope matches the given scope.
      * 
      */
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
     /**
-     * @return A filter to return only resources their scope matches the given lifecycleState.
+     * @return A filter to return only resources their scope matches the given scope.
      * 
      */
     public Optional<Output<String>> scope() {
@@ -85,14 +85,14 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<Output<String>> state() {
@@ -184,7 +184,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique Property identifier
+         * @param id A filter to return only resources whose Property identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique Property identifier
+         * @param id A filter to return only resources whose Property identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param scope A filter to return only resources their scope matches the given lifecycleState.
+         * @param scope A filter to return only resources their scope matches the given scope.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param scope A filter to return only resources their scope matches the given lifecycleState.
+         * @param scope A filter to return only resources their scope matches the given scope.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 

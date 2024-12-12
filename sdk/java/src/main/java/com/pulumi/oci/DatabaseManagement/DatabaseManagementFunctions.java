@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabaseArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabasePlainArgs;
@@ -484,6 +485,50 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint", TypeShape.of(GetDbManagementPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details of a specific Database Management private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpointPlain(GetDbManagementPrivateEndpointPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint", TypeShape.of(GetDbManagementPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
@@ -664,6 +709,51 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", TypeShape.of(GetDbManagementPrivateEndpointAssociatedDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Management Private Endpoint Associated Database resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of databases using a specific Database Management private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabasePlain(GetDbManagementPrivateEndpointAssociatedDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", TypeShape.of(GetDbManagementPrivateEndpointAssociatedDatabaseResult.class), args, Utilities.withVersion(options));
     }
@@ -800,6 +890,51 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases", TypeShape.of(GetDbManagementPrivateEndpointAssociatedDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of databases using a specific Database Management private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases", TypeShape.of(GetDbManagementPrivateEndpointAssociatedDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1040,6 +1175,55 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", TypeShape.of(GetDbManagementPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Management Private Endpoints in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a list of Database Management private endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoints = DatabaseManagementFunctions.getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .isCluster(dbManagementPrivateEndpointIsCluster)
+     *             .isDnsResolutionEnabled(dbManagementPrivateEndpointIsDnsResolutionEnabled)
+     *             .name(dbManagementPrivateEndpointName)
+     *             .state(dbManagementPrivateEndpointState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpointsPlain(GetDbManagementPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", TypeShape.of(GetDbManagementPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
@@ -1173,6 +1357,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalAsmResult> getExternalAsm(GetExternalAsmArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsm:getExternalAsm", TypeShape.of(GetExternalAsmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalAsmResult> getExternalAsm(GetExternalAsmArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsm:getExternalAsm", TypeShape.of(GetExternalAsmResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1352,6 +1580,51 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalAsmConfigurationResult> getExternalAsmConfiguration(GetExternalAsmConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", TypeShape.of(GetExternalAsmConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalAsmConfigurationResult> getExternalAsmConfiguration(GetExternalAsmConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", TypeShape.of(GetExternalAsmConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1576,6 +1849,51 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", TypeShape.of(GetExternalAsmDiskGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalAsmDiskGroupsResult> getExternalAsmDiskGroupsPlain(GetExternalAsmDiskGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", TypeShape.of(GetExternalAsmDiskGroupsResult.class), args, Utilities.withVersion(options));
     }
@@ -1709,6 +2027,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalAsmInstanceResult> getExternalAsmInstance(GetExternalAsmInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", TypeShape.of(GetExternalAsmInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalAsmInstanceResult> getExternalAsmInstance(GetExternalAsmInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", TypeShape.of(GetExternalAsmInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2028,6 +2390,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalAsmInstancesResult> getExternalAsmInstances(GetExternalAsmInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmInstances:getExternalAsmInstances", TypeShape.of(GetExternalAsmInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified external ASM.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmInstanceDisplayName)
+     *             .externalAsmId(testExternalAsm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalAsmInstancesResult> getExternalAsmInstancesPlain(GetExternalAsmInstancesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsmInstances:getExternalAsmInstances", TypeShape.of(GetExternalAsmInstancesResult.class), args, Utilities.withVersion(options));
     }
@@ -2164,6 +2572,51 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalAsmUsersResult> getExternalAsmUsers(GetExternalAsmUsersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", TypeShape.of(GetExternalAsmUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the external ASM specified by `externalAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalAsmUsersResult> getExternalAsmUsers(GetExternalAsmUsersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", TypeShape.of(GetExternalAsmUsersResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2484,6 +2937,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalAsmsResult> getExternalAsms(GetExternalAsmsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalAsms:getExternalAsms", TypeShape.of(GetExternalAsmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified external DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalAsmsResult> getExternalAsmsPlain(GetExternalAsmsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalAsms:getExternalAsms", TypeShape.of(GetExternalAsmsResult.class), args, Utilities.withVersion(options));
     }
@@ -2660,6 +3159,50 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalClusterResult> getExternalCluster(GetExternalClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalCluster:getExternalCluster", TypeShape.of(GetExternalClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster specified by `externalClusterId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalClusterResult> getExternalClusterPlain(GetExternalClusterPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalCluster:getExternalCluster", TypeShape.of(GetExternalClusterResult.class), args, Utilities.withVersion(options));
     }
@@ -2793,6 +3336,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalClusterInstanceResult> getExternalClusterInstance(GetExternalClusterInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", TypeShape.of(GetExternalClusterInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalClusterInstanceResult> getExternalClusterInstance(GetExternalClusterInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", TypeShape.of(GetExternalClusterInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3112,6 +3699,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalClusterInstancesResult> getExternalClusterInstances(GetExternalClusterInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalClusterInstances:getExternalClusterInstances", TypeShape.of(GetExternalClusterInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified external cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterInstanceDisplayName)
+     *             .externalClusterId(testExternalCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalClusterInstancesResult> getExternalClusterInstancesPlain(GetExternalClusterInstancesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalClusterInstances:getExternalClusterInstances", TypeShape.of(GetExternalClusterInstancesResult.class), args, Utilities.withVersion(options));
     }
@@ -3343,6 +3976,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalClustersResult> getExternalClusters(GetExternalClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalClusters:getExternalClusters", TypeShape.of(GetExternalClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified external DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalClustersResult> getExternalClusters(GetExternalClustersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalClusters:getExternalClusters", TypeShape.of(GetExternalClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3670,6 +4349,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalDatabasesResult> getExternalDatabases(GetExternalDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", TypeShape.of(GetExternalDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDatabaseDisplayName)
+     *             .externalDatabaseId(testExternalDatabase.id())
+     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalDatabasesResult> getExternalDatabasesPlain(GetExternalDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", TypeShape.of(GetExternalDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -3803,6 +4529,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalDbHomeResult> getExternalDbHome(GetExternalDbHomeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", TypeShape.of(GetExternalDbHomeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB home specified by `externalDbHomeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalDbHomeResult> getExternalDbHome(GetExternalDbHomeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", TypeShape.of(GetExternalDbHomeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4122,6 +4892,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalDbHomesResult> getExternalDbHomes(GetExternalDbHomesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", TypeShape.of(GetExternalDbHomesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbHomeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalDbHomesResult> getExternalDbHomesPlain(GetExternalDbHomesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", TypeShape.of(GetExternalDbHomesResult.class), args, Utilities.withVersion(options));
     }
@@ -4255,6 +5071,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalDbNodeResult> getExternalDbNode(GetExternalDbNodeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", TypeShape.of(GetExternalDbNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB node specified by `externalDbNodeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalDbNodeResult> getExternalDbNode(GetExternalDbNodeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", TypeShape.of(GetExternalDbNodeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4574,6 +5434,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalDbNodesResult> getExternalDbNodes(GetExternalDbNodesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", TypeShape.of(GetExternalDbNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB nodes in the specified external DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbNodeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalDbNodesResult> getExternalDbNodesPlain(GetExternalDbNodesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", TypeShape.of(GetExternalDbNodesResult.class), args, Utilities.withVersion(options));
     }
@@ -4750,6 +5656,50 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalDbSystemResult> getExternalDbSystem(GetExternalDbSystemArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem", TypeShape.of(GetExternalDbSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system specified by `externalDbSystemId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalDbSystemResult> getExternalDbSystemPlain(GetExternalDbSystemPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem", TypeShape.of(GetExternalDbSystemResult.class), args, Utilities.withVersion(options));
     }
@@ -4883,6 +5833,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalDbSystemConnectorResult> getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", TypeShape.of(GetExternalDbSystemConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalDbSystemConnectorResult> getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", TypeShape.of(GetExternalDbSystemConnectorResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5202,6 +6196,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemConnectors:getExternalDbSystemConnectors", TypeShape.of(GetExternalDbSystemConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external connectors in the specified external DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemConnectorDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalDbSystemConnectorsResult> getExternalDbSystemConnectorsPlain(GetExternalDbSystemConnectorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystemConnectors:getExternalDbSystemConnectors", TypeShape.of(GetExternalDbSystemConnectorsResult.class), args, Utilities.withVersion(options));
     }
@@ -5338,6 +6378,51 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", TypeShape.of(GetExternalDbSystemDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscoveries = DatabaseManagementFunctions.getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDiscoveryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalDbSystemDiscoveriesResult> getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", TypeShape.of(GetExternalDbSystemDiscoveriesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5558,6 +6643,50 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", TypeShape.of(GetExternalDbSystemDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalDbSystemDiscoveryResult> getExternalDbSystemDiscoveryPlain(GetExternalDbSystemDiscoveryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", TypeShape.of(GetExternalDbSystemDiscoveryResult.class), args, Utilities.withVersion(options));
     }
@@ -5694,6 +6823,51 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalDbSystemsResult> getExternalDbSystems(GetExternalDbSystemsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems", TypeShape.of(GetExternalDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the external DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDbSystems = DatabaseManagementFunctions.getExternalDbSystems(GetExternalDbSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalDbSystemsResult> getExternalDbSystems(GetExternalDbSystemsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems", TypeShape.of(GetExternalDbSystemsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5918,6 +7092,51 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", TypeShape.of(GetExternalExadataInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructurePlain(GetExternalExadataInfrastructurePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", TypeShape.of(GetExternalExadataInfrastructureResult.class), args, Utilities.withVersion(options));
     }
@@ -6098,6 +7317,51 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", TypeShape.of(GetExternalExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructures = DatabaseManagementFunctions.getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalExadataInfrastructureDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructuresPlain(GetExternalExadataInfrastructuresPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", TypeShape.of(GetExternalExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
     }
@@ -6231,6 +7495,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", TypeShape.of(GetExternalExadataStorageConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", TypeShape.of(GetExternalExadataStorageConnectorResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6458,6 +7766,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageConnectors:getExternalExadataStorageConnectors", TypeShape.of(GetExternalExadataStorageConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectorsPlain(GetExternalExadataStorageConnectorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageConnectors:getExternalExadataStorageConnectors", TypeShape.of(GetExternalExadataStorageConnectorsResult.class), args, Utilities.withVersion(options));
     }
@@ -6591,6 +7945,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalExadataStorageGridResult> getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", TypeShape.of(GetExternalExadataStorageGridResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalExadataStorageGridResult> getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", TypeShape.of(GetExternalExadataStorageGridResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6810,6 +8208,50 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalExadataStorageServerResult> getExternalExadataStorageServer(GetExternalExadataStorageServerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", TypeShape.of(GetExternalExadataStorageServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalExadataStorageServerResult> getExternalExadataStorageServerPlain(GetExternalExadataStorageServerPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", TypeShape.of(GetExternalExadataStorageServerResult.class), args, Utilities.withVersion(options));
     }
@@ -6943,6 +8385,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", TypeShape.of(GetExternalExadataStorageServerIormPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", TypeShape.of(GetExternalExadataStorageServerIormPlanResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7162,6 +8648,50 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", TypeShape.of(GetExternalExadataStorageServerOpenAlertHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistoryPlain(GetExternalExadataStorageServerOpenAlertHistoryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", TypeShape.of(GetExternalExadataStorageServerOpenAlertHistoryResult.class), args, Utilities.withVersion(options));
     }
@@ -7295,6 +8825,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", TypeShape.of(GetExternalExadataStorageServerTopSqlCpuActivityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerTopSqlCpuActivityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", TypeShape.of(GetExternalExadataStorageServerTopSqlCpuActivityResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7522,6 +9096,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalExadataStorageServersResult> getExternalExadataStorageServers(GetExternalExadataStorageServersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServers:getExternalExadataStorageServers", TypeShape.of(GetExternalExadataStorageServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageServerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalExadataStorageServersResult> getExternalExadataStorageServersPlain(GetExternalExadataStorageServersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageServers:getExternalExadataStorageServers", TypeShape.of(GetExternalExadataStorageServersResult.class), args, Utilities.withVersion(options));
     }
@@ -7655,6 +9275,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalListenerResult> getExternalListener(GetExternalListenerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalListener:getExternalListener", TypeShape.of(GetExternalListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the external listener specified by `externalListenerId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalListenerResult> getExternalListener(GetExternalListenerArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalListener:getExternalListener", TypeShape.of(GetExternalListenerResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7840,6 +9504,53 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetExternalListenerServicesResult> getExternalListenerServices(GetExternalListenerServicesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices", TypeShape.of(GetExternalListenerServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified external listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
+     *             .externalListenerId(testExternalListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalListenerServicesResult> getExternalListenerServices(GetExternalListenerServicesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices", TypeShape.of(GetExternalListenerServicesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8162,6 +9873,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalListenersResult> getExternalListeners(GetExternalListenersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalListeners:getExternalListeners", TypeShape.of(GetExternalListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified external DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalListenerDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalListenersResult> getExternalListenersPlain(GetExternalListenersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalListeners:getExternalListeners", TypeShape.of(GetExternalListenersResult.class), args, Utilities.withVersion(options));
     }
@@ -8313,6 +10070,56 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetJobExecutionsStatusResult> getJobExecutionsStatus(GetJobExecutionsStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", TypeShape.of(GetJobExecutionsStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Job Executions Status resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatus = DatabaseManagementFunctions.getJobExecutionsStatus(GetJobExecutionsStatusArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetJobExecutionsStatusResult> getJobExecutionsStatus(GetJobExecutionsStatusArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", TypeShape.of(GetJobExecutionsStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8562,6 +10369,56 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetJobExecutionsStatusesResult> getJobExecutionsStatuses(GetJobExecutionsStatusesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getJobExecutionsStatuses:getJobExecutionsStatuses", TypeShape.of(GetJobExecutionsStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Job Executions Statuses in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatuses = DatabaseManagementFunctions.getJobExecutionsStatuses(GetJobExecutionsStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetJobExecutionsStatusesResult> getJobExecutionsStatusesPlain(GetJobExecutionsStatusesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getJobExecutionsStatuses:getJobExecutionsStatuses", TypeShape.of(GetJobExecutionsStatusesResult.class), args, Utilities.withVersion(options));
     }
@@ -8695,6 +10552,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseResult> getManagedDatabase(GetManagedDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", TypeShape.of(GetManagedDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Managed Database specified by managedDatabaseId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseResult> getManagedDatabase(GetManagedDatabaseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", TypeShape.of(GetManagedDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8880,6 +10781,53 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", TypeShape.of(GetManagedDatabaseAddmTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", TypeShape.of(GetManagedDatabaseAddmTaskResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9114,6 +11062,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", TypeShape.of(GetManagedDatabaseAddmTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasksPlain(GetManagedDatabaseAddmTasksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", TypeShape.of(GetManagedDatabaseAddmTasksResult.class), args, Utilities.withVersion(options));
     }
@@ -9268,6 +11263,57 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", TypeShape.of(GetManagedDatabaseAlertLogCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", TypeShape.of(GetManagedDatabaseAlertLogCountResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9522,6 +11568,57 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAlertLogCounts:getManagedDatabaseAlertLogCounts", TypeShape.of(GetManagedDatabaseAlertLogCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Alert Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCountsPlain(GetManagedDatabaseAlertLogCountsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAlertLogCounts:getManagedDatabaseAlertLogCounts", TypeShape.of(GetManagedDatabaseAlertLogCountsResult.class), args, Utilities.withVersion(options));
     }
@@ -9676,6 +11773,57 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", TypeShape.of(GetManagedDatabaseAttentionLogCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Attention Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", TypeShape.of(GetManagedDatabaseAttentionLogCountResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9930,6 +12078,57 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", TypeShape.of(GetManagedDatabaseAttentionLogCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCountsPlain(GetManagedDatabaseAttentionLogCountsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", TypeShape.of(GetManagedDatabaseAttentionLogCountsResult.class), args, Utilities.withVersion(options));
     }
@@ -10114,6 +12313,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", TypeShape.of(GetManagedDatabaseCursorCacheStatementsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL statements from shared SQL area, also called the cursor cache.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseCursorCacheStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
+     *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatementsPlain(GetManagedDatabaseCursorCacheStatementsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", TypeShape.of(GetManagedDatabaseCursorCacheStatementsResult.class), args, Utilities.withVersion(options));
     }
@@ -10247,6 +12492,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseGroupResult> getManagedDatabaseGroup(GetManagedDatabaseGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseGroup:getManagedDatabaseGroup", TypeShape.of(GetManagedDatabaseGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseGroupResult> getManagedDatabaseGroup(GetManagedDatabaseGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseGroup:getManagedDatabaseGroup", TypeShape.of(GetManagedDatabaseGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -10490,6 +12779,56 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseGroupsResult> getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", TypeShape.of(GetManagedDatabaseGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the Managed Database Group for a specific ID or the list of Managed Database Groups in
+     * a specific compartment. Managed Database Groups can also be filtered based on the name parameter.
+     * Only one of the parameters, ID or name should be provided. If none of these parameters is provided,
+     * all the Managed Database Groups in the compartment are listed.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroups = DatabaseManagementFunctions.getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(managedDatabaseGroupId)
+     *             .name(managedDatabaseGroupName)
+     *             .state(managedDatabaseGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseGroupsResult> getManagedDatabaseGroupsPlain(GetManagedDatabaseGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", TypeShape.of(GetManagedDatabaseGroupsResult.class), args, Utilities.withVersion(options));
     }
@@ -10632,6 +12971,53 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+     * Managed Database, findings, recommendations, rationale, and examples.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -10862,6 +13248,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult.class), args, Utilities.withVersion(options));
     }
@@ -11007,6 +13439,54 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+     * If the date-time range is not specified, then the executions in the last seven days are listed.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -11266,6 +13746,59 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+     * You must specify a value for the GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+     * Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * You can further filter the results by providing the optional type of TaskTypeQueryParam.
+     * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
+     *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult.class), args, Utilities.withVersion(options));
     }
@@ -11402,6 +13935,51 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionOperationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionOperationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -11662,6 +14240,60 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the optimizer statistics (Auto and Manual) task operation summary for the specified Managed Database.
+     * The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+     * If you use the same header value in a consecutive request, the next page records are returned.
+     * To obtain the required results, you can apply the different types of filters supported by this API.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
+     *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionOperationTaskType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult.class), args, Utilities.withVersion(options));
     }
@@ -11801,6 +14433,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", TypeShape.of(GetManagedDatabaseSqlPlanBaselineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL plan baseline details for the specified planName.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", TypeShape.of(GetManagedDatabaseSqlPlanBaselineResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -12034,6 +14712,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration", TypeShape.of(GetManagedDatabaseSqlPlanBaselineConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the configuration details of SQL plan baselines for the specified
+     * Managed Database. The details include the settings for the capture and use of
+     * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfigurationPlain(GetManagedDatabaseSqlPlanBaselineConfigurationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration", TypeShape.of(GetManagedDatabaseSqlPlanBaselineConfigurationResult.class), args, Utilities.withVersion(options));
     }
@@ -12173,6 +14898,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", TypeShape.of(GetManagedDatabaseSqlPlanBaselineJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlPlanBaselineJobName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", TypeShape.of(GetManagedDatabaseSqlPlanBaselineJobsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -12450,6 +15221,64 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", TypeShape.of(GetManagedDatabaseSqlPlanBaselinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL plan baselines for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselinesPlain(GetManagedDatabaseSqlPlanBaselinesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", TypeShape.of(GetManagedDatabaseSqlPlanBaselinesResult.class), args, Utilities.withVersion(options));
     }
@@ -12595,6 +15424,54 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTask:getManagedDatabaseSqlTuningAdvisorTask", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Advisor Task resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTask:getManagedDatabaseSqlTuningAdvisorTask", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTaskResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -12790,6 +15667,55 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasks:getManagedDatabaseSqlTuningAdvisorTasks", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Tuning Advisor Tasks in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasks:getManagedDatabaseSqlTuningAdvisorTasks", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -13038,6 +15964,56 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Execution Plan Stats Comparision resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves a comparison of the existing SQL execution plan and a new plan.
+     * A SQL tuning task may suggest a new execution plan for a SQL,
+     * and this API retrieves the comparison report of the statistics of the two plans.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlain(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult.class), args, Utilities.withVersion(options));
     }
@@ -13192,6 +16168,57 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFinding:getManagedDatabaseSqlTuningAdvisorTasksFinding", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksFindingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Finding resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets an array of the details of the findings that match specific filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFinding:getManagedDatabaseSqlTuningAdvisorTasksFinding", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksFindingResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -13450,6 +16477,58 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Tuning Advisor Tasks Findings in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets an array of the details of the findings that match specific filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindingsPlain(GetManagedDatabaseSqlTuningAdvisorTasksFindingsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult.class), args, Utilities.withVersion(options));
     }
@@ -13595,6 +16674,54 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendation:getManagedDatabaseSqlTuningAdvisorTasksRecommendation", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Recommendation resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the findings and possible actions for a given object in a SQL tuning task.
+     * The task ID and object ID are used to retrieve the findings and recommendations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendation:getManagedDatabaseSqlTuningAdvisorTasksRecommendation", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -13838,6 +16965,55 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Tuning Advisor Tasks Recommendations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the findings and possible actions for a given object in a SQL tuning task.
+     * The task ID and object ID are used to retrieve the findings and recommendations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlain(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult.class), args, Utilities.withVersion(options));
     }
@@ -13983,6 +17159,54 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Sql Execution Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves a SQL execution plan for the SQL being tuned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
+     *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -14234,6 +17458,57 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSummaryReport:getManagedDatabaseSqlTuningAdvisorTasksSummaryReport", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Summary Report resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary report for the specified SQL Tuning Advisor task.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
+     *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlain(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSummaryReport:getManagedDatabaseSqlTuningAdvisorTasksSummaryReport", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult.class), args, Utilities.withVersion(options));
     }
@@ -14373,6 +17648,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", TypeShape.of(GetManagedDatabaseSqlTuningSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", TypeShape.of(GetManagedDatabaseSqlTuningSetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -14606,6 +17927,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", TypeShape.of(GetManagedDatabaseSqlTuningSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSetsPlain(GetManagedDatabaseSqlTuningSetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", TypeShape.of(GetManagedDatabaseSqlTuningSetsResult.class), args, Utilities.withVersion(options));
     }
@@ -14742,6 +18110,51 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", TypeShape.of(GetManagedDatabaseTableStatisticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the number of database table objects grouped by different statuses such as
+     * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseTableStatisticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", TypeShape.of(GetManagedDatabaseTableStatisticsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -14970,6 +18383,52 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseUserResult> getManagedDatabaseUser(GetManagedDatabaseUserArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUser:getManagedDatabaseUser", TypeShape.of(GetManagedDatabaseUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details of the user specified by managedDatabaseId and userName.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseUserResult> getManagedDatabaseUserPlain(GetManagedDatabaseUserPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseUser:getManagedDatabaseUser", TypeShape.of(GetManagedDatabaseUserResult.class), args, Utilities.withVersion(options));
     }
@@ -15109,6 +18568,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", TypeShape.of(GetManagedDatabaseUserConsumerGroupPrivilegeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database User Consumer Group Privilege resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of consumer group privileges granted to a specific user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", TypeShape.of(GetManagedDatabaseUserConsumerGroupPrivilegeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -15342,6 +18847,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivileges:getManagedDatabaseUserConsumerGroupPrivileges", TypeShape.of(GetManagedDatabaseUserConsumerGroupPrivilegesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database User Consumer Group Privileges in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of consumer group privileges granted to a specific user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivilegesPlain(GetManagedDatabaseUserConsumerGroupPrivilegesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivileges:getManagedDatabaseUserConsumerGroupPrivileges", TypeShape.of(GetManagedDatabaseUserConsumerGroupPrivilegesResult.class), args, Utilities.withVersion(options));
     }
@@ -15481,6 +19033,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", TypeShape.of(GetManagedDatabaseUserDataAccessContainerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database User Data Access Container resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", TypeShape.of(GetManagedDatabaseUserDataAccessContainerResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -15714,6 +19312,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainers:getManagedDatabaseUserDataAccessContainers", TypeShape.of(GetManagedDatabaseUserDataAccessContainersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database User Data Access Containers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
+     *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainersPlain(GetManagedDatabaseUserDataAccessContainersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainers:getManagedDatabaseUserDataAccessContainers", TypeShape.of(GetManagedDatabaseUserDataAccessContainersResult.class), args, Utilities.withVersion(options));
     }
@@ -15853,6 +19498,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivilege:getManagedDatabaseUserObjectPrivilege", TypeShape.of(GetManagedDatabaseUserObjectPrivilegeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database User Object Privilege resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of object privileges granted to a specific user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivilege:getManagedDatabaseUserObjectPrivilege", TypeShape.of(GetManagedDatabaseUserObjectPrivilegeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -16086,6 +19777,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivileges:getManagedDatabaseUserObjectPrivileges", TypeShape.of(GetManagedDatabaseUserObjectPrivilegesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database User Object Privileges in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of object privileges granted to a specific user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivilegesPlain(GetManagedDatabaseUserObjectPrivilegesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivileges:getManagedDatabaseUserObjectPrivileges", TypeShape.of(GetManagedDatabaseUserObjectPrivilegesResult.class), args, Utilities.withVersion(options));
     }
@@ -16225,6 +19963,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUser:getManagedDatabaseUserProxiedForUser", TypeShape.of(GetManagedDatabaseUserProxiedForUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database User Proxied For User resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of users on whose behalf the current user acts as proxy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUser:getManagedDatabaseUserProxiedForUser", TypeShape.of(GetManagedDatabaseUserProxiedForUserResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -16458,6 +20242,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", TypeShape.of(GetManagedDatabaseUserProxiedForUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database User Proxied For Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of users on whose behalf the current user acts as proxy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsersPlain(GetManagedDatabaseUserProxiedForUsersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", TypeShape.of(GetManagedDatabaseUserProxiedForUsersResult.class), args, Utilities.withVersion(options));
     }
@@ -16597,6 +20428,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserRole:getManagedDatabaseUserRole", TypeShape.of(GetManagedDatabaseUserRoleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database User Role resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of roles granted to a specific user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRoleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserRole:getManagedDatabaseUserRole", TypeShape.of(GetManagedDatabaseUserRoleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -16830,6 +20707,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles", TypeShape.of(GetManagedDatabaseUserRolesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database User Roles in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of roles granted to a specific user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRolesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
+     *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRolesPlain(GetManagedDatabaseUserRolesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles", TypeShape.of(GetManagedDatabaseUserRolesResult.class), args, Utilities.withVersion(options));
     }
@@ -16969,6 +20893,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabaseUsersResult> getManagedDatabaseUsers(GetManagedDatabaseUsersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUsers:getManagedDatabaseUsers", TypeShape.of(GetManagedDatabaseUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of users for the specified managedDatabaseId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabaseUsersResult> getManagedDatabaseUsers(GetManagedDatabaseUsersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseUsers:getManagedDatabaseUsers", TypeShape.of(GetManagedDatabaseUsersResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17230,6 +21200,60 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabasesResult> getManagedDatabases(GetManagedDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", TypeShape.of(GetManagedDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
+     * Managed Databases can be filtered based on the name parameter. Only one of the parameters, ID or name
+     * should be provided. If neither of these parameters is provided, all the Managed Databases in the compartment
+     * are listed. Managed Databases can also be filtered based on the deployment type and management option.
+     * If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
+     * considered and Managed Databases with `ADVANCED` management option are listed.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(managedDatabaseDeploymentType)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .id(managedDatabaseId)
+     *             .managementOption(managedDatabaseManagementOption)
+     *             .name(managedDatabaseName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabasesResult> getManagedDatabasesPlain(GetManagedDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", TypeShape.of(GetManagedDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -17366,6 +21390,51 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", TypeShape.of(GetManagedDatabasesAsmPropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Databases Asm Properties in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of ASM properties for the specified managedDatabaseId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", TypeShape.of(GetManagedDatabasesAsmPropertiesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17590,6 +21659,51 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty", TypeShape.of(GetManagedDatabasesAsmPropertyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Databases Asm Property resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of ASM properties for the specified managedDatabaseId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmPropertyPlain(GetManagedDatabasesAsmPropertyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty", TypeShape.of(GetManagedDatabasesAsmPropertyResult.class), args, Utilities.withVersion(options));
     }
@@ -17732,6 +21846,53 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter", TypeShape.of(GetManagedDatabasesDatabaseParameterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Databases Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParameterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .source(managedDatabasesDatabaseParameterSource)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter", TypeShape.of(GetManagedDatabasesDatabaseParameterResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17970,6 +22131,54 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters", TypeShape.of(GetManagedDatabasesDatabaseParametersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Databases Database Parameters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParametersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
+     *             .source(managedDatabasesDatabaseParameterSource)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParametersPlain(GetManagedDatabasesDatabaseParametersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters", TypeShape.of(GetManagedDatabasesDatabaseParametersResult.class), args, Utilities.withVersion(options));
     }
@@ -18109,6 +22318,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", TypeShape.of(GetManagedDatabasesUserProxyUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Databases User Proxy User resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of proxy users for the current user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", TypeShape.of(GetManagedDatabasesUserProxyUserResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -18342,6 +22597,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesUserProxyUsers:getManagedDatabasesUserProxyUsers", TypeShape.of(GetManagedDatabasesUserProxyUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Databases User Proxy Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of proxy users for the current user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
+     *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsersPlain(GetManagedDatabasesUserProxyUsersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabasesUserProxyUsers:getManagedDatabasesUserProxyUsers", TypeShape.of(GetManagedDatabasesUserProxyUsersResult.class), args, Utilities.withVersion(options));
     }
@@ -18481,6 +22783,52 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege", TypeShape.of(GetManagedDatabasesUserSystemPrivilegeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Databases User System Privilege resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of system privileges granted to a specific user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege", TypeShape.of(GetManagedDatabasesUserSystemPrivilegeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -18714,6 +23062,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", TypeShape.of(GetManagedDatabasesUserSystemPrivilegesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Databases User System Privileges in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of system privileges granted to a specific user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivilegesPlain(GetManagedDatabasesUserSystemPrivilegesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", TypeShape.of(GetManagedDatabasesUserSystemPrivilegesResult.class), args, Utilities.withVersion(options));
     }
@@ -18890,6 +23285,50 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedMySqlDatabaseResult> getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase", TypeShape.of(GetManagedMySqlDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves General Information for given MySQL Instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedMySqlDatabaseResult> getManagedMySqlDatabasePlain(GetManagedMySqlDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase", TypeShape.of(GetManagedMySqlDatabaseResult.class), args, Utilities.withVersion(options));
     }
@@ -19023,6 +23462,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedMySqlDatabaseConfigurationDataResult> getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseConfigurationData:getManagedMySqlDatabaseConfigurationData", TypeShape.of(GetManagedMySqlDatabaseConfigurationDataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves Configuration Data for given MySQL Instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseConfigurationDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseConfigurationDataResult> getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseConfigurationData:getManagedMySqlDatabaseConfigurationData", TypeShape.of(GetManagedMySqlDatabaseConfigurationDataResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -19254,6 +23737,53 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedMySqlDatabaseSqlDataResult> getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData", TypeShape.of(GetManagedMySqlDatabaseSqlDataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves SQL performance data for given MySQL Instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseSqlDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
+     *             .endTime(managedMySqlDatabaseSqlDataEndTime)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .startTime(managedMySqlDatabaseSqlDataStartTime)
+     *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedMySqlDatabaseSqlDataResult> getManagedMySqlDatabaseSqlDataPlain(GetManagedMySqlDatabaseSqlDataPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData", TypeShape.of(GetManagedMySqlDatabaseSqlDataResult.class), args, Utilities.withVersion(options));
     }
@@ -19387,6 +23917,50 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetManagedMySqlDatabasesResult> getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases", TypeShape.of(GetManagedMySqlDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of Managed MySQL Databases in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabasesResult> getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases", TypeShape.of(GetManagedMySqlDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -19606,6 +24180,50 @@ public final class DatabaseManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNamedCredentialResult> getNamedCredential(GetNamedCredentialArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getNamedCredential:getNamedCredential", TypeShape.of(GetNamedCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the named credential specified by namedCredentialId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNamedCredentialResult> getNamedCredentialPlain(GetNamedCredentialPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getNamedCredential:getNamedCredential", TypeShape.of(GetNamedCredentialResult.class), args, Utilities.withVersion(options));
     }
@@ -19751,6 +24369,54 @@ public final class DatabaseManagementFunctions {
      * 
      */
     public static Output<GetNamedCredentialsResult> getNamedCredentials(GetNamedCredentialsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getNamedCredentials:getNamedCredentials", TypeShape.of(GetNamedCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = DatabaseManagementFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .associatedResource(namedCredentialAssociatedResource)
+     *             .name(namedCredentialName)
+     *             .scope(namedCredentialScope)
+     *             .type(namedCredentialType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamedCredentialsResult> getNamedCredentials(GetNamedCredentialsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getNamedCredentials:getNamedCredentials", TypeShape.of(GetNamedCredentialsResult.class), args, Utilities.withVersion(options));
     }
     /**

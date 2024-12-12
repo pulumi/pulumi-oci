@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Creates a new SchedulerDefinition.
+// Create a SchedulerDefinition to perform lifecycle operations.
 //
 // ## Example Usage
 //
@@ -96,21 +96,21 @@ import (
 type SchedulerDefinition struct {
 	pulumi.CustomResourceState
 
-	// All ActionGroup Types part of the schedule.
+	// All ActionGroup Types that are part of the schedule.
 	ActionGroupTypes pulumi.StringArrayOutput `pulumi:"actionGroupTypes"`
 	// (Updatable) Action Groups associated with the Schedule.
 	ActionGroups SchedulerDefinitionActionGroupArrayOutput `pulumi:"actionGroups"`
 	// (Updatable) Activity Initiation Cut Off
 	ActivityInitiationCutOff pulumi.IntOutput `pulumi:"activityInitiationCutOff"`
-	// All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+	// All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
 	ApplicationTypes pulumi.StringArrayOutput `pulumi:"applicationTypes"`
 	// Tenancy OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Count of Action Groups affected by the Schedule.
 	CountOfAffectedActionGroups pulumi.IntOutput `pulumi:"countOfAffectedActionGroups"`
-	// Count of Resources affected by the Schedule
+	// Count of Resources affected by the Schedule.
 	CountOfAffectedResources pulumi.IntOutput `pulumi:"countOfAffectedResources"`
-	// Count of Targets affected by the Schedule
+	// Count of Targets affected by the Schedule.
 	CountOfAffectedTargets pulumi.IntOutput `pulumi:"countOfAffectedTargets"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -122,9 +122,9 @@ type SchedulerDefinition struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// All LifeCycle Operations part of the schedule
+	// All LifeCycle Operations that are part of the schedule.
 	LifecycleOperations pulumi.StringArrayOutput `pulumi:"lifecycleOperations"`
-	// All products part of the schedule for PRODUCT ActionGroup Type.
+	// All products that are part of the schedule for PRODUCT ActionGroup Type.
 	Products pulumi.StringArrayOutput `pulumi:"products"`
 	// Associated region
 	ResourceRegion pulumi.StringOutput `pulumi:"resourceRegion"`
@@ -138,7 +138,7 @@ type SchedulerDefinition struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// Scheduled date for the next run of the Job.
+	// The scheduled date for the next run of the Job.
 	TimeOfNextRun pulumi.StringOutput `pulumi:"timeOfNextRun"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -183,21 +183,21 @@ func GetSchedulerDefinition(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SchedulerDefinition resources.
 type schedulerDefinitionState struct {
-	// All ActionGroup Types part of the schedule.
+	// All ActionGroup Types that are part of the schedule.
 	ActionGroupTypes []string `pulumi:"actionGroupTypes"`
 	// (Updatable) Action Groups associated with the Schedule.
 	ActionGroups []SchedulerDefinitionActionGroup `pulumi:"actionGroups"`
 	// (Updatable) Activity Initiation Cut Off
 	ActivityInitiationCutOff *int `pulumi:"activityInitiationCutOff"`
-	// All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+	// All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
 	ApplicationTypes []string `pulumi:"applicationTypes"`
 	// Tenancy OCID
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Count of Action Groups affected by the Schedule.
 	CountOfAffectedActionGroups *int `pulumi:"countOfAffectedActionGroups"`
-	// Count of Resources affected by the Schedule
+	// Count of Resources affected by the Schedule.
 	CountOfAffectedResources *int `pulumi:"countOfAffectedResources"`
-	// Count of Targets affected by the Schedule
+	// Count of Targets affected by the Schedule.
 	CountOfAffectedTargets *int `pulumi:"countOfAffectedTargets"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -209,9 +209,9 @@ type schedulerDefinitionState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// All LifeCycle Operations part of the schedule
+	// All LifeCycle Operations that are part of the schedule.
 	LifecycleOperations []string `pulumi:"lifecycleOperations"`
-	// All products part of the schedule for PRODUCT ActionGroup Type.
+	// All products that are part of the schedule for PRODUCT ActionGroup Type.
 	Products []string `pulumi:"products"`
 	// Associated region
 	ResourceRegion *string `pulumi:"resourceRegion"`
@@ -225,28 +225,28 @@ type schedulerDefinitionState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// Scheduled date for the next run of the Job.
+	// The scheduled date for the next run of the Job.
 	TimeOfNextRun *string `pulumi:"timeOfNextRun"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type SchedulerDefinitionState struct {
-	// All ActionGroup Types part of the schedule.
+	// All ActionGroup Types that are part of the schedule.
 	ActionGroupTypes pulumi.StringArrayInput
 	// (Updatable) Action Groups associated with the Schedule.
 	ActionGroups SchedulerDefinitionActionGroupArrayInput
 	// (Updatable) Activity Initiation Cut Off
 	ActivityInitiationCutOff pulumi.IntPtrInput
-	// All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+	// All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
 	ApplicationTypes pulumi.StringArrayInput
 	// Tenancy OCID
 	CompartmentId pulumi.StringPtrInput
 	// Count of Action Groups affected by the Schedule.
 	CountOfAffectedActionGroups pulumi.IntPtrInput
-	// Count of Resources affected by the Schedule
+	// Count of Resources affected by the Schedule.
 	CountOfAffectedResources pulumi.IntPtrInput
-	// Count of Targets affected by the Schedule
+	// Count of Targets affected by the Schedule.
 	CountOfAffectedTargets pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
@@ -258,9 +258,9 @@ type SchedulerDefinitionState struct {
 	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// All LifeCycle Operations part of the schedule
+	// All LifeCycle Operations that are part of the schedule.
 	LifecycleOperations pulumi.StringArrayInput
-	// All products part of the schedule for PRODUCT ActionGroup Type.
+	// All products that are part of the schedule for PRODUCT ActionGroup Type.
 	Products pulumi.StringArrayInput
 	// Associated region
 	ResourceRegion pulumi.StringPtrInput
@@ -274,7 +274,7 @@ type SchedulerDefinitionState struct {
 	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
-	// Scheduled date for the next run of the Job.
+	// The scheduled date for the next run of the Job.
 	TimeOfNextRun pulumi.StringPtrInput
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -414,7 +414,7 @@ func (o SchedulerDefinitionOutput) ToSchedulerDefinitionOutputWithContext(ctx co
 	return o
 }
 
-// All ActionGroup Types part of the schedule.
+// All ActionGroup Types that are part of the schedule.
 func (o SchedulerDefinitionOutput) ActionGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.StringArrayOutput { return v.ActionGroupTypes }).(pulumi.StringArrayOutput)
 }
@@ -429,7 +429,7 @@ func (o SchedulerDefinitionOutput) ActivityInitiationCutOff() pulumi.IntOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.IntOutput { return v.ActivityInitiationCutOff }).(pulumi.IntOutput)
 }
 
-// All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+// All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
 func (o SchedulerDefinitionOutput) ApplicationTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.StringArrayOutput { return v.ApplicationTypes }).(pulumi.StringArrayOutput)
 }
@@ -444,12 +444,12 @@ func (o SchedulerDefinitionOutput) CountOfAffectedActionGroups() pulumi.IntOutpu
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.IntOutput { return v.CountOfAffectedActionGroups }).(pulumi.IntOutput)
 }
 
-// Count of Resources affected by the Schedule
+// Count of Resources affected by the Schedule.
 func (o SchedulerDefinitionOutput) CountOfAffectedResources() pulumi.IntOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.IntOutput { return v.CountOfAffectedResources }).(pulumi.IntOutput)
 }
 
-// Count of Targets affected by the Schedule
+// Count of Targets affected by the Schedule.
 func (o SchedulerDefinitionOutput) CountOfAffectedTargets() pulumi.IntOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.IntOutput { return v.CountOfAffectedTargets }).(pulumi.IntOutput)
 }
@@ -479,12 +479,12 @@ func (o SchedulerDefinitionOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// All LifeCycle Operations part of the schedule
+// All LifeCycle Operations that are part of the schedule.
 func (o SchedulerDefinitionOutput) LifecycleOperations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.StringArrayOutput { return v.LifecycleOperations }).(pulumi.StringArrayOutput)
 }
 
-// All products part of the schedule for PRODUCT ActionGroup Type.
+// All products that are part of the schedule for PRODUCT ActionGroup Type.
 func (o SchedulerDefinitionOutput) Products() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.StringArrayOutput { return v.Products }).(pulumi.StringArrayOutput)
 }
@@ -519,7 +519,7 @@ func (o SchedulerDefinitionOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Scheduled date for the next run of the Job.
+// The scheduled date for the next run of the Job.
 func (o SchedulerDefinitionOutput) TimeOfNextRun() pulumi.StringOutput {
 	return o.ApplyT(func(v *SchedulerDefinition) pulumi.StringOutput { return v.TimeOfNextRun }).(pulumi.StringOutput)
 }

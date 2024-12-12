@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
 import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationPlainArgs;
 import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
@@ -174,6 +175,50 @@ public final class ArtifactsFunctions {
      * 
      */
     public static Output<GetContainerConfigurationResult> getContainerConfiguration(GetContainerConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", TypeShape.of(GetContainerConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * Get container configuration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerConfiguration = ArtifactsFunctions.getContainerConfiguration(GetContainerConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetContainerConfigurationResult> getContainerConfiguration(GetContainerConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", TypeShape.of(GetContainerConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -393,6 +438,50 @@ public final class ArtifactsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetContainerImageResult> getContainerImage(GetContainerImageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getContainerImage:getContainerImage", TypeShape.of(GetContainerImageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Container Image resource in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * Get container image metadata.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImage = ArtifactsFunctions.getContainerImage(GetContainerImageArgs.builder()
+     *             .imageId(containerImageId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetContainerImageResult> getContainerImagePlain(GetContainerImagePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Artifacts/getContainerImage:getContainerImage", TypeShape.of(GetContainerImageResult.class), args, Utilities.withVersion(options));
     }
@@ -526,6 +615,50 @@ public final class ArtifactsFunctions {
      * 
      */
     public static Output<GetContainerImageSignatureResult> getContainerImageSignature(GetContainerImageSignatureArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", TypeShape.of(GetContainerImageSignatureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * Get container image signature metadata.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignature = ArtifactsFunctions.getContainerImageSignature(GetContainerImageSignatureArgs.builder()
+     *             .imageSignatureId(testImageSignature.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetContainerImageSignatureResult> getContainerImageSignature(GetContainerImageSignatureArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", TypeShape.of(GetContainerImageSignatureResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -777,6 +910,58 @@ public final class ArtifactsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetContainerImagesResult> getContainerImages(GetContainerImagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getContainerImages:getContainerImages", TypeShape.of(GetContainerImagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Container Images in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * List container images in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImages = ArtifactsFunctions.getContainerImages(GetContainerImagesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageCompartmentIdInSubtree)
+     *             .displayName(containerImageDisplayName)
+     *             .imageId(testImage.id())
+     *             .isVersioned(containerImageIsVersioned)
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .state(containerImageState)
+     *             .version(containerImageVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetContainerImagesResult> getContainerImagesPlain(GetContainerImagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Artifacts/getContainerImages:getContainerImages", TypeShape.of(GetContainerImagesResult.class), args, Utilities.withVersion(options));
     }
@@ -973,6 +1158,55 @@ public final class ArtifactsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetContainerRepositoriesResult> getContainerRepositories(GetContainerRepositoriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getContainerRepositories:getContainerRepositories", TypeShape.of(GetContainerRepositoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * List container repositories in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
+     *             .displayName(containerRepositoryDisplayName)
+     *             .isPublic(containerRepositoryIsPublic)
+     *             .repositoryId(testRepository.id())
+     *             .state(containerRepositoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetContainerRepositoriesResult> getContainerRepositoriesPlain(GetContainerRepositoriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Artifacts/getContainerRepositories:getContainerRepositories", TypeShape.of(GetContainerRepositoriesResult.class), args, Utilities.withVersion(options));
     }
@@ -1106,6 +1340,50 @@ public final class ArtifactsFunctions {
      * 
      */
     public static Output<GetContainerRepositoryResult> getContainerRepository(GetContainerRepositoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getContainerRepository:getContainerRepository", TypeShape.of(GetContainerRepositoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * Get container repository.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepository = ArtifactsFunctions.getContainerRepository(GetContainerRepositoryArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetContainerRepositoryResult> getContainerRepository(GetContainerRepositoryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Artifacts/getContainerRepository:getContainerRepository", TypeShape.of(GetContainerRepositoryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1361,6 +1639,59 @@ public final class ArtifactsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetContainerSignaturesResult> getContainerSignatures(GetContainerSignaturesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getContainerSignatures:getContainerSignatures", TypeShape.of(GetContainerSignaturesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Container Image Signatures in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * List container image signatures in an image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignatures = ArtifactsFunctions.getContainerSignatures(GetContainerSignaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageSignatureCompartmentIdInSubtree)
+     *             .displayName(containerImageSignatureDisplayName)
+     *             .imageDigest(containerImageSignatureImageDigest)
+     *             .imageId(testImage.id())
+     *             .kmsKeyId(testKey.id())
+     *             .kmsKeyVersionId(testKeyVersion.id())
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .signingAlgorithm(containerImageSignatureSigningAlgorithm)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetContainerSignaturesResult> getContainerSignaturesPlain(GetContainerSignaturesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Artifacts/getContainerSignatures:getContainerSignatures", TypeShape.of(GetContainerSignaturesResult.class), args, Utilities.withVersion(options));
     }
@@ -1494,6 +1825,50 @@ public final class ArtifactsFunctions {
      * 
      */
     public static Output<GetGenericArtifactResult> getGenericArtifact(GetGenericArtifactArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getGenericArtifact:getGenericArtifact", TypeShape.of(GetGenericArtifactResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifact = ArtifactsFunctions.getGenericArtifact(GetGenericArtifactArgs.builder()
+     *             .artifactId(testArtifact.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetGenericArtifactResult> getGenericArtifact(GetGenericArtifactArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Artifacts/getGenericArtifact:getGenericArtifact", TypeShape.of(GetGenericArtifactResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1741,6 +2116,57 @@ public final class ArtifactsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetGenericArtifactsResult> getGenericArtifacts(GetGenericArtifactsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getGenericArtifacts:getGenericArtifacts", TypeShape.of(GetGenericArtifactsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Generic Artifacts in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * Lists artifacts in the specified repository.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifacts = ArtifactsFunctions.getGenericArtifacts(GetGenericArtifactsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .repositoryId(testRepository.id())
+     *             .artifactPath(genericArtifactArtifactPath)
+     *             .displayName(genericArtifactDisplayName)
+     *             .id(genericArtifactId)
+     *             .sha256(genericArtifactSha256)
+     *             .state(genericArtifactState)
+     *             .version(genericArtifactVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetGenericArtifactsResult> getGenericArtifactsPlain(GetGenericArtifactsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Artifacts/getGenericArtifacts:getGenericArtifacts", TypeShape.of(GetGenericArtifactsResult.class), args, Utilities.withVersion(options));
     }
@@ -1933,6 +2359,54 @@ public final class ArtifactsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getRepositories:getRepositories", TypeShape.of(GetRepositoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repositories in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * Lists repositories in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = ArtifactsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(repositoryDisplayName)
+     *             .id(repositoryId)
+     *             .isImmutable(repositoryIsImmutable)
+     *             .state(repositoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Artifacts/getRepositories:getRepositories", TypeShape.of(GetRepositoriesResult.class), args, Utilities.withVersion(options));
     }
@@ -2066,6 +2540,50 @@ public final class ArtifactsFunctions {
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Artifacts/getRepository:getRepository", TypeShape.of(GetRepositoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Artifacts service.
+     * 
+     * Gets the specified repository&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = ArtifactsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(testRepositoryOciArtifactsRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Artifacts/getRepository:getRepository", TypeShape.of(GetRepositoryResult.class), args, Utilities.withVersion(options));
     }
     /**

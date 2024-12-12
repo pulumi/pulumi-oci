@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class FleetNotificationPreferencesPreferences {
     /**
-     * @return (Updatable) Enables or disables notification on Job Failures.&#39;
+     * @return (Updatable) Enables or disables notification on Job Failures.
      * 
      */
     private @Nullable Boolean onJobFailure;
@@ -29,7 +29,7 @@ public final class FleetNotificationPreferencesPreferences {
 
     private FleetNotificationPreferencesPreferences() {}
     /**
-     * @return (Updatable) Enables or disables notification on Job Failures.&#39;
+     * @return (Updatable) Enables or disables notification on Job Failures.
      * 
      */
     public Optional<Boolean> onJobFailure() {

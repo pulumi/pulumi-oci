@@ -24,6 +24,7 @@ class FleetArgs:
                  compartment_id: pulumi.Input[str],
                  fleet_type: pulumi.Input[str],
                  application_type: Optional[pulumi.Input[str]] = None,
+                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -38,24 +39,27 @@ class FleetArgs:
         """
         The set of arguments for constructing a Fleet resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
-        :param pulumi.Input[str] fleet_type: Type of the Fleet
-        :param pulumi.Input[str] application_type: Application Type associated with the Fleet.Applicable for Environment fleet types.
+        :param pulumi.Input[str] fleet_type: Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
+        :param pulumi.Input[str] application_type: Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        :param pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]] credentials: Credentials associated with the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet.Applicable for Environment fleet types.
+        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] group_type: Group Type associated with Group Fleet.Applicable for Group fleet types.
-        :param pulumi.Input[bool] is_target_auto_confirm: (Updatable) A value which represents if auto confirming of the targets can be enabled
-        :param pulumi.Input['FleetNotificationPreferencesArgs'] notification_preferences: (Updatable) Conditions when met to send notifications on the fleet activities
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: Products associated with the Fleet
-        :param pulumi.Input[str] resource_selection_type: Type of resource selection in a fleet
-        :param pulumi.Input['FleetRuleSelectionCriteriaArgs'] rule_selection_criteria: (Updatable) Rule Selection Criteria
+        :param pulumi.Input[str] group_type: Group Type associated with Group Fleet.
+        :param pulumi.Input[bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
+        :param pulumi.Input['FleetNotificationPreferencesArgs'] notification_preferences: (Updatable) Notification information to get notified when the fleet status changes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: Products associated with the Fleet.
+        :param pulumi.Input[str] resource_selection_type: Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
+        :param pulumi.Input['FleetRuleSelectionCriteriaArgs'] rule_selection_criteria: (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "fleet_type", fleet_type)
         if application_type is not None:
             pulumi.set(__self__, "application_type", application_type)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -95,7 +99,7 @@ class FleetArgs:
     @pulumi.getter(name="fleetType")
     def fleet_type(self) -> pulumi.Input[str]:
         """
-        Type of the Fleet
+        Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         """
         return pulumi.get(self, "fleet_type")
 
@@ -107,13 +111,25 @@ class FleetArgs:
     @pulumi.getter(name="applicationType")
     def application_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Application Type associated with the Fleet.Applicable for Environment fleet types.
+        Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "application_type")
 
     @application_type.setter
     def application_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "application_type", value)
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]]:
+        """
+        Credentials associated with the Fleet.
+        """
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]]):
+        pulumi.set(self, "credentials", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -155,7 +171,7 @@ class FleetArgs:
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Environment Type associated with the Fleet.Applicable for Environment fleet types.
+        Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
@@ -179,7 +195,7 @@ class FleetArgs:
     @pulumi.getter(name="groupType")
     def group_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Group Type associated with Group Fleet.Applicable for Group fleet types.
+        Group Type associated with Group Fleet.
         """
         return pulumi.get(self, "group_type")
 
@@ -191,7 +207,7 @@ class FleetArgs:
     @pulumi.getter(name="isTargetAutoConfirm")
     def is_target_auto_confirm(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) A value which represents if auto confirming of the targets can be enabled
+        (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         """
         return pulumi.get(self, "is_target_auto_confirm")
 
@@ -203,7 +219,7 @@ class FleetArgs:
     @pulumi.getter(name="notificationPreferences")
     def notification_preferences(self) -> Optional[pulumi.Input['FleetNotificationPreferencesArgs']]:
         """
-        (Updatable) Conditions when met to send notifications on the fleet activities
+        (Updatable) Notification information to get notified when the fleet status changes.
         """
         return pulumi.get(self, "notification_preferences")
 
@@ -215,7 +231,7 @@ class FleetArgs:
     @pulumi.getter
     def products(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Products associated with the Fleet
+        Products associated with the Fleet.
         """
         return pulumi.get(self, "products")
 
@@ -227,7 +243,7 @@ class FleetArgs:
     @pulumi.getter(name="resourceSelectionType")
     def resource_selection_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of resource selection in a fleet
+        Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         """
         return pulumi.get(self, "resource_selection_type")
 
@@ -239,7 +255,7 @@ class FleetArgs:
     @pulumi.getter(name="ruleSelectionCriteria")
     def rule_selection_criteria(self) -> Optional[pulumi.Input['FleetRuleSelectionCriteriaArgs']]:
         """
-        (Updatable) Rule Selection Criteria
+        (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         """
         return pulumi.get(self, "rule_selection_criteria")
 
@@ -253,6 +269,7 @@ class _FleetState:
     def __init__(__self__, *,
                  application_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -273,22 +290,23 @@ class _FleetState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Fleet resources.
-        :param pulumi.Input[str] application_type: Application Type associated with the Fleet.Applicable for Environment fleet types.
+        :param pulumi.Input[str] application_type: Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
+        :param pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]] credentials: Credentials associated with the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet.Applicable for Environment fleet types.
-        :param pulumi.Input[str] fleet_type: Type of the Fleet
+        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        :param pulumi.Input[str] fleet_type: Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] group_type: Group Type associated with Group Fleet.Applicable for Group fleet types.
-        :param pulumi.Input[bool] is_target_auto_confirm: (Updatable) A value which represents if auto confirming of the targets can be enabled
+        :param pulumi.Input[str] group_type: Group Type associated with Group Fleet.
+        :param pulumi.Input[bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input['FleetNotificationPreferencesArgs'] notification_preferences: (Updatable) Conditions when met to send notifications on the fleet activities
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: Products associated with the Fleet
+        :param pulumi.Input['FleetNotificationPreferencesArgs'] notification_preferences: (Updatable) Notification information to get notified when the fleet status changes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: Products associated with the Fleet.
         :param pulumi.Input[str] resource_region: Associated region
-        :param pulumi.Input[str] resource_selection_type: Type of resource selection in a fleet
-        :param pulumi.Input['FleetRuleSelectionCriteriaArgs'] rule_selection_criteria: (Updatable) Rule Selection Criteria
+        :param pulumi.Input[str] resource_selection_type: Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
+        :param pulumi.Input['FleetRuleSelectionCriteriaArgs'] rule_selection_criteria: (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         :param pulumi.Input[str] state: The lifecycle state of the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
@@ -298,6 +316,8 @@ class _FleetState:
             pulumi.set(__self__, "application_type", application_type)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -339,7 +359,7 @@ class _FleetState:
     @pulumi.getter(name="applicationType")
     def application_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Application Type associated with the Fleet.Applicable for Environment fleet types.
+        Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "application_type")
 
@@ -358,6 +378,18 @@ class _FleetState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]]:
+        """
+        Credentials associated with the Fleet.
+        """
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]]):
+        pulumi.set(self, "credentials", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -399,7 +431,7 @@ class _FleetState:
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Environment Type associated with the Fleet.Applicable for Environment fleet types.
+        Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
@@ -411,7 +443,7 @@ class _FleetState:
     @pulumi.getter(name="fleetType")
     def fleet_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of the Fleet
+        Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         """
         return pulumi.get(self, "fleet_type")
 
@@ -435,7 +467,7 @@ class _FleetState:
     @pulumi.getter(name="groupType")
     def group_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Group Type associated with Group Fleet.Applicable for Group fleet types.
+        Group Type associated with Group Fleet.
         """
         return pulumi.get(self, "group_type")
 
@@ -447,7 +479,7 @@ class _FleetState:
     @pulumi.getter(name="isTargetAutoConfirm")
     def is_target_auto_confirm(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) A value which represents if auto confirming of the targets can be enabled
+        (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         """
         return pulumi.get(self, "is_target_auto_confirm")
 
@@ -471,7 +503,7 @@ class _FleetState:
     @pulumi.getter(name="notificationPreferences")
     def notification_preferences(self) -> Optional[pulumi.Input['FleetNotificationPreferencesArgs']]:
         """
-        (Updatable) Conditions when met to send notifications on the fleet activities
+        (Updatable) Notification information to get notified when the fleet status changes.
         """
         return pulumi.get(self, "notification_preferences")
 
@@ -483,7 +515,7 @@ class _FleetState:
     @pulumi.getter
     def products(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Products associated with the Fleet
+        Products associated with the Fleet.
         """
         return pulumi.get(self, "products")
 
@@ -507,7 +539,7 @@ class _FleetState:
     @pulumi.getter(name="resourceSelectionType")
     def resource_selection_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type of resource selection in a fleet
+        Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         """
         return pulumi.get(self, "resource_selection_type")
 
@@ -519,7 +551,7 @@ class _FleetState:
     @pulumi.getter(name="ruleSelectionCriteria")
     def rule_selection_criteria(self) -> Optional[pulumi.Input['FleetRuleSelectionCriteriaArgs']]:
         """
-        (Updatable) Rule Selection Criteria
+        (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         """
         return pulumi.get(self, "rule_selection_criteria")
 
@@ -583,6 +615,7 @@ class Fleet(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -599,8 +632,7 @@ class Fleet(pulumi.CustomResource):
         """
         This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new fleet instance that includes fleet resources and properties.
-        For more information, please see the documentation.
+        Create a product, environment, group, or generic type of fleet in Fleet Application Management.
 
         ## Import
 
@@ -612,20 +644,21 @@ class Fleet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] application_type: Application Type associated with the Fleet.Applicable for Environment fleet types.
+        :param pulumi.Input[str] application_type: Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]] credentials: Credentials associated with the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet.Applicable for Environment fleet types.
-        :param pulumi.Input[str] fleet_type: Type of the Fleet
+        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        :param pulumi.Input[str] fleet_type: Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] group_type: Group Type associated with Group Fleet.Applicable for Group fleet types.
-        :param pulumi.Input[bool] is_target_auto_confirm: (Updatable) A value which represents if auto confirming of the targets can be enabled
-        :param pulumi.Input[Union['FleetNotificationPreferencesArgs', 'FleetNotificationPreferencesArgsDict']] notification_preferences: (Updatable) Conditions when met to send notifications on the fleet activities
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: Products associated with the Fleet
-        :param pulumi.Input[str] resource_selection_type: Type of resource selection in a fleet
-        :param pulumi.Input[Union['FleetRuleSelectionCriteriaArgs', 'FleetRuleSelectionCriteriaArgsDict']] rule_selection_criteria: (Updatable) Rule Selection Criteria
+        :param pulumi.Input[str] group_type: Group Type associated with Group Fleet.
+        :param pulumi.Input[bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
+        :param pulumi.Input[Union['FleetNotificationPreferencesArgs', 'FleetNotificationPreferencesArgsDict']] notification_preferences: (Updatable) Notification information to get notified when the fleet status changes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: Products associated with the Fleet.
+        :param pulumi.Input[str] resource_selection_type: Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
+        :param pulumi.Input[Union['FleetRuleSelectionCriteriaArgs', 'FleetRuleSelectionCriteriaArgsDict']] rule_selection_criteria: (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         """
         ...
     @overload
@@ -636,8 +669,7 @@ class Fleet(pulumi.CustomResource):
         """
         This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new fleet instance that includes fleet resources and properties.
-        For more information, please see the documentation.
+        Create a product, environment, group, or generic type of fleet in Fleet Application Management.
 
         ## Import
 
@@ -664,6 +696,7 @@ class Fleet(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -689,6 +722,7 @@ class Fleet(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["credentials"] = credentials
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
@@ -721,6 +755,7 @@ class Fleet(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             application_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -746,22 +781,23 @@ class Fleet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] application_type: Application Type associated with the Fleet.Applicable for Environment fleet types.
+        :param pulumi.Input[str] application_type: Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]] credentials: Credentials associated with the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet.Applicable for Environment fleet types.
-        :param pulumi.Input[str] fleet_type: Type of the Fleet
+        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        :param pulumi.Input[str] fleet_type: Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] group_type: Group Type associated with Group Fleet.Applicable for Group fleet types.
-        :param pulumi.Input[bool] is_target_auto_confirm: (Updatable) A value which represents if auto confirming of the targets can be enabled
+        :param pulumi.Input[str] group_type: Group Type associated with Group Fleet.
+        :param pulumi.Input[bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Union['FleetNotificationPreferencesArgs', 'FleetNotificationPreferencesArgsDict']] notification_preferences: (Updatable) Conditions when met to send notifications on the fleet activities
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: Products associated with the Fleet
+        :param pulumi.Input[Union['FleetNotificationPreferencesArgs', 'FleetNotificationPreferencesArgsDict']] notification_preferences: (Updatable) Notification information to get notified when the fleet status changes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: Products associated with the Fleet.
         :param pulumi.Input[str] resource_region: Associated region
-        :param pulumi.Input[str] resource_selection_type: Type of resource selection in a fleet
-        :param pulumi.Input[Union['FleetRuleSelectionCriteriaArgs', 'FleetRuleSelectionCriteriaArgsDict']] rule_selection_criteria: (Updatable) Rule Selection Criteria
+        :param pulumi.Input[str] resource_selection_type: Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
+        :param pulumi.Input[Union['FleetRuleSelectionCriteriaArgs', 'FleetRuleSelectionCriteriaArgsDict']] rule_selection_criteria: (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         :param pulumi.Input[str] state: The lifecycle state of the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
@@ -773,6 +809,7 @@ class Fleet(pulumi.CustomResource):
 
         __props__.__dict__["application_type"] = application_type
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["credentials"] = credentials
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
@@ -797,7 +834,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="applicationType")
     def application_type(self) -> pulumi.Output[str]:
         """
-        Application Type associated with the Fleet.Applicable for Environment fleet types.
+        Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "application_type")
 
@@ -808,6 +845,14 @@ class Fleet(pulumi.CustomResource):
         Tenancy OCID
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> pulumi.Output[Sequence['outputs.FleetCredential']]:
+        """
+        Credentials associated with the Fleet.
+        """
+        return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -837,7 +882,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> pulumi.Output[str]:
         """
-        Environment Type associated with the Fleet.Applicable for Environment fleet types.
+        Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
@@ -845,7 +890,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="fleetType")
     def fleet_type(self) -> pulumi.Output[str]:
         """
-        Type of the Fleet
+        Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         """
         return pulumi.get(self, "fleet_type")
 
@@ -861,7 +906,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="groupType")
     def group_type(self) -> pulumi.Output[str]:
         """
-        Group Type associated with Group Fleet.Applicable for Group fleet types.
+        Group Type associated with Group Fleet.
         """
         return pulumi.get(self, "group_type")
 
@@ -869,7 +914,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="isTargetAutoConfirm")
     def is_target_auto_confirm(self) -> pulumi.Output[bool]:
         """
-        (Updatable) A value which represents if auto confirming of the targets can be enabled
+        (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         """
         return pulumi.get(self, "is_target_auto_confirm")
 
@@ -885,7 +930,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="notificationPreferences")
     def notification_preferences(self) -> pulumi.Output['outputs.FleetNotificationPreferences']:
         """
-        (Updatable) Conditions when met to send notifications on the fleet activities
+        (Updatable) Notification information to get notified when the fleet status changes.
         """
         return pulumi.get(self, "notification_preferences")
 
@@ -893,7 +938,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter
     def products(self) -> pulumi.Output[Sequence[str]]:
         """
-        Products associated with the Fleet
+        Products associated with the Fleet.
         """
         return pulumi.get(self, "products")
 
@@ -909,7 +954,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="resourceSelectionType")
     def resource_selection_type(self) -> pulumi.Output[str]:
         """
-        Type of resource selection in a fleet
+        Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         """
         return pulumi.get(self, "resource_selection_type")
 
@@ -917,7 +962,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="ruleSelectionCriteria")
     def rule_selection_criteria(self) -> pulumi.Output['outputs.FleetRuleSelectionCriteria']:
         """
-        (Updatable) Rule Selection Criteria
+        (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         """
         return pulumi.get(self, "rule_selection_criteria")
 

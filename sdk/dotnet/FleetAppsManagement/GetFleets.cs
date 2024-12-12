@@ -84,7 +84,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the Application Type given.
+        /// A filter to return resources that match the Application Type/Product Stack given..
         /// </summary>
         [Input("applicationType")]
         public string? ApplicationType { get; set; }
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the Environment Type given.
+        /// A filter to return resources that match the Environment Type given.
         /// </summary>
         [Input("environmentType")]
         public string? EnvironmentType { get; set; }
@@ -116,25 +116,25 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// A filter to return only resources their fleetType matches the given fleetType.
+        /// A filter to return fleets whose fleetType matches the given fleetType.
         /// </summary>
         [Input("fleetType")]
         public string? FleetType { get; set; }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// A filter to return fleets whose id matches the given Fleet identifier
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the Product Type given.
+        /// A filter to return resources that match the Product given.
         /// </summary>
         [Input("product")]
         public string? Product { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return fleets whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -148,7 +148,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the Application Type given.
+        /// A filter to return resources that match the Application Type/Product Stack given..
         /// </summary>
         [Input("applicationType")]
         public Input<string>? ApplicationType { get; set; }
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the Environment Type given.
+        /// A filter to return resources that match the Environment Type given.
         /// </summary>
         [Input("environmentType")]
         public Input<string>? EnvironmentType { get; set; }
@@ -180,25 +180,25 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// A filter to return only resources their fleetType matches the given fleetType.
+        /// A filter to return fleets whose fleetType matches the given fleetType.
         /// </summary>
         [Input("fleetType")]
         public Input<string>? FleetType { get; set; }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// A filter to return fleets whose id matches the given Fleet identifier
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the Product Type given.
+        /// A filter to return resources that match the Product given.
         /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return fleets whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -214,11 +214,11 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetsResult
     {
         /// <summary>
-        /// Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        /// Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         public readonly string? ApplicationType;
         /// <summary>
-        /// Please provide the root compartmentId (TenancyId).
+        /// Tenancy Id (Root Compartment Id)for which the rule is created.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -226,7 +226,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        /// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         public readonly string? EnvironmentType;
         public readonly ImmutableArray<Outputs.GetFleetsFilterResult> Filters;
@@ -235,7 +235,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetsFleetCollectionResult> FleetCollections;
         /// <summary>
-        /// Type of the Fleet.
+        /// Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         /// </summary>
         public readonly string? FleetType;
         /// <summary>

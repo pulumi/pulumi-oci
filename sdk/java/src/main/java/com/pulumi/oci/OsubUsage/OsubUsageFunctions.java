@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.OsubUsage.inputs.GetCommitmentAggregatedsArgs;
 import com.pulumi.oci.OsubUsage.inputs.GetCommitmentAggregatedsPlainArgs;
 import com.pulumi.oci.OsubUsage.inputs.GetComputedUsageArgs;
@@ -45,6 +46,15 @@ public final class OsubUsageFunctions {
      * 
      */
     public static Output<GetCommitmentAggregatedsResult> getCommitmentAggregateds(GetCommitmentAggregatedsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds", TypeShape.of(GetCommitmentAggregatedsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Computed Usage Aggregateds in Oracle Cloud Infrastructure Osub Usage service.
+     * 
+     * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
+     * 
+     */
+    public static Output<GetCommitmentAggregatedsResult> getCommitmentAggregateds(GetCommitmentAggregatedsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds", TypeShape.of(GetCommitmentAggregatedsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -241,6 +251,53 @@ public final class OsubUsageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsubUsage/getComputedUsage:getComputedUsage", TypeShape.of(GetComputedUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Osub Usage service.
+     * 
+     * This is an API which returns Computed Usage corresponding to the id passed
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubUsage.OsubUsageFunctions;
+     * import com.pulumi.oci.OsubUsage.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .fields(computedUsageFields)
+     *             .xOneOriginRegion(computedUsageXOneOriginRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsubUsage/getComputedUsage:getComputedUsage", TypeShape.of(GetComputedUsageResult.class), args, Utilities.withVersion(options));
     }
@@ -269,6 +326,15 @@ public final class OsubUsageFunctions {
      * 
      */
     public static Output<GetComputedUsagesResult> getComputedUsages(GetComputedUsagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsubUsage/getComputedUsages:getComputedUsages", TypeShape.of(GetComputedUsagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Osub Usage service.
+     * 
+     * This is a collection API which returns a list of Computed Usages for given filters.
+     * 
+     */
+    public static Output<GetComputedUsagesResult> getComputedUsages(GetComputedUsagesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsubUsage/getComputedUsages:getComputedUsages", TypeShape.of(GetComputedUsagesResult.class), args, Utilities.withVersion(options));
     }
     /**

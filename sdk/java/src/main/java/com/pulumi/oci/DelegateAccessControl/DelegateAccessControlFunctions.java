@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestArgs;
 import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestAuditLogReportArgs;
 import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestAuditLogReportPlainArgs;
@@ -180,6 +181,50 @@ public final class DelegateAccessControlFunctions {
      * 
      */
     public static Output<GetDelegatedResourceAccessRequestResult> getDelegatedResourceAccessRequest(GetDelegatedResourceAccessRequestArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegatedResourceAccessRequest:getDelegatedResourceAccessRequest", TypeShape.of(GetDelegatedResourceAccessRequestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Delegated Resource Access Request resource in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Gets details of a Delegated Resource Access Request.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDelegatedResourceAccessRequest = DelegateAccessControlFunctions.getDelegatedResourceAccessRequest(GetDelegatedResourceAccessRequestArgs.builder()
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDelegatedResourceAccessRequestResult> getDelegatedResourceAccessRequest(GetDelegatedResourceAccessRequestArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegatedResourceAccessRequest:getDelegatedResourceAccessRequest", TypeShape.of(GetDelegatedResourceAccessRequestResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -403,6 +448,51 @@ public final class DelegateAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDelegatedResourceAccessRequestAuditLogReportResult> getDelegatedResourceAccessRequestAuditLogReport(GetDelegatedResourceAccessRequestAuditLogReportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport", TypeShape.of(GetDelegatedResourceAccessRequestAuditLogReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Delegated Resource Access Request Audit Log Report resource in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Gets the audit log report for the given Delegated Resource Access Request.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestAuditLogReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDelegatedResourceAccessRequestAuditLogReport = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestAuditLogReport(GetDelegatedResourceAccessRequestAuditLogReportArgs.builder()
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .isProcessTreeEnabled(delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDelegatedResourceAccessRequestAuditLogReportResult> getDelegatedResourceAccessRequestAuditLogReportPlain(GetDelegatedResourceAccessRequestAuditLogReportPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport", TypeShape.of(GetDelegatedResourceAccessRequestAuditLogReportResult.class), args, Utilities.withVersion(options));
     }
@@ -536,6 +626,50 @@ public final class DelegateAccessControlFunctions {
      * 
      */
     public static Output<GetDelegatedResourceAccessRequestHistoriesResult> getDelegatedResourceAccessRequestHistories(GetDelegatedResourceAccessRequestHistoriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories", TypeShape.of(GetDelegatedResourceAccessRequestHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Delegated Resource Access Request Histories in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Returns a history of all status associated with the Delegated Resource Access RequestId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDelegatedResourceAccessRequestHistories = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestHistories(GetDelegatedResourceAccessRequestHistoriesArgs.builder()
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDelegatedResourceAccessRequestHistoriesResult> getDelegatedResourceAccessRequestHistories(GetDelegatedResourceAccessRequestHistoriesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories", TypeShape.of(GetDelegatedResourceAccessRequestHistoriesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -779,6 +913,56 @@ public final class DelegateAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDelegatedResourceAccessRequestsResult> getDelegatedResourceAccessRequests(GetDelegatedResourceAccessRequestsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegatedResourceAccessRequests:getDelegatedResourceAccessRequests", TypeShape.of(GetDelegatedResourceAccessRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Delegated Resource Access Requests in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Lists all Delegated Resource Access Requests in the compartment. Note that only one of lifecycleState or requestStatus query parameter can be used.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDelegatedResourceAccessRequests = DelegateAccessControlFunctions.getDelegatedResourceAccessRequests(GetDelegatedResourceAccessRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .delegationControlId(testDelegationControl.id())
+     *             .requestStatus(delegatedResourceAccessRequestRequestStatus)
+     *             .resourceId(testResource.id())
+     *             .state(delegatedResourceAccessRequestState)
+     *             .timeEnd(delegatedResourceAccessRequestTimeEnd)
+     *             .timeStart(delegatedResourceAccessRequestTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDelegatedResourceAccessRequestsResult> getDelegatedResourceAccessRequestsPlain(GetDelegatedResourceAccessRequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DelegateAccessControl/getDelegatedResourceAccessRequests:getDelegatedResourceAccessRequests", TypeShape.of(GetDelegatedResourceAccessRequestsResult.class), args, Utilities.withVersion(options));
     }
@@ -955,6 +1139,50 @@ public final class DelegateAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDelegationControlResult> getDelegationControl(GetDelegationControlArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegationControl:getDelegationControl", TypeShape.of(GetDelegationControlResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Delegation Control resource in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Gets the Delegation Control associated with the specified Delegation Control ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDelegationControl = DelegateAccessControlFunctions.getDelegationControl(GetDelegationControlArgs.builder()
+     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDelegationControlResult> getDelegationControlPlain(GetDelegationControlPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DelegateAccessControl/getDelegationControl:getDelegationControl", TypeShape.of(GetDelegationControlResult.class), args, Utilities.withVersion(options));
     }
@@ -1088,6 +1316,50 @@ public final class DelegateAccessControlFunctions {
      * 
      */
     public static Output<GetDelegationControlResourcesResult> getDelegationControlResources(GetDelegationControlResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegationControlResources:getDelegationControlResources", TypeShape.of(GetDelegationControlResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Delegation Control Resources in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Returns a list of resources associated with the Delegation Control.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDelegationControlResources = DelegateAccessControlFunctions.getDelegationControlResources(GetDelegationControlResourcesArgs.builder()
+     *             .delegationControlId(testDelegationControl.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDelegationControlResourcesResult> getDelegationControlResources(GetDelegationControlResourcesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegationControlResources:getDelegationControlResources", TypeShape.of(GetDelegationControlResourcesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1323,6 +1595,54 @@ public final class DelegateAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDelegationControlsResult> getDelegationControls(GetDelegationControlsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegationControls:getDelegationControls", TypeShape.of(GetDelegationControlsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Delegation Controls in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Lists the Delegation Controls in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDelegationControls = DelegateAccessControlFunctions.getDelegationControls(GetDelegationControlsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(delegationControlDisplayName)
+     *             .resourceId(testResource.id())
+     *             .resourceType(delegationControlResourceType)
+     *             .state(delegationControlState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDelegationControlsResult> getDelegationControlsPlain(GetDelegationControlsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DelegateAccessControl/getDelegationControls:getDelegationControls", TypeShape.of(GetDelegationControlsResult.class), args, Utilities.withVersion(options));
     }
@@ -1456,6 +1776,50 @@ public final class DelegateAccessControlFunctions {
      * 
      */
     public static Output<GetDelegationSubscriptionResult> getDelegationSubscription(GetDelegationSubscriptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", TypeShape.of(GetDelegationSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Delegation Subscription resource in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Gets a DelegationSubscription by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDelegationSubscription = DelegateAccessControlFunctions.getDelegationSubscription(GetDelegationSubscriptionArgs.builder()
+     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDelegationSubscriptionResult> getDelegationSubscription(GetDelegationSubscriptionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", TypeShape.of(GetDelegationSubscriptionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1683,6 +2047,52 @@ public final class DelegateAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDelegationSubscriptionsResult> getDelegationSubscriptions(GetDelegationSubscriptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getDelegationSubscriptions:getDelegationSubscriptions", TypeShape.of(GetDelegationSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Delegation Subscriptions in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Lists the Delegation Subscriptions in Delegation Control.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDelegationSubscriptions = DelegateAccessControlFunctions.getDelegationSubscriptions(GetDelegationSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(delegationSubscriptionDisplayName)
+     *             .state(delegationSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDelegationSubscriptionsResult> getDelegationSubscriptionsPlain(GetDelegationSubscriptionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DelegateAccessControl/getDelegationSubscriptions:getDelegationSubscriptions", TypeShape.of(GetDelegationSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
@@ -1859,6 +2269,50 @@ public final class DelegateAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetServiceProviderResult> getServiceProvider(GetServiceProviderArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getServiceProvider:getServiceProvider", TypeShape.of(GetServiceProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Service Provider resource in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Gets a ServiceProvider by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceProvider = DelegateAccessControlFunctions.getServiceProvider(GetServiceProviderArgs.builder()
+     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetServiceProviderResult> getServiceProviderPlain(GetServiceProviderPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DelegateAccessControl/getServiceProvider:getServiceProvider", TypeShape.of(GetServiceProviderResult.class), args, Utilities.withVersion(options));
     }
@@ -1992,6 +2446,50 @@ public final class DelegateAccessControlFunctions {
      * 
      */
     public static Output<GetServiceProviderActionResult> getServiceProviderAction(GetServiceProviderActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction", TypeShape.of(GetServiceProviderActionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Service Provider Action resource in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Gets the Service Provider Action associated with the specified Service Provider Action ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceProviderAction = DelegateAccessControlFunctions.getServiceProviderAction(GetServiceProviderActionArgs.builder()
+     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServiceProviderActionResult> getServiceProviderAction(GetServiceProviderActionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction", TypeShape.of(GetServiceProviderActionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2227,6 +2725,54 @@ public final class DelegateAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetServiceProviderActionsResult> getServiceProviderActions(GetServiceProviderActionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getServiceProviderActions:getServiceProviderActions", TypeShape.of(GetServiceProviderActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Service Provider Actions in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Lists all the ServiceProviderActions available in the system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceProviderActions = DelegateAccessControlFunctions.getServiceProviderActions(GetServiceProviderActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(serviceProviderActionName)
+     *             .resourceType(serviceProviderActionResourceType)
+     *             .serviceProviderServiceTypes(serviceProviderActionServiceProviderServiceType)
+     *             .state(serviceProviderActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetServiceProviderActionsResult> getServiceProviderActionsPlain(GetServiceProviderActionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DelegateAccessControl/getServiceProviderActions:getServiceProviderActions", TypeShape.of(GetServiceProviderActionsResult.class), args, Utilities.withVersion(options));
     }
@@ -2372,6 +2918,54 @@ public final class DelegateAccessControlFunctions {
      * 
      */
     public static Output<GetServiceProvidersResult> getServiceProviders(GetServiceProvidersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DelegateAccessControl/getServiceProviders:getServiceProviders", TypeShape.of(GetServiceProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Service Providers in Oracle Cloud Infrastructure Delegate Access Control service.
+     * 
+     * Lists the Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
+     * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceProviders = DelegateAccessControlFunctions.getServiceProviders(GetServiceProvidersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(serviceProviderName)
+     *             .serviceProviderType(serviceProviderServiceProviderType)
+     *             .state(serviceProviderState)
+     *             .supportedResourceType(serviceProviderSupportedResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServiceProvidersResult> getServiceProviders(GetServiceProvidersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DelegateAccessControl/getServiceProviders:getServiceProviders", TypeShape.of(GetServiceProvidersResult.class), args, Utilities.withVersion(options));
     }
     /**

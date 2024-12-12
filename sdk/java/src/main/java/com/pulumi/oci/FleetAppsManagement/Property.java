@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  * 
- * Creates a new Property.
+ * Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
  * 
  * ## Example Usage
  * 
@@ -155,28 +155,28 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.resourceRegion;
     }
     /**
-     * The scope of the property
+     * The scope of the property.
      * 
      */
     @Export(name="scope", refs={String.class}, tree="[0]")
     private Output<String> scope;
 
     /**
-     * @return The scope of the property
+     * @return The scope of the property.
      * 
      */
     public Output<String> scope() {
         return this.scope;
     }
     /**
-     * (Updatable) Text selection of the category
+     * (Updatable) Text selection of the property.
      * 
      */
     @Export(name="selection", refs={String.class}, tree="[0]")
     private Output<String> selection;
 
     /**
-     * @return (Updatable) Text selection of the category
+     * @return (Updatable) Text selection of the property.
      * 
      */
     public Output<String> selection() {
@@ -253,21 +253,21 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.type;
     }
     /**
-     * (Updatable) Format of the value
+     * (Updatable) Format of the value.
      * 
      */
     @Export(name="valueType", refs={String.class}, tree="[0]")
     private Output<String> valueType;
 
     /**
-     * @return (Updatable) Format of the value
+     * @return (Updatable) Format of the value.
      * 
      */
     public Output<String> valueType() {
         return this.valueType;
     }
     /**
-     * (Updatable) Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * (Updatable) Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -277,7 +277,7 @@ public class Property extends com.pulumi.resources.CustomResource {
     private Output<List<String>> values;
 
     /**
-     * @return (Updatable) Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * @return (Updatable) Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

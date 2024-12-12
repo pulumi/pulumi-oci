@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionPlainArgs;
@@ -202,6 +203,50 @@ public final class DisasterRecoveryFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDrPlanResult> getDrPlan(GetDrPlanArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getDrPlan:getDrPlan", TypeShape.of(GetDrPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get details for the DR plan identified by *drPlanId*.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDrPlanResult> getDrPlanPlain(GetDrPlanPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DisasterRecovery/getDrPlan:getDrPlan", TypeShape.of(GetDrPlanResult.class), args, Utilities.withVersion(options));
     }
@@ -335,6 +380,50 @@ public final class DisasterRecoveryFunctions {
      * 
      */
     public static Output<GetDrPlanExecutionResult> getDrPlanExecution(GetDrPlanExecutionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution", TypeShape.of(GetDrPlanExecutionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get details for the DR plan execution identified by *drPlanExecutionId*.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDrPlanExecutionResult> getDrPlanExecution(GetDrPlanExecutionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution", TypeShape.of(GetDrPlanExecutionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -566,6 +655,53 @@ public final class DisasterRecoveryFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDrPlanExecutionsResult> getDrPlanExecutions(GetDrPlanExecutionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", TypeShape.of(GetDrPlanExecutionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get a summary list of all DR plan executions for a DR protection group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanExecutionDisplayName)
+     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .state(drPlanExecutionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDrPlanExecutionsResult> getDrPlanExecutionsPlain(GetDrPlanExecutionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", TypeShape.of(GetDrPlanExecutionsResult.class), args, Utilities.withVersion(options));
     }
@@ -604,6 +740,7 @@ public final class DisasterRecoveryFunctions {
      *             .displayName(drPlanDisplayName)
      *             .drPlanId(testDrPlan.id())
      *             .drPlanType(drPlanDrPlanType)
+     *             .lifecycleSubState(drPlanLifecycleSubState)
      *             .state(drPlanState)
      *             .build());
      * 
@@ -652,6 +789,7 @@ public final class DisasterRecoveryFunctions {
      *             .displayName(drPlanDisplayName)
      *             .drPlanId(testDrPlan.id())
      *             .drPlanType(drPlanDrPlanType)
+     *             .lifecycleSubState(drPlanLifecycleSubState)
      *             .state(drPlanState)
      *             .build());
      * 
@@ -700,6 +838,7 @@ public final class DisasterRecoveryFunctions {
      *             .displayName(drPlanDisplayName)
      *             .drPlanId(testDrPlan.id())
      *             .drPlanType(drPlanDrPlanType)
+     *             .lifecycleSubState(drPlanLifecycleSubState)
      *             .state(drPlanState)
      *             .build());
      * 
@@ -748,6 +887,56 @@ public final class DisasterRecoveryFunctions {
      *             .displayName(drPlanDisplayName)
      *             .drPlanId(testDrPlan.id())
      *             .drPlanType(drPlanDrPlanType)
+     *             .lifecycleSubState(drPlanLifecycleSubState)
+     *             .state(drPlanState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDrPlansResult> getDrPlans(GetDrPlansArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getDrPlans:getDrPlans", TypeShape.of(GetDrPlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get a summary list of all DR plans for a DR protection group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanDisplayName)
+     *             .drPlanId(testDrPlan.id())
+     *             .drPlanType(drPlanDrPlanType)
+     *             .lifecycleSubState(drPlanLifecycleSubState)
      *             .state(drPlanState)
      *             .build());
      * 
@@ -891,6 +1080,50 @@ public final class DisasterRecoveryFunctions {
      * 
      */
     public static Output<GetDrProtectionGroupResult> getDrProtectionGroup(GetDrProtectionGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getDrProtectionGroup:getDrProtectionGroup", TypeShape.of(GetDrProtectionGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get the DR protection group identified by *drProtectionGroupId*.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDrProtectionGroupResult> getDrProtectionGroup(GetDrProtectionGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DisasterRecovery/getDrProtectionGroup:getDrProtectionGroup", TypeShape.of(GetDrProtectionGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1082,6 +1315,55 @@ public final class DisasterRecoveryFunctions {
      * 
      */
     public static Output<GetDrProtectionGroupsResult> getDrProtectionGroups(GetDrProtectionGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", TypeShape.of(GetDrProtectionGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get a summary list of all DR protection groups in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(drProtectionGroupDisplayName)
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
+     *             .role(drProtectionGroupRole)
+     *             .state(drProtectionGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDrProtectionGroupsResult> getDrProtectionGroups(GetDrProtectionGroupsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", TypeShape.of(GetDrProtectionGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**

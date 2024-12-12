@@ -12,7 +12,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
     /// 
-    /// Creates a new Property.
+    /// Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
     /// 
     /// ## Example Usage
     /// 
@@ -84,13 +84,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> ResourceRegion { get; private set; } = null!;
 
         /// <summary>
-        /// The scope of the property
+        /// The scope of the property.
         /// </summary>
         [Output("scope")]
         public Output<string> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Text selection of the category
+        /// (Updatable) Text selection of the property.
         /// </summary>
         [Output("selection")]
         public Output<string> Selection { get; private set; } = null!;
@@ -126,13 +126,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Format of the value
+        /// (Updatable) Format of the value.
         /// </summary>
         [Output("valueType")]
         public Output<string> ValueType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        /// (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         /// 
         /// 
         /// ** IMPORTANT **
@@ -200,13 +200,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Text selection of the category
+        /// (Updatable) Text selection of the property.
         /// </summary>
         [Input("selection", required: true)]
         public Input<string> Selection { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Format of the value
+        /// (Updatable) Format of the value.
         /// </summary>
         [Input("valueType", required: true)]
         public Input<string> ValueType { get; set; } = null!;
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _values;
 
         /// <summary>
-        /// (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        /// (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         /// 
         /// 
         /// ** IMPORTANT **
@@ -284,13 +284,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? ResourceRegion { get; set; }
 
         /// <summary>
-        /// The scope of the property
+        /// The scope of the property.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// (Updatable) Text selection of the category
+        /// (Updatable) Text selection of the property.
         /// </summary>
         [Input("selection")]
         public Input<string>? Selection { get; set; }
@@ -332,7 +332,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// (Updatable) Format of the value
+        /// (Updatable) Format of the value.
         /// </summary>
         [Input("valueType")]
         public Input<string>? ValueType { get; set; }
@@ -341,7 +341,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _values;
 
         /// <summary>
-        /// (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        /// (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         /// 
         /// 
         /// ** IMPORTANT **

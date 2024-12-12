@@ -110,7 +110,7 @@ def get_scheduler_definition_scheduled_fleets(compartment_id: Optional[str] = No
     """
     This data source provides the list of Scheduler Definition Scheduled Fleets in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of ScheduledFleets
+    Returns a list of ScheduledFleets.
 
     ## Example Usage
 
@@ -151,7 +151,7 @@ def get_scheduler_definition_scheduled_fleets_output(compartment_id: Optional[pu
     """
     This data source provides the list of Scheduler Definition Scheduled Fleets in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of ScheduledFleets
+    Returns a list of ScheduledFleets.
 
     ## Example Usage
 

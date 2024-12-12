@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.MediaServices.inputs.GetMediaAssetArgs;
 import com.pulumi.oci.MediaServices.inputs.GetMediaAssetDistributionChannelAttachmentArgs;
 import com.pulumi.oci.MediaServices.inputs.GetMediaAssetDistributionChannelAttachmentPlainArgs;
@@ -241,6 +242,50 @@ public final class MediaServicesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMediaAssetResult> getMediaAsset(GetMediaAssetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaAsset:getMediaAsset", TypeShape.of(GetMediaAssetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Media Asset resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Gets a MediaAsset by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaAsset = MediaServicesFunctions.getMediaAsset(GetMediaAssetArgs.builder()
+     *             .mediaAssetId(testMediaAssetOciMediaServicesMediaAsset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMediaAssetResult> getMediaAssetPlain(GetMediaAssetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getMediaAsset:getMediaAsset", TypeShape.of(GetMediaAssetResult.class), args, Utilities.withVersion(options));
     }
@@ -380,6 +425,52 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", TypeShape.of(GetMediaAssetDistributionChannelAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetDistributionChannelAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
+     *             .distributionChannelId(testChannel.id())
+     *             .mediaAssetId(testMediaAsset.id())
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", TypeShape.of(GetMediaAssetDistributionChannelAttachmentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -755,6 +846,61 @@ public final class MediaServicesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMediaAssetsResult> getMediaAssets(GetMediaAssetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaAssets:getMediaAssets", TypeShape.of(GetMediaAssetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Media Assets in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Returns a list of MediaAssetSummary.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaAssets = MediaServicesFunctions.getMediaAssets(GetMediaAssetsArgs.builder()
+     *             .bucket(mediaAssetBucket)
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaAssetDisplayName)
+     *             .distributionChannelId(testChannel.id())
+     *             .masterMediaAssetId(testMediaAsset.id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .object(mediaAssetObject)
+     *             .parentMediaAssetId(testMediaAsset.id())
+     *             .sourceMediaWorkflowId(testMediaWorkflow.id())
+     *             .sourceMediaWorkflowVersion(mediaAssetSourceMediaWorkflowVersion)
+     *             .state(mediaAssetState)
+     *             .type(mediaAssetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMediaAssetsResult> getMediaAssetsPlain(GetMediaAssetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getMediaAssets:getMediaAssets", TypeShape.of(GetMediaAssetsResult.class), args, Utilities.withVersion(options));
     }
@@ -931,6 +1077,50 @@ public final class MediaServicesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMediaWorkflowResult> getMediaWorkflow(GetMediaWorkflowArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflow:getMediaWorkflow", TypeShape.of(GetMediaWorkflowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Gets a MediaWorkflow by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaWorkflow = MediaServicesFunctions.getMediaWorkflow(GetMediaWorkflowArgs.builder()
+     *             .mediaWorkflowId(testMediaWorkflowOciMediaServicesMediaWorkflow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMediaWorkflowResult> getMediaWorkflowPlain(GetMediaWorkflowPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getMediaWorkflow:getMediaWorkflow", TypeShape.of(GetMediaWorkflowResult.class), args, Utilities.withVersion(options));
     }
@@ -1064,6 +1254,50 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetMediaWorkflowConfigurationResult> getMediaWorkflowConfiguration(GetMediaWorkflowConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowConfiguration:getMediaWorkflowConfiguration", TypeShape.of(GetMediaWorkflowConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Gets a MediaWorkflowConfiguration by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaWorkflowConfiguration = MediaServicesFunctions.getMediaWorkflowConfiguration(GetMediaWorkflowConfigurationArgs.builder()
+     *             .mediaWorkflowConfigurationId(testMediaWorkflowConfigurationOciMediaServicesMediaWorkflowConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMediaWorkflowConfigurationResult> getMediaWorkflowConfiguration(GetMediaWorkflowConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowConfiguration:getMediaWorkflowConfiguration", TypeShape.of(GetMediaWorkflowConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1389,6 +1623,53 @@ public final class MediaServicesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMediaWorkflowConfigurationsResult> getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowConfigurations:getMediaWorkflowConfigurations", TypeShape.of(GetMediaWorkflowConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Media Workflow Configurations in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Returns a list of MediaWorkflowConfigurations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaWorkflowConfigurations = MediaServicesFunctions.getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowConfigurationDisplayName)
+     *             .id(mediaWorkflowConfigurationId)
+     *             .state(mediaWorkflowConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMediaWorkflowConfigurationsResult> getMediaWorkflowConfigurationsPlain(GetMediaWorkflowConfigurationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getMediaWorkflowConfigurations:getMediaWorkflowConfigurations", TypeShape.of(GetMediaWorkflowConfigurationsResult.class), args, Utilities.withVersion(options));
     }
@@ -1522,6 +1803,50 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetMediaWorkflowJobResult> getMediaWorkflowJob(GetMediaWorkflowJobArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowJob:getMediaWorkflowJob", TypeShape.of(GetMediaWorkflowJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Gets the MediaWorkflowJob.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaWorkflowJob = MediaServicesFunctions.getMediaWorkflowJob(GetMediaWorkflowJobArgs.builder()
+     *             .mediaWorkflowJobId(testMediaWorkflowJobOciMediaServicesMediaWorkflowJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMediaWorkflowJobResult> getMediaWorkflowJob(GetMediaWorkflowJobArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowJob:getMediaWorkflowJob", TypeShape.of(GetMediaWorkflowJobResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1749,6 +2074,52 @@ public final class MediaServicesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMediaWorkflowJobFactResult> getMediaWorkflowJobFact(GetMediaWorkflowJobFactArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", TypeShape.of(GetMediaWorkflowJobFactResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
+     * This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaWorkflowJobFact = MediaServicesFunctions.getMediaWorkflowJobFact(GetMediaWorkflowJobFactArgs.builder()
+     *             .key(mediaWorkflowJobFactKey)
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMediaWorkflowJobFactResult> getMediaWorkflowJobFactPlain(GetMediaWorkflowJobFactPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", TypeShape.of(GetMediaWorkflowJobFactResult.class), args, Utilities.withVersion(options));
     }
@@ -1891,6 +2262,53 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetMediaWorkflowJobFactsResult> getMediaWorkflowJobFacts(GetMediaWorkflowJobFactsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", TypeShape.of(GetMediaWorkflowJobFactsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
+     * This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaWorkflowJobFacts = MediaServicesFunctions.getMediaWorkflowJobFacts(GetMediaWorkflowJobFactsArgs.builder()
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .key(mediaWorkflowJobFactKey)
+     *             .type(mediaWorkflowJobFactType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMediaWorkflowJobFactsResult> getMediaWorkflowJobFacts(GetMediaWorkflowJobFactsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", TypeShape.of(GetMediaWorkflowJobFactsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2225,6 +2643,54 @@ public final class MediaServicesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMediaWorkflowJobsResult> getMediaWorkflowJobs(GetMediaWorkflowJobsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowJobs:getMediaWorkflowJobs", TypeShape.of(GetMediaWorkflowJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Media Workflow Jobs in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Lists the MediaWorkflowJobs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaWorkflowJobs = MediaServicesFunctions.getMediaWorkflowJobs(GetMediaWorkflowJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowJobDisplayName)
+     *             .id(mediaWorkflowJobId)
+     *             .mediaWorkflowId(testMediaWorkflow.id())
+     *             .state(mediaWorkflowJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMediaWorkflowJobsResult> getMediaWorkflowJobsPlain(GetMediaWorkflowJobsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getMediaWorkflowJobs:getMediaWorkflowJobs", TypeShape.of(GetMediaWorkflowJobsResult.class), args, Utilities.withVersion(options));
     }
@@ -2461,6 +2927,53 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetMediaWorkflowTaskDeclarationResult> getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration", TypeShape.of(GetMediaWorkflowTaskDeclarationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Media Workflow Task Declaration resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Returns a list of MediaWorkflowTaskDeclarations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowTaskDeclarationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaWorkflowTaskDeclaration = MediaServicesFunctions.getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .isCurrent(mediaWorkflowTaskDeclarationIsCurrent)
+     *             .name(mediaWorkflowTaskDeclarationName)
+     *             .version(mediaWorkflowTaskDeclarationVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMediaWorkflowTaskDeclarationResult> getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration", TypeShape.of(GetMediaWorkflowTaskDeclarationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2789,6 +3302,53 @@ public final class MediaServicesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMediaWorkflowsResult> getMediaWorkflows(GetMediaWorkflowsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflows:getMediaWorkflows", TypeShape.of(GetMediaWorkflowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Media Workflows in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Lists the MediaWorkflows.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaWorkflows = MediaServicesFunctions.getMediaWorkflows(GetMediaWorkflowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowDisplayName)
+     *             .id(mediaWorkflowId)
+     *             .state(mediaWorkflowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMediaWorkflowsResult> getMediaWorkflowsPlain(GetMediaWorkflowsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getMediaWorkflows:getMediaWorkflows", TypeShape.of(GetMediaWorkflowsResult.class), args, Utilities.withVersion(options));
     }
@@ -2922,6 +3482,50 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetStreamCdnConfigResult> getStreamCdnConfig(GetStreamCdnConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig", TypeShape.of(GetStreamCdnConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Gets a StreamCdnConfig by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamCdnConfig = MediaServicesFunctions.getStreamCdnConfig(GetStreamCdnConfigArgs.builder()
+     *             .streamCdnConfigId(testStreamCdnConfigOciMediaServicesStreamCdnConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamCdnConfigResult> getStreamCdnConfig(GetStreamCdnConfigArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig", TypeShape.of(GetStreamCdnConfigResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3153,6 +3757,53 @@ public final class MediaServicesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetStreamCdnConfigsResult> getStreamCdnConfigs(GetStreamCdnConfigsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs", TypeShape.of(GetStreamCdnConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Cdn Configs in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Lists the StreamCdnConfig.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamCdnConfigs = MediaServicesFunctions.getStreamCdnConfigs(GetStreamCdnConfigsArgs.builder()
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamCdnConfigDisplayName)
+     *             .id(streamCdnConfigId)
+     *             .state(streamCdnConfigState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetStreamCdnConfigsResult> getStreamCdnConfigsPlain(GetStreamCdnConfigsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs", TypeShape.of(GetStreamCdnConfigsResult.class), args, Utilities.withVersion(options));
     }
@@ -3286,6 +3937,50 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetStreamDistributionChannelResult> getStreamDistributionChannel(GetStreamDistributionChannelArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getStreamDistributionChannel:getStreamDistributionChannel", TypeShape.of(GetStreamDistributionChannelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Gets a Stream Distribution Channel by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamDistributionChannel = MediaServicesFunctions.getStreamDistributionChannel(GetStreamDistributionChannelArgs.builder()
+     *             .streamDistributionChannelId(testStreamDistributionChannelOciMediaServicesStreamDistributionChannel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamDistributionChannelResult> getStreamDistributionChannel(GetStreamDistributionChannelArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getStreamDistributionChannel:getStreamDistributionChannel", TypeShape.of(GetStreamDistributionChannelResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3611,6 +4306,53 @@ public final class MediaServicesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetStreamDistributionChannelsResult> getStreamDistributionChannels(GetStreamDistributionChannelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", TypeShape.of(GetStreamDistributionChannelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Distribution Channels in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Lists the Stream Distribution Channels.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamDistributionChannels = MediaServicesFunctions.getStreamDistributionChannels(GetStreamDistributionChannelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamDistributionChannelDisplayName)
+     *             .id(streamDistributionChannelId)
+     *             .state(streamDistributionChannelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetStreamDistributionChannelsResult> getStreamDistributionChannelsPlain(GetStreamDistributionChannelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", TypeShape.of(GetStreamDistributionChannelsResult.class), args, Utilities.withVersion(options));
     }
@@ -3744,6 +4486,50 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetStreamPackagingConfigResult> getStreamPackagingConfig(GetStreamPackagingConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getStreamPackagingConfig:getStreamPackagingConfig", TypeShape.of(GetStreamPackagingConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Gets a Stream Packaging Configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPackagingConfig = MediaServicesFunctions.getStreamPackagingConfig(GetStreamPackagingConfigArgs.builder()
+     *             .streamPackagingConfigId(testStreamPackagingConfigOciMediaServicesStreamPackagingConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamPackagingConfigResult> getStreamPackagingConfig(GetStreamPackagingConfigArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getStreamPackagingConfig:getStreamPackagingConfig", TypeShape.of(GetStreamPackagingConfigResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3929,6 +4715,53 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetStreamPackagingConfigsResult> getStreamPackagingConfigs(GetStreamPackagingConfigsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs", TypeShape.of(GetStreamPackagingConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Packaging Configs in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Lists the Stream Packaging Configurations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPackagingConfigs = MediaServicesFunctions.getStreamPackagingConfigs(GetStreamPackagingConfigsArgs.builder()
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamPackagingConfigDisplayName)
+     *             .state(streamPackagingConfigState)
+     *             .streamPackagingConfigId(testStreamPackagingConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamPackagingConfigsResult> getStreamPackagingConfigs(GetStreamPackagingConfigsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs", TypeShape.of(GetStreamPackagingConfigsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4201,6 +5034,51 @@ public final class MediaServicesFunctions {
      * 
      */
     public static Output<GetSystemMediaWorkflowResult> getSystemMediaWorkflow(GetSystemMediaWorkflowArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow", TypeShape.of(GetSystemMediaWorkflowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific System Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
+     * 
+     * Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetSystemMediaWorkflowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemMediaWorkflow = MediaServicesFunctions.getSystemMediaWorkflow(GetSystemMediaWorkflowArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(systemMediaWorkflowName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSystemMediaWorkflowResult> getSystemMediaWorkflow(GetSystemMediaWorkflowArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow", TypeShape.of(GetSystemMediaWorkflowResult.class), args, Utilities.withVersion(options));
     }
     /**

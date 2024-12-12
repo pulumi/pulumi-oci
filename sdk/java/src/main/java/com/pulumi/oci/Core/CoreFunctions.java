@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
 import com.pulumi.oci.Core.inputs.GetAppCatalogListingPlainArgs;
 import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
@@ -642,6 +643,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAppCatalogListingResult> getAppCatalogListing(GetAppCatalogListingArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getAppCatalogListing:getAppCatalogListing", TypeShape.of(GetAppCatalogListingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific App Catalog Listing resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified listing.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
+     *             .listingId(testListing.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAppCatalogListingResult> getAppCatalogListingPlain(GetAppCatalogListingPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getAppCatalogListing:getAppCatalogListing", TypeShape.of(GetAppCatalogListingResult.class), args, Utilities.withVersion(options));
     }
@@ -822,6 +867,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", TypeShape.of(GetAppCatalogListingResourceVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific App Catalog Listing Resource Version resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified listing resource version.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
+     *             .listingId(testListing.id())
+     *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersionPlain(GetAppCatalogListingResourceVersionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", TypeShape.of(GetAppCatalogListingResourceVersionResult.class), args, Utilities.withVersion(options));
     }
@@ -955,6 +1045,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", TypeShape.of(GetAppCatalogListingResourceVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of App Catalog Listing Resource Versions in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets all resource versions for a particular listing.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", TypeShape.of(GetAppCatalogListingResourceVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1274,6 +1408,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAppCatalogListingsResult> getAppCatalogListings(GetAppCatalogListingsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getAppCatalogListings:getAppCatalogListings", TypeShape.of(GetAppCatalogListingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of App Catalog Listings in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the published listings.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
+     *             .displayName(appCatalogListingDisplayName)
+     *             .publisherName(appCatalogListingPublisherName)
+     *             .publisherType(appCatalogListingPublisherType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAppCatalogListingsResult> getAppCatalogListingsPlain(GetAppCatalogListingsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getAppCatalogListings:getAppCatalogListings", TypeShape.of(GetAppCatalogListingsResult.class), args, Utilities.withVersion(options));
     }
@@ -1454,6 +1634,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", TypeShape.of(GetAppCatalogSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of App Catalog Subscriptions in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists subscriptions for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .listingId(testListing.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptionsPlain(GetAppCatalogSubscriptionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", TypeShape.of(GetAppCatalogSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
@@ -1587,6 +1812,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetBlockVolumeReplicaResult> getBlockVolumeReplica(GetBlockVolumeReplicaArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", TypeShape.of(GetBlockVolumeReplicaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Block Volume Replica resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information for the specified block volume replica.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBlockVolumeReplicaResult> getBlockVolumeReplica(GetBlockVolumeReplicaArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", TypeShape.of(GetBlockVolumeReplicaResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1918,6 +2187,54 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBlockVolumeReplicasResult> getBlockVolumeReplicas(GetBlockVolumeReplicasArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", TypeShape.of(GetBlockVolumeReplicasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Block Volume Replicas in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the block volume replicas in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
+     *             .availabilityDomain(blockVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockVolumeReplicaDisplayName)
+     *             .state(blockVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBlockVolumeReplicasResult> getBlockVolumeReplicasPlain(GetBlockVolumeReplicasPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", TypeShape.of(GetBlockVolumeReplicasResult.class), args, Utilities.withVersion(options));
     }
@@ -2051,6 +2368,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetBootVolumeResult> getBootVolume(GetBootVolumeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getBootVolume:getBootVolume", TypeShape.of(GetBootVolumeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Boot Volume resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information for the specified boot volume.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBootVolumeResult> getBootVolume(GetBootVolumeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getBootVolume:getBootVolume", TypeShape.of(GetBootVolumeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2290,6 +2651,55 @@ public final class CoreFunctions {
      * For more detailed implementation refer the instance example
      * 
      */
+    public static Output<GetBootVolumeAttachmentsResult> getBootVolumeAttachments(GetBootVolumeAttachmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", TypeShape.of(GetBootVolumeAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volume attachments in the specified compartment. You can filter the
+     * list by specifying an instance OCID, boot volume OCID, or both.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
+     *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .instanceId(testInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * For more detailed implementation refer the instance example
+     * 
+     */
     public static CompletableFuture<GetBootVolumeAttachmentsResult> getBootVolumeAttachmentsPlain(GetBootVolumeAttachmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", TypeShape.of(GetBootVolumeAttachmentsResult.class), args, Utilities.withVersion(options));
     }
@@ -2423,6 +2833,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetBootVolumeBackupResult> getBootVolumeBackup(GetBootVolumeBackupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getBootVolumeBackup:getBootVolumeBackup", TypeShape.of(GetBootVolumeBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information for the specified boot volume backup.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBootVolumeBackupResult> getBootVolumeBackup(GetBootVolumeBackupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getBootVolumeBackup:getBootVolumeBackup", TypeShape.of(GetBootVolumeBackupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2658,6 +3112,54 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBootVolumeBackupsResult> getBootVolumeBackups(GetBootVolumeBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getBootVolumeBackups:getBootVolumeBackups", TypeShape.of(GetBootVolumeBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Boot Volume Backups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .displayName(bootVolumeBackupDisplayName)
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .state(bootVolumeBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBootVolumeBackupsResult> getBootVolumeBackupsPlain(GetBootVolumeBackupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getBootVolumeBackups:getBootVolumeBackups", TypeShape.of(GetBootVolumeBackupsResult.class), args, Utilities.withVersion(options));
     }
@@ -2791,6 +3293,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetBootVolumeReplicaResult> getBootVolumeReplica(GetBootVolumeReplicaArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getBootVolumeReplica:getBootVolumeReplica", TypeShape.of(GetBootVolumeReplicaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Boot Volume Replica resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information for the specified boot volume replica.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBootVolumeReplicaResult> getBootVolumeReplica(GetBootVolumeReplicaArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getBootVolumeReplica:getBootVolumeReplica", TypeShape.of(GetBootVolumeReplicaResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3122,6 +3668,54 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBootVolumeReplicasResult> getBootVolumeReplicas(GetBootVolumeReplicasArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", TypeShape.of(GetBootVolumeReplicasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volume replicas in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
+     *             .availabilityDomain(bootVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(bootVolumeReplicaDisplayName)
+     *             .state(bootVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBootVolumeReplicasResult> getBootVolumeReplicasPlain(GetBootVolumeReplicasPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", TypeShape.of(GetBootVolumeReplicasResult.class), args, Utilities.withVersion(options));
     }
@@ -3398,6 +3992,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBootVolumesResult> getBootVolumes(GetBootVolumesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getBootVolumes:getBootVolumes", TypeShape.of(GetBootVolumesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Boot Volumes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volumes in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
+     *             .availabilityDomain(bootVolumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .volumeGroupId(testVolumeGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBootVolumesResult> getBootVolumesPlain(GetBootVolumesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getBootVolumes:getBootVolumes", TypeShape.of(GetBootVolumesResult.class), args, Utilities.withVersion(options));
     }
@@ -3578,6 +4218,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetByoipAllocatedRangesResult> getByoipAllocatedRanges(GetByoipAllocatedRangesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", TypeShape.of(GetByoipAllocatedRangesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
+     * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
+     *             .byoipRangeId(testByoipRange.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetByoipAllocatedRangesResult> getByoipAllocatedRangesPlain(GetByoipAllocatedRangesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", TypeShape.of(GetByoipAllocatedRangesResult.class), args, Utilities.withVersion(options));
     }
@@ -3711,6 +4396,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetByoipRangeResult> getByoipRange(GetByoipRangeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getByoipRange:getByoipRange", TypeShape.of(GetByoipRangeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Byoip Range resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetByoipRangeResult> getByoipRange(GetByoipRangeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getByoipRange:getByoipRange", TypeShape.of(GetByoipRangeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3942,6 +4671,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetByoipRangesResult> getByoipRanges(GetByoipRangesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getByoipRanges:getByoipRanges", TypeShape.of(GetByoipRangesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byoip Ranges in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the `ByoipRange` resources in the specified compartment.
+     * You can filter the list using query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRanges = CoreFunctions.getByoipRanges(GetByoipRangesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoipRangeDisplayName)
+     *             .state(byoipRangeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetByoipRangesResult> getByoipRangesPlain(GetByoipRangesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getByoipRanges:getByoipRanges", TypeShape.of(GetByoipRangesResult.class), args, Utilities.withVersion(options));
     }
@@ -4075,6 +4851,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetCaptureFilterResult> getCaptureFilter(GetCaptureFilterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCaptureFilter:getCaptureFilter", TypeShape.of(GetCaptureFilterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified VTAP capture filter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCaptureFilterResult> getCaptureFilter(GetCaptureFilterArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getCaptureFilter:getCaptureFilter", TypeShape.of(GetCaptureFilterResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4306,6 +5126,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCaptureFiltersResult> getCaptureFilters(GetCaptureFiltersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCaptureFilters:getCaptureFilters", TypeShape.of(GetCaptureFiltersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the capture filters in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(captureFilterDisplayName)
+     *             .filterType(captureFilterFilterType)
+     *             .state(captureFilterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCaptureFiltersResult> getCaptureFiltersPlain(GetCaptureFiltersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getCaptureFilters:getCaptureFilters", TypeShape.of(GetCaptureFiltersResult.class), args, Utilities.withVersion(options));
     }
@@ -4439,6 +5306,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetClusterNetworkResult> getClusterNetwork(GetClusterNetworkArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getClusterNetwork:getClusterNetwork", TypeShape.of(GetClusterNetworkResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetClusterNetworkResult> getClusterNetwork(GetClusterNetworkArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getClusterNetwork:getClusterNetwork", TypeShape.of(GetClusterNetworkResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4621,6 +5532,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetClusterNetworkInstancesResult> getClusterNetworkInstances(GetClusterNetworkInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", TypeShape.of(GetClusterNetworkInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
+     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetClusterNetworkInstancesResult> getClusterNetworkInstances(GetClusterNetworkInstancesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", TypeShape.of(GetClusterNetworkInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4854,6 +5811,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetClusterNetworksResult> getClusterNetworks(GetClusterNetworksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getClusterNetworks:getClusterNetworks", TypeShape.of(GetClusterNetworksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+     * in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworks = CoreFunctions.getClusterNetworks(GetClusterNetworksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkDisplayName)
+     *             .state(clusterNetworkState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetClusterNetworksResult> getClusterNetworksPlain(GetClusterNetworksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getClusterNetworks:getClusterNetworks", TypeShape.of(GetClusterNetworksResult.class), args, Utilities.withVersion(options));
     }
@@ -5030,6 +6034,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", TypeShape.of(GetCnvDnsResolverAssociationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vcn Dns Resolver Association resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Get the associated DNS resolver information with a vcn
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociationPlain(GetCnvDnsResolverAssociationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", TypeShape.of(GetCnvDnsResolverAssociationResult.class), args, Utilities.withVersion(options));
     }
@@ -5163,6 +6211,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetComputeCapacityReservationResult> getComputeCapacityReservation(GetComputeCapacityReservationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityReservation:getComputeCapacityReservation", TypeShape.of(GetComputeCapacityReservationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute capacity reservation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeCapacityReservationResult> getComputeCapacityReservation(GetComputeCapacityReservationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getComputeCapacityReservation:getComputeCapacityReservation", TypeShape.of(GetComputeCapacityReservationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5390,6 +6482,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityReservationInstanceShapes:getComputeCapacityReservationInstanceShapes", TypeShape.of(GetComputeCapacityReservationInstanceShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the shapes that can be reserved within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstanceShapes = CoreFunctions.getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationInstanceShapeAvailabilityDomain)
+     *             .displayName(computeCapacityReservationInstanceShapeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapesPlain(GetComputeCapacityReservationInstanceShapesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityReservationInstanceShapes:getComputeCapacityReservationInstanceShapes", TypeShape.of(GetComputeCapacityReservationInstanceShapesResult.class), args, Utilities.withVersion(options));
     }
@@ -5529,6 +6667,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", TypeShape.of(GetComputeCapacityReservationInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", TypeShape.of(GetComputeCapacityReservationInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5774,6 +6958,56 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputeCapacityReservationsResult> getComputeCapacityReservations(GetComputeCapacityReservationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", TypeShape.of(GetComputeCapacityReservationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Reservations in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute capacity reservations that match the specified criteria and compartment.
+     * 
+     * You can limit the list by specifying a compute capacity reservation display name
+     * (the list will include all the identically-named compute capacity reservations in the compartment).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservations = CoreFunctions.getComputeCapacityReservations(GetComputeCapacityReservationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationAvailabilityDomain)
+     *             .displayName(computeCapacityReservationDisplayName)
+     *             .state(computeCapacityReservationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputeCapacityReservationsResult> getComputeCapacityReservationsPlain(GetComputeCapacityReservationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", TypeShape.of(GetComputeCapacityReservationsResult.class), args, Utilities.withVersion(options));
     }
@@ -5962,6 +7196,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputeCapacityTopologiesResult> getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies", TypeShape.of(GetComputeCapacityTopologiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute capacity topologies in the specified compartment. You can filter the list by a compute
+     * capacity topology display name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologies = CoreFunctions.getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityTopologyAvailabilityDomain)
+     *             .displayName(computeCapacityTopologyDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputeCapacityTopologiesResult> getComputeCapacityTopologiesPlain(GetComputeCapacityTopologiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies", TypeShape.of(GetComputeCapacityTopologiesResult.class), args, Utilities.withVersion(options));
     }
@@ -6095,6 +7376,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetComputeCapacityTopologyResult> getComputeCapacityTopology(GetComputeCapacityTopologyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", TypeShape.of(GetComputeCapacityTopologyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyResult> getComputeCapacityTopology(GetComputeCapacityTopologyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", TypeShape.of(GetComputeCapacityTopologyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6334,6 +7659,55 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", TypeShape.of(GetComputeCapacityTopologyComputeBareMetalHostsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute bare metal hosts in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeLocalBlockId(testComputeLocalBlock.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHostsPlain(GetComputeCapacityTopologyComputeBareMetalHostsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", TypeShape.of(GetComputeCapacityTopologyComputeBareMetalHostsResult.class), args, Utilities.withVersion(options));
     }
@@ -6473,6 +7847,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", TypeShape.of(GetComputeCapacityTopologyComputeHpcIslandsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute HPC islands in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", TypeShape.of(GetComputeCapacityTopologyComputeHpcIslandsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6706,6 +8126,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", TypeShape.of(GetComputeCapacityTopologyComputeNetworkBlocksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Network Blocks in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute network blocks in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocksPlain(GetComputeCapacityTopologyComputeNetworkBlocksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", TypeShape.of(GetComputeCapacityTopologyComputeNetworkBlocksResult.class), args, Utilities.withVersion(options));
     }
@@ -6842,6 +8309,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetComputeClusterResult> getComputeCluster(GetComputeClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCluster:getComputeCluster", TypeShape.of(GetComputeClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * is a remote direct memory access (RDMA) network group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeClusterResult> getComputeCluster(GetComputeClusterArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getComputeCluster:getComputeCluster", TypeShape.of(GetComputeClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7074,6 +8586,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputeClustersResult> getComputeClusters(GetComputeClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeClusters:getComputeClusters", TypeShape.of(GetComputeClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute clusters in the specified compartment.
+     * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeClusters = CoreFunctions.getComputeClusters(GetComputeClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeClusterAvailabilityDomain)
+     *             .displayName(computeClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputeClustersResult> getComputeClustersPlain(GetComputeClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeClusters:getComputeClusters", TypeShape.of(GetComputeClustersResult.class), args, Utilities.withVersion(options));
     }
@@ -7207,6 +8766,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGlobalImageCapabilitySchema:getComputeGlobalImageCapabilitySchema", TypeShape.of(GetComputeGlobalImageCapabilitySchemaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Global Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified Compute Global Image Capability Schema
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getComputeGlobalImageCapabilitySchema:getComputeGlobalImageCapabilitySchema", TypeShape.of(GetComputeGlobalImageCapabilitySchemaResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7520,6 +9123,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas", TypeShape.of(GetComputeGlobalImageCapabilitySchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists Compute Global Image Capability Schema in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeGlobalImageCapabilitySchemaDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemasPlain(GetComputeGlobalImageCapabilitySchemasPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas", TypeShape.of(GetComputeGlobalImageCapabilitySchemasResult.class), args, Utilities.withVersion(options));
     }
@@ -7656,6 +9304,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", TypeShape.of(GetComputeGlobalImageCapabilitySchemasVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Global Image Capability Schemas Version resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified Compute Global Image Capability Schema Version
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", TypeShape.of(GetComputeGlobalImageCapabilitySchemasVersionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7880,6 +9573,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeGlobalImageCapabilitySchemasVersions:getComputeGlobalImageCapabilitySchemasVersions", TypeShape.of(GetComputeGlobalImageCapabilitySchemasVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Global Image Capability Schemas Versions in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists Compute Global Image Capability Schema versions in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersionsPlain(GetComputeGlobalImageCapabilitySchemasVersionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeGlobalImageCapabilitySchemasVersions:getComputeGlobalImageCapabilitySchemasVersions", TypeShape.of(GetComputeGlobalImageCapabilitySchemasVersionsResult.class), args, Utilities.withVersion(options));
     }
@@ -8016,6 +9754,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema", TypeShape.of(GetComputeImageCapabilitySchemaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified Compute Image Capability Schema
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema", TypeShape.of(GetComputeImageCapabilitySchemaResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8336,6 +10119,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeImageCapabilitySchemas:getComputeImageCapabilitySchemas", TypeShape.of(GetComputeImageCapabilitySchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Image Capability Schemas in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeImageCapabilitySchemaDisplayName)
+     *             .imageId(testImage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemasPlain(GetComputeImageCapabilitySchemasPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeImageCapabilitySchemas:getComputeImageCapabilitySchemas", TypeShape.of(GetComputeImageCapabilitySchemasResult.class), args, Utilities.withVersion(options));
     }
@@ -8478,6 +10307,53 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetConsoleHistoriesResult> getConsoleHistories(GetConsoleHistoriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getConsoleHistories:getConsoleHistories", TypeShape.of(GetConsoleHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the console history metadata for the specified compartment or instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(consoleHistoryAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .state(consoleHistoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConsoleHistoriesResult> getConsoleHistories(GetConsoleHistoriesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getConsoleHistories:getConsoleHistories", TypeShape.of(GetConsoleHistoriesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8716,6 +10592,54 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetConsoleHistoryDataResult> getConsoleHistoryData(GetConsoleHistoryDataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getConsoleHistoryData:getConsoleHistoryData", TypeShape.of(GetConsoleHistoryDataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Console History Content resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the actual console history data (not the metadata).
+     * See [CaptureConsoleHistory](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ConsoleHistory/CaptureConsoleHistory)
+     * for details about using the console history operations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .length(consoleHistoryContentLength)
+     *             .offset(consoleHistoryContentOffset)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetConsoleHistoryDataResult> getConsoleHistoryDataPlain(GetConsoleHistoryDataPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getConsoleHistoryData:getConsoleHistoryData", TypeShape.of(GetConsoleHistoryDataResult.class), args, Utilities.withVersion(options));
     }
@@ -8873,6 +10797,58 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetCpeDeviceShapeResult> getCpeDeviceShape(GetCpeDeviceShapeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCpeDeviceShape:getCpeDeviceShape", TypeShape.of(GetCpeDeviceShapeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cpe Device Shape resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the detailed information about the specified CPE device type. This might include a set of questions
+     * that are specific to the particular CPE device type. The customer must supply answers to those questions
+     * (see [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig)).
+     * The service merges the answers with a template of other information for the CPE device type. The following
+     * operations return the merged content:
+     * 
+     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCpeDeviceShapeResult> getCpeDeviceShape(GetCpeDeviceShapeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getCpeDeviceShape:getCpeDeviceShape", TypeShape.of(GetCpeDeviceShapeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9248,6 +11224,60 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCpeDeviceShapesResult> getCpeDeviceShapes(GetCpeDeviceShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", TypeShape.of(GetCpeDeviceShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the CPE device types that the Networking service provides CPE configuration
+     * content for (example: Cisco ASA). The content helps a network engineer configure
+     * the actual CPE device represented by a [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
+     * 
+     * If you want to generate CPE configuration content for one of the returned CPE device types,
+     * ensure that the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object&#39;s `cpeDeviceShapeId` attribute is set
+     * to the CPE device type&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (returned by this operation).
+     * 
+     * For information about generating CPE configuration content, see these operations:
+     * 
+     *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+     *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+     *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCpeDeviceShapesResult> getCpeDeviceShapesPlain(GetCpeDeviceShapesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", TypeShape.of(GetCpeDeviceShapesResult.class), args, Utilities.withVersion(options));
     }
@@ -9381,6 +11411,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetCpesResult> getCpes(GetCpesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCpes:getCpes", TypeShape.of(GetCpesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpes = CoreFunctions.getCpes(GetCpesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCpesResult> getCpes(GetCpesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getCpes:getCpes", TypeShape.of(GetCpesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9600,6 +11674,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCrossConnectResult> getCrossConnect(GetCrossConnectArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCrossConnect:getCrossConnect", TypeShape.of(GetCrossConnectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cross Connect resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified cross-connect&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCrossConnectResult> getCrossConnectPlain(GetCrossConnectPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getCrossConnect:getCrossConnect", TypeShape.of(GetCrossConnectResult.class), args, Utilities.withVersion(options));
     }
@@ -9733,6 +11851,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetCrossConnectGroupResult> getCrossConnectGroup(GetCrossConnectGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCrossConnectGroup:getCrossConnectGroup", TypeShape.of(GetCrossConnectGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified cross-connect group&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCrossConnectGroupResult> getCrossConnectGroup(GetCrossConnectGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getCrossConnectGroup:getCrossConnectGroup", TypeShape.of(GetCrossConnectGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9960,6 +12122,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCrossConnectGroupsResult> getCrossConnectGroups(GetCrossConnectGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCrossConnectGroups:getCrossConnectGroups", TypeShape.of(GetCrossConnectGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cross Connect Groups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the cross-connect groups in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroups = CoreFunctions.getCrossConnectGroups(GetCrossConnectGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(crossConnectGroupDisplayName)
+     *             .state(crossConnectGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCrossConnectGroupsResult> getCrossConnectGroupsPlain(GetCrossConnectGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getCrossConnectGroups:getCrossConnectGroups", TypeShape.of(GetCrossConnectGroupsResult.class), args, Utilities.withVersion(options));
     }
@@ -10096,6 +12304,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetCrossConnectLocationsResult> getCrossConnectLocations(GetCrossConnectLocationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCrossConnectLocations:getCrossConnectLocations", TypeShape.of(GetCrossConnectLocationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the available FastConnect locations for cross-connect installation. You need
+     * this information so you can specify your desired location when you create a cross-connect.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectLocations = CoreFunctions.getCrossConnectLocations(GetCrossConnectLocationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCrossConnectLocationsResult> getCrossConnectLocations(GetCrossConnectLocationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getCrossConnectLocations:getCrossConnectLocations", TypeShape.of(GetCrossConnectLocationsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -10324,6 +12577,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", TypeShape.of(GetCrossConnectPortSpeedShapeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cross Connect Port Speed Shapes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the available port speeds for cross-connects. You need this information
+     * so you can specify your desired port speed (that is, shape) when you create a
+     * cross-connect.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectPortSpeedShapes = CoreFunctions.getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShapePlain(GetCrossConnectPortSpeedShapePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", TypeShape.of(GetCrossConnectPortSpeedShapeResult.class), args, Utilities.withVersion(options));
     }
@@ -10457,6 +12756,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetCrossConnectStatusResult> getCrossConnectStatus(GetCrossConnectStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCrossConnectStatus:getCrossConnectStatus", TypeShape.of(GetCrossConnectStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the status of the specified cross-connect.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
+     *             .crossConnectId(testCrossConnect.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCrossConnectStatusResult> getCrossConnectStatus(GetCrossConnectStatusArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getCrossConnectStatus:getCrossConnectStatus", TypeShape.of(GetCrossConnectStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -10692,6 +13035,54 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCrossConnectsResult> getCrossConnects(GetCrossConnectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCrossConnects:getCrossConnects", TypeShape.of(GetCrossConnectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cross Connects in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the cross-connects in the specified compartment. You can filter the list
+     * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .displayName(crossConnectDisplayName)
+     *             .state(crossConnectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCrossConnectsResult> getCrossConnectsPlain(GetCrossConnectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getCrossConnects:getCrossConnects", TypeShape.of(GetCrossConnectsResult.class), args, Utilities.withVersion(options));
     }
@@ -10825,6 +13216,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetDedicatedVmHostResult> getDedicatedVmHost(GetDedicatedVmHostArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDedicatedVmHost:getDedicatedVmHost", TypeShape.of(GetDedicatedVmHostResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified dedicated virtual machine host.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDedicatedVmHostResult> getDedicatedVmHost(GetDedicatedVmHostArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getDedicatedVmHost:getDedicatedVmHost", TypeShape.of(GetDedicatedVmHostResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -11056,6 +13491,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", TypeShape.of(GetDedicatedVmHostInstanceShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the shapes that can be used to launch a virtual machine instance on a dedicated virtual machine host within the specified compartment.
+     * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostInstanceShapes = CoreFunctions.getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostInstanceShapeAvailabilityDomain)
+     *             .dedicatedVmHostShape(dedicatedVmHostInstanceShapeDedicatedVmHostShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapesPlain(GetDedicatedVmHostInstanceShapesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", TypeShape.of(GetDedicatedVmHostInstanceShapesResult.class), args, Utilities.withVersion(options));
     }
@@ -11240,6 +13722,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances", TypeShape.of(GetDedicatedVmHostInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstancesPlain(GetDedicatedVmHostInstancesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances", TypeShape.of(GetDedicatedVmHostInstancesResult.class), args, Utilities.withVersion(options));
     }
@@ -11379,6 +13907,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", TypeShape.of(GetDedicatedVmHostShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dedicated Vm Host Shapes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostShapes = CoreFunctions.getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostShapeAvailabilityDomain)
+     *             .instanceShapeName(dedicatedVmHostShapeInstanceShapeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", TypeShape.of(GetDedicatedVmHostShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -11636,6 +14210,59 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDedicatedVmHostsResult> getDedicatedVmHosts(GetDedicatedVmHostsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", TypeShape.of(GetDedicatedVmHostsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dedicated Vm Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Returns the list of dedicated virtual machine hosts that match the specified criteria in the specified compartment.
+     * 
+     * You can limit the list by specifying a dedicated virtual machine host display name. The list will include all the identically-named
+     * dedicated virtual machine hosts in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHosts = CoreFunctions.getDedicatedVmHosts(GetDedicatedVmHostsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
+     *             .displayName(dedicatedVmHostDisplayName)
+     *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
+     *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
+     *             .state(dedicatedVmHostState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDedicatedVmHostsResult> getDedicatedVmHostsPlain(GetDedicatedVmHostsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", TypeShape.of(GetDedicatedVmHostsResult.class), args, Utilities.withVersion(options));
     }
@@ -11787,6 +14414,56 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetDhcpOptionsResult> getDhcpOptions(GetDhcpOptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDhcpOptions:getDhcpOptions", TypeShape.of(GetDhcpOptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dhcp Options in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the sets of DHCP options in the specified VCN and specified compartment.
+     * If the VCN ID is not provided, then the list includes the sets of DHCP options from all VCNs in the specified compartment.
+     * The response includes the default set of options that automatically comes with each VCN,
+     * plus any other sets you&#39;ve created.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDhcpOptions = CoreFunctions.getDhcpOptions(GetDhcpOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dhcpOptionsDisplayName)
+     *             .state(dhcpOptionsState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDhcpOptionsResult> getDhcpOptions(GetDhcpOptionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getDhcpOptions:getDhcpOptions", TypeShape.of(GetDhcpOptionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -12060,6 +14737,62 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDrgAttachmentsResult> getDrgAttachments(GetDrgAttachmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgAttachments:getDrgAttachments", TypeShape.of(GetDrgAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Drg Attachments in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the `DrgAttachment` resource for the specified compartment. You can filter the
+     * results by DRG, attached network, attachment type, DRG route table or
+     * VCN route table.
+     * 
+     * The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
+     * but you may request to list ALL attachments of ALL types.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgAttachments = CoreFunctions.getDrgAttachments(GetDrgAttachmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .attachmentType(drgAttachmentAttachmentType)
+     *             .displayName(drgAttachmentDisplayName)
+     *             .drgId(testDrg.id())
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .networkId(testNetwork.id())
+     *             .state(drgAttachmentState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDrgAttachmentsResult> getDrgAttachmentsPlain(GetDrgAttachmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getDrgAttachments:getDrgAttachments", TypeShape.of(GetDrgAttachmentsResult.class), args, Utilities.withVersion(options));
     }
@@ -12236,6 +14969,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDrgRouteDistributionResult> getDrgRouteDistribution(GetDrgRouteDistributionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgRouteDistribution:getDrgRouteDistribution", TypeShape.of(GetDrgRouteDistributionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified route distribution&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDrgRouteDistributionResult> getDrgRouteDistributionPlain(GetDrgRouteDistributionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getDrgRouteDistribution:getDrgRouteDistribution", TypeShape.of(GetDrgRouteDistributionResult.class), args, Utilities.withVersion(options));
     }
@@ -12369,6 +15146,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", TypeShape.of(GetDrgRouteDistributionStatementsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the statements for the specified route distribution.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
+     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getDrgRouteDistributionStatements:getDrgRouteDistributionStatements", TypeShape.of(GetDrgRouteDistributionStatementsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -12608,6 +15429,55 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDrgRouteDistributionsResult> getDrgRouteDistributions(GetDrgRouteDistributionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgRouteDistributions:getDrgRouteDistributions", TypeShape.of(GetDrgRouteDistributionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Drg Route Distributions in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the route distributions in the specified DRG.
+     * 
+     * To retrieve the statements in a distribution, use the
+     * ListDrgRouteDistributionStatements operation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteDistributionDisplayName)
+     *             .state(drgRouteDistributionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDrgRouteDistributionsResult> getDrgRouteDistributionsPlain(GetDrgRouteDistributionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getDrgRouteDistributions:getDrgRouteDistributions", TypeShape.of(GetDrgRouteDistributionsResult.class), args, Utilities.withVersion(options));
     }
@@ -12741,6 +15611,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetDrgRouteRuleResult> getDrgRouteRule(GetDrgRouteRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgRouteRule:getDrgRouteRule", TypeShape.of(GetDrgRouteRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Drg Route Table resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified DRG route table&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDrgRouteRuleResult> getDrgRouteRule(GetDrgRouteRuleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getDrgRouteRule:getDrgRouteRule", TypeShape.of(GetDrgRouteRuleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -12920,6 +15834,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules", TypeShape.of(GetDrgRouteTableRouteRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Drg Route Table Route Rules in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the route rules in the specified DRG route table.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .routeType(drgRouteTableRouteRuleRouteType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules", TypeShape.of(GetDrgRouteTableRouteRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -13160,6 +16119,55 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDrgRouteTablesResult> getDrgRouteTables(GetDrgRouteTablesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgRouteTables:getDrgRouteTables", TypeShape.of(GetDrgRouteTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Drg Route Tables in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the DRG route tables for the specified DRG.
+     * 
+     * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteTableDisplayName)
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .state(drgRouteTableState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDrgRouteTablesResult> getDrgRouteTablesPlain(GetDrgRouteTablesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getDrgRouteTables:getDrgRouteTables", TypeShape.of(GetDrgRouteTablesResult.class), args, Utilities.withVersion(options));
     }
@@ -13293,6 +16301,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetDrgsResult> getDrgs(GetDrgsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgs:getDrgs", TypeShape.of(GetDrgsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the DRGs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgs = CoreFunctions.getDrgs(GetDrgsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDrgsResult> getDrgs(GetDrgsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getDrgs:getDrgs", TypeShape.of(GetDrgsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -13516,6 +16568,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFastConnectProviderServiceResult> getFastConnectProviderService(GetFastConnectProviderServiceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getFastConnectProviderService:getFastConnectProviderService", TypeShape.of(GetFastConnectProviderServiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fast Connect Provider Service resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified provider service.
+     * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFastConnectProviderServiceResult> getFastConnectProviderServicePlain(GetFastConnectProviderServicePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getFastConnectProviderService:getFastConnectProviderService", TypeShape.of(GetFastConnectProviderServiceResult.class), args, Utilities.withVersion(options));
     }
@@ -13655,6 +16752,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", TypeShape.of(GetFastConnectProviderServiceKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fast Connect Provider Service Key resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified provider service key&#39;s information. Use this operation to validate a
+     * provider service key. An invalid key returns a 404 error.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", TypeShape.of(GetFastConnectProviderServiceKeyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -13900,6 +17043,56 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFastConnectProviderServicesResult> getFastConnectProviderServices(GetFastConnectProviderServicesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getFastConnectProviderServices:getFastConnectProviderServices", TypeShape.of(GetFastConnectProviderServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the service offerings from supported providers. You need this
+     * information so you can specify your desired provider and service
+     * offering when you create a virtual circuit.
+     * 
+     * For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
+     * 
+     * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServices = CoreFunctions.getFastConnectProviderServices(GetFastConnectProviderServicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFastConnectProviderServicesResult> getFastConnectProviderServicesPlain(GetFastConnectProviderServicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getFastConnectProviderServices:getFastConnectProviderServices", TypeShape.of(GetFastConnectProviderServicesResult.class), args, Utilities.withVersion(options));
     }
@@ -14033,6 +17226,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetImageResult> getImage(GetImageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getImage:getImage", TypeShape.of(GetImageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Image resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
+     *             .imageId(testImageOciCoreImage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetImageResult> getImage(GetImageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getImage:getImage", TypeShape.of(GetImageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -14256,6 +17493,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetImageShapeResult> getImageShape(GetImageShapeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getImageShape:getImageShape", TypeShape.of(GetImageShapeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Image Shape resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Retrieves an image shape compatibility entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
+     *             .imageId(testImage.id())
+     *             .shapeName(testShape.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetImageShapeResult> getImageShapePlain(GetImageShapePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getImageShape:getImageShape", TypeShape.of(GetImageShapeResult.class), args, Utilities.withVersion(options));
     }
@@ -14389,6 +17671,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetImageShapesResult> getImageShapes(GetImageShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getImageShapes:getImageShapes", TypeShape.of(GetImageShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Image Shapes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compatible shapes for the specified image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
+     *             .imageId(testImage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetImageShapesResult> getImageShapes(GetImageShapesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getImageShapes:getImageShapes", TypeShape.of(GetImageShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -14676,6 +18002,67 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetImagesResult> getImages(GetImagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getImages:getImages", TypeShape.of(GetImagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Images in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists a subset of images available in the specified compartment, including
+     * [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
+     * [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
+     * The list of platform images includes the three most recently published versions
+     * of each major distribution. The list does not support filtering based on image tags.
+     * 
+     * The list of images returned is ordered to first show the recent platform images,
+     * then all of the custom images.
+     * 
+     * **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
+     * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImages = CoreFunctions.getImages(GetImagesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(imageDisplayName)
+     *             .operatingSystem(imageOperatingSystem)
+     *             .operatingSystemVersion(imageOperatingSystemVersion)
+     *             .shape(imageShape)
+     *             .state(imageState)
+     *             .sortBy(imageSortBy)
+     *             .sortOrder(imageSortOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetImagesResult> getImagesPlain(GetImagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getImages:getImages", TypeShape.of(GetImagesResult.class), args, Utilities.withVersion(options));
     }
@@ -14818,6 +18205,53 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetInstanceResult> getInstance(GetInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstance:getInstance", TypeShape.of(GetInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified instance.
+     * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
+     *             .instanceId(testInstanceOciCoreInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceResult> getInstance(GetInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getInstance:getInstance", TypeShape.of(GetInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -15040,6 +18474,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInstanceConfigurationResult> getInstanceConfiguration(GetInstanceConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceConfiguration:getInstanceConfiguration", TypeShape.of(GetInstanceConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Configuration resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified instance configuration
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInstanceConfigurationResult> getInstanceConfigurationPlain(GetInstanceConfigurationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInstanceConfiguration:getInstanceConfiguration", TypeShape.of(GetInstanceConfigurationResult.class), args, Utilities.withVersion(options));
     }
@@ -15173,6 +18651,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetInstanceConfigurationsResult> getInstanceConfigurations(GetInstanceConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceConfigurations:getInstanceConfigurations", TypeShape.of(GetInstanceConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the instance configurations in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfigurations = CoreFunctions.getInstanceConfigurations(GetInstanceConfigurationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceConfigurationsResult> getInstanceConfigurations(GetInstanceConfigurationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getInstanceConfigurations:getInstanceConfigurations", TypeShape.of(GetInstanceConfigurationsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -15404,6 +18926,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", TypeShape.of(GetInstanceConsoleConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the console connections for the specified compartment or instance.
+     * 
+     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .instanceId(testInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnectionsPlain(GetInstanceConsoleConnectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", TypeShape.of(GetInstanceConsoleConnectionsResult.class), args, Utilities.withVersion(options));
     }
@@ -15540,6 +19109,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetInstanceCredentialsResult> getInstanceCredentials(GetInstanceCredentialsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceCredentials:getInstanceCredentials", TypeShape.of(GetInstanceCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Credential resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
+     * For certain operating systems, users will be forced to change the initial credentials.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
+     *             .instanceId(testInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceCredentialsResult> getInstanceCredentials(GetInstanceCredentialsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getInstanceCredentials:getInstanceCredentials", TypeShape.of(GetInstanceCredentialsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -15768,6 +19382,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInstanceDevicesResult> getInstanceDevices(GetInstanceDevicesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceDevices:getInstanceDevices", TypeShape.of(GetInstanceDevicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
+     *             .instanceId(testInstance.id())
+     *             .isAvailable(instanceDeviceIsAvailable)
+     *             .name(instanceDeviceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInstanceDevicesResult> getInstanceDevicesPlain(GetInstanceDevicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInstanceDevices:getInstanceDevices", TypeShape.of(GetInstanceDevicesResult.class), args, Utilities.withVersion(options));
     }
@@ -15901,6 +19561,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetInstanceMaintenanceEventResult> getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", TypeShape.of(GetInstanceMaintenanceEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maintenance event for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceMaintenanceEventResult> getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", TypeShape.of(GetInstanceMaintenanceEventResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -16144,6 +19848,56 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInstanceMaintenanceEventsResult> getInstanceMaintenanceEvents(GetInstanceMaintenanceEventsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", TypeShape.of(GetInstanceMaintenanceEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Maintenance Events in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all the maintenance events for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvents = CoreFunctions.getInstanceMaintenanceEvents(GetInstanceMaintenanceEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .correlationToken(instanceMaintenanceEventCorrelationToken)
+     *             .instanceAction(instanceMaintenanceEventInstanceAction)
+     *             .instanceId(testInstance.id())
+     *             .state(instanceMaintenanceEventState)
+     *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
+     *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInstanceMaintenanceEventsResult> getInstanceMaintenanceEventsPlain(GetInstanceMaintenanceEventsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", TypeShape.of(GetInstanceMaintenanceEventsResult.class), args, Utilities.withVersion(options));
     }
@@ -16280,6 +20034,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", TypeShape.of(GetInstanceMaintenanceRebootResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
+     * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
+     *             .instanceId(testInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", TypeShape.of(GetInstanceMaintenanceRebootResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -16500,6 +20299,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", TypeShape.of(GetInstanceMeasuredBootReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the measured boot report for this shielded instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
+     *             .instanceId(testInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReportPlain(GetInstanceMeasuredBootReportPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", TypeShape.of(GetInstanceMeasuredBootReportResult.class), args, Utilities.withVersion(options));
     }
@@ -16633,6 +20476,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetInstancePoolResult> getInstancePool(GetInstancePoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstancePool:getInstancePool", TypeShape.of(GetInstancePoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Pool resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified instance pool
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstancePoolResult> getInstancePool(GetInstancePoolArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getInstancePool:getInstancePool", TypeShape.of(GetInstancePoolResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -16860,6 +20747,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInstancePoolInstancesResult> getInstancePoolInstances(GetInstancePoolInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstancePoolInstances:getInstancePoolInstances", TypeShape.of(GetInstancePoolInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Pool Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * List the instances in the specified instance pool.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .instancePoolId(testInstancePool.id())
+     *             .displayName(instancePoolInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInstancePoolInstancesResult> getInstancePoolInstancesPlain(GetInstancePoolInstancesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInstancePoolInstances:getInstancePoolInstances", TypeShape.of(GetInstancePoolInstancesResult.class), args, Utilities.withVersion(options));
     }
@@ -16996,6 +20929,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", TypeShape.of(GetInstancePoolLoadBalancerAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about a load balancer that is attached to the specified instance pool.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
+     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", TypeShape.of(GetInstancePoolLoadBalancerAttachmentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17179,6 +21157,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetInstancePoolsResult> getInstancePools(GetInstancePoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstancePools:getInstancePools", TypeShape.of(GetInstancePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Pools in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the instance pools in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePools = CoreFunctions.getInstancePools(GetInstancePoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instancePoolDisplayName)
+     *             .state(instancePoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstancePoolsResult> getInstancePools(GetInstancePoolsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getInstancePools:getInstancePools", TypeShape.of(GetInstancePoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17440,6 +21464,60 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInstancesResult> getInstances(GetInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the instances in the specified compartment and the specified availability domain.
+     * You can filter the results by specifying an instance name (the list will include all the identically-named
+     * instances in the compartment).
+     * 
+     * **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(instanceAvailabilityDomain)
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .computeClusterId(testComputeCluster.id())
+     *             .displayName(instanceDisplayName)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(GetInstancesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
     }
@@ -17585,6 +21663,54 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetInternetGatewaysResult> getInternetGateways(GetInternetGatewaysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInternetGateways:getInternetGateways", TypeShape.of(GetInternetGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internet Gateways in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the internet gateways in the specified VCN and the specified compartment.
+     * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternetGateways = CoreFunctions.getInternetGateways(GetInternetGatewaysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(internetGatewayDisplayName)
+     *             .state(internetGatewayState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternetGatewaysResult> getInternetGateways(GetInternetGatewaysArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getInternetGateways:getInternetGateways", TypeShape.of(GetInternetGatewaysResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17808,6 +21934,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetIpInventorySubnetResult> getIpInventorySubnet(GetIpInventorySubnetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpInventorySubnet:getIpInventorySubnet", TypeShape.of(GetIpInventorySubnetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetIpInventorySubnetResult> getIpInventorySubnetPlain(GetIpInventorySubnetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getIpInventorySubnet:getIpInventorySubnet", TypeShape.of(GetIpInventorySubnetResult.class), args, Utilities.withVersion(options));
     }
@@ -17941,6 +22111,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetIpInventorySubnetCidrResult> getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", TypeShape.of(GetIpInventorySubnetCidrResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet Cidr resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpInventorySubnetCidrResult> getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", TypeShape.of(GetIpInventorySubnetCidrResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -18123,6 +22337,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetIpInventoryVcnOverlapsResult> getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", TypeShape.of(GetIpInventoryVcnOverlapsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ip Inventory Vcn Overlaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
+     *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
+     *             .regionLists(ipInventoryVcnOverlapRegionList)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpInventoryVcnOverlapsResult> getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", TypeShape.of(GetIpInventoryVcnOverlapsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -18414,6 +22674,47 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetIpsecAlgorithmResult> getIpsecAlgorithm(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", TypeShape.of(GetIpsecAlgorithmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * The parameters allowed for IKE IPSec tunnels.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetIpsecAlgorithmResult> getIpsecAlgorithmPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", TypeShape.of(GetIpsecAlgorithmResult.class), args, Utilities.withVersion(options));
     }
@@ -18556,6 +22857,53 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetIpsecConfigResult> getIpsecConfig(GetIpsecConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpsecConfig:getIpsecConfig", TypeShape.of(GetIpsecConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ip Sec Connection Device Config resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Deprecated. To get tunnel information, instead use:
+     * 
+     * * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel)
+     * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
+     *             .ipsecId(testIpsec.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpsecConfigResult> getIpsecConfig(GetIpsecConfigArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getIpsecConfig:getIpsecConfig", TypeShape.of(GetIpsecConfigResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -18782,6 +23130,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", TypeShape.of(GetIpsecConnectionTunnelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified IPSec connection&#39;s specified tunnel basic information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnelPlain(GetIpsecConnectionTunnelPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", TypeShape.of(GetIpsecConnectionTunnelResult.class), args, Utilities.withVersion(options));
     }
@@ -18918,6 +23311,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", TypeShape.of(GetIpsecConnectionTunnelErrorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the identified error for the specified IPSec tunnel ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", TypeShape.of(GetIpsecConnectionTunnelErrorResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -19146,6 +23584,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes", TypeShape.of(GetIpsecConnectionTunnelRoutesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.
+     * 
+     * The routes advertised to the on-premises network and the routes received from the on-premises network.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
+     *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutesPlain(GetIpsecConnectionTunnelRoutesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes", TypeShape.of(GetIpsecConnectionTunnelRoutesResult.class), args, Utilities.withVersion(options));
     }
@@ -19279,6 +23763,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpsecConnectionTunnels:getIpsecConnectionTunnels", TypeShape.of(GetIpsecConnectionTunnelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ip Sec Connection Tunnels in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the tunnel information for the specified IPSec connection.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
+     *             .ipsecId(testIpsec.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getIpsecConnectionTunnels:getIpsecConnectionTunnels", TypeShape.of(GetIpsecConnectionTunnelsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -19510,6 +24038,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetIpsecConnectionsResult> getIpsecConnections(GetIpsecConnectionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpsecConnections:getIpsecConnections", TypeShape.of(GetIpsecConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the IPSec connections for the specified compartment. You can filter the
+     * results by DRG or CPE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .cpeId(testCpe.id())
+     *             .drgId(testDrg.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetIpsecConnectionsResult> getIpsecConnectionsPlain(GetIpsecConnectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getIpsecConnections:getIpsecConnections", TypeShape.of(GetIpsecConnectionsResult.class), args, Utilities.withVersion(options));
     }
@@ -19646,6 +24221,51 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetIpsecStatusResult> getIpsecStatus(GetIpsecStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpsecStatus:getIpsecStatus", TypeShape.of(GetIpsecStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ip Sec Connection Device Status resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Deprecated. To get the tunnel status, instead use
+     * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
+     *             .ipsecId(testIpsec.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpsecStatusResult> getIpsecStatus(GetIpsecStatusArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getIpsecStatus:getIpsecStatus", TypeShape.of(GetIpsecStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -19832,6 +24452,53 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetIpv6Result> getIpv6(GetIpv6Args args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpv6:getIpv6", TypeShape.of(GetIpv6Result.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ipv6 resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified IPv6. You must specify the object&#39;s OCID.
+     * Alternatively, you can get the object by using
+     * [ListIpv6s](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/ListIpv6s)
+     * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6Args;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
+     *             .ipv6id(testIpv6OciCoreIpv6.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpv6Result> getIpv6(GetIpv6Args args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getIpv6:getIpv6", TypeShape.of(GetIpv6Result.class), args, Utilities.withVersion(options));
     }
     /**
@@ -20196,6 +24863,59 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetIpv6sResult> getIpv6s(GetIpv6sArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpv6s:getIpv6s", TypeShape.of(GetIpv6sResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ipv6s in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
+     * on one of these filters:
+     * 
+     *   * Subnet OCID.
+     *   * VNIC OCID.
+     *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+     *       IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+     *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
+     *             .ipAddress(ipv6IpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vnicId(testVnicAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetIpv6sResult> getIpv6sPlain(GetIpv6sPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getIpv6s:getIpv6s", TypeShape.of(GetIpv6sResult.class), args, Utilities.withVersion(options));
     }
@@ -20372,6 +25092,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLetterOfAuthorityResult> getLetterOfAuthority(GetLetterOfAuthorityArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getLetterOfAuthority:getLetterOfAuthority", TypeShape.of(GetLetterOfAuthorityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Letter Of Authority resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the Letter of Authority for the specified cross-connect.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
+     *             .crossConnectId(testCrossConnect.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLetterOfAuthorityResult> getLetterOfAuthorityPlain(GetLetterOfAuthorityPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getLetterOfAuthority:getLetterOfAuthority", TypeShape.of(GetLetterOfAuthorityResult.class), args, Utilities.withVersion(options));
     }
@@ -20384,6 +25148,9 @@ public final class CoreFunctions {
     public static Output<GetListingResourceVersionResult> getListingResourceVersion(GetListingResourceVersionArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getListingResourceVersion:getListingResourceVersion", TypeShape.of(GetListingResourceVersionResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetListingResourceVersionResult> getListingResourceVersion(GetListingResourceVersionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getListingResourceVersion:getListingResourceVersion", TypeShape.of(GetListingResourceVersionResult.class), args, Utilities.withVersion(options));
+    }
     public static CompletableFuture<GetListingResourceVersionResult> getListingResourceVersionPlain(GetListingResourceVersionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getListingResourceVersion:getListingResourceVersion", TypeShape.of(GetListingResourceVersionResult.class), args, Utilities.withVersion(options));
     }
@@ -20394,6 +25161,9 @@ public final class CoreFunctions {
         return getListingResourceVersionsPlain(args, InvokeOptions.Empty);
     }
     public static Output<GetListingResourceVersionsResult> getListingResourceVersions(GetListingResourceVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getListingResourceVersions:getListingResourceVersions", TypeShape.of(GetListingResourceVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetListingResourceVersionsResult> getListingResourceVersions(GetListingResourceVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getListingResourceVersions:getListingResourceVersions", TypeShape.of(GetListingResourceVersionsResult.class), args, Utilities.withVersion(options));
     }
     public static CompletableFuture<GetListingResourceVersionsResult> getListingResourceVersionsPlain(GetListingResourceVersionsPlainArgs args, InvokeOptions options) {
@@ -20535,6 +25305,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetLocalPeeringGatewaysResult> getLocalPeeringGateways(GetLocalPeeringGatewaysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", TypeShape.of(GetLocalPeeringGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Local Peering Gateways in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the local peering gateways (LPGs) for the specified VCN and specified compartment.
+     * If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLocalPeeringGatewaysResult> getLocalPeeringGateways(GetLocalPeeringGatewaysArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", TypeShape.of(GetLocalPeeringGatewaysResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -20756,6 +25572,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNatGatewayResult> getNatGateway(GetNatGatewayArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getNatGateway:getNatGateway", TypeShape.of(GetNatGatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Nat Gateway resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified NAT gateway&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNatGatewayResult> getNatGatewayPlain(GetNatGatewayPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getNatGateway:getNatGateway", TypeShape.of(GetNatGatewayResult.class), args, Utilities.withVersion(options));
     }
@@ -20901,6 +25761,54 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetNatGatewaysResult> getNatGateways(GetNatGatewaysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getNatGateways:getNatGateways", TypeShape.of(GetNatGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Nat Gateways in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the NAT gateways in the specified compartment. You may optionally specify a VCN OCID
+     * to filter the results by VCN.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateways = CoreFunctions.getNatGateways(GetNatGatewaysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(natGatewayDisplayName)
+     *             .state(natGatewayState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNatGatewaysResult> getNatGateways(GetNatGatewaysArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getNatGateways:getNatGateways", TypeShape.of(GetNatGatewaysResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -21148,6 +26056,56 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNetworkSecurityGroupResult> getNetworkSecurityGroup(GetNetworkSecurityGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getNetworkSecurityGroup:getNetworkSecurityGroup", TypeShape.of(GetNetworkSecurityGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Security Group resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified network security group&#39;s information.
+     * 
+     * To list the VNICs in an NSG, see
+     * [ListNetworkSecurityGroupVnics](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics).
+     * 
+     * To list the security rules in an NSG, see
+     * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNetworkSecurityGroupResult> getNetworkSecurityGroupPlain(GetNetworkSecurityGroupPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getNetworkSecurityGroup:getNetworkSecurityGroup", TypeShape.of(GetNetworkSecurityGroupResult.class), args, Utilities.withVersion(options));
     }
@@ -21328,6 +26286,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", TypeShape.of(GetNetworkSecurityGroupSecurityRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the security rules in the specified network security group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .direction(networkSecurityGroupSecurityRuleDirection)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRulesPlain(GetNetworkSecurityGroupSecurityRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", TypeShape.of(GetNetworkSecurityGroupSecurityRulesResult.class), args, Utilities.withVersion(options));
     }
@@ -21461,6 +26464,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", TypeShape.of(GetNetworkSecurityGroupVnicsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the VNICs in the specified network security group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", TypeShape.of(GetNetworkSecurityGroupVnicsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -21798,6 +26845,55 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNetworkSecurityGroupsResult> getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", TypeShape.of(GetNetworkSecurityGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Security Groups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists either the network security groups in the specified compartment, or those associated with the specified VLAN.
+     * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkSecurityGroupDisplayName)
+     *             .state(networkSecurityGroupState)
+     *             .vcnId(testVcn.id())
+     *             .vlanId(testVlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNetworkSecurityGroupsResult> getNetworkSecurityGroupsPlain(GetNetworkSecurityGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", TypeShape.of(GetNetworkSecurityGroupsResult.class), args, Utilities.withVersion(options));
     }
@@ -22056,6 +27152,49 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", TypeShape.of(GetPeerRegionForRemotePeeringsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the regions that support remote VCN peering (which is peering across regions).
+     * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeeringsPlain(GetPeerRegionForRemotePeeringsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", TypeShape.of(GetPeerRegionForRemotePeeringsResult.class), args, Utilities.withVersion(options));
     }
@@ -22198,6 +27337,53 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetPrivateIpResult> getPrivateIp(GetPrivateIpArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getPrivateIp:getPrivateIp", TypeShape.of(GetPrivateIpResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Private Ip resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified private IP. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Alternatively, you can get the object by using
+     * [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)
+     * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPrivateIpResult> getPrivateIp(GetPrivateIpArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getPrivateIp:getPrivateIp", TypeShape.of(GetPrivateIpResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -22890,6 +28076,135 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetPrivateIpsResult> getPrivateIps(GetPrivateIpsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getPrivateIps:getPrivateIps", TypeShape.of(GetPrivateIpsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Ips in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
+     * on one of these filters:
+     * 
+     *   - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *   - Both private IP address and subnet OCID: This lets
+     *       you get a `privateIP` object based on its private IP
+     *       address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+     *       [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
+     *       requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * If you&#39;re listing all the private IPs associated with a given subnet
+     * or VNIC, the response includes both primary and secondary private IPs.
+     * 
+     * If you are an Oracle Cloud VMware Solution customer and have VLANs
+     * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         // Filter on Subnet OCID
+     *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .subnetId(privateIpSubnetId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         // Filter on VNIC OCID
+     *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .vnicId(testVnic.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         // Filter on private IP address and Subnet OCID
+     *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .ipAddress(privateIpIpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vlanId(testVlan.id())
+     *             .vnicId(testVnicAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPrivateIpsResult> getPrivateIps(GetPrivateIpsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getPrivateIps:getPrivateIps", TypeShape.of(GetPrivateIpsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -23756,6 +29071,129 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPublicIpResult> getPublicIp(GetPublicIpArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getPublicIp:getPublicIp", TypeShape.of(GetPublicIpResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified public IP. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * Alternatively, you can get the object by using [GetPublicIpByIpAddress](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByIpAddress)
+     * with the public IP address (for example, 203.0.113.2).
+     * 
+     * Or you can use [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByPrivateIpId)
+     * with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is assigned to.
+     * 
+     * **Note:** If you&#39;re fetching a reserved public IP that is in the process of being
+     * moved to a different private IP, the service returns the public IP object with
+     * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
+     * 
+     * ## Example Usage
+     * 
+     * ### Get a public ip by public ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .id(testPublicIpId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     * ### Get a public ip by private ip id
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .privateIpId(testPublicIpPrivateIpId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     * ### Get a public ip by public ip address
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .ipAddress(testPublicIpIpAddress)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPublicIpResult> getPublicIpPlain(GetPublicIpPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getPublicIp:getPublicIp", TypeShape.of(GetPublicIpResult.class), args, Utilities.withVersion(options));
     }
@@ -23889,6 +29327,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetPublicIpPoolResult> getPublicIpPool(GetPublicIpPoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getPublicIpPool:getPublicIpPool", TypeShape.of(GetPublicIpPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified `PublicIpPool` object. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPublicIpPoolResult> getPublicIpPool(GetPublicIpPoolArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getPublicIpPool:getPublicIpPool", TypeShape.of(GetPublicIpPoolResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -24074,6 +29556,53 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetPublicIpPoolsResult> getPublicIpPools(GetPublicIpPoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getPublicIpPools:getPublicIpPools", TypeShape.of(GetPublicIpPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the public IP pools in the specified compartment.
+     * You can filter the list using query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .byoipRangeId(testByoipRange.id())
+     *             .displayName(publicIpPoolDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPublicIpPoolsResult> getPublicIpPools(GetPublicIpPoolsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getPublicIpPools:getPublicIpPools", TypeShape.of(GetPublicIpPoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -24388,6 +29917,73 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPublicIpsResult> getPublicIps(GetPublicIpsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getPublicIps:getPublicIps", TypeShape.of(GetPublicIpsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Public Ips in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the [PublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) objects
+     * in the specified compartment. You can filter the list by using query parameters.
+     * 
+     * To list your reserved public IPs:
+     *   * Set `scope` = `REGION`  (required)
+     *   * Leave the `availabilityDomain` parameter empty
+     *   * Set `lifetime` = `RESERVED`
+     * 
+     * To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
+     *   * Set `scope` = `REGION`  (required)
+     *   * Leave the `availabilityDomain` parameter empty
+     *   * Set `lifetime` = `EPHEMERAL`
+     * 
+     * To list the ephemeral public IPs assigned to private IPs:
+     *   * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+     *   * Set the `availabilityDomain` parameter to the desired availability domain (required)
+     *   * Set `lifetime` = `EPHEMERAL`
+     * 
+     * **Note:** An ephemeral public IP assigned to a private IP
+     * is always in the same availability domain and compartment as the private IP.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIps = CoreFunctions.getPublicIps(GetPublicIpsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .scope(publicIpScope)
+     *             .availabilityDomain(publicIpAvailabilityDomain)
+     *             .lifetime(publicIpLifetime)
+     *             .publicIpPoolId(testPublicIpPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPublicIpsResult> getPublicIpsPlain(GetPublicIpsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getPublicIps:getPublicIps", TypeShape.of(GetPublicIpsResult.class), args, Utilities.withVersion(options));
     }
@@ -24527,6 +30123,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetRemotePeeringConnectionsResult> getRemotePeeringConnections(GetRemotePeeringConnectionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", TypeShape.of(GetRemotePeeringConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the remote peering connections (RPCs) for the specified DRG and compartment
+     * (the RPC&#39;s compartment).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .drgId(testDrg.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRemotePeeringConnectionsResult> getRemotePeeringConnections(GetRemotePeeringConnectionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", TypeShape.of(GetRemotePeeringConnectionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -24772,6 +30414,56 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRouteTablesResult> getRouteTables(GetRouteTablesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getRouteTables:getRouteTables", TypeShape.of(GetRouteTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Route Tables in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the route tables in the specified VCN and specified compartment.
+     * If the VCN ID is not provided, then the list includes the route tables from all VCNs in the specified compartment.
+     * The response includes the default route table that automatically comes with
+     * each VCN in the specified compartment, plus any route tables you&#39;ve created.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRouteTables = CoreFunctions.getRouteTables(GetRouteTablesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(routeTableDisplayName)
+     *             .state(routeTableState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRouteTablesResult> getRouteTablesPlain(GetRouteTablesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getRouteTables:getRouteTables", TypeShape.of(GetRouteTablesResult.class), args, Utilities.withVersion(options));
     }
@@ -24964,6 +30656,54 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSecurityListsResult> getSecurityLists(GetSecurityListsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getSecurityLists:getSecurityLists", TypeShape.of(GetSecurityListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Lists in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the security lists in the specified VCN and compartment.
+     * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityLists = CoreFunctions.getSecurityLists(GetSecurityListsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(securityListDisplayName)
+     *             .state(securityListState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSecurityListsResult> getSecurityListsPlain(GetSecurityListsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getSecurityLists:getSecurityLists", TypeShape.of(GetSecurityListsResult.class), args, Utilities.withVersion(options));
     }
@@ -25106,6 +30846,53 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetServiceGatewaysResult> getServiceGateways(GetServiceGatewaysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getServiceGateways:getServiceGateways", TypeShape.of(GetServiceGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the service gateways in the specified compartment. You may optionally specify a VCN OCID
+     * to filter the results by VCN.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .state(serviceGatewayState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServiceGatewaysResult> getServiceGateways(GetServiceGatewaysArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getServiceGateways:getServiceGateways", TypeShape.of(GetServiceGatewaysResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -25410,6 +31197,49 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetServicesResult> getServices(GetServicesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getServices:getServices", TypeShape.of(GetServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Services in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the available [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects that you can enable for a
+     * service gateway in this region.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = CoreFunctions.getServices();
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getServices:getServices", TypeShape.of(GetServicesResult.class), args, Utilities.withVersion(options));
     }
@@ -25420,6 +31250,9 @@ public final class CoreFunctions {
         return getShapePlain(args, InvokeOptions.Empty);
     }
     public static Output<GetShapeResult> getShape(GetShapeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getShape:getShape", TypeShape.of(GetShapeResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetShapeResult> getShape(GetShapeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getShape:getShape", TypeShape.of(GetShapeResult.class), args, Utilities.withVersion(options));
     }
     public static CompletableFuture<GetShapeResult> getShapePlain(GetShapePlainArgs args, InvokeOptions options) {
@@ -25610,6 +31443,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getShapes:getShapes", TypeShape.of(GetShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Shapes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the shapes that can be used to launch an instance within the specified compartment. You can
+     * filter the list by compatibility with a specific image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(shapeAvailabilityDomain)
+     *             .imageId(testImage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getShapes:getShapes", TypeShape.of(GetShapesResult.class), args, Utilities.withVersion(options));
     }
@@ -25743,6 +31623,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetSubnetResult> getSubnet(GetSubnetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getSubnet:getSubnet", TypeShape.of(GetSubnetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subnet resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified subnet&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
+     *             .subnetId(testSubnetOciCoreSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubnetResult> getSubnet(GetSubnetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getSubnet:getSubnet", TypeShape.of(GetSubnetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -25978,6 +31902,54 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSubnetsResult> getSubnets(GetSubnetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getSubnets:getSubnets", TypeShape.of(GetSubnetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subnets in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the subnets in the specified VCN and the specified compartment.
+     * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnets = CoreFunctions.getSubnets(GetSubnetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(subnetDisplayName)
+     *             .state(subnetState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSubnetsResult> getSubnetsPlain(GetSubnetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getSubnets:getSubnets", TypeShape.of(GetSubnetsResult.class), args, Utilities.withVersion(options));
     }
@@ -26158,6 +32130,51 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", TypeShape.of(GetTunnelSecurityAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the tunnel security associations information for the specified IPSec tunnel ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociationsPlain(GetTunnelSecurityAssociationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", TypeShape.of(GetTunnelSecurityAssociationsResult.class), args, Utilities.withVersion(options));
     }
@@ -26291,6 +32308,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVcnResult> getVcn(GetVcnArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVcn:getVcn", TypeShape.of(GetVcnResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vcn resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified VCN&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
+     *             .vcnId(testVcnOciCoreVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVcnResult> getVcn(GetVcnArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVcn:getVcn", TypeShape.of(GetVcnResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -26534,6 +32595,56 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVcnsResult> getVcns(GetVcnsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVcns:getVcns", TypeShape.of(GetVcnsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the virtual cloud networks (VCNs) in the specified compartment.
+     * 
+     * ## Supported Aliases
+     * 
+     * * `oci.Core.getVirtualNetworks`
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcns = CoreFunctions.getVcns(GetVcnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vcnDisplayName)
+     *             .state(vcnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVcnsResult> getVcnsPlain(GetVcnsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVcns:getVcns", TypeShape.of(GetVcnsResult.class), args, Utilities.withVersion(options));
     }
@@ -26710,6 +32821,50 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVirtualCircuitResult> getVirtualCircuit(GetVirtualCircuitArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVirtualCircuit:getVirtualCircuit", TypeShape.of(GetVirtualCircuitResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Virtual Circuit resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified virtual circuit&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVirtualCircuitResult> getVirtualCircuitPlain(GetVirtualCircuitPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVirtualCircuit:getVirtualCircuit", TypeShape.of(GetVirtualCircuitResult.class), args, Utilities.withVersion(options));
     }
@@ -26843,6 +32998,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", TypeShape.of(GetVirtualCircuitAssociatedTunnelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified virtual circuit&#39;s associatedTunnelsInfo.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
+     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVirtualCircuitAssociatedTunnelsResult> getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", TypeShape.of(GetVirtualCircuitAssociatedTunnelsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -27074,6 +33273,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", TypeShape.of(GetVirtualCircuitBandwidthShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the list of available virtual circuit bandwidth levels for a provider.
+     * You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
+     * 
+     * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapesPlain(GetVirtualCircuitBandwidthShapesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", TypeShape.of(GetVirtualCircuitBandwidthShapesResult.class), args, Utilities.withVersion(options));
     }
@@ -27213,6 +33459,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", TypeShape.of(GetVirtualCircuitPublicPrefixesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the public IP prefixes and their details for the specified
+     * public virtual circuit.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
+     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .verificationState(virtualCircuitPublicPrefixVerificationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", TypeShape.of(GetVirtualCircuitPublicPrefixesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -27442,6 +33734,52 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVirtualCircuitsResult> getVirtualCircuits(GetVirtualCircuitsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVirtualCircuits:getVirtualCircuits", TypeShape.of(GetVirtualCircuitsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Circuits in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the virtual circuits in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuits = CoreFunctions.getVirtualCircuits(GetVirtualCircuitsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(virtualCircuitDisplayName)
+     *             .state(virtualCircuitState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVirtualCircuitsResult> getVirtualCircuitsPlain(GetVirtualCircuitsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVirtualCircuits:getVirtualCircuits", TypeShape.of(GetVirtualCircuitsResult.class), args, Utilities.withVersion(options));
     }
@@ -27452,6 +33790,9 @@ public final class CoreFunctions {
         return getVirtualNetworksPlain(args, InvokeOptions.Empty);
     }
     public static Output<GetVirtualNetworksResult> getVirtualNetworks(GetVirtualNetworksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVirtualNetworks:getVirtualNetworks", TypeShape.of(GetVirtualNetworksResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetVirtualNetworksResult> getVirtualNetworks(GetVirtualNetworksArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVirtualNetworks:getVirtualNetworks", TypeShape.of(GetVirtualNetworksResult.class), args, Utilities.withVersion(options));
     }
     public static CompletableFuture<GetVirtualNetworksResult> getVirtualNetworksPlain(GetVirtualNetworksPlainArgs args, InvokeOptions options) {
@@ -27587,6 +33928,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVlanResult> getVlan(GetVlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVlan:getVlan", TypeShape.of(GetVlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vlan resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified VLAN&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
+     *             .vlanId(testVlanOciCoreVlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVlanResult> getVlan(GetVlanArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVlan:getVlan", TypeShape.of(GetVlanResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -27818,6 +34203,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVlansResult> getVlans(GetVlansArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVlans:getVlans", TypeShape.of(GetVlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vlans in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the VLANs in the specified VCN and the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlans = CoreFunctions.getVlans(GetVlansArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vlanDisplayName)
+     *             .state(vlanState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVlansResult> getVlansPlain(GetVlansPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVlans:getVlans", TypeShape.of(GetVlansResult.class), args, Utilities.withVersion(options));
     }
@@ -27960,6 +34392,53 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVnicResult> getVnic(GetVnicArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVnic:getVnic", TypeShape.of(GetVnicResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vnic resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the information for the specified virtual network interface card (VNIC).
+     * You can get the VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from the
+     * [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+     * operation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
+     *             .vnicId(testVnicOciCoreVnic.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVnicResult> getVnic(GetVnicArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVnic:getVnic", TypeShape.of(GetVnicResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -28202,6 +34681,55 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVnicAttachmentsResult> getVnicAttachments(GetVnicAttachmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVnicAttachments:getVnicAttachments", TypeShape.of(GetVnicAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vnic Attachments in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the VNIC attachments in the specified compartment. A VNIC attachment
+     * resides in the same compartment as the attached instance. The list can be
+     * filtered by instance, VNIC, or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .vnicId(testVnic.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVnicAttachmentsResult> getVnicAttachmentsPlain(GetVnicAttachmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVnicAttachments:getVnicAttachments", TypeShape.of(GetVnicAttachmentsResult.class), args, Utilities.withVersion(options));
     }
@@ -28335,6 +34863,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVolumeResult> getVolume(GetVolumeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolume:getVolume", TypeShape.of(GetVolumeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Volume resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information for the specified volume.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
+     *             .volumeId(testVolumeOciCoreVolume.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVolumeResult> getVolume(GetVolumeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVolume:getVolume", TypeShape.of(GetVolumeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -28532,6 +35104,57 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVolumeAttachmentsResult> getVolumeAttachments(GetVolumeAttachmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolumeAttachments:getVolumeAttachments", TypeShape.of(GetVolumeAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Volume Attachments in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the volume attachments in the specified compartment. You can filter the
+     * list by specifying an instance OCID, volume OCID, or both.
+     * 
+     * Currently, the only supported volume attachment type are [IScsiVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IScsiVolumeAttachment/) and
+     * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .volumeId(testVolume.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVolumeAttachmentsResult> getVolumeAttachments(GetVolumeAttachmentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVolumeAttachments:getVolumeAttachments", TypeShape.of(GetVolumeAttachmentsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -28864,6 +35487,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVolumeBackupPoliciesResult> getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", TypeShape.of(GetVolumeBackupPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Volume Backup Policies in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists all the volume backup policies available in the specified compartment.
+     * 
+     * For more information about Oracle defined backup policies and user defined backup policies,
+     * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVolumeBackupPoliciesResult> getVolumeBackupPoliciesPlain(GetVolumeBackupPoliciesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", TypeShape.of(GetVolumeBackupPoliciesResult.class), args, Utilities.withVersion(options));
     }
@@ -29003,6 +35673,52 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments", TypeShape.of(GetVolumeBackupPolicyAssignmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the volume backup policy assignment for the specified volume. The
+     * `assetId` query parameter is required, and the returned list will contain at most
+     * one item, since volume can only have one volume backup policy assigned at a time.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
+     *             .assetId(testVolume.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments", TypeShape.of(GetVolumeBackupPolicyAssignmentsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -29240,6 +35956,54 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVolumeBackupsResult> getVolumeBackups(GetVolumeBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolumeBackups:getVolumeBackups", TypeShape.of(GetVolumeBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Volume Backups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the volume backups in the specified compartment. You can filter the results by volume.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeBackupDisplayName)
+     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .state(volumeBackupState)
+     *             .volumeId(testVolume.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVolumeBackupsResult> getVolumeBackupsPlain(GetVolumeBackupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVolumeBackups:getVolumeBackups", TypeShape.of(GetVolumeBackupsResult.class), args, Utilities.withVersion(options));
     }
@@ -29428,6 +36192,53 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVolumeGroupBackupsResult> getVolumeGroupBackups(GetVolumeGroupBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", TypeShape.of(GetVolumeGroupBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Volume Group Backups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the volume group backups in the specified compartment. You can filter the results by volume group.
+     * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupBackupDisplayName)
+     *             .volumeGroupId(testVolumeGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVolumeGroupBackupsResult> getVolumeGroupBackupsPlain(GetVolumeGroupBackupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", TypeShape.of(GetVolumeGroupBackupsResult.class), args, Utilities.withVersion(options));
     }
@@ -29561,6 +36372,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVolumeGroupReplicaResult> getVolumeGroupReplica(GetVolumeGroupReplicaArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolumeGroupReplica:getVolumeGroupReplica", TypeShape.of(GetVolumeGroupReplicaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Volume Group Replica resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information for the specified volume group replica.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVolumeGroupReplicaResult> getVolumeGroupReplica(GetVolumeGroupReplicaArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVolumeGroupReplica:getVolumeGroupReplica", TypeShape.of(GetVolumeGroupReplicaResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -29796,6 +36651,54 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVolumeGroupReplicasResult> getVolumeGroupReplicas(GetVolumeGroupReplicasArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", TypeShape.of(GetVolumeGroupReplicasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Volume Group Replicas in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the volume group replicas in the specified compartment. You can filter the results by volume group.
+     * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplicas = CoreFunctions.getVolumeGroupReplicas(GetVolumeGroupReplicasArgs.builder()
+     *             .availabilityDomain(volumeGroupReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupReplicaDisplayName)
+     *             .state(volumeGroupReplicaState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVolumeGroupReplicasResult> getVolumeGroupReplicasPlain(GetVolumeGroupReplicasPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", TypeShape.of(GetVolumeGroupReplicasResult.class), args, Utilities.withVersion(options));
     }
@@ -29941,6 +36844,54 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVolumeGroupsResult> getVolumeGroups(GetVolumeGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolumeGroups:getVolumeGroups", TypeShape.of(GetVolumeGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Volume Groups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the volume groups in the specified compartment and availability domain.
+     * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroups = CoreFunctions.getVolumeGroups(GetVolumeGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeGroupAvailabilityDomain)
+     *             .displayName(volumeGroupDisplayName)
+     *             .state(volumeGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVolumeGroupsResult> getVolumeGroups(GetVolumeGroupsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVolumeGroups:getVolumeGroups", TypeShape.of(GetVolumeGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -30282,6 +37233,55 @@ public final class CoreFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVolumesResult> getVolumes(GetVolumesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVolumes:getVolumes", TypeShape.of(GetVolumesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the volumes in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
+     *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .clusterPlacementGroupId(testGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeDisplayName)
+     *             .state(volumeState)
+     *             .volumeGroupId(testVolumeGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVolumesResult> getVolumesPlain(GetVolumesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVolumes:getVolumes", TypeShape.of(GetVolumesResult.class), args, Utilities.withVersion(options));
     }
@@ -30415,6 +37415,50 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVtapResult> getVtap(GetVtapArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVtap:getVtap", TypeShape.of(GetVtapResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified `Vtap` resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
+     *             .vtapId(testVtapOciCoreVtap.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVtapResult> getVtap(GetVtapArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVtap:getVtap", TypeShape.of(GetVtapResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -30612,6 +37656,57 @@ public final class CoreFunctions {
      * 
      */
     public static Output<GetVtapsResult> getVtaps(GetVtapsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVtaps:getVtaps", TypeShape.of(GetVtapsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the virtual test access points (VTAPs) in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtaps = CoreFunctions.getVtaps(GetVtapsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vtapDisplayName)
+     *             .isVtapEnabled(vtapIsVtapEnabled)
+     *             .source(vtapSource)
+     *             .state(vtapState)
+     *             .targetId(testTarget.id())
+     *             .targetIp(vtapTargetIp)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVtapsResult> getVtaps(GetVtapsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getVtaps:getVtaps", TypeShape.of(GetVtapsResult.class), args, Utilities.withVersion(options));
     }
     /**

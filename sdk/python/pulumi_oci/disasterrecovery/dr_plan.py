@@ -25,18 +25,24 @@ class DrPlanArgs:
                  dr_protection_group_id: pulumi.Input[str],
                  type: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 refresh_trigger: Optional[pulumi.Input[int]] = None,
+                 source_plan_id: Optional[pulumi.Input[str]] = None,
+                 verify_trigger: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a DrPlan resource.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
+        :param pulumi.Input[str] type: The type of DR plan to be created.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        :param pulumi.Input[str] source_plan_id: The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+        :param pulumi.Input[int] verify_trigger: (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "dr_protection_group_id", dr_protection_group_id)
@@ -45,6 +51,12 @@ class DrPlanArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if refresh_trigger is not None:
+            pulumi.set(__self__, "refresh_trigger", refresh_trigger)
+        if source_plan_id is not None:
+            pulumi.set(__self__, "source_plan_id", source_plan_id)
+        if verify_trigger is not None:
+            pulumi.set(__self__, "verify_trigger", verify_trigger)
 
     @property
     @pulumi.getter(name="displayName")
@@ -74,11 +86,7 @@ class DrPlanArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of DR plan to be created.
         """
         return pulumi.get(self, "type")
 
@@ -110,6 +118,46 @@ class DrPlanArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        """
+        return pulumi.get(self, "refresh_trigger")
+
+    @refresh_trigger.setter
+    def refresh_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "refresh_trigger", value)
+
+    @property
+    @pulumi.getter(name="sourcePlanId")
+    def source_plan_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_plan_id")
+
+    @source_plan_id.setter
+    def source_plan_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_plan_id", value)
+
+    @property
+    @pulumi.getter(name="verifyTrigger")
+    def verify_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "verify_trigger")
+
+    @verify_trigger.setter
+    def verify_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "verify_trigger", value)
+
 
 @pulumi.input_type
 class _DrPlanState:
@@ -120,14 +168,18 @@ class _DrPlanState:
                  dr_protection_group_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  life_cycle_details: Optional[pulumi.Input[str]] = None,
+                 lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
                  peer_dr_protection_group_id: Optional[pulumi.Input[str]] = None,
                  peer_region: Optional[pulumi.Input[str]] = None,
                  plan_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupArgs']]]] = None,
+                 refresh_trigger: Optional[pulumi.Input[int]] = None,
+                 source_plan_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
-                 type: Optional[pulumi.Input[str]] = None):
+                 type: Optional[pulumi.Input[str]] = None,
+                 verify_trigger: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering DrPlan resources.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -136,14 +188,18 @@ class _DrPlanState:
         :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] life_cycle_details: A message describing the DR plan's current state in more detail.
+        :param pulumi.Input[str] lifecycle_sub_state: The current state of the DR plan.
         :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupArgs']]] plan_groups: The list of groups in this DR plan.
+        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        :param pulumi.Input[str] source_plan_id: The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
         :param pulumi.Input[str] state: The current state of the DR plan.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] time_updated: The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
+        :param pulumi.Input[str] type: The type of DR plan to be created.
+        :param pulumi.Input[int] verify_trigger: (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
                
                
                ** IMPORTANT **
@@ -161,12 +217,18 @@ class _DrPlanState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if life_cycle_details is not None:
             pulumi.set(__self__, "life_cycle_details", life_cycle_details)
+        if lifecycle_sub_state is not None:
+            pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         if peer_dr_protection_group_id is not None:
             pulumi.set(__self__, "peer_dr_protection_group_id", peer_dr_protection_group_id)
         if peer_region is not None:
             pulumi.set(__self__, "peer_region", peer_region)
         if plan_groups is not None:
             pulumi.set(__self__, "plan_groups", plan_groups)
+        if refresh_trigger is not None:
+            pulumi.set(__self__, "refresh_trigger", refresh_trigger)
+        if source_plan_id is not None:
+            pulumi.set(__self__, "source_plan_id", source_plan_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -177,6 +239,8 @@ class _DrPlanState:
             pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if verify_trigger is not None:
+            pulumi.set(__self__, "verify_trigger", verify_trigger)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -251,6 +315,18 @@ class _DrPlanState:
         pulumi.set(self, "life_cycle_details", value)
 
     @property
+    @pulumi.getter(name="lifecycleSubState")
+    def lifecycle_sub_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the DR plan.
+        """
+        return pulumi.get(self, "lifecycle_sub_state")
+
+    @lifecycle_sub_state.setter
+    def lifecycle_sub_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_sub_state", value)
+
+    @property
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -285,6 +361,30 @@ class _DrPlanState:
     @plan_groups.setter
     def plan_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupArgs']]]]):
         pulumi.set(self, "plan_groups", value)
+
+    @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        """
+        return pulumi.get(self, "refresh_trigger")
+
+    @refresh_trigger.setter
+    def refresh_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "refresh_trigger", value)
+
+    @property
+    @pulumi.getter(name="sourcePlanId")
+    def source_plan_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_plan_id")
+
+    @source_plan_id.setter
+    def source_plan_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_plan_id", value)
 
     @property
     @pulumi.getter
@@ -338,17 +438,29 @@ class _DrPlanState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of DR plan to be created.
         """
         return pulumi.get(self, "type")
 
     @type.setter
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="verifyTrigger")
+    def verify_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "verify_trigger")
+
+    @verify_trigger.setter
+    def verify_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "verify_trigger", value)
 
 
 class DrPlan(pulumi.CustomResource):
@@ -360,7 +472,10 @@ class DrPlan(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  dr_protection_group_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 refresh_trigger: Optional[pulumi.Input[int]] = None,
+                 source_plan_id: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
+                 verify_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -382,7 +497,8 @@ class DrPlan(pulumi.CustomResource):
             },
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            source_plan_id=test_source_plan["id"])
         ```
 
         ## Import
@@ -399,7 +515,10 @@ class DrPlan(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
+        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        :param pulumi.Input[str] source_plan_id: The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+        :param pulumi.Input[str] type: The type of DR plan to be created.
+        :param pulumi.Input[int] verify_trigger: (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
                
                
                ** IMPORTANT **
@@ -431,7 +550,8 @@ class DrPlan(pulumi.CustomResource):
             },
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            source_plan_id=test_source_plan["id"])
         ```
 
         ## Import
@@ -461,7 +581,10 @@ class DrPlan(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  dr_protection_group_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 refresh_trigger: Optional[pulumi.Input[int]] = None,
+                 source_plan_id: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
+                 verify_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -479,11 +602,15 @@ class DrPlan(pulumi.CustomResource):
                 raise TypeError("Missing required property 'dr_protection_group_id'")
             __props__.__dict__["dr_protection_group_id"] = dr_protection_group_id
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["refresh_trigger"] = refresh_trigger
+            __props__.__dict__["source_plan_id"] = source_plan_id
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
+            __props__.__dict__["verify_trigger"] = verify_trigger
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["life_cycle_details"] = None
+            __props__.__dict__["lifecycle_sub_state"] = None
             __props__.__dict__["peer_dr_protection_group_id"] = None
             __props__.__dict__["peer_region"] = None
             __props__.__dict__["plan_groups"] = None
@@ -507,14 +634,18 @@ class DrPlan(pulumi.CustomResource):
             dr_protection_group_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             life_cycle_details: Optional[pulumi.Input[str]] = None,
+            lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
             peer_dr_protection_group_id: Optional[pulumi.Input[str]] = None,
             peer_region: Optional[pulumi.Input[str]] = None,
             plan_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrPlanPlanGroupArgs', 'DrPlanPlanGroupArgsDict']]]]] = None,
+            refresh_trigger: Optional[pulumi.Input[int]] = None,
+            source_plan_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
-            type: Optional[pulumi.Input[str]] = None) -> 'DrPlan':
+            type: Optional[pulumi.Input[str]] = None,
+            verify_trigger: Optional[pulumi.Input[int]] = None) -> 'DrPlan':
         """
         Get an existing DrPlan resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -528,14 +659,18 @@ class DrPlan(pulumi.CustomResource):
         :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] life_cycle_details: A message describing the DR plan's current state in more detail.
+        :param pulumi.Input[str] lifecycle_sub_state: The current state of the DR plan.
         :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanPlanGroupArgs', 'DrPlanPlanGroupArgsDict']]]] plan_groups: The list of groups in this DR plan.
+        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        :param pulumi.Input[str] source_plan_id: The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
         :param pulumi.Input[str] state: The current state of the DR plan.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] time_updated: The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
+        :param pulumi.Input[str] type: The type of DR plan to be created.
+        :param pulumi.Input[int] verify_trigger: (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
                
                
                ** IMPORTANT **
@@ -551,14 +686,18 @@ class DrPlan(pulumi.CustomResource):
         __props__.__dict__["dr_protection_group_id"] = dr_protection_group_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["life_cycle_details"] = life_cycle_details
+        __props__.__dict__["lifecycle_sub_state"] = lifecycle_sub_state
         __props__.__dict__["peer_dr_protection_group_id"] = peer_dr_protection_group_id
         __props__.__dict__["peer_region"] = peer_region
         __props__.__dict__["plan_groups"] = plan_groups
+        __props__.__dict__["refresh_trigger"] = refresh_trigger
+        __props__.__dict__["source_plan_id"] = source_plan_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["type"] = type
+        __props__.__dict__["verify_trigger"] = verify_trigger
         return DrPlan(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -610,6 +749,14 @@ class DrPlan(pulumi.CustomResource):
         return pulumi.get(self, "life_cycle_details")
 
     @property
+    @pulumi.getter(name="lifecycleSubState")
+    def lifecycle_sub_state(self) -> pulumi.Output[str]:
+        """
+        The current state of the DR plan.
+        """
+        return pulumi.get(self, "lifecycle_sub_state")
+
+    @property
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> pulumi.Output[str]:
         """
@@ -632,6 +779,22 @@ class DrPlan(pulumi.CustomResource):
         The list of groups in this DR plan.
         """
         return pulumi.get(self, "plan_groups")
+
+    @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        """
+        return pulumi.get(self, "refresh_trigger")
+
+    @property
+    @pulumi.getter(name="sourcePlanId")
+    def source_plan_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_plan_id")
 
     @property
     @pulumi.getter
@@ -669,11 +832,19 @@ class DrPlan(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        The type of DR plan to be created. 
+        The type of DR plan to be created.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="verifyTrigger")
+    def verify_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "type")
+        return pulumi.get(self, "verify_trigger")
 

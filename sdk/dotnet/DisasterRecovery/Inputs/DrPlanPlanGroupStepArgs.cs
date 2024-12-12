@@ -49,17 +49,19 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? MemberId { get; set; }
 
         /// <summary>
+        /// The DR plan step refresh status.  Example: `STEP_ADDED`
+        /// </summary>
+        [Input("refreshStatus")]
+        public Input<string>? RefreshStatus { get; set; }
+
+        /// <summary>
         /// The timeout in seconds for executing this step.  Example: `600`
         /// </summary>
         [Input("timeout")]
         public Input<int>? Timeout { get; set; }
 
         /// <summary>
-        /// The type of DR plan to be created. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The type of DR plan to be created.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

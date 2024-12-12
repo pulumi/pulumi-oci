@@ -16,7 +16,11 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'CompliancePolicyRulePatchSelection',
+    'CompliancePolicyRuleProductVersion',
+    'FleetCredential',
     'FleetCredentialEntitySpecifics',
+    'FleetCredentialEntitySpecificsVariable',
     'FleetCredentialPassword',
     'FleetCredentialUser',
     'FleetNotificationPreferences',
@@ -24,26 +28,100 @@ __all__ = [
     'FleetRuleSelectionCriteria',
     'FleetRuleSelectionCriteriaRule',
     'FleetRuleSelectionCriteriaRuleCondition',
+    'OnboardingAppliedPolicy',
+    'OnboardingItem',
+    'OnboardingItemAppliedPolicy',
+    'PatchArtifactDetails',
+    'PatchArtifactDetailsArtifact',
+    'PatchArtifactDetailsArtifactContent',
+    'PatchDependentPatch',
+    'PatchPatchType',
+    'PatchProduct',
+    'PlatformConfigurationConfigCategoryDetails',
+    'PlatformConfigurationConfigCategoryDetailsCompatibleProduct',
+    'PlatformConfigurationConfigCategoryDetailsCredential',
+    'PlatformConfigurationConfigCategoryDetailsPatchType',
+    'PlatformConfigurationConfigCategoryDetailsProduct',
+    'PlatformConfigurationConfigCategoryDetailsSubCategoryDetails',
+    'PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredential',
+    'PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchType',
+    'RunbookAssociations',
+    'RunbookAssociationsExecutionWorkflowDetails',
+    'RunbookAssociationsExecutionWorkflowDetailsWorkflow',
+    'RunbookAssociationsExecutionWorkflowDetailsWorkflowStep',
+    'RunbookAssociationsGroup',
+    'RunbookAssociationsGroupProperties',
+    'RunbookAssociationsGroupPropertiesNotificationPreferences',
+    'RunbookAssociationsGroupPropertiesPauseDetails',
+    'RunbookAssociationsRollbackWorkflowDetails',
+    'RunbookAssociationsRollbackWorkflowDetailsWorkflow',
+    'RunbookAssociationsRollbackWorkflowDetailsWorkflowStep',
+    'RunbookAssociationsTask',
+    'RunbookAssociationsTaskOutputVariableMapping',
+    'RunbookAssociationsTaskOutputVariableMappingOutputVariableDetails',
+    'RunbookAssociationsTaskStepProperties',
+    'RunbookAssociationsTaskStepPropertiesNotificationPreferences',
+    'RunbookAssociationsTaskStepPropertiesPauseDetails',
+    'RunbookAssociationsTaskTaskRecordDetails',
+    'RunbookAssociationsTaskTaskRecordDetailsExecutionDetails',
+    'RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContent',
+    'RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredential',
+    'RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariables',
+    'RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable',
+    'RunbookAssociationsTaskTaskRecordDetailsProperties',
     'SchedulerDefinitionActionGroup',
     'SchedulerDefinitionRunBook',
     'SchedulerDefinitionRunBookInputParameter',
     'SchedulerDefinitionRunBookInputParameterArgument',
     'SchedulerDefinitionSchedule',
+    'TaskRecordDetails',
+    'TaskRecordDetailsExecutionDetails',
+    'TaskRecordDetailsExecutionDetailsContent',
+    'TaskRecordDetailsExecutionDetailsCredential',
+    'TaskRecordDetailsExecutionDetailsVariables',
+    'TaskRecordDetailsExecutionDetailsVariablesInputVariable',
+    'TaskRecordDetailsProperties',
     'GetAnnouncementsAnnouncementCollectionResult',
     'GetAnnouncementsAnnouncementCollectionItemResult',
     'GetAnnouncementsFilterResult',
+    'GetCompliancePoliciesCompliancePolicyCollectionResult',
+    'GetCompliancePoliciesCompliancePolicyCollectionItemResult',
+    'GetCompliancePoliciesFilterResult',
+    'GetCompliancePolicyRulePatchSelectionResult',
+    'GetCompliancePolicyRuleProductVersionResult',
+    'GetCompliancePolicyRulesCompliancePolicyRuleCollectionResult',
+    'GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemResult',
+    'GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemPatchSelectionResult',
+    'GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemProductVersionResult',
+    'GetCompliancePolicyRulesFilterResult',
+    'GetComplianceRecordCountsComplianceRecordAggregationCollectionResult',
+    'GetComplianceRecordCountsComplianceRecordAggregationCollectionItemResult',
+    'GetComplianceRecordCountsComplianceRecordAggregationCollectionItemDimensionResult',
+    'GetComplianceRecordCountsFilterResult',
+    'GetComplianceRecordsComplianceRecordCollectionResult',
+    'GetComplianceRecordsComplianceRecordCollectionItemResult',
+    'GetComplianceRecordsComplianceRecordCollectionItemPatchResult',
+    'GetComplianceRecordsComplianceRecordCollectionItemPatchProductResult',
+    'GetComplianceRecordsComplianceRecordCollectionItemPolicyResult',
+    'GetComplianceRecordsComplianceRecordCollectionItemPolicyPatchSelectionResult',
+    'GetComplianceRecordsComplianceRecordCollectionItemResourceResult',
+    'GetComplianceRecordsComplianceRecordCollectionItemTargetResult',
+    'GetComplianceRecordsFilterResult',
     'GetFleetComplianceReportResourceResult',
     'GetFleetComplianceReportResourceProductResult',
     'GetFleetComplianceReportResourceProductTargetResult',
     'GetFleetComplianceReportResourceProductTargetInstalledPatchResult',
     'GetFleetComplianceReportResourceProductTargetRecommendedPatchResult',
+    'GetFleetCredentialResult',
     'GetFleetCredentialEntitySpecificResult',
+    'GetFleetCredentialEntitySpecificVariableResult',
     'GetFleetCredentialPasswordResult',
     'GetFleetCredentialUserResult',
     'GetFleetCredentialsFilterResult',
     'GetFleetCredentialsFleetCredentialCollectionResult',
     'GetFleetCredentialsFleetCredentialCollectionItemResult',
     'GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificResult',
+    'GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariableResult',
     'GetFleetCredentialsFleetCredentialCollectionItemPasswordResult',
     'GetFleetCredentialsFleetCredentialCollectionItemUserResult',
     'GetFleetNotificationPreferenceResult',
@@ -68,6 +146,11 @@ __all__ = [
     'GetFleetsFilterResult',
     'GetFleetsFleetCollectionResult',
     'GetFleetsFleetCollectionItemResult',
+    'GetFleetsFleetCollectionItemCredentialResult',
+    'GetFleetsFleetCollectionItemCredentialEntitySpecificResult',
+    'GetFleetsFleetCollectionItemCredentialEntitySpecificVariableResult',
+    'GetFleetsFleetCollectionItemCredentialPasswordResult',
+    'GetFleetsFleetCollectionItemCredentialUserResult',
     'GetFleetsFleetCollectionItemNotificationPreferenceResult',
     'GetFleetsFleetCollectionItemNotificationPreferencePreferenceResult',
     'GetFleetsFleetCollectionItemRuleSelectionCriteriaResult',
@@ -79,12 +162,53 @@ __all__ = [
     'GetMaintenanceWindowsFilterResult',
     'GetMaintenanceWindowsMaintenanceWindowCollectionResult',
     'GetMaintenanceWindowsMaintenanceWindowCollectionItemResult',
+    'GetManagedEntityCountsFilterResult',
+    'GetManagedEntityCountsManagedEntityAggregationCollectionResult',
+    'GetManagedEntityCountsManagedEntityAggregationCollectionItemResult',
+    'GetManagedEntityCountsManagedEntityAggregationCollectionItemDimensionResult',
     'GetOnboardingPoliciesFilterResult',
     'GetOnboardingPoliciesOnboardingPolicyCollectionResult',
     'GetOnboardingPoliciesOnboardingPolicyCollectionItemResult',
     'GetOnboardingsFilterResult',
     'GetOnboardingsOnboardingCollectionResult',
     'GetOnboardingsOnboardingCollectionItemResult',
+    'GetOnboardingsOnboardingCollectionItemAppliedPolicyResult',
+    'GetOnboardingsOnboardingCollectionItemItemResult',
+    'GetOnboardingsOnboardingCollectionItemItemAppliedPolicyResult',
+    'GetPatchArtifactDetailResult',
+    'GetPatchArtifactDetailArtifactResult',
+    'GetPatchArtifactDetailArtifactContentResult',
+    'GetPatchDependentPatchResult',
+    'GetPatchPatchTypeResult',
+    'GetPatchProductResult',
+    'GetPatchesFilterResult',
+    'GetPatchesPatchCollectionResult',
+    'GetPatchesPatchCollectionItemResult',
+    'GetPatchesPatchCollectionItemArtifactDetailResult',
+    'GetPatchesPatchCollectionItemArtifactDetailArtifactResult',
+    'GetPatchesPatchCollectionItemArtifactDetailArtifactContentResult',
+    'GetPatchesPatchCollectionItemDependentPatchResult',
+    'GetPatchesPatchCollectionItemPatchTypeResult',
+    'GetPatchesPatchCollectionItemProductResult',
+    'GetPlatformConfigurationConfigCategoryDetailResult',
+    'GetPlatformConfigurationConfigCategoryDetailCompatibleProductResult',
+    'GetPlatformConfigurationConfigCategoryDetailCredentialResult',
+    'GetPlatformConfigurationConfigCategoryDetailPatchTypeResult',
+    'GetPlatformConfigurationConfigCategoryDetailProductResult',
+    'GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailResult',
+    'GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailCredentialResult',
+    'GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailPatchTypeResult',
+    'GetPlatformConfigurationsFilterResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionItemResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCredentialResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProductResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailCredentialResult',
+    'GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailPatchTypeResult',
     'GetPropertiesFilterResult',
     'GetPropertiesPropertyCollectionResult',
     'GetPropertiesPropertyCollectionItemResult',
@@ -94,13 +218,21 @@ __all__ = [
     'GetRunbookAssociationExecutionWorkflowDetailWorkflowStepResult',
     'GetRunbookAssociationGroupResult',
     'GetRunbookAssociationGroupPropertyResult',
+    'GetRunbookAssociationGroupPropertyNotificationPreferenceResult',
+    'GetRunbookAssociationGroupPropertyPauseDetailResult',
+    'GetRunbookAssociationRollbackWorkflowDetailResult',
+    'GetRunbookAssociationRollbackWorkflowDetailWorkflowResult',
+    'GetRunbookAssociationRollbackWorkflowDetailWorkflowStepResult',
     'GetRunbookAssociationTaskResult',
     'GetRunbookAssociationTaskOutputVariableMappingResult',
     'GetRunbookAssociationTaskOutputVariableMappingOutputVariableDetailResult',
     'GetRunbookAssociationTaskStepPropertyResult',
+    'GetRunbookAssociationTaskStepPropertyNotificationPreferenceResult',
+    'GetRunbookAssociationTaskStepPropertyPauseDetailResult',
     'GetRunbookAssociationTaskTaskRecordDetailResult',
     'GetRunbookAssociationTaskTaskRecordDetailExecutionDetailResult',
     'GetRunbookAssociationTaskTaskRecordDetailExecutionDetailContentResult',
+    'GetRunbookAssociationTaskTaskRecordDetailExecutionDetailCredentialResult',
     'GetRunbookAssociationTaskTaskRecordDetailExecutionDetailVariableResult',
     'GetRunbookAssociationTaskTaskRecordDetailExecutionDetailVariableInputVariableResult',
     'GetRunbookAssociationTaskTaskRecordDetailPropertyResult',
@@ -113,13 +245,21 @@ __all__ = [
     'GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowStepResult',
     'GetRunbooksRunbookCollectionItemAssociationGroupResult',
     'GetRunbooksRunbookCollectionItemAssociationGroupPropertyResult',
+    'GetRunbooksRunbookCollectionItemAssociationGroupPropertyNotificationPreferenceResult',
+    'GetRunbooksRunbookCollectionItemAssociationGroupPropertyPauseDetailResult',
+    'GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailResult',
+    'GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowResult',
+    'GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowStepResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskOutputVariableMappingResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskOutputVariableMappingOutputVariableDetailResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyResult',
+    'GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyNotificationPreferenceResult',
+    'GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyPauseDetailResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailContentResult',
+    'GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailCredentialResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailVariableResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailVariableInputVariableResult',
     'GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailPropertyResult',
@@ -139,9 +279,21 @@ __all__ = [
     'GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBookInputParameterResult',
     'GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBookInputParameterArgumentResult',
     'GetSchedulerDefinitionsSchedulerDefinitionCollectionItemScheduleResult',
+    'GetSchedulerJobCountsFilterResult',
+    'GetSchedulerJobCountsSchedulerJobAggregationCollectionResult',
+    'GetSchedulerJobCountsSchedulerJobAggregationCollectionItemResult',
+    'GetSchedulerJobCountsSchedulerJobAggregationCollectionItemDimensionResult',
+    'GetSchedulerJobJobActivityResourcesFilterResult',
+    'GetSchedulerJobJobActivityResourcesResourceCollectionResult',
+    'GetSchedulerJobJobActivityResourcesResourceCollectionItemResult',
+    'GetSchedulerJobJobActivityResourcesResourceCollectionItemTargetResult',
+    'GetSchedulerJobJobActivityStepsFilterResult',
+    'GetSchedulerJobJobActivityStepsStepCollectionResult',
+    'GetSchedulerJobJobActivityStepsStepCollectionItemResult',
     'GetTaskRecordDetailResult',
     'GetTaskRecordDetailExecutionDetailResult',
     'GetTaskRecordDetailExecutionDetailContentResult',
+    'GetTaskRecordDetailExecutionDetailCredentialResult',
     'GetTaskRecordDetailExecutionDetailVariableResult',
     'GetTaskRecordDetailExecutionDetailVariableInputVariableResult',
     'GetTaskRecordDetailPropertyResult',
@@ -151,10 +303,218 @@ __all__ = [
     'GetTaskRecordsTaskRecordCollectionItemDetailResult',
     'GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult',
     'GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult',
+    'GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredentialResult',
     'GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableResult',
     'GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableInputVariableResult',
     'GetTaskRecordsTaskRecordCollectionItemDetailPropertyResult',
 ]
+
+@pulumi.output_type
+class CompliancePolicyRulePatchSelection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "selectionType":
+            suggest = "selection_type"
+        elif key == "daysSinceRelease":
+            suggest = "days_since_release"
+        elif key == "patchLevel":
+            suggest = "patch_level"
+        elif key == "patchName":
+            suggest = "patch_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CompliancePolicyRulePatchSelection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CompliancePolicyRulePatchSelection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CompliancePolicyRulePatchSelection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 selection_type: str,
+                 days_since_release: Optional[int] = None,
+                 patch_level: Optional[str] = None,
+                 patch_name: Optional[str] = None):
+        """
+        :param str selection_type: (Updatable) Selection type for the Patch.
+        :param int days_since_release: (Updatable) Days passed since patch release.
+        :param str patch_level: (Updatable) Patch Name.
+        :param str patch_name: (Updatable) Patch Name.
+        """
+        pulumi.set(__self__, "selection_type", selection_type)
+        if days_since_release is not None:
+            pulumi.set(__self__, "days_since_release", days_since_release)
+        if patch_level is not None:
+            pulumi.set(__self__, "patch_level", patch_level)
+        if patch_name is not None:
+            pulumi.set(__self__, "patch_name", patch_name)
+
+    @property
+    @pulumi.getter(name="selectionType")
+    def selection_type(self) -> str:
+        """
+        (Updatable) Selection type for the Patch.
+        """
+        return pulumi.get(self, "selection_type")
+
+    @property
+    @pulumi.getter(name="daysSinceRelease")
+    def days_since_release(self) -> Optional[int]:
+        """
+        (Updatable) Days passed since patch release.
+        """
+        return pulumi.get(self, "days_since_release")
+
+    @property
+    @pulumi.getter(name="patchLevel")
+    def patch_level(self) -> Optional[str]:
+        """
+        (Updatable) Patch Name.
+        """
+        return pulumi.get(self, "patch_level")
+
+    @property
+    @pulumi.getter(name="patchName")
+    def patch_name(self) -> Optional[str]:
+        """
+        (Updatable) Patch Name.
+        """
+        return pulumi.get(self, "patch_name")
+
+
+@pulumi.output_type
+class CompliancePolicyRuleProductVersion(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isApplicableForAllHigherVersions":
+            suggest = "is_applicable_for_all_higher_versions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CompliancePolicyRuleProductVersion. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CompliancePolicyRuleProductVersion.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CompliancePolicyRuleProductVersion.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 version: str,
+                 is_applicable_for_all_higher_versions: Optional[bool] = None):
+        """
+        :param str version: (Updatable) Product version the rule is applicable.
+        :param bool is_applicable_for_all_higher_versions: (Updatable) Is rule applicable to all higher versions also
+        """
+        pulumi.set(__self__, "version", version)
+        if is_applicable_for_all_higher_versions is not None:
+            pulumi.set(__self__, "is_applicable_for_all_higher_versions", is_applicable_for_all_higher_versions)
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        (Updatable) Product version the rule is applicable.
+        """
+        return pulumi.get(self, "version")
+
+    @property
+    @pulumi.getter(name="isApplicableForAllHigherVersions")
+    def is_applicable_for_all_higher_versions(self) -> Optional[bool]:
+        """
+        (Updatable) Is rule applicable to all higher versions also
+        """
+        return pulumi.get(self, "is_applicable_for_all_higher_versions")
+
+
+@pulumi.output_type
+class FleetCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "entitySpecifics":
+            suggest = "entity_specifics"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FleetCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FleetCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FleetCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 display_name: str,
+                 entity_specifics: 'outputs.FleetCredentialEntitySpecifics',
+                 password: 'outputs.FleetCredentialPassword',
+                 user: 'outputs.FleetCredentialUser'):
+        """
+        :param str compartment_id: Tenancy OCID
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param 'FleetCredentialEntitySpecificsArgs' entity_specifics: Credential specific Details.
+        :param 'FleetCredentialPasswordArgs' password: Credential Details.
+        :param 'FleetCredentialUserArgs' user: Credential Details.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_specifics", entity_specifics)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user", user)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        Tenancy OCID
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="entitySpecifics")
+    def entity_specifics(self) -> 'outputs.FleetCredentialEntitySpecifics':
+        """
+        Credential specific Details.
+        """
+        return pulumi.get(self, "entity_specifics")
+
+    @property
+    @pulumi.getter
+    def password(self) -> 'outputs.FleetCredentialPassword':
+        """
+        Credential Details.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def user(self) -> 'outputs.FleetCredentialUser':
+        """
+        Credential Details.
+        """
+        return pulumi.get(self, "user")
+
 
 @pulumi.output_type
 class FleetCredentialEntitySpecifics(dict):
@@ -179,40 +539,85 @@ class FleetCredentialEntitySpecifics(dict):
 
     def __init__(__self__, *,
                  credential_level: str,
-                 resource_id: str,
-                 target: str):
+                 resource_id: Optional[str] = None,
+                 target: Optional[str] = None,
+                 variables: Optional[Sequence['outputs.FleetCredentialEntitySpecificsVariable']] = None):
         """
-        :param str credential_level: (Updatable) Credential Level.
-        :param str resource_id: (Updatable) OCID of the resource associated with the target for which credential is created
-        :param str target: (Updatable) Target associated with the Credential
+        :param str credential_level: (Updatable) At what level the credential is provided?
+        :param str resource_id: (Updatable) OCID of the resource associated with the target for which the credential is created.
+        :param str target: (Updatable) Target name for which the credential is provided.
+        :param Sequence['FleetCredentialEntitySpecificsVariableArgs'] variables: (Updatable) List of fleet credential variables.
         """
         pulumi.set(__self__, "credential_level", credential_level)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "target", target)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if variables is not None:
+            pulumi.set(__self__, "variables", variables)
 
     @property
     @pulumi.getter(name="credentialLevel")
     def credential_level(self) -> str:
         """
-        (Updatable) Credential Level.
+        (Updatable) At what level the credential is provided?
         """
         return pulumi.get(self, "credential_level")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
+    def resource_id(self) -> Optional[str]:
         """
-        (Updatable) OCID of the resource associated with the target for which credential is created
+        (Updatable) OCID of the resource associated with the target for which the credential is created.
         """
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter
-    def target(self) -> str:
+    def target(self) -> Optional[str]:
         """
-        (Updatable) Target associated with the Credential
+        (Updatable) Target name for which the credential is provided.
         """
         return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional[Sequence['outputs.FleetCredentialEntitySpecificsVariable']]:
+        """
+        (Updatable) List of fleet credential variables.
+        """
+        return pulumi.get(self, "variables")
+
+
+@pulumi.output_type
+class FleetCredentialEntitySpecificsVariable(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: (Updatable) Name of the variable.
+        :param str value: (Updatable) The value corresponding to the variable name.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the variable.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) The value corresponding to the variable name.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -253,13 +658,13 @@ class FleetCredentialPassword(dict):
                  value: Optional[str] = None,
                  vault_id: Optional[str] = None):
         """
-        :param str credential_type: (Updatable) Credential Type
+        :param str credential_type: (Updatable) Credential Type.
         :param str key_id: (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
         :param str key_version: (Updatable) The Vault Key version.
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
         :param str secret_version: (Updatable) The secret version.
-        :param str value: (Updatable) The value corresponding to the credential
-        :param str vault_id: (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        :param str value: (Updatable) The value corresponding to the credential.
+        :param str vault_id: (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         pulumi.set(__self__, "credential_type", credential_type)
         if key_id is not None:
@@ -279,7 +684,7 @@ class FleetCredentialPassword(dict):
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> str:
         """
-        (Updatable) Credential Type
+        (Updatable) Credential Type.
         """
         return pulumi.get(self, "credential_type")
 
@@ -319,7 +724,7 @@ class FleetCredentialPassword(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        (Updatable) The value corresponding to the credential
+        (Updatable) The value corresponding to the credential.
         """
         return pulumi.get(self, "value")
 
@@ -327,7 +732,7 @@ class FleetCredentialPassword(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[str]:
         """
-        (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         return pulumi.get(self, "vault_id")
 
@@ -370,13 +775,13 @@ class FleetCredentialUser(dict):
                  value: Optional[str] = None,
                  vault_id: Optional[str] = None):
         """
-        :param str credential_type: (Updatable) Credential Type
+        :param str credential_type: (Updatable) Credential Type.
         :param str key_id: (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
         :param str key_version: (Updatable) The Vault Key version.
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
         :param str secret_version: (Updatable) The secret version.
-        :param str value: (Updatable) The value corresponding to the credential
-        :param str vault_id: (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        :param str value: (Updatable) The value corresponding to the credential.
+        :param str vault_id: (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
                
                
                ** IMPORTANT **
@@ -400,7 +805,7 @@ class FleetCredentialUser(dict):
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> str:
         """
-        (Updatable) Credential Type
+        (Updatable) Credential Type.
         """
         return pulumi.get(self, "credential_type")
 
@@ -440,7 +845,7 @@ class FleetCredentialUser(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        (Updatable) The value corresponding to the credential
+        (Updatable) The value corresponding to the credential.
         """
         return pulumi.get(self, "value")
 
@@ -448,7 +853,7 @@ class FleetCredentialUser(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[str]:
         """
-        (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
 
 
         ** IMPORTANT **
@@ -483,9 +888,9 @@ class FleetNotificationPreferences(dict):
                  topic_id: str,
                  preferences: Optional['outputs.FleetNotificationPreferencesPreferences'] = None):
         """
-        :param str compartment_id: (Updatable) Copartment Id of the topic where the notifications will be directed
-        :param str topic_id: (Updatable) Topic Id where the notifications will be directed
-        :param 'FleetNotificationPreferencesPreferencesArgs' preferences: (Updatable) Preferences to send notifications on the fleet activities
+        :param str compartment_id: (Updatable) Compartment ID the topic belongs to.
+        :param str topic_id: (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
+        :param 'FleetNotificationPreferencesPreferencesArgs' preferences: (Updatable) Preferences to send notifications on the fleet activities.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "topic_id", topic_id)
@@ -496,7 +901,7 @@ class FleetNotificationPreferences(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        (Updatable) Copartment Id of the topic where the notifications will be directed
+        (Updatable) Compartment ID the topic belongs to.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -504,7 +909,7 @@ class FleetNotificationPreferences(dict):
     @pulumi.getter(name="topicId")
     def topic_id(self) -> str:
         """
-        (Updatable) Topic Id where the notifications will be directed
+        (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
         """
         return pulumi.get(self, "topic_id")
 
@@ -512,7 +917,7 @@ class FleetNotificationPreferences(dict):
     @pulumi.getter
     def preferences(self) -> Optional['outputs.FleetNotificationPreferencesPreferences']:
         """
-        (Updatable) Preferences to send notifications on the fleet activities
+        (Updatable) Preferences to send notifications on the fleet activities.
         """
         return pulumi.get(self, "preferences")
 
@@ -545,7 +950,7 @@ class FleetNotificationPreferencesPreferences(dict):
                  on_topology_modification: Optional[bool] = None,
                  on_upcoming_schedule: Optional[bool] = None):
         """
-        :param bool on_job_failure: (Updatable) Enables or disables notification on Job Failures.'
+        :param bool on_job_failure: (Updatable) Enables or disables notification on Job Failures.
         :param bool on_topology_modification: (Updatable) Enables or disables notification on Environment Fleet Topology Modification.
         :param bool on_upcoming_schedule: (Updatable) Enables notification on upcoming schedule.
         """
@@ -560,7 +965,7 @@ class FleetNotificationPreferencesPreferences(dict):
     @pulumi.getter(name="onJobFailure")
     def on_job_failure(self) -> Optional[bool]:
         """
-        (Updatable) Enables or disables notification on Job Failures.'
+        (Updatable) Enables or disables notification on Job Failures.
         """
         return pulumi.get(self, "on_job_failure")
 
@@ -604,7 +1009,7 @@ class FleetRuleSelectionCriteria(dict):
                  match_condition: str,
                  rules: Sequence['outputs.FleetRuleSelectionCriteriaRule']):
         """
-        :param str match_condition: (Updatable) Rule selection match condition.
+        :param str match_condition: (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
         :param Sequence['FleetRuleSelectionCriteriaRuleArgs'] rules: (Updatable) Rules.
         """
         pulumi.set(__self__, "match_condition", match_condition)
@@ -614,7 +1019,7 @@ class FleetRuleSelectionCriteria(dict):
     @pulumi.getter(name="matchCondition")
     def match_condition(self) -> str:
         """
-        (Updatable) Rule selection match condition.
+        (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
         """
         return pulumi.get(self, "match_condition")
 
@@ -654,14 +1059,14 @@ class FleetRuleSelectionCriteriaRule(dict):
                  resource_compartment_id: str,
                  basis: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) Please provide the root compartmentId (TenancyId).
+        :param str compartment_id: (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
         :param Sequence['FleetRuleSelectionCriteriaRuleConditionArgs'] conditions: (Updatable) Rule Conditions
-        :param str resource_compartment_id: (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        :param str resource_compartment_id: (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str basis: (Updatable) Rule to be be applied on.
+        :param str basis: (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "conditions", conditions)
@@ -673,7 +1078,7 @@ class FleetRuleSelectionCriteriaRule(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        (Updatable) Please provide the root compartmentId (TenancyId).
+        (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -689,7 +1094,7 @@ class FleetRuleSelectionCriteriaRule(dict):
     @pulumi.getter(name="resourceCompartmentId")
     def resource_compartment_id(self) -> str:
         """
-        (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable. 
 
 
         ** IMPORTANT **
@@ -701,7 +1106,7 @@ class FleetRuleSelectionCriteriaRule(dict):
     @pulumi.getter
     def basis(self) -> Optional[str]:
         """
-        (Updatable) Rule to be be applied on.
+        (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
         """
         return pulumi.get(self, "basis")
 
@@ -734,9 +1139,9 @@ class FleetRuleSelectionCriteriaRuleCondition(dict):
                  attr_key: str,
                  attr_value: str):
         """
-        :param str attr_group: (Updatable) Attribute Group.
-        :param str attr_key: (Updatable) Attribute Key.
-        :param str attr_value: (Updatable) Attribute Value.
+        :param str attr_group: (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
+        :param str attr_key: (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
+        :param str attr_value: (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
         """
         pulumi.set(__self__, "attr_group", attr_group)
         pulumi.set(__self__, "attr_key", attr_key)
@@ -746,7 +1151,7 @@ class FleetRuleSelectionCriteriaRuleCondition(dict):
     @pulumi.getter(name="attrGroup")
     def attr_group(self) -> str:
         """
-        (Updatable) Attribute Group.
+        (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
         """
         return pulumi.get(self, "attr_group")
 
@@ -754,7 +1159,7 @@ class FleetRuleSelectionCriteriaRuleCondition(dict):
     @pulumi.getter(name="attrKey")
     def attr_key(self) -> str:
         """
-        (Updatable) Attribute Key.
+        (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
         """
         return pulumi.get(self, "attr_key")
 
@@ -762,9 +1167,2700 @@ class FleetRuleSelectionCriteriaRuleCondition(dict):
     @pulumi.getter(name="attrValue")
     def attr_value(self) -> str:
         """
-        (Updatable) Attribute Value.
+        (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
         """
         return pulumi.get(self, "attr_value")
+
+
+@pulumi.output_type
+class OnboardingAppliedPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "systemTags":
+            suggest = "system_tags"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OnboardingAppliedPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OnboardingAppliedPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OnboardingAppliedPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: Optional[str] = None,
+                 statements: Optional[Sequence[str]] = None,
+                 system_tags: Optional[Mapping[str, str]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        """
+        :param str id: The unique id of the resource.
+        :param Sequence[str] statements: Policy statements.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if statements is not None:
+            pulumi.set(__self__, "statements", statements)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The unique id of the resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def statements(self) -> Optional[Sequence[str]]:
+        """
+        Policy statements.
+        """
+        return pulumi.get(self, "statements")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class OnboardingItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "appliedPolicies":
+            suggest = "applied_policies"
+        elif key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "discoveryFrequency":
+            suggest = "discovery_frequency"
+        elif key == "isCostTrackingTagEnabled":
+            suggest = "is_cost_tracking_tag_enabled"
+        elif key == "isFamsTagEnabled":
+            suggest = "is_fams_tag_enabled"
+        elif key == "resourceRegion":
+            suggest = "resource_region"
+        elif key == "systemTags":
+            suggest = "system_tags"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OnboardingItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OnboardingItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OnboardingItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 applied_policies: Optional[Sequence['outputs.OnboardingItemAppliedPolicy']] = None,
+                 compartment_id: Optional[str] = None,
+                 discovery_frequency: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_cost_tracking_tag_enabled: Optional[bool] = None,
+                 is_fams_tag_enabled: Optional[bool] = None,
+                 resource_region: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, str]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 version: Optional[str] = None):
+        """
+        :param Sequence['OnboardingItemAppliedPolicyArgs'] applied_policies: Summary of the Fleet Application Management Onboard Policy.
+        :param str compartment_id: Tenancy OCID
+        :param str discovery_frequency: Provide discovery frequency.
+        :param str id: The unique id of the resource.
+        :param bool is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+        :param bool is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str resource_region: Associated region
+        :param str state: The current state of the Onboarding.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        :param str version: The version of Fleet Application Management that the tenant is onboarded to.
+        """
+        if applied_policies is not None:
+            pulumi.set(__self__, "applied_policies", applied_policies)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if discovery_frequency is not None:
+            pulumi.set(__self__, "discovery_frequency", discovery_frequency)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_cost_tracking_tag_enabled is not None:
+            pulumi.set(__self__, "is_cost_tracking_tag_enabled", is_cost_tracking_tag_enabled)
+        if is_fams_tag_enabled is not None:
+            pulumi.set(__self__, "is_fams_tag_enabled", is_fams_tag_enabled)
+        if resource_region is not None:
+            pulumi.set(__self__, "resource_region", resource_region)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="appliedPolicies")
+    def applied_policies(self) -> Optional[Sequence['outputs.OnboardingItemAppliedPolicy']]:
+        """
+        Summary of the Fleet Application Management Onboard Policy.
+        """
+        return pulumi.get(self, "applied_policies")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        Tenancy OCID
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="discoveryFrequency")
+    def discovery_frequency(self) -> Optional[str]:
+        """
+        Provide discovery frequency.
+        """
+        return pulumi.get(self, "discovery_frequency")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The unique id of the resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCostTrackingTagEnabled")
+    def is_cost_tracking_tag_enabled(self) -> Optional[bool]:
+        """
+        A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+        """
+        return pulumi.get(self, "is_cost_tracking_tag_enabled")
+
+    @property
+    @pulumi.getter(name="isFamsTagEnabled")
+    def is_fams_tag_enabled(self) -> Optional[bool]:
+        """
+        A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "is_fams_tag_enabled")
+
+    @property
+    @pulumi.getter(name="resourceRegion")
+    def resource_region(self) -> Optional[str]:
+        """
+        Associated region
+        """
+        return pulumi.get(self, "resource_region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the Onboarding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        The version of Fleet Application Management that the tenant is onboarded to.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class OnboardingItemAppliedPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "systemTags":
+            suggest = "system_tags"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OnboardingItemAppliedPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OnboardingItemAppliedPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OnboardingItemAppliedPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: Optional[str] = None,
+                 statements: Optional[Sequence[str]] = None,
+                 system_tags: Optional[Mapping[str, str]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        """
+        :param str id: The unique id of the resource.
+        :param Sequence[str] statements: Policy statements.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if statements is not None:
+            pulumi.set(__self__, "statements", statements)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The unique id of the resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def statements(self) -> Optional[Sequence[str]]:
+        """
+        Policy statements.
+        """
+        return pulumi.get(self, "statements")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class PatchArtifactDetails(dict):
+    def __init__(__self__, *,
+                 category: str,
+                 artifact: Optional['outputs.PatchArtifactDetailsArtifact'] = None,
+                 artifacts: Optional[Sequence['outputs.PatchArtifactDetailsArtifact']] = None):
+        """
+        :param str category: (Updatable) Artifact category details.
+        :param 'PatchArtifactDetailsArtifactArgs' artifact: (Updatable) Patch artifact metadata Details which is common for all platforms.
+        :param Sequence['PatchArtifactDetailsArtifactArgs'] artifacts: (Updatable) Artifacts.
+        """
+        pulumi.set(__self__, "category", category)
+        if artifact is not None:
+            pulumi.set(__self__, "artifact", artifact)
+        if artifacts is not None:
+            pulumi.set(__self__, "artifacts", artifacts)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        (Updatable) Artifact category details.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def artifact(self) -> Optional['outputs.PatchArtifactDetailsArtifact']:
+        """
+        (Updatable) Patch artifact metadata Details which is common for all platforms.
+        """
+        return pulumi.get(self, "artifact")
+
+    @property
+    @pulumi.getter
+    def artifacts(self) -> Optional[Sequence['outputs.PatchArtifactDetailsArtifact']]:
+        """
+        (Updatable) Artifacts.
+        """
+        return pulumi.get(self, "artifacts")
+
+
+@pulumi.output_type
+class PatchArtifactDetailsArtifact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "osType":
+            suggest = "os_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PatchArtifactDetailsArtifact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PatchArtifactDetailsArtifact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PatchArtifactDetailsArtifact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 architecture: Optional[str] = None,
+                 content: Optional['outputs.PatchArtifactDetailsArtifactContent'] = None,
+                 os_type: Optional[str] = None):
+        """
+        :param str architecture: (Updatable) System architecture.
+        :param 'PatchArtifactDetailsArtifactContentArgs' content: (Updatable) Content Source details.
+        :param str os_type: (Updatable) The OS type the patch is applicable for.
+        """
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if os_type is not None:
+            pulumi.set(__self__, "os_type", os_type)
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> Optional[str]:
+        """
+        (Updatable) System architecture.
+        """
+        return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional['outputs.PatchArtifactDetailsArtifactContent']:
+        """
+        (Updatable) Content Source details.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="osType")
+    def os_type(self) -> Optional[str]:
+        """
+        (Updatable) The OS type the patch is applicable for.
+        """
+        return pulumi.get(self, "os_type")
+
+
+@pulumi.output_type
+class PatchArtifactDetailsArtifactContent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PatchArtifactDetailsArtifactContent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PatchArtifactDetailsArtifactContent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PatchArtifactDetailsArtifactContent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: str,
+                 checksum: str,
+                 namespace: str,
+                 object: str,
+                 source_type: str):
+        """
+        :param str bucket: (Updatable) Bucket Name.
+        :param str checksum: (Updatable) md5 checksum of the artifact.
+        :param str namespace: (Updatable) Namespace.
+        :param str object: (Updatable) Object Name.
+        :param str source_type: (Updatable) Content Source type details.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "checksum", checksum)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        (Updatable) Bucket Name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def checksum(self) -> str:
+        """
+        (Updatable) md5 checksum of the artifact.
+        """
+        return pulumi.get(self, "checksum")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        (Updatable) Namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        (Updatable) Object Name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        (Updatable) Content Source type details.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class PatchDependentPatch(dict):
+    def __init__(__self__, *,
+                 id: str):
+        """
+        :param str id: (Updatable) The OCID of the resource.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        (Updatable) The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class PatchPatchType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "platformConfigurationId":
+            suggest = "platform_configuration_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PatchPatchType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PatchPatchType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PatchPatchType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 platform_configuration_id: str):
+        """
+        :param str platform_configuration_id: (Updatable) PlatformConfiguration Id corresponding to the Patch Type
+        """
+        pulumi.set(__self__, "platform_configuration_id", platform_configuration_id)
+
+    @property
+    @pulumi.getter(name="platformConfigurationId")
+    def platform_configuration_id(self) -> str:
+        """
+        (Updatable) PlatformConfiguration Id corresponding to the Patch Type
+        """
+        return pulumi.get(self, "platform_configuration_id")
+
+
+@pulumi.output_type
+class PatchProduct(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "platformConfigurationId":
+            suggest = "platform_configuration_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PatchProduct. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PatchProduct.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PatchProduct.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 platform_configuration_id: str,
+                 version: Optional[str] = None):
+        """
+        :param str platform_configuration_id: (Updatable) PlatformConfiguration Id corresponding to the Product
+        :param str version: (Updatable) product version.
+        """
+        pulumi.set(__self__, "platform_configuration_id", platform_configuration_id)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="platformConfigurationId")
+    def platform_configuration_id(self) -> str:
+        """
+        (Updatable) PlatformConfiguration Id corresponding to the Product
+        """
+        return pulumi.get(self, "platform_configuration_id")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        (Updatable) product version.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class PlatformConfigurationConfigCategoryDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configCategory":
+            suggest = "config_category"
+        elif key == "compatibleProducts":
+            suggest = "compatible_products"
+        elif key == "patchTypes":
+            suggest = "patch_types"
+        elif key == "subCategoryDetails":
+            suggest = "sub_category_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PlatformConfigurationConfigCategoryDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PlatformConfigurationConfigCategoryDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PlatformConfigurationConfigCategoryDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_category: str,
+                 compatible_products: Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsCompatibleProduct']] = None,
+                 components: Optional[Sequence[str]] = None,
+                 credentials: Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsCredential']] = None,
+                 patch_types: Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsPatchType']] = None,
+                 products: Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsProduct']] = None,
+                 sub_category_details: Optional['outputs.PlatformConfigurationConfigCategoryDetailsSubCategoryDetails'] = None,
+                 versions: Optional[Sequence[str]] = None):
+        """
+        :param str config_category: (Updatable) Category of configuration
+        :param Sequence['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs'] compatible_products: (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        :param Sequence[str] components: (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        :param Sequence['PlatformConfigurationConfigCategoryDetailsCredentialArgs'] credentials: (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        :param Sequence['PlatformConfigurationConfigCategoryDetailsPatchTypeArgs'] patch_types: (Updatable) Patch Types associated with this Product.
+        :param Sequence['PlatformConfigurationConfigCategoryDetailsProductArgs'] products: (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
+        :param 'PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgs' sub_category_details: (Updatable) ProductStack Config Category Details.
+        :param Sequence[str] versions: (Updatable) Versions associated with the PRODUCT .
+        """
+        pulumi.set(__self__, "config_category", config_category)
+        if compatible_products is not None:
+            pulumi.set(__self__, "compatible_products", compatible_products)
+        if components is not None:
+            pulumi.set(__self__, "components", components)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if patch_types is not None:
+            pulumi.set(__self__, "patch_types", patch_types)
+        if products is not None:
+            pulumi.set(__self__, "products", products)
+        if sub_category_details is not None:
+            pulumi.set(__self__, "sub_category_details", sub_category_details)
+        if versions is not None:
+            pulumi.set(__self__, "versions", versions)
+
+    @property
+    @pulumi.getter(name="configCategory")
+    def config_category(self) -> str:
+        """
+        (Updatable) Category of configuration
+        """
+        return pulumi.get(self, "config_category")
+
+    @property
+    @pulumi.getter(name="compatibleProducts")
+    def compatible_products(self) -> Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsCompatibleProduct']]:
+        """
+        (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        """
+        return pulumi.get(self, "compatible_products")
+
+    @property
+    @pulumi.getter
+    def components(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        """
+        return pulumi.get(self, "components")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsCredential']]:
+        """
+        (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter(name="patchTypes")
+    def patch_types(self) -> Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsPatchType']]:
+        """
+        (Updatable) Patch Types associated with this Product.
+        """
+        return pulumi.get(self, "patch_types")
+
+    @property
+    @pulumi.getter
+    def products(self) -> Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsProduct']]:
+        """
+        (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
+        """
+        return pulumi.get(self, "products")
+
+    @property
+    @pulumi.getter(name="subCategoryDetails")
+    def sub_category_details(self) -> Optional['outputs.PlatformConfigurationConfigCategoryDetailsSubCategoryDetails']:
+        """
+        (Updatable) ProductStack Config Category Details.
+        """
+        return pulumi.get(self, "sub_category_details")
+
+    @property
+    @pulumi.getter
+    def versions(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Versions associated with the PRODUCT .
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class PlatformConfigurationConfigCategoryDetailsCompatibleProduct(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PlatformConfigurationConfigCategoryDetailsCompatibleProduct. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PlatformConfigurationConfigCategoryDetailsCompatibleProduct.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PlatformConfigurationConfigCategoryDetailsCompatibleProduct.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: (Updatable) The OCID of the resource.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class PlatformConfigurationConfigCategoryDetailsCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PlatformConfigurationConfigCategoryDetailsCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PlatformConfigurationConfigCategoryDetailsCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PlatformConfigurationConfigCategoryDetailsCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: (Updatable) The OCID of the resource.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class PlatformConfigurationConfigCategoryDetailsPatchType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PlatformConfigurationConfigCategoryDetailsPatchType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PlatformConfigurationConfigCategoryDetailsPatchType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PlatformConfigurationConfigCategoryDetailsPatchType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: (Updatable) The OCID of the resource.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class PlatformConfigurationConfigCategoryDetailsProduct(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PlatformConfigurationConfigCategoryDetailsProduct. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PlatformConfigurationConfigCategoryDetailsProduct.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PlatformConfigurationConfigCategoryDetailsProduct.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: (Updatable) The OCID of the resource.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class PlatformConfigurationConfigCategoryDetailsSubCategoryDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subCategory":
+            suggest = "sub_category"
+        elif key == "patchTypes":
+            suggest = "patch_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PlatformConfigurationConfigCategoryDetailsSubCategoryDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PlatformConfigurationConfigCategoryDetailsSubCategoryDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PlatformConfigurationConfigCategoryDetailsSubCategoryDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 sub_category: str,
+                 components: Optional[Sequence[str]] = None,
+                 credentials: Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredential']] = None,
+                 patch_types: Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchType']] = None,
+                 versions: Optional[Sequence[str]] = None):
+        """
+        :param str sub_category: (Updatable) SubCategory of Product Stack.
+        :param Sequence[str] components: (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        :param Sequence['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgs'] credentials: (Updatable) OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        :param Sequence['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgs'] patch_types: (Updatable) Patch Types associated with this Product Stack which will be considered as Product.
+        :param Sequence[str] versions: (Updatable) Versions associated with the PRODUCT .
+        """
+        pulumi.set(__self__, "sub_category", sub_category)
+        if components is not None:
+            pulumi.set(__self__, "components", components)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if patch_types is not None:
+            pulumi.set(__self__, "patch_types", patch_types)
+        if versions is not None:
+            pulumi.set(__self__, "versions", versions)
+
+    @property
+    @pulumi.getter(name="subCategory")
+    def sub_category(self) -> str:
+        """
+        (Updatable) SubCategory of Product Stack.
+        """
+        return pulumi.get(self, "sub_category")
+
+    @property
+    @pulumi.getter
+    def components(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        """
+        return pulumi.get(self, "components")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredential']]:
+        """
+        (Updatable) OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter(name="patchTypes")
+    def patch_types(self) -> Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchType']]:
+        """
+        (Updatable) Patch Types associated with this Product Stack which will be considered as Product.
+        """
+        return pulumi.get(self, "patch_types")
+
+    @property
+    @pulumi.getter
+    def versions(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Versions associated with the PRODUCT .
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: (Updatable) The OCID of the resource.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: (Updatable) The OCID of the resource.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class RunbookAssociations(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "executionWorkflowDetails":
+            suggest = "execution_workflow_details"
+        elif key == "rollbackWorkflowDetails":
+            suggest = "rollback_workflow_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociations. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociations.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociations.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 execution_workflow_details: 'outputs.RunbookAssociationsExecutionWorkflowDetails',
+                 groups: Sequence['outputs.RunbookAssociationsGroup'],
+                 tasks: Sequence['outputs.RunbookAssociationsTask'],
+                 rollback_workflow_details: Optional['outputs.RunbookAssociationsRollbackWorkflowDetails'] = None,
+                 version: Optional[str] = None):
+        """
+        :param 'RunbookAssociationsExecutionWorkflowDetailsArgs' execution_workflow_details: (Updatable) Execution Workflow details.
+        :param Sequence['RunbookAssociationsGroupArgs'] groups: (Updatable) The groups of the runbook.
+        :param Sequence['RunbookAssociationsTaskArgs'] tasks: (Updatable) A set of tasks to execute in the runbook.
+        :param 'RunbookAssociationsRollbackWorkflowDetailsArgs' rollback_workflow_details: (Updatable) Rollback Workflow details.
+        :param str version: (Updatable) The version of the runbook.
+        """
+        pulumi.set(__self__, "execution_workflow_details", execution_workflow_details)
+        pulumi.set(__self__, "groups", groups)
+        pulumi.set(__self__, "tasks", tasks)
+        if rollback_workflow_details is not None:
+            pulumi.set(__self__, "rollback_workflow_details", rollback_workflow_details)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="executionWorkflowDetails")
+    def execution_workflow_details(self) -> 'outputs.RunbookAssociationsExecutionWorkflowDetails':
+        """
+        (Updatable) Execution Workflow details.
+        """
+        return pulumi.get(self, "execution_workflow_details")
+
+    @property
+    @pulumi.getter
+    def groups(self) -> Sequence['outputs.RunbookAssociationsGroup']:
+        """
+        (Updatable) The groups of the runbook.
+        """
+        return pulumi.get(self, "groups")
+
+    @property
+    @pulumi.getter
+    def tasks(self) -> Sequence['outputs.RunbookAssociationsTask']:
+        """
+        (Updatable) A set of tasks to execute in the runbook.
+        """
+        return pulumi.get(self, "tasks")
+
+    @property
+    @pulumi.getter(name="rollbackWorkflowDetails")
+    def rollback_workflow_details(self) -> Optional['outputs.RunbookAssociationsRollbackWorkflowDetails']:
+        """
+        (Updatable) Rollback Workflow details.
+        """
+        return pulumi.get(self, "rollback_workflow_details")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        (Updatable) The version of the runbook.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class RunbookAssociationsExecutionWorkflowDetails(dict):
+    def __init__(__self__, *,
+                 workflows: Sequence['outputs.RunbookAssociationsExecutionWorkflowDetailsWorkflow']):
+        """
+        :param Sequence['RunbookAssociationsExecutionWorkflowDetailsWorkflowArgs'] workflows: (Updatable) Execution Workflow for the runbook.
+        """
+        pulumi.set(__self__, "workflows", workflows)
+
+    @property
+    @pulumi.getter
+    def workflows(self) -> Sequence['outputs.RunbookAssociationsExecutionWorkflowDetailsWorkflow']:
+        """
+        (Updatable) Execution Workflow for the runbook.
+        """
+        return pulumi.get(self, "workflows")
+
+
+@pulumi.output_type
+class RunbookAssociationsExecutionWorkflowDetailsWorkflow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "groupName":
+            suggest = "group_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsExecutionWorkflowDetailsWorkflow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsExecutionWorkflowDetailsWorkflow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsExecutionWorkflowDetailsWorkflow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 group_name: str,
+                 steps: Sequence['outputs.RunbookAssociationsExecutionWorkflowDetailsWorkflowStep'],
+                 type: str):
+        """
+        :param str group_name: (Updatable) Name of the group.
+        :param Sequence['RunbookAssociationsExecutionWorkflowDetailsWorkflowStepArgs'] steps: (Updatable) Steps within the Group.
+        :param str type: (Updatable) Workflow Group  Details.
+        """
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "steps", steps)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> str:
+        """
+        (Updatable) Name of the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Sequence['outputs.RunbookAssociationsExecutionWorkflowDetailsWorkflowStep']:
+        """
+        (Updatable) Steps within the Group.
+        """
+        return pulumi.get(self, "steps")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) Workflow Group  Details.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class RunbookAssociationsExecutionWorkflowDetailsWorkflowStep(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "groupName":
+            suggest = "group_name"
+        elif key == "stepName":
+            suggest = "step_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsExecutionWorkflowDetailsWorkflowStep. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsExecutionWorkflowDetailsWorkflowStep.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsExecutionWorkflowDetailsWorkflowStep.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 group_name: Optional[str] = None,
+                 step_name: Optional[str] = None,
+                 steps: Optional[Sequence[str]] = None):
+        """
+        :param str type: (Updatable) Content Source Details.
+        :param str group_name: (Updatable) Name of the group.
+        :param str step_name: (Updatable) Provide StepName for the Task.
+        :param Sequence[str] steps: (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
+        """
+        pulumi.set(__self__, "type", type)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
+        if steps is not None:
+            pulumi.set(__self__, "steps", steps)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) Content Source Details.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> Optional[str]:
+        """
+        (Updatable) Provide StepName for the Task.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
+        """
+        return pulumi.get(self, "steps")
+
+
+@pulumi.output_type
+class RunbookAssociationsGroup(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 type: str,
+                 properties: Optional['outputs.RunbookAssociationsGroupProperties'] = None):
+        """
+        :param str name: (Updatable) The name of the group.
+        :param str type: (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
+        :param 'RunbookAssociationsGroupPropertiesArgs' properties: (Updatable) The properties of the component.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) The name of the group.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Optional['outputs.RunbookAssociationsGroupProperties']:
+        """
+        (Updatable) The properties of the component.
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class RunbookAssociationsGroupProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "actionOnFailure":
+            suggest = "action_on_failure"
+        elif key == "notificationPreferences":
+            suggest = "notification_preferences"
+        elif key == "pauseDetails":
+            suggest = "pause_details"
+        elif key == "runOn":
+            suggest = "run_on"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsGroupProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsGroupProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsGroupProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action_on_failure: str,
+                 condition: Optional[str] = None,
+                 notification_preferences: Optional['outputs.RunbookAssociationsGroupPropertiesNotificationPreferences'] = None,
+                 pause_details: Optional['outputs.RunbookAssociationsGroupPropertiesPauseDetails'] = None,
+                 run_on: Optional[str] = None):
+        """
+        :param str action_on_failure: (Updatable) The action to be taken in case of a failure.
+        :param str condition: (Updatable) Build control flow conditions that determine the relevance of the task execution.
+        :param 'RunbookAssociationsGroupPropertiesNotificationPreferencesArgs' notification_preferences: (Updatable) Preferences to send notifications on the task activities.
+        :param 'RunbookAssociationsGroupPropertiesPauseDetailsArgs' pause_details: (Updatable) Pause Details
+        :param str run_on: (Updatable) The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
+        """
+        pulumi.set(__self__, "action_on_failure", action_on_failure)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if notification_preferences is not None:
+            pulumi.set(__self__, "notification_preferences", notification_preferences)
+        if pause_details is not None:
+            pulumi.set(__self__, "pause_details", pause_details)
+        if run_on is not None:
+            pulumi.set(__self__, "run_on", run_on)
+
+    @property
+    @pulumi.getter(name="actionOnFailure")
+    def action_on_failure(self) -> str:
+        """
+        (Updatable) The action to be taken in case of a failure.
+        """
+        return pulumi.get(self, "action_on_failure")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[str]:
+        """
+        (Updatable) Build control flow conditions that determine the relevance of the task execution.
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="notificationPreferences")
+    def notification_preferences(self) -> Optional['outputs.RunbookAssociationsGroupPropertiesNotificationPreferences']:
+        """
+        (Updatable) Preferences to send notifications on the task activities.
+        """
+        return pulumi.get(self, "notification_preferences")
+
+    @property
+    @pulumi.getter(name="pauseDetails")
+    def pause_details(self) -> Optional['outputs.RunbookAssociationsGroupPropertiesPauseDetails']:
+        """
+        (Updatable) Pause Details
+        """
+        return pulumi.get(self, "pause_details")
+
+    @property
+    @pulumi.getter(name="runOn")
+    def run_on(self) -> Optional[str]:
+        """
+        (Updatable) The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
+        """
+        return pulumi.get(self, "run_on")
+
+
+@pulumi.output_type
+class RunbookAssociationsGroupPropertiesNotificationPreferences(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "shouldNotifyOnPause":
+            suggest = "should_notify_on_pause"
+        elif key == "shouldNotifyOnTaskFailure":
+            suggest = "should_notify_on_task_failure"
+        elif key == "shouldNotifyOnTaskSuccess":
+            suggest = "should_notify_on_task_success"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsGroupPropertiesNotificationPreferences. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsGroupPropertiesNotificationPreferences.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsGroupPropertiesNotificationPreferences.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 should_notify_on_pause: Optional[bool] = None,
+                 should_notify_on_task_failure: Optional[bool] = None,
+                 should_notify_on_task_success: Optional[bool] = None):
+        """
+        :param bool should_notify_on_pause: (Updatable) Enables notification on pause.
+        :param bool should_notify_on_task_failure: (Updatable) Enables or disables notification on Task Failures.
+        :param bool should_notify_on_task_success: (Updatable) Enables or disables notification on Task Success.
+        """
+        if should_notify_on_pause is not None:
+            pulumi.set(__self__, "should_notify_on_pause", should_notify_on_pause)
+        if should_notify_on_task_failure is not None:
+            pulumi.set(__self__, "should_notify_on_task_failure", should_notify_on_task_failure)
+        if should_notify_on_task_success is not None:
+            pulumi.set(__self__, "should_notify_on_task_success", should_notify_on_task_success)
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnPause")
+    def should_notify_on_pause(self) -> Optional[bool]:
+        """
+        (Updatable) Enables notification on pause.
+        """
+        return pulumi.get(self, "should_notify_on_pause")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskFailure")
+    def should_notify_on_task_failure(self) -> Optional[bool]:
+        """
+        (Updatable) Enables or disables notification on Task Failures.
+        """
+        return pulumi.get(self, "should_notify_on_task_failure")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskSuccess")
+    def should_notify_on_task_success(self) -> Optional[bool]:
+        """
+        (Updatable) Enables or disables notification on Task Success.
+        """
+        return pulumi.get(self, "should_notify_on_task_success")
+
+
+@pulumi.output_type
+class RunbookAssociationsGroupPropertiesPauseDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationInMinutes":
+            suggest = "duration_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsGroupPropertiesPauseDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsGroupPropertiesPauseDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsGroupPropertiesPauseDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 kind: str,
+                 duration_in_minutes: Optional[int] = None):
+        """
+        :param str kind: (Updatable) Pause based On.
+        :param int duration_in_minutes: (Updatable) Time in minutes to apply Pause.
+        """
+        pulumi.set(__self__, "kind", kind)
+        if duration_in_minutes is not None:
+            pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
+
+    @property
+    @pulumi.getter
+    def kind(self) -> str:
+        """
+        (Updatable) Pause based On.
+        """
+        return pulumi.get(self, "kind")
+
+    @property
+    @pulumi.getter(name="durationInMinutes")
+    def duration_in_minutes(self) -> Optional[int]:
+        """
+        (Updatable) Time in minutes to apply Pause.
+        """
+        return pulumi.get(self, "duration_in_minutes")
+
+
+@pulumi.output_type
+class RunbookAssociationsRollbackWorkflowDetails(dict):
+    def __init__(__self__, *,
+                 scope: str,
+                 workflows: Sequence['outputs.RunbookAssociationsRollbackWorkflowDetailsWorkflow']):
+        """
+        :param str scope: (Updatable) rollback Scope
+        :param Sequence['RunbookAssociationsRollbackWorkflowDetailsWorkflowArgs'] workflows: (Updatable) Rollback Workflow for the runbook.
+        """
+        pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "workflows", workflows)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> str:
+        """
+        (Updatable) rollback Scope
+        """
+        return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter
+    def workflows(self) -> Sequence['outputs.RunbookAssociationsRollbackWorkflowDetailsWorkflow']:
+        """
+        (Updatable) Rollback Workflow for the runbook.
+        """
+        return pulumi.get(self, "workflows")
+
+
+@pulumi.output_type
+class RunbookAssociationsRollbackWorkflowDetailsWorkflow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "groupName":
+            suggest = "group_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsRollbackWorkflowDetailsWorkflow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsRollbackWorkflowDetailsWorkflow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsRollbackWorkflowDetailsWorkflow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 group_name: str,
+                 steps: Sequence['outputs.RunbookAssociationsRollbackWorkflowDetailsWorkflowStep'],
+                 type: str):
+        """
+        :param str group_name: (Updatable) Name of the group.
+        :param Sequence['RunbookAssociationsRollbackWorkflowDetailsWorkflowStepArgs'] steps: (Updatable) Steps within the Group.
+        :param str type: (Updatable) Workflow Group  Details.
+        """
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "steps", steps)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> str:
+        """
+        (Updatable) Name of the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Sequence['outputs.RunbookAssociationsRollbackWorkflowDetailsWorkflowStep']:
+        """
+        (Updatable) Steps within the Group.
+        """
+        return pulumi.get(self, "steps")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) Workflow Group  Details.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class RunbookAssociationsRollbackWorkflowDetailsWorkflowStep(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "groupName":
+            suggest = "group_name"
+        elif key == "stepName":
+            suggest = "step_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsRollbackWorkflowDetailsWorkflowStep. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsRollbackWorkflowDetailsWorkflowStep.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsRollbackWorkflowDetailsWorkflowStep.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 group_name: Optional[str] = None,
+                 step_name: Optional[str] = None,
+                 steps: Optional[Sequence[str]] = None):
+        """
+        :param str type: (Updatable) Content Source Details.
+        :param str group_name: (Updatable) Name of the group.
+        :param str step_name: (Updatable) Provide StepName for the Task.
+        :param Sequence[str] steps: (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
+        """
+        pulumi.set(__self__, "type", type)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
+        if steps is not None:
+            pulumi.set(__self__, "steps", steps)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) Content Source Details.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> Optional[str]:
+        """
+        (Updatable) Provide StepName for the Task.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
+        """
+        return pulumi.get(self, "steps")
+
+
+@pulumi.output_type
+class RunbookAssociationsTask(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "associationType":
+            suggest = "association_type"
+        elif key == "stepName":
+            suggest = "step_name"
+        elif key == "taskRecordDetails":
+            suggest = "task_record_details"
+        elif key == "outputVariableMappings":
+            suggest = "output_variable_mappings"
+        elif key == "stepProperties":
+            suggest = "step_properties"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTask. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTask.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTask.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 association_type: str,
+                 step_name: str,
+                 task_record_details: 'outputs.RunbookAssociationsTaskTaskRecordDetails',
+                 output_variable_mappings: Optional[Sequence['outputs.RunbookAssociationsTaskOutputVariableMapping']] = None,
+                 step_properties: Optional['outputs.RunbookAssociationsTaskStepProperties'] = None):
+        """
+        :param str association_type: (Updatable) The association type of the task
+        :param str step_name: (Updatable) The name of the task step.
+        :param 'RunbookAssociationsTaskTaskRecordDetailsArgs' task_record_details: (Updatable) The details of the task.
+        :param Sequence['RunbookAssociationsTaskOutputVariableMappingArgs'] output_variable_mappings: (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
+        :param 'RunbookAssociationsTaskStepPropertiesArgs' step_properties: (Updatable) The properties of the component.
+        """
+        pulumi.set(__self__, "association_type", association_type)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "task_record_details", task_record_details)
+        if output_variable_mappings is not None:
+            pulumi.set(__self__, "output_variable_mappings", output_variable_mappings)
+        if step_properties is not None:
+            pulumi.set(__self__, "step_properties", step_properties)
+
+    @property
+    @pulumi.getter(name="associationType")
+    def association_type(self) -> str:
+        """
+        (Updatable) The association type of the task
+        """
+        return pulumi.get(self, "association_type")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        (Updatable) The name of the task step.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="taskRecordDetails")
+    def task_record_details(self) -> 'outputs.RunbookAssociationsTaskTaskRecordDetails':
+        """
+        (Updatable) The details of the task.
+        """
+        return pulumi.get(self, "task_record_details")
+
+    @property
+    @pulumi.getter(name="outputVariableMappings")
+    def output_variable_mappings(self) -> Optional[Sequence['outputs.RunbookAssociationsTaskOutputVariableMapping']]:
+        """
+        (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
+        """
+        return pulumi.get(self, "output_variable_mappings")
+
+    @property
+    @pulumi.getter(name="stepProperties")
+    def step_properties(self) -> Optional['outputs.RunbookAssociationsTaskStepProperties']:
+        """
+        (Updatable) The properties of the component.
+        """
+        return pulumi.get(self, "step_properties")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskOutputVariableMapping(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "outputVariableDetails":
+            suggest = "output_variable_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskOutputVariableMapping. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskOutputVariableMapping.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskOutputVariableMapping.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: str,
+                 output_variable_details: 'outputs.RunbookAssociationsTaskOutputVariableMappingOutputVariableDetails'):
+        """
+        :param str name: (Updatable) The name of the input variable.
+        :param 'RunbookAssociationsTaskOutputVariableMappingOutputVariableDetailsArgs' output_variable_details: (Updatable) The details of the output variable that will be used for mapping.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "output_variable_details", output_variable_details)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) The name of the input variable.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="outputVariableDetails")
+    def output_variable_details(self) -> 'outputs.RunbookAssociationsTaskOutputVariableMappingOutputVariableDetails':
+        """
+        (Updatable) The details of the output variable that will be used for mapping.
+        """
+        return pulumi.get(self, "output_variable_details")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskOutputVariableMappingOutputVariableDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "outputVariableName":
+            suggest = "output_variable_name"
+        elif key == "stepName":
+            suggest = "step_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskOutputVariableMappingOutputVariableDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskOutputVariableMappingOutputVariableDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskOutputVariableMappingOutputVariableDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 output_variable_name: str,
+                 step_name: str):
+        """
+        :param str output_variable_name: (Updatable) The name of the output variable whose value has to be mapped.
+        :param str step_name: (Updatable) The name of the task step the output variable belongs to.
+        """
+        pulumi.set(__self__, "output_variable_name", output_variable_name)
+        pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="outputVariableName")
+    def output_variable_name(self) -> str:
+        """
+        (Updatable) The name of the output variable whose value has to be mapped.
+        """
+        return pulumi.get(self, "output_variable_name")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        (Updatable) The name of the task step the output variable belongs to.
+        """
+        return pulumi.get(self, "step_name")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskStepProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "actionOnFailure":
+            suggest = "action_on_failure"
+        elif key == "notificationPreferences":
+            suggest = "notification_preferences"
+        elif key == "pauseDetails":
+            suggest = "pause_details"
+        elif key == "runOn":
+            suggest = "run_on"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskStepProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskStepProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskStepProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action_on_failure: str,
+                 condition: Optional[str] = None,
+                 notification_preferences: Optional['outputs.RunbookAssociationsTaskStepPropertiesNotificationPreferences'] = None,
+                 pause_details: Optional['outputs.RunbookAssociationsTaskStepPropertiesPauseDetails'] = None,
+                 run_on: Optional[str] = None):
+        """
+        :param str action_on_failure: (Updatable) The action to be taken in case of a failure.
+        :param str condition: (Updatable) Build control flow conditions that determine the relevance of the task execution.
+        :param 'RunbookAssociationsTaskStepPropertiesNotificationPreferencesArgs' notification_preferences: (Updatable) Preferences to send notifications on the task activities.
+        :param 'RunbookAssociationsTaskStepPropertiesPauseDetailsArgs' pause_details: (Updatable) Pause Details
+        :param str run_on: (Updatable) The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
+        """
+        pulumi.set(__self__, "action_on_failure", action_on_failure)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if notification_preferences is not None:
+            pulumi.set(__self__, "notification_preferences", notification_preferences)
+        if pause_details is not None:
+            pulumi.set(__self__, "pause_details", pause_details)
+        if run_on is not None:
+            pulumi.set(__self__, "run_on", run_on)
+
+    @property
+    @pulumi.getter(name="actionOnFailure")
+    def action_on_failure(self) -> str:
+        """
+        (Updatable) The action to be taken in case of a failure.
+        """
+        return pulumi.get(self, "action_on_failure")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[str]:
+        """
+        (Updatable) Build control flow conditions that determine the relevance of the task execution.
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="notificationPreferences")
+    def notification_preferences(self) -> Optional['outputs.RunbookAssociationsTaskStepPropertiesNotificationPreferences']:
+        """
+        (Updatable) Preferences to send notifications on the task activities.
+        """
+        return pulumi.get(self, "notification_preferences")
+
+    @property
+    @pulumi.getter(name="pauseDetails")
+    def pause_details(self) -> Optional['outputs.RunbookAssociationsTaskStepPropertiesPauseDetails']:
+        """
+        (Updatable) Pause Details
+        """
+        return pulumi.get(self, "pause_details")
+
+    @property
+    @pulumi.getter(name="runOn")
+    def run_on(self) -> Optional[str]:
+        """
+        (Updatable) The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
+        """
+        return pulumi.get(self, "run_on")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskStepPropertiesNotificationPreferences(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "shouldNotifyOnPause":
+            suggest = "should_notify_on_pause"
+        elif key == "shouldNotifyOnTaskFailure":
+            suggest = "should_notify_on_task_failure"
+        elif key == "shouldNotifyOnTaskSuccess":
+            suggest = "should_notify_on_task_success"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskStepPropertiesNotificationPreferences. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskStepPropertiesNotificationPreferences.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskStepPropertiesNotificationPreferences.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 should_notify_on_pause: Optional[bool] = None,
+                 should_notify_on_task_failure: Optional[bool] = None,
+                 should_notify_on_task_success: Optional[bool] = None):
+        """
+        :param bool should_notify_on_pause: (Updatable) Enables notification on pause.
+        :param bool should_notify_on_task_failure: (Updatable) Enables or disables notification on Task Failures.
+        :param bool should_notify_on_task_success: (Updatable) Enables or disables notification on Task Success.
+        """
+        if should_notify_on_pause is not None:
+            pulumi.set(__self__, "should_notify_on_pause", should_notify_on_pause)
+        if should_notify_on_task_failure is not None:
+            pulumi.set(__self__, "should_notify_on_task_failure", should_notify_on_task_failure)
+        if should_notify_on_task_success is not None:
+            pulumi.set(__self__, "should_notify_on_task_success", should_notify_on_task_success)
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnPause")
+    def should_notify_on_pause(self) -> Optional[bool]:
+        """
+        (Updatable) Enables notification on pause.
+        """
+        return pulumi.get(self, "should_notify_on_pause")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskFailure")
+    def should_notify_on_task_failure(self) -> Optional[bool]:
+        """
+        (Updatable) Enables or disables notification on Task Failures.
+        """
+        return pulumi.get(self, "should_notify_on_task_failure")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskSuccess")
+    def should_notify_on_task_success(self) -> Optional[bool]:
+        """
+        (Updatable) Enables or disables notification on Task Success.
+        """
+        return pulumi.get(self, "should_notify_on_task_success")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskStepPropertiesPauseDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationInMinutes":
+            suggest = "duration_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskStepPropertiesPauseDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskStepPropertiesPauseDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskStepPropertiesPauseDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 kind: str,
+                 duration_in_minutes: Optional[int] = None):
+        """
+        :param str kind: (Updatable) Pause based On.
+        :param int duration_in_minutes: (Updatable) Time in minutes to apply Pause.
+        """
+        pulumi.set(__self__, "kind", kind)
+        if duration_in_minutes is not None:
+            pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
+
+    @property
+    @pulumi.getter
+    def kind(self) -> str:
+        """
+        (Updatable) Pause based On.
+        """
+        return pulumi.get(self, "kind")
+
+    @property
+    @pulumi.getter(name="durationInMinutes")
+    def duration_in_minutes(self) -> Optional[int]:
+        """
+        (Updatable) Time in minutes to apply Pause.
+        """
+        return pulumi.get(self, "duration_in_minutes")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskTaskRecordDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "executionDetails":
+            suggest = "execution_details"
+        elif key == "isApplySubjectTask":
+            suggest = "is_apply_subject_task"
+        elif key == "isCopyToLibraryEnabled":
+            suggest = "is_copy_to_library_enabled"
+        elif key == "isDiscoveryOutputTask":
+            suggest = "is_discovery_output_task"
+        elif key == "osType":
+            suggest = "os_type"
+        elif key == "taskRecordId":
+            suggest = "task_record_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskTaskRecordDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskTaskRecordDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskTaskRecordDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 scope: str,
+                 description: Optional[str] = None,
+                 execution_details: Optional['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetails'] = None,
+                 is_apply_subject_task: Optional[bool] = None,
+                 is_copy_to_library_enabled: Optional[bool] = None,
+                 is_discovery_output_task: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 os_type: Optional[str] = None,
+                 platform: Optional[str] = None,
+                 properties: Optional['outputs.RunbookAssociationsTaskTaskRecordDetailsProperties'] = None,
+                 task_record_id: Optional[str] = None):
+        """
+        :param str scope: (Updatable) The scope of the task.
+        :param str description: (Updatable) The description of the task.
+        :param 'RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsArgs' execution_details: (Updatable) Execution details.
+        :param bool is_apply_subject_task: (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
+        :param bool is_copy_to_library_enabled: (Updatable) Make a copy of this task in Library
+        :param bool is_discovery_output_task: (Updatable) Is this a discovery output task?
+        :param str name: (Updatable) The name of the task
+        :param str os_type: (Updatable) The OS for the task.
+        :param str platform: (Updatable) The platform of the runbook.
+        :param 'RunbookAssociationsTaskTaskRecordDetailsPropertiesArgs' properties: (Updatable) The properties of the task.
+        :param str task_record_id: (Updatable) The ID of taskRecord.
+        """
+        pulumi.set(__self__, "scope", scope)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if execution_details is not None:
+            pulumi.set(__self__, "execution_details", execution_details)
+        if is_apply_subject_task is not None:
+            pulumi.set(__self__, "is_apply_subject_task", is_apply_subject_task)
+        if is_copy_to_library_enabled is not None:
+            pulumi.set(__self__, "is_copy_to_library_enabled", is_copy_to_library_enabled)
+        if is_discovery_output_task is not None:
+            pulumi.set(__self__, "is_discovery_output_task", is_discovery_output_task)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if os_type is not None:
+            pulumi.set(__self__, "os_type", os_type)
+        if platform is not None:
+            pulumi.set(__self__, "platform", platform)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+        if task_record_id is not None:
+            pulumi.set(__self__, "task_record_id", task_record_id)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> str:
+        """
+        (Updatable) The scope of the task.
+        """
+        return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) The description of the task.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="executionDetails")
+    def execution_details(self) -> Optional['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetails']:
+        """
+        (Updatable) Execution details.
+        """
+        return pulumi.get(self, "execution_details")
+
+    @property
+    @pulumi.getter(name="isApplySubjectTask")
+    def is_apply_subject_task(self) -> Optional[bool]:
+        """
+        (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
+        """
+        return pulumi.get(self, "is_apply_subject_task")
+
+    @property
+    @pulumi.getter(name="isCopyToLibraryEnabled")
+    def is_copy_to_library_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Make a copy of this task in Library
+        """
+        return pulumi.get(self, "is_copy_to_library_enabled")
+
+    @property
+    @pulumi.getter(name="isDiscoveryOutputTask")
+    def is_discovery_output_task(self) -> Optional[bool]:
+        """
+        (Updatable) Is this a discovery output task?
+        """
+        return pulumi.get(self, "is_discovery_output_task")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the task
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="osType")
+    def os_type(self) -> Optional[str]:
+        """
+        (Updatable) The OS for the task.
+        """
+        return pulumi.get(self, "os_type")
+
+    @property
+    @pulumi.getter
+    def platform(self) -> Optional[str]:
+        """
+        (Updatable) The platform of the runbook.
+        """
+        return pulumi.get(self, "platform")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Optional['outputs.RunbookAssociationsTaskTaskRecordDetailsProperties']:
+        """
+        (Updatable) The properties of the task.
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter(name="taskRecordId")
+    def task_record_id(self) -> Optional[str]:
+        """
+        (Updatable) The ID of taskRecord.
+        """
+        return pulumi.get(self, "task_record_id")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskTaskRecordDetailsExecutionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "executionType":
+            suggest = "execution_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskTaskRecordDetailsExecutionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsExecutionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsExecutionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 execution_type: str,
+                 command: Optional[str] = None,
+                 content: Optional['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContent'] = None,
+                 credentials: Optional[Sequence['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredential']] = None,
+                 endpoint: Optional[str] = None,
+                 variables: Optional['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariables'] = None):
+        """
+        :param str execution_type: (Updatable) The action type of the task
+        :param str command: (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+        :param 'RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContentArgs' content: (Updatable) Content Source details.
+        :param Sequence['RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredentialArgs'] credentials: (Updatable) Credentials required for executing the task.
+        :param str endpoint: (Updatable) Endpoint to be invoked.
+        :param 'RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariablesArgs' variables: (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
+        """
+        pulumi.set(__self__, "execution_type", execution_type)
+        if command is not None:
+            pulumi.set(__self__, "command", command)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if variables is not None:
+            pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter(name="executionType")
+    def execution_type(self) -> str:
+        """
+        (Updatable) The action type of the task
+        """
+        return pulumi.get(self, "execution_type")
+
+    @property
+    @pulumi.getter
+    def command(self) -> Optional[str]:
+        """
+        (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+        """
+        return pulumi.get(self, "command")
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContent']:
+        """
+        (Updatable) Content Source details.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Optional[Sequence['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredential']]:
+        """
+        (Updatable) Credentials required for executing the task.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> Optional[str]:
+        """
+        (Updatable) Endpoint to be invoked.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariables']:
+        """
+        (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
+        """
+        return pulumi.get(self, "variables")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: str,
+                 checksum: str,
+                 namespace: str,
+                 object: str,
+                 source_type: str):
+        """
+        :param str bucket: (Updatable) Bucket Name.
+        :param str checksum: (Updatable) md5 checksum of the artifact.
+        :param str namespace: (Updatable) Namespace.
+        :param str object: (Updatable) Object Name.
+        :param str source_type: (Updatable) Content Source type details.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "checksum", checksum)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        (Updatable) Bucket Name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def checksum(self) -> str:
+        """
+        (Updatable) md5 checksum of the artifact.
+        """
+        return pulumi.get(self, "checksum")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        (Updatable) Namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        (Updatable) Object Name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        (Updatable) Content Source type details.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: (Updatable) The OCID of the resource.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariables(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inputVariables":
+            suggest = "input_variables"
+        elif key == "outputVariables":
+            suggest = "output_variables"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariables. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariables.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariables.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 input_variables: Optional[Sequence['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable']] = None,
+                 output_variables: Optional[Sequence[str]] = None):
+        """
+        :param Sequence['RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs'] input_variables: (Updatable) The input variables for the task.
+        :param Sequence[str] output_variables: (Updatable) The list of output variables.
+        """
+        if input_variables is not None:
+            pulumi.set(__self__, "input_variables", input_variables)
+        if output_variables is not None:
+            pulumi.set(__self__, "output_variables", output_variables)
+
+    @property
+    @pulumi.getter(name="inputVariables")
+    def input_variables(self) -> Optional[Sequence['outputs.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable']]:
+        """
+        (Updatable) The input variables for the task.
+        """
+        return pulumi.get(self, "input_variables")
+
+    @property
+    @pulumi.getter(name="outputVariables")
+    def output_variables(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The list of output variables.
+        """
+        return pulumi.get(self, "output_variables")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable(dict):
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str description: (Updatable) The description of the argument.
+        :param str name: (Updatable) The name of the argument.
+        :param str type: (Updatable) Input argument Type.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) The description of the argument.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the argument.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        (Updatable) Input argument Type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class RunbookAssociationsTaskTaskRecordDetailsProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "numRetries":
+            suggest = "num_retries"
+        elif key == "timeoutInSeconds":
+            suggest = "timeout_in_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RunbookAssociationsTaskTaskRecordDetailsProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RunbookAssociationsTaskTaskRecordDetailsProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 num_retries: Optional[int] = None,
+                 timeout_in_seconds: Optional[int] = None):
+        """
+        :param int num_retries: (Updatable) The number of retries allowed.
+        :param int timeout_in_seconds: (Updatable) The timeout in seconds for the task.
+        """
+        if num_retries is not None:
+            pulumi.set(__self__, "num_retries", num_retries)
+        if timeout_in_seconds is not None:
+            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+
+    @property
+    @pulumi.getter(name="numRetries")
+    def num_retries(self) -> Optional[int]:
+        """
+        (Updatable) The number of retries allowed.
+        """
+        return pulumi.get(self, "num_retries")
+
+    @property
+    @pulumi.getter(name="timeoutInSeconds")
+    def timeout_in_seconds(self) -> Optional[int]:
+        """
+        (Updatable) The timeout in seconds for the task.
+        """
+        return pulumi.get(self, "timeout_in_seconds")
 
 
 @pulumi.output_type
@@ -804,7 +3900,7 @@ class SchedulerDefinitionActionGroup(dict):
                  target_id: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str resource_id: (Updatable) Provide the ID of the resource; Ex- fleetId.
+        :param str resource_id: (Updatable) Provide the ID of the resource. Example fleet ID.
         :param str runbook_id: (Updatable) ID of the runbook
         :param str application_type: (Updatable) Application Type associated. Only applicable if type is ENVIRONMENT.
         :param str lifecycle_operation: (Updatable) LifeCycle Operation
@@ -832,7 +3928,7 @@ class SchedulerDefinitionActionGroup(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> str:
         """
-        (Updatable) Provide the ID of the resource; Ex- fleetId.
+        (Updatable) Provide the ID of the resource. Example fleet ID.
         """
         return pulumi.get(self, "resource_id")
 
@@ -1110,6 +4206,480 @@ class SchedulerDefinitionSchedule(dict):
 
 
 @pulumi.output_type
+class TaskRecordDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "executionDetails":
+            suggest = "execution_details"
+        elif key == "osType":
+            suggest = "os_type"
+        elif key == "isApplySubjectTask":
+            suggest = "is_apply_subject_task"
+        elif key == "isDiscoveryOutputTask":
+            suggest = "is_discovery_output_task"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskRecordDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskRecordDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskRecordDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 execution_details: 'outputs.TaskRecordDetailsExecutionDetails',
+                 os_type: str,
+                 scope: str,
+                 is_apply_subject_task: Optional[bool] = None,
+                 is_discovery_output_task: Optional[bool] = None,
+                 platform: Optional[str] = None,
+                 properties: Optional['outputs.TaskRecordDetailsProperties'] = None):
+        """
+        :param 'TaskRecordDetailsExecutionDetailsArgs' execution_details: (Updatable) Execution details.
+        :param str os_type: (Updatable) The OS for the task
+        :param str scope: (Updatable) The scope of the task
+        :param bool is_apply_subject_task: (Updatable) Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+        :param bool is_discovery_output_task: (Updatable) Is this a discovery output task?
+        :param str platform: (Updatable) The platform of the runbook.
+        :param 'TaskRecordDetailsPropertiesArgs' properties: (Updatable) The properties of the task.
+        """
+        pulumi.set(__self__, "execution_details", execution_details)
+        pulumi.set(__self__, "os_type", os_type)
+        pulumi.set(__self__, "scope", scope)
+        if is_apply_subject_task is not None:
+            pulumi.set(__self__, "is_apply_subject_task", is_apply_subject_task)
+        if is_discovery_output_task is not None:
+            pulumi.set(__self__, "is_discovery_output_task", is_discovery_output_task)
+        if platform is not None:
+            pulumi.set(__self__, "platform", platform)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+
+    @property
+    @pulumi.getter(name="executionDetails")
+    def execution_details(self) -> 'outputs.TaskRecordDetailsExecutionDetails':
+        """
+        (Updatable) Execution details.
+        """
+        return pulumi.get(self, "execution_details")
+
+    @property
+    @pulumi.getter(name="osType")
+    def os_type(self) -> str:
+        """
+        (Updatable) The OS for the task
+        """
+        return pulumi.get(self, "os_type")
+
+    @property
+    @pulumi.getter
+    def scope(self) -> str:
+        """
+        (Updatable) The scope of the task
+        """
+        return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter(name="isApplySubjectTask")
+    def is_apply_subject_task(self) -> Optional[bool]:
+        """
+        (Updatable) Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+        """
+        return pulumi.get(self, "is_apply_subject_task")
+
+    @property
+    @pulumi.getter(name="isDiscoveryOutputTask")
+    def is_discovery_output_task(self) -> Optional[bool]:
+        """
+        (Updatable) Is this a discovery output task?
+        """
+        return pulumi.get(self, "is_discovery_output_task")
+
+    @property
+    @pulumi.getter
+    def platform(self) -> Optional[str]:
+        """
+        (Updatable) The platform of the runbook.
+        """
+        return pulumi.get(self, "platform")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Optional['outputs.TaskRecordDetailsProperties']:
+        """
+        (Updatable) The properties of the task.
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class TaskRecordDetailsExecutionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "executionType":
+            suggest = "execution_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskRecordDetailsExecutionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskRecordDetailsExecutionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskRecordDetailsExecutionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 execution_type: str,
+                 command: Optional[str] = None,
+                 content: Optional['outputs.TaskRecordDetailsExecutionDetailsContent'] = None,
+                 credentials: Optional[Sequence['outputs.TaskRecordDetailsExecutionDetailsCredential']] = None,
+                 endpoint: Optional[str] = None,
+                 variables: Optional['outputs.TaskRecordDetailsExecutionDetailsVariables'] = None):
+        """
+        :param str execution_type: (Updatable) The action type of the task
+        :param str command: (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+        :param 'TaskRecordDetailsExecutionDetailsContentArgs' content: (Updatable) Content Source details.
+        :param Sequence['TaskRecordDetailsExecutionDetailsCredentialArgs'] credentials: (Updatable) Credentials required for executing the task.
+        :param str endpoint: (Updatable) Endpoint to be invoked.
+        :param 'TaskRecordDetailsExecutionDetailsVariablesArgs' variables: (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
+        """
+        pulumi.set(__self__, "execution_type", execution_type)
+        if command is not None:
+            pulumi.set(__self__, "command", command)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if variables is not None:
+            pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter(name="executionType")
+    def execution_type(self) -> str:
+        """
+        (Updatable) The action type of the task
+        """
+        return pulumi.get(self, "execution_type")
+
+    @property
+    @pulumi.getter
+    def command(self) -> Optional[str]:
+        """
+        (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+        """
+        return pulumi.get(self, "command")
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional['outputs.TaskRecordDetailsExecutionDetailsContent']:
+        """
+        (Updatable) Content Source details.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Optional[Sequence['outputs.TaskRecordDetailsExecutionDetailsCredential']]:
+        """
+        (Updatable) Credentials required for executing the task.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> Optional[str]:
+        """
+        (Updatable) Endpoint to be invoked.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional['outputs.TaskRecordDetailsExecutionDetailsVariables']:
+        """
+        (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
+        """
+        return pulumi.get(self, "variables")
+
+
+@pulumi.output_type
+class TaskRecordDetailsExecutionDetailsContent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskRecordDetailsExecutionDetailsContent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskRecordDetailsExecutionDetailsContent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskRecordDetailsExecutionDetailsContent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: str,
+                 checksum: str,
+                 namespace: str,
+                 object: str,
+                 source_type: str):
+        """
+        :param str bucket: (Updatable) Bucket Name.
+        :param str checksum: (Updatable) md5 checksum of the artifact.
+        :param str namespace: (Updatable) Namespace.
+        :param str object: (Updatable) Object Name.
+        :param str source_type: (Updatable) Content Source type details.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "checksum", checksum)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        (Updatable) Bucket Name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def checksum(self) -> str:
+        """
+        (Updatable) md5 checksum of the artifact.
+        """
+        return pulumi.get(self, "checksum")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        (Updatable) Namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        (Updatable) Object Name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        (Updatable) Content Source type details.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class TaskRecordDetailsExecutionDetailsCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskRecordDetailsExecutionDetailsCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskRecordDetailsExecutionDetailsCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskRecordDetailsExecutionDetailsCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: (Updatable) The OCID of the resource.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class TaskRecordDetailsExecutionDetailsVariables(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inputVariables":
+            suggest = "input_variables"
+        elif key == "outputVariables":
+            suggest = "output_variables"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskRecordDetailsExecutionDetailsVariables. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskRecordDetailsExecutionDetailsVariables.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskRecordDetailsExecutionDetailsVariables.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 input_variables: Optional[Sequence['outputs.TaskRecordDetailsExecutionDetailsVariablesInputVariable']] = None,
+                 output_variables: Optional[Sequence[str]] = None):
+        """
+        :param Sequence['TaskRecordDetailsExecutionDetailsVariablesInputVariableArgs'] input_variables: (Updatable) The input variables for the task.
+        :param Sequence[str] output_variables: (Updatable) The list of output variables.
+        """
+        if input_variables is not None:
+            pulumi.set(__self__, "input_variables", input_variables)
+        if output_variables is not None:
+            pulumi.set(__self__, "output_variables", output_variables)
+
+    @property
+    @pulumi.getter(name="inputVariables")
+    def input_variables(self) -> Optional[Sequence['outputs.TaskRecordDetailsExecutionDetailsVariablesInputVariable']]:
+        """
+        (Updatable) The input variables for the task.
+        """
+        return pulumi.get(self, "input_variables")
+
+    @property
+    @pulumi.getter(name="outputVariables")
+    def output_variables(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The list of output variables.
+        """
+        return pulumi.get(self, "output_variables")
+
+
+@pulumi.output_type
+class TaskRecordDetailsExecutionDetailsVariablesInputVariable(dict):
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str description: (Updatable) The description of the argument.
+        :param str name: (Updatable) The name of the argument.
+        :param str type: (Updatable) Input argument Type.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) The description of the argument.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the argument.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        (Updatable) Input argument Type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class TaskRecordDetailsProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "numRetries":
+            suggest = "num_retries"
+        elif key == "timeoutInSeconds":
+            suggest = "timeout_in_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskRecordDetailsProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskRecordDetailsProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskRecordDetailsProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 num_retries: int,
+                 timeout_in_seconds: int):
+        """
+        :param int num_retries: (Updatable) The number of retries allowed.
+        :param int timeout_in_seconds: (Updatable) The timeout in seconds for the task.
+        """
+        pulumi.set(__self__, "num_retries", num_retries)
+        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+
+    @property
+    @pulumi.getter(name="numRetries")
+    def num_retries(self) -> int:
+        """
+        (Updatable) The number of retries allowed.
+        """
+        return pulumi.get(self, "num_retries")
+
+    @property
+    @pulumi.getter(name="timeoutInSeconds")
+    def timeout_in_seconds(self) -> int:
+        """
+        (Updatable) The timeout in seconds for the task.
+        """
+        return pulumi.get(self, "timeout_in_seconds")
+
+
+@pulumi.output_type
 class GetAnnouncementsAnnouncementCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']):
@@ -1148,23 +4718,23 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
                  type: str,
                  url: str):
         """
-        :param str announcement_end: Date to end displaying annonucement to user
-        :param str announcement_start: Date to start displaying announcement to user
+        :param str announcement_end: Announcement end date
+        :param str announcement_start: Announcement start date.
         :param str compartment_id: Tenancy OCID
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
-        :param str details: Details of the announcement
+        :param str details: Announcement Details.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the resource.
         :param str resource_region: Associated region
         :param str state: The lifecycle state of the announcement.
-        :param str summary: Summary of the announcement
+        :param str summary: Summary of the announcement.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param str type: Type of announcement
-        :param str url: URL to the announcement
+        :param str type: Type of announcement.
+        :param str url: URL to the announcement.
         """
         pulumi.set(__self__, "announcement_end", announcement_end)
         pulumi.set(__self__, "announcement_start", announcement_start)
@@ -1188,7 +4758,7 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
     @pulumi.getter(name="announcementEnd")
     def announcement_end(self) -> str:
         """
-        Date to end displaying annonucement to user
+        Announcement end date
         """
         return pulumi.get(self, "announcement_end")
 
@@ -1196,7 +4766,7 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
     @pulumi.getter(name="announcementStart")
     def announcement_start(self) -> str:
         """
-        Date to start displaying announcement to user
+        Announcement start date.
         """
         return pulumi.get(self, "announcement_start")
 
@@ -1228,7 +4798,7 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
     @pulumi.getter
     def details(self) -> str:
         """
-        Details of the announcement
+        Announcement Details.
         """
         return pulumi.get(self, "details")
 
@@ -1276,7 +4846,7 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
     @pulumi.getter
     def summary(self) -> str:
         """
-        Summary of the announcement
+        Summary of the announcement.
         """
         return pulumi.get(self, "summary")
 
@@ -1308,7 +4878,7 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Type of announcement
+        Type of announcement.
         """
         return pulumi.get(self, "type")
 
@@ -1316,13 +4886,1199 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
     @pulumi.getter
     def url(self) -> str:
         """
-        URL to the announcement
+        URL to the announcement.
         """
         return pulumi.get(self, "url")
 
 
 @pulumi.output_type
 class GetAnnouncementsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCompliancePoliciesCompliancePolicyCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCompliancePoliciesCompliancePolicyCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCompliancePoliciesCompliancePolicyCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCompliancePoliciesCompliancePolicyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 product_id: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: unique CompliancePolicy identifier.
+        :param str lifecycle_details: A message that describes the current state of the CompliancePolicy in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param str product_id: platformConfiguration OCID corresponding to the Product.
+        :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the CompliancePolicy was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the CompliancePolicy was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique CompliancePolicy identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message that describes the current state of the CompliancePolicy in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> str:
+        """
+        platformConfiguration OCID corresponding to the Product.
+        """
+        return pulumi.get(self, "product_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the CompliancePolicy was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the CompliancePolicy was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCompliancePoliciesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCompliancePolicyRulePatchSelectionResult(dict):
+    def __init__(__self__, *,
+                 days_since_release: int,
+                 patch_level: str,
+                 patch_name: str,
+                 selection_type: str):
+        """
+        :param int days_since_release: Days passed since patch release.
+        :param str patch_level: Patch Name.
+        :param str patch_name: Patch Name.
+        :param str selection_type: Selection type for the Patch.
+        """
+        pulumi.set(__self__, "days_since_release", days_since_release)
+        pulumi.set(__self__, "patch_level", patch_level)
+        pulumi.set(__self__, "patch_name", patch_name)
+        pulumi.set(__self__, "selection_type", selection_type)
+
+    @property
+    @pulumi.getter(name="daysSinceRelease")
+    def days_since_release(self) -> int:
+        """
+        Days passed since patch release.
+        """
+        return pulumi.get(self, "days_since_release")
+
+    @property
+    @pulumi.getter(name="patchLevel")
+    def patch_level(self) -> str:
+        """
+        Patch Name.
+        """
+        return pulumi.get(self, "patch_level")
+
+    @property
+    @pulumi.getter(name="patchName")
+    def patch_name(self) -> str:
+        """
+        Patch Name.
+        """
+        return pulumi.get(self, "patch_name")
+
+    @property
+    @pulumi.getter(name="selectionType")
+    def selection_type(self) -> str:
+        """
+        Selection type for the Patch.
+        """
+        return pulumi.get(self, "selection_type")
+
+
+@pulumi.output_type
+class GetCompliancePolicyRuleProductVersionResult(dict):
+    def __init__(__self__, *,
+                 is_applicable_for_all_higher_versions: bool,
+                 version: str):
+        """
+        :param bool is_applicable_for_all_higher_versions: Is rule applicable to all higher versions also
+        :param str version: Product version the rule is applicable.
+        """
+        pulumi.set(__self__, "is_applicable_for_all_higher_versions", is_applicable_for_all_higher_versions)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="isApplicableForAllHigherVersions")
+    def is_applicable_for_all_higher_versions(self) -> bool:
+        """
+        Is rule applicable to all higher versions also
+        """
+        return pulumi.get(self, "is_applicable_for_all_higher_versions")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Product version the rule is applicable.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetCompliancePolicyRulesCompliancePolicyRuleCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 compliance_policy_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 grace_period: str,
+                 id: str,
+                 lifecycle_details: str,
+                 patch_selections: Sequence['outputs.GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemPatchSelectionResult'],
+                 patch_types: Sequence[str],
+                 product_versions: Sequence['outputs.GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemProductVersionResult'],
+                 severities: Sequence[str],
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str compliance_policy_id: unique CompliancePolicy identifier.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str grace_period: Grace period in days,weeks,months or years the exemption is applicable for the rule. This enables a grace period when Fleet Application Management doesn't report the product as noncompliant when patch is not applied.
+        :param str id: unique CompliancePolicyRule identifier.
+        :param str lifecycle_details: A message that describes the current state of the CompliancePolicyRule in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param Sequence['GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemPatchSelectionArgs'] patch_selections: Patch Selection Details
+        :param Sequence[str] patch_types: PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
+        :param Sequence['GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemProductVersionArgs'] product_versions: A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
+        :param Sequence[str] severities: Severity to which this CompliancePolicyRule applies.
+        :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the CompliancePolicyRule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the CompliancePolicyRule was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compliance_policy_id", compliance_policy_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "grace_period", grace_period)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "patch_selections", patch_selections)
+        pulumi.set(__self__, "patch_types", patch_types)
+        pulumi.set(__self__, "product_versions", product_versions)
+        pulumi.set(__self__, "severities", severities)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="compliancePolicyId")
+    def compliance_policy_id(self) -> str:
+        """
+        unique CompliancePolicy identifier.
+        """
+        return pulumi.get(self, "compliance_policy_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="gracePeriod")
+    def grace_period(self) -> str:
+        """
+        Grace period in days,weeks,months or years the exemption is applicable for the rule. This enables a grace period when Fleet Application Management doesn't report the product as noncompliant when patch is not applied.
+        """
+        return pulumi.get(self, "grace_period")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique CompliancePolicyRule identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message that describes the current state of the CompliancePolicyRule in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="patchSelections")
+    def patch_selections(self) -> Sequence['outputs.GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemPatchSelectionResult']:
+        """
+        Patch Selection Details
+        """
+        return pulumi.get(self, "patch_selections")
+
+    @property
+    @pulumi.getter(name="patchTypes")
+    def patch_types(self) -> Sequence[str]:
+        """
+        PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
+        """
+        return pulumi.get(self, "patch_types")
+
+    @property
+    @pulumi.getter(name="productVersions")
+    def product_versions(self) -> Sequence['outputs.GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemProductVersionResult']:
+        """
+        A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
+        """
+        return pulumi.get(self, "product_versions")
+
+    @property
+    @pulumi.getter
+    def severities(self) -> Sequence[str]:
+        """
+        Severity to which this CompliancePolicyRule applies.
+        """
+        return pulumi.get(self, "severities")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the CompliancePolicyRule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the CompliancePolicyRule was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemPatchSelectionResult(dict):
+    def __init__(__self__, *,
+                 days_since_release: int,
+                 patch_level: str,
+                 patch_name: str,
+                 selection_type: str):
+        """
+        :param int days_since_release: Days passed since patch release.
+        :param str patch_level: Patch Name.
+        :param str patch_name: A filter to return only resources that match the patch selection against the given patch name.
+        :param str selection_type: Selection type for the Patch.
+        """
+        pulumi.set(__self__, "days_since_release", days_since_release)
+        pulumi.set(__self__, "patch_level", patch_level)
+        pulumi.set(__self__, "patch_name", patch_name)
+        pulumi.set(__self__, "selection_type", selection_type)
+
+    @property
+    @pulumi.getter(name="daysSinceRelease")
+    def days_since_release(self) -> int:
+        """
+        Days passed since patch release.
+        """
+        return pulumi.get(self, "days_since_release")
+
+    @property
+    @pulumi.getter(name="patchLevel")
+    def patch_level(self) -> str:
+        """
+        Patch Name.
+        """
+        return pulumi.get(self, "patch_level")
+
+    @property
+    @pulumi.getter(name="patchName")
+    def patch_name(self) -> str:
+        """
+        A filter to return only resources that match the patch selection against the given patch name.
+        """
+        return pulumi.get(self, "patch_name")
+
+    @property
+    @pulumi.getter(name="selectionType")
+    def selection_type(self) -> str:
+        """
+        Selection type for the Patch.
+        """
+        return pulumi.get(self, "selection_type")
+
+
+@pulumi.output_type
+class GetCompliancePolicyRulesCompliancePolicyRuleCollectionItemProductVersionResult(dict):
+    def __init__(__self__, *,
+                 is_applicable_for_all_higher_versions: bool,
+                 version: str):
+        """
+        :param bool is_applicable_for_all_higher_versions: Is rule applicable to all higher versions also
+        :param str version: Product version the rule is applicable.
+        """
+        pulumi.set(__self__, "is_applicable_for_all_higher_versions", is_applicable_for_all_higher_versions)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="isApplicableForAllHigherVersions")
+    def is_applicable_for_all_higher_versions(self) -> bool:
+        """
+        Is rule applicable to all higher versions also
+        """
+        return pulumi.get(self, "is_applicable_for_all_higher_versions")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Product version the rule is applicable.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetCompliancePolicyRulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetComplianceRecordCountsComplianceRecordAggregationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetComplianceRecordCountsComplianceRecordAggregationCollectionItemResult']):
+        """
+        :param Sequence['GetComplianceRecordCountsComplianceRecordAggregationCollectionItemArgs'] items: List of ComplianceRecordAggregation objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetComplianceRecordCountsComplianceRecordAggregationCollectionItemResult']:
+        """
+        List of ComplianceRecordAggregation objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetComplianceRecordCountsComplianceRecordAggregationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compliance_record_count_count: int,
+                 dimensions: Sequence['outputs.GetComplianceRecordCountsComplianceRecordAggregationCollectionItemDimensionResult']):
+        """
+        :param int compliance_record_count_count: count of ComplianceRecord in a Tenancy.
+        :param Sequence['GetComplianceRecordCountsComplianceRecordAggregationCollectionItemDimensionArgs'] dimensions: Aggregated summary information for ComplianceRecord
+        """
+        pulumi.set(__self__, "compliance_record_count_count", compliance_record_count_count)
+        pulumi.set(__self__, "dimensions", dimensions)
+
+    @property
+    @pulumi.getter(name="complianceRecordCountCount")
+    def compliance_record_count_count(self) -> int:
+        """
+        count of ComplianceRecord in a Tenancy.
+        """
+        return pulumi.get(self, "compliance_record_count_count")
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetComplianceRecordCountsComplianceRecordAggregationCollectionItemDimensionResult']:
+        """
+        Aggregated summary information for ComplianceRecord
+        """
+        return pulumi.get(self, "dimensions")
+
+
+@pulumi.output_type
+class GetComplianceRecordCountsComplianceRecordAggregationCollectionItemDimensionResult(dict):
+    def __init__(__self__, *,
+                 compliance_level: str,
+                 compliance_state: str):
+        """
+        :param str compliance_level: Level at which the compliance is calculated.
+        :param str compliance_state: Last known compliance state.
+        """
+        pulumi.set(__self__, "compliance_level", compliance_level)
+        pulumi.set(__self__, "compliance_state", compliance_state)
+
+    @property
+    @pulumi.getter(name="complianceLevel")
+    def compliance_level(self) -> str:
+        """
+        Level at which the compliance is calculated.
+        """
+        return pulumi.get(self, "compliance_level")
+
+    @property
+    @pulumi.getter(name="complianceState")
+    def compliance_state(self) -> str:
+        """
+        Last known compliance state.
+        """
+        return pulumi.get(self, "compliance_state")
+
+
+@pulumi.output_type
+class GetComplianceRecordCountsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetComplianceRecordsComplianceRecordCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemResult']):
+        """
+        :param Sequence['GetComplianceRecordsComplianceRecordCollectionItemArgs'] items: List of compliancePolicys.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemResult']:
+        """
+        List of compliancePolicys.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetComplianceRecordsComplianceRecordCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 compliance_state: str,
+                 entity_display_name: str,
+                 entity_id: str,
+                 id: str,
+                 patches: Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemPatchResult'],
+                 policies: Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemPolicyResult'],
+                 resources: Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemResourceResult'],
+                 state: str,
+                 targets: Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemTargetResult'],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str compliance_state: Target Compliance State.
+        :param str entity_display_name: The displayName of the entity for which the compliance is calculated.Ex.DisplayName for the Fleet
+        :param str entity_id: Entity identifier.Ex:FleetId
+        :param str id: The OCID of the ComplianceRecord.
+        :param Sequence['GetComplianceRecordsComplianceRecordCollectionItemPatchArgs'] patches: Details of the Patch
+        :param Sequence['GetComplianceRecordsComplianceRecordCollectionItemPolicyArgs'] policies: Details of the Policy associated
+        :param Sequence['GetComplianceRecordsComplianceRecordCollectionItemResourceArgs'] resources: Details of the Resource
+        :param str state: The current state of the ComplianceRecord.
+        :param Sequence['GetComplianceRecordsComplianceRecordCollectionItemTargetArgs'] targets: Details of the Target
+        :param str time_created: The date and time the ComplianceRecord was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the ComplianceRecord was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compliance_state", compliance_state)
+        pulumi.set(__self__, "entity_display_name", entity_display_name)
+        pulumi.set(__self__, "entity_id", entity_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "patches", patches)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "resources", resources)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="complianceState")
+    def compliance_state(self) -> str:
+        """
+        Target Compliance State.
+        """
+        return pulumi.get(self, "compliance_state")
+
+    @property
+    @pulumi.getter(name="entityDisplayName")
+    def entity_display_name(self) -> str:
+        """
+        The displayName of the entity for which the compliance is calculated.Ex.DisplayName for the Fleet
+        """
+        return pulumi.get(self, "entity_display_name")
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> str:
+        """
+        Entity identifier.Ex:FleetId
+        """
+        return pulumi.get(self, "entity_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the ComplianceRecord.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def patches(self) -> Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemPatchResult']:
+        """
+        Details of the Patch
+        """
+        return pulumi.get(self, "patches")
+
+    @property
+    @pulumi.getter
+    def policies(self) -> Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemPolicyResult']:
+        """
+        Details of the Policy associated
+        """
+        return pulumi.get(self, "policies")
+
+    @property
+    @pulumi.getter
+    def resources(self) -> Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemResourceResult']:
+        """
+        Details of the Resource
+        """
+        return pulumi.get(self, "resources")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the ComplianceRecord.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemTargetResult']:
+        """
+        Details of the Target
+        """
+        return pulumi.get(self, "targets")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the ComplianceRecord was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the ComplianceRecord was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetComplianceRecordsComplianceRecordCollectionItemPatchResult(dict):
+    def __init__(__self__, *,
+                 patch_description: str,
+                 patch_id: str,
+                 patch_name: str,
+                 patch_type: str,
+                 products: Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemPatchProductResult'],
+                 severity: str,
+                 time_released: str):
+        """
+        :param str patch_description: Patch Description.
+        :param str patch_id: patch OCID.
+        :param str patch_name: Patch Name.
+        :param str patch_type: Type of patch.
+        :param Sequence['GetComplianceRecordsComplianceRecordCollectionItemPatchProductArgs'] products: Details of the Product
+        :param str severity: Patch Severity.
+        :param str time_released: Date on which patch was released
+        """
+        pulumi.set(__self__, "patch_description", patch_description)
+        pulumi.set(__self__, "patch_id", patch_id)
+        pulumi.set(__self__, "patch_name", patch_name)
+        pulumi.set(__self__, "patch_type", patch_type)
+        pulumi.set(__self__, "products", products)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "time_released", time_released)
+
+    @property
+    @pulumi.getter(name="patchDescription")
+    def patch_description(self) -> str:
+        """
+        Patch Description.
+        """
+        return pulumi.get(self, "patch_description")
+
+    @property
+    @pulumi.getter(name="patchId")
+    def patch_id(self) -> str:
+        """
+        patch OCID.
+        """
+        return pulumi.get(self, "patch_id")
+
+    @property
+    @pulumi.getter(name="patchName")
+    def patch_name(self) -> str:
+        """
+        Patch Name.
+        """
+        return pulumi.get(self, "patch_name")
+
+    @property
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> str:
+        """
+        Type of patch.
+        """
+        return pulumi.get(self, "patch_type")
+
+    @property
+    @pulumi.getter
+    def products(self) -> Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemPatchProductResult']:
+        """
+        Details of the Product
+        """
+        return pulumi.get(self, "products")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> str:
+        """
+        Patch Severity.
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> str:
+        """
+        Date on which patch was released
+        """
+        return pulumi.get(self, "time_released")
+
+
+@pulumi.output_type
+class GetComplianceRecordsComplianceRecordCollectionItemPatchProductResult(dict):
+    def __init__(__self__, *,
+                 product_name: str,
+                 product_stack: str,
+                 product_version: str):
+        """
+        :param str product_name: Product Name.
+        :param str product_stack: ProductStack name.
+        :param str product_version: Product Version.
+        """
+        pulumi.set(__self__, "product_name", product_name)
+        pulumi.set(__self__, "product_stack", product_stack)
+        pulumi.set(__self__, "product_version", product_version)
+
+    @property
+    @pulumi.getter(name="productName")
+    def product_name(self) -> str:
+        """
+        Product Name.
+        """
+        return pulumi.get(self, "product_name")
+
+    @property
+    @pulumi.getter(name="productStack")
+    def product_stack(self) -> str:
+        """
+        ProductStack name.
+        """
+        return pulumi.get(self, "product_stack")
+
+    @property
+    @pulumi.getter(name="productVersion")
+    def product_version(self) -> str:
+        """
+        Product Version.
+        """
+        return pulumi.get(self, "product_version")
+
+
+@pulumi.output_type
+class GetComplianceRecordsComplianceRecordCollectionItemPolicyResult(dict):
+    def __init__(__self__, *,
+                 compliance_policy_display_name: str,
+                 compliance_policy_id: str,
+                 compliance_policy_rule_display_name: str,
+                 compliance_policy_rule_id: str,
+                 grace_period: str,
+                 patch_selections: Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemPolicyPatchSelectionResult']):
+        """
+        :param str compliance_policy_display_name: Compliane Policy DisplayName
+        :param str compliance_policy_id: Compliance Policy Id
+        :param str compliance_policy_rule_display_name: Product Name
+        :param str compliance_policy_rule_id: Compliane Policy Rule Id
+        :param str grace_period: Grace period in days,weeks,months or years the exemption is applicable for the rule.
+        :param Sequence['GetComplianceRecordsComplianceRecordCollectionItemPolicyPatchSelectionArgs'] patch_selections: Patch Selection Details
+        """
+        pulumi.set(__self__, "compliance_policy_display_name", compliance_policy_display_name)
+        pulumi.set(__self__, "compliance_policy_id", compliance_policy_id)
+        pulumi.set(__self__, "compliance_policy_rule_display_name", compliance_policy_rule_display_name)
+        pulumi.set(__self__, "compliance_policy_rule_id", compliance_policy_rule_id)
+        pulumi.set(__self__, "grace_period", grace_period)
+        pulumi.set(__self__, "patch_selections", patch_selections)
+
+    @property
+    @pulumi.getter(name="compliancePolicyDisplayName")
+    def compliance_policy_display_name(self) -> str:
+        """
+        Compliane Policy DisplayName
+        """
+        return pulumi.get(self, "compliance_policy_display_name")
+
+    @property
+    @pulumi.getter(name="compliancePolicyId")
+    def compliance_policy_id(self) -> str:
+        """
+        Compliance Policy Id
+        """
+        return pulumi.get(self, "compliance_policy_id")
+
+    @property
+    @pulumi.getter(name="compliancePolicyRuleDisplayName")
+    def compliance_policy_rule_display_name(self) -> str:
+        """
+        Product Name
+        """
+        return pulumi.get(self, "compliance_policy_rule_display_name")
+
+    @property
+    @pulumi.getter(name="compliancePolicyRuleId")
+    def compliance_policy_rule_id(self) -> str:
+        """
+        Compliane Policy Rule Id
+        """
+        return pulumi.get(self, "compliance_policy_rule_id")
+
+    @property
+    @pulumi.getter(name="gracePeriod")
+    def grace_period(self) -> str:
+        """
+        Grace period in days,weeks,months or years the exemption is applicable for the rule.
+        """
+        return pulumi.get(self, "grace_period")
+
+    @property
+    @pulumi.getter(name="patchSelections")
+    def patch_selections(self) -> Sequence['outputs.GetComplianceRecordsComplianceRecordCollectionItemPolicyPatchSelectionResult']:
+        """
+        Patch Selection Details
+        """
+        return pulumi.get(self, "patch_selections")
+
+
+@pulumi.output_type
+class GetComplianceRecordsComplianceRecordCollectionItemPolicyPatchSelectionResult(dict):
+    def __init__(__self__, *,
+                 days_since_release: int,
+                 patch_level: str,
+                 patch_name: str,
+                 selection_type: str):
+        """
+        :param int days_since_release: Days passed since patch release.
+        :param str patch_level: Patch Name.
+        :param str patch_name: Patch Name.
+        :param str selection_type: Selection type for the Patch.
+        """
+        pulumi.set(__self__, "days_since_release", days_since_release)
+        pulumi.set(__self__, "patch_level", patch_level)
+        pulumi.set(__self__, "patch_name", patch_name)
+        pulumi.set(__self__, "selection_type", selection_type)
+
+    @property
+    @pulumi.getter(name="daysSinceRelease")
+    def days_since_release(self) -> int:
+        """
+        Days passed since patch release.
+        """
+        return pulumi.get(self, "days_since_release")
+
+    @property
+    @pulumi.getter(name="patchLevel")
+    def patch_level(self) -> str:
+        """
+        Patch Name.
+        """
+        return pulumi.get(self, "patch_level")
+
+    @property
+    @pulumi.getter(name="patchName")
+    def patch_name(self) -> str:
+        """
+        Patch Name.
+        """
+        return pulumi.get(self, "patch_name")
+
+    @property
+    @pulumi.getter(name="selectionType")
+    def selection_type(self) -> str:
+        """
+        Selection type for the Patch.
+        """
+        return pulumi.get(self, "selection_type")
+
+
+@pulumi.output_type
+class GetComplianceRecordsComplianceRecordCollectionItemResourceResult(dict):
+    def __init__(__self__, *,
+                 compartment: str,
+                 compartment_id: str,
+                 resource_id: str,
+                 resource_name: str,
+                 resource_region: str):
+        """
+        :param str compartment: Compartment the resource belongs to.
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str resource_id: Resource identifier.
+        :param str resource_name: Name of the resource.
+        :param str resource_region: Region the resource belongs to.
+        """
+        pulumi.set(__self__, "compartment", compartment)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "resource_region", resource_region)
+
+    @property
+    @pulumi.getter
+    def compartment(self) -> str:
+        """
+        Compartment the resource belongs to.
+        """
+        return pulumi.get(self, "compartment")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        Resource identifier.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> str:
+        """
+        Name of the resource.
+        """
+        return pulumi.get(self, "resource_name")
+
+    @property
+    @pulumi.getter(name="resourceRegion")
+    def resource_region(self) -> str:
+        """
+        Region the resource belongs to.
+        """
+        return pulumi.get(self, "resource_region")
+
+
+@pulumi.output_type
+class GetComplianceRecordsComplianceRecordCollectionItemTargetResult(dict):
+    def __init__(__self__, *,
+                 target_id: str,
+                 target_name: str,
+                 version: str):
+        """
+        :param str target_id: Target Identifier.
+        :param str target_name: Unique target name
+        :param str version: Current version.
+        """
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_name", target_name)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        Target Identifier.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="targetName")
+    def target_name(self) -> str:
+        """
+        Unique target name
+        """
+        return pulumi.get(self, "target_name")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Current version.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetComplianceRecordsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -1362,11 +6118,11 @@ class GetFleetComplianceReportResourceResult(dict):
                  tenancy_name: str):
         """
         :param str compartment: Compartment the resource belongs to.
-        :param str compliance_state: Last known compliance state of target.
-        :param Sequence['GetFleetComplianceReportResourceProductArgs'] products: Products assocaited with the Fleet.Only products belonging to managed targets will be shown.
+        :param str compliance_state: The last known compliance state of the target.
+        :param Sequence['GetFleetComplianceReportResourceProductArgs'] products: Products associated with the Fleet.  Only the products belonging to managed targets will be shown.
         :param str resource_id: The OCID to identify the resource.
         :param str resource_name: Display name of the resource.
-        :param str resource_region: Region the resource belongs to.
+        :param str resource_region: The region the resource belongs to.
         :param str resource_type: Type of the resource.
         :param str tenancy_id: TenancyId of the resource.
         :param str tenancy_name: Tenancy the resource belongs to.
@@ -1393,7 +6149,7 @@ class GetFleetComplianceReportResourceResult(dict):
     @pulumi.getter(name="complianceState")
     def compliance_state(self) -> str:
         """
-        Last known compliance state of target.
+        The last known compliance state of the target.
         """
         return pulumi.get(self, "compliance_state")
 
@@ -1401,7 +6157,7 @@ class GetFleetComplianceReportResourceResult(dict):
     @pulumi.getter
     def products(self) -> Sequence['outputs.GetFleetComplianceReportResourceProductResult']:
         """
-        Products assocaited with the Fleet.Only products belonging to managed targets will be shown.
+        Products associated with the Fleet.  Only the products belonging to managed targets will be shown.
         """
         return pulumi.get(self, "products")
 
@@ -1425,7 +6181,7 @@ class GetFleetComplianceReportResourceResult(dict):
     @pulumi.getter(name="resourceRegion")
     def resource_region(self) -> str:
         """
-        Region the resource belongs to.
+        The region the resource belongs to.
         """
         return pulumi.get(self, "resource_region")
 
@@ -1460,7 +6216,7 @@ class GetFleetComplianceReportResourceProductResult(dict):
                  product_name: str,
                  targets: Sequence['outputs.GetFleetComplianceReportResourceProductTargetResult']):
         """
-        :param str product_name: Product Name
+        :param str product_name: Product Name.
         :param Sequence['GetFleetComplianceReportResourceProductTargetArgs'] targets: Managed Targets associated with the Product.
         """
         pulumi.set(__self__, "product_name", product_name)
@@ -1470,7 +6226,7 @@ class GetFleetComplianceReportResourceProductResult(dict):
     @pulumi.getter(name="productName")
     def product_name(self) -> str:
         """
-        Product Name
+        Product Name.
         """
         return pulumi.get(self, "product_name")
 
@@ -1493,12 +6249,12 @@ class GetFleetComplianceReportResourceProductTargetResult(dict):
                  target_name: str,
                  version: str):
         """
-        :param str compliance_state: Last known compliance state of target.
+        :param str compliance_state: The last known compliance state of the target.
         :param Sequence['GetFleetComplianceReportResourceProductTargetInstalledPatchArgs'] installed_patches: Installed Patches for the Target.
         :param Sequence['GetFleetComplianceReportResourceProductTargetRecommendedPatchArgs'] recommended_patches: Recommended Patches for the Target.
-        :param str target_id: Target Identifier.
+        :param str target_id: Target Identifier.Can be the target name if a separate ID is not available.
         :param str target_name: Target Name.
-        :param str version: Current version.
+        :param str version: Current version of the target.
         """
         pulumi.set(__self__, "compliance_state", compliance_state)
         pulumi.set(__self__, "installed_patches", installed_patches)
@@ -1511,7 +6267,7 @@ class GetFleetComplianceReportResourceProductTargetResult(dict):
     @pulumi.getter(name="complianceState")
     def compliance_state(self) -> str:
         """
-        Last known compliance state of target.
+        The last known compliance state of the target.
         """
         return pulumi.get(self, "compliance_state")
 
@@ -1535,7 +6291,7 @@ class GetFleetComplianceReportResourceProductTargetResult(dict):
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
-        Target Identifier.
+        Target Identifier.Can be the target name if a separate ID is not available.
         """
         return pulumi.get(self, "target_id")
 
@@ -1551,7 +6307,7 @@ class GetFleetComplianceReportResourceProductTargetResult(dict):
     @pulumi.getter
     def version(self) -> str:
         """
-        Current version.
+        Current version of the target.
         """
         return pulumi.get(self, "version")
 
@@ -1565,11 +6321,11 @@ class GetFleetComplianceReportResourceProductTargetInstalledPatchResult(dict):
                  time_applied: str,
                  time_released: str):
         """
-        :param str patch_description: The OCID of the work request to start the analysis.
-        :param str patch_name: The OCID to identify this analysis results.
+        :param str patch_description: Patch description.
+        :param str patch_name: Patch name.
         :param str patch_type: Type of patch.
-        :param str time_applied: Time the patch was applied
-        :param str time_released: Date on which patch was released.
+        :param str time_applied: Time the patch was applied.
+        :param str time_released: The date on which patch was released.
         """
         pulumi.set(__self__, "patch_description", patch_description)
         pulumi.set(__self__, "patch_name", patch_name)
@@ -1581,7 +6337,7 @@ class GetFleetComplianceReportResourceProductTargetInstalledPatchResult(dict):
     @pulumi.getter(name="patchDescription")
     def patch_description(self) -> str:
         """
-        The OCID of the work request to start the analysis.
+        Patch description.
         """
         return pulumi.get(self, "patch_description")
 
@@ -1589,7 +6345,7 @@ class GetFleetComplianceReportResourceProductTargetInstalledPatchResult(dict):
     @pulumi.getter(name="patchName")
     def patch_name(self) -> str:
         """
-        The OCID to identify this analysis results.
+        Patch name.
         """
         return pulumi.get(self, "patch_name")
 
@@ -1605,7 +6361,7 @@ class GetFleetComplianceReportResourceProductTargetInstalledPatchResult(dict):
     @pulumi.getter(name="timeApplied")
     def time_applied(self) -> str:
         """
-        Time the patch was applied
+        Time the patch was applied.
         """
         return pulumi.get(self, "time_applied")
 
@@ -1613,7 +6369,7 @@ class GetFleetComplianceReportResourceProductTargetInstalledPatchResult(dict):
     @pulumi.getter(name="timeReleased")
     def time_released(self) -> str:
         """
-        Date on which patch was released.
+        The date on which patch was released.
         """
         return pulumi.get(self, "time_released")
 
@@ -1627,11 +6383,11 @@ class GetFleetComplianceReportResourceProductTargetRecommendedPatchResult(dict):
                  time_applied: str,
                  time_released: str):
         """
-        :param str patch_description: The OCID of the work request to start the analysis.
-        :param str patch_name: The OCID to identify this analysis results.
+        :param str patch_description: Patch description.
+        :param str patch_name: Patch name.
         :param str patch_type: Type of patch.
-        :param str time_applied: Time the patch was applied
-        :param str time_released: Date on which patch was released.
+        :param str time_applied: Time the patch was applied.
+        :param str time_released: The date on which patch was released.
         """
         pulumi.set(__self__, "patch_description", patch_description)
         pulumi.set(__self__, "patch_name", patch_name)
@@ -1643,7 +6399,7 @@ class GetFleetComplianceReportResourceProductTargetRecommendedPatchResult(dict):
     @pulumi.getter(name="patchDescription")
     def patch_description(self) -> str:
         """
-        The OCID of the work request to start the analysis.
+        Patch description.
         """
         return pulumi.get(self, "patch_description")
 
@@ -1651,7 +6407,7 @@ class GetFleetComplianceReportResourceProductTargetRecommendedPatchResult(dict):
     @pulumi.getter(name="patchName")
     def patch_name(self) -> str:
         """
-        The OCID to identify this analysis results.
+        Patch name.
         """
         return pulumi.get(self, "patch_name")
 
@@ -1667,7 +6423,7 @@ class GetFleetComplianceReportResourceProductTargetRecommendedPatchResult(dict):
     @pulumi.getter(name="timeApplied")
     def time_applied(self) -> str:
         """
-        Time the patch was applied
+        Time the patch was applied.
         """
         return pulumi.get(self, "time_applied")
 
@@ -1675,9 +6431,71 @@ class GetFleetComplianceReportResourceProductTargetRecommendedPatchResult(dict):
     @pulumi.getter(name="timeReleased")
     def time_released(self) -> str:
         """
-        Date on which patch was released.
+        The date on which patch was released.
         """
         return pulumi.get(self, "time_released")
+
+
+@pulumi.output_type
+class GetFleetCredentialResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 display_name: str,
+                 entity_specifics: Sequence['outputs.GetFleetCredentialEntitySpecificResult'],
+                 passwords: Sequence['outputs.GetFleetCredentialPasswordResult'],
+                 users: Sequence['outputs.GetFleetCredentialUserResult']):
+        """
+        :param str compartment_id: Tenancy Id (Root Compartment Id)for which the rule is created.
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param Sequence['GetFleetCredentialEntitySpecificArgs'] entity_specifics: Credential specific Details.
+        :param Sequence['GetFleetCredentialPasswordArgs'] passwords: Credential Details.
+        :param Sequence['GetFleetCredentialUserArgs'] users: Credential Details.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_specifics", entity_specifics)
+        pulumi.set(__self__, "passwords", passwords)
+        pulumi.set(__self__, "users", users)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        Tenancy Id (Root Compartment Id)for which the rule is created.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="entitySpecifics")
+    def entity_specifics(self) -> Sequence['outputs.GetFleetCredentialEntitySpecificResult']:
+        """
+        Credential specific Details.
+        """
+        return pulumi.get(self, "entity_specifics")
+
+    @property
+    @pulumi.getter
+    def passwords(self) -> Sequence['outputs.GetFleetCredentialPasswordResult']:
+        """
+        Credential Details.
+        """
+        return pulumi.get(self, "passwords")
+
+    @property
+    @pulumi.getter
+    def users(self) -> Sequence['outputs.GetFleetCredentialUserResult']:
+        """
+        Credential Details.
+        """
+        return pulumi.get(self, "users")
 
 
 @pulumi.output_type
@@ -1685,21 +6503,24 @@ class GetFleetCredentialEntitySpecificResult(dict):
     def __init__(__self__, *,
                  credential_level: str,
                  resource_id: str,
-                 target: str):
+                 target: str,
+                 variables: Sequence['outputs.GetFleetCredentialEntitySpecificVariableResult']):
         """
-        :param str credential_level: Credential Level.
-        :param str resource_id: OCID of the resource associated with the target for which credential is created
-        :param str target: Target associated with the Credential
+        :param str credential_level: At what level the credential is provided?
+        :param str resource_id: OCID of the resource associated with the target for which the credential is created.
+        :param str target: Target name for which the credential is provided.
+        :param Sequence['GetFleetCredentialEntitySpecificVariableArgs'] variables: List of fleet credential variables.
         """
         pulumi.set(__self__, "credential_level", credential_level)
         pulumi.set(__self__, "resource_id", resource_id)
         pulumi.set(__self__, "target", target)
+        pulumi.set(__self__, "variables", variables)
 
     @property
     @pulumi.getter(name="credentialLevel")
     def credential_level(self) -> str:
         """
-        Credential Level.
+        At what level the credential is provided?
         """
         return pulumi.get(self, "credential_level")
 
@@ -1707,7 +6528,7 @@ class GetFleetCredentialEntitySpecificResult(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> str:
         """
-        OCID of the resource associated with the target for which credential is created
+        OCID of the resource associated with the target for which the credential is created.
         """
         return pulumi.get(self, "resource_id")
 
@@ -1715,9 +6536,46 @@ class GetFleetCredentialEntitySpecificResult(dict):
     @pulumi.getter
     def target(self) -> str:
         """
-        Target associated with the Credential
+        Target name for which the credential is provided.
         """
         return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Sequence['outputs.GetFleetCredentialEntitySpecificVariableResult']:
+        """
+        List of fleet credential variables.
+        """
+        return pulumi.get(self, "variables")
+
+
+@pulumi.output_type
+class GetFleetCredentialEntitySpecificVariableResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of the variable.
+        :param str value: The value corresponding to the credential.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the variable.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value corresponding to the credential.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -1731,13 +6589,13 @@ class GetFleetCredentialPasswordResult(dict):
                  value: str,
                  vault_id: str):
         """
-        :param str credential_type: Credential Type
+        :param str credential_type: Credential Type.
         :param str key_id: OCID for the Vault Key that will be used to encrypt/decrypt the value given.
         :param str key_version: The Vault Key version.
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
         :param str secret_version: The secret version.
-        :param str value: The value corresponding to the credential
-        :param str vault_id: OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        :param str value: The value corresponding to the credential.
+        :param str vault_id: OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         pulumi.set(__self__, "credential_type", credential_type)
         pulumi.set(__self__, "key_id", key_id)
@@ -1751,7 +6609,7 @@ class GetFleetCredentialPasswordResult(dict):
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> str:
         """
-        Credential Type
+        Credential Type.
         """
         return pulumi.get(self, "credential_type")
 
@@ -1791,7 +6649,7 @@ class GetFleetCredentialPasswordResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        The value corresponding to the credential
+        The value corresponding to the credential.
         """
         return pulumi.get(self, "value")
 
@@ -1799,7 +6657,7 @@ class GetFleetCredentialPasswordResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         return pulumi.get(self, "vault_id")
 
@@ -1815,13 +6673,13 @@ class GetFleetCredentialUserResult(dict):
                  value: str,
                  vault_id: str):
         """
-        :param str credential_type: Credential Type
+        :param str credential_type: Credential Type.
         :param str key_id: OCID for the Vault Key that will be used to encrypt/decrypt the value given.
         :param str key_version: The Vault Key version.
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
         :param str secret_version: The secret version.
-        :param str value: The value corresponding to the credential
-        :param str vault_id: OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        :param str value: The value corresponding to the credential.
+        :param str vault_id: OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         pulumi.set(__self__, "credential_type", credential_type)
         pulumi.set(__self__, "key_id", key_id)
@@ -1835,7 +6693,7 @@ class GetFleetCredentialUserResult(dict):
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> str:
         """
-        Credential Type
+        Credential Type.
         """
         return pulumi.get(self, "credential_type")
 
@@ -1875,7 +6733,7 @@ class GetFleetCredentialUserResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        The value corresponding to the credential
+        The value corresponding to the credential.
         """
         return pulumi.get(self, "value")
 
@@ -1883,7 +6741,7 @@ class GetFleetCredentialUserResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         return pulumi.get(self, "vault_id")
 
@@ -1894,6 +6752,9 @@ class GetFleetCredentialsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of the variable.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1902,6 +6763,9 @@ class GetFleetCredentialsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of the variable.
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -1945,16 +6809,16 @@ class GetFleetCredentialsFleetCredentialCollectionItemResult(dict):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Sequence['GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificArgs'] entity_specifics: Credential Details
-        :param str fleet_id: unique Fleet identifier
-        :param str id: unique FleetCredential identifier
+        :param Sequence['GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificArgs'] entity_specifics: Credential specific Details.
+        :param str fleet_id: Unique Fleet identifier.
+        :param str id: A filter to return only resources whose credential identifier matches the given identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence['GetFleetCredentialsFleetCredentialCollectionItemPasswordArgs'] passwords: Credential Details
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param Sequence['GetFleetCredentialsFleetCredentialCollectionItemPasswordArgs'] passwords: Credential Details.
+        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param Sequence['GetFleetCredentialsFleetCredentialCollectionItemUserArgs'] users: Credential Details
+        :param Sequence['GetFleetCredentialsFleetCredentialCollectionItemUserArgs'] users: Credential Details.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -1989,7 +6853,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemResult(dict):
     @pulumi.getter(name="entitySpecifics")
     def entity_specifics(self) -> Sequence['outputs.GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificResult']:
         """
-        Credential Details
+        Credential specific Details.
         """
         return pulumi.get(self, "entity_specifics")
 
@@ -1997,7 +6861,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemResult(dict):
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -2005,7 +6869,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique FleetCredential identifier
+        A filter to return only resources whose credential identifier matches the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -2021,7 +6885,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemResult(dict):
     @pulumi.getter
     def passwords(self) -> Sequence['outputs.GetFleetCredentialsFleetCredentialCollectionItemPasswordResult']:
         """
-        Credential Details
+        Credential Details.
         """
         return pulumi.get(self, "passwords")
 
@@ -2029,7 +6893,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources whose lifecycleState matches the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -2061,7 +6925,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemResult(dict):
     @pulumi.getter
     def users(self) -> Sequence['outputs.GetFleetCredentialsFleetCredentialCollectionItemUserResult']:
         """
-        Credential Details
+        Credential Details.
         """
         return pulumi.get(self, "users")
 
@@ -2071,21 +6935,24 @@ class GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificResult(dict)
     def __init__(__self__, *,
                  credential_level: str,
                  resource_id: str,
-                 target: str):
+                 target: str,
+                 variables: Sequence['outputs.GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariableResult']):
         """
-        :param str credential_level: Credential Level.
-        :param str resource_id: OCID of the resource associated with the target for which credential is created
-        :param str target: Target associated with the Credential
+        :param str credential_level: A filter to return only resources whose credentialLevel matches the given credentialLevel.
+        :param str resource_id: Resource Identifier
+        :param str target: A filter to return only resources whose target matches the given target name.
+        :param Sequence['GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariableArgs'] variables: List of fleet credential variables.
         """
         pulumi.set(__self__, "credential_level", credential_level)
         pulumi.set(__self__, "resource_id", resource_id)
         pulumi.set(__self__, "target", target)
+        pulumi.set(__self__, "variables", variables)
 
     @property
     @pulumi.getter(name="credentialLevel")
     def credential_level(self) -> str:
         """
-        Credential Level.
+        A filter to return only resources whose credentialLevel matches the given credentialLevel.
         """
         return pulumi.get(self, "credential_level")
 
@@ -2093,7 +6960,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificResult(dict)
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> str:
         """
-        OCID of the resource associated with the target for which credential is created
+        Resource Identifier
         """
         return pulumi.get(self, "resource_id")
 
@@ -2101,9 +6968,46 @@ class GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificResult(dict)
     @pulumi.getter
     def target(self) -> str:
         """
-        Target associated with the Credential
+        A filter to return only resources whose target matches the given target name.
         """
         return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Sequence['outputs.GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariableResult']:
+        """
+        List of fleet credential variables.
+        """
+        return pulumi.get(self, "variables")
+
+
+@pulumi.output_type
+class GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariableResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of the variable.
+        :param str value: The value corresponding to the credential.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the variable.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value corresponding to the credential.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -2117,13 +7021,13 @@ class GetFleetCredentialsFleetCredentialCollectionItemPasswordResult(dict):
                  value: str,
                  vault_id: str):
         """
-        :param str credential_type: Credential Type
+        :param str credential_type: Credential Type.
         :param str key_id: OCID for the Vault Key that will be used to encrypt/decrypt the value given.
         :param str key_version: The Vault Key version.
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
         :param str secret_version: The secret version.
-        :param str value: The value corresponding to the credential
-        :param str vault_id: OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        :param str value: The value corresponding to the credential.
+        :param str vault_id: OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         pulumi.set(__self__, "credential_type", credential_type)
         pulumi.set(__self__, "key_id", key_id)
@@ -2137,7 +7041,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemPasswordResult(dict):
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> str:
         """
-        Credential Type
+        Credential Type.
         """
         return pulumi.get(self, "credential_type")
 
@@ -2177,7 +7081,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemPasswordResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        The value corresponding to the credential
+        The value corresponding to the credential.
         """
         return pulumi.get(self, "value")
 
@@ -2185,7 +7089,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemPasswordResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         return pulumi.get(self, "vault_id")
 
@@ -2201,13 +7105,13 @@ class GetFleetCredentialsFleetCredentialCollectionItemUserResult(dict):
                  value: str,
                  vault_id: str):
         """
-        :param str credential_type: Credential Type
+        :param str credential_type: Credential Type.
         :param str key_id: OCID for the Vault Key that will be used to encrypt/decrypt the value given.
         :param str key_version: The Vault Key version.
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
         :param str secret_version: The secret version.
-        :param str value: The value corresponding to the credential
-        :param str vault_id: OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        :param str value: The value corresponding to the credential.
+        :param str vault_id: OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         pulumi.set(__self__, "credential_type", credential_type)
         pulumi.set(__self__, "key_id", key_id)
@@ -2221,7 +7125,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemUserResult(dict):
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> str:
         """
-        Credential Type
+        Credential Type.
         """
         return pulumi.get(self, "credential_type")
 
@@ -2261,7 +7165,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemUserResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        The value corresponding to the credential
+        The value corresponding to the credential.
         """
         return pulumi.get(self, "value")
 
@@ -2269,7 +7173,7 @@ class GetFleetCredentialsFleetCredentialCollectionItemUserResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         """
         return pulumi.get(self, "vault_id")
 
@@ -2281,9 +7185,9 @@ class GetFleetNotificationPreferenceResult(dict):
                  preferences: Sequence['outputs.GetFleetNotificationPreferencePreferenceResult'],
                  topic_id: str):
         """
-        :param str compartment_id: Please provide the root compartmentId (TenancyId).
-        :param Sequence['GetFleetNotificationPreferencePreferenceArgs'] preferences: Preferences to send notifications on the fleet activities
-        :param str topic_id: Topic Id where the notifications will be directed
+        :param str compartment_id: Tenancy Id (Root Compartment Id)for which the rule is created.
+        :param Sequence['GetFleetNotificationPreferencePreferenceArgs'] preferences: Preferences to send notifications on the fleet activities.
+        :param str topic_id: Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "preferences", preferences)
@@ -2293,7 +7197,7 @@ class GetFleetNotificationPreferenceResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Please provide the root compartmentId (TenancyId).
+        Tenancy Id (Root Compartment Id)for which the rule is created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2301,7 +7205,7 @@ class GetFleetNotificationPreferenceResult(dict):
     @pulumi.getter
     def preferences(self) -> Sequence['outputs.GetFleetNotificationPreferencePreferenceResult']:
         """
-        Preferences to send notifications on the fleet activities
+        Preferences to send notifications on the fleet activities.
         """
         return pulumi.get(self, "preferences")
 
@@ -2309,7 +7213,7 @@ class GetFleetNotificationPreferenceResult(dict):
     @pulumi.getter(name="topicId")
     def topic_id(self) -> str:
         """
-        Topic Id where the notifications will be directed
+        Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
         """
         return pulumi.get(self, "topic_id")
 
@@ -2321,7 +7225,7 @@ class GetFleetNotificationPreferencePreferenceResult(dict):
                  on_topology_modification: bool,
                  on_upcoming_schedule: bool):
         """
-        :param bool on_job_failure: Enables or disables notification on Job Failures.'
+        :param bool on_job_failure: Enables or disables notification on Job Failures.
         :param bool on_topology_modification: Enables or disables notification on Environment Fleet Topology Modification.
         :param bool on_upcoming_schedule: Enables notification on upcoming schedule.
         """
@@ -2333,7 +7237,7 @@ class GetFleetNotificationPreferencePreferenceResult(dict):
     @pulumi.getter(name="onJobFailure")
     def on_job_failure(self) -> bool:
         """
-        Enables or disables notification on Job Failures.'
+        Enables or disables notification on Job Failures.
         """
         return pulumi.get(self, "on_job_failure")
 
@@ -2410,9 +7314,9 @@ class GetFleetProductsFleetProductCollectionItemResult(dict):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Sequence['GetFleetProductsFleetProductCollectionItemResourceArgs'] resources: Resource Information for the Target
+        :param Sequence['GetFleetProductsFleetProductCollectionItemResourceArgs'] resources: Resource Information for the Target.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param int target_count: Count of targets associated with the Product
+        :param int target_count: Count of the targets associated with the Product.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -2440,7 +7344,7 @@ class GetFleetProductsFleetProductCollectionItemResult(dict):
     @pulumi.getter
     def resources(self) -> Sequence['outputs.GetFleetProductsFleetProductCollectionItemResourceResult']:
         """
-        Resource Information for the Target
+        Resource Information for the Target.
         """
         return pulumi.get(self, "resources")
 
@@ -2456,7 +7360,7 @@ class GetFleetProductsFleetProductCollectionItemResult(dict):
     @pulumi.getter(name="targetCount")
     def target_count(self) -> int:
         """
-        Count of targets associated with the Product
+        Count of the targets associated with the Product.
         """
         return pulumi.get(self, "target_count")
 
@@ -2467,7 +7371,7 @@ class GetFleetProductsFleetProductCollectionItemResourceResult(dict):
                  resource_display_name: str,
                  resource_id: str):
         """
-        :param str resource_display_name: Resource Display Name
+        :param str resource_display_name: Resource Display Name.
         :param str resource_id: Resource Identifier
         """
         pulumi.set(__self__, "resource_display_name", resource_display_name)
@@ -2477,7 +7381,7 @@ class GetFleetProductsFleetProductCollectionItemResourceResult(dict):
     @pulumi.getter(name="resourceDisplayName")
     def resource_display_name(self) -> str:
         """
-        Resource Display Name
+        Resource Display Name.
         """
         return pulumi.get(self, "resource_display_name")
 
@@ -2546,19 +7450,19 @@ class GetFleetPropertiesFleetPropertyCollectionItemResult(dict):
                  value: str,
                  value_type: str):
         """
-        :param Sequence[str] allowed_values: Values of the category (must be a single value if selection = 'single choice')
+        :param Sequence[str] allowed_values: Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str fleet_id: unique Fleet identifier
-        :param str id: unique FleetProperty identifier
-        :param str property_id: Property Id Ocid.
-        :param str selection_type: Text selection of the category
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str fleet_id: Unique Fleet identifier.
+        :param str id: A filter to return only resources whose fleetProperty identifier matches the given identifier.
+        :param str property_id: OCID referring to global level metadata property.
+        :param str selection_type: Text selection of the property.
+        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param str value: Value of the Property
-        :param str value_type: Format of the value
+        :param str value: Value of the Property.
+        :param str value_type: Format of the value.
         """
         pulumi.set(__self__, "allowed_values", allowed_values)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -2578,7 +7482,7 @@ class GetFleetPropertiesFleetPropertyCollectionItemResult(dict):
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> Sequence[str]:
         """
-        Values of the category (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         """
         return pulumi.get(self, "allowed_values")
 
@@ -2602,7 +7506,7 @@ class GetFleetPropertiesFleetPropertyCollectionItemResult(dict):
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -2610,7 +7514,7 @@ class GetFleetPropertiesFleetPropertyCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique FleetProperty identifier
+        A filter to return only resources whose fleetProperty identifier matches the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -2618,7 +7522,7 @@ class GetFleetPropertiesFleetPropertyCollectionItemResult(dict):
     @pulumi.getter(name="propertyId")
     def property_id(self) -> str:
         """
-        Property Id Ocid.
+        OCID referring to global level metadata property.
         """
         return pulumi.get(self, "property_id")
 
@@ -2626,7 +7530,7 @@ class GetFleetPropertiesFleetPropertyCollectionItemResult(dict):
     @pulumi.getter(name="selectionType")
     def selection_type(self) -> str:
         """
-        Text selection of the category
+        Text selection of the property.
         """
         return pulumi.get(self, "selection_type")
 
@@ -2634,7 +7538,7 @@ class GetFleetPropertiesFleetPropertyCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources whose lifecycleState matches the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -2666,7 +7570,7 @@ class GetFleetPropertiesFleetPropertyCollectionItemResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        Value of the Property
+        Value of the Property.
         """
         return pulumi.get(self, "value")
 
@@ -2674,7 +7578,7 @@ class GetFleetPropertiesFleetPropertyCollectionItemResult(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> str:
         """
-        Format of the value
+        Format of the value.
         """
         return pulumi.get(self, "value_type")
 
@@ -2743,25 +7647,25 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param str application_type: Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-        :param str compartment: Resource Compartment
+        :param str application_type: Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        :param str compartment: Resource Compartment name.
         :param str compartment_id: OCID of the compartment to which the resource belongs to.
-        :param str compliance_state: Compliance State of the Resource
+        :param str compliance_state: Compliance State of the Resource.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str environment_type: Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-        :param str fleet_id: unique Fleet identifier
-        :param str id: unique FleetResource identifier
+        :param str environment_type: Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        :param str fleet_id: Unique Fleet identifier.
+        :param str id: A filter to return only resources whose identifier matches the given identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str product: Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        :param str product: Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         :param int product_count: Count of products within the resource.
         :param str resource_id: The OCID of the resource.
         :param str resource_region: Associated region
         :param str resource_type: Type of the Resource.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param int target_count: Count of targets  within the resource.
+        :param int target_count: Count of targets within the resource.
         :param str tenancy_id: Resource Tenancy Id
-        :param str tenancy_name: Resource Tenancy Name
+        :param str tenancy_name: Resource Tenancy Name.
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -2791,7 +7695,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter(name="applicationType")
     def application_type(self) -> str:
         """
-        Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "application_type")
 
@@ -2799,7 +7703,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter
     def compartment(self) -> str:
         """
-        Resource Compartment
+        Resource Compartment name.
         """
         return pulumi.get(self, "compartment")
 
@@ -2815,7 +7719,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter(name="complianceState")
     def compliance_state(self) -> str:
         """
-        Compliance State of the Resource
+        Compliance State of the Resource.
         """
         return pulumi.get(self, "compliance_state")
 
@@ -2831,7 +7735,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> str:
         """
-        Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "environment_type")
 
@@ -2839,7 +7743,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -2847,7 +7751,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique FleetResource identifier
+        A filter to return only resources whose identifier matches the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -2863,7 +7767,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter
     def product(self) -> str:
         """
-        Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "product")
 
@@ -2903,7 +7807,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources whose lifecycleState matches the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -2919,7 +7823,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter(name="targetCount")
     def target_count(self) -> int:
         """
-        Count of targets  within the resource.
+        Count of targets within the resource.
         """
         return pulumi.get(self, "target_count")
 
@@ -2935,7 +7839,7 @@ class GetFleetResourcesFleetResourceCollectionItemResult(dict):
     @pulumi.getter(name="tenancyName")
     def tenancy_name(self) -> str:
         """
-        Resource Tenancy Name
+        Resource Tenancy Name.
         """
         return pulumi.get(self, "tenancy_name")
 
@@ -2962,7 +7866,7 @@ class GetFleetRuleSelectionCriteriaResult(dict):
                  match_condition: str,
                  rules: Sequence['outputs.GetFleetRuleSelectionCriteriaRuleResult']):
         """
-        :param str match_condition: Rule selection match condition.
+        :param str match_condition: Match condition for the rule selection. Include resources that match all rules or any of the rules.
         :param Sequence['GetFleetRuleSelectionCriteriaRuleArgs'] rules: Rules.
         """
         pulumi.set(__self__, "match_condition", match_condition)
@@ -2972,7 +7876,7 @@ class GetFleetRuleSelectionCriteriaResult(dict):
     @pulumi.getter(name="matchCondition")
     def match_condition(self) -> str:
         """
-        Rule selection match condition.
+        Match condition for the rule selection. Include resources that match all rules or any of the rules.
         """
         return pulumi.get(self, "match_condition")
 
@@ -2993,10 +7897,10 @@ class GetFleetRuleSelectionCriteriaRuleResult(dict):
                  conditions: Sequence['outputs.GetFleetRuleSelectionCriteriaRuleConditionResult'],
                  resource_compartment_id: str):
         """
-        :param str basis: Rule to be be applied on.
-        :param str compartment_id: Please provide the root compartmentId (TenancyId).
+        :param str basis: Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
+        :param str compartment_id: Tenancy Id (Root Compartment Id)for which the rule is created.
         :param Sequence['GetFleetRuleSelectionCriteriaRuleConditionArgs'] conditions: Rule Conditions
-        :param str resource_compartment_id: Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        :param str resource_compartment_id: The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
         """
         pulumi.set(__self__, "basis", basis)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -3007,7 +7911,7 @@ class GetFleetRuleSelectionCriteriaRuleResult(dict):
     @pulumi.getter
     def basis(self) -> str:
         """
-        Rule to be be applied on.
+        Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
         """
         return pulumi.get(self, "basis")
 
@@ -3015,7 +7919,7 @@ class GetFleetRuleSelectionCriteriaRuleResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Please provide the root compartmentId (TenancyId).
+        Tenancy Id (Root Compartment Id)for which the rule is created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -3031,7 +7935,7 @@ class GetFleetRuleSelectionCriteriaRuleResult(dict):
     @pulumi.getter(name="resourceCompartmentId")
     def resource_compartment_id(self) -> str:
         """
-        Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
         """
         return pulumi.get(self, "resource_compartment_id")
 
@@ -3043,9 +7947,9 @@ class GetFleetRuleSelectionCriteriaRuleConditionResult(dict):
                  attr_key: str,
                  attr_value: str):
         """
-        :param str attr_group: Attribute Group.
-        :param str attr_key: Attribute Key.
-        :param str attr_value: Attribute Value.
+        :param str attr_group: Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
+        :param str attr_key: Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
+        :param str attr_value: Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
         """
         pulumi.set(__self__, "attr_group", attr_group)
         pulumi.set(__self__, "attr_key", attr_key)
@@ -3055,7 +7959,7 @@ class GetFleetRuleSelectionCriteriaRuleConditionResult(dict):
     @pulumi.getter(name="attrGroup")
     def attr_group(self) -> str:
         """
-        Attribute Group.
+        Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
         """
         return pulumi.get(self, "attr_group")
 
@@ -3063,7 +7967,7 @@ class GetFleetRuleSelectionCriteriaRuleConditionResult(dict):
     @pulumi.getter(name="attrKey")
     def attr_key(self) -> str:
         """
-        Attribute Key.
+        Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
         """
         return pulumi.get(self, "attr_key")
 
@@ -3071,7 +7975,7 @@ class GetFleetRuleSelectionCriteriaRuleConditionResult(dict):
     @pulumi.getter(name="attrValue")
     def attr_value(self) -> str:
         """
-        Attribute Value.
+        Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
         """
         return pulumi.get(self, "attr_value")
 
@@ -3128,30 +8032,39 @@ class GetFleetTargetsFleetTargetCollectionItemResult(dict):
                  compliance_state: str,
                  display_name: str,
                  id: str,
+                 is_last_discovery_attempt_successful: bool,
                  product: str,
                  resources: Sequence['outputs.GetFleetTargetsFleetTargetCollectionItemResourceResult'],
                  state: str,
                  system_tags: Mapping[str, str],
+                 time_of_last_discovery_attempt: str,
+                 time_of_last_successful_discovery: str,
                  version: str):
         """
         :param str compartment_id: Tenancy OCID
-        :param str compliance_state: Last known compliance state of Target.
+        :param str compliance_state: The last known compliance state of the target.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str id: The OCID of the resource.
-        :param str product: Product Name
-        :param Sequence['GetFleetTargetsFleetTargetCollectionItemResourceArgs'] resources: Resource Information for the Target
+        :param bool is_last_discovery_attempt_successful: A boolean flag that represents whether the last discovery attempt was successful.
+        :param str product: Product Name.
+        :param Sequence['GetFleetTargetsFleetTargetCollectionItemResourceArgs'] resources: Resource Information for the Target.
         :param str state: The current state of the FleetTarget.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str version: Current version of Target
+        :param str time_of_last_discovery_attempt: The time when last discovery was attempted.
+        :param str time_of_last_successful_discovery: The time when the last successful discovery was made.
+        :param str version: Current version of target.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compliance_state", compliance_state)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_last_discovery_attempt_successful", is_last_discovery_attempt_successful)
         pulumi.set(__self__, "product", product)
         pulumi.set(__self__, "resources", resources)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_of_last_discovery_attempt", time_of_last_discovery_attempt)
+        pulumi.set(__self__, "time_of_last_successful_discovery", time_of_last_successful_discovery)
         pulumi.set(__self__, "version", version)
 
     @property
@@ -3166,7 +8079,7 @@ class GetFleetTargetsFleetTargetCollectionItemResult(dict):
     @pulumi.getter(name="complianceState")
     def compliance_state(self) -> str:
         """
-        Last known compliance state of Target.
+        The last known compliance state of the target.
         """
         return pulumi.get(self, "compliance_state")
 
@@ -3187,10 +8100,18 @@ class GetFleetTargetsFleetTargetCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLastDiscoveryAttemptSuccessful")
+    def is_last_discovery_attempt_successful(self) -> bool:
+        """
+        A boolean flag that represents whether the last discovery attempt was successful.
+        """
+        return pulumi.get(self, "is_last_discovery_attempt_successful")
+
+    @property
     @pulumi.getter
     def product(self) -> str:
         """
-        Product Name
+        Product Name.
         """
         return pulumi.get(self, "product")
 
@@ -3198,7 +8119,7 @@ class GetFleetTargetsFleetTargetCollectionItemResult(dict):
     @pulumi.getter
     def resources(self) -> Sequence['outputs.GetFleetTargetsFleetTargetCollectionItemResourceResult']:
         """
-        Resource Information for the Target
+        Resource Information for the Target.
         """
         return pulumi.get(self, "resources")
 
@@ -3219,10 +8140,26 @@ class GetFleetTargetsFleetTargetCollectionItemResult(dict):
         return pulumi.get(self, "system_tags")
 
     @property
+    @pulumi.getter(name="timeOfLastDiscoveryAttempt")
+    def time_of_last_discovery_attempt(self) -> str:
+        """
+        The time when last discovery was attempted.
+        """
+        return pulumi.get(self, "time_of_last_discovery_attempt")
+
+    @property
+    @pulumi.getter(name="timeOfLastSuccessfulDiscovery")
+    def time_of_last_successful_discovery(self) -> str:
+        """
+        The time when the last successful discovery was made.
+        """
+        return pulumi.get(self, "time_of_last_successful_discovery")
+
+    @property
     @pulumi.getter
     def version(self) -> str:
         """
-        Current version of Target
+        Current version of target.
         """
         return pulumi.get(self, "version")
 
@@ -3233,7 +8170,7 @@ class GetFleetTargetsFleetTargetCollectionItemResourceResult(dict):
                  resource_display_name: str,
                  resource_id: str):
         """
-        :param str resource_display_name: Resource Display Name
+        :param str resource_display_name: Resource Display Name.
         :param str resource_id: Resource Identifier
         """
         pulumi.set(__self__, "resource_display_name", resource_display_name)
@@ -3243,7 +8180,7 @@ class GetFleetTargetsFleetTargetCollectionItemResourceResult(dict):
     @pulumi.getter(name="resourceDisplayName")
     def resource_display_name(self) -> str:
         """
-        Resource Display Name
+        Resource Display Name.
         """
         return pulumi.get(self, "resource_display_name")
 
@@ -3262,6 +8199,9 @@ class GetFleetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of the variable.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3270,6 +8210,9 @@ class GetFleetsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of the variable.
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -3300,6 +8243,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     def __init__(__self__, *,
                  application_type: str,
                  compartment_id: str,
+                 credentials: Sequence['outputs.GetFleetsFleetCollectionItemCredentialResult'],
                  defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
@@ -3320,30 +8264,32 @@ class GetFleetsFleetCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param str application_type: A filter to return only resources that match the Application Type given.
+        :param str application_type: A filter to return resources that match the Application Type/Product Stack given..
         :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Sequence['GetFleetsFleetCollectionItemCredentialArgs'] credentials: Credentials associated with the Fleet.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str environment_type: A filter to return only resources that match the Environment Type given.
-        :param str fleet_type: A filter to return only resources their fleetType matches the given fleetType.
+        :param str environment_type: A filter to return resources that match the Environment Type given.
+        :param str fleet_type: A filter to return fleets whose fleetType matches the given fleetType.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str group_type: Group Type associated with Group Fleet.Applicable for GROUP fleet types.
-        :param str id: unique Fleet identifier
-        :param bool is_target_auto_confirm: A value which represents if auto confirming of the targets can be enabled
+        :param str group_type: Group Type associated with Group Fleet. Applicable for GROUP fleet types.
+        :param str id: A filter to return fleets whose id matches the given Fleet identifier
+        :param bool is_target_auto_confirm: A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence['GetFleetsFleetCollectionItemNotificationPreferenceArgs'] notification_preferences: Conditions when met to send notifications on the fleet activities
-        :param Sequence[str] products: Products associated with the Fleet
+        :param Sequence['GetFleetsFleetCollectionItemNotificationPreferenceArgs'] notification_preferences: Notification information to get notified when the fleet status changes.
+        :param Sequence[str] products: Products associated with the Fleet.
         :param str resource_region: Associated region
-        :param str resource_selection_type: Type of resource selection in a fleet.
-        :param Sequence['GetFleetsFleetCollectionItemRuleSelectionCriteriaArgs'] rule_selection_criterias: Rule Selection Criteria
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str resource_selection_type: Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
+        :param Sequence['GetFleetsFleetCollectionItemRuleSelectionCriteriaArgs'] rule_selection_criterias: Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
+        :param str state: A filter to return fleets whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "application_type", application_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -3368,7 +8314,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="applicationType")
     def application_type(self) -> str:
         """
-        A filter to return only resources that match the Application Type given.
+        A filter to return resources that match the Application Type/Product Stack given..
         """
         return pulumi.get(self, "application_type")
 
@@ -3379,6 +8325,14 @@ class GetFleetsFleetCollectionItemResult(dict):
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetFleetsFleetCollectionItemCredentialResult']:
+        """
+        Credentials associated with the Fleet.
+        """
+        return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -3408,7 +8362,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> str:
         """
-        A filter to return only resources that match the Environment Type given.
+        A filter to return resources that match the Environment Type given.
         """
         return pulumi.get(self, "environment_type")
 
@@ -3416,7 +8370,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="fleetType")
     def fleet_type(self) -> str:
         """
-        A filter to return only resources their fleetType matches the given fleetType.
+        A filter to return fleets whose fleetType matches the given fleetType.
         """
         return pulumi.get(self, "fleet_type")
 
@@ -3432,7 +8386,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="groupType")
     def group_type(self) -> str:
         """
-        Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+        Group Type associated with Group Fleet. Applicable for GROUP fleet types.
         """
         return pulumi.get(self, "group_type")
 
@@ -3440,7 +8394,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique Fleet identifier
+        A filter to return fleets whose id matches the given Fleet identifier
         """
         return pulumi.get(self, "id")
 
@@ -3448,7 +8402,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="isTargetAutoConfirm")
     def is_target_auto_confirm(self) -> bool:
         """
-        A value which represents if auto confirming of the targets can be enabled
+        A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         """
         return pulumi.get(self, "is_target_auto_confirm")
 
@@ -3464,7 +8418,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="notificationPreferences")
     def notification_preferences(self) -> Sequence['outputs.GetFleetsFleetCollectionItemNotificationPreferenceResult']:
         """
-        Conditions when met to send notifications on the fleet activities
+        Notification information to get notified when the fleet status changes.
         """
         return pulumi.get(self, "notification_preferences")
 
@@ -3472,7 +8426,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter
     def products(self) -> Sequence[str]:
         """
-        Products associated with the Fleet
+        Products associated with the Fleet.
         """
         return pulumi.get(self, "products")
 
@@ -3488,7 +8442,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="resourceSelectionType")
     def resource_selection_type(self) -> str:
         """
-        Type of resource selection in a fleet.
+        Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         """
         return pulumi.get(self, "resource_selection_type")
 
@@ -3496,7 +8450,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="ruleSelectionCriterias")
     def rule_selection_criterias(self) -> Sequence['outputs.GetFleetsFleetCollectionItemRuleSelectionCriteriaResult']:
         """
-        Rule Selection Criteria
+        Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         """
         return pulumi.get(self, "rule_selection_criterias")
 
@@ -3504,7 +8458,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return fleets whose lifecycleState matches the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -3534,6 +8488,316 @@ class GetFleetsFleetCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetFleetsFleetCollectionItemCredentialResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 display_name: str,
+                 entity_specifics: Sequence['outputs.GetFleetsFleetCollectionItemCredentialEntitySpecificResult'],
+                 passwords: Sequence['outputs.GetFleetsFleetCollectionItemCredentialPasswordResult'],
+                 users: Sequence['outputs.GetFleetsFleetCollectionItemCredentialUserResult']):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Sequence['GetFleetsFleetCollectionItemCredentialEntitySpecificArgs'] entity_specifics: Credential specific Details.
+        :param Sequence['GetFleetsFleetCollectionItemCredentialPasswordArgs'] passwords: Credential Details.
+        :param Sequence['GetFleetsFleetCollectionItemCredentialUserArgs'] users: Credential Details.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_specifics", entity_specifics)
+        pulumi.set(__self__, "passwords", passwords)
+        pulumi.set(__self__, "users", users)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="entitySpecifics")
+    def entity_specifics(self) -> Sequence['outputs.GetFleetsFleetCollectionItemCredentialEntitySpecificResult']:
+        """
+        Credential specific Details.
+        """
+        return pulumi.get(self, "entity_specifics")
+
+    @property
+    @pulumi.getter
+    def passwords(self) -> Sequence['outputs.GetFleetsFleetCollectionItemCredentialPasswordResult']:
+        """
+        Credential Details.
+        """
+        return pulumi.get(self, "passwords")
+
+    @property
+    @pulumi.getter
+    def users(self) -> Sequence['outputs.GetFleetsFleetCollectionItemCredentialUserResult']:
+        """
+        Credential Details.
+        """
+        return pulumi.get(self, "users")
+
+
+@pulumi.output_type
+class GetFleetsFleetCollectionItemCredentialEntitySpecificResult(dict):
+    def __init__(__self__, *,
+                 credential_level: str,
+                 resource_id: str,
+                 target: str,
+                 variables: Sequence['outputs.GetFleetsFleetCollectionItemCredentialEntitySpecificVariableResult']):
+        """
+        :param str credential_level: At what level the credential is provided?
+        :param str resource_id: OCID of the resource.
+        :param str target: Target name for which the credential is provided.
+        :param Sequence['GetFleetsFleetCollectionItemCredentialEntitySpecificVariableArgs'] variables: List of fleet credential variables.
+        """
+        pulumi.set(__self__, "credential_level", credential_level)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "target", target)
+        pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter(name="credentialLevel")
+    def credential_level(self) -> str:
+        """
+        At what level the credential is provided?
+        """
+        return pulumi.get(self, "credential_level")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        OCID of the resource.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        """
+        Target name for which the credential is provided.
+        """
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Sequence['outputs.GetFleetsFleetCollectionItemCredentialEntitySpecificVariableResult']:
+        """
+        List of fleet credential variables.
+        """
+        return pulumi.get(self, "variables")
+
+
+@pulumi.output_type
+class GetFleetsFleetCollectionItemCredentialEntitySpecificVariableResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of the variable.
+        :param str value: Value of the Property.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the variable.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the Property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetFleetsFleetCollectionItemCredentialPasswordResult(dict):
+    def __init__(__self__, *,
+                 credential_type: str,
+                 key_id: str,
+                 key_version: str,
+                 secret_id: str,
+                 secret_version: str,
+                 value: str,
+                 vault_id: str):
+        """
+        :param str credential_type: Credential Type.
+        :param str key_id: OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+        :param str key_version: The Vault Key version.
+        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
+        :param str secret_version: The secret version.
+        :param str value: Value of the Property.
+        :param str vault_id: OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "key_version", key_version)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "secret_version", secret_version)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        """
+        Credential Type.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> str:
+        """
+        OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+        """
+        return pulumi.get(self, "key_id")
+
+    @property
+    @pulumi.getter(name="keyVersion")
+    def key_version(self) -> str:
+        """
+        The Vault Key version.
+        """
+        return pulumi.get(self, "key_version")
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter(name="secretVersion")
+    def secret_version(self) -> str:
+        """
+        The secret version.
+        """
+        return pulumi.get(self, "secret_version")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the Property.
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetFleetsFleetCollectionItemCredentialUserResult(dict):
+    def __init__(__self__, *,
+                 credential_type: str,
+                 key_id: str,
+                 key_version: str,
+                 secret_id: str,
+                 secret_version: str,
+                 value: str,
+                 vault_id: str):
+        """
+        :param str credential_type: Credential Type.
+        :param str key_id: OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+        :param str key_version: The Vault Key version.
+        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
+        :param str secret_version: The secret version.
+        :param str value: Value of the Property.
+        :param str vault_id: OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "key_version", key_version)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "secret_version", secret_version)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        """
+        Credential Type.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> str:
+        """
+        OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+        """
+        return pulumi.get(self, "key_id")
+
+    @property
+    @pulumi.getter(name="keyVersion")
+    def key_version(self) -> str:
+        """
+        The Vault Key version.
+        """
+        return pulumi.get(self, "key_version")
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter(name="secretVersion")
+    def secret_version(self) -> str:
+        """
+        The secret version.
+        """
+        return pulumi.get(self, "secret_version")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the Property.
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
 class GetFleetsFleetCollectionItemNotificationPreferenceResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
@@ -3541,8 +8805,8 @@ class GetFleetsFleetCollectionItemNotificationPreferenceResult(dict):
                  topic_id: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Sequence['GetFleetsFleetCollectionItemNotificationPreferencePreferenceArgs'] preferences: Preferences to send notifications on the fleet activities
-        :param str topic_id: Topic Id where the notifications will be directed
+        :param Sequence['GetFleetsFleetCollectionItemNotificationPreferencePreferenceArgs'] preferences: Preferences to send notifications on the fleet activities.
+        :param str topic_id: Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "preferences", preferences)
@@ -3560,7 +8824,7 @@ class GetFleetsFleetCollectionItemNotificationPreferenceResult(dict):
     @pulumi.getter
     def preferences(self) -> Sequence['outputs.GetFleetsFleetCollectionItemNotificationPreferencePreferenceResult']:
         """
-        Preferences to send notifications on the fleet activities
+        Preferences to send notifications on the fleet activities.
         """
         return pulumi.get(self, "preferences")
 
@@ -3568,7 +8832,7 @@ class GetFleetsFleetCollectionItemNotificationPreferenceResult(dict):
     @pulumi.getter(name="topicId")
     def topic_id(self) -> str:
         """
-        Topic Id where the notifications will be directed
+        Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
         """
         return pulumi.get(self, "topic_id")
 
@@ -3580,7 +8844,7 @@ class GetFleetsFleetCollectionItemNotificationPreferencePreferenceResult(dict):
                  on_topology_modification: bool,
                  on_upcoming_schedule: bool):
         """
-        :param bool on_job_failure: Enables or disables notification on Job Failures.'
+        :param bool on_job_failure: Enables or disables notification on Job Failures.
         :param bool on_topology_modification: Enables or disables notification on Environment Fleet Topology Modification.
         :param bool on_upcoming_schedule: Enables notification on upcoming schedule.
         """
@@ -3592,7 +8856,7 @@ class GetFleetsFleetCollectionItemNotificationPreferencePreferenceResult(dict):
     @pulumi.getter(name="onJobFailure")
     def on_job_failure(self) -> bool:
         """
-        Enables or disables notification on Job Failures.'
+        Enables or disables notification on Job Failures.
         """
         return pulumi.get(self, "on_job_failure")
 
@@ -3619,7 +8883,7 @@ class GetFleetsFleetCollectionItemRuleSelectionCriteriaResult(dict):
                  match_condition: str,
                  rules: Sequence['outputs.GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleResult']):
         """
-        :param str match_condition: Rule selection match condition.
+        :param str match_condition: Match condition for the rule selection. Include resources that match all rules or any of the rules.
         :param Sequence['GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleArgs'] rules: Rules.
         """
         pulumi.set(__self__, "match_condition", match_condition)
@@ -3629,7 +8893,7 @@ class GetFleetsFleetCollectionItemRuleSelectionCriteriaResult(dict):
     @pulumi.getter(name="matchCondition")
     def match_condition(self) -> str:
         """
-        Rule selection match condition.
+        Match condition for the rule selection. Include resources that match all rules or any of the rules.
         """
         return pulumi.get(self, "match_condition")
 
@@ -3650,10 +8914,10 @@ class GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleResult(dict):
                  conditions: Sequence['outputs.GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleConditionResult'],
                  resource_compartment_id: str):
         """
-        :param str basis: Rule to be be applied on.
+        :param str basis: Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleConditionArgs'] conditions: Rule Conditions
-        :param str resource_compartment_id: Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        :param str resource_compartment_id: The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
         """
         pulumi.set(__self__, "basis", basis)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -3664,7 +8928,7 @@ class GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleResult(dict):
     @pulumi.getter
     def basis(self) -> str:
         """
-        Rule to be be applied on.
+        Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
         """
         return pulumi.get(self, "basis")
 
@@ -3688,7 +8952,7 @@ class GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleResult(dict):
     @pulumi.getter(name="resourceCompartmentId")
     def resource_compartment_id(self) -> str:
         """
-        Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
         """
         return pulumi.get(self, "resource_compartment_id")
 
@@ -3700,9 +8964,9 @@ class GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleConditionResult(dict)
                  attr_key: str,
                  attr_value: str):
         """
-        :param str attr_group: Attribute Group.
-        :param str attr_key: Attribute Key.
-        :param str attr_value: Attribute Value.
+        :param str attr_group: Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
+        :param str attr_key: Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
+        :param str attr_value: Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
         """
         pulumi.set(__self__, "attr_group", attr_group)
         pulumi.set(__self__, "attr_key", attr_key)
@@ -3712,7 +8976,7 @@ class GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleConditionResult(dict)
     @pulumi.getter(name="attrGroup")
     def attr_group(self) -> str:
         """
-        Attribute Group.
+        Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
         """
         return pulumi.get(self, "attr_group")
 
@@ -3720,7 +8984,7 @@ class GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleConditionResult(dict)
     @pulumi.getter(name="attrKey")
     def attr_key(self) -> str:
         """
-        Attribute Key.
+        Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
         """
         return pulumi.get(self, "attr_key")
 
@@ -3728,7 +8992,7 @@ class GetFleetsFleetCollectionItemRuleSelectionCriteriaRuleConditionResult(dict)
     @pulumi.getter(name="attrValue")
     def attr_value(self) -> str:
         """
-        Attribute Value.
+        Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
         """
         return pulumi.get(self, "attr_value")
 
@@ -3794,14 +9058,14 @@ class GetInventoryResourcesInventoryResourceCollectionItemResult(dict):
                  system_tags: Mapping[str, str],
                  type: str):
         """
-        :param str availability_domain: Availability Domain of the resource
-        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str availability_domain: Availability Domain of the resource.
+        :param str compartment_id: A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the resource.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str resource_compartment_id: Resource Compartment ID
+        :param str resource_compartment_id: A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
         :param str resource_region: Resource Region
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3824,7 +9088,7 @@ class GetInventoryResourcesInventoryResourceCollectionItemResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        Availability Domain of the resource
+        Availability Domain of the resource.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -3832,7 +9096,7 @@ class GetInventoryResourcesInventoryResourceCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The ID of the compartment in which to list resources.
+        A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -3880,7 +9144,7 @@ class GetInventoryResourcesInventoryResourceCollectionItemResult(dict):
     @pulumi.getter(name="resourceCompartmentId")
     def resource_compartment_id(self) -> str:
         """
-        Resource Compartment ID
+        A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
         """
         return pulumi.get(self, "resource_compartment_id")
 
@@ -3983,20 +9247,20 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str duration: Duration if schedule type is Custom
+        :param str duration: Duration of the maintenance window. Specify how long the maintenance window remains open.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique MaintenanceWindow identifier
-        :param bool is_outage: Does the maintenenace window cause outage?
-        :param bool is_recurring: Is this is a recurring maintenance window
+        :param str id: A filter to return only the Maintenance Windows whose identifier matches the given identifier.
+        :param bool is_outage: Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
+        :param bool is_recurring: Is this a recurring maintenance window?
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str maintenance_window_type: Type of the MaintenanceWindow.
-        :param str recurrences: Recurrence rule specification if recurring
+        :param str recurrences: Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         :param str resource_region: Associated region
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param int task_initiation_cutoff: Task initiation cutoff
+        :param int task_initiation_cutoff: Task initiation cutoff time for the maintenance window.
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
-        :param str time_schedule_start: Start time of schedule
+        :param str time_schedule_start: Specify the date and time of the day that the maintenance window starts.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -4055,7 +9319,7 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @pulumi.getter
     def duration(self) -> str:
         """
-        Duration if schedule type is Custom
+        Duration of the maintenance window. Specify how long the maintenance window remains open.
         """
         return pulumi.get(self, "duration")
 
@@ -4071,7 +9335,7 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique MaintenanceWindow identifier
+        A filter to return only the Maintenance Windows whose identifier matches the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -4079,7 +9343,7 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @pulumi.getter(name="isOutage")
     def is_outage(self) -> bool:
         """
-        Does the maintenenace window cause outage?
+        Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
         """
         return pulumi.get(self, "is_outage")
 
@@ -4087,7 +9351,7 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @pulumi.getter(name="isRecurring")
     def is_recurring(self) -> bool:
         """
-        Is this is a recurring maintenance window
+        Is this a recurring maintenance window?
         """
         return pulumi.get(self, "is_recurring")
 
@@ -4111,7 +9375,7 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @pulumi.getter
     def recurrences(self) -> str:
         """
-        Recurrence rule specification if recurring
+        Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         """
         return pulumi.get(self, "recurrences")
 
@@ -4127,7 +9391,7 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources whose lifecycleState matches the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -4143,7 +9407,7 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @pulumi.getter(name="taskInitiationCutoff")
     def task_initiation_cutoff(self) -> int:
         """
-        Task initiation cutoff
+        Task initiation cutoff time for the maintenance window.
         """
         return pulumi.get(self, "task_initiation_cutoff")
 
@@ -4159,7 +9423,7 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
     @pulumi.getter(name="timeScheduleStart")
     def time_schedule_start(self) -> str:
         """
-        Start time of schedule
+        Specify the date and time of the day that the maintenance window starts.
         """
         return pulumi.get(self, "time_schedule_start")
 
@@ -4170,6 +9434,98 @@ class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetManagedEntityCountsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedEntityCountsManagedEntityAggregationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedEntityCountsManagedEntityAggregationCollectionItemResult']):
+        """
+        :param Sequence['GetManagedEntityCountsManagedEntityAggregationCollectionItemArgs'] items: List of ManagedEntityAggregation objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedEntityCountsManagedEntityAggregationCollectionItemResult']:
+        """
+        List of ManagedEntityAggregation objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedEntityCountsManagedEntityAggregationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 dimensions: Sequence['outputs.GetManagedEntityCountsManagedEntityAggregationCollectionItemDimensionResult'],
+                 managed_entity_count_count: int):
+        """
+        :param Sequence['GetManagedEntityCountsManagedEntityAggregationCollectionItemDimensionArgs'] dimensions: Aggregated summary information for ComplianceRecord
+        :param int managed_entity_count_count: count of Managed Entities in a Tenancy.
+        """
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "managed_entity_count_count", managed_entity_count_count)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetManagedEntityCountsManagedEntityAggregationCollectionItemDimensionResult']:
+        """
+        Aggregated summary information for ComplianceRecord
+        """
+        return pulumi.get(self, "dimensions")
+
+    @property
+    @pulumi.getter(name="managedEntityCountCount")
+    def managed_entity_count_count(self) -> int:
+        """
+        count of Managed Entities in a Tenancy.
+        """
+        return pulumi.get(self, "managed_entity_count_count")
+
+
+@pulumi.output_type
+class GetManagedEntityCountsManagedEntityAggregationCollectionItemDimensionResult(dict):
+    def __init__(__self__, *,
+                 entity: str):
+        """
+        :param str entity: Level at which the compliance is calculated.
+        """
+        pulumi.set(__self__, "entity", entity)
+
+    @property
+    @pulumi.getter
+    def entity(self) -> str:
+        """
+        Level at which the compliance is calculated.
+        """
+        return pulumi.get(self, "entity")
 
 
 @pulumi.output_type
@@ -4204,7 +9560,7 @@ class GetOnboardingPoliciesOnboardingPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOnboardingPoliciesOnboardingPolicyCollectionItemResult']):
         """
-        :param Sequence['GetOnboardingPoliciesOnboardingPolicyCollectionItemArgs'] items: List of FleetAppManagementService Onboard policies.
+        :param Sequence['GetOnboardingPoliciesOnboardingPolicyCollectionItemArgs'] items: List of Fleet Application Management Onboard policies.
         """
         pulumi.set(__self__, "items", items)
 
@@ -4212,7 +9568,7 @@ class GetOnboardingPoliciesOnboardingPolicyCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetOnboardingPoliciesOnboardingPolicyCollectionItemResult']:
         """
-        List of FleetAppManagementService Onboard policies.
+        List of Fleet Application Management Onboard policies.
         """
         return pulumi.get(self, "items")
 
@@ -4311,7 +9667,7 @@ class GetOnboardingsOnboardingCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOnboardingsOnboardingCollectionItemResult']):
         """
-        :param Sequence['GetOnboardingsOnboardingCollectionItemArgs'] items: List of FleetAppManagementService Onboardings.
+        :param Sequence['GetOnboardingsOnboardingCollectionItemArgs'] items: List of Fleet Application Management Onboardings.
         """
         pulumi.set(__self__, "items", items)
 
@@ -4319,7 +9675,7 @@ class GetOnboardingsOnboardingCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetOnboardingsOnboardingCollectionItemResult']:
         """
-        List of FleetAppManagementService Onboardings.
+        List of Fleet Application Management Onboardings.
         """
         return pulumi.get(self, "items")
 
@@ -4327,10 +9683,13 @@ class GetOnboardingsOnboardingCollectionResult(dict):
 @pulumi.output_type
 class GetOnboardingsOnboardingCollectionItemResult(dict):
     def __init__(__self__, *,
+                 applied_policies: Sequence['outputs.GetOnboardingsOnboardingCollectionItemAppliedPolicyResult'],
                  compartment_id: str,
+                 discovery_frequency: str,
                  id: str,
                  is_cost_tracking_tag_enabled: bool,
                  is_fams_tag_enabled: bool,
+                 items: Sequence['outputs.GetOnboardingsOnboardingCollectionItemItemResult'],
                  resource_region: str,
                  state: str,
                  system_tags: Mapping[str, str],
@@ -4338,21 +9697,27 @@ class GetOnboardingsOnboardingCollectionItemResult(dict):
                  time_updated: str,
                  version: str):
         """
+        :param Sequence['GetOnboardingsOnboardingCollectionItemAppliedPolicyArgs'] applied_policies: Summary of the Fleet Application Management Onboard Policy.
         :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str discovery_frequency: Provide discovery frequency.
         :param str id: unique onboarding identifier
-        :param bool is_cost_tracking_tag_enabled: A value determining if cost tracking tag is enabled or not
-        :param bool is_fams_tag_enabled: A value determining FAMS tag is enabled or not
+        :param bool is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+        :param bool is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+        :param Sequence['GetOnboardingsOnboardingCollectionItemItemArgs'] items: List of Fleet Application Management Onboardings.
         :param str resource_region: Associated region
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param str version: Version of FAMS the tenant is onboarded to.
+        :param str version: The version of Fleet Application Management that the tenant is onboarded to.
         """
+        pulumi.set(__self__, "applied_policies", applied_policies)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "discovery_frequency", discovery_frequency)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_cost_tracking_tag_enabled", is_cost_tracking_tag_enabled)
         pulumi.set(__self__, "is_fams_tag_enabled", is_fams_tag_enabled)
+        pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "resource_region", resource_region)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -4361,12 +9726,28 @@ class GetOnboardingsOnboardingCollectionItemResult(dict):
         pulumi.set(__self__, "version", version)
 
     @property
+    @pulumi.getter(name="appliedPolicies")
+    def applied_policies(self) -> Sequence['outputs.GetOnboardingsOnboardingCollectionItemAppliedPolicyResult']:
+        """
+        Summary of the Fleet Application Management Onboard Policy.
+        """
+        return pulumi.get(self, "applied_policies")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="discoveryFrequency")
+    def discovery_frequency(self) -> str:
+        """
+        Provide discovery frequency.
+        """
+        return pulumi.get(self, "discovery_frequency")
 
     @property
     @pulumi.getter
@@ -4380,7 +9761,7 @@ class GetOnboardingsOnboardingCollectionItemResult(dict):
     @pulumi.getter(name="isCostTrackingTagEnabled")
     def is_cost_tracking_tag_enabled(self) -> bool:
         """
-        A value determining if cost tracking tag is enabled or not
+        A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         """
         return pulumi.get(self, "is_cost_tracking_tag_enabled")
 
@@ -4388,9 +9769,1486 @@ class GetOnboardingsOnboardingCollectionItemResult(dict):
     @pulumi.getter(name="isFamsTagEnabled")
     def is_fams_tag_enabled(self) -> bool:
         """
-        A value determining FAMS tag is enabled or not
+        A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
         """
         return pulumi.get(self, "is_fams_tag_enabled")
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOnboardingsOnboardingCollectionItemItemResult']:
+        """
+        List of Fleet Application Management Onboardings.
+        """
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter(name="resourceRegion")
+    def resource_region(self) -> str:
+        """
+        Associated region
+        """
+        return pulumi.get(self, "resource_region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of Fleet Application Management that the tenant is onboarded to.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetOnboardingsOnboardingCollectionItemAppliedPolicyResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 statements: Sequence[str],
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str id: unique onboarding identifier
+        :param Sequence[str] statements: Policy statements.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "statements", statements)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique onboarding identifier
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def statements(self) -> Sequence[str]:
+        """
+        Policy statements.
+        """
+        return pulumi.get(self, "statements")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetOnboardingsOnboardingCollectionItemItemResult(dict):
+    def __init__(__self__, *,
+                 applied_policies: Sequence['outputs.GetOnboardingsOnboardingCollectionItemItemAppliedPolicyResult'],
+                 compartment_id: str,
+                 discovery_frequency: str,
+                 id: str,
+                 is_cost_tracking_tag_enabled: bool,
+                 is_fams_tag_enabled: bool,
+                 resource_region: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Sequence['GetOnboardingsOnboardingCollectionItemItemAppliedPolicyArgs'] applied_policies: Summary of the Fleet Application Management Onboard Policy.
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str discovery_frequency: Provide discovery frequency.
+        :param str id: unique onboarding identifier
+        :param bool is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+        :param bool is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+        :param str resource_region: Associated region
+        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        :param str version: The version of Fleet Application Management that the tenant is onboarded to.
+        """
+        pulumi.set(__self__, "applied_policies", applied_policies)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "discovery_frequency", discovery_frequency)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_cost_tracking_tag_enabled", is_cost_tracking_tag_enabled)
+        pulumi.set(__self__, "is_fams_tag_enabled", is_fams_tag_enabled)
+        pulumi.set(__self__, "resource_region", resource_region)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="appliedPolicies")
+    def applied_policies(self) -> Sequence['outputs.GetOnboardingsOnboardingCollectionItemItemAppliedPolicyResult']:
+        """
+        Summary of the Fleet Application Management Onboard Policy.
+        """
+        return pulumi.get(self, "applied_policies")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="discoveryFrequency")
+    def discovery_frequency(self) -> str:
+        """
+        Provide discovery frequency.
+        """
+        return pulumi.get(self, "discovery_frequency")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique onboarding identifier
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCostTrackingTagEnabled")
+    def is_cost_tracking_tag_enabled(self) -> bool:
+        """
+        A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+        """
+        return pulumi.get(self, "is_cost_tracking_tag_enabled")
+
+    @property
+    @pulumi.getter(name="isFamsTagEnabled")
+    def is_fams_tag_enabled(self) -> bool:
+        """
+        A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+        """
+        return pulumi.get(self, "is_fams_tag_enabled")
+
+    @property
+    @pulumi.getter(name="resourceRegion")
+    def resource_region(self) -> str:
+        """
+        Associated region
+        """
+        return pulumi.get(self, "resource_region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of Fleet Application Management that the tenant is onboarded to.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetOnboardingsOnboardingCollectionItemItemAppliedPolicyResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 statements: Sequence[str],
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str id: unique onboarding identifier
+        :param Sequence[str] statements: Policy statements.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "statements", statements)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique onboarding identifier
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def statements(self) -> Sequence[str]:
+        """
+        Policy statements.
+        """
+        return pulumi.get(self, "statements")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetPatchArtifactDetailResult(dict):
+    def __init__(__self__, *,
+                 artifact: Sequence['outputs.GetPatchArtifactDetailArtifactResult'],
+                 artifacts: Sequence['outputs.GetPatchArtifactDetailArtifactResult'],
+                 category: str):
+        """
+        :param Sequence['GetPatchArtifactDetailArtifactArgs'] artifact: Patch artifact metadata Details which is common for all platforms.
+        :param Sequence['GetPatchArtifactDetailArtifactArgs'] artifacts: Artifacts.
+        :param str category: Artifact category details.
+        """
+        pulumi.set(__self__, "artifact", artifact)
+        pulumi.set(__self__, "artifacts", artifacts)
+        pulumi.set(__self__, "category", category)
+
+    @property
+    @pulumi.getter
+    def artifact(self) -> Sequence['outputs.GetPatchArtifactDetailArtifactResult']:
+        """
+        Patch artifact metadata Details which is common for all platforms.
+        """
+        return pulumi.get(self, "artifact")
+
+    @property
+    @pulumi.getter
+    def artifacts(self) -> Sequence['outputs.GetPatchArtifactDetailArtifactResult']:
+        """
+        Artifacts.
+        """
+        return pulumi.get(self, "artifacts")
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        Artifact category details.
+        """
+        return pulumi.get(self, "category")
+
+
+@pulumi.output_type
+class GetPatchArtifactDetailArtifactResult(dict):
+    def __init__(__self__, *,
+                 architecture: str,
+                 contents: Sequence['outputs.GetPatchArtifactDetailArtifactContentResult'],
+                 os_type: str):
+        """
+        :param str architecture: System architecture.
+        :param Sequence['GetPatchArtifactDetailArtifactContentArgs'] contents: Content Source details.
+        :param str os_type: The OS type the patch is applicable for.
+        """
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "contents", contents)
+        pulumi.set(__self__, "os_type", os_type)
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        System architecture.
+        """
+        return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter
+    def contents(self) -> Sequence['outputs.GetPatchArtifactDetailArtifactContentResult']:
+        """
+        Content Source details.
+        """
+        return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter(name="osType")
+    def os_type(self) -> str:
+        """
+        The OS type the patch is applicable for.
+        """
+        return pulumi.get(self, "os_type")
+
+
+@pulumi.output_type
+class GetPatchArtifactDetailArtifactContentResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 checksum: str,
+                 namespace: str,
+                 object: str,
+                 source_type: str):
+        """
+        :param str bucket: Bucket Name.
+        :param str checksum: md5 checksum of the artifact.
+        :param str namespace: Namespace.
+        :param str object: Object Name.
+        :param str source_type: Content Source type details.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "checksum", checksum)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Bucket Name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def checksum(self) -> str:
+        """
+        md5 checksum of the artifact.
+        """
+        return pulumi.get(self, "checksum")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        Object Name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Content Source type details.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetPatchDependentPatchResult(dict):
+    def __init__(__self__, *,
+                 id: str):
+        """
+        :param str id: The OCID of the resource.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPatchPatchTypeResult(dict):
+    def __init__(__self__, *,
+                 platform_configuration_id: str):
+        """
+        :param str platform_configuration_id: PlatformConfiguration Id corresponding to the Product
+        """
+        pulumi.set(__self__, "platform_configuration_id", platform_configuration_id)
+
+    @property
+    @pulumi.getter(name="platformConfigurationId")
+    def platform_configuration_id(self) -> str:
+        """
+        PlatformConfiguration Id corresponding to the Product
+        """
+        return pulumi.get(self, "platform_configuration_id")
+
+
+@pulumi.output_type
+class GetPatchProductResult(dict):
+    def __init__(__self__, *,
+                 platform_configuration_id: str,
+                 version: str):
+        """
+        :param str platform_configuration_id: PlatformConfiguration Id corresponding to the Product
+        :param str version: product version.
+        """
+        pulumi.set(__self__, "platform_configuration_id", platform_configuration_id)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="platformConfigurationId")
+    def platform_configuration_id(self) -> str:
+        """
+        PlatformConfiguration Id corresponding to the Product
+        """
+        return pulumi.get(self, "platform_configuration_id")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        product version.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetPatchesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only resources that match the entire name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPatchesPatchCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPatchesPatchCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPatchesPatchCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPatchesPatchCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 artifact_details: Sequence['outputs.GetPatchesPatchCollectionItemArtifactDetailResult'],
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 dependent_patches: Sequence['outputs.GetPatchesPatchCollectionItemDependentPatchResult'],
+                 description: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 name: str,
+                 patch_types: Sequence['outputs.GetPatchesPatchCollectionItemPatchTypeResult'],
+                 products: Sequence['outputs.GetPatchesPatchCollectionItemProductResult'],
+                 resource_region: str,
+                 severity: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_released: str,
+                 time_updated: str,
+                 type: str):
+        """
+        :param Sequence['GetPatchesPatchCollectionItemArtifactDetailArgs'] artifact_details: Patch artifact description and content details.
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Sequence['GetPatchesPatchCollectionItemDependentPatchArgs'] dependent_patches: Dependent Patches for this patch.
+        :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: unique Patch identifier
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param str name: A filter to return only resources that match the entire name given.
+        :param Sequence['GetPatchesPatchCollectionItemPatchTypeArgs'] patch_types: Patch Type
+        :param Sequence['GetPatchesPatchCollectionItemProductArgs'] products: Product
+        :param str resource_region: Associated region
+        :param str severity: Patch Severity.
+        :param str state: The current state of the Patch.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_released: Date when the patch was released.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        :param str type: DefinedBy type.
+        """
+        pulumi.set(__self__, "artifact_details", artifact_details)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "dependent_patches", dependent_patches)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "patch_types", patch_types)
+        pulumi.set(__self__, "products", products)
+        pulumi.set(__self__, "resource_region", resource_region)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_released", time_released)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="artifactDetails")
+    def artifact_details(self) -> Sequence['outputs.GetPatchesPatchCollectionItemArtifactDetailResult']:
+        """
+        Patch artifact description and content details.
+        """
+        return pulumi.get(self, "artifact_details")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="dependentPatches")
+    def dependent_patches(self) -> Sequence['outputs.GetPatchesPatchCollectionItemDependentPatchResult']:
+        """
+        Dependent Patches for this patch.
+        """
+        return pulumi.get(self, "dependent_patches")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique Patch identifier
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="patchTypes")
+    def patch_types(self) -> Sequence['outputs.GetPatchesPatchCollectionItemPatchTypeResult']:
+        """
+        Patch Type
+        """
+        return pulumi.get(self, "patch_types")
+
+    @property
+    @pulumi.getter
+    def products(self) -> Sequence['outputs.GetPatchesPatchCollectionItemProductResult']:
+        """
+        Product
+        """
+        return pulumi.get(self, "products")
+
+    @property
+    @pulumi.getter(name="resourceRegion")
+    def resource_region(self) -> str:
+        """
+        Associated region
+        """
+        return pulumi.get(self, "resource_region")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> str:
+        """
+        Patch Severity.
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the Patch.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> str:
+        """
+        Date when the patch was released.
+        """
+        return pulumi.get(self, "time_released")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        DefinedBy type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPatchesPatchCollectionItemArtifactDetailResult(dict):
+    def __init__(__self__, *,
+                 artifact: Sequence['outputs.GetPatchesPatchCollectionItemArtifactDetailArtifactResult'],
+                 artifacts: Sequence['outputs.GetPatchesPatchCollectionItemArtifactDetailArtifactResult'],
+                 category: str):
+        """
+        :param Sequence['GetPatchesPatchCollectionItemArtifactDetailArtifactArgs'] artifact: Patch artifact metadata Details which is common for all platforms.
+        :param Sequence['GetPatchesPatchCollectionItemArtifactDetailArtifactArgs'] artifacts: Artifacts.
+        :param str category: Artifact category details.
+        """
+        pulumi.set(__self__, "artifact", artifact)
+        pulumi.set(__self__, "artifacts", artifacts)
+        pulumi.set(__self__, "category", category)
+
+    @property
+    @pulumi.getter
+    def artifact(self) -> Sequence['outputs.GetPatchesPatchCollectionItemArtifactDetailArtifactResult']:
+        """
+        Patch artifact metadata Details which is common for all platforms.
+        """
+        return pulumi.get(self, "artifact")
+
+    @property
+    @pulumi.getter
+    def artifacts(self) -> Sequence['outputs.GetPatchesPatchCollectionItemArtifactDetailArtifactResult']:
+        """
+        Artifacts.
+        """
+        return pulumi.get(self, "artifacts")
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        Artifact category details.
+        """
+        return pulumi.get(self, "category")
+
+
+@pulumi.output_type
+class GetPatchesPatchCollectionItemArtifactDetailArtifactResult(dict):
+    def __init__(__self__, *,
+                 architecture: str,
+                 contents: Sequence['outputs.GetPatchesPatchCollectionItemArtifactDetailArtifactContentResult'],
+                 os_type: str):
+        """
+        :param str architecture: System architecture.
+        :param Sequence['GetPatchesPatchCollectionItemArtifactDetailArtifactContentArgs'] contents: Content Source details.
+        :param str os_type: The OS type the patch is applicable for.
+        """
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "contents", contents)
+        pulumi.set(__self__, "os_type", os_type)
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        System architecture.
+        """
+        return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter
+    def contents(self) -> Sequence['outputs.GetPatchesPatchCollectionItemArtifactDetailArtifactContentResult']:
+        """
+        Content Source details.
+        """
+        return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter(name="osType")
+    def os_type(self) -> str:
+        """
+        The OS type the patch is applicable for.
+        """
+        return pulumi.get(self, "os_type")
+
+
+@pulumi.output_type
+class GetPatchesPatchCollectionItemArtifactDetailArtifactContentResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 checksum: str,
+                 namespace: str,
+                 object: str,
+                 source_type: str):
+        """
+        :param str bucket: Bucket Name.
+        :param str checksum: md5 checksum of the artifact.
+        :param str namespace: Namespace.
+        :param str object: Object Name.
+        :param str source_type: Content Source type details.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "checksum", checksum)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Bucket Name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def checksum(self) -> str:
+        """
+        md5 checksum of the artifact.
+        """
+        return pulumi.get(self, "checksum")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        Object Name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Content Source type details.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetPatchesPatchCollectionItemDependentPatchResult(dict):
+    def __init__(__self__, *,
+                 id: str):
+        """
+        :param str id: unique Patch identifier
+        """
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique Patch identifier
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPatchesPatchCollectionItemPatchTypeResult(dict):
+    def __init__(__self__, *,
+                 platform_configuration_id: str):
+        """
+        :param str platform_configuration_id: PlatformConfiguration Id corresponding to the Product
+        """
+        pulumi.set(__self__, "platform_configuration_id", platform_configuration_id)
+
+    @property
+    @pulumi.getter(name="platformConfigurationId")
+    def platform_configuration_id(self) -> str:
+        """
+        PlatformConfiguration Id corresponding to the Product
+        """
+        return pulumi.get(self, "platform_configuration_id")
+
+
+@pulumi.output_type
+class GetPatchesPatchCollectionItemProductResult(dict):
+    def __init__(__self__, *,
+                 platform_configuration_id: str,
+                 version: str):
+        """
+        :param str platform_configuration_id: PlatformConfiguration Id corresponding to the Product
+        :param str version: Product version
+        """
+        pulumi.set(__self__, "platform_configuration_id", platform_configuration_id)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="platformConfigurationId")
+    def platform_configuration_id(self) -> str:
+        """
+        PlatformConfiguration Id corresponding to the Product
+        """
+        return pulumi.get(self, "platform_configuration_id")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Product version
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationConfigCategoryDetailResult(dict):
+    def __init__(__self__, *,
+                 compatible_products: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailCompatibleProductResult'],
+                 components: Sequence[str],
+                 config_category: str,
+                 credentials: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailCredentialResult'],
+                 patch_types: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailPatchTypeResult'],
+                 products: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailProductResult'],
+                 sub_category_details: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailResult'],
+                 versions: Sequence[str]):
+        """
+        :param Sequence['GetPlatformConfigurationConfigCategoryDetailCompatibleProductArgs'] compatible_products: Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        :param Sequence[str] components: Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        :param str config_category: Category of configuration
+        :param Sequence['GetPlatformConfigurationConfigCategoryDetailCredentialArgs'] credentials: OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        :param Sequence['GetPlatformConfigurationConfigCategoryDetailPatchTypeArgs'] patch_types: Patch Types associated with this Product Stack which will be considered as Product.
+        :param Sequence['GetPlatformConfigurationConfigCategoryDetailProductArgs'] products: Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
+        :param Sequence['GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailArgs'] sub_category_details: ProductStack Config Category Details.
+        :param Sequence[str] versions: Versions associated with the PRODUCT .
+        """
+        pulumi.set(__self__, "compatible_products", compatible_products)
+        pulumi.set(__self__, "components", components)
+        pulumi.set(__self__, "config_category", config_category)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "patch_types", patch_types)
+        pulumi.set(__self__, "products", products)
+        pulumi.set(__self__, "sub_category_details", sub_category_details)
+        pulumi.set(__self__, "versions", versions)
+
+    @property
+    @pulumi.getter(name="compatibleProducts")
+    def compatible_products(self) -> Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailCompatibleProductResult']:
+        """
+        Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        """
+        return pulumi.get(self, "compatible_products")
+
+    @property
+    @pulumi.getter
+    def components(self) -> Sequence[str]:
+        """
+        Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        """
+        return pulumi.get(self, "components")
+
+    @property
+    @pulumi.getter(name="configCategory")
+    def config_category(self) -> str:
+        """
+        Category of configuration
+        """
+        return pulumi.get(self, "config_category")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailCredentialResult']:
+        """
+        OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter(name="patchTypes")
+    def patch_types(self) -> Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailPatchTypeResult']:
+        """
+        Patch Types associated with this Product Stack which will be considered as Product.
+        """
+        return pulumi.get(self, "patch_types")
+
+    @property
+    @pulumi.getter
+    def products(self) -> Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailProductResult']:
+        """
+        Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
+        """
+        return pulumi.get(self, "products")
+
+    @property
+    @pulumi.getter(name="subCategoryDetails")
+    def sub_category_details(self) -> Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailResult']:
+        """
+        ProductStack Config Category Details.
+        """
+        return pulumi.get(self, "sub_category_details")
+
+    @property
+    @pulumi.getter
+    def versions(self) -> Sequence[str]:
+        """
+        Versions associated with the PRODUCT .
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationConfigCategoryDetailCompatibleProductResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: The OCID of the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationConfigCategoryDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: The OCID of the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationConfigCategoryDetailPatchTypeResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: The OCID of the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationConfigCategoryDetailProductResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: The OCID of the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailResult(dict):
+    def __init__(__self__, *,
+                 components: Sequence[str],
+                 credentials: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailCredentialResult'],
+                 patch_types: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailPatchTypeResult'],
+                 sub_category: str,
+                 versions: Sequence[str]):
+        """
+        :param Sequence[str] components: Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        :param Sequence['GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailCredentialArgs'] credentials: OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        :param Sequence['GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailPatchTypeArgs'] patch_types: Patch Types associated with this Product Stack which will be considered as Product.
+        :param str sub_category: SubCategory of Product Stack.
+        :param Sequence[str] versions: Versions associated with the PRODUCT .
+        """
+        pulumi.set(__self__, "components", components)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "patch_types", patch_types)
+        pulumi.set(__self__, "sub_category", sub_category)
+        pulumi.set(__self__, "versions", versions)
+
+    @property
+    @pulumi.getter
+    def components(self) -> Sequence[str]:
+        """
+        Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        """
+        return pulumi.get(self, "components")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailCredentialResult']:
+        """
+        OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter(name="patchTypes")
+    def patch_types(self) -> Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailPatchTypeResult']:
+        """
+        Patch Types associated with this Product Stack which will be considered as Product.
+        """
+        return pulumi.get(self, "patch_types")
+
+    @property
+    @pulumi.getter(name="subCategory")
+    def sub_category(self) -> str:
+        """
+        SubCategory of Product Stack.
+        """
+        return pulumi.get(self, "sub_category")
+
+    @property
+    @pulumi.getter
+    def versions(self) -> Sequence[str]:
+        """
+        Versions associated with the PRODUCT .
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: The OCID of the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailPatchTypeResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: The OCID of the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 config_category_details: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailResult'],
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 resource_region: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str,
+                 type: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailArgs'] config_category_details: Config Category Details.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: unique PlatformConfiguration identifier
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param str resource_region: Associated region
+        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        :param str type: The type of the configuration.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "config_category_details", config_category_details)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "resource_region", resource_region)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configCategoryDetails")
+    def config_category_details(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailResult']:
+        """
+        Config Category Details.
+        """
+        return pulumi.get(self, "config_category_details")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique PlatformConfiguration identifier
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="resourceRegion")
@@ -4434,11 +11292,342 @@ class GetOnboardingsOnboardingCollectionItemResult(dict):
 
     @property
     @pulumi.getter
-    def version(self) -> str:
+    def type(self) -> str:
         """
-        Version of FAMS the tenant is onboarded to.
+        The type of the configuration.
         """
-        return pulumi.get(self, "version")
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailResult(dict):
+    def __init__(__self__, *,
+                 compatible_products: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductResult'],
+                 components: Sequence[str],
+                 config_category: str,
+                 credentials: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCredentialResult'],
+                 patch_types: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeResult'],
+                 products: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProductResult'],
+                 sub_category_details: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailResult'],
+                 versions: Sequence[str]):
+        """
+        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductArgs'] compatible_products: Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        :param Sequence[str] components: Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        :param str config_category: Config Category
+        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCredentialArgs'] credentials: OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeArgs'] patch_types: Patch Types associated with this Product Stack which will be considered as Product.
+        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProductArgs'] products: Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
+        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailArgs'] sub_category_details: ProductStack Config Category Details.
+        :param Sequence[str] versions: Versions associated with the PRODUCT .
+        """
+        pulumi.set(__self__, "compatible_products", compatible_products)
+        pulumi.set(__self__, "components", components)
+        pulumi.set(__self__, "config_category", config_category)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "patch_types", patch_types)
+        pulumi.set(__self__, "products", products)
+        pulumi.set(__self__, "sub_category_details", sub_category_details)
+        pulumi.set(__self__, "versions", versions)
+
+    @property
+    @pulumi.getter(name="compatibleProducts")
+    def compatible_products(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductResult']:
+        """
+        Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        """
+        return pulumi.get(self, "compatible_products")
+
+    @property
+    @pulumi.getter
+    def components(self) -> Sequence[str]:
+        """
+        Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        """
+        return pulumi.get(self, "components")
+
+    @property
+    @pulumi.getter(name="configCategory")
+    def config_category(self) -> str:
+        """
+        Config Category
+        """
+        return pulumi.get(self, "config_category")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCredentialResult']:
+        """
+        OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter(name="patchTypes")
+    def patch_types(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeResult']:
+        """
+        Patch Types associated with this Product Stack which will be considered as Product.
+        """
+        return pulumi.get(self, "patch_types")
+
+    @property
+    @pulumi.getter
+    def products(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProductResult']:
+        """
+        Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
+        """
+        return pulumi.get(self, "products")
+
+    @property
+    @pulumi.getter(name="subCategoryDetails")
+    def sub_category_details(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailResult']:
+        """
+        ProductStack Config Category Details.
+        """
+        return pulumi.get(self, "sub_category_details")
+
+    @property
+    @pulumi.getter
+    def versions(self) -> Sequence[str]:
+        """
+        Versions associated with the PRODUCT .
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str id: unique PlatformConfiguration identifier
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique PlatformConfiguration identifier
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str id: unique PlatformConfiguration identifier
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique PlatformConfiguration identifier
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str id: unique PlatformConfiguration identifier
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique PlatformConfiguration identifier
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProductResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str id: unique PlatformConfiguration identifier
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique PlatformConfiguration identifier
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailResult(dict):
+    def __init__(__self__, *,
+                 components: Sequence[str],
+                 credentials: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailCredentialResult'],
+                 patch_types: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailPatchTypeResult'],
+                 sub_category: str,
+                 versions: Sequence[str]):
+        """
+        :param Sequence[str] components: Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailCredentialArgs'] credentials: OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailPatchTypeArgs'] patch_types: Patch Types associated with this Product Stack which will be considered as Product.
+        :param str sub_category: SubCategory of Product Stack.
+        :param Sequence[str] versions: Versions associated with the PRODUCT .
+        """
+        pulumi.set(__self__, "components", components)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "patch_types", patch_types)
+        pulumi.set(__self__, "sub_category", sub_category)
+        pulumi.set(__self__, "versions", versions)
+
+    @property
+    @pulumi.getter
+    def components(self) -> Sequence[str]:
+        """
+        Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        """
+        return pulumi.get(self, "components")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailCredentialResult']:
+        """
+        OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter(name="patchTypes")
+    def patch_types(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailPatchTypeResult']:
+        """
+        Patch Types associated with this Product Stack which will be considered as Product.
+        """
+        return pulumi.get(self, "patch_types")
+
+    @property
+    @pulumi.getter(name="subCategory")
+    def sub_category(self) -> str:
+        """
+        SubCategory of Product Stack.
+        """
+        return pulumi.get(self, "sub_category")
+
+    @property
+    @pulumi.getter
+    def versions(self) -> Sequence[str]:
+        """
+        Versions associated with the PRODUCT .
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str id: unique PlatformConfiguration identifier
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique PlatformConfiguration identifier
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailPatchTypeResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str id: unique PlatformConfiguration identifier
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique PlatformConfiguration identifier
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -4448,7 +11637,7 @@ class GetPropertiesFilterResult(dict):
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param Sequence[str] values: Values of the property (must be a single value if selection = 'single choice')
+        :param Sequence[str] values: Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -4464,7 +11653,7 @@ class GetPropertiesFilterResult(dict):
     @pulumi.getter
     def values(self) -> Sequence[str]:
         """
-        Values of the property (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         """
         return pulumi.get(self, "values")
 
@@ -4510,18 +11699,18 @@ class GetPropertiesPropertyCollectionItemResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique Property identifier
+        :param str id: A filter to return only resources whose Property identifier matches the given identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str resource_region: Associated region
-        :param str scope: A filter to return only resources their scope matches the given lifecycleState.
-        :param str selection: Text selection of the category
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str scope: A filter to return only resources their scope matches the given scope.
+        :param str selection: Text selection of the property.
+        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         :param str type: The type of the property.
-        :param str value_type: Format of the value
-        :param Sequence[str] values: Values of the property (must be a single value if selection = 'single choice')
+        :param str value_type: Format of the value.
+        :param Sequence[str] values: Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -4576,7 +11765,7 @@ class GetPropertiesPropertyCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique Property identifier
+        A filter to return only resources whose Property identifier matches the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -4600,7 +11789,7 @@ class GetPropertiesPropertyCollectionItemResult(dict):
     @pulumi.getter
     def scope(self) -> str:
         """
-        A filter to return only resources their scope matches the given lifecycleState.
+        A filter to return only resources their scope matches the given scope.
         """
         return pulumi.get(self, "scope")
 
@@ -4608,7 +11797,7 @@ class GetPropertiesPropertyCollectionItemResult(dict):
     @pulumi.getter
     def selection(self) -> str:
         """
-        Text selection of the category
+        Text selection of the property.
         """
         return pulumi.get(self, "selection")
 
@@ -4616,7 +11805,7 @@ class GetPropertiesPropertyCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources whose lifecycleState matches the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -4656,7 +11845,7 @@ class GetPropertiesPropertyCollectionItemResult(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> str:
         """
-        Format of the value
+        Format of the value.
         """
         return pulumi.get(self, "value_type")
 
@@ -4664,7 +11853,7 @@ class GetPropertiesPropertyCollectionItemResult(dict):
     @pulumi.getter
     def values(self) -> Sequence[str]:
         """
-        Values of the property (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         """
         return pulumi.get(self, "values")
 
@@ -4674,16 +11863,19 @@ class GetRunbookAssociationResult(dict):
     def __init__(__self__, *,
                  execution_workflow_details: Sequence['outputs.GetRunbookAssociationExecutionWorkflowDetailResult'],
                  groups: Sequence['outputs.GetRunbookAssociationGroupResult'],
+                 rollback_workflow_details: Sequence['outputs.GetRunbookAssociationRollbackWorkflowDetailResult'],
                  tasks: Sequence['outputs.GetRunbookAssociationTaskResult'],
                  version: str):
         """
-        :param Sequence['GetRunbookAssociationExecutionWorkflowDetailArgs'] execution_workflow_details: Execution Workflow.
-        :param Sequence['GetRunbookAssociationGroupArgs'] groups: The groups of the runbook
-        :param Sequence['GetRunbookAssociationTaskArgs'] tasks: A set of tasks to execute in the runbook
+        :param Sequence['GetRunbookAssociationExecutionWorkflowDetailArgs'] execution_workflow_details: Execution Workflow details.
+        :param Sequence['GetRunbookAssociationGroupArgs'] groups: The groups of the runbook.
+        :param Sequence['GetRunbookAssociationRollbackWorkflowDetailArgs'] rollback_workflow_details: Rollback Workflow details.
+        :param Sequence['GetRunbookAssociationTaskArgs'] tasks: A set of tasks to execute in the runbook.
         :param str version: The version of the runbook.
         """
         pulumi.set(__self__, "execution_workflow_details", execution_workflow_details)
         pulumi.set(__self__, "groups", groups)
+        pulumi.set(__self__, "rollback_workflow_details", rollback_workflow_details)
         pulumi.set(__self__, "tasks", tasks)
         pulumi.set(__self__, "version", version)
 
@@ -4691,7 +11883,7 @@ class GetRunbookAssociationResult(dict):
     @pulumi.getter(name="executionWorkflowDetails")
     def execution_workflow_details(self) -> Sequence['outputs.GetRunbookAssociationExecutionWorkflowDetailResult']:
         """
-        Execution Workflow.
+        Execution Workflow details.
         """
         return pulumi.get(self, "execution_workflow_details")
 
@@ -4699,15 +11891,23 @@ class GetRunbookAssociationResult(dict):
     @pulumi.getter
     def groups(self) -> Sequence['outputs.GetRunbookAssociationGroupResult']:
         """
-        The groups of the runbook
+        The groups of the runbook.
         """
         return pulumi.get(self, "groups")
+
+    @property
+    @pulumi.getter(name="rollbackWorkflowDetails")
+    def rollback_workflow_details(self) -> Sequence['outputs.GetRunbookAssociationRollbackWorkflowDetailResult']:
+        """
+        Rollback Workflow details.
+        """
+        return pulumi.get(self, "rollback_workflow_details")
 
     @property
     @pulumi.getter
     def tasks(self) -> Sequence['outputs.GetRunbookAssociationTaskResult']:
         """
-        A set of tasks to execute in the runbook
+        A set of tasks to execute in the runbook.
         """
         return pulumi.get(self, "tasks")
 
@@ -4725,7 +11925,7 @@ class GetRunbookAssociationExecutionWorkflowDetailResult(dict):
     def __init__(__self__, *,
                  workflows: Sequence['outputs.GetRunbookAssociationExecutionWorkflowDetailWorkflowResult']):
         """
-        :param Sequence['GetRunbookAssociationExecutionWorkflowDetailWorkflowArgs'] workflows: Execution Workflow for the runbook.
+        :param Sequence['GetRunbookAssociationExecutionWorkflowDetailWorkflowArgs'] workflows: Rollback Workflow for the runbook.
         """
         pulumi.set(__self__, "workflows", workflows)
 
@@ -4733,7 +11933,7 @@ class GetRunbookAssociationExecutionWorkflowDetailResult(dict):
     @pulumi.getter
     def workflows(self) -> Sequence['outputs.GetRunbookAssociationExecutionWorkflowDetailWorkflowResult']:
         """
-        Execution Workflow for the runbook.
+        Rollback Workflow for the runbook.
         """
         return pulumi.get(self, "workflows")
 
@@ -4745,8 +11945,8 @@ class GetRunbookAssociationExecutionWorkflowDetailWorkflowResult(dict):
                  steps: Sequence['outputs.GetRunbookAssociationExecutionWorkflowDetailWorkflowStepResult'],
                  type: str):
         """
-        :param str group_name: Provide the name of the group.
-        :param Sequence['GetRunbookAssociationExecutionWorkflowDetailWorkflowStepArgs'] steps: Tasks within the Group. Provide the stepName for all tasks that are applicable
+        :param str group_name: Name of the group.
+        :param Sequence['GetRunbookAssociationExecutionWorkflowDetailWorkflowStepArgs'] steps: Tasks within the Group. Provide the stepName for all applicable tasks.
         :param str type: The type of the runbook.
         """
         pulumi.set(__self__, "group_name", group_name)
@@ -4757,7 +11957,7 @@ class GetRunbookAssociationExecutionWorkflowDetailWorkflowResult(dict):
     @pulumi.getter(name="groupName")
     def group_name(self) -> str:
         """
-        Provide the name of the group.
+        Name of the group.
         """
         return pulumi.get(self, "group_name")
 
@@ -4765,7 +11965,7 @@ class GetRunbookAssociationExecutionWorkflowDetailWorkflowResult(dict):
     @pulumi.getter
     def steps(self) -> Sequence['outputs.GetRunbookAssociationExecutionWorkflowDetailWorkflowStepResult']:
         """
-        Tasks within the Group. Provide the stepName for all tasks that are applicable
+        Tasks within the Group. Provide the stepName for all applicable tasks.
         """
         return pulumi.get(self, "steps")
 
@@ -4786,9 +11986,9 @@ class GetRunbookAssociationExecutionWorkflowDetailWorkflowStepResult(dict):
                  steps: Sequence[str],
                  type: str):
         """
-        :param str group_name: Provide the name of the group.
+        :param str group_name: Name of the group.
         :param str step_name: The name of the task step.
-        :param Sequence[str] steps: Tasks within the Group. Provide the stepName for all tasks that are applicable
+        :param Sequence[str] steps: Tasks within the Group. Provide the stepName for all applicable tasks.
         :param str type: The type of the runbook.
         """
         pulumi.set(__self__, "group_name", group_name)
@@ -4800,7 +12000,7 @@ class GetRunbookAssociationExecutionWorkflowDetailWorkflowStepResult(dict):
     @pulumi.getter(name="groupName")
     def group_name(self) -> str:
         """
-        Provide the name of the group.
+        Name of the group.
         """
         return pulumi.get(self, "group_name")
 
@@ -4816,7 +12016,7 @@ class GetRunbookAssociationExecutionWorkflowDetailWorkflowStepResult(dict):
     @pulumi.getter
     def steps(self) -> Sequence[str]:
         """
-        Tasks within the Group. Provide the stepName for all tasks that are applicable
+        Tasks within the Group. Provide the stepName for all applicable tasks.
         """
         return pulumi.get(self, "steps")
 
@@ -4874,21 +12074,27 @@ class GetRunbookAssociationGroupPropertyResult(dict):
     def __init__(__self__, *,
                  action_on_failure: str,
                  condition: str,
+                 notification_preferences: Sequence['outputs.GetRunbookAssociationGroupPropertyNotificationPreferenceResult'],
+                 pause_details: Sequence['outputs.GetRunbookAssociationGroupPropertyPauseDetailResult'],
                  run_on: str):
         """
-        :param str action_on_failure: The action to be taken in case of task failure.
-        :param str condition: The condition in which the task is to be executed.
-        :param str run_on: The hosts to execute on.
+        :param str action_on_failure: The action to be taken in case of a failure.
+        :param str condition: Build control flow conditions that determine the relevance of the task execution.
+        :param Sequence['GetRunbookAssociationGroupPropertyNotificationPreferenceArgs'] notification_preferences: Preferences to send notifications on the task activities.
+        :param Sequence['GetRunbookAssociationGroupPropertyPauseDetailArgs'] pause_details: Pause Details
+        :param str run_on: The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
         """
         pulumi.set(__self__, "action_on_failure", action_on_failure)
         pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "notification_preferences", notification_preferences)
+        pulumi.set(__self__, "pause_details", pause_details)
         pulumi.set(__self__, "run_on", run_on)
 
     @property
     @pulumi.getter(name="actionOnFailure")
     def action_on_failure(self) -> str:
         """
-        The action to be taken in case of task failure.
+        The action to be taken in case of a failure.
         """
         return pulumi.get(self, "action_on_failure")
 
@@ -4896,17 +12102,222 @@ class GetRunbookAssociationGroupPropertyResult(dict):
     @pulumi.getter
     def condition(self) -> str:
         """
-        The condition in which the task is to be executed.
+        Build control flow conditions that determine the relevance of the task execution.
         """
         return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="notificationPreferences")
+    def notification_preferences(self) -> Sequence['outputs.GetRunbookAssociationGroupPropertyNotificationPreferenceResult']:
+        """
+        Preferences to send notifications on the task activities.
+        """
+        return pulumi.get(self, "notification_preferences")
+
+    @property
+    @pulumi.getter(name="pauseDetails")
+    def pause_details(self) -> Sequence['outputs.GetRunbookAssociationGroupPropertyPauseDetailResult']:
+        """
+        Pause Details
+        """
+        return pulumi.get(self, "pause_details")
 
     @property
     @pulumi.getter(name="runOn")
     def run_on(self) -> str:
         """
-        The hosts to execute on.
+        The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
         """
         return pulumi.get(self, "run_on")
+
+
+@pulumi.output_type
+class GetRunbookAssociationGroupPropertyNotificationPreferenceResult(dict):
+    def __init__(__self__, *,
+                 should_notify_on_pause: bool,
+                 should_notify_on_task_failure: bool,
+                 should_notify_on_task_success: bool):
+        """
+        :param bool should_notify_on_pause: Enables notification on pause.
+        :param bool should_notify_on_task_failure: Enables or disables notification on Task Failures.
+        :param bool should_notify_on_task_success: Enables or disables notification on Task Success.
+        """
+        pulumi.set(__self__, "should_notify_on_pause", should_notify_on_pause)
+        pulumi.set(__self__, "should_notify_on_task_failure", should_notify_on_task_failure)
+        pulumi.set(__self__, "should_notify_on_task_success", should_notify_on_task_success)
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnPause")
+    def should_notify_on_pause(self) -> bool:
+        """
+        Enables notification on pause.
+        """
+        return pulumi.get(self, "should_notify_on_pause")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskFailure")
+    def should_notify_on_task_failure(self) -> bool:
+        """
+        Enables or disables notification on Task Failures.
+        """
+        return pulumi.get(self, "should_notify_on_task_failure")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskSuccess")
+    def should_notify_on_task_success(self) -> bool:
+        """
+        Enables or disables notification on Task Success.
+        """
+        return pulumi.get(self, "should_notify_on_task_success")
+
+
+@pulumi.output_type
+class GetRunbookAssociationGroupPropertyPauseDetailResult(dict):
+    def __init__(__self__, *,
+                 duration_in_minutes: int,
+                 kind: str):
+        """
+        :param int duration_in_minutes: Time in minutes to apply Pause.
+        :param str kind: Pause based On.
+        """
+        pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
+        pulumi.set(__self__, "kind", kind)
+
+    @property
+    @pulumi.getter(name="durationInMinutes")
+    def duration_in_minutes(self) -> int:
+        """
+        Time in minutes to apply Pause.
+        """
+        return pulumi.get(self, "duration_in_minutes")
+
+    @property
+    @pulumi.getter
+    def kind(self) -> str:
+        """
+        Pause based On.
+        """
+        return pulumi.get(self, "kind")
+
+
+@pulumi.output_type
+class GetRunbookAssociationRollbackWorkflowDetailResult(dict):
+    def __init__(__self__, *,
+                 scope: str,
+                 workflows: Sequence['outputs.GetRunbookAssociationRollbackWorkflowDetailWorkflowResult']):
+        """
+        :param str scope: The scope of the task.
+        :param Sequence['GetRunbookAssociationRollbackWorkflowDetailWorkflowArgs'] workflows: Rollback Workflow for the runbook.
+        """
+        pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "workflows", workflows)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> str:
+        """
+        The scope of the task.
+        """
+        return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter
+    def workflows(self) -> Sequence['outputs.GetRunbookAssociationRollbackWorkflowDetailWorkflowResult']:
+        """
+        Rollback Workflow for the runbook.
+        """
+        return pulumi.get(self, "workflows")
+
+
+@pulumi.output_type
+class GetRunbookAssociationRollbackWorkflowDetailWorkflowResult(dict):
+    def __init__(__self__, *,
+                 group_name: str,
+                 steps: Sequence['outputs.GetRunbookAssociationRollbackWorkflowDetailWorkflowStepResult'],
+                 type: str):
+        """
+        :param str group_name: Name of the group.
+        :param Sequence['GetRunbookAssociationRollbackWorkflowDetailWorkflowStepArgs'] steps: Tasks within the Group. Provide the stepName for all applicable tasks.
+        :param str type: The type of the runbook.
+        """
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "steps", steps)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> str:
+        """
+        Name of the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Sequence['outputs.GetRunbookAssociationRollbackWorkflowDetailWorkflowStepResult']:
+        """
+        Tasks within the Group. Provide the stepName for all applicable tasks.
+        """
+        return pulumi.get(self, "steps")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the runbook.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRunbookAssociationRollbackWorkflowDetailWorkflowStepResult(dict):
+    def __init__(__self__, *,
+                 group_name: str,
+                 step_name: str,
+                 steps: Sequence[str],
+                 type: str):
+        """
+        :param str group_name: Name of the group.
+        :param str step_name: The name of the task step.
+        :param Sequence[str] steps: Tasks within the Group. Provide the stepName for all applicable tasks.
+        :param str type: The type of the runbook.
+        """
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "steps", steps)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> str:
+        """
+        Name of the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the task step.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Sequence[str]:
+        """
+        Tasks within the Group. Provide the stepName for all applicable tasks.
+        """
+        return pulumi.get(self, "steps")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the runbook.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -4921,7 +12332,7 @@ class GetRunbookAssociationTaskResult(dict):
         :param str association_type: The association type of the task
         :param Sequence['GetRunbookAssociationTaskOutputVariableMappingArgs'] output_variable_mappings: Mapping output variables of previous tasks to the input variables of the current task.
         :param str step_name: The name of the task step.
-        :param Sequence['GetRunbookAssociationTaskStepPropertyArgs'] step_properties: The properties of the task.
+        :param Sequence['GetRunbookAssociationTaskStepPropertyArgs'] step_properties: The properties of the component.
         :param Sequence['GetRunbookAssociationTaskTaskRecordDetailArgs'] task_record_details: The details of the task.
         """
         pulumi.set(__self__, "association_type", association_type)
@@ -4958,7 +12369,7 @@ class GetRunbookAssociationTaskResult(dict):
     @pulumi.getter(name="stepProperties")
     def step_properties(self) -> Sequence['outputs.GetRunbookAssociationTaskStepPropertyResult']:
         """
-        The properties of the task.
+        The properties of the component.
         """
         return pulumi.get(self, "step_properties")
 
@@ -5006,7 +12417,7 @@ class GetRunbookAssociationTaskOutputVariableMappingOutputVariableDetailResult(d
                  output_variable_name: str,
                  step_name: str):
         """
-        :param str output_variable_name: The name of the output variable whose value that has to be mapped.
+        :param str output_variable_name: The name of the output variable whose value has to be mapped.
         :param str step_name: The name of the task step.
         """
         pulumi.set(__self__, "output_variable_name", output_variable_name)
@@ -5016,7 +12427,7 @@ class GetRunbookAssociationTaskOutputVariableMappingOutputVariableDetailResult(d
     @pulumi.getter(name="outputVariableName")
     def output_variable_name(self) -> str:
         """
-        The name of the output variable whose value that has to be mapped.
+        The name of the output variable whose value has to be mapped.
         """
         return pulumi.get(self, "output_variable_name")
 
@@ -5034,21 +12445,27 @@ class GetRunbookAssociationTaskStepPropertyResult(dict):
     def __init__(__self__, *,
                  action_on_failure: str,
                  condition: str,
+                 notification_preferences: Sequence['outputs.GetRunbookAssociationTaskStepPropertyNotificationPreferenceResult'],
+                 pause_details: Sequence['outputs.GetRunbookAssociationTaskStepPropertyPauseDetailResult'],
                  run_on: str):
         """
-        :param str action_on_failure: The action to be taken in case of task failure.
-        :param str condition: The condition in which the task is to be executed.
-        :param str run_on: The hosts to execute on.
+        :param str action_on_failure: The action to be taken in case of a failure.
+        :param str condition: Build control flow conditions that determine the relevance of the task execution.
+        :param Sequence['GetRunbookAssociationTaskStepPropertyNotificationPreferenceArgs'] notification_preferences: Preferences to send notifications on the task activities.
+        :param Sequence['GetRunbookAssociationTaskStepPropertyPauseDetailArgs'] pause_details: Pause Details
+        :param str run_on: The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
         """
         pulumi.set(__self__, "action_on_failure", action_on_failure)
         pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "notification_preferences", notification_preferences)
+        pulumi.set(__self__, "pause_details", pause_details)
         pulumi.set(__self__, "run_on", run_on)
 
     @property
     @pulumi.getter(name="actionOnFailure")
     def action_on_failure(self) -> str:
         """
-        The action to be taken in case of task failure.
+        The action to be taken in case of a failure.
         """
         return pulumi.get(self, "action_on_failure")
 
@@ -5056,17 +12473,102 @@ class GetRunbookAssociationTaskStepPropertyResult(dict):
     @pulumi.getter
     def condition(self) -> str:
         """
-        The condition in which the task is to be executed.
+        Build control flow conditions that determine the relevance of the task execution.
         """
         return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="notificationPreferences")
+    def notification_preferences(self) -> Sequence['outputs.GetRunbookAssociationTaskStepPropertyNotificationPreferenceResult']:
+        """
+        Preferences to send notifications on the task activities.
+        """
+        return pulumi.get(self, "notification_preferences")
+
+    @property
+    @pulumi.getter(name="pauseDetails")
+    def pause_details(self) -> Sequence['outputs.GetRunbookAssociationTaskStepPropertyPauseDetailResult']:
+        """
+        Pause Details
+        """
+        return pulumi.get(self, "pause_details")
 
     @property
     @pulumi.getter(name="runOn")
     def run_on(self) -> str:
         """
-        The hosts to execute on.
+        The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
         """
         return pulumi.get(self, "run_on")
+
+
+@pulumi.output_type
+class GetRunbookAssociationTaskStepPropertyNotificationPreferenceResult(dict):
+    def __init__(__self__, *,
+                 should_notify_on_pause: bool,
+                 should_notify_on_task_failure: bool,
+                 should_notify_on_task_success: bool):
+        """
+        :param bool should_notify_on_pause: Enables notification on pause.
+        :param bool should_notify_on_task_failure: Enables or disables notification on Task Failures.
+        :param bool should_notify_on_task_success: Enables or disables notification on Task Success.
+        """
+        pulumi.set(__self__, "should_notify_on_pause", should_notify_on_pause)
+        pulumi.set(__self__, "should_notify_on_task_failure", should_notify_on_task_failure)
+        pulumi.set(__self__, "should_notify_on_task_success", should_notify_on_task_success)
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnPause")
+    def should_notify_on_pause(self) -> bool:
+        """
+        Enables notification on pause.
+        """
+        return pulumi.get(self, "should_notify_on_pause")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskFailure")
+    def should_notify_on_task_failure(self) -> bool:
+        """
+        Enables or disables notification on Task Failures.
+        """
+        return pulumi.get(self, "should_notify_on_task_failure")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskSuccess")
+    def should_notify_on_task_success(self) -> bool:
+        """
+        Enables or disables notification on Task Success.
+        """
+        return pulumi.get(self, "should_notify_on_task_success")
+
+
+@pulumi.output_type
+class GetRunbookAssociationTaskStepPropertyPauseDetailResult(dict):
+    def __init__(__self__, *,
+                 duration_in_minutes: int,
+                 kind: str):
+        """
+        :param int duration_in_minutes: Time in minutes to apply Pause.
+        :param str kind: Pause based On.
+        """
+        pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
+        pulumi.set(__self__, "kind", kind)
+
+    @property
+    @pulumi.getter(name="durationInMinutes")
+    def duration_in_minutes(self) -> int:
+        """
+        Time in minutes to apply Pause.
+        """
+        return pulumi.get(self, "duration_in_minutes")
+
+    @property
+    @pulumi.getter
+    def kind(self) -> str:
+        """
+        Pause based On.
+        """
+        return pulumi.get(self, "kind")
 
 
 @pulumi.output_type
@@ -5074,7 +12576,9 @@ class GetRunbookAssociationTaskTaskRecordDetailResult(dict):
     def __init__(__self__, *,
                  description: str,
                  execution_details: Sequence['outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailResult'],
+                 is_apply_subject_task: bool,
                  is_copy_to_library_enabled: bool,
+                 is_discovery_output_task: bool,
                  name: str,
                  os_type: str,
                  platform: str,
@@ -5083,8 +12587,10 @@ class GetRunbookAssociationTaskTaskRecordDetailResult(dict):
                  task_record_id: str):
         """
         :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
-        :param Sequence['GetRunbookAssociationTaskTaskRecordDetailExecutionDetailArgs'] execution_details: Content Source Details
+        :param Sequence['GetRunbookAssociationTaskTaskRecordDetailExecutionDetailArgs'] execution_details: Execution details.
+        :param bool is_apply_subject_task: Is this an Apply Subject Task? Ex. Patch Execution Task
         :param bool is_copy_to_library_enabled: Make a copy of this task in Library
+        :param bool is_discovery_output_task: Is this a discovery output task?
         :param str name: The name of the task
         :param str os_type: The OS type for the runbook.
         :param str platform: The platform of the runbook.
@@ -5094,7 +12600,9 @@ class GetRunbookAssociationTaskTaskRecordDetailResult(dict):
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "execution_details", execution_details)
+        pulumi.set(__self__, "is_apply_subject_task", is_apply_subject_task)
         pulumi.set(__self__, "is_copy_to_library_enabled", is_copy_to_library_enabled)
+        pulumi.set(__self__, "is_discovery_output_task", is_discovery_output_task)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "os_type", os_type)
         pulumi.set(__self__, "platform", platform)
@@ -5114,9 +12622,17 @@ class GetRunbookAssociationTaskTaskRecordDetailResult(dict):
     @pulumi.getter(name="executionDetails")
     def execution_details(self) -> Sequence['outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailResult']:
         """
-        Content Source Details
+        Execution details.
         """
         return pulumi.get(self, "execution_details")
+
+    @property
+    @pulumi.getter(name="isApplySubjectTask")
+    def is_apply_subject_task(self) -> bool:
+        """
+        Is this an Apply Subject Task? Ex. Patch Execution Task
+        """
+        return pulumi.get(self, "is_apply_subject_task")
 
     @property
     @pulumi.getter(name="isCopyToLibraryEnabled")
@@ -5125,6 +12641,14 @@ class GetRunbookAssociationTaskTaskRecordDetailResult(dict):
         Make a copy of this task in Library
         """
         return pulumi.get(self, "is_copy_to_library_enabled")
+
+    @property
+    @pulumi.getter(name="isDiscoveryOutputTask")
+    def is_discovery_output_task(self) -> bool:
+        """
+        Is this a discovery output task?
+        """
+        return pulumi.get(self, "is_discovery_output_task")
 
     @property
     @pulumi.getter
@@ -5180,18 +12704,21 @@ class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailResult(dict):
     def __init__(__self__, *,
                  command: str,
                  contents: Sequence['outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailContentResult'],
+                 credentials: Sequence['outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailCredentialResult'],
                  endpoint: str,
                  execution_type: str,
                  variables: Sequence['outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailVariableResult']):
         """
-        :param str command: Optional Command to execute the content.
-        :param Sequence['GetRunbookAssociationTaskTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source Details.
+        :param str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+        :param Sequence['GetRunbookAssociationTaskTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source details.
+        :param Sequence['GetRunbookAssociationTaskTaskRecordDetailExecutionDetailCredentialArgs'] credentials: Credentials required for executing the task.
         :param str endpoint: Endpoint to be invoked.
         :param str execution_type: The action type of the task
-        :param Sequence['GetRunbookAssociationTaskTaskRecordDetailExecutionDetailVariableArgs'] variables: The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+        :param Sequence['GetRunbookAssociationTaskTaskRecordDetailExecutionDetailVariableArgs'] variables: The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         """
         pulumi.set(__self__, "command", command)
         pulumi.set(__self__, "contents", contents)
+        pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "endpoint", endpoint)
         pulumi.set(__self__, "execution_type", execution_type)
         pulumi.set(__self__, "variables", variables)
@@ -5200,7 +12727,7 @@ class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailResult(dict):
     @pulumi.getter
     def command(self) -> str:
         """
-        Optional Command to execute the content.
+        Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         """
         return pulumi.get(self, "command")
 
@@ -5208,9 +12735,17 @@ class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailResult(dict):
     @pulumi.getter
     def contents(self) -> Sequence['outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailContentResult']:
         """
-        Content Source Details.
+        Content Source details.
         """
         return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailCredentialResult']:
+        """
+        Credentials required for executing the task.
+        """
+        return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter
@@ -5232,7 +12767,7 @@ class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailResult(dict):
     @pulumi.getter
     def variables(self) -> Sequence['outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailVariableResult']:
         """
-        The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+        The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         """
         return pulumi.get(self, "variables")
 
@@ -5247,10 +12782,10 @@ class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailContentResult(dict
                  source_type: str):
         """
         :param str bucket: Bucket Name.
-        :param str checksum: SHA256 checksum of the artifact.
+        :param str checksum: md5 checksum of the artifact.
         :param str namespace: Namespace.
         :param str object: Object Name.
-        :param str source_type: Content Source Details.
+        :param str source_type: Content Source type details.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "checksum", checksum)
@@ -5270,7 +12805,7 @@ class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailContentResult(dict
     @pulumi.getter
     def checksum(self) -> str:
         """
-        SHA256 checksum of the artifact.
+        md5 checksum of the artifact.
         """
         return pulumi.get(self, "checksum")
 
@@ -5294,9 +12829,38 @@ class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailContentResult(dict
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Content Source Details.
+        Content Source type details.
         """
         return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetRunbookAssociationTaskTaskRecordDetailExecutionDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: The OCID of the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -5466,26 +13030,26 @@ class GetRunbooksRunbookCollectionItemResult(dict):
                  time_updated: str,
                  type: str):
         """
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationArgs'] associations: JSON content with required associations
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationArgs'] associations: Associations for the runbook.
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str estimated_time: Estimated time to successfully complete the runbook execution
+        :param str estimated_time: Estimated time to successfully complete the runbook execution.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique Runbook identifier
-        :param bool is_default: Is the runbook default?
+        :param str id: A filter to return runbooks whose identifier matches the given identifier.
+        :param bool is_default: Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str operation: The runbook lifecycle.
+        :param str operation: A filter to return runbooks whose operation matches the given lifecycle operation.
         :param str os_type: The OS type for the runbook.
-        :param str platform: The ID of the runbook platform.
+        :param str platform: A filter to return runbooks whose platform matches the given platform.
         :param str resource_region: Associated region
-        :param str runbook_relevance: The runbook relevance of product or full-stack.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str runbook_relevance: A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
+        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param str type: The ID of the runbook type.
+        :param str type: A filter to return runbooks whose type matches the given type.
         """
         pulumi.set(__self__, "associations", associations)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -5512,7 +13076,7 @@ class GetRunbooksRunbookCollectionItemResult(dict):
     @pulumi.getter
     def associations(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationResult']:
         """
-        JSON content with required associations
+        Associations for the runbook.
         """
         return pulumi.get(self, "associations")
 
@@ -5552,7 +13116,7 @@ class GetRunbooksRunbookCollectionItemResult(dict):
     @pulumi.getter(name="estimatedTime")
     def estimated_time(self) -> str:
         """
-        Estimated time to successfully complete the runbook execution
+        Estimated time to successfully complete the runbook execution.
         """
         return pulumi.get(self, "estimated_time")
 
@@ -5568,7 +13132,7 @@ class GetRunbooksRunbookCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique Runbook identifier
+        A filter to return runbooks whose identifier matches the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -5576,7 +13140,7 @@ class GetRunbooksRunbookCollectionItemResult(dict):
     @pulumi.getter(name="isDefault")
     def is_default(self) -> bool:
         """
-        Is the runbook default?
+        Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
         """
         return pulumi.get(self, "is_default")
 
@@ -5592,7 +13156,7 @@ class GetRunbooksRunbookCollectionItemResult(dict):
     @pulumi.getter
     def operation(self) -> str:
         """
-        The runbook lifecycle.
+        A filter to return runbooks whose operation matches the given lifecycle operation.
         """
         return pulumi.get(self, "operation")
 
@@ -5608,7 +13172,7 @@ class GetRunbooksRunbookCollectionItemResult(dict):
     @pulumi.getter
     def platform(self) -> str:
         """
-        The ID of the runbook platform.
+        A filter to return runbooks whose platform matches the given platform.
         """
         return pulumi.get(self, "platform")
 
@@ -5624,7 +13188,7 @@ class GetRunbooksRunbookCollectionItemResult(dict):
     @pulumi.getter(name="runbookRelevance")
     def runbook_relevance(self) -> str:
         """
-        The runbook relevance of product or full-stack.
+        A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
         """
         return pulumi.get(self, "runbook_relevance")
 
@@ -5632,7 +13196,7 @@ class GetRunbooksRunbookCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources whose lifecycleState matches the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -5664,7 +13228,7 @@ class GetRunbooksRunbookCollectionItemResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The ID of the runbook type.
+        A filter to return runbooks whose type matches the given type.
         """
         return pulumi.get(self, "type")
 
@@ -5674,16 +13238,19 @@ class GetRunbooksRunbookCollectionItemAssociationResult(dict):
     def __init__(__self__, *,
                  execution_workflow_details: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailResult'],
                  groups: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationGroupResult'],
+                 rollback_workflow_details: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailResult'],
                  tasks: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskResult'],
                  version: str):
         """
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailArgs'] execution_workflow_details: Execution Workflow.
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationGroupArgs'] groups: The groups of the runbook
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskArgs'] tasks: A set of tasks to execute in the runbook
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailArgs'] execution_workflow_details: Execution Workflow details.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationGroupArgs'] groups: The groups of the runbook.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailArgs'] rollback_workflow_details: Rollback Workflow details.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskArgs'] tasks: A set of tasks to execute in the runbook.
         :param str version: The version of the runbook.
         """
         pulumi.set(__self__, "execution_workflow_details", execution_workflow_details)
         pulumi.set(__self__, "groups", groups)
+        pulumi.set(__self__, "rollback_workflow_details", rollback_workflow_details)
         pulumi.set(__self__, "tasks", tasks)
         pulumi.set(__self__, "version", version)
 
@@ -5691,7 +13258,7 @@ class GetRunbooksRunbookCollectionItemAssociationResult(dict):
     @pulumi.getter(name="executionWorkflowDetails")
     def execution_workflow_details(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailResult']:
         """
-        Execution Workflow.
+        Execution Workflow details.
         """
         return pulumi.get(self, "execution_workflow_details")
 
@@ -5699,15 +13266,23 @@ class GetRunbooksRunbookCollectionItemAssociationResult(dict):
     @pulumi.getter
     def groups(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationGroupResult']:
         """
-        The groups of the runbook
+        The groups of the runbook.
         """
         return pulumi.get(self, "groups")
+
+    @property
+    @pulumi.getter(name="rollbackWorkflowDetails")
+    def rollback_workflow_details(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailResult']:
+        """
+        Rollback Workflow details.
+        """
+        return pulumi.get(self, "rollback_workflow_details")
 
     @property
     @pulumi.getter
     def tasks(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskResult']:
         """
-        A set of tasks to execute in the runbook
+        A set of tasks to execute in the runbook.
         """
         return pulumi.get(self, "tasks")
 
@@ -5725,7 +13300,7 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailResult(d
     def __init__(__self__, *,
                  workflows: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowResult']):
         """
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowArgs'] workflows: Execution Workflow for the runbook.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowArgs'] workflows: Rollback Workflow for the runbook.
         """
         pulumi.set(__self__, "workflows", workflows)
 
@@ -5733,7 +13308,7 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailResult(d
     @pulumi.getter
     def workflows(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowResult']:
         """
-        Execution Workflow for the runbook.
+        Rollback Workflow for the runbook.
         """
         return pulumi.get(self, "workflows")
 
@@ -5745,9 +13320,9 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow
                  steps: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowStepResult'],
                  type: str):
         """
-        :param str group_name: Provide the name of the group.
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowStepArgs'] steps: Tasks within the Group. Provide the stepName for all tasks that are applicable
-        :param str type: The ID of the runbook type.
+        :param str group_name: Name of the group.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowStepArgs'] steps: Tasks within the Group. Provide the stepName for all applicable tasks.
+        :param str type: A filter to return runbooks whose type matches the given type.
         """
         pulumi.set(__self__, "group_name", group_name)
         pulumi.set(__self__, "steps", steps)
@@ -5757,7 +13332,7 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow
     @pulumi.getter(name="groupName")
     def group_name(self) -> str:
         """
-        Provide the name of the group.
+        Name of the group.
         """
         return pulumi.get(self, "group_name")
 
@@ -5765,7 +13340,7 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow
     @pulumi.getter
     def steps(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowStepResult']:
         """
-        Tasks within the Group. Provide the stepName for all tasks that are applicable
+        Tasks within the Group. Provide the stepName for all applicable tasks.
         """
         return pulumi.get(self, "steps")
 
@@ -5773,7 +13348,7 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow
     @pulumi.getter
     def type(self) -> str:
         """
-        The ID of the runbook type.
+        A filter to return runbooks whose type matches the given type.
         """
         return pulumi.get(self, "type")
 
@@ -5786,10 +13361,10 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow
                  steps: Sequence[str],
                  type: str):
         """
-        :param str group_name: Provide the name of the group.
+        :param str group_name: Name of the group.
         :param str step_name: The name of the task step.
-        :param Sequence[str] steps: Tasks within the Group. Provide the stepName for all tasks that are applicable
-        :param str type: The ID of the runbook type.
+        :param Sequence[str] steps: Tasks within the Group. Provide the stepName for all applicable tasks.
+        :param str type: A filter to return runbooks whose type matches the given type.
         """
         pulumi.set(__self__, "group_name", group_name)
         pulumi.set(__self__, "step_name", step_name)
@@ -5800,7 +13375,7 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow
     @pulumi.getter(name="groupName")
     def group_name(self) -> str:
         """
-        Provide the name of the group.
+        Name of the group.
         """
         return pulumi.get(self, "group_name")
 
@@ -5816,7 +13391,7 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow
     @pulumi.getter
     def steps(self) -> Sequence[str]:
         """
-        Tasks within the Group. Provide the stepName for all tasks that are applicable
+        Tasks within the Group. Provide the stepName for all applicable tasks.
         """
         return pulumi.get(self, "steps")
 
@@ -5824,7 +13399,7 @@ class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflow
     @pulumi.getter
     def type(self) -> str:
         """
-        The ID of the runbook type.
+        A filter to return runbooks whose type matches the given type.
         """
         return pulumi.get(self, "type")
 
@@ -5838,7 +13413,7 @@ class GetRunbooksRunbookCollectionItemAssociationGroupResult(dict):
         """
         :param str name: The name of the task
         :param Sequence['GetRunbooksRunbookCollectionItemAssociationGroupPropertyArgs'] properties: The properties of the task.
-        :param str type: The ID of the runbook type.
+        :param str type: A filter to return runbooks whose type matches the given type.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "properties", properties)
@@ -5864,7 +13439,7 @@ class GetRunbooksRunbookCollectionItemAssociationGroupResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The ID of the runbook type.
+        A filter to return runbooks whose type matches the given type.
         """
         return pulumi.get(self, "type")
 
@@ -5874,21 +13449,27 @@ class GetRunbooksRunbookCollectionItemAssociationGroupPropertyResult(dict):
     def __init__(__self__, *,
                  action_on_failure: str,
                  condition: str,
+                 notification_preferences: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationGroupPropertyNotificationPreferenceResult'],
+                 pause_details: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationGroupPropertyPauseDetailResult'],
                  run_on: str):
         """
-        :param str action_on_failure: The action to be taken in case of task failure.
-        :param str condition: The condition in which the task is to be executed.
-        :param str run_on: The hosts to execute on.
+        :param str action_on_failure: The action to be taken in case of a failure.
+        :param str condition: Build control flow conditions that determine the relevance of the task execution.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationGroupPropertyNotificationPreferenceArgs'] notification_preferences: Preferences to send notifications on the task activities.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationGroupPropertyPauseDetailArgs'] pause_details: Pause Details
+        :param str run_on: The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
         """
         pulumi.set(__self__, "action_on_failure", action_on_failure)
         pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "notification_preferences", notification_preferences)
+        pulumi.set(__self__, "pause_details", pause_details)
         pulumi.set(__self__, "run_on", run_on)
 
     @property
     @pulumi.getter(name="actionOnFailure")
     def action_on_failure(self) -> str:
         """
-        The action to be taken in case of task failure.
+        The action to be taken in case of a failure.
         """
         return pulumi.get(self, "action_on_failure")
 
@@ -5896,17 +13477,222 @@ class GetRunbooksRunbookCollectionItemAssociationGroupPropertyResult(dict):
     @pulumi.getter
     def condition(self) -> str:
         """
-        The condition in which the task is to be executed.
+        Build control flow conditions that determine the relevance of the task execution.
         """
         return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="notificationPreferences")
+    def notification_preferences(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationGroupPropertyNotificationPreferenceResult']:
+        """
+        Preferences to send notifications on the task activities.
+        """
+        return pulumi.get(self, "notification_preferences")
+
+    @property
+    @pulumi.getter(name="pauseDetails")
+    def pause_details(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationGroupPropertyPauseDetailResult']:
+        """
+        Pause Details
+        """
+        return pulumi.get(self, "pause_details")
 
     @property
     @pulumi.getter(name="runOn")
     def run_on(self) -> str:
         """
-        The hosts to execute on.
+        The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
         """
         return pulumi.get(self, "run_on")
+
+
+@pulumi.output_type
+class GetRunbooksRunbookCollectionItemAssociationGroupPropertyNotificationPreferenceResult(dict):
+    def __init__(__self__, *,
+                 should_notify_on_pause: bool,
+                 should_notify_on_task_failure: bool,
+                 should_notify_on_task_success: bool):
+        """
+        :param bool should_notify_on_pause: Enables notification on pause.
+        :param bool should_notify_on_task_failure: Enables or disables notification on Task Failures.
+        :param bool should_notify_on_task_success: Enables or disables notification on Task Success.
+        """
+        pulumi.set(__self__, "should_notify_on_pause", should_notify_on_pause)
+        pulumi.set(__self__, "should_notify_on_task_failure", should_notify_on_task_failure)
+        pulumi.set(__self__, "should_notify_on_task_success", should_notify_on_task_success)
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnPause")
+    def should_notify_on_pause(self) -> bool:
+        """
+        Enables notification on pause.
+        """
+        return pulumi.get(self, "should_notify_on_pause")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskFailure")
+    def should_notify_on_task_failure(self) -> bool:
+        """
+        Enables or disables notification on Task Failures.
+        """
+        return pulumi.get(self, "should_notify_on_task_failure")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskSuccess")
+    def should_notify_on_task_success(self) -> bool:
+        """
+        Enables or disables notification on Task Success.
+        """
+        return pulumi.get(self, "should_notify_on_task_success")
+
+
+@pulumi.output_type
+class GetRunbooksRunbookCollectionItemAssociationGroupPropertyPauseDetailResult(dict):
+    def __init__(__self__, *,
+                 duration_in_minutes: int,
+                 kind: str):
+        """
+        :param int duration_in_minutes: Time in minutes to apply Pause.
+        :param str kind: Pause based On.
+        """
+        pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
+        pulumi.set(__self__, "kind", kind)
+
+    @property
+    @pulumi.getter(name="durationInMinutes")
+    def duration_in_minutes(self) -> int:
+        """
+        Time in minutes to apply Pause.
+        """
+        return pulumi.get(self, "duration_in_minutes")
+
+    @property
+    @pulumi.getter
+    def kind(self) -> str:
+        """
+        Pause based On.
+        """
+        return pulumi.get(self, "kind")
+
+
+@pulumi.output_type
+class GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailResult(dict):
+    def __init__(__self__, *,
+                 scope: str,
+                 workflows: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowResult']):
+        """
+        :param str scope: The scope of the task.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowArgs'] workflows: Rollback Workflow for the runbook.
+        """
+        pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "workflows", workflows)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> str:
+        """
+        The scope of the task.
+        """
+        return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter
+    def workflows(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowResult']:
+        """
+        Rollback Workflow for the runbook.
+        """
+        return pulumi.get(self, "workflows")
+
+
+@pulumi.output_type
+class GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowResult(dict):
+    def __init__(__self__, *,
+                 group_name: str,
+                 steps: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowStepResult'],
+                 type: str):
+        """
+        :param str group_name: Name of the group.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowStepArgs'] steps: Tasks within the Group. Provide the stepName for all applicable tasks.
+        :param str type: A filter to return runbooks whose type matches the given type.
+        """
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "steps", steps)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> str:
+        """
+        Name of the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowStepResult']:
+        """
+        Tasks within the Group. Provide the stepName for all applicable tasks.
+        """
+        return pulumi.get(self, "steps")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        A filter to return runbooks whose type matches the given type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailWorkflowStepResult(dict):
+    def __init__(__self__, *,
+                 group_name: str,
+                 step_name: str,
+                 steps: Sequence[str],
+                 type: str):
+        """
+        :param str group_name: Name of the group.
+        :param str step_name: The name of the task step.
+        :param Sequence[str] steps: Tasks within the Group. Provide the stepName for all applicable tasks.
+        :param str type: A filter to return runbooks whose type matches the given type.
+        """
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "steps", steps)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> str:
+        """
+        Name of the group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the task step.
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Sequence[str]:
+        """
+        Tasks within the Group. Provide the stepName for all applicable tasks.
+        """
+        return pulumi.get(self, "steps")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        A filter to return runbooks whose type matches the given type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -5921,7 +13707,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskResult(dict):
         :param str association_type: The association type of the task
         :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskOutputVariableMappingArgs'] output_variable_mappings: Mapping output variables of previous tasks to the input variables of the current task.
         :param str step_name: The name of the task step.
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyArgs'] step_properties: The properties of the task.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyArgs'] step_properties: The properties of the component.
         :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailArgs'] task_record_details: The details of the task.
         """
         pulumi.set(__self__, "association_type", association_type)
@@ -5958,7 +13744,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskResult(dict):
     @pulumi.getter(name="stepProperties")
     def step_properties(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyResult']:
         """
-        The properties of the task.
+        The properties of the component.
         """
         return pulumi.get(self, "step_properties")
 
@@ -6006,7 +13792,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskOutputVariableMappingOutput
                  output_variable_name: str,
                  step_name: str):
         """
-        :param str output_variable_name: The name of the output variable whose value that has to be mapped.
+        :param str output_variable_name: The name of the output variable whose value has to be mapped.
         :param str step_name: The name of the task step.
         """
         pulumi.set(__self__, "output_variable_name", output_variable_name)
@@ -6016,7 +13802,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskOutputVariableMappingOutput
     @pulumi.getter(name="outputVariableName")
     def output_variable_name(self) -> str:
         """
-        The name of the output variable whose value that has to be mapped.
+        The name of the output variable whose value has to be mapped.
         """
         return pulumi.get(self, "output_variable_name")
 
@@ -6034,21 +13820,27 @@ class GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyResult(dict):
     def __init__(__self__, *,
                  action_on_failure: str,
                  condition: str,
+                 notification_preferences: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyNotificationPreferenceResult'],
+                 pause_details: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyPauseDetailResult'],
                  run_on: str):
         """
-        :param str action_on_failure: The action to be taken in case of task failure.
-        :param str condition: The condition in which the task is to be executed.
-        :param str run_on: The hosts to execute on.
+        :param str action_on_failure: The action to be taken in case of a failure.
+        :param str condition: Build control flow conditions that determine the relevance of the task execution.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyNotificationPreferenceArgs'] notification_preferences: Preferences to send notifications on the task activities.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyPauseDetailArgs'] pause_details: Pause Details
+        :param str run_on: The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
         """
         pulumi.set(__self__, "action_on_failure", action_on_failure)
         pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "notification_preferences", notification_preferences)
+        pulumi.set(__self__, "pause_details", pause_details)
         pulumi.set(__self__, "run_on", run_on)
 
     @property
     @pulumi.getter(name="actionOnFailure")
     def action_on_failure(self) -> str:
         """
-        The action to be taken in case of task failure.
+        The action to be taken in case of a failure.
         """
         return pulumi.get(self, "action_on_failure")
 
@@ -6056,17 +13848,102 @@ class GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyResult(dict):
     @pulumi.getter
     def condition(self) -> str:
         """
-        The condition in which the task is to be executed.
+        Build control flow conditions that determine the relevance of the task execution.
         """
         return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="notificationPreferences")
+    def notification_preferences(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyNotificationPreferenceResult']:
+        """
+        Preferences to send notifications on the task activities.
+        """
+        return pulumi.get(self, "notification_preferences")
+
+    @property
+    @pulumi.getter(name="pauseDetails")
+    def pause_details(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyPauseDetailResult']:
+        """
+        Pause Details
+        """
+        return pulumi.get(self, "pause_details")
 
     @property
     @pulumi.getter(name="runOn")
     def run_on(self) -> str:
         """
-        The hosts to execute on.
+        The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
         """
         return pulumi.get(self, "run_on")
+
+
+@pulumi.output_type
+class GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyNotificationPreferenceResult(dict):
+    def __init__(__self__, *,
+                 should_notify_on_pause: bool,
+                 should_notify_on_task_failure: bool,
+                 should_notify_on_task_success: bool):
+        """
+        :param bool should_notify_on_pause: Enables notification on pause.
+        :param bool should_notify_on_task_failure: Enables or disables notification on Task Failures.
+        :param bool should_notify_on_task_success: Enables or disables notification on Task Success.
+        """
+        pulumi.set(__self__, "should_notify_on_pause", should_notify_on_pause)
+        pulumi.set(__self__, "should_notify_on_task_failure", should_notify_on_task_failure)
+        pulumi.set(__self__, "should_notify_on_task_success", should_notify_on_task_success)
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnPause")
+    def should_notify_on_pause(self) -> bool:
+        """
+        Enables notification on pause.
+        """
+        return pulumi.get(self, "should_notify_on_pause")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskFailure")
+    def should_notify_on_task_failure(self) -> bool:
+        """
+        Enables or disables notification on Task Failures.
+        """
+        return pulumi.get(self, "should_notify_on_task_failure")
+
+    @property
+    @pulumi.getter(name="shouldNotifyOnTaskSuccess")
+    def should_notify_on_task_success(self) -> bool:
+        """
+        Enables or disables notification on Task Success.
+        """
+        return pulumi.get(self, "should_notify_on_task_success")
+
+
+@pulumi.output_type
+class GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyPauseDetailResult(dict):
+    def __init__(__self__, *,
+                 duration_in_minutes: int,
+                 kind: str):
+        """
+        :param int duration_in_minutes: Time in minutes to apply Pause.
+        :param str kind: Pause based On.
+        """
+        pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
+        pulumi.set(__self__, "kind", kind)
+
+    @property
+    @pulumi.getter(name="durationInMinutes")
+    def duration_in_minutes(self) -> int:
+        """
+        Time in minutes to apply Pause.
+        """
+        return pulumi.get(self, "duration_in_minutes")
+
+    @property
+    @pulumi.getter
+    def kind(self) -> str:
+        """
+        Pause based On.
+        """
+        return pulumi.get(self, "kind")
 
 
 @pulumi.output_type
@@ -6074,7 +13951,9 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailResult(dict
     def __init__(__self__, *,
                  description: str,
                  execution_details: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailResult'],
+                 is_apply_subject_task: bool,
                  is_copy_to_library_enabled: bool,
+                 is_discovery_output_task: bool,
                  name: str,
                  os_type: str,
                  platform: str,
@@ -6083,18 +13962,22 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailResult(dict
                  task_record_id: str):
         """
         :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailArgs'] execution_details: Content Source Details
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailArgs'] execution_details: Execution details.
+        :param bool is_apply_subject_task: Is this an Apply Subject Task? Ex. Patch Execution Task
         :param bool is_copy_to_library_enabled: Make a copy of this task in Library
+        :param bool is_discovery_output_task: Is this a discovery output task?
         :param str name: The name of the task
         :param str os_type: The OS type for the runbook.
-        :param str platform: The ID of the runbook platform.
+        :param str platform: A filter to return runbooks whose platform matches the given platform.
         :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailPropertyArgs'] properties: The properties of the task.
         :param str scope: The scope of the task.
         :param str task_record_id: The ID of taskRecord.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "execution_details", execution_details)
+        pulumi.set(__self__, "is_apply_subject_task", is_apply_subject_task)
         pulumi.set(__self__, "is_copy_to_library_enabled", is_copy_to_library_enabled)
+        pulumi.set(__self__, "is_discovery_output_task", is_discovery_output_task)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "os_type", os_type)
         pulumi.set(__self__, "platform", platform)
@@ -6114,9 +13997,17 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailResult(dict
     @pulumi.getter(name="executionDetails")
     def execution_details(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailResult']:
         """
-        Content Source Details
+        Execution details.
         """
         return pulumi.get(self, "execution_details")
+
+    @property
+    @pulumi.getter(name="isApplySubjectTask")
+    def is_apply_subject_task(self) -> bool:
+        """
+        Is this an Apply Subject Task? Ex. Patch Execution Task
+        """
+        return pulumi.get(self, "is_apply_subject_task")
 
     @property
     @pulumi.getter(name="isCopyToLibraryEnabled")
@@ -6125,6 +14016,14 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailResult(dict
         Make a copy of this task in Library
         """
         return pulumi.get(self, "is_copy_to_library_enabled")
+
+    @property
+    @pulumi.getter(name="isDiscoveryOutputTask")
+    def is_discovery_output_task(self) -> bool:
+        """
+        Is this a discovery output task?
+        """
+        return pulumi.get(self, "is_discovery_output_task")
 
     @property
     @pulumi.getter
@@ -6146,7 +14045,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailResult(dict
     @pulumi.getter
     def platform(self) -> str:
         """
-        The ID of the runbook platform.
+        A filter to return runbooks whose platform matches the given platform.
         """
         return pulumi.get(self, "platform")
 
@@ -6180,18 +14079,21 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDe
     def __init__(__self__, *,
                  command: str,
                  contents: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailContentResult'],
+                 credentials: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailCredentialResult'],
                  endpoint: str,
                  execution_type: str,
                  variables: Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailVariableResult']):
         """
-        :param str command: Optional Command to execute the content.
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source Details.
+        :param str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source details.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailCredentialArgs'] credentials: Credentials required for executing the task.
         :param str endpoint: Endpoint to be invoked.
         :param str execution_type: The action type of the task
-        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailVariableArgs'] variables: The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+        :param Sequence['GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailVariableArgs'] variables: The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         """
         pulumi.set(__self__, "command", command)
         pulumi.set(__self__, "contents", contents)
+        pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "endpoint", endpoint)
         pulumi.set(__self__, "execution_type", execution_type)
         pulumi.set(__self__, "variables", variables)
@@ -6200,7 +14102,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDe
     @pulumi.getter
     def command(self) -> str:
         """
-        Optional Command to execute the content.
+        Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         """
         return pulumi.get(self, "command")
 
@@ -6208,9 +14110,17 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDe
     @pulumi.getter
     def contents(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailContentResult']:
         """
-        Content Source Details.
+        Content Source details.
         """
         return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailCredentialResult']:
+        """
+        Credentials required for executing the task.
+        """
+        return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter
@@ -6232,7 +14142,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDe
     @pulumi.getter
     def variables(self) -> Sequence['outputs.GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailVariableResult']:
         """
-        The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+        The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         """
         return pulumi.get(self, "variables")
 
@@ -6247,10 +14157,10 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDe
                  source_type: str):
         """
         :param str bucket: Bucket Name.
-        :param str checksum: SHA256 checksum of the artifact.
+        :param str checksum: md5 checksum of the artifact.
         :param str namespace: Namespace.
         :param str object: Object Name.
-        :param str source_type: Content Source Details.
+        :param str source_type: Content Source type details.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "checksum", checksum)
@@ -6270,7 +14180,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDe
     @pulumi.getter
     def checksum(self) -> str:
         """
-        SHA256 checksum of the artifact.
+        md5 checksum of the artifact.
         """
         return pulumi.get(self, "checksum")
 
@@ -6294,9 +14204,38 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDe
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Content Source Details.
+        Content Source type details.
         """
         return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str id: A filter to return runbooks whose identifier matches the given identifier.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        A filter to return runbooks whose identifier matches the given identifier.
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -6337,7 +14276,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDe
         """
         :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param str name: The name of the task
-        :param str type: The ID of the runbook type.
+        :param str type: A filter to return runbooks whose type matches the given type.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "name", name)
@@ -6363,7 +14302,7 @@ class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDe
     @pulumi.getter
     def type(self) -> str:
         """
-        The ID of the runbook type.
+        A filter to return runbooks whose type matches the given type.
         """
         return pulumi.get(self, "type")
 
@@ -6412,7 +14351,7 @@ class GetSchedulerDefinitionActionGroupResult(dict):
         :param str application_type: Application Type associated. Only applicable if type is ENVIRONMENT.
         :param str lifecycle_operation: LifeCycle Operation
         :param str product: Product associated. Only applicable if type is PRODUCT.
-        :param str resource_id: Provide the ID of the resource; Ex- fleetId.
+        :param str resource_id: Provide the ID of the resource. Example fleet ID.
         :param str runbook_id: ID of the runbook
         :param Sequence[str] subjects: Provide subjects that need to be considered for the schedule.
         :param str target_id: Provide the target if schedule is created against the target
@@ -6455,7 +14394,7 @@ class GetSchedulerDefinitionActionGroupResult(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> str:
         """
-        Provide the ID of the resource; Ex- fleetId.
+        Provide the ID of the resource. Example fleet ID.
         """
         return pulumi.get(self, "resource_id")
 
@@ -6854,29 +14793,29 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
                  time_of_next_run: str,
                  time_updated: str):
         """
-        :param Sequence[str] action_group_types: All ActionGroup Types part of the schedule.
+        :param Sequence[str] action_group_types: All ActionGroup Types that are part of the schedule.
         :param Sequence['GetSchedulerDefinitionsSchedulerDefinitionCollectionItemActionGroupArgs'] action_groups: Action Groups associated with the Schedule.
-        :param int activity_initiation_cut_off: Activity Initiation Cut Off
-        :param Sequence[str] application_types: All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        :param int activity_initiation_cut_off: Activity Initiation Cut Off.
+        :param Sequence[str] application_types: All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param int count_of_affected_action_groups: Count of Action Groups affected by the Schedule.
-        :param int count_of_affected_resources: Count of Resources affected by the Schedule
-        :param int count_of_affected_targets: Count of Targets affected by the Schedule
+        :param int count_of_affected_resources: Count of Resources affected by the Schedule.
+        :param int count_of_affected_targets: Count of Targets affected by the Schedule.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique SchedulerDefinition identifier
+        :param str id: A filter to return only schedule definitions whose identifier matches the given identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence[str] lifecycle_operations: All LifeCycle Operations part of the schedule
-        :param Sequence[str] products: All products part of the schedule for PRODUCT ActionGroup Type.
+        :param Sequence[str] lifecycle_operations: All LifeCycle Operations that are part of the schedule.
+        :param Sequence[str] products: All products that are part of the schedule for PRODUCT ActionGroup Type.
         :param str resource_region: Associated region
         :param Sequence['GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBookArgs'] run_books: Runbooks.
         :param Sequence['GetSchedulerDefinitionsSchedulerDefinitionCollectionItemScheduleArgs'] schedules: Schedule Information.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str state: A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
-        :param str time_of_next_run: Scheduled date for the next run of the Job.
+        :param str time_of_next_run: The scheduled date for the next run of the Job.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "action_group_types", action_group_types)
@@ -6908,7 +14847,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="actionGroupTypes")
     def action_group_types(self) -> Sequence[str]:
         """
-        All ActionGroup Types part of the schedule.
+        All ActionGroup Types that are part of the schedule.
         """
         return pulumi.get(self, "action_group_types")
 
@@ -6924,7 +14863,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="activityInitiationCutOff")
     def activity_initiation_cut_off(self) -> int:
         """
-        Activity Initiation Cut Off
+        Activity Initiation Cut Off.
         """
         return pulumi.get(self, "activity_initiation_cut_off")
 
@@ -6932,7 +14871,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="applicationTypes")
     def application_types(self) -> Sequence[str]:
         """
-        All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         """
         return pulumi.get(self, "application_types")
 
@@ -6956,7 +14895,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="countOfAffectedResources")
     def count_of_affected_resources(self) -> int:
         """
-        Count of Resources affected by the Schedule
+        Count of Resources affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_resources")
 
@@ -6964,7 +14903,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="countOfAffectedTargets")
     def count_of_affected_targets(self) -> int:
         """
-        Count of Targets affected by the Schedule
+        Count of Targets affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_targets")
 
@@ -7004,7 +14943,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        unique SchedulerDefinition identifier
+        A filter to return only schedule definitions whose identifier matches the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -7020,7 +14959,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="lifecycleOperations")
     def lifecycle_operations(self) -> Sequence[str]:
         """
-        All LifeCycle Operations part of the schedule
+        All LifeCycle Operations that are part of the schedule.
         """
         return pulumi.get(self, "lifecycle_operations")
 
@@ -7028,7 +14967,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter
     def products(self) -> Sequence[str]:
         """
-        All products part of the schedule for PRODUCT ActionGroup Type.
+        All products that are part of the schedule for PRODUCT ActionGroup Type.
         """
         return pulumi.get(self, "products")
 
@@ -7060,7 +14999,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -7084,7 +15023,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="timeOfNextRun")
     def time_of_next_run(self) -> str:
         """
-        Scheduled date for the next run of the Job.
+        The scheduled date for the next run of the Job.
         """
         return pulumi.get(self, "time_of_next_run")
 
@@ -7111,9 +15050,9 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemActionGroupResult(
         """
         :param str application_type: Application Type associated. Only applicable if type is ENVIRONMENT.
         :param str lifecycle_operation: LifeCycle Operation
-        :param str product: A filter to return only Scheduler Definitions whose assocaited product matches the given product
-        :param str resource_id: Provide the ID of the resource; Ex- fleetId.
-        :param str runbook_id: ID of the runbook
+        :param str product: A filter to return only dchedule definitions whose assocaited product matches the given product
+        :param str resource_id: Provide the ID of the resource. Example fleet ID.
+        :param str runbook_id: A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
         :param Sequence[str] subjects: Provide subjects that need to be considered for the schedule.
         :param str target_id: Provide the target if schedule is created against the target
         :param str type: Schedule Type
@@ -7147,7 +15086,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemActionGroupResult(
     @pulumi.getter
     def product(self) -> str:
         """
-        A filter to return only Scheduler Definitions whose assocaited product matches the given product
+        A filter to return only dchedule definitions whose assocaited product matches the given product
         """
         return pulumi.get(self, "product")
 
@@ -7155,7 +15094,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemActionGroupResult(
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> str:
         """
-        Provide the ID of the resource; Ex- fleetId.
+        Provide the ID of the resource. Example fleet ID.
         """
         return pulumi.get(self, "resource_id")
 
@@ -7163,7 +15102,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemActionGroupResult(
     @pulumi.getter(name="runbookId")
     def runbook_id(self) -> str:
         """
-        ID of the runbook
+        A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
         """
         return pulumi.get(self, "runbook_id")
 
@@ -7198,7 +15137,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBookResult(dict
                  id: str,
                  input_parameters: Sequence['outputs.GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBookInputParameterResult']):
         """
-        :param str id: unique SchedulerDefinition identifier
+        :param str id: A filter to return only schedule definitions whose identifier matches the given identifier.
         :param Sequence['GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBookInputParameterArgs'] input_parameters: Input Parameters for the Task
         """
         pulumi.set(__self__, "id", id)
@@ -7208,7 +15147,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBookResult(dict
     @pulumi.getter
     def id(self) -> str:
         """
-        unique SchedulerDefinition identifier
+        A filter to return only schedule definitions whose identifier matches the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -7290,7 +15229,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemScheduleResult(dic
         """
         :param str duration: Duration if schedule type is Custom
         :param str execution_startdate: Start Date for the schedule. An RFC3339 formatted datetime string
-        :param str maintenance_window_id: unique MaintenanceWindow identifier
+        :param str maintenance_window_id: A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
         :param str recurrences: Recurrence rule specification if Schedule Type is Custom and Recurring
         :param str type: Schedule Type
         """
@@ -7320,7 +15259,7 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemScheduleResult(dic
     @pulumi.getter(name="maintenanceWindowId")
     def maintenance_window_id(self) -> str:
         """
-        unique MaintenanceWindow identifier
+        A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
         """
         return pulumi.get(self, "maintenance_window_id")
 
@@ -7342,21 +15281,450 @@ class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemScheduleResult(dic
 
 
 @pulumi.output_type
+class GetSchedulerJobCountsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSchedulerJobCountsSchedulerJobAggregationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSchedulerJobCountsSchedulerJobAggregationCollectionItemResult']):
+        """
+        :param Sequence['GetSchedulerJobCountsSchedulerJobAggregationCollectionItemArgs'] items: List of SchedulerJobAggregation objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSchedulerJobCountsSchedulerJobAggregationCollectionItemResult']:
+        """
+        List of SchedulerJobAggregation objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSchedulerJobCountsSchedulerJobAggregationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 dimensions: Sequence['outputs.GetSchedulerJobCountsSchedulerJobAggregationCollectionItemDimensionResult'],
+                 scheduler_job_count_count: int):
+        """
+        :param Sequence['GetSchedulerJobCountsSchedulerJobAggregationCollectionItemDimensionArgs'] dimensions: Aggregated summary information for a SchedulerJob.
+        :param int scheduler_job_count_count: Count of jobs in a Tenancy.
+        """
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "scheduler_job_count_count", scheduler_job_count_count)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetSchedulerJobCountsSchedulerJobAggregationCollectionItemDimensionResult']:
+        """
+        Aggregated summary information for a SchedulerJob.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @property
+    @pulumi.getter(name="schedulerJobCountCount")
+    def scheduler_job_count_count(self) -> int:
+        """
+        Count of jobs in a Tenancy.
+        """
+        return pulumi.get(self, "scheduler_job_count_count")
+
+
+@pulumi.output_type
+class GetSchedulerJobCountsSchedulerJobAggregationCollectionItemDimensionResult(dict):
+    def __init__(__self__, *,
+                 lifecycle_details: str):
+        """
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+
+@pulumi.output_type
+class GetSchedulerJobJobActivityResourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSchedulerJobJobActivityResourcesResourceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSchedulerJobJobActivityResourcesResourceCollectionItemResult']):
+        """
+        :param Sequence['GetSchedulerJobJobActivityResourcesResourceCollectionItemArgs'] items: List of Execution Resources.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSchedulerJobJobActivityResourcesResourceCollectionItemResult']:
+        """
+        List of Execution Resources.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSchedulerJobJobActivityResourcesResourceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 resource_display_name: str,
+                 resource_id: str,
+                 sequence: str,
+                 status: str,
+                 targets: Sequence['outputs.GetSchedulerJobJobActivityResourcesResourceCollectionItemTargetResult'],
+                 time_ended: str,
+                 time_started: str):
+        """
+        :param str description: Description of the Execution status. If there are any errors, this can also include a short error message.
+        :param str resource_display_name: Resource Display Name.
+        :param str resource_id: Resource Identifier associated with the Work Request.
+        :param str sequence: Task Order Sequence
+        :param str status: Status of the Job at target Level.
+        :param Sequence['GetSchedulerJobJobActivityResourcesResourceCollectionItemTargetArgs'] targets: Targets associated with the resource.
+        :param str time_ended: The time the task ended for the resource. An RFC3339 formatted datetime string
+        :param str time_started: The time the task started for the resource. An RFC3339 formatted datetime string
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "resource_display_name", resource_display_name)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "sequence", sequence)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the Execution status. If there are any errors, this can also include a short error message.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="resourceDisplayName")
+    def resource_display_name(self) -> str:
+        """
+        Resource Display Name.
+        """
+        return pulumi.get(self, "resource_display_name")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        Resource Identifier associated with the Work Request.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter
+    def sequence(self) -> str:
+        """
+        Task Order Sequence
+        """
+        return pulumi.get(self, "sequence")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status of the Job at target Level.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetSchedulerJobJobActivityResourcesResourceCollectionItemTargetResult']:
+        """
+        Targets associated with the resource.
+        """
+        return pulumi.get(self, "targets")
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        The time the task ended for the resource. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The time the task started for the resource. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetSchedulerJobJobActivityResourcesResourceCollectionItemTargetResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 status: str,
+                 target_name: str):
+        """
+        :param str description: Description of the Execution status. If there are any errors, this can also include a short error message.
+        :param str status: Status of the Job at target Level.
+        :param str target_name: Unique target name
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "target_name", target_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the Execution status. If there are any errors, this can also include a short error message.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status of the Job at target Level.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="targetName")
+    def target_name(self) -> str:
+        """
+        Unique target name
+        """
+        return pulumi.get(self, "target_name")
+
+
+@pulumi.output_type
+class GetSchedulerJobJobActivityStepsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSchedulerJobJobActivityStepsStepCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSchedulerJobJobActivityStepsStepCollectionItemResult']):
+        """
+        :param Sequence['GetSchedulerJobJobActivityStepsStepCollectionItemArgs'] items: List of Execution steps.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSchedulerJobJobActivityStepsStepCollectionItemResult']:
+        """
+        List of Execution steps.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSchedulerJobJobActivityStepsStepCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 is_rollback_task: bool,
+                 sequence: str,
+                 status: str,
+                 step_name: str,
+                 system_tags: Mapping[str, str],
+                 task_record_id: str,
+                 time_ended: str,
+                 time_started: str):
+        """
+        :param str description: Description of the step Execution
+        :param bool is_rollback_task: Is this a rollback task?
+        :param str sequence: Task Order Sequence
+        :param str status: Status of the Task
+        :param str step_name: Unique step name
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str task_record_id: The OCID of taskRecord assocaited with the step
+        :param str time_ended: The time the task ended. An RFC3339 formatted datetime string
+        :param str time_started: The time the task started. An RFC3339 formatted datetime string
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_rollback_task", is_rollback_task)
+        pulumi.set(__self__, "sequence", sequence)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "task_record_id", task_record_id)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the step Execution
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isRollbackTask")
+    def is_rollback_task(self) -> bool:
+        """
+        Is this a rollback task?
+        """
+        return pulumi.get(self, "is_rollback_task")
+
+    @property
+    @pulumi.getter
+    def sequence(self) -> str:
+        """
+        Task Order Sequence
+        """
+        return pulumi.get(self, "sequence")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status of the Task
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        Unique step name
+        """
+        return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="taskRecordId")
+    def task_record_id(self) -> str:
+        """
+        The OCID of taskRecord assocaited with the step
+        """
+        return pulumi.get(self, "task_record_id")
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        The time the task ended. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The time the task started. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
 class GetTaskRecordDetailResult(dict):
     def __init__(__self__, *,
                  execution_details: Sequence['outputs.GetTaskRecordDetailExecutionDetailResult'],
+                 is_apply_subject_task: bool,
+                 is_discovery_output_task: bool,
                  os_type: str,
                  platform: str,
                  properties: Sequence['outputs.GetTaskRecordDetailPropertyResult'],
                  scope: str):
         """
-        :param Sequence['GetTaskRecordDetailExecutionDetailArgs'] execution_details: Content Source Details
+        :param Sequence['GetTaskRecordDetailExecutionDetailArgs'] execution_details: Execution details.
+        :param bool is_apply_subject_task: Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+        :param bool is_discovery_output_task: Is this a discovery output task?
         :param str os_type: The OS for the task
         :param str platform: The platform of the runbook.
         :param Sequence['GetTaskRecordDetailPropertyArgs'] properties: The properties of the task.
         :param str scope: The scope of the task
         """
         pulumi.set(__self__, "execution_details", execution_details)
+        pulumi.set(__self__, "is_apply_subject_task", is_apply_subject_task)
+        pulumi.set(__self__, "is_discovery_output_task", is_discovery_output_task)
         pulumi.set(__self__, "os_type", os_type)
         pulumi.set(__self__, "platform", platform)
         pulumi.set(__self__, "properties", properties)
@@ -7366,9 +15734,25 @@ class GetTaskRecordDetailResult(dict):
     @pulumi.getter(name="executionDetails")
     def execution_details(self) -> Sequence['outputs.GetTaskRecordDetailExecutionDetailResult']:
         """
-        Content Source Details
+        Execution details.
         """
         return pulumi.get(self, "execution_details")
+
+    @property
+    @pulumi.getter(name="isApplySubjectTask")
+    def is_apply_subject_task(self) -> bool:
+        """
+        Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+        """
+        return pulumi.get(self, "is_apply_subject_task")
+
+    @property
+    @pulumi.getter(name="isDiscoveryOutputTask")
+    def is_discovery_output_task(self) -> bool:
+        """
+        Is this a discovery output task?
+        """
+        return pulumi.get(self, "is_discovery_output_task")
 
     @property
     @pulumi.getter(name="osType")
@@ -7408,18 +15792,21 @@ class GetTaskRecordDetailExecutionDetailResult(dict):
     def __init__(__self__, *,
                  command: str,
                  contents: Sequence['outputs.GetTaskRecordDetailExecutionDetailContentResult'],
+                 credentials: Sequence['outputs.GetTaskRecordDetailExecutionDetailCredentialResult'],
                  endpoint: str,
                  execution_type: str,
                  variables: Sequence['outputs.GetTaskRecordDetailExecutionDetailVariableResult']):
         """
-        :param str command: Optional Command to execute the content.
-        :param Sequence['GetTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source Details.
+        :param str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+        :param Sequence['GetTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source details.
+        :param Sequence['GetTaskRecordDetailExecutionDetailCredentialArgs'] credentials: Credentials required for executing the task.
         :param str endpoint: Endpoint to be invoked.
         :param str execution_type: The action type of the task
-        :param Sequence['GetTaskRecordDetailExecutionDetailVariableArgs'] variables: The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+        :param Sequence['GetTaskRecordDetailExecutionDetailVariableArgs'] variables: The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         """
         pulumi.set(__self__, "command", command)
         pulumi.set(__self__, "contents", contents)
+        pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "endpoint", endpoint)
         pulumi.set(__self__, "execution_type", execution_type)
         pulumi.set(__self__, "variables", variables)
@@ -7428,7 +15815,7 @@ class GetTaskRecordDetailExecutionDetailResult(dict):
     @pulumi.getter
     def command(self) -> str:
         """
-        Optional Command to execute the content.
+        Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         """
         return pulumi.get(self, "command")
 
@@ -7436,9 +15823,17 @@ class GetTaskRecordDetailExecutionDetailResult(dict):
     @pulumi.getter
     def contents(self) -> Sequence['outputs.GetTaskRecordDetailExecutionDetailContentResult']:
         """
-        Content Source Details.
+        Content Source details.
         """
         return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetTaskRecordDetailExecutionDetailCredentialResult']:
+        """
+        Credentials required for executing the task.
+        """
+        return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter
@@ -7460,7 +15855,7 @@ class GetTaskRecordDetailExecutionDetailResult(dict):
     @pulumi.getter
     def variables(self) -> Sequence['outputs.GetTaskRecordDetailExecutionDetailVariableResult']:
         """
-        The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+        The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         """
         return pulumi.get(self, "variables")
 
@@ -7475,10 +15870,10 @@ class GetTaskRecordDetailExecutionDetailContentResult(dict):
                  source_type: str):
         """
         :param str bucket: Bucket Name.
-        :param str checksum: SHA256 checksum of the artifact.
+        :param str checksum: md5 checksum of the artifact.
         :param str namespace: Namespace.
         :param str object: Object Name.
-        :param str source_type: Content Source Details.
+        :param str source_type: Content Source type details.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "checksum", checksum)
@@ -7498,7 +15893,7 @@ class GetTaskRecordDetailExecutionDetailContentResult(dict):
     @pulumi.getter
     def checksum(self) -> str:
         """
-        SHA256 checksum of the artifact.
+        md5 checksum of the artifact.
         """
         return pulumi.get(self, "checksum")
 
@@ -7522,9 +15917,38 @@ class GetTaskRecordDetailExecutionDetailContentResult(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Content Source Details.
+        Content Source type details.
         """
         return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetTaskRecordDetailExecutionDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param str id: The OCID of the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the resource.
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -7564,7 +15988,7 @@ class GetTaskRecordDetailExecutionDetailVariableInputVariableResult(dict):
                  type: str):
         """
         :param str description: The description of the argument.
-        :param str name: The name of the argument
+        :param str name: The name of the argument.
         :param str type: Task type.
         """
         pulumi.set(__self__, "description", description)
@@ -7583,7 +16007,7 @@ class GetTaskRecordDetailExecutionDetailVariableInputVariableResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the argument
+        The name of the argument.
         """
         return pulumi.get(self, "name")
 
@@ -7632,7 +16056,7 @@ class GetTaskRecordsFilterResult(dict):
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: The name of the argument
+        :param str name: The name of the argument.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -7643,7 +16067,7 @@ class GetTaskRecordsFilterResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the argument
+        The name of the argument.
         """
         return pulumi.get(self, "name")
 
@@ -7846,18 +16270,24 @@ class GetTaskRecordsTaskRecordCollectionItemResult(dict):
 class GetTaskRecordsTaskRecordCollectionItemDetailResult(dict):
     def __init__(__self__, *,
                  execution_details: Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult'],
+                 is_apply_subject_task: bool,
+                 is_discovery_output_task: bool,
                  os_type: str,
                  platform: str,
                  properties: Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailPropertyResult'],
                  scope: str):
         """
-        :param Sequence['GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailArgs'] execution_details: Content Source Details
+        :param Sequence['GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailArgs'] execution_details: Execution details.
+        :param bool is_apply_subject_task: Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+        :param bool is_discovery_output_task: Is this a discovery output task?
         :param str os_type: The OS for the task
         :param str platform: The platform for the Task.
         :param Sequence['GetTaskRecordsTaskRecordCollectionItemDetailPropertyArgs'] properties: The properties of the task.
         :param str scope: The scope of the task
         """
         pulumi.set(__self__, "execution_details", execution_details)
+        pulumi.set(__self__, "is_apply_subject_task", is_apply_subject_task)
+        pulumi.set(__self__, "is_discovery_output_task", is_discovery_output_task)
         pulumi.set(__self__, "os_type", os_type)
         pulumi.set(__self__, "platform", platform)
         pulumi.set(__self__, "properties", properties)
@@ -7867,9 +16297,25 @@ class GetTaskRecordsTaskRecordCollectionItemDetailResult(dict):
     @pulumi.getter(name="executionDetails")
     def execution_details(self) -> Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult']:
         """
-        Content Source Details
+        Execution details.
         """
         return pulumi.get(self, "execution_details")
+
+    @property
+    @pulumi.getter(name="isApplySubjectTask")
+    def is_apply_subject_task(self) -> bool:
+        """
+        Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+        """
+        return pulumi.get(self, "is_apply_subject_task")
+
+    @property
+    @pulumi.getter(name="isDiscoveryOutputTask")
+    def is_discovery_output_task(self) -> bool:
+        """
+        Is this a discovery output task?
+        """
+        return pulumi.get(self, "is_discovery_output_task")
 
     @property
     @pulumi.getter(name="osType")
@@ -7909,18 +16355,21 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult(dict):
     def __init__(__self__, *,
                  command: str,
                  contents: Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult'],
+                 credentials: Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredentialResult'],
                  endpoint: str,
                  execution_type: str,
                  variables: Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableResult']):
         """
-        :param str command: Optional Command to execute the content.
-        :param Sequence['GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentArgs'] contents: Content Source Details.
+        :param str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+        :param Sequence['GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentArgs'] contents: Content Source details.
+        :param Sequence['GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredentialArgs'] credentials: Credentials required for executing the task.
         :param str endpoint: Endpoint to be invoked.
         :param str execution_type: The action type of the task
-        :param Sequence['GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableArgs'] variables: The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+        :param Sequence['GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableArgs'] variables: The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         """
         pulumi.set(__self__, "command", command)
         pulumi.set(__self__, "contents", contents)
+        pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "endpoint", endpoint)
         pulumi.set(__self__, "execution_type", execution_type)
         pulumi.set(__self__, "variables", variables)
@@ -7929,7 +16378,7 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult(dict):
     @pulumi.getter
     def command(self) -> str:
         """
-        Optional Command to execute the content.
+        Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         """
         return pulumi.get(self, "command")
 
@@ -7937,9 +16386,17 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult(dict):
     @pulumi.getter
     def contents(self) -> Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult']:
         """
-        Content Source Details.
+        Content Source details.
         """
         return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredentialResult']:
+        """
+        Credentials required for executing the task.
+        """
+        return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter
@@ -7961,7 +16418,7 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult(dict):
     @pulumi.getter
     def variables(self) -> Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableResult']:
         """
-        The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+        The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         """
         return pulumi.get(self, "variables")
 
@@ -7976,10 +16433,10 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult(d
                  source_type: str):
         """
         :param str bucket: Bucket Name.
-        :param str checksum: SHA256 checksum of the artifact.
+        :param str checksum: md5 checksum of the artifact.
         :param str namespace: Namespace.
         :param str object: Object Name.
-        :param str source_type: Content Source Details.
+        :param str source_type: Content Source type details.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "checksum", checksum)
@@ -7999,7 +16456,7 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult(d
     @pulumi.getter
     def checksum(self) -> str:
         """
-        SHA256 checksum of the artifact.
+        md5 checksum of the artifact.
         """
         return pulumi.get(self, "checksum")
 
@@ -8023,9 +16480,38 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult(d
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Content Source Details.
+        Content Source type details.
         """
         return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str id: unique TaskDetail identifier
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique TaskDetail identifier
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -8065,7 +16551,7 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableInputVa
                  type: str):
         """
         :param str description: The description of the argument.
-        :param str name: The name of the argument
+        :param str name: The name of the argument.
         :param str type: The type of the Task.
         """
         pulumi.set(__self__, "description", description)
@@ -8084,7 +16570,7 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableInputVa
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the argument
+        The name of the argument.
         """
         return pulumi.get(self, "name")
 

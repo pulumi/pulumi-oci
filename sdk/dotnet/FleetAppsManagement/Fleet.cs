@@ -12,8 +12,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
     /// 
-    /// Creates a new fleet instance that includes fleet resources and properties.
-    /// For more information, please see the documentation.
+    /// Create a product, environment, group, or generic type of fleet in Fleet Application Management.
     /// 
     /// ## Import
     /// 
@@ -27,7 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public partial class Fleet : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Application Type associated with the Fleet.Applicable for Environment fleet types.
+        /// Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         [Output("applicationType")]
         public Output<string> ApplicationType { get; private set; } = null!;
@@ -37,6 +36,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// Credentials associated with the Fleet.
+        /// </summary>
+        [Output("credentials")]
+        public Output<ImmutableArray<Outputs.FleetCredential>> Credentials { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -57,13 +62,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Environment Type associated with the Fleet.Applicable for Environment fleet types.
+        /// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         [Output("environmentType")]
         public Output<string> EnvironmentType { get; private set; } = null!;
 
         /// <summary>
-        /// Type of the Fleet
+        /// Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         /// </summary>
         [Output("fleetType")]
         public Output<string> FleetType { get; private set; } = null!;
@@ -75,13 +80,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Group Type associated with Group Fleet.Applicable for Group fleet types.
+        /// Group Type associated with Group Fleet.
         /// </summary>
         [Output("groupType")]
         public Output<string> GroupType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A value which represents if auto confirming of the targets can be enabled
+        /// (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         /// </summary>
         [Output("isTargetAutoConfirm")]
         public Output<bool> IsTargetAutoConfirm { get; private set; } = null!;
@@ -93,13 +98,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Conditions when met to send notifications on the fleet activities
+        /// (Updatable) Notification information to get notified when the fleet status changes.
         /// </summary>
         [Output("notificationPreferences")]
         public Output<Outputs.FleetNotificationPreferences> NotificationPreferences { get; private set; } = null!;
 
         /// <summary>
-        /// Products associated with the Fleet
+        /// Products associated with the Fleet.
         /// </summary>
         [Output("products")]
         public Output<ImmutableArray<string>> Products { get; private set; } = null!;
@@ -111,13 +116,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> ResourceRegion { get; private set; } = null!;
 
         /// <summary>
-        /// Type of resource selection in a fleet
+        /// Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         /// </summary>
         [Output("resourceSelectionType")]
         public Output<string> ResourceSelectionType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Rule Selection Criteria
+        /// (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         /// </summary>
         [Output("ruleSelectionCriteria")]
         public Output<Outputs.FleetRuleSelectionCriteria> RuleSelectionCriteria { get; private set; } = null!;
@@ -193,7 +198,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class FleetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Application Type associated with the Fleet.Applicable for Environment fleet types.
+        /// Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         [Input("applicationType")]
         public Input<string>? ApplicationType { get; set; }
@@ -203,6 +208,18 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
+
+        [Input("credentials")]
+        private InputList<Inputs.FleetCredentialArgs>? _credentials;
+
+        /// <summary>
+        /// Credentials associated with the Fleet.
+        /// </summary>
+        public InputList<Inputs.FleetCredentialArgs> Credentials
+        {
+            get => _credentials ?? (_credentials = new InputList<Inputs.FleetCredentialArgs>());
+            set => _credentials = value;
+        }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -229,13 +246,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Environment Type associated with the Fleet.Applicable for Environment fleet types.
+        /// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         [Input("environmentType")]
         public Input<string>? EnvironmentType { get; set; }
 
         /// <summary>
-        /// Type of the Fleet
+        /// Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         /// </summary>
         [Input("fleetType", required: true)]
         public Input<string> FleetType { get; set; } = null!;
@@ -253,19 +270,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// Group Type associated with Group Fleet.Applicable for Group fleet types.
+        /// Group Type associated with Group Fleet.
         /// </summary>
         [Input("groupType")]
         public Input<string>? GroupType { get; set; }
 
         /// <summary>
-        /// (Updatable) A value which represents if auto confirming of the targets can be enabled
+        /// (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         /// </summary>
         [Input("isTargetAutoConfirm")]
         public Input<bool>? IsTargetAutoConfirm { get; set; }
 
         /// <summary>
-        /// (Updatable) Conditions when met to send notifications on the fleet activities
+        /// (Updatable) Notification information to get notified when the fleet status changes.
         /// </summary>
         [Input("notificationPreferences")]
         public Input<Inputs.FleetNotificationPreferencesArgs>? NotificationPreferences { get; set; }
@@ -274,7 +291,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _products;
 
         /// <summary>
-        /// Products associated with the Fleet
+        /// Products associated with the Fleet.
         /// </summary>
         public InputList<string> Products
         {
@@ -283,13 +300,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// Type of resource selection in a fleet
+        /// Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         /// </summary>
         [Input("resourceSelectionType")]
         public Input<string>? ResourceSelectionType { get; set; }
 
         /// <summary>
-        /// (Updatable) Rule Selection Criteria
+        /// (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         /// </summary>
         [Input("ruleSelectionCriteria")]
         public Input<Inputs.FleetRuleSelectionCriteriaArgs>? RuleSelectionCriteria { get; set; }
@@ -303,7 +320,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class FleetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Application Type associated with the Fleet.Applicable for Environment fleet types.
+        /// Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         [Input("applicationType")]
         public Input<string>? ApplicationType { get; set; }
@@ -313,6 +330,18 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("credentials")]
+        private InputList<Inputs.FleetCredentialGetArgs>? _credentials;
+
+        /// <summary>
+        /// Credentials associated with the Fleet.
+        /// </summary>
+        public InputList<Inputs.FleetCredentialGetArgs> Credentials
+        {
+            get => _credentials ?? (_credentials = new InputList<Inputs.FleetCredentialGetArgs>());
+            set => _credentials = value;
+        }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -339,13 +368,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Environment Type associated with the Fleet.Applicable for Environment fleet types.
+        /// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         [Input("environmentType")]
         public Input<string>? EnvironmentType { get; set; }
 
         /// <summary>
-        /// Type of the Fleet
+        /// Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         /// </summary>
         [Input("fleetType")]
         public Input<string>? FleetType { get; set; }
@@ -363,13 +392,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// Group Type associated with Group Fleet.Applicable for Group fleet types.
+        /// Group Type associated with Group Fleet.
         /// </summary>
         [Input("groupType")]
         public Input<string>? GroupType { get; set; }
 
         /// <summary>
-        /// (Updatable) A value which represents if auto confirming of the targets can be enabled
+        /// (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         /// </summary>
         [Input("isTargetAutoConfirm")]
         public Input<bool>? IsTargetAutoConfirm { get; set; }
@@ -381,7 +410,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Conditions when met to send notifications on the fleet activities
+        /// (Updatable) Notification information to get notified when the fleet status changes.
         /// </summary>
         [Input("notificationPreferences")]
         public Input<Inputs.FleetNotificationPreferencesGetArgs>? NotificationPreferences { get; set; }
@@ -390,7 +419,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _products;
 
         /// <summary>
-        /// Products associated with the Fleet
+        /// Products associated with the Fleet.
         /// </summary>
         public InputList<string> Products
         {
@@ -405,13 +434,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? ResourceRegion { get; set; }
 
         /// <summary>
-        /// Type of resource selection in a fleet
+        /// Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         /// </summary>
         [Input("resourceSelectionType")]
         public Input<string>? ResourceSelectionType { get; set; }
 
         /// <summary>
-        /// (Updatable) Rule Selection Criteria
+        /// (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         /// </summary>
         [Input("ruleSelectionCriteria")]
         public Input<Inputs.FleetRuleSelectionCriteriaGetArgs>? RuleSelectionCriteria { get; set; }

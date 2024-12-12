@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
@@ -283,6 +284,53 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", TypeShape.of(GetLogAnalyticsCategoriesListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategoriesList = LogAnalyticsFunctions.getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs.builder()
+     *             .namespace(logAnalyticsCategoriesListNamespace)
+     *             .categoryDisplayText(logAnalyticsCategoriesListCategoryDisplayText)
+     *             .categoryType(logAnalyticsCategoriesListCategoryType)
+     *             .name(logAnalyticsCategoriesListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesListPlain(GetLogAnalyticsCategoriesListPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", TypeShape.of(GetLogAnalyticsCategoriesListResult.class), args, Utilities.withVersion(options));
     }
@@ -419,6 +467,51 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetLogAnalyticsCategoryResult> getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsCategory:getLogAnalyticsCategory", TypeShape.of(GetLogAnalyticsCategoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Gets detailed information about the category with the specified name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategory = LogAnalyticsFunctions.getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs.builder()
+     *             .name(logAnalyticsCategoryName)
+     *             .namespace(logAnalyticsCategoryNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsCategoryResult> getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsCategory:getLogAnalyticsCategory", TypeShape.of(GetLogAnalyticsCategoryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -687,6 +780,62 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", TypeShape.of(GetLogAnalyticsEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entities.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(testCloudResource.id())
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntitiesPlain(GetLogAnalyticsEntitiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", TypeShape.of(GetLogAnalyticsEntitiesResult.class), args, Utilities.withVersion(options));
     }
@@ -867,6 +1016,51 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary", TypeShape.of(GetLogAnalyticsEntitiesSummaryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Entities Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns log analytics entities count summary report.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntitiesSummary = LogAnalyticsFunctions.getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntitiesSummaryNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummaryPlain(GetLogAnalyticsEntitiesSummaryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary", TypeShape.of(GetLogAnalyticsEntitiesSummaryResult.class), args, Utilities.withVersion(options));
     }
@@ -1003,6 +1197,51 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetLogAnalyticsEntityResult> getLogAnalyticsEntity(GetLogAnalyticsEntityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", TypeShape.of(GetLogAnalyticsEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Retrieve the log analytics entity with the given id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityResult> getLogAnalyticsEntity(GetLogAnalyticsEntityArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", TypeShape.of(GetLogAnalyticsEntityResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1235,6 +1474,53 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", TypeShape.of(GetLogAnalyticsEntityTopologyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityTopologyNamespace)
+     *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
+     *             .state(logAnalyticsEntityTopologyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopologyPlain(GetLogAnalyticsEntityTopologyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", TypeShape.of(GetLogAnalyticsEntityTopologyResult.class), args, Utilities.withVersion(options));
     }
@@ -1371,6 +1657,51 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup", TypeShape.of(GetLogAnalyticsLogGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .namespace(logAnalyticsLogGroupNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup", TypeShape.of(GetLogAnalyticsLogGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1599,6 +1930,52 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", TypeShape.of(GetLogAnalyticsLogGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroups = LogAnalyticsFunctions.getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupNamespace)
+     *             .displayName(logAnalyticsLogGroupDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroupsPlain(GetLogAnalyticsLogGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", TypeShape.of(GetLogAnalyticsLogGroupsResult.class), args, Utilities.withVersion(options));
     }
@@ -1779,6 +2156,51 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", TypeShape.of(GetLogAnalyticsLogGroupsSummaryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Log Groups Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns the count of log groups in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroupsSummary = LogAnalyticsFunctions.getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupsSummaryNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummaryPlain(GetLogAnalyticsLogGroupsSummaryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", TypeShape.of(GetLogAnalyticsLogGroupsSummaryResult.class), args, Utilities.withVersion(options));
     }
@@ -1915,6 +2337,51 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", TypeShape.of(GetLogAnalyticsObjectCollectionRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Gets a configured object storage based collection rule by given id
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", TypeShape.of(GetLogAnalyticsObjectCollectionRuleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2147,6 +2614,53 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", TypeShape.of(GetLogAnalyticsObjectCollectionRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Analytics Object Collection Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Gets list of configuration details of Object Storage based collection rules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRules = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
+     *             .name(logAnalyticsObjectCollectionRuleName)
+     *             .state(logAnalyticsObjectCollectionRuleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRulesPlain(GetLogAnalyticsObjectCollectionRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", TypeShape.of(GetLogAnalyticsObjectCollectionRulesResult.class), args, Utilities.withVersion(options));
     }
@@ -2280,6 +2794,50 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", TypeShape.of(GetLogAnalyticsPreferenceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsPreference = LogAnalyticsFunctions.getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs.builder()
+     *             .namespace(logAnalyticsPreferenceNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", TypeShape.of(GetLogAnalyticsPreferenceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2511,6 +3069,53 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", TypeShape.of(GetLogAnalyticsResourceCategoriesListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of resources and their category assignments.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsResourceCategoriesList = LogAnalyticsFunctions.getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs.builder()
+     *             .namespace(logAnalyticsResourceCategoriesListNamespace)
+     *             .resourceIds(logAnalyticsResourceCategoriesListResourceIds)
+     *             .resourceTypes(logAnalyticsResourceCategoriesListResourceTypes)
+     *             .resourceCategories(logAnalyticsResourceCategoriesListResourceCategories)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesListPlain(GetLogAnalyticsResourceCategoriesListPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", TypeShape.of(GetLogAnalyticsResourceCategoriesListResult.class), args, Utilities.withVersion(options));
     }
@@ -2644,6 +3249,50 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", TypeShape.of(GetLogAnalyticsUnprocessedDataBucketResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API retrieves details of the configured bucket that stores unprocessed payloads.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsUnprocessedDataBucket = LogAnalyticsFunctions.getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs.builder()
+     *             .namespace(logAnalyticsUnprocessedDataBucketNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", TypeShape.of(GetLogAnalyticsUnprocessedDataBucketResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2863,6 +3512,50 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogSetsCountResult> getLogSetsCount(GetLogSetsCountArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", TypeShape.of(GetLogSetsCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API returns the count of distinct log sets.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSetsCount = LogAnalyticsFunctions.getLogSetsCount(GetLogSetsCountArgs.builder()
+     *             .namespace(logSetsCountNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogSetsCountResult> getLogSetsCountPlain(GetLogSetsCountPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", TypeShape.of(GetLogSetsCountResult.class), args, Utilities.withVersion(options));
     }
@@ -2996,6 +3689,50 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetNamespaceResult> getNamespace(GetNamespaceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespace:getNamespace", TypeShape.of(GetNamespaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespace = LogAnalyticsFunctions.getNamespace(GetNamespaceArgs.builder()
+     *             .namespace(namespaceNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamespaceResult> getNamespace(GetNamespaceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespace:getNamespace", TypeShape.of(GetNamespaceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3239,6 +3976,56 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNamespaceEffectivePropertiesResult> getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", TypeShape.of(GetNamespaceEffectivePropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of effective properties for the specified resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
+     *             .namespace(namespaceEffectivePropertyNamespace)
+     *             .agentId(testAgent.id())
+     *             .entityId(testLogAnalyticsEntity.id())
+     *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
+     *             .name(namespaceEffectivePropertyName)
+     *             .patternId(testPattern.id())
+     *             .sourceName(namespaceEffectivePropertySourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNamespaceEffectivePropertiesResult> getNamespaceEffectivePropertiesPlain(GetNamespaceEffectivePropertiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", TypeShape.of(GetNamespaceEffectivePropertiesResult.class), args, Utilities.withVersion(options));
     }
@@ -3375,6 +4162,51 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule", TypeShape.of(GetNamespaceIngestTimeRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
+     *             .ingestTimeRuleId(testRule.id())
+     *             .namespace(namespaceIngestTimeRuleNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule", TypeShape.of(GetNamespaceIngestTimeRuleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3619,6 +4451,56 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", TypeShape.of(GetNamespaceIngestTimeRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRules = LogAnalyticsFunctions.getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceIngestTimeRuleNamespace)
+     *             .conditionKind(namespaceIngestTimeRuleConditionKind)
+     *             .displayName(namespaceIngestTimeRuleDisplayName)
+     *             .fieldName(namespaceIngestTimeRuleFieldName)
+     *             .fieldValue(namespaceIngestTimeRuleFieldValue)
+     *             .state(namespaceIngestTimeRuleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRulesPlain(GetNamespaceIngestTimeRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", TypeShape.of(GetNamespaceIngestTimeRulesResult.class), args, Utilities.withVersion(options));
     }
@@ -3764,6 +4646,54 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", TypeShape.of(GetNamespacePropertiesMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of properties along with their metadata.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespacePropertiesMetadata = LogAnalyticsFunctions.getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs.builder()
+     *             .namespace(namespacePropertiesMetadataNamespace)
+     *             .constraints(namespacePropertiesMetadataConstraints)
+     *             .displayText(namespacePropertiesMetadataDisplayText)
+     *             .level(namespacePropertiesMetadataLevel)
+     *             .name(namespacePropertiesMetadataName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamespacePropertiesMetadataResult> getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", TypeShape.of(GetNamespacePropertiesMetadataResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4007,6 +4937,55 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNamespaceRulesResult> getNamespaceRules(GetNamespaceRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceRules:getNamespaceRules", TypeShape.of(GetNamespaceRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRules = LogAnalyticsFunctions.getNamespaceRules(GetNamespaceRulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRuleNamespace)
+     *             .displayName(namespaceRuleDisplayName)
+     *             .kind(namespaceRuleKind)
+     *             .state(namespaceRuleState)
+     *             .targetService(namespaceRuleTargetService)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNamespaceRulesResult> getNamespaceRulesPlain(GetNamespaceRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceRules:getNamespaceRules", TypeShape.of(GetNamespaceRulesResult.class), args, Utilities.withVersion(options));
     }
@@ -4187,6 +5166,51 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNamespaceRulesSummaryResult> getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", TypeShape.of(GetNamespaceRulesSummaryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns the count of detection rules in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRulesSummary = LogAnalyticsFunctions.getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRulesSummaryNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNamespaceRulesSummaryResult> getNamespaceRulesSummaryPlain(GetNamespaceRulesSummaryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", TypeShape.of(GetNamespaceRulesSummaryResult.class), args, Utilities.withVersion(options));
     }
@@ -4323,6 +5347,51 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetNamespaceScheduledTaskResult> getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask", TypeShape.of(GetNamespaceScheduledTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Get the scheduled task for the specified task identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .scheduledTaskId(testScheduledTask.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamespaceScheduledTaskResult> getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask", TypeShape.of(GetNamespaceScheduledTaskResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4559,6 +5628,54 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", TypeShape.of(GetNamespaceScheduledTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Lists scheduled tasks.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTasks = LogAnalyticsFunctions.getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .displayName(namespaceScheduledTaskDisplayName)
+     *             .targetService(namespaceScheduledTaskTargetService)
+     *             .taskType(namespaceScheduledTaskTaskType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasksPlain(GetNamespaceScheduledTasksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", TypeShape.of(GetNamespaceScheduledTasksResult.class), args, Utilities.withVersion(options));
     }
@@ -4692,6 +5809,50 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", TypeShape.of(GetNamespaceStorageEncryptionKeyInfoResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API returns the list of customer owned encryption key info.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageEncryptionKeyInfo = LogAnalyticsFunctions.getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs.builder()
+     *             .namespace(namespaceStorageEncryptionKeyInfoNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", TypeShape.of(GetNamespaceStorageEncryptionKeyInfoResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4919,6 +6080,52 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", TypeShape.of(GetNamespaceStorageOverlappingRecallsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the list of overlapping recalls made in the given timeframe
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageOverlappingRecalls = LogAnalyticsFunctions.getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs.builder()
+     *             .namespace(namespaceStorageOverlappingRecallNamespace)
+     *             .timeDataEnded(namespaceStorageOverlappingRecallTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageOverlappingRecallTimeDataStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNamespaceStorageOverlappingRecallsResult> getNamespaceStorageOverlappingRecallsPlain(GetNamespaceStorageOverlappingRecallsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", TypeShape.of(GetNamespaceStorageOverlappingRecallsResult.class), args, Utilities.withVersion(options));
     }
@@ -5052,6 +6259,50 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", TypeShape.of(GetNamespaceStorageRecallCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the number of recalls made and the maximum recalls that can be made
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecallCount = LogAnalyticsFunctions.getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs.builder()
+     *             .namespace(namespaceStorageRecallCountNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamespaceStorageRecallCountResult> getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", TypeShape.of(GetNamespaceStorageRecallCountResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5279,6 +6530,52 @@ public final class LogAnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", TypeShape.of(GetNamespaceStorageRecalledDataSizeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API gets the datasize of recalls for a given timeframe
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageRecalledDataSize = LogAnalyticsFunctions.getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs.builder()
+     *             .namespace(namespaceStorageRecalledDataSizeNamespace)
+     *             .timeDataEnded(namespaceStorageRecalledDataSizeTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageRecalledDataSizeTimeDataStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNamespaceStorageRecalledDataSizeResult> getNamespaceStorageRecalledDataSizePlain(GetNamespaceStorageRecalledDataSizePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", TypeShape.of(GetNamespaceStorageRecalledDataSizeResult.class), args, Utilities.withVersion(options));
     }
@@ -5415,6 +6712,51 @@ public final class LogAnalyticsFunctions {
      * 
      */
     public static Output<GetNamespacesResult> getNamespaces(GetNamespacesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaces:getNamespaces", TypeShape.of(GetNamespacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
+     * result also indicates if the tenancy is onboarded with Logging Analytics.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamespacesResult> getNamespaces(GetNamespacesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaces:getNamespaces", TypeShape.of(GetNamespacesResult.class), args, Utilities.withVersion(options));
     }
     /**

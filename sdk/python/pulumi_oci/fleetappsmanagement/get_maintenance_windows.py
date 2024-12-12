@@ -28,7 +28,7 @@ class GetMaintenanceWindowsResult:
     """
     A collection of values returned by getMaintenanceWindows.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, maintenance_window_collections=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, maintenance_window_collections=None, state=None, time_schedule_start_greater_than_or_equal_to=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetMaintenanceWindowsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if time_schedule_start_greater_than_or_equal_to and not isinstance(time_schedule_start_greater_than_or_equal_to, str):
+            raise TypeError("Expected argument 'time_schedule_start_greater_than_or_equal_to' to be a str")
+        pulumi.set(__self__, "time_schedule_start_greater_than_or_equal_to", time_schedule_start_greater_than_or_equal_to)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -93,6 +96,11 @@ class GetMaintenanceWindowsResult:
         """
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter(name="timeScheduleStartGreaterThanOrEqualTo")
+    def time_schedule_start_greater_than_or_equal_to(self) -> Optional[str]:
+        return pulumi.get(self, "time_schedule_start_greater_than_or_equal_to")
+
 
 class AwaitableGetMaintenanceWindowsResult(GetMaintenanceWindowsResult):
     # pylint: disable=using-constant-test
@@ -105,7 +113,8 @@ class AwaitableGetMaintenanceWindowsResult(GetMaintenanceWindowsResult):
             filters=self.filters,
             id=self.id,
             maintenance_window_collections=self.maintenance_window_collections,
-            state=self.state)
+            state=self.state,
+            time_schedule_start_greater_than_or_equal_to=self.time_schedule_start_greater_than_or_equal_to)
 
 
 def get_maintenance_windows(compartment_id: Optional[str] = None,
@@ -113,11 +122,12 @@ def get_maintenance_windows(compartment_id: Optional[str] = None,
                             filters: Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict']]] = None,
                             id: Optional[str] = None,
                             state: Optional[str] = None,
+                            time_schedule_start_greater_than_or_equal_to: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaintenanceWindowsResult:
     """
     This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of MaintenanceWindows in the specified Tenancy.
+    List maintenance windows for a specified tenancy in Fleet Application Management.
 
     ## Example Usage
 
@@ -128,14 +138,16 @@ def get_maintenance_windows(compartment_id: Optional[str] = None,
     test_maintenance_windows = oci.FleetAppsManagement.get_maintenance_windows(compartment_id=compartment_id,
         display_name=maintenance_window_display_name,
         id=maintenance_window_id,
-        state=maintenance_window_state)
+        state=maintenance_window_state,
+        time_schedule_start_greater_than_or_equal_to=maintenance_window_time_schedule_start_greater_than_or_equal_to)
     ```
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique MaintenanceWindow identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str id: A filter to return only the Maintenance Windows whose identifier matches the given identifier.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param str time_schedule_start_greater_than_or_equal_to: A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -143,6 +155,7 @@ def get_maintenance_windows(compartment_id: Optional[str] = None,
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
+    __args__['timeScheduleStartGreaterThanOrEqualTo'] = time_schedule_start_greater_than_or_equal_to
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:FleetAppsManagement/getMaintenanceWindows:getMaintenanceWindows', __args__, opts=opts, typ=GetMaintenanceWindowsResult).value
 
@@ -152,17 +165,19 @@ def get_maintenance_windows(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         maintenance_window_collections=pulumi.get(__ret__, 'maintenance_window_collections'),
-        state=pulumi.get(__ret__, 'state'))
+        state=pulumi.get(__ret__, 'state'),
+        time_schedule_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_schedule_start_greater_than_or_equal_to'))
 def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
+                                   time_schedule_start_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceWindowsResult]:
     """
     This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of MaintenanceWindows in the specified Tenancy.
+    List maintenance windows for a specified tenancy in Fleet Application Management.
 
     ## Example Usage
 
@@ -173,14 +188,16 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[Optiona
     test_maintenance_windows = oci.FleetAppsManagement.get_maintenance_windows(compartment_id=compartment_id,
         display_name=maintenance_window_display_name,
         id=maintenance_window_id,
-        state=maintenance_window_state)
+        state=maintenance_window_state,
+        time_schedule_start_greater_than_or_equal_to=maintenance_window_time_schedule_start_greater_than_or_equal_to)
     ```
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique MaintenanceWindow identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str id: A filter to return only the Maintenance Windows whose identifier matches the given identifier.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param str time_schedule_start_greater_than_or_equal_to: A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -188,6 +205,7 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[Optiona
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
+    __args__['timeScheduleStartGreaterThanOrEqualTo'] = time_schedule_start_greater_than_or_equal_to
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getMaintenanceWindows:getMaintenanceWindows', __args__, opts=opts, typ=GetMaintenanceWindowsResult)
     return __ret__.apply(lambda __response__: GetMaintenanceWindowsResult(
@@ -196,4 +214,5 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[Optiona
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         maintenance_window_collections=pulumi.get(__response__, 'maintenance_window_collections'),
-        state=pulumi.get(__response__, 'state')))
+        state=pulumi.get(__response__, 'state'),
+        time_schedule_start_greater_than_or_equal_to=pulumi.get(__response__, 'time_schedule_start_greater_than_or_equal_to')))

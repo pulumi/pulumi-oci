@@ -29,14 +29,14 @@ public final class GetFleetCredentialPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private String fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
@@ -80,7 +80,7 @@ public final class GetFleetCredentialPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 

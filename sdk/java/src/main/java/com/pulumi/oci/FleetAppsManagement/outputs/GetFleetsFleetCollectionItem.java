@@ -5,6 +5,7 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetsFleetCollectionItemCredential;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetsFleetCollectionItemNotificationPreference;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetsFleetCollectionItemRuleSelectionCriteria;
 import java.lang.Boolean;
@@ -16,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetsFleetCollectionItem {
     /**
-     * @return A filter to return only resources that match the Application Type given.
+     * @return A filter to return resources that match the Application Type/Product Stack given..
      * 
      */
     private String applicationType;
@@ -25,6 +26,11 @@ public final class GetFleetsFleetCollectionItem {
      * 
      */
     private String compartmentId;
+    /**
+     * @return Credentials associated with the Fleet.
+     * 
+     */
+    private List<GetFleetsFleetCollectionItemCredential> credentials;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -41,12 +47,12 @@ public final class GetFleetsFleetCollectionItem {
      */
     private String displayName;
     /**
-     * @return A filter to return only resources that match the Environment Type given.
+     * @return A filter to return resources that match the Environment Type given.
      * 
      */
     private String environmentType;
     /**
-     * @return A filter to return only resources their fleetType matches the given fleetType.
+     * @return A filter to return fleets whose fleetType matches the given fleetType.
      * 
      */
     private String fleetType;
@@ -56,17 +62,17 @@ public final class GetFleetsFleetCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+     * @return Group Type associated with Group Fleet. Applicable for GROUP fleet types.
      * 
      */
     private String groupType;
     /**
-     * @return unique Fleet identifier
+     * @return A filter to return fleets whose id matches the given Fleet identifier
      * 
      */
     private String id;
     /**
-     * @return A value which represents if auto confirming of the targets can be enabled
+     * @return A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      * 
      */
     private Boolean isTargetAutoConfirm;
@@ -76,12 +82,12 @@ public final class GetFleetsFleetCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return Conditions when met to send notifications on the fleet activities
+     * @return Notification information to get notified when the fleet status changes.
      * 
      */
     private List<GetFleetsFleetCollectionItemNotificationPreference> notificationPreferences;
     /**
-     * @return Products associated with the Fleet
+     * @return Products associated with the Fleet.
      * 
      */
     private List<String> products;
@@ -91,17 +97,17 @@ public final class GetFleetsFleetCollectionItem {
      */
     private String resourceRegion;
     /**
-     * @return Type of resource selection in a fleet.
+     * @return Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      * 
      */
     private String resourceSelectionType;
     /**
-     * @return Rule Selection Criteria
+     * @return Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      * 
      */
     private List<GetFleetsFleetCollectionItemRuleSelectionCriteria> ruleSelectionCriterias;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return fleets whose lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
@@ -123,7 +129,7 @@ public final class GetFleetsFleetCollectionItem {
 
     private GetFleetsFleetCollectionItem() {}
     /**
-     * @return A filter to return only resources that match the Application Type given.
+     * @return A filter to return resources that match the Application Type/Product Stack given..
      * 
      */
     public String applicationType() {
@@ -135,6 +141,13 @@ public final class GetFleetsFleetCollectionItem {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return Credentials associated with the Fleet.
+     * 
+     */
+    public List<GetFleetsFleetCollectionItemCredential> credentials() {
+        return this.credentials;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -158,14 +171,14 @@ public final class GetFleetsFleetCollectionItem {
         return this.displayName;
     }
     /**
-     * @return A filter to return only resources that match the Environment Type given.
+     * @return A filter to return resources that match the Environment Type given.
      * 
      */
     public String environmentType() {
         return this.environmentType;
     }
     /**
-     * @return A filter to return only resources their fleetType matches the given fleetType.
+     * @return A filter to return fleets whose fleetType matches the given fleetType.
      * 
      */
     public String fleetType() {
@@ -179,21 +192,21 @@ public final class GetFleetsFleetCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+     * @return Group Type associated with Group Fleet. Applicable for GROUP fleet types.
      * 
      */
     public String groupType() {
         return this.groupType;
     }
     /**
-     * @return unique Fleet identifier
+     * @return A filter to return fleets whose id matches the given Fleet identifier
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return A value which represents if auto confirming of the targets can be enabled
+     * @return A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      * 
      */
     public Boolean isTargetAutoConfirm() {
@@ -207,14 +220,14 @@ public final class GetFleetsFleetCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return Conditions when met to send notifications on the fleet activities
+     * @return Notification information to get notified when the fleet status changes.
      * 
      */
     public List<GetFleetsFleetCollectionItemNotificationPreference> notificationPreferences() {
         return this.notificationPreferences;
     }
     /**
-     * @return Products associated with the Fleet
+     * @return Products associated with the Fleet.
      * 
      */
     public List<String> products() {
@@ -228,21 +241,21 @@ public final class GetFleetsFleetCollectionItem {
         return this.resourceRegion;
     }
     /**
-     * @return Type of resource selection in a fleet.
+     * @return Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      * 
      */
     public String resourceSelectionType() {
         return this.resourceSelectionType;
     }
     /**
-     * @return Rule Selection Criteria
+     * @return Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      * 
      */
     public List<GetFleetsFleetCollectionItemRuleSelectionCriteria> ruleSelectionCriterias() {
         return this.ruleSelectionCriterias;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return fleets whose lifecycleState matches the given lifecycleState.
      * 
      */
     public String state() {
@@ -281,6 +294,7 @@ public final class GetFleetsFleetCollectionItem {
     public static final class Builder {
         private String applicationType;
         private String compartmentId;
+        private List<GetFleetsFleetCollectionItemCredential> credentials;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
@@ -305,6 +319,7 @@ public final class GetFleetsFleetCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.applicationType = defaults.applicationType;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.credentials = defaults.credentials;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
@@ -341,6 +356,17 @@ public final class GetFleetsFleetCollectionItem {
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder credentials(List<GetFleetsFleetCollectionItemCredential> credentials) {
+            if (credentials == null) {
+              throw new MissingRequiredPropertyException("GetFleetsFleetCollectionItem", "credentials");
+            }
+            this.credentials = credentials;
+            return this;
+        }
+        public Builder credentials(GetFleetsFleetCollectionItemCredential... credentials) {
+            return credentials(List.of(credentials));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -507,6 +533,7 @@ public final class GetFleetsFleetCollectionItem {
             final var _resultValue = new GetFleetsFleetCollectionItem();
             _resultValue.applicationType = applicationType;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.credentials = credentials;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;

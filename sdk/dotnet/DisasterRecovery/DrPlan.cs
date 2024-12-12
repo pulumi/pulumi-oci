@@ -37,6 +37,7 @@ namespace Pulumi.Oci.DisasterRecovery
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         SourcePlanId = testSourcePlan.Id,
     ///     });
     /// 
     /// });
@@ -90,6 +91,12 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<string> LifeCycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// The current state of the DR plan.
+        /// </summary>
+        [Output("lifecycleSubState")]
+        public Output<string> LifecycleSubState { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Output("peerDrProtectionGroupId")]
@@ -106,6 +113,18 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         [Output("planGroups")]
         public Output<ImmutableArray<Outputs.DrPlanPlanGroup>> PlanGroups { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// </summary>
+        [Output("refreshTrigger")]
+        public Output<int?> RefreshTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+        /// </summary>
+        [Output("sourcePlanId")]
+        public Output<string> SourcePlanId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the DR plan.
@@ -132,14 +151,20 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// The type of DR plan to be created. 
+        /// The type of DR plan to be created.
+        /// </summary>
+        [Output("type")]
+        public Output<string> Type { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        [Output("verifyTrigger")]
+        public Output<int?> VerifyTrigger { get; private set; } = null!;
 
 
         /// <summary>
@@ -224,14 +249,32 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The type of DR plan to be created. 
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// </summary>
+        [Input("refreshTrigger")]
+        public Input<int>? RefreshTrigger { get; set; }
+
+        /// <summary>
+        /// The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+        /// </summary>
+        [Input("sourcePlanId")]
+        public Input<string>? SourcePlanId { get; set; }
+
+        /// <summary>
+        /// The type of DR plan to be created.
+        /// </summary>
+        [Input("type", required: true)]
+        public Input<string> Type { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("type", required: true)]
-        public Input<string> Type { get; set; } = null!;
+        [Input("verifyTrigger")]
+        public Input<int>? VerifyTrigger { get; set; }
 
         public DrPlanArgs()
         {
@@ -290,6 +333,12 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? LifeCycleDetails { get; set; }
 
         /// <summary>
+        /// The current state of the DR plan.
+        /// </summary>
+        [Input("lifecycleSubState")]
+        public Input<string>? LifecycleSubState { get; set; }
+
+        /// <summary>
         /// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("peerDrProtectionGroupId")]
@@ -312,6 +361,18 @@ namespace Pulumi.Oci.DisasterRecovery
             get => _planGroups ?? (_planGroups = new InputList<Inputs.DrPlanPlanGroupGetArgs>());
             set => _planGroups = value;
         }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// </summary>
+        [Input("refreshTrigger")]
+        public Input<int>? RefreshTrigger { get; set; }
+
+        /// <summary>
+        /// The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+        /// </summary>
+        [Input("sourcePlanId")]
+        public Input<string>? SourcePlanId { get; set; }
 
         /// <summary>
         /// The current state of the DR plan.
@@ -344,14 +405,20 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// The type of DR plan to be created. 
+        /// The type of DR plan to be created.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("type")]
-        public Input<string>? Type { get; set; }
+        [Input("verifyTrigger")]
+        public Input<int>? VerifyTrigger { get; set; }
 
         public DrPlanState()
         {

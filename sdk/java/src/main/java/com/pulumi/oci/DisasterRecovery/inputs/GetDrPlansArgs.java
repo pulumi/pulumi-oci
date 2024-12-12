@@ -86,6 +86,21 @@ public final class GetDrPlansArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * A filter to return only DR plans that match the given lifecycle sub-state.
+     * 
+     */
+    @Import(name="lifecycleSubState")
+    private @Nullable Output<String> lifecycleSubState;
+
+    /**
+     * @return A filter to return only DR plans that match the given lifecycle sub-state.
+     * 
+     */
+    public Optional<Output<String>> lifecycleSubState() {
+        return Optional.ofNullable(this.lifecycleSubState);
+    }
+
+    /**
      * A filter to return only DR plans that match the given lifecycle state.
      * 
      */
@@ -108,6 +123,7 @@ public final class GetDrPlansArgs extends com.pulumi.resources.InvokeArgs {
         this.drPlanType = $.drPlanType;
         this.drProtectionGroupId = $.drProtectionGroupId;
         this.filters = $.filters;
+        this.lifecycleSubState = $.lifecycleSubState;
         this.state = $.state;
     }
 
@@ -224,6 +240,27 @@ public final class GetDrPlansArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetDrPlansFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param lifecycleSubState A filter to return only DR plans that match the given lifecycle sub-state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubState(@Nullable Output<String> lifecycleSubState) {
+            $.lifecycleSubState = lifecycleSubState;
+            return this;
+        }
+
+        /**
+         * @param lifecycleSubState A filter to return only DR plans that match the given lifecycle sub-state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubState(String lifecycleSubState) {
+            return lifecycleSubState(Output.of(lifecycleSubState));
         }
 
         /**

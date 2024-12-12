@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterPlainArgs;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
@@ -180,6 +181,59 @@ public final class OpensearchFunctions {
      * 
      */
     public static Output<GetOpensearchClusterResult> getOpensearchCluster(GetOpensearchClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", TypeShape.of(GetOpensearchClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Gets a OpensearchCluster by identifier
+     * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpensearchClusterResult> getOpensearchCluster(GetOpensearchClusterArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", TypeShape.of(GetOpensearchClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -456,6 +510,62 @@ public final class OpensearchFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOpensearchClustersResult> getOpensearchClusters(GetOpensearchClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", TypeShape.of(GetOpensearchClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Returns a list of OpensearchClusters.
+     * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusters = OpensearchFunctions.getOpensearchClusters(GetOpensearchClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterDisplayName)
+     *             .id(opensearchClusterId)
+     *             .state(opensearchClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOpensearchClustersResult> getOpensearchClustersPlain(GetOpensearchClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", TypeShape.of(GetOpensearchClustersResult.class), args, Utilities.withVersion(options));
     }
@@ -668,6 +778,59 @@ public final class OpensearchFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOpensearchVersionResult> getOpensearchVersion(GetOpensearchVersionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", TypeShape.of(GetOpensearchVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opensearch Version resource in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Lists the supported Opensearch versions
+     * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersion = OpensearchFunctions.getOpensearchVersion(GetOpensearchVersionArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOpensearchVersionResult> getOpensearchVersionPlain(GetOpensearchVersionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", TypeShape.of(GetOpensearchVersionResult.class), args, Utilities.withVersion(options));
     }
@@ -828,6 +991,59 @@ public final class OpensearchFunctions {
      * 
      */
     public static Output<GetOpensearchVersionsResult> getOpensearchVersions(GetOpensearchVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", TypeShape.of(GetOpensearchVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
+     * 
+     * Lists the supported Opensearch versions
+     * 
+     * ## Prerequisites
+     * 
+     * The below policies must be created in compartment before creating OpensearchCluster
+     * 
+     * ##### {Compartment-Name} - Name of  your compartment
+     * 
+     * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+     * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersions = OpensearchFunctions.getOpensearchVersions(GetOpensearchVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpensearchVersionsResult> getOpensearchVersions(GetOpensearchVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", TypeShape.of(GetOpensearchVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**

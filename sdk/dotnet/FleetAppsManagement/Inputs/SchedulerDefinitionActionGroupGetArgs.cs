@@ -31,7 +31,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// (Updatable) Provide the ID of the resource; Ex- fleetId.
+        /// (Updatable) Provide the ID of the resource. Example fleet ID.
         /// </summary>
         [Input("resourceId", required: true)]
         public Input<string> ResourceId { get; set; } = null!;

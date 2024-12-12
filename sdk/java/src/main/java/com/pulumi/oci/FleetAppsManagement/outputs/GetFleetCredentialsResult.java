@@ -21,7 +21,7 @@ public final class GetFleetCredentialsResult {
      */
     private @Nullable String compartmentId;
     /**
-     * @return Credential Level.
+     * @return At what level the credential is provided?
      * 
      */
     private @Nullable String credentialLevel;
@@ -43,10 +43,20 @@ public final class GetFleetCredentialsResult {
      */
     private @Nullable String id;
     /**
+     * @return OCID of the resource associated with the target for which the credential is created.
+     * 
+     */
+    private @Nullable String resourceId;
+    /**
      * @return The current state of the FleetCredential.
      * 
      */
     private @Nullable String state;
+    /**
+     * @return Target name for which the credential is provided.
+     * 
+     */
+    private @Nullable String target;
 
     private GetFleetCredentialsResult() {}
     /**
@@ -57,7 +67,7 @@ public final class GetFleetCredentialsResult {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return Credential Level.
+     * @return At what level the credential is provided?
      * 
      */
     public Optional<String> credentialLevel() {
@@ -91,11 +101,25 @@ public final class GetFleetCredentialsResult {
         return Optional.ofNullable(this.id);
     }
     /**
+     * @return OCID of the resource associated with the target for which the credential is created.
+     * 
+     */
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+    /**
      * @return The current state of the FleetCredential.
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
+    }
+    /**
+     * @return Target name for which the credential is provided.
+     * 
+     */
+    public Optional<String> target() {
+        return Optional.ofNullable(this.target);
     }
 
     public static Builder builder() {
@@ -114,7 +138,9 @@ public final class GetFleetCredentialsResult {
         private List<GetFleetCredentialsFleetCredentialCollection> fleetCredentialCollections;
         private String fleetId;
         private @Nullable String id;
+        private @Nullable String resourceId;
         private @Nullable String state;
+        private @Nullable String target;
         public Builder() {}
         public Builder(GetFleetCredentialsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,7 +151,9 @@ public final class GetFleetCredentialsResult {
     	      this.fleetCredentialCollections = defaults.fleetCredentialCollections;
     	      this.fleetId = defaults.fleetId;
     	      this.id = defaults.id;
+    	      this.resourceId = defaults.resourceId;
     	      this.state = defaults.state;
+    	      this.target = defaults.target;
         }
 
         @CustomType.Setter
@@ -181,9 +209,21 @@ public final class GetFleetCredentialsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceId(@Nullable String resourceId) {
+
+            this.resourceId = resourceId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder target(@Nullable String target) {
+
+            this.target = target;
             return this;
         }
         public GetFleetCredentialsResult build() {
@@ -195,7 +235,9 @@ public final class GetFleetCredentialsResult {
             _resultValue.fleetCredentialCollections = fleetCredentialCollections;
             _resultValue.fleetId = fleetId;
             _resultValue.id = id;
+            _resultValue.resourceId = resourceId;
             _resultValue.state = state;
+            _resultValue.target = target;
             return _resultValue;
         }
     }

@@ -61,7 +61,8 @@ type LookupDesktopPoolResult struct {
 	// The number of active desktops in the desktop pool.
 	ActiveDesktops int `pulumi:"activeDesktops"`
 	// Indicates whether desktop pool users have administrative privileges on their desktop.
-	ArePrivilegedUsers bool `pulumi:"arePrivilegedUsers"`
+	ArePrivilegedUsers  bool `pulumi:"arePrivilegedUsers"`
+	AreVolumesPreserved bool `pulumi:"areVolumesPreserved"`
 	// The availability domain of the desktop pool.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Provides the start and stop schedule information for desktop availability of the desktop pool.
@@ -172,6 +173,10 @@ func (o LookupDesktopPoolResultOutput) ActiveDesktops() pulumi.IntOutput {
 // Indicates whether desktop pool users have administrative privileges on their desktop.
 func (o LookupDesktopPoolResultOutput) ArePrivilegedUsers() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDesktopPoolResult) bool { return v.ArePrivilegedUsers }).(pulumi.BoolOutput)
+}
+
+func (o LookupDesktopPoolResultOutput) AreVolumesPreserved() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDesktopPoolResult) bool { return v.AreVolumesPreserved }).(pulumi.BoolOutput)
 }
 
 // The availability domain of the desktop pool.

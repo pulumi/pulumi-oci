@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
@@ -150,6 +151,46 @@ public final class DatabaseMigrationFunctions {
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -369,6 +410,51 @@ public final class DatabaseMigrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DatabaseMigrationFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .connectionTypes(connectionConnectionType)
+     *             .displayName(connectionDisplayName)
+     *             .sourceConnectionId(testConnection.id())
+     *             .state(connectionState)
+     *             .technologyTypes(connectionTechnologyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
     }
@@ -490,6 +576,46 @@ public final class DatabaseMigrationFunctions {
      * 
      */
     public static Output<GetJobAdvisorReportResult> getJobAdvisorReport(GetJobAdvisorReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", TypeShape.of(GetJobAdvisorReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetJobAdvisorReportResult> getJobAdvisorReport(GetJobAdvisorReportArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", TypeShape.of(GetJobAdvisorReportResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -705,6 +831,50 @@ public final class DatabaseMigrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetJobOutputResult> getJobOutput(GetJobOutputArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getJobOutput:getJobOutput", TypeShape.of(GetJobOutputResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List the Job Outputs
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetJobOutputResult> getJobOutputPlain(GetJobOutputPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getJobOutput:getJobOutput", TypeShape.of(GetJobOutputResult.class), args, Utilities.withVersion(options));
     }
@@ -826,6 +996,46 @@ public final class DatabaseMigrationFunctions {
      * 
      */
     public static Output<GetMigrationResult> getMigration(GetMigrationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigration:getMigration", TypeShape.of(GetMigrationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMigrationResult> getMigration(GetMigrationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigration:getMigration", TypeShape.of(GetMigrationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1025,6 +1235,46 @@ public final class DatabaseMigrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMigrationObjectTypesResult> getMigrationObjectTypes(GetMigrationObjectTypesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", TypeShape.of(GetMigrationObjectTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationObjectTypes = DatabaseMigrationFunctions.getMigrationObjectTypes(GetMigrationObjectTypesArgs.builder()
+     *             .connectionType(migrationObjectTypeConnectionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMigrationObjectTypesResult> getMigrationObjectTypesPlain(GetMigrationObjectTypesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", TypeShape.of(GetMigrationObjectTypesResult.class), args, Utilities.withVersion(options));
     }
@@ -1155,6 +1405,49 @@ public final class DatabaseMigrationFunctions {
      * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrations:getMigrations", TypeShape.of(GetMigrationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrations:getMigrations", TypeShape.of(GetMigrationsResult.class), args, Utilities.withVersion(options));
     }
     /**

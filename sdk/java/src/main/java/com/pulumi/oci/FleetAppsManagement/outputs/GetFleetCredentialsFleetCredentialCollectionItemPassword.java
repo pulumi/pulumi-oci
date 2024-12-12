@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetCredentialsFleetCredentialCollectionItemPassword {
     /**
-     * @return Credential Type
+     * @return Credential Type.
      * 
      */
     private String credentialType;
@@ -36,19 +36,19 @@ public final class GetFleetCredentialsFleetCredentialCollectionItemPassword {
      */
     private String secretVersion;
     /**
-     * @return The value corresponding to the credential
+     * @return The value corresponding to the credential.
      * 
      */
     private String value;
     /**
-     * @return OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+     * @return OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
      * 
      */
     private String vaultId;
 
     private GetFleetCredentialsFleetCredentialCollectionItemPassword() {}
     /**
-     * @return Credential Type
+     * @return Credential Type.
      * 
      */
     public String credentialType() {
@@ -83,14 +83,14 @@ public final class GetFleetCredentialsFleetCredentialCollectionItemPassword {
         return this.secretVersion;
     }
     /**
-     * @return The value corresponding to the credential
+     * @return The value corresponding to the credential.
      * 
      */
     public String value() {
         return this.value;
     }
     /**
-     * @return OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+     * @return OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
      * 
      */
     public String vaultId() {

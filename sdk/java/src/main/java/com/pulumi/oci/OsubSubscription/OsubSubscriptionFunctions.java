@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentArgs;
 import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentPlainArgs;
 import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentsArgs;
@@ -204,6 +205,52 @@ public final class OsubSubscriptionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCommitmentResult> getCommitment(GetCommitmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsubSubscription/getCommitment:getCommitment", TypeShape.of(GetCommitmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Osub Subscription service.
+     * 
+     * This API returns the commitment details corresponding to the id provided
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCommitmentResult> getCommitmentPlain(GetCommitmentPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsubSubscription/getCommitment:getCommitment", TypeShape.of(GetCommitmentResult.class), args, Utilities.withVersion(options));
     }
@@ -346,6 +393,53 @@ public final class OsubSubscriptionFunctions {
      * 
      */
     public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsubSubscription/getCommitments:getCommitments", TypeShape.of(GetCommitmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
+     * 
+     * This list API returns all commitments for a particular Subscribed Service
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testService.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsubSubscription/getCommitments:getCommitments", TypeShape.of(GetCommitmentsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -592,6 +686,56 @@ public final class OsubSubscriptionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRatecardsResult> getRatecards(GetRatecardsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsubSubscription/getRatecards:getRatecards", TypeShape.of(GetRatecardsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ratecards in Oracle Cloud Infrastructure Osub Subscription service.
+     * 
+     * List API that returns all ratecards for given Subscription Id and Account ID (if provided) and
+     * for a particular date range
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetRatecardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
+     *             .xOneOriginRegion(ratecardXOneOriginRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRatecardsResult> getRatecardsPlain(GetRatecardsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsubSubscription/getRatecards:getRatecards", TypeShape.of(GetRatecardsResult.class), args, Utilities.withVersion(options));
     }
@@ -752,6 +896,59 @@ public final class OsubSubscriptionFunctions {
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsubSubscription/getSubscriptions:getSubscriptions", TypeShape.of(GetSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osub Subscription service.
+     * 
+     * This list API returns all subscriptions for a given plan number or subscription id or buyer email
+     * and provides additional parameters to include ratecard and commitment details.
+     * This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw
+     * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubSubscription.OsubSubscriptionFunctions;
+     * import com.pulumi.oci.OsubSubscription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OsubSubscriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
+     *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(subscriptionXOneOriginRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsubSubscription/getSubscriptions:getSubscriptions", TypeShape.of(GetSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a SchedulerDefinition by identifier
+        /// Get the details of a SchedulerDefinition that performs lifecycle management operations.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a SchedulerDefinition by identifier
+        /// Get the details of a SchedulerDefinition that performs lifecycle management operations.
         /// 
         /// ## Example Usage
         /// 
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetSchedulerDefinitionResult
     {
         /// <summary>
-        /// All ActionGroup Types part of the schedule.
+        /// All ActionGroup Types that are part of the schedule.
         /// </summary>
         public readonly ImmutableArray<string> ActionGroupTypes;
         /// <summary>
@@ -106,11 +106,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSchedulerDefinitionActionGroupResult> ActionGroups;
         /// <summary>
-        /// Activity Initiation Cut Off
+        /// Activity Initiation Cut Off.
         /// </summary>
         public readonly int ActivityInitiationCutOff;
         /// <summary>
-        /// All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        /// All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         /// </summary>
         public readonly ImmutableArray<string> ApplicationTypes;
         /// <summary>
@@ -122,11 +122,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly int CountOfAffectedActionGroups;
         /// <summary>
-        /// Count of Resources affected by the Schedule
+        /// Count of Resources affected by the Schedule.
         /// </summary>
         public readonly int CountOfAffectedResources;
         /// <summary>
-        /// Count of Targets affected by the Schedule
+        /// Count of Targets affected by the Schedule.
         /// </summary>
         public readonly int CountOfAffectedTargets;
         /// <summary>
@@ -154,11 +154,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// All LifeCycle Operations part of the schedule
+        /// All LifeCycle Operations that are part of the schedule.
         /// </summary>
         public readonly ImmutableArray<string> LifecycleOperations;
         /// <summary>
-        /// All products part of the schedule for PRODUCT ActionGroup Type.
+        /// All products that are part of the schedule for PRODUCT ActionGroup Type.
         /// </summary>
         public readonly ImmutableArray<string> Products;
         /// <summary>
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// Scheduled date for the next run of the Job.
+        /// The scheduled date for the next run of the Job.
         /// </summary>
         public readonly string TimeOfNextRun;
         /// <summary>

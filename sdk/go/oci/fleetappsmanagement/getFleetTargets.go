@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Returns a list of FleetTargets.
+// Returns the list of all confirmed targets within a fleet.
 //
 // ## Example Usage
 //
@@ -59,11 +59,11 @@ type GetFleetTargetsArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetFleetTargetsFilter `pulumi:"filters"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
-	// Product Name
+	// Product Name.
 	Product *string `pulumi:"product"`
-	// Resource Display Name
+	// Resource Display Name.
 	ResourceDisplayName *string `pulumi:"resourceDisplayName"`
 	// Resource Identifier
 	ResourceId *string `pulumi:"resourceId"`
@@ -111,11 +111,11 @@ type GetFleetTargetsOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput           `pulumi:"displayName"`
 	Filters     GetFleetTargetsFilterArrayInput `pulumi:"filters"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
-	// Product Name
+	// Product Name.
 	Product pulumi.StringPtrInput `pulumi:"product"`
-	// Resource Display Name
+	// Resource Display Name.
 	ResourceDisplayName pulumi.StringPtrInput `pulumi:"resourceDisplayName"`
 	// Resource Identifier
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRunbooksRunbookCollectionItemAssociationTaskOutputVariableMappingOutputVariableDetail {
     /**
-     * @return The name of the output variable whose value that has to be mapped.
+     * @return The name of the output variable whose value has to be mapped.
      * 
      */
     private String outputVariableName;
@@ -23,7 +23,7 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskOutputVariable
 
     private GetRunbooksRunbookCollectionItemAssociationTaskOutputVariableMappingOutputVariableDetail() {}
     /**
-     * @return The name of the output variable whose value that has to be mapped.
+     * @return The name of the output variable whose value has to be mapped.
      * 
      */
     public String outputVariableName() {

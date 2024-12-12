@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
 import com.pulumi.oci.Apm.inputs.GetApmDomainPlainArgs;
 import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
@@ -150,6 +151,50 @@ public final class ApmFunctions {
      * 
      */
     public static Output<GetApmDomainResult> getApmDomain(GetApmDomainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Apm/getApmDomain:getApmDomain", TypeShape.of(GetApmDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Apm Domain resource in Oracle Cloud Infrastructure Apm service.
+     * 
+     * Gets the details of the APM domain specified by OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
+     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApmDomainResult> getApmDomain(GetApmDomainArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Apm/getApmDomain:getApmDomain", TypeShape.of(GetApmDomainResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -377,6 +422,52 @@ public final class ApmFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetApmDomainsResult> getApmDomains(GetApmDomainsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Apm/getApmDomains:getApmDomains", TypeShape.of(GetApmDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Apm Domains in Oracle Cloud Infrastructure Apm service.
+     * 
+     * Lists all APM domains for the specified tenant compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomains = ApmFunctions.getApmDomains(GetApmDomainsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(apmDomainDisplayName)
+     *             .state(apmDomainState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetApmDomainsResult> getApmDomainsPlain(GetApmDomainsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Apm/getApmDomains:getApmDomains", TypeShape.of(GetApmDomainsResult.class), args, Utilities.withVersion(options));
     }
@@ -516,6 +607,52 @@ public final class ApmFunctions {
      * 
      */
     public static Output<GetDataKeysResult> getDataKeys(GetDataKeysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Apm/getDataKeys:getDataKeys", TypeShape.of(GetDataKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
+     * 
+     * Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the &#39;dataKeyType&#39;
+     * query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(dataKeyDataKeyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDataKeysResult> getDataKeys(GetDataKeysArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Apm/getDataKeys:getDataKeys", TypeShape.of(GetDataKeysResult.class), args, Utilities.withVersion(options));
     }
     /**

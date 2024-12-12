@@ -28,7 +28,7 @@ class GetFleetCredentialsResult:
     """
     A collection of values returned by getFleetCredentials.
     """
-    def __init__(__self__, compartment_id=None, credential_level=None, display_name=None, filters=None, fleet_credential_collections=None, fleet_id=None, id=None, state=None):
+    def __init__(__self__, compartment_id=None, credential_level=None, display_name=None, filters=None, fleet_credential_collections=None, fleet_id=None, id=None, resource_id=None, state=None, target=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,9 +50,15 @@ class GetFleetCredentialsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if resource_id and not isinstance(resource_id, str):
+            raise TypeError("Expected argument 'resource_id' to be a str")
+        pulumi.set(__self__, "resource_id", resource_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if target and not isinstance(target, str):
+            raise TypeError("Expected argument 'target' to be a str")
+        pulumi.set(__self__, "target", target)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -66,7 +72,7 @@ class GetFleetCredentialsResult:
     @pulumi.getter(name="credentialLevel")
     def credential_level(self) -> Optional[str]:
         """
-        Credential Level.
+        At what level the credential is provided?
         """
         return pulumi.get(self, "credential_level")
 
@@ -105,12 +111,28 @@ class GetFleetCredentialsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[str]:
+        """
+        OCID of the resource associated with the target for which the credential is created.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
         The current state of the FleetCredential.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[str]:
+        """
+        Target name for which the credential is provided.
+        """
+        return pulumi.get(self, "target")
 
 
 class AwaitableGetFleetCredentialsResult(GetFleetCredentialsResult):
@@ -126,7 +148,9 @@ class AwaitableGetFleetCredentialsResult(GetFleetCredentialsResult):
             fleet_credential_collections=self.fleet_credential_collections,
             fleet_id=self.fleet_id,
             id=self.id,
-            state=self.state)
+            resource_id=self.resource_id,
+            state=self.state,
+            target=self.target)
 
 
 def get_fleet_credentials(compartment_id: Optional[str] = None,
@@ -135,12 +159,14 @@ def get_fleet_credentials(compartment_id: Optional[str] = None,
                           filters: Optional[Sequence[Union['GetFleetCredentialsFilterArgs', 'GetFleetCredentialsFilterArgsDict']]] = None,
                           fleet_id: Optional[str] = None,
                           id: Optional[str] = None,
+                          resource_id: Optional[str] = None,
                           state: Optional[str] = None,
+                          target: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetCredentialsResult:
     """
     This data source provides the list of Fleet Credentials in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of FleetCredentials.
+    List credentials in Fleet Application Management.
 
     ## Example Usage
 
@@ -153,16 +179,20 @@ def get_fleet_credentials(compartment_id: Optional[str] = None,
         credential_level=fleet_credential_credential_level,
         display_name=fleet_credential_display_name,
         id=fleet_credential_id,
-        state=fleet_credential_state)
+        resource_id=test_resource["id"],
+        state=fleet_credential_state,
+        target=fleet_credential_target)
     ```
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str credential_level: Credential Level.
+    :param str credential_level: A filter to return only resources whose credentialLevel matches the given credentialLevel.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fleet_id: unique Fleet identifier
-    :param str id: unique FleetCredential identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str fleet_id: Unique Fleet identifier.
+    :param str id: A filter to return only resources whose credential identifier matches the given identifier.
+    :param str resource_id: Resource Identifier
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param str target: A filter to return only resources whose target matches the given target name.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,7 +201,9 @@ def get_fleet_credentials(compartment_id: Optional[str] = None,
     __args__['filters'] = filters
     __args__['fleetId'] = fleet_id
     __args__['id'] = id
+    __args__['resourceId'] = resource_id
     __args__['state'] = state
+    __args__['target'] = target
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:FleetAppsManagement/getFleetCredentials:getFleetCredentials', __args__, opts=opts, typ=GetFleetCredentialsResult).value
 
@@ -183,19 +215,23 @@ def get_fleet_credentials(compartment_id: Optional[str] = None,
         fleet_credential_collections=pulumi.get(__ret__, 'fleet_credential_collections'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         id=pulumi.get(__ret__, 'id'),
-        state=pulumi.get(__ret__, 'state'))
+        resource_id=pulumi.get(__ret__, 'resource_id'),
+        state=pulumi.get(__ret__, 'state'),
+        target=pulumi.get(__ret__, 'target'))
 def get_fleet_credentials_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  credential_level: Optional[pulumi.Input[Optional[str]]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetCredentialsFilterArgs', 'GetFleetCredentialsFilterArgsDict']]]]] = None,
                                  fleet_id: Optional[pulumi.Input[str]] = None,
                                  id: Optional[pulumi.Input[Optional[str]]] = None,
+                                 resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
+                                 target: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetCredentialsResult]:
     """
     This data source provides the list of Fleet Credentials in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of FleetCredentials.
+    List credentials in Fleet Application Management.
 
     ## Example Usage
 
@@ -208,16 +244,20 @@ def get_fleet_credentials_output(compartment_id: Optional[pulumi.Input[Optional[
         credential_level=fleet_credential_credential_level,
         display_name=fleet_credential_display_name,
         id=fleet_credential_id,
-        state=fleet_credential_state)
+        resource_id=test_resource["id"],
+        state=fleet_credential_state,
+        target=fleet_credential_target)
     ```
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str credential_level: Credential Level.
+    :param str credential_level: A filter to return only resources whose credentialLevel matches the given credentialLevel.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fleet_id: unique Fleet identifier
-    :param str id: unique FleetCredential identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str fleet_id: Unique Fleet identifier.
+    :param str id: A filter to return only resources whose credential identifier matches the given identifier.
+    :param str resource_id: Resource Identifier
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param str target: A filter to return only resources whose target matches the given target name.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -226,7 +266,9 @@ def get_fleet_credentials_output(compartment_id: Optional[pulumi.Input[Optional[
     __args__['filters'] = filters
     __args__['fleetId'] = fleet_id
     __args__['id'] = id
+    __args__['resourceId'] = resource_id
     __args__['state'] = state
+    __args__['target'] = target
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getFleetCredentials:getFleetCredentials', __args__, opts=opts, typ=GetFleetCredentialsResult)
     return __ret__.apply(lambda __response__: GetFleetCredentialsResult(
@@ -237,4 +279,6 @@ def get_fleet_credentials_output(compartment_id: Optional[pulumi.Input[Optional[
         fleet_credential_collections=pulumi.get(__response__, 'fleet_credential_collections'),
         fleet_id=pulumi.get(__response__, 'fleet_id'),
         id=pulumi.get(__response__, 'id'),
-        state=pulumi.get(__response__, 'state')))
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        state=pulumi.get(__response__, 'state'),
+        target=pulumi.get(__response__, 'target')))

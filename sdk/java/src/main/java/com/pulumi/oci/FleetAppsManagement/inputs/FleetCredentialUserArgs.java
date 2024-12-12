@@ -17,14 +17,14 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
     public static final FleetCredentialUserArgs Empty = new FleetCredentialUserArgs();
 
     /**
-     * (Updatable) Credential Type
+     * (Updatable) Credential Type.
      * 
      */
     @Import(name="credentialType", required=true)
     private Output<String> credentialType;
 
     /**
-     * @return (Updatable) Credential Type
+     * @return (Updatable) Credential Type.
      * 
      */
     public Output<String> credentialType() {
@@ -92,14 +92,14 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The value corresponding to the credential
+     * (Updatable) The value corresponding to the credential.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) The value corresponding to the credential
+     * @return (Updatable) The value corresponding to the credential.
      * 
      */
     public Optional<Output<String>> value() {
@@ -107,7 +107,7 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+     * (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -117,7 +117,7 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
     private @Nullable Output<String> vaultId;
 
     /**
-     * @return (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+     * @return (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -158,7 +158,7 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param credentialType (Updatable) Credential Type
+         * @param credentialType (Updatable) Credential Type.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param credentialType (Updatable) Credential Type
+         * @param credentialType (Updatable) Credential Type.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param value (Updatable) The value corresponding to the credential
+         * @param value (Updatable) The value corresponding to the credential.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param value (Updatable) The value corresponding to the credential
+         * @param value (Updatable) The value corresponding to the credential.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param vaultId (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+         * @param vaultId (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -298,7 +298,7 @@ public final class FleetCredentialUserArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param vaultId (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+         * @param vaultId (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

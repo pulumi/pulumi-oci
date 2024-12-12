@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ServiceMesh.inputs.GetAccessPoliciesArgs;
 import com.pulumi.oci.ServiceMesh.inputs.GetAccessPoliciesPlainArgs;
 import com.pulumi.oci.ServiceMesh.inputs.GetAccessPolicyArgs;
@@ -244,6 +245,54 @@ public final class ServiceMeshFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAccessPoliciesResult> getAccessPolicies(GetAccessPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", TypeShape.of(GetAccessPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Access Policies in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Returns a list of AccessPolicy objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicies = ServiceMeshFunctions.getAccessPolicies(GetAccessPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(accessPolicyId)
+     *             .meshId(testMesh.id())
+     *             .name(accessPolicyName)
+     *             .state(accessPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAccessPoliciesResult> getAccessPoliciesPlain(GetAccessPoliciesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", TypeShape.of(GetAccessPoliciesResult.class), args, Utilities.withVersion(options));
     }
@@ -377,6 +426,50 @@ public final class ServiceMeshFunctions {
      * 
      */
     public static Output<GetAccessPolicyResult> getAccessPolicy(GetAccessPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getAccessPolicy:getAccessPolicy", TypeShape.of(GetAccessPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Access Policy resource in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Get an AccessPolicy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicy = ServiceMeshFunctions.getAccessPolicy(GetAccessPolicyArgs.builder()
+     *             .accessPolicyId(testAccessPolicyOciServiceMeshAccessPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAccessPolicyResult> getAccessPolicy(GetAccessPolicyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceMesh/getAccessPolicy:getAccessPolicy", TypeShape.of(GetAccessPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -596,6 +689,50 @@ public final class ServiceMeshFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetIngressGatewayResult> getIngressGateway(GetIngressGatewayArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getIngressGateway:getIngressGateway", TypeShape.of(GetIngressGatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ingress Gateway resource in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Gets an IngressGateway by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateway = ServiceMeshFunctions.getIngressGateway(GetIngressGatewayArgs.builder()
+     *             .ingressGatewayId(testIngressGatewayOciServiceMeshIngressGateway.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetIngressGatewayResult> getIngressGatewayPlain(GetIngressGatewayPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceMesh/getIngressGateway:getIngressGateway", TypeShape.of(GetIngressGatewayResult.class), args, Utilities.withVersion(options));
     }
@@ -729,6 +866,50 @@ public final class ServiceMeshFunctions {
      * 
      */
     public static Output<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getIngressGatewayRouteTable:getIngressGatewayRouteTable", TypeShape.of(GetIngressGatewayRouteTableResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ingress Gateway Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Gets a IngressGatewayRouteTable by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTable = ServiceMeshFunctions.getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs.builder()
+     *             .ingressGatewayRouteTableId(testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceMesh/getIngressGatewayRouteTable:getIngressGatewayRouteTable", TypeShape.of(GetIngressGatewayRouteTableResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -917,6 +1098,54 @@ public final class ServiceMeshFunctions {
      * 
      */
     public static Output<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getIngressGatewayRouteTables:getIngressGatewayRouteTables", TypeShape.of(GetIngressGatewayRouteTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ingress Gateway Route Tables in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Returns a list of IngressGatewayRouteTable objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTables = ServiceMeshFunctions.getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayRouteTableId)
+     *             .ingressGatewayId(testIngressGateway.id())
+     *             .name(ingressGatewayRouteTableName)
+     *             .state(ingressGatewayRouteTableState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceMesh/getIngressGatewayRouteTables:getIngressGatewayRouteTables", TypeShape.of(GetIngressGatewayRouteTablesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1156,6 +1385,54 @@ public final class ServiceMeshFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetIngressGatewaysResult> getIngressGateways(GetIngressGatewaysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getIngressGateways:getIngressGateways", TypeShape.of(GetIngressGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ingress Gateways in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Returns a list of IngressGateway objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateways = ServiceMeshFunctions.getIngressGateways(GetIngressGatewaysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayId)
+     *             .meshId(testMesh.id())
+     *             .name(ingressGatewayName)
+     *             .state(ingressGatewayState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetIngressGatewaysResult> getIngressGatewaysPlain(GetIngressGatewaysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceMesh/getIngressGateways:getIngressGateways", TypeShape.of(GetIngressGatewaysResult.class), args, Utilities.withVersion(options));
     }
@@ -1289,6 +1566,50 @@ public final class ServiceMeshFunctions {
      * 
      */
     public static Output<GetMeshResult> getMesh(GetMeshArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getMesh:getMesh", TypeShape.of(GetMeshResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Mesh resource in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Gets a Mesh by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMesh = ServiceMeshFunctions.getMesh(GetMeshArgs.builder()
+     *             .meshId(testMeshOciServiceMeshMesh.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMeshResult> getMesh(GetMeshArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceMesh/getMesh:getMesh", TypeShape.of(GetMeshResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1474,6 +1795,53 @@ public final class ServiceMeshFunctions {
      * 
      */
     public static Output<GetMeshesResult> getMeshes(GetMeshesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getMeshes:getMeshes", TypeShape.of(GetMeshesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Meshes in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Returns a list of Mesh objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMeshes = ServiceMeshFunctions.getMeshes(GetMeshesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(meshDisplayName)
+     *             .id(meshId)
+     *             .state(meshState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMeshesResult> getMeshes(GetMeshesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceMesh/getMeshes:getMeshes", TypeShape.of(GetMeshesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1766,6 +2134,47 @@ public final class ServiceMeshFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProxyDetailResult> getProxyDetail(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getProxyDetail:getProxyDetail", TypeShape.of(GetProxyDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Returns the attributes of the Proxy such as proxy image version.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProxyDetailResult> getProxyDetailPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceMesh/getProxyDetail:getProxyDetail", TypeShape.of(GetProxyDetailResult.class), args, Utilities.withVersion(options));
     }
@@ -1899,6 +2308,50 @@ public final class ServiceMeshFunctions {
      * 
      */
     public static Output<GetVirtualDeploymentResult> getVirtualDeployment(GetVirtualDeploymentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", TypeShape.of(GetVirtualDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Gets a VirtualDeployment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployment = ServiceMeshFunctions.getVirtualDeployment(GetVirtualDeploymentArgs.builder()
+     *             .virtualDeploymentId(testVirtualDeploymentOciServiceMeshVirtualDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVirtualDeploymentResult> getVirtualDeployment(GetVirtualDeploymentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", TypeShape.of(GetVirtualDeploymentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2134,6 +2587,54 @@ public final class ServiceMeshFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVirtualDeploymentsResult> getVirtualDeployments(GetVirtualDeploymentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getVirtualDeployments:getVirtualDeployments", TypeShape.of(GetVirtualDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Deployments in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Returns a list of VirtualDeployments.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployments = ServiceMeshFunctions.getVirtualDeployments(GetVirtualDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(virtualDeploymentId)
+     *             .name(virtualDeploymentName)
+     *             .state(virtualDeploymentState)
+     *             .virtualServiceId(testVirtualService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVirtualDeploymentsResult> getVirtualDeploymentsPlain(GetVirtualDeploymentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceMesh/getVirtualDeployments:getVirtualDeployments", TypeShape.of(GetVirtualDeploymentsResult.class), args, Utilities.withVersion(options));
     }
@@ -2310,6 +2811,50 @@ public final class ServiceMeshFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVirtualServiceResult> getVirtualService(GetVirtualServiceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getVirtualService:getVirtualService", TypeShape.of(GetVirtualServiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Virtual Service resource in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Gets a VirtualService by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualService = ServiceMeshFunctions.getVirtualService(GetVirtualServiceArgs.builder()
+     *             .virtualServiceId(testVirtualServiceOciServiceMeshVirtualService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVirtualServiceResult> getVirtualServicePlain(GetVirtualServicePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceMesh/getVirtualService:getVirtualService", TypeShape.of(GetVirtualServiceResult.class), args, Utilities.withVersion(options));
     }
@@ -2443,6 +2988,50 @@ public final class ServiceMeshFunctions {
      * 
      */
     public static Output<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", TypeShape.of(GetVirtualServiceRouteTableResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Virtual Service Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Gets a VirtualServiceRouteTable by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTable = ServiceMeshFunctions.getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs.builder()
+     *             .virtualServiceRouteTableId(testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", TypeShape.of(GetVirtualServiceRouteTableResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2678,6 +3267,54 @@ public final class ServiceMeshFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getVirtualServiceRouteTables:getVirtualServiceRouteTables", TypeShape.of(GetVirtualServiceRouteTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Service Route Tables in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Returns a list of VirtualServiceRouteTable objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTables = ServiceMeshFunctions.getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceRouteTableId)
+     *             .name(virtualServiceRouteTableName)
+     *             .state(virtualServiceRouteTableState)
+     *             .virtualServiceId(testVirtualService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTablesPlain(GetVirtualServiceRouteTablesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceMesh/getVirtualServiceRouteTables:getVirtualServiceRouteTables", TypeShape.of(GetVirtualServiceRouteTablesResult.class), args, Utilities.withVersion(options));
     }
@@ -2823,6 +3460,54 @@ public final class ServiceMeshFunctions {
      * 
      */
     public static Output<GetVirtualServicesResult> getVirtualServices(GetVirtualServicesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceMesh/getVirtualServices:getVirtualServices", TypeShape.of(GetVirtualServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Services in Oracle Cloud Infrastructure Service Mesh service.
+     * 
+     * Returns a list of VirtualService objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServices = ServiceMeshFunctions.getVirtualServices(GetVirtualServicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceId)
+     *             .meshId(testMesh.id())
+     *             .name(virtualServiceName)
+     *             .state(virtualServiceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVirtualServicesResult> getVirtualServices(GetVirtualServicesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceMesh/getVirtualServices:getVirtualServices", TypeShape.of(GetVirtualServicesResult.class), args, Utilities.withVersion(options));
     }
     /**

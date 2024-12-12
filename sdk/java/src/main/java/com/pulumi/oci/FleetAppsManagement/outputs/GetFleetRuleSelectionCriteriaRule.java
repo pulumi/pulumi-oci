@@ -13,12 +13,12 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetRuleSelectionCriteriaRule {
     /**
-     * @return Rule to be be applied on.
+     * @return Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
      * 
      */
     private String basis;
     /**
-     * @return Please provide the root compartmentId (TenancyId).
+     * @return Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     private String compartmentId;
@@ -28,21 +28,21 @@ public final class GetFleetRuleSelectionCriteriaRule {
      */
     private List<GetFleetRuleSelectionCriteriaRuleCondition> conditions;
     /**
-     * @return Resource Compartment Id.Provide the compartmentId the resource belongs to.
+     * @return The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
      * 
      */
     private String resourceCompartmentId;
 
     private GetFleetRuleSelectionCriteriaRule() {}
     /**
-     * @return Rule to be be applied on.
+     * @return Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
      * 
      */
     public String basis() {
         return this.basis;
     }
     /**
-     * @return Please provide the root compartmentId (TenancyId).
+     * @return Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     public String compartmentId() {
@@ -56,7 +56,7 @@ public final class GetFleetRuleSelectionCriteriaRule {
         return this.conditions;
     }
     /**
-     * @return Resource Compartment Id.Provide the compartmentId the resource belongs to.
+     * @return The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
      * 
      */
     public String resourceCompartmentId() {

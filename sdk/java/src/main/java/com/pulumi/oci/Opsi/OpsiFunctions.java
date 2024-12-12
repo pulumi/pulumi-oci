@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotPlainArgs;
@@ -277,6 +278,50 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAwrHubResult> getAwrHub(GetAwrHubArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getAwrHub:getAwrHub", TypeShape.of(GetAwrHubResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an AWR hub.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
+     *             .awrHubId(testAwrHubOciOpsiAwrHub.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAwrHubResult> getAwrHubPlain(GetAwrHubPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getAwrHub:getAwrHub", TypeShape.of(GetAwrHubResult.class), args, Utilities.withVersion(options));
     }
@@ -422,6 +467,54 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getAwrHubAwrSnapshot:getAwrHubAwrSnapshot", TypeShape.of(GetAwrHubAwrSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Awr Hub Awr Snapshot resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Lists AWR snapshots for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of 1 day.
+     * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
+     *             .awrHubId(testAwrHub.id())
+     *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
+     *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getAwrHubAwrSnapshot:getAwrHubAwrSnapshot", TypeShape.of(GetAwrHubAwrSnapshotResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -661,6 +754,54 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getAwrHubAwrSnapshots:getAwrHubAwrSnapshots", TypeShape.of(GetAwrHubAwrSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Awr Hub Awr Snapshots in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Lists AWR snapshots for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of 1 day.
+     * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
+     *             .awrHubId(testAwrHub.id())
+     *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
+     *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshotsPlain(GetAwrHubAwrSnapshotsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getAwrHubAwrSnapshots:getAwrHubAwrSnapshots", TypeShape.of(GetAwrHubAwrSnapshotsResult.class), args, Utilities.withVersion(options));
     }
@@ -845,6 +986,52 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getAwrHubAwrSourcesSummary:getAwrHubAwrSourcesSummary", TypeShape.of(GetAwrHubAwrSourcesSummaryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Awr Hub Awr Sources Summary resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of summary of AWR Sources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
+     *             .awrHubId(testAwrHub.id())
+     *             .compartmentId(compartmentId)
+     *             .name(awrHubAwrSourcesSummaryName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummaryPlain(GetAwrHubAwrSourcesSummaryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getAwrHubAwrSourcesSummary:getAwrHubAwrSourcesSummary", TypeShape.of(GetAwrHubAwrSourcesSummaryResult.class), args, Utilities.withVersion(options));
     }
@@ -978,6 +1165,50 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetAwrHubSourceResult> getAwrHubSource(GetAwrHubSourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getAwrHubSource:getAwrHubSource", TypeShape.of(GetAwrHubSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the Awr Hub source object.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
+     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAwrHubSourceResult> getAwrHubSource(GetAwrHubSourceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getAwrHubSource:getAwrHubSource", TypeShape.of(GetAwrHubSourceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1221,6 +1452,56 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAwrHubSourcesResult> getAwrHubSources(GetAwrHubSourcesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getAwrHubSources:getAwrHubSources", TypeShape.of(GetAwrHubSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Awr Hub Sources in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Awr Hub source objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
+     *             .awrHubId(testAwrHub.id())
+     *             .awrHubSourceId(testAwrHubSource.id())
+     *             .compartmentId(compartmentId)
+     *             .name(awrHubSourceName)
+     *             .sourceTypes(awrHubSourceSourceType)
+     *             .states(awrHubSourceState)
+     *             .statuses(awrHubSourceStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAwrHubSourcesResult> getAwrHubSourcesPlain(GetAwrHubSourcesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getAwrHubSources:getAwrHubSources", TypeShape.of(GetAwrHubSourcesResult.class), args, Utilities.withVersion(options));
     }
@@ -1413,6 +1694,54 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAwrHubsResult> getAwrHubs(GetAwrHubsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getAwrHubs:getAwrHubs", TypeShape.of(GetAwrHubsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(awrHubDisplayName)
+     *             .id(awrHubId)
+     *             .states(awrHubState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAwrHubsResult> getAwrHubsPlain(GetAwrHubsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getAwrHubs:getAwrHubs", TypeShape.of(GetAwrHubsResult.class), args, Utilities.withVersion(options));
     }
@@ -1546,6 +1875,50 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetDatabaseInsightResult> getDatabaseInsight(GetDatabaseInsightArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getDatabaseInsight:getDatabaseInsight", TypeShape.of(GetDatabaseInsightResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of a database insight.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
+     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseInsightResult> getDatabaseInsight(GetDatabaseInsightArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getDatabaseInsight:getDatabaseInsight", TypeShape.of(GetDatabaseInsightResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1919,6 +2292,61 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabaseInsightsResult> getDatabaseInsights(GetDatabaseInsightsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getDatabaseInsights:getDatabaseInsights", TypeShape.of(GetDatabaseInsightsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Insights in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(databaseInsightCompartmentIdInSubtree)
+     *             .databaseIds(testDatabase.id())
+     *             .databaseTypes(databaseInsightDatabaseType)
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .exadataInsightId(testExadataInsight.id())
+     *             .fields(databaseInsightFields)
+     *             .id(databaseInsightId)
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .states(databaseInsightState)
+     *             .statuses(databaseInsightStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabaseInsightsResult> getDatabaseInsightsPlain(GetDatabaseInsightsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getDatabaseInsights:getDatabaseInsights", TypeShape.of(GetDatabaseInsightsResult.class), args, Utilities.withVersion(options));
     }
@@ -2052,6 +2480,50 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", TypeShape.of(GetEnterpriseManagerBridgeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an Operations Insights Enterprise Manager bridge.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", TypeShape.of(GetEnterpriseManagerBridgeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2389,6 +2861,55 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", TypeShape.of(GetEnterpriseManagerBridgesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridges = OpsiFunctions.getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(enterpriseManagerBridgeCompartmentIdInSubtree)
+     *             .displayName(enterpriseManagerBridgeDisplayName)
+     *             .id(enterpriseManagerBridgeId)
+     *             .states(enterpriseManagerBridgeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridgesPlain(GetEnterpriseManagerBridgesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", TypeShape.of(GetEnterpriseManagerBridgesResult.class), args, Utilities.withVersion(options));
     }
@@ -2522,6 +3043,50 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetExadataInsightResult> getExadataInsight(GetExadataInsightArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getExadataInsight:getExadataInsight", TypeShape.of(GetExadataInsightResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an Exadata insight.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
+     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadataInsightResult> getExadataInsight(GetExadataInsightArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getExadataInsight:getExadataInsight", TypeShape.of(GetExadataInsightResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2871,6 +3436,57 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExadataInsightsResult> getExadataInsights(GetExadataInsightsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getExadataInsights:getExadataInsights", TypeShape.of(GetExadataInsightsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadata Insights in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(exadataInsightCompartmentIdInSubtree)
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .exadataTypes(exadataInsightExadataType)
+     *             .id(exadataInsightId)
+     *             .states(exadataInsightState)
+     *             .statuses(exadataInsightStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExadataInsightsResult> getExadataInsightsPlain(GetExadataInsightsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getExadataInsights:getExadataInsights", TypeShape.of(GetExadataInsightsResult.class), args, Utilities.withVersion(options));
     }
@@ -3004,6 +3620,50 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetHostInsightResult> getHostInsight(GetHostInsightArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getHostInsight:getHostInsight", TypeShape.of(GetHostInsightResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Host Insight resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of a host insight.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
+     *             .hostInsightId(testHostInsightOciOpsiHostInsight.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetHostInsightResult> getHostInsight(GetHostInsightArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getHostInsight:getHostInsight", TypeShape.of(GetHostInsightResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3359,6 +4019,58 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetHostInsightsResult> getHostInsights(GetHostInsightsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getHostInsights:getHostInsights", TypeShape.of(GetHostInsightsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Host Insights in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(hostInsightCompartmentIdInSubtree)
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .exadataInsightId(testExadataInsight.id())
+     *             .hostTypes(hostInsightHostType)
+     *             .id(hostInsightId)
+     *             .states(hostInsightState)
+     *             .statuses(hostInsightStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetHostInsightsResult> getHostInsightsPlain(GetHostInsightsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getHostInsights:getHostInsights", TypeShape.of(GetHostInsightsResult.class), args, Utilities.withVersion(options));
     }
@@ -3504,6 +4216,54 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetImportableAgentEntitiesResult> getImportableAgentEntities(GetImportableAgentEntitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", TypeShape.of(GetImportableAgentEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntities = OpsiFunctions.getImportableAgentEntities(GetImportableAgentEntitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetImportableAgentEntitiesResult> getImportableAgentEntities(GetImportableAgentEntitiesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", TypeShape.of(GetImportableAgentEntitiesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3743,6 +4503,54 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetImportableAgentEntityResult> getImportableAgentEntity(GetImportableAgentEntityArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getImportableAgentEntity:getImportableAgentEntity", TypeShape.of(GetImportableAgentEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Importable Agent Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntity = OpsiFunctions.getImportableAgentEntity(GetImportableAgentEntityArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetImportableAgentEntityResult> getImportableAgentEntityPlain(GetImportableAgentEntityPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getImportableAgentEntity:getImportableAgentEntity", TypeShape.of(GetImportableAgentEntityResult.class), args, Utilities.withVersion(options));
     }
@@ -3894,6 +4702,56 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetImportableComputeEntitiesResult> getImportableComputeEntities(GetImportableComputeEntitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", TypeShape.of(GetImportableComputeEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Importable Compute Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntities = OpsiFunctions.getImportableComputeEntities(GetImportableComputeEntitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetImportableComputeEntitiesResult> getImportableComputeEntities(GetImportableComputeEntitiesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", TypeShape.of(GetImportableComputeEntitiesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4143,6 +5001,56 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetImportableComputeEntityResult> getImportableComputeEntity(GetImportableComputeEntityArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", TypeShape.of(GetImportableComputeEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntity = OpsiFunctions.getImportableComputeEntity(GetImportableComputeEntityArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetImportableComputeEntityResult> getImportableComputeEntityPlain(GetImportableComputeEntityPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", TypeShape.of(GetImportableComputeEntityResult.class), args, Utilities.withVersion(options));
     }
@@ -4276,6 +5184,50 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetNewsReportResult> getNewsReport(GetNewsReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getNewsReport:getNewsReport", TypeShape.of(GetNewsReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of a news report.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
+     *             .newsReportId(testNewsReportOciOpsiNewsReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNewsReportResult> getNewsReport(GetNewsReportArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getNewsReport:getNewsReport", TypeShape.of(GetNewsReportResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4607,6 +5559,54 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNewsReportsResult> getNewsReports(GetNewsReportsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getNewsReports:getNewsReports", TypeShape.of(GetNewsReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(newsReportCompartmentIdInSubtree)
+     *             .newsReportId(testNewsReport.id())
+     *             .states(newsReportState)
+     *             .statuses(newsReportStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNewsReportsResult> getNewsReportsPlain(GetNewsReportsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getNewsReports:getNewsReports", TypeShape.of(GetNewsReportsResult.class), args, Utilities.withVersion(options));
     }
@@ -4740,6 +5740,50 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", TypeShape.of(GetOperationsInsightsPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the details of the specified private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
+     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", TypeShape.of(GetOperationsInsightsPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5083,6 +6127,56 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints", TypeShape.of(GetOperationsInsightsPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Operations Insights Private Endpoints in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Operation Insights private endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoints = OpsiFunctions.getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(operationsInsightsPrivateEndpointCompartmentIdInSubtree)
+     *             .displayName(operationsInsightsPrivateEndpointDisplayName)
+     *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .states(operationsInsightsPrivateEndpointState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpointsPlain(GetOperationsInsightsPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints", TypeShape.of(GetOperationsInsightsPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
@@ -5219,6 +6313,51 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse", TypeShape.of(GetOperationsInsightsWarehouseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an Ops Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse", TypeShape.of(GetOperationsInsightsWarehouseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5443,6 +6582,51 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", TypeShape.of(GetOperationsInsightsWarehouseResourceUsageSummaryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the details of resources used by an Operations Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummaryPlain(GetOperationsInsightsWarehouseResourceUsageSummaryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", TypeShape.of(GetOperationsInsightsWarehouseResourceUsageSummaryResult.class), args, Utilities.withVersion(options));
     }
@@ -5576,6 +6760,50 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser", TypeShape.of(GetOperationsInsightsWarehouseUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an Operations Insights Warehouse User.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
+     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser", TypeShape.of(GetOperationsInsightsWarehouseUserResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5764,6 +6992,54 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", TypeShape.of(GetOperationsInsightsWarehouseUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Operations Insights Warehouse Users in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(operationsInsightsWarehouseUserDisplayName)
+     *             .id(operationsInsightsWarehouseUserId)
+     *             .states(operationsInsightsWarehouseUserState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", TypeShape.of(GetOperationsInsightsWarehouseUsersResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6099,6 +7375,54 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses", TypeShape.of(GetOperationsInsightsWarehousesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouses = OpsiFunctions.getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(operationsInsightsWarehouseDisplayName)
+     *             .id(operationsInsightsWarehouseId)
+     *             .states(operationsInsightsWarehouseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehousesPlain(GetOperationsInsightsWarehousesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses", TypeShape.of(GetOperationsInsightsWarehousesResult.class), args, Utilities.withVersion(options));
     }
@@ -6250,6 +7574,56 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetOpsiConfigurationResult> getOpsiConfiguration(GetOpsiConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOpsiConfiguration:getOpsiConfiguration", TypeShape.of(GetOpsiConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets details of an OPSI configuration resource.
+     * Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
+     * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
+     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.id())
+     *             .configItemCustomStatuses(opsiConfigurationConfigItemCustomStatus)
+     *             .configItemFields(opsiConfigurationConfigItemField)
+     *             .configItemsApplicableContexts(opsiConfigurationConfigItemsApplicableContext)
+     *             .opsiConfigFields(opsiConfigurationOpsiConfigField)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpsiConfigurationResult> getOpsiConfiguration(GetOpsiConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getOpsiConfiguration:getOpsiConfiguration", TypeShape.of(GetOpsiConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6495,6 +7869,55 @@ public final class OpsiFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", TypeShape.of(GetOpsiConfigurationConfigurationItemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+     * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurationConfigurationItem = OpsiFunctions.getOpsiConfigurationConfigurationItem(GetOpsiConfigurationConfigurationItemArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .configItemFields(opsiConfigurationConfigurationItemConfigItemField)
+     *             .configItemsApplicableContexts(opsiConfigurationConfigurationItemConfigItemsApplicableContext)
+     *             .name(opsiConfigurationConfigurationItemName)
+     *             .opsiConfigType(opsiConfigurationConfigurationItemOpsiConfigType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOpsiConfigurationConfigurationItemResult> getOpsiConfigurationConfigurationItemPlain(GetOpsiConfigurationConfigurationItemPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", TypeShape.of(GetOpsiConfigurationConfigurationItemResult.class), args, Utilities.withVersion(options));
     }
@@ -6637,6 +8060,53 @@ public final class OpsiFunctions {
      * 
      */
     public static Output<GetOpsiConfigurationsResult> getOpsiConfigurations(GetOpsiConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getOpsiConfigurations:getOpsiConfigurations", TypeShape.of(GetOpsiConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of OPSI configuration resources based on the query parameters specified.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpsiConfigurations = OpsiFunctions.getOpsiConfigurations(GetOpsiConfigurationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(opsiConfigurationDisplayName)
+     *             .opsiConfigTypes(opsiConfigurationOpsiConfigType)
+     *             .states(opsiConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOpsiConfigurationsResult> getOpsiConfigurations(GetOpsiConfigurationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Opsi/getOpsiConfigurations:getOpsiConfigurations", TypeShape.of(GetOpsiConfigurationsResult.class), args, Utilities.withVersion(options));
     }
     /**

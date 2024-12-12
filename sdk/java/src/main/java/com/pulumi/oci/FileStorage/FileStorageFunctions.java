@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.FileStorage.inputs.GetExportSetsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetExportSetsPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
@@ -195,6 +196,54 @@ public final class FileStorageFunctions {
      * 
      */
     public static Output<GetExportSetsResult> getExportSets(GetExportSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getExportSets:getExportSets", TypeShape.of(GetExportSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Export Sets in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the export set resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExportSets = FileStorageFunctions.getExportSets(GetExportSetsArgs.builder()
+     *             .availabilityDomain(exportSetAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(exportSetDisplayName)
+     *             .id(exportSetId)
+     *             .state(exportSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExportSetsResult> getExportSets(GetExportSetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FileStorage/getExportSets:getExportSets", TypeShape.of(GetExportSetsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -542,6 +591,56 @@ public final class FileStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExportsResult> getExports(GetExportsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getExports:getExports", TypeShape.of(GetExportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exports in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists export resources by compartment, file system, or export
+     * set. You must specify an export set ID, a file system ID, and
+     * / or a compartment ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .exportSetId(testExportSet.id())
+     *             .fileSystemId(testFileSystem.id())
+     *             .id(exportId)
+     *             .state(exportState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExportsResult> getExportsPlain(GetExportsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getExports:getExports", TypeShape.of(GetExportsResult.class), args, Utilities.withVersion(options));
     }
@@ -699,6 +798,58 @@ public final class FileStorageFunctions {
      * 
      */
     public static Output<GetFileSystemsResult> getFileSystems(GetFileSystemsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getFileSystems:getFileSystems", TypeShape.of(GetFileSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the file system resources in the specified compartment, or by the specified compartment and
+     * file system snapshot policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystems = FileStorageFunctions.getFileSystems(GetFileSystemsArgs.builder()
+     *             .availabilityDomain(fileSystemAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(fileSystemDisplayName)
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .id(fileSystemId)
+     *             .parentFileSystemId(testFileSystem.id())
+     *             .sourceSnapshotId(testSnapshot.id())
+     *             .state(fileSystemState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFileSystemsResult> getFileSystems(GetFileSystemsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FileStorage/getFileSystems:getFileSystems", TypeShape.of(GetFileSystemsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -942,6 +1093,54 @@ public final class FileStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", TypeShape.of(GetFilesystemSnapshotPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Filesystem Snapshot Policies in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists file system snapshot policies in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicies = FileStorageFunctions.getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs.builder()
+     *             .availabilityDomain(filesystemSnapshotPolicyAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(filesystemSnapshotPolicyDisplayName)
+     *             .id(filesystemSnapshotPolicyId)
+     *             .state(filesystemSnapshotPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPoliciesPlain(GetFilesystemSnapshotPoliciesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", TypeShape.of(GetFilesystemSnapshotPoliciesResult.class), args, Utilities.withVersion(options));
     }
@@ -1075,6 +1274,50 @@ public final class FileStorageFunctions {
      * 
      */
     public static Output<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", TypeShape.of(GetFilesystemSnapshotPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified file system snapshot policy&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", TypeShape.of(GetFilesystemSnapshotPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1314,6 +1557,55 @@ public final class FileStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMountTargetsResult> getMountTargets(GetMountTargetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getMountTargets:getMountTargets", TypeShape.of(GetMountTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the mount target resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetMountTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMountTargets = FileStorageFunctions.getMountTargets(GetMountTargetsArgs.builder()
+     *             .availabilityDomain(mountTargetAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(mountTargetDisplayName)
+     *             .exportSetId(testExportSet.id())
+     *             .id(mountTargetId)
+     *             .state(mountTargetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMountTargetsResult> getMountTargetsPlain(GetMountTargetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getMountTargets:getMountTargets", TypeShape.of(GetMountTargetsResult.class), args, Utilities.withVersion(options));
     }
@@ -1447,6 +1739,50 @@ public final class FileStorageFunctions {
      * 
      */
     public static Output<GetOutboundConnectorResult> getOutboundConnector(GetOutboundConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getOutboundConnector:getOutboundConnector", TypeShape.of(GetOutboundConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified outbound connector&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
+     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOutboundConnectorResult> getOutboundConnector(GetOutboundConnectorArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FileStorage/getOutboundConnector:getOutboundConnector", TypeShape.of(GetOutboundConnectorResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1682,6 +2018,54 @@ public final class FileStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOutboundConnectorsResult> getOutboundConnectors(GetOutboundConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getOutboundConnectors:getOutboundConnectors", TypeShape.of(GetOutboundConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Outbound Connectors in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the outbound connector resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetOutboundConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOutboundConnectors = FileStorageFunctions.getOutboundConnectors(GetOutboundConnectorsArgs.builder()
+     *             .availabilityDomain(outboundConnectorAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(outboundConnectorDisplayName)
+     *             .id(outboundConnectorId)
+     *             .state(outboundConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOutboundConnectorsResult> getOutboundConnectorsPlain(GetOutboundConnectorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getOutboundConnectors:getOutboundConnectors", TypeShape.of(GetOutboundConnectorsResult.class), args, Utilities.withVersion(options));
     }
@@ -1815,6 +2199,50 @@ public final class FileStorageFunctions {
      * 
      */
     public static Output<GetReplicationResult> getReplication(GetReplicationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getReplication:getReplication", TypeShape.of(GetReplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Replication resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
+     *             .replicationId(testReplicationOciFileStorageReplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetReplicationResult> getReplication(GetReplicationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FileStorage/getReplication:getReplication", TypeShape.of(GetReplicationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2034,6 +2462,50 @@ public final class FileStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetReplicationTargetResult> getReplicationTarget(GetReplicationTargetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getReplicationTarget:getReplicationTarget", TypeShape.of(GetReplicationTargetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Replication Target resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication target&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
+     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetReplicationTargetResult> getReplicationTargetPlain(GetReplicationTargetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getReplicationTarget:getReplicationTarget", TypeShape.of(GetReplicationTargetResult.class), args, Utilities.withVersion(options));
     }
@@ -2179,6 +2651,54 @@ public final class FileStorageFunctions {
      * 
      */
     public static Output<GetReplicationTargetsResult> getReplicationTargets(GetReplicationTargetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getReplicationTargets:getReplicationTargets", TypeShape.of(GetReplicationTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication target resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTargets = FileStorageFunctions.getReplicationTargets(GetReplicationTargetsArgs.builder()
+     *             .availabilityDomain(replicationTargetAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(replicationTargetDisplayName)
+     *             .id(replicationTargetId)
+     *             .state(replicationTargetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetReplicationTargetsResult> getReplicationTargets(GetReplicationTargetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FileStorage/getReplicationTargets:getReplicationTargets", TypeShape.of(GetReplicationTargetsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2422,6 +2942,55 @@ public final class FileStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetReplicationsResult> getReplications(GetReplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getReplications:getReplications", TypeShape.of(GetReplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replications in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplications = FileStorageFunctions.getReplications(GetReplicationsArgs.builder()
+     *             .availabilityDomain(replicationAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(replicationDisplayName)
+     *             .fileSystemId(testFileSystem.id())
+     *             .id(replicationId)
+     *             .state(replicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetReplicationsResult> getReplicationsPlain(GetReplicationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getReplications:getReplications", TypeShape.of(GetReplicationsResult.class), args, Utilities.withVersion(options));
     }
@@ -2555,6 +3124,50 @@ public final class FileStorageFunctions {
      * 
      */
     public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getSnapshot:getSnapshot", TypeShape.of(GetSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified snapshot&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
+     *             .snapshotId(testSnapshotOciFileStorageSnapshot.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FileStorage/getSnapshot:getSnapshot", TypeShape.of(GetSnapshotResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2869,6 +3482,60 @@ public final class FileStorageFunctions {
      * 
      */
     public static Output<GetSnapshotsResult> getSnapshots(GetSnapshotsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getSnapshots:getSnapshots", TypeShape.of(GetSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+     * or by file system snapshot policy and file system.
+     * 
+     * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+     * 
+     * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+     * (sort by name is NOT supported for listing snapshots by policy and compartment).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .fileSystemId(testFileSystem.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .id(snapshotId)
+     *             .state(snapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots(GetSnapshotsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FileStorage/getSnapshots:getSnapshots", TypeShape.of(GetSnapshotsResult.class), args, Utilities.withVersion(options));
     }
     /**

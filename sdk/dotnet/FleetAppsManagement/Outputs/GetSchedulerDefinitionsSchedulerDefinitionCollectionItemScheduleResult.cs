@@ -22,7 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ExecutionStartdate;
         /// <summary>
-        /// unique MaintenanceWindow identifier
+        /// A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
         /// </summary>
         public readonly string MaintenanceWindowId;
         /// <summary>

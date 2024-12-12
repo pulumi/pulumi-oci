@@ -53,6 +53,12 @@ import (
 //				},
 //				IdcsOpenId:             pulumi.Any(testIdcsOpen.Id),
 //				IsVisualBuilderEnabled: pulumi.Any(vbInstanceIsVisualBuilderEnabled),
+//				NetworkEndpointDetails: &visualbuilder.VbInstanceNetworkEndpointDetailsArgs{
+//					NetworkEndpointType:     pulumi.Any(vbInstanceNetworkEndpointDetailsNetworkEndpointType),
+//					SubnetId:                pulumi.Any(testSubnet.Id),
+//					NetworkSecurityGroupIds: pulumi.Any(vbInstanceNetworkEndpointDetailsNetworkSecurityGroupIds),
+//					PrivateEndpointIp:       pulumi.Any(vbInstanceNetworkEndpointDetailsPrivateEndpointIp),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -75,8 +81,6 @@ type VbInstance struct {
 
 	// (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints VbInstanceAlternateCustomEndpointArrayOutput `pulumi:"alternateCustomEndpoints"`
-	// A list of associated attachments to other services
-	Attachments VbInstanceAttachmentArrayOutput `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -89,8 +93,6 @@ type VbInstance struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// Information for IDCS access
-	IdcsInfos VbInstanceIdcsInfoArrayOutput `pulumi:"idcsInfos"`
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 	IdcsOpenId pulumi.StringPtrOutput `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
@@ -101,6 +103,8 @@ type VbInstance struct {
 	ManagementNatGatewayIp pulumi.StringOutput `pulumi:"managementNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 	ManagementVcnId pulumi.StringOutput `pulumi:"managementVcnId"`
+	// (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+	NetworkEndpointDetails VbInstanceNetworkEndpointDetailsOutput `pulumi:"networkEndpointDetails"`
 	// (Updatable) The number of Nodes
 	//
 	// ** IMPORTANT **
@@ -170,8 +174,6 @@ func GetVbInstance(ctx *pulumi.Context,
 type vbInstanceState struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints []VbInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
-	// A list of associated attachments to other services
-	Attachments []VbInstanceAttachment `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -184,8 +186,6 @@ type vbInstanceState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Information for IDCS access
-	IdcsInfos []VbInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 	IdcsOpenId *string `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
@@ -196,6 +196,8 @@ type vbInstanceState struct {
 	ManagementNatGatewayIp *string `pulumi:"managementNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 	ManagementVcnId *string `pulumi:"managementVcnId"`
+	// (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+	NetworkEndpointDetails *VbInstanceNetworkEndpointDetails `pulumi:"networkEndpointDetails"`
 	// (Updatable) The number of Nodes
 	//
 	// ** IMPORTANT **
@@ -220,8 +222,6 @@ type vbInstanceState struct {
 type VbInstanceState struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints VbInstanceAlternateCustomEndpointArrayInput
-	// A list of associated attachments to other services
-	Attachments VbInstanceAttachmentArrayInput
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringPtrInput
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -234,8 +234,6 @@ type VbInstanceState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// Information for IDCS access
-	IdcsInfos VbInstanceIdcsInfoArrayInput
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 	IdcsOpenId pulumi.StringPtrInput
 	// The Vb Instance URL.
@@ -246,6 +244,8 @@ type VbInstanceState struct {
 	ManagementNatGatewayIp pulumi.StringPtrInput
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 	ManagementVcnId pulumi.StringPtrInput
+	// (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+	NetworkEndpointDetails VbInstanceNetworkEndpointDetailsPtrInput
 	// (Updatable) The number of Nodes
 	//
 	// ** IMPORTANT **
@@ -290,6 +290,8 @@ type vbInstanceArgs struct {
 	IdcsOpenId *string `pulumi:"idcsOpenId"`
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
+	// (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+	NetworkEndpointDetails *VbInstanceNetworkEndpointDetails `pulumi:"networkEndpointDetails"`
 	// (Updatable) The number of Nodes
 	//
 	// ** IMPORTANT **
@@ -317,6 +319,8 @@ type VbInstanceArgs struct {
 	IdcsOpenId pulumi.StringPtrInput
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled pulumi.BoolPtrInput
+	// (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+	NetworkEndpointDetails VbInstanceNetworkEndpointDetailsPtrInput
 	// (Updatable) The number of Nodes
 	//
 	// ** IMPORTANT **
@@ -416,11 +420,6 @@ func (o VbInstanceOutput) AlternateCustomEndpoints() VbInstanceAlternateCustomEn
 	return o.ApplyT(func(v *VbInstance) VbInstanceAlternateCustomEndpointArrayOutput { return v.AlternateCustomEndpoints }).(VbInstanceAlternateCustomEndpointArrayOutput)
 }
 
-// A list of associated attachments to other services
-func (o VbInstanceOutput) Attachments() VbInstanceAttachmentArrayOutput {
-	return o.ApplyT(func(v *VbInstance) VbInstanceAttachmentArrayOutput { return v.Attachments }).(VbInstanceAttachmentArrayOutput)
-}
-
 // (Updatable) Compartment Identifier.
 func (o VbInstanceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -451,11 +450,6 @@ func (o VbInstanceOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Information for IDCS access
-func (o VbInstanceOutput) IdcsInfos() VbInstanceIdcsInfoArrayOutput {
-	return o.ApplyT(func(v *VbInstance) VbInstanceIdcsInfoArrayOutput { return v.IdcsInfos }).(VbInstanceIdcsInfoArrayOutput)
-}
-
 // (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 func (o VbInstanceOutput) IdcsOpenId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.StringPtrOutput { return v.IdcsOpenId }).(pulumi.StringPtrOutput)
@@ -479,6 +473,11 @@ func (o VbInstanceOutput) ManagementNatGatewayIp() pulumi.StringOutput {
 // The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 func (o VbInstanceOutput) ManagementVcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.StringOutput { return v.ManagementVcnId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+func (o VbInstanceOutput) NetworkEndpointDetails() VbInstanceNetworkEndpointDetailsOutput {
+	return o.ApplyT(func(v *VbInstance) VbInstanceNetworkEndpointDetailsOutput { return v.NetworkEndpointDetails }).(VbInstanceNetworkEndpointDetailsOutput)
 }
 
 // (Updatable) The number of Nodes

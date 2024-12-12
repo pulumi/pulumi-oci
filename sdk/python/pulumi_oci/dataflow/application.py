@@ -47,6 +47,7 @@ class ApplicationArgs:
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]]] = None,
                  pool_id: Optional[pulumi.Input[str]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
+                 terminate_runs_on_deletion: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None):
         """
@@ -77,12 +78,12 @@ class ApplicationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]] parameters: (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
         :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
-        :param pulumi.Input[str] type: The Spark application processing type.
-        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-               
+        :param pulumi.Input[bool] terminate_runs_on_deletion: A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: The Spark application processing type.
+        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -129,6 +130,8 @@ class ApplicationArgs:
             pulumi.set(__self__, "pool_id", pool_id)
         if private_endpoint_id is not None:
             pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if terminate_runs_on_deletion is not None:
+            pulumi.set(__self__, "terminate_runs_on_deletion", terminate_runs_on_deletion)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if warehouse_bucket_uri is not None:
@@ -447,6 +450,21 @@ class ApplicationArgs:
         pulumi.set(self, "private_endpoint_id", value)
 
     @property
+    @pulumi.getter(name="terminateRunsOnDeletion")
+    def terminate_runs_on_deletion(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "terminate_runs_on_deletion")
+
+    @terminate_runs_on_deletion.setter
+    def terminate_runs_on_deletion(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "terminate_runs_on_deletion", value)
+
+    @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -462,11 +480,7 @@ class ApplicationArgs:
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "warehouse_bucket_uri")
 
@@ -507,6 +521,7 @@ class _ApplicationState:
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 terminate_runs_on_deletion: Optional[pulumi.Input[bool]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -542,14 +557,14 @@ class _ApplicationState:
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
         :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
         :param pulumi.Input[str] state: The current state of this application.
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] type: The Spark application processing type.
-        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-               
+        :param pulumi.Input[bool] terminate_runs_on_deletion: A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] type: The Spark application processing type.
+        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         if application_log_config is not None:
             pulumi.set(__self__, "application_log_config", application_log_config)
@@ -609,6 +624,8 @@ class _ApplicationState:
             pulumi.set(__self__, "spark_version", spark_version)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if terminate_runs_on_deletion is not None:
+            pulumi.set(__self__, "terminate_runs_on_deletion", terminate_runs_on_deletion)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -967,6 +984,21 @@ class _ApplicationState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="terminateRunsOnDeletion")
+    def terminate_runs_on_deletion(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "terminate_runs_on_deletion")
+
+    @terminate_runs_on_deletion.setter
+    def terminate_runs_on_deletion(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "terminate_runs_on_deletion", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1006,11 +1038,7 @@ class _ApplicationState:
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "warehouse_bucket_uri")
 
@@ -1050,6 +1078,7 @@ class Application(pulumi.CustomResource):
                  pool_id: Optional[pulumi.Input[str]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
+                 terminate_runs_on_deletion: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1108,7 +1137,8 @@ class Application(pulumi.CustomResource):
             pool_id=test_pool["id"],
             private_endpoint_id=test_private_endpoint["id"],
             type=application_type,
-            warehouse_bucket_uri=application_warehouse_bucket_uri)
+            warehouse_bucket_uri=application_warehouse_bucket_uri,
+            terminate_runs_on_deletion=True)
         ```
 
         ## Import
@@ -1147,12 +1177,12 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
         :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
-        :param pulumi.Input[str] type: The Spark application processing type.
-        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-               
+        :param pulumi.Input[bool] terminate_runs_on_deletion: A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: The Spark application processing type.
+        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         ...
     @overload
@@ -1215,7 +1245,8 @@ class Application(pulumi.CustomResource):
             pool_id=test_pool["id"],
             private_endpoint_id=test_private_endpoint["id"],
             type=application_type,
-            warehouse_bucket_uri=application_warehouse_bucket_uri)
+            warehouse_bucket_uri=application_warehouse_bucket_uri,
+            terminate_runs_on_deletion=True)
         ```
 
         ## Import
@@ -1267,6 +1298,7 @@ class Application(pulumi.CustomResource):
                  pool_id: Optional[pulumi.Input[str]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
+                 terminate_runs_on_deletion: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1318,6 +1350,7 @@ class Application(pulumi.CustomResource):
             if spark_version is None and not opts.urn:
                 raise TypeError("Missing required property 'spark_version'")
             __props__.__dict__["spark_version"] = spark_version
+            __props__.__dict__["terminate_runs_on_deletion"] = terminate_runs_on_deletion
             __props__.__dict__["type"] = type
             __props__.__dict__["warehouse_bucket_uri"] = warehouse_bucket_uri
             __props__.__dict__["owner_principal_id"] = None
@@ -1364,6 +1397,7 @@ class Application(pulumi.CustomResource):
             private_endpoint_id: Optional[pulumi.Input[str]] = None,
             spark_version: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            terminate_runs_on_deletion: Optional[pulumi.Input[bool]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
@@ -1404,14 +1438,14 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
         :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
         :param pulumi.Input[str] state: The current state of this application.
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] type: The Spark application processing type.
-        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-               
+        :param pulumi.Input[bool] terminate_runs_on_deletion: A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] type: The Spark application processing type.
+        :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1446,6 +1480,7 @@ class Application(pulumi.CustomResource):
         __props__.__dict__["private_endpoint_id"] = private_endpoint_id
         __props__.__dict__["spark_version"] = spark_version
         __props__.__dict__["state"] = state
+        __props__.__dict__["terminate_runs_on_deletion"] = terminate_runs_on_deletion
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["type"] = type
@@ -1685,6 +1720,17 @@ class Application(pulumi.CustomResource):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="terminateRunsOnDeletion")
+    def terminate_runs_on_deletion(self) -> pulumi.Output[Optional[bool]]:
+        """
+        A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "terminate_runs_on_deletion")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
@@ -1712,11 +1758,7 @@ class Application(pulumi.CustomResource):
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> pulumi.Output[str]:
         """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "warehouse_bucket_uri")
 

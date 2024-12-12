@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetComplianceReportResourceProductResult
     {
         /// <summary>
-        /// Product Name
+        /// Product Name.
         /// </summary>
         public readonly string ProductName;
         /// <summary>

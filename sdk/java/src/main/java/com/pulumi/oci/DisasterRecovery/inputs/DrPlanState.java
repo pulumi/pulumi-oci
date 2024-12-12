@@ -6,6 +6,7 @@ package com.pulumi.oci.DisasterRecovery.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanPlanGroupArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -109,6 +110,21 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The current state of the DR plan.
+     * 
+     */
+    @Import(name="lifecycleSubState")
+    private @Nullable Output<String> lifecycleSubState;
+
+    /**
+     * @return The current state of the DR plan.
+     * 
+     */
+    public Optional<Output<String>> lifecycleSubState() {
+        return Optional.ofNullable(this.lifecycleSubState);
+    }
+
+    /**
      * The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
@@ -151,6 +167,36 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<DrPlanPlanGroupArgs>>> planGroups() {
         return Optional.ofNullable(this.planGroups);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     */
+    @Import(name="refreshTrigger")
+    private @Nullable Output<Integer> refreshTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> refreshTrigger() {
+        return Optional.ofNullable(this.refreshTrigger);
+    }
+
+    /**
+     * The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+     * 
+     */
+    @Import(name="sourcePlanId")
+    private @Nullable Output<String> sourcePlanId;
+
+    /**
+     * @return The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> sourcePlanId() {
+        return Optional.ofNullable(this.sourcePlanId);
     }
 
     /**
@@ -216,9 +262,6 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     /**
      * The type of DR plan to be created.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
@@ -226,12 +269,30 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return The type of DR plan to be created.
      * 
+     */
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> type() {
-        return Optional.ofNullable(this.type);
+    @Import(name="verifyTrigger")
+    private @Nullable Output<Integer> verifyTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> verifyTrigger() {
+        return Optional.ofNullable(this.verifyTrigger);
     }
 
     private DrPlanState() {}
@@ -243,14 +304,18 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         this.drProtectionGroupId = $.drProtectionGroupId;
         this.freeformTags = $.freeformTags;
         this.lifeCycleDetails = $.lifeCycleDetails;
+        this.lifecycleSubState = $.lifecycleSubState;
         this.peerDrProtectionGroupId = $.peerDrProtectionGroupId;
         this.peerRegion = $.peerRegion;
         this.planGroups = $.planGroups;
+        this.refreshTrigger = $.refreshTrigger;
+        this.sourcePlanId = $.sourcePlanId;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.type = $.type;
+        this.verifyTrigger = $.verifyTrigger;
     }
 
     public static Builder builder() {
@@ -398,6 +463,27 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param lifecycleSubState The current state of the DR plan.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubState(@Nullable Output<String> lifecycleSubState) {
+            $.lifecycleSubState = lifecycleSubState;
+            return this;
+        }
+
+        /**
+         * @param lifecycleSubState The current state of the DR plan.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubState(String lifecycleSubState) {
+            return lifecycleSubState(Output.of(lifecycleSubState));
+        }
+
+        /**
          * @param peerDrProtectionGroupId The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
@@ -468,6 +554,48 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder planGroups(DrPlanPlanGroupArgs... planGroups) {
             return planGroups(List.of(planGroups));
+        }
+
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(@Nullable Output<Integer> refreshTrigger) {
+            $.refreshTrigger = refreshTrigger;
+            return this;
+        }
+
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            return refreshTrigger(Output.of(refreshTrigger));
+        }
+
+        /**
+         * @param sourcePlanId The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourcePlanId(@Nullable Output<String> sourcePlanId) {
+            $.sourcePlanId = sourcePlanId;
+            return this;
+        }
+
+        /**
+         * @param sourcePlanId The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourcePlanId(String sourcePlanId) {
+            return sourcePlanId(Output.of(sourcePlanId));
         }
 
         /**
@@ -557,9 +685,6 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param type The type of DR plan to be created.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -571,14 +696,38 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param type The type of DR plan to be created.
          * 
+         * @return builder
+         * 
+         */
+        public Builder type(String type) {
+            return type(Output.of(type));
+        }
+
+        /**
+         * @param verifyTrigger (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder type(String type) {
-            return type(Output.of(type));
+        public Builder verifyTrigger(@Nullable Output<Integer> verifyTrigger) {
+            $.verifyTrigger = verifyTrigger;
+            return this;
+        }
+
+        /**
+         * @param verifyTrigger (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder verifyTrigger(Integer verifyTrigger) {
+            return verifyTrigger(Output.of(verifyTrigger));
         }
 
         public DrPlanState build() {

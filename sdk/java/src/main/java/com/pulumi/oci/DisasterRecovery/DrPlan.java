@@ -11,9 +11,11 @@ import com.pulumi.oci.DisasterRecovery.DrPlanArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanState;
 import com.pulumi.oci.DisasterRecovery.outputs.DrPlanPlanGroup;
 import com.pulumi.oci.Utilities;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -52,6 +54,7 @@ import javax.annotation.Nullable;
  *             .type(drPlanType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .sourcePlanId(testSourcePlan.id())
  *             .build());
  * 
  *     }
@@ -156,6 +159,20 @@ public class DrPlan extends com.pulumi.resources.CustomResource {
         return this.lifeCycleDetails;
     }
     /**
+     * The current state of the DR plan.
+     * 
+     */
+    @Export(name="lifecycleSubState", refs={String.class}, tree="[0]")
+    private Output<String> lifecycleSubState;
+
+    /**
+     * @return The current state of the DR plan.
+     * 
+     */
+    public Output<String> lifecycleSubState() {
+        return this.lifecycleSubState;
+    }
+    /**
      * The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
@@ -196,6 +213,34 @@ public class DrPlan extends com.pulumi.resources.CustomResource {
      */
     public Output<List<DrPlanPlanGroup>> planGroups() {
         return this.planGroups;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     */
+    @Export(name="refreshTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> refreshTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> refreshTrigger() {
+        return Codegen.optional(this.refreshTrigger);
+    }
+    /**
+     * The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+     * 
+     */
+    @Export(name="sourcePlanId", refs={String.class}, tree="[0]")
+    private Output<String> sourcePlanId;
+
+    /**
+     * @return The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+     * 
+     */
+    public Output<String> sourcePlanId() {
+        return this.sourcePlanId;
     }
     /**
      * The current state of the DR plan.
@@ -256,9 +301,6 @@ public class DrPlan extends com.pulumi.resources.CustomResource {
     /**
      * The type of DR plan to be created.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
@@ -266,12 +308,29 @@ public class DrPlan extends com.pulumi.resources.CustomResource {
     /**
      * @return The type of DR plan to be created.
      * 
+     */
+    public Output<String> type() {
+        return this.type;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    @Export(name="verifyTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> verifyTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> verifyTrigger() {
+        return Codegen.optional(this.verifyTrigger);
     }
 
     /**

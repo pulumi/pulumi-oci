@@ -9,6 +9,7 @@ import com.pulumi.oci.DataFlow.inputs.ApplicationApplicationLogConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationDriverShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationExecutorShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationParameterArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -458,6 +459,27 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="terminateRunsOnDeletion")
+    private @Nullable Output<Boolean> terminateRunsOnDeletion;
+
+    /**
+     * @return A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Boolean>> terminateRunsOnDeletion() {
+        return Optional.ofNullable(this.terminateRunsOnDeletion);
+    }
+
+    /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
@@ -505,18 +527,12 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="warehouseBucketUri")
     private @Nullable Output<String> warehouseBucketUri;
 
     /**
      * @return (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> warehouseBucketUri() {
@@ -555,6 +571,7 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         this.privateEndpointId = $.privateEndpointId;
         this.sparkVersion = $.sparkVersion;
         this.state = $.state;
+        this.terminateRunsOnDeletion = $.terminateRunsOnDeletion;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.type = $.type;
@@ -1209,6 +1226,33 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param terminateRunsOnDeletion A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder terminateRunsOnDeletion(@Nullable Output<Boolean> terminateRunsOnDeletion) {
+            $.terminateRunsOnDeletion = terminateRunsOnDeletion;
+            return this;
+        }
+
+        /**
+         * @param terminateRunsOnDeletion A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder terminateRunsOnDeletion(Boolean terminateRunsOnDeletion) {
+            return terminateRunsOnDeletion(Output.of(terminateRunsOnDeletion));
+        }
+
+        /**
          * @param timeCreated The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
          * 
          * @return builder
@@ -1274,9 +1318,6 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param warehouseBucketUri (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -1287,9 +1328,6 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param warehouseBucketUri (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

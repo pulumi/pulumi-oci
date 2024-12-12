@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Fleet Credentials in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetCredentials.
+ * List credentials in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -23,7 +23,9 @@ import * as utilities from "../utilities";
  *     credentialLevel: fleetCredentialCredentialLevel,
  *     displayName: fleetCredentialDisplayName,
  *     id: fleetCredentialId,
+ *     resourceId: testResource.id,
  *     state: fleetCredentialState,
+ *     target: fleetCredentialTarget,
  * });
  * ```
  */
@@ -36,7 +38,9 @@ export function getFleetCredentials(args: GetFleetCredentialsArgs, opts?: pulumi
         "filters": args.filters,
         "fleetId": args.fleetId,
         "id": args.id,
+        "resourceId": args.resourceId,
         "state": args.state,
+        "target": args.target,
     }, opts);
 }
 
@@ -49,7 +53,7 @@ export interface GetFleetCredentialsArgs {
      */
     compartmentId?: string;
     /**
-     * Credential Level.
+     * A filter to return only resources whose credentialLevel matches the given credentialLevel.
      */
     credentialLevel?: string;
     /**
@@ -58,17 +62,25 @@ export interface GetFleetCredentialsArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetFleetCredentialsFilter[];
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
     /**
-     * unique FleetCredential identifier
+     * A filter to return only resources whose credential identifier matches the given identifier.
      */
     id?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * Resource Identifier
+     */
+    resourceId?: string;
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: string;
+    /**
+     * A filter to return only resources whose target matches the given target name.
+     */
+    target?: string;
 }
 
 /**
@@ -80,7 +92,7 @@ export interface GetFleetCredentialsResult {
      */
     readonly compartmentId?: string;
     /**
-     * Credential Level.
+     * At what level the credential is provided?
      */
     readonly credentialLevel?: string;
     /**
@@ -98,14 +110,22 @@ export interface GetFleetCredentialsResult {
      */
     readonly id?: string;
     /**
+     * OCID of the resource associated with the target for which the credential is created.
+     */
+    readonly resourceId?: string;
+    /**
      * The current state of the FleetCredential.
      */
     readonly state?: string;
+    /**
+     * Target name for which the credential is provided.
+     */
+    readonly target?: string;
 }
 /**
  * This data source provides the list of Fleet Credentials in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetCredentials.
+ * List credentials in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -119,7 +139,9 @@ export interface GetFleetCredentialsResult {
  *     credentialLevel: fleetCredentialCredentialLevel,
  *     displayName: fleetCredentialDisplayName,
  *     id: fleetCredentialId,
+ *     resourceId: testResource.id,
  *     state: fleetCredentialState,
+ *     target: fleetCredentialTarget,
  * });
  * ```
  */
@@ -132,7 +154,9 @@ export function getFleetCredentialsOutput(args: GetFleetCredentialsOutputArgs, o
         "filters": args.filters,
         "fleetId": args.fleetId,
         "id": args.id,
+        "resourceId": args.resourceId,
         "state": args.state,
+        "target": args.target,
     }, opts);
 }
 
@@ -145,7 +169,7 @@ export interface GetFleetCredentialsOutputArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * Credential Level.
+     * A filter to return only resources whose credentialLevel matches the given credentialLevel.
      */
     credentialLevel?: pulumi.Input<string>;
     /**
@@ -154,15 +178,23 @@ export interface GetFleetCredentialsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetCredentialsFilterArgs>[]>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**
-     * unique FleetCredential identifier
+     * A filter to return only resources whose credential identifier matches the given identifier.
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * Resource Identifier
+     */
+    resourceId?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources whose target matches the given target name.
+     */
+    target?: pulumi.Input<string>;
 }

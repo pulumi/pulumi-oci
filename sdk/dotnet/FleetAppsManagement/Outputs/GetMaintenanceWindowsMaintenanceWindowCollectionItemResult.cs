@@ -30,7 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Duration if schedule type is Custom
+        /// Duration of the maintenance window. Specify how long the maintenance window remains open.
         /// </summary>
         public readonly string Duration;
         /// <summary>
@@ -38,15 +38,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// unique MaintenanceWindow identifier
+        /// A filter to return only the Maintenance Windows whose identifier matches the given identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Does the maintenenace window cause outage?
+        /// Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
         /// </summary>
         public readonly bool IsOutage;
         /// <summary>
-        /// Is this is a recurring maintenance window
+        /// Is this a recurring maintenance window?
         /// </summary>
         public readonly bool IsRecurring;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string MaintenanceWindowType;
         /// <summary>
-        /// Recurrence rule specification if recurring
+        /// Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         /// </summary>
         public readonly string Recurrences;
         /// <summary>
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ResourceRegion;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// Task initiation cutoff
+        /// Task initiation cutoff time for the maintenance window.
         /// </summary>
         public readonly int TaskInitiationCutoff;
         /// <summary>
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// Start time of schedule
+        /// Specify the date and time of the day that the maintenance window starts.
         /// </summary>
         public readonly string TimeScheduleStart;
         /// <summary>

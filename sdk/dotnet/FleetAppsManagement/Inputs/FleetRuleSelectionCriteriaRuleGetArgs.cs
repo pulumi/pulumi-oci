@@ -13,13 +13,13 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class FleetRuleSelectionCriteriaRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Rule to be be applied on.
+        /// (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
         /// </summary>
         [Input("basis")]
         public Input<string>? Basis { get; set; }
 
         /// <summary>
-        /// (Updatable) Please provide the root compartmentId (TenancyId).
+        /// (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        /// (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable. 
         /// 
         /// 
         /// ** IMPORTANT **

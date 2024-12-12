@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  * 
- * Creates a new MaintenanceWindow.
+ * Create a maintenance window in Fleet Application Management.
  * 
  * ## Example Usage
  * 
@@ -135,14 +135,14 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) Duration if schedule type is Custom
+     * (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      * 
      */
     @Export(name="duration", refs={String.class}, tree="[0]")
     private Output<String> duration;
 
     /**
-     * @return (Updatable) Duration if schedule type is Custom
+     * @return (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      * 
      */
     public Output<String> duration() {
@@ -163,28 +163,28 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) Does the maintenenace window cause outage?
+     * (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      * 
      */
     @Export(name="isOutage", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOutage;
 
     /**
-     * @return (Updatable) Does the maintenenace window cause outage?
+     * @return (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      * 
      */
     public Output<Boolean> isOutage() {
         return this.isOutage;
     }
     /**
-     * (Updatable) Is this is a recurring maintenance window
+     * (Updatable) Is this a recurring maintenance window?
      * 
      */
     @Export(name="isRecurring", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRecurring;
 
     /**
-     * @return (Updatable) Is this is a recurring maintenance window
+     * @return (Updatable) Is this a recurring maintenance window?
      * 
      */
     public Output<Boolean> isRecurring() {
@@ -219,14 +219,14 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
         return this.maintenanceWindowType;
     }
     /**
-     * (Updatable) Recurrence rule specification if recurring
+     * (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      * 
      */
     @Export(name="recurrences", refs={String.class}, tree="[0]")
     private Output<String> recurrences;
 
     /**
-     * @return (Updatable) Recurrence rule specification if recurring
+     * @return (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      * 
      */
     public Output<String> recurrences() {
@@ -275,14 +275,14 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * (Updatable) Task initiation cutoff
+     * (Updatable) Task initiation cutoff time for the maintenance window.
      * 
      */
     @Export(name="taskInitiationCutoff", refs={Integer.class}, tree="[0]")
     private Output<Integer> taskInitiationCutoff;
 
     /**
-     * @return (Updatable) Task initiation cutoff
+     * @return (Updatable) Task initiation cutoff time for the maintenance window.
      * 
      */
     public Output<Integer> taskInitiationCutoff() {
@@ -303,7 +303,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
-     * (Updatable) Start time of schedule
+     * (Updatable) Specify the date and time of the day that the maintenance window starts.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -313,7 +313,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
     private Output<String> timeScheduleStart;
 
     /**
-     * @return (Updatable) Start time of schedule
+     * @return (Updatable) Specify the date and time of the day that the maintenance window starts.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -51,6 +51,11 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
      */
     private String id;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     * 
+     */
+    private String lastCompletedFsuCycleId;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -147,6 +152,13 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
         return this.id;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     * 
+     */
+    public String lastCompletedFsuCycleId() {
+        return this.lastCompletedFsuCycleId;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -226,6 +238,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
         private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery> fleetDiscoveries;
         private Map<String,String> freeformTags;
         private String id;
+        private String lastCompletedFsuCycleId;
         private String lifecycleDetails;
         private String serviceType;
         private String sourceMajorVersion;
@@ -245,6 +258,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
     	      this.fleetDiscoveries = defaults.fleetDiscoveries;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lastCompletedFsuCycleId = defaults.lastCompletedFsuCycleId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.serviceType = defaults.serviceType;
     	      this.sourceMajorVersion = defaults.sourceMajorVersion;
@@ -316,6 +330,14 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
               throw new MissingRequiredPropertyException("GetFsuCollectionsFsuCollectionSummaryCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lastCompletedFsuCycleId(String lastCompletedFsuCycleId) {
+            if (lastCompletedFsuCycleId == null) {
+              throw new MissingRequiredPropertyException("GetFsuCollectionsFsuCollectionSummaryCollectionItem", "lastCompletedFsuCycleId");
+            }
+            this.lastCompletedFsuCycleId = lastCompletedFsuCycleId;
             return this;
         }
         @CustomType.Setter
@@ -399,6 +421,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
             _resultValue.fleetDiscoveries = fleetDiscoveries;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.lastCompletedFsuCycleId = lastCompletedFsuCycleId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.serviceType = serviceType;
             _resultValue.sourceMajorVersion = sourceMajorVersion;

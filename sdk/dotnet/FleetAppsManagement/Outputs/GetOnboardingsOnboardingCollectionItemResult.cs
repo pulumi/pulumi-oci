@@ -14,27 +14,39 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetOnboardingsOnboardingCollectionItemResult
     {
         /// <summary>
+        /// Summary of the Fleet Application Management Onboard Policy.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOnboardingsOnboardingCollectionItemAppliedPolicyResult> AppliedPolicies;
+        /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// Provide discovery frequency.
+        /// </summary>
+        public readonly string DiscoveryFrequency;
         /// <summary>
         /// unique onboarding identifier
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A value determining if cost tracking tag is enabled or not
+        /// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         /// </summary>
         public readonly bool IsCostTrackingTagEnabled;
         /// <summary>
-        /// A value determining FAMS tag is enabled or not
+        /// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
         /// </summary>
         public readonly bool IsFamsTagEnabled;
+        /// <summary>
+        /// List of Fleet Application Management Onboardings.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOnboardingsOnboardingCollectionItemItemResult> Items;
         /// <summary>
         /// Associated region
         /// </summary>
         public readonly string ResourceRegion;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -50,19 +62,25 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Version of FAMS the tenant is onboarded to.
+        /// The version of Fleet Application Management that the tenant is onboarded to.
         /// </summary>
         public readonly string Version;
 
         [OutputConstructor]
         private GetOnboardingsOnboardingCollectionItemResult(
+            ImmutableArray<Outputs.GetOnboardingsOnboardingCollectionItemAppliedPolicyResult> appliedPolicies,
+
             string compartmentId,
+
+            string discoveryFrequency,
 
             string id,
 
             bool isCostTrackingTagEnabled,
 
             bool isFamsTagEnabled,
+
+            ImmutableArray<Outputs.GetOnboardingsOnboardingCollectionItemItemResult> items,
 
             string resourceRegion,
 
@@ -76,10 +94,13 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             string version)
         {
+            AppliedPolicies = appliedPolicies;
             CompartmentId = compartmentId;
+            DiscoveryFrequency = discoveryFrequency;
             Id = id;
             IsCostTrackingTagEnabled = isCostTrackingTagEnabled;
             IsFamsTagEnabled = isFamsTagEnabled;
+            Items = items;
             ResourceRegion = resourceRegion;
             State = state;
             SystemTags = systemTags;

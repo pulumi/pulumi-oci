@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetComplianceReportResourceProductTarget {
     /**
-     * @return Last known compliance state of target.
+     * @return The last known compliance state of the target.
      * 
      */
     private String complianceState;
@@ -29,7 +29,7 @@ public final class GetFleetComplianceReportResourceProductTarget {
      */
     private List<GetFleetComplianceReportResourceProductTargetRecommendedPatch> recommendedPatches;
     /**
-     * @return Target Identifier.
+     * @return Target Identifier.Can be the target name if a separate ID is not available.
      * 
      */
     private String targetId;
@@ -39,14 +39,14 @@ public final class GetFleetComplianceReportResourceProductTarget {
      */
     private String targetName;
     /**
-     * @return Current version.
+     * @return Current version of the target.
      * 
      */
     private String version;
 
     private GetFleetComplianceReportResourceProductTarget() {}
     /**
-     * @return Last known compliance state of target.
+     * @return The last known compliance state of the target.
      * 
      */
     public String complianceState() {
@@ -67,7 +67,7 @@ public final class GetFleetComplianceReportResourceProductTarget {
         return this.recommendedPatches;
     }
     /**
-     * @return Target Identifier.
+     * @return Target Identifier.Can be the target name if a separate ID is not available.
      * 
      */
     public String targetId() {
@@ -81,7 +81,7 @@ public final class GetFleetComplianceReportResourceProductTarget {
         return this.targetName;
     }
     /**
-     * @return Current version.
+     * @return Current version of the target.
      * 
      */
     public String version() {

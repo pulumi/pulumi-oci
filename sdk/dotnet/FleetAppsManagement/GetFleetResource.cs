@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a FleetResource by identifier
+        /// Gets a Fleet Resource by identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a FleetResource by identifier
+        /// Gets a Fleet Resource by identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetResourceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetResourceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
@@ -112,11 +112,11 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetResourceResult
     {
         /// <summary>
-        /// Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        /// Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         /// </summary>
         public readonly string ApplicationType;
         /// <summary>
-        /// Resource Compartment
+        /// Resource Compartment name.
         /// </summary>
         public readonly string Compartment;
         /// <summary>
@@ -124,7 +124,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Compliance State of the Resource
+        /// Compliance State of the Resource.
         /// </summary>
         public readonly string ComplianceState;
         /// <summary>
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        /// Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         /// </summary>
         public readonly string EnvironmentType;
         public readonly string FleetId;
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        /// Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         /// </summary>
         public readonly string Product;
         /// <summary>
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// Count of targets  within the resource.
+        /// Count of targets within the resource.
         /// </summary>
         public readonly int TargetCount;
         /// <summary>
@@ -182,7 +182,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string TenancyId;
         /// <summary>
-        /// Resource Tenancy Name
+        /// Resource Tenancy Name.
         /// </summary>
         public readonly string TenancyName;
         /// <summary>

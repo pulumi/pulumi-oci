@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.CloudMigrations.inputs.GetMigrationArgs;
 import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetArgs;
 import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetPlainArgs;
@@ -220,6 +221,50 @@ public final class CloudMigrationsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMigrationResult> getMigration(GetMigrationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getMigration:getMigration", TypeShape.of(GetMigrationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Gets a migration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMigrationResult> getMigrationPlain(GetMigrationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudMigrations/getMigration:getMigration", TypeShape.of(GetMigrationResult.class), args, Utilities.withVersion(options));
     }
@@ -353,6 +398,50 @@ public final class CloudMigrationsFunctions {
      * 
      */
     public static Output<GetMigrationAssetResult> getMigrationAsset(GetMigrationAssetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", TypeShape.of(GetMigrationAssetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Gets a migration asset by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMigrationAssetResult> getMigrationAsset(GetMigrationAssetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", TypeShape.of(GetMigrationAssetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -678,6 +767,53 @@ public final class CloudMigrationsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMigrationAssetsResult> getMigrationAssets(GetMigrationAssetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrationAssets:getMigrationAssets", TypeShape.of(GetMigrationAssetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Assets in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Returns a list of migration assets.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
+     *             .displayName(migrationAssetDisplayName)
+     *             .migrationAssetId(testMigrationAsset.id())
+     *             .migrationId(testMigration.id())
+     *             .state(migrationAssetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMigrationAssetsResult> getMigrationAssetsPlain(GetMigrationAssetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudMigrations/getMigrationAssets:getMigrationAssets", TypeShape.of(GetMigrationAssetsResult.class), args, Utilities.withVersion(options));
     }
@@ -811,6 +947,50 @@ public final class CloudMigrationsFunctions {
      * 
      */
     public static Output<GetMigrationPlanResult> getMigrationPlan(GetMigrationPlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", TypeShape.of(GetMigrationPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Gets a migration plan by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMigrationPlanResult> getMigrationPlan(GetMigrationPlanArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", TypeShape.of(GetMigrationPlanResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1046,6 +1226,54 @@ public final class CloudMigrationsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMigrationPlanAvailableShapeResult> getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrationPlanAvailableShape:getMigrationPlanAvailableShape", TypeShape.of(GetMigrationPlanAvailableShapeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Migration Plan Available Shape resource in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * List of shapes by parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMigrationPlanAvailableShapeResult> getMigrationPlanAvailableShapePlain(GetMigrationPlanAvailableShapePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudMigrations/getMigrationPlanAvailableShape:getMigrationPlanAvailableShape", TypeShape.of(GetMigrationPlanAvailableShapeResult.class), args, Utilities.withVersion(options));
     }
@@ -1191,6 +1419,54 @@ public final class CloudMigrationsFunctions {
      * 
      */
     public static Output<GetMigrationPlanAvailableShapesResult> getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", TypeShape.of(GetMigrationPlanAvailableShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Plan Available Shapes in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * List of shapes by parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlanAvailableShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMigrationPlanAvailableShapesResult> getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", TypeShape.of(GetMigrationPlanAvailableShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1526,6 +1802,54 @@ public final class CloudMigrationsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMigrationPlansResult> getMigrationPlans(GetMigrationPlansArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrationPlans:getMigrationPlans", TypeShape.of(GetMigrationPlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Plans in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Returns a list of migration plans.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationPlanDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(migrationPlanState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMigrationPlansResult> getMigrationPlansPlain(GetMigrationPlansPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudMigrations/getMigrationPlans:getMigrationPlans", TypeShape.of(GetMigrationPlansResult.class), args, Utilities.withVersion(options));
     }
@@ -1808,6 +2132,53 @@ public final class CloudMigrationsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getMigrations:getMigrations", TypeShape.of(GetMigrationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migrations in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Returns a list of migrations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetMigrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .state(migrationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudMigrations/getMigrations:getMigrations", TypeShape.of(GetMigrationsResult.class), args, Utilities.withVersion(options));
     }
@@ -1941,6 +2312,50 @@ public final class CloudMigrationsFunctions {
      * 
      */
     public static Output<GetReplicationScheduleResult> getReplicationSchedule(GetReplicationScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getReplicationSchedule:getReplicationSchedule", TypeShape.of(GetReplicationScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Gets a replication schedule by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetReplicationScheduleResult> getReplicationSchedule(GetReplicationScheduleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudMigrations/getReplicationSchedule:getReplicationSchedule", TypeShape.of(GetReplicationScheduleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2266,6 +2681,53 @@ public final class CloudMigrationsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetReplicationSchedulesResult> getReplicationSchedules(GetReplicationSchedulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getReplicationSchedules:getReplicationSchedules", TypeShape.of(GetReplicationSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replication Schedules in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Returns a list of replication schedules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetReplicationSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(replicationScheduleDisplayName)
+     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .state(replicationScheduleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetReplicationSchedulesResult> getReplicationSchedulesPlain(GetReplicationSchedulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudMigrations/getReplicationSchedules:getReplicationSchedules", TypeShape.of(GetReplicationSchedulesResult.class), args, Utilities.withVersion(options));
     }
@@ -2399,6 +2861,50 @@ public final class CloudMigrationsFunctions {
      * 
      */
     public static Output<GetTargetAssetResult> getTargetAsset(GetTargetAssetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getTargetAsset:getTargetAsset", TypeShape.of(GetTargetAssetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Gets a target asset by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetAssetResult> getTargetAsset(GetTargetAssetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudMigrations/getTargetAsset:getTargetAsset", TypeShape.of(GetTargetAssetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2678,6 +3184,53 @@ public final class CloudMigrationsFunctions {
      * 
      */
     public static Output<GetTargetAssetsResult> getTargetAssets(GetTargetAssetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudMigrations/getTargetAssets:getTargetAssets", TypeShape.of(GetTargetAssetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Assets in Oracle Cloud Infrastructure Cloud Migrations service.
+     * 
+     * Returns a list of target assets.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudMigrations.CloudMigrationsFunctions;
+     * import com.pulumi.oci.CloudMigrations.inputs.GetTargetAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
+     *             .displayName(targetAssetDisplayName)
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(targetAssetState)
+     *             .targetAssetId(testTargetAsset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetAssetsResult> getTargetAssets(GetTargetAssetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CloudMigrations/getTargetAssets:getTargetAssets", TypeShape.of(GetTargetAssetsResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Creates a new FleetResource.
+// Add resource to a fleet in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -53,23 +53,23 @@ import (
 type FleetResource struct {
 	pulumi.CustomResourceState
 
-	// Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+	// Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 	ApplicationType pulumi.StringOutput `pulumi:"applicationType"`
-	// Resource Compartment
+	// Resource Compartment name.
 	Compartment pulumi.StringOutput `pulumi:"compartment"`
 	// (Updatable) OCID of the compartment to which the resource belongs to.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// Compliance State of the Resource
+	// Compliance State of the Resource.
 	ComplianceState pulumi.StringOutput `pulumi:"complianceState"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+	// Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 	EnvironmentType pulumi.StringOutput `pulumi:"environmentType"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringOutput `pulumi:"fleetId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+	// Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
 	Product pulumi.StringOutput `pulumi:"product"`
 	// Count of products within the resource.
 	ProductCount pulumi.IntOutput `pulumi:"productCount"`
@@ -83,14 +83,14 @@ type FleetResource struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// Count of targets  within the resource.
+	// Count of targets within the resource.
 	TargetCount pulumi.IntOutput `pulumi:"targetCount"`
 	// (Updatable) OCID of the tenancy to which the resource belongs to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
-	// Resource Tenancy Name
+	// Resource Tenancy Name.
 	TenancyName pulumi.StringOutput `pulumi:"tenancyName"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -140,23 +140,23 @@ func GetFleetResource(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FleetResource resources.
 type fleetResourceState struct {
-	// Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+	// Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 	ApplicationType *string `pulumi:"applicationType"`
-	// Resource Compartment
+	// Resource Compartment name.
 	Compartment *string `pulumi:"compartment"`
 	// (Updatable) OCID of the compartment to which the resource belongs to.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Compliance State of the Resource
+	// Compliance State of the Resource.
 	ComplianceState *string `pulumi:"complianceState"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
-	// Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+	// Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 	EnvironmentType *string `pulumi:"environmentType"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId *string `pulumi:"fleetId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+	// Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
 	Product *string `pulumi:"product"`
 	// Count of products within the resource.
 	ProductCount *int `pulumi:"productCount"`
@@ -170,14 +170,14 @@ type fleetResourceState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Count of targets  within the resource.
+	// Count of targets within the resource.
 	TargetCount *int `pulumi:"targetCount"`
 	// (Updatable) OCID of the tenancy to which the resource belongs to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TenancyId *string `pulumi:"tenancyId"`
-	// Resource Tenancy Name
+	// Resource Tenancy Name.
 	TenancyName *string `pulumi:"tenancyName"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -186,23 +186,23 @@ type fleetResourceState struct {
 }
 
 type FleetResourceState struct {
-	// Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+	// Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 	ApplicationType pulumi.StringPtrInput
-	// Resource Compartment
+	// Resource Compartment name.
 	Compartment pulumi.StringPtrInput
 	// (Updatable) OCID of the compartment to which the resource belongs to.
 	CompartmentId pulumi.StringPtrInput
-	// Compliance State of the Resource
+	// Compliance State of the Resource.
 	ComplianceState pulumi.StringPtrInput
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
-	// Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+	// Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 	EnvironmentType pulumi.StringPtrInput
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+	// Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
 	Product pulumi.StringPtrInput
 	// Count of products within the resource.
 	ProductCount pulumi.IntPtrInput
@@ -216,14 +216,14 @@ type FleetResourceState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// Count of targets  within the resource.
+	// Count of targets within the resource.
 	TargetCount pulumi.IntPtrInput
 	// (Updatable) OCID of the tenancy to which the resource belongs to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TenancyId pulumi.StringPtrInput
-	// Resource Tenancy Name
+	// Resource Tenancy Name.
 	TenancyName pulumi.StringPtrInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -238,7 +238,7 @@ func (FleetResourceState) ElementType() reflect.Type {
 type fleetResourceArgs struct {
 	// (Updatable) OCID of the compartment to which the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
 	// The OCID of the resource.
 	ResourceId string `pulumi:"resourceId"`
@@ -257,7 +257,7 @@ type fleetResourceArgs struct {
 type FleetResourceArgs struct {
 	// (Updatable) OCID of the compartment to which the resource belongs to.
 	CompartmentId pulumi.StringInput
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput
 	// The OCID of the resource.
 	ResourceId pulumi.StringInput
@@ -359,12 +359,12 @@ func (o FleetResourceOutput) ToFleetResourceOutputWithContext(ctx context.Contex
 	return o
 }
 
-// Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+// Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 func (o FleetResourceOutput) ApplicationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.ApplicationType }).(pulumi.StringOutput)
 }
 
-// Resource Compartment
+// Resource Compartment name.
 func (o FleetResourceOutput) Compartment() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.Compartment }).(pulumi.StringOutput)
 }
@@ -374,7 +374,7 @@ func (o FleetResourceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Compliance State of the Resource
+// Compliance State of the Resource.
 func (o FleetResourceOutput) ComplianceState() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.ComplianceState }).(pulumi.StringOutput)
 }
@@ -384,12 +384,12 @@ func (o FleetResourceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+// Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 func (o FleetResourceOutput) EnvironmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.EnvironmentType }).(pulumi.StringOutput)
 }
 
-// unique Fleet identifier
+// Unique Fleet identifier.
 func (o FleetResourceOutput) FleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.FleetId }).(pulumi.StringOutput)
 }
@@ -399,7 +399,7 @@ func (o FleetResourceOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+// Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
 func (o FleetResourceOutput) Product() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.Product }).(pulumi.StringOutput)
 }
@@ -434,7 +434,7 @@ func (o FleetResourceOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Count of targets  within the resource.
+// Count of targets within the resource.
 func (o FleetResourceOutput) TargetCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.IntOutput { return v.TargetCount }).(pulumi.IntOutput)
 }
@@ -447,7 +447,7 @@ func (o FleetResourceOutput) TenancyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.TenancyId }).(pulumi.StringOutput)
 }
 
-// Resource Tenancy Name
+// Resource Tenancy Name.
 func (o FleetResourceOutput) TenancyName() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetResource) pulumi.StringOutput { return v.TenancyName }).(pulumi.StringOutput)
 }

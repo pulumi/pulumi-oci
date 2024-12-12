@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Fleet Products in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of FleetProducts.
+        /// Returns a list of products associated with the confirmed targets.
         /// 
         /// 
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Fleet Products in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of FleetProducts.
+        /// Returns a list of products associated with the confirmed targets.
         /// 
         /// 
         /// ## Example Usage
@@ -98,13 +98,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
 
         /// <summary>
-        /// Resource Display Name
+        /// Resource Display Name.
         /// </summary>
         [Input("resourceDisplayName")]
         public string? ResourceDisplayName { get; set; }
@@ -144,13 +144,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
 
         /// <summary>
-        /// Resource Display Name
+        /// Resource Display Name.
         /// </summary>
         [Input("resourceDisplayName")]
         public Input<string>? ResourceDisplayName { get; set; }

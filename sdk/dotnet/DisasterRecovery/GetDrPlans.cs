@@ -32,6 +32,7 @@ namespace Pulumi.Oci.DisasterRecovery
         ///         DisplayName = drPlanDisplayName,
         ///         DrPlanId = testDrPlan.Id,
         ///         DrPlanType = drPlanDrPlanType,
+        ///         LifecycleSubState = drPlanLifecycleSubState,
         ///         State = drPlanState,
         ///     });
         /// 
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.DisasterRecovery
         ///         DisplayName = drPlanDisplayName,
         ///         DrPlanId = testDrPlan.Id,
         ///         DrPlanType = drPlanDrPlanType,
+        ///         LifecycleSubState = drPlanLifecycleSubState,
         ///         State = drPlanState,
         ///     });
         /// 
@@ -106,6 +108,12 @@ namespace Pulumi.Oci.DisasterRecovery
             get => _filters ?? (_filters = new List<Inputs.GetDrPlansFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only DR plans that match the given lifecycle sub-state.
+        /// </summary>
+        [Input("lifecycleSubState")]
+        public string? LifecycleSubState { get; set; }
 
         /// <summary>
         /// A filter to return only DR plans that match the given lifecycle state.
@@ -154,6 +162,12 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
+        /// A filter to return only DR plans that match the given lifecycle sub-state.
+        /// </summary>
+        [Input("lifecycleSubState")]
+        public Input<string>? LifecycleSubState { get; set; }
+
+        /// <summary>
         /// A filter to return only DR plans that match the given lifecycle state.
         /// </summary>
         [Input("state")]
@@ -191,6 +205,10 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// The current state of the DR plan.
         /// </summary>
+        public readonly string? LifecycleSubState;
+        /// <summary>
+        /// The current state of the DR plan.
+        /// </summary>
         public readonly string? State;
 
         [OutputConstructor]
@@ -209,6 +227,8 @@ namespace Pulumi.Oci.DisasterRecovery
 
             string id,
 
+            string? lifecycleSubState,
+
             string? state)
         {
             DisplayName = displayName;
@@ -218,6 +238,7 @@ namespace Pulumi.Oci.DisasterRecovery
             DrProtectionGroupId = drProtectionGroupId;
             Filters = filters;
             Id = id;
+            LifecycleSubState = lifecycleSubState;
             State = state;
         }
     }

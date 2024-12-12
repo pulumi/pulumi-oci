@@ -32,14 +32,14 @@ public final class GetPropertiesFilter extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     @Import(name="values", required=true)
     private List<String> values;
 
     /**
-     * @return Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     public List<String> values() {
@@ -83,7 +83,7 @@ public final class GetPropertiesFilter extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param values Values of the property (must be a single value if selection = &#39;single choice&#39;)
+         * @param values Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class GetPropertiesFilter extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param values Values of the property (must be a single value if selection = &#39;single choice&#39;)
+         * @param values Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
          * 
          * @return builder
          * 

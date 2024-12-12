@@ -14,38 +14,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class FleetNotificationPreferences {
     /**
-     * @return (Updatable) Copartment Id of the topic where the notifications will be directed
+     * @return (Updatable) Compartment ID the topic belongs to.
      * 
      */
     private String compartmentId;
     /**
-     * @return (Updatable) Preferences to send notifications on the fleet activities
+     * @return (Updatable) Preferences to send notifications on the fleet activities.
      * 
      */
     private @Nullable FleetNotificationPreferencesPreferences preferences;
     /**
-     * @return (Updatable) Topic Id where the notifications will be directed
+     * @return (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
      * 
      */
     private String topicId;
 
     private FleetNotificationPreferences() {}
     /**
-     * @return (Updatable) Copartment Id of the topic where the notifications will be directed
+     * @return (Updatable) Compartment ID the topic belongs to.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return (Updatable) Preferences to send notifications on the fleet activities
+     * @return (Updatable) Preferences to send notifications on the fleet activities.
      * 
      */
     public Optional<FleetNotificationPreferencesPreferences> preferences() {
         return Optional.ofNullable(this.preferences);
     }
     /**
-     * @return (Updatable) Topic Id where the notifications will be directed
+     * @return (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
      * 
      */
     public String topicId() {

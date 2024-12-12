@@ -70,14 +70,14 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * unique SchedulerDefinition identifier
+     * A filter to return only schedule definitions whose identifier matches the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return unique SchedulerDefinition identifier
+     * @return A filter to return only schedule definitions whose identifier matches the given identifier.
      * 
      */
     public Optional<Output<String>> id() {
@@ -85,14 +85,14 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * unique MaintenanceWindow identifier
+     * A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
      * 
      */
     @Import(name="maintenanceWindowId")
     private @Nullable Output<String> maintenanceWindowId;
 
     /**
-     * @return unique MaintenanceWindow identifier
+     * @return A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
      * 
      */
     public Optional<Output<String>> maintenanceWindowId() {
@@ -100,14 +100,14 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * A filter to return only Scheduler Definitions whose assocaited product matches the given product
+     * A filter to return only dchedule definitions whose assocaited product matches the given product
      * 
      */
     @Import(name="product")
     private @Nullable Output<String> product;
 
     /**
-     * @return A filter to return only Scheduler Definitions whose assocaited product matches the given product
+     * @return A filter to return only dchedule definitions whose assocaited product matches the given product
      * 
      */
     public Optional<Output<String>> product() {
@@ -115,14 +115,29 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+     * 
+     */
+    @Import(name="runbookId")
+    private @Nullable Output<String> runbookId;
+
+    /**
+     * @return A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+     * 
+     */
+    public Optional<Output<String>> runbookId() {
+        return Optional.ofNullable(this.runbookId);
+    }
+
+    /**
+     * A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<Output<String>> state() {
@@ -139,6 +154,7 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
         this.id = $.id;
         this.maintenanceWindowId = $.maintenanceWindowId;
         this.product = $.product;
+        this.runbookId = $.runbookId;
         this.state = $.state;
     }
 
@@ -237,7 +253,7 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param id unique SchedulerDefinition identifier
+         * @param id A filter to return only schedule definitions whose identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -248,7 +264,7 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param id unique SchedulerDefinition identifier
+         * @param id A filter to return only schedule definitions whose identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -258,7 +274,7 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param maintenanceWindowId unique MaintenanceWindow identifier
+         * @param maintenanceWindowId A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
          * 
          * @return builder
          * 
@@ -269,7 +285,7 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param maintenanceWindowId unique MaintenanceWindow identifier
+         * @param maintenanceWindowId A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
          * 
          * @return builder
          * 
@@ -279,7 +295,7 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param product A filter to return only Scheduler Definitions whose assocaited product matches the given product
+         * @param product A filter to return only dchedule definitions whose assocaited product matches the given product
          * 
          * @return builder
          * 
@@ -290,7 +306,7 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param product A filter to return only Scheduler Definitions whose assocaited product matches the given product
+         * @param product A filter to return only dchedule definitions whose assocaited product matches the given product
          * 
          * @return builder
          * 
@@ -300,7 +316,28 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param runbookId A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runbookId(@Nullable Output<String> runbookId) {
+            $.runbookId = runbookId;
+            return this;
+        }
+
+        /**
+         * @param runbookId A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runbookId(String runbookId) {
+            return runbookId(Output.of(runbookId));
+        }
+
+        /**
+         * @param state A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
@@ -311,7 +348,7 @@ public final class GetSchedulerDefinitionsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 

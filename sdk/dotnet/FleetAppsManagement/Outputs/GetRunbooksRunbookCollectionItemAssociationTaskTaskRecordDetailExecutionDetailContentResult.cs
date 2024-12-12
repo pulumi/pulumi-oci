@@ -18,7 +18,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Bucket;
         /// <summary>
-        /// SHA256 checksum of the artifact.
+        /// md5 checksum of the artifact.
         /// </summary>
         public readonly string Checksum;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Object;
         /// <summary>
-        /// Content Source Details.
+        /// Content Source type details.
         /// </summary>
         public readonly string SourceType;
 

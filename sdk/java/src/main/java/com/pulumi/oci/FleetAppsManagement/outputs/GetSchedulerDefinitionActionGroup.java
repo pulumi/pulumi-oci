@@ -27,7 +27,7 @@ public final class GetSchedulerDefinitionActionGroup {
      */
     private String product;
     /**
-     * @return Provide the ID of the resource; Ex- fleetId.
+     * @return Provide the ID of the resource. Example fleet ID.
      * 
      */
     private String resourceId;
@@ -75,7 +75,7 @@ public final class GetSchedulerDefinitionActionGroup {
         return this.product;
     }
     /**
-     * @return Provide the ID of the resource; Ex- fleetId.
+     * @return Provide the ID of the resource. Example fleet ID.
      * 
      */
     public String resourceId() {

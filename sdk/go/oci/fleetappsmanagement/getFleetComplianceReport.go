@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// # Retrieve compiane report for a Fleet
+// Retrieve compliance report for a fleet.
 //
 // ## Example Usage
 //
@@ -53,22 +53,22 @@ func GetFleetComplianceReport(ctx *pulumi.Context, args *GetFleetComplianceRepor
 
 // A collection of arguments for invoking getFleetComplianceReport.
 type GetFleetComplianceReportArgs struct {
-	// compliance report identifier
+	// compliance report identifier.
 	ComplianceReportId string `pulumi:"complianceReportId"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
 }
 
 // A collection of values returned by getFleetComplianceReport.
 type GetFleetComplianceReportResult struct {
 	ComplianceReportId string `pulumi:"complianceReportId"`
-	// Last known compliance state of target.
+	// The last known compliance state of the target.
 	ComplianceState string `pulumi:"complianceState"`
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Resources assocaited with the Fleet.
+	// Resources associated with the Fleet.
 	Resources []GetFleetComplianceReportResource `pulumi:"resources"`
 }
 
@@ -93,9 +93,9 @@ func GetFleetComplianceReportOutput(ctx *pulumi.Context, args GetFleetCompliance
 
 // A collection of arguments for invoking getFleetComplianceReport.
 type GetFleetComplianceReportOutputArgs struct {
-	// compliance report identifier
+	// compliance report identifier.
 	ComplianceReportId pulumi.StringInput `pulumi:"complianceReportId"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
 }
 
@@ -122,7 +122,7 @@ func (o GetFleetComplianceReportResultOutput) ComplianceReportId() pulumi.String
 	return o.ApplyT(func(v GetFleetComplianceReportResult) string { return v.ComplianceReportId }).(pulumi.StringOutput)
 }
 
-// Last known compliance state of target.
+// The last known compliance state of the target.
 func (o GetFleetComplianceReportResultOutput) ComplianceState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetComplianceReportResult) string { return v.ComplianceState }).(pulumi.StringOutput)
 }
@@ -137,7 +137,7 @@ func (o GetFleetComplianceReportResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetComplianceReportResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Resources assocaited with the Fleet.
+// Resources associated with the Fleet.
 func (o GetFleetComplianceReportResultOutput) Resources() GetFleetComplianceReportResourceArrayOutput {
 	return o.ApplyT(func(v GetFleetComplianceReportResult) []GetFleetComplianceReportResource { return v.Resources }).(GetFleetComplianceReportResourceArrayOutput)
 }

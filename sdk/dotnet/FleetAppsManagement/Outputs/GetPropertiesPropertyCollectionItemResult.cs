@@ -30,7 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// unique Property identifier
+        /// A filter to return only resources whose Property identifier matches the given identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -42,15 +42,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ResourceRegion;
         /// <summary>
-        /// A filter to return only resources their scope matches the given lifecycleState.
+        /// A filter to return only resources their scope matches the given scope.
         /// </summary>
         public readonly string Scope;
         /// <summary>
-        /// Text selection of the category
+        /// Text selection of the property.
         /// </summary>
         public readonly string Selection;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -70,11 +70,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Format of the value
+        /// Format of the value.
         /// </summary>
         public readonly string ValueType;
         /// <summary>
-        /// Values of the property (must be a single value if selection = 'single choice')
+        /// Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

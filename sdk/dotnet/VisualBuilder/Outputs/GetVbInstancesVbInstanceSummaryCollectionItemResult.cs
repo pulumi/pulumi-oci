@@ -18,10 +18,6 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult> AlternateCustomEndpoints;
         /// <summary>
-        /// A list of associated attachments to other services
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult> Attachments;
-        /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -49,10 +45,6 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// Unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// Information for IDCS access
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult> IdcsInfos;
         public readonly string IdcsOpenId;
         /// <summary>
         /// The Vb Instance URL.
@@ -70,6 +62,10 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         /// </summary>
         public readonly string ManagementVcnId;
+        /// <summary>
+        /// Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailResult> NetworkEndpointDetails;
         /// <summary>
         /// The number of Nodes
         /// </summary>
@@ -107,8 +103,6 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         private GetVbInstancesVbInstanceSummaryCollectionItemResult(
             ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult> alternateCustomEndpoints,
 
-            ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult> attachments,
-
             string compartmentId,
 
             string consumptionModel,
@@ -123,8 +117,6 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
 
             string id,
 
-            ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult> idcsInfos,
-
             string idcsOpenId,
 
             string instanceUrl,
@@ -134,6 +126,8 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
             string managementNatGatewayIp,
 
             string managementVcnId,
+
+            ImmutableArray<Outputs.GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailResult> networkEndpointDetails,
 
             int nodeCount,
 
@@ -152,7 +146,6 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
             string timeUpdated)
         {
             AlternateCustomEndpoints = alternateCustomEndpoints;
-            Attachments = attachments;
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
             CustomEndpoints = customEndpoints;
@@ -160,12 +153,12 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
-            IdcsInfos = idcsInfos;
             IdcsOpenId = idcsOpenId;
             InstanceUrl = instanceUrl;
             IsVisualBuilderEnabled = isVisualBuilderEnabled;
             ManagementNatGatewayIp = managementNatGatewayIp;
             ManagementVcnId = managementVcnId;
+            NetworkEndpointDetails = networkEndpointDetails;
             NodeCount = nodeCount;
             ServiceNatGatewayIp = serviceNatGatewayIp;
             ServiceVcnId = serviceVcnId;

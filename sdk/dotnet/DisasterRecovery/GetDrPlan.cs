@@ -127,6 +127,10 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public readonly string LifeCycleDetails;
         /// <summary>
+        /// The current state of the DR plan.
+        /// </summary>
+        public readonly string LifecycleSubState;
+        /// <summary>
         /// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         public readonly string PeerDrProtectionGroupId;
@@ -138,6 +142,11 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The list of groups in this DR plan.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlanPlanGroupResult> PlanGroups;
+        public readonly int RefreshTrigger;
+        /// <summary>
+        /// If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+        /// </summary>
+        public readonly string SourcePlanId;
         /// <summary>
         /// The current state of the DR plan.
         /// </summary>
@@ -158,6 +167,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The type of the DR plan.
         /// </summary>
         public readonly string Type;
+        public readonly int VerifyTrigger;
 
         [OutputConstructor]
         private GetDrPlanResult(
@@ -177,11 +187,17 @@ namespace Pulumi.Oci.DisasterRecovery
 
             string lifeCycleDetails,
 
+            string lifecycleSubState,
+
             string peerDrProtectionGroupId,
 
             string peerRegion,
 
             ImmutableArray<Outputs.GetDrPlanPlanGroupResult> planGroups,
+
+            int refreshTrigger,
+
+            string sourcePlanId,
 
             string state,
 
@@ -191,7 +207,9 @@ namespace Pulumi.Oci.DisasterRecovery
 
             string timeUpdated,
 
-            string type)
+            string type,
+
+            int verifyTrigger)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -201,14 +219,18 @@ namespace Pulumi.Oci.DisasterRecovery
             FreeformTags = freeformTags;
             Id = id;
             LifeCycleDetails = lifeCycleDetails;
+            LifecycleSubState = lifecycleSubState;
             PeerDrProtectionGroupId = peerDrProtectionGroupId;
             PeerRegion = peerRegion;
             PlanGroups = planGroups;
+            RefreshTrigger = refreshTrigger;
+            SourcePlanId = sourcePlanId;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Type = type;
+            VerifyTrigger = verifyTrigger;
         }
     }
 }

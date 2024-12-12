@@ -23,7 +23,7 @@ public final class GetRunbooksRunbookCollectionItemAssociationGroup {
      */
     private List<GetRunbooksRunbookCollectionItemAssociationGroupProperty> properties;
     /**
-     * @return The ID of the runbook type.
+     * @return A filter to return runbooks whose type matches the given type.
      * 
      */
     private String type;
@@ -44,7 +44,7 @@ public final class GetRunbooksRunbookCollectionItemAssociationGroup {
         return this.properties;
     }
     /**
-     * @return The ID of the runbook type.
+     * @return A filter to return runbooks whose type matches the given type.
      * 
      */
     public String type() {

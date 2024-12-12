@@ -345,6 +345,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
     /**
+     * The OCID of the key version that is used in rotate key operations.
+     */
+    public readonly keyVersionId!: pulumi.Output<string | undefined>;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     public readonly kmsKeyId!: pulumi.Output<string>;
@@ -761,6 +765,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["keyHistoryEntries"] = state ? state.keyHistoryEntries : undefined;
             resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
             resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
+            resourceInputs["keyVersionId"] = state ? state.keyVersionId : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyLifecycleDetails"] = state ? state.kmsKeyLifecycleDetails : undefined;
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
@@ -889,6 +894,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isRefreshableClone"] = args ? args.isRefreshableClone : undefined;
             resourceInputs["isReplicateAutomaticBackups"] = args ? args.isReplicateAutomaticBackups : undefined;
             resourceInputs["isShrinkOnly"] = args ? args.isShrinkOnly : undefined;
+            resourceInputs["keyVersionId"] = args ? args.keyVersionId : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
             resourceInputs["localAdgAutoFailoverMaxDataLossLimit"] = args ? args.localAdgAutoFailoverMaxDataLossLimit : undefined;
@@ -1292,6 +1298,10 @@ export interface AutonomousDatabaseState {
      * The wallet name for Oracle Key Vault.
      */
     keyStoreWalletName?: pulumi.Input<string>;
+    /**
+     * The OCID of the key version that is used in rotate key operations.
+     */
+    keyVersionId?: pulumi.Input<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
@@ -1846,6 +1856,10 @@ export interface AutonomousDatabaseArgs {
      * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
      */
     isShrinkOnly?: pulumi.Input<boolean>;
+    /**
+     * The OCID of the key version that is used in rotate key operations.
+     */
+    keyVersionId?: pulumi.Input<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */

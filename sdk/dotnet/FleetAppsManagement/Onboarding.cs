@@ -12,7 +12,8 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
     /// 
-    /// Onboard a tenant to Fleet Application Management Service
+    /// Onboard a tenant to Fleet Application Management.
+    /// The onboarding process lets Fleet Application Management create a few required policies that you need to start using it and its features.
     /// 
     /// ## Example Usage
     /// 
@@ -42,19 +43,31 @@ namespace Pulumi.Oci.FleetAppsManagement
     public partial class Onboarding : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Summary of the Fleet Application Management Onboard Policy.
+        /// </summary>
+        [Output("appliedPolicies")]
+        public Output<ImmutableArray<Outputs.OnboardingAppliedPolicy>> AppliedPolicies { get; private set; } = null!;
+
+        /// <summary>
         /// Tenancy OCID
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// A value determining if cost tracking tag is enabled or not
+        /// Provide discovery frequency.
+        /// </summary>
+        [Output("discoveryFrequency")]
+        public Output<string> DiscoveryFrequency { get; private set; } = null!;
+
+        /// <summary>
+        /// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         /// </summary>
         [Output("isCostTrackingTagEnabled")]
         public Output<bool> IsCostTrackingTagEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// A value determining FAMS tag is enabled or not
+        /// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -62,6 +75,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         [Output("isFamsTagEnabled")]
         public Output<bool> IsFamsTagEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// List of Fleet Application Management Onboardings.
+        /// </summary>
+        [Output("items")]
+        public Output<ImmutableArray<Outputs.OnboardingItem>> Items { get; private set; } = null!;
 
         /// <summary>
         /// Associated region
@@ -94,7 +113,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Version of FAMS the tenant is onboarded to.
+        /// The version of Fleet Application Management that the tenant is onboarded to.
         /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
@@ -152,13 +171,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A value determining if cost tracking tag is enabled or not
+        /// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         /// </summary>
         [Input("isCostTrackingTagEnabled")]
         public Input<bool>? IsCostTrackingTagEnabled { get; set; }
 
         /// <summary>
-        /// A value determining FAMS tag is enabled or not
+        /// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -175,6 +194,18 @@ namespace Pulumi.Oci.FleetAppsManagement
 
     public sealed class OnboardingState : global::Pulumi.ResourceArgs
     {
+        [Input("appliedPolicies")]
+        private InputList<Inputs.OnboardingAppliedPolicyGetArgs>? _appliedPolicies;
+
+        /// <summary>
+        /// Summary of the Fleet Application Management Onboard Policy.
+        /// </summary>
+        public InputList<Inputs.OnboardingAppliedPolicyGetArgs> AppliedPolicies
+        {
+            get => _appliedPolicies ?? (_appliedPolicies = new InputList<Inputs.OnboardingAppliedPolicyGetArgs>());
+            set => _appliedPolicies = value;
+        }
+
         /// <summary>
         /// Tenancy OCID
         /// </summary>
@@ -182,13 +213,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// A value determining if cost tracking tag is enabled or not
+        /// Provide discovery frequency.
+        /// </summary>
+        [Input("discoveryFrequency")]
+        public Input<string>? DiscoveryFrequency { get; set; }
+
+        /// <summary>
+        /// A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         /// </summary>
         [Input("isCostTrackingTagEnabled")]
         public Input<bool>? IsCostTrackingTagEnabled { get; set; }
 
         /// <summary>
-        /// A value determining FAMS tag is enabled or not
+        /// A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -196,6 +233,18 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         [Input("isFamsTagEnabled")]
         public Input<bool>? IsFamsTagEnabled { get; set; }
+
+        [Input("items")]
+        private InputList<Inputs.OnboardingItemGetArgs>? _items;
+
+        /// <summary>
+        /// List of Fleet Application Management Onboardings.
+        /// </summary>
+        public InputList<Inputs.OnboardingItemGetArgs> Items
+        {
+            get => _items ?? (_items = new InputList<Inputs.OnboardingItemGetArgs>());
+            set => _items = value;
+        }
 
         /// <summary>
         /// Associated region
@@ -234,7 +283,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Version of FAMS the tenant is onboarded to.
+        /// The version of Fleet Application Management that the tenant is onboarded to.
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

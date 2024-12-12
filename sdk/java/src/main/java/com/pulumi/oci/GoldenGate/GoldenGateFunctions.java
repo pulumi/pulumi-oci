@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.GoldenGate.inputs.GetConnectionArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentPlainArgs;
@@ -256,6 +257,50 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Connection.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = GoldenGateFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(testConnectionOciGoldenGateConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
     }
@@ -389,6 +434,50 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetConnectionAssignmentResult> getConnectionAssignment(GetConnectionAssignmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getConnectionAssignment:getConnectionAssignment", TypeShape.of(GetConnectionAssignmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Connection Assignment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConnectionAssignmentResult> getConnectionAssignment(GetConnectionAssignmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getConnectionAssignment:getConnectionAssignment", TypeShape.of(GetConnectionAssignmentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -577,6 +666,54 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetConnectionAssignmentsResult> getConnectionAssignments(GetConnectionAssignmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", TypeShape.of(GetConnectionAssignmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Connection Assignments in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Connection Assignments in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .connectionId(testConnection.id())
+     *             .deploymentId(testDeployment.id())
+     *             .name(connectionAssignmentName)
+     *             .state(connectionAssignmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConnectionAssignmentsResult> getConnectionAssignments(GetConnectionAssignmentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", TypeShape.of(GetConnectionAssignmentsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -828,6 +965,57 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Connections in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Connections in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentType(connectionAssignableDeploymentType)
+     *             .assignedDeploymentId(testDeployment.id())
+     *             .connectionTypes(connectionConnectionType)
+     *             .displayName(connectionDisplayName)
+     *             .state(connectionState)
+     *             .technologyTypes(connectionTechnologyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
     }
@@ -964,6 +1152,51 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetDatabaseRegistrationResult> getDatabaseRegistration(GetDatabaseRegistrationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", TypeShape.of(GetDatabaseRegistrationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Note: Deprecated. Use the /connections API instead.
+     * Retrieves a DatabaseRegistration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseRegistrationResult> getDatabaseRegistration(GetDatabaseRegistrationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", TypeShape.of(GetDatabaseRegistrationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1196,6 +1429,53 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabaseRegistrationsResult> getDatabaseRegistrations(GetDatabaseRegistrationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDatabaseRegistrations:getDatabaseRegistrations", TypeShape.of(GetDatabaseRegistrationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Note: Deprecated. Use the /connections API instead.
+     * Lists the DatabaseRegistrations in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistrations = GoldenGateFunctions.getDatabaseRegistrations(GetDatabaseRegistrationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseRegistrationDisplayName)
+     *             .state(databaseRegistrationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabaseRegistrationsResult> getDatabaseRegistrationsPlain(GetDatabaseRegistrationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDatabaseRegistrations:getDatabaseRegistrations", TypeShape.of(GetDatabaseRegistrationsResult.class), args, Utilities.withVersion(options));
     }
@@ -1372,6 +1652,50 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeployment:getDeployment", TypeShape.of(GetDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a deployment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeployment:getDeployment", TypeShape.of(GetDeploymentResult.class), args, Utilities.withVersion(options));
     }
@@ -1505,6 +1829,50 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetDeploymentBackupResult> getDeploymentBackup(GetDeploymentBackupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", TypeShape.of(GetDeploymentBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a DeploymentBackup.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeploymentBackupResult> getDeploymentBackup(GetDeploymentBackupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", TypeShape.of(GetDeploymentBackupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1736,6 +2104,53 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeploymentBackupsResult> getDeploymentBackups(GetDeploymentBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentBackups:getDeploymentBackups", TypeShape.of(GetDeploymentBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployment Backups in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Backups in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentBackupDisplayName)
+     *             .state(deploymentBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeploymentBackupsResult> getDeploymentBackupsPlain(GetDeploymentBackupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeploymentBackups:getDeploymentBackups", TypeShape.of(GetDeploymentBackupsResult.class), args, Utilities.withVersion(options));
     }
@@ -1872,6 +2287,51 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetDeploymentCertificateResult> getDeploymentCertificate(GetDeploymentCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", TypeShape.of(GetDeploymentCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Certificate.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
+     *             .certificateKey(deploymentCertificateCertificateKey)
+     *             .deploymentId(testDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeploymentCertificateResult> getDeploymentCertificate(GetDeploymentCertificateArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", TypeShape.of(GetDeploymentCertificateResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2096,6 +2556,51 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeploymentCertificatesResult> getDeploymentCertificates(GetDeploymentCertificatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates", TypeShape.of(GetDeploymentCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployment Certificates in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns a list of certificates from truststore.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
+     *             .deploymentId(testDeployment.id())
+     *             .state(deploymentCertificateState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeploymentCertificatesResult> getDeploymentCertificatesPlain(GetDeploymentCertificatesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates", TypeShape.of(GetDeploymentCertificatesResult.class), args, Utilities.withVersion(options));
     }
@@ -2229,6 +2734,50 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetDeploymentEnvironmentsResult> getDeploymentEnvironments(GetDeploymentEnvironmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentEnvironments:getDeploymentEnvironments", TypeShape.of(GetDeploymentEnvironmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployment Environments in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of DeploymentEnvironmentDescriptor
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentEnvironments = GoldenGateFunctions.getDeploymentEnvironments(GetDeploymentEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeploymentEnvironmentsResult> getDeploymentEnvironments(GetDeploymentEnvironmentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentEnvironments:getDeploymentEnvironments", TypeShape.of(GetDeploymentEnvironmentsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2408,6 +2957,51 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetDeploymentTypeResult> getDeploymentType(GetDeploymentTypeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentType:getDeploymentType", TypeShape.of(GetDeploymentTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment Type resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of DeploymentTypeDescriptor
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentType = GoldenGateFunctions.getDeploymentType(GetDeploymentTypeArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentTypeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeploymentTypeResult> getDeploymentType(GetDeploymentTypeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentType:getDeploymentType", TypeShape.of(GetDeploymentTypeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2640,6 +3234,53 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeploymentTypesResult> getDeploymentTypes(GetDeploymentTypesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentTypes:getDeploymentTypes", TypeShape.of(GetDeploymentTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployment Types in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of DeploymentTypeDescriptor
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentTypes = GoldenGateFunctions.getDeploymentTypes(GetDeploymentTypesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(deploymentTypeDeploymentType)
+     *             .displayName(deploymentTypeDisplayName)
+     *             .oggVersion(deploymentTypeOggVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeploymentTypesResult> getDeploymentTypesPlain(GetDeploymentTypesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeploymentTypes:getDeploymentTypes", TypeShape.of(GetDeploymentTypesResult.class), args, Utilities.withVersion(options));
     }
@@ -2773,6 +3414,50 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetDeploymentUpgradeResult> getDeploymentUpgrade(GetDeploymentUpgradeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentUpgrade:getDeploymentUpgrade", TypeShape.of(GetDeploymentUpgradeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment Upgrade resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a deployment upgrade.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeploymentUpgradeResult> getDeploymentUpgrade(GetDeploymentUpgradeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentUpgrade:getDeploymentUpgrade", TypeShape.of(GetDeploymentUpgradeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3004,6 +3689,53 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeploymentUpgradesResult> getDeploymentUpgrades(GetDeploymentUpgradesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", TypeShape.of(GetDeploymentUpgradesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployment Upgrades in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Deployment Upgrades in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentUpgradeDisplayName)
+     *             .state(deploymentUpgradeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeploymentUpgradesResult> getDeploymentUpgradesPlain(GetDeploymentUpgradesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", TypeShape.of(GetDeploymentUpgradesResult.class), args, Utilities.withVersion(options));
     }
@@ -3143,6 +3875,52 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetDeploymentVersionsResult> getDeploymentVersions(GetDeploymentVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentVersions:getDeploymentVersions", TypeShape.of(GetDeploymentVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of available deployment versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .deploymentType(deploymentVersionDeploymentType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeploymentVersionsResult> getDeploymentVersions(GetDeploymentVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentVersions:getDeploymentVersions", TypeShape.of(GetDeploymentVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3392,6 +4170,57 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeployments:getDeployments", TypeShape.of(GetDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Deployments in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .assignableConnectionId(testConnection.id())
+     *             .assignedConnectionId(testConnection.id())
+     *             .displayName(deploymentDisplayName)
+     *             .fqdn(deploymentFqdn)
+     *             .lifecycleSubState(deploymentLifecycleSubState)
+     *             .state(deploymentState)
+     *             .supportedConnectionType(deploymentSupportedConnectionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeployments:getDeployments", TypeShape.of(GetDeploymentsResult.class), args, Utilities.withVersion(options));
     }
@@ -3568,6 +4397,50 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMessageResult> getMessage(GetMessageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getMessage:getMessage", TypeShape.of(GetMessageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Message resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetMessageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
+     *             .deploymentId(testDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMessageResult> getMessagePlain(GetMessagePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getMessage:getMessage", TypeShape.of(GetMessageResult.class), args, Utilities.withVersion(options));
     }
@@ -3701,6 +4574,50 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetMessagesResult> getMessages(GetMessagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getMessages:getMessages", TypeShape.of(GetMessagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Messages in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetMessagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
+     *             .deploymentId(testDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMessagesResult> getMessages(GetMessagesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getMessages:getMessages", TypeShape.of(GetMessagesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3928,6 +4845,52 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetTrailFileResult> getTrailFile(GetTrailFileArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getTrailFile:getTrailFile", TypeShape.of(GetTrailFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the TrailFiles for a deployment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetTrailFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .displayName(trailFileDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetTrailFileResult> getTrailFilePlain(GetTrailFilePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getTrailFile:getTrailFile", TypeShape.of(GetTrailFileResult.class), args, Utilities.withVersion(options));
     }
@@ -4067,6 +5030,52 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetTrailFilesResult> getTrailFiles(GetTrailFilesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getTrailFiles:getTrailFiles", TypeShape.of(GetTrailFilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetTrailFilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailFileDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTrailFilesResult> getTrailFiles(GetTrailFilesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getTrailFiles:getTrailFiles", TypeShape.of(GetTrailFilesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4300,6 +5309,53 @@ public final class GoldenGateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetTrailSequenceResult> getTrailSequence(GetTrailSequenceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getTrailSequence:getTrailSequence", TypeShape.of(GetTrailSequenceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Trail Sequence resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequenceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetTrailSequenceResult> getTrailSequencePlain(GetTrailSequencePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getTrailSequence:getTrailSequence", TypeShape.of(GetTrailSequenceResult.class), args, Utilities.withVersion(options));
     }
@@ -4442,6 +5498,53 @@ public final class GoldenGateFunctions {
      * 
      */
     public static Output<GetTrailSequencesResult> getTrailSequences(GetTrailSequencesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getTrailSequences:getTrailSequences", TypeShape.of(GetTrailSequencesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequence.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTrailSequencesResult> getTrailSequences(GetTrailSequencesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getTrailSequences:getTrailSequences", TypeShape.of(GetTrailSequencesResult.class), args, Utilities.withVersion(options));
     }
     /**

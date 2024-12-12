@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a SchedulerDefinition by identifier
+ * Get the details of a SchedulerDefinition that performs lifecycle management operations.
  *
  * ## Example Usage
  *
@@ -44,7 +44,7 @@ export interface GetSchedulerDefinitionArgs {
  */
 export interface GetSchedulerDefinitionResult {
     /**
-     * All ActionGroup Types part of the schedule.
+     * All ActionGroup Types that are part of the schedule.
      */
     readonly actionGroupTypes: string[];
     /**
@@ -52,11 +52,11 @@ export interface GetSchedulerDefinitionResult {
      */
     readonly actionGroups: outputs.FleetAppsManagement.GetSchedulerDefinitionActionGroup[];
     /**
-     * Activity Initiation Cut Off
+     * Activity Initiation Cut Off.
      */
     readonly activityInitiationCutOff: number;
     /**
-     * All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
      */
     readonly applicationTypes: string[];
     /**
@@ -68,11 +68,11 @@ export interface GetSchedulerDefinitionResult {
      */
     readonly countOfAffectedActionGroups: number;
     /**
-     * Count of Resources affected by the Schedule
+     * Count of Resources affected by the Schedule.
      */
     readonly countOfAffectedResources: number;
     /**
-     * Count of Targets affected by the Schedule
+     * Count of Targets affected by the Schedule.
      */
     readonly countOfAffectedTargets: number;
     /**
@@ -100,11 +100,11 @@ export interface GetSchedulerDefinitionResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * All LifeCycle Operations part of the schedule
+     * All LifeCycle Operations that are part of the schedule.
      */
     readonly lifecycleOperations: string[];
     /**
-     * All products part of the schedule for PRODUCT ActionGroup Type.
+     * All products that are part of the schedule for PRODUCT ActionGroup Type.
      */
     readonly products: string[];
     /**
@@ -133,7 +133,7 @@ export interface GetSchedulerDefinitionResult {
      */
     readonly timeCreated: string;
     /**
-     * Scheduled date for the next run of the Job.
+     * The scheduled date for the next run of the Job.
      */
     readonly timeOfNextRun: string;
     /**
@@ -144,7 +144,7 @@ export interface GetSchedulerDefinitionResult {
 /**
  * This data source provides details about a specific Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a SchedulerDefinition by identifier
+ * Get the details of a SchedulerDefinition that performs lifecycle management operations.
  *
  * ## Example Usage
  *

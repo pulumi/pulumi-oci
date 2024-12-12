@@ -55,14 +55,14 @@ public final class GetOnboardingsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<Output<String>> state() {
@@ -152,7 +152,7 @@ public final class GetOnboardingsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class GetOnboardingsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 

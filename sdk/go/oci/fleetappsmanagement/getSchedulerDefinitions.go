@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Scheduler Definitions in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Returns a list of SchedulerDefinitions.
+// List all lifecycle management schedules in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -36,6 +36,7 @@ import (
 //				Id:                  pulumi.StringRef(schedulerDefinitionId),
 //				MaintenanceWindowId: pulumi.StringRef(testMaintenanceWindow.Id),
 //				Product:             pulumi.StringRef(schedulerDefinitionProduct),
+//				RunbookId:           pulumi.StringRef(testRunbook.Id),
 //				State:               pulumi.StringRef(schedulerDefinitionState),
 //			}, nil)
 //			if err != nil {
@@ -65,13 +66,15 @@ type GetSchedulerDefinitionsArgs struct {
 	Filters     []GetSchedulerDefinitionsFilter `pulumi:"filters"`
 	// unique Fleet identifier
 	FleetId *string `pulumi:"fleetId"`
-	// unique SchedulerDefinition identifier
+	// A filter to return only schedule definitions whose identifier matches the given identifier.
 	Id *string `pulumi:"id"`
-	// unique MaintenanceWindow identifier
+	// A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
 	MaintenanceWindowId *string `pulumi:"maintenanceWindowId"`
-	// A filter to return only Scheduler Definitions whose assocaited product matches the given product
+	// A filter to return only dchedule definitions whose assocaited product matches the given product
 	Product *string `pulumi:"product"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+	RunbookId *string `pulumi:"runbookId"`
+	// A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
 }
 
@@ -89,6 +92,8 @@ type GetSchedulerDefinitionsResult struct {
 	MaintenanceWindowId *string `pulumi:"maintenanceWindowId"`
 	// Product associated. Only applicable if type is PRODUCT.
 	Product *string `pulumi:"product"`
+	// ID of the runbook
+	RunbookId *string `pulumi:"runbookId"`
 	// The list of scheduler_definition_collection.
 	SchedulerDefinitionCollections []GetSchedulerDefinitionsSchedulerDefinitionCollection `pulumi:"schedulerDefinitionCollections"`
 	// The current state of the SchedulerDefinition.
@@ -123,13 +128,15 @@ type GetSchedulerDefinitionsOutputArgs struct {
 	Filters     GetSchedulerDefinitionsFilterArrayInput `pulumi:"filters"`
 	// unique Fleet identifier
 	FleetId pulumi.StringPtrInput `pulumi:"fleetId"`
-	// unique SchedulerDefinition identifier
+	// A filter to return only schedule definitions whose identifier matches the given identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// unique MaintenanceWindow identifier
+	// A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
 	MaintenanceWindowId pulumi.StringPtrInput `pulumi:"maintenanceWindowId"`
-	// A filter to return only Scheduler Definitions whose assocaited product matches the given product
+	// A filter to return only dchedule definitions whose assocaited product matches the given product
 	Product pulumi.StringPtrInput `pulumi:"product"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+	RunbookId pulumi.StringPtrInput `pulumi:"runbookId"`
+	// A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -183,6 +190,11 @@ func (o GetSchedulerDefinitionsResultOutput) MaintenanceWindowId() pulumi.String
 // Product associated. Only applicable if type is PRODUCT.
 func (o GetSchedulerDefinitionsResultOutput) Product() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSchedulerDefinitionsResult) *string { return v.Product }).(pulumi.StringPtrOutput)
+}
+
+// ID of the runbook
+func (o GetSchedulerDefinitionsResultOutput) RunbookId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulerDefinitionsResult) *string { return v.RunbookId }).(pulumi.StringPtrOutput)
 }
 
 // The list of scheduler_definition_collection.

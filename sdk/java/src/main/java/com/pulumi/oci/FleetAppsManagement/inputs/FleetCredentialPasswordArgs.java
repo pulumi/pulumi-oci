@@ -17,14 +17,14 @@ public final class FleetCredentialPasswordArgs extends com.pulumi.resources.Reso
     public static final FleetCredentialPasswordArgs Empty = new FleetCredentialPasswordArgs();
 
     /**
-     * (Updatable) Credential Type
+     * (Updatable) Credential Type.
      * 
      */
     @Import(name="credentialType", required=true)
     private Output<String> credentialType;
 
     /**
-     * @return (Updatable) Credential Type
+     * @return (Updatable) Credential Type.
      * 
      */
     public Output<String> credentialType() {
@@ -92,14 +92,14 @@ public final class FleetCredentialPasswordArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The value corresponding to the credential
+     * (Updatable) The value corresponding to the credential.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) The value corresponding to the credential
+     * @return (Updatable) The value corresponding to the credential.
      * 
      */
     public Optional<Output<String>> value() {
@@ -107,14 +107,14 @@ public final class FleetCredentialPasswordArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+     * (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
      * 
      */
     @Import(name="vaultId")
     private @Nullable Output<String> vaultId;
 
     /**
-     * @return (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+     * @return (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
      * 
      */
     public Optional<Output<String>> vaultId() {
@@ -152,7 +152,7 @@ public final class FleetCredentialPasswordArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param credentialType (Updatable) Credential Type
+         * @param credentialType (Updatable) Credential Type.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class FleetCredentialPasswordArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param credentialType (Updatable) Credential Type
+         * @param credentialType (Updatable) Credential Type.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class FleetCredentialPasswordArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) The value corresponding to the credential
+         * @param value (Updatable) The value corresponding to the credential.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class FleetCredentialPasswordArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) The value corresponding to the credential
+         * @param value (Updatable) The value corresponding to the credential.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class FleetCredentialPasswordArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param vaultId (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+         * @param vaultId (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class FleetCredentialPasswordArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param vaultId (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+         * @param vaultId (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
          * 
          * @return builder
          * 

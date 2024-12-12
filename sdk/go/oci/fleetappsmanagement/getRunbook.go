@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// # Gets a Runbook by identifier
+// Get the details of a runbook in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetRunbook(ctx *pulumi.Context, args *GetRunbookArgs, opts ...pulumi.InvokeOption) (*GetRunbookResult, error) {
+func LookupRunbook(ctx *pulumi.Context, args *LookupRunbookArgs, opts ...pulumi.InvokeOption) (*LookupRunbookResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetRunbookResult
+	var rv LookupRunbookResult
 	err := ctx.Invoke("oci:FleetAppsManagement/getRunbook:getRunbook", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,14 +51,14 @@ func GetRunbook(ctx *pulumi.Context, args *GetRunbookArgs, opts ...pulumi.Invoke
 }
 
 // A collection of arguments for invoking getRunbook.
-type GetRunbookArgs struct {
+type LookupRunbookArgs struct {
 	// Unique Runbook identifier
 	RunbookId string `pulumi:"runbookId"`
 }
 
 // A collection of values returned by getRunbook.
-type GetRunbookResult struct {
-	// JSON content with required associations
+type LookupRunbookResult struct {
+	// Associations for the runbook.
 	Associations  []GetRunbookAssociation `pulumi:"associations"`
 	CompartmentId string                  `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -67,17 +67,17 @@ type GetRunbookResult struct {
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
-	// Estimated time to successfully complete the runbook execution
+	// Estimated time to successfully complete the runbook execution.
 	EstimatedTime string `pulumi:"estimatedTime"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The provider-assigned unique ID for this managed resource.
+	// The OCID of the resource.
 	Id string `pulumi:"id"`
-	// Is the runbook default?
+	// Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
 	IsDefault bool `pulumi:"isDefault"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The lifecycle operation performed by the task.
+	// The lifecycle operation performed by the runbook.
 	Operation string `pulumi:"operation"`
 	// The OS type for the runbook.
 	OsType string `pulumi:"osType"`
@@ -86,7 +86,7 @@ type GetRunbookResult struct {
 	// Associated region
 	ResourceRegion string `pulumi:"resourceRegion"`
 	RunbookId      string `pulumi:"runbookId"`
-	// Type of runbook structure.
+	// Relevance of the runbook.
 	RunbookRelevance string `pulumi:"runbookRelevance"`
 	// The current state of the Runbook.
 	State string `pulumi:"state"`
@@ -100,153 +100,153 @@ type GetRunbookResult struct {
 	Type string `pulumi:"type"`
 }
 
-func GetRunbookOutput(ctx *pulumi.Context, args GetRunbookOutputArgs, opts ...pulumi.InvokeOption) GetRunbookResultOutput {
+func LookupRunbookOutput(ctx *pulumi.Context, args LookupRunbookOutputArgs, opts ...pulumi.InvokeOption) LookupRunbookResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetRunbookResultOutput, error) {
-			args := v.(GetRunbookArgs)
+		ApplyT(func(v interface{}) (LookupRunbookResultOutput, error) {
+			args := v.(LookupRunbookArgs)
 			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRunbookResult
+			var rv LookupRunbookResult
 			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getRunbook:getRunbook", args, &rv, "", opts...)
 			if err != nil {
-				return GetRunbookResultOutput{}, err
+				return LookupRunbookResultOutput{}, err
 			}
 
-			output := pulumi.ToOutput(rv).(GetRunbookResultOutput)
+			output := pulumi.ToOutput(rv).(LookupRunbookResultOutput)
 			if secret {
-				return pulumi.ToSecret(output).(GetRunbookResultOutput), nil
+				return pulumi.ToSecret(output).(LookupRunbookResultOutput), nil
 			}
 			return output, nil
-		}).(GetRunbookResultOutput)
+		}).(LookupRunbookResultOutput)
 }
 
 // A collection of arguments for invoking getRunbook.
-type GetRunbookOutputArgs struct {
+type LookupRunbookOutputArgs struct {
 	// Unique Runbook identifier
 	RunbookId pulumi.StringInput `pulumi:"runbookId"`
 }
 
-func (GetRunbookOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetRunbookArgs)(nil)).Elem()
+func (LookupRunbookOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupRunbookArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getRunbook.
-type GetRunbookResultOutput struct{ *pulumi.OutputState }
+type LookupRunbookResultOutput struct{ *pulumi.OutputState }
 
-func (GetRunbookResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetRunbookResult)(nil)).Elem()
+func (LookupRunbookResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupRunbookResult)(nil)).Elem()
 }
 
-func (o GetRunbookResultOutput) ToGetRunbookResultOutput() GetRunbookResultOutput {
+func (o LookupRunbookResultOutput) ToLookupRunbookResultOutput() LookupRunbookResultOutput {
 	return o
 }
 
-func (o GetRunbookResultOutput) ToGetRunbookResultOutputWithContext(ctx context.Context) GetRunbookResultOutput {
+func (o LookupRunbookResultOutput) ToLookupRunbookResultOutputWithContext(ctx context.Context) LookupRunbookResultOutput {
 	return o
 }
 
-// JSON content with required associations
-func (o GetRunbookResultOutput) Associations() GetRunbookAssociationArrayOutput {
-	return o.ApplyT(func(v GetRunbookResult) []GetRunbookAssociation { return v.Associations }).(GetRunbookAssociationArrayOutput)
+// Associations for the runbook.
+func (o LookupRunbookResultOutput) Associations() GetRunbookAssociationArrayOutput {
+	return o.ApplyT(func(v LookupRunbookResult) []GetRunbookAssociation { return v.Associations }).(GetRunbookAssociationArrayOutput)
 }
 
-func (o GetRunbookResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRunbookResultOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetRunbookResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+func (o LookupRunbookResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRunbookResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
-func (o GetRunbookResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o GetRunbookResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Estimated time to successfully complete the runbook execution
-func (o GetRunbookResultOutput) EstimatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.EstimatedTime }).(pulumi.StringOutput)
+// Estimated time to successfully complete the runbook execution.
+func (o LookupRunbookResultOutput) EstimatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.EstimatedTime }).(pulumi.StringOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetRunbookResultOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetRunbookResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+func (o LookupRunbookResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRunbookResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetRunbookResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.Id }).(pulumi.StringOutput)
+// The OCID of the resource.
+func (o LookupRunbookResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Is the runbook default?
-func (o GetRunbookResultOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRunbookResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
+// Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
+func (o LookupRunbookResultOutput) IsDefault() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupRunbookResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetRunbookResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The lifecycle operation performed by the task.
-func (o GetRunbookResultOutput) Operation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.Operation }).(pulumi.StringOutput)
+// The lifecycle operation performed by the runbook.
+func (o LookupRunbookResultOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.Operation }).(pulumi.StringOutput)
 }
 
 // The OS type for the runbook.
-func (o GetRunbookResultOutput) OsType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.OsType }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) OsType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.OsType }).(pulumi.StringOutput)
 }
 
 // The platform of the runbook.
-func (o GetRunbookResultOutput) Platform() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.Platform }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) Platform() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.Platform }).(pulumi.StringOutput)
 }
 
 // Associated region
-func (o GetRunbookResultOutput) ResourceRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.ResourceRegion }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) ResourceRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.ResourceRegion }).(pulumi.StringOutput)
 }
 
-func (o GetRunbookResultOutput) RunbookId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.RunbookId }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) RunbookId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.RunbookId }).(pulumi.StringOutput)
 }
 
-// Type of runbook structure.
-func (o GetRunbookResultOutput) RunbookRelevance() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.RunbookRelevance }).(pulumi.StringOutput)
+// Relevance of the runbook.
+func (o LookupRunbookResultOutput) RunbookRelevance() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.RunbookRelevance }).(pulumi.StringOutput)
 }
 
 // The current state of the Runbook.
-func (o GetRunbookResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetRunbookResultOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetRunbookResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+func (o LookupRunbookResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRunbookResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o GetRunbookResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o GetRunbookResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 // The type of the runbook.
-func (o GetRunbookResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunbookResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupRunbookResultOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRunbookResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetRunbookResultOutput{})
+	pulumi.RegisterOutputType(LookupRunbookResultOutput{})
 }

@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Returns a list of Runbooks.
+// List runbooks in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -64,17 +64,17 @@ type GetRunbooksArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetRunbooksFilter `pulumi:"filters"`
-	// unique Runbook identifier
+	// A filter to return runbooks whose identifier matches the given identifier.
 	Id *string `pulumi:"id"`
-	// The runbook lifecycle.
+	// A filter to return runbooks whose operation matches the given lifecycle operation.
 	Operation *string `pulumi:"operation"`
-	// The ID of the runbook platform.
+	// A filter to return runbooks whose platform matches the given platform.
 	Platform *string `pulumi:"platform"`
-	// The runbook relevance of product or full-stack.
+	// A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
 	RunbookRelevance *string `pulumi:"runbookRelevance"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
-	// The ID of the runbook type.
+	// A filter to return runbooks whose type matches the given type.
 	Type *string `pulumi:"type"`
 }
 
@@ -86,13 +86,13 @@ type GetRunbooksResult struct {
 	Filters     []GetRunbooksFilter `pulumi:"filters"`
 	// The OCID of the resource.
 	Id *string `pulumi:"id"`
-	// The lifecycle operation performed by the task.
+	// The lifecycle operation performed by the runbook.
 	Operation *string `pulumi:"operation"`
 	// The platform of the runbook.
 	Platform *string `pulumi:"platform"`
 	// The list of runbook_collection.
 	RunbookCollections []GetRunbooksRunbookCollection `pulumi:"runbookCollections"`
-	// Type of runbook structure.
+	// Relevance of the runbook.
 	RunbookRelevance *string `pulumi:"runbookRelevance"`
 	// The current state of the Runbook.
 	State *string `pulumi:"state"`
@@ -126,17 +126,17 @@ type GetRunbooksOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput       `pulumi:"displayName"`
 	Filters     GetRunbooksFilterArrayInput `pulumi:"filters"`
-	// unique Runbook identifier
+	// A filter to return runbooks whose identifier matches the given identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The runbook lifecycle.
+	// A filter to return runbooks whose operation matches the given lifecycle operation.
 	Operation pulumi.StringPtrInput `pulumi:"operation"`
-	// The ID of the runbook platform.
+	// A filter to return runbooks whose platform matches the given platform.
 	Platform pulumi.StringPtrInput `pulumi:"platform"`
-	// The runbook relevance of product or full-stack.
+	// A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
 	RunbookRelevance pulumi.StringPtrInput `pulumi:"runbookRelevance"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// The ID of the runbook type.
+	// A filter to return runbooks whose type matches the given type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -177,7 +177,7 @@ func (o GetRunbooksResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRunbooksResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// The lifecycle operation performed by the task.
+// The lifecycle operation performed by the runbook.
 func (o GetRunbooksResultOutput) Operation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRunbooksResult) *string { return v.Operation }).(pulumi.StringPtrOutput)
 }
@@ -192,7 +192,7 @@ func (o GetRunbooksResultOutput) RunbookCollections() GetRunbooksRunbookCollecti
 	return o.ApplyT(func(v GetRunbooksResult) []GetRunbooksRunbookCollection { return v.RunbookCollections }).(GetRunbooksRunbookCollectionArrayOutput)
 }
 
-// Type of runbook structure.
+// Relevance of the runbook.
 func (o GetRunbooksResultOutput) RunbookRelevance() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRunbooksResult) *string { return v.RunbookRelevance }).(pulumi.StringPtrOutput)
 }

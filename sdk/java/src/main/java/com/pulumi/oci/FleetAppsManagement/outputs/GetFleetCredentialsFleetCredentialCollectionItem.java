@@ -26,17 +26,17 @@ public final class GetFleetCredentialsFleetCredentialCollectionItem {
      */
     private String displayName;
     /**
-     * @return Credential Details
+     * @return Credential specific Details.
      * 
      */
     private List<GetFleetCredentialsFleetCredentialCollectionItemEntitySpecific> entitySpecifics;
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     private String fleetId;
     /**
-     * @return unique FleetCredential identifier
+     * @return A filter to return only resources whose credential identifier matches the given identifier.
      * 
      */
     private String id;
@@ -46,12 +46,12 @@ public final class GetFleetCredentialsFleetCredentialCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return Credential Details
+     * @return Credential Details.
      * 
      */
     private List<GetFleetCredentialsFleetCredentialCollectionItemPassword> passwords;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
@@ -71,7 +71,7 @@ public final class GetFleetCredentialsFleetCredentialCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return Credential Details
+     * @return Credential Details.
      * 
      */
     private List<GetFleetCredentialsFleetCredentialCollectionItemUser> users;
@@ -92,21 +92,21 @@ public final class GetFleetCredentialsFleetCredentialCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Credential Details
+     * @return Credential specific Details.
      * 
      */
     public List<GetFleetCredentialsFleetCredentialCollectionItemEntitySpecific> entitySpecifics() {
         return this.entitySpecifics;
     }
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
         return this.fleetId;
     }
     /**
-     * @return unique FleetCredential identifier
+     * @return A filter to return only resources whose credential identifier matches the given identifier.
      * 
      */
     public String id() {
@@ -120,14 +120,14 @@ public final class GetFleetCredentialsFleetCredentialCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return Credential Details
+     * @return Credential Details.
      * 
      */
     public List<GetFleetCredentialsFleetCredentialCollectionItemPassword> passwords() {
         return this.passwords;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public String state() {
@@ -155,7 +155,7 @@ public final class GetFleetCredentialsFleetCredentialCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return Credential Details
+     * @return Credential Details.
      * 
      */
     public List<GetFleetCredentialsFleetCredentialCollectionItemUser> users() {

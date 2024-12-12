@@ -54,14 +54,14 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * unique Runbook identifier
+     * A filter to return runbooks whose identifier matches the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return unique Runbook identifier
+     * @return A filter to return runbooks whose identifier matches the given identifier.
      * 
      */
     public Optional<String> id() {
@@ -69,14 +69,14 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The runbook lifecycle.
+     * A filter to return runbooks whose operation matches the given lifecycle operation.
      * 
      */
     @Import(name="operation")
     private @Nullable String operation;
 
     /**
-     * @return The runbook lifecycle.
+     * @return A filter to return runbooks whose operation matches the given lifecycle operation.
      * 
      */
     public Optional<String> operation() {
@@ -84,14 +84,14 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The ID of the runbook platform.
+     * A filter to return runbooks whose platform matches the given platform.
      * 
      */
     @Import(name="platform")
     private @Nullable String platform;
 
     /**
-     * @return The ID of the runbook platform.
+     * @return A filter to return runbooks whose platform matches the given platform.
      * 
      */
     public Optional<String> platform() {
@@ -99,14 +99,14 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The runbook relevance of product or full-stack.
+     * A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
      * 
      */
     @Import(name="runbookRelevance")
     private @Nullable String runbookRelevance;
 
     /**
-     * @return The runbook relevance of product or full-stack.
+     * @return A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
      * 
      */
     public Optional<String> runbookRelevance() {
@@ -114,14 +114,14 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<String> state() {
@@ -129,14 +129,14 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The ID of the runbook type.
+     * A filter to return runbooks whose type matches the given type.
      * 
      */
     @Import(name="type")
     private @Nullable String type;
 
     /**
-     * @return The ID of the runbook type.
+     * @return A filter to return runbooks whose type matches the given type.
      * 
      */
     public Optional<String> type() {
@@ -207,7 +207,7 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param id unique Runbook identifier
+         * @param id A filter to return runbooks whose identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param operation The runbook lifecycle.
+         * @param operation A filter to return runbooks whose operation matches the given lifecycle operation.
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param platform The ID of the runbook platform.
+         * @param platform A filter to return runbooks whose platform matches the given platform.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param runbookRelevance The runbook relevance of product or full-stack.
+         * @param runbookRelevance A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class GetRunbooksPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param type The ID of the runbook type.
+         * @param type A filter to return runbooks whose type matches the given type.
          * 
          * @return builder
          * 

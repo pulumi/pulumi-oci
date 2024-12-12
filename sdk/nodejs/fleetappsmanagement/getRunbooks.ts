@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of Runbooks.
+ * List runbooks in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -59,27 +59,27 @@ export interface GetRunbooksArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetRunbooksFilter[];
     /**
-     * unique Runbook identifier
+     * A filter to return runbooks whose identifier matches the given identifier.
      */
     id?: string;
     /**
-     * The runbook lifecycle.
+     * A filter to return runbooks whose operation matches the given lifecycle operation.
      */
     operation?: string;
     /**
-     * The ID of the runbook platform.
+     * A filter to return runbooks whose platform matches the given platform.
      */
     platform?: string;
     /**
-     * The runbook relevance of product or full-stack.
+     * A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
      */
     runbookRelevance?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: string;
     /**
-     * The ID of the runbook type.
+     * A filter to return runbooks whose type matches the given type.
      */
     type?: string;
 }
@@ -99,7 +99,7 @@ export interface GetRunbooksResult {
      */
     readonly id?: string;
     /**
-     * The lifecycle operation performed by the task.
+     * The lifecycle operation performed by the runbook.
      */
     readonly operation?: string;
     /**
@@ -111,7 +111,7 @@ export interface GetRunbooksResult {
      */
     readonly runbookCollections: outputs.FleetAppsManagement.GetRunbooksRunbookCollection[];
     /**
-     * Type of runbook structure.
+     * Relevance of the runbook.
      */
     readonly runbookRelevance?: string;
     /**
@@ -126,7 +126,7 @@ export interface GetRunbooksResult {
 /**
  * This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of Runbooks.
+ * List runbooks in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -176,27 +176,27 @@ export interface GetRunbooksOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetRunbooksFilterArgs>[]>;
     /**
-     * unique Runbook identifier
+     * A filter to return runbooks whose identifier matches the given identifier.
      */
     id?: pulumi.Input<string>;
     /**
-     * The runbook lifecycle.
+     * A filter to return runbooks whose operation matches the given lifecycle operation.
      */
     operation?: pulumi.Input<string>;
     /**
-     * The ID of the runbook platform.
+     * A filter to return runbooks whose platform matches the given platform.
      */
     platform?: pulumi.Input<string>;
     /**
-     * The runbook relevance of product or full-stack.
+     * A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
      */
     runbookRelevance?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: pulumi.Input<string>;
     /**
-     * The ID of the runbook type.
+     * A filter to return runbooks whose type matches the given type.
      */
     type?: pulumi.Input<string>;
 }

@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a FleetResource by identifier
+ * Gets a Fleet Resource by identifier.
  *
  * ## Example Usage
  *
@@ -34,7 +34,7 @@ export function getFleetResource(args: GetFleetResourceArgs, opts?: pulumi.Invok
  */
 export interface GetFleetResourceArgs {
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
     /**
@@ -48,11 +48,11 @@ export interface GetFleetResourceArgs {
  */
 export interface GetFleetResourceResult {
     /**
-     * Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      */
     readonly applicationType: string;
     /**
-     * Resource Compartment
+     * Resource Compartment name.
      */
     readonly compartment: string;
     /**
@@ -60,7 +60,7 @@ export interface GetFleetResourceResult {
      */
     readonly compartmentId: string;
     /**
-     * Compliance State of the Resource
+     * Compliance State of the Resource.
      */
     readonly complianceState: string;
     /**
@@ -68,7 +68,7 @@ export interface GetFleetResourceResult {
      */
     readonly displayName: string;
     /**
-     * Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      */
     readonly environmentType: string;
     readonly fleetId: string;
@@ -82,7 +82,7 @@ export interface GetFleetResourceResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+     * Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      */
     readonly product: string;
     /**
@@ -110,7 +110,7 @@ export interface GetFleetResourceResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * Count of targets  within the resource.
+     * Count of targets within the resource.
      */
     readonly targetCount: number;
     /**
@@ -118,7 +118,7 @@ export interface GetFleetResourceResult {
      */
     readonly tenancyId: string;
     /**
-     * Resource Tenancy Name
+     * Resource Tenancy Name.
      */
     readonly tenancyName: string;
     /**
@@ -133,7 +133,7 @@ export interface GetFleetResourceResult {
 /**
  * This data source provides details about a specific Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a FleetResource by identifier
+ * Gets a Fleet Resource by identifier.
  *
  * ## Example Usage
  *
@@ -160,7 +160,7 @@ export function getFleetResourceOutput(args: GetFleetResourceOutputArgs, opts?: 
  */
 export interface GetFleetResourceOutputArgs {
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**

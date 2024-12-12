@@ -14,15 +14,19 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetRunbooksRunbookCollectionItemAssociationResult
     {
         /// <summary>
-        /// Execution Workflow.
+        /// Execution Workflow details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailResult> ExecutionWorkflowDetails;
         /// <summary>
-        /// The groups of the runbook
+        /// The groups of the runbook.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationGroupResult> Groups;
         /// <summary>
-        /// A set of tasks to execute in the runbook
+        /// Rollback Workflow details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailResult> RollbackWorkflowDetails;
+        /// <summary>
+        /// A set of tasks to execute in the runbook.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationTaskResult> Tasks;
         /// <summary>
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationGroupResult> groups,
 
+            ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationRollbackWorkflowDetailResult> rollbackWorkflowDetails,
+
             ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationTaskResult> tasks,
 
             string version)
         {
             ExecutionWorkflowDetails = executionWorkflowDetails;
             Groups = groups;
+            RollbackWorkflowDetails = rollbackWorkflowDetails;
             Tasks = tasks;
             Version = version;
         }

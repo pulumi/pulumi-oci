@@ -52,6 +52,11 @@ public final class GetFsuCollectionResult {
      */
     private String id;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     * 
+     */
+    private String lastCompletedFsuCycleId;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -151,6 +156,13 @@ public final class GetFsuCollectionResult {
         return this.id;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     * 
+     */
+    public String lastCompletedFsuCycleId() {
+        return this.lastCompletedFsuCycleId;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -231,6 +243,7 @@ public final class GetFsuCollectionResult {
         private Map<String,String> freeformTags;
         private String fsuCollectionId;
         private String id;
+        private String lastCompletedFsuCycleId;
         private String lifecycleDetails;
         private String serviceType;
         private String sourceMajorVersion;
@@ -251,6 +264,7 @@ public final class GetFsuCollectionResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.fsuCollectionId = defaults.fsuCollectionId;
     	      this.id = defaults.id;
+    	      this.lastCompletedFsuCycleId = defaults.lastCompletedFsuCycleId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.serviceType = defaults.serviceType;
     	      this.sourceMajorVersion = defaults.sourceMajorVersion;
@@ -330,6 +344,14 @@ public final class GetFsuCollectionResult {
               throw new MissingRequiredPropertyException("GetFsuCollectionResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lastCompletedFsuCycleId(String lastCompletedFsuCycleId) {
+            if (lastCompletedFsuCycleId == null) {
+              throw new MissingRequiredPropertyException("GetFsuCollectionResult", "lastCompletedFsuCycleId");
+            }
+            this.lastCompletedFsuCycleId = lastCompletedFsuCycleId;
             return this;
         }
         @CustomType.Setter
@@ -414,6 +436,7 @@ public final class GetFsuCollectionResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.fsuCollectionId = fsuCollectionId;
             _resultValue.id = id;
+            _resultValue.lastCompletedFsuCycleId = lastCompletedFsuCycleId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.serviceType = serviceType;
             _resultValue.sourceMajorVersion = sourceMajorVersion;

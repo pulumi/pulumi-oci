@@ -345,6 +345,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private String keyStoreWalletName;
+    private String keyVersionId;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -1132,6 +1133,9 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public String keyStoreWalletName() {
         return this.keyStoreWalletName;
     }
+    public String keyVersionId() {
+        return this.keyVersionId;
+    }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -1696,6 +1700,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private List<GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
         private String keyStoreId;
         private String keyStoreWalletName;
+        private String keyVersionId;
         private String kmsKeyId;
         private String kmsKeyLifecycleDetails;
         private String kmsKeyVersionId;
@@ -1841,6 +1846,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
+    	      this.keyVersionId = defaults.keyVersionId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyLifecycleDetails = defaults.kmsKeyLifecycleDetails;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
@@ -2482,6 +2488,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "keyStoreWalletName");
             }
             this.keyStoreWalletName = keyStoreWalletName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyVersionId(String keyVersionId) {
+            if (keyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "keyVersionId");
+            }
+            this.keyVersionId = keyVersionId;
             return this;
         }
         @CustomType.Setter
@@ -3192,6 +3206,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.keyHistoryEntries = keyHistoryEntries;
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.keyStoreWalletName = keyStoreWalletName;
+            _resultValue.keyVersionId = keyVersionId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;

@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
     /**
-     * @return All ActionGroup Types part of the schedule.
+     * @return All ActionGroup Types that are part of the schedule.
      * 
      */
     private List<String> actionGroupTypes;
@@ -27,12 +27,12 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
      */
     private List<GetSchedulerDefinitionsSchedulerDefinitionCollectionItemActionGroup> actionGroups;
     /**
-     * @return Activity Initiation Cut Off
+     * @return Activity Initiation Cut Off.
      * 
      */
     private Integer activityInitiationCutOff;
     /**
-     * @return All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * @return All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
      * 
      */
     private List<String> applicationTypes;
@@ -47,12 +47,12 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
      */
     private Integer countOfAffectedActionGroups;
     /**
-     * @return Count of Resources affected by the Schedule
+     * @return Count of Resources affected by the Schedule.
      * 
      */
     private Integer countOfAffectedResources;
     /**
-     * @return Count of Targets affected by the Schedule
+     * @return Count of Targets affected by the Schedule.
      * 
      */
     private Integer countOfAffectedTargets;
@@ -77,7 +77,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return unique SchedulerDefinition identifier
+     * @return A filter to return only schedule definitions whose identifier matches the given identifier.
      * 
      */
     private String id;
@@ -87,12 +87,12 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return All LifeCycle Operations part of the schedule
+     * @return All LifeCycle Operations that are part of the schedule.
      * 
      */
     private List<String> lifecycleOperations;
     /**
-     * @return All products part of the schedule for PRODUCT ActionGroup Type.
+     * @return All products that are part of the schedule for PRODUCT ActionGroup Type.
      * 
      */
     private List<String> products;
@@ -112,7 +112,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
      */
     private List<GetSchedulerDefinitionsSchedulerDefinitionCollectionItemSchedule> schedules;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
@@ -127,7 +127,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
      */
     private String timeCreated;
     /**
-     * @return Scheduled date for the next run of the Job.
+     * @return The scheduled date for the next run of the Job.
      * 
      */
     private String timeOfNextRun;
@@ -139,7 +139,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
 
     private GetSchedulerDefinitionsSchedulerDefinitionCollectionItem() {}
     /**
-     * @return All ActionGroup Types part of the schedule.
+     * @return All ActionGroup Types that are part of the schedule.
      * 
      */
     public List<String> actionGroupTypes() {
@@ -153,14 +153,14 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
         return this.actionGroups;
     }
     /**
-     * @return Activity Initiation Cut Off
+     * @return Activity Initiation Cut Off.
      * 
      */
     public Integer activityInitiationCutOff() {
         return this.activityInitiationCutOff;
     }
     /**
-     * @return All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * @return All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
      * 
      */
     public List<String> applicationTypes() {
@@ -181,14 +181,14 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
         return this.countOfAffectedActionGroups;
     }
     /**
-     * @return Count of Resources affected by the Schedule
+     * @return Count of Resources affected by the Schedule.
      * 
      */
     public Integer countOfAffectedResources() {
         return this.countOfAffectedResources;
     }
     /**
-     * @return Count of Targets affected by the Schedule
+     * @return Count of Targets affected by the Schedule.
      * 
      */
     public Integer countOfAffectedTargets() {
@@ -223,7 +223,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return unique SchedulerDefinition identifier
+     * @return A filter to return only schedule definitions whose identifier matches the given identifier.
      * 
      */
     public String id() {
@@ -237,14 +237,14 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return All LifeCycle Operations part of the schedule
+     * @return All LifeCycle Operations that are part of the schedule.
      * 
      */
     public List<String> lifecycleOperations() {
         return this.lifecycleOperations;
     }
     /**
-     * @return All products part of the schedule for PRODUCT ActionGroup Type.
+     * @return All products that are part of the schedule for PRODUCT ActionGroup Type.
      * 
      */
     public List<String> products() {
@@ -272,7 +272,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
         return this.schedules;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
      * 
      */
     public String state() {
@@ -293,7 +293,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItem {
         return this.timeCreated;
     }
     /**
-     * @return Scheduled date for the next run of the Job.
+     * @return The scheduled date for the next run of the Job.
      * 
      */
     public String timeOfNextRun() {

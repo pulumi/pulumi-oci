@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
 import com.pulumi.oci.LicenseManager.inputs.GetConfigurationPlainArgs;
 import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
@@ -168,6 +169,50 @@ public final class LicenseManagerFunctions {
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LicenseManager/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure License Manager service.
+     * 
+     * Retrieves configuration for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = LicenseManagerFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LicenseManager/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -391,6 +436,51 @@ public final class LicenseManagerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLicenseMetricResult> getLicenseMetric(GetLicenseMetricArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LicenseManager/getLicenseMetric:getLicenseMetric", TypeShape.of(GetLicenseMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific License Metric resource in Oracle Cloud Infrastructure License Manager service.
+     * 
+     * Retrieves the license metrics for a given compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseMetric = LicenseManagerFunctions.getLicenseMetric(GetLicenseMetricArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(licenseMetricIsCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLicenseMetricResult> getLicenseMetricPlain(GetLicenseMetricPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LicenseManager/getLicenseMetric:getLicenseMetric", TypeShape.of(GetLicenseMetricResult.class), args, Utilities.withVersion(options));
     }
@@ -524,6 +614,50 @@ public final class LicenseManagerFunctions {
      * 
      */
     public static Output<GetLicenseRecordResult> getLicenseRecord(GetLicenseRecordArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LicenseManager/getLicenseRecord:getLicenseRecord", TypeShape.of(GetLicenseRecordResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific License Record resource in Oracle Cloud Infrastructure License Manager service.
+     * 
+     * Retrieves license record details by the license record ID in a given compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLicenseRecordResult> getLicenseRecord(GetLicenseRecordArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LicenseManager/getLicenseRecord:getLicenseRecord", TypeShape.of(GetLicenseRecordResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -743,6 +877,50 @@ public final class LicenseManagerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLicenseRecordsResult> getLicenseRecords(GetLicenseRecordsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LicenseManager/getLicenseRecords:getLicenseRecords", TypeShape.of(GetLicenseRecordsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of License Records in Oracle Cloud Infrastructure License Manager service.
+     * 
+     * Retrieves all license records for a given product license ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
+     *             .productLicenseId(testProductLicense.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLicenseRecordsResult> getLicenseRecordsPlain(GetLicenseRecordsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LicenseManager/getLicenseRecords:getLicenseRecords", TypeShape.of(GetLicenseRecordsResult.class), args, Utilities.withVersion(options));
     }
@@ -876,6 +1054,50 @@ public final class LicenseManagerFunctions {
      * 
      */
     public static Output<GetProductLicenseResult> getProductLicense(GetProductLicenseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LicenseManager/getProductLicense:getProductLicense", TypeShape.of(GetProductLicenseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Product License resource in Oracle Cloud Infrastructure License Manager service.
+     * 
+     * Retrieves product license details by product license ID in a given compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProductLicenseResult> getProductLicense(GetProductLicenseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LicenseManager/getProductLicense:getProductLicense", TypeShape.of(GetProductLicenseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1103,6 +1325,52 @@ public final class LicenseManagerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProductLicenseConsumersResult> getProductLicenseConsumers(GetProductLicenseConsumersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LicenseManager/getProductLicenseConsumers:getProductLicenseConsumers", TypeShape.of(GetProductLicenseConsumersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Product License Consumers in Oracle Cloud Infrastructure License Manager service.
+     * 
+     * Retrieves the product license consumers for a particular product license ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .productLicenseId(testProductLicense.id())
+     *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProductLicenseConsumersResult> getProductLicenseConsumersPlain(GetProductLicenseConsumersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LicenseManager/getProductLicenseConsumers:getProductLicenseConsumers", TypeShape.of(GetProductLicenseConsumersResult.class), args, Utilities.withVersion(options));
     }
@@ -1239,6 +1507,51 @@ public final class LicenseManagerFunctions {
      * 
      */
     public static Output<GetProductLicensesResult> getProductLicenses(GetProductLicensesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LicenseManager/getProductLicenses:getProductLicenses", TypeShape.of(GetProductLicensesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Product Licenses in Oracle Cloud Infrastructure License Manager service.
+     * 
+     * Retrieves all the product licenses from a given compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenses = LicenseManagerFunctions.getProductLicenses(GetProductLicensesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(productLicenseIsCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProductLicensesResult> getProductLicenses(GetProductLicensesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LicenseManager/getProductLicenses:getProductLicenses", TypeShape.of(GetProductLicensesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1463,6 +1776,51 @@ public final class LicenseManagerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LicenseManager/getTopUtilizedProductLicenses:getTopUtilizedProductLicenses", TypeShape.of(GetTopUtilizedProductLicensesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Top Utilized Product Licenses in Oracle Cloud Infrastructure License Manager service.
+     * 
+     * Retrieves the top utilized product licenses for a given compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedProductLicenses = LicenseManagerFunctions.getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedProductLicenseIsCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicensesPlain(GetTopUtilizedProductLicensesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LicenseManager/getTopUtilizedProductLicenses:getTopUtilizedProductLicenses", TypeShape.of(GetTopUtilizedProductLicensesResult.class), args, Utilities.withVersion(options));
     }
@@ -1602,6 +1960,52 @@ public final class LicenseManagerFunctions {
      * 
      */
     public static Output<GetTopUtilizedResourcesResult> getTopUtilizedResources(GetTopUtilizedResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", TypeShape.of(GetTopUtilizedResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Top Utilized Resources in Oracle Cloud Infrastructure License Manager service.
+     * 
+     * Retrieves the top utilized resources for a given compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedResources = LicenseManagerFunctions.getTopUtilizedResources(GetTopUtilizedResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedResourceIsCompartmentIdInSubtree)
+     *             .resourceUnitType(topUtilizedResourceResourceUnitType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTopUtilizedResourcesResult> getTopUtilizedResources(GetTopUtilizedResourcesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", TypeShape.of(GetTopUtilizedResourcesResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Retrieve compiane report for a Fleet
+ * Retrieve compliance report for a fleet.
  *
  * ## Example Usage
  *
@@ -36,11 +36,11 @@ export function getFleetComplianceReport(args: GetFleetComplianceReportArgs, opt
  */
 export interface GetFleetComplianceReportArgs {
     /**
-     * compliance report identifier
+     * compliance report identifier.
      */
     complianceReportId: string;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
 }
@@ -51,7 +51,7 @@ export interface GetFleetComplianceReportArgs {
 export interface GetFleetComplianceReportResult {
     readonly complianceReportId: string;
     /**
-     * Last known compliance state of target.
+     * The last known compliance state of the target.
      */
     readonly complianceState: string;
     /**
@@ -63,14 +63,14 @@ export interface GetFleetComplianceReportResult {
      */
     readonly id: string;
     /**
-     * Resources assocaited with the Fleet.
+     * Resources associated with the Fleet.
      */
     readonly resources: outputs.FleetAppsManagement.GetFleetComplianceReportResource[];
 }
 /**
  * This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Retrieve compiane report for a Fleet
+ * Retrieve compliance report for a fleet.
  *
  * ## Example Usage
  *
@@ -97,11 +97,11 @@ export function getFleetComplianceReportOutput(args: GetFleetComplianceReportOut
  */
 export interface GetFleetComplianceReportOutputArgs {
     /**
-     * compliance report identifier
+     * compliance report identifier.
      */
     complianceReportId: pulumi.Input<string>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
 }

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
 import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancePlainArgs;
 import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
@@ -190,6 +191,50 @@ public final class AppMgmtControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMonitoredInstanceResult> getMonitoredInstance(GetMonitoredInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AppMgmtControl/getMonitoredInstance:getMonitoredInstance", TypeShape.of(GetMonitoredInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Instance resource in Oracle Cloud Infrastructure Appmgmt Control service.
+     * 
+     * Gets a monitored instance by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstance = AppMgmtControlFunctions.getMonitoredInstance(GetMonitoredInstanceArgs.builder()
+     *             .monitoredInstanceId(testMonitoredInstanceOciAppmgmtControlMonitoredInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMonitoredInstanceResult> getMonitoredInstancePlain(GetMonitoredInstancePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AppMgmtControl/getMonitoredInstance:getMonitoredInstance", TypeShape.of(GetMonitoredInstanceResult.class), args, Utilities.withVersion(options));
     }
@@ -326,6 +371,51 @@ public final class AppMgmtControlFunctions {
      * 
      */
     public static Output<GetMonitoredInstancesResult> getMonitoredInstances(GetMonitoredInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", TypeShape.of(GetMonitoredInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
+     * 
+     * Returns a list of monitored instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstances = AppMgmtControlFunctions.getMonitoredInstances(GetMonitoredInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoredInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoredInstancesResult> getMonitoredInstances(GetMonitoredInstancesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", TypeShape.of(GetMonitoredInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**

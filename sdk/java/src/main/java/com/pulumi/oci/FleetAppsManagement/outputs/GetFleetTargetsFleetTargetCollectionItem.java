@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetTargetsFleetTargetCollectionItemResource;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +20,7 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
      */
     private String compartmentId;
     /**
-     * @return Last known compliance state of Target.
+     * @return The last known compliance state of the target.
      * 
      */
     private String complianceState;
@@ -34,12 +35,17 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
      */
     private String id;
     /**
-     * @return Product Name
+     * @return A boolean flag that represents whether the last discovery attempt was successful.
+     * 
+     */
+    private Boolean isLastDiscoveryAttemptSuccessful;
+    /**
+     * @return Product Name.
      * 
      */
     private String product;
     /**
-     * @return Resource Information for the Target
+     * @return Resource Information for the Target.
      * 
      */
     private List<GetFleetTargetsFleetTargetCollectionItemResource> resources;
@@ -54,7 +60,17 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
      */
     private Map<String,String> systemTags;
     /**
-     * @return Current version of Target
+     * @return The time when last discovery was attempted.
+     * 
+     */
+    private String timeOfLastDiscoveryAttempt;
+    /**
+     * @return The time when the last successful discovery was made.
+     * 
+     */
+    private String timeOfLastSuccessfulDiscovery;
+    /**
+     * @return Current version of target.
      * 
      */
     private String version;
@@ -68,7 +84,7 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return Last known compliance state of Target.
+     * @return The last known compliance state of the target.
      * 
      */
     public String complianceState() {
@@ -89,14 +105,21 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
         return this.id;
     }
     /**
-     * @return Product Name
+     * @return A boolean flag that represents whether the last discovery attempt was successful.
+     * 
+     */
+    public Boolean isLastDiscoveryAttemptSuccessful() {
+        return this.isLastDiscoveryAttemptSuccessful;
+    }
+    /**
+     * @return Product Name.
      * 
      */
     public String product() {
         return this.product;
     }
     /**
-     * @return Resource Information for the Target
+     * @return Resource Information for the Target.
      * 
      */
     public List<GetFleetTargetsFleetTargetCollectionItemResource> resources() {
@@ -117,7 +140,21 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return Current version of Target
+     * @return The time when last discovery was attempted.
+     * 
+     */
+    public String timeOfLastDiscoveryAttempt() {
+        return this.timeOfLastDiscoveryAttempt;
+    }
+    /**
+     * @return The time when the last successful discovery was made.
+     * 
+     */
+    public String timeOfLastSuccessfulDiscovery() {
+        return this.timeOfLastSuccessfulDiscovery;
+    }
+    /**
+     * @return Current version of target.
      * 
      */
     public String version() {
@@ -137,10 +174,13 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
         private String complianceState;
         private String displayName;
         private String id;
+        private Boolean isLastDiscoveryAttemptSuccessful;
         private String product;
         private List<GetFleetTargetsFleetTargetCollectionItemResource> resources;
         private String state;
         private Map<String,String> systemTags;
+        private String timeOfLastDiscoveryAttempt;
+        private String timeOfLastSuccessfulDiscovery;
         private String version;
         public Builder() {}
         public Builder(GetFleetTargetsFleetTargetCollectionItem defaults) {
@@ -149,10 +189,13 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
     	      this.complianceState = defaults.complianceState;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.isLastDiscoveryAttemptSuccessful = defaults.isLastDiscoveryAttemptSuccessful;
     	      this.product = defaults.product;
     	      this.resources = defaults.resources;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.timeOfLastDiscoveryAttempt = defaults.timeOfLastDiscoveryAttempt;
+    	      this.timeOfLastSuccessfulDiscovery = defaults.timeOfLastSuccessfulDiscovery;
     	      this.version = defaults.version;
         }
 
@@ -186,6 +229,14 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
               throw new MissingRequiredPropertyException("GetFleetTargetsFleetTargetCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLastDiscoveryAttemptSuccessful(Boolean isLastDiscoveryAttemptSuccessful) {
+            if (isLastDiscoveryAttemptSuccessful == null) {
+              throw new MissingRequiredPropertyException("GetFleetTargetsFleetTargetCollectionItem", "isLastDiscoveryAttemptSuccessful");
+            }
+            this.isLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
             return this;
         }
         @CustomType.Setter
@@ -224,6 +275,22 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeOfLastDiscoveryAttempt(String timeOfLastDiscoveryAttempt) {
+            if (timeOfLastDiscoveryAttempt == null) {
+              throw new MissingRequiredPropertyException("GetFleetTargetsFleetTargetCollectionItem", "timeOfLastDiscoveryAttempt");
+            }
+            this.timeOfLastDiscoveryAttempt = timeOfLastDiscoveryAttempt;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeOfLastSuccessfulDiscovery(String timeOfLastSuccessfulDiscovery) {
+            if (timeOfLastSuccessfulDiscovery == null) {
+              throw new MissingRequiredPropertyException("GetFleetTargetsFleetTargetCollectionItem", "timeOfLastSuccessfulDiscovery");
+            }
+            this.timeOfLastSuccessfulDiscovery = timeOfLastSuccessfulDiscovery;
+            return this;
+        }
+        @CustomType.Setter
         public Builder version(String version) {
             if (version == null) {
               throw new MissingRequiredPropertyException("GetFleetTargetsFleetTargetCollectionItem", "version");
@@ -237,10 +304,13 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
             _resultValue.complianceState = complianceState;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.isLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
             _resultValue.product = product;
             _resultValue.resources = resources;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.timeOfLastDiscoveryAttempt = timeOfLastDiscoveryAttempt;
+            _resultValue.timeOfLastSuccessfulDiscovery = timeOfLastSuccessfulDiscovery;
             _resultValue.version = version;
             return _resultValue;
         }

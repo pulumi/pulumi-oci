@@ -37,7 +37,7 @@ public final class GetPropertiesResult {
      */
     private List<GetPropertiesPropertyCollection> propertyCollections;
     /**
-     * @return The scope of the property
+     * @return The scope of the property.
      * 
      */
     private @Nullable String scope;
@@ -80,7 +80,7 @@ public final class GetPropertiesResult {
         return this.propertyCollections;
     }
     /**
-     * @return The scope of the property
+     * @return The scope of the property.
      * 
      */
     public Optional<String> scope() {

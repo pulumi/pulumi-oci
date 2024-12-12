@@ -33,14 +33,14 @@ public final class OnboardingArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A value determining if cost tracking tag is enabled or not
+     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
      * 
      */
     @Import(name="isCostTrackingTagEnabled")
     private @Nullable Output<Boolean> isCostTrackingTagEnabled;
 
     /**
-     * @return A value determining if cost tracking tag is enabled or not
+     * @return A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
      * 
      */
     public Optional<Output<Boolean>> isCostTrackingTagEnabled() {
@@ -48,7 +48,7 @@ public final class OnboardingArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A value determining FAMS tag is enabled or not
+     * A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -58,7 +58,7 @@ public final class OnboardingArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<Boolean> isFamsTagEnabled;
 
     /**
-     * @return A value determining FAMS tag is enabled or not
+     * @return A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -116,7 +116,7 @@ public final class OnboardingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCostTrackingTagEnabled A value determining if cost tracking tag is enabled or not
+         * @param isCostTrackingTagEnabled A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class OnboardingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCostTrackingTagEnabled A value determining if cost tracking tag is enabled or not
+         * @param isCostTrackingTagEnabled A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class OnboardingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isFamsTagEnabled A value determining FAMS tag is enabled or not
+         * @param isFamsTagEnabled A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,7 +151,7 @@ public final class OnboardingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isFamsTagEnabled A value determining FAMS tag is enabled or not
+         * @param isFamsTagEnabled A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

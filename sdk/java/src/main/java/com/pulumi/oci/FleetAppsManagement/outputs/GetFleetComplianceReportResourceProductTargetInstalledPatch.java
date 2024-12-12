@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetComplianceReportResourceProductTargetInstalledPatch {
     /**
-     * @return The OCID of the work request to start the analysis.
+     * @return Patch description.
      * 
      */
     private String patchDescription;
     /**
-     * @return The OCID to identify this analysis results.
+     * @return Patch name.
      * 
      */
     private String patchName;
@@ -26,26 +26,26 @@ public final class GetFleetComplianceReportResourceProductTargetInstalledPatch {
      */
     private String patchType;
     /**
-     * @return Time the patch was applied
+     * @return Time the patch was applied.
      * 
      */
     private String timeApplied;
     /**
-     * @return Date on which patch was released.
+     * @return The date on which patch was released.
      * 
      */
     private String timeReleased;
 
     private GetFleetComplianceReportResourceProductTargetInstalledPatch() {}
     /**
-     * @return The OCID of the work request to start the analysis.
+     * @return Patch description.
      * 
      */
     public String patchDescription() {
         return this.patchDescription;
     }
     /**
-     * @return The OCID to identify this analysis results.
+     * @return Patch name.
      * 
      */
     public String patchName() {
@@ -59,14 +59,14 @@ public final class GetFleetComplianceReportResourceProductTargetInstalledPatch {
         return this.patchType;
     }
     /**
-     * @return Time the patch was applied
+     * @return Time the patch was applied.
      * 
      */
     public String timeApplied() {
         return this.timeApplied;
     }
     /**
-     * @return Date on which patch was released.
+     * @return The date on which patch was released.
      * 
      */
     public String timeReleased() {

@@ -33,7 +33,7 @@ public final class GetPropertiesPropertyCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return unique Property identifier
+     * @return A filter to return only resources whose Property identifier matches the given identifier.
      * 
      */
     private String id;
@@ -48,17 +48,17 @@ public final class GetPropertiesPropertyCollectionItem {
      */
     private String resourceRegion;
     /**
-     * @return A filter to return only resources their scope matches the given lifecycleState.
+     * @return A filter to return only resources their scope matches the given scope.
      * 
      */
     private String scope;
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     private String selection;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
@@ -83,12 +83,12 @@ public final class GetPropertiesPropertyCollectionItem {
      */
     private String type;
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     private String valueType;
     /**
-     * @return Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     private List<String> values;
@@ -123,7 +123,7 @@ public final class GetPropertiesPropertyCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return unique Property identifier
+     * @return A filter to return only resources whose Property identifier matches the given identifier.
      * 
      */
     public String id() {
@@ -144,21 +144,21 @@ public final class GetPropertiesPropertyCollectionItem {
         return this.resourceRegion;
     }
     /**
-     * @return A filter to return only resources their scope matches the given lifecycleState.
+     * @return A filter to return only resources their scope matches the given scope.
      * 
      */
     public String scope() {
         return this.scope;
     }
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     public String selection() {
         return this.selection;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public String state() {
@@ -193,14 +193,14 @@ public final class GetPropertiesPropertyCollectionItem {
         return this.type;
     }
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     public String valueType() {
         return this.valueType;
     }
     /**
-     * @return Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     public List<String> values() {

@@ -14,14 +14,14 @@ public final class GetFleetComplianceReportPlainArgs extends com.pulumi.resource
     public static final GetFleetComplianceReportPlainArgs Empty = new GetFleetComplianceReportPlainArgs();
 
     /**
-     * compliance report identifier
+     * compliance report identifier.
      * 
      */
     @Import(name="complianceReportId", required=true)
     private String complianceReportId;
 
     /**
-     * @return compliance report identifier
+     * @return compliance report identifier.
      * 
      */
     public String complianceReportId() {
@@ -29,14 +29,14 @@ public final class GetFleetComplianceReportPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private String fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
@@ -69,7 +69,7 @@ public final class GetFleetComplianceReportPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param complianceReportId compliance report identifier
+         * @param complianceReportId compliance report identifier.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetFleetComplianceReportPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 

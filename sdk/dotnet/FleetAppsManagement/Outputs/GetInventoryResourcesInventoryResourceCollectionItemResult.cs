@@ -14,11 +14,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetInventoryResourcesInventoryResourceCollectionItemResult
     {
         /// <summary>
-        /// Availability Domain of the resource
+        /// Availability Domain of the resource.
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Resource Compartment ID
+        /// A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
         /// </summary>
         public readonly string ResourceCompartmentId;
         /// <summary>

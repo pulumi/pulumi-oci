@@ -71,11 +71,11 @@ export interface GetPropertyResult {
      */
     readonly resourceRegion: string;
     /**
-     * The scope of the property
+     * The scope of the property.
      */
     readonly scope: string;
     /**
-     * Text selection of the category
+     * Text selection of the property.
      */
     readonly selection: string;
     /**
@@ -99,11 +99,11 @@ export interface GetPropertyResult {
      */
     readonly type: string;
     /**
-     * Format of the value
+     * Format of the value.
      */
     readonly valueType: string;
     /**
-     * Values of the property (must be a single value if selection = 'single choice')
+     * Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
      */
     readonly values: string[];
 }

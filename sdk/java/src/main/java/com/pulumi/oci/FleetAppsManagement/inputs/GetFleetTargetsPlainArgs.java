@@ -40,14 +40,14 @@ public final class GetFleetTargetsPlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private String fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
@@ -55,14 +55,14 @@ public final class GetFleetTargetsPlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * Product Name
+     * Product Name.
      * 
      */
     @Import(name="product")
     private @Nullable String product;
 
     /**
-     * @return Product Name
+     * @return Product Name.
      * 
      */
     public Optional<String> product() {
@@ -70,14 +70,14 @@ public final class GetFleetTargetsPlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * Resource Display Name
+     * Resource Display Name.
      * 
      */
     @Import(name="resourceDisplayName")
     private @Nullable String resourceDisplayName;
 
     /**
-     * @return Resource Display Name
+     * @return Resource Display Name.
      * 
      */
     public Optional<String> resourceDisplayName() {
@@ -149,7 +149,7 @@ public final class GetFleetTargetsPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -160,7 +160,7 @@ public final class GetFleetTargetsPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param product Product Name
+         * @param product Product Name.
          * 
          * @return builder
          * 
@@ -171,7 +171,7 @@ public final class GetFleetTargetsPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param resourceDisplayName Resource Display Name
+         * @param resourceDisplayName Resource Display Name.
          * 
          * @return builder
          * 

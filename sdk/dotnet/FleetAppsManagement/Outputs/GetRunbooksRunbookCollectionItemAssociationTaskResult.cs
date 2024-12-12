@@ -26,7 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string StepName;
         /// <summary>
-        /// The properties of the task.
+        /// The properties of the component.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationTaskStepPropertyResult> StepProperties;
         /// <summary>

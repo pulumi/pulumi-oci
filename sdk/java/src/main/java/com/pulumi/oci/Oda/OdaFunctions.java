@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
 import com.pulumi.oci.Oda.inputs.GetOdaInstancePlainArgs;
 import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
@@ -165,6 +166,50 @@ public final class OdaFunctions {
      * 
      */
     public static Output<GetOdaInstanceResult> getOdaInstance(GetOdaInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Oda/getOdaInstance:getOdaInstance", TypeShape.of(GetOdaInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
+     * 
+     * Gets the specified Digital Assistant instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
+     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOdaInstanceResult> getOdaInstance(GetOdaInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Oda/getOdaInstance:getOdaInstance", TypeShape.of(GetOdaInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -412,6 +457,57 @@ public final class OdaFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOdaInstancesResult> getOdaInstances(GetOdaInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Oda/getOdaInstances:getOdaInstances", TypeShape.of(GetOdaInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oda Instances in Oracle Cloud Infrastructure Digital Assistant service.
+     * 
+     * Returns a page of Digital Assistant instances that belong to the specified
+     * compartment.
+     * 
+     * If the `opc-next-page` header appears in the response, then
+     * there are more items to retrieve. To get the next page in the subsequent
+     * GET request, include the header&#39;s value as the `page` query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstances = OdaFunctions.getOdaInstances(GetOdaInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(odaInstanceDisplayName)
+     *             .state(odaInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOdaInstancesResult> getOdaInstancesPlain(GetOdaInstancesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Oda/getOdaInstances:getOdaInstances", TypeShape.of(GetOdaInstancesResult.class), args, Utilities.withVersion(options));
     }
@@ -545,6 +641,50 @@ public final class OdaFunctions {
      * 
      */
     public static Output<GetOdaPrivateEndpointResult> getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", TypeShape.of(GetOdaPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oda Private Endpoint resource in Oracle Cloud Infrastructure Digital Assistant service.
+     * 
+     * Gets the specified ODA Private Endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaPrivateEndpoint = OdaFunctions.getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs.builder()
+     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOdaPrivateEndpointResult> getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", TypeShape.of(GetOdaPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -764,6 +904,50 @@ public final class OdaFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOdaPrivateEndpointAttachmentResult> getOdaPrivateEndpointAttachment(GetOdaPrivateEndpointAttachmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment", TypeShape.of(GetOdaPrivateEndpointAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
+     * 
+     * Gets the specified ODA Private Endpoint Attachment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaPrivateEndpointAttachment = OdaFunctions.getOdaPrivateEndpointAttachment(GetOdaPrivateEndpointAttachmentArgs.builder()
+     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOdaPrivateEndpointAttachmentResult> getOdaPrivateEndpointAttachmentPlain(GetOdaPrivateEndpointAttachmentPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment", TypeShape.of(GetOdaPrivateEndpointAttachmentResult.class), args, Utilities.withVersion(options));
     }
@@ -915,6 +1099,56 @@ public final class OdaFunctions {
      * 
      */
     public static Output<GetOdaPrivateEndpointAttachmentsResult> getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", TypeShape.of(GetOdaPrivateEndpointAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oda Private Endpoint Attachments in Oracle Cloud Infrastructure Digital Assistant service.
+     * 
+     * Returns a page of ODA Instances attached to this ODA Private Endpoint.
+     * 
+     * If the `opc-next-page` header appears in the response, then
+     * there are more items to retrieve. To get the next page in the subsequent
+     * GET request, include the header&#39;s value as the `page` query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaPrivateEndpointAttachments = OdaFunctions.getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .state(odaPrivateEndpointAttachmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOdaPrivateEndpointAttachmentsResult> getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", TypeShape.of(GetOdaPrivateEndpointAttachmentsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1164,6 +1398,56 @@ public final class OdaFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOdaPrivateEndpointScanProxiesResult> getOdaPrivateEndpointScanProxies(GetOdaPrivateEndpointScanProxiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", TypeShape.of(GetOdaPrivateEndpointScanProxiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oda Private Endpoint Scan Proxies in Oracle Cloud Infrastructure Digital Assistant service.
+     * 
+     * Returns a page of ODA Private Endpoint Scan Proxies that belong to the specified
+     * ODA Private Endpoint.
+     * 
+     * If the `opc-next-page` header appears in the response, then
+     * there are more items to retrieve. To get the next page in the subsequent
+     * GET request, include the header&#39;s value as the `page` query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaPrivateEndpointScanProxies = OdaFunctions.getOdaPrivateEndpointScanProxies(GetOdaPrivateEndpointScanProxiesArgs.builder()
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .state(odaPrivateEndpointScanProxyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOdaPrivateEndpointScanProxiesResult> getOdaPrivateEndpointScanProxiesPlain(GetOdaPrivateEndpointScanProxiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", TypeShape.of(GetOdaPrivateEndpointScanProxiesResult.class), args, Utilities.withVersion(options));
     }
@@ -1300,6 +1584,51 @@ public final class OdaFunctions {
      * 
      */
     public static Output<GetOdaPrivateEndpointScanProxyResult> getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", TypeShape.of(GetOdaPrivateEndpointScanProxyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
+     * 
+     * Gets the specified ODA Private Endpoint Scan Proxy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaPrivateEndpointScanProxy = OdaFunctions.getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs.builder()
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOdaPrivateEndpointScanProxyResult> getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", TypeShape.of(GetOdaPrivateEndpointScanProxyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1498,6 +1827,57 @@ public final class OdaFunctions {
      * 
      */
     public static Output<GetOdaPrivateEndpointsResult> getOdaPrivateEndpoints(GetOdaPrivateEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpoints:getOdaPrivateEndpoints", TypeShape.of(GetOdaPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oda Private Endpoints in Oracle Cloud Infrastructure Digital Assistant service.
+     * 
+     * Returns a page of ODA Private Endpoints that belong to the specified
+     * compartment.
+     * 
+     * If the `opc-next-page` header appears in the response, then
+     * there are more items to retrieve. To get the next page in the subsequent
+     * GET request, include the header&#39;s value as the `page` query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaPrivateEndpoints = OdaFunctions.getOdaPrivateEndpoints(GetOdaPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(odaPrivateEndpointDisplayName)
+     *             .state(odaPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOdaPrivateEndpointsResult> getOdaPrivateEndpoints(GetOdaPrivateEndpointsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Oda/getOdaPrivateEndpoints:getOdaPrivateEndpoints", TypeShape.of(GetOdaPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**

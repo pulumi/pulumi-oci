@@ -18,14 +18,14 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
     public static final FleetResourceState Empty = new FleetResourceState();
 
     /**
-     * Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     @Import(name="applicationType")
     private @Nullable Output<String> applicationType;
 
     /**
-     * @return Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * @return Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     public Optional<Output<String>> applicationType() {
@@ -33,14 +33,14 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Resource Compartment
+     * Resource Compartment name.
      * 
      */
     @Import(name="compartment")
     private @Nullable Output<String> compartment;
 
     /**
-     * @return Resource Compartment
+     * @return Resource Compartment name.
      * 
      */
     public Optional<Output<String>> compartment() {
@@ -63,14 +63,14 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Compliance State of the Resource
+     * Compliance State of the Resource.
      * 
      */
     @Import(name="complianceState")
     private @Nullable Output<String> complianceState;
 
     /**
-     * @return Compliance State of the Resource
+     * @return Compliance State of the Resource.
      * 
      */
     public Optional<Output<String>> complianceState() {
@@ -93,14 +93,14 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     @Import(name="environmentType")
     private @Nullable Output<String> environmentType;
 
     /**
-     * @return Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * @return Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     public Optional<Output<String>> environmentType() {
@@ -108,14 +108,14 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId")
     private @Nullable Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Optional<Output<String>> fleetId() {
@@ -138,14 +138,14 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+     * Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      * 
      */
     @Import(name="product")
     private @Nullable Output<String> product;
 
     /**
-     * @return Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+     * @return Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      * 
      */
     public Optional<Output<String>> product() {
@@ -243,14 +243,14 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Count of targets  within the resource.
+     * Count of targets within the resource.
      * 
      */
     @Import(name="targetCount")
     private @Nullable Output<Integer> targetCount;
 
     /**
-     * @return Count of targets  within the resource.
+     * @return Count of targets within the resource.
      * 
      */
     public Optional<Output<Integer>> targetCount() {
@@ -279,14 +279,14 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Resource Tenancy Name
+     * Resource Tenancy Name.
      * 
      */
     @Import(name="tenancyName")
     private @Nullable Output<String> tenancyName;
 
     /**
-     * @return Resource Tenancy Name
+     * @return Resource Tenancy Name.
      * 
      */
     public Optional<Output<String>> tenancyName() {
@@ -367,7 +367,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param applicationType Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+         * @param applicationType Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param applicationType Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+         * @param applicationType Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartment Resource Compartment
+         * @param compartment Resource Compartment name.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartment Resource Compartment
+         * @param compartment Resource Compartment name.
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param complianceState Compliance State of the Resource
+         * @param complianceState Compliance State of the Resource.
          * 
          * @return builder
          * 
@@ -441,7 +441,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param complianceState Compliance State of the Resource
+         * @param complianceState Compliance State of the Resource.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param environmentType Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+         * @param environmentType Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param environmentType Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+         * @param environmentType Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -504,7 +504,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param product Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+         * @param product Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
          * 
          * @return builder
          * 
@@ -546,7 +546,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param product Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+         * @param product Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
          * 
          * @return builder
          * 
@@ -682,7 +682,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param targetCount Count of targets  within the resource.
+         * @param targetCount Count of targets within the resource.
          * 
          * @return builder
          * 
@@ -693,7 +693,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param targetCount Count of targets  within the resource.
+         * @param targetCount Count of targets within the resource.
          * 
          * @return builder
          * 
@@ -730,7 +730,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param tenancyName Resource Tenancy Name
+         * @param tenancyName Resource Tenancy Name.
          * 
          * @return builder
          * 
@@ -741,7 +741,7 @@ public final class FleetResourceState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param tenancyName Resource Tenancy Name
+         * @param tenancyName Resource Tenancy Name.
          * 
          * @return builder
          * 

@@ -14,29 +14,36 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class FleetCredentialEntitySpecifics
     {
         /// <summary>
-        /// (Updatable) Credential Level.
+        /// (Updatable) At what level the credential is provided?
         /// </summary>
         public readonly string CredentialLevel;
         /// <summary>
-        /// (Updatable) OCID of the resource associated with the target for which credential is created
+        /// (Updatable) OCID of the resource associated with the target for which the credential is created.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
-        /// (Updatable) Target associated with the Credential
+        /// (Updatable) Target name for which the credential is provided.
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
+        /// <summary>
+        /// (Updatable) List of fleet credential variables.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.FleetCredentialEntitySpecificsVariable> Variables;
 
         [OutputConstructor]
         private FleetCredentialEntitySpecifics(
             string credentialLevel,
 
-            string resourceId,
+            string? resourceId,
 
-            string target)
+            string? target,
+
+            ImmutableArray<Outputs.FleetCredentialEntitySpecificsVariable> variables)
         {
             CredentialLevel = credentialLevel;
             ResourceId = resourceId;
             Target = target;
+            Variables = variables;
         }
     }
 }

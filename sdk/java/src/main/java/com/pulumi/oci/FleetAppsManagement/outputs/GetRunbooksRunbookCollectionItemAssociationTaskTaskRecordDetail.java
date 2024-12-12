@@ -20,15 +20,25 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
      */
     private String description;
     /**
-     * @return Content Source Details
+     * @return Execution details.
      * 
      */
     private List<GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetail> executionDetails;
+    /**
+     * @return Is this an Apply Subject Task? Ex. Patch Execution Task
+     * 
+     */
+    private Boolean isApplySubjectTask;
     /**
      * @return Make a copy of this task in Library
      * 
      */
     private Boolean isCopyToLibraryEnabled;
+    /**
+     * @return Is this a discovery output task?
+     * 
+     */
+    private Boolean isDiscoveryOutputTask;
     /**
      * @return The name of the task
      * 
@@ -40,7 +50,7 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
      */
     private String osType;
     /**
-     * @return The ID of the runbook platform.
+     * @return A filter to return runbooks whose platform matches the given platform.
      * 
      */
     private String platform;
@@ -69,11 +79,18 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
         return this.description;
     }
     /**
-     * @return Content Source Details
+     * @return Execution details.
      * 
      */
     public List<GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetail> executionDetails() {
         return this.executionDetails;
+    }
+    /**
+     * @return Is this an Apply Subject Task? Ex. Patch Execution Task
+     * 
+     */
+    public Boolean isApplySubjectTask() {
+        return this.isApplySubjectTask;
     }
     /**
      * @return Make a copy of this task in Library
@@ -81,6 +98,13 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
      */
     public Boolean isCopyToLibraryEnabled() {
         return this.isCopyToLibraryEnabled;
+    }
+    /**
+     * @return Is this a discovery output task?
+     * 
+     */
+    public Boolean isDiscoveryOutputTask() {
+        return this.isDiscoveryOutputTask;
     }
     /**
      * @return The name of the task
@@ -97,7 +121,7 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
         return this.osType;
     }
     /**
-     * @return The ID of the runbook platform.
+     * @return A filter to return runbooks whose platform matches the given platform.
      * 
      */
     public String platform() {
@@ -136,7 +160,9 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
     public static final class Builder {
         private String description;
         private List<GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetailExecutionDetail> executionDetails;
+        private Boolean isApplySubjectTask;
         private Boolean isCopyToLibraryEnabled;
+        private Boolean isDiscoveryOutputTask;
         private String name;
         private String osType;
         private String platform;
@@ -148,7 +174,9 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
     	      this.executionDetails = defaults.executionDetails;
+    	      this.isApplySubjectTask = defaults.isApplySubjectTask;
     	      this.isCopyToLibraryEnabled = defaults.isCopyToLibraryEnabled;
+    	      this.isDiscoveryOutputTask = defaults.isDiscoveryOutputTask;
     	      this.name = defaults.name;
     	      this.osType = defaults.osType;
     	      this.platform = defaults.platform;
@@ -177,11 +205,27 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
             return executionDetails(List.of(executionDetails));
         }
         @CustomType.Setter
+        public Builder isApplySubjectTask(Boolean isApplySubjectTask) {
+            if (isApplySubjectTask == null) {
+              throw new MissingRequiredPropertyException("GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetail", "isApplySubjectTask");
+            }
+            this.isApplySubjectTask = isApplySubjectTask;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isCopyToLibraryEnabled(Boolean isCopyToLibraryEnabled) {
             if (isCopyToLibraryEnabled == null) {
               throw new MissingRequiredPropertyException("GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetail", "isCopyToLibraryEnabled");
             }
             this.isCopyToLibraryEnabled = isCopyToLibraryEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDiscoveryOutputTask(Boolean isDiscoveryOutputTask) {
+            if (isDiscoveryOutputTask == null) {
+              throw new MissingRequiredPropertyException("GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetail", "isDiscoveryOutputTask");
+            }
+            this.isDiscoveryOutputTask = isDiscoveryOutputTask;
             return this;
         }
         @CustomType.Setter
@@ -239,7 +283,9 @@ public final class GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDeta
             final var _resultValue = new GetRunbooksRunbookCollectionItemAssociationTaskTaskRecordDetail();
             _resultValue.description = description;
             _resultValue.executionDetails = executionDetails;
+            _resultValue.isApplySubjectTask = isApplySubjectTask;
             _resultValue.isCopyToLibraryEnabled = isCopyToLibraryEnabled;
+            _resultValue.isDiscoveryOutputTask = isDiscoveryOutputTask;
             _resultValue.name = name;
             _resultValue.osType = osType;
             _resultValue.platform = platform;

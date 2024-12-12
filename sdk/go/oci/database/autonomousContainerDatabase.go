@@ -75,6 +75,8 @@ type AutonomousContainerDatabase struct {
 	KeyStoreId pulumi.StringOutput `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId pulumi.StringPtrOutput `pulumi:"keyVersionId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
@@ -239,6 +241,8 @@ type autonomousContainerDatabaseState struct {
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId *string `pulumi:"keyVersionId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
@@ -368,6 +372,8 @@ type AutonomousContainerDatabaseState struct {
 	KeyStoreId pulumi.StringPtrInput
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName pulumi.StringPtrInput
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
@@ -487,6 +493,8 @@ type autonomousContainerDatabaseArgs struct {
 	IsDstFileUpdateEnabled *bool `pulumi:"isDstFileUpdateEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	KeyStoreId *string `pulumi:"keyStoreId"`
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId *string `pulumi:"keyVersionId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -563,6 +571,8 @@ type AutonomousContainerDatabaseArgs struct {
 	IsDstFileUpdateEnabled pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	KeyStoreId pulumi.StringPtrInput
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -815,6 +825,11 @@ func (o AutonomousContainerDatabaseOutput) KeyStoreId() pulumi.StringOutput {
 // The wallet name for Oracle Key Vault.
 func (o AutonomousContainerDatabaseOutput) KeyStoreWalletName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+}
+
+// The OCID of the key version that is used in rotate key operations.
+func (o AutonomousContainerDatabaseOutput) KeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringPtrOutput { return v.KeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

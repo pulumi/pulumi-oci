@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
 import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathPlainArgs;
 import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
@@ -198,6 +199,52 @@ public final class GenericArtifactsContentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetArtifactByPathResult> getArtifactByPath(GetArtifactByPathArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", TypeShape.of(GetArtifactByPathResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
+     * 
+     * Get generic artifact content.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
+     *             .artifactPath(artifactByPathArtifactPath)
+     *             .repositoryId(testRepository.id())
+     *             .version(artifactByPathVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetArtifactByPathResult> getArtifactByPathPlain(GetArtifactByPathPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", TypeShape.of(GetArtifactByPathResult.class), args, Utilities.withVersion(options));
     }
@@ -331,6 +378,50 @@ public final class GenericArtifactsContentFunctions {
      * 
      */
     public static Output<GetGenericArtifactsContentResult> getGenericArtifactsContent(GetGenericArtifactsContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent", TypeShape.of(GetGenericArtifactsContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Generic Artifacts Content resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
+     * 
+     * Gets the specified artifact&#39;s content.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
+     *             .artifactId(testArtifact.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetGenericArtifactsContentResult> getGenericArtifactsContent(GetGenericArtifactsContentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent", TypeShape.of(GetGenericArtifactsContentResult.class), args, Utilities.withVersion(options));
     }
     /**

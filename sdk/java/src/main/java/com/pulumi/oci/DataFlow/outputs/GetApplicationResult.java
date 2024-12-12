@@ -9,6 +9,7 @@ import com.pulumi.oci.DataFlow.outputs.GetApplicationApplicationLogConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationParameter;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -168,6 +169,11 @@ public final class GetApplicationResult {
      * 
      */
     private String state;
+    /**
+     * @return A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+     * 
+     */
+    private Boolean terminateRunsOnDeletion;
     /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
@@ -404,6 +410,13 @@ public final class GetApplicationResult {
         return this.state;
     }
     /**
+     * @return A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+     * 
+     */
+    public Boolean terminateRunsOnDeletion() {
+        return this.terminateRunsOnDeletion;
+    }
+    /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
@@ -472,6 +485,7 @@ public final class GetApplicationResult {
         private String privateEndpointId;
         private String sparkVersion;
         private String state;
+        private Boolean terminateRunsOnDeletion;
         private String timeCreated;
         private String timeUpdated;
         private String type;
@@ -510,6 +524,7 @@ public final class GetApplicationResult {
     	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.sparkVersion = defaults.sparkVersion;
     	      this.state = defaults.state;
+    	      this.terminateRunsOnDeletion = defaults.terminateRunsOnDeletion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
@@ -780,6 +795,14 @@ public final class GetApplicationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder terminateRunsOnDeletion(Boolean terminateRunsOnDeletion) {
+            if (terminateRunsOnDeletion == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "terminateRunsOnDeletion");
+            }
+            this.terminateRunsOnDeletion = terminateRunsOnDeletion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetApplicationResult", "timeCreated");
@@ -844,6 +867,7 @@ public final class GetApplicationResult {
             _resultValue.privateEndpointId = privateEndpointId;
             _resultValue.sparkVersion = sparkVersion;
             _resultValue.state = state;
+            _resultValue.terminateRunsOnDeletion = terminateRunsOnDeletion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;

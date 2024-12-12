@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Desktops.Inputs
     public sealed class DesktopPoolSessionLifecycleActionsDisconnectGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) a disconnect action to be triggered
+        /// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;

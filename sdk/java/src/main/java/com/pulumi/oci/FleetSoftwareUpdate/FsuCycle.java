@@ -323,6 +323,20 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
         return this.lastCompletedAction;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+     * 
+     */
+    @Export(name="lastCompletedActionId", refs={String.class}, tree="[0]")
+    private Output<String> lastCompletedActionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+     * 
+     */
+    public Output<String> lastCompletedActionId() {
+        return this.lastCompletedActionId;
+    }
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -363,6 +377,20 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
      */
     public Output<List<FsuCycleNextActionToExecute>> nextActionToExecutes() {
         return this.nextActionToExecutes;
+    }
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     * 
+     */
+    @Export(name="rollbackCycleState", refs={String.class}, tree="[0]")
+    private Output<String> rollbackCycleState;
+
+    /**
+     * @return Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     * 
+     */
+    public Output<String> rollbackCycleState() {
+        return this.rollbackCycleState;
     }
     /**
      * Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.

@@ -700,17 +700,17 @@ if not MYPY:
         """
         A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
         """
+        refresh_status: NotRequired[pulumi.Input[str]]
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
         steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgsDict']]]]
         """
         The list of steps in the group.
         """
         type: NotRequired[pulumi.Input[str]]
         """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of DR plan to be created.
         """
 elif False:
     DrPlanPlanGroupArgsDict: TypeAlias = Mapping[str, Any]
@@ -721,18 +721,16 @@ class DrPlanPlanGroupArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  is_pause_enabled: Optional[pulumi.Input[bool]] = None,
+                 refresh_status: Optional[pulumi.Input[str]] = None,
                  steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         :param pulumi.Input[str] id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param pulumi.Input[bool] is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        :param pulumi.Input[str] refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]] steps: The list of steps in the group.
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: The type of DR plan to be created.
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -740,6 +738,8 @@ class DrPlanPlanGroupArgs:
             pulumi.set(__self__, "id", id)
         if is_pause_enabled is not None:
             pulumi.set(__self__, "is_pause_enabled", is_pause_enabled)
+        if refresh_status is not None:
+            pulumi.set(__self__, "refresh_status", refresh_status)
         if steps is not None:
             pulumi.set(__self__, "steps", steps)
         if type is not None:
@@ -782,6 +782,18 @@ class DrPlanPlanGroupArgs:
         pulumi.set(self, "is_pause_enabled", value)
 
     @property
+    @pulumi.getter(name="refreshStatus")
+    def refresh_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
+        return pulumi.get(self, "refresh_status")
+
+    @refresh_status.setter
+    def refresh_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "refresh_status", value)
+
+    @property
     @pulumi.getter
     def steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]]]:
         """
@@ -797,11 +809,7 @@ class DrPlanPlanGroupArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of DR plan to be created.
         """
         return pulumi.get(self, "type")
 
@@ -836,17 +844,17 @@ if not MYPY:
         """
         The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         """
+        refresh_status: NotRequired[pulumi.Input[str]]
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
         timeout: NotRequired[pulumi.Input[int]]
         """
         The timeout in seconds for executing this step.  Example: `600`
         """
         type: NotRequired[pulumi.Input[str]]
         """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of DR plan to be created.
         """
         user_defined_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgsDict']]]]
         """
@@ -864,6 +872,7 @@ class DrPlanPlanGroupStepArgs:
                  id: Optional[pulumi.Input[str]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  member_id: Optional[pulumi.Input[str]] = None,
+                 refresh_status: Optional[pulumi.Input[str]] = None,
                  timeout: Optional[pulumi.Input[int]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  user_defined_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]]] = None):
@@ -874,12 +883,9 @@ class DrPlanPlanGroupStepArgs:
         :param pulumi.Input[str] id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param pulumi.Input[bool] is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
         :param pulumi.Input[str] member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
+        :param pulumi.Input[str] refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param pulumi.Input[int] timeout: The timeout in seconds for executing this step.  Example: `600`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: The type of DR plan to be created.
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]] user_defined_steps: The details for a user-defined step in a DR plan.
         """
         if display_name is not None:
@@ -894,6 +900,8 @@ class DrPlanPlanGroupStepArgs:
             pulumi.set(__self__, "is_enabled", is_enabled)
         if member_id is not None:
             pulumi.set(__self__, "member_id", member_id)
+        if refresh_status is not None:
+            pulumi.set(__self__, "refresh_status", refresh_status)
         if timeout is not None:
             pulumi.set(__self__, "timeout", timeout)
         if type is not None:
@@ -974,6 +982,18 @@ class DrPlanPlanGroupStepArgs:
         pulumi.set(self, "member_id", value)
 
     @property
+    @pulumi.getter(name="refreshStatus")
+    def refresh_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The DR plan step refresh status.  Example: `STEP_ADDED`
+        """
+        return pulumi.get(self, "refresh_status")
+
+    @refresh_status.setter
+    def refresh_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "refresh_status", value)
+
+    @property
     @pulumi.getter
     def timeout(self) -> Optional[pulumi.Input[int]]:
         """
@@ -989,11 +1009,7 @@ class DrPlanPlanGroupStepArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of DR plan to be created.
         """
         return pulumi.get(self, "type")
 

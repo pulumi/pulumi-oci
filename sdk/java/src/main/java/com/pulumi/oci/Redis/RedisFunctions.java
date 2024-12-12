@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Redis.inputs.GetRedisClusterArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesPlainArgs;
@@ -193,6 +194,50 @@ public final class RedisFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRedisClusterResult> getRedisCluster(GetRedisClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getRedisCluster:getRedisCluster", TypeShape.of(GetRedisClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetRedisClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRedisClusterResult> getRedisClusterPlain(GetRedisClusterPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Redis/getRedisCluster:getRedisCluster", TypeShape.of(GetRedisClusterResult.class), args, Utilities.withVersion(options));
     }
@@ -329,6 +374,51 @@ public final class RedisFunctions {
      * 
      */
     public static Output<GetRedisClusterNodesResult> getRedisClusterNodes(GetRedisClusterNodesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", TypeShape.of(GetRedisClusterNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Redis Cluster Nodes in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets the list of all nodes in a cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
+     *             .redisClusterId(testRedisCluster.id())
+     *             .displayName(redisClusterNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRedisClusterNodesResult> getRedisClusterNodes(GetRedisClusterNodesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", TypeShape.of(GetRedisClusterNodesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -609,6 +699,53 @@ public final class RedisFunctions {
      * 
      */
     public static Output<GetRedisClustersResult> getRedisClusters(GetRedisClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getRedisClusters:getRedisClusters", TypeShape.of(GetRedisClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRedisClusters = RedisFunctions.getRedisClusters(GetRedisClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(redisClusterDisplayName)
+     *             .id(redisClusterId)
+     *             .state(redisClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRedisClustersResult> getRedisClusters(GetRedisClustersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Redis/getRedisClusters:getRedisClusters", TypeShape.of(GetRedisClustersResult.class), args, Utilities.withVersion(options));
     }
     /**

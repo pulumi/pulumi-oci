@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetComplianceReportResourceProduct {
     /**
-     * @return Product Name
+     * @return Product Name.
      * 
      */
     private String productName;
@@ -25,7 +25,7 @@ public final class GetFleetComplianceReportResourceProduct {
 
     private GetFleetComplianceReportResourceProduct() {}
     /**
-     * @return Product Name
+     * @return Product Name.
      * 
      */
     public String productName() {

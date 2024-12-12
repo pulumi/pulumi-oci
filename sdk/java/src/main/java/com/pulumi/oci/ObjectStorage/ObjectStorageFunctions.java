@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ObjectStorage.inputs.GetBucketArgs;
 import com.pulumi.oci.ObjectStorage.inputs.GetBucketPlainArgs;
 import com.pulumi.oci.ObjectStorage.inputs.GetBucketSummariesArgs;
@@ -236,6 +237,51 @@ public final class ObjectStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBucketResult> getBucket(GetBucketArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getBucket:getBucket", TypeShape.of(GetBucketResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the current representation of the given bucket in the given Object Storage namespace.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetBucketArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBucket = ObjectStorageFunctions.getBucket(GetBucketArgs.builder()
+     *             .name(bucketName)
+     *             .namespace(bucketNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBucketResult> getBucketPlain(GetBucketPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getBucket:getBucket", TypeShape.of(GetBucketResult.class), args, Utilities.withVersion(options));
     }
@@ -396,6 +442,59 @@ public final class ObjectStorageFunctions {
      * 
      */
     public static Output<GetBucketSummariesResult> getBucketSummaries(GetBucketSummariesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", TypeShape.of(GetBucketSummariesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
+     * and does not contain fields like the user-defined metadata.
+     * 
+     * ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
+     * `opc-next-page` value with the `page` request parameter.
+     * 
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetBucketSummariesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuckets = ObjectStorageFunctions.getBucketSummaries(GetBucketSummariesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(bucketNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBucketSummariesResult> getBucketSummaries(GetBucketSummariesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", TypeShape.of(GetBucketSummariesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -748,6 +847,56 @@ public final class ObjectStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNamespaceResult> getNamespace(GetNamespaceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getNamespace:getNamespace", TypeShape.of(GetNamespaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Each Oracle Cloud Infrastructure tenant is assigned one unique and uneditable Object Storage namespace. The namespace
+     * is a system-generated string assigned during account creation. For some older tenancies, the namespace string may be
+     * the tenancy name in all lower-case letters. You cannot edit a namespace.
+     * 
+     * GetNamespace returns the name of the Object Storage namespace for the user making the request.
+     * If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
+     * tenancy, provided the user has access to it.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespace = ObjectStorageFunctions.getNamespace(GetNamespaceArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNamespaceResult> getNamespacePlain(GetNamespacePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getNamespace:getNamespace", TypeShape.of(GetNamespaceResult.class), args, Utilities.withVersion(options));
     }
@@ -758,6 +907,9 @@ public final class ObjectStorageFunctions {
         return getNamespaceMetadataPlain(args, InvokeOptions.Empty);
     }
     public static Output<GetNamespaceMetadataResult> getNamespaceMetadata(GetNamespaceMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", TypeShape.of(GetNamespaceMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetNamespaceMetadataResult> getNamespaceMetadata(GetNamespaceMetadataArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", TypeShape.of(GetNamespaceMetadataResult.class), args, Utilities.withVersion(options));
     }
     public static CompletableFuture<GetNamespaceMetadataResult> getNamespaceMetadataPlain(GetNamespaceMetadataPlainArgs args, InvokeOptions options) {
@@ -920,6 +1072,59 @@ public final class ObjectStorageFunctions {
      * 
      */
     public static Output<GetObjectResult> getObject(GetObjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getObject:getObject", TypeShape.of(GetObjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the metadata and body of an object.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObject = ObjectStorageFunctions.getObject(GetObjectArgs.builder()
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
+     *             .httpResponseCacheControl(objectHttpResponseCacheControl)
+     *             .httpResponseContentDisposition(objectHttpResponseContentDisposition)
+     *             .httpResponseContentEncoding(objectHttpResponseContentEncoding)
+     *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
+     *             .httpResponseContentType(objectHttpResponseContentType)
+     *             .httpResponseExpires(objectHttpResponseExpires)
+     *             .versionId(testVersion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetObjectResult> getObject(GetObjectArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getObject:getObject", TypeShape.of(GetObjectResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1156,6 +1361,52 @@ public final class ObjectStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetObjectHeadResult> getObjectHead(GetObjectHeadArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getObjectHead:getObjectHead", TypeShape.of(GetObjectHeadResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the metadata of an object.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectHeadArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectHead = ObjectStorageFunctions.getObjectHead(GetObjectHeadArgs.builder()
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetObjectHeadResult> getObjectHeadPlain(GetObjectHeadPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getObjectHead:getObjectHead", TypeShape.of(GetObjectHeadResult.class), args, Utilities.withVersion(options));
     }
@@ -1292,6 +1543,51 @@ public final class ObjectStorageFunctions {
      * 
      */
     public static Output<GetObjectLifecyclePolicyResult> getObjectLifecyclePolicy(GetObjectLifecyclePolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", TypeShape.of(GetObjectLifecyclePolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the object lifecycle policy for the bucket.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectLifecyclePolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectLifecyclePolicy = ObjectStorageFunctions.getObjectLifecyclePolicy(GetObjectLifecyclePolicyArgs.builder()
+     *             .bucket(objectLifecyclePolicyBucket)
+     *             .namespace(objectLifecyclePolicyNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetObjectLifecyclePolicyResult> getObjectLifecyclePolicy(GetObjectLifecyclePolicyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", TypeShape.of(GetObjectLifecyclePolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1511,6 +1807,64 @@ public final class ObjectStorageFunctions {
      * 
      */
     public static Output<GetObjectVersionsResult> getObjectVersions(GetObjectVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getObjectVersions:getObjectVersions", TypeShape.of(GetObjectVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Object Versions in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Lists the object versions in a bucket.
+     * 
+     * ListObjectVersions returns an ObjectVersionCollection containing at most 1000 object versions. To paginate through
+     * more object versions, use the returned `opc-next-page` value with the `page` request parameter.
+     * 
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectVersions = ObjectStorageFunctions.getObjectVersions(GetObjectVersionsArgs.builder()
+     *             .bucket(objectVersionBucket)
+     *             .namespace(objectVersionNamespace)
+     *             .delimiter(objectVersionDelimiter)
+     *             .end(objectVersionEnd)
+     *             .fields(objectVersionFields)
+     *             .prefix(objectVersionPrefix)
+     *             .start(objectVersionStart)
+     *             .startAfter(objectVersionStartAfter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetObjectVersionsResult> getObjectVersions(GetObjectVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getObjectVersions:getObjectVersions", TypeShape.of(GetObjectVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1808,6 +2162,66 @@ public final class ObjectStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetObjectsResult> getObjects(GetObjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getObjects:getObjects", TypeShape.of(GetObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
+     * parameter for other fields that you can optionally include in ListObjects response.
+     * 
+     * ListObjects returns at most 1000 objects. To paginate through more objects, use the returned &#39;nextStartWith&#39;
+     * value with the &#39;start&#39; parameter. To filter which objects ListObjects returns, use the &#39;start&#39; and &#39;end&#39;
+     * parameters.
+     * 
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetObjectsResult> getObjectsPlain(GetObjectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getObjects:getObjects", TypeShape.of(GetObjectsResult.class), args, Utilities.withVersion(options));
     }
@@ -1947,6 +2361,52 @@ public final class ObjectStorageFunctions {
      * 
      */
     public static Output<GetPreauthrequestResult> getPreauthrequest(GetPreauthrequestArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getPreauthrequest:getPreauthrequest", TypeShape.of(GetPreauthrequestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the pre-authenticated request for the bucket.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .parId(testPar.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPreauthrequestResult> getPreauthrequest(GetPreauthrequestArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getPreauthrequest:getPreauthrequest", TypeShape.of(GetPreauthrequestResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2176,6 +2636,52 @@ public final class ObjectStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPreauthrequestsResult> getPreauthrequests(GetPreauthrequestsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getPreauthrequests:getPreauthrequests", TypeShape.of(GetPreauthrequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Lists pre-authenticated requests for the bucket.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPreauthenticatedRequests = ObjectStorageFunctions.getPreauthrequests(GetPreauthrequestsArgs.builder()
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .objectNamePrefix(preauthenticatedRequestObjectNamePrefix)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPreauthrequestsResult> getPreauthrequestsPlain(GetPreauthrequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getPreauthrequests:getPreauthrequests", TypeShape.of(GetPreauthrequestsResult.class), args, Utilities.withVersion(options));
     }
@@ -2188,6 +2694,9 @@ public final class ObjectStorageFunctions {
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
@@ -2198,6 +2707,9 @@ public final class ObjectStorageFunctions {
         return getPrivateEndpointSummariesPlain(args, InvokeOptions.Empty);
     }
     public static Output<GetPrivateEndpointSummariesResult> getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", TypeShape.of(GetPrivateEndpointSummariesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPrivateEndpointSummariesResult> getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", TypeShape.of(GetPrivateEndpointSummariesResult.class), args, Utilities.withVersion(options));
     }
     public static CompletableFuture<GetPrivateEndpointSummariesResult> getPrivateEndpointSummariesPlain(GetPrivateEndpointSummariesPlainArgs args, InvokeOptions options) {
@@ -2336,6 +2848,51 @@ public final class ObjectStorageFunctions {
      * 
      */
     public static Output<GetReplicationPoliciesResult> getReplicationPolicies(GetReplicationPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", TypeShape.of(GetReplicationPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * List the replication policies associated with a bucket.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationPolicies = ObjectStorageFunctions.getReplicationPolicies(GetReplicationPoliciesArgs.builder()
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetReplicationPoliciesResult> getReplicationPolicies(GetReplicationPoliciesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", TypeShape.of(GetReplicationPoliciesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2564,6 +3121,52 @@ public final class ObjectStorageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetReplicationPolicyResult> getReplicationPolicy(GetReplicationPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getReplicationPolicy:getReplicationPolicy", TypeShape.of(GetReplicationPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Get the replication policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
+     *             .replicationId(testReplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetReplicationPolicyResult> getReplicationPolicyPlain(GetReplicationPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getReplicationPolicy:getReplicationPolicy", TypeShape.of(GetReplicationPolicyResult.class), args, Utilities.withVersion(options));
     }
@@ -2700,6 +3303,51 @@ public final class ObjectStorageFunctions {
      * 
      */
     public static Output<GetReplicationSourcesResult> getReplicationSources(GetReplicationSourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getReplicationSources:getReplicationSources", TypeShape.of(GetReplicationSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * List the replication sources of a destination bucket.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationSources = ObjectStorageFunctions.getReplicationSources(GetReplicationSourcesArgs.builder()
+     *             .bucket(replicationSourceBucket)
+     *             .namespace(replicationSourceNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetReplicationSourcesResult> getReplicationSources(GetReplicationSourcesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getReplicationSources:getReplicationSources", TypeShape.of(GetReplicationSourcesResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -64,7 +64,7 @@ class GetFleetsResult:
     @pulumi.getter(name="applicationType")
     def application_type(self) -> Optional[str]:
         """
-        Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "application_type")
 
@@ -72,7 +72,7 @@ class GetFleetsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        Please provide the root compartmentId (TenancyId).
+        Tenancy Id (Root Compartment Id)for which the rule is created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -88,7 +88,7 @@ class GetFleetsResult:
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> Optional[str]:
         """
-        Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
@@ -109,7 +109,7 @@ class GetFleetsResult:
     @pulumi.getter(name="fleetType")
     def fleet_type(self) -> Optional[str]:
         """
-        Type of the Fleet.
+        Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         """
         return pulumi.get(self, "fleet_type")
 
@@ -185,14 +185,14 @@ def get_fleets(application_type: Optional[str] = None,
     ```
 
 
-    :param str application_type: A filter to return only resources that match the Application Type given.
+    :param str application_type: A filter to return resources that match the Application Type/Product Stack given..
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str environment_type: A filter to return only resources that match the Environment Type given.
-    :param str fleet_type: A filter to return only resources their fleetType matches the given fleetType.
-    :param str id: unique Fleet identifier
-    :param str product: A filter to return only resources that match the Product Type given.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str environment_type: A filter to return resources that match the Environment Type given.
+    :param str fleet_type: A filter to return fleets whose fleetType matches the given fleetType.
+    :param str id: A filter to return fleets whose id matches the given Fleet identifier
+    :param str product: A filter to return resources that match the Product given.
+    :param str state: A filter to return fleets whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['applicationType'] = application_type
@@ -250,14 +250,14 @@ def get_fleets_output(application_type: Optional[pulumi.Input[Optional[str]]] = 
     ```
 
 
-    :param str application_type: A filter to return only resources that match the Application Type given.
+    :param str application_type: A filter to return resources that match the Application Type/Product Stack given..
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str environment_type: A filter to return only resources that match the Environment Type given.
-    :param str fleet_type: A filter to return only resources their fleetType matches the given fleetType.
-    :param str id: unique Fleet identifier
-    :param str product: A filter to return only resources that match the Product Type given.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str environment_type: A filter to return resources that match the Environment Type given.
+    :param str fleet_type: A filter to return fleets whose fleetType matches the given fleetType.
+    :param str id: A filter to return fleets whose id matches the given Fleet identifier
+    :param str product: A filter to return resources that match the Product given.
+    :param str state: A filter to return fleets whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['applicationType'] = application_type

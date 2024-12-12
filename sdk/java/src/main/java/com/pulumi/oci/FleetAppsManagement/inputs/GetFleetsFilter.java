@@ -17,9 +17,17 @@ public final class GetFleetsFilter extends com.pulumi.resources.InvokeArgs {
 
     public static final GetFleetsFilter Empty = new GetFleetsFilter();
 
+    /**
+     * Name of the variable.
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return Name of the variable.
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -64,6 +72,12 @@ public final class GetFleetsFilter extends com.pulumi.resources.InvokeArgs {
             $ = new GetFleetsFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name Name of the variable.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;

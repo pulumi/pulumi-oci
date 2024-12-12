@@ -393,6 +393,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    @Import(name="keyVersionId")
+    private @Nullable Output<String> keyVersionId;
+
+    /**
+     * @return The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    public Optional<Output<String>> keyVersionId() {
+        return Optional.ofNullable(this.keyVersionId);
+    }
+
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -958,6 +973,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.keyHistoryEntries = $.keyHistoryEntries;
         this.keyStoreId = $.keyStoreId;
         this.keyStoreWalletName = $.keyStoreWalletName;
+        this.keyVersionId = $.keyVersionId;
         this.kmsKeyId = $.kmsKeyId;
         this.largestProvisionableAutonomousDatabaseInCpus = $.largestProvisionableAutonomousDatabaseInCpus;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
@@ -1535,6 +1551,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder keyStoreWalletName(String keyStoreWalletName) {
             return keyStoreWalletName(Output.of(keyStoreWalletName));
+        }
+
+        /**
+         * @param keyVersionId The OCID of the key version that is used in rotate key operations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyVersionId(@Nullable Output<String> keyVersionId) {
+            $.keyVersionId = keyVersionId;
+            return this;
+        }
+
+        /**
+         * @param keyVersionId The OCID of the key version that is used in rotate key operations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyVersionId(String keyVersionId) {
+            return keyVersionId(Output.of(keyVersionId));
         }
 
         /**

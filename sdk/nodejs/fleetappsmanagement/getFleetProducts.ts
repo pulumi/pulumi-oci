@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Fleet Products in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetProducts.
+ * Returns a list of products associated with the confirmed targets.
  *
  * ## Example Usage
  *
@@ -52,11 +52,11 @@ export interface GetFleetProductsArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetFleetProductsFilter[];
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
     /**
-     * Resource Display Name
+     * Resource Display Name.
      */
     resourceDisplayName?: string;
     /**
@@ -99,7 +99,7 @@ export interface GetFleetProductsResult {
 /**
  * This data source provides the list of Fleet Products in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetProducts.
+ * Returns a list of products associated with the confirmed targets.
  *
  * ## Example Usage
  *
@@ -142,11 +142,11 @@ export interface GetFleetProductsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetProductsFilterArgs>[]>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**
-     * Resource Display Name
+     * Resource Display Name.
      */
     resourceDisplayName?: pulumi.Input<string>;
     /**

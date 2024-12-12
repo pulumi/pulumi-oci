@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetTargets.
+ * Returns the list of all confirmed targets within a fleet.
  *
  * ## Example Usage
  *
@@ -48,15 +48,15 @@ export interface GetFleetTargetsArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetFleetTargetsFilter[];
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
     /**
-     * Product Name
+     * Product Name.
      */
     product?: string;
     /**
-     * Resource Display Name
+     * Resource Display Name.
      */
     resourceDisplayName?: string;
     /**
@@ -99,7 +99,7 @@ export interface GetFleetTargetsResult {
 /**
  * This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetTargets.
+ * Returns the list of all confirmed targets within a fleet.
  *
  * ## Example Usage
  *
@@ -138,15 +138,15 @@ export interface GetFleetTargetsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetTargetsFilterArgs>[]>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**
-     * Product Name
+     * Product Name.
      */
     product?: pulumi.Input<string>;
     /**
-     * Resource Display Name
+     * Resource Display Name.
      */
     resourceDisplayName?: pulumi.Input<string>;
     /**

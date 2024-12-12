@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRunbookResult {
     /**
-     * @return JSON content with required associations
+     * @return Associations for the runbook.
      * 
      */
     private List<GetRunbookAssociation> associations;
@@ -36,7 +36,7 @@ public final class GetRunbookResult {
      */
     private String displayName;
     /**
-     * @return Estimated time to successfully complete the runbook execution
+     * @return Estimated time to successfully complete the runbook execution.
      * 
      */
     private String estimatedTime;
@@ -46,12 +46,12 @@ public final class GetRunbookResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The OCID of the resource.
      * 
      */
     private String id;
     /**
-     * @return Is the runbook default?
+     * @return Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
      * 
      */
     private Boolean isDefault;
@@ -61,7 +61,7 @@ public final class GetRunbookResult {
      */
     private String lifecycleDetails;
     /**
-     * @return The lifecycle operation performed by the task.
+     * @return The lifecycle operation performed by the runbook.
      * 
      */
     private String operation;
@@ -82,7 +82,7 @@ public final class GetRunbookResult {
     private String resourceRegion;
     private String runbookId;
     /**
-     * @return Type of runbook structure.
+     * @return Relevance of the runbook.
      * 
      */
     private String runbookRelevance;
@@ -114,7 +114,7 @@ public final class GetRunbookResult {
 
     private GetRunbookResult() {}
     /**
-     * @return JSON content with required associations
+     * @return Associations for the runbook.
      * 
      */
     public List<GetRunbookAssociation> associations() {
@@ -145,7 +145,7 @@ public final class GetRunbookResult {
         return this.displayName;
     }
     /**
-     * @return Estimated time to successfully complete the runbook execution
+     * @return Estimated time to successfully complete the runbook execution.
      * 
      */
     public String estimatedTime() {
@@ -159,14 +159,14 @@ public final class GetRunbookResult {
         return this.freeformTags;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The OCID of the resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Is the runbook default?
+     * @return Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
      * 
      */
     public Boolean isDefault() {
@@ -180,7 +180,7 @@ public final class GetRunbookResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return The lifecycle operation performed by the task.
+     * @return The lifecycle operation performed by the runbook.
      * 
      */
     public String operation() {
@@ -211,7 +211,7 @@ public final class GetRunbookResult {
         return this.runbookId;
     }
     /**
-     * @return Type of runbook structure.
+     * @return Relevance of the runbook.
      * 
      */
     public String runbookRelevance() {

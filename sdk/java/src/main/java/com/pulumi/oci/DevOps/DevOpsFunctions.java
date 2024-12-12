@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
 import com.pulumi.oci.DevOps.inputs.GetBuildPipelinePlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
@@ -319,6 +320,50 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBuildPipelineResult> getBuildPipeline(GetBuildPipelineArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getBuildPipeline:getBuildPipeline", TypeShape.of(GetBuildPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a build pipeline by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
+     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBuildPipelineResult> getBuildPipelinePlain(GetBuildPipelinePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getBuildPipeline:getBuildPipeline", TypeShape.of(GetBuildPipelineResult.class), args, Utilities.withVersion(options));
     }
@@ -452,6 +497,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetBuildPipelineStageResult> getBuildPipelineStage(GetBuildPipelineStageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getBuildPipelineStage:getBuildPipelineStage", TypeShape.of(GetBuildPipelineStageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a stage based on the stage ID provided in the request.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
+     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBuildPipelineStageResult> getBuildPipelineStage(GetBuildPipelineStageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getBuildPipelineStage:getBuildPipelineStage", TypeShape.of(GetBuildPipelineStageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -736,6 +825,54 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetBuildPipelineStagesResult> getBuildPipelineStages(GetBuildPipelineStagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getBuildPipelineStages:getBuildPipelineStages", TypeShape.of(GetBuildPipelineStagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Build Pipeline Stages in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of all stages in a compartment or build pipeline.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
+     *             .buildPipelineId(testBuildPipeline.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(buildPipelineStageDisplayName)
+     *             .id(buildPipelineStageId)
+     *             .state(buildPipelineStageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBuildPipelineStagesResult> getBuildPipelineStages(GetBuildPipelineStagesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getBuildPipelineStages:getBuildPipelineStages", TypeShape.of(GetBuildPipelineStagesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1071,6 +1208,54 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBuildPipelinesResult> getBuildPipelines(GetBuildPipelinesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getBuildPipelines:getBuildPipelines", TypeShape.of(GetBuildPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Build Pipelines in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of build pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelines = DevOpsFunctions.getBuildPipelines(GetBuildPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(buildPipelineDisplayName)
+     *             .id(buildPipelineId)
+     *             .projectId(testProject.id())
+     *             .state(buildPipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBuildPipelinesResult> getBuildPipelinesPlain(GetBuildPipelinesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getBuildPipelines:getBuildPipelines", TypeShape.of(GetBuildPipelinesResult.class), args, Utilities.withVersion(options));
     }
@@ -1204,6 +1389,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetBuildRunResult> getBuildRun(GetBuildRunArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getBuildRun:getBuildRun", TypeShape.of(GetBuildRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Build Run resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns the details of a build run for a given build run ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
+     *             .buildRunId(testBuildRunOciDevopsBuildRun.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBuildRunResult> getBuildRun(GetBuildRunArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getBuildRun:getBuildRun", TypeShape.of(GetBuildRunResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1541,6 +1770,55 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBuildRunsResult> getBuildRuns(GetBuildRunsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getBuildRuns:getBuildRuns", TypeShape.of(GetBuildRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Build Runs in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of build run summary.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
+     *             .buildPipelineId(testBuildPipeline.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(buildRunDisplayName)
+     *             .id(buildRunId)
+     *             .projectId(testProject.id())
+     *             .state(buildRunState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBuildRunsResult> getBuildRunsPlain(GetBuildRunsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getBuildRuns:getBuildRuns", TypeShape.of(GetBuildRunsResult.class), args, Utilities.withVersion(options));
     }
@@ -1674,6 +1952,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a connection by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(testConnectionOciDevopsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2011,6 +2333,55 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Connections in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of connections.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DevOpsFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .connectionType(connectionConnectionType)
+     *             .displayName(connectionDisplayName)
+     *             .id(connectionId)
+     *             .projectId(testProject.id())
+     *             .state(connectionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
     }
@@ -2144,6 +2515,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetDeployArtifactResult> getDeployArtifact(GetDeployArtifactArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployArtifact:getDeployArtifact", TypeShape.of(GetDeployArtifactResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a deployment artifact by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
+     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeployArtifactResult> getDeployArtifact(GetDeployArtifactArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getDeployArtifact:getDeployArtifact", TypeShape.of(GetDeployArtifactResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2475,6 +2890,54 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeployArtifactsResult> getDeployArtifacts(GetDeployArtifactsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployArtifacts:getDeployArtifacts", TypeShape.of(GetDeployArtifactsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deploy Artifacts in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of deployment artifacts.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifacts = DevOpsFunctions.getDeployArtifacts(GetDeployArtifactsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(deployArtifactDisplayName)
+     *             .id(deployArtifactId)
+     *             .projectId(testProject.id())
+     *             .state(deployArtifactState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeployArtifactsResult> getDeployArtifactsPlain(GetDeployArtifactsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getDeployArtifacts:getDeployArtifacts", TypeShape.of(GetDeployArtifactsResult.class), args, Utilities.withVersion(options));
     }
@@ -2608,6 +3071,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetDeployEnvironmentResult> getDeployEnvironment(GetDeployEnvironmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployEnvironment:getDeployEnvironment", TypeShape.of(GetDeployEnvironmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a deployment environment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
+     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeployEnvironmentResult> getDeployEnvironment(GetDeployEnvironmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getDeployEnvironment:getDeployEnvironment", TypeShape.of(GetDeployEnvironmentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2939,6 +3446,54 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeployEnvironmentsResult> getDeployEnvironments(GetDeployEnvironmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployEnvironments:getDeployEnvironments", TypeShape.of(GetDeployEnvironmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deploy Environments in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of deployment environments.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironments = DevOpsFunctions.getDeployEnvironments(GetDeployEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(deployEnvironmentDisplayName)
+     *             .id(deployEnvironmentId)
+     *             .projectId(testProject.id())
+     *             .state(deployEnvironmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeployEnvironmentsResult> getDeployEnvironmentsPlain(GetDeployEnvironmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getDeployEnvironments:getDeployEnvironments", TypeShape.of(GetDeployEnvironmentsResult.class), args, Utilities.withVersion(options));
     }
@@ -3072,6 +3627,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetDeployPipelineResult> getDeployPipeline(GetDeployPipelineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployPipeline:getDeployPipeline", TypeShape.of(GetDeployPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a deployment pipeline by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
+     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeployPipelineResult> getDeployPipeline(GetDeployPipelineArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getDeployPipeline:getDeployPipeline", TypeShape.of(GetDeployPipelineResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3403,6 +4002,54 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeployPipelinesResult> getDeployPipelines(GetDeployPipelinesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployPipelines:getDeployPipelines", TypeShape.of(GetDeployPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deploy Pipelines in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of deployment pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipelines = DevOpsFunctions.getDeployPipelines(GetDeployPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(deployPipelineDisplayName)
+     *             .id(deployPipelineId)
+     *             .projectId(testProject.id())
+     *             .state(deployPipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeployPipelinesResult> getDeployPipelinesPlain(GetDeployPipelinesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getDeployPipelines:getDeployPipelines", TypeShape.of(GetDeployPipelinesResult.class), args, Utilities.withVersion(options));
     }
@@ -3536,6 +4183,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetDeployStageResult> getDeployStage(GetDeployStageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployStage:getDeployStage", TypeShape.of(GetDeployStageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a deployment stage by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
+     *             .deployStageId(testDeployStageOciDevopsDeployStage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeployStageResult> getDeployStage(GetDeployStageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getDeployStage:getDeployStage", TypeShape.of(GetDeployStageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3867,6 +4558,54 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeployStagesResult> getDeployStages(GetDeployStagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployStages:getDeployStages", TypeShape.of(GetDeployStagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deploy Stages in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a list of deployment stages.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .deployPipelineId(testDeployPipeline.id())
+     *             .displayName(deployStageDisplayName)
+     *             .id(deployStageId)
+     *             .state(deployStageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeployStagesResult> getDeployStagesPlain(GetDeployStagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getDeployStages:getDeployStages", TypeShape.of(GetDeployStagesResult.class), args, Utilities.withVersion(options));
     }
@@ -4000,6 +4739,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployment:getDeployment", TypeShape.of(GetDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a deployment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(testDeploymentOciDevopsDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getDeployment:getDeployment", TypeShape.of(GetDeploymentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4349,6 +5132,57 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getDeployments:getDeployments", TypeShape.of(GetDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployments in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of deployments.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .deployPipelineId(testDeployPipeline.id())
+     *             .displayName(deploymentDisplayName)
+     *             .id(deploymentId)
+     *             .projectId(testProject.id())
+     *             .state(deploymentState)
+     *             .timeCreatedGreaterThanOrEqualTo(deploymentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(deploymentTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getDeployments:getDeployments", TypeShape.of(GetDeploymentsResult.class), args, Utilities.withVersion(options));
     }
@@ -4525,6 +5359,50 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a project by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(testProjectOciDevopsProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
     }
@@ -4658,6 +5536,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetProjectRepositorySettingResult> getProjectRepositorySetting(GetProjectRepositorySettingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", TypeShape.of(GetProjectRepositorySettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a project&#39;s repository settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProjectRepositorySettingResult> getProjectRepositorySetting(GetProjectRepositorySettingArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", TypeShape.of(GetProjectRepositorySettingResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4889,6 +5811,53 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of projects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DevOpsFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(projectId)
+     *             .name(projectName)
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
     }
@@ -5031,6 +6000,53 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepoFileLineResult> getRepoFileLine(GetRepoFileLineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepoFileLine:getRepoFileLine", TypeShape.of(GetRepoFileLineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieve lines of a specified file. Supports starting line number and limit.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .revision(repoFileLineRevision)
+     *             .filePath(repoFileLineFilePath)
+     *             .startLineNumber(repoFileLineStartLineNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepoFileLineResult> getRepoFileLine(GetRepoFileLineArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepoFileLine:getRepoFileLine", TypeShape.of(GetRepoFileLineResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5365,6 +6381,54 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositories:getRepositories", TypeShape.of(GetRepositoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repositories in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of repositories given a compartment ID or a project ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(repositoryName)
+     *             .projectId(testProject.id())
+     *             .repositoryId(testRepository.id())
+     *             .state(repositoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositories:getRepositories", TypeShape.of(GetRepositoriesResult.class), args, Utilities.withVersion(options));
     }
@@ -5501,6 +6565,51 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepository:getRepository", TypeShape.of(GetRepositoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a repository by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(testRepositoryOciDevopsRepository.id())
+     *             .fields(repositoryFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepository:getRepository", TypeShape.of(GetRepositoryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5729,6 +6838,52 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryArchiveContentResult> getRepositoryArchiveContent(GetRepositoryArchiveContentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", TypeShape.of(GetRepositoryArchiveContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Archive Content resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns the archived repository information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .format(repositoryArchiveContentFormat)
+     *             .refName(repositoryArchiveContentRefName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryArchiveContentResult> getRepositoryArchiveContentPlain(GetRepositoryArchiveContentPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", TypeShape.of(GetRepositoryArchiveContentResult.class), args, Utilities.withVersion(options));
     }
@@ -5865,6 +7020,51 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepositoryAuthorResult> getRepositoryAuthor(GetRepositoryAuthorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", TypeShape.of(GetRepositoryAuthorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Author resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieve a list of all the authors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .refName(repositoryAuthorRefName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryAuthorResult> getRepositoryAuthor(GetRepositoryAuthorArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", TypeShape.of(GetRepositoryAuthorResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6089,6 +7289,51 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryAuthorsResult> getRepositoryAuthors(GetRepositoryAuthorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryAuthors:getRepositoryAuthors", TypeShape.of(GetRepositoryAuthorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repository Authors in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieve a list of all the authors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .refName(repositoryAuthorRefName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryAuthorsResult> getRepositoryAuthorsPlain(GetRepositoryAuthorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryAuthors:getRepositoryAuthors", TypeShape.of(GetRepositoryAuthorsResult.class), args, Utilities.withVersion(options));
     }
@@ -6225,6 +7470,51 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepositoryCommitResult> getRepositoryCommit(GetRepositoryCommitArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryCommit:getRepositoryCommit", TypeShape.of(GetRepositoryCommitResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a repository&#39;s commit by commit ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
+     *             .commitId(testCommit.id())
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryCommitResult> getRepositoryCommit(GetRepositoryCommitArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepositoryCommit:getRepositoryCommit", TypeShape.of(GetRepositoryCommitResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6473,6 +7763,57 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryCommitsResult> getRepositoryCommits(GetRepositoryCommitsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryCommits:getRepositoryCommits", TypeShape.of(GetRepositoryCommitsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repository Commits in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of commits.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .authorName(repositoryCommitAuthorName)
+     *             .commitMessage(repositoryCommitCommitMessage)
+     *             .excludeRefName(repositoryCommitExcludeRefName)
+     *             .filePath(repositoryCommitFilePath)
+     *             .refName(repositoryCommitRefName)
+     *             .timestampGreaterThanOrEqualTo(repositoryCommitTimestampGreaterThanOrEqualTo)
+     *             .timestampLessThanOrEqualTo(repositoryCommitTimestampLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryCommitsResult> getRepositoryCommitsPlain(GetRepositoryCommitsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryCommits:getRepositoryCommits", TypeShape.of(GetRepositoryCommitsResult.class), args, Utilities.withVersion(options));
     }
@@ -6618,6 +7959,54 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepositoryDiffResult> getRepositoryDiff(GetRepositoryDiffArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryDiff:getRepositoryDiff", TypeShape.of(GetRepositoryDiffResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Diff resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/diffs&#34;
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
+     *             .baseVersion(repositoryDiffBaseVersion)
+     *             .filePath(repositoryDiffFilePath)
+     *             .repositoryId(testRepository.id())
+     *             .targetVersion(repositoryDiffTargetVersion)
+     *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryDiffResult> getRepositoryDiff(GetRepositoryDiffArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepositoryDiff:getRepositoryDiff", TypeShape.of(GetRepositoryDiffResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6857,6 +8246,54 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryDiffsResult> getRepositoryDiffs(GetRepositoryDiffsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", TypeShape.of(GetRepositoryDiffsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Compares two revisions and lists the differences. Supports comparison between two references or commits.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
+     *             .baseVersion(repositoryDiffBaseVersion)
+     *             .repositoryId(testRepository.id())
+     *             .targetVersion(repositoryDiffTargetVersion)
+     *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
+     *             .targetRepositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryDiffsResult> getRepositoryDiffsPlain(GetRepositoryDiffsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", TypeShape.of(GetRepositoryDiffsResult.class), args, Utilities.withVersion(options));
     }
@@ -7002,6 +8439,54 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepositoryFileDiffResult> getRepositoryFileDiff(GetRepositoryFileDiffArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", TypeShape.of(GetRepositoryFileDiffResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository File Diff resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Gets the line-by-line difference between file on different commits.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
+     *             .baseVersion(repositoryFileDiffBaseVersion)
+     *             .repositoryId(testRepository.id())
+     *             .targetVersion(repositoryFileDiffTargetVersion)
+     *             .filePath(repositoryFileDiffFilePath)
+     *             .isComparisonFromMergeBase(repositoryFileDiffIsComparisonFromMergeBase)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryFileDiffResult> getRepositoryFileDiff(GetRepositoryFileDiffArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", TypeShape.of(GetRepositoryFileDiffResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7237,6 +8722,53 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryFileLineResult> getRepositoryFileLine(GetRepositoryFileLineArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", TypeShape.of(GetRepositoryFileLineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository File Line resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/lines&#34;
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .revision(repositoryFileLineRevision)
+     *             .filePath(repositoryFileLineFilePath)
+     *             .startLineNumber(repositoryFileLineStartLineNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryFileLineResult> getRepositoryFileLinePlain(GetRepositoryFileLinePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", TypeShape.of(GetRepositoryFileLineResult.class), args, Utilities.withVersion(options));
     }
@@ -7373,6 +8905,51 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", TypeShape.of(GetRepositoryMirrorRecordResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns either current mirror record or last successful mirror record for a specific mirror repository.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
+     *             .mirrorRecordType(repositoryMirrorRecordMirrorRecordType)
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", TypeShape.of(GetRepositoryMirrorRecordResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7593,6 +9170,50 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords", TypeShape.of(GetRepositoryMirrorRecordsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of mirror entry in history within 30 days.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecordsPlain(GetRepositoryMirrorRecordsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords", TypeShape.of(GetRepositoryMirrorRecordsResult.class), args, Utilities.withVersion(options));
     }
@@ -7732,6 +9353,52 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepositoryObjectResult> getRepositoryObject(GetRepositoryObjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryObject:getRepositoryObject", TypeShape.of(GetRepositoryObjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Object resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves blob of specific branch name/commit ID and file path.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .filePath(repositoryObjectFilePath)
+     *             .refName(repositoryObjectRefName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryObjectResult> getRepositoryObject(GetRepositoryObjectArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepositoryObject:getRepositoryObject", TypeShape.of(GetRepositoryObjectResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7961,6 +9628,52 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryObjectContentResult> getRepositoryObjectContent(GetRepositoryObjectContentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", TypeShape.of(GetRepositoryObjectContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieve contents of a specified object.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .sha(repositoryObjectContentSha)
+     *             .filePath(repositoryObjectContentFilePath)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryObjectContentResult> getRepositoryObjectContentPlain(GetRepositoryObjectContentPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", TypeShape.of(GetRepositoryObjectContentResult.class), args, Utilities.withVersion(options));
     }
@@ -8106,6 +9819,54 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepositoryPathResult> getRepositoryPath(GetRepositoryPathArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryPath:getRepositoryPath", TypeShape.of(GetRepositoryPathResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Path resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a list of files and directories in a repository.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .displayName(repositoryPathDisplayName)
+     *             .folderPath(repositoryPathFolderPath)
+     *             .pathsInSubtree(repositoryPathPathsInSubtree)
+     *             .ref(repositoryPathRef)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryPathResult> getRepositoryPath(GetRepositoryPathArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepositoryPath:getRepositoryPath", TypeShape.of(GetRepositoryPathResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8345,6 +10106,54 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryPathsResult> getRepositoryPaths(GetRepositoryPathsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryPaths:getRepositoryPaths", TypeShape.of(GetRepositoryPathsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repository Paths in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a list of files and directories in a repository.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .displayName(repositoryPathDisplayName)
+     *             .folderPath(repositoryPathFolderPath)
+     *             .pathsInSubtree(repositoryPathPathsInSubtree)
+     *             .ref(repositoryPathRef)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryPathsResult> getRepositoryPathsPlain(GetRepositoryPathsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryPaths:getRepositoryPaths", TypeShape.of(GetRepositoryPathsResult.class), args, Utilities.withVersion(options));
     }
@@ -8525,6 +10334,51 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryProtectedBranchesResult> getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", TypeShape.of(GetRepositoryProtectedBranchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repository Protected Branches in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of Protected Branches.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .name(repositoryProtectedBranchName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryProtectedBranchesResult> getRepositoryProtectedBranchesPlain(GetRepositoryProtectedBranchesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", TypeShape.of(GetRepositoryProtectedBranchesResult.class), args, Utilities.withVersion(options));
     }
@@ -8661,6 +10515,51 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetRepositoryRefResult> getRepositoryRef(GetRepositoryRefArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryRef:getRepositoryRef", TypeShape.of(GetRepositoryRefResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/refs&#34;. Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
+     *             .refName(repositoryRefRefName)
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryRefResult> getRepositoryRef(GetRepositoryRefArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getRepositoryRef:getRepositoryRef", TypeShape.of(GetRepositoryRefResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8893,6 +10792,53 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositoryRefsResult> getRepositoryRefs(GetRepositoryRefsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryRefs:getRepositoryRefs", TypeShape.of(GetRepositoryRefsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of references.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .commitId(testCommit.id())
+     *             .refName(repositoryRefRefName)
+     *             .refType(repositoryRefRefType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositoryRefsResult> getRepositoryRefsPlain(GetRepositoryRefsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryRefs:getRepositoryRefs", TypeShape.of(GetRepositoryRefsResult.class), args, Utilities.withVersion(options));
     }
@@ -9069,6 +11015,50 @@ public final class DevOpsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRepositorySettingResult> getRepositorySetting(GetRepositorySettingArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositorySetting:getRepositorySetting", TypeShape.of(GetRepositorySettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a repository&#39;s settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRepositorySettingResult> getRepositorySettingPlain(GetRepositorySettingPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositorySetting:getRepositorySetting", TypeShape.of(GetRepositorySettingResult.class), args, Utilities.withVersion(options));
     }
@@ -9202,6 +11192,50 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetTriggerResult> getTrigger(GetTriggerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getTrigger:getTrigger", TypeShape.of(GetTriggerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Trigger resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a trigger by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
+     *             .triggerId(testTriggerOciDevopsTrigger.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTriggerResult> getTrigger(GetTriggerArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getTrigger:getTrigger", TypeShape.of(GetTriggerResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9486,6 +11520,54 @@ public final class DevOpsFunctions {
      * 
      */
     public static Output<GetTriggersResult> getTriggers(GetTriggersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getTriggers:getTriggers", TypeShape.of(GetTriggersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of triggers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTriggers = DevOpsFunctions.getTriggers(GetTriggersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(triggerDisplayName)
+     *             .id(triggerId)
+     *             .projectId(testProject.id())
+     *             .state(triggerState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTriggersResult> getTriggers(GetTriggersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DevOps/getTriggers:getTriggers", TypeShape.of(GetTriggersResult.class), args, Utilities.withVersion(options));
     }
     /**

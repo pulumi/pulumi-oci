@@ -59,7 +59,7 @@ type GetOnboardingsArgs struct {
 	Filters       []GetOnboardingsFilter `pulumi:"filters"`
 	// unique onboarding identifier
 	Id *string `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
 }
 
@@ -102,7 +102,7 @@ type GetOnboardingsOutputArgs struct {
 	Filters       GetOnboardingsFilterArrayInput `pulumi:"filters"`
 	// unique onboarding identifier
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 

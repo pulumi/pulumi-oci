@@ -16,14 +16,14 @@ public final class FleetNotificationPreferencesPreferencesArgs extends com.pulum
     public static final FleetNotificationPreferencesPreferencesArgs Empty = new FleetNotificationPreferencesPreferencesArgs();
 
     /**
-     * (Updatable) Enables or disables notification on Job Failures.&#39;
+     * (Updatable) Enables or disables notification on Job Failures.
      * 
      */
     @Import(name="onJobFailure")
     private @Nullable Output<Boolean> onJobFailure;
 
     /**
-     * @return (Updatable) Enables or disables notification on Job Failures.&#39;
+     * @return (Updatable) Enables or disables notification on Job Failures.
      * 
      */
     public Optional<Output<Boolean>> onJobFailure() {
@@ -87,7 +87,7 @@ public final class FleetNotificationPreferencesPreferencesArgs extends com.pulum
         }
 
         /**
-         * @param onJobFailure (Updatable) Enables or disables notification on Job Failures.&#39;
+         * @param onJobFailure (Updatable) Enables or disables notification on Job Failures.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class FleetNotificationPreferencesPreferencesArgs extends com.pulum
         }
 
         /**
-         * @param onJobFailure (Updatable) Enables or disables notification on Job Failures.&#39;
+         * @param onJobFailure (Updatable) Enables or disables notification on Job Failures.
          * 
          * @return builder
          * 

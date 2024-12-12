@@ -13,7 +13,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class FleetNotificationPreferencesPreferencesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Enables or disables notification on Job Failures.'
+        /// (Updatable) Enables or disables notification on Job Failures.
         /// </summary>
         [Input("onJobFailure")]
         public Input<bool>? OnJobFailure { get; set; }

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
 import com.pulumi.oci.Nosql.inputs.GetIndexPlainArgs;
 import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
@@ -159,6 +160,52 @@ public final class NosqlFunctions {
      * 
      */
     public static Output<GetIndexResult> getIndex(GetIndexArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Nosql/getIndex:getIndex", TypeShape.of(GetIndexResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Index resource in Oracle Cloud Infrastructure NoSQL Database service.
+     * 
+     * Get information about a single index.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
+     *             .indexName(testIndexOciNosqlIndex.name())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIndexResult> getIndex(GetIndexArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Nosql/getIndex:getIndex", TypeShape.of(GetIndexResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -392,6 +439,53 @@ public final class NosqlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetIndexesResult> getIndexes(GetIndexesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Nosql/getIndexes:getIndexes", TypeShape.of(GetIndexesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Indexes in Oracle Cloud Infrastructure NoSQL Database service.
+     * 
+     * Get a list of indexes on a table.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .name(indexName)
+     *             .state(indexState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetIndexesResult> getIndexesPlain(GetIndexesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Nosql/getIndexes:getIndexes", TypeShape.of(GetIndexesResult.class), args, Utilities.withVersion(options));
     }
@@ -528,6 +622,51 @@ public final class NosqlFunctions {
      * 
      */
     public static Output<GetTableResult> getTable(GetTableArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Nosql/getTable:getTable", TypeShape.of(GetTableResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Table resource in Oracle Cloud Infrastructure NoSQL Database service.
+     * 
+     * Get table info by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTableResult> getTable(GetTableArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Nosql/getTable:getTable", TypeShape.of(GetTableResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -711,6 +850,52 @@ public final class NosqlFunctions {
      * 
      */
     public static Output<GetTablesResult> getTables(GetTablesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Nosql/getTables:getTables", TypeShape.of(GetTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Tables in Oracle Cloud Infrastructure NoSQL Database service.
+     * 
+     * Get a list of tables in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTables = NosqlFunctions.getTables(GetTablesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(tableName)
+     *             .state(tableState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTablesResult> getTables(GetTablesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Nosql/getTables:getTables", TypeShape.of(GetTablesResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -251,6 +251,21 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+     * 
+     */
+    @Import(name="lastCompletedActionId")
+    private @Nullable Output<String> lastCompletedActionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+     * 
+     */
+    public Optional<Output<String>> lastCompletedActionId() {
+        return Optional.ofNullable(this.lastCompletedActionId);
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -293,6 +308,21 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<FsuCycleNextActionToExecuteArgs>>> nextActionToExecutes() {
         return Optional.ofNullable(this.nextActionToExecutes);
+    }
+
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     * 
+     */
+    @Import(name="rollbackCycleState")
+    private @Nullable Output<String> rollbackCycleState;
+
+    /**
+     * @return Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     * 
+     */
+    public Optional<Output<String>> rollbackCycleState() {
+        return Optional.ofNullable(this.rollbackCycleState);
     }
 
     /**
@@ -424,9 +454,11 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
         this.isIgnorePatches = $.isIgnorePatches;
         this.isKeepPlacement = $.isKeepPlacement;
         this.lastCompletedAction = $.lastCompletedAction;
+        this.lastCompletedActionId = $.lastCompletedActionId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maxDrainTimeoutInSeconds = $.maxDrainTimeoutInSeconds;
         this.nextActionToExecutes = $.nextActionToExecutes;
+        this.rollbackCycleState = $.rollbackCycleState;
         this.stageActionSchedule = $.stageActionSchedule;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -780,6 +812,27 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param lastCompletedActionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastCompletedActionId(@Nullable Output<String> lastCompletedActionId) {
+            $.lastCompletedActionId = lastCompletedActionId;
+            return this;
+        }
+
+        /**
+         * @param lastCompletedActionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastCompletedActionId(String lastCompletedActionId) {
+            return lastCompletedActionId(Output.of(lastCompletedActionId));
+        }
+
+        /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * 
          * @return builder
@@ -850,6 +903,27 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nextActionToExecutes(FsuCycleNextActionToExecuteArgs... nextActionToExecutes) {
             return nextActionToExecutes(List.of(nextActionToExecutes));
+        }
+
+        /**
+         * @param rollbackCycleState Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rollbackCycleState(@Nullable Output<String> rollbackCycleState) {
+            $.rollbackCycleState = rollbackCycleState;
+            return this;
+        }
+
+        /**
+         * @param rollbackCycleState Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rollbackCycleState(String rollbackCycleState) {
+            return rollbackCycleState(Output.of(rollbackCycleState));
         }
 
         /**

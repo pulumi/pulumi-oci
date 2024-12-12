@@ -98,7 +98,7 @@ class GetFleetResourceResult:
     @pulumi.getter(name="applicationType")
     def application_type(self) -> str:
         """
-        Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "application_type")
 
@@ -106,7 +106,7 @@ class GetFleetResourceResult:
     @pulumi.getter
     def compartment(self) -> str:
         """
-        Resource Compartment
+        Resource Compartment name.
         """
         return pulumi.get(self, "compartment")
 
@@ -122,7 +122,7 @@ class GetFleetResourceResult:
     @pulumi.getter(name="complianceState")
     def compliance_state(self) -> str:
         """
-        Compliance State of the Resource
+        Compliance State of the Resource.
         """
         return pulumi.get(self, "compliance_state")
 
@@ -138,7 +138,7 @@ class GetFleetResourceResult:
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> str:
         """
-        Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "environment_type")
 
@@ -172,7 +172,7 @@ class GetFleetResourceResult:
     @pulumi.getter
     def product(self) -> str:
         """
-        Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "product")
 
@@ -228,7 +228,7 @@ class GetFleetResourceResult:
     @pulumi.getter(name="targetCount")
     def target_count(self) -> int:
         """
-        Count of targets  within the resource.
+        Count of targets within the resource.
         """
         return pulumi.get(self, "target_count")
 
@@ -244,7 +244,7 @@ class GetFleetResourceResult:
     @pulumi.getter(name="tenancyName")
     def tenancy_name(self) -> str:
         """
-        Resource Tenancy Name
+        Resource Tenancy Name.
         """
         return pulumi.get(self, "tenancy_name")
 
@@ -301,7 +301,7 @@ def get_fleet_resource(fleet_id: Optional[str] = None,
     """
     This data source provides details about a specific Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a FleetResource by identifier
+    Gets a Fleet Resource by identifier.
 
     ## Example Usage
 
@@ -314,7 +314,7 @@ def get_fleet_resource(fleet_id: Optional[str] = None,
     ```
 
 
-    :param str fleet_id: unique Fleet identifier
+    :param str fleet_id: Unique Fleet identifier.
     :param str fleet_resource_id: unique FleetResource identifier
     """
     __args__ = dict()
@@ -352,7 +352,7 @@ def get_fleet_resource_output(fleet_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a FleetResource by identifier
+    Gets a Fleet Resource by identifier.
 
     ## Example Usage
 
@@ -365,7 +365,7 @@ def get_fleet_resource_output(fleet_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str fleet_id: unique Fleet identifier
+    :param str fleet_id: Unique Fleet identifier.
     :param str fleet_resource_id: unique FleetResource identifier
     """
     __args__ = dict()

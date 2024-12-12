@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceArgs;
 import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstancePlainArgs;
 import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapeArgs;
@@ -196,6 +197,50 @@ public final class ContainerInstancesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetContainerInstanceResult> getContainerInstance(GetContainerInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerInstances/getContainerInstance:getContainerInstance", TypeShape.of(GetContainerInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
+     * 
+     * Gets information about the specified container instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
+     * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetContainerInstanceResult> getContainerInstancePlain(GetContainerInstancePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerInstances/getContainerInstance:getContainerInstance", TypeShape.of(GetContainerInstanceResult.class), args, Utilities.withVersion(options));
     }
@@ -332,6 +377,51 @@ public final class ContainerInstancesFunctions {
      * 
      */
     public static Output<GetContainerInstanceShapeResult> getContainerInstanceShape(GetContainerInstanceShapeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape", TypeShape.of(GetContainerInstanceShapeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Container Instance Shape resource in Oracle Cloud Infrastructure Container Instances service.
+     * 
+     * Get a list of shapes for creating Container Instances and their details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
+     * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerInstanceShape = ContainerInstancesFunctions.getContainerInstanceShape(GetContainerInstanceShapeArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetContainerInstanceShapeResult> getContainerInstanceShape(GetContainerInstanceShapeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape", TypeShape.of(GetContainerInstanceShapeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -556,6 +646,51 @@ public final class ContainerInstancesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetContainerInstanceShapesResult> getContainerInstanceShapes(GetContainerInstanceShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", TypeShape.of(GetContainerInstanceShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
+     * 
+     * Lists the shapes that can be used to create container instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
+     * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerInstanceShapes = ContainerInstancesFunctions.getContainerInstanceShapes(GetContainerInstanceShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetContainerInstanceShapesResult> getContainerInstanceShapesPlain(GetContainerInstanceShapesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", TypeShape.of(GetContainerInstanceShapesResult.class), args, Utilities.withVersion(options));
     }
@@ -698,6 +833,53 @@ public final class ContainerInstancesFunctions {
      * 
      */
     public static Output<GetContainerInstancesResult> getContainerInstances(GetContainerInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerInstances/getContainerInstances:getContainerInstances", TypeShape.of(GetContainerInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
+     * 
+     * Returns a list of container instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
+     * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerInstances = ContainerInstancesFunctions.getContainerInstances(GetContainerInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceAvailabilityDomain)
+     *             .displayName(containerInstanceDisplayName)
+     *             .state(containerInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetContainerInstancesResult> getContainerInstances(GetContainerInstancesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerInstances/getContainerInstances:getContainerInstances", TypeShape.of(GetContainerInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**

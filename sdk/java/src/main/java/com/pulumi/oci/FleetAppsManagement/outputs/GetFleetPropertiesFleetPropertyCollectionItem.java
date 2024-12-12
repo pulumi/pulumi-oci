@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetPropertiesFleetPropertyCollectionItem {
     /**
-     * @return Values of the category (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     private List<String> allowedValues;
@@ -28,27 +28,27 @@ public final class GetFleetPropertiesFleetPropertyCollectionItem {
      */
     private String displayName;
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     private String fleetId;
     /**
-     * @return unique FleetProperty identifier
+     * @return A filter to return only resources whose fleetProperty identifier matches the given identifier.
      * 
      */
     private String id;
     /**
-     * @return Property Id Ocid.
+     * @return OCID referring to global level metadata property.
      * 
      */
     private String propertyId;
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     private String selectionType;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
@@ -68,19 +68,19 @@ public final class GetFleetPropertiesFleetPropertyCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return Value of the Property
+     * @return Value of the Property.
      * 
      */
     private String value;
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     private String valueType;
 
     private GetFleetPropertiesFleetPropertyCollectionItem() {}
     /**
-     * @return Values of the category (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     public List<String> allowedValues() {
@@ -101,35 +101,35 @@ public final class GetFleetPropertiesFleetPropertyCollectionItem {
         return this.displayName;
     }
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
         return this.fleetId;
     }
     /**
-     * @return unique FleetProperty identifier
+     * @return A filter to return only resources whose fleetProperty identifier matches the given identifier.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Property Id Ocid.
+     * @return OCID referring to global level metadata property.
      * 
      */
     public String propertyId() {
         return this.propertyId;
     }
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     public String selectionType() {
         return this.selectionType;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public String state() {
@@ -157,14 +157,14 @@ public final class GetFleetPropertiesFleetPropertyCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return Value of the Property
+     * @return Value of the Property.
      * 
      */
     public String value() {
         return this.value;
     }
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     public String valueType() {

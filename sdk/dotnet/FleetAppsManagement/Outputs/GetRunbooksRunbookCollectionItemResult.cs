@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetRunbooksRunbookCollectionItemResult
     {
         /// <summary>
-        /// JSON content with required associations
+        /// Associations for the runbook.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationResult> Associations;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Estimated time to successfully complete the runbook execution
+        /// Estimated time to successfully complete the runbook execution.
         /// </summary>
         public readonly string EstimatedTime;
         /// <summary>
@@ -42,11 +42,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// unique Runbook identifier
+        /// A filter to return runbooks whose identifier matches the given identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Is the runbook default?
+        /// Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
         /// </summary>
         public readonly bool IsDefault;
         /// <summary>
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The runbook lifecycle.
+        /// A filter to return runbooks whose operation matches the given lifecycle operation.
         /// </summary>
         public readonly string Operation;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string OsType;
         /// <summary>
-        /// The ID of the runbook platform.
+        /// A filter to return runbooks whose platform matches the given platform.
         /// </summary>
         public readonly string Platform;
         /// <summary>
@@ -70,11 +70,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ResourceRegion;
         /// <summary>
-        /// The runbook relevance of product or full-stack.
+        /// A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
         /// </summary>
         public readonly string RunbookRelevance;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The ID of the runbook type.
+        /// A filter to return runbooks whose type matches the given type.
         /// </summary>
         public readonly string Type;
 

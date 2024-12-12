@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBook {
     /**
-     * @return unique SchedulerDefinition identifier
+     * @return A filter to return only schedule definitions whose identifier matches the given identifier.
      * 
      */
     private String id;
@@ -25,7 +25,7 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBo
 
     private GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBook() {}
     /**
-     * @return unique SchedulerDefinition identifier
+     * @return A filter to return only schedule definitions whose identifier matches the given identifier.
      * 
      */
     public String id() {

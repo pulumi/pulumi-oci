@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Desktops.inputs.GetDesktopArgs;
 import com.pulumi.oci.Desktops.inputs.GetDesktopPlainArgs;
 import com.pulumi.oci.Desktops.inputs.GetDesktopPoolArgs;
@@ -159,6 +160,50 @@ public final class DesktopsFunctions {
      * 
      */
     public static Output<GetDesktopResult> getDesktop(GetDesktopArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Desktops/getDesktop:getDesktop", TypeShape.of(GetDesktopResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Desktop resource in Oracle Cloud Infrastructure Desktops service.
+     * 
+     * Provides information about the desktop with the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Desktops.DesktopsFunctions;
+     * import com.pulumi.oci.Desktops.inputs.GetDesktopArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDesktop = DesktopsFunctions.getDesktop(GetDesktopArgs.builder()
+     *             .desktopId(testDesktopOciDesktopsDesktop.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDesktopResult> getDesktop(GetDesktopArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Desktops/getDesktop:getDesktop", TypeShape.of(GetDesktopResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -378,6 +423,50 @@ public final class DesktopsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDesktopPoolResult> getDesktopPool(GetDesktopPoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Desktops/getDesktopPool:getDesktopPool", TypeShape.of(GetDesktopPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
+     * 
+     * Returns information about the desktop pool including all configuration parameters and the current state.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Desktops.DesktopsFunctions;
+     * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDesktopPool = DesktopsFunctions.getDesktopPool(GetDesktopPoolArgs.builder()
+     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDesktopPoolResult> getDesktopPoolPlain(GetDesktopPoolPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Desktops/getDesktopPool:getDesktopPool", TypeShape.of(GetDesktopPoolResult.class), args, Utilities.withVersion(options));
     }
@@ -526,6 +615,55 @@ public final class DesktopsFunctions {
      * 
      */
     public static Output<GetDesktopPoolDesktopsResult> getDesktopPoolDesktops(GetDesktopPoolDesktopsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Desktops/getDesktopPoolDesktops:getDesktopPoolDesktops", TypeShape.of(GetDesktopPoolDesktopsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Desktop Pool Desktops in Oracle Cloud Infrastructure Desktops service.
+     * 
+     * Returns a list of desktops within a given desktop pool. You can limit the results to an availability domain, desktop name, or desktop state. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Desktops.DesktopsFunctions;
+     * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolDesktopsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDesktopPoolDesktops = DesktopsFunctions.getDesktopPoolDesktops(GetDesktopPoolDesktopsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .desktopPoolId(testDesktopPool.id())
+     *             .availabilityDomain(desktopPoolDesktopAvailabilityDomain)
+     *             .displayName(desktopPoolDesktopDisplayName)
+     *             .id(desktopPoolDesktopId)
+     *             .state(desktopPoolDesktopState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDesktopPoolDesktopsResult> getDesktopPoolDesktops(GetDesktopPoolDesktopsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Desktops/getDesktopPoolDesktops:getDesktopPoolDesktops", TypeShape.of(GetDesktopPoolDesktopsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -770,6 +908,55 @@ public final class DesktopsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDesktopPoolVolumesResult> getDesktopPoolVolumes(GetDesktopPoolVolumesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Desktops/getDesktopPoolVolumes:getDesktopPoolVolumes", TypeShape.of(GetDesktopPoolVolumesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Desktop Pool Volumes in Oracle Cloud Infrastructure Desktops service.
+     * 
+     * Returns a list of volumes within the given desktop pool. You can limit the results to an availability domain, volume name, or volume state. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Desktops.DesktopsFunctions;
+     * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDesktopPoolVolumes = DesktopsFunctions.getDesktopPoolVolumes(GetDesktopPoolVolumesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .desktopPoolId(testDesktopPool.id())
+     *             .availabilityDomain(desktopPoolVolumeAvailabilityDomain)
+     *             .displayName(desktopPoolVolumeDisplayName)
+     *             .id(desktopPoolVolumeId)
+     *             .state(desktopPoolVolumeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDesktopPoolVolumesResult> getDesktopPoolVolumesPlain(GetDesktopPoolVolumesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Desktops/getDesktopPoolVolumes:getDesktopPoolVolumes", TypeShape.of(GetDesktopPoolVolumesResult.class), args, Utilities.withVersion(options));
     }
@@ -915,6 +1102,54 @@ public final class DesktopsFunctions {
      * 
      */
     public static Output<GetDesktopPoolsResult> getDesktopPools(GetDesktopPoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Desktops/getDesktopPools:getDesktopPools", TypeShape.of(GetDesktopPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Desktop Pools in Oracle Cloud Infrastructure Desktops service.
+     * 
+     * Returns a list of desktop pools within the given compartment. You can limit the results to an availability domain, pool name, or pool state. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Desktops.DesktopsFunctions;
+     * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDesktopPools = DesktopsFunctions.getDesktopPools(GetDesktopPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(desktopPoolAvailabilityDomain)
+     *             .displayName(desktopPoolDisplayName)
+     *             .id(desktopPoolId)
+     *             .state(desktopPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDesktopPoolsResult> getDesktopPools(GetDesktopPoolsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Desktops/getDesktopPools:getDesktopPools", TypeShape.of(GetDesktopPoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1110,6 +1345,55 @@ public final class DesktopsFunctions {
      * 
      */
     public static Output<GetDesktopsResult> getDesktops(GetDesktopsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Desktops/getDesktops:getDesktops", TypeShape.of(GetDesktopsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Desktops in Oracle Cloud Infrastructure Desktops service.
+     * 
+     * Returns a list of desktops filtered by the specified parameters. You can limit the results to an availability domain, desktop name, desktop OCID, desktop state, pool OCID, or compartment OCID. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Desktops.DesktopsFunctions;
+     * import com.pulumi.oci.Desktops.inputs.GetDesktopsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDesktops = DesktopsFunctions.getDesktops(GetDesktopsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(desktopAvailabilityDomain)
+     *             .desktopPoolId(testDesktopPool.id())
+     *             .displayName(desktopDisplayName)
+     *             .id(desktopId)
+     *             .state(desktopState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDesktopsResult> getDesktops(GetDesktopsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Desktops/getDesktops:getDesktops", TypeShape.of(GetDesktopsResult.class), args, Utilities.withVersion(options));
     }
     /**

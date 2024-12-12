@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.OsubOrganizationSubscription.inputs.GetOrganizationSubscriptionsArgs;
 import com.pulumi.oci.OsubOrganizationSubscription.inputs.GetOrganizationSubscriptionsPlainArgs;
 import com.pulumi.oci.OsubOrganizationSubscription.outputs.GetOrganizationSubscriptionsResult;
@@ -150,6 +151,52 @@ public final class OsubOrganizationSubscriptionFunctions {
      * 
      */
     public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", TypeShape.of(GetOrganizationSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Osub Organization Subscription service.
+     * 
+     * API that returns data for the list of subscription ids returned from Organizations API
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubOrganizationSubscription.OsubOrganizationSubscriptionFunctions;
+     * import com.pulumi.oci.OsubOrganizationSubscription.inputs.GetOrganizationSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOrganizationSubscriptions = OsubOrganizationSubscriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionIds(organizationSubscriptionSubscriptionIds)
+     *             .xOneOriginRegion(organizationSubscriptionXOneOriginRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsubOrganizationSubscription/getOrganizationSubscriptions:getOrganizationSubscriptions", TypeShape.of(GetOrganizationSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
     /**

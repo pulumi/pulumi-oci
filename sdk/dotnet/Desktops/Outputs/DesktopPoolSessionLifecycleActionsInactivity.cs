@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Desktops.Outputs
     public sealed class DesktopPoolSessionLifecycleActionsInactivity
     {
         /// <summary>
-        /// (Updatable) an inactivity action to be triggered
+        /// (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
         /// </summary>
         public readonly string Action;
         /// <summary>

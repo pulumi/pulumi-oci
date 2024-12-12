@@ -66,6 +66,7 @@ class AutonomousDatabaseArgs:
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
                  is_replicate_automatic_backups: Optional[pulumi.Input[bool]] = None,
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
+                 key_version_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
@@ -180,6 +181,7 @@ class AutonomousDatabaseArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
@@ -353,6 +355,8 @@ class AutonomousDatabaseArgs:
             pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
         if is_shrink_only is not None:
             pulumi.set(__self__, "is_shrink_only", is_shrink_only)
+        if key_version_id is not None:
+            pulumi.set(__self__, "key_version_id", key_version_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if license_model is not None:
@@ -997,6 +1001,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "is_shrink_only", value)
 
     @property
+    @pulumi.getter(name="keyVersionId")
+    def key_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the key version that is used in rotate key operations.
+        """
+        return pulumi.get(self, "key_version_id")
+
+    @key_version_id.setter
+    def key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_version_id", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1541,6 +1557,7 @@ class _AutonomousDatabaseState:
                  key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+                 key_version_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_lifecycle_details: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
@@ -1715,6 +1732,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]] key_history_entries: Key History Entry.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault. This is used in Autonomous Databases on Serverless instances and dedicated Exadata infrastructure.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
+        :param pulumi.Input[str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_lifecycle_details: KMS key lifecycle details.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
@@ -1969,6 +1987,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "key_store_id", key_store_id)
         if key_store_wallet_name is not None:
             pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+        if key_version_id is not None:
+            pulumi.set(__self__, "key_version_id", key_version_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_lifecycle_details is not None:
@@ -2941,6 +2961,18 @@ class _AutonomousDatabaseState:
     @key_store_wallet_name.setter
     def key_store_wallet_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key_store_wallet_name", value)
+
+    @property
+    @pulumi.getter(name="keyVersionId")
+    def key_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the key version that is used in rotate key operations.
+        """
+        return pulumi.get(self, "key_version_id")
+
+    @key_version_id.setter
+    def key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_version_id", value)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -3930,6 +3962,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
                  is_replicate_automatic_backups: Optional[pulumi.Input[bool]] = None,
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
+                 key_version_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
@@ -4060,6 +4093,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
@@ -4223,6 +4257,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
                  is_replicate_automatic_backups: Optional[pulumi.Input[bool]] = None,
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
+                 key_version_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
@@ -4317,6 +4352,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["is_refreshable_clone"] = is_refreshable_clone
             __props__.__dict__["is_replicate_automatic_backups"] = is_replicate_automatic_backups
             __props__.__dict__["is_shrink_only"] = is_shrink_only
+            __props__.__dict__["key_version_id"] = key_version_id
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["local_adg_auto_failover_max_data_loss_limit"] = local_adg_auto_failover_max_data_loss_limit
@@ -4491,6 +4527,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseKeyHistoryEntryArgs', 'AutonomousDatabaseKeyHistoryEntryArgsDict']]]]] = None,
             key_store_id: Optional[pulumi.Input[str]] = None,
             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+            key_version_id: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             kms_key_lifecycle_details: Optional[pulumi.Input[str]] = None,
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
@@ -4670,6 +4707,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseKeyHistoryEntryArgs', 'AutonomousDatabaseKeyHistoryEntryArgsDict']]]] key_history_entries: Key History Entry.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault. This is used in Autonomous Databases on Serverless instances and dedicated Exadata infrastructure.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
+        :param pulumi.Input[str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_lifecycle_details: KMS key lifecycle details.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
@@ -4859,6 +4897,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["key_history_entries"] = key_history_entries
         __props__.__dict__["key_store_id"] = key_store_id
         __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
+        __props__.__dict__["key_version_id"] = key_version_id
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_lifecycle_details"] = kms_key_lifecycle_details
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
@@ -5493,6 +5532,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The wallet name for Oracle Key Vault.
         """
         return pulumi.get(self, "key_store_wallet_name")
+
+    @property
+    @pulumi.getter(name="keyVersionId")
+    def key_version_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        The OCID of the key version that is used in rotate key operations.
+        """
+        return pulumi.get(self, "key_version_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")

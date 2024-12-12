@@ -22,15 +22,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string LifecycleOperation;
         /// <summary>
-        /// A filter to return only Scheduler Definitions whose assocaited product matches the given product
+        /// A filter to return only dchedule definitions whose assocaited product matches the given product
         /// </summary>
         public readonly string Product;
         /// <summary>
-        /// Provide the ID of the resource; Ex- fleetId.
+        /// Provide the ID of the resource. Example fleet ID.
         /// </summary>
         public readonly string ResourceId;
         /// <summary>
-        /// ID of the runbook
+        /// A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
         /// </summary>
         public readonly string RunbookId;
         /// <summary>

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
 import com.pulumi.oci.Audit.inputs.GetConfigurationPlainArgs;
 import com.pulumi.oci.Audit.inputs.GetEventsArgs;
@@ -147,6 +148,50 @@ public final class AuditFunctions {
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Audit/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Audit service.
+     * 
+     * Get the configuration
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Audit.AuditFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = AuditFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(tenancyOcid)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Audit/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -332,6 +377,53 @@ public final class AuditFunctions {
      * 
      */
     public static Output<GetEventsResult> getEvents(GetEventsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Audit/getEvents:getEvents", TypeShape.of(GetEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
+     * 
+     * Returns all the audit events processed for the specified compartment within the specified
+     * time range.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Audit.AuditFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEvents = AuditFunctions.getEvents(GetEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .endTime(auditEventEndTime)
+     *             .startTime(auditEventStartTime)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEventsResult> getEvents(GetEventsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Audit/getEvents:getEvents", TypeShape.of(GetEventsResult.class), args, Utilities.withVersion(options));
     }
     /**

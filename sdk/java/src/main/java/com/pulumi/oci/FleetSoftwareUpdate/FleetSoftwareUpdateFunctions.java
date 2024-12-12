@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionPlainArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionsArgs;
@@ -153,6 +154,50 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      */
     public static Output<GetFsuCollectionResult> getFsuCollection(GetFsuCollectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuCollection:getFsuCollection", TypeShape.of(GetFsuCollectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fsu Collection resource in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Gets a Exadata Fleet Update Collection by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuCollection = FleetSoftwareUpdateFunctions.getFsuCollection(GetFsuCollectionArgs.builder()
+     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFsuCollectionResult> getFsuCollection(GetFsuCollectionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuCollection:getFsuCollection", TypeShape.of(GetFsuCollectionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -384,6 +429,53 @@ public final class FleetSoftwareUpdateFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFsuCollectionsResult> getFsuCollections(GetFsuCollectionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuCollections:getFsuCollections", TypeShape.of(GetFsuCollectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fsu Collections in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Gets a list of all Exadata Fleet Update Collections in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuCollections = FleetSoftwareUpdateFunctions.getFsuCollections(GetFsuCollectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(fsuCollectionDisplayName)
+     *             .state(fsuCollectionState)
+     *             .type(fsuCollectionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFsuCollectionsResult> getFsuCollectionsPlain(GetFsuCollectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FleetSoftwareUpdate/getFsuCollections:getFsuCollections", TypeShape.of(GetFsuCollectionsResult.class), args, Utilities.withVersion(options));
     }
@@ -517,6 +609,50 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      */
     public static Output<GetFsuCycleResult> getFsuCycle(GetFsuCycleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuCycle:getFsuCycle", TypeShape.of(GetFsuCycleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Gets a Exadata Fleet Update Cycle by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCycleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuCycle = FleetSoftwareUpdateFunctions.getFsuCycle(GetFsuCycleArgs.builder()
+     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFsuCycleResult> getFsuCycle(GetFsuCycleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuCycle:getFsuCycle", TypeShape.of(GetFsuCycleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -708,6 +844,55 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      */
     public static Output<GetFsuCyclesResult> getFsuCycles(GetFsuCyclesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", TypeShape.of(GetFsuCyclesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fsu Cycles in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Gets a list of all Exadata Fleet Update Cycles in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCyclesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuCycles = FleetSoftwareUpdateFunctions.getFsuCycles(GetFsuCyclesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .collectionType(fsuCycleCollectionType)
+     *             .displayName(fsuCycleDisplayName)
+     *             .fsuCollectionId(testFsuCollection.id())
+     *             .state(fsuCycleState)
+     *             .targetVersion(fsuCycleTargetVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFsuCyclesResult> getFsuCycles(GetFsuCyclesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", TypeShape.of(GetFsuCyclesResult.class), args, Utilities.withVersion(options));
     }
     /**

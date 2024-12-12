@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetOnboardingPoliciesOnboardingPolicyCollection {
     /**
-     * @return List of FleetAppManagementService Onboard policies.
+     * @return List of Fleet Application Management Onboard policies.
      * 
      */
     private List<GetOnboardingPoliciesOnboardingPolicyCollectionItem> items;
 
     private GetOnboardingPoliciesOnboardingPolicyCollection() {}
     /**
-     * @return List of FleetAppManagementService Onboard policies.
+     * @return List of Fleet Application Management Onboard policies.
      * 
      */
     public List<GetOnboardingPoliciesOnboardingPolicyCollectionItem> items() {

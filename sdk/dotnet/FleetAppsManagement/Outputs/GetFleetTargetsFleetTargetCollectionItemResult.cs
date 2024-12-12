@@ -18,7 +18,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Last known compliance state of Target.
+        /// The last known compliance state of the target.
         /// </summary>
         public readonly string ComplianceState;
         /// <summary>
@@ -30,11 +30,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Product Name
+        /// A boolean flag that represents whether the last discovery attempt was successful.
+        /// </summary>
+        public readonly bool IsLastDiscoveryAttemptSuccessful;
+        /// <summary>
+        /// Product Name.
         /// </summary>
         public readonly string Product;
         /// <summary>
-        /// Resource Information for the Target
+        /// Resource Information for the Target.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetTargetsFleetTargetCollectionItemResourceResult> Resources;
         /// <summary>
@@ -46,7 +50,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// Current version of Target
+        /// The time when last discovery was attempted.
+        /// </summary>
+        public readonly string TimeOfLastDiscoveryAttempt;
+        /// <summary>
+        /// The time when the last successful discovery was made.
+        /// </summary>
+        public readonly string TimeOfLastSuccessfulDiscovery;
+        /// <summary>
+        /// Current version of target.
         /// </summary>
         public readonly string Version;
 
@@ -60,6 +72,8 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             string id,
 
+            bool isLastDiscoveryAttemptSuccessful,
+
             string product,
 
             ImmutableArray<Outputs.GetFleetTargetsFleetTargetCollectionItemResourceResult> resources,
@@ -68,16 +82,23 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             ImmutableDictionary<string, string> systemTags,
 
+            string timeOfLastDiscoveryAttempt,
+
+            string timeOfLastSuccessfulDiscovery,
+
             string version)
         {
             CompartmentId = compartmentId;
             ComplianceState = complianceState;
             DisplayName = displayName;
             Id = id;
+            IsLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
             Product = product;
             Resources = resources;
             State = state;
             SystemTags = systemTags;
+            TimeOfLastDiscoveryAttempt = timeOfLastDiscoveryAttempt;
+            TimeOfLastSuccessfulDiscovery = timeOfLastSuccessfulDiscovery;
             Version = version;
         }
     }

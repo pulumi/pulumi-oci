@@ -53,6 +53,13 @@ namespace Pulumi.Oci.VisualBuilder
     ///         },
     ///         IdcsOpenId = testIdcsOpen.Id,
     ///         IsVisualBuilderEnabled = vbInstanceIsVisualBuilderEnabled,
+    ///         NetworkEndpointDetails = new Oci.VisualBuilder.Inputs.VbInstanceNetworkEndpointDetailsArgs
+    ///         {
+    ///             NetworkEndpointType = vbInstanceNetworkEndpointDetailsNetworkEndpointType,
+    ///             SubnetId = testSubnet.Id,
+    ///             NetworkSecurityGroupIds = vbInstanceNetworkEndpointDetailsNetworkSecurityGroupIds,
+    ///             PrivateEndpointIp = vbInstanceNetworkEndpointDetailsPrivateEndpointIp,
+    ///         },
     ///     });
     /// 
     /// });
@@ -74,12 +81,6 @@ namespace Pulumi.Oci.VisualBuilder
         /// </summary>
         [Output("alternateCustomEndpoints")]
         public Output<ImmutableArray<Outputs.VbInstanceAlternateCustomEndpoint>> AlternateCustomEndpoints { get; private set; } = null!;
-
-        /// <summary>
-        /// A list of associated attachments to other services
-        /// </summary>
-        [Output("attachments")]
-        public Output<ImmutableArray<Outputs.VbInstanceAttachment>> Attachments { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Compartment Identifier.
@@ -118,12 +119,6 @@ namespace Pulumi.Oci.VisualBuilder
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Information for IDCS access
-        /// </summary>
-        [Output("idcsInfos")]
-        public Output<ImmutableArray<Outputs.VbInstanceIdcsInfo>> IdcsInfos { get; private set; } = null!;
-
-        /// <summary>
         /// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         /// </summary>
         [Output("idcsOpenId")]
@@ -152,6 +147,12 @@ namespace Pulumi.Oci.VisualBuilder
         /// </summary>
         [Output("managementVcnId")]
         public Output<string> ManagementVcnId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        /// </summary>
+        [Output("networkEndpointDetails")]
+        public Output<Outputs.VbInstanceNetworkEndpointDetails> NetworkEndpointDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of Nodes
@@ -338,6 +339,12 @@ namespace Pulumi.Oci.VisualBuilder
         public Input<bool>? IsVisualBuilderEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        /// </summary>
+        [Input("networkEndpointDetails")]
+        public Input<Inputs.VbInstanceNetworkEndpointDetailsArgs>? NetworkEndpointDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The number of Nodes
         /// 
         /// 
@@ -365,18 +372,6 @@ namespace Pulumi.Oci.VisualBuilder
         {
             get => _alternateCustomEndpoints ?? (_alternateCustomEndpoints = new InputList<Inputs.VbInstanceAlternateCustomEndpointGetArgs>());
             set => _alternateCustomEndpoints = value;
-        }
-
-        [Input("attachments")]
-        private InputList<Inputs.VbInstanceAttachmentGetArgs>? _attachments;
-
-        /// <summary>
-        /// A list of associated attachments to other services
-        /// </summary>
-        public InputList<Inputs.VbInstanceAttachmentGetArgs> Attachments
-        {
-            get => _attachments ?? (_attachments = new InputList<Inputs.VbInstanceAttachmentGetArgs>());
-            set => _attachments = value;
         }
 
         /// <summary>
@@ -427,18 +422,6 @@ namespace Pulumi.Oci.VisualBuilder
             set => _freeformTags = value;
         }
 
-        [Input("idcsInfos")]
-        private InputList<Inputs.VbInstanceIdcsInfoGetArgs>? _idcsInfos;
-
-        /// <summary>
-        /// Information for IDCS access
-        /// </summary>
-        public InputList<Inputs.VbInstanceIdcsInfoGetArgs> IdcsInfos
-        {
-            get => _idcsInfos ?? (_idcsInfos = new InputList<Inputs.VbInstanceIdcsInfoGetArgs>());
-            set => _idcsInfos = value;
-        }
-
         [Input("idcsOpenId")]
         private Input<string>? _idcsOpenId;
 
@@ -478,6 +461,12 @@ namespace Pulumi.Oci.VisualBuilder
         /// </summary>
         [Input("managementVcnId")]
         public Input<string>? ManagementVcnId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        /// </summary>
+        [Input("networkEndpointDetails")]
+        public Input<Inputs.VbInstanceNetworkEndpointDetailsGetArgs>? NetworkEndpointDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The number of Nodes

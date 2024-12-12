@@ -27,13 +27,10 @@ class GetVbInstanceResult:
     """
     A collection of values returned by getVbInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, idcs_infos=None, idcs_open_id=None, instance_url=None, is_visual_builder_enabled=None, management_nat_gateway_ip=None, management_vcn_id=None, node_count=None, service_nat_gateway_ip=None, service_vcn_id=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None, vb_instance_id=None):
+    def __init__(__self__, alternate_custom_endpoints=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, idcs_open_id=None, instance_url=None, is_visual_builder_enabled=None, management_nat_gateway_ip=None, management_vcn_id=None, network_endpoint_details=None, node_count=None, service_nat_gateway_ip=None, service_vcn_id=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None, vb_instance_id=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
-        if attachments and not isinstance(attachments, list):
-            raise TypeError("Expected argument 'attachments' to be a list")
-        pulumi.set(__self__, "attachments", attachments)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -55,9 +52,6 @@ class GetVbInstanceResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
-        if idcs_infos and not isinstance(idcs_infos, list):
-            raise TypeError("Expected argument 'idcs_infos' to be a list")
-        pulumi.set(__self__, "idcs_infos", idcs_infos)
         if idcs_open_id and not isinstance(idcs_open_id, str):
             raise TypeError("Expected argument 'idcs_open_id' to be a str")
         pulumi.set(__self__, "idcs_open_id", idcs_open_id)
@@ -73,6 +67,9 @@ class GetVbInstanceResult:
         if management_vcn_id and not isinstance(management_vcn_id, str):
             raise TypeError("Expected argument 'management_vcn_id' to be a str")
         pulumi.set(__self__, "management_vcn_id", management_vcn_id)
+        if network_endpoint_details and not isinstance(network_endpoint_details, list):
+            raise TypeError("Expected argument 'network_endpoint_details' to be a list")
+        pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         if node_count and not isinstance(node_count, int):
             raise TypeError("Expected argument 'node_count' to be a int")
         pulumi.set(__self__, "node_count", node_count)
@@ -108,14 +105,6 @@ class GetVbInstanceResult:
         A list of alternate custom endpoints used for the vb instance URL.
         """
         return pulumi.get(self, "alternate_custom_endpoints")
-
-    @property
-    @pulumi.getter
-    def attachments(self) -> Sequence['outputs.GetVbInstanceAttachmentResult']:
-        """
-        A list of associated attachments to other services
-        """
-        return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -174,14 +163,6 @@ class GetVbInstanceResult:
         return pulumi.get(self, "id")
 
     @property
-    @pulumi.getter(name="idcsInfos")
-    def idcs_infos(self) -> Sequence['outputs.GetVbInstanceIdcsInfoResult']:
-        """
-        Information for IDCS access
-        """
-        return pulumi.get(self, "idcs_infos")
-
-    @property
     @pulumi.getter(name="idcsOpenId")
     def idcs_open_id(self) -> str:
         return pulumi.get(self, "idcs_open_id")
@@ -217,6 +198,14 @@ class GetVbInstanceResult:
         The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         """
         return pulumi.get(self, "management_vcn_id")
+
+    @property
+    @pulumi.getter(name="networkEndpointDetails")
+    def network_endpoint_details(self) -> Sequence['outputs.GetVbInstanceNetworkEndpointDetailResult']:
+        """
+        Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        """
+        return pulumi.get(self, "network_endpoint_details")
 
     @property
     @pulumi.getter(name="nodeCount")
@@ -295,7 +284,6 @@ class AwaitableGetVbInstanceResult(GetVbInstanceResult):
             yield self
         return GetVbInstanceResult(
             alternate_custom_endpoints=self.alternate_custom_endpoints,
-            attachments=self.attachments,
             compartment_id=self.compartment_id,
             consumption_model=self.consumption_model,
             custom_endpoints=self.custom_endpoints,
@@ -303,12 +291,12 @@ class AwaitableGetVbInstanceResult(GetVbInstanceResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
-            idcs_infos=self.idcs_infos,
             idcs_open_id=self.idcs_open_id,
             instance_url=self.instance_url,
             is_visual_builder_enabled=self.is_visual_builder_enabled,
             management_nat_gateway_ip=self.management_nat_gateway_ip,
             management_vcn_id=self.management_vcn_id,
+            network_endpoint_details=self.network_endpoint_details,
             node_count=self.node_count,
             service_nat_gateway_ip=self.service_nat_gateway_ip,
             service_vcn_id=self.service_vcn_id,
@@ -346,7 +334,6 @@ def get_vb_instance(vb_instance_id: Optional[str] = None,
 
     return AwaitableGetVbInstanceResult(
         alternate_custom_endpoints=pulumi.get(__ret__, 'alternate_custom_endpoints'),
-        attachments=pulumi.get(__ret__, 'attachments'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         consumption_model=pulumi.get(__ret__, 'consumption_model'),
         custom_endpoints=pulumi.get(__ret__, 'custom_endpoints'),
@@ -354,12 +341,12 @@ def get_vb_instance(vb_instance_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
-        idcs_infos=pulumi.get(__ret__, 'idcs_infos'),
         idcs_open_id=pulumi.get(__ret__, 'idcs_open_id'),
         instance_url=pulumi.get(__ret__, 'instance_url'),
         is_visual_builder_enabled=pulumi.get(__ret__, 'is_visual_builder_enabled'),
         management_nat_gateway_ip=pulumi.get(__ret__, 'management_nat_gateway_ip'),
         management_vcn_id=pulumi.get(__ret__, 'management_vcn_id'),
+        network_endpoint_details=pulumi.get(__ret__, 'network_endpoint_details'),
         node_count=pulumi.get(__ret__, 'node_count'),
         service_nat_gateway_ip=pulumi.get(__ret__, 'service_nat_gateway_ip'),
         service_vcn_id=pulumi.get(__ret__, 'service_vcn_id'),
@@ -394,7 +381,6 @@ def get_vb_instance_output(vb_instance_id: Optional[pulumi.Input[str]] = None,
     __ret__ = pulumi.runtime.invoke_output('oci:VisualBuilder/getVbInstance:getVbInstance', __args__, opts=opts, typ=GetVbInstanceResult)
     return __ret__.apply(lambda __response__: GetVbInstanceResult(
         alternate_custom_endpoints=pulumi.get(__response__, 'alternate_custom_endpoints'),
-        attachments=pulumi.get(__response__, 'attachments'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         consumption_model=pulumi.get(__response__, 'consumption_model'),
         custom_endpoints=pulumi.get(__response__, 'custom_endpoints'),
@@ -402,12 +388,12 @@ def get_vb_instance_output(vb_instance_id: Optional[pulumi.Input[str]] = None,
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
-        idcs_infos=pulumi.get(__response__, 'idcs_infos'),
         idcs_open_id=pulumi.get(__response__, 'idcs_open_id'),
         instance_url=pulumi.get(__response__, 'instance_url'),
         is_visual_builder_enabled=pulumi.get(__response__, 'is_visual_builder_enabled'),
         management_nat_gateway_ip=pulumi.get(__response__, 'management_nat_gateway_ip'),
         management_vcn_id=pulumi.get(__response__, 'management_vcn_id'),
+        network_endpoint_details=pulumi.get(__response__, 'network_endpoint_details'),
         node_count=pulumi.get(__response__, 'node_count'),
         service_nat_gateway_ip=pulumi.get(__response__, 'service_nat_gateway_ip'),
         service_vcn_id=pulumi.get(__response__, 'service_vcn_id'),

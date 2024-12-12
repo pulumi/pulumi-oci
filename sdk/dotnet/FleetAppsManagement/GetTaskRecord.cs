@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a TaskRecord by identifier
+        /// Gets a Task by identifier
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a TaskRecord by identifier
+        /// Gets a Task by identifier
         /// 
         /// ## Example Usage
         /// 
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// The OCID of the resource.
         /// </summary>
         public readonly string Id;
         /// <summary>

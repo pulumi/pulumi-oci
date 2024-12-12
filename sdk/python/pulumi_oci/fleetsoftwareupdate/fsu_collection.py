@@ -167,6 +167,7 @@ class _FsuCollectionState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  fleet_discovery: Optional[pulumi.Input['FsuCollectionFleetDiscoveryArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 last_completed_fsu_cycle_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  service_type: Optional[pulumi.Input[str]] = None,
                  source_major_version: Optional[pulumi.Input[str]] = None,
@@ -184,6 +185,7 @@ class _FsuCollectionState:
         :param pulumi.Input[str] display_name: (Updatable) Exadata Fleet Update Collection Identifier.
         :param pulumi.Input['FsuCollectionFleetDiscoveryArgs'] fleet_discovery: Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] last_completed_fsu_cycle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] service_type: Exadata service type for the target resource members.
         :param pulumi.Input[str] source_major_version: Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
@@ -210,6 +212,8 @@ class _FsuCollectionState:
             pulumi.set(__self__, "fleet_discovery", fleet_discovery)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if last_completed_fsu_cycle_id is not None:
+            pulumi.set(__self__, "last_completed_fsu_cycle_id", last_completed_fsu_cycle_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if service_type is not None:
@@ -300,6 +304,18 @@ class _FsuCollectionState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="lastCompletedFsuCycleId")
+    def last_completed_fsu_cycle_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+        """
+        return pulumi.get(self, "last_completed_fsu_cycle_id")
+
+    @last_completed_fsu_cycle_id.setter
+    def last_completed_fsu_cycle_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_completed_fsu_cycle_id", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -604,6 +620,7 @@ class FsuCollection(pulumi.CustomResource):
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
             __props__.__dict__["active_fsu_cycles"] = None
+            __props__.__dict__["last_completed_fsu_cycle_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -626,6 +643,7 @@ class FsuCollection(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             fleet_discovery: Optional[pulumi.Input[Union['FsuCollectionFleetDiscoveryArgs', 'FsuCollectionFleetDiscoveryArgsDict']]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            last_completed_fsu_cycle_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             service_type: Optional[pulumi.Input[str]] = None,
             source_major_version: Optional[pulumi.Input[str]] = None,
@@ -648,6 +666,7 @@ class FsuCollection(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Exadata Fleet Update Collection Identifier.
         :param pulumi.Input[Union['FsuCollectionFleetDiscoveryArgs', 'FsuCollectionFleetDiscoveryArgsDict']] fleet_discovery: Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] last_completed_fsu_cycle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] service_type: Exadata service type for the target resource members.
         :param pulumi.Input[str] source_major_version: Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
@@ -672,6 +691,7 @@ class FsuCollection(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fleet_discovery"] = fleet_discovery
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["last_completed_fsu_cycle_id"] = last_completed_fsu_cycle_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["service_type"] = service_type
         __props__.__dict__["source_major_version"] = source_major_version
@@ -730,6 +750,14 @@ class FsuCollection(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="lastCompletedFsuCycleId")
+    def last_completed_fsu_cycle_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+        """
+        return pulumi.get(self, "last_completed_fsu_cycle_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

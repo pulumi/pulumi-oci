@@ -144,7 +144,7 @@ class GetPropertyResult:
     @pulumi.getter
     def scope(self) -> str:
         """
-        The scope of the property
+        The scope of the property.
         """
         return pulumi.get(self, "scope")
 
@@ -152,7 +152,7 @@ class GetPropertyResult:
     @pulumi.getter
     def selection(self) -> str:
         """
-        Text selection of the category
+        Text selection of the property.
         """
         return pulumi.get(self, "selection")
 
@@ -200,7 +200,7 @@ class GetPropertyResult:
     @pulumi.getter(name="valueType")
     def value_type(self) -> str:
         """
-        Format of the value
+        Format of the value.
         """
         return pulumi.get(self, "value_type")
 
@@ -208,7 +208,7 @@ class GetPropertyResult:
     @pulumi.getter
     def values(self) -> Sequence[str]:
         """
-        Values of the property (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         """
         return pulumi.get(self, "values")
 

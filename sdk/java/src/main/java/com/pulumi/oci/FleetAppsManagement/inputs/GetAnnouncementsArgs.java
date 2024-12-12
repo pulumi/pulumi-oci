@@ -40,14 +40,14 @@ public final class GetAnnouncementsArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * Filter the list with summary contains the given value.
+     * Filter the list of announcements that contains the given summary value.
      * 
      */
     @Import(name="summaryContains")
     private @Nullable Output<String> summaryContains;
 
     /**
-     * @return Filter the list with summary contains the given value.
+     * @return Filter the list of announcements that contains the given summary value.
      * 
      */
     public Optional<Output<String>> summaryContains() {
@@ -115,7 +115,7 @@ public final class GetAnnouncementsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param summaryContains Filter the list with summary contains the given value.
+         * @param summaryContains Filter the list of announcements that contains the given summary value.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class GetAnnouncementsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param summaryContains Filter the list with summary contains the given value.
+         * @param summaryContains Filter the list of announcements that contains the given summary value.
          * 
          * @return builder
          * 

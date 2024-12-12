@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
 import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointPlainArgs;
 import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
@@ -202,6 +203,50 @@ public final class ResourceManagerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceManager/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the specified private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = ResourceManagerFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(testPrivateEndpointOciResourcemanagerPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ResourceManager/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
@@ -338,6 +383,51 @@ public final class ResourceManagerFunctions {
      * 
      */
     public static Output<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", TypeShape.of(GetPrivateEndpointReachableIpResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpointReachableIp = ResourceManagerFunctions.getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs.builder()
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .privateIp(privateEndpointReachableIpPrivateIp)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", TypeShape.of(GetPrivateEndpointReachableIpResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -676,6 +766,55 @@ public final class ResourceManagerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Lists private endpoints according to the specified filter.
+     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `privateEndpointId`, lists the matching private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateEndpointDisplayName)
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
@@ -809,6 +948,50 @@ public final class ResourceManagerFunctions {
      * 
      */
     public static Output<GetStackResult> getStack(GetStackArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceManager/getStack:getStack", TypeShape.of(GetStackResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets a stack using the stack ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = ResourceManagerFunctions.getStack(GetStackArgs.builder()
+     *             .stackId(testStackOciResourcemanagerStack.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStackResult> getStack(GetStackArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ResourceManager/getStack:getStack", TypeShape.of(GetStackResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1012,6 +1195,46 @@ public final class ResourceManagerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetStackTfStateResult> getStackTfState(GetStackTfStateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceManager/getStackTfState:getStackTfState", TypeShape.of(GetStackTfStateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStackTfState = ResourceManagerFunctions.getStackTfState(GetStackTfStateArgs.builder()
+     *             .stackId(testStack.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetStackTfStateResult> getStackTfStatePlain(GetStackTfStatePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ResourceManager/getStackTfState:getStackTfState", TypeShape.of(GetStackTfStateResult.class), args, Utilities.withVersion(options));
     }
@@ -1160,6 +1383,55 @@ public final class ResourceManagerFunctions {
      * 
      */
     public static Output<GetStacksResult> getStacks(GetStacksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceManager/getStacks:getStacks", TypeShape.of(GetStacksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Returns a list of stacks.
+     * - If called using the compartment ID, returns all stacks in the specified compartment.
+     * - If called using the stack ID, returns the specified stack.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = ResourceManagerFunctions.getStacks(GetStacksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStacksResult> getStacks(GetStacksArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ResourceManager/getStacks:getStacks", TypeShape.of(GetStacksResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -120,7 +120,7 @@ def get_onboardings(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str id: unique onboarding identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -160,7 +160,7 @@ def get_onboardings_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str id: unique onboarding identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

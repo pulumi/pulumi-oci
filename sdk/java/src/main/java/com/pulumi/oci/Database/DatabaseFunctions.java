@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
 import com.pulumi.oci.Database.inputs.GetApplicationVipPlainArgs;
 import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
@@ -585,6 +586,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetApplicationVipResult> getApplicationVip(GetApplicationVipArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getApplicationVip:getApplicationVip", TypeShape.of(GetApplicationVipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified application virtual IP (VIP) address.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVip = DatabaseFunctions.getApplicationVip(GetApplicationVipArgs.builder()
+     *             .applicationVipId(testApplicationVipOciDatabaseApplicationVip.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetApplicationVipResult> getApplicationVipPlain(GetApplicationVipPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getApplicationVip:getApplicationVip", TypeShape.of(GetApplicationVipResult.class), args, Utilities.withVersion(options));
     }
@@ -724,6 +769,52 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetApplicationVipsResult> getApplicationVips(GetApplicationVipsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getApplicationVips:getApplicationVips", TypeShape.of(GetApplicationVipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplicationVips = DatabaseFunctions.getApplicationVips(GetApplicationVipsArgs.builder()
+     *             .cloudVmClusterId(testCloudVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(applicationVipState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApplicationVipsResult> getApplicationVips(GetApplicationVipsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getApplicationVips:getApplicationVips", TypeShape.of(GetApplicationVipsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1045,6 +1136,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", TypeShape.of(GetAutonomousCharacterSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported character sets.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
+     *             .characterSetType(autonomousDatabaseCharacterSetCharacterSetType)
+     *             .isDedicated(autonomousDatabaseCharacterSetIsDedicated)
+     *             .isShared(autonomousDatabaseCharacterSetIsShared)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain(GetAutonomousCharacterSetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", TypeShape.of(GetAutonomousCharacterSetsResult.class), args, Utilities.withVersion(options));
     }
@@ -1178,6 +1315,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", TypeShape.of(GetAutonomousContainerDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Container Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabase = DatabaseFunctions.getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabaseOciDatabaseAutonomousContainerDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", TypeShape.of(GetAutonomousContainerDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1401,6 +1582,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation", TypeShape.of(GetAutonomousContainerDatabaseDataguardAssociationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousContainerDatabaseDataguardAssociationId(testAutonomousContainerDatabaseDataguardAssociationOciDatabaseAutonomousContainerDatabaseDataguardAssociation.id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociationPlain(GetAutonomousContainerDatabaseDataguardAssociationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation", TypeShape.of(GetAutonomousContainerDatabaseDataguardAssociationResult.class), args, Utilities.withVersion(options));
     }
@@ -1534,6 +1760,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", TypeShape.of(GetAutonomousContainerDatabaseDataguardAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", TypeShape.of(GetAutonomousContainerDatabaseDataguardAssociationsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1753,6 +2023,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", TypeShape.of(GetAutonomousContainerDatabaseResourceUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get resource usage details for the specified Autonomous Container Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseResourceUsage = DatabaseFunctions.getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousContainerDatabaseResourceUsageResult> getAutonomousContainerDatabaseResourceUsagePlain(GetAutonomousContainerDatabaseResourceUsagePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", TypeShape.of(GetAutonomousContainerDatabaseResourceUsageResult.class), args, Utilities.withVersion(options));
     }
@@ -1889,6 +2203,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", TypeShape.of(GetAutonomousContainerDatabaseVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Autonomous Container Database versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseVersions = DatabaseFunctions.getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .serviceComponent(autonomousContainerDatabaseVersionServiceComponent)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseVersionsResult> getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", TypeShape.of(GetAutonomousContainerDatabaseVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2141,6 +2500,58 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases", TypeShape.of(GetAutonomousContainerDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Databases in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Autonomous Container Databases in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabases = DatabaseFunctions.getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .availabilityDomain(autonomousContainerDatabaseAvailabilityDomain)
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .displayName(autonomousContainerDatabaseDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseInfrastructureType)
+     *             .serviceLevelAgreementType(autonomousContainerDatabaseServiceLevelAgreementType)
+     *             .state(autonomousContainerDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabasesPlain(GetAutonomousContainerDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases", TypeShape.of(GetAutonomousContainerDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -2280,6 +2691,52 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousContainerPatchesResult> getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", TypeShape.of(GetAutonomousContainerPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the patches applicable to the requested container database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .autonomousPatchType(autonomousContainerPatchAutonomousPatchType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousContainerPatchesResult> getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", TypeShape.of(GetAutonomousContainerPatchesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2501,6 +2958,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousDatabaseResult> getAutonomousDatabase(GetAutonomousDatabaseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabase:getAutonomousDatabase", TypeShape.of(GetAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabaseOciDatabaseAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousDatabaseResult> getAutonomousDatabasePlain(GetAutonomousDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabase:getAutonomousDatabase", TypeShape.of(GetAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
     }
@@ -2634,6 +3135,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseBackup:getAutonomousDatabaseBackup", TypeShape.of(GetAutonomousDatabaseBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Database backup.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackup = DatabaseFunctions.getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs.builder()
+     *             .autonomousDatabaseBackupId(testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseBackup:getAutonomousDatabaseBackup", TypeShape.of(GetAutonomousDatabaseBackupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2965,6 +3510,54 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", TypeShape.of(GetAutonomousDatabaseBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .state(autonomousDatabaseBackupState)
+     *             .type(autonomousDatabaseBackupType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackupsPlain(GetAutonomousDatabaseBackupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", TypeShape.of(GetAutonomousDatabaseBackupsResult.class), args, Utilities.withVersion(options));
     }
@@ -3101,6 +3694,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", TypeShape.of(GetAutonomousDatabaseDataguardAssociationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousDatabaseDataguardAssociationId(testAutonomousDatabaseDataguardAssociationOciDatabaseAutonomousDatabaseDataguardAssociation.id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", TypeShape.of(GetAutonomousDatabaseDataguardAssociationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3321,6 +3959,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseDataguardAssociations:getAutonomousDatabaseDataguardAssociations", TypeShape.of(GetAutonomousDatabaseDataguardAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociationsPlain(GetAutonomousDatabaseDataguardAssociationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseDataguardAssociations:getAutonomousDatabaseDataguardAssociations", TypeShape.of(GetAutonomousDatabaseDataguardAssociationsResult.class), args, Utilities.withVersion(options));
     }
@@ -3454,6 +4136,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", TypeShape.of(GetAutonomousDatabaseInstanceWalletManagementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the wallet details for the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseInstanceWalletManagement = DatabaseFunctions.getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", TypeShape.of(GetAutonomousDatabaseInstanceWalletManagementResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3673,6 +4399,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousDatabasePeersResult> getAutonomousDatabasePeers(GetAutonomousDatabasePeersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", TypeShape.of(GetAutonomousDatabasePeersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasePeers = DatabaseFunctions.getAutonomousDatabasePeers(GetAutonomousDatabasePeersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousDatabasePeersResult> getAutonomousDatabasePeersPlain(GetAutonomousDatabasePeersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", TypeShape.of(GetAutonomousDatabasePeersResult.class), args, Utilities.withVersion(options));
     }
@@ -3806,6 +4576,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", TypeShape.of(GetAutonomousDatabaseRefreshableClonesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRefreshableClones = DatabaseFunctions.getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseRefreshableClonesResult> getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", TypeShape.of(GetAutonomousDatabaseRefreshableClonesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4095,6 +4909,47 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagement(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", TypeShape.of(GetAutonomousDatabaseRegionalWalletManagementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the Autonomous Database regional wallet details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagementPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", TypeShape.of(GetAutonomousDatabaseRegionalWalletManagementResult.class), args, Utilities.withVersion(options));
     }
@@ -4228,6 +5083,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousDatabaseSoftwareImageResult> getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage", TypeShape.of(GetAutonomousDatabaseSoftwareImageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Database Software Image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImage = DatabaseFunctions.getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs.builder()
+     *             .autonomousDatabaseSoftwareImageId(testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseSoftwareImageResult> getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage", TypeShape.of(GetAutonomousDatabaseSoftwareImageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4459,6 +5358,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousDatabaseSoftwareImagesResult> getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", TypeShape.of(GetAutonomousDatabaseSoftwareImagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImages = DatabaseFunctions.getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .imageShapeFamily(autonomousDatabaseSoftwareImageImageShapeFamily)
+     *             .displayName(autonomousDatabaseSoftwareImageDisplayName)
+     *             .state(autonomousDatabaseSoftwareImageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousDatabaseSoftwareImagesResult> getAutonomousDatabaseSoftwareImagesPlain(GetAutonomousDatabaseSoftwareImagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", TypeShape.of(GetAutonomousDatabaseSoftwareImagesResult.class), args, Utilities.withVersion(options));
     }
@@ -4610,6 +5556,56 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", TypeShape.of(GetAutonomousDatabaseWalletResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+     * 
+     * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Creates and downloads a wallet for the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .password(autonomousDatabaseWalletPassword)
+     *             .base64EncodeContent("false")
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", TypeShape.of(GetAutonomousDatabaseWalletResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4935,6 +5931,75 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousDatabasesResult> getAutonomousDatabases(GetAutonomousDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabases:getAutonomousDatabases", TypeShape.of(GetAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * ## 
+     * 
+     * ***
+     * ## subcategory: &#34;Database&#34;
+     * 
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
+     * description: |-
+     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+     * ---
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabases
+     * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .dbVersion(autonomousDatabaseDbVersion)
+     *             .dbWorkload(autonomousDatabaseDbWorkload)
+     *             .displayName(autonomousDatabaseDisplayName)
+     *             .infrastructureType(autonomousDatabaseInfrastructureType)
+     *             .isDataGuardEnabled(autonomousDatabaseIsDataGuardEnabled)
+     *             .isFreeTier(autonomousDatabaseIsFreeTier)
+     *             .isRefreshableClone(autonomousDatabaseIsRefreshableClone)
+     *             .isResourcePoolLeader(autonomousDatabaseIsResourcePoolLeader)
+     *             .lifecycleStateNotEqualTo(autonomousDatabaseLifecycleStateNotEqualTo)
+     *             .resourcePoolLeaderId(testResourcePoolLeader.id())
+     *             .state(autonomousDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousDatabasesResult> getAutonomousDatabasesPlain(GetAutonomousDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabases:getAutonomousDatabases", TypeShape.of(GetAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -5080,6 +6145,54 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", TypeShape.of(GetAutonomousDatabasesClonesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Database clones for the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesClones = DatabaseFunctions.getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .cloneType(autonomousDatabasesCloneCloneType)
+     *             .displayName(autonomousDatabasesCloneDisplayName)
+     *             .state(autonomousDatabasesCloneState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", TypeShape.of(GetAutonomousDatabasesClonesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5307,6 +6420,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", TypeShape.of(GetAutonomousDbPreviewVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
+     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbPreviewVersions = DatabaseFunctions.getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersionsPlain(GetAutonomousDbPreviewVersionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", TypeShape.of(GetAutonomousDbPreviewVersionsResult.class), args, Utilities.withVersion(options));
     }
@@ -5443,6 +6601,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousDbVersionsResult> getAutonomousDbVersions(GetAutonomousDbVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", TypeShape.of(GetAutonomousDbVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Autonomous Database versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbVersions = DatabaseFunctions.getAutonomousDbVersions(GetAutonomousDbVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbWorkload(autonomousDbVersionDbWorkload)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDbVersionsResult> getAutonomousDbVersions(GetAutonomousDbVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", TypeShape.of(GetAutonomousDbVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5663,6 +6866,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", TypeShape.of(GetAutonomousExadataInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructure = DatabaseFunctions.getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs.builder()
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructureOciDatabaseAutonomousExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructurePlain(GetAutonomousExadataInfrastructurePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", TypeShape.of(GetAutonomousExadataInfrastructureResult.class), args, Utilities.withVersion(options));
     }
@@ -5796,6 +7043,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu", TypeShape.of(GetAutonomousExadataInfrastructureOcpuResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Exadata Infrastructure Ocpu resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureOcpu = DatabaseFunctions.getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs.builder()
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu", TypeShape.of(GetAutonomousExadataInfrastructureOcpuResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5975,6 +7266,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", TypeShape.of(GetAutonomousExadataInfrastructureShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
+     * 
+     * **Deprecated.**
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureShapes = DatabaseFunctions.getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs.builder()
+     *             .availabilityDomain(autonomousExadataInfrastructureShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", TypeShape.of(GetAutonomousExadataInfrastructureShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6207,6 +7543,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures", TypeShape.of(GetAutonomousExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
+     * 
+     * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructures = DatabaseFunctions.getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(autonomousExadataInfrastructureAvailabilityDomain)
+     *             .displayName(autonomousExadataInfrastructureDisplayName)
+     *             .state(autonomousExadataInfrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructuresPlain(GetAutonomousExadataInfrastructuresPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures", TypeShape.of(GetAutonomousExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
     }
@@ -6383,6 +7766,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousPatchResult> getAutonomousPatch(GetAutonomousPatchArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousPatch:getAutonomousPatch", TypeShape.of(GetAutonomousPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specific autonomous patch.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousPatch = DatabaseFunctions.getAutonomousPatch(GetAutonomousPatchArgs.builder()
+     *             .autonomousPatchId(testAutonomousPatchOciDatabaseAutonomousPatch.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousPatchResult> getAutonomousPatchPlain(GetAutonomousPatchPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousPatch:getAutonomousPatch", TypeShape.of(GetAutonomousPatchResult.class), args, Utilities.withVersion(options));
     }
@@ -6516,6 +7943,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousVirtualMachine:getAutonomousVirtualMachine", TypeShape.of(GetAutonomousVirtualMachineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Virtual Machine resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of specific Autonomous Virtual Machine.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachine = DatabaseFunctions.getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs.builder()
+     *             .autonomousVirtualMachineId(testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousVirtualMachineResult> getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousVirtualMachine:getAutonomousVirtualMachine", TypeShape.of(GetAutonomousVirtualMachineResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -6743,6 +8214,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", TypeShape.of(GetAutonomousVirtualMachinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVirtualMachines = DatabaseFunctions.getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs.builder()
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(autonomousVirtualMachineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousVirtualMachinesResult> getAutonomousVirtualMachinesPlain(GetAutonomousVirtualMachinesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", TypeShape.of(GetAutonomousVirtualMachinesResult.class), args, Utilities.withVersion(options));
     }
@@ -6876,6 +8393,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousVmClusterResult> getAutonomousVmCluster(GetAutonomousVmClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousVmCluster:getAutonomousVmCluster", TypeShape.of(GetAutonomousVmClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous VM cluster for an Exadata Cloud{@literal @}Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmCluster = DatabaseFunctions.getAutonomousVmCluster(GetAutonomousVmClusterArgs.builder()
+     *             .autonomousVmClusterId(testAutonomousVmClusterOciDatabaseAutonomousVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousVmClusterResult> getAutonomousVmCluster(GetAutonomousVmClusterArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousVmCluster:getAutonomousVmCluster", TypeShape.of(GetAutonomousVmClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7099,6 +8660,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousVmClusterAcdResourceUsagesResult> getAutonomousVmClusterAcdResourceUsages(GetAutonomousVmClusterAcdResourceUsagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", TypeShape.of(GetAutonomousVmClusterAcdResourceUsagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterAcdResourceUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getAutonomousVmClusterAcdResourceUsages(GetAutonomousVmClusterAcdResourceUsagesArgs.builder()
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousVmClusterAcdResourceUsagesResult> getAutonomousVmClusterAcdResourceUsagesPlain(GetAutonomousVmClusterAcdResourceUsagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", TypeShape.of(GetAutonomousVmClusterAcdResourceUsagesResult.class), args, Utilities.withVersion(options));
     }
@@ -7232,6 +8838,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetAutonomousVmClusterResourceUsageResult> getAutonomousVmClusterResourceUsage(GetAutonomousVmClusterResourceUsageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousVmClusterResourceUsage:getAutonomousVmClusterResourceUsage", TypeShape.of(GetAutonomousVmClusterResourceUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get the resource usage details for the specified Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmClusterResourceUsage = DatabaseFunctions.getAutonomousVmClusterResourceUsage(GetAutonomousVmClusterResourceUsageArgs.builder()
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousVmClusterResourceUsageResult> getAutonomousVmClusterResourceUsage(GetAutonomousVmClusterResourceUsageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousVmClusterResourceUsage:getAutonomousVmClusterResourceUsage", TypeShape.of(GetAutonomousVmClusterResourceUsageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7463,6 +9113,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutonomousVmClustersResult> getAutonomousVmClusters(GetAutonomousVmClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousVmClusters:getAutonomousVmClusters", TypeShape.of(GetAutonomousVmClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Exadata Cloud{@literal @}Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmClusters = DatabaseFunctions.getAutonomousVmClusters(GetAutonomousVmClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousVmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(autonomousVmClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutonomousVmClustersResult> getAutonomousVmClustersPlain(GetAutonomousVmClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousVmClusters:getAutonomousVmClusters", TypeShape.of(GetAutonomousVmClustersResult.class), args, Utilities.withVersion(options));
     }
@@ -7596,6 +9293,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetBackupDestinationResult> getBackupDestination(GetBackupDestinationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getBackupDestination:getBackupDestination", TypeShape.of(GetBackupDestinationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Backup Destination resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified backup destination in an Exadata Cloud{@literal @}Customer system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestination = DatabaseFunctions.getBackupDestination(GetBackupDestinationArgs.builder()
+     *             .backupDestinationId(testBackupDestinationOciDatabaseBackupDestination.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBackupDestinationResult> getBackupDestination(GetBackupDestinationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getBackupDestination:getBackupDestination", TypeShape.of(GetBackupDestinationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -7775,6 +9516,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetBackupDestinationsResult> getBackupDestinations(GetBackupDestinationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getBackupDestinations:getBackupDestinations", TypeShape.of(GetBackupDestinationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Backup Destinations in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of backup destinations in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestinations = DatabaseFunctions.getBackupDestinations(GetBackupDestinationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .type(backupDestinationType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBackupDestinationsResult> getBackupDestinations(GetBackupDestinationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getBackupDestinations:getBackupDestinations", TypeShape.of(GetBackupDestinationsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8095,6 +9881,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBackupsResult> getBackups(GetBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
+     *             .shapeFamily(backupShapeFamily)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain(GetBackupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
     }
@@ -8228,6 +10060,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", TypeShape.of(GetCloudAutonomousVmClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud{@literal @}Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmCluster = DatabaseFunctions.getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs.builder()
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmClusterOciDatabaseCloudAutonomousVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", TypeShape.of(GetCloudAutonomousVmClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8455,6 +10331,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudAutonomousVmClusterAcdResourceUsages:getCloudAutonomousVmClusterAcdResourceUsages", TypeShape.of(GetCloudAutonomousVmClusterAcdResourceUsagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the list of resource usage details for all the Cloud Autonomous Container Database
+     * in the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs.builder()
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCloudAutonomousVmClusterAcdResourceUsagesResult> getCloudAutonomousVmClusterAcdResourceUsagesPlain(GetCloudAutonomousVmClusterAcdResourceUsagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getCloudAutonomousVmClusterAcdResourceUsages:getCloudAutonomousVmClusterAcdResourceUsages", TypeShape.of(GetCloudAutonomousVmClusterAcdResourceUsagesResult.class), args, Utilities.withVersion(options));
     }
@@ -8588,6 +10510,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", TypeShape.of(GetCloudAutonomousVmClusterResourceUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusterResourceUsage = DatabaseFunctions.getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs.builder()
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAutonomousVmClusterResourceUsageResult> getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", TypeShape.of(GetCloudAutonomousVmClusterResourceUsageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -8823,6 +10789,54 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", TypeShape.of(GetCloudAutonomousVmClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud{@literal @}Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusters = DatabaseFunctions.getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .state(cloudAutonomousVmClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClustersPlain(GetCloudAutonomousVmClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", TypeShape.of(GetCloudAutonomousVmClustersResult.class), args, Utilities.withVersion(options));
     }
@@ -8956,6 +10970,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", TypeShape.of(GetCloudExadataInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", TypeShape.of(GetCloudExadataInfrastructureResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9135,6 +11193,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudExadataInfrastructureUnAllocatedResource:getCloudExadataInfrastructureUnAllocatedResource", TypeShape.of(GetCloudExadataInfrastructureUnAllocatedResourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .dbServers(cloudExadataInfrastructureUnAllocatedResourceDbServers)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getCloudExadataInfrastructureUnAllocatedResource:getCloudExadataInfrastructureUnAllocatedResource", TypeShape.of(GetCloudExadataInfrastructureUnAllocatedResourceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9367,6 +11470,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", TypeShape.of(GetCloudExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(cloudExadataInfrastructureClusterPlacementGroupId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .state(cloudExadataInfrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructuresPlain(GetCloudExadataInfrastructuresPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", TypeShape.of(GetCloudExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
     }
@@ -9500,6 +11650,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetCloudVmClusterResult> getCloudVmCluster(GetCloudVmClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudVmCluster:getCloudVmCluster", TypeShape.of(GetCloudVmClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmCluster = DatabaseFunctions.getCloudVmCluster(GetCloudVmClusterArgs.builder()
+     *             .cloudVmClusterId(testCloudVmClusterOciDatabaseCloudVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudVmClusterResult> getCloudVmCluster(GetCloudVmClusterArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getCloudVmCluster:getCloudVmCluster", TypeShape.of(GetCloudVmClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9685,6 +11879,53 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", TypeShape.of(GetCloudVmClusterIormConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the IORM configuration settings for the specified Cloud Vm Cluster.
+     * All Exadata service instances have default IORM settings.
+     * 
+     * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusterIormConfig = DatabaseFunctions.getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs.builder()
+     *             .cloudVmClusterId(testCloudVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", TypeShape.of(GetCloudVmClusterIormConfigResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -9919,6 +12160,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCloudVmClustersResult> getCloudVmClusters(GetCloudVmClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getCloudVmClusters:getCloudVmClusters", TypeShape.of(GetCloudVmClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Vm Clusters in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusters = DatabaseFunctions.getCloudVmClusters(GetCloudVmClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudVmClusterDisplayName)
+     *             .state(cloudVmClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCloudVmClustersResult> getCloudVmClustersPlain(GetCloudVmClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getCloudVmClusters:getCloudVmClusters", TypeShape.of(GetCloudVmClustersResult.class), args, Utilities.withVersion(options));
     }
@@ -10055,6 +12343,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDataGuardAssociationResult> getDataGuardAssociation(GetDataGuardAssociationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDataGuardAssociation:getDataGuardAssociation", TypeShape.of(GetDataGuardAssociationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the specified Data Guard association&#39;s configuration information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociation = DatabaseFunctions.getDataGuardAssociation(GetDataGuardAssociationArgs.builder()
+     *             .dataGuardAssociationId(testDataGuardAssociationOciDatabaseDataGuardAssociation.id())
+     *             .databaseId(testDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDataGuardAssociationResult> getDataGuardAssociation(GetDataGuardAssociationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDataGuardAssociation:getDataGuardAssociation", TypeShape.of(GetDataGuardAssociationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -10275,6 +12608,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDataGuardAssociationsResult> getDataGuardAssociations(GetDataGuardAssociationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDataGuardAssociations:getDataGuardAssociations", TypeShape.of(GetDataGuardAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists all Data Guard associations for the specified database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociations = DatabaseFunctions.getDataGuardAssociations(GetDataGuardAssociationsArgs.builder()
+     *             .databaseId(testDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDataGuardAssociationsResult> getDataGuardAssociationsPlain(GetDataGuardAssociationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDataGuardAssociations:getDataGuardAssociations", TypeShape.of(GetDataGuardAssociationsResult.class), args, Utilities.withVersion(options));
     }
@@ -10408,6 +12785,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDatabaseResult> getDatabase(GetDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabase:getDatabase", TypeShape.of(GetDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabase = DatabaseFunctions.getDatabase(GetDatabaseArgs.builder()
+     *             .databaseId(databaseId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseResult> getDatabase(GetDatabaseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDatabase:getDatabase", TypeShape.of(GetDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -10647,6 +13068,55 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", TypeShape.of(GetDatabaseMaintenanceRunHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the maintenance run histories in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistories = DatabaseFunctions.getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunHistoryAvailabilityDomain)
+     *             .maintenanceType(maintenanceRunHistoryMaintenanceType)
+     *             .state(maintenanceRunHistoryState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunHistoryTargetResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistoriesPlain(GetDatabaseMaintenanceRunHistoriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", TypeShape.of(GetDatabaseMaintenanceRunHistoriesResult.class), args, Utilities.withVersion(options));
     }
@@ -10780,6 +13250,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", TypeShape.of(GetDatabaseMaintenanceRunHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified maintenance run history.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistory = DatabaseFunctions.getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs.builder()
+     *             .maintenanceRunHistoryId(testMaintenanceRunHistoryOciDatabaseMaintenanceRunHistory.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", TypeShape.of(GetDatabaseMaintenanceRunHistoryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -11007,6 +13521,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries", TypeShape.of(GetDatabasePdbConversionHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntries = DatabaseFunctions.getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs.builder()
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionAction(databasePdbConversionHistoryEntryPdbConversionAction)
+     *             .state(databasePdbConversionHistoryEntryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntriesPlain(GetDatabasePdbConversionHistoryEntriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries", TypeShape.of(GetDatabasePdbConversionHistoryEntriesResult.class), args, Utilities.withVersion(options));
     }
@@ -11187,6 +13747,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", TypeShape.of(GetDatabasePdbConversionHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntry = DatabaseFunctions.getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs.builder()
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionHistoryEntryId(testPdbConversionHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntryPlain(GetDatabasePdbConversionHistoryEntryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", TypeShape.of(GetDatabasePdbConversionHistoryEntryResult.class), args, Utilities.withVersion(options));
     }
@@ -11320,6 +13925,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", TypeShape.of(GetDatabaseSoftwareImageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database software image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImage = DatabaseFunctions.getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs.builder()
+     *             .databaseSoftwareImageId(testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", TypeShape.of(GetDatabaseSoftwareImageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -11559,6 +14208,55 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", TypeShape.of(GetDatabaseSoftwareImagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the database software images in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseSoftwareImageDisplayName)
+     *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
+     *             .imageType(databaseSoftwareImageImageType)
+     *             .isUpgradeSupported(databaseSoftwareImageIsUpgradeSupported)
+     *             .state(databaseSoftwareImageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImagesPlain(GetDatabaseSoftwareImagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", TypeShape.of(GetDatabaseSoftwareImagesResult.class), args, Utilities.withVersion(options));
     }
@@ -11743,6 +14441,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries", TypeShape.of(GetDatabaseUpgradeHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Upgrade History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntries = DatabaseFunctions.getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs.builder()
+     *             .databaseId(testDatabase.id())
+     *             .state(databaseUpgradeHistoryEntryState)
+     *             .upgradeAction(databaseUpgradeHistoryEntryUpgradeAction)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntriesPlain(GetDatabaseUpgradeHistoryEntriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries", TypeShape.of(GetDatabaseUpgradeHistoryEntriesResult.class), args, Utilities.withVersion(options));
     }
@@ -11879,6 +14623,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", TypeShape.of(GetDatabaseUpgradeHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * gets the upgrade history for a specified database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntry = DatabaseFunctions.getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs.builder()
+     *             .databaseId(testDatabase.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", TypeShape.of(GetDatabaseUpgradeHistoryEntryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -12115,6 +14904,54 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabasesResult> getDatabases(GetDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabases:getDatabases", TypeShape.of(GetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Databases in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the databases in the specified Database Home.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabases = DatabaseFunctions.getDatabases(GetDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbHomeId(testDbHome.id())
+     *             .dbName(databaseDbName)
+     *             .state(databaseState)
+     *             .systemId(testSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabasesResult> getDatabasesPlain(GetDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDatabases:getDatabases", TypeShape.of(GetDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -12248,6 +15085,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbHomeResult> getDbHome(GetDbHomeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbHome:getDbHome", TypeShape.of(GetDbHomeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Home resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Database Home.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHome = DatabaseFunctions.getDbHome(GetDbHomeArgs.builder()
+     *             .dbHomeId(dbHomeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbHomeResult> getDbHome(GetDbHomeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbHome:getDbHome", TypeShape.of(GetDbHomeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -12467,6 +15348,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", TypeShape.of(GetDbHomePatchHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the history of patch operations on the specified Database Home.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatchHistoryEntries = DatabaseFunctions.getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs.builder()
+     *             .dbHomeId(testDbHome.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntriesPlain(GetDbHomePatchHistoryEntriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", TypeShape.of(GetDbHomePatchHistoryEntriesResult.class), args, Utilities.withVersion(options));
     }
@@ -12643,6 +15568,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbHomePatchesResult> getDbHomePatches(GetDbHomePatchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbHomePatches:getDbHomePatches", TypeShape.of(GetDbHomePatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists patches applicable to the requested Database Home.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatches = DatabaseFunctions.getDbHomePatches(GetDbHomePatchesArgs.builder()
+     *             .dbHomeId(testDbHome.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbHomePatchesResult> getDbHomePatchesPlain(GetDbHomePatchesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbHomePatches:getDbHomePatches", TypeShape.of(GetDbHomePatchesResult.class), args, Utilities.withVersion(options));
     }
@@ -12671,6 +15640,15 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbHomesResult> getDbHomes(GetDbHomesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbHomes:getDbHomes", TypeShape.of(GetDbHomesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Homes in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
+     * 
+     */
+    public static Output<GetDbHomesResult> getDbHomes(GetDbHomesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbHomes:getDbHomes", TypeShape.of(GetDbHomesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -12812,6 +15790,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbNodeResult> getDbNode(GetDbNodeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNode:getDbNode", TypeShape.of(GetDbNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Node resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database node.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNode = DatabaseFunctions.getDbNode(GetDbNodeArgs.builder()
+     *             .dbNodeId(dbNodeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbNodeResult> getDbNode(GetDbNodeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbNode:getDbNode", TypeShape.of(GetDbNodeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -13035,6 +16057,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleConnection:getDbNodeConsoleConnection", TypeShape.of(GetDbNodeConsoleConnectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the specified database node console connection&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnection = DatabaseFunctions.getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs.builder()
+     *             .dbNodeId(testDbNode.id())
+     *             .id(dbNodeConsoleConnectionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnectionPlain(GetDbNodeConsoleConnectionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbNodeConsoleConnection:getDbNodeConsoleConnection", TypeShape.of(GetDbNodeConsoleConnectionResult.class), args, Utilities.withVersion(options));
     }
@@ -13168,6 +16235,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", TypeShape.of(GetDbNodeConsoleConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the console connections for the specified database node.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnections = DatabaseFunctions.getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs.builder()
+     *             .dbNodeId(testDbNode.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", TypeShape.of(GetDbNodeConsoleConnectionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -13395,6 +16506,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories", TypeShape.of(GetDbNodeConsoleHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Node Console Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the console histories for the specified database node.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistories = DatabaseFunctions.getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs.builder()
+     *             .dbNodeId(testDbNode.id())
+     *             .displayName(dbNodeConsoleHistoryDisplayName)
+     *             .state(dbNodeConsoleHistoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistoriesPlain(GetDbNodeConsoleHistoriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories", TypeShape.of(GetDbNodeConsoleHistoriesResult.class), args, Utilities.withVersion(options));
     }
@@ -13575,6 +16732,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleHistory:getDbNodeConsoleHistory", TypeShape.of(GetDbNodeConsoleHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database node console history.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistory = DatabaseFunctions.getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs.builder()
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistoryPlain(GetDbNodeConsoleHistoryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbNodeConsoleHistory:getDbNodeConsoleHistory", TypeShape.of(GetDbNodeConsoleHistoryResult.class), args, Utilities.withVersion(options));
     }
@@ -13711,6 +16913,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", TypeShape.of(GetDbNodeConsoleHistoryContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History Content resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the specified database node console history contents upto a megabyte.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistoryContent = DatabaseFunctions.getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs.builder()
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", TypeShape.of(GetDbNodeConsoleHistoryContentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -13947,6 +17194,54 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbNodesResult> getDbNodes(GetDbNodesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNodes:getDbNodes", TypeShape.of(GetDbNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodes = DatabaseFunctions.getDbNodes(GetDbNodesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbServerId(testDbServer.id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbNodeState)
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbNodesResult> getDbNodesPlain(GetDbNodesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbNodes:getDbNodes", TypeShape.of(GetDbNodesResult.class), args, Utilities.withVersion(options));
     }
@@ -14083,6 +17378,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbServerResult> getDbServer(GetDbServerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbServer:getDbServer", TypeShape.of(GetDbServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the Exadata Db server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServer = DatabaseFunctions.getDbServer(GetDbServerArgs.builder()
+     *             .dbServerId(testDbServerOciDatabaseDbServer.id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbServerResult> getDbServer(GetDbServerArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbServer:getDbServer", TypeShape.of(GetDbServerResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -14269,6 +17609,53 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbServersResult> getDbServers(GetDbServersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbServers:getDbServers", TypeShape.of(GetDbServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Servers in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServers = DatabaseFunctions.getDbServers(GetDbServersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(dbServerDisplayName)
+     *             .state(dbServerState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbServersResult> getDbServers(GetDbServersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbServers:getDbServers", TypeShape.of(GetDbServersResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -14579,6 +17966,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", TypeShape.of(GetDbSystemComputePerformancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
+     *             .dbSystemShape(dbSystemComputePerformanceDbSystemShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain(GetDbSystemComputePerformancesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", TypeShape.of(GetDbSystemComputePerformancesResult.class), args, Utilities.withVersion(options));
     }
@@ -14755,6 +18186,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", TypeShape.of(GetDbSystemHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the patch actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatchHistoryEntries = DatabaseFunctions.getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntriesPlain(GetDbSystemHistoryEntriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", TypeShape.of(GetDbSystemHistoryEntriesResult.class), args, Utilities.withVersion(options));
     }
@@ -14888,6 +18363,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbSystemPatchesResult> getDbSystemPatches(GetDbSystemPatchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemPatches:getDbSystemPatches", TypeShape.of(GetDbSystemPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the patches applicable to the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatches = DatabaseFunctions.getDbSystemPatches(GetDbSystemPatchesArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbSystemPatchesResult> getDbSystemPatches(GetDbSystemPatchesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbSystemPatches:getDbSystemPatches", TypeShape.of(GetDbSystemPatchesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -15111,6 +18630,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbSystemShapesResult> getDbSystemShapes(GetDbSystemShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemShapes:getDbSystemShapes", TypeShape.of(GetDbSystemShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbSystemShapesResult> getDbSystemShapesPlain(GetDbSystemShapesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemShapes:getDbSystemShapes", TypeShape.of(GetDbSystemShapesResult.class), args, Utilities.withVersion(options));
     }
@@ -15247,6 +18811,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", TypeShape.of(GetDbSystemStoragePerformancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", TypeShape.of(GetDbSystemStoragePerformancesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -15499,6 +19108,58 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbSystemsResult> getDbSystems(GetDbSystemsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystems:getDbSystems", TypeShape.of(GetDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
+     * 
+     * **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+     * 
+     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystems = DatabaseFunctions.getDbSystems(GetDbSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemAvailabilityDomain)
+     *             .backupId(testBackup.id())
+     *             .displayName(dbSystemDisplayName)
+     *             .state(dbSystemState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain(GetDbSystemsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbSystems:getDbSystems", TypeShape.of(GetDbSystemsResult.class), args, Utilities.withVersion(options));
     }
@@ -15683,6 +19344,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", TypeShape.of(GetDbSystemsUpgradeHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the upgrade actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntries = DatabaseFunctions.getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbSystemsUpgradeHistoryEntryState)
+     *             .upgradeAction(dbSystemsUpgradeHistoryEntryUpgradeAction)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntriesPlain(GetDbSystemsUpgradeHistoryEntriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", TypeShape.of(GetDbSystemsUpgradeHistoryEntriesResult.class), args, Utilities.withVersion(options));
     }
@@ -15819,6 +19526,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemsUpgradeHistoryEntry:getDbSystemsUpgradeHistoryEntry", TypeShape.of(GetDbSystemsUpgradeHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified operating system upgrade operation for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntry = DatabaseFunctions.getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getDbSystemsUpgradeHistoryEntry:getDbSystemsUpgradeHistoryEntry", TypeShape.of(GetDbSystemsUpgradeHistoryEntryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -16059,6 +19811,55 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbVersionsResult> getDbVersions(GetDbVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbVersions:getDbVersions", TypeShape.of(GetDbVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Oracle Database versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbVersions = DatabaseFunctions.getDbVersions(GetDbVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemShape(dbVersionDbSystemShape)
+     *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
+     *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .storageManagement(dbVersionStorageManagement)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbVersionsResult> getDbVersionsPlain(GetDbVersionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbVersions:getDbVersions", TypeShape.of(GetDbVersionsResult.class), args, Utilities.withVersion(options));
     }
@@ -16198,6 +19999,52 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExadataInfrastructureResult> getExadataInfrastructure(GetExadataInfrastructureArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructure:getExadataInfrastructure", TypeShape.of(GetExadataInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadataInfrastructureResult> getExadataInfrastructure(GetExadataInfrastructureArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructure:getExadataInfrastructure", TypeShape.of(GetExadataInfrastructureResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -16423,6 +20270,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", TypeShape.of(GetExadataInfrastructureDownloadConfigFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Downloads the configuration file for the specified Exadata Cloud{@literal @}Customer infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .base64EncodeContent("false")
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFilePlain(GetExadataInfrastructureDownloadConfigFilePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", TypeShape.of(GetExadataInfrastructureDownloadConfigFileResult.class), args, Utilities.withVersion(options));
     }
@@ -16559,6 +20451,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", TypeShape.of(GetExadataInfrastructureUnAllocatedResourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .dbServers(exadataInfrastructureUnAllocatedResourceDbServers)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", TypeShape.of(GetExadataInfrastructureUnAllocatedResourceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -16748,6 +20685,54 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExadataInfrastructuresResult> getExadataInfrastructures(GetExadataInfrastructuresArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructures:getExadataInfrastructures", TypeShape.of(GetExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadataInfrastructuresResult> getExadataInfrastructures(GetExadataInfrastructuresArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructures:getExadataInfrastructures", TypeShape.of(GetExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17003,6 +20988,58 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExadataIormConfigResult> getExadataIormConfig(GetExadataIormConfigArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadataIormConfig:getExadataIormConfig", TypeShape.of(GetExadataIormConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the IORM configuration settings for the specified cloud Exadata DB system.
+     * All Exadata service instances have default IORM settings.
+     * 
+     * **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+     * 
+     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * 
+     * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Exadata systems using the
+     * new resource model.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataIormConfig = DatabaseFunctions.getExadataIormConfig(GetExadataIormConfigArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExadataIormConfigResult> getExadataIormConfigPlain(GetExadataIormConfigPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExadataIormConfig:getExadataIormConfig", TypeShape.of(GetExadataIormConfigResult.class), args, Utilities.withVersion(options));
     }
@@ -17136,6 +21173,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExadbVmClusterResult> getExadbVmCluster(GetExadbVmClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmCluster:getExadbVmCluster", TypeShape.of(GetExadbVmClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmCluster = DatabaseFunctions.getExadbVmCluster(GetExadbVmClusterArgs.builder()
+     *             .exadbVmClusterId(testExadbVmClusterOciDatabaseExadbVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterResult> getExadbVmCluster(GetExadbVmClusterArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadbVmCluster:getExadbVmCluster", TypeShape.of(GetExadbVmClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17315,6 +21396,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExadbVmClusterUpdateResult> getExadbVmClusterUpdate(GetExadbVmClusterUpdateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdate:getExadbVmClusterUpdate", TypeShape.of(GetExadbVmClusterUpdateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified maintenance update package for a Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdate = DatabaseFunctions.getExadbVmClusterUpdate(GetExadbVmClusterUpdateArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateId(testUpdate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdateResult> getExadbVmClusterUpdate(GetExadbVmClusterUpdateArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdate:getExadbVmClusterUpdate", TypeShape.of(GetExadbVmClusterUpdateResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17539,6 +21665,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExadbVmClusterUpdateHistoryEntriesResult> getExadbVmClusterUpdateHistoryEntries(GetExadbVmClusterUpdateHistoryEntriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", TypeShape.of(GetExadbVmClusterUpdateHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the maintenance update actions performed on the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntries = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntries(GetExadbVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateHistoryEntryUpdateType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExadbVmClusterUpdateHistoryEntriesResult> getExadbVmClusterUpdateHistoryEntriesPlain(GetExadbVmClusterUpdateHistoryEntriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", TypeShape.of(GetExadbVmClusterUpdateHistoryEntriesResult.class), args, Utilities.withVersion(options));
     }
@@ -17675,6 +21846,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExadbVmClusterUpdateHistoryEntryResult> getExadbVmClusterUpdateHistoryEntry(GetExadbVmClusterUpdateHistoryEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdateHistoryEntry:getExadbVmClusterUpdateHistoryEntry", TypeShape.of(GetExadbVmClusterUpdateHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the maintenance update history details for the specified update history entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntry = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntry(GetExadbVmClusterUpdateHistoryEntryArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdateHistoryEntryResult> getExadbVmClusterUpdateHistoryEntry(GetExadbVmClusterUpdateHistoryEntryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdateHistoryEntry:getExadbVmClusterUpdateHistoryEntry", TypeShape.of(GetExadbVmClusterUpdateHistoryEntryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -17858,6 +22074,52 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExadbVmClusterUpdatesResult> getExadbVmClusterUpdates(GetExadbVmClusterUpdatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdates:getExadbVmClusterUpdates", TypeShape.of(GetExadbVmClusterUpdatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the maintenance updates that can be applied to the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdates = DatabaseFunctions.getExadbVmClusterUpdates(GetExadbVmClusterUpdatesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateUpdateType)
+     *             .version(exadbVmClusterUpdateVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdatesResult> getExadbVmClusterUpdates(GetExadbVmClusterUpdatesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdates:getExadbVmClusterUpdates", TypeShape.of(GetExadbVmClusterUpdatesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -18091,6 +22353,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExadbVmClustersResult> getExadbVmClusters(GetExadbVmClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusters:getExadbVmClusters", TypeShape.of(GetExadbVmClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadb Vm Clusters in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata VM clusters on Exascale Infrastructure in the specified compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadbVmClusterDisplayName)
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
+     *             .state(exadbVmClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExadbVmClustersResult> getExadbVmClustersPlain(GetExadbVmClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExadbVmClusters:getExadbVmClusters", TypeShape.of(GetExadbVmClustersResult.class), args, Utilities.withVersion(options));
     }
@@ -18224,6 +22533,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExascaleDbStorageVaultResult> getExascaleDbStorageVault(GetExascaleDbStorageVaultArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExascaleDbStorageVault:getExascaleDbStorageVault", TypeShape.of(GetExascaleDbStorageVaultResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVault = DatabaseFunctions.getExascaleDbStorageVault(GetExascaleDbStorageVaultArgs.builder()
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVaultOciDatabaseExascaleDbStorageVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExascaleDbStorageVaultResult> getExascaleDbStorageVault(GetExascaleDbStorageVaultArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExascaleDbStorageVault:getExascaleDbStorageVault", TypeShape.of(GetExascaleDbStorageVaultResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -18451,6 +22804,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExascaleDbStorageVaultsResult> getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", TypeShape.of(GetExascaleDbStorageVaultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exascale Db Storage Vaults in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .state(exascaleDbStorageVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExascaleDbStorageVaultsResult> getExascaleDbStorageVaultsPlain(GetExascaleDbStorageVaultsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", TypeShape.of(GetExascaleDbStorageVaultsResult.class), args, Utilities.withVersion(options));
     }
@@ -18584,6 +22983,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExternalContainerDatabaseResult> getExternalContainerDatabase(GetExternalContainerDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExternalContainerDatabase:getExternalContainerDatabase", TypeShape.of(GetExternalContainerDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Container Database resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified external container database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabase = DatabaseFunctions.getExternalContainerDatabase(GetExternalContainerDatabaseArgs.builder()
+     *             .externalContainerDatabaseId(testExternalContainerDatabaseOciDatabaseExternalContainerDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalContainerDatabaseResult> getExternalContainerDatabase(GetExternalContainerDatabaseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExternalContainerDatabase:getExternalContainerDatabase", TypeShape.of(GetExternalContainerDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -18811,6 +23254,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalContainerDatabasesResult> getExternalContainerDatabases(GetExternalContainerDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExternalContainerDatabases:getExternalContainerDatabases", TypeShape.of(GetExternalContainerDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Container Databases in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the external container databases in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabases = DatabaseFunctions.getExternalContainerDatabases(GetExternalContainerDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalContainerDatabaseDisplayName)
+     *             .state(externalContainerDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalContainerDatabasesResult> getExternalContainerDatabasesPlain(GetExternalContainerDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExternalContainerDatabases:getExternalContainerDatabases", TypeShape.of(GetExternalContainerDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -18944,6 +23433,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExternalDatabaseConnectorResult> getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector", TypeShape.of(GetExternalDatabaseConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Database Connector resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified external database connector.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnector = DatabaseFunctions.getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs.builder()
+     *             .externalDatabaseConnectorId(testExternalDatabaseConnectorOciDatabaseExternalDatabaseConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalDatabaseConnectorResult> getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector", TypeShape.of(GetExternalDatabaseConnectorResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -19175,6 +23708,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors", TypeShape.of(GetExternalDatabaseConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Database Connectors in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the external database connectors in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnectors = DatabaseFunctions.getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .externalDatabaseId(testDatabase.id())
+     *             .displayName(externalDatabaseConnectorDisplayName)
+     *             .state(externalDatabaseConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectorsPlain(GetExternalDatabaseConnectorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors", TypeShape.of(GetExternalDatabaseConnectorsResult.class), args, Utilities.withVersion(options));
     }
@@ -19308,6 +23888,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", TypeShape.of(GetExternalNonContainerDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Non Container Database resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specific external non-container database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabase = DatabaseFunctions.getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs.builder()
+     *             .externalNonContainerDatabaseId(testExternalNonContainerDatabaseOciDatabaseExternalNonContainerDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", TypeShape.of(GetExternalNonContainerDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -19535,6 +24159,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExternalNonContainerDatabases:getExternalNonContainerDatabases", TypeShape.of(GetExternalNonContainerDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Non Container Databases in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabases = DatabaseFunctions.getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalNonContainerDatabaseDisplayName)
+     *             .state(externalNonContainerDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabasesPlain(GetExternalNonContainerDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExternalNonContainerDatabases:getExternalNonContainerDatabases", TypeShape.of(GetExternalNonContainerDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -19671,6 +24341,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetExternalPluggableDatabaseResult> getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExternalPluggableDatabase:getExternalPluggableDatabase", TypeShape.of(GetExternalPluggableDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specific
+     * [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabase = DatabaseFunctions.getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs.builder()
+     *             .externalPluggableDatabaseId(testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalPluggableDatabaseResult> getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExternalPluggableDatabase:getExternalPluggableDatabase", TypeShape.of(GetExternalPluggableDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -19907,6 +24622,54 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetExternalPluggableDatabasesResult> getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExternalPluggableDatabases:getExternalPluggableDatabases", TypeShape.of(GetExternalPluggableDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Pluggable Databases in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
+     * resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabases = DatabaseFunctions.getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalPluggableDatabaseDisplayName)
+     *             .externalContainerDatabaseId(testExternalContainerDatabase.id())
+     *             .state(externalPluggableDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetExternalPluggableDatabasesResult> getExternalPluggableDatabasesPlain(GetExternalPluggableDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExternalPluggableDatabases:getExternalPluggableDatabases", TypeShape.of(GetExternalPluggableDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -20043,6 +24806,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetFlexComponentsResult> getFlexComponents(GetFlexComponentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getFlexComponents:getFlexComponents", TypeShape.of(GetFlexComponentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(flexComponentName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFlexComponentsResult> getFlexComponents(GetFlexComponentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getFlexComponents:getFlexComponents", TypeShape.of(GetFlexComponentsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -20283,6 +25091,55 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetGiVersionMinorVersionsResult> getGiVersionMinorVersions(GetGiVersionMinorVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", TypeShape.of(GetGiVersionMinorVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Gi Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Oracle Grid Infrastructure minor versions for the given major version and shape family.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersionMinorVersions = DatabaseFunctions.getGiVersionMinorVersions(GetGiVersionMinorVersionsArgs.builder()
+     *             .version(giVersionMinorVersionVersion)
+     *             .availabilityDomain(giVersionMinorVersionAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .isGiVersionForProvisioning(giVersionMinorVersionIsGiVersionForProvisioning)
+     *             .shape(giVersionMinorVersionShape)
+     *             .shapeFamily(giVersionMinorVersionShapeFamily)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetGiVersionMinorVersionsResult> getGiVersionMinorVersionsPlain(GetGiVersionMinorVersionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", TypeShape.of(GetGiVersionMinorVersionsResult.class), args, Utilities.withVersion(options));
     }
@@ -20422,6 +25279,52 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetGiVersionsResult> getGiVersions(GetGiVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getGiVersions:getGiVersions", TypeShape.of(GetGiVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported GI versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(giVersionAvailabilityDomain)
+     *             .shape(giVersionShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetGiVersionsResult> getGiVersions(GetGiVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getGiVersions:getGiVersions", TypeShape.of(GetGiVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -20655,6 +25558,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInfrastructureTargetVersionResult> getInfrastructureTargetVersion(GetInfrastructureTargetVersionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", TypeShape.of(GetInfrastructureTargetVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
+     * Applies to Exadata Cloud{@literal @}Customer and Exadata Cloud instances only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetInfrastructureTargetVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructureTargetVersion = DatabaseFunctions.getInfrastructureTargetVersion(GetInfrastructureTargetVersionArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(infrastructureTargetVersionTargetResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInfrastructureTargetVersionResult> getInfrastructureTargetVersionPlain(GetInfrastructureTargetVersionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", TypeShape.of(GetInfrastructureTargetVersionResult.class), args, Utilities.withVersion(options));
     }
@@ -20788,6 +25738,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetKeyStoreResult> getKeyStore(GetKeyStoreArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getKeyStore:getKeyStore", TypeShape.of(GetKeyStoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Key Store resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified key store.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStore = DatabaseFunctions.getKeyStore(GetKeyStoreArgs.builder()
+     *             .keyStoreId(testKeyStoreOciDatabaseKeyStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetKeyStoreResult> getKeyStore(GetKeyStoreArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getKeyStore:getKeyStore", TypeShape.of(GetKeyStoreResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -21007,6 +26001,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetKeyStoresResult> getKeyStores(GetKeyStoresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getKeyStores:getKeyStores", TypeShape.of(GetKeyStoresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of key stores in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetKeyStoresResult> getKeyStoresPlain(GetKeyStoresPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getKeyStores:getKeyStores", TypeShape.of(GetKeyStoresResult.class), args, Utilities.withVersion(options));
     }
@@ -21140,6 +26178,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetMaintenanceRunResult> getMaintenanceRun(GetMaintenanceRunArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getMaintenanceRun:getMaintenanceRun", TypeShape.of(GetMaintenanceRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Run resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified maintenance run.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRun = DatabaseFunctions.getMaintenanceRun(GetMaintenanceRunArgs.builder()
+     *             .maintenanceRunId(testMaintenanceRunOciDatabaseMaintenanceRun.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaintenanceRunResult> getMaintenanceRun(GetMaintenanceRunArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getMaintenanceRun:getMaintenanceRun", TypeShape.of(GetMaintenanceRunResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -21383,6 +26465,56 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMaintenanceRunsResult> getMaintenanceRuns(GetMaintenanceRunsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getMaintenanceRuns:getMaintenanceRuns", TypeShape.of(GetMaintenanceRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the maintenance runs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
+     *             .maintenanceType(maintenanceRunMaintenanceType)
+     *             .state(maintenanceRunState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunTargetResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMaintenanceRunsResult> getMaintenanceRunsPlain(GetMaintenanceRunsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getMaintenanceRuns:getMaintenanceRuns", TypeShape.of(GetMaintenanceRunsResult.class), args, Utilities.withVersion(options));
     }
@@ -21519,6 +26651,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetManagedPreferredCredentialResult> getManagedPreferredCredential(GetManagedPreferredCredentialArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", TypeShape.of(GetManagedPreferredCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the preferred credential details for a Managed Database based on credentialName.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasePreferredCredential = DatabaseFunctions.getManagedPreferredCredential(GetManagedPreferredCredentialArgs.builder()
+     *             .credentialName(managedDatabasePreferredCredentialCredentialName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedPreferredCredentialResult> getManagedPreferredCredential(GetManagedPreferredCredentialArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", TypeShape.of(GetManagedPreferredCredentialResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -21739,6 +26916,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedPreferredCredentialsResult> getManagedPreferredCredentials(GetManagedPreferredCredentialsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", TypeShape.of(GetManagedPreferredCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Preferred Credentials in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of preferred credentials for a given Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasePreferredCredentials = DatabaseFunctions.getManagedPreferredCredentials(GetManagedPreferredCredentialsArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedPreferredCredentialsResult> getManagedPreferredCredentialsPlain(GetManagedPreferredCredentialsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", TypeShape.of(GetManagedPreferredCredentialsResult.class), args, Utilities.withVersion(options));
     }
@@ -21872,6 +27093,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetOneoffPatchResult> getOneoffPatch(GetOneoffPatchArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getOneoffPatch:getOneoffPatch", TypeShape.of(GetOneoffPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified one-off patch.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatch = DatabaseFunctions.getOneoffPatch(GetOneoffPatchArgs.builder()
+     *             .oneoffPatchId(testOneoffPatchOciDatabaseOneoffPatch.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOneoffPatchResult> getOneoffPatch(GetOneoffPatchArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getOneoffPatch:getOneoffPatch", TypeShape.of(GetOneoffPatchResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -22099,6 +27364,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOneoffPatchesResult> getOneoffPatches(GetOneoffPatchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getOneoffPatches:getOneoffPatches", TypeShape.of(GetOneoffPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists one-off patches in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatches = DatabaseFunctions.getOneoffPatches(GetOneoffPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oneoffPatchDisplayName)
+     *             .state(oneoffPatchState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOneoffPatchesResult> getOneoffPatchesPlain(GetOneoffPatchesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getOneoffPatches:getOneoffPatches", TypeShape.of(GetOneoffPatchesResult.class), args, Utilities.withVersion(options));
     }
@@ -22232,6 +27543,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetPluggableDatabaseResult> getPluggableDatabase(GetPluggableDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getPluggableDatabase:getPluggableDatabase", TypeShape.of(GetPluggableDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified pluggable database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabase = DatabaseFunctions.getPluggableDatabase(GetPluggableDatabaseArgs.builder()
+     *             .pluggableDatabaseId(testPluggableDatabaseOciDatabasePluggableDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluggableDatabaseResult> getPluggableDatabase(GetPluggableDatabaseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getPluggableDatabase:getPluggableDatabase", TypeShape.of(GetPluggableDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -22557,6 +27912,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPluggableDatabasesResult> getPluggableDatabases(GetPluggableDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getPluggableDatabases:getPluggableDatabases", TypeShape.of(GetPluggableDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
+     *             .pdbName(pluggableDatabasePdbName)
+     *             .state(pluggableDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPluggableDatabasesResult> getPluggableDatabasesPlain(GetPluggableDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getPluggableDatabases:getPluggableDatabases", TypeShape.of(GetPluggableDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -22741,6 +28143,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSystemVersionsResult> getSystemVersions(GetSystemVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSystemVersions:getSystemVersions", TypeShape.of(GetSystemVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Exadata system versions for a given shape and GI version.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionGiVersion)
+     *             .shape(systemVersionShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSystemVersionsResult> getSystemVersionsPlain(GetSystemVersionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getSystemVersions:getSystemVersions", TypeShape.of(GetSystemVersionsResult.class), args, Utilities.withVersion(options));
     }
@@ -22874,6 +28322,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetVmClusterResult> getVmCluster(GetVmClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmCluster:getVmCluster", TypeShape.of(GetVmClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the VM cluster. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmCluster = DatabaseFunctions.getVmCluster(GetVmClusterArgs.builder()
+     *             .vmClusterId(testVmClusterOciDatabaseVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVmClusterResult> getVmCluster(GetVmClusterArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getVmCluster:getVmCluster", TypeShape.of(GetVmClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -23101,6 +28593,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVmClusterNetworkResult> getVmClusterNetwork(GetVmClusterNetworkArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterNetwork:getVmClusterNetwork", TypeShape.of(GetVmClusterNetworkResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified VM cluster network. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = DatabaseFunctions.getVmClusterNetwork(GetVmClusterNetworkArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDatabaseVmClusterNetwork.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVmClusterNetworkResult> getVmClusterNetworkPlain(GetVmClusterNetworkPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getVmClusterNetwork:getVmClusterNetwork", TypeShape.of(GetVmClusterNetworkResult.class), args, Utilities.withVersion(options));
     }
@@ -23240,6 +28778,52 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", TypeShape.of(GetVmClusterNetworkDownloadConfigFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetwork.id())
+     *             .base64EncodeContent("false")
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", TypeShape.of(GetVmClusterNetworkDownloadConfigFileResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -23473,6 +29057,53 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVmClusterNetworksResult> getVmClusterNetworks(GetVmClusterNetworksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterNetworks:getVmClusterNetworks", TypeShape.of(GetVmClusterNetworksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = DatabaseFunctions.getVmClusterNetworks(GetVmClusterNetworksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .state(vmClusterNetworkState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVmClusterNetworksResult> getVmClusterNetworksPlain(GetVmClusterNetworksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getVmClusterNetworks:getVmClusterNetworks", TypeShape.of(GetVmClusterNetworksResult.class), args, Utilities.withVersion(options));
     }
@@ -23653,6 +29284,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVmClusterPatchResult> getVmClusterPatch(GetVmClusterPatchArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterPatch:getVmClusterPatch", TypeShape.of(GetVmClusterPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Patch resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified patch package.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatch = DatabaseFunctions.getVmClusterPatch(GetVmClusterPatchArgs.builder()
+     *             .patchId(testPatch.id())
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVmClusterPatchResult> getVmClusterPatchPlain(GetVmClusterPatchPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getVmClusterPatch:getVmClusterPatch", TypeShape.of(GetVmClusterPatchResult.class), args, Utilities.withVersion(options));
     }
@@ -23786,6 +29462,50 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries", TypeShape.of(GetVmClusterPatchHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Cluster Patch History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud{@literal @}Customer system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntries = DatabaseFunctions.getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs.builder()
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries", TypeShape.of(GetVmClusterPatchHistoryEntriesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -24009,6 +29729,51 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", TypeShape.of(GetVmClusterPatchHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Patch History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the patch history details for the specified patch history entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntry = DatabaseFunctions.getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs.builder()
+     *             .patchHistoryEntryId(testPatchHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntryPlain(GetVmClusterPatchHistoryEntryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", TypeShape.of(GetVmClusterPatchHistoryEntryResult.class), args, Utilities.withVersion(options));
     }
@@ -24185,6 +29950,50 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVmClusterPatchesResult> getVmClusterPatches(GetVmClusterPatchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterPatches:getVmClusterPatches", TypeShape.of(GetVmClusterPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Cluster Patches in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the patches applicable to the specified VM cluster in an Exadata Cloud{@literal @}Customer system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatches = DatabaseFunctions.getVmClusterPatches(GetVmClusterPatchesArgs.builder()
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVmClusterPatchesResult> getVmClusterPatchesPlain(GetVmClusterPatchesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getVmClusterPatches:getVmClusterPatches", TypeShape.of(GetVmClusterPatchesResult.class), args, Utilities.withVersion(options));
     }
@@ -24213,6 +30022,15 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetVmClusterRecommendedNetworkResult> getVmClusterRecommendedNetwork(GetVmClusterRecommendedNetworkArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", TypeShape.of(GetVmClusterRecommendedNetworkResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Generates a recommended Cloud{@literal @}Customer VM cluster network configuration.
+     * 
+     */
+    public static Output<GetVmClusterRecommendedNetworkResult> getVmClusterRecommendedNetwork(GetVmClusterRecommendedNetworkArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", TypeShape.of(GetVmClusterRecommendedNetworkResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -24357,6 +30175,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetVmClusterUpdateResult> getVmClusterUpdate(GetVmClusterUpdateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterUpdate:getVmClusterUpdate", TypeShape.of(GetVmClusterUpdateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdate = DatabaseFunctions.getVmClusterUpdate(GetVmClusterUpdateArgs.builder()
+     *             .updateId(testUpdate.id())
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVmClusterUpdateResult> getVmClusterUpdate(GetVmClusterUpdateArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getVmClusterUpdate:getVmClusterUpdate", TypeShape.of(GetVmClusterUpdateResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -24585,6 +30448,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", TypeShape.of(GetVmClusterUpdateHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntries = DatabaseFunctions.getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateHistoryEntryState)
+     *             .updateType(vmClusterUpdateHistoryEntryUpdateType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntriesPlain(GetVmClusterUpdateHistoryEntriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", TypeShape.of(GetVmClusterUpdateHistoryEntriesResult.class), args, Utilities.withVersion(options));
     }
@@ -24721,6 +30630,51 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry", TypeShape.of(GetVmClusterUpdateHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntry = DatabaseFunctions.getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs.builder()
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry", TypeShape.of(GetVmClusterUpdateHistoryEntryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -24949,6 +30903,52 @@ public final class DatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVmClusterUpdatesResult> getVmClusterUpdates(GetVmClusterUpdatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusterUpdates:getVmClusterUpdates", TypeShape.of(GetVmClusterUpdatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdates = DatabaseFunctions.getVmClusterUpdates(GetVmClusterUpdatesArgs.builder()
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateState)
+     *             .updateType(vmClusterUpdateUpdateType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVmClusterUpdatesResult> getVmClusterUpdatesPlain(GetVmClusterUpdatesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getVmClusterUpdates:getVmClusterUpdates", TypeShape.of(GetVmClusterUpdatesResult.class), args, Utilities.withVersion(options));
     }
@@ -25094,6 +31094,54 @@ public final class DatabaseFunctions {
      * 
      */
     public static Output<GetVmClustersResult> getVmClusters(GetVmClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getVmClusters:getVmClusters", TypeShape.of(GetVmClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Clusters in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the VM clusters in the specified compartment. Applies to Exadata Cloud{@literal @}Customer instances only.
+     * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusters = DatabaseFunctions.getVmClusters(GetVmClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(vmClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVmClustersResult> getVmClusters(GetVmClustersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getVmClusters:getVmClusters", TypeShape.of(GetVmClustersResult.class), args, Utilities.withVersion(options));
     }
     /**

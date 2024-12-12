@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
 import com.pulumi.oci.Optimizer.inputs.GetCategoriesPlainArgs;
 import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
@@ -249,6 +250,55 @@ public final class OptimizerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCategoriesResult> getCategories(GetCategoriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getCategories:getCategories", TypeShape.of(GetCategoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Categories in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists the supported Cloud Advisor categories.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = OptimizerFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(categoryCompartmentIdInSubtree)
+     *             .childTenancyIds(categoryChildTenancyIds)
+     *             .includeOrganization(categoryIncludeOrganization)
+     *             .name(categoryName)
+     *             .state(categoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCategoriesResult> getCategoriesPlain(GetCategoriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Optimizer/getCategories:getCategories", TypeShape.of(GetCategoriesResult.class), args, Utilities.withVersion(options));
     }
@@ -382,6 +432,50 @@ public final class OptimizerFunctions {
      * 
      */
     public static Output<GetCategoryResult> getCategory(GetCategoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getCategory:getCategory", TypeShape.of(GetCategoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Gets the category that corresponds to the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
+     *             .categoryId(testCategoryOciOptimizerCategory.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCategoryResult> getCategory(GetCategoryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Optimizer/getCategory:getCategory", TypeShape.of(GetCategoryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -601,6 +695,50 @@ public final class OptimizerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetEnrollmentStatusResult> getEnrollmentStatus(GetEnrollmentStatusArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", TypeShape.of(GetEnrollmentStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Gets the Cloud Advisor enrollment status.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
+     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetEnrollmentStatusResult> getEnrollmentStatusPlain(GetEnrollmentStatusPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", TypeShape.of(GetEnrollmentStatusResult.class), args, Utilities.withVersion(options));
     }
@@ -740,6 +878,52 @@ public final class OptimizerFunctions {
      * 
      */
     public static Output<GetEnrollmentStatusesResult> getEnrollmentStatuses(GetEnrollmentStatusesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses", TypeShape.of(GetEnrollmentStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Enrollment Statuses in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists the Cloud Advisor enrollment statuses.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatuses = OptimizerFunctions.getEnrollmentStatuses(GetEnrollmentStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .state(enrollmentStatusState)
+     *             .status(enrollmentStatusStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEnrollmentStatusesResult> getEnrollmentStatuses(GetEnrollmentStatusesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses", TypeShape.of(GetEnrollmentStatusesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -997,6 +1181,59 @@ public final class OptimizerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetHistoriesResult> getHistories(GetHistoriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getHistories:getHistories", TypeShape.of(GetHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists changes to the recommendations based on user activity.
+     * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHistories = OptimizerFunctions.getHistories(GetHistoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(historyCompartmentIdInSubtree)
+     *             .includeResourceMetadata(historyIncludeResourceMetadata)
+     *             .name(historyName)
+     *             .recommendationId(testRecommendation.id())
+     *             .recommendationName(testRecommendation.name())
+     *             .resourceType(historyResourceType)
+     *             .state(historyState)
+     *             .status(historyStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetHistoriesResult> getHistoriesPlain(GetHistoriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Optimizer/getHistories:getHistories", TypeShape.of(GetHistoriesResult.class), args, Utilities.withVersion(options));
     }
@@ -1130,6 +1367,50 @@ public final class OptimizerFunctions {
      * 
      */
     public static Output<GetProfileResult> getProfile(GetProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getProfile:getProfile", TypeShape.of(GetProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Gets the specified profile&#39;s information. Uses the profile&#39;s OCID to determine which profile to retrieve.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
+     *             .profileId(testProfileOciOptimizerProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProfileResult> getProfile(GetProfileArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Optimizer/getProfile:getProfile", TypeShape.of(GetProfileResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1315,6 +1596,53 @@ public final class OptimizerFunctions {
      * 
      */
     public static Output<GetProfileLevelResult> getProfileLevel(GetProfileLevelArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getProfileLevel:getProfileLevel", TypeShape.of(GetProfileLevelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Profile Level resource in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists the existing profile levels.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevel = OptimizerFunctions.getProfileLevel(GetProfileLevelArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
+     *             .name(profileLevelName)
+     *             .recommendationName(testRecommendation.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProfileLevelResult> getProfileLevel(GetProfileLevelArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Optimizer/getProfileLevel:getProfileLevel", TypeShape.of(GetProfileLevelResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1549,6 +1877,53 @@ public final class OptimizerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProfileLevelsResult> getProfileLevels(GetProfileLevelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getProfileLevels:getProfileLevels", TypeShape.of(GetProfileLevelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Profile Levels in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists the existing profile levels.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevels = OptimizerFunctions.getProfileLevels(GetProfileLevelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
+     *             .name(profileLevelName)
+     *             .recommendationName(testRecommendation.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProfileLevelsResult> getProfileLevelsPlain(GetProfileLevelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Optimizer/getProfileLevels:getProfileLevels", TypeShape.of(GetProfileLevelsResult.class), args, Utilities.withVersion(options));
     }
@@ -1733,6 +2108,52 @@ public final class OptimizerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProfilesResult> getProfiles(GetProfilesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getProfiles:getProfiles", TypeShape.of(GetProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Profiles in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists the existing profiles.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfiles = OptimizerFunctions.getProfiles(GetProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(profileName)
+     *             .state(profileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProfilesResult> getProfilesPlain(GetProfilesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Optimizer/getProfiles:getProfiles", TypeShape.of(GetProfilesResult.class), args, Utilities.withVersion(options));
     }
@@ -1866,6 +2287,50 @@ public final class OptimizerFunctions {
      * 
      */
     public static Output<GetRecommendationResult> getRecommendation(GetRecommendationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getRecommendation:getRecommendation", TypeShape.of(GetRecommendationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Gets the recommendation for the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
+     *             .recommendationId(testRecommendationOciOptimizerRecommendation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRecommendationResult> getRecommendation(GetRecommendationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Optimizer/getRecommendation:getRecommendation", TypeShape.of(GetRecommendationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2097,6 +2562,53 @@ public final class OptimizerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRecommendationStrategiesResult> getRecommendationStrategies(GetRecommendationStrategiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getRecommendationStrategies:getRecommendationStrategies", TypeShape.of(GetRecommendationStrategiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Recommendation Strategies in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists the existing strategies.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategies = OptimizerFunctions.getRecommendationStrategies(GetRecommendationStrategiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
+     *             .name(recommendationStrategyName)
+     *             .recommendationName(testRecommendation.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRecommendationStrategiesResult> getRecommendationStrategiesPlain(GetRecommendationStrategiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Optimizer/getRecommendationStrategies:getRecommendationStrategies", TypeShape.of(GetRecommendationStrategiesResult.class), args, Utilities.withVersion(options));
     }
@@ -2239,6 +2751,53 @@ public final class OptimizerFunctions {
      * 
      */
     public static Output<GetRecommendationStrategyResult> getRecommendationStrategy(GetRecommendationStrategyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", TypeShape.of(GetRecommendationStrategyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Recommendation Strategy resource in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists the existing strategies.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategy = OptimizerFunctions.getRecommendationStrategy(GetRecommendationStrategyArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
+     *             .name(recommendationStrategyName)
+     *             .recommendationName(testRecommendation.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRecommendationStrategyResult> getRecommendationStrategy(GetRecommendationStrategyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", TypeShape.of(GetRecommendationStrategyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2493,6 +3052,58 @@ public final class OptimizerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRecommendationsResult> getRecommendations(GetRecommendationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getRecommendations:getRecommendations", TypeShape.of(GetRecommendationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists the Cloud Advisor recommendations that are currently supported.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(recommendationCompartmentIdInSubtree)
+     *             .categoryId(testCategory.id())
+     *             .categoryName(testCategory.name())
+     *             .childTenancyIds(recommendationChildTenancyIds)
+     *             .includeOrganization(recommendationIncludeOrganization)
+     *             .name(recommendationName)
+     *             .state(recommendationState)
+     *             .status(recommendationStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRecommendationsResult> getRecommendationsPlain(GetRecommendationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Optimizer/getRecommendations:getRecommendations", TypeShape.of(GetRecommendationsResult.class), args, Utilities.withVersion(options));
     }
@@ -2629,6 +3240,51 @@ public final class OptimizerFunctions {
      * 
      */
     public static Output<GetResourceActionResult> getResourceAction(GetResourceActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getResourceAction:getResourceAction", TypeShape.of(GetResourceActionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Gets the resource action that corresponds to the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
+     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.id())
+     *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetResourceActionResult> getResourceAction(GetResourceActionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Optimizer/getResourceAction:getResourceAction", TypeShape.of(GetResourceActionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2836,6 +3492,60 @@ public final class OptimizerFunctions {
      * 
      */
     public static Output<GetResourceActionsResult> getResourceActions(GetResourceActionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Optimizer/getResourceActions:getResourceActions", TypeShape.of(GetResourceActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
+     * 
+     * Lists the Cloud Advisor resource actions that are supported.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceActions = OptimizerFunctions.getResourceActions(GetResourceActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(resourceActionCompartmentIdInSubtree)
+     *             .childTenancyIds(resourceActionChildTenancyIds)
+     *             .includeOrganization(resourceActionIncludeOrganization)
+     *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
+     *             .name(resourceActionName)
+     *             .recommendationId(testRecommendation.id())
+     *             .recommendationName(testRecommendation.name())
+     *             .resourceType(resourceActionResourceType)
+     *             .state(resourceActionState)
+     *             .status(resourceActionStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetResourceActionsResult> getResourceActions(GetResourceActionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Optimizer/getResourceActions:getResourceActions", TypeShape.of(GetResourceActionsResult.class), args, Utilities.withVersion(options));
     }
     /**

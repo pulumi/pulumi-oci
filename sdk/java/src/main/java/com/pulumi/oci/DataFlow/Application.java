@@ -14,6 +14,7 @@ import com.pulumi.oci.DataFlow.outputs.ApplicationDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.ApplicationExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.ApplicationParameter;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -96,6 +97,7 @@ import javax.annotation.Nullable;
  *             .privateEndpointId(testPrivateEndpoint.id())
  *             .type(applicationType)
  *             .warehouseBucketUri(applicationWarehouseBucketUri)
+ *             .terminateRunsOnDeletion(true)
  *             .build());
  * 
  *     }
@@ -522,6 +524,26 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
+     * A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="terminateRunsOnDeletion", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> terminateRunsOnDeletion;
+
+    /**
+     * @return A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Boolean>> terminateRunsOnDeletion() {
+        return Codegen.optional(this.terminateRunsOnDeletion);
+    }
+    /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
@@ -566,18 +588,12 @@ public class Application extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="warehouseBucketUri", refs={String.class}, tree="[0]")
     private Output<String> warehouseBucketUri;
 
     /**
      * @return (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> warehouseBucketUri() {

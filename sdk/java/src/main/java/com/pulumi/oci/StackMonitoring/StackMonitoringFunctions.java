@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
@@ -201,6 +202,50 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetBaselineableMetricResult> getBaselineableMetric(GetBaselineableMetricArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", TypeShape.of(GetBaselineableMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get the Baseline-able metric for the given id
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetric = StackMonitoringFunctions.getBaselineableMetric(GetBaselineableMetricArgs.builder()
+     *             .baselineableMetricId(testBaselineableMetricOciStackMonitoringBaselineableMetric.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBaselineableMetricResult> getBaselineableMetric(GetBaselineableMetricArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", TypeShape.of(GetBaselineableMetricResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -544,6 +589,56 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBaselineableMetricsResult> getBaselineableMetrics(GetBaselineableMetricsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics", TypeShape.of(GetBaselineableMetricsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List of summary of baseline-able metrics for a given resource group if specified.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
+     *             .baselineableMetricId(testBaselineableMetric.id())
+     *             .compartmentId(compartmentId)
+     *             .isOutOfBox(baselineableMetricIsOutOfBox)
+     *             .metricNamespace(baselineableMetricMetricNamespace)
+     *             .name(baselineableMetricName)
+     *             .resourceGroup(baselineableMetricResourceGroup)
+     *             .resourceType(baselineableMetricResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBaselineableMetricsResult> getBaselineableMetricsPlain(GetBaselineableMetricsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics", TypeShape.of(GetBaselineableMetricsResult.class), args, Utilities.withVersion(options));
     }
@@ -713,6 +808,62 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", TypeShape.of(GetBaselineableMetricsEvaluateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Evaluates metric for anomalies for the given data points
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetricsEvaluate = StackMonitoringFunctions.getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs.builder()
+     *             .baselineableMetricId(testBaselineableMetric.id())
+     *             .items(GetBaselineableMetricsEvaluateItemArgs.builder()
+     *                 .evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs.builder()
+     *                     .timestamp(baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsEvaluationDataPointsValue)
+     *                     .build())
+     *                 .trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPointArgs.builder()
+     *                     .timestamp(baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsTrainingDataPointsValue)
+     *                     .build())
+     *                 .dimensions(baselineableMetricsEvaluateItemsDimensions)
+     *                 .build())
+     *             .resourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", TypeShape.of(GetBaselineableMetricsEvaluateResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -944,6 +1095,50 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetConfigResult> getConfig(GetConfigArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getConfig:getConfig", TypeShape.of(GetConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets the details of a configuration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfig = StackMonitoringFunctions.getConfig(GetConfigArgs.builder()
+     *             .configId(testConfigOciStackMonitoringConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetConfigResult> getConfigPlain(GetConfigPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getConfig:getConfig", TypeShape.of(GetConfigResult.class), args, Utilities.withVersion(options));
     }
@@ -1086,6 +1281,53 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getConfigs:getConfigs", TypeShape.of(GetConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get a list of configurations in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfigs = StackMonitoringFunctions.getConfigs(GetConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(configDisplayName)
+     *             .state(configState)
+     *             .type(configType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getConfigs:getConfigs", TypeShape.of(GetConfigsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1308,6 +1550,50 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDiscoveryJobResult> getDiscoveryJob(GetDiscoveryJobArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getDiscoveryJob:getDiscoveryJob", TypeShape.of(GetDiscoveryJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of discovery Job by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJob = StackMonitoringFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
+     *             .discoveryJobId(testDiscoveryJobOciStackMonitoringDiscoveryJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDiscoveryJobResult> getDiscoveryJobPlain(GetDiscoveryJobPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getDiscoveryJob:getDiscoveryJob", TypeShape.of(GetDiscoveryJobResult.class), args, Utilities.withVersion(options));
     }
@@ -1444,6 +1730,51 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetDiscoveryJobLogsResult> getDiscoveryJobLogs(GetDiscoveryJobLogsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", TypeShape.of(GetDiscoveryJobLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Discovery Job Logs in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get all the logs of a Discovery Job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobLogs = StackMonitoringFunctions.getDiscoveryJobLogs(GetDiscoveryJobLogsArgs.builder()
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .logType(discoveryJobLogLogType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDiscoveryJobLogsResult> getDiscoveryJobLogs(GetDiscoveryJobLogsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", TypeShape.of(GetDiscoveryJobLogsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1668,6 +1999,51 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDiscoveryJobsResult> getDiscoveryJobs(GetDiscoveryJobsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getDiscoveryJobs:getDiscoveryJobs", TypeShape.of(GetDiscoveryJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Discovery Jobs in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of all Discovery Jobs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobs = StackMonitoringFunctions.getDiscoveryJobs(GetDiscoveryJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(discoveryJobName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDiscoveryJobsResult> getDiscoveryJobsPlain(GetDiscoveryJobsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getDiscoveryJobs:getDiscoveryJobs", TypeShape.of(GetDiscoveryJobsResult.class), args, Utilities.withVersion(options));
     }
@@ -1801,6 +2177,50 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetMaintenanceWindowResult> getMaintenanceWindow(GetMaintenanceWindowArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow", TypeShape.of(GetMaintenanceWindowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get maintenance window for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindow = StackMonitoringFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
+     *             .maintenanceWindowId(testMaintenanceWindowOciStackMonitoringMaintenanceWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaintenanceWindowResult> getMaintenanceWindow(GetMaintenanceWindowArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow", TypeShape.of(GetMaintenanceWindowResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2032,6 +2452,53 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMaintenanceWindowsResult> getMaintenanceWindows(GetMaintenanceWindowsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMaintenanceWindows:getMaintenanceWindows", TypeShape.of(GetMaintenanceWindowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of maintenance windows.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindows = StackMonitoringFunctions.getMaintenanceWindows(GetMaintenanceWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .lifecycleDetails(maintenanceWindowLifecycleDetails)
+     *             .name(maintenanceWindowName)
+     *             .status(maintenanceWindowStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMaintenanceWindowsResult> getMaintenanceWindowsPlain(GetMaintenanceWindowsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMaintenanceWindows:getMaintenanceWindows", TypeShape.of(GetMaintenanceWindowsResult.class), args, Utilities.withVersion(options));
     }
@@ -2165,6 +2632,50 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetMetricExtensionResult> getMetricExtension(GetMetricExtensionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMetricExtension:getMetricExtension", TypeShape.of(GetMetricExtensionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Metric Extension by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtension = StackMonitoringFunctions.getMetricExtension(GetMetricExtensionArgs.builder()
+     *             .metricExtensionId(testMetricExtensionOciStackMonitoringMetricExtension.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMetricExtensionResult> getMetricExtension(GetMetricExtensionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getMetricExtension:getMetricExtension", TypeShape.of(GetMetricExtensionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2404,6 +2915,55 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMetricExtensionsResult> getMetricExtensions(GetMetricExtensionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", TypeShape.of(GetMetricExtensionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of metric extensions
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .enabledOnResourceId(testResource.id())
+     *             .name(metricExtensionName)
+     *             .resourceType(metricExtensionResourceType)
+     *             .state(metricExtensionState)
+     *             .status(metricExtensionStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMetricExtensionsResult> getMetricExtensionsPlain(GetMetricExtensionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", TypeShape.of(GetMetricExtensionsResult.class), args, Utilities.withVersion(options));
     }
@@ -2580,6 +3140,50 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMonitoredResourceResult> getMonitoredResource(GetMonitoredResourceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", TypeShape.of(GetMonitoredResourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResource = StackMonitoringFunctions.getMonitoredResource(GetMonitoredResourceArgs.builder()
+     *             .monitoredResourceId(testMonitoredResourceOciStackMonitoringMonitoredResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMonitoredResourceResult> getMonitoredResourcePlain(GetMonitoredResourcePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", TypeShape.of(GetMonitoredResourceResult.class), args, Utilities.withVersion(options));
     }
@@ -2713,6 +3317,50 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetMonitoredResourceTaskResult> getMonitoredResourceTask(GetMonitoredResourceTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", TypeShape.of(GetMonitoredResourceTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTask = StackMonitoringFunctions.getMonitoredResourceTask(GetMonitoredResourceTaskArgs.builder()
+     *             .monitoredResourceTaskId(testMonitoredResourceTaskOciStackMonitoringMonitoredResourceTask.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoredResourceTaskResult> getMonitoredResourceTask(GetMonitoredResourceTaskArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", TypeShape.of(GetMonitoredResourceTaskResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2936,6 +3584,51 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMonitoredResourceTasksResult> getMonitoredResourceTasks(GetMonitoredResourceTasksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", TypeShape.of(GetMonitoredResourceTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Resource Tasks in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of stack monitoring resource tasks in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTasks = StackMonitoringFunctions.getMonitoredResourceTasks(GetMonitoredResourceTasksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .status(monitoredResourceTaskStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMonitoredResourceTasksResult> getMonitoredResourceTasksPlain(GetMonitoredResourceTasksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", TypeShape.of(GetMonitoredResourceTasksResult.class), args, Utilities.withVersion(options));
     }
@@ -3069,6 +3762,50 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetMonitoredResourceTypeResult> getMonitoredResourceType(GetMonitoredResourceTypeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType", TypeShape.of(GetMonitoredResourceTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceType = StackMonitoringFunctions.getMonitoredResourceType(GetMonitoredResourceTypeArgs.builder()
+     *             .monitoredResourceTypeId(testMonitoredResourceTypeOciStackMonitoringMonitoredResourceType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoredResourceTypeResult> getMonitoredResourceType(GetMonitoredResourceTypeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType", TypeShape.of(GetMonitoredResourceTypeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3332,6 +4069,61 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetMonitoredResourceTypesResult> getMonitoredResourceTypes(GetMonitoredResourceTypesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes", TypeShape.of(GetMonitoredResourceTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns list of resource types accessible to the customer.
+     * There are two types of resource types - System resource types and User resource types.
+     * System resource types are available out of the box in the stack monitoring resource service
+     * and are accessible to all the tenant users. User resource types are created in the context
+     * of a tenancy and are visible only for the tenancy. By default, both System resource types
+     * and User resource types are returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTypes = StackMonitoringFunctions.getMonitoredResourceTypes(GetMonitoredResourceTypesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .excludeFields(monitoredResourceTypeExcludeFields)
+     *             .fields(monitoredResourceTypeFields)
+     *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
+     *             .metricNamespace(monitoredResourceTypeMetricNamespace)
+     *             .name(monitoredResourceTypeName)
+     *             .status(monitoredResourceTypeStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetMonitoredResourceTypesResult> getMonitoredResourceTypesPlain(GetMonitoredResourceTypesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes", TypeShape.of(GetMonitoredResourceTypesResult.class), args, Utilities.withVersion(options));
     }
@@ -3474,6 +4266,53 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetMonitoredResourcesResult> getMonitoredResources(GetMonitoredResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResources:getMonitoredResources", TypeShape.of(GetMonitoredResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of monitored resources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(monitoredResourceName)
+     *             .status(monitoredResourceStatus)
+     *             .workRequestId(testWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMonitoredResourcesResult> getMonitoredResources(GetMonitoredResourcesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResources:getMonitoredResources", TypeShape.of(GetMonitoredResourcesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3696,6 +4535,50 @@ public final class StackMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProcessSetResult> getProcessSet(GetProcessSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getProcessSet:getProcessSet", TypeShape.of(GetProcessSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of a Process Set by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSet = StackMonitoringFunctions.getProcessSet(GetProcessSetArgs.builder()
+     *             .processSetId(testProcessSetOciStackMonitoringProcessSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProcessSetResult> getProcessSetPlain(GetProcessSetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getProcessSet:getProcessSet", TypeShape.of(GetProcessSetResult.class), args, Utilities.withVersion(options));
     }
@@ -3832,6 +4715,51 @@ public final class StackMonitoringFunctions {
      * 
      */
     public static Output<GetProcessSetsResult> getProcessSets(GetProcessSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getProcessSets:getProcessSets", TypeShape.of(GetProcessSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Process Sets in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of all Process Sets.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSets = StackMonitoringFunctions.getProcessSets(GetProcessSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(processSetDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProcessSetsResult> getProcessSets(GetProcessSetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:StackMonitoring/getProcessSets:getProcessSets", TypeShape.of(GetProcessSetsResult.class), args, Utilities.withVersion(options));
     }
     /**

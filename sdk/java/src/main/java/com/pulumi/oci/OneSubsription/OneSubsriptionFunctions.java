@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.OneSubsription.inputs.GetAggregatedComputedUsagesArgs;
 import com.pulumi.oci.OneSubsription.inputs.GetAggregatedComputedUsagesPlainArgs;
 import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
@@ -75,6 +76,15 @@ public final class OneSubsriptionFunctions {
      * 
      */
     public static Output<GetAggregatedComputedUsagesResult> getAggregatedComputedUsages(GetAggregatedComputedUsagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", TypeShape.of(GetAggregatedComputedUsagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Aggregated Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
+     * 
+     */
+    public static Output<GetAggregatedComputedUsagesResult> getAggregatedComputedUsages(GetAggregatedComputedUsagesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", TypeShape.of(GetAggregatedComputedUsagesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -225,6 +235,53 @@ public final class OneSubsriptionFunctions {
      * 
      */
     public static Output<GetBillingSchedulesResult> getBillingSchedules(GetBillingSchedulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getBillingSchedules:getBillingSchedules", TypeShape.of(GetBillingSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This list API returns all billing schedules for given subscription id and
+     * for a particular Subscribed Service if provided
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBillingSchedules = OneSubsriptionFunctions.getBillingSchedules(GetBillingSchedulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscribedServiceId(testSubscribedService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBillingSchedulesResult> getBillingSchedules(GetBillingSchedulesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OneSubsription/getBillingSchedules:getBillingSchedules", TypeShape.of(GetBillingSchedulesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -447,6 +504,50 @@ public final class OneSubsriptionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCommitmentResult> getCommitment(GetCommitmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getCommitment:getCommitment", TypeShape.of(GetCommitmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This API returns the commitment details corresponding to the id provided
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitment = OneSubsriptionFunctions.getCommitment(GetCommitmentArgs.builder()
+     *             .commitmentId(testCommitmentOciOnesubscriptionCommitment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCommitmentResult> getCommitmentPlain(GetCommitmentPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OneSubsription/getCommitment:getCommitment", TypeShape.of(GetCommitmentResult.class), args, Utilities.withVersion(options));
     }
@@ -583,6 +684,51 @@ public final class OneSubsriptionFunctions {
      * 
      */
     public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getCommitments:getCommitments", TypeShape.of(GetCommitmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Commitments in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This list API returns all commitments for a particular Subscribed Service
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitments = OneSubsriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testSubscribedService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OneSubsription/getCommitments:getCommitments", TypeShape.of(GetCommitmentsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -811,6 +957,52 @@ public final class OneSubsriptionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getComputedUsage:getComputedUsage", TypeShape.of(GetComputedUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This is an API which returns Computed Usage corresponding to the id passed
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OneSubsriptionFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOnesubscriptionComputedUsage.id())
+     *             .fields(computedUsageFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OneSubsription/getComputedUsage:getComputedUsage", TypeShape.of(GetComputedUsageResult.class), args, Utilities.withVersion(options));
     }
@@ -839,6 +1031,15 @@ public final class OneSubsriptionFunctions {
      * 
      */
     public static Output<GetComputedUsagesResult> getComputedUsages(GetComputedUsagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getComputedUsages:getComputedUsages", TypeShape.of(GetComputedUsagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This is a collection API which returns a list of Computed Usages for given filters.
+     * 
+     */
+    public static Output<GetComputedUsagesResult> getComputedUsages(GetComputedUsagesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OneSubsription/getComputedUsages:getComputedUsages", TypeShape.of(GetComputedUsagesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -986,6 +1187,52 @@ public final class OneSubsriptionFunctions {
      * 
      */
     public static Output<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", TypeShape.of(GetInvoiceLineComputedUsagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoiceLineComputedUsages = OneSubsriptionFunctions.getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .invoiceLineId(testInvoiceLine.id())
+     *             .fields(invoiceLineComputedUsageFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", TypeShape.of(GetInvoiceLineComputedUsagesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1223,6 +1470,54 @@ public final class OneSubsriptionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getInvoices:getInvoices", TypeShape.of(GetInvoicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Invoices in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This is a collection API which returns a list of Invoices for given filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OneSubsriptionFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .arCustomerTransactionId(testArCustomerTransaction.id())
+     *             .compartmentId(compartmentId)
+     *             .fields(invoiceFields)
+     *             .timeFrom(invoiceTimeFrom)
+     *             .timeTo(invoiceTimeTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OneSubsription/getInvoices:getInvoices", TypeShape.of(GetInvoicesResult.class), args, Utilities.withVersion(options));
     }
@@ -1356,6 +1651,50 @@ public final class OneSubsriptionFunctions {
      * 
      */
     public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", TypeShape.of(GetOrganizationSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * API that returns data for the list of subscription ids returned from Organizations API
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOrganizationSubscriptions = OneSubsriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", TypeShape.of(GetOrganizationSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1595,6 +1934,55 @@ public final class OneSubsriptionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRatecardsResult> getRatecards(GetRatecardsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getRatecards:getRatecards", TypeShape.of(GetRatecardsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ratecards in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * List API that returns all ratecards for given Subscription Id and Account ID (if provided) and
+     * for a particular date range
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRatecards = OneSubsriptionFunctions.getRatecards(GetRatecardsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRatecardsResult> getRatecardsPlain(GetRatecardsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OneSubsription/getRatecards:getRatecards", TypeShape.of(GetRatecardsResult.class), args, Utilities.withVersion(options));
     }
@@ -1731,6 +2119,51 @@ public final class OneSubsriptionFunctions {
      * 
      */
     public static Output<GetSubscribedServiceResult> getSubscribedService(GetSubscribedServiceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getSubscribedService:getSubscribedService", TypeShape.of(GetSubscribedServiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This API returns the subscribed service details corresponding to the id provided
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedService = OneSubsriptionFunctions.getSubscribedService(GetSubscribedServiceArgs.builder()
+     *             .subscribedServiceId(testSubscribedServiceOciOnesubscriptionSubscribedService.id())
+     *             .fields(subscribedServiceFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubscribedServiceResult> getSubscribedService(GetSubscribedServiceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OneSubsription/getSubscribedService:getSubscribedService", TypeShape.of(GetSubscribedServiceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1963,6 +2396,53 @@ public final class OneSubsriptionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSubscribedServicesResult> getSubscribedServices(GetSubscribedServicesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getSubscribedServices:getSubscribedServices", TypeShape.of(GetSubscribedServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This list API returns all subscribed services for given Subscription ID
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedServices = OneSubsriptionFunctions.getSubscribedServices(GetSubscribedServicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .orderLineId(testOrderLine.id())
+     *             .status(subscribedServiceStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSubscribedServicesResult> getSubscribedServicesPlain(GetSubscribedServicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OneSubsription/getSubscribedServices:getSubscribedServices", TypeShape.of(GetSubscribedServicesResult.class), args, Utilities.withVersion(options));
     }
@@ -2117,6 +2597,57 @@ public final class OneSubsriptionFunctions {
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OneSubsription/getSubscriptions:getSubscriptions", TypeShape.of(GetSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
+     * 
+     * This list API returns all subscriptions for a given plan number or subscription id or buyer email
+     * and provides additional parameters to include ratecard and commitment details.
+     * This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw
+     * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OneSubsriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OneSubsription/getSubscriptions:getSubscriptions", TypeShape.of(GetSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
     /**

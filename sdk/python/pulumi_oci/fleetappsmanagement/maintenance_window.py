@@ -34,17 +34,17 @@ class MaintenanceWindowArgs:
         """
         The set of arguments for constructing a MaintenanceWindow resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
-        :param pulumi.Input[str] duration: (Updatable) Duration if schedule type is Custom
+        :param pulumi.Input[str] duration: (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_outage: (Updatable) Does the maintenenace window cause outage?
-        :param pulumi.Input[bool] is_recurring: (Updatable) Is this is a recurring maintenance window
+        :param pulumi.Input[bool] is_outage: (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
+        :param pulumi.Input[bool] is_recurring: (Updatable) Is this a recurring maintenance window?
         :param pulumi.Input[str] maintenance_window_type: (Updatable) Type of maintenenace window
-        :param pulumi.Input[str] recurrences: (Updatable) Recurrence rule specification if recurring
-        :param pulumi.Input[int] task_initiation_cutoff: (Updatable) Task initiation cutoff
-        :param pulumi.Input[str] time_schedule_start: (Updatable) Start time of schedule
+        :param pulumi.Input[str] recurrences: (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
+        :param pulumi.Input[int] task_initiation_cutoff: (Updatable) Task initiation cutoff time for the maintenance window.
+        :param pulumi.Input[str] time_schedule_start: (Updatable) Specify the date and time of the day that the maintenance window starts.
                
                
                ** IMPORTANT **
@@ -89,7 +89,7 @@ class MaintenanceWindowArgs:
     @pulumi.getter
     def duration(self) -> pulumi.Input[str]:
         """
-        (Updatable) Duration if schedule type is Custom
+        (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         """
         return pulumi.get(self, "duration")
 
@@ -149,7 +149,7 @@ class MaintenanceWindowArgs:
     @pulumi.getter(name="isOutage")
     def is_outage(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Does the maintenenace window cause outage?
+        (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
         """
         return pulumi.get(self, "is_outage")
 
@@ -161,7 +161,7 @@ class MaintenanceWindowArgs:
     @pulumi.getter(name="isRecurring")
     def is_recurring(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Is this is a recurring maintenance window
+        (Updatable) Is this a recurring maintenance window?
         """
         return pulumi.get(self, "is_recurring")
 
@@ -185,7 +185,7 @@ class MaintenanceWindowArgs:
     @pulumi.getter
     def recurrences(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Recurrence rule specification if recurring
+        (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         """
         return pulumi.get(self, "recurrences")
 
@@ -197,7 +197,7 @@ class MaintenanceWindowArgs:
     @pulumi.getter(name="taskInitiationCutoff")
     def task_initiation_cutoff(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Task initiation cutoff
+        (Updatable) Task initiation cutoff time for the maintenance window.
         """
         return pulumi.get(self, "task_initiation_cutoff")
 
@@ -209,7 +209,7 @@ class MaintenanceWindowArgs:
     @pulumi.getter(name="timeScheduleStart")
     def time_schedule_start(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Start time of schedule
+        (Updatable) Specify the date and time of the day that the maintenance window starts.
 
 
         ** IMPORTANT **
@@ -249,19 +249,19 @@ class _MaintenanceWindowState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] duration: (Updatable) Duration if schedule type is Custom
+        :param pulumi.Input[str] duration: (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_outage: (Updatable) Does the maintenenace window cause outage?
-        :param pulumi.Input[bool] is_recurring: (Updatable) Is this is a recurring maintenance window
+        :param pulumi.Input[bool] is_outage: (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
+        :param pulumi.Input[bool] is_recurring: (Updatable) Is this a recurring maintenance window?
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] maintenance_window_type: (Updatable) Type of maintenenace window
-        :param pulumi.Input[str] recurrences: (Updatable) Recurrence rule specification if recurring
+        :param pulumi.Input[str] recurrences: (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         :param pulumi.Input[str] resource_region: Associated region
         :param pulumi.Input[str] state: The current state of the MaintenanceWindow.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[int] task_initiation_cutoff: (Updatable) Task initiation cutoff
+        :param pulumi.Input[int] task_initiation_cutoff: (Updatable) Task initiation cutoff time for the maintenance window.
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_schedule_start: (Updatable) Start time of schedule
+        :param pulumi.Input[str] time_schedule_start: (Updatable) Specify the date and time of the day that the maintenance window starts.
                
                
                ** IMPORTANT **
@@ -357,7 +357,7 @@ class _MaintenanceWindowState:
     @pulumi.getter
     def duration(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Duration if schedule type is Custom
+        (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         """
         return pulumi.get(self, "duration")
 
@@ -381,7 +381,7 @@ class _MaintenanceWindowState:
     @pulumi.getter(name="isOutage")
     def is_outage(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Does the maintenenace window cause outage?
+        (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
         """
         return pulumi.get(self, "is_outage")
 
@@ -393,7 +393,7 @@ class _MaintenanceWindowState:
     @pulumi.getter(name="isRecurring")
     def is_recurring(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Is this is a recurring maintenance window
+        (Updatable) Is this a recurring maintenance window?
         """
         return pulumi.get(self, "is_recurring")
 
@@ -429,7 +429,7 @@ class _MaintenanceWindowState:
     @pulumi.getter
     def recurrences(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Recurrence rule specification if recurring
+        (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         """
         return pulumi.get(self, "recurrences")
 
@@ -477,7 +477,7 @@ class _MaintenanceWindowState:
     @pulumi.getter(name="taskInitiationCutoff")
     def task_initiation_cutoff(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Task initiation cutoff
+        (Updatable) Task initiation cutoff time for the maintenance window.
         """
         return pulumi.get(self, "task_initiation_cutoff")
 
@@ -501,7 +501,7 @@ class _MaintenanceWindowState:
     @pulumi.getter(name="timeScheduleStart")
     def time_schedule_start(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Start time of schedule
+        (Updatable) Specify the date and time of the day that the maintenance window starts.
 
 
         ** IMPORTANT **
@@ -547,7 +547,7 @@ class MaintenanceWindow(pulumi.CustomResource):
         """
         This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new MaintenanceWindow.
+        Create a maintenance window in Fleet Application Management.
 
         ## Example Usage
 
@@ -588,14 +588,14 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] duration: (Updatable) Duration if schedule type is Custom
+        :param pulumi.Input[str] duration: (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_outage: (Updatable) Does the maintenenace window cause outage?
-        :param pulumi.Input[bool] is_recurring: (Updatable) Is this is a recurring maintenance window
+        :param pulumi.Input[bool] is_outage: (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
+        :param pulumi.Input[bool] is_recurring: (Updatable) Is this a recurring maintenance window?
         :param pulumi.Input[str] maintenance_window_type: (Updatable) Type of maintenenace window
-        :param pulumi.Input[str] recurrences: (Updatable) Recurrence rule specification if recurring
-        :param pulumi.Input[int] task_initiation_cutoff: (Updatable) Task initiation cutoff
-        :param pulumi.Input[str] time_schedule_start: (Updatable) Start time of schedule
+        :param pulumi.Input[str] recurrences: (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
+        :param pulumi.Input[int] task_initiation_cutoff: (Updatable) Task initiation cutoff time for the maintenance window.
+        :param pulumi.Input[str] time_schedule_start: (Updatable) Specify the date and time of the day that the maintenance window starts.
                
                
                ** IMPORTANT **
@@ -610,7 +610,7 @@ class MaintenanceWindow(pulumi.CustomResource):
         """
         This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new MaintenanceWindow.
+        Create a maintenance window in Fleet Application Management.
 
         ## Example Usage
 
@@ -742,19 +742,19 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] duration: (Updatable) Duration if schedule type is Custom
+        :param pulumi.Input[str] duration: (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_outage: (Updatable) Does the maintenenace window cause outage?
-        :param pulumi.Input[bool] is_recurring: (Updatable) Is this is a recurring maintenance window
+        :param pulumi.Input[bool] is_outage: (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
+        :param pulumi.Input[bool] is_recurring: (Updatable) Is this a recurring maintenance window?
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] maintenance_window_type: (Updatable) Type of maintenenace window
-        :param pulumi.Input[str] recurrences: (Updatable) Recurrence rule specification if recurring
+        :param pulumi.Input[str] recurrences: (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         :param pulumi.Input[str] resource_region: Associated region
         :param pulumi.Input[str] state: The current state of the MaintenanceWindow.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[int] task_initiation_cutoff: (Updatable) Task initiation cutoff
+        :param pulumi.Input[int] task_initiation_cutoff: (Updatable) Task initiation cutoff time for the maintenance window.
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_schedule_start: (Updatable) Start time of schedule
+        :param pulumi.Input[str] time_schedule_start: (Updatable) Specify the date and time of the day that the maintenance window starts.
                
                
                ** IMPORTANT **
@@ -821,7 +821,7 @@ class MaintenanceWindow(pulumi.CustomResource):
     @pulumi.getter
     def duration(self) -> pulumi.Output[str]:
         """
-        (Updatable) Duration if schedule type is Custom
+        (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         """
         return pulumi.get(self, "duration")
 
@@ -837,7 +837,7 @@ class MaintenanceWindow(pulumi.CustomResource):
     @pulumi.getter(name="isOutage")
     def is_outage(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Does the maintenenace window cause outage?
+        (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
         """
         return pulumi.get(self, "is_outage")
 
@@ -845,7 +845,7 @@ class MaintenanceWindow(pulumi.CustomResource):
     @pulumi.getter(name="isRecurring")
     def is_recurring(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Is this is a recurring maintenance window
+        (Updatable) Is this a recurring maintenance window?
         """
         return pulumi.get(self, "is_recurring")
 
@@ -869,7 +869,7 @@ class MaintenanceWindow(pulumi.CustomResource):
     @pulumi.getter
     def recurrences(self) -> pulumi.Output[str]:
         """
-        (Updatable) Recurrence rule specification if recurring
+        (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         """
         return pulumi.get(self, "recurrences")
 
@@ -901,7 +901,7 @@ class MaintenanceWindow(pulumi.CustomResource):
     @pulumi.getter(name="taskInitiationCutoff")
     def task_initiation_cutoff(self) -> pulumi.Output[int]:
         """
-        (Updatable) Task initiation cutoff
+        (Updatable) Task initiation cutoff time for the maintenance window.
         """
         return pulumi.get(self, "task_initiation_cutoff")
 
@@ -917,7 +917,7 @@ class MaintenanceWindow(pulumi.CustomResource):
     @pulumi.getter(name="timeScheduleStart")
     def time_schedule_start(self) -> pulumi.Output[str]:
         """
-        (Updatable) Start time of schedule
+        (Updatable) Specify the date and time of the day that the maintenance window starts.
 
 
         ** IMPORTANT **

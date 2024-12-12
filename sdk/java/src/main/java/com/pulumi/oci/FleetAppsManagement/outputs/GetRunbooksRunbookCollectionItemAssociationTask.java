@@ -30,7 +30,7 @@ public final class GetRunbooksRunbookCollectionItemAssociationTask {
      */
     private String stepName;
     /**
-     * @return The properties of the task.
+     * @return The properties of the component.
      * 
      */
     private List<GetRunbooksRunbookCollectionItemAssociationTaskStepProperty> stepProperties;
@@ -63,7 +63,7 @@ public final class GetRunbooksRunbookCollectionItemAssociationTask {
         return this.stepName;
     }
     /**
-     * @return The properties of the task.
+     * @return The properties of the component.
      * 
      */
     public List<GetRunbooksRunbookCollectionItemAssociationTaskStepProperty> stepProperties() {

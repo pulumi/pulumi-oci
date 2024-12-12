@@ -18,13 +18,21 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Content Source Details
+        /// Execution details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailResult> ExecutionDetails;
+        /// <summary>
+        /// Is this an Apply Subject Task? Ex. Patch Execution Task
+        /// </summary>
+        public readonly bool IsApplySubjectTask;
         /// <summary>
         /// Make a copy of this task in Library
         /// </summary>
         public readonly bool IsCopyToLibraryEnabled;
+        /// <summary>
+        /// Is this a discovery output task?
+        /// </summary>
+        public readonly bool IsDiscoveryOutputTask;
         /// <summary>
         /// The name of the task
         /// </summary>
@@ -56,7 +64,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             ImmutableArray<Outputs.GetRunbookAssociationTaskTaskRecordDetailExecutionDetailResult> executionDetails,
 
+            bool isApplySubjectTask,
+
             bool isCopyToLibraryEnabled,
+
+            bool isDiscoveryOutputTask,
 
             string name,
 
@@ -72,7 +84,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         {
             Description = description;
             ExecutionDetails = executionDetails;
+            IsApplySubjectTask = isApplySubjectTask;
             IsCopyToLibraryEnabled = isCopyToLibraryEnabled;
+            IsDiscoveryOutputTask = isDiscoveryOutputTask;
             Name = name;
             OsType = osType;
             Platform = platform;

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
 import com.pulumi.oci.Streaming.inputs.GetConnectHarnessPlainArgs;
 import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
@@ -159,6 +160,50 @@ public final class StreamingFunctions {
      * 
      */
     public static Output<GetConnectHarnessResult> getConnectHarness(GetConnectHarnessArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Streaming/getConnectHarness:getConnectHarness", TypeShape.of(GetConnectHarnessResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
+     * 
+     * Gets detailed information about a connect harness.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
+     *             .connectHarnessId(testConnectHarnes.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConnectHarnessResult> getConnectHarness(GetConnectHarnessArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Streaming/getConnectHarness:getConnectHarness", TypeShape.of(GetConnectHarnessResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -390,6 +435,53 @@ public final class StreamingFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetConnectHarnessesResult> getConnectHarnesses(GetConnectHarnessesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Streaming/getConnectHarnesses:getConnectHarnesses", TypeShape.of(GetConnectHarnessesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Connect Harnesses in Oracle Cloud Infrastructure Streaming service.
+     * 
+     * Lists the connectharness.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarnesses = StreamingFunctions.getConnectHarnesses(GetConnectHarnessesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(connectHarnessId)
+     *             .name(connectHarnessName)
+     *             .state(connectHarnessState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetConnectHarnessesResult> getConnectHarnessesPlain(GetConnectHarnessesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Streaming/getConnectHarnesses:getConnectHarnesses", TypeShape.of(GetConnectHarnessesResult.class), args, Utilities.withVersion(options));
     }
@@ -523,6 +615,50 @@ public final class StreamingFunctions {
      * 
      */
     public static Output<GetStreamResult> getStream(GetStreamArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Streaming/getStream:getStream", TypeShape.of(GetStreamResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream resource in Oracle Cloud Infrastructure Streaming service.
+     * 
+     * Gets detailed information about a stream, including the number of partitions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
+     *             .streamId(testStreamOciStreamingStream.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamResult> getStream(GetStreamArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Streaming/getStream:getStream", TypeShape.of(GetStreamResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -742,6 +878,50 @@ public final class StreamingFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetStreamPoolResult> getStreamPool(GetStreamPoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Streaming/getStreamPool:getStreamPool", TypeShape.of(GetStreamPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
+     * 
+     * Gets detailed information about the stream pool, such as Kafka settings.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetStreamPoolResult> getStreamPoolPlain(GetStreamPoolPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Streaming/getStreamPool:getStreamPool", TypeShape.of(GetStreamPoolResult.class), args, Utilities.withVersion(options));
     }
@@ -884,6 +1064,53 @@ public final class StreamingFunctions {
      * 
      */
     public static Output<GetStreamPoolsResult> getStreamPools(GetStreamPoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Streaming/getStreamPools:getStreamPools", TypeShape.of(GetStreamPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Pools in Oracle Cloud Infrastructure Streaming service.
+     * 
+     * List the stream pools for a given compartment ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPools = StreamingFunctions.getStreamPools(GetStreamPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(streamPoolId)
+     *             .name(streamPoolName)
+     *             .state(streamPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamPoolsResult> getStreamPools(GetStreamPoolsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Streaming/getStreamPools:getStreamPools", TypeShape.of(GetStreamPoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1186,6 +1413,57 @@ public final class StreamingFunctions {
      * 
      */
     public static Output<GetStreamsResult> getStreams(GetStreamsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Streaming/getStreams:getStreams", TypeShape.of(GetStreamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Streams in Oracle Cloud Infrastructure Streaming service.
+     * 
+     * Lists the streams in the given compartment id.
+     * If the compartment id is specified, it will list streams in the compartment, regardless of their stream pool.
+     * If the stream pool id is specified, the action will be scoped to that stream pool.
+     * The compartment id and stream pool id cannot be specified at the same time.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(streamId)
+     *             .name(streamName)
+     *             .state(streamState)
+     *             .streamPoolId(testStreamPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamsResult> getStreams(GetStreamsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Streaming/getStreams:getStreams", TypeShape.of(GetStreamsResult.class), args, Utilities.withVersion(options));
     }
     /**

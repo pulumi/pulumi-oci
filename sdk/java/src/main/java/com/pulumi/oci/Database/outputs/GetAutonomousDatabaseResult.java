@@ -349,6 +349,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private String keyStoreWalletName;
     /**
+     * @return (Optional) The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    private String keyVersionId;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -1139,6 +1144,13 @@ public final class GetAutonomousDatabaseResult {
         return this.keyStoreWalletName;
     }
     /**
+     * @return (Optional) The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    public String keyVersionId() {
+        return this.keyVersionId;
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -1702,6 +1714,7 @@ public final class GetAutonomousDatabaseResult {
         private List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
         private String keyStoreId;
         private String keyStoreWalletName;
+        private String keyVersionId;
         private String kmsKeyId;
         private String kmsKeyLifecycleDetails;
         private String kmsKeyVersionId;
@@ -1847,6 +1860,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
+    	      this.keyVersionId = defaults.keyVersionId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyLifecycleDetails = defaults.kmsKeyLifecycleDetails;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
@@ -2488,6 +2502,14 @@ public final class GetAutonomousDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "keyStoreWalletName");
             }
             this.keyStoreWalletName = keyStoreWalletName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyVersionId(String keyVersionId) {
+            if (keyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "keyVersionId");
+            }
+            this.keyVersionId = keyVersionId;
             return this;
         }
         @CustomType.Setter
@@ -3198,6 +3220,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.keyHistoryEntries = keyHistoryEntries;
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.keyStoreWalletName = keyStoreWalletName;
+            _resultValue.keyVersionId = keyVersionId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;

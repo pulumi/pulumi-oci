@@ -18,9 +18,17 @@ public final class GetFleetCredentialsFilterArgs extends com.pulumi.resources.Re
 
     public static final GetFleetCredentialsFilterArgs Empty = new GetFleetCredentialsFilterArgs();
 
+    /**
+     * Name of the variable.
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return Name of the variable.
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
@@ -65,11 +73,23 @@ public final class GetFleetCredentialsFilterArgs extends com.pulumi.resources.Re
             $ = new GetFleetCredentialsFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name Name of the variable.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name Name of the variable.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

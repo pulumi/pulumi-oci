@@ -27,13 +27,16 @@ class GetDesktopPoolResult:
     """
     A collection of values returned by getDesktopPool.
     """
-    def __init__(__self__, active_desktops=None, are_privileged_users=None, availability_domain=None, availability_policies=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, private_access_details=None, session_lifecycle_actions=None, shape_configs=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None, use_dedicated_vm_host=None):
+    def __init__(__self__, active_desktops=None, are_privileged_users=None, are_volumes_preserved=None, availability_domain=None, availability_policies=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, private_access_details=None, session_lifecycle_actions=None, shape_configs=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None, use_dedicated_vm_host=None):
         if active_desktops and not isinstance(active_desktops, int):
             raise TypeError("Expected argument 'active_desktops' to be a int")
         pulumi.set(__self__, "active_desktops", active_desktops)
         if are_privileged_users and not isinstance(are_privileged_users, bool):
             raise TypeError("Expected argument 'are_privileged_users' to be a bool")
         pulumi.set(__self__, "are_privileged_users", are_privileged_users)
+        if are_volumes_preserved and not isinstance(are_volumes_preserved, bool):
+            raise TypeError("Expected argument 'are_volumes_preserved' to be a bool")
+        pulumi.set(__self__, "are_volumes_preserved", are_volumes_preserved)
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -134,6 +137,11 @@ class GetDesktopPoolResult:
         Indicates whether desktop pool users have administrative privileges on their desktop.
         """
         return pulumi.get(self, "are_privileged_users")
+
+    @property
+    @pulumi.getter(name="areVolumesPreserved")
+    def are_volumes_preserved(self) -> bool:
+        return pulumi.get(self, "are_volumes_preserved")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -366,6 +374,7 @@ class AwaitableGetDesktopPoolResult(GetDesktopPoolResult):
         return GetDesktopPoolResult(
             active_desktops=self.active_desktops,
             are_privileged_users=self.are_privileged_users,
+            are_volumes_preserved=self.are_volumes_preserved,
             availability_domain=self.availability_domain,
             availability_policies=self.availability_policies,
             compartment_id=self.compartment_id,
@@ -423,6 +432,7 @@ def get_desktop_pool(desktop_pool_id: Optional[str] = None,
     return AwaitableGetDesktopPoolResult(
         active_desktops=pulumi.get(__ret__, 'active_desktops'),
         are_privileged_users=pulumi.get(__ret__, 'are_privileged_users'),
+        are_volumes_preserved=pulumi.get(__ret__, 'are_volumes_preserved'),
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         availability_policies=pulumi.get(__ret__, 'availability_policies'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -477,6 +487,7 @@ def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[str]] = None,
     return __ret__.apply(lambda __response__: GetDesktopPoolResult(
         active_desktops=pulumi.get(__response__, 'active_desktops'),
         are_privileged_users=pulumi.get(__response__, 'are_privileged_users'),
+        are_volumes_preserved=pulumi.get(__response__, 'are_volumes_preserved'),
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         availability_policies=pulumi.get(__response__, 'availability_policies'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),

@@ -156,6 +156,10 @@ export class FsuCycle extends pulumi.CustomResource {
      */
     public /*out*/ readonly lastCompletedAction!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+     */
+    public /*out*/ readonly lastCompletedActionId!: pulumi.Output<string>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -167,6 +171,10 @@ export class FsuCycle extends pulumi.CustomResource {
      * In this array all the possible actions will be listed. The first element is the suggested Action.
      */
     public /*out*/ readonly nextActionToExecutes!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleNextActionToExecute[]>;
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     */
+    public /*out*/ readonly rollbackCycleState!: pulumi.Output<string>;
     /**
      * Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
      */
@@ -228,9 +236,11 @@ export class FsuCycle extends pulumi.CustomResource {
             resourceInputs["isIgnorePatches"] = state ? state.isIgnorePatches : undefined;
             resourceInputs["isKeepPlacement"] = state ? state.isKeepPlacement : undefined;
             resourceInputs["lastCompletedAction"] = state ? state.lastCompletedAction : undefined;
+            resourceInputs["lastCompletedActionId"] = state ? state.lastCompletedActionId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maxDrainTimeoutInSeconds"] = state ? state.maxDrainTimeoutInSeconds : undefined;
             resourceInputs["nextActionToExecutes"] = state ? state.nextActionToExecutes : undefined;
+            resourceInputs["rollbackCycleState"] = state ? state.rollbackCycleState : undefined;
             resourceInputs["stageActionSchedule"] = state ? state.stageActionSchedule : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -270,8 +280,10 @@ export class FsuCycle extends pulumi.CustomResource {
             resourceInputs["collectionType"] = undefined /*out*/;
             resourceInputs["executingFsuActionId"] = undefined /*out*/;
             resourceInputs["lastCompletedAction"] = undefined /*out*/;
+            resourceInputs["lastCompletedActionId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["nextActionToExecutes"] = undefined /*out*/;
+            resourceInputs["rollbackCycleState"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -348,6 +360,10 @@ export interface FsuCycleState {
      */
     lastCompletedAction?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+     */
+    lastCompletedActionId?: pulumi.Input<string>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
@@ -359,6 +375,10 @@ export interface FsuCycleState {
      * In this array all the possible actions will be listed. The first element is the suggested Action.
      */
     nextActionToExecutes?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleNextActionToExecute>[]>;
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     */
+    rollbackCycleState?: pulumi.Input<string>;
     /**
      * Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
      */

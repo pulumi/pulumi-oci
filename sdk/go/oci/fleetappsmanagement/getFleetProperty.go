@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// # Gets a FleetProperty by identifier
+// Gets a Fleet Property by identifier.
 //
 // ## Example Usage
 //
@@ -53,15 +53,15 @@ func LookupFleetProperty(ctx *pulumi.Context, args *LookupFleetPropertyArgs, opt
 
 // A collection of arguments for invoking getFleetProperty.
 type LookupFleetPropertyArgs struct {
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
-	// unique FleetProperty identifier
+	// unique FleetProperty identifier.
 	FleetPropertyId string `pulumi:"fleetPropertyId"`
 }
 
 // A collection of values returned by getFleetProperty.
 type LookupFleetPropertyResult struct {
-	// Values of the category (must be a single value if selection = 'single choice')
+	// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
 	AllowedValues []string `pulumi:"allowedValues"`
 	// Tenancy OCID
 	CompartmentId string `pulumi:"compartmentId"`
@@ -71,9 +71,9 @@ type LookupFleetPropertyResult struct {
 	FleetPropertyId string `pulumi:"fleetPropertyId"`
 	// The unique id of the resource.
 	Id string `pulumi:"id"`
-	// Property Id Ocid.
+	// OCID referring to global level metadata property.
 	PropertyId string `pulumi:"propertyId"`
-	// Text selection of the category
+	// Text selection of the property.
 	SelectionType string `pulumi:"selectionType"`
 	// The current state of the FleetProperty.
 	State string `pulumi:"state"`
@@ -83,9 +83,9 @@ type LookupFleetPropertyResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Value of the Property
+	// Value of the Property.
 	Value string `pulumi:"value"`
-	// Format of the value
+	// Format of the value.
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -110,9 +110,9 @@ func LookupFleetPropertyOutput(ctx *pulumi.Context, args LookupFleetPropertyOutp
 
 // A collection of arguments for invoking getFleetProperty.
 type LookupFleetPropertyOutputArgs struct {
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
-	// unique FleetProperty identifier
+	// unique FleetProperty identifier.
 	FleetPropertyId pulumi.StringInput `pulumi:"fleetPropertyId"`
 }
 
@@ -135,7 +135,7 @@ func (o LookupFleetPropertyResultOutput) ToLookupFleetPropertyResultOutputWithCo
 	return o
 }
 
-// Values of the category (must be a single value if selection = 'single choice')
+// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
 func (o LookupFleetPropertyResultOutput) AllowedValues() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupFleetPropertyResult) []string { return v.AllowedValues }).(pulumi.StringArrayOutput)
 }
@@ -163,12 +163,12 @@ func (o LookupFleetPropertyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetPropertyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Property Id Ocid.
+// OCID referring to global level metadata property.
 func (o LookupFleetPropertyResultOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetPropertyResult) string { return v.PropertyId }).(pulumi.StringOutput)
 }
 
-// Text selection of the category
+// Text selection of the property.
 func (o LookupFleetPropertyResultOutput) SelectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetPropertyResult) string { return v.SelectionType }).(pulumi.StringOutput)
 }
@@ -193,12 +193,12 @@ func (o LookupFleetPropertyResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetPropertyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Value of the Property
+// Value of the Property.
 func (o LookupFleetPropertyResultOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetPropertyResult) string { return v.Value }).(pulumi.StringOutput)
 }
 
-// Format of the value
+// Format of the value.
 func (o LookupFleetPropertyResultOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetPropertyResult) string { return v.ValueType }).(pulumi.StringOutput)
 }

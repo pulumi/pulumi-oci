@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
 import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthPlainArgs;
 import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
@@ -249,6 +250,52 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getBackendHealth:getBackendHealth", TypeShape.of(GetBackendHealthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Gets the current health status of the specified backend server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBackendHealthResult> getBackendHealthPlain(GetBackendHealthPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getBackendHealth:getBackendHealth", TypeShape.of(GetBackendHealthResult.class), args, Utilities.withVersion(options));
     }
@@ -385,6 +432,51 @@ public final class LoadBalancerFunctions {
      * 
      */
     public static Output<GetBackendSetHealthResult> getBackendSetHealth(GetBackendSetHealthArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", TypeShape.of(GetBackendSetHealthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Backend Set Health resource in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Gets the health status for the specified backend set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBackendSetHealthResult> getBackendSetHealth(GetBackendSetHealthArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", TypeShape.of(GetBackendSetHealthResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -621,6 +713,54 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getBackendSets:getBackendSets", TypeShape.of(GetBackendSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all backend sets associated with a given load balancer.
+     * 
+     * ## Supported Aliases
+     * 
+     * * `oci_load_balancer_backendsets`
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBackendSetsResult> getBackendSetsPlain(GetBackendSetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getBackendSets:getBackendSets", TypeShape.of(GetBackendSetsResult.class), args, Utilities.withVersion(options));
     }
@@ -757,6 +897,51 @@ public final class LoadBalancerFunctions {
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getBackends:getBackends", TypeShape.of(GetBackendsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Backends in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists the backend servers for a given load balancer and backend set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendsetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBackendsResult> getBackends(GetBackendsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LoadBalancer/getBackends:getBackends", TypeShape.of(GetBackendsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -977,6 +1162,50 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Certificates in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all SSL certificates bundles associated with a given load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
     }
@@ -1153,6 +1382,50 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetHealthResult> getHealth(GetHealthArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getHealth:getHealth", TypeShape.of(GetHealthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Load Balancer Health resource in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Gets the health status for the specified load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetHealthResult> getHealthPlain(GetHealthPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getHealth:getHealth", TypeShape.of(GetHealthResult.class), args, Utilities.withVersion(options));
     }
@@ -1286,6 +1559,50 @@ public final class LoadBalancerFunctions {
      * 
      */
     public static Output<GetHostnamesResult> getHostnames(GetHostnamesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getHostnames:getHostnames", TypeShape.of(GetHostnamesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hostnames in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all hostname resources associated with the specified load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetHostnamesResult> getHostnames(GetHostnamesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LoadBalancer/getHostnames:getHostnames", TypeShape.of(GetHostnamesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1533,6 +1850,57 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetListenerRulesResult> getListenerRules(GetListenerRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getListenerRules:getListenerRules", TypeShape.of(GetListenerRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Listener Rules in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
+     * the rules in the following order:
+     * 
+     * *  Access control rules
+     * *  Allow method rules
+     * *  Request header rules
+     * *  Response header rules
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
+     *             .listenerName(testListener.name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetListenerRulesResult> getListenerRulesPlain(GetListenerRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getListenerRules:getListenerRules", TypeShape.of(GetListenerRulesResult.class), args, Utilities.withVersion(options));
     }
@@ -1666,6 +2034,50 @@ public final class LoadBalancerFunctions {
      * 
      */
     public static Output<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", TypeShape.of(GetLoadBalancerRoutingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Load Balancer Routing Policies in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all routing policies associated with the specified load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", TypeShape.of(GetLoadBalancerRoutingPoliciesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1845,6 +2257,51 @@ public final class LoadBalancerFunctions {
      * 
      */
     public static Output<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getLoadBalancerRoutingPolicy:getLoadBalancerRoutingPolicy", TypeShape.of(GetLoadBalancerRoutingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Gets the specified routing policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .routingPolicyName(testRoutingPolicy.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LoadBalancer/getLoadBalancerRoutingPolicy:getLoadBalancerRoutingPolicy", TypeShape.of(GetLoadBalancerRoutingPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2093,6 +2550,57 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLoadBalancersResult> getLoadBalancers(GetLoadBalancersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getLoadBalancers:getLoadBalancers", TypeShape.of(GetLoadBalancersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Load Balancers in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all load balancers in the specified compartment.
+     * 
+     * ## Supported Aliases
+     * 
+     * * `oci_load_balancers`
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancers = LoadBalancerFunctions.getLoadBalancers(GetLoadBalancersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .detail(loadBalancerDetail)
+     *             .displayName(loadBalancerDisplayName)
+     *             .state(loadBalancerState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLoadBalancersResult> getLoadBalancersPlain(GetLoadBalancersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getLoadBalancers:getLoadBalancers", TypeShape.of(GetLoadBalancersResult.class), args, Utilities.withVersion(options));
     }
@@ -2226,6 +2734,50 @@ public final class LoadBalancerFunctions {
      * 
      */
     public static Output<GetPathRouteSetsResult> getPathRouteSets(GetPathRouteSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", TypeShape.of(GetPathRouteSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Path Route Sets in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all path route sets associated with the specified load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPathRouteSetsResult> getPathRouteSets(GetPathRouteSetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", TypeShape.of(GetPathRouteSetsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2445,6 +2997,50 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPoliciesResult> getPolicies(GetPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getPolicies:getPolicies", TypeShape.of(GetPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Load Balancer Policies in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists the available load balancer policies.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerPolicies = LoadBalancerFunctions.getPolicies(GetPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(GetPoliciesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getPolicies:getPolicies", TypeShape.of(GetPoliciesResult.class), args, Utilities.withVersion(options));
     }
@@ -2578,6 +3174,50 @@ public final class LoadBalancerFunctions {
      * 
      */
     public static Output<GetProtocolsResult> getProtocols(GetProtocolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getProtocols:getProtocols", TypeShape.of(GetProtocolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all supported traffic protocols.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerProtocols = LoadBalancerFunctions.getProtocols(GetProtocolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProtocolsResult> getProtocols(GetProtocolsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LoadBalancer/getProtocols:getProtocols", TypeShape.of(GetProtocolsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2801,6 +3441,51 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRuleSetResult> getRuleSet(GetRuleSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getRuleSet:getRuleSet", TypeShape.of(GetRuleSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Gets the specified set of rules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(ruleSetName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRuleSetResult> getRuleSetPlain(GetRuleSetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getRuleSet:getRuleSet", TypeShape.of(GetRuleSetResult.class), args, Utilities.withVersion(options));
     }
@@ -2977,6 +3662,50 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRuleSetsResult> getRuleSets(GetRuleSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getRuleSets:getRuleSets", TypeShape.of(GetRuleSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Rule Sets in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all rule sets associated with the specified load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRuleSetsResult> getRuleSetsPlain(GetRuleSetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getRuleSets:getRuleSets", TypeShape.of(GetRuleSetsResult.class), args, Utilities.withVersion(options));
     }
@@ -3110,6 +3839,50 @@ public final class LoadBalancerFunctions {
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getShapes:getShapes", TypeShape.of(GetShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists the valid load balancer shapes.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerShapes = LoadBalancerFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LoadBalancer/getShapes:getShapes", TypeShape.of(GetShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3333,6 +4106,51 @@ public final class LoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSslCipherSuiteResult> getSslCipherSuite(GetSslCipherSuiteArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite", TypeShape.of(GetSslCipherSuiteResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Gets the specified SSL cipher suite&#39;s configuration information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(sslCipherSuiteName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSslCipherSuiteResult> getSslCipherSuitePlain(GetSslCipherSuitePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite", TypeShape.of(GetSslCipherSuiteResult.class), args, Utilities.withVersion(options));
     }
@@ -3466,6 +4284,50 @@ public final class LoadBalancerFunctions {
      * 
      */
     public static Output<GetSslCipherSuitesResult> getSslCipherSuites(GetSslCipherSuitesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", TypeShape.of(GetSslCipherSuitesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
+     * 
+     * Lists all SSL cipher suites associated with the specified load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSslCipherSuitesResult> getSslCipherSuites(GetSslCipherSuitesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", TypeShape.of(GetSslCipherSuitesResult.class), args, Utilities.withVersion(options));
     }
     /**

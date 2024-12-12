@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ResourceScheduler.inputs.GetScheduleArgs;
 import com.pulumi.oci.ResourceScheduler.inputs.GetSchedulePlainArgs;
 import com.pulumi.oci.ResourceScheduler.inputs.GetSchedulesArgs;
@@ -147,6 +148,50 @@ public final class ResourceSchedulerFunctions {
      * 
      */
     public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceScheduler/getSchedule:getSchedule", TypeShape.of(GetScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
+     * 
+     * This API gets information about a schedule.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceScheduler.ResourceSchedulerFunctions;
+     * import com.pulumi.oci.ResourceScheduler.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = ResourceSchedulerFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ResourceScheduler/getSchedule:getSchedule", TypeShape.of(GetScheduleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -426,6 +471,53 @@ public final class ResourceSchedulerFunctions {
      * 
      */
     public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceScheduler/getSchedules:getSchedules", TypeShape.of(GetSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
+     * 
+     * This API gets a list of schedules
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceScheduler.ResourceSchedulerFunctions;
+     * import com.pulumi.oci.ResourceScheduler.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .scheduleId(testSchedule.id())
+     *             .displayName(scheduleDisplayName)
+     *             .state(scheduleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ResourceScheduler/getSchedules:getSchedules", TypeShape.of(GetSchedulesResult.class), args, Utilities.withVersion(options));
     }
     /**

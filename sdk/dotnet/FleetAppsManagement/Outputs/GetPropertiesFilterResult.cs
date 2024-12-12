@@ -16,7 +16,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         public readonly string Name;
         public readonly bool? Regex;
         /// <summary>
-        /// Values of the property (must be a single value if selection = 'single choice')
+        /// Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

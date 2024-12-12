@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetTargetsFleetTargetCollectionItemResourceResult
     {
         /// <summary>
-        /// Resource Display Name
+        /// Resource Display Name.
         /// </summary>
         public readonly string ResourceDisplayName;
         /// <summary>

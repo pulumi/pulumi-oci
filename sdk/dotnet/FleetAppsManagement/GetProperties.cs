@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of Properties for Tenancy.
+        /// List properties and their values for a tenancy in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of Properties for Tenancy.
+        /// List properties and their values for a tenancy in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -98,19 +98,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Property identifier
+        /// A filter to return only resources whose Property identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their scope matches the given lifecycleState.
+        /// A filter to return only resources their scope matches the given scope.
         /// </summary>
         [Input("scope")]
         public string? Scope { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -144,19 +144,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Property identifier
+        /// A filter to return only resources whose Property identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their scope matches the given lifecycleState.
+        /// A filter to return only resources their scope matches the given scope.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -189,7 +189,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertiesPropertyCollectionResult> PropertyCollections;
         /// <summary>
-        /// The scope of the property
+        /// The scope of the property.
         /// </summary>
         public readonly string? Scope;
         /// <summary>

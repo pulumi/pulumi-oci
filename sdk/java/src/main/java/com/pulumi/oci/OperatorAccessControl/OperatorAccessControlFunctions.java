@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportPlainArgs;
@@ -171,6 +172,50 @@ public final class OperatorAccessControlFunctions {
      * 
      */
     public static Output<GetAccessRequestResult> getAccessRequest(GetAccessRequestArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", TypeShape.of(GetAccessRequestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Access Request resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Gets details of an access request.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
+     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAccessRequestResult> getAccessRequest(GetAccessRequestArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", TypeShape.of(GetAccessRequestResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -394,6 +439,51 @@ public final class OperatorAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", TypeShape.of(GetAccessRequestAuditLogReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Access Request Audit Log Report resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Gets the Audit Log Report for the given access requestId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
+     *             .accessRequestId(testAccessRequest.id())
+     *             .enableProcessTree(accessRequestAuditLogReportEnableProcessTree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReportPlain(GetAccessRequestAuditLogReportPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", TypeShape.of(GetAccessRequestAuditLogReportResult.class), args, Utilities.withVersion(options));
     }
@@ -527,6 +617,50 @@ public final class OperatorAccessControlFunctions {
      * 
      */
     public static Output<GetAccessRequestHistoryResult> getAccessRequestHistory(GetAccessRequestHistoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", TypeShape.of(GetAccessRequestHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Returns a history of all status associated with the accessRequestId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
+     *             .accessRequestId(testAccessRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAccessRequestHistoryResult> getAccessRequestHistory(GetAccessRequestHistoryArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", TypeShape.of(GetAccessRequestHistoryResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -766,6 +900,55 @@ public final class OperatorAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAccessRequestsResult> getAccessRequests(GetAccessRequestsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", TypeShape.of(GetAccessRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Access Requests in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Lists all access requests in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequests = OperatorAccessControlFunctions.getAccessRequests(GetAccessRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .resourceName(accessRequestResourceName)
+     *             .resourceType(accessRequestResourceType)
+     *             .state(accessRequestState)
+     *             .timeEnd(accessRequestTimeEnd)
+     *             .timeStart(accessRequestTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAccessRequestsResult> getAccessRequestsPlain(GetAccessRequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", TypeShape.of(GetAccessRequestsResult.class), args, Utilities.withVersion(options));
     }
@@ -899,6 +1082,50 @@ public final class OperatorAccessControlFunctions {
      * 
      */
     public static Output<GetActionResult> getAction(GetActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getAction:getAction", TypeShape.of(GetActionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Operator Action resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Gets the operator action associated with the specified operator action ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
+     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetActionResult> getAction(GetActionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OperatorAccessControl/getAction:getAction", TypeShape.of(GetActionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1130,6 +1357,53 @@ public final class OperatorAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetActionsResult> getActions(GetActionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getActions:getActions", TypeShape.of(GetActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Operator Actions in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Lists all the OperatorActions available in the system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorActions = OperatorAccessControlFunctions.getActions(GetActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(operatorActionName)
+     *             .resourceType(operatorActionResourceType)
+     *             .state(operatorActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetActionsResult> getActionsPlain(GetActionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OperatorAccessControl/getActions:getActions", TypeShape.of(GetActionsResult.class), args, Utilities.withVersion(options));
     }
@@ -1306,6 +1580,50 @@ public final class OperatorAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetControlResult> getControl(GetControlArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getControl:getControl", TypeShape.of(GetControlResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Gets the Operator Control associated with the specified Operator Control ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
+     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetControlResult> getControlPlain(GetControlPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OperatorAccessControl/getControl:getControl", TypeShape.of(GetControlResult.class), args, Utilities.withVersion(options));
     }
@@ -1439,6 +1757,50 @@ public final class OperatorAccessControlFunctions {
      * 
      */
     public static Output<GetControlAssignmentResult> getControlAssignment(GetControlAssignmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", TypeShape.of(GetControlAssignmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Gets the details of an Operator Control Assignment of the specified ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
+     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetControlAssignmentResult> getControlAssignment(GetControlAssignmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", TypeShape.of(GetControlAssignmentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1674,6 +2036,54 @@ public final class OperatorAccessControlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetControlAssignmentsResult> getControlAssignments(GetControlAssignmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getControlAssignments:getControlAssignments", TypeShape.of(GetControlAssignmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Operator Control Assignments in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Lists all Operator Control Assignments.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .operatorControlName(testOperatorControl.name())
+     *             .resourceName(operatorControlAssignmentResourceName)
+     *             .resourceType(operatorControlAssignmentResourceType)
+     *             .state(operatorControlAssignmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetControlAssignmentsResult> getControlAssignmentsPlain(GetControlAssignmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OperatorAccessControl/getControlAssignments:getControlAssignments", TypeShape.of(GetControlAssignmentsResult.class), args, Utilities.withVersion(options));
     }
@@ -1816,6 +2226,53 @@ public final class OperatorAccessControlFunctions {
      * 
      */
     public static Output<GetControlsResult> getControls(GetControlsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getControls:getControls", TypeShape.of(GetControlsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Lists the operator controls in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControls = OperatorAccessControlFunctions.getControls(GetControlsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(operatorControlDisplayName)
+     *             .resourceType(operatorControlResourceType)
+     *             .state(operatorControlState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetControlsResult> getControls(GetControlsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OperatorAccessControl/getControls:getControls", TypeShape.of(GetControlsResult.class), args, Utilities.withVersion(options));
     }
     /**

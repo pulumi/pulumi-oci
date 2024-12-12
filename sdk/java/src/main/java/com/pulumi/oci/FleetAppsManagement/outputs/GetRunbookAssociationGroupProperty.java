@@ -5,44 +5,71 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookAssociationGroupPropertyNotificationPreference;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookAssociationGroupPropertyPauseDetail;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetRunbookAssociationGroupProperty {
     /**
-     * @return The action to be taken in case of task failure.
+     * @return The action to be taken in case of a failure.
      * 
      */
     private String actionOnFailure;
     /**
-     * @return The condition in which the task is to be executed.
+     * @return Build control flow conditions that determine the relevance of the task execution.
      * 
      */
     private String condition;
     /**
-     * @return The hosts to execute on.
+     * @return Preferences to send notifications on the task activities.
+     * 
+     */
+    private List<GetRunbookAssociationGroupPropertyNotificationPreference> notificationPreferences;
+    /**
+     * @return Pause Details
+     * 
+     */
+    private List<GetRunbookAssociationGroupPropertyPauseDetail> pauseDetails;
+    /**
+     * @return The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
      * 
      */
     private String runOn;
 
     private GetRunbookAssociationGroupProperty() {}
     /**
-     * @return The action to be taken in case of task failure.
+     * @return The action to be taken in case of a failure.
      * 
      */
     public String actionOnFailure() {
         return this.actionOnFailure;
     }
     /**
-     * @return The condition in which the task is to be executed.
+     * @return Build control flow conditions that determine the relevance of the task execution.
      * 
      */
     public String condition() {
         return this.condition;
     }
     /**
-     * @return The hosts to execute on.
+     * @return Preferences to send notifications on the task activities.
+     * 
+     */
+    public List<GetRunbookAssociationGroupPropertyNotificationPreference> notificationPreferences() {
+        return this.notificationPreferences;
+    }
+    /**
+     * @return Pause Details
+     * 
+     */
+    public List<GetRunbookAssociationGroupPropertyPauseDetail> pauseDetails() {
+        return this.pauseDetails;
+    }
+    /**
+     * @return The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
      * 
      */
     public String runOn() {
@@ -60,12 +87,16 @@ public final class GetRunbookAssociationGroupProperty {
     public static final class Builder {
         private String actionOnFailure;
         private String condition;
+        private List<GetRunbookAssociationGroupPropertyNotificationPreference> notificationPreferences;
+        private List<GetRunbookAssociationGroupPropertyPauseDetail> pauseDetails;
         private String runOn;
         public Builder() {}
         public Builder(GetRunbookAssociationGroupProperty defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionOnFailure = defaults.actionOnFailure;
     	      this.condition = defaults.condition;
+    	      this.notificationPreferences = defaults.notificationPreferences;
+    	      this.pauseDetails = defaults.pauseDetails;
     	      this.runOn = defaults.runOn;
         }
 
@@ -86,6 +117,28 @@ public final class GetRunbookAssociationGroupProperty {
             return this;
         }
         @CustomType.Setter
+        public Builder notificationPreferences(List<GetRunbookAssociationGroupPropertyNotificationPreference> notificationPreferences) {
+            if (notificationPreferences == null) {
+              throw new MissingRequiredPropertyException("GetRunbookAssociationGroupProperty", "notificationPreferences");
+            }
+            this.notificationPreferences = notificationPreferences;
+            return this;
+        }
+        public Builder notificationPreferences(GetRunbookAssociationGroupPropertyNotificationPreference... notificationPreferences) {
+            return notificationPreferences(List.of(notificationPreferences));
+        }
+        @CustomType.Setter
+        public Builder pauseDetails(List<GetRunbookAssociationGroupPropertyPauseDetail> pauseDetails) {
+            if (pauseDetails == null) {
+              throw new MissingRequiredPropertyException("GetRunbookAssociationGroupProperty", "pauseDetails");
+            }
+            this.pauseDetails = pauseDetails;
+            return this;
+        }
+        public Builder pauseDetails(GetRunbookAssociationGroupPropertyPauseDetail... pauseDetails) {
+            return pauseDetails(List.of(pauseDetails));
+        }
+        @CustomType.Setter
         public Builder runOn(String runOn) {
             if (runOn == null) {
               throw new MissingRequiredPropertyException("GetRunbookAssociationGroupProperty", "runOn");
@@ -97,6 +150,8 @@ public final class GetRunbookAssociationGroupProperty {
             final var _resultValue = new GetRunbookAssociationGroupProperty();
             _resultValue.actionOnFailure = actionOnFailure;
             _resultValue.condition = condition;
+            _resultValue.notificationPreferences = notificationPreferences;
+            _resultValue.pauseDetails = pauseDetails;
             _resultValue.runOn = runOn;
             return _resultValue;
         }

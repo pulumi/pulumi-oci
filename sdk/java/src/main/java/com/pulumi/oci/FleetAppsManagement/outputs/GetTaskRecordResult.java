@@ -40,7 +40,7 @@ public final class GetTaskRecordResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The OCID of the resource.
      * 
      */
     private String id;
@@ -126,7 +126,7 @@ public final class GetTaskRecordResult {
         return this.freeformTags;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The OCID of the resource.
      * 
      */
     public String id() {

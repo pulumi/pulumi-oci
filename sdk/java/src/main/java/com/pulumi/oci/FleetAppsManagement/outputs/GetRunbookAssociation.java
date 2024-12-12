@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookAssociationExecutionWorkflowDetail;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookAssociationGroup;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookAssociationRollbackWorkflowDetail;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookAssociationTask;
 import java.lang.String;
 import java.util.List;
@@ -15,17 +16,22 @@ import java.util.Objects;
 @CustomType
 public final class GetRunbookAssociation {
     /**
-     * @return Execution Workflow.
+     * @return Execution Workflow details.
      * 
      */
     private List<GetRunbookAssociationExecutionWorkflowDetail> executionWorkflowDetails;
     /**
-     * @return The groups of the runbook
+     * @return The groups of the runbook.
      * 
      */
     private List<GetRunbookAssociationGroup> groups;
     /**
-     * @return A set of tasks to execute in the runbook
+     * @return Rollback Workflow details.
+     * 
+     */
+    private List<GetRunbookAssociationRollbackWorkflowDetail> rollbackWorkflowDetails;
+    /**
+     * @return A set of tasks to execute in the runbook.
      * 
      */
     private List<GetRunbookAssociationTask> tasks;
@@ -37,21 +43,28 @@ public final class GetRunbookAssociation {
 
     private GetRunbookAssociation() {}
     /**
-     * @return Execution Workflow.
+     * @return Execution Workflow details.
      * 
      */
     public List<GetRunbookAssociationExecutionWorkflowDetail> executionWorkflowDetails() {
         return this.executionWorkflowDetails;
     }
     /**
-     * @return The groups of the runbook
+     * @return The groups of the runbook.
      * 
      */
     public List<GetRunbookAssociationGroup> groups() {
         return this.groups;
     }
     /**
-     * @return A set of tasks to execute in the runbook
+     * @return Rollback Workflow details.
+     * 
+     */
+    public List<GetRunbookAssociationRollbackWorkflowDetail> rollbackWorkflowDetails() {
+        return this.rollbackWorkflowDetails;
+    }
+    /**
+     * @return A set of tasks to execute in the runbook.
      * 
      */
     public List<GetRunbookAssociationTask> tasks() {
@@ -76,6 +89,7 @@ public final class GetRunbookAssociation {
     public static final class Builder {
         private List<GetRunbookAssociationExecutionWorkflowDetail> executionWorkflowDetails;
         private List<GetRunbookAssociationGroup> groups;
+        private List<GetRunbookAssociationRollbackWorkflowDetail> rollbackWorkflowDetails;
         private List<GetRunbookAssociationTask> tasks;
         private String version;
         public Builder() {}
@@ -83,6 +97,7 @@ public final class GetRunbookAssociation {
     	      Objects.requireNonNull(defaults);
     	      this.executionWorkflowDetails = defaults.executionWorkflowDetails;
     	      this.groups = defaults.groups;
+    	      this.rollbackWorkflowDetails = defaults.rollbackWorkflowDetails;
     	      this.tasks = defaults.tasks;
     	      this.version = defaults.version;
         }
@@ -110,6 +125,17 @@ public final class GetRunbookAssociation {
             return groups(List.of(groups));
         }
         @CustomType.Setter
+        public Builder rollbackWorkflowDetails(List<GetRunbookAssociationRollbackWorkflowDetail> rollbackWorkflowDetails) {
+            if (rollbackWorkflowDetails == null) {
+              throw new MissingRequiredPropertyException("GetRunbookAssociation", "rollbackWorkflowDetails");
+            }
+            this.rollbackWorkflowDetails = rollbackWorkflowDetails;
+            return this;
+        }
+        public Builder rollbackWorkflowDetails(GetRunbookAssociationRollbackWorkflowDetail... rollbackWorkflowDetails) {
+            return rollbackWorkflowDetails(List.of(rollbackWorkflowDetails));
+        }
+        @CustomType.Setter
         public Builder tasks(List<GetRunbookAssociationTask> tasks) {
             if (tasks == null) {
               throw new MissingRequiredPropertyException("GetRunbookAssociation", "tasks");
@@ -132,6 +158,7 @@ public final class GetRunbookAssociation {
             final var _resultValue = new GetRunbookAssociation();
             _resultValue.executionWorkflowDetails = executionWorkflowDetails;
             _resultValue.groups = groups;
+            _resultValue.rollbackWorkflowDetails = rollbackWorkflowDetails;
             _resultValue.tasks = tasks;
             _resultValue.version = version;
             return _resultValue;

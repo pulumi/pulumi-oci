@@ -60,8 +60,6 @@ type LookupVbInstanceArgs struct {
 type LookupVbInstanceResult struct {
 	// A list of alternate custom endpoints used for the vb instance URL.
 	AlternateCustomEndpoints []GetVbInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
-	// A list of associated attachments to other services
-	Attachments []GetVbInstanceAttachment `pulumi:"attachments"`
 	// Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
@@ -75,10 +73,8 @@ type LookupVbInstanceResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
-	// Information for IDCS access
-	IdcsInfos  []GetVbInstanceIdcsInfo `pulumi:"idcsInfos"`
-	IdcsOpenId string                  `pulumi:"idcsOpenId"`
+	Id         string `pulumi:"id"`
+	IdcsOpenId string `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
 	InstanceUrl string `pulumi:"instanceUrl"`
 	// Visual Builder is enabled or not.
@@ -87,6 +83,8 @@ type LookupVbInstanceResult struct {
 	ManagementNatGatewayIp string `pulumi:"managementNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 	ManagementVcnId string `pulumi:"managementVcnId"`
+	// Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+	NetworkEndpointDetails []GetVbInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// The number of Nodes
 	NodeCount int `pulumi:"nodeCount"`
 	// The NAT gateway IP address for the VB service VCN
@@ -157,11 +155,6 @@ func (o LookupVbInstanceResultOutput) AlternateCustomEndpoints() GetVbInstanceAl
 	}).(GetVbInstanceAlternateCustomEndpointArrayOutput)
 }
 
-// A list of associated attachments to other services
-func (o LookupVbInstanceResultOutput) Attachments() GetVbInstanceAttachmentArrayOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) []GetVbInstanceAttachment { return v.Attachments }).(GetVbInstanceAttachmentArrayOutput)
-}
-
 // Compartment Identifier.
 func (o LookupVbInstanceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -197,11 +190,6 @@ func (o LookupVbInstanceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Information for IDCS access
-func (o LookupVbInstanceResultOutput) IdcsInfos() GetVbInstanceIdcsInfoArrayOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) []GetVbInstanceIdcsInfo { return v.IdcsInfos }).(GetVbInstanceIdcsInfoArrayOutput)
-}
-
 func (o LookupVbInstanceResultOutput) IdcsOpenId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.IdcsOpenId }).(pulumi.StringOutput)
 }
@@ -224,6 +212,11 @@ func (o LookupVbInstanceResultOutput) ManagementNatGatewayIp() pulumi.StringOutp
 // The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 func (o LookupVbInstanceResultOutput) ManagementVcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.ManagementVcnId }).(pulumi.StringOutput)
+}
+
+// Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+func (o LookupVbInstanceResultOutput) NetworkEndpointDetails() GetVbInstanceNetworkEndpointDetailArrayOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) []GetVbInstanceNetworkEndpointDetail { return v.NetworkEndpointDetails }).(GetVbInstanceNetworkEndpointDetailArrayOutput)
 }
 
 // The number of Nodes

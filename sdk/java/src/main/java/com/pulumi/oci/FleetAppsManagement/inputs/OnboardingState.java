@@ -5,8 +5,11 @@ package com.pulumi.oci.FleetAppsManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.FleetAppsManagement.inputs.OnboardingAppliedPolicyArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.OnboardingItemArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +19,21 @@ import javax.annotation.Nullable;
 public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
 
     public static final OnboardingState Empty = new OnboardingState();
+
+    /**
+     * Summary of the Fleet Application Management Onboard Policy.
+     * 
+     */
+    @Import(name="appliedPolicies")
+    private @Nullable Output<List<OnboardingAppliedPolicyArgs>> appliedPolicies;
+
+    /**
+     * @return Summary of the Fleet Application Management Onboard Policy.
+     * 
+     */
+    public Optional<Output<List<OnboardingAppliedPolicyArgs>>> appliedPolicies() {
+        return Optional.ofNullable(this.appliedPolicies);
+    }
 
     /**
      * Tenancy OCID
@@ -33,14 +51,29 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A value determining if cost tracking tag is enabled or not
+     * Provide discovery frequency.
+     * 
+     */
+    @Import(name="discoveryFrequency")
+    private @Nullable Output<String> discoveryFrequency;
+
+    /**
+     * @return Provide discovery frequency.
+     * 
+     */
+    public Optional<Output<String>> discoveryFrequency() {
+        return Optional.ofNullable(this.discoveryFrequency);
+    }
+
+    /**
+     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
      * 
      */
     @Import(name="isCostTrackingTagEnabled")
     private @Nullable Output<Boolean> isCostTrackingTagEnabled;
 
     /**
-     * @return A value determining if cost tracking tag is enabled or not
+     * @return A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
      * 
      */
     public Optional<Output<Boolean>> isCostTrackingTagEnabled() {
@@ -48,7 +81,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A value determining FAMS tag is enabled or not
+     * A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -58,7 +91,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<Boolean> isFamsTagEnabled;
 
     /**
-     * @return A value determining FAMS tag is enabled or not
+     * @return A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -66,6 +99,21 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> isFamsTagEnabled() {
         return Optional.ofNullable(this.isFamsTagEnabled);
+    }
+
+    /**
+     * List of Fleet Application Management Onboardings.
+     * 
+     */
+    @Import(name="items")
+    private @Nullable Output<List<OnboardingItemArgs>> items;
+
+    /**
+     * @return List of Fleet Application Management Onboardings.
+     * 
+     */
+    public Optional<Output<List<OnboardingItemArgs>>> items() {
+        return Optional.ofNullable(this.items);
     }
 
     /**
@@ -144,14 +192,14 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Version of FAMS the tenant is onboarded to.
+     * The version of Fleet Application Management that the tenant is onboarded to.
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return Version of FAMS the tenant is onboarded to.
+     * @return The version of Fleet Application Management that the tenant is onboarded to.
      * 
      */
     public Optional<Output<String>> version() {
@@ -161,9 +209,12 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
     private OnboardingState() {}
 
     private OnboardingState(OnboardingState $) {
+        this.appliedPolicies = $.appliedPolicies;
         this.compartmentId = $.compartmentId;
+        this.discoveryFrequency = $.discoveryFrequency;
         this.isCostTrackingTagEnabled = $.isCostTrackingTagEnabled;
         this.isFamsTagEnabled = $.isFamsTagEnabled;
+        this.items = $.items;
         this.resourceRegion = $.resourceRegion;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -191,6 +242,37 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param appliedPolicies Summary of the Fleet Application Management Onboard Policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appliedPolicies(@Nullable Output<List<OnboardingAppliedPolicyArgs>> appliedPolicies) {
+            $.appliedPolicies = appliedPolicies;
+            return this;
+        }
+
+        /**
+         * @param appliedPolicies Summary of the Fleet Application Management Onboard Policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appliedPolicies(List<OnboardingAppliedPolicyArgs> appliedPolicies) {
+            return appliedPolicies(Output.of(appliedPolicies));
+        }
+
+        /**
+         * @param appliedPolicies Summary of the Fleet Application Management Onboard Policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appliedPolicies(OnboardingAppliedPolicyArgs... appliedPolicies) {
+            return appliedPolicies(List.of(appliedPolicies));
+        }
+
+        /**
          * @param compartmentId Tenancy OCID
          * 
          * @return builder
@@ -212,7 +294,28 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCostTrackingTagEnabled A value determining if cost tracking tag is enabled or not
+         * @param discoveryFrequency Provide discovery frequency.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder discoveryFrequency(@Nullable Output<String> discoveryFrequency) {
+            $.discoveryFrequency = discoveryFrequency;
+            return this;
+        }
+
+        /**
+         * @param discoveryFrequency Provide discovery frequency.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder discoveryFrequency(String discoveryFrequency) {
+            return discoveryFrequency(Output.of(discoveryFrequency));
+        }
+
+        /**
+         * @param isCostTrackingTagEnabled A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
          * 
          * @return builder
          * 
@@ -223,7 +326,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCostTrackingTagEnabled A value determining if cost tracking tag is enabled or not
+         * @param isCostTrackingTagEnabled A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
          * 
          * @return builder
          * 
@@ -233,7 +336,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isFamsTagEnabled A value determining FAMS tag is enabled or not
+         * @param isFamsTagEnabled A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -247,7 +350,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isFamsTagEnabled A value determining FAMS tag is enabled or not
+         * @param isFamsTagEnabled A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -257,6 +360,37 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isFamsTagEnabled(Boolean isFamsTagEnabled) {
             return isFamsTagEnabled(Output.of(isFamsTagEnabled));
+        }
+
+        /**
+         * @param items List of Fleet Application Management Onboardings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder items(@Nullable Output<List<OnboardingItemArgs>> items) {
+            $.items = items;
+            return this;
+        }
+
+        /**
+         * @param items List of Fleet Application Management Onboardings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder items(List<OnboardingItemArgs> items) {
+            return items(Output.of(items));
+        }
+
+        /**
+         * @param items List of Fleet Application Management Onboardings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder items(OnboardingItemArgs... items) {
+            return items(List.of(items));
         }
 
         /**
@@ -365,7 +499,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version Version of FAMS the tenant is onboarded to.
+         * @param version The version of Fleet Application Management that the tenant is onboarded to.
          * 
          * @return builder
          * 
@@ -376,7 +510,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version Version of FAMS the tenant is onboarded to.
+         * @param version The version of Fleet Application Management that the tenant is onboarded to.
          * 
          * @return builder
          * 

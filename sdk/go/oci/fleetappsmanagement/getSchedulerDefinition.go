@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// # Gets a SchedulerDefinition by identifier
+// Get the details of a SchedulerDefinition that performs lifecycle management operations.
 //
 // ## Example Usage
 //
@@ -58,21 +58,21 @@ type LookupSchedulerDefinitionArgs struct {
 
 // A collection of values returned by getSchedulerDefinition.
 type LookupSchedulerDefinitionResult struct {
-	// All ActionGroup Types part of the schedule.
+	// All ActionGroup Types that are part of the schedule.
 	ActionGroupTypes []string `pulumi:"actionGroupTypes"`
 	// Action Groups associated with the Schedule.
 	ActionGroups []GetSchedulerDefinitionActionGroup `pulumi:"actionGroups"`
-	// Activity Initiation Cut Off
+	// Activity Initiation Cut Off.
 	ActivityInitiationCutOff int `pulumi:"activityInitiationCutOff"`
-	// All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+	// All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
 	ApplicationTypes []string `pulumi:"applicationTypes"`
 	// Tenancy OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// Count of Action Groups affected by the Schedule.
 	CountOfAffectedActionGroups int `pulumi:"countOfAffectedActionGroups"`
-	// Count of Resources affected by the Schedule
+	// Count of Resources affected by the Schedule.
 	CountOfAffectedResources int `pulumi:"countOfAffectedResources"`
-	// Count of Targets affected by the Schedule
+	// Count of Targets affected by the Schedule.
 	CountOfAffectedTargets int `pulumi:"countOfAffectedTargets"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -86,9 +86,9 @@ type LookupSchedulerDefinitionResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// All LifeCycle Operations part of the schedule
+	// All LifeCycle Operations that are part of the schedule.
 	LifecycleOperations []string `pulumi:"lifecycleOperations"`
-	// All products part of the schedule for PRODUCT ActionGroup Type.
+	// All products that are part of the schedule for PRODUCT ActionGroup Type.
 	Products []string `pulumi:"products"`
 	// Associated region
 	ResourceRegion string `pulumi:"resourceRegion"`
@@ -103,7 +103,7 @@ type LookupSchedulerDefinitionResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// Scheduled date for the next run of the Job.
+	// The scheduled date for the next run of the Job.
 	TimeOfNextRun string `pulumi:"timeOfNextRun"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
@@ -153,7 +153,7 @@ func (o LookupSchedulerDefinitionResultOutput) ToLookupSchedulerDefinitionResult
 	return o
 }
 
-// All ActionGroup Types part of the schedule.
+// All ActionGroup Types that are part of the schedule.
 func (o LookupSchedulerDefinitionResultOutput) ActionGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) []string { return v.ActionGroupTypes }).(pulumi.StringArrayOutput)
 }
@@ -163,12 +163,12 @@ func (o LookupSchedulerDefinitionResultOutput) ActionGroups() GetSchedulerDefini
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) []GetSchedulerDefinitionActionGroup { return v.ActionGroups }).(GetSchedulerDefinitionActionGroupArrayOutput)
 }
 
-// Activity Initiation Cut Off
+// Activity Initiation Cut Off.
 func (o LookupSchedulerDefinitionResultOutput) ActivityInitiationCutOff() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) int { return v.ActivityInitiationCutOff }).(pulumi.IntOutput)
 }
 
-// All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+// All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
 func (o LookupSchedulerDefinitionResultOutput) ApplicationTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) []string { return v.ApplicationTypes }).(pulumi.StringArrayOutput)
 }
@@ -183,12 +183,12 @@ func (o LookupSchedulerDefinitionResultOutput) CountOfAffectedActionGroups() pul
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) int { return v.CountOfAffectedActionGroups }).(pulumi.IntOutput)
 }
 
-// Count of Resources affected by the Schedule
+// Count of Resources affected by the Schedule.
 func (o LookupSchedulerDefinitionResultOutput) CountOfAffectedResources() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) int { return v.CountOfAffectedResources }).(pulumi.IntOutput)
 }
 
-// Count of Targets affected by the Schedule
+// Count of Targets affected by the Schedule.
 func (o LookupSchedulerDefinitionResultOutput) CountOfAffectedTargets() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) int { return v.CountOfAffectedTargets }).(pulumi.IntOutput)
 }
@@ -223,12 +223,12 @@ func (o LookupSchedulerDefinitionResultOutput) LifecycleDetails() pulumi.StringO
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// All LifeCycle Operations part of the schedule
+// All LifeCycle Operations that are part of the schedule.
 func (o LookupSchedulerDefinitionResultOutput) LifecycleOperations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) []string { return v.LifecycleOperations }).(pulumi.StringArrayOutput)
 }
 
-// All products part of the schedule for PRODUCT ActionGroup Type.
+// All products that are part of the schedule for PRODUCT ActionGroup Type.
 func (o LookupSchedulerDefinitionResultOutput) Products() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) []string { return v.Products }).(pulumi.StringArrayOutput)
 }
@@ -267,7 +267,7 @@ func (o LookupSchedulerDefinitionResultOutput) TimeCreated() pulumi.StringOutput
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Scheduled date for the next run of the Job.
+// The scheduled date for the next run of the Job.
 func (o LookupSchedulerDefinitionResultOutput) TimeOfNextRun() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSchedulerDefinitionResult) string { return v.TimeOfNextRun }).(pulumi.StringOutput)
 }

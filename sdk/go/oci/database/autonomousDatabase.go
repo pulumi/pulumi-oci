@@ -193,6 +193,8 @@ type AutonomousDatabase struct {
 	KeyStoreId pulumi.StringOutput `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId pulumi.StringPtrOutput `pulumi:"keyVersionId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// KMS key lifecycle details.
@@ -595,6 +597,8 @@ type autonomousDatabaseState struct {
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId *string `pulumi:"keyVersionId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// KMS key lifecycle details.
@@ -955,6 +959,8 @@ type AutonomousDatabaseState struct {
 	KeyStoreId pulumi.StringPtrInput
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName pulumi.StringPtrInput
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// KMS key lifecycle details.
@@ -1277,6 +1283,8 @@ type autonomousDatabaseArgs struct {
 	//
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly *bool `pulumi:"isShrinkOnly"`
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId *string `pulumi:"keyVersionId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `dbWorkload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `licenseModel` value `BRING_YOUR_OWN_LICENSE`.
@@ -1520,6 +1528,8 @@ type AutonomousDatabaseArgs struct {
 	//
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly pulumi.BoolPtrInput
+	// The OCID of the key version that is used in rotate key operations.
+	KeyVersionId pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `dbWorkload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `licenseModel` value `BRING_YOUR_OWN_LICENSE`.
@@ -2088,6 +2098,11 @@ func (o AutonomousDatabaseOutput) KeyStoreId() pulumi.StringOutput {
 // The wallet name for Oracle Key Vault.
 func (o AutonomousDatabaseOutput) KeyStoreWalletName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+}
+
+// The OCID of the key version that is used in rotate key operations.
+func (o AutonomousDatabaseOutput) KeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringPtrOutput { return v.KeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

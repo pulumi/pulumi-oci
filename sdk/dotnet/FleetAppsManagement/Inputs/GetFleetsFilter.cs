@@ -12,6 +12,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
 
     public sealed class GetFleetsFilterArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Name of the variable.
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 

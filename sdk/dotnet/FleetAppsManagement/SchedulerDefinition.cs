@@ -12,7 +12,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
     /// 
-    /// Creates a new SchedulerDefinition.
+    /// Create a SchedulerDefinition to perform lifecycle operations.
     /// 
     /// ## Example Usage
     /// 
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public partial class SchedulerDefinition : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// All ActionGroup Types part of the schedule.
+        /// All ActionGroup Types that are part of the schedule.
         /// </summary>
         [Output("actionGroupTypes")]
         public Output<ImmutableArray<string>> ActionGroupTypes { get; private set; } = null!;
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<int> ActivityInitiationCutOff { get; private set; } = null!;
 
         /// <summary>
-        /// All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        /// All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         /// </summary>
         [Output("applicationTypes")]
         public Output<ImmutableArray<string>> ApplicationTypes { get; private set; } = null!;
@@ -135,13 +135,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<int> CountOfAffectedActionGroups { get; private set; } = null!;
 
         /// <summary>
-        /// Count of Resources affected by the Schedule
+        /// Count of Resources affected by the Schedule.
         /// </summary>
         [Output("countOfAffectedResources")]
         public Output<int> CountOfAffectedResources { get; private set; } = null!;
 
         /// <summary>
-        /// Count of Targets affected by the Schedule
+        /// Count of Targets affected by the Schedule.
         /// </summary>
         [Output("countOfAffectedTargets")]
         public Output<int> CountOfAffectedTargets { get; private set; } = null!;
@@ -177,13 +177,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// All LifeCycle Operations part of the schedule
+        /// All LifeCycle Operations that are part of the schedule.
         /// </summary>
         [Output("lifecycleOperations")]
         public Output<ImmutableArray<string>> LifecycleOperations { get; private set; } = null!;
 
         /// <summary>
-        /// All products part of the schedule for PRODUCT ActionGroup Type.
+        /// All products that are part of the schedule for PRODUCT ActionGroup Type.
         /// </summary>
         [Output("products")]
         public Output<ImmutableArray<string>> Products { get; private set; } = null!;
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// Scheduled date for the next run of the Job.
+        /// The scheduled date for the next run of the Job.
         /// </summary>
         [Output("timeOfNextRun")]
         public Output<string> TimeOfNextRun { get; private set; } = null!;
@@ -372,7 +372,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _actionGroupTypes;
 
         /// <summary>
-        /// All ActionGroup Types part of the schedule.
+        /// All ActionGroup Types that are part of the schedule.
         /// </summary>
         public InputList<string> ActionGroupTypes
         {
@@ -402,7 +402,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _applicationTypes;
 
         /// <summary>
-        /// All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        /// All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         /// </summary>
         public InputList<string> ApplicationTypes
         {
@@ -423,13 +423,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<int>? CountOfAffectedActionGroups { get; set; }
 
         /// <summary>
-        /// Count of Resources affected by the Schedule
+        /// Count of Resources affected by the Schedule.
         /// </summary>
         [Input("countOfAffectedResources")]
         public Input<int>? CountOfAffectedResources { get; set; }
 
         /// <summary>
-        /// Count of Targets affected by the Schedule
+        /// Count of Targets affected by the Schedule.
         /// </summary>
         [Input("countOfAffectedTargets")]
         public Input<int>? CountOfAffectedTargets { get; set; }
@@ -480,7 +480,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _lifecycleOperations;
 
         /// <summary>
-        /// All LifeCycle Operations part of the schedule
+        /// All LifeCycle Operations that are part of the schedule.
         /// </summary>
         public InputList<string> LifecycleOperations
         {
@@ -492,7 +492,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _products;
 
         /// <summary>
-        /// All products part of the schedule for PRODUCT ActionGroup Type.
+        /// All products that are part of the schedule for PRODUCT ActionGroup Type.
         /// </summary>
         public InputList<string> Products
         {
@@ -549,7 +549,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// Scheduled date for the next run of the Job.
+        /// The scheduled date for the next run of the Job.
         /// </summary>
         [Input("timeOfNextRun")]
         public Input<string>? TimeOfNextRun { get; set; }

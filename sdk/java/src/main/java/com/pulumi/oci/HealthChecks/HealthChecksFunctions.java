@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
 import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorPlainArgs;
 import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
@@ -205,6 +206,50 @@ public final class HealthChecksFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetHttpMonitorResult> getHttpMonitor(GetHttpMonitorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:HealthChecks/getHttpMonitor:getHttpMonitor", TypeShape.of(GetHttpMonitorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+     * 
+     * Gets the configuration for the specified monitor.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
+     *             .monitorId(testMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetHttpMonitorResult> getHttpMonitorPlain(GetHttpMonitorPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:HealthChecks/getHttpMonitor:getHttpMonitor", TypeShape.of(GetHttpMonitorResult.class), args, Utilities.withVersion(options));
     }
@@ -344,6 +389,52 @@ public final class HealthChecksFunctions {
      * 
      */
     public static Output<GetHttpMonitorsResult> getHttpMonitors(GetHttpMonitorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:HealthChecks/getHttpMonitors:getHttpMonitors", TypeShape.of(GetHttpMonitorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.
+     * 
+     * Gets a list of HTTP monitors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitors = HealthChecksFunctions.getHttpMonitors(GetHttpMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(httpMonitorDisplayName)
+     *             .homeRegion(httpMonitorHomeRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetHttpMonitorsResult> getHttpMonitors(GetHttpMonitorsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:HealthChecks/getHttpMonitors:getHttpMonitors", TypeShape.of(GetHttpMonitorsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -585,6 +676,55 @@ public final class HealthChecksFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetHttpProbeResultsResult> getHttpProbeResults(GetHttpProbeResultsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", TypeShape.of(GetHttpProbeResultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Http Probe Results in Oracle Cloud Infrastructure Health Checks service.
+     * 
+     * Gets the HTTP probe results for the specified probe or monitor, where
+     * the `probeConfigurationId` is the OCID of either a monitor or an
+     * on-demand probe.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(httpProbeResultTarget)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetHttpProbeResultsResult> getHttpProbeResultsPlain(GetHttpProbeResultsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", TypeShape.of(GetHttpProbeResultsResult.class), args, Utilities.withVersion(options));
     }
@@ -718,6 +858,50 @@ public final class HealthChecksFunctions {
      * 
      */
     public static Output<GetPingMonitorResult> getPingMonitor(GetPingMonitorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:HealthChecks/getPingMonitor:getPingMonitor", TypeShape.of(GetPingMonitorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+     * 
+     * Gets the configuration for the specified ping monitor.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
+     *             .monitorId(testMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPingMonitorResult> getPingMonitor(GetPingMonitorArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:HealthChecks/getPingMonitor:getPingMonitor", TypeShape.of(GetPingMonitorResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -957,6 +1141,55 @@ public final class HealthChecksFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPingMonitorsResult> getPingMonitors(GetPingMonitorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:HealthChecks/getPingMonitors:getPingMonitors", TypeShape.of(GetPingMonitorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ping Monitors in Oracle Cloud Infrastructure Health Checks service.
+     * 
+     * Gets a list of configured ping monitors.
+     * 
+     * Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+     * a URL for fetching the next page.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitors = HealthChecksFunctions.getPingMonitors(GetPingMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(pingMonitorDisplayName)
+     *             .homeRegion(pingMonitorHomeRegion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPingMonitorsResult> getPingMonitorsPlain(GetPingMonitorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:HealthChecks/getPingMonitors:getPingMonitors", TypeShape.of(GetPingMonitorsResult.class), args, Utilities.withVersion(options));
     }
@@ -1117,6 +1350,59 @@ public final class HealthChecksFunctions {
      * 
      */
     public static Output<GetPingProbeResultsResult> getPingProbeResults(GetPingProbeResultsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:HealthChecks/getPingProbeResults:getPingProbeResults", TypeShape.of(GetPingProbeResultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ping Probe Results in Oracle Cloud Infrastructure Health Checks service.
+     * 
+     * Returns the results for the specified probe, where the `probeConfigurationId`
+     * is the OCID of either a monitor or an on-demand probe.
+     * 
+     * Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+     * a URL for fetching the next page.  Use `sortOrder` to set the order of the
+     * results.  If `sortOrder` is unspecified, results are sorted in ascending order by
+     * `startTime`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(pingProbeResultTarget)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPingProbeResultsResult> getPingProbeResults(GetPingProbeResultsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:HealthChecks/getPingProbeResults:getPingProbeResults", TypeShape.of(GetPingProbeResultsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1395,6 +1681,51 @@ public final class HealthChecksFunctions {
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:HealthChecks/getVantagePoints:getVantagePoints", TypeShape.of(GetVantagePointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
+     * 
+     * Gets information about all vantage points available to the user.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .displayName(vantagePointDisplayName)
+     *             .name(vantagePointName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:HealthChecks/getVantagePoints:getVantagePoints", TypeShape.of(GetVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**

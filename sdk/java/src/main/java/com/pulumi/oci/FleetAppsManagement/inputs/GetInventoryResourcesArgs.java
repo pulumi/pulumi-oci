@@ -19,14 +19,14 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
     public static final GetInventoryResourcesArgs Empty = new GetInventoryResourcesArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
      * 
      */
     public Output<String> compartmentId() {
@@ -34,14 +34,14 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;. Example: Identification.Development=Yes
      * 
      */
     @Import(name="definedTagEquals")
     private @Nullable Output<List<String>> definedTagEquals;
 
     /**
-     * @return A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * @return A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;. Example: Identification.Development=Yes
      * 
      */
     public Optional<Output<List<String>>> definedTagEquals() {
@@ -86,14 +86,14 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;.
+     * A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;. Example: Instance.displayName=TEST_INSTANCE
      * 
      */
     @Import(name="inventoryProperties")
     private @Nullable Output<List<String>> inventoryProperties;
 
     /**
-     * @return A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;.
+     * @return A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;. Example: Instance.displayName=TEST_INSTANCE
      * 
      */
     public Optional<Output<List<String>>> inventoryProperties() {
@@ -101,14 +101,14 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * Fetch resources matching matching ANY or ALL criteria passed as params in &#34;tags&#34; and &#34;inventoryProperties&#34;
+     * Fetch resources matching ANY or ALL criteria passed as params in &#34;tags&#34; and &#34;inventoryProperties&#34;. Example: matchingCriteria=ANY
      * 
      */
     @Import(name="matchingCriteria")
     private @Nullable Output<String> matchingCriteria;
 
     /**
-     * @return Fetch resources matching matching ANY or ALL criteria passed as params in &#34;tags&#34; and &#34;inventoryProperties&#34;
+     * @return Fetch resources matching ANY or ALL criteria passed as params in &#34;tags&#34; and &#34;inventoryProperties&#34;. Example: matchingCriteria=ANY
      * 
      */
     public Optional<Output<String>> matchingCriteria() {
@@ -116,14 +116,14 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * Resource Compartment ID
+     * A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
      * 
      */
     @Import(name="resourceCompartmentId", required=true)
     private Output<String> resourceCompartmentId;
 
     /**
-     * @return Resource Compartment ID
+     * @return A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
      * 
      */
     public Output<String> resourceCompartmentId() {
@@ -194,7 +194,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param definedTagEquals A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * @param definedTagEquals A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;. Example: Identification.Development=Yes
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param definedTagEquals A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * @param definedTagEquals A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;. Example: Identification.Development=Yes
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param definedTagEquals A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * @param definedTagEquals A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}={value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;. Example: Identification.Development=Yes
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param inventoryProperties A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;.
+         * @param inventoryProperties A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;. Example: Instance.displayName=TEST_INSTANCE
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param inventoryProperties A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;.
+         * @param inventoryProperties A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;. Example: Instance.displayName=TEST_INSTANCE
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param inventoryProperties A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;.
+         * @param inventoryProperties A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is &#34;{resourceType}.{inventoryProperty}={value}&#34;. Example: Instance.displayName=TEST_INSTANCE
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param matchingCriteria Fetch resources matching matching ANY or ALL criteria passed as params in &#34;tags&#34; and &#34;inventoryProperties&#34;
+         * @param matchingCriteria Fetch resources matching ANY or ALL criteria passed as params in &#34;tags&#34; and &#34;inventoryProperties&#34;. Example: matchingCriteria=ANY
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param matchingCriteria Fetch resources matching matching ANY or ALL criteria passed as params in &#34;tags&#34; and &#34;inventoryProperties&#34;
+         * @param matchingCriteria Fetch resources matching ANY or ALL criteria passed as params in &#34;tags&#34; and &#34;inventoryProperties&#34;. Example: matchingCriteria=ANY
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param resourceCompartmentId Resource Compartment ID
+         * @param resourceCompartmentId A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class GetInventoryResourcesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param resourceCompartmentId Resource Compartment ID
+         * @param resourceCompartmentId A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
          * 
          * @return builder
          * 

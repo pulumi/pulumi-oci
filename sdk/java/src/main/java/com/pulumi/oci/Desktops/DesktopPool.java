@@ -106,6 +106,7 @@ import javax.annotation.Nullable;
  *             .standbySize(desktopPoolStandbySize)
  *             .storageBackupPolicyId("ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz")
  *             .storageSizeInGbs(desktopPoolStorageSizeInGbs)
+ *             .areVolumesPreserved(desktopPoolAreVolumesPreserved)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(desktopPoolDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
@@ -181,6 +182,26 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
         return this.arePrivilegedUsers;
     }
     /**
+     * (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="areVolumesPreserved", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> areVolumesPreserved;
+
+    /**
+     * @return (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Boolean>> areVolumesPreserved() {
+        return Codegen.optional(this.areVolumesPreserved);
+    }
+    /**
      * The availability domain of the desktop pool.
      * 
      */
@@ -195,14 +216,14 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
         return this.availabilityDomain;
     }
     /**
-     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
      * 
      */
     @Export(name="availabilityPolicy", refs={DesktopPoolAvailabilityPolicy.class}, tree="[0]")
     private Output<DesktopPoolAvailabilityPolicy> availabilityPolicy;
 
     /**
-     * @return (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+     * @return (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
      * 
      */
     public Output<DesktopPoolAvailabilityPolicy> availabilityPolicy() {
@@ -533,18 +554,12 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
     /**
      * Indicates whether the desktop pool uses dedicated virtual machine hosts.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="useDedicatedVmHost", refs={String.class}, tree="[0]")
     private Output<String> useDedicatedVmHost;
 
     /**
      * @return Indicates whether the desktop pool uses dedicated virtual machine hosts.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> useDedicatedVmHost() {

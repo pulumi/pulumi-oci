@@ -28,7 +28,7 @@ class GetSchedulerDefinitionsResult:
     """
     A collection of values returned by getSchedulerDefinitions.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, fleet_id=None, id=None, maintenance_window_id=None, product=None, scheduler_definition_collections=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, fleet_id=None, id=None, maintenance_window_id=None, product=None, runbook_id=None, scheduler_definition_collections=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +50,9 @@ class GetSchedulerDefinitionsResult:
         if product and not isinstance(product, str):
             raise TypeError("Expected argument 'product' to be a str")
         pulumi.set(__self__, "product", product)
+        if runbook_id and not isinstance(runbook_id, str):
+            raise TypeError("Expected argument 'runbook_id' to be a str")
+        pulumi.set(__self__, "runbook_id", runbook_id)
         if scheduler_definition_collections and not isinstance(scheduler_definition_collections, list):
             raise TypeError("Expected argument 'scheduler_definition_collections' to be a list")
         pulumi.set(__self__, "scheduler_definition_collections", scheduler_definition_collections)
@@ -108,6 +111,14 @@ class GetSchedulerDefinitionsResult:
         return pulumi.get(self, "product")
 
     @property
+    @pulumi.getter(name="runbookId")
+    def runbook_id(self) -> Optional[str]:
+        """
+        ID of the runbook
+        """
+        return pulumi.get(self, "runbook_id")
+
+    @property
     @pulumi.getter(name="schedulerDefinitionCollections")
     def scheduler_definition_collections(self) -> Sequence['outputs.GetSchedulerDefinitionsSchedulerDefinitionCollectionResult']:
         """
@@ -137,6 +148,7 @@ class AwaitableGetSchedulerDefinitionsResult(GetSchedulerDefinitionsResult):
             id=self.id,
             maintenance_window_id=self.maintenance_window_id,
             product=self.product,
+            runbook_id=self.runbook_id,
             scheduler_definition_collections=self.scheduler_definition_collections,
             state=self.state)
 
@@ -148,12 +160,13 @@ def get_scheduler_definitions(compartment_id: Optional[str] = None,
                               id: Optional[str] = None,
                               maintenance_window_id: Optional[str] = None,
                               product: Optional[str] = None,
+                              runbook_id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSchedulerDefinitionsResult:
     """
     This data source provides the list of Scheduler Definitions in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of SchedulerDefinitions.
+    List all lifecycle management schedules in Fleet Application Management.
 
     ## Example Usage
 
@@ -167,6 +180,7 @@ def get_scheduler_definitions(compartment_id: Optional[str] = None,
         id=scheduler_definition_id,
         maintenance_window_id=test_maintenance_window["id"],
         product=scheduler_definition_product,
+        runbook_id=test_runbook["id"],
         state=scheduler_definition_state)
     ```
 
@@ -174,10 +188,11 @@ def get_scheduler_definitions(compartment_id: Optional[str] = None,
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str fleet_id: unique Fleet identifier
-    :param str id: unique SchedulerDefinition identifier
-    :param str maintenance_window_id: unique MaintenanceWindow identifier
-    :param str product: A filter to return only Scheduler Definitions whose assocaited product matches the given product
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str id: A filter to return only schedule definitions whose identifier matches the given identifier.
+    :param str maintenance_window_id: A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
+    :param str product: A filter to return only dchedule definitions whose assocaited product matches the given product
+    :param str runbook_id: A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+    :param str state: A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -187,6 +202,7 @@ def get_scheduler_definitions(compartment_id: Optional[str] = None,
     __args__['id'] = id
     __args__['maintenanceWindowId'] = maintenance_window_id
     __args__['product'] = product
+    __args__['runbookId'] = runbook_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:FleetAppsManagement/getSchedulerDefinitions:getSchedulerDefinitions', __args__, opts=opts, typ=GetSchedulerDefinitionsResult).value
@@ -199,6 +215,7 @@ def get_scheduler_definitions(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         maintenance_window_id=pulumi.get(__ret__, 'maintenance_window_id'),
         product=pulumi.get(__ret__, 'product'),
+        runbook_id=pulumi.get(__ret__, 'runbook_id'),
         scheduler_definition_collections=pulumi.get(__ret__, 'scheduler_definition_collections'),
         state=pulumi.get(__ret__, 'state'))
 def get_scheduler_definitions_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -208,12 +225,13 @@ def get_scheduler_definitions_output(compartment_id: Optional[pulumi.Input[Optio
                                      id: Optional[pulumi.Input[Optional[str]]] = None,
                                      maintenance_window_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      product: Optional[pulumi.Input[Optional[str]]] = None,
+                                     runbook_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerDefinitionsResult]:
     """
     This data source provides the list of Scheduler Definitions in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of SchedulerDefinitions.
+    List all lifecycle management schedules in Fleet Application Management.
 
     ## Example Usage
 
@@ -227,6 +245,7 @@ def get_scheduler_definitions_output(compartment_id: Optional[pulumi.Input[Optio
         id=scheduler_definition_id,
         maintenance_window_id=test_maintenance_window["id"],
         product=scheduler_definition_product,
+        runbook_id=test_runbook["id"],
         state=scheduler_definition_state)
     ```
 
@@ -234,10 +253,11 @@ def get_scheduler_definitions_output(compartment_id: Optional[pulumi.Input[Optio
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str fleet_id: unique Fleet identifier
-    :param str id: unique SchedulerDefinition identifier
-    :param str maintenance_window_id: unique MaintenanceWindow identifier
-    :param str product: A filter to return only Scheduler Definitions whose assocaited product matches the given product
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str id: A filter to return only schedule definitions whose identifier matches the given identifier.
+    :param str maintenance_window_id: A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
+    :param str product: A filter to return only dchedule definitions whose assocaited product matches the given product
+    :param str runbook_id: A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+    :param str state: A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -247,6 +267,7 @@ def get_scheduler_definitions_output(compartment_id: Optional[pulumi.Input[Optio
     __args__['id'] = id
     __args__['maintenanceWindowId'] = maintenance_window_id
     __args__['product'] = product
+    __args__['runbookId'] = runbook_id
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getSchedulerDefinitions:getSchedulerDefinitions', __args__, opts=opts, typ=GetSchedulerDefinitionsResult)
@@ -258,5 +279,6 @@ def get_scheduler_definitions_output(compartment_id: Optional[pulumi.Input[Optio
         id=pulumi.get(__response__, 'id'),
         maintenance_window_id=pulumi.get(__response__, 'maintenance_window_id'),
         product=pulumi.get(__response__, 'product'),
+        runbook_id=pulumi.get(__response__, 'runbook_id'),
         scheduler_definition_collections=pulumi.get(__response__, 'scheduler_definition_collections'),
         state=pulumi.get(__response__, 'state')))

@@ -18,12 +18,12 @@ public final class GetFleetComplianceReportResource {
      */
     private String compartment;
     /**
-     * @return Last known compliance state of target.
+     * @return The last known compliance state of the target.
      * 
      */
     private String complianceState;
     /**
-     * @return Products assocaited with the Fleet.Only products belonging to managed targets will be shown.
+     * @return Products associated with the Fleet.  Only the products belonging to managed targets will be shown.
      * 
      */
     private List<GetFleetComplianceReportResourceProduct> products;
@@ -38,7 +38,7 @@ public final class GetFleetComplianceReportResource {
      */
     private String resourceName;
     /**
-     * @return Region the resource belongs to.
+     * @return The region the resource belongs to.
      * 
      */
     private String resourceRegion;
@@ -67,14 +67,14 @@ public final class GetFleetComplianceReportResource {
         return this.compartment;
     }
     /**
-     * @return Last known compliance state of target.
+     * @return The last known compliance state of the target.
      * 
      */
     public String complianceState() {
         return this.complianceState;
     }
     /**
-     * @return Products assocaited with the Fleet.Only products belonging to managed targets will be shown.
+     * @return Products associated with the Fleet.  Only the products belonging to managed targets will be shown.
      * 
      */
     public List<GetFleetComplianceReportResourceProduct> products() {
@@ -95,7 +95,7 @@ public final class GetFleetComplianceReportResource {
         return this.resourceName;
     }
     /**
-     * @return Region the resource belongs to.
+     * @return The region the resource belongs to.
      * 
      */
     public String resourceRegion() {

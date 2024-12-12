@@ -13,19 +13,19 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class FleetNotificationPreferencesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Copartment Id of the topic where the notifications will be directed
+        /// (Updatable) Compartment ID the topic belongs to.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Preferences to send notifications on the fleet activities
+        /// (Updatable) Preferences to send notifications on the fleet activities.
         /// </summary>
         [Input("preferences")]
         public Input<Inputs.FleetNotificationPreferencesPreferencesArgs>? Preferences { get; set; }
 
         /// <summary>
-        /// (Updatable) Topic Id where the notifications will be directed
+        /// (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
         /// </summary>
         [Input("topicId", required: true)]
         public Input<string> TopicId { get; set; } = null!;

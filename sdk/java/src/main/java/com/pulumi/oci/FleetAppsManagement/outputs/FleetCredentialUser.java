@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class FleetCredentialUser {
     /**
-     * @return (Updatable) Credential Type
+     * @return (Updatable) Credential Type.
      * 
      */
     private String credentialType;
@@ -38,12 +38,12 @@ public final class FleetCredentialUser {
      */
     private @Nullable String secretVersion;
     /**
-     * @return (Updatable) The value corresponding to the credential
+     * @return (Updatable) The value corresponding to the credential.
      * 
      */
     private @Nullable String value;
     /**
-     * @return (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+     * @return (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -53,7 +53,7 @@ public final class FleetCredentialUser {
 
     private FleetCredentialUser() {}
     /**
-     * @return (Updatable) Credential Type
+     * @return (Updatable) Credential Type.
      * 
      */
     public String credentialType() {
@@ -88,14 +88,14 @@ public final class FleetCredentialUser {
         return Optional.ofNullable(this.secretVersion);
     }
     /**
-     * @return (Updatable) The value corresponding to the credential
+     * @return (Updatable) The value corresponding to the credential.
      * 
      */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }
     /**
-     * @return (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+     * @return (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

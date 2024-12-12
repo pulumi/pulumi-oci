@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
 import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationsArgs;
@@ -230,6 +231,51 @@ public final class BigDataServiceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getAutoScalingConfiguration:getAutoScalingConfiguration", TypeShape.of(GetAutoScalingConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the autoscale configuration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = BigDataServiceFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getAutoScalingConfiguration:getAutoScalingConfiguration", TypeShape.of(GetAutoScalingConfigurationResult.class), args, Utilities.withVersion(options));
     }
@@ -240,6 +286,9 @@ public final class BigDataServiceFunctions {
         return getAutoScalingConfigurationsPlain(args, InvokeOptions.Empty);
     }
     public static Output<GetAutoScalingConfigurationsResult> getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", TypeShape.of(GetAutoScalingConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAutoScalingConfigurationsResult> getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", TypeShape.of(GetAutoScalingConfigurationsResult.class), args, Utilities.withVersion(options));
     }
     public static CompletableFuture<GetAutoScalingConfigurationsResult> getAutoScalingConfigurationsPlain(GetAutoScalingConfigurationsPlainArgs args, InvokeOptions options) {
@@ -375,6 +424,50 @@ public final class BigDataServiceFunctions {
      * 
      */
     public static Output<GetBdsInstanceResult> getBdsInstance(GetBdsInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstance:getBdsInstance", TypeShape.of(GetBdsInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the Big Data Service cluster identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstance = BigDataServiceFunctions.getBdsInstance(GetBdsInstanceArgs.builder()
+     *             .bdsInstanceId(testBdsInstanceOciBdsBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceResult> getBdsInstance(GetBdsInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstance:getBdsInstance", TypeShape.of(GetBdsInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -554,6 +647,51 @@ public final class BigDataServiceFunctions {
      * 
      */
     public static Output<GetBdsInstanceApiKeyResult> getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", TypeShape.of(GetBdsInstanceApiKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns the user&#39;s API key information for the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceApiKeyResult> getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", TypeShape.of(GetBdsInstanceApiKeyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -778,6 +916,51 @@ public final class BigDataServiceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeys(GetBdsInstanceApiKeysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", TypeShape.of(GetBdsInstanceApiKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns the user&#39;s API key information for the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeysPlain(GetBdsInstanceApiKeysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", TypeShape.of(GetBdsInstanceApiKeysResult.class), args, Utilities.withVersion(options));
     }
@@ -914,6 +1097,51 @@ public final class BigDataServiceFunctions {
      * 
      */
     public static Output<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceGetOsPatch:getBdsInstanceGetOsPatch", TypeShape.of(GetBdsInstanceGetOsPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of an os patch
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceGetOsPatch = BigDataServiceFunctions.getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .osPatchVersion(bdsInstanceGetOsPatchOsPatchVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceGetOsPatchResult> getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceGetOsPatch:getBdsInstanceGetOsPatch", TypeShape.of(GetBdsInstanceGetOsPatchResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1134,6 +1362,50 @@ public final class BigDataServiceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches", TypeShape.of(GetBdsInstanceListOsPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all available os patches for a given cluster
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceListOsPatches = BigDataServiceFunctions.getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBdsInstanceListOsPatchesResult> getBdsInstanceListOsPatchesPlain(GetBdsInstanceListOsPatchesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches", TypeShape.of(GetBdsInstanceListOsPatchesResult.class), args, Utilities.withVersion(options));
     }
@@ -1270,6 +1542,51 @@ public final class BigDataServiceFunctions {
      * 
      */
     public static Output<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", TypeShape.of(GetBdsInstanceMetastoreConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns the BDS Metastore configuration information for the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfig = BigDataServiceFunctions.getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .metastoreConfigId(testConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", TypeShape.of(GetBdsInstanceMetastoreConfigResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1510,6 +1827,55 @@ public final class BigDataServiceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", TypeShape.of(GetBdsInstanceMetastoreConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Metastore Configs in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfigs = BigDataServiceFunctions.getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .bdsApiKeyId(testApiKey.id())
+     *             .displayName(bdsInstanceMetastoreConfigDisplayName)
+     *             .metastoreId(testMetastore.id())
+     *             .metastoreType(bdsInstanceMetastoreConfigMetastoreType)
+     *             .state(bdsInstanceMetastoreConfigState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigsPlain(GetBdsInstanceMetastoreConfigsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", TypeShape.of(GetBdsInstanceMetastoreConfigsResult.class), args, Utilities.withVersion(options));
     }
@@ -1652,6 +2018,53 @@ public final class BigDataServiceFunctions {
      * 
      */
     public static Output<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", TypeShape.of(GetBdsInstancePatchHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List the patch history of this cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .patchType(bdsInstancePatchHistoryPatchType)
+     *             .patchVersion(bdsInstancePatchHistoryPatchVersion)
+     *             .state(bdsInstancePatchHistoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", TypeShape.of(GetBdsInstancePatchHistoriesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1874,6 +2287,50 @@ public final class BigDataServiceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBdsInstancePatchesResult> getBdsInstancePatches(GetBdsInstancePatchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", TypeShape.of(GetBdsInstancePatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available patches for this cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatches = BigDataServiceFunctions.getBdsInstancePatches(GetBdsInstancePatchesArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBdsInstancePatchesResult> getBdsInstancePatchesPlain(GetBdsInstancePatchesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", TypeShape.of(GetBdsInstancePatchesResult.class), args, Utilities.withVersion(options));
     }
@@ -2010,6 +2467,51 @@ public final class BigDataServiceFunctions {
      * 
      */
     public static Output<GetBdsInstanceResourcePrincipalConfigurationResult> getBdsInstanceResourcePrincipalConfiguration(GetBdsInstanceResourcePrincipalConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", TypeShape.of(GetBdsInstanceResourcePrincipalConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the resourcePrincipalConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfiguration = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfiguration(GetBdsInstanceResourcePrincipalConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .resourcePrincipalConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceResourcePrincipalConfigurationResult> getBdsInstanceResourcePrincipalConfiguration(GetBdsInstanceResourcePrincipalConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", TypeShape.of(GetBdsInstanceResourcePrincipalConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2238,6 +2740,52 @@ public final class BigDataServiceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBdsInstanceResourcePrincipalConfigurationsResult> getBdsInstanceResourcePrincipalConfigurations(GetBdsInstanceResourcePrincipalConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", TypeShape.of(GetBdsInstanceResourcePrincipalConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Resource Principal Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the ResourcePrincipalConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceResourcePrincipalConfigurations = BigDataServiceFunctions.getBdsInstanceResourcePrincipalConfigurations(GetBdsInstanceResourcePrincipalConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceResourcePrincipalConfigurationDisplayName)
+     *             .state(bdsInstanceResourcePrincipalConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBdsInstanceResourcePrincipalConfigurationsResult> getBdsInstanceResourcePrincipalConfigurationsPlain(GetBdsInstanceResourcePrincipalConfigurationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", TypeShape.of(GetBdsInstanceResourcePrincipalConfigurationsResult.class), args, Utilities.withVersion(options));
     }
@@ -2377,6 +2925,52 @@ public final class BigDataServiceFunctions {
      * 
      */
     public static Output<GetBdsInstancesResult> getBdsInstances(GetBdsInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstances:getBdsInstances", TypeShape.of(GetBdsInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of all Big Data Service clusters in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstances = BigDataServiceFunctions.getBdsInstances(GetBdsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsInstanceDisplayName)
+     *             .state(bdsInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstancesResult> getBdsInstances(GetBdsInstancesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstances:getBdsInstances", TypeShape.of(GetBdsInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -129,6 +129,10 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+        /// </summary>
+        public readonly string LastCompletedFsuCycleId;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -183,6 +187,8 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
 
             string id,
 
+            string lastCompletedFsuCycleId,
+
             string lifecycleDetails,
 
             string serviceType,
@@ -209,6 +215,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
             FreeformTags = freeformTags;
             FsuCollectionId = fsuCollectionId;
             Id = id;
+            LastCompletedFsuCycleId = lastCompletedFsuCycleId;
             LifecycleDetails = lifecycleDetails;
             ServiceType = serviceType;
             SourceMajorVersion = sourceMajorVersion;

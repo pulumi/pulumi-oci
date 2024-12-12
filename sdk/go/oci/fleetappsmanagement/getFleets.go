@@ -59,39 +59,39 @@ func GetFleets(ctx *pulumi.Context, args *GetFleetsArgs, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getFleets.
 type GetFleetsArgs struct {
-	// A filter to return only resources that match the Application Type given.
+	// A filter to return resources that match the Application Type/Product Stack given..
 	ApplicationType *string `pulumi:"applicationType"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string `pulumi:"displayName"`
-	// A filter to return only resources that match the Environment Type given.
+	// A filter to return resources that match the Environment Type given.
 	EnvironmentType *string           `pulumi:"environmentType"`
 	Filters         []GetFleetsFilter `pulumi:"filters"`
-	// A filter to return only resources their fleetType matches the given fleetType.
+	// A filter to return fleets whose fleetType matches the given fleetType.
 	FleetType *string `pulumi:"fleetType"`
-	// unique Fleet identifier
+	// A filter to return fleets whose id matches the given Fleet identifier
 	Id *string `pulumi:"id"`
-	// A filter to return only resources that match the Product Type given.
+	// A filter to return resources that match the Product given.
 	Product *string `pulumi:"product"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return fleets whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getFleets.
 type GetFleetsResult struct {
-	// Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+	// Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 	ApplicationType *string `pulumi:"applicationType"`
-	// Please provide the root compartmentId (TenancyId).
+	// Tenancy Id (Root Compartment Id)for which the rule is created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
-	// Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+	// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 	EnvironmentType *string           `pulumi:"environmentType"`
 	Filters         []GetFleetsFilter `pulumi:"filters"`
 	// The list of fleet_collection.
 	FleetCollections []GetFleetsFleetCollection `pulumi:"fleetCollections"`
-	// Type of the Fleet.
+	// Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 	FleetType *string `pulumi:"fleetType"`
 	// The OCID of the resource.
 	Id      *string `pulumi:"id"`
@@ -121,22 +121,22 @@ func GetFleetsOutput(ctx *pulumi.Context, args GetFleetsOutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getFleets.
 type GetFleetsOutputArgs struct {
-	// A filter to return only resources that match the Application Type given.
+	// A filter to return resources that match the Application Type/Product Stack given..
 	ApplicationType pulumi.StringPtrInput `pulumi:"applicationType"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// A filter to return only resources that match the Environment Type given.
+	// A filter to return resources that match the Environment Type given.
 	EnvironmentType pulumi.StringPtrInput     `pulumi:"environmentType"`
 	Filters         GetFleetsFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resources their fleetType matches the given fleetType.
+	// A filter to return fleets whose fleetType matches the given fleetType.
 	FleetType pulumi.StringPtrInput `pulumi:"fleetType"`
-	// unique Fleet identifier
+	// A filter to return fleets whose id matches the given Fleet identifier
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources that match the Product Type given.
+	// A filter to return resources that match the Product given.
 	Product pulumi.StringPtrInput `pulumi:"product"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return fleets whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -159,12 +159,12 @@ func (o GetFleetsResultOutput) ToGetFleetsResultOutputWithContext(ctx context.Co
 	return o
 }
 
-// Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+// Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 func (o GetFleetsResultOutput) ApplicationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetsResult) *string { return v.ApplicationType }).(pulumi.StringPtrOutput)
 }
 
-// Please provide the root compartmentId (TenancyId).
+// Tenancy Id (Root Compartment Id)for which the rule is created.
 func (o GetFleetsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -174,7 +174,7 @@ func (o GetFleetsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 func (o GetFleetsResultOutput) EnvironmentType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetsResult) *string { return v.EnvironmentType }).(pulumi.StringPtrOutput)
 }
@@ -188,7 +188,7 @@ func (o GetFleetsResultOutput) FleetCollections() GetFleetsFleetCollectionArrayO
 	return o.ApplyT(func(v GetFleetsResult) []GetFleetsFleetCollection { return v.FleetCollections }).(GetFleetsFleetCollectionArrayOutput)
 }
 
-// Type of the Fleet.
+// Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 func (o GetFleetsResultOutput) FleetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetsResult) *string { return v.FleetType }).(pulumi.StringPtrOutput)
 }

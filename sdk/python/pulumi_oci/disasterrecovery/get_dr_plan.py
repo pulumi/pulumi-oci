@@ -27,7 +27,7 @@ class GetDrPlanResult:
     """
     A collection of values returned by getDrPlan.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, dr_plan_id=None, dr_protection_group_id=None, freeform_tags=None, id=None, life_cycle_details=None, peer_dr_protection_group_id=None, peer_region=None, plan_groups=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, dr_plan_id=None, dr_protection_group_id=None, freeform_tags=None, id=None, life_cycle_details=None, lifecycle_sub_state=None, peer_dr_protection_group_id=None, peer_region=None, plan_groups=None, refresh_trigger=None, source_plan_id=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, verify_trigger=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52,6 +52,9 @@ class GetDrPlanResult:
         if life_cycle_details and not isinstance(life_cycle_details, str):
             raise TypeError("Expected argument 'life_cycle_details' to be a str")
         pulumi.set(__self__, "life_cycle_details", life_cycle_details)
+        if lifecycle_sub_state and not isinstance(lifecycle_sub_state, str):
+            raise TypeError("Expected argument 'lifecycle_sub_state' to be a str")
+        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         if peer_dr_protection_group_id and not isinstance(peer_dr_protection_group_id, str):
             raise TypeError("Expected argument 'peer_dr_protection_group_id' to be a str")
         pulumi.set(__self__, "peer_dr_protection_group_id", peer_dr_protection_group_id)
@@ -61,6 +64,12 @@ class GetDrPlanResult:
         if plan_groups and not isinstance(plan_groups, list):
             raise TypeError("Expected argument 'plan_groups' to be a list")
         pulumi.set(__self__, "plan_groups", plan_groups)
+        if refresh_trigger and not isinstance(refresh_trigger, int):
+            raise TypeError("Expected argument 'refresh_trigger' to be a int")
+        pulumi.set(__self__, "refresh_trigger", refresh_trigger)
+        if source_plan_id and not isinstance(source_plan_id, str):
+            raise TypeError("Expected argument 'source_plan_id' to be a str")
+        pulumi.set(__self__, "source_plan_id", source_plan_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -76,6 +85,9 @@ class GetDrPlanResult:
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+        if verify_trigger and not isinstance(verify_trigger, int):
+            raise TypeError("Expected argument 'verify_trigger' to be a int")
+        pulumi.set(__self__, "verify_trigger", verify_trigger)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -139,6 +151,14 @@ class GetDrPlanResult:
         return pulumi.get(self, "life_cycle_details")
 
     @property
+    @pulumi.getter(name="lifecycleSubState")
+    def lifecycle_sub_state(self) -> str:
+        """
+        The current state of the DR plan.
+        """
+        return pulumi.get(self, "lifecycle_sub_state")
+
+    @property
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> str:
         """
@@ -161,6 +181,19 @@ class GetDrPlanResult:
         The list of groups in this DR plan.
         """
         return pulumi.get(self, "plan_groups")
+
+    @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> int:
+        return pulumi.get(self, "refresh_trigger")
+
+    @property
+    @pulumi.getter(name="sourcePlanId")
+    def source_plan_id(self) -> str:
+        """
+        If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_plan_id")
 
     @property
     @pulumi.getter
@@ -202,6 +235,11 @@ class GetDrPlanResult:
         """
         return pulumi.get(self, "type")
 
+    @property
+    @pulumi.getter(name="verifyTrigger")
+    def verify_trigger(self) -> int:
+        return pulumi.get(self, "verify_trigger")
+
 
 class AwaitableGetDrPlanResult(GetDrPlanResult):
     # pylint: disable=using-constant-test
@@ -217,14 +255,18 @@ class AwaitableGetDrPlanResult(GetDrPlanResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             life_cycle_details=self.life_cycle_details,
+            lifecycle_sub_state=self.lifecycle_sub_state,
             peer_dr_protection_group_id=self.peer_dr_protection_group_id,
             peer_region=self.peer_region,
             plan_groups=self.plan_groups,
+            refresh_trigger=self.refresh_trigger,
+            source_plan_id=self.source_plan_id,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
-            type=self.type)
+            type=self.type,
+            verify_trigger=self.verify_trigger)
 
 
 def get_dr_plan(dr_plan_id: Optional[str] = None,
@@ -260,14 +302,18 @@ def get_dr_plan(dr_plan_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         life_cycle_details=pulumi.get(__ret__, 'life_cycle_details'),
+        lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         peer_dr_protection_group_id=pulumi.get(__ret__, 'peer_dr_protection_group_id'),
         peer_region=pulumi.get(__ret__, 'peer_region'),
         plan_groups=pulumi.get(__ret__, 'plan_groups'),
+        refresh_trigger=pulumi.get(__ret__, 'refresh_trigger'),
+        source_plan_id=pulumi.get(__ret__, 'source_plan_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
-        type=pulumi.get(__ret__, 'type'))
+        type=pulumi.get(__ret__, 'type'),
+        verify_trigger=pulumi.get(__ret__, 'verify_trigger'))
 def get_dr_plan_output(dr_plan_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrPlanResult]:
     """
@@ -300,11 +346,15 @@ def get_dr_plan_output(dr_plan_id: Optional[pulumi.Input[str]] = None,
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         life_cycle_details=pulumi.get(__response__, 'life_cycle_details'),
+        lifecycle_sub_state=pulumi.get(__response__, 'lifecycle_sub_state'),
         peer_dr_protection_group_id=pulumi.get(__response__, 'peer_dr_protection_group_id'),
         peer_region=pulumi.get(__response__, 'peer_region'),
         plan_groups=pulumi.get(__response__, 'plan_groups'),
+        refresh_trigger=pulumi.get(__response__, 'refresh_trigger'),
+        source_plan_id=pulumi.get(__response__, 'source_plan_id'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
-        type=pulumi.get(__response__, 'type')))
+        type=pulumi.get(__response__, 'type'),
+        verify_trigger=pulumi.get(__response__, 'verify_trigger')))

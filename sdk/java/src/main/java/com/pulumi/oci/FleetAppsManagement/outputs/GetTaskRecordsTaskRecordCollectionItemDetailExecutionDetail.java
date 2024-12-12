@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContent;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredential;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariable;
 import java.lang.String;
 import java.util.List;
@@ -14,15 +15,20 @@ import java.util.Objects;
 @CustomType
 public final class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail {
     /**
-     * @return Optional Command to execute the content.
+     * @return Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
      * 
      */
     private String command;
     /**
-     * @return Content Source Details.
+     * @return Content Source details.
      * 
      */
     private List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContent> contents;
+    /**
+     * @return Credentials required for executing the task.
+     * 
+     */
+    private List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredential> credentials;
     /**
      * @return Endpoint to be invoked.
      * 
@@ -34,25 +40,32 @@ public final class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail {
      */
     private String executionType;
     /**
-     * @return The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+     * @return The variable of the task. At least one of the dynamicArguments or output needs to be provided.
      * 
      */
     private List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariable> variables;
 
     private GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail() {}
     /**
-     * @return Optional Command to execute the content.
+     * @return Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
      * 
      */
     public String command() {
         return this.command;
     }
     /**
-     * @return Content Source Details.
+     * @return Content Source details.
      * 
      */
     public List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContent> contents() {
         return this.contents;
+    }
+    /**
+     * @return Credentials required for executing the task.
+     * 
+     */
+    public List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredential> credentials() {
+        return this.credentials;
     }
     /**
      * @return Endpoint to be invoked.
@@ -69,7 +82,7 @@ public final class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail {
         return this.executionType;
     }
     /**
-     * @return The variable of the task.Atleast one of dynamicArguments or output needs to be provided.
+     * @return The variable of the task. At least one of the dynamicArguments or output needs to be provided.
      * 
      */
     public List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariable> variables() {
@@ -87,6 +100,7 @@ public final class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail {
     public static final class Builder {
         private String command;
         private List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContent> contents;
+        private List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredential> credentials;
         private String endpoint;
         private String executionType;
         private List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariable> variables;
@@ -95,6 +109,7 @@ public final class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail {
     	      Objects.requireNonNull(defaults);
     	      this.command = defaults.command;
     	      this.contents = defaults.contents;
+    	      this.credentials = defaults.credentials;
     	      this.endpoint = defaults.endpoint;
     	      this.executionType = defaults.executionType;
     	      this.variables = defaults.variables;
@@ -118,6 +133,17 @@ public final class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail {
         }
         public Builder contents(GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContent... contents) {
             return contents(List.of(contents));
+        }
+        @CustomType.Setter
+        public Builder credentials(List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredential> credentials) {
+            if (credentials == null) {
+              throw new MissingRequiredPropertyException("GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail", "credentials");
+            }
+            this.credentials = credentials;
+            return this;
+        }
+        public Builder credentials(GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailCredential... credentials) {
+            return credentials(List.of(credentials));
         }
         @CustomType.Setter
         public Builder endpoint(String endpoint) {
@@ -150,6 +176,7 @@ public final class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail {
             final var _resultValue = new GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail();
             _resultValue.command = command;
             _resultValue.contents = contents;
+            _resultValue.credentials = credentials;
             _resultValue.endpoint = endpoint;
             _resultValue.executionType = executionType;
             _resultValue.variables = variables;

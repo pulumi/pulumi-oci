@@ -18,14 +18,14 @@ public final class DesktopPoolSessionLifecycleActionsInactivityArgs extends com.
     public static final DesktopPoolSessionLifecycleActionsInactivityArgs Empty = new DesktopPoolSessionLifecycleActionsInactivityArgs();
 
     /**
-     * (Updatable) an inactivity action to be triggered
+     * (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
      * 
      */
     @Import(name="action", required=true)
     private Output<String> action;
 
     /**
-     * @return (Updatable) an inactivity action to be triggered
+     * @return (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
      * 
      */
     public Output<String> action() {
@@ -73,7 +73,7 @@ public final class DesktopPoolSessionLifecycleActionsInactivityArgs extends com.
         }
 
         /**
-         * @param action (Updatable) an inactivity action to be triggered
+         * @param action (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class DesktopPoolSessionLifecycleActionsInactivityArgs extends com.
         }
 
         /**
-         * @param action (Updatable) an inactivity action to be triggered
+         * @param action (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
          * 
          * @return builder
          * 

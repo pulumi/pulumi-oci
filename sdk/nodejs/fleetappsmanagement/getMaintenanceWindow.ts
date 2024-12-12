@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a MaintenanceWindow by identifier
+ * Get the details for a maintenance window in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -58,7 +58,7 @@ export interface GetMaintenanceWindowResult {
      */
     readonly displayName: string;
     /**
-     * Duration if schedule type is Custom
+     * Duration of the maintenance window. Specify how long the maintenance window remains open.
      */
     readonly duration: string;
     /**
@@ -70,11 +70,11 @@ export interface GetMaintenanceWindowResult {
      */
     readonly id: string;
     /**
-     * Does the maintenenace window cause outage?
+     * Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      */
     readonly isOutage: boolean;
     /**
-     * Is this is a recurring maintenance window
+     * Is this a recurring maintenance window?
      */
     readonly isRecurring: boolean;
     /**
@@ -87,7 +87,7 @@ export interface GetMaintenanceWindowResult {
      */
     readonly maintenanceWindowType: string;
     /**
-     * Recurrence rule specification if recurring
+     * Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      */
     readonly recurrences: string;
     /**
@@ -103,7 +103,7 @@ export interface GetMaintenanceWindowResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * Task initiation cutoff
+     * Task initiation cutoff time for the maintenance window.
      */
     readonly taskInitiationCutoff: number;
     /**
@@ -111,7 +111,7 @@ export interface GetMaintenanceWindowResult {
      */
     readonly timeCreated: string;
     /**
-     * Start time of schedule
+     * Specify the date and time of the day that the maintenance window starts.
      */
     readonly timeScheduleStart: string;
     /**
@@ -122,7 +122,7 @@ export interface GetMaintenanceWindowResult {
 /**
  * This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a MaintenanceWindow by identifier
+ * Get the details for a maintenance window in Fleet Application Management.
  *
  * ## Example Usage
  *

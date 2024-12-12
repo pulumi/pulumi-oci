@@ -14,9 +14,17 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetTaskRecordsTaskRecordCollectionItemDetailResult
     {
         /// <summary>
-        /// Content Source Details
+        /// Execution details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult> ExecutionDetails;
+        /// <summary>
+        /// Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+        /// </summary>
+        public readonly bool IsApplySubjectTask;
+        /// <summary>
+        /// Is this a discovery output task?
+        /// </summary>
+        public readonly bool IsDiscoveryOutputTask;
         /// <summary>
         /// The OS for the task
         /// </summary>
@@ -38,6 +46,10 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         private GetTaskRecordsTaskRecordCollectionItemDetailResult(
             ImmutableArray<Outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult> executionDetails,
 
+            bool isApplySubjectTask,
+
+            bool isDiscoveryOutputTask,
+
             string osType,
 
             string platform,
@@ -47,6 +59,8 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
             string scope)
         {
             ExecutionDetails = executionDetails;
+            IsApplySubjectTask = isApplySubjectTask;
+            IsDiscoveryOutputTask = isDiscoveryOutputTask;
             OsType = osType;
             Platform = platform;
             Properties = properties;

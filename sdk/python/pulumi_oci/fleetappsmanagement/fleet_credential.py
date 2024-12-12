@@ -16,10 +16,10 @@ from .. import _utilities
 from . import outputs
 from ._inputs import *
 
-__all__ = ['FleetCredentialArgs', 'FleetCredential']
+__all__ = ['FleetCredentialInitArgs', 'FleetCredential']
 
 @pulumi.input_type
-class FleetCredentialArgs:
+class FleetCredentialInitArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
@@ -31,10 +31,10 @@ class FleetCredentialArgs:
         The set of arguments for constructing a FleetCredential resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input['FleetCredentialEntitySpecificsArgs'] entity_specifics: (Updatable) Credential Details
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
-        :param pulumi.Input['FleetCredentialPasswordArgs'] password: (Updatable) Credential Details
-        :param pulumi.Input['FleetCredentialUserArgs'] user: (Updatable) Credential Details
+        :param pulumi.Input['FleetCredentialEntitySpecificsArgs'] entity_specifics: (Updatable) Credential specific Details.
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
+        :param pulumi.Input['FleetCredentialPasswordArgs'] password: (Updatable) Credential Details.
+        :param pulumi.Input['FleetCredentialUserArgs'] user: (Updatable) Credential Details.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -71,7 +71,7 @@ class FleetCredentialArgs:
     @pulumi.getter(name="entitySpecifics")
     def entity_specifics(self) -> pulumi.Input['FleetCredentialEntitySpecificsArgs']:
         """
-        (Updatable) Credential Details
+        (Updatable) Credential specific Details.
         """
         return pulumi.get(self, "entity_specifics")
 
@@ -83,7 +83,7 @@ class FleetCredentialArgs:
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> pulumi.Input[str]:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -95,7 +95,7 @@ class FleetCredentialArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input['FleetCredentialPasswordArgs']:
         """
-        (Updatable) Credential Details
+        (Updatable) Credential Details.
         """
         return pulumi.get(self, "password")
 
@@ -107,7 +107,7 @@ class FleetCredentialArgs:
     @pulumi.getter
     def user(self) -> pulumi.Input['FleetCredentialUserArgs']:
         """
-        (Updatable) Credential Details
+        (Updatable) Credential Details.
         """
         return pulumi.get(self, "user")
 
@@ -134,15 +134,15 @@ class _FleetCredentialState:
         Input properties used for looking up and filtering FleetCredential resources.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input['FleetCredentialEntitySpecificsArgs'] entity_specifics: (Updatable) Credential Details
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
+        :param pulumi.Input['FleetCredentialEntitySpecificsArgs'] entity_specifics: (Updatable) Credential specific Details.
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input['FleetCredentialPasswordArgs'] password: (Updatable) Credential Details
+        :param pulumi.Input['FleetCredentialPasswordArgs'] password: (Updatable) Credential Details.
         :param pulumi.Input[str] state: The current state of the FleetCredential.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input['FleetCredentialUserArgs'] user: (Updatable) Credential Details
+        :param pulumi.Input['FleetCredentialUserArgs'] user: (Updatable) Credential Details.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -195,7 +195,7 @@ class _FleetCredentialState:
     @pulumi.getter(name="entitySpecifics")
     def entity_specifics(self) -> Optional[pulumi.Input['FleetCredentialEntitySpecificsArgs']]:
         """
-        (Updatable) Credential Details
+        (Updatable) Credential specific Details.
         """
         return pulumi.get(self, "entity_specifics")
 
@@ -207,7 +207,7 @@ class _FleetCredentialState:
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -231,7 +231,7 @@ class _FleetCredentialState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input['FleetCredentialPasswordArgs']]:
         """
-        (Updatable) Credential Details
+        (Updatable) Credential Details.
         """
         return pulumi.get(self, "password")
 
@@ -291,7 +291,7 @@ class _FleetCredentialState:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input['FleetCredentialUserArgs']]:
         """
-        (Updatable) Credential Details
+        (Updatable) Credential Details.
         """
         return pulumi.get(self, "user")
 
@@ -315,7 +315,7 @@ class FleetCredential(pulumi.CustomResource):
         """
         This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new FleetCredential.
+        Add credentials to a fleet in Fleet Application Management.
 
         ## Example Usage
 
@@ -330,6 +330,10 @@ class FleetCredential(pulumi.CustomResource):
                 "credential_level": fleet_credential_entity_specifics_credential_level,
                 "resource_id": test_resource["id"],
                 "target": fleet_credential_entity_specifics_target,
+                "variables": [{
+                    "name": fleet_credential_entity_specifics_variables_name,
+                    "value": fleet_credential_entity_specifics_variables_value,
+                }],
             },
             fleet_id=test_fleet["id"],
             password={
@@ -360,21 +364,21 @@ class FleetCredential(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']] entity_specifics: (Updatable) Credential Details
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
-        :param pulumi.Input[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']] password: (Updatable) Credential Details
-        :param pulumi.Input[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']] user: (Updatable) Credential Details
+        :param pulumi.Input[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']] entity_specifics: (Updatable) Credential specific Details.
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
+        :param pulumi.Input[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']] password: (Updatable) Credential Details.
+        :param pulumi.Input[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']] user: (Updatable) Credential Details.
         """
         ...
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: FleetCredentialArgs,
+                 args: FleetCredentialInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new FleetCredential.
+        Add credentials to a fleet in Fleet Application Management.
 
         ## Example Usage
 
@@ -389,6 +393,10 @@ class FleetCredential(pulumi.CustomResource):
                 "credential_level": fleet_credential_entity_specifics_credential_level,
                 "resource_id": test_resource["id"],
                 "target": fleet_credential_entity_specifics_target,
+                "variables": [{
+                    "name": fleet_credential_entity_specifics_variables_name,
+                    "value": fleet_credential_entity_specifics_variables_value,
+                }],
             },
             fleet_id=test_fleet["id"],
             password={
@@ -416,12 +424,12 @@ class FleetCredential(pulumi.CustomResource):
         Import is not supported for this resource.
 
         :param str resource_name: The name of the resource.
-        :param FleetCredentialArgs args: The arguments to use to populate this resource's properties.
+        :param FleetCredentialInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
         ...
     def __init__(__self__, resource_name: str, *args, **kwargs):
-        resource_args, opts = _utilities.get_resource_args_opts(FleetCredentialArgs, pulumi.ResourceOptions, *args, **kwargs)
+        resource_args, opts = _utilities.get_resource_args_opts(FleetCredentialInitArgs, pulumi.ResourceOptions, *args, **kwargs)
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
@@ -443,7 +451,7 @@ class FleetCredential(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = FleetCredentialArgs.__new__(FleetCredentialArgs)
+            __props__ = FleetCredentialInitArgs.__new__(FleetCredentialInitArgs)
 
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -498,15 +506,15 @@ class FleetCredential(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']] entity_specifics: (Updatable) Credential Details
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
+        :param pulumi.Input[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict']] entity_specifics: (Updatable) Credential specific Details.
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']] password: (Updatable) Credential Details
+        :param pulumi.Input[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict']] password: (Updatable) Credential Details.
         :param pulumi.Input[str] state: The current state of the FleetCredential.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']] user: (Updatable) Credential Details
+        :param pulumi.Input[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']] user: (Updatable) Credential Details.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -545,7 +553,7 @@ class FleetCredential(pulumi.CustomResource):
     @pulumi.getter(name="entitySpecifics")
     def entity_specifics(self) -> pulumi.Output['outputs.FleetCredentialEntitySpecifics']:
         """
-        (Updatable) Credential Details
+        (Updatable) Credential specific Details.
         """
         return pulumi.get(self, "entity_specifics")
 
@@ -553,7 +561,7 @@ class FleetCredential(pulumi.CustomResource):
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> pulumi.Output[str]:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -569,7 +577,7 @@ class FleetCredential(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output['outputs.FleetCredentialPassword']:
         """
-        (Updatable) Credential Details
+        (Updatable) Credential Details.
         """
         return pulumi.get(self, "password")
 
@@ -609,7 +617,7 @@ class FleetCredential(pulumi.CustomResource):
     @pulumi.getter
     def user(self) -> pulumi.Output['outputs.FleetCredentialUser']:
         """
-        (Updatable) Credential Details
+        (Updatable) Credential Details.
         """
         return pulumi.get(self, "user")
 

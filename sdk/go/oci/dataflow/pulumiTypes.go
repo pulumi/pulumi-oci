@@ -3313,7 +3313,8 @@ type GetApplicationsApplication struct {
 	// The Spark version utilized to run the application.
 	SparkVersion string `pulumi:"sparkVersion"`
 	// The current state of this application.
-	State string `pulumi:"state"`
+	State                   string `pulumi:"state"`
+	TerminateRunsOnDeletion bool   `pulumi:"terminateRunsOnDeletion"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -3395,7 +3396,8 @@ type GetApplicationsApplicationArgs struct {
 	// The Spark version utilized to run the application.
 	SparkVersion pulumi.StringInput `pulumi:"sparkVersion"`
 	// The current state of this application.
-	State pulumi.StringInput `pulumi:"state"`
+	State                   pulumi.StringInput `pulumi:"state"`
+	TerminateRunsOnDeletion pulumi.BoolInput   `pulumi:"terminateRunsOnDeletion"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -3611,6 +3613,10 @@ func (o GetApplicationsApplicationOutput) SparkVersion() pulumi.StringOutput {
 // The current state of this application.
 func (o GetApplicationsApplicationOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetApplicationsApplicationOutput) TerminateRunsOnDeletion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) bool { return v.TerminateRunsOnDeletion }).(pulumi.BoolOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`

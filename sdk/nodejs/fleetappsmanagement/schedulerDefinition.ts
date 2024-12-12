@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Creates a new SchedulerDefinition.
+ * Create a SchedulerDefinition to perform lifecycle operations.
  *
  * ## Example Usage
  *
@@ -95,7 +95,7 @@ export class SchedulerDefinition extends pulumi.CustomResource {
     }
 
     /**
-     * All ActionGroup Types part of the schedule.
+     * All ActionGroup Types that are part of the schedule.
      */
     public /*out*/ readonly actionGroupTypes!: pulumi.Output<string[]>;
     /**
@@ -107,7 +107,7 @@ export class SchedulerDefinition extends pulumi.CustomResource {
      */
     public readonly activityInitiationCutOff!: pulumi.Output<number>;
     /**
-     * All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
      */
     public /*out*/ readonly applicationTypes!: pulumi.Output<string[]>;
     /**
@@ -119,11 +119,11 @@ export class SchedulerDefinition extends pulumi.CustomResource {
      */
     public /*out*/ readonly countOfAffectedActionGroups!: pulumi.Output<number>;
     /**
-     * Count of Resources affected by the Schedule
+     * Count of Resources affected by the Schedule.
      */
     public /*out*/ readonly countOfAffectedResources!: pulumi.Output<number>;
     /**
-     * Count of Targets affected by the Schedule
+     * Count of Targets affected by the Schedule.
      */
     public /*out*/ readonly countOfAffectedTargets!: pulumi.Output<number>;
     /**
@@ -147,11 +147,11 @@ export class SchedulerDefinition extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * All LifeCycle Operations part of the schedule
+     * All LifeCycle Operations that are part of the schedule.
      */
     public /*out*/ readonly lifecycleOperations!: pulumi.Output<string[]>;
     /**
-     * All products part of the schedule for PRODUCT ActionGroup Type.
+     * All products that are part of the schedule for PRODUCT ActionGroup Type.
      */
     public /*out*/ readonly products!: pulumi.Output<string[]>;
     /**
@@ -179,7 +179,7 @@ export class SchedulerDefinition extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * Scheduled date for the next run of the Job.
+     * The scheduled date for the next run of the Job.
      */
     public /*out*/ readonly timeOfNextRun!: pulumi.Output<string>;
     /**
@@ -268,7 +268,7 @@ export class SchedulerDefinition extends pulumi.CustomResource {
  */
 export interface SchedulerDefinitionState {
     /**
-     * All ActionGroup Types part of the schedule.
+     * All ActionGroup Types that are part of the schedule.
      */
     actionGroupTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -280,7 +280,7 @@ export interface SchedulerDefinitionState {
      */
     activityInitiationCutOff?: pulumi.Input<number>;
     /**
-     * All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
      */
     applicationTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -292,11 +292,11 @@ export interface SchedulerDefinitionState {
      */
     countOfAffectedActionGroups?: pulumi.Input<number>;
     /**
-     * Count of Resources affected by the Schedule
+     * Count of Resources affected by the Schedule.
      */
     countOfAffectedResources?: pulumi.Input<number>;
     /**
-     * Count of Targets affected by the Schedule
+     * Count of Targets affected by the Schedule.
      */
     countOfAffectedTargets?: pulumi.Input<number>;
     /**
@@ -320,11 +320,11 @@ export interface SchedulerDefinitionState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * All LifeCycle Operations part of the schedule
+     * All LifeCycle Operations that are part of the schedule.
      */
     lifecycleOperations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * All products part of the schedule for PRODUCT ActionGroup Type.
+     * All products that are part of the schedule for PRODUCT ActionGroup Type.
      */
     products?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -352,7 +352,7 @@ export interface SchedulerDefinitionState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * Scheduled date for the next run of the Job.
+     * The scheduled date for the next run of the Job.
      */
     timeOfNextRun?: pulumi.Input<string>;
     /**

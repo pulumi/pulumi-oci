@@ -38,6 +38,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string MemberId;
         /// <summary>
+        /// The DR plan step refresh status.  Example: `STEP_ADDED`
+        /// </summary>
+        public readonly string RefreshStatus;
+        /// <summary>
         /// The timeout in seconds for executing this step.  Example: `600`
         /// </summary>
         public readonly int Timeout;
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string memberId,
 
+            string refreshStatus,
+
             int timeout,
 
             string type,
@@ -76,6 +82,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             Id = id;
             IsEnabled = isEnabled;
             MemberId = memberId;
+            RefreshStatus = refreshStatus;
             Timeout = timeout;
             Type = type;
             UserDefinedSteps = userDefinedSteps;

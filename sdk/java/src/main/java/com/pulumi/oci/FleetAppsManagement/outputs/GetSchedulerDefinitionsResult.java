@@ -43,6 +43,11 @@ public final class GetSchedulerDefinitionsResult {
      */
     private @Nullable String product;
     /**
+     * @return ID of the runbook
+     * 
+     */
+    private @Nullable String runbookId;
+    /**
      * @return The list of scheduler_definition_collection.
      * 
      */
@@ -96,6 +101,13 @@ public final class GetSchedulerDefinitionsResult {
         return Optional.ofNullable(this.product);
     }
     /**
+     * @return ID of the runbook
+     * 
+     */
+    public Optional<String> runbookId() {
+        return Optional.ofNullable(this.runbookId);
+    }
+    /**
      * @return The list of scheduler_definition_collection.
      * 
      */
@@ -126,6 +138,7 @@ public final class GetSchedulerDefinitionsResult {
         private @Nullable String id;
         private @Nullable String maintenanceWindowId;
         private @Nullable String product;
+        private @Nullable String runbookId;
         private List<GetSchedulerDefinitionsSchedulerDefinitionCollection> schedulerDefinitionCollections;
         private @Nullable String state;
         public Builder() {}
@@ -138,6 +151,7 @@ public final class GetSchedulerDefinitionsResult {
     	      this.id = defaults.id;
     	      this.maintenanceWindowId = defaults.maintenanceWindowId;
     	      this.product = defaults.product;
+    	      this.runbookId = defaults.runbookId;
     	      this.schedulerDefinitionCollections = defaults.schedulerDefinitionCollections;
     	      this.state = defaults.state;
         }
@@ -188,6 +202,12 @@ public final class GetSchedulerDefinitionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder runbookId(@Nullable String runbookId) {
+
+            this.runbookId = runbookId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder schedulerDefinitionCollections(List<GetSchedulerDefinitionsSchedulerDefinitionCollection> schedulerDefinitionCollections) {
             if (schedulerDefinitionCollections == null) {
               throw new MissingRequiredPropertyException("GetSchedulerDefinitionsResult", "schedulerDefinitionCollections");
@@ -213,6 +233,7 @@ public final class GetSchedulerDefinitionsResult {
             _resultValue.id = id;
             _resultValue.maintenanceWindowId = maintenanceWindowId;
             _resultValue.product = product;
+            _resultValue.runbookId = runbookId;
             _resultValue.schedulerDefinitionCollections = schedulerDefinitionCollections;
             _resultValue.state = state;
             return _resultValue;

@@ -45,6 +45,11 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
      */
     private String memberId;
     /**
+     * @return The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    private String refreshStatus;
+    /**
      * @return The timeout in seconds for executing this step.  Example: `600`
      * 
      */
@@ -104,6 +109,13 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
         return this.memberId;
     }
     /**
+     * @return The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    public String refreshStatus() {
+        return this.refreshStatus;
+    }
+    /**
      * @return The timeout in seconds for executing this step.  Example: `600`
      * 
      */
@@ -140,6 +152,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
         private String id;
         private Boolean isEnabled;
         private String memberId;
+        private String refreshStatus;
         private Integer timeout;
         private String type;
         private List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep> userDefinedSteps;
@@ -152,6 +165,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
     	      this.id = defaults.id;
     	      this.isEnabled = defaults.isEnabled;
     	      this.memberId = defaults.memberId;
+    	      this.refreshStatus = defaults.refreshStatus;
     	      this.timeout = defaults.timeout;
     	      this.type = defaults.type;
     	      this.userDefinedSteps = defaults.userDefinedSteps;
@@ -206,6 +220,14 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
             return this;
         }
         @CustomType.Setter
+        public Builder refreshStatus(String refreshStatus) {
+            if (refreshStatus == null) {
+              throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItemPlanGroupStep", "refreshStatus");
+            }
+            this.refreshStatus = refreshStatus;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeout(Integer timeout) {
             if (timeout == null) {
               throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItemPlanGroupStep", "timeout");
@@ -240,6 +262,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
             _resultValue.id = id;
             _resultValue.isEnabled = isEnabled;
             _resultValue.memberId = memberId;
+            _resultValue.refreshStatus = refreshStatus;
             _resultValue.timeout = timeout;
             _resultValue.type = type;
             _resultValue.userDefinedSteps = userDefinedSteps;

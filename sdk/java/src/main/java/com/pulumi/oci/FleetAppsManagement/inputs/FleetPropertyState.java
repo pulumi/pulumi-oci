@@ -18,14 +18,14 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
     public static final FleetPropertyState Empty = new FleetPropertyState();
 
     /**
-     * Values of the category (must be a single value if selection = &#39;single choice&#39;)
+     * Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     @Import(name="allowedValues")
     private @Nullable Output<List<String>> allowedValues;
 
     /**
-     * @return Values of the category (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     public Optional<Output<List<String>>> allowedValues() {
@@ -63,14 +63,14 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId")
     private @Nullable Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Optional<Output<String>> fleetId() {
@@ -78,14 +78,14 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Property Id.
+     * OCID referring to global level metadata property.
      * 
      */
     @Import(name="propertyId")
     private @Nullable Output<String> propertyId;
 
     /**
-     * @return Property Id.
+     * @return OCID referring to global level metadata property.
      * 
      */
     public Optional<Output<String>> propertyId() {
@@ -93,14 +93,14 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Text selection of the category
+     * Text selection of the property.
      * 
      */
     @Import(name="selectionType")
     private @Nullable Output<String> selectionType;
 
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     public Optional<Output<String>> selectionType() {
@@ -168,7 +168,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Value of the Property
+     * (Updatable) Value of the Property.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -178,7 +178,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) Value of the Property
+     * @return (Updatable) Value of the Property.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -189,14 +189,14 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Format of the value
+     * Format of the value.
      * 
      */
     @Import(name="valueType")
     private @Nullable Output<String> valueType;
 
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     public Optional<Output<String>> valueType() {
@@ -239,7 +239,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param allowedValues Values of the category (must be a single value if selection = &#39;single choice&#39;)
+         * @param allowedValues Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param allowedValues Values of the category (must be a single value if selection = &#39;single choice&#39;)
+         * @param allowedValues Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param allowedValues Values of the category (must be a single value if selection = &#39;single choice&#39;)
+         * @param allowedValues Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param propertyId Property Id.
+         * @param propertyId OCID referring to global level metadata property.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param propertyId Property Id.
+         * @param propertyId OCID referring to global level metadata property.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param selectionType Text selection of the category
+         * @param selectionType Text selection of the property.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param selectionType Text selection of the category
+         * @param selectionType Text selection of the property.
          * 
          * @return builder
          * 
@@ -459,7 +459,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value (Updatable) Value of the Property
+         * @param value (Updatable) Value of the Property.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -473,7 +473,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value (Updatable) Value of the Property
+         * @param value (Updatable) Value of the Property.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -486,7 +486,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param valueType Format of the value
+         * @param valueType Format of the value.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class FleetPropertyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param valueType Format of the value
+         * @param valueType Format of the value.
          * 
          * @return builder
          * 

@@ -30,6 +30,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         [Input("isPauseEnabled")]
         public Input<bool>? IsPauseEnabled { get; set; }
 
+        /// <summary>
+        /// The DR plan step refresh status.  Example: `STEP_ADDED`
+        /// </summary>
+        [Input("refreshStatus")]
+        public Input<string>? RefreshStatus { get; set; }
+
         [Input("steps")]
         private InputList<Inputs.DrPlanPlanGroupStepArgs>? _steps;
 
@@ -43,11 +49,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         }
 
         /// <summary>
-        /// The type of DR plan to be created. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The type of DR plan to be created.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

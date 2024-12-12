@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.GloballyDistributedDatabase.inputs.GetPrivateEndpointArgs;
 import com.pulumi.oci.GloballyDistributedDatabase.inputs.GetPrivateEndpointPlainArgs;
 import com.pulumi.oci.GloballyDistributedDatabase.inputs.GetPrivateEndpointsArgs;
@@ -153,6 +154,50 @@ public final class GloballyDistributedDatabaseFunctions {
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GloballyDistributedDatabase/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
+     * 
+     * Get the PrivateEndpoint resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GloballyDistributedDatabase.GloballyDistributedDatabaseFunctions;
+     * import com.pulumi.oci.GloballyDistributedDatabase.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = GloballyDistributedDatabaseFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(testPrivateEndpointOciGloballyDistributedDatabasePrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GloballyDistributedDatabase/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -380,6 +425,52 @@ public final class GloballyDistributedDatabaseFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GloballyDistributedDatabase/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Globally Distributed Database service.
+     * 
+     * List of PrivateEndpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GloballyDistributedDatabase.GloballyDistributedDatabaseFunctions;
+     * import com.pulumi.oci.GloballyDistributedDatabase.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = GloballyDistributedDatabaseFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateEndpointDisplayName)
+     *             .state(privateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GloballyDistributedDatabase/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
@@ -516,6 +607,51 @@ public final class GloballyDistributedDatabaseFunctions {
      * 
      */
     public static Output<GetShardedDatabaseResult> getShardedDatabase(GetShardedDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GloballyDistributedDatabase/getShardedDatabase:getShardedDatabase", TypeShape.of(GetShardedDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sharded Database resource in Oracle Cloud Infrastructure Globally Distributed Database service.
+     * 
+     * Gets the details of the Sharded database identified by given id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GloballyDistributedDatabase.GloballyDistributedDatabaseFunctions;
+     * import com.pulumi.oci.GloballyDistributedDatabase.inputs.GetShardedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShardedDatabase = GloballyDistributedDatabaseFunctions.getShardedDatabase(GetShardedDatabaseArgs.builder()
+     *             .shardedDatabaseId(testShardedDatabaseOciGloballyDistributedDatabaseShardedDatabase.id())
+     *             .metadata(shardedDatabaseMetadata)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetShardedDatabaseResult> getShardedDatabase(GetShardedDatabaseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GloballyDistributedDatabase/getShardedDatabase:getShardedDatabase", TypeShape.of(GetShardedDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -699,6 +835,52 @@ public final class GloballyDistributedDatabaseFunctions {
      * 
      */
     public static Output<GetShardedDatabasesResult> getShardedDatabases(GetShardedDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GloballyDistributedDatabase/getShardedDatabases:getShardedDatabases", TypeShape.of(GetShardedDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sharded Databases in Oracle Cloud Infrastructure Globally Distributed Database service.
+     * 
+     * List of Sharded databases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GloballyDistributedDatabase.GloballyDistributedDatabaseFunctions;
+     * import com.pulumi.oci.GloballyDistributedDatabase.inputs.GetShardedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShardedDatabases = GloballyDistributedDatabaseFunctions.getShardedDatabases(GetShardedDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(shardedDatabaseDisplayName)
+     *             .state(shardedDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetShardedDatabasesResult> getShardedDatabases(GetShardedDatabasesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GloballyDistributedDatabase/getShardedDatabases:getShardedDatabases", TypeShape.of(GetShardedDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**

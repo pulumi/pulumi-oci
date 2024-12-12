@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetsFilter {
+    /**
+     * @return Name of the variable.
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetFleetsFilter() {}
+    /**
+     * @return Name of the variable.
+     * 
+     */
     public String name() {
         return this.name;
     }

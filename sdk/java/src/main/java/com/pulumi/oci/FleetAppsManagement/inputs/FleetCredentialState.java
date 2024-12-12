@@ -50,14 +50,14 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential specific Details.
      * 
      */
     @Import(name="entitySpecifics")
     private @Nullable Output<FleetCredentialEntitySpecificsArgs> entitySpecifics;
 
     /**
-     * @return (Updatable) Credential Details
+     * @return (Updatable) Credential specific Details.
      * 
      */
     public Optional<Output<FleetCredentialEntitySpecificsArgs>> entitySpecifics() {
@@ -65,14 +65,14 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId")
     private @Nullable Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Optional<Output<String>> fleetId() {
@@ -95,14 +95,14 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      * 
      */
     @Import(name="password")
     private @Nullable Output<FleetCredentialPasswordArgs> password;
 
     /**
-     * @return (Updatable) Credential Details
+     * @return (Updatable) Credential Details.
      * 
      */
     public Optional<Output<FleetCredentialPasswordArgs>> password() {
@@ -170,14 +170,14 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      * 
      */
     @Import(name="user")
     private @Nullable Output<FleetCredentialUserArgs> user;
 
     /**
-     * @return (Updatable) Credential Details
+     * @return (Updatable) Credential Details.
      * 
      */
     public Optional<Output<FleetCredentialUserArgs>> user() {
@@ -261,7 +261,7 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param entitySpecifics (Updatable) Credential Details
+         * @param entitySpecifics (Updatable) Credential specific Details.
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param entitySpecifics (Updatable) Credential Details
+         * @param entitySpecifics (Updatable) Credential specific Details.
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param password (Updatable) Credential Details
+         * @param password (Updatable) Credential Details.
          * 
          * @return builder
          * 
@@ -335,7 +335,7 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param password (Updatable) Credential Details
+         * @param password (Updatable) Credential Details.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param user (Updatable) Credential Details
+         * @param user (Updatable) Credential Details.
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class FleetCredentialState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param user (Updatable) Credential Details
+         * @param user (Updatable) Credential Details.
          * 
          * @return builder
          * 

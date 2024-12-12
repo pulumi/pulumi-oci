@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.AiLanguage.inputs.GetEndpointArgs;
 import com.pulumi.oci.AiLanguage.inputs.GetEndpointPlainArgs;
 import com.pulumi.oci.AiLanguage.inputs.GetEndpointsArgs;
@@ -165,6 +166,50 @@ public final class AiLanguageFunctions {
      * 
      */
     public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Gets an endpoint by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEndpoint = AiLanguageFunctions.getEndpoint(GetEndpointArgs.builder()
+     *             .endpointId(testEndpointOciAiLanguageEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -404,6 +449,55 @@ public final class AiLanguageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetEndpointsResult> getEndpoints(GetEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Returns a list of Endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEndpoints = AiLanguageFunctions.getEndpoints(GetEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(endpointDisplayName)
+     *             .endpointId(testEndpoint.id())
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(endpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(GetEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiLanguage/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
     }
@@ -537,6 +631,50 @@ public final class AiLanguageFunctions {
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Gets a model by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiLanguageFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(testModelOciAiLanguageModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -756,6 +894,50 @@ public final class AiLanguageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetModelEvaluationResultsResult> getModelEvaluationResults(GetModelEvaluationResultsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", TypeShape.of(GetModelEvaluationResultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Evaluation Results in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Get a (paginated) list of evaluation results for a given model.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetModelEvaluationResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
+     *             .modelId(testModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetModelEvaluationResultsResult> getModelEvaluationResultsPlain(GetModelEvaluationResultsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", TypeShape.of(GetModelEvaluationResultsResult.class), args, Utilities.withVersion(options));
     }
@@ -889,6 +1071,50 @@ public final class AiLanguageFunctions {
      * 
      */
     public static Output<GetModelTypeResult> getModelType(GetModelTypeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getModelType:getModelType", TypeShape.of(GetModelTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Gets model capabilities
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetModelTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelType = AiLanguageFunctions.getModelType(GetModelTypeArgs.builder()
+     *             .modelType(modelTypeModelType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelTypeResult> getModelType(GetModelTypeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getModelType:getModelType", TypeShape.of(GetModelTypeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1124,6 +1350,54 @@ public final class AiLanguageFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Returns a list of models.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiLanguageFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiLanguage/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
     }
@@ -1257,6 +1531,50 @@ public final class AiLanguageFunctions {
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Gets a Project by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiLanguageFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(testProjectOciAiLanguageProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1442,6 +1760,53 @@ public final class AiLanguageFunctions {
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Returns a list of  Projects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiLanguageFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
     }
     /**

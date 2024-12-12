@@ -28,7 +28,7 @@ class FleetResourceArgs:
         """
         The set of arguments for constructing a FleetResource resource.
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment to which the resource belongs to.
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
         :param pulumi.Input[str] resource_id: The OCID of the resource.
         :param pulumi.Input[str] tenancy_id: (Updatable) OCID of the tenancy to which the resource belongs to.
                
@@ -63,7 +63,7 @@ class FleetResourceArgs:
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> pulumi.Input[str]:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -149,28 +149,28 @@ class _FleetResourceState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FleetResource resources.
-        :param pulumi.Input[str] application_type: Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-        :param pulumi.Input[str] compartment: Resource Compartment
+        :param pulumi.Input[str] application_type: Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        :param pulumi.Input[str] compartment: Resource Compartment name.
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment to which the resource belongs to.
-        :param pulumi.Input[str] compliance_state: Compliance State of the Resource
+        :param pulumi.Input[str] compliance_state: Compliance State of the Resource.
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
+        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] product: Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        :param pulumi.Input[str] product: Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         :param pulumi.Input[int] product_count: Count of products within the resource.
         :param pulumi.Input[str] resource_id: The OCID of the resource.
         :param pulumi.Input[str] resource_region: Associated region
         :param pulumi.Input[str] resource_type: Type of the Resource.
         :param pulumi.Input[str] state: The current state of the FleetResource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[int] target_count: Count of targets  within the resource.
+        :param pulumi.Input[int] target_count: Count of targets within the resource.
         :param pulumi.Input[str] tenancy_id: (Updatable) OCID of the tenancy to which the resource belongs to.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] tenancy_name: Resource Tenancy Name
+        :param pulumi.Input[str] tenancy_name: Resource Tenancy Name.
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -219,7 +219,7 @@ class _FleetResourceState:
     @pulumi.getter(name="applicationType")
     def application_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "application_type")
 
@@ -231,7 +231,7 @@ class _FleetResourceState:
     @pulumi.getter
     def compartment(self) -> Optional[pulumi.Input[str]]:
         """
-        Resource Compartment
+        Resource Compartment name.
         """
         return pulumi.get(self, "compartment")
 
@@ -255,7 +255,7 @@ class _FleetResourceState:
     @pulumi.getter(name="complianceState")
     def compliance_state(self) -> Optional[pulumi.Input[str]]:
         """
-        Compliance State of the Resource
+        Compliance State of the Resource.
         """
         return pulumi.get(self, "compliance_state")
 
@@ -279,7 +279,7 @@ class _FleetResourceState:
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "environment_type")
 
@@ -291,7 +291,7 @@ class _FleetResourceState:
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -315,7 +315,7 @@ class _FleetResourceState:
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
         """
-        Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "product")
 
@@ -399,7 +399,7 @@ class _FleetResourceState:
     @pulumi.getter(name="targetCount")
     def target_count(self) -> Optional[pulumi.Input[int]]:
         """
-        Count of targets  within the resource.
+        Count of targets within the resource.
         """
         return pulumi.get(self, "target_count")
 
@@ -427,7 +427,7 @@ class _FleetResourceState:
     @pulumi.getter(name="tenancyName")
     def tenancy_name(self) -> Optional[pulumi.Input[str]]:
         """
-        Resource Tenancy Name
+        Resource Tenancy Name.
         """
         return pulumi.get(self, "tenancy_name")
 
@@ -475,7 +475,7 @@ class FleetResource(pulumi.CustomResource):
         """
         This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new FleetResource.
+        Add resource to a fleet in Fleet Application Management.
 
         ## Example Usage
 
@@ -499,7 +499,7 @@ class FleetResource(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment to which the resource belongs to.
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
         :param pulumi.Input[str] resource_id: The OCID of the resource.
         :param pulumi.Input[str] resource_region: Associated region
         :param pulumi.Input[str] resource_type: Type of the Resource.
@@ -518,7 +518,7 @@ class FleetResource(pulumi.CustomResource):
         """
         This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new FleetResource.
+        Add resource to a fleet in Fleet Application Management.
 
         ## Example Usage
 
@@ -634,28 +634,28 @@ class FleetResource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] application_type: Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-        :param pulumi.Input[str] compartment: Resource Compartment
+        :param pulumi.Input[str] application_type: Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        :param pulumi.Input[str] compartment: Resource Compartment name.
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment to which the resource belongs to.
-        :param pulumi.Input[str] compliance_state: Compliance State of the Resource
+        :param pulumi.Input[str] compliance_state: Compliance State of the Resource.
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-        :param pulumi.Input[str] fleet_id: unique Fleet identifier
+        :param pulumi.Input[str] environment_type: Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        :param pulumi.Input[str] fleet_id: Unique Fleet identifier.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] product: Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        :param pulumi.Input[str] product: Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         :param pulumi.Input[int] product_count: Count of products within the resource.
         :param pulumi.Input[str] resource_id: The OCID of the resource.
         :param pulumi.Input[str] resource_region: Associated region
         :param pulumi.Input[str] resource_type: Type of the Resource.
         :param pulumi.Input[str] state: The current state of the FleetResource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[int] target_count: Count of targets  within the resource.
+        :param pulumi.Input[int] target_count: Count of targets within the resource.
         :param pulumi.Input[str] tenancy_id: (Updatable) OCID of the tenancy to which the resource belongs to.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] tenancy_name: Resource Tenancy Name
+        :param pulumi.Input[str] tenancy_name: Resource Tenancy Name.
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -689,7 +689,7 @@ class FleetResource(pulumi.CustomResource):
     @pulumi.getter(name="applicationType")
     def application_type(self) -> pulumi.Output[str]:
         """
-        Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "application_type")
 
@@ -697,7 +697,7 @@ class FleetResource(pulumi.CustomResource):
     @pulumi.getter
     def compartment(self) -> pulumi.Output[str]:
         """
-        Resource Compartment
+        Resource Compartment name.
         """
         return pulumi.get(self, "compartment")
 
@@ -713,7 +713,7 @@ class FleetResource(pulumi.CustomResource):
     @pulumi.getter(name="complianceState")
     def compliance_state(self) -> pulumi.Output[str]:
         """
-        Compliance State of the Resource
+        Compliance State of the Resource.
         """
         return pulumi.get(self, "compliance_state")
 
@@ -729,7 +729,7 @@ class FleetResource(pulumi.CustomResource):
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> pulumi.Output[str]:
         """
-        Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "environment_type")
 
@@ -737,7 +737,7 @@ class FleetResource(pulumi.CustomResource):
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> pulumi.Output[str]:
         """
-        unique Fleet identifier
+        Unique Fleet identifier.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -753,7 +753,7 @@ class FleetResource(pulumi.CustomResource):
     @pulumi.getter
     def product(self) -> pulumi.Output[str]:
         """
-        Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         """
         return pulumi.get(self, "product")
 
@@ -809,7 +809,7 @@ class FleetResource(pulumi.CustomResource):
     @pulumi.getter(name="targetCount")
     def target_count(self) -> pulumi.Output[int]:
         """
-        Count of targets  within the resource.
+        Count of targets within the resource.
         """
         return pulumi.get(self, "target_count")
 
@@ -829,7 +829,7 @@ class FleetResource(pulumi.CustomResource):
     @pulumi.getter(name="tenancyName")
     def tenancy_name(self) -> pulumi.Output[str]:
         """
-        Resource Tenancy Name
+        Resource Tenancy Name.
         """
         return pulumi.get(self, "tenancy_name")
 

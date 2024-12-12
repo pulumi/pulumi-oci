@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRunbooksRunbookCollectionItem {
     /**
-     * @return JSON content with required associations
+     * @return Associations for the runbook.
      * 
      */
     private List<GetRunbooksRunbookCollectionItemAssociation> associations;
@@ -40,7 +40,7 @@ public final class GetRunbooksRunbookCollectionItem {
      */
     private String displayName;
     /**
-     * @return Estimated time to successfully complete the runbook execution
+     * @return Estimated time to successfully complete the runbook execution.
      * 
      */
     private String estimatedTime;
@@ -50,12 +50,12 @@ public final class GetRunbooksRunbookCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return unique Runbook identifier
+     * @return A filter to return runbooks whose identifier matches the given identifier.
      * 
      */
     private String id;
     /**
-     * @return Is the runbook default?
+     * @return Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
      * 
      */
     private Boolean isDefault;
@@ -65,7 +65,7 @@ public final class GetRunbooksRunbookCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return The runbook lifecycle.
+     * @return A filter to return runbooks whose operation matches the given lifecycle operation.
      * 
      */
     private String operation;
@@ -75,7 +75,7 @@ public final class GetRunbooksRunbookCollectionItem {
      */
     private String osType;
     /**
-     * @return The ID of the runbook platform.
+     * @return A filter to return runbooks whose platform matches the given platform.
      * 
      */
     private String platform;
@@ -85,12 +85,12 @@ public final class GetRunbooksRunbookCollectionItem {
      */
     private String resourceRegion;
     /**
-     * @return The runbook relevance of product or full-stack.
+     * @return A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
      * 
      */
     private String runbookRelevance;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
@@ -110,14 +110,14 @@ public final class GetRunbooksRunbookCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return The ID of the runbook type.
+     * @return A filter to return runbooks whose type matches the given type.
      * 
      */
     private String type;
 
     private GetRunbooksRunbookCollectionItem() {}
     /**
-     * @return JSON content with required associations
+     * @return Associations for the runbook.
      * 
      */
     public List<GetRunbooksRunbookCollectionItemAssociation> associations() {
@@ -152,7 +152,7 @@ public final class GetRunbooksRunbookCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Estimated time to successfully complete the runbook execution
+     * @return Estimated time to successfully complete the runbook execution.
      * 
      */
     public String estimatedTime() {
@@ -166,14 +166,14 @@ public final class GetRunbooksRunbookCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return unique Runbook identifier
+     * @return A filter to return runbooks whose identifier matches the given identifier.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Is the runbook default?
+     * @return Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
      * 
      */
     public Boolean isDefault() {
@@ -187,7 +187,7 @@ public final class GetRunbooksRunbookCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return The runbook lifecycle.
+     * @return A filter to return runbooks whose operation matches the given lifecycle operation.
      * 
      */
     public String operation() {
@@ -201,7 +201,7 @@ public final class GetRunbooksRunbookCollectionItem {
         return this.osType;
     }
     /**
-     * @return The ID of the runbook platform.
+     * @return A filter to return runbooks whose platform matches the given platform.
      * 
      */
     public String platform() {
@@ -215,14 +215,14 @@ public final class GetRunbooksRunbookCollectionItem {
         return this.resourceRegion;
     }
     /**
-     * @return The runbook relevance of product or full-stack.
+     * @return A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
      * 
      */
     public String runbookRelevance() {
         return this.runbookRelevance;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public String state() {
@@ -250,7 +250,7 @@ public final class GetRunbooksRunbookCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return The ID of the runbook type.
+     * @return A filter to return runbooks whose type matches the given type.
      * 
      */
     public String type() {

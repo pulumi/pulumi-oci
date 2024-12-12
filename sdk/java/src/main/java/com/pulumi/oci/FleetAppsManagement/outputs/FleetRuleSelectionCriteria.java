@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class FleetRuleSelectionCriteria {
     /**
-     * @return (Updatable) Rule selection match condition.
+     * @return (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
      * 
      */
     private String matchCondition;
@@ -25,7 +25,7 @@ public final class FleetRuleSelectionCriteria {
 
     private FleetRuleSelectionCriteria() {}
     /**
-     * @return (Updatable) Rule selection match condition.
+     * @return (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
      * 
      */
     public String matchCondition() {

@@ -137,7 +137,7 @@ def get_fleet_resources(display_name: Optional[str] = None,
     """
     This data source provides the list of Fleet Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of FleetResources.
+    List resources for a fleet in Fleet Application Management.
 
     ## Example Usage
 
@@ -155,10 +155,10 @@ def get_fleet_resources(display_name: Optional[str] = None,
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fleet_id: unique Fleet identifier
-    :param str fleet_resource_type: A filter to return resources that match the Type
-    :param str id: unique FleetResource identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str fleet_id: Unique Fleet identifier.
+    :param str fleet_resource_type: A filter to return only resources whose resourceType matches the given resourceType.
+    :param str id: A filter to return only resources whose identifier matches the given identifier.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
     :param str tenancy_id: Resource Tenancy Id
     """
     __args__ = dict()
@@ -192,7 +192,7 @@ def get_fleet_resources_output(display_name: Optional[pulumi.Input[Optional[str]
     """
     This data source provides the list of Fleet Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of FleetResources.
+    List resources for a fleet in Fleet Application Management.
 
     ## Example Usage
 
@@ -210,10 +210,10 @@ def get_fleet_resources_output(display_name: Optional[pulumi.Input[Optional[str]
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fleet_id: unique Fleet identifier
-    :param str fleet_resource_type: A filter to return resources that match the Type
-    :param str id: unique FleetResource identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str fleet_id: Unique Fleet identifier.
+    :param str fleet_resource_type: A filter to return only resources whose resourceType matches the given resourceType.
+    :param str id: A filter to return only resources whose identifier matches the given identifier.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
     :param str tenancy_id: Resource Tenancy Id
     """
     __args__ = dict()

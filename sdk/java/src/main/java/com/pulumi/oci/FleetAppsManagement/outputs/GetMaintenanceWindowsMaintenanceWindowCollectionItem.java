@@ -34,7 +34,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
      */
     private String displayName;
     /**
-     * @return Duration if schedule type is Custom
+     * @return Duration of the maintenance window. Specify how long the maintenance window remains open.
      * 
      */
     private String duration;
@@ -44,17 +44,17 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return unique MaintenanceWindow identifier
+     * @return A filter to return only the Maintenance Windows whose identifier matches the given identifier.
      * 
      */
     private String id;
     /**
-     * @return Does the maintenenace window cause outage?
+     * @return Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      * 
      */
     private Boolean isOutage;
     /**
-     * @return Is this is a recurring maintenance window
+     * @return Is this a recurring maintenance window?
      * 
      */
     private Boolean isRecurring;
@@ -69,7 +69,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
      */
     private String maintenanceWindowType;
     /**
-     * @return Recurrence rule specification if recurring
+     * @return Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      * 
      */
     private String recurrences;
@@ -79,7 +79,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
      */
     private String resourceRegion;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
@@ -89,7 +89,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
      */
     private Map<String,String> systemTags;
     /**
-     * @return Task initiation cutoff
+     * @return Task initiation cutoff time for the maintenance window.
      * 
      */
     private Integer taskInitiationCutoff;
@@ -99,7 +99,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
      */
     private String timeCreated;
     /**
-     * @return Start time of schedule
+     * @return Specify the date and time of the day that the maintenance window starts.
      * 
      */
     private String timeScheduleStart;
@@ -139,7 +139,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Duration if schedule type is Custom
+     * @return Duration of the maintenance window. Specify how long the maintenance window remains open.
      * 
      */
     public String duration() {
@@ -153,21 +153,21 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return unique MaintenanceWindow identifier
+     * @return A filter to return only the Maintenance Windows whose identifier matches the given identifier.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Does the maintenenace window cause outage?
+     * @return Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      * 
      */
     public Boolean isOutage() {
         return this.isOutage;
     }
     /**
-     * @return Is this is a recurring maintenance window
+     * @return Is this a recurring maintenance window?
      * 
      */
     public Boolean isRecurring() {
@@ -188,7 +188,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
         return this.maintenanceWindowType;
     }
     /**
-     * @return Recurrence rule specification if recurring
+     * @return Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      * 
      */
     public String recurrences() {
@@ -202,7 +202,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
         return this.resourceRegion;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public String state() {
@@ -216,7 +216,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return Task initiation cutoff
+     * @return Task initiation cutoff time for the maintenance window.
      * 
      */
     public Integer taskInitiationCutoff() {
@@ -230,7 +230,7 @@ public final class GetMaintenanceWindowsMaintenanceWindowCollectionItem {
         return this.timeCreated;
     }
     /**
-     * @return Start time of schedule
+     * @return Specify the date and time of the day that the maintenance window starts.
      * 
      */
     public String timeScheduleStart() {

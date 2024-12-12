@@ -18,11 +18,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Compartment;
         /// <summary>
-        /// Last known compliance state of target.
+        /// The last known compliance state of the target.
         /// </summary>
         public readonly string ComplianceState;
         /// <summary>
-        /// Products assocaited with the Fleet.Only products belonging to managed targets will be shown.
+        /// Products associated with the Fleet.  Only the products belonging to managed targets will be shown.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetComplianceReportResourceProductResult> Products;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ResourceName;
         /// <summary>
-        /// Region the resource belongs to.
+        /// The region the resource belongs to.
         /// </summary>
         public readonly string ResourceRegion;
         /// <summary>

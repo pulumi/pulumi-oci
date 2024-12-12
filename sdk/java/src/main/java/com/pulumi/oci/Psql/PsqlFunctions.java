@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Psql.inputs.GetBackupArgs;
 import com.pulumi.oci.Psql.inputs.GetBackupPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetBackupsArgs;
@@ -174,6 +175,50 @@ public final class PsqlFunctions {
      * 
      */
     public static Output<GetBackupResult> getBackup(GetBackupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getBackup:getBackup", TypeShape.of(GetBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets a backup by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
+     *             .backupId(testBackupOciPsqlBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBackupResult> getBackup(GetBackupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Psql/getBackup:getBackup", TypeShape.of(GetBackupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -517,6 +562,56 @@ public final class PsqlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBackupsResult> getBackups(GetBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns a list of backups.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
+     *             .backupId(testBackup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(backupDisplayName)
+     *             .id(backupId)
+     *             .state(backupState)
+     *             .timeEnded(backupTimeEnded)
+     *             .timeStarted(backupTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain(GetBackupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Psql/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
     }
@@ -650,6 +745,50 @@ public final class PsqlFunctions {
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets a configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Psql/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -987,6 +1126,55 @@ public final class PsqlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetConfigurationsResult> getConfigurations(GetConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getConfigurations:getConfigurations", TypeShape.of(GetConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns a list of configurations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(configurationDbVersion)
+     *             .displayName(configurationDisplayName)
+     *             .shape(configurationShape)
+     *             .state(configurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetConfigurationsResult> getConfigurationsPlain(GetConfigurationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Psql/getConfigurations:getConfigurations", TypeShape.of(GetConfigurationsResult.class), args, Utilities.withVersion(options));
     }
@@ -1123,6 +1311,51 @@ public final class PsqlFunctions {
      * 
      */
     public static Output<GetDbSystemResult> getDbSystem(GetDbSystemArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDbSystem:getDbSystem", TypeShape.of(GetDbSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets a database system by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .excludedFields(dbSystemExcludedFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbSystemResult> getDbSystem(GetDbSystemArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Psql/getDbSystem:getDbSystem", TypeShape.of(GetDbSystemResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1343,6 +1576,50 @@ public final class PsqlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbSystemConnectionDetailResult> getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", TypeShape.of(GetDbSystemConnectionDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets the database system connection details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemConnectionDetailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbSystemConnectionDetailResult> getDbSystemConnectionDetailPlain(GetDbSystemConnectionDetailPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", TypeShape.of(GetDbSystemConnectionDetailResult.class), args, Utilities.withVersion(options));
     }
@@ -1476,6 +1753,50 @@ public final class PsqlFunctions {
      * 
      */
     public static Output<GetDbSystemPrimaryDbInstanceResult> getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", TypeShape.of(GetDbSystemPrimaryDbInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets the primary database instance node details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbSystemPrimaryDbInstanceResult> getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", TypeShape.of(GetDbSystemPrimaryDbInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1801,6 +2122,53 @@ public final class PsqlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDbSystemsResult> getDbSystems(GetDbSystemsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDbSystems:getDbSystems", TypeShape.of(GetDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns a list of database systems.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystems = PsqlFunctions.getDbSystems(GetDbSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dbSystemDisplayName)
+     *             .id(dbSystemId)
+     *             .state(dbSystemState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain(GetDbSystemsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Psql/getDbSystems:getDbSystems", TypeShape.of(GetDbSystemsResult.class), args, Utilities.withVersion(options));
     }
@@ -1934,6 +2302,50 @@ public final class PsqlFunctions {
      * 
      */
     public static Output<GetDefaultConfigurationResult> getDefaultConfiguration(GetDefaultConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDefaultConfiguration:getDefaultConfiguration", TypeShape.of(GetDefaultConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets a default configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDefaultConfigurationResult> getDefaultConfiguration(GetDefaultConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Psql/getDefaultConfiguration:getDefaultConfiguration", TypeShape.of(GetDefaultConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2265,6 +2677,54 @@ public final class PsqlFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDefaultConfigurationsResult> getDefaultConfigurations(GetDefaultConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDefaultConfigurations:getDefaultConfigurations", TypeShape.of(GetDefaultConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns a list of default configurations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(defaultConfigurationDbVersion)
+     *             .displayName(defaultConfigurationDisplayName)
+     *             .shape(defaultConfigurationShape)
+     *             .state(defaultConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDefaultConfigurationsResult> getDefaultConfigurationsPlain(GetDefaultConfigurationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Psql/getDefaultConfigurations:getDefaultConfigurations", TypeShape.of(GetDefaultConfigurationsResult.class), args, Utilities.withVersion(options));
     }
@@ -2491,6 +2951,51 @@ public final class PsqlFunctions {
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getShapes:getShapes", TypeShape.of(GetShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Shapes in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns the list of shapes allowed in the region.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = PsqlFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(shapeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Psql/getShapes:getShapes", TypeShape.of(GetShapesResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -9,16 +9,20 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FleetAppsManagement.OnboardingArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.OnboardingState;
+import com.pulumi.oci.FleetAppsManagement.outputs.OnboardingAppliedPolicy;
+import com.pulumi.oci.FleetAppsManagement.outputs.OnboardingItem;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
  * This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  * 
- * Onboard a tenant to Fleet Application Management Service
+ * Onboard a tenant to Fleet Application Management.
+ * The onboarding process lets Fleet Application Management create a few required policies that you need to start using it and its features.
  * 
  * ## Example Usage
  * 
@@ -65,6 +69,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:FleetAppsManagement/onboarding:Onboarding")
 public class Onboarding extends com.pulumi.resources.CustomResource {
     /**
+     * Summary of the Fleet Application Management Onboard Policy.
+     * 
+     */
+    @Export(name="appliedPolicies", refs={List.class,OnboardingAppliedPolicy.class}, tree="[0,1]")
+    private Output<List<OnboardingAppliedPolicy>> appliedPolicies;
+
+    /**
+     * @return Summary of the Fleet Application Management Onboard Policy.
+     * 
+     */
+    public Output<List<OnboardingAppliedPolicy>> appliedPolicies() {
+        return this.appliedPolicies;
+    }
+    /**
      * Tenancy OCID
      * 
      */
@@ -79,21 +97,35 @@ public class Onboarding extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * A value determining if cost tracking tag is enabled or not
+     * Provide discovery frequency.
+     * 
+     */
+    @Export(name="discoveryFrequency", refs={String.class}, tree="[0]")
+    private Output<String> discoveryFrequency;
+
+    /**
+     * @return Provide discovery frequency.
+     * 
+     */
+    public Output<String> discoveryFrequency() {
+        return this.discoveryFrequency;
+    }
+    /**
+     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
      * 
      */
     @Export(name="isCostTrackingTagEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCostTrackingTagEnabled;
 
     /**
-     * @return A value determining if cost tracking tag is enabled or not
+     * @return A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using &#34;Oracle$FAMS-Tags.FAMSManaged&#34; tag.
      * 
      */
     public Output<Boolean> isCostTrackingTagEnabled() {
         return this.isCostTrackingTagEnabled;
     }
     /**
-     * A value determining FAMS tag is enabled or not
+     * A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -103,7 +135,7 @@ public class Onboarding extends com.pulumi.resources.CustomResource {
     private Output<Boolean> isFamsTagEnabled;
 
     /**
-     * @return A value determining FAMS tag is enabled or not
+     * @return A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -111,6 +143,20 @@ public class Onboarding extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isFamsTagEnabled() {
         return this.isFamsTagEnabled;
+    }
+    /**
+     * List of Fleet Application Management Onboardings.
+     * 
+     */
+    @Export(name="items", refs={List.class,OnboardingItem.class}, tree="[0,1]")
+    private Output<List<OnboardingItem>> items;
+
+    /**
+     * @return List of Fleet Application Management Onboardings.
+     * 
+     */
+    public Output<List<OnboardingItem>> items() {
+        return this.items;
     }
     /**
      * Associated region
@@ -183,14 +229,14 @@ public class Onboarding extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * Version of FAMS the tenant is onboarded to.
+     * The version of Fleet Application Management that the tenant is onboarded to.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
-     * @return Version of FAMS the tenant is onboarded to.
+     * @return The version of Fleet Application Management that the tenant is onboarded to.
      * 
      */
     public Output<String> version() {

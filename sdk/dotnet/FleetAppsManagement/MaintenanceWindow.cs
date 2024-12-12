@@ -12,7 +12,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
     /// 
-    /// Creates a new MaintenanceWindow.
+    /// Create a maintenance window in Fleet Application Management.
     /// 
     /// ## Example Usage
     /// 
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Duration if schedule type is Custom
+        /// (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         /// </summary>
         [Output("duration")]
         public Output<string> Duration { get; private set; } = null!;
@@ -97,13 +97,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Does the maintenenace window cause outage?
+        /// (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
         /// </summary>
         [Output("isOutage")]
         public Output<bool> IsOutage { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Is this is a recurring maintenance window
+        /// (Updatable) Is this a recurring maintenance window?
         /// </summary>
         [Output("isRecurring")]
         public Output<bool> IsRecurring { get; private set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> MaintenanceWindowType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Recurrence rule specification if recurring
+        /// (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         /// </summary>
         [Output("recurrences")]
         public Output<string> Recurrences { get; private set; } = null!;
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Task initiation cutoff
+        /// (Updatable) Task initiation cutoff time for the maintenance window.
         /// </summary>
         [Output("taskInitiationCutoff")]
         public Output<int> TaskInitiationCutoff { get; private set; } = null!;
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Start time of schedule
+        /// (Updatable) Specify the date and time of the day that the maintenance window starts.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -249,7 +249,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Duration if schedule type is Custom
+        /// (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         /// </summary>
         [Input("duration", required: true)]
         public Input<string> Duration { get; set; } = null!;
@@ -267,13 +267,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// (Updatable) Does the maintenenace window cause outage?
+        /// (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
         /// </summary>
         [Input("isOutage")]
         public Input<bool>? IsOutage { get; set; }
 
         /// <summary>
-        /// (Updatable) Is this is a recurring maintenance window
+        /// (Updatable) Is this a recurring maintenance window?
         /// </summary>
         [Input("isRecurring")]
         public Input<bool>? IsRecurring { get; set; }
@@ -285,19 +285,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? MaintenanceWindowType { get; set; }
 
         /// <summary>
-        /// (Updatable) Recurrence rule specification if recurring
+        /// (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         /// </summary>
         [Input("recurrences")]
         public Input<string>? Recurrences { get; set; }
 
         /// <summary>
-        /// (Updatable) Task initiation cutoff
+        /// (Updatable) Task initiation cutoff time for the maintenance window.
         /// </summary>
         [Input("taskInitiationCutoff")]
         public Input<int>? TaskInitiationCutoff { get; set; }
 
         /// <summary>
-        /// (Updatable) Start time of schedule
+        /// (Updatable) Specify the date and time of the day that the maintenance window starts.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -345,7 +345,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Duration if schedule type is Custom
+        /// (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         /// </summary>
         [Input("duration")]
         public Input<string>? Duration { get; set; }
@@ -363,13 +363,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// (Updatable) Does the maintenenace window cause outage?
+        /// (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
         /// </summary>
         [Input("isOutage")]
         public Input<bool>? IsOutage { get; set; }
 
         /// <summary>
-        /// (Updatable) Is this is a recurring maintenance window
+        /// (Updatable) Is this a recurring maintenance window?
         /// </summary>
         [Input("isRecurring")]
         public Input<bool>? IsRecurring { get; set; }
@@ -387,7 +387,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? MaintenanceWindowType { get; set; }
 
         /// <summary>
-        /// (Updatable) Recurrence rule specification if recurring
+        /// (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         /// </summary>
         [Input("recurrences")]
         public Input<string>? Recurrences { get; set; }
@@ -417,7 +417,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// (Updatable) Task initiation cutoff
+        /// (Updatable) Task initiation cutoff time for the maintenance window.
         /// </summary>
         [Input("taskInitiationCutoff")]
         public Input<int>? TaskInitiationCutoff { get; set; }
@@ -429,7 +429,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) Start time of schedule
+        /// (Updatable) Specify the date and time of the day that the maintenance window starts.
         /// 
         /// 
         /// ** IMPORTANT **

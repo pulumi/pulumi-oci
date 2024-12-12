@@ -91,12 +91,16 @@ type LookupFsuCycleResult struct {
 	IsKeepPlacement bool `pulumi:"isKeepPlacement"`
 	// The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
 	LastCompletedAction string `pulumi:"lastCompletedAction"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+	LastCompletedActionId string `pulumi:"lastCompletedActionId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Service drain timeout specified in seconds.
 	MaxDrainTimeoutInSeconds int `pulumi:"maxDrainTimeoutInSeconds"`
 	// In this array all the possible actions will be listed. The first element is the suggested Action.
 	NextActionToExecutes []GetFsuCycleNextActionToExecute `pulumi:"nextActionToExecutes"`
+	// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+	RollbackCycleState string `pulumi:"rollbackCycleState"`
 	// Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.
 	StageActionSchedules []GetFsuCycleStageActionSchedule `pulumi:"stageActionSchedules"`
 	// The current state of the Exadata Fleet Update Cycle.
@@ -241,6 +245,11 @@ func (o LookupFsuCycleResultOutput) LastCompletedAction() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.LastCompletedAction }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+func (o LookupFsuCycleResultOutput) LastCompletedActionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.LastCompletedActionId }).(pulumi.StringOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o LookupFsuCycleResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -254,6 +263,11 @@ func (o LookupFsuCycleResultOutput) MaxDrainTimeoutInSeconds() pulumi.IntOutput 
 // In this array all the possible actions will be listed. The first element is the suggested Action.
 func (o LookupFsuCycleResultOutput) NextActionToExecutes() GetFsuCycleNextActionToExecuteArrayOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) []GetFsuCycleNextActionToExecute { return v.NextActionToExecutes }).(GetFsuCycleNextActionToExecuteArrayOutput)
+}
+
+// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+func (o LookupFsuCycleResultOutput) RollbackCycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.RollbackCycleState }).(pulumi.StringOutput)
 }
 
 // Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetResourcesFleetResourceCollectionItemResult
     {
         /// <summary>
-        /// Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        /// Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         /// </summary>
         public readonly string ApplicationType;
         /// <summary>
-        /// Resource Compartment
+        /// Resource Compartment name.
         /// </summary>
         public readonly string Compartment;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Compliance State of the Resource
+        /// Compliance State of the Resource.
         /// </summary>
         public readonly string ComplianceState;
         /// <summary>
@@ -34,15 +34,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        /// Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         /// </summary>
         public readonly string EnvironmentType;
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         public readonly string FleetId;
         /// <summary>
-        /// unique FleetResource identifier
+        /// A filter to return only resources whose identifier matches the given identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        /// Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         /// </summary>
         public readonly string Product;
         /// <summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ResourceType;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// Count of targets  within the resource.
+        /// Count of targets within the resource.
         /// </summary>
         public readonly int TargetCount;
         /// <summary>
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string TenancyId;
         /// <summary>
-        /// Resource Tenancy Name
+        /// Resource Tenancy Name.
         /// </summary>
         public readonly string TenancyName;
         /// <summary>

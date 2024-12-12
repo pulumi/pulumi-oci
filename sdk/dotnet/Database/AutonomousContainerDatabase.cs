@@ -173,6 +173,12 @@ namespace Pulumi.Oci.Database
         public Output<string> KeyStoreWalletName { get; private set; } = null!;
 
         /// <summary>
+        /// The OCID of the key version that is used in rotate key operations.
+        /// </summary>
+        [Output("keyVersionId")]
+        public Output<string?> KeyVersionId { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
@@ -553,6 +559,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? KeyStoreId { get; set; }
 
         /// <summary>
+        /// The OCID of the key version that is used in rotate key operations.
+        /// </summary>
+        [Input("keyVersionId")]
+        public Input<string>? KeyVersionId { get; set; }
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Input("kmsKeyId")]
@@ -829,6 +841,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("keyStoreWalletName")]
         public Input<string>? KeyStoreWalletName { get; set; }
+
+        /// <summary>
+        /// The OCID of the key version that is used in rotate key operations.
+        /// </summary>
+        [Input("keyVersionId")]
+        public Input<string>? KeyVersionId { get; set; }
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

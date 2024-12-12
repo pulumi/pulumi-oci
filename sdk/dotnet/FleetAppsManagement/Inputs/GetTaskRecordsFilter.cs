@@ -13,7 +13,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class GetTaskRecordsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the argument
+        /// The name of the argument.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

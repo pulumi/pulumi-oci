@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Returns a list of Properties for Tenancy.
+// List properties and their values for a tenancy in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -61,11 +61,11 @@ type GetPropertiesArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetPropertiesFilter `pulumi:"filters"`
-	// unique Property identifier
+	// A filter to return only resources whose Property identifier matches the given identifier.
 	Id *string `pulumi:"id"`
-	// A filter to return only resources their scope matches the given lifecycleState.
+	// A filter to return only resources their scope matches the given scope.
 	Scope *string `pulumi:"scope"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
 }
 
@@ -80,7 +80,7 @@ type GetPropertiesResult struct {
 	Id *string `pulumi:"id"`
 	// The list of property_collection.
 	PropertyCollections []GetPropertiesPropertyCollection `pulumi:"propertyCollections"`
-	// The scope of the property
+	// The scope of the property.
 	Scope *string `pulumi:"scope"`
 	// The current state of the Property.
 	State *string `pulumi:"state"`
@@ -112,11 +112,11 @@ type GetPropertiesOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput         `pulumi:"displayName"`
 	Filters     GetPropertiesFilterArrayInput `pulumi:"filters"`
-	// unique Property identifier
+	// A filter to return only resources whose Property identifier matches the given identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources their scope matches the given lifecycleState.
+	// A filter to return only resources their scope matches the given scope.
 	Scope pulumi.StringPtrInput `pulumi:"scope"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -163,7 +163,7 @@ func (o GetPropertiesResultOutput) PropertyCollections() GetPropertiesPropertyCo
 	return o.ApplyT(func(v GetPropertiesResult) []GetPropertiesPropertyCollection { return v.PropertyCollections }).(GetPropertiesPropertyCollectionArrayOutput)
 }
 
-// The scope of the property
+// The scope of the property.
 func (o GetPropertiesResultOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPropertiesResult) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }

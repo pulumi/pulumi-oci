@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetPropertyResult {
     /**
-     * @return Values of the category (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     private List<String> allowedValues;
@@ -35,12 +35,12 @@ public final class GetFleetPropertyResult {
      */
     private String id;
     /**
-     * @return Property Id Ocid.
+     * @return OCID referring to global level metadata property.
      * 
      */
     private String propertyId;
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     private String selectionType;
@@ -65,19 +65,19 @@ public final class GetFleetPropertyResult {
      */
     private String timeUpdated;
     /**
-     * @return Value of the Property
+     * @return Value of the Property.
      * 
      */
     private String value;
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     private String valueType;
 
     private GetFleetPropertyResult() {}
     /**
-     * @return Values of the category (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     public List<String> allowedValues() {
@@ -111,14 +111,14 @@ public final class GetFleetPropertyResult {
         return this.id;
     }
     /**
-     * @return Property Id Ocid.
+     * @return OCID referring to global level metadata property.
      * 
      */
     public String propertyId() {
         return this.propertyId;
     }
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     public String selectionType() {
@@ -153,14 +153,14 @@ public final class GetFleetPropertyResult {
         return this.timeUpdated;
     }
     /**
-     * @return Value of the Property
+     * @return Value of the Property.
      * 
      */
     public String value() {
         return this.value;
     }
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     public String valueType() {

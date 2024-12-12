@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationPlainArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
@@ -177,6 +178,50 @@ public final class CertificatesManagementFunctions {
      * 
      */
     public static Output<GetAssociationResult> getAssociation(GetAssociationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getAssociation:getAssociation", TypeShape.of(GetAssociationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Association resource in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Gets details about the specified association.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAssociationResult> getAssociation(GetAssociationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getAssociation:getAssociation", TypeShape.of(GetAssociationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -520,6 +565,56 @@ public final class CertificatesManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAssociationsResult> getAssociations(GetAssociationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getAssociations:getAssociations", TypeShape.of(GetAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Associations in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Lists all associations that match the query parameters.
+     * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associationId(testAssociation.id())
+     *             .associationType(associationAssociationType)
+     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .compartmentId(compartmentId)
+     *             .name(associationName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAssociationsResult> getAssociationsPlain(GetAssociationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CertificatesManagement/getAssociations:getAssociations", TypeShape.of(GetAssociationsResult.class), args, Utilities.withVersion(options));
     }
@@ -653,6 +748,50 @@ public final class CertificatesManagementFunctions {
      * 
      */
     public static Output<GetCaBundleResult> getCaBundle(GetCaBundleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCaBundle:getCaBundle", TypeShape.of(GetCaBundleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Gets details about the specified CA bundle.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCaBundleResult> getCaBundle(GetCaBundleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCaBundle:getCaBundle", TypeShape.of(GetCaBundleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -984,6 +1123,54 @@ public final class CertificatesManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCaBundlesResult> getCaBundles(GetCaBundlesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCaBundles:getCaBundles", TypeShape.of(GetCaBundlesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ca Bundles in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Lists all CA bundles that match the query parameters.
+     * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
+     *             .caBundleId(testCaBundle.id())
+     *             .compartmentId(compartmentId)
+     *             .name(caBundleName)
+     *             .state(caBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCaBundlesResult> getCaBundlesPlain(GetCaBundlesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CertificatesManagement/getCaBundles:getCaBundles", TypeShape.of(GetCaBundlesResult.class), args, Utilities.withVersion(options));
     }
@@ -1117,6 +1304,50 @@ public final class CertificatesManagementFunctions {
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Gets details about the specified certificate.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1454,6 +1685,55 @@ public final class CertificatesManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCertificateAuthoritiesResult> getCertificateAuthorities(GetCertificateAuthoritiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", TypeShape.of(GetCertificateAuthoritiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Certificate Authorities in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Lists all certificate authorities (CAs) in the specified compartment.
+     * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateAuthorityName)
+     *             .state(certificateAuthorityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCertificateAuthoritiesResult> getCertificateAuthoritiesPlain(GetCertificateAuthoritiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", TypeShape.of(GetCertificateAuthoritiesResult.class), args, Utilities.withVersion(options));
     }
@@ -1587,6 +1867,50 @@ public final class CertificatesManagementFunctions {
      * 
      */
     public static Output<GetCertificateAuthorityResult> getCertificateAuthority(GetCertificateAuthorityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthority:getCertificateAuthority", TypeShape.of(GetCertificateAuthorityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Gets details about the specified certificate authority (CA).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCertificateAuthorityResult> getCertificateAuthority(GetCertificateAuthorityArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthority:getCertificateAuthority", TypeShape.of(GetCertificateAuthorityResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1769,6 +2093,52 @@ public final class CertificatesManagementFunctions {
      * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", TypeShape.of(GetCertificateAuthorityVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Certificate Authority Version resource in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Lists all versions for the specified certificate authority (CA).
+     * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", TypeShape.of(GetCertificateAuthorityVersionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1998,6 +2368,52 @@ public final class CertificatesManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", TypeShape.of(GetCertificateAuthorityVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Certificate Authority Versions in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Lists all versions for the specified certificate authority (CA).
+     * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersionsPlain(GetCertificateAuthorityVersionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", TypeShape.of(GetCertificateAuthorityVersionsResult.class), args, Utilities.withVersion(options));
     }
@@ -2134,6 +2550,51 @@ public final class CertificatesManagementFunctions {
      * 
      */
     public static Output<GetCertificateVersionResult> getCertificateVersion(GetCertificateVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", TypeShape.of(GetCertificateVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Certificate Version resource in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Gets details about the specified version of a certificate.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
+     *             .certificateId(testCertificate.id())
+     *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCertificateVersionResult> getCertificateVersion(GetCertificateVersionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", TypeShape.of(GetCertificateVersionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2317,6 +2778,52 @@ public final class CertificatesManagementFunctions {
      * 
      */
     public static Output<GetCertificateVersionsResult> getCertificateVersions(GetCertificateVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateVersions:getCertificateVersions", TypeShape.of(GetCertificateVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Certificate Versions in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Lists all certificate versions for the specified certificate.
+     * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
+     *             .certificateId(testCertificate.id())
+     *             .versionNumber(certificateVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCertificateVersionsResult> getCertificateVersions(GetCertificateVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateVersions:getCertificateVersions", TypeShape.of(GetCertificateVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2608,6 +3115,55 @@ public final class CertificatesManagementFunctions {
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Certificates in Oracle Cloud Infrastructure Certificates Management service.
+     * 
+     * Lists all certificates that match the query parameters.
+     * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .certificateId(testCertificate.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateName)
+     *             .state(certificateState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
     }
     /**

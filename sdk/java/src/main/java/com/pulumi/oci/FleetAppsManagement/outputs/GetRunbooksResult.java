@@ -28,7 +28,7 @@ public final class GetRunbooksResult {
      */
     private @Nullable String id;
     /**
-     * @return The lifecycle operation performed by the task.
+     * @return The lifecycle operation performed by the runbook.
      * 
      */
     private @Nullable String operation;
@@ -43,7 +43,7 @@ public final class GetRunbooksResult {
      */
     private List<GetRunbooksRunbookCollection> runbookCollections;
     /**
-     * @return Type of runbook structure.
+     * @return Relevance of the runbook.
      * 
      */
     private @Nullable String runbookRelevance;
@@ -80,7 +80,7 @@ public final class GetRunbooksResult {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return The lifecycle operation performed by the task.
+     * @return The lifecycle operation performed by the runbook.
      * 
      */
     public Optional<String> operation() {
@@ -101,7 +101,7 @@ public final class GetRunbooksResult {
         return this.runbookCollections;
     }
     /**
-     * @return Type of runbook structure.
+     * @return Relevance of the runbook.
      * 
      */
     public Optional<String> runbookRelevance() {

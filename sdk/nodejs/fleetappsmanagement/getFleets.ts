@@ -50,7 +50,7 @@ export function getFleets(args?: GetFleetsArgs, opts?: pulumi.InvokeOptions): Pr
  */
 export interface GetFleetsArgs {
     /**
-     * A filter to return only resources that match the Application Type given.
+     * A filter to return resources that match the Application Type/Product Stack given..
      */
     applicationType?: string;
     /**
@@ -62,24 +62,24 @@ export interface GetFleetsArgs {
      */
     displayName?: string;
     /**
-     * A filter to return only resources that match the Environment Type given.
+     * A filter to return resources that match the Environment Type given.
      */
     environmentType?: string;
     filters?: inputs.FleetAppsManagement.GetFleetsFilter[];
     /**
-     * A filter to return only resources their fleetType matches the given fleetType.
+     * A filter to return fleets whose fleetType matches the given fleetType.
      */
     fleetType?: string;
     /**
-     * unique Fleet identifier
+     * A filter to return fleets whose id matches the given Fleet identifier
      */
     id?: string;
     /**
-     * A filter to return only resources that match the Product Type given.
+     * A filter to return resources that match the Product given.
      */
     product?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return fleets whose lifecycleState matches the given lifecycleState.
      */
     state?: string;
 }
@@ -89,11 +89,11 @@ export interface GetFleetsArgs {
  */
 export interface GetFleetsResult {
     /**
-     * Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     readonly applicationType?: string;
     /**
-     * Please provide the root compartmentId (TenancyId).
+     * Tenancy Id (Root Compartment Id)for which the rule is created.
      */
     readonly compartmentId?: string;
     /**
@@ -101,7 +101,7 @@ export interface GetFleetsResult {
      */
     readonly displayName?: string;
     /**
-     * Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     readonly environmentType?: string;
     readonly filters?: outputs.FleetAppsManagement.GetFleetsFilter[];
@@ -110,7 +110,7 @@ export interface GetFleetsResult {
      */
     readonly fleetCollections: outputs.FleetAppsManagement.GetFleetsFleetCollection[];
     /**
-     * Type of the Fleet.
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      */
     readonly fleetType?: string;
     /**
@@ -167,7 +167,7 @@ export function getFleetsOutput(args?: GetFleetsOutputArgs, opts?: pulumi.Invoke
  */
 export interface GetFleetsOutputArgs {
     /**
-     * A filter to return only resources that match the Application Type given.
+     * A filter to return resources that match the Application Type/Product Stack given..
      */
     applicationType?: pulumi.Input<string>;
     /**
@@ -179,24 +179,24 @@ export interface GetFleetsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the Environment Type given.
+     * A filter to return resources that match the Environment Type given.
      */
     environmentType?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetsFilterArgs>[]>;
     /**
-     * A filter to return only resources their fleetType matches the given fleetType.
+     * A filter to return fleets whose fleetType matches the given fleetType.
      */
     fleetType?: pulumi.Input<string>;
     /**
-     * unique Fleet identifier
+     * A filter to return fleets whose id matches the given Fleet identifier
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the Product Type given.
+     * A filter to return resources that match the Product given.
      */
     product?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return fleets whose lifecycleState matches the given lifecycleState.
      */
     state?: pulumi.Input<string>;
 }

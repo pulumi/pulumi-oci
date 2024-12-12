@@ -102,6 +102,11 @@ public final class GetFsuCycleResult {
      */
     private String lastCompletedAction;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+     * 
+     */
+    private String lastCompletedActionId;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -116,6 +121,11 @@ public final class GetFsuCycleResult {
      * 
      */
     private List<GetFsuCycleNextActionToExecute> nextActionToExecutes;
+    /**
+     * @return Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     * 
+     */
+    private String rollbackCycleState;
     /**
      * @return Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.
      * 
@@ -269,6 +279,13 @@ public final class GetFsuCycleResult {
         return this.lastCompletedAction;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+     * 
+     */
+    public String lastCompletedActionId() {
+        return this.lastCompletedActionId;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -288,6 +305,13 @@ public final class GetFsuCycleResult {
      */
     public List<GetFsuCycleNextActionToExecute> nextActionToExecutes() {
         return this.nextActionToExecutes;
+    }
+    /**
+     * @return Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     * 
+     */
+    public String rollbackCycleState() {
+        return this.rollbackCycleState;
     }
     /**
      * @return Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.
@@ -365,9 +389,11 @@ public final class GetFsuCycleResult {
         private Boolean isIgnorePatches;
         private Boolean isKeepPlacement;
         private String lastCompletedAction;
+        private String lastCompletedActionId;
         private String lifecycleDetails;
         private Integer maxDrainTimeoutInSeconds;
         private List<GetFsuCycleNextActionToExecute> nextActionToExecutes;
+        private String rollbackCycleState;
         private List<GetFsuCycleStageActionSchedule> stageActionSchedules;
         private String state;
         private Map<String,String> systemTags;
@@ -395,9 +421,11 @@ public final class GetFsuCycleResult {
     	      this.isIgnorePatches = defaults.isIgnorePatches;
     	      this.isKeepPlacement = defaults.isKeepPlacement;
     	      this.lastCompletedAction = defaults.lastCompletedAction;
+    	      this.lastCompletedActionId = defaults.lastCompletedActionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maxDrainTimeoutInSeconds = defaults.maxDrainTimeoutInSeconds;
     	      this.nextActionToExecutes = defaults.nextActionToExecutes;
+    	      this.rollbackCycleState = defaults.rollbackCycleState;
     	      this.stageActionSchedules = defaults.stageActionSchedules;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -559,6 +587,14 @@ public final class GetFsuCycleResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lastCompletedActionId(String lastCompletedActionId) {
+            if (lastCompletedActionId == null) {
+              throw new MissingRequiredPropertyException("GetFsuCycleResult", "lastCompletedActionId");
+            }
+            this.lastCompletedActionId = lastCompletedActionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetFsuCycleResult", "lifecycleDetails");
@@ -584,6 +620,14 @@ public final class GetFsuCycleResult {
         }
         public Builder nextActionToExecutes(GetFsuCycleNextActionToExecute... nextActionToExecutes) {
             return nextActionToExecutes(List.of(nextActionToExecutes));
+        }
+        @CustomType.Setter
+        public Builder rollbackCycleState(String rollbackCycleState) {
+            if (rollbackCycleState == null) {
+              throw new MissingRequiredPropertyException("GetFsuCycleResult", "rollbackCycleState");
+            }
+            this.rollbackCycleState = rollbackCycleState;
+            return this;
         }
         @CustomType.Setter
         public Builder stageActionSchedules(List<GetFsuCycleStageActionSchedule> stageActionSchedules) {
@@ -663,9 +707,11 @@ public final class GetFsuCycleResult {
             _resultValue.isIgnorePatches = isIgnorePatches;
             _resultValue.isKeepPlacement = isKeepPlacement;
             _resultValue.lastCompletedAction = lastCompletedAction;
+            _resultValue.lastCompletedActionId = lastCompletedActionId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;
             _resultValue.nextActionToExecutes = nextActionToExecutes;
+            _resultValue.rollbackCycleState = rollbackCycleState;
             _resultValue.stageActionSchedules = stageActionSchedules;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

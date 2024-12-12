@@ -119,6 +119,8 @@ type LookupApplicationResult struct {
 	SparkVersion string `pulumi:"sparkVersion"`
 	// The current state of this application.
 	State string `pulumi:"state"`
+	// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+	TerminateRunsOnDeletion bool `pulumi:"terminateRunsOnDeletion"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -325,6 +327,11 @@ func (o LookupApplicationResultOutput) SparkVersion() pulumi.StringOutput {
 // The current state of this application.
 func (o LookupApplicationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+func (o LookupApplicationResultOutput) TerminateRunsOnDeletion() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupApplicationResult) bool { return v.TerminateRunsOnDeletion }).(pulumi.BoolOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`

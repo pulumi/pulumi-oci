@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
@@ -159,6 +160,50 @@ public final class DatabaseToolsFunctions {
      * 
      */
     public static Output<GetDatabaseToolsConnectionResult> getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection", TypeShape.of(GetDatabaseToolsConnectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools connection.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseToolsConnectionResult> getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection", TypeShape.of(GetDatabaseToolsConnectionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -398,6 +443,55 @@ public final class DatabaseToolsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", TypeShape.of(GetDatabaseToolsConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools connections.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsConnectionDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
+     *             .state(databaseToolsConnectionState)
+     *             .types(databaseToolsConnectionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnectionsPlain(GetDatabaseToolsConnectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", TypeShape.of(GetDatabaseToolsConnectionsResult.class), args, Utilities.withVersion(options));
     }
@@ -531,6 +625,50 @@ public final class DatabaseToolsFunctions {
      * 
      */
     public static Output<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService", TypeShape.of(GetDatabaseToolsEndpointServiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details for the specified Database Tools endpoint service.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService", TypeShape.of(GetDatabaseToolsEndpointServiceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -762,6 +900,53 @@ public final class DatabaseToolsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsEndpointServices:getDatabaseToolsEndpointServices", TypeShape.of(GetDatabaseToolsEndpointServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools endpoint services.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointServices = DatabaseToolsFunctions.getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsEndpointServiceDisplayName)
+     *             .name(databaseToolsEndpointServiceName)
+     *             .state(databaseToolsEndpointServiceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServicesPlain(GetDatabaseToolsEndpointServicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsEndpointServices:getDatabaseToolsEndpointServices", TypeShape.of(GetDatabaseToolsEndpointServicesResult.class), args, Utilities.withVersion(options));
     }
@@ -895,6 +1080,50 @@ public final class DatabaseToolsFunctions {
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsPrivateEndpoint:getDatabaseToolsPrivateEndpoint", TypeShape.of(GetDatabaseToolsPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of a specified Database Tools private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsPrivateEndpoint:getDatabaseToolsPrivateEndpoint", TypeShape.of(GetDatabaseToolsPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1083,6 +1312,54 @@ public final class DatabaseToolsFunctions {
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", TypeShape.of(GetDatabaseToolsPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools private endpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsPrivateEndpointDisplayName)
+     *             .endpointServiceId(testService.id())
+     *             .state(databaseToolsPrivateEndpointState)
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", TypeShape.of(GetDatabaseToolsPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**

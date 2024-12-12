@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetsFleetCollectionItemNotificationPreferencePreference {
     /**
-     * @return Enables or disables notification on Job Failures.&#39;
+     * @return Enables or disables notification on Job Failures.
      * 
      */
     private Boolean onJobFailure;
@@ -28,7 +28,7 @@ public final class GetFleetsFleetCollectionItemNotificationPreferencePreference 
 
     private GetFleetsFleetCollectionItemNotificationPreferencePreference() {}
     /**
-     * @return Enables or disables notification on Job Failures.&#39;
+     * @return Enables or disables notification on Job Failures.
      * 
      */
     public Boolean onJobFailure() {

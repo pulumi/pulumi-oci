@@ -30,7 +30,8 @@ class VbInstanceArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_open_id: Optional[pulumi.Input[str]] = None,
-                 is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None):
+                 is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+                 network_endpoint_details: Optional[pulumi.Input['VbInstanceNetworkEndpointDetailsArgs']] = None):
         """
         The set of arguments for constructing a VbInstance resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
@@ -47,6 +48,7 @@ class VbInstanceArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
+        :param pulumi.Input['VbInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -65,6 +67,8 @@ class VbInstanceArgs:
             pulumi.set(__self__, "idcs_open_id", idcs_open_id)
         if is_visual_builder_enabled is not None:
             pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+        if network_endpoint_details is not None:
+            pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -190,24 +194,35 @@ class VbInstanceArgs:
     def is_visual_builder_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_visual_builder_enabled", value)
 
+    @property
+    @pulumi.getter(name="networkEndpointDetails")
+    def network_endpoint_details(self) -> Optional[pulumi.Input['VbInstanceNetworkEndpointDetailsArgs']]:
+        """
+        (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        """
+        return pulumi.get(self, "network_endpoint_details")
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, value: Optional[pulumi.Input['VbInstanceNetworkEndpointDetailsArgs']]):
+        pulumi.set(self, "network_endpoint_details", value)
+
 
 @pulumi.input_type
 class _VbInstanceState:
     def __init__(__self__, *,
                  alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]]] = None,
-                 attachments: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  consumption_model: Optional[pulumi.Input[str]] = None,
                  custom_endpoint: Optional[pulumi.Input['VbInstanceCustomEndpointArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]]] = None,
                  idcs_open_id: Optional[pulumi.Input[str]] = None,
                  instance_url: Optional[pulumi.Input[str]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  management_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
                  management_vcn_id: Optional[pulumi.Input[str]] = None,
+                 network_endpoint_details: Optional[pulumi.Input['VbInstanceNetworkEndpointDetailsArgs']] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  service_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
                  service_vcn_id: Optional[pulumi.Input[str]] = None,
@@ -219,19 +234,18 @@ class _VbInstanceState:
         """
         Input properties used for looking up and filtering VbInstance resources.
         :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]] attachments: A list of associated attachments to other services
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input['VbInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Vb Instance Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         :param pulumi.Input[str] instance_url: The Vb Instance URL.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[str] management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
         :param pulumi.Input[str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+        :param pulumi.Input['VbInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
                
                
@@ -247,8 +261,6 @@ class _VbInstanceState:
         """
         if alternate_custom_endpoints is not None:
             pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
-        if attachments is not None:
-            pulumi.set(__self__, "attachments", attachments)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if consumption_model is not None:
@@ -261,8 +273,6 @@ class _VbInstanceState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if idcs_infos is not None:
-            pulumi.set(__self__, "idcs_infos", idcs_infos)
         if idcs_open_id is not None:
             pulumi.set(__self__, "idcs_open_id", idcs_open_id)
         if instance_url is not None:
@@ -273,6 +283,8 @@ class _VbInstanceState:
             pulumi.set(__self__, "management_nat_gateway_ip", management_nat_gateway_ip)
         if management_vcn_id is not None:
             pulumi.set(__self__, "management_vcn_id", management_vcn_id)
+        if network_endpoint_details is not None:
+            pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         if node_count is not None:
             pulumi.set(__self__, "node_count", node_count)
         if service_nat_gateway_ip is not None:
@@ -301,18 +313,6 @@ class _VbInstanceState:
     @alternate_custom_endpoints.setter
     def alternate_custom_endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]]]):
         pulumi.set(self, "alternate_custom_endpoints", value)
-
-    @property
-    @pulumi.getter
-    def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]]]:
-        """
-        A list of associated attachments to other services
-        """
-        return pulumi.get(self, "attachments")
-
-    @attachments.setter
-    def attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]]]):
-        pulumi.set(self, "attachments", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -387,18 +387,6 @@ class _VbInstanceState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
-    @pulumi.getter(name="idcsInfos")
-    def idcs_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]]]:
-        """
-        Information for IDCS access
-        """
-        return pulumi.get(self, "idcs_infos")
-
-    @idcs_infos.setter
-    def idcs_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]]]):
-        pulumi.set(self, "idcs_infos", value)
-
-    @property
     @pulumi.getter(name="idcsOpenId")
     def idcs_open_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -457,6 +445,18 @@ class _VbInstanceState:
     @management_vcn_id.setter
     def management_vcn_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "management_vcn_id", value)
+
+    @property
+    @pulumi.getter(name="networkEndpointDetails")
+    def network_endpoint_details(self) -> Optional[pulumi.Input['VbInstanceNetworkEndpointDetailsArgs']]:
+        """
+        (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        """
+        return pulumi.get(self, "network_endpoint_details")
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, value: Optional[pulumi.Input['VbInstanceNetworkEndpointDetailsArgs']]):
+        pulumi.set(self, "network_endpoint_details", value)
 
     @property
     @pulumi.getter(name="nodeCount")
@@ -573,6 +573,7 @@ class VbInstance(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_open_id: Optional[pulumi.Input[str]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+                 network_endpoint_details: Optional[pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
@@ -606,7 +607,13 @@ class VbInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_open_id=test_idcs_open["id"],
-            is_visual_builder_enabled=vb_instance_is_visual_builder_enabled)
+            is_visual_builder_enabled=vb_instance_is_visual_builder_enabled,
+            network_endpoint_details={
+                "network_endpoint_type": vb_instance_network_endpoint_details_network_endpoint_type,
+                "subnet_id": test_subnet["id"],
+                "network_security_group_ids": vb_instance_network_endpoint_details_network_security_group_ids,
+                "private_endpoint_ip": vb_instance_network_endpoint_details_private_endpoint_ip,
+            })
         ```
 
         ## Import
@@ -628,6 +635,7 @@ class VbInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
+        :param pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
                
                
@@ -671,7 +679,13 @@ class VbInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_open_id=test_idcs_open["id"],
-            is_visual_builder_enabled=vb_instance_is_visual_builder_enabled)
+            is_visual_builder_enabled=vb_instance_is_visual_builder_enabled,
+            network_endpoint_details={
+                "network_endpoint_type": vb_instance_network_endpoint_details_network_endpoint_type,
+                "subnet_id": test_subnet["id"],
+                "network_security_group_ids": vb_instance_network_endpoint_details_network_security_group_ids,
+                "private_endpoint_ip": vb_instance_network_endpoint_details_private_endpoint_ip,
+            })
         ```
 
         ## Import
@@ -706,6 +720,7 @@ class VbInstance(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_open_id: Optional[pulumi.Input[str]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+                 network_endpoint_details: Optional[pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -729,11 +744,10 @@ class VbInstance(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["idcs_open_id"] = None if idcs_open_id is None else pulumi.Output.secret(idcs_open_id)
             __props__.__dict__["is_visual_builder_enabled"] = is_visual_builder_enabled
+            __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             if node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'node_count'")
             __props__.__dict__["node_count"] = node_count
-            __props__.__dict__["attachments"] = None
-            __props__.__dict__["idcs_infos"] = None
             __props__.__dict__["instance_url"] = None
             __props__.__dict__["management_nat_gateway_ip"] = None
             __props__.__dict__["management_vcn_id"] = None
@@ -757,19 +771,18 @@ class VbInstance(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict']]]]] = None,
-            attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceAttachmentArgs', 'VbInstanceAttachmentArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             consumption_model: Optional[pulumi.Input[str]] = None,
             custom_endpoint: Optional[pulumi.Input[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-            idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceIdcsInfoArgs', 'VbInstanceIdcsInfoArgsDict']]]]] = None,
             idcs_open_id: Optional[pulumi.Input[str]] = None,
             instance_url: Optional[pulumi.Input[str]] = None,
             is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
             management_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
             management_vcn_id: Optional[pulumi.Input[str]] = None,
+            network_endpoint_details: Optional[pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
             service_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
             service_vcn_id: Optional[pulumi.Input[str]] = None,
@@ -786,19 +799,18 @@ class VbInstance(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceAttachmentArgs', 'VbInstanceAttachmentArgsDict']]]] attachments: A list of associated attachments to other services
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Vb Instance Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceIdcsInfoArgs', 'VbInstanceIdcsInfoArgsDict']]]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         :param pulumi.Input[str] instance_url: The Vb Instance URL.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[str] management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
         :param pulumi.Input[str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+        :param pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
                
                
@@ -817,19 +829,18 @@ class VbInstance(pulumi.CustomResource):
         __props__ = _VbInstanceState.__new__(_VbInstanceState)
 
         __props__.__dict__["alternate_custom_endpoints"] = alternate_custom_endpoints
-        __props__.__dict__["attachments"] = attachments
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["consumption_model"] = consumption_model
         __props__.__dict__["custom_endpoint"] = custom_endpoint
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
-        __props__.__dict__["idcs_infos"] = idcs_infos
         __props__.__dict__["idcs_open_id"] = idcs_open_id
         __props__.__dict__["instance_url"] = instance_url
         __props__.__dict__["is_visual_builder_enabled"] = is_visual_builder_enabled
         __props__.__dict__["management_nat_gateway_ip"] = management_nat_gateway_ip
         __props__.__dict__["management_vcn_id"] = management_vcn_id
+        __props__.__dict__["network_endpoint_details"] = network_endpoint_details
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["service_nat_gateway_ip"] = service_nat_gateway_ip
         __props__.__dict__["service_vcn_id"] = service_vcn_id
@@ -847,14 +858,6 @@ class VbInstance(pulumi.CustomResource):
         (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         """
         return pulumi.get(self, "alternate_custom_endpoints")
-
-    @property
-    @pulumi.getter
-    def attachments(self) -> pulumi.Output[Sequence['outputs.VbInstanceAttachment']]:
-        """
-        A list of associated attachments to other services
-        """
-        return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -905,14 +908,6 @@ class VbInstance(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
-    @pulumi.getter(name="idcsInfos")
-    def idcs_infos(self) -> pulumi.Output[Sequence['outputs.VbInstanceIdcsInfo']]:
-        """
-        Information for IDCS access
-        """
-        return pulumi.get(self, "idcs_infos")
-
-    @property
     @pulumi.getter(name="idcsOpenId")
     def idcs_open_id(self) -> pulumi.Output[Optional[str]]:
         """
@@ -951,6 +946,14 @@ class VbInstance(pulumi.CustomResource):
         The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         """
         return pulumi.get(self, "management_vcn_id")
+
+    @property
+    @pulumi.getter(name="networkEndpointDetails")
+    def network_endpoint_details(self) -> pulumi.Output['outputs.VbInstanceNetworkEndpointDetails']:
+        """
+        (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        """
+        return pulumi.get(self, "network_endpoint_details")
 
     @property
     @pulumi.getter(name="nodeCount")

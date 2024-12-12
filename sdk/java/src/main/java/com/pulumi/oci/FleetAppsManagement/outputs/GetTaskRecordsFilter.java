@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetTaskRecordsFilter {
     /**
-     * @return The name of the argument
+     * @return The name of the argument.
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetTaskRecordsFilter {
 
     private GetTaskRecordsFilter() {}
     /**
-     * @return The name of the argument
+     * @return The name of the argument.
      * 
      */
     public String name() {

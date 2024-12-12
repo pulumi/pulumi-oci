@@ -18,12 +18,12 @@ public final class GetFleetsFleetCollectionItemNotificationPreference {
      */
     private String compartmentId;
     /**
-     * @return Preferences to send notifications on the fleet activities
+     * @return Preferences to send notifications on the fleet activities.
      * 
      */
     private List<GetFleetsFleetCollectionItemNotificationPreferencePreference> preferences;
     /**
-     * @return Topic Id where the notifications will be directed
+     * @return Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
      * 
      */
     private String topicId;
@@ -37,14 +37,14 @@ public final class GetFleetsFleetCollectionItemNotificationPreference {
         return this.compartmentId;
     }
     /**
-     * @return Preferences to send notifications on the fleet activities
+     * @return Preferences to send notifications on the fleet activities.
      * 
      */
     public List<GetFleetsFleetCollectionItemNotificationPreferencePreference> preferences() {
         return this.preferences;
     }
     /**
-     * @return Topic Id where the notifications will be directed
+     * @return Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
      * 
      */
     public String topicId() {

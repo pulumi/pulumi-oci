@@ -261,6 +261,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The wallet name for Oracle Key Vault.
         /// </summary>
         public readonly string KeyStoreWalletName;
+        public readonly string KeyVersionId;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
@@ -670,6 +671,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string keyStoreWalletName,
 
+            string keyVersionId,
+
             string kmsKeyId,
 
             string kmsKeyLifecycleDetails,
@@ -887,6 +890,7 @@ namespace Pulumi.Oci.Database.Outputs
             KeyHistoryEntries = keyHistoryEntries;
             KeyStoreId = keyStoreId;
             KeyStoreWalletName = keyStoreWalletName;
+            KeyVersionId = keyVersionId;
             KmsKeyId = kmsKeyId;
             KmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
             KmsKeyVersionId = kmsKeyVersionId;

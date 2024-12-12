@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Return a list of AnnouncementSummary items
+        /// Return a list of AnnouncementSummary items.
         /// 
         /// ## Example Usage
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Return a list of AnnouncementSummary items
+        /// Return a list of AnnouncementSummary items.
         /// 
         /// ## Example Usage
         /// 
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// Filter the list with summary contains the given value.
+        /// Filter the list of announcements that contains the given summary value.
         /// </summary>
         [Input("summaryContains")]
         public string? SummaryContains { get; set; }
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// Filter the list with summary contains the given value.
+        /// Filter the list of announcements that contains the given summary value.
         /// </summary>
         [Input("summaryContains")]
         public Input<string>? SummaryContains { get; set; }

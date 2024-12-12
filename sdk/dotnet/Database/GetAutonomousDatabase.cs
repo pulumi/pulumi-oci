@@ -351,6 +351,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string KeyStoreWalletName;
         /// <summary>
+        /// (Optional) The OCID of the key version that is used in rotate key operations.
+        /// </summary>
+        public readonly string KeyVersionId;
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         public readonly string KmsKeyId;
@@ -759,6 +763,8 @@ namespace Pulumi.Oci.Database
 
             string keyStoreWalletName,
 
+            string keyVersionId,
+
             string kmsKeyId,
 
             string kmsKeyLifecycleDetails,
@@ -976,6 +982,7 @@ namespace Pulumi.Oci.Database
             KeyHistoryEntries = keyHistoryEntries;
             KeyStoreId = keyStoreId;
             KeyStoreWalletName = keyStoreWalletName;
+            KeyVersionId = keyVersionId;
             KmsKeyId = kmsKeyId;
             KmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
             KmsKeyVersionId = kmsKeyVersionId;

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemRunBookResult
     {
         /// <summary>
-        /// unique SchedulerDefinition identifier
+        /// A filter to return only schedule definitions whose identifier matches the given identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>

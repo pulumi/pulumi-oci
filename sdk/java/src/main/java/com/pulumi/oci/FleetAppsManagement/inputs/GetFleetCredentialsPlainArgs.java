@@ -33,14 +33,14 @@ public final class GetFleetCredentialsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * Credential Level.
+     * A filter to return only resources whose credentialLevel matches the given credentialLevel.
      * 
      */
     @Import(name="credentialLevel")
     private @Nullable String credentialLevel;
 
     /**
-     * @return Credential Level.
+     * @return A filter to return only resources whose credentialLevel matches the given credentialLevel.
      * 
      */
     public Optional<String> credentialLevel() {
@@ -70,14 +70,14 @@ public final class GetFleetCredentialsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private String fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
@@ -85,14 +85,14 @@ public final class GetFleetCredentialsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * unique FleetCredential identifier
+     * A filter to return only resources whose credential identifier matches the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return unique FleetCredential identifier
+     * @return A filter to return only resources whose credential identifier matches the given identifier.
      * 
      */
     public Optional<String> id() {
@@ -100,18 +100,48 @@ public final class GetFleetCredentialsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * Resource Identifier
+     * 
+     */
+    @Import(name="resourceId")
+    private @Nullable String resourceId;
+
+    /**
+     * @return Resource Identifier
+     * 
+     */
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
+    }
+
+    /**
+     * A filter to return only resources whose target matches the given target name.
+     * 
+     */
+    @Import(name="target")
+    private @Nullable String target;
+
+    /**
+     * @return A filter to return only resources whose target matches the given target name.
+     * 
+     */
+    public Optional<String> target() {
+        return Optional.ofNullable(this.target);
     }
 
     private GetFleetCredentialsPlainArgs() {}
@@ -123,7 +153,9 @@ public final class GetFleetCredentialsPlainArgs extends com.pulumi.resources.Inv
         this.filters = $.filters;
         this.fleetId = $.fleetId;
         this.id = $.id;
+        this.resourceId = $.resourceId;
         this.state = $.state;
+        this.target = $.target;
     }
 
     public static Builder builder() {
@@ -156,7 +188,7 @@ public final class GetFleetCredentialsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param credentialLevel Credential Level.
+         * @param credentialLevel A filter to return only resources whose credentialLevel matches the given credentialLevel.
          * 
          * @return builder
          * 
@@ -187,7 +219,7 @@ public final class GetFleetCredentialsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -198,7 +230,7 @@ public final class GetFleetCredentialsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param id unique FleetCredential identifier
+         * @param id A filter to return only resources whose credential identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -209,13 +241,35 @@ public final class GetFleetCredentialsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param resourceId Resource Identifier
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(@Nullable String resourceId) {
+            $.resourceId = resourceId;
+            return this;
+        }
+
+        /**
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param target A filter to return only resources whose target matches the given target name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder target(@Nullable String target) {
+            $.target = target;
             return this;
         }
 

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
 import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatPlainArgs;
 import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
@@ -153,6 +154,50 @@ public final class DataLabellingServiceFunctions {
      * 
      */
     public static Output<GetAnnotationFormatResult> getAnnotationFormat(GetAnnotationFormatArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", TypeShape.of(GetAnnotationFormatResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Annotation Format resource in Oracle Cloud Infrastructure Data Labeling Service service.
+     * 
+     * These are a static list in a given region.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormat = DataLabellingServiceFunctions.getAnnotationFormat(GetAnnotationFormatArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAnnotationFormatResult> getAnnotationFormat(GetAnnotationFormatArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", TypeShape.of(GetAnnotationFormatResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -372,6 +417,50 @@ public final class DataLabellingServiceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAnnotationFormatsResult> getAnnotationFormats(GetAnnotationFormatsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataLabellingService/getAnnotationFormats:getAnnotationFormats", TypeShape.of(GetAnnotationFormatsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Annotation Formats in Oracle Cloud Infrastructure Data Labeling Service service.
+     * 
+     * These are a static list in a given region.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormats = DataLabellingServiceFunctions.getAnnotationFormats(GetAnnotationFormatsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAnnotationFormatsResult> getAnnotationFormatsPlain(GetAnnotationFormatsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataLabellingService/getAnnotationFormats:getAnnotationFormats", TypeShape.of(GetAnnotationFormatsResult.class), args, Utilities.withVersion(options));
     }
@@ -505,6 +594,50 @@ public final class DataLabellingServiceFunctions {
      * 
      */
     public static Output<GetDatasetResult> getDataset(GetDatasetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataLabellingService/getDataset:getDataset", TypeShape.of(GetDatasetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
+     * 
+     * Gets a Dataset by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatasetResult> getDataset(GetDatasetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataLabellingService/getDataset:getDataset", TypeShape.of(GetDatasetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -693,6 +826,54 @@ public final class DataLabellingServiceFunctions {
      * 
      */
     public static Output<GetDatasetsResult> getDatasets(GetDatasetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataLabellingService/getDatasets:getDatasets", TypeShape.of(GetDatasetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Datasets in Oracle Cloud Infrastructure Data Labeling Service service.
+     * 
+     * Returns a list of Datasets.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatasets = DataLabellingServiceFunctions.getDatasets(GetDatasetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .annotationFormat(datasetAnnotationFormat)
+     *             .displayName(datasetDisplayName)
+     *             .id(datasetId)
+     *             .state(datasetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatasetsResult> getDatasets(GetDatasetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataLabellingService/getDatasets:getDatasets", TypeShape.of(GetDatasetsResult.class), args, Utilities.withVersion(options));
     }
     /**

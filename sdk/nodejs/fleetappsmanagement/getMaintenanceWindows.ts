@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of MaintenanceWindows in the specified Tenancy.
+ * List maintenance windows for a specified tenancy in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     displayName: maintenanceWindowDisplayName,
  *     id: maintenanceWindowId,
  *     state: maintenanceWindowState,
+ *     timeScheduleStartGreaterThanOrEqualTo: maintenanceWindowTimeScheduleStartGreaterThanOrEqualTo,
  * });
  * ```
  */
@@ -34,6 +35,7 @@ export function getMaintenanceWindows(args?: GetMaintenanceWindowsArgs, opts?: p
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
+        "timeScheduleStartGreaterThanOrEqualTo": args.timeScheduleStartGreaterThanOrEqualTo,
     }, opts);
 }
 
@@ -51,13 +53,17 @@ export interface GetMaintenanceWindowsArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetMaintenanceWindowsFilter[];
     /**
-     * unique MaintenanceWindow identifier
+     * A filter to return only the Maintenance Windows whose identifier matches the given identifier.
      */
     id?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: string;
+    /**
+     * A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+     */
+    timeScheduleStartGreaterThanOrEqualTo?: string;
 }
 
 /**
@@ -85,11 +91,12 @@ export interface GetMaintenanceWindowsResult {
      * The current state of the MaintenanceWindow.
      */
     readonly state?: string;
+    readonly timeScheduleStartGreaterThanOrEqualTo?: string;
 }
 /**
  * This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of MaintenanceWindows in the specified Tenancy.
+ * List maintenance windows for a specified tenancy in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -102,6 +109,7 @@ export interface GetMaintenanceWindowsResult {
  *     displayName: maintenanceWindowDisplayName,
  *     id: maintenanceWindowId,
  *     state: maintenanceWindowState,
+ *     timeScheduleStartGreaterThanOrEqualTo: maintenanceWindowTimeScheduleStartGreaterThanOrEqualTo,
  * });
  * ```
  */
@@ -114,6 +122,7 @@ export function getMaintenanceWindowsOutput(args?: GetMaintenanceWindowsOutputAr
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
+        "timeScheduleStartGreaterThanOrEqualTo": args.timeScheduleStartGreaterThanOrEqualTo,
     }, opts);
 }
 
@@ -131,11 +140,15 @@ export interface GetMaintenanceWindowsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetMaintenanceWindowsFilterArgs>[]>;
     /**
-     * unique MaintenanceWindow identifier
+     * A filter to return only the Maintenance Windows whose identifier matches the given identifier.
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+     */
+    timeScheduleStartGreaterThanOrEqualTo?: pulumi.Input<string>;
 }

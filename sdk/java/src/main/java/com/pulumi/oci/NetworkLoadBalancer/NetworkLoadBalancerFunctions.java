@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendHealthArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendHealthPlainArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
@@ -183,6 +184,52 @@ public final class NetworkLoadBalancerFunctions {
      * 
      */
     public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", TypeShape.of(GetBackendHealthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves the current health status of the specified backend server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", TypeShape.of(GetBackendHealthResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -412,6 +459,52 @@ public final class NetworkLoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", TypeShape.of(GetBackendSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves the configuration information for the specified backend set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .ipVersion(backendSetIpVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetBackendSetResult> getBackendSetPlain(GetBackendSetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", TypeShape.of(GetBackendSetResult.class), args, Utilities.withVersion(options));
     }
@@ -422,6 +515,9 @@ public final class NetworkLoadBalancerFunctions {
         return getBackendSetHealthPlain(args, InvokeOptions.Empty);
     }
     public static Output<GetBackendSetHealthResult> getBackendSetHealth(GetBackendSetHealthArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", TypeShape.of(GetBackendSetHealthResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBackendSetHealthResult> getBackendSetHealth(GetBackendSetHealthArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", TypeShape.of(GetBackendSetHealthResult.class), args, Utilities.withVersion(options));
     }
     public static CompletableFuture<GetBackendSetHealthResult> getBackendSetHealthPlain(GetBackendSetHealthPlainArgs args, InvokeOptions options) {
@@ -557,6 +653,50 @@ public final class NetworkLoadBalancerFunctions {
      * 
      */
     public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSets:getBackendSets", TypeShape.of(GetBackendSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Lists all backend sets associated with a given network load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSets:getBackendSets", TypeShape.of(GetBackendSetsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -736,6 +876,51 @@ public final class NetworkLoadBalancerFunctions {
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackends:getBackends", TypeShape.of(GetBackendsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Backends in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Lists the backend servers for a given network load balancer and backend set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBackendsResult> getBackends(GetBackendsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackends:getBackends", TypeShape.of(GetBackendsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -960,6 +1145,51 @@ public final class NetworkLoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetListenerResult> getListener(GetListenerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getListener:getListener", TypeShape.of(GetListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves listener properties associated with a given network load balancer and listener name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetListenerResult> getListenerPlain(GetListenerPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkLoadBalancer/getListener:getListener", TypeShape.of(GetListenerResult.class), args, Utilities.withVersion(options));
     }
@@ -1093,6 +1323,50 @@ public final class NetworkLoadBalancerFunctions {
      * 
      */
     public static Output<GetListenersResult> getListeners(GetListenersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getListeners:getListeners", TypeShape.of(GetListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Listeners in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Lists all listeners associated with a given network load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetListenersResult> getListeners(GetListenersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getListeners:getListeners", TypeShape.of(GetListenersResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1312,6 +1586,50 @@ public final class NetworkLoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNetworkLoadBalancerResult> getNetworkLoadBalancer(GetNetworkLoadBalancerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", TypeShape.of(GetNetworkLoadBalancerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves network load balancer configuration information by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNetworkLoadBalancerResult> getNetworkLoadBalancerPlain(GetNetworkLoadBalancerPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", TypeShape.of(GetNetworkLoadBalancerResult.class), args, Utilities.withVersion(options));
     }
@@ -1445,6 +1763,50 @@ public final class NetworkLoadBalancerFunctions {
      * 
      */
     public static Output<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", TypeShape.of(GetNetworkLoadBalancerHealthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves the health status for the specified network load balancer.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", TypeShape.of(GetNetworkLoadBalancerHealthResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1627,6 +1989,52 @@ public final class NetworkLoadBalancerFunctions {
      * 
      */
     public static Output<GetNetworkLoadBalancersResult> getNetworkLoadBalancers(GetNetworkLoadBalancersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancers:getNetworkLoadBalancers", TypeShape.of(GetNetworkLoadBalancersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Load Balancers in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Returns a list of network load balancers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancers = NetworkLoadBalancerFunctions.getNetworkLoadBalancers(GetNetworkLoadBalancersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkLoadBalancerDisplayName)
+     *             .state(networkLoadBalancerState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkLoadBalancersResult> getNetworkLoadBalancers(GetNetworkLoadBalancersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancers:getNetworkLoadBalancers", TypeShape.of(GetNetworkLoadBalancersResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1924,6 +2332,48 @@ public final class NetworkLoadBalancerFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancersPolicies:getNetworkLoadBalancersPolicies", TypeShape.of(GetNetworkLoadBalancersPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Lists the available network load balancer policies.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPoliciesPlain(GetNetworkLoadBalancersPoliciesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkLoadBalancer/getNetworkLoadBalancersPolicies:getNetworkLoadBalancersPolicies", TypeShape.of(GetNetworkLoadBalancersPoliciesResult.class), args, Utilities.withVersion(options));
     }
@@ -2140,6 +2590,49 @@ public final class NetworkLoadBalancerFunctions {
      * 
      */
     public static Output<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", TypeShape.of(GetNetworkLoadBalancersProtocolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Load Balancers Protocols in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * This API has been deprecated so it won&#39;t return the updated list of supported protocls.
+     * Lists all supported traffic protocols.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", TypeShape.of(GetNetworkLoadBalancersProtocolsResult.class), args, Utilities.withVersion(options));
     }
     /**

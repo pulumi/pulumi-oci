@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructureArgs;
 import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructurePlainArgs;
 import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructuresArgs;
@@ -156,6 +157,51 @@ public final class ComputeCloudFunctions {
      * 
      */
     public static Output<GetAtCustomerCccInfrastructureResult> getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", TypeShape.of(GetAtCustomerCccInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+     * 
+     * Gets a Compute Cloud{@literal @}Customer infrastructure using the infrastructure
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
+     * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCccInfrastructure = ComputeCloudFunctions.getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs.builder()
+     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAtCustomerCccInfrastructureResult> getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", TypeShape.of(GetAtCustomerCccInfrastructureResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -500,6 +546,56 @@ public final class ComputeCloudFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAtCustomerCccInfrastructuresResult> getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", TypeShape.of(GetAtCustomerCccInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+     * 
+     * Returns a list of Compute Cloud{@literal @}Customer infrastructures.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
+     * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCccInfrastructures = ComputeCloudFunctions.getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs.builder()
+     *             .accessLevel(cccInfrastructureAccessLevel)
+     *             .cccInfrastructureId(testCccInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(cccInfrastructureCompartmentIdInSubtree)
+     *             .displayName(cccInfrastructureDisplayName)
+     *             .displayNameContains(cccInfrastructureDisplayNameContains)
+     *             .state(cccInfrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAtCustomerCccInfrastructuresResult> getAtCustomerCccInfrastructuresPlain(GetAtCustomerCccInfrastructuresPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", TypeShape.of(GetAtCustomerCccInfrastructuresResult.class), args, Utilities.withVersion(options));
     }
@@ -636,6 +732,51 @@ public final class ComputeCloudFunctions {
      * 
      */
     public static Output<GetAtCustomerCccUpgradeScheduleResult> getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", TypeShape.of(GetAtCustomerCccUpgradeScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+     * 
+     * Gets a Compute Cloud{@literal @}Customer upgrade schedule by the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
+     * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCccUpgradeSchedule = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs.builder()
+     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAtCustomerCccUpgradeScheduleResult> getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", TypeShape.of(GetAtCustomerCccUpgradeScheduleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -931,6 +1072,56 @@ public final class ComputeCloudFunctions {
      * 
      */
     public static Output<GetAtCustomerCccUpgradeSchedulesResult> getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ComputeCloud/getAtCustomerCccUpgradeSchedules:getAtCustomerCccUpgradeSchedules", TypeShape.of(GetAtCustomerCccUpgradeSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+     * 
+     * Returns a list of Compute Cloud{@literal @}Customer upgrade schedules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeCloud.ComputeCloudFunctions;
+     * import com.pulumi.oci.ComputeCloud.inputs.GetAtCustomerCccUpgradeSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCccUpgradeSchedules = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs.builder()
+     *             .accessLevel(cccUpgradeScheduleAccessLevel)
+     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(cccUpgradeScheduleCompartmentIdInSubtree)
+     *             .displayName(cccUpgradeScheduleDisplayName)
+     *             .displayNameContains(cccUpgradeScheduleDisplayNameContains)
+     *             .state(cccUpgradeScheduleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAtCustomerCccUpgradeSchedulesResult> getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ComputeCloud/getAtCustomerCccUpgradeSchedules:getAtCustomerCccUpgradeSchedules", TypeShape.of(GetAtCustomerCccUpgradeSchedulesResult.class), args, Utilities.withVersion(options));
     }
     /**

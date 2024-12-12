@@ -73,6 +73,8 @@ type LookupFsuCollectionResult struct {
 	FsuCollectionId string            `pulumi:"fsuCollectionId"`
 	// OCID identifier for the Exadata Fleet Update Collection.
 	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+	LastCompletedFsuCycleId string `pulumi:"lastCompletedFsuCycleId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Exadata service type for the target resource members.
@@ -174,6 +176,11 @@ func (o LookupFsuCollectionResultOutput) FsuCollectionId() pulumi.StringOutput {
 // OCID identifier for the Exadata Fleet Update Collection.
 func (o LookupFsuCollectionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+func (o LookupFsuCollectionResultOutput) LastCompletedFsuCycleId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.LastCompletedFsuCycleId }).(pulumi.StringOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

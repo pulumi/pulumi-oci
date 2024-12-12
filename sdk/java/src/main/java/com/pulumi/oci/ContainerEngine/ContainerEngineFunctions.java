@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsPlainArgs;
@@ -248,6 +249,51 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAddonResult> getAddon(GetAddonArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getAddon:getAddon", TypeShape.of(GetAddonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified addon for a cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
+     *             .addonName(testAddonOciContainerengineAddon.name())
+     *             .clusterId(testCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAddonResult> getAddonPlain(GetAddonPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getAddon:getAddon", TypeShape.of(GetAddonResult.class), args, Utilities.withVersion(options));
     }
@@ -384,6 +430,51 @@ public final class ContainerEngineFunctions {
      * 
      */
     public static Output<GetAddonOptionsResult> getAddonOptions(GetAddonOptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getAddonOptions:getAddonOptions", TypeShape.of(GetAddonOptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get list of supported addons for a specific kubernetes version.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
+     *             .kubernetesVersion(addonOptionKubernetesVersion)
+     *             .addonName(testAddon.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAddonOptionsResult> getAddonOptions(GetAddonOptionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getAddonOptions:getAddonOptions", TypeShape.of(GetAddonOptionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -604,6 +695,50 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAddonsResult> getAddons(GetAddonsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getAddons:getAddons", TypeShape.of(GetAddonsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List addon for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAddonsResult> getAddonsPlain(GetAddonsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getAddons:getAddons", TypeShape.of(GetAddonsResult.class), args, Utilities.withVersion(options));
     }
@@ -780,6 +915,50 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetClusterResult> getCluster(GetClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getCluster:getCluster", TypeShape.of(GetClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the details of a cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
+     *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetClusterResult> getClusterPlain(GetClusterPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getCluster:getCluster", TypeShape.of(GetClusterResult.class), args, Utilities.withVersion(options));
     }
@@ -913,6 +1092,50 @@ public final class ContainerEngineFunctions {
      * 
      */
     public static Output<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", TypeShape.of(GetClusterCredentialRotationStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster credential rotation status.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetClusterCredentialRotationStatusResult> getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", TypeShape.of(GetClusterCredentialRotationStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1144,6 +1367,53 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetClusterKubeConfigResult> getClusterKubeConfig(GetClusterKubeConfigArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", TypeShape.of(GetClusterKubeConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Create the Kubeconfig YAML for a cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .endpoint(clusterKubeConfigEndpoint)
+     *             .expiration(clusterKubeConfigExpiration)
+     *             .tokenVersion(clusterKubeConfigTokenVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetClusterKubeConfigResult> getClusterKubeConfigPlain(GetClusterKubeConfigPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", TypeShape.of(GetClusterKubeConfigResult.class), args, Utilities.withVersion(options));
     }
@@ -1280,6 +1550,51 @@ public final class ContainerEngineFunctions {
      * 
      */
     public static Output<GetClusterOptionResult> getClusterOption(GetClusterOptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterOption:getClusterOption", TypeShape.of(GetClusterOptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get options available for clusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetClusterOptionResult> getClusterOption(GetClusterOptionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterOption:getClusterOption", TypeShape.of(GetClusterOptionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1504,6 +1819,51 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetClusterWorkloadMappingResult> getClusterWorkloadMapping(GetClusterWorkloadMappingArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", TypeShape.of(GetClusterWorkloadMappingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified workloadMapping for a cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .workloadMappingId(testWorkloadMapping.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetClusterWorkloadMappingResult> getClusterWorkloadMappingPlain(GetClusterWorkloadMappingPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", TypeShape.of(GetClusterWorkloadMappingResult.class), args, Utilities.withVersion(options));
     }
@@ -1637,6 +1997,50 @@ public final class ContainerEngineFunctions {
      * 
      */
     public static Output<GetClusterWorkloadMappingsResult> getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings", TypeShape.of(GetClusterWorkloadMappingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List workloadMappings for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetClusterWorkloadMappingsResult> getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings", TypeShape.of(GetClusterWorkloadMappingsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1864,6 +2268,52 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetClustersResult> getClusters(GetClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusters:getClusters", TypeShape.of(GetClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Clusters in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the cluster objects in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = ContainerEngineFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(clusterName)
+     *             .states(clusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getClusters:getClusters", TypeShape.of(GetClustersResult.class), args, Utilities.withVersion(options));
     }
@@ -1874,6 +2324,9 @@ public final class ContainerEngineFunctions {
         return getMigrateToNativeVcnStatusPlain(args, InvokeOptions.Empty);
     }
     public static Output<GetMigrateToNativeVcnStatusResult> getMigrateToNativeVcnStatus(GetMigrateToNativeVcnStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", TypeShape.of(GetMigrateToNativeVcnStatusResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetMigrateToNativeVcnStatusResult> getMigrateToNativeVcnStatus(GetMigrateToNativeVcnStatusArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", TypeShape.of(GetMigrateToNativeVcnStatusResult.class), args, Utilities.withVersion(options));
     }
     public static CompletableFuture<GetMigrateToNativeVcnStatusResult> getMigrateToNativeVcnStatusPlain(GetMigrateToNativeVcnStatusPlainArgs args, InvokeOptions options) {
@@ -2009,6 +2462,50 @@ public final class ContainerEngineFunctions {
      * 
      */
     public static Output<GetNodePoolResult> getNodePool(GetNodePoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getNodePool:getNodePool", TypeShape.of(GetNodePoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the details of a node pool.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNodePoolResult> getNodePool(GetNodePoolArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getNodePool:getNodePool", TypeShape.of(GetNodePoolResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2188,6 +2685,51 @@ public final class ContainerEngineFunctions {
      * 
      */
     public static Output<GetNodePoolOptionResult> getNodePoolOption(GetNodePoolOptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", TypeShape.of(GetNodePoolOptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get options available for node pools.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNodePoolOptionResult> getNodePoolOption(GetNodePoolOptionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", TypeShape.of(GetNodePoolOptionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2420,6 +2962,53 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNodePoolsResult> getNodePools(GetNodePoolsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getNodePools:getNodePools", TypeShape.of(GetNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the node pools in a compartment, and optionally filter by cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(nodePoolName)
+     *             .states(nodePoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNodePoolsResult> getNodePoolsPlain(GetNodePoolsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getNodePools:getNodePools", TypeShape.of(GetNodePoolsResult.class), args, Utilities.withVersion(options));
     }
@@ -2604,6 +3193,52 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPodShapesResult> getPodShapes(GetPodShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getPodShapes:getPodShapes", TypeShape.of(GetPodShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the Pod Shapes in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPodShapes = ContainerEngineFunctions.getPodShapes(GetPodShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(podShapeAvailabilityDomain)
+     *             .name(podShapeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPodShapesResult> getPodShapesPlain(GetPodShapesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getPodShapes:getPodShapes", TypeShape.of(GetPodShapesResult.class), args, Utilities.withVersion(options));
     }
@@ -2737,6 +3372,50 @@ public final class ContainerEngineFunctions {
      * 
      */
     public static Output<GetVirtualNodePoolResult> getVirtualNodePool(GetVirtualNodePoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", TypeShape.of(GetVirtualNodePoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the details of a virtual node pool.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVirtualNodePoolResult> getVirtualNodePool(GetVirtualNodePoolArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", TypeShape.of(GetVirtualNodePoolResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2968,6 +3647,53 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", TypeShape.of(GetVirtualNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all the virtual node pools in a compartment, and optionally filter by cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVirtualNodePoolsResult> getVirtualNodePoolsPlain(GetVirtualNodePoolsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", TypeShape.of(GetVirtualNodePoolsResult.class), args, Utilities.withVersion(options));
     }
@@ -3104,6 +3830,51 @@ public final class ContainerEngineFunctions {
      * 
      */
     public static Output<GetWorkRequestErrorsResult> getWorkRequestErrors(GetWorkRequestErrorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", TypeShape.of(GetWorkRequestErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Work Request Errors in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the errors of a work request.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkRequestErrorsResult> getWorkRequestErrors(GetWorkRequestErrorsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", TypeShape.of(GetWorkRequestErrorsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3328,6 +4099,51 @@ public final class ContainerEngineFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkRequestLogEntriesResult> getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", TypeShape.of(GetWorkRequestLogEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Work Request Log Entries in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the logs of a work request.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkRequestLogEntriesResult> getWorkRequestLogEntriesPlain(GetWorkRequestLogEntriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", TypeShape.of(GetWorkRequestLogEntriesResult.class), args, Utilities.withVersion(options));
     }
@@ -3473,6 +4289,54 @@ public final class ContainerEngineFunctions {
      * 
      */
     public static Output<GetWorkRequestsResult> getWorkRequests(GetWorkRequestsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getWorkRequests:getWorkRequests", TypeShape.of(GetWorkRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List all work requests in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .resourceId(testResource.id())
+     *             .resourceType(workRequestResourceType)
+     *             .statuses(workRequestStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkRequestsResult> getWorkRequests(GetWorkRequestsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getWorkRequests:getWorkRequests", TypeShape.of(GetWorkRequestsResult.class), args, Utilities.withVersion(options));
     }
     /**

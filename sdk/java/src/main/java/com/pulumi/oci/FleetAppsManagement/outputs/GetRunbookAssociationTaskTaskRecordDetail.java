@@ -20,15 +20,25 @@ public final class GetRunbookAssociationTaskTaskRecordDetail {
      */
     private String description;
     /**
-     * @return Content Source Details
+     * @return Execution details.
      * 
      */
     private List<GetRunbookAssociationTaskTaskRecordDetailExecutionDetail> executionDetails;
+    /**
+     * @return Is this an Apply Subject Task? Ex. Patch Execution Task
+     * 
+     */
+    private Boolean isApplySubjectTask;
     /**
      * @return Make a copy of this task in Library
      * 
      */
     private Boolean isCopyToLibraryEnabled;
+    /**
+     * @return Is this a discovery output task?
+     * 
+     */
+    private Boolean isDiscoveryOutputTask;
     /**
      * @return The name of the task
      * 
@@ -69,11 +79,18 @@ public final class GetRunbookAssociationTaskTaskRecordDetail {
         return this.description;
     }
     /**
-     * @return Content Source Details
+     * @return Execution details.
      * 
      */
     public List<GetRunbookAssociationTaskTaskRecordDetailExecutionDetail> executionDetails() {
         return this.executionDetails;
+    }
+    /**
+     * @return Is this an Apply Subject Task? Ex. Patch Execution Task
+     * 
+     */
+    public Boolean isApplySubjectTask() {
+        return this.isApplySubjectTask;
     }
     /**
      * @return Make a copy of this task in Library
@@ -81,6 +98,13 @@ public final class GetRunbookAssociationTaskTaskRecordDetail {
      */
     public Boolean isCopyToLibraryEnabled() {
         return this.isCopyToLibraryEnabled;
+    }
+    /**
+     * @return Is this a discovery output task?
+     * 
+     */
+    public Boolean isDiscoveryOutputTask() {
+        return this.isDiscoveryOutputTask;
     }
     /**
      * @return The name of the task
@@ -136,7 +160,9 @@ public final class GetRunbookAssociationTaskTaskRecordDetail {
     public static final class Builder {
         private String description;
         private List<GetRunbookAssociationTaskTaskRecordDetailExecutionDetail> executionDetails;
+        private Boolean isApplySubjectTask;
         private Boolean isCopyToLibraryEnabled;
+        private Boolean isDiscoveryOutputTask;
         private String name;
         private String osType;
         private String platform;
@@ -148,7 +174,9 @@ public final class GetRunbookAssociationTaskTaskRecordDetail {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
     	      this.executionDetails = defaults.executionDetails;
+    	      this.isApplySubjectTask = defaults.isApplySubjectTask;
     	      this.isCopyToLibraryEnabled = defaults.isCopyToLibraryEnabled;
+    	      this.isDiscoveryOutputTask = defaults.isDiscoveryOutputTask;
     	      this.name = defaults.name;
     	      this.osType = defaults.osType;
     	      this.platform = defaults.platform;
@@ -177,11 +205,27 @@ public final class GetRunbookAssociationTaskTaskRecordDetail {
             return executionDetails(List.of(executionDetails));
         }
         @CustomType.Setter
+        public Builder isApplySubjectTask(Boolean isApplySubjectTask) {
+            if (isApplySubjectTask == null) {
+              throw new MissingRequiredPropertyException("GetRunbookAssociationTaskTaskRecordDetail", "isApplySubjectTask");
+            }
+            this.isApplySubjectTask = isApplySubjectTask;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isCopyToLibraryEnabled(Boolean isCopyToLibraryEnabled) {
             if (isCopyToLibraryEnabled == null) {
               throw new MissingRequiredPropertyException("GetRunbookAssociationTaskTaskRecordDetail", "isCopyToLibraryEnabled");
             }
             this.isCopyToLibraryEnabled = isCopyToLibraryEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDiscoveryOutputTask(Boolean isDiscoveryOutputTask) {
+            if (isDiscoveryOutputTask == null) {
+              throw new MissingRequiredPropertyException("GetRunbookAssociationTaskTaskRecordDetail", "isDiscoveryOutputTask");
+            }
+            this.isDiscoveryOutputTask = isDiscoveryOutputTask;
             return this;
         }
         @CustomType.Setter
@@ -239,7 +283,9 @@ public final class GetRunbookAssociationTaskTaskRecordDetail {
             final var _resultValue = new GetRunbookAssociationTaskTaskRecordDetail();
             _resultValue.description = description;
             _resultValue.executionDetails = executionDetails;
+            _resultValue.isApplySubjectTask = isApplySubjectTask;
             _resultValue.isCopyToLibraryEnabled = isCopyToLibraryEnabled;
+            _resultValue.isDiscoveryOutputTask = isDiscoveryOutputTask;
             _resultValue.name = name;
             _resultValue.osType = osType;
             _resultValue.platform = platform;

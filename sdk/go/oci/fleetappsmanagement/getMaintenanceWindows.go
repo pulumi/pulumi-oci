@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Returns a list of MaintenanceWindows in the specified Tenancy.
+// List maintenance windows for a specified tenancy in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -30,10 +30,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FleetAppsManagement.GetMaintenanceWindows(ctx, &fleetappsmanagement.GetMaintenanceWindowsArgs{
-//				CompartmentId: pulumi.StringRef(compartmentId),
-//				DisplayName:   pulumi.StringRef(maintenanceWindowDisplayName),
-//				Id:            pulumi.StringRef(maintenanceWindowId),
-//				State:         pulumi.StringRef(maintenanceWindowState),
+//				CompartmentId:                         pulumi.StringRef(compartmentId),
+//				DisplayName:                           pulumi.StringRef(maintenanceWindowDisplayName),
+//				Id:                                    pulumi.StringRef(maintenanceWindowId),
+//				State:                                 pulumi.StringRef(maintenanceWindowState),
+//				TimeScheduleStartGreaterThanOrEqualTo: pulumi.StringRef(maintenanceWindowTimeScheduleStartGreaterThanOrEqualTo),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -60,10 +61,12 @@ type GetMaintenanceWindowsArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetMaintenanceWindowsFilter `pulumi:"filters"`
-	// unique MaintenanceWindow identifier
+	// A filter to return only the Maintenance Windows whose identifier matches the given identifier.
 	Id *string `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
+	// A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+	TimeScheduleStartGreaterThanOrEqualTo *string `pulumi:"timeScheduleStartGreaterThanOrEqualTo"`
 }
 
 // A collection of values returned by getMaintenanceWindows.
@@ -78,7 +81,8 @@ type GetMaintenanceWindowsResult struct {
 	// The list of maintenance_window_collection.
 	MaintenanceWindowCollections []GetMaintenanceWindowsMaintenanceWindowCollection `pulumi:"maintenanceWindowCollections"`
 	// The current state of the MaintenanceWindow.
-	State *string `pulumi:"state"`
+	State                                 *string `pulumi:"state"`
+	TimeScheduleStartGreaterThanOrEqualTo *string `pulumi:"timeScheduleStartGreaterThanOrEqualTo"`
 }
 
 func GetMaintenanceWindowsOutput(ctx *pulumi.Context, args GetMaintenanceWindowsOutputArgs, opts ...pulumi.InvokeOption) GetMaintenanceWindowsResultOutput {
@@ -107,10 +111,12 @@ type GetMaintenanceWindowsOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput                 `pulumi:"displayName"`
 	Filters     GetMaintenanceWindowsFilterArrayInput `pulumi:"filters"`
-	// unique MaintenanceWindow identifier
+	// A filter to return only the Maintenance Windows whose identifier matches the given identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+	TimeScheduleStartGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeScheduleStartGreaterThanOrEqualTo"`
 }
 
 func (GetMaintenanceWindowsOutputArgs) ElementType() reflect.Type {
@@ -161,6 +167,10 @@ func (o GetMaintenanceWindowsResultOutput) MaintenanceWindowCollections() GetMai
 // The current state of the MaintenanceWindow.
 func (o GetMaintenanceWindowsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMaintenanceWindowsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetMaintenanceWindowsResultOutput) TimeScheduleStartGreaterThanOrEqualTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsResult) *string { return v.TimeScheduleStartGreaterThanOrEqualTo }).(pulumi.StringPtrOutput)
 }
 
 func init() {

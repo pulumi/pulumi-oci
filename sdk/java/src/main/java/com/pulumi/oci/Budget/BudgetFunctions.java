@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
 import com.pulumi.oci.Budget.inputs.GetAlertRulePlainArgs;
 import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
@@ -156,6 +157,51 @@ public final class BudgetFunctions {
      * 
      */
     public static Output<GetAlertRuleResult> getAlertRule(GetAlertRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getAlertRule:getAlertRule", TypeShape.of(GetAlertRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets an Alert Rule for a specified budget.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
+     *             .budgetId(testBudget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAlertRuleResult> getAlertRule(GetAlertRuleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Budget/getAlertRule:getAlertRule", TypeShape.of(GetAlertRuleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -384,6 +430,52 @@ public final class BudgetFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAlertRulesResult> getAlertRules(GetAlertRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getAlertRules:getAlertRules", TypeShape.of(GetAlertRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Returns a list of Alert Rules for a specified budget.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
+     *             .budgetId(testBudget.id())
+     *             .displayName(alertRuleDisplayName)
+     *             .state(alertRuleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAlertRulesResult> getAlertRulesPlain(GetAlertRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Budget/getAlertRules:getAlertRules", TypeShape.of(GetAlertRulesResult.class), args, Utilities.withVersion(options));
     }
@@ -517,6 +609,50 @@ public final class BudgetFunctions {
      * 
      */
     public static Output<GetBudgetResult> getBudget(GetBudgetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getBudget:getBudget", TypeShape.of(GetBudgetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a budget by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
+     *             .budgetId(testBudgetOciBudgetBudget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBudgetResult> getBudget(GetBudgetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Budget/getBudget:getBudget", TypeShape.of(GetBudgetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -720,6 +856,59 @@ public final class BudgetFunctions {
      * 
      */
     public static Output<GetBudgetsResult> getBudgets(GetBudgetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getBudgets:getBudgets", TypeShape.of(GetBudgetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of budgets in a compartment.
+     * 
+     * By default, ListBudgets returns budgets of the &#39;COMPARTMENT&#39; target type, and the budget records with only one target compartment OCID.
+     * 
+     * To list all budgets, set the targetType query parameter to ALL (for example: &#39;targetType=ALL&#39;).
+     * 
+     * Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudgets = BudgetFunctions.getBudgets(GetBudgetsArgs.builder()
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(budgetDisplayName)
+     *             .state(budgetState)
+     *             .targetType(budgetTargetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBudgetsResult> getBudgets(GetBudgetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Budget/getBudgets:getBudgets", TypeShape.of(GetBudgetsResult.class), args, Utilities.withVersion(options));
     }
     /**

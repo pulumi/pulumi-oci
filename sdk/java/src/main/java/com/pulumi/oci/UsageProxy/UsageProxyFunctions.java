@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasPlainArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
@@ -183,6 +184,53 @@ public final class UsageProxyFunctions {
      * 
      */
     public static Output<GetResourceQuotasResult> getResourceQuotas(GetResourceQuotasArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getResourceQuotas:getResourceQuotas", TypeShape.of(GetResourceQuotasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource quota details under a tenancy
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .serviceEntitlement(resourceQuotaServiceEntitlement)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetResourceQuotasResult> getResourceQuotas(GetResourceQuotasArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:UsageProxy/getResourceQuotas:getResourceQuotas", TypeShape.of(GetResourceQuotasResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -417,6 +465,53 @@ public final class UsageProxyFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetResourcesResult> getResources(GetResourcesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getResources:getResources", TypeShape.of(GetResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource details for a service
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .entitlementId(testEntitlement.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetResourcesResult> getResourcesPlain(GetResourcesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:UsageProxy/getResources:getResources", TypeShape.of(GetResourcesResult.class), args, Utilities.withVersion(options));
     }
@@ -559,6 +654,53 @@ public final class UsageProxyFunctions {
      * 
      */
     public static Output<GetSubscriptionProductResult> getSubscriptionProduct(GetSubscriptionProductArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", TypeShape.of(GetSubscriptionProductResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Product resource in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Provides product information that is specific to a reward usage period and its usage details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubscriptionProductResult> getSubscriptionProduct(GetSubscriptionProductArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", TypeShape.of(GetSubscriptionProductResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -793,6 +935,53 @@ public final class UsageProxyFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSubscriptionProductsResult> getSubscriptionProducts(GetSubscriptionProductsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts", TypeShape.of(GetSubscriptionProductsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscription Products in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Provides product information that is specific to a reward usage period and its usage details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSubscriptionProductsResult> getSubscriptionProductsPlain(GetSubscriptionProductsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts", TypeShape.of(GetSubscriptionProductsResult.class), args, Utilities.withVersion(options));
     }
@@ -929,6 +1118,51 @@ public final class UsageProxyFunctions {
      * 
      */
     public static Output<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", TypeShape.of(GetSubscriptionRedeemableUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", TypeShape.of(GetSubscriptionRedeemableUserResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1153,6 +1387,51 @@ public final class UsageProxyFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", TypeShape.of(GetSubscriptionRedeemableUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsersPlain(GetSubscriptionRedeemableUsersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", TypeShape.of(GetSubscriptionRedeemableUsersResult.class), args, Utilities.withVersion(options));
     }
@@ -1295,6 +1574,53 @@ public final class UsageProxyFunctions {
      * 
      */
     public static Output<GetSubscriptionRedemptionResult> getSubscriptionRedemption(GetSubscriptionRedemptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionRedemption:getSubscriptionRedemption", TypeShape.of(GetSubscriptionRedemptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Redemption resource in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubscriptionRedemptionResult> getSubscriptionRedemption(GetSubscriptionRedemptionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionRedemption:getSubscriptionRedemption", TypeShape.of(GetSubscriptionRedemptionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1529,6 +1855,53 @@ public final class UsageProxyFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSubscriptionRedemptionsResult> getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", TypeShape.of(GetSubscriptionRedemptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSubscriptionRedemptionsResult> getSubscriptionRedemptionsPlain(GetSubscriptionRedemptionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", TypeShape.of(GetSubscriptionRedemptionsResult.class), args, Utilities.withVersion(options));
     }
@@ -1665,6 +2038,51 @@ public final class UsageProxyFunctions {
      * 
      */
     public static Output<GetSubscriptionRewardResult> getSubscriptionReward(GetSubscriptionRewardArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionReward:getSubscriptionReward", TypeShape.of(GetSubscriptionRewardResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Reward resource in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of rewards for a subscription ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubscriptionRewardResult> getSubscriptionReward(GetSubscriptionRewardArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionReward:getSubscriptionReward", TypeShape.of(GetSubscriptionRewardResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1889,6 +2307,51 @@ public final class UsageProxyFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSubscriptionRewardsResult> getSubscriptionRewards(GetSubscriptionRewardsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", TypeShape.of(GetSubscriptionRewardsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscription Rewards in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of rewards for a subscription ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSubscriptionRewardsResult> getSubscriptionRewardsPlain(GetSubscriptionRewardsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", TypeShape.of(GetSubscriptionRewardsResult.class), args, Utilities.withVersion(options));
     }
@@ -2034,6 +2497,54 @@ public final class UsageProxyFunctions {
      * 
      */
     public static Output<GetUsagelimitsResult> getUsagelimits(GetUsagelimitsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getUsagelimits:getUsagelimits", TypeShape.of(GetUsagelimitsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of usage limit for the subscription ID and tenant ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .limitType(usagelimitLimitType)
+     *             .resourceType(usagelimitResourceType)
+     *             .serviceType(usagelimitServiceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUsagelimitsResult> getUsagelimits(GetUsagelimitsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:UsageProxy/getUsagelimits:getUsagelimits", TypeShape.of(GetUsagelimitsResult.class), args, Utilities.withVersion(options));
     }
     /**

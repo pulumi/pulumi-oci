@@ -22,7 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The ID of the runbook type.
+        /// A filter to return runbooks whose type matches the given type.
         /// </summary>
         public readonly string Type;
 

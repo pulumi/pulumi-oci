@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetAppsManagement;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetAppsManagement.inputs.FleetCredentialArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.FleetNotificationPreferencesArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.FleetRuleSelectionCriteriaArgs;
 import java.lang.Boolean;
@@ -22,14 +23,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     public static final FleetArgs Empty = new FleetArgs();
 
     /**
-     * Application Type associated with the Fleet.Applicable for Environment fleet types.
+     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     @Import(name="applicationType")
     private @Nullable Output<String> applicationType;
 
     /**
-     * @return Application Type associated with the Fleet.Applicable for Environment fleet types.
+     * @return Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public Optional<Output<String>> applicationType() {
@@ -49,6 +50,21 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+
+    /**
+     * Credentials associated with the Fleet.
+     * 
+     */
+    @Import(name="credentials")
+    private @Nullable Output<List<FleetCredentialArgs>> credentials;
+
+    /**
+     * @return Credentials associated with the Fleet.
+     * 
+     */
+    public Optional<Output<List<FleetCredentialArgs>>> credentials() {
+        return Optional.ofNullable(this.credentials);
     }
 
     /**
@@ -97,14 +113,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Environment Type associated with the Fleet.Applicable for Environment fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     @Import(name="environmentType")
     private @Nullable Output<String> environmentType;
 
     /**
-     * @return Environment Type associated with the Fleet.Applicable for Environment fleet types.
+     * @return Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public Optional<Output<String>> environmentType() {
@@ -112,14 +128,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Type of the Fleet
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      * 
      */
     @Import(name="fleetType", required=true)
     private Output<String> fleetType;
 
     /**
-     * @return Type of the Fleet
+     * @return Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      * 
      */
     public Output<String> fleetType() {
@@ -142,14 +158,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Group Type associated with Group Fleet.Applicable for Group fleet types.
+     * Group Type associated with Group Fleet.
      * 
      */
     @Import(name="groupType")
     private @Nullable Output<String> groupType;
 
     /**
-     * @return Group Type associated with Group Fleet.Applicable for Group fleet types.
+     * @return Group Type associated with Group Fleet.
      * 
      */
     public Optional<Output<String>> groupType() {
@@ -157,14 +173,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A value which represents if auto confirming of the targets can be enabled
+     * (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      * 
      */
     @Import(name="isTargetAutoConfirm")
     private @Nullable Output<Boolean> isTargetAutoConfirm;
 
     /**
-     * @return (Updatable) A value which represents if auto confirming of the targets can be enabled
+     * @return (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      * 
      */
     public Optional<Output<Boolean>> isTargetAutoConfirm() {
@@ -172,14 +188,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Conditions when met to send notifications on the fleet activities
+     * (Updatable) Notification information to get notified when the fleet status changes.
      * 
      */
     @Import(name="notificationPreferences")
     private @Nullable Output<FleetNotificationPreferencesArgs> notificationPreferences;
 
     /**
-     * @return (Updatable) Conditions when met to send notifications on the fleet activities
+     * @return (Updatable) Notification information to get notified when the fleet status changes.
      * 
      */
     public Optional<Output<FleetNotificationPreferencesArgs>> notificationPreferences() {
@@ -187,14 +203,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Products associated with the Fleet
+     * Products associated with the Fleet.
      * 
      */
     @Import(name="products")
     private @Nullable Output<List<String>> products;
 
     /**
-     * @return Products associated with the Fleet
+     * @return Products associated with the Fleet.
      * 
      */
     public Optional<Output<List<String>>> products() {
@@ -202,14 +218,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Type of resource selection in a fleet
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      * 
      */
     @Import(name="resourceSelectionType")
     private @Nullable Output<String> resourceSelectionType;
 
     /**
-     * @return Type of resource selection in a fleet
+     * @return Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      * 
      */
     public Optional<Output<String>> resourceSelectionType() {
@@ -217,14 +233,14 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Rule Selection Criteria
+     * (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      * 
      */
     @Import(name="ruleSelectionCriteria")
     private @Nullable Output<FleetRuleSelectionCriteriaArgs> ruleSelectionCriteria;
 
     /**
-     * @return (Updatable) Rule Selection Criteria
+     * @return (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      * 
      */
     public Optional<Output<FleetRuleSelectionCriteriaArgs>> ruleSelectionCriteria() {
@@ -236,6 +252,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
     private FleetArgs(FleetArgs $) {
         this.applicationType = $.applicationType;
         this.compartmentId = $.compartmentId;
+        this.credentials = $.credentials;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
@@ -269,7 +286,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param applicationType Application Type associated with the Fleet.Applicable for Environment fleet types.
+         * @param applicationType Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          * 
          * @return builder
          * 
@@ -280,7 +297,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param applicationType Application Type associated with the Fleet.Applicable for Environment fleet types.
+         * @param applicationType Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          * 
          * @return builder
          * 
@@ -308,6 +325,37 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param credentials Credentials associated with the Fleet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder credentials(@Nullable Output<List<FleetCredentialArgs>> credentials) {
+            $.credentials = credentials;
+            return this;
+        }
+
+        /**
+         * @param credentials Credentials associated with the Fleet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder credentials(List<FleetCredentialArgs> credentials) {
+            return credentials(Output.of(credentials));
+        }
+
+        /**
+         * @param credentials Credentials associated with the Fleet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder credentials(FleetCredentialArgs... credentials) {
+            return credentials(List.of(credentials));
         }
 
         /**
@@ -374,7 +422,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param environmentType Environment Type associated with the Fleet.Applicable for Environment fleet types.
+         * @param environmentType Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          * 
          * @return builder
          * 
@@ -385,7 +433,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param environmentType Environment Type associated with the Fleet.Applicable for Environment fleet types.
+         * @param environmentType Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          * 
          * @return builder
          * 
@@ -395,7 +443,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fleetType Type of the Fleet
+         * @param fleetType Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
          * 
          * @return builder
          * 
@@ -406,7 +454,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fleetType Type of the Fleet
+         * @param fleetType Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
          * 
          * @return builder
          * 
@@ -437,7 +485,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupType Group Type associated with Group Fleet.Applicable for Group fleet types.
+         * @param groupType Group Type associated with Group Fleet.
          * 
          * @return builder
          * 
@@ -448,7 +496,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupType Group Type associated with Group Fleet.Applicable for Group fleet types.
+         * @param groupType Group Type associated with Group Fleet.
          * 
          * @return builder
          * 
@@ -458,7 +506,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isTargetAutoConfirm (Updatable) A value which represents if auto confirming of the targets can be enabled
+         * @param isTargetAutoConfirm (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
          * 
          * @return builder
          * 
@@ -469,7 +517,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isTargetAutoConfirm (Updatable) A value which represents if auto confirming of the targets can be enabled
+         * @param isTargetAutoConfirm (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
          * 
          * @return builder
          * 
@@ -479,7 +527,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param notificationPreferences (Updatable) Conditions when met to send notifications on the fleet activities
+         * @param notificationPreferences (Updatable) Notification information to get notified when the fleet status changes.
          * 
          * @return builder
          * 
@@ -490,7 +538,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param notificationPreferences (Updatable) Conditions when met to send notifications on the fleet activities
+         * @param notificationPreferences (Updatable) Notification information to get notified when the fleet status changes.
          * 
          * @return builder
          * 
@@ -500,7 +548,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param products Products associated with the Fleet
+         * @param products Products associated with the Fleet.
          * 
          * @return builder
          * 
@@ -511,7 +559,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param products Products associated with the Fleet
+         * @param products Products associated with the Fleet.
          * 
          * @return builder
          * 
@@ -521,7 +569,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param products Products associated with the Fleet
+         * @param products Products associated with the Fleet.
          * 
          * @return builder
          * 
@@ -531,7 +579,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceSelectionType Type of resource selection in a fleet
+         * @param resourceSelectionType Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
          * 
          * @return builder
          * 
@@ -542,7 +590,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceSelectionType Type of resource selection in a fleet
+         * @param resourceSelectionType Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
          * 
          * @return builder
          * 
@@ -552,7 +600,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleSelectionCriteria (Updatable) Rule Selection Criteria
+         * @param ruleSelectionCriteria (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
          * 
          * @return builder
          * 
@@ -563,7 +611,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleSelectionCriteria (Updatable) Rule Selection Criteria
+         * @param ruleSelectionCriteria (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
          * 
          * @return builder
          * 

@@ -27,7 +27,7 @@ class GetFsuCollectionResult:
     """
     A collection of values returned by getFsuCollection.
     """
-    def __init__(__self__, active_fsu_cycles=None, compartment_id=None, defined_tags=None, display_name=None, fleet_discoveries=None, freeform_tags=None, fsu_collection_id=None, id=None, lifecycle_details=None, service_type=None, source_major_version=None, state=None, system_tags=None, target_count=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, active_fsu_cycles=None, compartment_id=None, defined_tags=None, display_name=None, fleet_discoveries=None, freeform_tags=None, fsu_collection_id=None, id=None, last_completed_fsu_cycle_id=None, lifecycle_details=None, service_type=None, source_major_version=None, state=None, system_tags=None, target_count=None, time_created=None, time_updated=None, type=None):
         if active_fsu_cycles and not isinstance(active_fsu_cycles, list):
             raise TypeError("Expected argument 'active_fsu_cycles' to be a list")
         pulumi.set(__self__, "active_fsu_cycles", active_fsu_cycles)
@@ -52,6 +52,9 @@ class GetFsuCollectionResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if last_completed_fsu_cycle_id and not isinstance(last_completed_fsu_cycle_id, str):
+            raise TypeError("Expected argument 'last_completed_fsu_cycle_id' to be a str")
+        pulumi.set(__self__, "last_completed_fsu_cycle_id", last_completed_fsu_cycle_id)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -142,6 +145,14 @@ class GetFsuCollectionResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="lastCompletedFsuCycleId")
+    def last_completed_fsu_cycle_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+        """
+        return pulumi.get(self, "last_completed_fsu_cycle_id")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -228,6 +239,7 @@ class AwaitableGetFsuCollectionResult(GetFsuCollectionResult):
             freeform_tags=self.freeform_tags,
             fsu_collection_id=self.fsu_collection_id,
             id=self.id,
+            last_completed_fsu_cycle_id=self.last_completed_fsu_cycle_id,
             lifecycle_details=self.lifecycle_details,
             service_type=self.service_type,
             source_major_version=self.source_major_version,
@@ -272,6 +284,7 @@ def get_fsu_collection(fsu_collection_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         fsu_collection_id=pulumi.get(__ret__, 'fsu_collection_id'),
         id=pulumi.get(__ret__, 'id'),
+        last_completed_fsu_cycle_id=pulumi.get(__ret__, 'last_completed_fsu_cycle_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         service_type=pulumi.get(__ret__, 'service_type'),
         source_major_version=pulumi.get(__ret__, 'source_major_version'),
@@ -313,6 +326,7 @@ def get_fsu_collection_output(fsu_collection_id: Optional[pulumi.Input[str]] = N
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         fsu_collection_id=pulumi.get(__response__, 'fsu_collection_id'),
         id=pulumi.get(__response__, 'id'),
+        last_completed_fsu_cycle_id=pulumi.get(__response__, 'last_completed_fsu_cycle_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         service_type=pulumi.get(__response__, 'service_type'),
         source_major_version=pulumi.get(__response__, 'source_major_version'),

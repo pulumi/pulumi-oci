@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Creates a new MaintenanceWindow.
+// Create a maintenance window in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -75,19 +75,19 @@ type MaintenanceWindow struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Duration if schedule type is Custom
+	// (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
 	Duration pulumi.StringOutput `pulumi:"duration"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// (Updatable) Does the maintenenace window cause outage?
+	// (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
 	IsOutage pulumi.BoolOutput `pulumi:"isOutage"`
-	// (Updatable) Is this is a recurring maintenance window
+	// (Updatable) Is this a recurring maintenance window?
 	IsRecurring pulumi.BoolOutput `pulumi:"isRecurring"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Type of maintenenace window
 	MaintenanceWindowType pulumi.StringOutput `pulumi:"maintenanceWindowType"`
-	// (Updatable) Recurrence rule specification if recurring
+	// (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
 	Recurrences pulumi.StringOutput `pulumi:"recurrences"`
 	// Associated region
 	ResourceRegion pulumi.StringOutput `pulumi:"resourceRegion"`
@@ -95,11 +95,11 @@ type MaintenanceWindow struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// (Updatable) Task initiation cutoff
+	// (Updatable) Task initiation cutoff time for the maintenance window.
 	TaskInitiationCutoff pulumi.IntOutput `pulumi:"taskInitiationCutoff"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// (Updatable) Start time of schedule
+	// (Updatable) Specify the date and time of the day that the maintenance window starts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -152,19 +152,19 @@ type maintenanceWindowState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Duration if schedule type is Custom
+	// (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
 	Duration *string `pulumi:"duration"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) Does the maintenenace window cause outage?
+	// (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
 	IsOutage *bool `pulumi:"isOutage"`
-	// (Updatable) Is this is a recurring maintenance window
+	// (Updatable) Is this a recurring maintenance window?
 	IsRecurring *bool `pulumi:"isRecurring"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Type of maintenenace window
 	MaintenanceWindowType *string `pulumi:"maintenanceWindowType"`
-	// (Updatable) Recurrence rule specification if recurring
+	// (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
 	Recurrences *string `pulumi:"recurrences"`
 	// Associated region
 	ResourceRegion *string `pulumi:"resourceRegion"`
@@ -172,11 +172,11 @@ type maintenanceWindowState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// (Updatable) Task initiation cutoff
+	// (Updatable) Task initiation cutoff time for the maintenance window.
 	TaskInitiationCutoff *int `pulumi:"taskInitiationCutoff"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// (Updatable) Start time of schedule
+	// (Updatable) Specify the date and time of the day that the maintenance window starts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,19 +194,19 @@ type MaintenanceWindowState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Duration if schedule type is Custom
+	// (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
 	Duration pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) Does the maintenenace window cause outage?
+	// (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
 	IsOutage pulumi.BoolPtrInput
-	// (Updatable) Is this is a recurring maintenance window
+	// (Updatable) Is this a recurring maintenance window?
 	IsRecurring pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Type of maintenenace window
 	MaintenanceWindowType pulumi.StringPtrInput
-	// (Updatable) Recurrence rule specification if recurring
+	// (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
 	Recurrences pulumi.StringPtrInput
 	// Associated region
 	ResourceRegion pulumi.StringPtrInput
@@ -214,11 +214,11 @@ type MaintenanceWindowState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// (Updatable) Task initiation cutoff
+	// (Updatable) Task initiation cutoff time for the maintenance window.
 	TaskInitiationCutoff pulumi.IntPtrInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
-	// (Updatable) Start time of schedule
+	// (Updatable) Specify the date and time of the day that the maintenance window starts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -240,21 +240,21 @@ type maintenanceWindowArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Duration if schedule type is Custom
+	// (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
 	Duration string `pulumi:"duration"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) Does the maintenenace window cause outage?
+	// (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
 	IsOutage *bool `pulumi:"isOutage"`
-	// (Updatable) Is this is a recurring maintenance window
+	// (Updatable) Is this a recurring maintenance window?
 	IsRecurring *bool `pulumi:"isRecurring"`
 	// (Updatable) Type of maintenenace window
 	MaintenanceWindowType *string `pulumi:"maintenanceWindowType"`
-	// (Updatable) Recurrence rule specification if recurring
+	// (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
 	Recurrences *string `pulumi:"recurrences"`
-	// (Updatable) Task initiation cutoff
+	// (Updatable) Task initiation cutoff time for the maintenance window.
 	TaskInitiationCutoff *int `pulumi:"taskInitiationCutoff"`
-	// (Updatable) Start time of schedule
+	// (Updatable) Specify the date and time of the day that the maintenance window starts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -271,21 +271,21 @@ type MaintenanceWindowArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Duration if schedule type is Custom
+	// (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
 	Duration pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) Does the maintenenace window cause outage?
+	// (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
 	IsOutage pulumi.BoolPtrInput
-	// (Updatable) Is this is a recurring maintenance window
+	// (Updatable) Is this a recurring maintenance window?
 	IsRecurring pulumi.BoolPtrInput
 	// (Updatable) Type of maintenenace window
 	MaintenanceWindowType pulumi.StringPtrInput
-	// (Updatable) Recurrence rule specification if recurring
+	// (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
 	Recurrences pulumi.StringPtrInput
-	// (Updatable) Task initiation cutoff
+	// (Updatable) Task initiation cutoff time for the maintenance window.
 	TaskInitiationCutoff pulumi.IntPtrInput
-	// (Updatable) Start time of schedule
+	// (Updatable) Specify the date and time of the day that the maintenance window starts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -399,7 +399,7 @@ func (o MaintenanceWindowOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Duration if schedule type is Custom
+// (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
 func (o MaintenanceWindowOutput) Duration() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.Duration }).(pulumi.StringOutput)
 }
@@ -409,12 +409,12 @@ func (o MaintenanceWindowOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) Does the maintenenace window cause outage?
+// (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
 func (o MaintenanceWindowOutput) IsOutage() pulumi.BoolOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.BoolOutput { return v.IsOutage }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Is this is a recurring maintenance window
+// (Updatable) Is this a recurring maintenance window?
 func (o MaintenanceWindowOutput) IsRecurring() pulumi.BoolOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.BoolOutput { return v.IsRecurring }).(pulumi.BoolOutput)
 }
@@ -429,7 +429,7 @@ func (o MaintenanceWindowOutput) MaintenanceWindowType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.MaintenanceWindowType }).(pulumi.StringOutput)
 }
 
-// (Updatable) Recurrence rule specification if recurring
+// (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
 func (o MaintenanceWindowOutput) Recurrences() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.Recurrences }).(pulumi.StringOutput)
 }
@@ -449,7 +449,7 @@ func (o MaintenanceWindowOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) Task initiation cutoff
+// (Updatable) Task initiation cutoff time for the maintenance window.
 func (o MaintenanceWindowOutput) TaskInitiationCutoff() pulumi.IntOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.IntOutput { return v.TaskInitiationCutoff }).(pulumi.IntOutput)
 }
@@ -459,7 +459,7 @@ func (o MaintenanceWindowOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// (Updatable) Start time of schedule
+// (Updatable) Specify the date and time of the day that the maintenance window starts.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

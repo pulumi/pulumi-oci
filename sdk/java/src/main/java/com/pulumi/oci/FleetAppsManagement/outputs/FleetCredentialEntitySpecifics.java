@@ -5,48 +5,64 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetAppsManagement.outputs.FleetCredentialEntitySpecificsVariable;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class FleetCredentialEntitySpecifics {
     /**
-     * @return (Updatable) Credential Level.
+     * @return (Updatable) At what level the credential is provided?
      * 
      */
     private String credentialLevel;
     /**
-     * @return (Updatable) OCID of the resource associated with the target for which credential is created
+     * @return (Updatable) OCID of the resource associated with the target for which the credential is created.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
-     * @return (Updatable) Target associated with the Credential
+     * @return (Updatable) Target name for which the credential is provided.
      * 
      */
-    private String target;
+    private @Nullable String target;
+    /**
+     * @return (Updatable) List of fleet credential variables.
+     * 
+     */
+    private @Nullable List<FleetCredentialEntitySpecificsVariable> variables;
 
     private FleetCredentialEntitySpecifics() {}
     /**
-     * @return (Updatable) Credential Level.
+     * @return (Updatable) At what level the credential is provided?
      * 
      */
     public String credentialLevel() {
         return this.credentialLevel;
     }
     /**
-     * @return (Updatable) OCID of the resource associated with the target for which credential is created
+     * @return (Updatable) OCID of the resource associated with the target for which the credential is created.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
-     * @return (Updatable) Target associated with the Credential
+     * @return (Updatable) Target name for which the credential is provided.
      * 
      */
-    public String target() {
-        return this.target;
+    public Optional<String> target() {
+        return Optional.ofNullable(this.target);
+    }
+    /**
+     * @return (Updatable) List of fleet credential variables.
+     * 
+     */
+    public List<FleetCredentialEntitySpecificsVariable> variables() {
+        return this.variables == null ? List.of() : this.variables;
     }
 
     public static Builder builder() {
@@ -59,14 +75,16 @@ public final class FleetCredentialEntitySpecifics {
     @CustomType.Builder
     public static final class Builder {
         private String credentialLevel;
-        private String resourceId;
-        private String target;
+        private @Nullable String resourceId;
+        private @Nullable String target;
+        private @Nullable List<FleetCredentialEntitySpecificsVariable> variables;
         public Builder() {}
         public Builder(FleetCredentialEntitySpecifics defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentialLevel = defaults.credentialLevel;
     	      this.resourceId = defaults.resourceId;
     	      this.target = defaults.target;
+    	      this.variables = defaults.variables;
         }
 
         @CustomType.Setter
@@ -78,26 +96,32 @@ public final class FleetCredentialEntitySpecifics {
             return this;
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            if (resourceId == null) {
-              throw new MissingRequiredPropertyException("FleetCredentialEntitySpecifics", "resourceId");
-            }
+        public Builder resourceId(@Nullable String resourceId) {
+
             this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder target(String target) {
-            if (target == null) {
-              throw new MissingRequiredPropertyException("FleetCredentialEntitySpecifics", "target");
-            }
+        public Builder target(@Nullable String target) {
+
             this.target = target;
             return this;
+        }
+        @CustomType.Setter
+        public Builder variables(@Nullable List<FleetCredentialEntitySpecificsVariable> variables) {
+
+            this.variables = variables;
+            return this;
+        }
+        public Builder variables(FleetCredentialEntitySpecificsVariable... variables) {
+            return variables(List.of(variables));
         }
         public FleetCredentialEntitySpecifics build() {
             final var _resultValue = new FleetCredentialEntitySpecifics();
             _resultValue.credentialLevel = credentialLevel;
             _resultValue.resourceId = resourceId;
             _resultValue.target = target;
+            _resultValue.variables = variables;
             return _resultValue;
         }
     }

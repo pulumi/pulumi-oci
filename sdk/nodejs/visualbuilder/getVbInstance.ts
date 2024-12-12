@@ -48,10 +48,6 @@ export interface GetVbInstanceResult {
      */
     readonly alternateCustomEndpoints: outputs.VisualBuilder.GetVbInstanceAlternateCustomEndpoint[];
     /**
-     * A list of associated attachments to other services
-     */
-    readonly attachments: outputs.VisualBuilder.GetVbInstanceAttachment[];
-    /**
      * Compartment Identifier.
      */
     readonly compartmentId: string;
@@ -79,10 +75,6 @@ export interface GetVbInstanceResult {
      * Unique identifier that is immutable on creation.
      */
     readonly id: string;
-    /**
-     * Information for IDCS access
-     */
-    readonly idcsInfos: outputs.VisualBuilder.GetVbInstanceIdcsInfo[];
     readonly idcsOpenId: string;
     /**
      * The Vb Instance URL.
@@ -100,6 +92,10 @@ export interface GetVbInstanceResult {
      * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      */
     readonly managementVcnId: string;
+    /**
+     * Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     */
+    readonly networkEndpointDetails: outputs.VisualBuilder.GetVbInstanceNetworkEndpointDetail[];
     /**
      * The number of Nodes
      */

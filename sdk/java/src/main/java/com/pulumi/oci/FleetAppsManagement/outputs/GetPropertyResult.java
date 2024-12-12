@@ -49,12 +49,12 @@ public final class GetPropertyResult {
      */
     private String resourceRegion;
     /**
-     * @return The scope of the property
+     * @return The scope of the property.
      * 
      */
     private String scope;
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     private String selection;
@@ -84,12 +84,12 @@ public final class GetPropertyResult {
      */
     private String type;
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     private String valueType;
     /**
-     * @return Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     private List<String> values;
@@ -148,14 +148,14 @@ public final class GetPropertyResult {
         return this.resourceRegion;
     }
     /**
-     * @return The scope of the property
+     * @return The scope of the property.
      * 
      */
     public String scope() {
         return this.scope;
     }
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     public String selection() {
@@ -197,14 +197,14 @@ public final class GetPropertyResult {
         return this.type;
     }
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     public String valueType() {
         return this.valueType;
     }
     /**
-     * @return Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     public List<String> values() {

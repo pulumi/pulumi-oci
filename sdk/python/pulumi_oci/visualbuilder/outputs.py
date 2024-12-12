@@ -17,22 +17,19 @@ from . import outputs
 
 __all__ = [
     'VbInstanceAlternateCustomEndpoint',
-    'VbInstanceAttachment',
     'VbInstanceCustomEndpoint',
-    'VbInstanceIdcsInfo',
+    'VbInstanceNetworkEndpointDetails',
     'GetVbInstanceAlternateCustomEndpointResult',
     'GetVbInstanceApplicationsApplicationSummaryCollectionResult',
     'GetVbInstanceApplicationsApplicationSummaryCollectionItemResult',
-    'GetVbInstanceAttachmentResult',
     'GetVbInstanceCustomEndpointResult',
-    'GetVbInstanceIdcsInfoResult',
+    'GetVbInstanceNetworkEndpointDetailResult',
     'GetVbInstancesFilterResult',
     'GetVbInstancesVbInstanceSummaryCollectionResult',
     'GetVbInstancesVbInstanceSummaryCollectionItemResult',
     'GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult',
-    'GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult',
     'GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult',
-    'GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult',
+    'GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailResult',
 ]
 
 @pulumi.output_type
@@ -97,104 +94,6 @@ class VbInstanceAlternateCustomEndpoint(dict):
 
 
 @pulumi.output_type
-class VbInstanceAttachment(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "isImplicit":
-            suggest = "is_implicit"
-        elif key == "targetId":
-            suggest = "target_id"
-        elif key == "targetInstanceUrl":
-            suggest = "target_instance_url"
-        elif key == "targetRole":
-            suggest = "target_role"
-        elif key == "targetServiceType":
-            suggest = "target_service_type"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in VbInstanceAttachment. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        VbInstanceAttachment.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        VbInstanceAttachment.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 is_implicit: Optional[bool] = None,
-                 target_id: Optional[str] = None,
-                 target_instance_url: Optional[str] = None,
-                 target_role: Optional[str] = None,
-                 target_service_type: Optional[str] = None):
-        """
-        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment. 
-               * `PARENT` - The target instance is the parent of this attachment.
-               * `CHILD` - The target instance is the child of this attachment.
-        :param str target_service_type: The type of the target instance, such as "FUSION".
-        """
-        if is_implicit is not None:
-            pulumi.set(__self__, "is_implicit", is_implicit)
-        if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
-        if target_instance_url is not None:
-            pulumi.set(__self__, "target_instance_url", target_instance_url)
-        if target_role is not None:
-            pulumi.set(__self__, "target_role", target_role)
-        if target_service_type is not None:
-            pulumi.set(__self__, "target_service_type", target_service_type)
-
-    @property
-    @pulumi.getter(name="isImplicit")
-    def is_implicit(self) -> Optional[bool]:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
-        return pulumi.get(self, "is_implicit")
-
-    @property
-    @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
-        return pulumi.get(self, "target_id")
-
-    @property
-    @pulumi.getter(name="targetInstanceUrl")
-    def target_instance_url(self) -> Optional[str]:
-        """
-        The dataplane instance URL of the attached instance
-        """
-        return pulumi.get(self, "target_instance_url")
-
-    @property
-    @pulumi.getter(name="targetRole")
-    def target_role(self) -> Optional[str]:
-        """
-        The role of the target attachment. 
-        * `PARENT` - The target instance is the parent of this attachment.
-        * `CHILD` - The target instance is the child of this attachment.
-        """
-        return pulumi.get(self, "target_role")
-
-    @property
-    @pulumi.getter(name="targetServiceType")
-    def target_service_type(self) -> Optional[str]:
-        """
-        The type of the target instance, such as "FUSION".
-        """
-        return pulumi.get(self, "target_service_type")
-
-
-@pulumi.output_type
 class VbInstanceCustomEndpoint(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -256,95 +155,79 @@ class VbInstanceCustomEndpoint(dict):
 
 
 @pulumi.output_type
-class VbInstanceIdcsInfo(dict):
+class VbInstanceNetworkEndpointDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "idcsAppDisplayName":
-            suggest = "idcs_app_display_name"
-        elif key == "idcsAppId":
-            suggest = "idcs_app_id"
-        elif key == "idcsAppLocationUrl":
-            suggest = "idcs_app_location_url"
-        elif key == "idcsAppName":
-            suggest = "idcs_app_name"
-        elif key == "instancePrimaryAudienceUrl":
-            suggest = "instance_primary_audience_url"
+        if key == "networkEndpointType":
+            suggest = "network_endpoint_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "networkSecurityGroupIds":
+            suggest = "network_security_group_ids"
+        elif key == "privateEndpointIp":
+            suggest = "private_endpoint_ip"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in VbInstanceIdcsInfo. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in VbInstanceNetworkEndpointDetails. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        VbInstanceIdcsInfo.__key_warning(key)
+        VbInstanceNetworkEndpointDetails.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        VbInstanceIdcsInfo.__key_warning(key)
+        VbInstanceNetworkEndpointDetails.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 idcs_app_display_name: Optional[str] = None,
-                 idcs_app_id: Optional[str] = None,
-                 idcs_app_location_url: Optional[str] = None,
-                 idcs_app_name: Optional[str] = None,
-                 instance_primary_audience_url: Optional[str] = None):
+                 network_endpoint_type: str,
+                 subnet_id: str,
+                 network_security_group_ids: Optional[Sequence[str]] = None,
+                 private_endpoint_ip: Optional[str] = None):
         """
-        :param str idcs_app_display_name: The IDCS application display name associated with the instance
-        :param str idcs_app_id: The IDCS application ID associated with the instance
-        :param str idcs_app_location_url: URL for the location of the IDCS Application (used by IDCS APIs)
-        :param str idcs_app_name: The IDCS application name associated with the instance
-        :param str instance_primary_audience_url: The URL used as the primary audience for visual builder flows in this instance type: string
+        :param str network_endpoint_type: (Updatable) The type of network endpoint.
+        :param str subnet_id: (Updatable) The subnet OCID for the private endpoint.
+        :param Sequence[str] network_security_group_ids: (Updatable) Network Security Group OCIDs for the Private Endpoint.
+        :param str private_endpoint_ip: The IP address to be assigned to Private Endpoint
         """
-        if idcs_app_display_name is not None:
-            pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
-        if idcs_app_id is not None:
-            pulumi.set(__self__, "idcs_app_id", idcs_app_id)
-        if idcs_app_location_url is not None:
-            pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
-        if idcs_app_name is not None:
-            pulumi.set(__self__, "idcs_app_name", idcs_app_name)
-        if instance_primary_audience_url is not None:
-            pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if network_security_group_ids is not None:
+            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if private_endpoint_ip is not None:
+            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
 
     @property
-    @pulumi.getter(name="idcsAppDisplayName")
-    def idcs_app_display_name(self) -> Optional[str]:
+    @pulumi.getter(name="networkEndpointType")
+    def network_endpoint_type(self) -> str:
         """
-        The IDCS application display name associated with the instance
+        (Updatable) The type of network endpoint.
         """
-        return pulumi.get(self, "idcs_app_display_name")
+        return pulumi.get(self, "network_endpoint_type")
 
     @property
-    @pulumi.getter(name="idcsAppId")
-    def idcs_app_id(self) -> Optional[str]:
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
         """
-        The IDCS application ID associated with the instance
+        (Updatable) The subnet OCID for the private endpoint.
         """
-        return pulumi.get(self, "idcs_app_id")
+        return pulumi.get(self, "subnet_id")
 
     @property
-    @pulumi.getter(name="idcsAppLocationUrl")
-    def idcs_app_location_url(self) -> Optional[str]:
+    @pulumi.getter(name="networkSecurityGroupIds")
+    def network_security_group_ids(self) -> Optional[Sequence[str]]:
         """
-        URL for the location of the IDCS Application (used by IDCS APIs)
+        (Updatable) Network Security Group OCIDs for the Private Endpoint.
         """
-        return pulumi.get(self, "idcs_app_location_url")
+        return pulumi.get(self, "network_security_group_ids")
 
     @property
-    @pulumi.getter(name="idcsAppName")
-    def idcs_app_name(self) -> Optional[str]:
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> Optional[str]:
         """
-        The IDCS application name associated with the instance
+        The IP address to be assigned to Private Endpoint
         """
-        return pulumi.get(self, "idcs_app_name")
-
-    @property
-    @pulumi.getter(name="instancePrimaryAudienceUrl")
-    def instance_primary_audience_url(self) -> Optional[str]:
-        """
-        The URL used as the primary audience for visual builder flows in this instance type: string
-        """
-        return pulumi.get(self, "instance_primary_audience_url")
+        return pulumi.get(self, "private_endpoint_ip")
 
 
 @pulumi.output_type
@@ -451,74 +334,6 @@ class GetVbInstanceApplicationsApplicationSummaryCollectionItemResult(dict):
 
 
 @pulumi.output_type
-class GetVbInstanceAttachmentResult(dict):
-    def __init__(__self__, *,
-                 is_implicit: bool,
-                 target_id: str,
-                 target_instance_url: str,
-                 target_role: str,
-                 target_service_type: str):
-        """
-        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment. 
-               * `PARENT` - The target instance is the parent of this attachment.
-               * `CHILD` - The target instance is the child of this attachment.
-        :param str target_service_type: The type of the target instance, such as "FUSION".
-        """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
-
-    @property
-    @pulumi.getter(name="isImplicit")
-    def is_implicit(self) -> bool:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
-        return pulumi.get(self, "is_implicit")
-
-    @property
-    @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
-        return pulumi.get(self, "target_id")
-
-    @property
-    @pulumi.getter(name="targetInstanceUrl")
-    def target_instance_url(self) -> str:
-        """
-        The dataplane instance URL of the attached instance
-        """
-        return pulumi.get(self, "target_instance_url")
-
-    @property
-    @pulumi.getter(name="targetRole")
-    def target_role(self) -> str:
-        """
-        The role of the target attachment. 
-        * `PARENT` - The target instance is the parent of this attachment.
-        * `CHILD` - The target instance is the child of this attachment.
-        """
-        return pulumi.get(self, "target_role")
-
-    @property
-    @pulumi.getter(name="targetServiceType")
-    def target_service_type(self) -> str:
-        """
-        The type of the target instance, such as "FUSION".
-        """
-        return pulumi.get(self, "target_service_type")
-
-
-@pulumi.output_type
 class GetVbInstanceCustomEndpointResult(dict):
     def __init__(__self__, *,
                  certificate_secret_id: str,
@@ -559,65 +374,54 @@ class GetVbInstanceCustomEndpointResult(dict):
 
 
 @pulumi.output_type
-class GetVbInstanceIdcsInfoResult(dict):
+class GetVbInstanceNetworkEndpointDetailResult(dict):
     def __init__(__self__, *,
-                 idcs_app_display_name: str,
-                 idcs_app_id: str,
-                 idcs_app_location_url: str,
-                 idcs_app_name: str,
-                 instance_primary_audience_url: str):
+                 network_endpoint_type: str,
+                 network_security_group_ids: Sequence[str],
+                 private_endpoint_ip: str,
+                 subnet_id: str):
         """
-        :param str idcs_app_display_name: The IDCS application display name associated with the instance
-        :param str idcs_app_id: The IDCS application ID associated with the instance
-        :param str idcs_app_location_url: URL for the location of the IDCS Application (used by IDCS APIs)
-        :param str idcs_app_name: The IDCS application name associated with the instance
-        :param str instance_primary_audience_url: The URL used as the primary audience for visual builder flows in this instance type: string
+        :param str network_endpoint_type: The type of network endpoint.
+        :param Sequence[str] network_security_group_ids: Network Security Group OCIDs for the Private Endpoint.
+        :param str private_endpoint_ip: The IP address to be assigned to Private Endpoint
+        :param str subnet_id: The subnet OCID for the private endpoint.
         """
-        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
-        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
-        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
-        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
-        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
-    @pulumi.getter(name="idcsAppDisplayName")
-    def idcs_app_display_name(self) -> str:
+    @pulumi.getter(name="networkEndpointType")
+    def network_endpoint_type(self) -> str:
         """
-        The IDCS application display name associated with the instance
+        The type of network endpoint.
         """
-        return pulumi.get(self, "idcs_app_display_name")
+        return pulumi.get(self, "network_endpoint_type")
 
     @property
-    @pulumi.getter(name="idcsAppId")
-    def idcs_app_id(self) -> str:
+    @pulumi.getter(name="networkSecurityGroupIds")
+    def network_security_group_ids(self) -> Sequence[str]:
         """
-        The IDCS application ID associated with the instance
+        Network Security Group OCIDs for the Private Endpoint.
         """
-        return pulumi.get(self, "idcs_app_id")
+        return pulumi.get(self, "network_security_group_ids")
 
     @property
-    @pulumi.getter(name="idcsAppLocationUrl")
-    def idcs_app_location_url(self) -> str:
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> str:
         """
-        URL for the location of the IDCS Application (used by IDCS APIs)
+        The IP address to be assigned to Private Endpoint
         """
-        return pulumi.get(self, "idcs_app_location_url")
+        return pulumi.get(self, "private_endpoint_ip")
 
     @property
-    @pulumi.getter(name="idcsAppName")
-    def idcs_app_name(self) -> str:
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
         """
-        The IDCS application name associated with the instance
+        The subnet OCID for the private endpoint.
         """
-        return pulumi.get(self, "idcs_app_name")
-
-    @property
-    @pulumi.getter(name="instancePrimaryAudienceUrl")
-    def instance_primary_audience_url(self) -> str:
-        """
-        The URL used as the primary audience for visual builder flows in this instance type: string
-        """
-        return pulumi.get(self, "instance_primary_audience_url")
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -663,7 +467,6 @@ class GetVbInstancesVbInstanceSummaryCollectionResult(dict):
 class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  alternate_custom_endpoints: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult'],
-                 attachments: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult'],
                  compartment_id: str,
                  consumption_model: str,
                  custom_endpoints: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult'],
@@ -671,12 +474,12 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
-                 idcs_infos: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult'],
                  idcs_open_id: str,
                  instance_url: str,
                  is_visual_builder_enabled: bool,
                  management_nat_gateway_ip: str,
                  management_vcn_id: str,
+                 network_endpoint_details: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailResult'],
                  node_count: int,
                  service_nat_gateway_ip: str,
                  service_vcn_id: str,
@@ -687,7 +490,6 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
                  time_updated: str):
         """
         :param Sequence['GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs'] alternate_custom_endpoints: A list of alternate custom endpoints used for the vb instance URL.
-        :param Sequence['GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs'] attachments: A list of associated attachments to other services
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str consumption_model: The entitlement used for billing purposes.
         :param Sequence['GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs'] custom_endpoints: Details for a custom endpoint for the vb instance.
@@ -695,11 +497,11 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable on creation.
-        :param Sequence['GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs'] idcs_infos: Information for IDCS access
         :param str instance_url: The Vb Instance URL.
         :param bool is_visual_builder_enabled: Visual Builder is enabled or not.
         :param str management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
         :param str management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+        :param Sequence['GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         :param int node_count: The number of Nodes
         :param str service_nat_gateway_ip: The NAT gateway IP address for the VB service VCN
         :param str service_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder service VCN
@@ -710,7 +512,6 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
         :param str time_updated: The time the VbInstance was updated. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
-        pulumi.set(__self__, "attachments", attachments)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "consumption_model", consumption_model)
         pulumi.set(__self__, "custom_endpoints", custom_endpoints)
@@ -718,12 +519,12 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_infos", idcs_infos)
         pulumi.set(__self__, "idcs_open_id", idcs_open_id)
         pulumi.set(__self__, "instance_url", instance_url)
         pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
         pulumi.set(__self__, "management_nat_gateway_ip", management_nat_gateway_ip)
         pulumi.set(__self__, "management_vcn_id", management_vcn_id)
+        pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "service_nat_gateway_ip", service_nat_gateway_ip)
         pulumi.set(__self__, "service_vcn_id", service_vcn_id)
@@ -740,14 +541,6 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
         A list of alternate custom endpoints used for the vb instance URL.
         """
         return pulumi.get(self, "alternate_custom_endpoints")
-
-    @property
-    @pulumi.getter
-    def attachments(self) -> Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult']:
-        """
-        A list of associated attachments to other services
-        """
-        return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -806,14 +599,6 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
-    @pulumi.getter(name="idcsInfos")
-    def idcs_infos(self) -> Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult']:
-        """
-        Information for IDCS access
-        """
-        return pulumi.get(self, "idcs_infos")
-
-    @property
     @pulumi.getter(name="idcsOpenId")
     def idcs_open_id(self) -> str:
         return pulumi.get(self, "idcs_open_id")
@@ -849,6 +634,14 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
         The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         """
         return pulumi.get(self, "management_vcn_id")
+
+    @property
+    @pulumi.getter(name="networkEndpointDetails")
+    def network_endpoint_details(self) -> Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailResult']:
+        """
+        Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        """
+        return pulumi.get(self, "network_endpoint_details")
 
     @property
     @pulumi.getter(name="nodeCount")
@@ -956,74 +749,6 @@ class GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult
 
 
 @pulumi.output_type
-class GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult(dict):
-    def __init__(__self__, *,
-                 is_implicit: bool,
-                 target_id: str,
-                 target_instance_url: str,
-                 target_role: str,
-                 target_service_type: str):
-        """
-        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment. 
-               * `PARENT` - The target instance is the parent of this attachment.
-               * `CHILD` - The target instance is the child of this attachment.
-        :param str target_service_type: The type of the target instance, such as "FUSION".
-        """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
-
-    @property
-    @pulumi.getter(name="isImplicit")
-    def is_implicit(self) -> bool:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
-        return pulumi.get(self, "is_implicit")
-
-    @property
-    @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
-        return pulumi.get(self, "target_id")
-
-    @property
-    @pulumi.getter(name="targetInstanceUrl")
-    def target_instance_url(self) -> str:
-        """
-        The dataplane instance URL of the attached instance
-        """
-        return pulumi.get(self, "target_instance_url")
-
-    @property
-    @pulumi.getter(name="targetRole")
-    def target_role(self) -> str:
-        """
-        The role of the target attachment. 
-        * `PARENT` - The target instance is the parent of this attachment.
-        * `CHILD` - The target instance is the child of this attachment.
-        """
-        return pulumi.get(self, "target_role")
-
-    @property
-    @pulumi.getter(name="targetServiceType")
-    def target_service_type(self) -> str:
-        """
-        The type of the target instance, such as "FUSION".
-        """
-        return pulumi.get(self, "target_service_type")
-
-
-@pulumi.output_type
 class GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult(dict):
     def __init__(__self__, *,
                  certificate_secret_id: str,
@@ -1064,64 +789,53 @@ class GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult(dict):
 
 
 @pulumi.output_type
-class GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult(dict):
+class GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailResult(dict):
     def __init__(__self__, *,
-                 idcs_app_display_name: str,
-                 idcs_app_id: str,
-                 idcs_app_location_url: str,
-                 idcs_app_name: str,
-                 instance_primary_audience_url: str):
+                 network_endpoint_type: str,
+                 network_security_group_ids: Sequence[str],
+                 private_endpoint_ip: str,
+                 subnet_id: str):
         """
-        :param str idcs_app_display_name: The IDCS application display name associated with the instance
-        :param str idcs_app_id: The IDCS application ID associated with the instance
-        :param str idcs_app_location_url: URL for the location of the IDCS Application (used by IDCS APIs)
-        :param str idcs_app_name: The IDCS application name associated with the instance
-        :param str instance_primary_audience_url: The URL used as the primary audience for visual builder flows in this instance type: string
+        :param str network_endpoint_type: The type of network endpoint.
+        :param Sequence[str] network_security_group_ids: Network Security Group OCIDs for the Private Endpoint.
+        :param str private_endpoint_ip: The IP address to be assigned to Private Endpoint
+        :param str subnet_id: The subnet OCID for the private endpoint.
         """
-        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
-        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
-        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
-        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
-        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
-    @pulumi.getter(name="idcsAppDisplayName")
-    def idcs_app_display_name(self) -> str:
+    @pulumi.getter(name="networkEndpointType")
+    def network_endpoint_type(self) -> str:
         """
-        The IDCS application display name associated with the instance
+        The type of network endpoint.
         """
-        return pulumi.get(self, "idcs_app_display_name")
+        return pulumi.get(self, "network_endpoint_type")
 
     @property
-    @pulumi.getter(name="idcsAppId")
-    def idcs_app_id(self) -> str:
+    @pulumi.getter(name="networkSecurityGroupIds")
+    def network_security_group_ids(self) -> Sequence[str]:
         """
-        The IDCS application ID associated with the instance
+        Network Security Group OCIDs for the Private Endpoint.
         """
-        return pulumi.get(self, "idcs_app_id")
+        return pulumi.get(self, "network_security_group_ids")
 
     @property
-    @pulumi.getter(name="idcsAppLocationUrl")
-    def idcs_app_location_url(self) -> str:
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> str:
         """
-        URL for the location of the IDCS Application (used by IDCS APIs)
+        The IP address to be assigned to Private Endpoint
         """
-        return pulumi.get(self, "idcs_app_location_url")
+        return pulumi.get(self, "private_endpoint_ip")
 
     @property
-    @pulumi.getter(name="idcsAppName")
-    def idcs_app_name(self) -> str:
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
         """
-        The IDCS application name associated with the instance
+        The subnet OCID for the private endpoint.
         """
-        return pulumi.get(self, "idcs_app_name")
-
-    @property
-    @pulumi.getter(name="instancePrimaryAudienceUrl")
-    def instance_primary_audience_url(self) -> str:
-        """
-        The URL used as the primary audience for visual builder flows in this instance type: string
-        """
-        return pulumi.get(self, "instance_primary_audience_url")
+        return pulumi.get(self, "subnet_id")
 
 

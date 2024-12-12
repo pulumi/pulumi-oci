@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
 import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestPlainArgs;
@@ -190,6 +191,50 @@ public final class VnMonitoringFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPathAnalyzerTestResult> getPathAnalyzerTest(GetPathAnalyzerTestArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest", TypeShape.of(GetPathAnalyzerTestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
+     * 
+     * Gets a `PathAnalyzerTest` using its identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
+     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPathAnalyzerTestResult> getPathAnalyzerTestPlain(GetPathAnalyzerTestPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest", TypeShape.of(GetPathAnalyzerTestResult.class), args, Utilities.withVersion(options));
     }
@@ -329,6 +374,52 @@ public final class VnMonitoringFunctions {
      * 
      */
     public static Output<GetPathAnalyzerTestsResult> getPathAnalyzerTests(GetPathAnalyzerTestsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", TypeShape.of(GetPathAnalyzerTestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Path Analyzer Tests in Oracle Cloud Infrastructure Vn Monitoring service.
+     * 
+     * Returns a list of all `PathAnalyzerTests` in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
+     * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPathAnalyzerTests = VnMonitoringFunctions.GetPathAnalyzerTests(GetPathAnalyzerTestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(pathAnalyzerTestDisplayName)
+     *             .state(pathAnalyzerTestState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPathAnalyzerTestsResult> getPathAnalyzerTests(GetPathAnalyzerTestsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", TypeShape.of(GetPathAnalyzerTestsResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchPlainArgs;
@@ -244,6 +245,50 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceResult> getWorkspace(GetWorkspaceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspace:getWorkspace", TypeShape.of(GetWorkspaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a Data Integration workspace using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceResult> getWorkspacePlain(GetWorkspacePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspace:getWorkspace", TypeShape.of(GetWorkspaceResult.class), args, Utilities.withVersion(options));
     }
@@ -380,6 +425,51 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspaceApplicationResult> getWorkspaceApplication(GetWorkspaceApplicationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication", TypeShape.of(GetWorkspaceApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
+     *             .applicationKey(workspaceApplicationApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceApplicationResult> getWorkspaceApplication(GetWorkspaceApplicationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication", TypeShape.of(GetWorkspaceApplicationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -563,6 +653,52 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationPatch:getWorkspaceApplicationPatch", TypeShape.of(GetWorkspaceApplicationPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a patch in an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .patchKey(workspaceApplicationPatchPatchKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationPatch:getWorkspaceApplicationPatch", TypeShape.of(GetWorkspaceApplicationPatchResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -800,6 +936,54 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", TypeShape.of(GetWorkspaceApplicationPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Application Patches in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationPatchFields)
+     *             .identifiers(workspaceApplicationPatchIdentifier)
+     *             .name(workspaceApplicationPatchName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatchesPlain(GetWorkspaceApplicationPatchesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", TypeShape.of(GetWorkspaceApplicationPatchesResult.class), args, Utilities.withVersion(options));
     }
@@ -939,6 +1123,52 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspaceApplicationScheduleResult> getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationSchedule:getWorkspaceApplicationSchedule", TypeShape.of(GetWorkspaceApplicationScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Schedule resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves schedule by schedule key
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceApplicationScheduleResult> getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationSchedule:getWorkspaceApplicationSchedule", TypeShape.of(GetWorkspaceApplicationScheduleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1180,6 +1410,55 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceApplicationSchedulesResult> getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationSchedules:getWorkspaceApplicationSchedules", TypeShape.of(GetWorkspaceApplicationSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Application Schedules in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Use this endpoint to list schedules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationScheduleIdentifier)
+     *             .keys(workspaceApplicationScheduleKey)
+     *             .name(workspaceApplicationScheduleName)
+     *             .types(workspaceApplicationScheduleType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceApplicationSchedulesResult> getWorkspaceApplicationSchedulesPlain(GetWorkspaceApplicationSchedulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplicationSchedules:getWorkspaceApplicationSchedules", TypeShape.of(GetWorkspaceApplicationSchedulesResult.class), args, Utilities.withVersion(options));
     }
@@ -1319,6 +1598,52 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspaceApplicationTaskScheduleResult> getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule", TypeShape.of(GetWorkspaceApplicationTaskScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Endpoint used to get taskSchedule by its key
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceApplicationTaskScheduleResult> getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule", TypeShape.of(GetWorkspaceApplicationTaskScheduleResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1564,6 +1889,56 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceApplicationTaskSchedulesResult> getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules", TypeShape.of(GetWorkspaceApplicationTaskSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Application Task Schedules in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * This endpoint can be used to get the list of all the TaskSchedule objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
+     *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
+     *             .keys(workspaceApplicationTaskScheduleKey)
+     *             .name(workspaceApplicationTaskScheduleName)
+     *             .types(workspaceApplicationTaskScheduleType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceApplicationTaskSchedulesResult> getWorkspaceApplicationTaskSchedulesPlain(GetWorkspaceApplicationTaskSchedulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules", TypeShape.of(GetWorkspaceApplicationTaskSchedulesResult.class), args, Utilities.withVersion(options));
     }
@@ -1756,6 +2131,54 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceApplicationsResult> getWorkspaceApplications(GetWorkspaceApplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", TypeShape.of(GetWorkspaceApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of applications and provides options to filter the list.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationFields)
+     *             .identifiers(workspaceApplicationIdentifier)
+     *             .name(workspaceApplicationName)
+     *             .nameContains(workspaceApplicationNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceApplicationsResult> getWorkspaceApplicationsPlain(GetWorkspaceApplicationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", TypeShape.of(GetWorkspaceApplicationsResult.class), args, Utilities.withVersion(options));
     }
@@ -1892,6 +2315,51 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspaceExportRequestResult> getWorkspaceExportRequest(GetWorkspaceExportRequestArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceExportRequest:getWorkspaceExportRequest", TypeShape.of(GetWorkspaceExportRequestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * This endpoint can be used to get the summary/details of object being exported.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
+     *             .exportRequestKey(workspaceExportRequestExportRequestKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceExportRequestResult> getWorkspaceExportRequest(GetWorkspaceExportRequestArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceExportRequest:getWorkspaceExportRequest", TypeShape.of(GetWorkspaceExportRequestResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2132,6 +2600,55 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceExportRequestsResult> getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceExportRequests:getWorkspaceExportRequests", TypeShape.of(GetWorkspaceExportRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Export Requests in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * This endpoint can be used to get the list of export object requests.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
+     *             .workspaceId(testWorkspace.id())
+     *             .exportStatus(workspaceExportRequestExportStatus)
+     *             .name(workspaceExportRequestName)
+     *             .projection(workspaceExportRequestProjection)
+     *             .timeEndedInMillis(workspaceExportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceExportRequestTimeStartedInMillis)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceExportRequestsResult> getWorkspaceExportRequestsPlain(GetWorkspaceExportRequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceExportRequests:getWorkspaceExportRequests", TypeShape.of(GetWorkspaceExportRequestsResult.class), args, Utilities.withVersion(options));
     }
@@ -2268,6 +2785,51 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspaceFolderResult> getWorkspaceFolder(GetWorkspaceFolderArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", TypeShape.of(GetWorkspaceFolderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a folder using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFolderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
+     *             .folderKey(workspaceFolderFolderKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceFolderResult> getWorkspaceFolder(GetWorkspaceFolderArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", TypeShape.of(GetWorkspaceFolderResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2508,6 +3070,55 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceFoldersResult> getWorkspaceFolders(GetWorkspaceFoldersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders", TypeShape.of(GetWorkspaceFoldersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Folders in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of folders in a project and provides options to filter the list.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFoldersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
+     *             .workspaceId(testWorkspace.id())
+     *             .aggregatorKey(workspaceFolderAggregatorKey)
+     *             .fields(workspaceFolderFields)
+     *             .identifiers(workspaceFolderIdentifier)
+     *             .name(workspaceFolderName)
+     *             .nameContains(workspaceFolderNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceFoldersResult> getWorkspaceFoldersPlain(GetWorkspaceFoldersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders", TypeShape.of(GetWorkspaceFoldersResult.class), args, Utilities.withVersion(options));
     }
@@ -2644,6 +3255,51 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspaceImportRequestResult> getWorkspaceImportRequest(GetWorkspaceImportRequestArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceImportRequest:getWorkspaceImportRequest", TypeShape.of(GetWorkspaceImportRequestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * This endpoint can be used to get the summary/details of object being imported.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
+     *             .importRequestKey(workspaceImportRequestImportRequestKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceImportRequestResult> getWorkspaceImportRequest(GetWorkspaceImportRequestArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceImportRequest:getWorkspaceImportRequest", TypeShape.of(GetWorkspaceImportRequestResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2884,6 +3540,55 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceImportRequestsResult> getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", TypeShape.of(GetWorkspaceImportRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Import Requests in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * This endpoint can be used to get the list of import object requests.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
+     *             .workspaceId(testWorkspace.id())
+     *             .importStatus(workspaceImportRequestImportStatus)
+     *             .name(workspaceImportRequestName)
+     *             .projection(workspaceImportRequestProjection)
+     *             .timeEndedInMillis(workspaceImportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceImportRequestTimeStartedInMillis)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceImportRequestsResult> getWorkspaceImportRequestsPlain(GetWorkspaceImportRequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", TypeShape.of(GetWorkspaceImportRequestsResult.class), args, Utilities.withVersion(options));
     }
@@ -3020,6 +3725,51 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspaceProjectResult> getWorkspaceProject(GetWorkspaceProjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceProject:getWorkspaceProject", TypeShape.of(GetWorkspaceProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a project using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
+     *             .projectKey(workspaceProjectProjectKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceProjectResult> getWorkspaceProject(GetWorkspaceProjectArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceProject:getWorkspaceProject", TypeShape.of(GetWorkspaceProjectResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3256,6 +4006,54 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceProjectsResult> getWorkspaceProjects(GetWorkspaceProjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects", TypeShape.of(GetWorkspaceProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Projects in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a lists of projects in a workspace and provides options to filter the list.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceProjectFields)
+     *             .identifiers(workspaceProjectIdentifier)
+     *             .name(workspaceProjectName)
+     *             .nameContains(workspaceProjectNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceProjectsResult> getWorkspaceProjectsPlain(GetWorkspaceProjectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects", TypeShape.of(GetWorkspaceProjectsResult.class), args, Utilities.withVersion(options));
     }
@@ -3395,6 +4193,52 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspaceTaskResult> getWorkspaceTask(GetWorkspaceTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", TypeShape.of(GetWorkspaceTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a task using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
+     *             .taskKey(workspaceTaskTaskKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .expandReferences(workspaceTaskExpandReferences)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceTaskResult> getWorkspaceTask(GetWorkspaceTaskArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", TypeShape.of(GetWorkspaceTaskResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3640,6 +4484,56 @@ public final class DataIntegrationFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWorkspaceTasksResult> getWorkspaceTasks(GetWorkspaceTasksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks", TypeShape.of(GetWorkspaceTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Tasks in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of all tasks in a specified project or folder.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceTaskFields)
+     *             .folderId(testFolder.id())
+     *             .identifiers(workspaceTaskIdentifier)
+     *             .keys(workspaceTaskKey)
+     *             .name(workspaceTaskName)
+     *             .types(workspaceTaskType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWorkspaceTasksResult> getWorkspaceTasksPlain(GetWorkspaceTasksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks", TypeShape.of(GetWorkspaceTasksResult.class), args, Utilities.withVersion(options));
     }
@@ -3779,6 +4673,52 @@ public final class DataIntegrationFunctions {
      * 
      */
     public static Output<GetWorkspacesResult> getWorkspaces(GetWorkspacesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaces:getWorkspaces", TypeShape.of(GetWorkspacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of Data Integration workspaces.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaces = DataIntegrationFunctions.getWorkspaces(GetWorkspacesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(workspaceName)
+     *             .state(workspaceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspacesResult> getWorkspaces(GetWorkspacesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaces:getWorkspaces", TypeShape.of(GetWorkspacesResult.class), args, Utilities.withVersion(options));
     }
     /**

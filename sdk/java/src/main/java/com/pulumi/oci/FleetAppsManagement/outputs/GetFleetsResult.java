@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetFleetsResult {
     /**
-     * @return Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * @return Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     private @Nullable String applicationType;
     /**
-     * @return Please provide the root compartmentId (TenancyId).
+     * @return Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     private @Nullable String compartmentId;
@@ -31,7 +31,7 @@ public final class GetFleetsResult {
      */
     private @Nullable String displayName;
     /**
-     * @return Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * @return Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     private @Nullable String environmentType;
@@ -42,7 +42,7 @@ public final class GetFleetsResult {
      */
     private List<GetFleetsFleetCollection> fleetCollections;
     /**
-     * @return Type of the Fleet.
+     * @return Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      * 
      */
     private @Nullable String fleetType;
@@ -60,14 +60,14 @@ public final class GetFleetsResult {
 
     private GetFleetsResult() {}
     /**
-     * @return Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * @return Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public Optional<String> applicationType() {
         return Optional.ofNullable(this.applicationType);
     }
     /**
-     * @return Please provide the root compartmentId (TenancyId).
+     * @return Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     public Optional<String> compartmentId() {
@@ -81,7 +81,7 @@ public final class GetFleetsResult {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * @return Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public Optional<String> environmentType() {
@@ -98,7 +98,7 @@ public final class GetFleetsResult {
         return this.fleetCollections;
     }
     /**
-     * @return Type of the Fleet.
+     * @return Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      * 
      */
     public Optional<String> fleetType() {

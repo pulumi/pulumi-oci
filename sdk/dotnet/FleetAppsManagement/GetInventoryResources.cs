@@ -86,7 +86,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetInventoryResourcesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private List<string>? _definedTagEquals;
 
         /// <summary>
-        /// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND". Example: Identification.Development=Yes
         /// </summary>
         public List<string> DefinedTagEquals
         {
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private List<string>? _inventoryProperties;
 
         /// <summary>
-        /// A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}".
+        /// A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example: Instance.displayName=TEST_INSTANCE
         /// </summary>
         public List<string> InventoryProperties
         {
@@ -142,13 +142,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties"
+        /// Fetch resources matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties". Example: matchingCriteria=ANY
         /// </summary>
         [Input("matchingCriteria")]
         public string? MatchingCriteria { get; set; }
 
         /// <summary>
-        /// Resource Compartment ID
+        /// A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
         /// </summary>
         [Input("resourceCompartmentId", required: true)]
         public string ResourceCompartmentId { get; set; } = null!;
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetInventoryResourcesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _definedTagEquals;
 
         /// <summary>
-        /// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND". Example: Identification.Development=Yes
         /// </summary>
         public InputList<string> DefinedTagEquals
         {
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _inventoryProperties;
 
         /// <summary>
-        /// A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}".
+        /// A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example: Instance.displayName=TEST_INSTANCE
         /// </summary>
         public InputList<string> InventoryProperties
         {
@@ -230,13 +230,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties"
+        /// Fetch resources matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties". Example: matchingCriteria=ANY
         /// </summary>
         [Input("matchingCriteria")]
         public Input<string>? MatchingCriteria { get; set; }
 
         /// <summary>
-        /// Resource Compartment ID
+        /// A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
         /// </summary>
         [Input("resourceCompartmentId", required: true)]
         public Input<string> ResourceCompartmentId { get; set; } = null!;
@@ -285,11 +285,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         public readonly ImmutableArray<Outputs.GetInventoryResourcesInventoryResourceCollectionResult> InventoryResourceCollections;
         public readonly string? MatchingCriteria;
         /// <summary>
-        /// Compartment Id of the resource
+        /// Compartment Id of the resource.
         /// </summary>
         public readonly string ResourceCompartmentId;
         /// <summary>
-        /// Region the resource belongs to
+        /// The region the resource belongs to.
         /// </summary>
         public readonly string? ResourceRegion;
         /// <summary>

@@ -57,6 +57,7 @@ import * as utilities from "../utilities";
  *     standbySize: desktopPoolStandbySize,
  *     storageBackupPolicyId: "ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
  *     storageSizeInGbs: desktopPoolStorageSizeInGbs,
+ *     areVolumesPreserved: desktopPoolAreVolumesPreserved,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -136,11 +137,19 @@ export class DesktopPool extends pulumi.CustomResource {
      */
     public readonly arePrivilegedUsers!: pulumi.Output<boolean>;
     /**
+     * (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly areVolumesPreserved!: pulumi.Output<boolean | undefined>;
+    /**
      * The availability domain of the desktop pool.
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
-     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
      */
     public readonly availabilityPolicy!: pulumi.Output<outputs.Desktops.DesktopPoolAvailabilityPolicy>;
     /**
@@ -237,10 +246,6 @@ export class DesktopPool extends pulumi.CustomResource {
     public readonly timeStopScheduled!: pulumi.Output<string | undefined>;
     /**
      * Indicates whether the desktop pool uses dedicated virtual machine hosts.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly useDedicatedVmHost!: pulumi.Output<string>;
 
@@ -259,6 +264,7 @@ export class DesktopPool extends pulumi.CustomResource {
             const state = argsOrState as DesktopPoolState | undefined;
             resourceInputs["activeDesktops"] = state ? state.activeDesktops : undefined;
             resourceInputs["arePrivilegedUsers"] = state ? state.arePrivilegedUsers : undefined;
+            resourceInputs["areVolumesPreserved"] = state ? state.areVolumesPreserved : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["availabilityPolicy"] = state ? state.availabilityPolicy : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -333,6 +339,7 @@ export class DesktopPool extends pulumi.CustomResource {
                 throw new Error("Missing required property 'storageSizeInGbs'");
             }
             resourceInputs["arePrivilegedUsers"] = args ? args.arePrivilegedUsers : undefined;
+            resourceInputs["areVolumesPreserved"] = args ? args.areVolumesPreserved : undefined;
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["availabilityPolicy"] = args ? args.availabilityPolicy : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
@@ -379,11 +386,19 @@ export interface DesktopPoolState {
      */
     arePrivilegedUsers?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    areVolumesPreserved?: pulumi.Input<boolean>;
+    /**
      * The availability domain of the desktop pool.
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
      */
     availabilityPolicy?: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicy>;
     /**
@@ -480,10 +495,6 @@ export interface DesktopPoolState {
     timeStopScheduled?: pulumi.Input<string>;
     /**
      * Indicates whether the desktop pool uses dedicated virtual machine hosts.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     useDedicatedVmHost?: pulumi.Input<string>;
 }
@@ -497,11 +508,19 @@ export interface DesktopPoolArgs {
      */
     arePrivilegedUsers: pulumi.Input<boolean>;
     /**
+     * (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    areVolumesPreserved?: pulumi.Input<boolean>;
+    /**
      * The availability domain of the desktop pool.
      */
     availabilityDomain: pulumi.Input<string>;
     /**
-     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
      */
     availabilityPolicy: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicy>;
     /**
@@ -590,10 +609,6 @@ export interface DesktopPoolArgs {
     timeStopScheduled?: pulumi.Input<string>;
     /**
      * Indicates whether the desktop pool uses dedicated virtual machine hosts.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     useDedicatedVmHost?: pulumi.Input<string>;
 }

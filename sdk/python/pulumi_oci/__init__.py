@@ -3654,6 +3654,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FleetAppsManagement/compliancePolicyRule",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule": "CompliancePolicyRule"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "FleetAppsManagement/fleet",
   "fqn": "pulumi_oci.fleetappsmanagement",
   "classes": {
@@ -3702,6 +3710,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FleetAppsManagement/patch",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/patch:Patch": "Patch"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/platformConfiguration",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/platformConfiguration:PlatformConfiguration": "PlatformConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "FleetAppsManagement/property",
   "fqn": "pulumi_oci.fleetappsmanagement",
   "classes": {
@@ -3710,10 +3734,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FleetAppsManagement/runbook",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/runbook:Runbook": "Runbook"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "FleetAppsManagement/schedulerDefinition",
   "fqn": "pulumi_oci.fleetappsmanagement",
   "classes": {
    "oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition": "SchedulerDefinition"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/taskRecord",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/taskRecord:TaskRecord": "TaskRecord"
   }
  },
  {

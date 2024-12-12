@@ -41,6 +41,7 @@ public final class GetMaintenanceWindowsResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable String timeScheduleStartGreaterThanOrEqualTo;
 
     private GetMaintenanceWindowsResult() {}
     /**
@@ -81,6 +82,9 @@ public final class GetMaintenanceWindowsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> timeScheduleStartGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeScheduleStartGreaterThanOrEqualTo);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -97,6 +101,7 @@ public final class GetMaintenanceWindowsResult {
         private @Nullable String id;
         private List<GetMaintenanceWindowsMaintenanceWindowCollection> maintenanceWindowCollections;
         private @Nullable String state;
+        private @Nullable String timeScheduleStartGreaterThanOrEqualTo;
         public Builder() {}
         public Builder(GetMaintenanceWindowsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -106,6 +111,7 @@ public final class GetMaintenanceWindowsResult {
     	      this.id = defaults.id;
     	      this.maintenanceWindowCollections = defaults.maintenanceWindowCollections;
     	      this.state = defaults.state;
+    	      this.timeScheduleStartGreaterThanOrEqualTo = defaults.timeScheduleStartGreaterThanOrEqualTo;
         }
 
         @CustomType.Setter
@@ -152,6 +158,12 @@ public final class GetMaintenanceWindowsResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeScheduleStartGreaterThanOrEqualTo(@Nullable String timeScheduleStartGreaterThanOrEqualTo) {
+
+            this.timeScheduleStartGreaterThanOrEqualTo = timeScheduleStartGreaterThanOrEqualTo;
+            return this;
+        }
         public GetMaintenanceWindowsResult build() {
             final var _resultValue = new GetMaintenanceWindowsResult();
             _resultValue.compartmentId = compartmentId;
@@ -160,6 +172,7 @@ public final class GetMaintenanceWindowsResult {
             _resultValue.id = id;
             _resultValue.maintenanceWindowCollections = maintenanceWindowCollections;
             _resultValue.state = state;
+            _resultValue.timeScheduleStartGreaterThanOrEqualTo = timeScheduleStartGreaterThanOrEqualTo;
             return _resultValue;
         }
     }

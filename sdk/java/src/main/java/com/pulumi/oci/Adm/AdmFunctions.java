@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
 import com.pulumi.oci.Adm.inputs.GetKnowledgebasePlainArgs;
 import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
@@ -180,6 +181,50 @@ public final class AdmFunctions {
      * 
      */
     public static Output<GetKnowledgebaseResult> getKnowledgebase(GetKnowledgebaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getKnowledgebase:getKnowledgebase", TypeShape.of(GetKnowledgebaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure ADM service.
+     * 
+     * Returns the details of the specified Knowledge Base.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBase = AdmFunctions.getKnowledgebase(GetKnowledgebaseArgs.builder()
+     *             .knowledgeBaseId(testKnowledgeBaseOciAdmKnowledgeBase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetKnowledgebaseResult> getKnowledgebase(GetKnowledgebaseArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Adm/getKnowledgebase:getKnowledgebase", TypeShape.of(GetKnowledgebaseResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -511,6 +556,54 @@ public final class AdmFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetKnowledgebasesResult> getKnowledgebases(GetKnowledgebasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getKnowledgebases:getKnowledgebases", TypeShape.of(GetKnowledgebasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure ADM service.
+     * 
+     * Returns a list of KnowledgeBases based on the specified query parameters.
+     * At least id or compartmentId query parameter must be provided.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .id(knowledgeBaseId)
+     *             .state(knowledgeBaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetKnowledgebasesResult> getKnowledgebasesPlain(GetKnowledgebasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Adm/getKnowledgebases:getKnowledgebases", TypeShape.of(GetKnowledgebasesResult.class), args, Utilities.withVersion(options));
     }
@@ -644,6 +737,50 @@ public final class AdmFunctions {
      * 
      */
     public static Output<GetRemediationRecipeResult> getRemediationRecipe(GetRemediationRecipeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRecipe:getRemediationRecipe", TypeShape.of(GetRemediationRecipeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified RemediationRecipe.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipe = AdmFunctions.getRemediationRecipe(GetRemediationRecipeArgs.builder()
+     *             .remediationRecipeId(testRemediationRecipeOciAdmRemediationRecipe.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRemediationRecipeResult> getRemediationRecipe(GetRemediationRecipeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Adm/getRemediationRecipe:getRemediationRecipe", TypeShape.of(GetRemediationRecipeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -975,6 +1112,54 @@ public final class AdmFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRemediationRecipesResult> getRemediationRecipes(GetRemediationRecipesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRecipes:getRemediationRecipes", TypeShape.of(GetRemediationRecipesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Recipes based on the specified query parameters.
+     * The query parameters `compartmentId` or `id` must be provided.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRecipeDisplayName)
+     *             .id(remediationRecipeId)
+     *             .state(remediationRecipeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRemediationRecipesResult> getRemediationRecipesPlain(GetRemediationRecipesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRecipes:getRemediationRecipes", TypeShape.of(GetRemediationRecipesResult.class), args, Utilities.withVersion(options));
     }
@@ -1108,6 +1293,50 @@ public final class AdmFunctions {
      * 
      */
     public static Output<GetRemediationRunResult> getRemediationRun(GetRemediationRunArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRun:getRemediationRun", TypeShape.of(GetRemediationRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Remediation Run resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified remediation run.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRun = AdmFunctions.getRemediationRun(GetRemediationRunArgs.builder()
+     *             .remediationRunId(testRemediationRunOciAdmRemediationRun.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRemediationRunResult> getRemediationRun(GetRemediationRunArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Adm/getRemediationRun:getRemediationRun", TypeShape.of(GetRemediationRunResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1335,6 +1564,52 @@ public final class AdmFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", TypeShape.of(GetRemediationRunApplicationDependencyRecommendationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of application dependency with their associated recommendations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
+     *             .remediationRunId(testRemediationRun.id())
+     *             .gav(remediationRunApplicationDependencyRecommendationGav)
+     *             .purl(remediationRunApplicationDependencyRecommendationPurl)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendationsPlain(GetRemediationRunApplicationDependencyRecommendationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", TypeShape.of(GetRemediationRunApplicationDependencyRecommendationsResult.class), args, Utilities.withVersion(options));
     }
@@ -1471,6 +1746,51 @@ public final class AdmFunctions {
      * 
      */
     public static Output<GetRemediationRunStageResult> getRemediationRunStage(GetRemediationRunStageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRunStage:getRemediationRunStage", TypeShape.of(GetRemediationRunStageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified Remediation Run Stage.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStage = AdmFunctions.getRemediationRunStage(GetRemediationRunStageArgs.builder()
+     *             .remediationRunId(testRemediationRun.id())
+     *             .stageType(remediationRunStageStageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRemediationRunStageResult> getRemediationRunStage(GetRemediationRunStageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Adm/getRemediationRunStage:getRemediationRunStage", TypeShape.of(GetRemediationRunStageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1654,6 +1974,52 @@ public final class AdmFunctions {
      * 
      */
     public static Output<GetRemediationRunStagesResult> getRemediationRunStages(GetRemediationRunStagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRunStages:getRemediationRunStages", TypeShape.of(GetRemediationRunStagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStages = AdmFunctions.getRemediationRunStages(GetRemediationRunStagesArgs.builder()
+     *             .remediationRunId(testRemediationRun.id())
+     *             .status(remediationRunStageStatus)
+     *             .type(remediationRunStageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRemediationRunStagesResult> getRemediationRunStages(GetRemediationRunStagesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Adm/getRemediationRunStages:getRemediationRunStages", TypeShape.of(GetRemediationRunStagesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1993,6 +2359,55 @@ public final class AdmFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetRemediationRunsResult> getRemediationRuns(GetRemediationRunsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRuns:getRemediationRuns", TypeShape.of(GetRemediationRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of remediation runs contained by a compartment.
+     * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRunDisplayName)
+     *             .id(remediationRunId)
+     *             .remediationRecipeId(testRemediationRecipe.id())
+     *             .state(remediationRunState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetRemediationRunsResult> getRemediationRunsPlain(GetRemediationRunsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRuns:getRemediationRuns", TypeShape.of(GetRemediationRunsResult.class), args, Utilities.withVersion(options));
     }
@@ -2126,6 +2541,50 @@ public final class AdmFunctions {
      * 
      */
     public static Output<GetVulnerabilityAuditResult> getVulnerabilityAudit(GetVulnerabilityAuditArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getVulnerabilityAudit:getVulnerabilityAudit", TypeShape.of(GetVulnerabilityAuditResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vulnerability Audit resource in Oracle Cloud Infrastructure ADM service.
+     * 
+     * Returns the details of the specified Vulnerability Audit.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudit = AdmFunctions.getVulnerabilityAudit(GetVulnerabilityAuditArgs.builder()
+     *             .vulnerabilityAuditId(testVulnerabilityAuditOciAdmVulnerabilityAudit.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVulnerabilityAuditResult> getVulnerabilityAudit(GetVulnerabilityAuditArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Adm/getVulnerabilityAudit:getVulnerabilityAudit", TypeShape.of(GetVulnerabilityAuditResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2377,6 +2836,58 @@ public final class AdmFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getVulnerabilityAuditApplicationDependencyVulnerabilities:getVulnerabilityAuditApplicationDependencyVulnerabilities", TypeShape.of(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vulnerability Audit Application Dependency Vulnerabilities in Oracle Cloud Infrastructure ADM service.
+     * 
+     * Returns a list of Application Dependencies with their associated vulnerabilities.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerabilities = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs.builder()
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .purl(vulnerabilityAuditApplicationDependencyVulnerabilityPurl)
+     *             .rootNodeId(testRootNode.id())
+     *             .severityGreaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilitySeverityGreaterThanOrEqual)
+     *             .vulnerabilityId(testVulnerability.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilitiesPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Adm/getVulnerabilityAuditApplicationDependencyVulnerabilities:getVulnerabilityAuditApplicationDependencyVulnerabilities", TypeShape.of(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult.class), args, Utilities.withVersion(options));
     }
@@ -2528,6 +3039,56 @@ public final class AdmFunctions {
      * 
      */
     public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getVulnerabilityAuditApplicationDependencyVulnerability:getVulnerabilityAuditApplicationDependencyVulnerability", TypeShape.of(GetVulnerabilityAuditApplicationDependencyVulnerabilityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vulnerability Audit Application Dependency Vulnerability resource in Oracle Cloud Infrastructure ADM service.
+     * 
+     * Returns a list of Application Dependencies with their associated vulnerabilities.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerability = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs.builder()
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .rootNodeId(testRootNode.id())
+     *             .vulnerabilityId(testVulnerability.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Adm/getVulnerabilityAuditApplicationDependencyVulnerability:getVulnerabilityAuditApplicationDependencyVulnerability", TypeShape.of(GetVulnerabilityAuditApplicationDependencyVulnerabilityResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2843,6 +3404,59 @@ public final class AdmFunctions {
      * 
      */
     public static Output<GetVulnerabilityAuditsResult> getVulnerabilityAudits(GetVulnerabilityAuditsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getVulnerabilityAudits:getVulnerabilityAudits", TypeShape.of(GetVulnerabilityAuditsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vulnerability Audits in Oracle Cloud Infrastructure ADM service.
+     * 
+     * Returns a list of Vulnerability Audits based on the specified query parameters.
+     * At least one of id, compartmentId query parameter must be provided.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vulnerabilityAuditDisplayName)
+     *             .id(vulnerabilityAuditId)
+     *             .isSuccess(vulnerabilityAuditIsSuccess)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(vulnerabilityAuditMaxObservedSeverityGreaterThanOrEqualTo)
+     *             .state(vulnerabilityAuditState)
+     *             .timeCreatedGreaterThanOrEqualTo(vulnerabilityAuditTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThanOrEqualTo(vulnerabilityAuditTimeCreatedLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVulnerabilityAuditsResult> getVulnerabilityAudits(GetVulnerabilityAuditsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Adm/getVulnerabilityAudits:getVulnerabilityAudits", TypeShape.of(GetVulnerabilityAuditsResult.class), args, Utilities.withVersion(options));
     }
     /**

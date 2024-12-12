@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Retrieve compiane report for a Fleet
+        /// Retrieve compliance report for a fleet.
         /// 
         /// ## Example Usage
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Retrieve compiane report for a Fleet
+        /// Retrieve compliance report for a fleet.
         /// 
         /// ## Example Usage
         /// 
@@ -70,13 +70,13 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetComplianceReportArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// compliance report identifier
+        /// compliance report identifier.
         /// </summary>
         [Input("complianceReportId", required: true)]
         public string ComplianceReportId { get; set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
@@ -90,13 +90,13 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetComplianceReportInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// compliance report identifier
+        /// compliance report identifier.
         /// </summary>
         [Input("complianceReportId", required: true)]
         public Input<string> ComplianceReportId { get; set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     {
         public readonly string ComplianceReportId;
         /// <summary>
-        /// Last known compliance state of target.
+        /// The last known compliance state of the target.
         /// </summary>
         public readonly string ComplianceState;
         /// <summary>
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Resources assocaited with the Fleet.
+        /// Resources associated with the Fleet.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetComplianceReportResourceResult> Resources;
 

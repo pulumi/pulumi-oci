@@ -63,14 +63,14 @@ public final class SchedulerDefinitionActionGroupArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Provide the ID of the resource; Ex- fleetId.
+     * (Updatable) Provide the ID of the resource. Example fleet ID.
      * 
      */
     @Import(name="resourceId", required=true)
     private Output<String> resourceId;
 
     /**
-     * @return (Updatable) Provide the ID of the resource; Ex- fleetId.
+     * @return (Updatable) Provide the ID of the resource. Example fleet ID.
      * 
      */
     public Output<String> resourceId() {
@@ -232,7 +232,7 @@ public final class SchedulerDefinitionActionGroupArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param resourceId (Updatable) Provide the ID of the resource; Ex- fleetId.
+         * @param resourceId (Updatable) Provide the ID of the resource. Example fleet ID.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class SchedulerDefinitionActionGroupArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param resourceId (Updatable) Provide the ID of the resource; Ex- fleetId.
+         * @param resourceId (Updatable) Provide the ID of the resource. Example fleet ID.
          * 
          * @return builder
          * 

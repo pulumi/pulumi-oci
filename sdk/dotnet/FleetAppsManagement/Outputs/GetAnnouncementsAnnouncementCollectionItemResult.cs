@@ -14,11 +14,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetAnnouncementsAnnouncementCollectionItemResult
     {
         /// <summary>
-        /// Date to end displaying annonucement to user
+        /// Announcement end date
         /// </summary>
         public readonly string AnnouncementEnd;
         /// <summary>
-        /// Date to start displaying announcement to user
+        /// Announcement start date.
         /// </summary>
         public readonly string AnnouncementStart;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Details of the announcement
+        /// Announcement Details.
         /// </summary>
         public readonly string Details;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Summary of the announcement
+        /// Summary of the announcement.
         /// </summary>
         public readonly string Summary;
         /// <summary>
@@ -74,11 +74,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Type of announcement
+        /// Type of announcement.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// URL to the announcement
+        /// URL to the announcement.
         /// </summary>
         public readonly string Url;
 

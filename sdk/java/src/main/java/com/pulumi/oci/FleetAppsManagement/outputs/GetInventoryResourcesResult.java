@@ -41,12 +41,12 @@ public final class GetInventoryResourcesResult {
     private List<GetInventoryResourcesInventoryResourceCollection> inventoryResourceCollections;
     private @Nullable String matchingCriteria;
     /**
-     * @return Compartment Id of the resource
+     * @return Compartment Id of the resource.
      * 
      */
     private String resourceCompartmentId;
     /**
-     * @return Region the resource belongs to
+     * @return The region the resource belongs to.
      * 
      */
     private @Nullable String resourceRegion;
@@ -101,14 +101,14 @@ public final class GetInventoryResourcesResult {
         return Optional.ofNullable(this.matchingCriteria);
     }
     /**
-     * @return Compartment Id of the resource
+     * @return Compartment Id of the resource.
      * 
      */
     public String resourceCompartmentId() {
         return this.resourceCompartmentId;
     }
     /**
-     * @return Region the resource belongs to
+     * @return The region the resource belongs to.
      * 
      */
     public Optional<String> resourceRegion() {

@@ -34,6 +34,7 @@ import (
 //				DisplayName:         pulumi.StringRef(drPlanDisplayName),
 //				DrPlanId:            pulumi.StringRef(testDrPlan.Id),
 //				DrPlanType:          pulumi.StringRef(drPlanDrPlanType),
+//				LifecycleSubState:   pulumi.StringRef(drPlanLifecycleSubState),
 //				State:               pulumi.StringRef(drPlanState),
 //			}, nil)
 //			if err != nil {
@@ -65,6 +66,8 @@ type GetDrPlansArgs struct {
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string             `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlansFilter `pulumi:"filters"`
+	// A filter to return only DR plans that match the given lifecycle sub-state.
+	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// A filter to return only DR plans that match the given lifecycle state.
 	State *string `pulumi:"state"`
 }
@@ -82,6 +85,8 @@ type GetDrPlansResult struct {
 	Filters             []GetDrPlansFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// The current state of the DR plan.
+	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// The current state of the DR plan.
 	State *string `pulumi:"state"`
 }
@@ -116,6 +121,8 @@ type GetDrPlansOutputArgs struct {
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringInput         `pulumi:"drProtectionGroupId"`
 	Filters             GetDrPlansFilterArrayInput `pulumi:"filters"`
+	// A filter to return only DR plans that match the given lifecycle sub-state.
+	LifecycleSubState pulumi.StringPtrInput `pulumi:"lifecycleSubState"`
 	// A filter to return only DR plans that match the given lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -169,6 +176,11 @@ func (o GetDrPlansResultOutput) Filters() GetDrPlansFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetDrPlansResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current state of the DR plan.
+func (o GetDrPlansResultOutput) LifecycleSubState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansResult) *string { return v.LifecycleSubState }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DR plan.

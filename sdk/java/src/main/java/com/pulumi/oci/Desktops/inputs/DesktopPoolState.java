@@ -57,6 +57,27 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="areVolumesPreserved")
+    private @Nullable Output<Boolean> areVolumesPreserved;
+
+    /**
+     * @return (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Boolean>> areVolumesPreserved() {
+        return Optional.ofNullable(this.areVolumesPreserved);
+    }
+
+    /**
      * The availability domain of the desktop pool.
      * 
      */
@@ -72,14 +93,14 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
      * 
      */
     @Import(name="availabilityPolicy")
     private @Nullable Output<DesktopPoolAvailabilityPolicyArgs> availabilityPolicy;
 
     /**
-     * @return (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+     * @return (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
      * 
      */
     public Optional<Output<DesktopPoolAvailabilityPolicyArgs>> availabilityPolicy() {
@@ -434,18 +455,12 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
     /**
      * Indicates whether the desktop pool uses dedicated virtual machine hosts.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="useDedicatedVmHost")
     private @Nullable Output<String> useDedicatedVmHost;
 
     /**
      * @return Indicates whether the desktop pool uses dedicated virtual machine hosts.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> useDedicatedVmHost() {
@@ -457,6 +472,7 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
     private DesktopPoolState(DesktopPoolState $) {
         this.activeDesktops = $.activeDesktops;
         this.arePrivilegedUsers = $.arePrivilegedUsers;
+        this.areVolumesPreserved = $.areVolumesPreserved;
         this.availabilityDomain = $.availabilityDomain;
         this.availabilityPolicy = $.availabilityPolicy;
         this.compartmentId = $.compartmentId;
@@ -546,6 +562,33 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param areVolumesPreserved (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areVolumesPreserved(@Nullable Output<Boolean> areVolumesPreserved) {
+            $.areVolumesPreserved = areVolumesPreserved;
+            return this;
+        }
+
+        /**
+         * @param areVolumesPreserved (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areVolumesPreserved(Boolean areVolumesPreserved) {
+            return areVolumesPreserved(Output.of(areVolumesPreserved));
+        }
+
+        /**
          * @param availabilityDomain The availability domain of the desktop pool.
          * 
          * @return builder
@@ -567,7 +610,7 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityPolicy (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+         * @param availabilityPolicy (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
          * 
          * @return builder
          * 
@@ -578,7 +621,7 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityPolicy (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+         * @param availabilityPolicy (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
          * 
          * @return builder
          * 
@@ -1083,9 +1126,6 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param useDedicatedVmHost Indicates whether the desktop pool uses dedicated virtual machine hosts.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -1096,9 +1136,6 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param useDedicatedVmHost Indicates whether the desktop pool uses dedicated virtual machine hosts.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

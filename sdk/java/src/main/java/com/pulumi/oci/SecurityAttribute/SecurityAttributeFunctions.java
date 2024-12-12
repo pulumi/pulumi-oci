@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeArgs;
 import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespaceArgs;
 import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespacePlainArgs;
@@ -200,6 +201,51 @@ public final class SecurityAttributeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSecurityAttributeResult> getSecurityAttribute(GetSecurityAttributeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:SecurityAttribute/getSecurityAttribute:getSecurityAttribute", TypeShape.of(GetSecurityAttributeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Attribute resource in Oracle Cloud Infrastructure Security Attribute service.
+     * 
+     * Gets the specified security attribute&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
+     * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAttribute = SecurityAttributeFunctions.getSecurityAttribute(GetSecurityAttributeArgs.builder()
+     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.name())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSecurityAttributeResult> getSecurityAttributePlain(GetSecurityAttributePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:SecurityAttribute/getSecurityAttribute:getSecurityAttribute", TypeShape.of(GetSecurityAttributeResult.class), args, Utilities.withVersion(options));
     }
@@ -333,6 +379,50 @@ public final class SecurityAttributeFunctions {
      * 
      */
     public static Output<GetSecurityAttributeNamespaceResult> getSecurityAttributeNamespace(GetSecurityAttributeNamespaceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:SecurityAttribute/getSecurityAttributeNamespace:getSecurityAttributeNamespace", TypeShape.of(GetSecurityAttributeNamespaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Attribute Namespace resource in Oracle Cloud Infrastructure Security Attribute service.
+     * 
+     * Gets the specified security attribute namespace&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
+     * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespaceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAttributeNamespace = SecurityAttributeFunctions.getSecurityAttributeNamespace(GetSecurityAttributeNamespaceArgs.builder()
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAttributeNamespaceResult> getSecurityAttributeNamespace(GetSecurityAttributeNamespaceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:SecurityAttribute/getSecurityAttributeNamespace:getSecurityAttributeNamespace", TypeShape.of(GetSecurityAttributeNamespaceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -658,6 +748,53 @@ public final class SecurityAttributeFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSecurityAttributeNamespacesResult> getSecurityAttributeNamespaces(GetSecurityAttributeNamespacesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:SecurityAttribute/getSecurityAttributeNamespaces:getSecurityAttributeNamespaces", TypeShape.of(GetSecurityAttributeNamespacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Attribute Namespaces in Oracle Cloud Infrastructure Security Attribute service.
+     * 
+     * Lists the security attribute namespaces in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
+     * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributeNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAttributeNamespaces = SecurityAttributeFunctions.getSecurityAttributeNamespaces(GetSecurityAttributeNamespacesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(securityAttributeNamespaceCompartmentIdInSubtree)
+     *             .name(securityAttributeNamespaceName)
+     *             .state(securityAttributeNamespaceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSecurityAttributeNamespacesResult> getSecurityAttributeNamespacesPlain(GetSecurityAttributeNamespacesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:SecurityAttribute/getSecurityAttributeNamespaces:getSecurityAttributeNamespaces", TypeShape.of(GetSecurityAttributeNamespacesResult.class), args, Utilities.withVersion(options));
     }
@@ -794,6 +931,51 @@ public final class SecurityAttributeFunctions {
      * 
      */
     public static Output<GetSecurityAttributesResult> getSecurityAttributes(GetSecurityAttributesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:SecurityAttribute/getSecurityAttributes:getSecurityAttributes", TypeShape.of(GetSecurityAttributesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Attributes in Oracle Cloud Infrastructure Security Attribute service.
+     * 
+     * Lists the security attributes in the specified namespace.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.SecurityAttribute.SecurityAttributeFunctions;
+     * import com.pulumi.oci.SecurityAttribute.inputs.GetSecurityAttributesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAttributes = SecurityAttributeFunctions.getSecurityAttributes(GetSecurityAttributesArgs.builder()
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .state(securityAttributeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAttributesResult> getSecurityAttributes(GetSecurityAttributesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:SecurityAttribute/getSecurityAttributes:getSecurityAttributes", TypeShape.of(GetSecurityAttributesResult.class), args, Utilities.withVersion(options));
     }
     /**

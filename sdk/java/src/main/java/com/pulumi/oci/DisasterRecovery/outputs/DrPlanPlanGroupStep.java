@@ -46,15 +46,17 @@ public final class DrPlanPlanGroupStep {
      */
     private @Nullable String memberId;
     /**
+     * @return The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    private @Nullable String refreshStatus;
+    /**
      * @return The timeout in seconds for executing this step.  Example: `600`
      * 
      */
     private @Nullable Integer timeout;
     /**
      * @return The type of DR plan to be created.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String type;
@@ -108,6 +110,13 @@ public final class DrPlanPlanGroupStep {
         return Optional.ofNullable(this.memberId);
     }
     /**
+     * @return The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    public Optional<String> refreshStatus() {
+        return Optional.ofNullable(this.refreshStatus);
+    }
+    /**
      * @return The timeout in seconds for executing this step.  Example: `600`
      * 
      */
@@ -116,9 +125,6 @@ public final class DrPlanPlanGroupStep {
     }
     /**
      * @return The type of DR plan to be created.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> type() {
@@ -147,6 +153,7 @@ public final class DrPlanPlanGroupStep {
         private @Nullable String id;
         private @Nullable Boolean isEnabled;
         private @Nullable String memberId;
+        private @Nullable String refreshStatus;
         private @Nullable Integer timeout;
         private @Nullable String type;
         private @Nullable List<DrPlanPlanGroupStepUserDefinedStep> userDefinedSteps;
@@ -159,6 +166,7 @@ public final class DrPlanPlanGroupStep {
     	      this.id = defaults.id;
     	      this.isEnabled = defaults.isEnabled;
     	      this.memberId = defaults.memberId;
+    	      this.refreshStatus = defaults.refreshStatus;
     	      this.timeout = defaults.timeout;
     	      this.type = defaults.type;
     	      this.userDefinedSteps = defaults.userDefinedSteps;
@@ -201,6 +209,12 @@ public final class DrPlanPlanGroupStep {
             return this;
         }
         @CustomType.Setter
+        public Builder refreshStatus(@Nullable String refreshStatus) {
+
+            this.refreshStatus = refreshStatus;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeout(@Nullable Integer timeout) {
 
             this.timeout = timeout;
@@ -229,6 +243,7 @@ public final class DrPlanPlanGroupStep {
             _resultValue.id = id;
             _resultValue.isEnabled = isEnabled;
             _resultValue.memberId = memberId;
+            _resultValue.refreshStatus = refreshStatus;
             _resultValue.timeout = timeout;
             _resultValue.type = type;
             _resultValue.userDefinedSteps = userDefinedSteps;

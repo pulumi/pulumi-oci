@@ -108,7 +108,7 @@ class GetSchedulerDefinitionResult:
     @pulumi.getter(name="actionGroupTypes")
     def action_group_types(self) -> Sequence[str]:
         """
-        All ActionGroup Types part of the schedule.
+        All ActionGroup Types that are part of the schedule.
         """
         return pulumi.get(self, "action_group_types")
 
@@ -124,7 +124,7 @@ class GetSchedulerDefinitionResult:
     @pulumi.getter(name="activityInitiationCutOff")
     def activity_initiation_cut_off(self) -> int:
         """
-        Activity Initiation Cut Off
+        Activity Initiation Cut Off.
         """
         return pulumi.get(self, "activity_initiation_cut_off")
 
@@ -132,7 +132,7 @@ class GetSchedulerDefinitionResult:
     @pulumi.getter(name="applicationTypes")
     def application_types(self) -> Sequence[str]:
         """
-        All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         """
         return pulumi.get(self, "application_types")
 
@@ -156,7 +156,7 @@ class GetSchedulerDefinitionResult:
     @pulumi.getter(name="countOfAffectedResources")
     def count_of_affected_resources(self) -> int:
         """
-        Count of Resources affected by the Schedule
+        Count of Resources affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_resources")
 
@@ -164,7 +164,7 @@ class GetSchedulerDefinitionResult:
     @pulumi.getter(name="countOfAffectedTargets")
     def count_of_affected_targets(self) -> int:
         """
-        Count of Targets affected by the Schedule
+        Count of Targets affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_targets")
 
@@ -220,7 +220,7 @@ class GetSchedulerDefinitionResult:
     @pulumi.getter(name="lifecycleOperations")
     def lifecycle_operations(self) -> Sequence[str]:
         """
-        All LifeCycle Operations part of the schedule
+        All LifeCycle Operations that are part of the schedule.
         """
         return pulumi.get(self, "lifecycle_operations")
 
@@ -228,7 +228,7 @@ class GetSchedulerDefinitionResult:
     @pulumi.getter
     def products(self) -> Sequence[str]:
         """
-        All products part of the schedule for PRODUCT ActionGroup Type.
+        All products that are part of the schedule for PRODUCT ActionGroup Type.
         """
         return pulumi.get(self, "products")
 
@@ -289,7 +289,7 @@ class GetSchedulerDefinitionResult:
     @pulumi.getter(name="timeOfNextRun")
     def time_of_next_run(self) -> str:
         """
-        Scheduled date for the next run of the Job.
+        The scheduled date for the next run of the Job.
         """
         return pulumi.get(self, "time_of_next_run")
 
@@ -340,7 +340,7 @@ def get_scheduler_definition(scheduler_definition_id: Optional[str] = None,
     """
     This data source provides details about a specific Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a SchedulerDefinition by identifier
+    Get the details of a SchedulerDefinition that performs lifecycle management operations.
 
     ## Example Usage
 
@@ -390,7 +390,7 @@ def get_scheduler_definition_output(scheduler_definition_id: Optional[pulumi.Inp
     """
     This data source provides details about a specific Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a SchedulerDefinition by identifier
+    Get the details of a SchedulerDefinition that performs lifecycle management operations.
 
     ## Example Usage
 

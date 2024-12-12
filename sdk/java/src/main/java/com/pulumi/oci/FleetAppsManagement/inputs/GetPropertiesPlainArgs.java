@@ -54,14 +54,14 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * unique Property identifier
+     * A filter to return only resources whose Property identifier matches the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return unique Property identifier
+     * @return A filter to return only resources whose Property identifier matches the given identifier.
      * 
      */
     public Optional<String> id() {
@@ -69,14 +69,14 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return only resources their scope matches the given lifecycleState.
+     * A filter to return only resources their scope matches the given scope.
      * 
      */
     @Import(name="scope")
     private @Nullable String scope;
 
     /**
-     * @return A filter to return only resources their scope matches the given lifecycleState.
+     * @return A filter to return only resources their scope matches the given scope.
      * 
      */
     public Optional<String> scope() {
@@ -84,14 +84,14 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<String> state() {
@@ -159,7 +159,7 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param id unique Property identifier
+         * @param id A filter to return only resources whose Property identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param scope A filter to return only resources their scope matches the given lifecycleState.
+         * @param scope A filter to return only resources their scope matches the given scope.
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 

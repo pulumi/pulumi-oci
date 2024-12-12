@@ -127,7 +127,7 @@ def get_fleet_properties(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Fleet Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of FleetProperties.
+    List fleet properties in Fleet Application Management.
 
     ## Example Usage
 
@@ -145,9 +145,9 @@ def get_fleet_properties(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fleet_id: unique Fleet identifier
-    :param str id: unique FleetProperty identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str fleet_id: Unique Fleet identifier.
+    :param str id: A filter to return only resources whose fleetProperty identifier matches the given identifier.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -177,7 +177,7 @@ def get_fleet_properties_output(compartment_id: Optional[pulumi.Input[Optional[s
     """
     This data source provides the list of Fleet Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of FleetProperties.
+    List fleet properties in Fleet Application Management.
 
     ## Example Usage
 
@@ -195,9 +195,9 @@ def get_fleet_properties_output(compartment_id: Optional[pulumi.Input[Optional[s
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fleet_id: unique Fleet identifier
-    :param str id: unique FleetProperty identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str fleet_id: Unique Fleet identifier.
+    :param str id: A filter to return only resources whose fleetProperty identifier matches the given identifier.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

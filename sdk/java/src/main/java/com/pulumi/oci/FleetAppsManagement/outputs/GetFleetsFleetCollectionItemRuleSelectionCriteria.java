@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetsFleetCollectionItemRuleSelectionCriteria {
     /**
-     * @return Rule selection match condition.
+     * @return Match condition for the rule selection. Include resources that match all rules or any of the rules.
      * 
      */
     private String matchCondition;
@@ -25,7 +25,7 @@ public final class GetFleetsFleetCollectionItemRuleSelectionCriteria {
 
     private GetFleetsFleetCollectionItemRuleSelectionCriteria() {}
     /**
-     * @return Rule selection match condition.
+     * @return Match condition for the rule selection. Include resources that match all rules or any of the rules.
      * 
      */
     public String matchCondition() {

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Resource Information for the Target
+        /// Resource Information for the Target.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetProductsFleetProductCollectionItemResourceResult> Resources;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// Count of targets associated with the Product
+        /// Count of the targets associated with the Product.
         /// </summary>
         public readonly int TargetCount;
 

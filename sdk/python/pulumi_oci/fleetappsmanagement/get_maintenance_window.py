@@ -124,7 +124,7 @@ class GetMaintenanceWindowResult:
     @pulumi.getter
     def duration(self) -> str:
         """
-        Duration if schedule type is Custom
+        Duration of the maintenance window. Specify how long the maintenance window remains open.
         """
         return pulumi.get(self, "duration")
 
@@ -148,7 +148,7 @@ class GetMaintenanceWindowResult:
     @pulumi.getter(name="isOutage")
     def is_outage(self) -> bool:
         """
-        Does the maintenenace window cause outage?
+        Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
         """
         return pulumi.get(self, "is_outage")
 
@@ -156,7 +156,7 @@ class GetMaintenanceWindowResult:
     @pulumi.getter(name="isRecurring")
     def is_recurring(self) -> bool:
         """
-        Is this is a recurring maintenance window
+        Is this a recurring maintenance window?
         """
         return pulumi.get(self, "is_recurring")
 
@@ -185,7 +185,7 @@ class GetMaintenanceWindowResult:
     @pulumi.getter
     def recurrences(self) -> str:
         """
-        Recurrence rule specification if recurring
+        Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         """
         return pulumi.get(self, "recurrences")
 
@@ -217,7 +217,7 @@ class GetMaintenanceWindowResult:
     @pulumi.getter(name="taskInitiationCutoff")
     def task_initiation_cutoff(self) -> int:
         """
-        Task initiation cutoff
+        Task initiation cutoff time for the maintenance window.
         """
         return pulumi.get(self, "task_initiation_cutoff")
 
@@ -233,7 +233,7 @@ class GetMaintenanceWindowResult:
     @pulumi.getter(name="timeScheduleStart")
     def time_schedule_start(self) -> str:
         """
-        Start time of schedule
+        Specify the date and time of the day that the maintenance window starts.
         """
         return pulumi.get(self, "time_schedule_start")
 
@@ -279,7 +279,7 @@ def get_maintenance_window(maintenance_window_id: Optional[str] = None,
     """
     This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a MaintenanceWindow by identifier
+    Get the details for a maintenance window in Fleet Application Management.
 
     ## Example Usage
 
@@ -324,7 +324,7 @@ def get_maintenance_window_output(maintenance_window_id: Optional[pulumi.Input[s
     """
     This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a MaintenanceWindow by identifier
+    Get the details for a maintenance window in Fleet Application Management.
 
     ## Example Usage
 

@@ -21,6 +21,7 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// Indicates whether desktop pool users have administrative privileges on their desktop.
         /// </summary>
         public readonly bool ArePrivilegedUsers;
+        public readonly bool AreVolumesPreserved;
         /// <summary>
         /// The name of the availability domain.
         /// </summary>
@@ -136,6 +137,8 @@ namespace Pulumi.Oci.Desktops.Outputs
 
             bool arePrivilegedUsers,
 
+            bool areVolumesPreserved,
+
             string availabilityDomain,
 
             ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicyResult> availabilityPolicies,
@@ -192,6 +195,7 @@ namespace Pulumi.Oci.Desktops.Outputs
         {
             ActiveDesktops = activeDesktops;
             ArePrivilegedUsers = arePrivilegedUsers;
+            AreVolumesPreserved = areVolumesPreserved;
             AvailabilityDomain = availabilityDomain;
             AvailabilityPolicies = availabilityPolicies;
             CompartmentId = compartmentId;

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Onboarding Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of onboarding policy information for FAMS.
+ * Returns a list of onboarding policy information for Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -52,7 +52,7 @@ export interface GetOnboardingPoliciesResult {
 /**
  * This data source provides the list of Onboarding Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of onboarding policy information for FAMS.
+ * Returns a list of onboarding policy information for Fleet Application Management.
  *
  * ## Example Usage
  *

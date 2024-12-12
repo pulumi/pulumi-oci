@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  * 
- * Creates a new FleetProperty.
+ * Add an existing global property to a fleet in Fleet Application Management.
  * 
  * ## Example Usage
  * 
@@ -66,14 +66,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:FleetAppsManagement/fleetProperty:FleetProperty")
 public class FleetProperty extends com.pulumi.resources.CustomResource {
     /**
-     * Values of the category (must be a single value if selection = &#39;single choice&#39;)
+     * Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     @Export(name="allowedValues", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedValues;
 
     /**
-     * @return Values of the category (must be a single value if selection = &#39;single choice&#39;)
+     * @return Values of the property (must be a single value if selectionType = &#39;SINGLE_CHOICE&#39;).
      * 
      */
     public Output<List<String>> allowedValues() {
@@ -108,42 +108,42 @@ public class FleetProperty extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Export(name="fleetId", refs={String.class}, tree="[0]")
     private Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Output<String> fleetId() {
         return this.fleetId;
     }
     /**
-     * Property Id.
+     * OCID referring to global level metadata property.
      * 
      */
     @Export(name="propertyId", refs={String.class}, tree="[0]")
     private Output<String> propertyId;
 
     /**
-     * @return Property Id.
+     * @return OCID referring to global level metadata property.
      * 
      */
     public Output<String> propertyId() {
         return this.propertyId;
     }
     /**
-     * Text selection of the category
+     * Text selection of the property.
      * 
      */
     @Export(name="selectionType", refs={String.class}, tree="[0]")
     private Output<String> selectionType;
 
     /**
-     * @return Text selection of the category
+     * @return Text selection of the property.
      * 
      */
     public Output<String> selectionType() {
@@ -206,7 +206,7 @@ public class FleetProperty extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Value of the Property
+     * (Updatable) Value of the Property.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,7 +216,7 @@ public class FleetProperty extends com.pulumi.resources.CustomResource {
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the Property
+     * @return (Updatable) Value of the Property.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,14 +226,14 @@ public class FleetProperty extends com.pulumi.resources.CustomResource {
         return this.value;
     }
     /**
-     * Format of the value
+     * Format of the value.
      * 
      */
     @Export(name="valueType", refs={String.class}, tree="[0]")
     private Output<String> valueType;
 
     /**
-     * @return Format of the value
+     * @return Format of the value.
      * 
      */
     public Output<String> valueType() {

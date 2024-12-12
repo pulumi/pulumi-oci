@@ -126,7 +126,7 @@ class GetTaskRecordResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The OCID of the resource.
         """
         return pulumi.get(self, "id")
 
@@ -229,7 +229,7 @@ def get_task_record(task_record_id: Optional[str] = None,
     """
     This data source provides details about a specific Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a TaskRecord by identifier
+    Gets a Task by identifier
 
     ## Example Usage
 
@@ -270,7 +270,7 @@ def get_task_record_output(task_record_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a TaskRecord by identifier
+    Gets a Task by identifier
 
     ## Example Usage
 

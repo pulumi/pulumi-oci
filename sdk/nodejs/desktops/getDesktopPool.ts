@@ -51,6 +51,7 @@ export interface GetDesktopPoolResult {
      * Indicates whether desktop pool users have administrative privileges on their desktop.
      */
     readonly arePrivilegedUsers: boolean;
+    readonly areVolumesPreserved: boolean;
     /**
      * The availability domain of the desktop pool.
      */

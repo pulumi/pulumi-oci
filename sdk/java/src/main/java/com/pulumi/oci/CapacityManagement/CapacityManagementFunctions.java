@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.CapacityManagement.inputs.GetInternalNamespaceOccOverviewsArgs;
 import com.pulumi.oci.CapacityManagement.inputs.GetInternalNamespaceOccOverviewsPlainArgs;
 import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccAvailabilityCatalogsArgs;
@@ -201,6 +202,55 @@ public final class CapacityManagementFunctions {
      * 
      */
     public static Output<GetInternalNamespaceOccOverviewsResult> getInternalNamespaceOccOverviews(GetInternalNamespaceOccOverviewsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews", TypeShape.of(GetInternalNamespaceOccOverviewsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Namespace Occ Overviews in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Lists an overview of all resources in that namespace in a given time interval.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalNamespaceOccOverviewsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalNamespaceOccOverviews = CapacityManagementFunctions.getInternalNamespaceOccOverviews(GetInternalNamespaceOccOverviewsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(internalNamespaceOccOverviewNamespace)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .from(internalNamespaceOccOverviewFrom)
+     *             .to(internalNamespaceOccOverviewTo)
+     *             .workloadType(internalNamespaceOccOverviewWorkloadType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalNamespaceOccOverviewsResult> getInternalNamespaceOccOverviews(GetInternalNamespaceOccOverviewsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews", TypeShape.of(GetInternalNamespaceOccOverviewsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -445,6 +495,55 @@ public final class CapacityManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInternalOccAvailabilityCatalogsResult> getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccAvailabilityCatalogs:getInternalOccAvailabilityCatalogs", TypeShape.of(GetInternalOccAvailabilityCatalogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occ Availability Catalogs in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * An internal api to list availability catalogs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccAvailabilityCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .catalogState(internalOccAvailabilityCatalogCatalogState)
+     *             .displayName(internalOccAvailabilityCatalogDisplayName)
+     *             .id(internalOccAvailabilityCatalogId)
+     *             .namespace(internalOccAvailabilityCatalogNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInternalOccAvailabilityCatalogsResult> getInternalOccAvailabilityCatalogsPlain(GetInternalOccAvailabilityCatalogsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccAvailabilityCatalogs:getInternalOccAvailabilityCatalogs", TypeShape.of(GetInternalOccAvailabilityCatalogsResult.class), args, Utilities.withVersion(options));
     }
@@ -581,6 +680,51 @@ public final class CapacityManagementFunctions {
      * 
      */
     public static Output<GetInternalOccHandoverResourceBlockDetailsResult> getInternalOccHandoverResourceBlockDetails(GetInternalOccHandoverResourceBlockDetailsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccHandoverResourceBlockDetails:getInternalOccHandoverResourceBlockDetails", TypeShape.of(GetInternalOccHandoverResourceBlockDetailsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occ Handover Resource Block Details in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * List details about a given occHandoverResourceBlock.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlockDetailsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccHandoverResourceBlockDetails = CapacityManagementFunctions.getInternalOccHandoverResourceBlockDetails(GetInternalOccHandoverResourceBlockDetailsArgs.builder()
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .hostId(testHost.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccHandoverResourceBlockDetailsResult> getInternalOccHandoverResourceBlockDetails(GetInternalOccHandoverResourceBlockDetailsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccHandoverResourceBlockDetails:getInternalOccHandoverResourceBlockDetails", TypeShape.of(GetInternalOccHandoverResourceBlockDetailsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -825,6 +969,56 @@ public final class CapacityManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInternalOccHandoverResourceBlocksResult> getInternalOccHandoverResourceBlocks(GetInternalOccHandoverResourceBlocksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", TypeShape.of(GetInternalOccHandoverResourceBlocksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occ Handover Resource Blocks in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * List Occ Handover Resource blocks.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlocksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccHandoverResourceBlocks = CapacityManagementFunctions.getInternalOccHandoverResourceBlocks(GetInternalOccHandoverResourceBlocksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(internalOccHandoverResourceBlockNamespace)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .handoverDateGreaterThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
+     *             .handoverDateLessThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateLessThanOrEqualTo)
+     *             .handoverResourceName(testResource.name())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInternalOccHandoverResourceBlocksResult> getInternalOccHandoverResourceBlocksPlain(GetInternalOccHandoverResourceBlocksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", TypeShape.of(GetInternalOccHandoverResourceBlocksResult.class), args, Utilities.withVersion(options));
     }
@@ -970,6 +1164,54 @@ public final class CapacityManagementFunctions {
      * 
      */
     public static Output<GetNamespaceOccOverviewsResult> getNamespaceOccOverviews(GetNamespaceOccOverviewsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getNamespaceOccOverviews:getNamespaceOccOverviews", TypeShape.of(GetNamespaceOccOverviewsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Occ Overviews in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Lists an overview of all resources in that namespace in a given time interval.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetNamespaceOccOverviewsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceOccOverviews = CapacityManagementFunctions.getNamespaceOccOverviews(GetNamespaceOccOverviewsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceOccOverviewNamespace)
+     *             .from(namespaceOccOverviewFrom)
+     *             .to(namespaceOccOverviewTo)
+     *             .workloadType(namespaceOccOverviewWorkloadType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamespaceOccOverviewsResult> getNamespaceOccOverviews(GetNamespaceOccOverviewsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CapacityManagement/getNamespaceOccOverviews:getNamespaceOccOverviews", TypeShape.of(GetNamespaceOccOverviewsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1193,6 +1435,50 @@ public final class CapacityManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOccAvailabilityCatalogResult> getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccAvailabilityCatalog:getOccAvailabilityCatalog", TypeShape.of(GetOccAvailabilityCatalogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Get details about availability catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOccAvailabilityCatalogResult> getOccAvailabilityCatalogPlain(GetOccAvailabilityCatalogPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccAvailabilityCatalog:getOccAvailabilityCatalog", TypeShape.of(GetOccAvailabilityCatalogResult.class), args, Utilities.withVersion(options));
     }
@@ -1326,6 +1612,50 @@ public final class CapacityManagementFunctions {
      * 
      */
     public static Output<GetOccAvailabilityCatalogContentResult> getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccAvailabilityCatalogContent:getOccAvailabilityCatalogContent", TypeShape.of(GetOccAvailabilityCatalogContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occ Availability Catalog Content resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Returns the binary contents of the availability catalog. Can be saved as a csv file.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccAvailabilityCatalogContentResult> getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CapacityManagement/getOccAvailabilityCatalogContent:getOccAvailabilityCatalogContent", TypeShape.of(GetOccAvailabilityCatalogContentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1514,6 +1844,54 @@ public final class CapacityManagementFunctions {
      * 
      */
     public static Output<GetOccAvailabilityCatalogOccAvailabilitiesResult> getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccAvailabilityCatalogOccAvailabilities:getOccAvailabilityCatalogOccAvailabilities", TypeShape.of(GetOccAvailabilityCatalogOccAvailabilitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Availability Catalog Occ Availabilities in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Lists availabilities for a particular availability catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogOccAvailabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
+     *             .resourceName(testResource.name())
+     *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
+     *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccAvailabilityCatalogOccAvailabilitiesResult> getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CapacityManagement/getOccAvailabilityCatalogOccAvailabilities:getOccAvailabilityCatalogOccAvailabilities", TypeShape.of(GetOccAvailabilityCatalogOccAvailabilitiesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1753,6 +2131,54 @@ public final class CapacityManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOccAvailabilityCatalogsResult> getOccAvailabilityCatalogs(GetOccAvailabilityCatalogsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccAvailabilityCatalogs:getOccAvailabilityCatalogs", TypeShape.of(GetOccAvailabilityCatalogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Availability Catalogs in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Lists all availability catalogs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccAvailabilityCatalogs = CapacityManagementFunctions.getOccAvailabilityCatalogs(GetOccAvailabilityCatalogsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .catalogState(occAvailabilityCatalogCatalogState)
+     *             .displayName(occAvailabilityCatalogDisplayName)
+     *             .id(occAvailabilityCatalogId)
+     *             .namespace(occAvailabilityCatalogNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOccAvailabilityCatalogsResult> getOccAvailabilityCatalogsPlain(GetOccAvailabilityCatalogsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccAvailabilityCatalogs:getOccAvailabilityCatalogs", TypeShape.of(GetOccAvailabilityCatalogsResult.class), args, Utilities.withVersion(options));
     }
@@ -1886,6 +2312,50 @@ public final class CapacityManagementFunctions {
      * 
      */
     public static Output<GetOccCapacityRequestResult> getOccCapacityRequest(GetOccCapacityRequestArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest", TypeShape.of(GetOccCapacityRequestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Get details about the capacity request.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccCapacityRequestResult> getOccCapacityRequest(GetOccCapacityRequestArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest", TypeShape.of(GetOccCapacityRequestResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2125,6 +2595,55 @@ public final class CapacityManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOccCapacityRequestsResult> getOccCapacityRequests(GetOccCapacityRequestsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccCapacityRequests:getOccCapacityRequests", TypeShape.of(GetOccCapacityRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Capacity Requests in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Lists all capacity requests.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccCapacityRequests = CapacityManagementFunctions.getOccCapacityRequests(GetOccCapacityRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCapacityRequestDisplayName)
+     *             .id(occCapacityRequestId)
+     *             .namespace(occCapacityRequestNamespace)
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .requestType(occCapacityRequestRequestType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOccCapacityRequestsResult> getOccCapacityRequestsPlain(GetOccCapacityRequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccCapacityRequests:getOccCapacityRequests", TypeShape.of(GetOccCapacityRequestsResult.class), args, Utilities.withVersion(options));
     }
@@ -2258,6 +2777,50 @@ public final class CapacityManagementFunctions {
      * 
      */
     public static Output<GetOccCustomerGroupResult> getOccCustomerGroup(GetOccCustomerGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", TypeShape.of(GetOccCustomerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Gets information about the specified customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccCustomerGroupResult> getOccCustomerGroup(GetOccCustomerGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", TypeShape.of(GetOccCustomerGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2489,6 +3052,53 @@ public final class CapacityManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetOccCustomerGroupsResult> getOccCustomerGroups(GetOccCustomerGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccCustomerGroups:getOccCustomerGroups", TypeShape.of(GetOccCustomerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Customer Groups in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * Lists all the customer groups.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccCustomerGroups = CapacityManagementFunctions.getOccCustomerGroups(GetOccCustomerGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCustomerGroupDisplayName)
+     *             .id(occCustomerGroupId)
+     *             .status(occCustomerGroupStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetOccCustomerGroupsResult> getOccCustomerGroupsPlain(GetOccCustomerGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccCustomerGroups:getOccCustomerGroups", TypeShape.of(GetOccCustomerGroupsResult.class), args, Utilities.withVersion(options));
     }
@@ -2625,6 +3235,51 @@ public final class CapacityManagementFunctions {
      * 
      */
     public static Output<GetOccHandoverResourceBlockDetailsResult> getOccHandoverResourceBlockDetails(GetOccHandoverResourceBlockDetailsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccHandoverResourceBlockDetails:getOccHandoverResourceBlockDetails", TypeShape.of(GetOccHandoverResourceBlockDetailsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Handover Resource Block Details in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * List details about a given occHandoverResourceBlock.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlockDetailsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccHandoverResourceBlockDetails = CapacityManagementFunctions.getOccHandoverResourceBlockDetails(GetOccHandoverResourceBlockDetailsArgs.builder()
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .hostId(testHost.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccHandoverResourceBlockDetailsResult> getOccHandoverResourceBlockDetails(GetOccHandoverResourceBlockDetailsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CapacityManagement/getOccHandoverResourceBlockDetails:getOccHandoverResourceBlockDetails", TypeShape.of(GetOccHandoverResourceBlockDetailsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2915,6 +3570,55 @@ public final class CapacityManagementFunctions {
      * 
      */
     public static Output<GetOccHandoverResourceBlocksResult> getOccHandoverResourceBlocks(GetOccHandoverResourceBlocksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks", TypeShape.of(GetOccHandoverResourceBlocksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Handover Resource Blocks in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * List Occ Handover Resource blocks.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccHandoverResourceBlocks = CapacityManagementFunctions.getOccHandoverResourceBlocks(GetOccHandoverResourceBlocksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .handoverDateGreaterThanOrEqualTo(occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
+     *             .handoverDateLessThanOrEqualTo(occHandoverResourceBlockHandoverDateLessThanOrEqualTo)
+     *             .handoverResourceName(testResource.name())
+     *             .namespace(occHandoverResourceBlockNamespace)
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccHandoverResourceBlocksResult> getOccHandoverResourceBlocks(GetOccHandoverResourceBlocksArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks", TypeShape.of(GetOccHandoverResourceBlocksResult.class), args, Utilities.withVersion(options));
     }
     /**

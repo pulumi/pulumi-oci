@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetProductsFleetProductCollectionItemResource {
     /**
-     * @return Resource Display Name
+     * @return Resource Display Name.
      * 
      */
     private String resourceDisplayName;
@@ -23,7 +23,7 @@ public final class GetFleetProductsFleetProductCollectionItemResource {
 
     private GetFleetProductsFleetProductCollectionItemResource() {}
     /**
-     * @return Resource Display Name
+     * @return Resource Display Name.
      * 
      */
     public String resourceDisplayName() {

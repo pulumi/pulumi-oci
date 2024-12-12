@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ApmConfig.inputs.GetConfigArgs;
 import com.pulumi.oci.ApmConfig.inputs.GetConfigPlainArgs;
 import com.pulumi.oci.ApmConfig.inputs.GetConfigsArgs;
@@ -150,6 +151,51 @@ public final class ApmConfigFunctions {
      * 
      */
     public static Output<GetConfigResult> getConfig(GetConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmConfig/getConfig:getConfig", TypeShape.of(GetConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
+     * 
+     * Gets the configuration item identified by the OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
+     * import com.pulumi.oci.ApmConfig.inputs.GetConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .configId(testConfigOciApmConfigConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigResult> getConfig(GetConfigArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApmConfig/getConfig:getConfig", TypeShape.of(GetConfigResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -348,6 +394,57 @@ public final class ApmConfigFunctions {
      * 
      */
     public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmConfig/getConfigs:getConfigs", TypeShape.of(GetConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
+     * 
+     * Returns all configuration items, which can optionally be filtered by configuration type.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
+     * import com.pulumi.oci.ApmConfig.inputs.GetConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .configType(configConfigType)
+     *             .definedTagEquals(configDefinedTagEquals)
+     *             .definedTagExists(configDefinedTagExists)
+     *             .displayName(configDisplayName)
+     *             .freeformTagEquals(configFreeformTagEquals)
+     *             .freeformTagExists(configFreeformTagExists)
+     *             .optionsGroup(configOptionsGroup)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApmConfig/getConfigs:getConfigs", TypeShape.of(GetConfigsResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class FleetRuleSelectionCriteriaGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Rule selection match condition.
+        /// (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
         /// </summary>
         [Input("matchCondition", required: true)]
         public Input<string> MatchCondition { get; set; } = null!;

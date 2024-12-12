@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetTaskRecordDetailExecutionDetail;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetTaskRecordDetailProperty;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -14,10 +15,20 @@ import java.util.Objects;
 @CustomType
 public final class GetTaskRecordDetail {
     /**
-     * @return Content Source Details
+     * @return Execution details.
      * 
      */
     private List<GetTaskRecordDetailExecutionDetail> executionDetails;
+    /**
+     * @return Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+     * 
+     */
+    private Boolean isApplySubjectTask;
+    /**
+     * @return Is this a discovery output task?
+     * 
+     */
+    private Boolean isDiscoveryOutputTask;
     /**
      * @return The OS for the task
      * 
@@ -41,11 +52,25 @@ public final class GetTaskRecordDetail {
 
     private GetTaskRecordDetail() {}
     /**
-     * @return Content Source Details
+     * @return Execution details.
      * 
      */
     public List<GetTaskRecordDetailExecutionDetail> executionDetails() {
         return this.executionDetails;
+    }
+    /**
+     * @return Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+     * 
+     */
+    public Boolean isApplySubjectTask() {
+        return this.isApplySubjectTask;
+    }
+    /**
+     * @return Is this a discovery output task?
+     * 
+     */
+    public Boolean isDiscoveryOutputTask() {
+        return this.isDiscoveryOutputTask;
     }
     /**
      * @return The OS for the task
@@ -86,6 +111,8 @@ public final class GetTaskRecordDetail {
     @CustomType.Builder
     public static final class Builder {
         private List<GetTaskRecordDetailExecutionDetail> executionDetails;
+        private Boolean isApplySubjectTask;
+        private Boolean isDiscoveryOutputTask;
         private String osType;
         private String platform;
         private List<GetTaskRecordDetailProperty> properties;
@@ -94,6 +121,8 @@ public final class GetTaskRecordDetail {
         public Builder(GetTaskRecordDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.executionDetails = defaults.executionDetails;
+    	      this.isApplySubjectTask = defaults.isApplySubjectTask;
+    	      this.isDiscoveryOutputTask = defaults.isDiscoveryOutputTask;
     	      this.osType = defaults.osType;
     	      this.platform = defaults.platform;
     	      this.properties = defaults.properties;
@@ -110,6 +139,22 @@ public final class GetTaskRecordDetail {
         }
         public Builder executionDetails(GetTaskRecordDetailExecutionDetail... executionDetails) {
             return executionDetails(List.of(executionDetails));
+        }
+        @CustomType.Setter
+        public Builder isApplySubjectTask(Boolean isApplySubjectTask) {
+            if (isApplySubjectTask == null) {
+              throw new MissingRequiredPropertyException("GetTaskRecordDetail", "isApplySubjectTask");
+            }
+            this.isApplySubjectTask = isApplySubjectTask;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDiscoveryOutputTask(Boolean isDiscoveryOutputTask) {
+            if (isDiscoveryOutputTask == null) {
+              throw new MissingRequiredPropertyException("GetTaskRecordDetail", "isDiscoveryOutputTask");
+            }
+            this.isDiscoveryOutputTask = isDiscoveryOutputTask;
+            return this;
         }
         @CustomType.Setter
         public Builder osType(String osType) {
@@ -149,6 +194,8 @@ public final class GetTaskRecordDetail {
         public GetTaskRecordDetail build() {
             final var _resultValue = new GetTaskRecordDetail();
             _resultValue.executionDetails = executionDetails;
+            _resultValue.isApplySubjectTask = isApplySubjectTask;
+            _resultValue.isDiscoveryOutputTask = isDiscoveryOutputTask;
             _resultValue.osType = osType;
             _resultValue.platform = platform;
             _resultValue.properties = properties;

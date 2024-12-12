@@ -14,15 +14,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetNotificationPreferenceResult
     {
         /// <summary>
-        /// Please provide the root compartmentId (TenancyId).
+        /// Tenancy Id (Root Compartment Id)for which the rule is created.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Preferences to send notifications on the fleet activities
+        /// Preferences to send notifications on the fleet activities.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetNotificationPreferencePreferenceResult> Preferences;
         /// <summary>
-        /// Topic Id where the notifications will be directed
+        /// Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
         /// </summary>
         public readonly string TopicId;
 

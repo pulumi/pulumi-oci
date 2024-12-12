@@ -25,7 +25,7 @@ public final class GetFleetProductsFleetProductCollectionItem {
      */
     private String displayName;
     /**
-     * @return Resource Information for the Target
+     * @return Resource Information for the Target.
      * 
      */
     private List<GetFleetProductsFleetProductCollectionItemResource> resources;
@@ -35,7 +35,7 @@ public final class GetFleetProductsFleetProductCollectionItem {
      */
     private Map<String,String> systemTags;
     /**
-     * @return Count of targets associated with the Product
+     * @return Count of the targets associated with the Product.
      * 
      */
     private Integer targetCount;
@@ -56,7 +56,7 @@ public final class GetFleetProductsFleetProductCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Resource Information for the Target
+     * @return Resource Information for the Target.
      * 
      */
     public List<GetFleetProductsFleetProductCollectionItemResource> resources() {
@@ -70,7 +70,7 @@ public final class GetFleetProductsFleetProductCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return Count of targets associated with the Product
+     * @return Count of the targets associated with the Product.
      * 
      */
     public Integer targetCount() {

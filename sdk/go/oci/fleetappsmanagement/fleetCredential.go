@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Creates a new FleetCredential.
+// Add credentials to a fleet in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -37,6 +37,12 @@ import (
 //					CredentialLevel: pulumi.Any(fleetCredentialEntitySpecificsCredentialLevel),
 //					ResourceId:      pulumi.Any(testResource.Id),
 //					Target:          pulumi.Any(fleetCredentialEntitySpecificsTarget),
+//					Variables: fleetappsmanagement.FleetCredentialEntitySpecificsVariableArray{
+//						&fleetappsmanagement.FleetCredentialEntitySpecificsVariableArgs{
+//							Name:  pulumi.Any(fleetCredentialEntitySpecificsVariablesName),
+//							Value: pulumi.Any(fleetCredentialEntitySpecificsVariablesValue),
+//						},
+//					},
 //				},
 //				FleetId: pulumi.Any(testFleet.Id),
 //				Password: &fleetappsmanagement.FleetCredentialPasswordArgs{
@@ -77,13 +83,13 @@ type FleetCredential struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Credential Details
+	// (Updatable) Credential specific Details.
 	EntitySpecifics FleetCredentialEntitySpecificsOutput `pulumi:"entitySpecifics"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringOutput `pulumi:"fleetId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	Password FleetCredentialPasswordOutput `pulumi:"password"`
 	// The current state of the FleetCredential.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -93,7 +99,7 @@ type FleetCredential struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	User FleetCredentialUserOutput `pulumi:"user"`
 }
 
@@ -149,13 +155,13 @@ type fleetCredentialState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Credential Details
+	// (Updatable) Credential specific Details.
 	EntitySpecifics *FleetCredentialEntitySpecifics `pulumi:"entitySpecifics"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId *string `pulumi:"fleetId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	Password *FleetCredentialPassword `pulumi:"password"`
 	// The current state of the FleetCredential.
 	State *string `pulumi:"state"`
@@ -165,7 +171,7 @@ type fleetCredentialState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	User *FleetCredentialUser `pulumi:"user"`
 }
 
@@ -174,13 +180,13 @@ type FleetCredentialState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Credential Details
+	// (Updatable) Credential specific Details.
 	EntitySpecifics FleetCredentialEntitySpecificsPtrInput
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	Password FleetCredentialPasswordPtrInput
 	// The current state of the FleetCredential.
 	State pulumi.StringPtrInput
@@ -190,7 +196,7 @@ type FleetCredentialState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	User FleetCredentialUserPtrInput
 }
 
@@ -203,13 +209,13 @@ type fleetCredentialArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
-	// (Updatable) Credential Details
+	// (Updatable) Credential specific Details.
 	EntitySpecifics FleetCredentialEntitySpecifics `pulumi:"entitySpecifics"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	Password FleetCredentialPassword `pulumi:"password"`
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	User FleetCredentialUser `pulumi:"user"`
 }
 
@@ -219,13 +225,13 @@ type FleetCredentialArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringInput
-	// (Updatable) Credential Details
+	// (Updatable) Credential specific Details.
 	EntitySpecifics FleetCredentialEntitySpecificsInput
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	Password FleetCredentialPasswordInput
-	// (Updatable) Credential Details
+	// (Updatable) Credential Details.
 	User FleetCredentialUserInput
 }
 
@@ -326,12 +332,12 @@ func (o FleetCredentialOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetCredential) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Credential Details
+// (Updatable) Credential specific Details.
 func (o FleetCredentialOutput) EntitySpecifics() FleetCredentialEntitySpecificsOutput {
 	return o.ApplyT(func(v *FleetCredential) FleetCredentialEntitySpecificsOutput { return v.EntitySpecifics }).(FleetCredentialEntitySpecificsOutput)
 }
 
-// unique Fleet identifier
+// Unique Fleet identifier.
 func (o FleetCredentialOutput) FleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetCredential) pulumi.StringOutput { return v.FleetId }).(pulumi.StringOutput)
 }
@@ -341,7 +347,7 @@ func (o FleetCredentialOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetCredential) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) Credential Details
+// (Updatable) Credential Details.
 func (o FleetCredentialOutput) Password() FleetCredentialPasswordOutput {
 	return o.ApplyT(func(v *FleetCredential) FleetCredentialPasswordOutput { return v.Password }).(FleetCredentialPasswordOutput)
 }
@@ -366,7 +372,7 @@ func (o FleetCredentialOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetCredential) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) Credential Details
+// (Updatable) Credential Details.
 func (o FleetCredentialOutput) User() FleetCredentialUserOutput {
 	return o.ApplyT(func(v *FleetCredential) FleetCredentialUserOutput { return v.User }).(FleetCredentialUserOutput)
 }

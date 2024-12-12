@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Creates a new Property.
+// Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
 //
 // ## Example Usage
 //
@@ -68,9 +68,9 @@ type Property struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Associated region
 	ResourceRegion pulumi.StringOutput `pulumi:"resourceRegion"`
-	// The scope of the property
+	// The scope of the property.
 	Scope pulumi.StringOutput `pulumi:"scope"`
-	// (Updatable) Text selection of the category
+	// (Updatable) Text selection of the property.
 	Selection pulumi.StringOutput `pulumi:"selection"`
 	// The current state of the Property.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -82,9 +82,9 @@ type Property struct {
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The type of the property.
 	Type pulumi.StringOutput `pulumi:"type"`
-	// (Updatable) Format of the value
+	// (Updatable) Format of the value.
 	ValueType pulumi.StringOutput `pulumi:"valueType"`
-	// (Updatable) Values of the property (must be a single value if selection = 'single choice')
+	// (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -142,9 +142,9 @@ type propertyState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Associated region
 	ResourceRegion *string `pulumi:"resourceRegion"`
-	// The scope of the property
+	// The scope of the property.
 	Scope *string `pulumi:"scope"`
-	// (Updatable) Text selection of the category
+	// (Updatable) Text selection of the property.
 	Selection *string `pulumi:"selection"`
 	// The current state of the Property.
 	State *string `pulumi:"state"`
@@ -156,9 +156,9 @@ type propertyState struct {
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The type of the property.
 	Type *string `pulumi:"type"`
-	// (Updatable) Format of the value
+	// (Updatable) Format of the value.
 	ValueType *string `pulumi:"valueType"`
-	// (Updatable) Values of the property (must be a single value if selection = 'single choice')
+	// (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -178,9 +178,9 @@ type PropertyState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Associated region
 	ResourceRegion pulumi.StringPtrInput
-	// The scope of the property
+	// The scope of the property.
 	Scope pulumi.StringPtrInput
-	// (Updatable) Text selection of the category
+	// (Updatable) Text selection of the property.
 	Selection pulumi.StringPtrInput
 	// The current state of the Property.
 	State pulumi.StringPtrInput
@@ -192,9 +192,9 @@ type PropertyState struct {
 	TimeUpdated pulumi.StringPtrInput
 	// The type of the property.
 	Type pulumi.StringPtrInput
-	// (Updatable) Format of the value
+	// (Updatable) Format of the value.
 	ValueType pulumi.StringPtrInput
-	// (Updatable) Values of the property (must be a single value if selection = 'single choice')
+	// (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -210,11 +210,11 @@ type propertyArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Text selection of the category
+	// (Updatable) Text selection of the property.
 	Selection string `pulumi:"selection"`
-	// (Updatable) Format of the value
+	// (Updatable) Format of the value.
 	ValueType string `pulumi:"valueType"`
-	// (Updatable) Values of the property (must be a single value if selection = 'single choice')
+	// (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -227,11 +227,11 @@ type PropertyArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Text selection of the category
+	// (Updatable) Text selection of the property.
 	Selection pulumi.StringInput
-	// (Updatable) Format of the value
+	// (Updatable) Format of the value.
 	ValueType pulumi.StringInput
-	// (Updatable) Values of the property (must be a single value if selection = 'single choice')
+	// (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -355,12 +355,12 @@ func (o PropertyOutput) ResourceRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.ResourceRegion }).(pulumi.StringOutput)
 }
 
-// The scope of the property
+// The scope of the property.
 func (o PropertyOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }
 
-// (Updatable) Text selection of the category
+// (Updatable) Text selection of the property.
 func (o PropertyOutput) Selection() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Selection }).(pulumi.StringOutput)
 }
@@ -390,12 +390,12 @@ func (o PropertyOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// (Updatable) Format of the value
+// (Updatable) Format of the value.
 func (o PropertyOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.ValueType }).(pulumi.StringOutput)
 }
 
-// (Updatable) Values of the property (must be a single value if selection = 'single choice')
+// (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

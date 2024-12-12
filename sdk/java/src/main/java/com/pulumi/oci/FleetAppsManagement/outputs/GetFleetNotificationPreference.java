@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetNotificationPreference {
     /**
-     * @return Please provide the root compartmentId (TenancyId).
+     * @return Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     private String compartmentId;
     /**
-     * @return Preferences to send notifications on the fleet activities
+     * @return Preferences to send notifications on the fleet activities.
      * 
      */
     private List<GetFleetNotificationPreferencePreference> preferences;
     /**
-     * @return Topic Id where the notifications will be directed
+     * @return Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
      * 
      */
     private String topicId;
 
     private GetFleetNotificationPreference() {}
     /**
-     * @return Please provide the root compartmentId (TenancyId).
+     * @return Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Preferences to send notifications on the fleet activities
+     * @return Preferences to send notifications on the fleet activities.
      * 
      */
     public List<GetFleetNotificationPreferencePreference> preferences() {
         return this.preferences;
     }
     /**
-     * @return Topic Id where the notifications will be directed
+     * @return Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
      * 
      */
     public String topicId() {

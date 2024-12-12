@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointPlainArgs;
 import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointsArgs;
@@ -171,6 +172,50 @@ public final class AiAnomalyDetectionFunctions {
      * 
      */
     public static Output<GetAiPrivateEndpointResult> getAiPrivateEndpoint(GetAiPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", TypeShape.of(GetAiPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Gets a specific private reverse connection by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoint = AiAnomalyDetectionFunctions.getAiPrivateEndpoint(GetAiPrivateEndpointArgs.builder()
+     *             .aiPrivateEndpointId(testAiPrivateEndpointOciAiAnomalyDetectionAiPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAiPrivateEndpointResult> getAiPrivateEndpoint(GetAiPrivateEndpointArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", TypeShape.of(GetAiPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -402,6 +447,53 @@ public final class AiAnomalyDetectionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAiPrivateEndpointsResult> getAiPrivateEndpoints(GetAiPrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", TypeShape.of(GetAiPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ai Private Endpoints in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Returns a list of all the AI private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoints = AiAnomalyDetectionFunctions.getAiPrivateEndpoints(GetAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiPrivateEndpointDisplayName)
+     *             .id(aiPrivateEndpointId)
+     *             .state(aiPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAiPrivateEndpointsResult> getAiPrivateEndpointsPlain(GetAiPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints", TypeShape.of(GetAiPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
@@ -535,6 +627,50 @@ public final class AiAnomalyDetectionFunctions {
      * 
      */
     public static Output<GetDetectAnomalyJobResult> getDetectAnomalyJob(GetDetectAnomalyJobArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob", TypeShape.of(GetDetectAnomalyJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Gets a detect anomaly asynchronous job by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJob = AiAnomalyDetectionFunctions.getDetectAnomalyJob(GetDetectAnomalyJobArgs.builder()
+     *             .detectAnomalyJobId(testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDetectAnomalyJobResult> getDetectAnomalyJob(GetDetectAnomalyJobArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob", TypeShape.of(GetDetectAnomalyJobResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -774,6 +910,55 @@ public final class AiAnomalyDetectionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDetectAnomalyJobsResult> getDetectAnomalyJobs(GetDetectAnomalyJobsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", TypeShape.of(GetDetectAnomalyJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Returns a list of all the Anomaly Detection jobs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectAnomalyJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectAnomalyJobs = AiAnomalyDetectionFunctions.getDetectAnomalyJobs(GetDetectAnomalyJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .detectAnomalyJobId(testDetectAnomalyJob.id())
+     *             .displayName(detectAnomalyJobDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(detectAnomalyJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDetectAnomalyJobsResult> getDetectAnomalyJobsPlain(GetDetectAnomalyJobsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", TypeShape.of(GetDetectAnomalyJobsResult.class), args, Utilities.withVersion(options));
     }
@@ -907,6 +1092,50 @@ public final class AiAnomalyDetectionFunctions {
      * 
      */
     public static Output<GetDetectionDataAssetResult> getDetectionDataAsset(GetDetectionDataAssetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", TypeShape.of(GetDetectionDataAssetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Gets a DataAsset by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAsset = AiAnomalyDetectionFunctions.getDetectionDataAsset(GetDetectionDataAssetArgs.builder()
+     *             .dataAssetId(testDataAssetOciAiAnomalyDetectionDataAsset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDetectionDataAssetResult> getDetectionDataAsset(GetDetectionDataAssetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", TypeShape.of(GetDetectionDataAssetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1138,6 +1367,53 @@ public final class AiAnomalyDetectionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDetectionDataAssetsResult> getDetectionDataAssets(GetDetectionDataAssetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionDataAssets:getDetectionDataAssets", TypeShape.of(GetDetectionDataAssetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Assets in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Returns a list of DataAssets.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = AiAnomalyDetectionFunctions.getDetectionDataAssets(GetDetectionDataAssetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataAssetDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(dataAssetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDetectionDataAssetsResult> getDetectionDataAssetsPlain(GetDetectionDataAssetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiAnomalyDetection/getDetectionDataAssets:getDetectionDataAssets", TypeShape.of(GetDetectionDataAssetsResult.class), args, Utilities.withVersion(options));
     }
@@ -1271,6 +1547,50 @@ public final class AiAnomalyDetectionFunctions {
      * 
      */
     public static Output<GetDetectionModelResult> getDetectionModel(GetDetectionModelArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionModel:getDetectionModel", TypeShape.of(GetDetectionModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Gets a Model by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiAnomalyDetectionFunctions.getDetectionModel(GetDetectionModelArgs.builder()
+     *             .modelId(testModelOciAiAnomalyDetectionModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDetectionModelResult> getDetectionModel(GetDetectionModelArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionModel:getDetectionModel", TypeShape.of(GetDetectionModelResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1502,6 +1822,53 @@ public final class AiAnomalyDetectionFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDetectionModelsResult> getDetectionModels(GetDetectionModelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", TypeShape.of(GetDetectionModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Returns a list of Models.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiAnomalyDetectionFunctions.getDetectionModels(GetDetectionModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(modelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDetectionModelsResult> getDetectionModelsPlain(GetDetectionModelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", TypeShape.of(GetDetectionModelsResult.class), args, Utilities.withVersion(options));
     }
@@ -1635,6 +2002,50 @@ public final class AiAnomalyDetectionFunctions {
      * 
      */
     public static Output<GetDetectionProjectResult> getDetectionProject(GetDetectionProjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", TypeShape.of(GetDetectionProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Gets a Project by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiAnomalyDetectionFunctions.getDetectionProject(GetDetectionProjectArgs.builder()
+     *             .projectId(testProjectOciAiAnomalyDetectionProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDetectionProjectResult> getDetectionProject(GetDetectionProjectArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", TypeShape.of(GetDetectionProjectResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1817,6 +2228,52 @@ public final class AiAnomalyDetectionFunctions {
      * 
      */
     public static Output<GetDetectionProjectsResult> getDetectionProjects(GetDetectionProjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionProjects:getDetectionProjects", TypeShape.of(GetDetectionProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+     * 
+     * Returns a list of  Projects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiAnomalyDetectionFunctions.getDetectionProjects(GetDetectionProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDetectionProjectsResult> getDetectionProjects(GetDetectionProjectsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiAnomalyDetection/getDetectionProjects:getDetectionProjects", TypeShape.of(GetDetectionProjectsResult.class), args, Utilities.withVersion(options));
     }
     /**

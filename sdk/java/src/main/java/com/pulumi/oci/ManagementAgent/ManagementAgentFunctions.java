@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesPlainArgs;
@@ -220,6 +221,50 @@ public final class ManagementAgentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagementAgentResult> getManagementAgent(GetManagementAgentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgent:getManagementAgent", TypeShape.of(GetManagementAgentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Gets complete details of the inventory of a given agent id
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagementAgentResult> getManagementAgentPlain(GetManagementAgentPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgent:getManagementAgent", TypeShape.of(GetManagementAgentResult.class), args, Utilities.withVersion(options));
     }
@@ -359,6 +404,52 @@ public final class ManagementAgentFunctions {
      * 
      */
     public static Output<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", TypeShape.of(GetManagementAgentAvailableHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Lists the availability history records of Management Agent
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
+     *             .managementAgentId(testManagementAgent.id())
+     *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
+     *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", TypeShape.of(GetManagementAgentAvailableHistoriesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -596,6 +687,54 @@ public final class ManagementAgentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagementAgentCountResult> getManagementAgentCount(GetManagementAgentCountArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", TypeShape.of(GetManagementAgentCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
+     * Supported groupBy parameters: availabilityStatus, platformType, version
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentCount = ManagementAgentFunctions.getManagementAgentCount(GetManagementAgentCountArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .groupBies(managementAgentCountGroupBy)
+     *             .hasPlugins(managementAgentCountHasPlugins)
+     *             .installType(managementAgentCountInstallType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagementAgentCountResult> getManagementAgentCountPlain(GetManagementAgentCountPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", TypeShape.of(GetManagementAgentCountResult.class), args, Utilities.withVersion(options));
     }
@@ -732,6 +871,51 @@ public final class ManagementAgentFunctions {
      * 
      */
     public static Output<GetManagementAgentDataSourceResult> getManagementAgentDataSource(GetManagementAgentDataSourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource", TypeShape.of(GetManagementAgentDataSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Datasource details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
+     *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
+     *             .managementAgentId(testManagementAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagementAgentDataSourceResult> getManagementAgentDataSource(GetManagementAgentDataSourceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource", TypeShape.of(GetManagementAgentDataSourceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -956,6 +1140,51 @@ public final class ManagementAgentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagementAgentDataSourcesResult> getManagementAgentDataSources(GetManagementAgentDataSourcesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", TypeShape.of(GetManagementAgentDataSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Agent Data Sources in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
+     *             .managementAgentId(testManagementAgent.id())
+     *             .name(managementAgentDataSourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagementAgentDataSourcesResult> getManagementAgentDataSourcesPlain(GetManagementAgentDataSourcesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", TypeShape.of(GetManagementAgentDataSourcesResult.class), args, Utilities.withVersion(options));
     }
@@ -1092,6 +1321,51 @@ public final class ManagementAgentFunctions {
      * 
      */
     public static Output<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", TypeShape.of(GetManagementAgentGetAutoUpgradableConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get the AutoUpgradable configuration for all agents in a tenancy.
+     * The supplied compartmentId must be a tenancy root.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentGetAutoUpgradableConfig = ManagementAgentFunctions.getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", TypeShape.of(GetManagementAgentGetAutoUpgradableConfigResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1324,6 +1598,53 @@ public final class ManagementAgentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagementAgentImagesResult> getManagementAgentImages(GetManagementAgentImagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", TypeShape.of(GetManagementAgentImagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get supported agent image information
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentImages = ManagementAgentFunctions.getManagementAgentImages(GetManagementAgentImagesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .installType(managementAgentImageInstallType)
+     *             .name(managementAgentImageName)
+     *             .state(managementAgentImageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagementAgentImagesResult> getManagementAgentImagesPlain(GetManagementAgentImagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", TypeShape.of(GetManagementAgentImagesResult.class), args, Utilities.withVersion(options));
     }
@@ -1457,6 +1778,50 @@ public final class ManagementAgentFunctions {
      * 
      */
     public static Output<GetManagementAgentInstallKeyResult> getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", TypeShape.of(GetManagementAgentInstallKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Gets complete details of the Agent install Key for a given key id
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagementAgentInstallKeyResult> getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", TypeShape.of(GetManagementAgentInstallKeyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1692,6 +2057,54 @@ public final class ManagementAgentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", TypeShape.of(GetManagementAgentInstallKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Agent Install Keys in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Returns a list of Management Agent installed Keys.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKeys = ManagementAgentFunctions.getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentInstallKeyAccessLevel)
+     *             .compartmentIdInSubtree(managementAgentInstallKeyCompartmentIdInSubtree)
+     *             .displayName(managementAgentInstallKeyDisplayName)
+     *             .state(managementAgentInstallKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeysPlain(GetManagementAgentInstallKeysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", TypeShape.of(GetManagementAgentInstallKeysResult.class), args, Utilities.withVersion(options));
     }
@@ -1831,6 +2244,52 @@ public final class ManagementAgentFunctions {
      * 
      */
     public static Output<GetManagementAgentPluginCountResult> getManagementAgentPluginCount(GetManagementAgentPluginCountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", TypeShape.of(GetManagementAgentPluginCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent Plugin Count resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
+     * Supported groupBy parameter: pluginName
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPluginCount = ManagementAgentFunctions.getManagementAgentPluginCount(GetManagementAgentPluginCountArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .groupBy(managementAgentPluginCountGroupBy)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagementAgentPluginCountResult> getManagementAgentPluginCount(GetManagementAgentPluginCountArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", TypeShape.of(GetManagementAgentPluginCountResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2068,6 +2527,54 @@ public final class ManagementAgentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagementAgentPluginsResult> getManagementAgentPlugins(GetManagementAgentPluginsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", TypeShape.of(GetManagementAgentPluginsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Agent Plugins in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Returns a list of managementAgentPlugins.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPlugins = ManagementAgentFunctions.getManagementAgentPlugins(GetManagementAgentPluginsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .agentId(managementAgentId)
+     *             .displayName(managementAgentPluginDisplayName)
+     *             .platformTypes(managementAgentPluginPlatformType)
+     *             .state(managementAgentPluginState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagementAgentPluginsResult> getManagementAgentPluginsPlain(GetManagementAgentPluginsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", TypeShape.of(GetManagementAgentPluginsResult.class), args, Utilities.withVersion(options));
     }
@@ -2252,6 +2759,67 @@ public final class ManagementAgentFunctions {
      * 
      */
     public static Output<GetManagementAgentsResult> getManagementAgents(GetManagementAgentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgents:getManagementAgents", TypeShape.of(GetManagementAgentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Returns a list of Management Agents.
+     * If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+     * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgents = ManagementAgentFunctions.getManagementAgents(GetManagementAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentAccessLevel)
+     *             .availabilityStatus(managementAgentAvailabilityStatus)
+     *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
+     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceType(managementAgentDataSourceType)
+     *             .displayName(managementAgentDisplayName)
+     *             .gatewayIds(testGateway.id())
+     *             .hostId(testHost.id())
+     *             .waitForHostId(10)
+     *             .installType(managementAgentInstallType)
+     *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
+     *             .platformTypes(managementAgentPlatformType)
+     *             .pluginNames(managementAgentPluginName)
+     *             .state(managementAgentState)
+     *             .versions(managementAgentVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagementAgentsResult> getManagementAgents(GetManagementAgentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgents:getManagementAgents", TypeShape.of(GetManagementAgentsResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -15,14 +15,14 @@ public final class GetFleetComplianceReportArgs extends com.pulumi.resources.Inv
     public static final GetFleetComplianceReportArgs Empty = new GetFleetComplianceReportArgs();
 
     /**
-     * compliance report identifier
+     * compliance report identifier.
      * 
      */
     @Import(name="complianceReportId", required=true)
     private Output<String> complianceReportId;
 
     /**
-     * @return compliance report identifier
+     * @return compliance report identifier.
      * 
      */
     public Output<String> complianceReportId() {
@@ -30,14 +30,14 @@ public final class GetFleetComplianceReportArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Output<String> fleetId() {
@@ -70,7 +70,7 @@ public final class GetFleetComplianceReportArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param complianceReportId compliance report identifier
+         * @param complianceReportId compliance report identifier.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class GetFleetComplianceReportArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param complianceReportId compliance report identifier
+         * @param complianceReportId compliance report identifier.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class GetFleetComplianceReportArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class GetFleetComplianceReportArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 

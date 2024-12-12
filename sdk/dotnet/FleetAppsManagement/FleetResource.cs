@@ -12,7 +12,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
     /// 
-    /// Creates a new FleetResource.
+    /// Add resource to a fleet in Fleet Application Management.
     /// 
     /// ## Example Usage
     /// 
@@ -45,13 +45,13 @@ namespace Pulumi.Oci.FleetAppsManagement
     public partial class FleetResource : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        /// Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         /// </summary>
         [Output("applicationType")]
         public Output<string> ApplicationType { get; private set; } = null!;
 
         /// <summary>
-        /// Resource Compartment
+        /// Resource Compartment name.
         /// </summary>
         [Output("compartment")]
         public Output<string> Compartment { get; private set; } = null!;
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Compliance State of the Resource
+        /// Compliance State of the Resource.
         /// </summary>
         [Output("complianceState")]
         public Output<string> ComplianceState { get; private set; } = null!;
@@ -75,13 +75,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        /// Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         /// </summary>
         [Output("environmentType")]
         public Output<string> EnvironmentType { get; private set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Output("fleetId")]
         public Output<string> FleetId { get; private set; } = null!;
@@ -93,7 +93,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        /// Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         /// </summary>
         [Output("product")]
         public Output<string> Product { get; private set; } = null!;
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// Count of targets  within the resource.
+        /// Count of targets within the resource.
         /// </summary>
         [Output("targetCount")]
         public Output<int> TargetCount { get; private set; } = null!;
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> TenancyId { get; private set; } = null!;
 
         /// <summary>
-        /// Resource Tenancy Name
+        /// Resource Tenancy Name.
         /// </summary>
         [Output("tenancyName")]
         public Output<string> TenancyName { get; private set; } = null!;
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
@@ -263,13 +263,13 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class FleetResourceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        /// Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         /// </summary>
         [Input("applicationType")]
         public Input<string>? ApplicationType { get; set; }
 
         /// <summary>
-        /// Resource Compartment
+        /// Resource Compartment name.
         /// </summary>
         [Input("compartment")]
         public Input<string>? Compartment { get; set; }
@@ -281,7 +281,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Compliance State of the Resource
+        /// Compliance State of the Resource.
         /// </summary>
         [Input("complianceState")]
         public Input<string>? ComplianceState { get; set; }
@@ -293,13 +293,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        /// Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
         /// </summary>
         [Input("environmentType")]
         public Input<string>? EnvironmentType { get; set; }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId")]
         public Input<string>? FleetId { get; set; }
@@ -311,7 +311,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        /// Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
         /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
@@ -359,7 +359,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// Count of targets  within the resource.
+        /// Count of targets within the resource.
         /// </summary>
         [Input("targetCount")]
         public Input<int>? TargetCount { get; set; }
@@ -375,7 +375,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? TenancyId { get; set; }
 
         /// <summary>
-        /// Resource Tenancy Name
+        /// Resource Tenancy Name.
         /// </summary>
         [Input("tenancyName")]
         public Input<string>? TenancyName { get; set; }

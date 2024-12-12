@@ -9,8 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Creates a new fleet instance that includes fleet resources and properties.
- * For more information, please see the documentation.
+ * Create a product, environment, group, or generic type of fleet in Fleet Application Management.
  *
  * ## Import
  *
@@ -49,13 +48,17 @@ export class Fleet extends pulumi.CustomResource {
     }
 
     /**
-     * Application Type associated with the Fleet.Applicable for Environment fleet types.
+     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     public readonly applicationType!: pulumi.Output<string>;
     /**
      * Tenancy OCID
      */
     public readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * Credentials associated with the Fleet.
+     */
+    public readonly credentials!: pulumi.Output<outputs.FleetAppsManagement.FleetCredential[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -69,11 +72,11 @@ export class Fleet extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * Environment Type associated with the Fleet.Applicable for Environment fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     public readonly environmentType!: pulumi.Output<string>;
     /**
-     * Type of the Fleet
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      */
     public readonly fleetType!: pulumi.Output<string>;
     /**
@@ -81,11 +84,11 @@ export class Fleet extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * Group Type associated with Group Fleet.Applicable for Group fleet types.
+     * Group Type associated with Group Fleet.
      */
     public readonly groupType!: pulumi.Output<string>;
     /**
-     * (Updatable) A value which represents if auto confirming of the targets can be enabled
+     * (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      */
     public readonly isTargetAutoConfirm!: pulumi.Output<boolean>;
     /**
@@ -93,11 +96,11 @@ export class Fleet extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) Conditions when met to send notifications on the fleet activities
+     * (Updatable) Notification information to get notified when the fleet status changes.
      */
     public readonly notificationPreferences!: pulumi.Output<outputs.FleetAppsManagement.FleetNotificationPreferences>;
     /**
-     * Products associated with the Fleet
+     * Products associated with the Fleet.
      */
     public readonly products!: pulumi.Output<string[]>;
     /**
@@ -105,11 +108,11 @@ export class Fleet extends pulumi.CustomResource {
      */
     public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
     /**
-     * Type of resource selection in a fleet
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      */
     public readonly resourceSelectionType!: pulumi.Output<string>;
     /**
-     * (Updatable) Rule Selection Criteria
+     * (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      */
     public readonly ruleSelectionCriteria!: pulumi.Output<outputs.FleetAppsManagement.FleetRuleSelectionCriteria>;
     /**
@@ -144,6 +147,7 @@ export class Fleet extends pulumi.CustomResource {
             const state = argsOrState as FleetState | undefined;
             resourceInputs["applicationType"] = state ? state.applicationType : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["credentials"] = state ? state.credentials : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -172,6 +176,7 @@ export class Fleet extends pulumi.CustomResource {
             }
             resourceInputs["applicationType"] = args ? args.applicationType : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["credentials"] = args ? args.credentials : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -201,13 +206,17 @@ export class Fleet extends pulumi.CustomResource {
  */
 export interface FleetState {
     /**
-     * Application Type associated with the Fleet.Applicable for Environment fleet types.
+     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     applicationType?: pulumi.Input<string>;
     /**
      * Tenancy OCID
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * Credentials associated with the Fleet.
+     */
+    credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetCredential>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -221,11 +230,11 @@ export interface FleetState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Environment Type associated with the Fleet.Applicable for Environment fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     environmentType?: pulumi.Input<string>;
     /**
-     * Type of the Fleet
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      */
     fleetType?: pulumi.Input<string>;
     /**
@@ -233,11 +242,11 @@ export interface FleetState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Group Type associated with Group Fleet.Applicable for Group fleet types.
+     * Group Type associated with Group Fleet.
      */
     groupType?: pulumi.Input<string>;
     /**
-     * (Updatable) A value which represents if auto confirming of the targets can be enabled
+     * (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      */
     isTargetAutoConfirm?: pulumi.Input<boolean>;
     /**
@@ -245,11 +254,11 @@ export interface FleetState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Conditions when met to send notifications on the fleet activities
+     * (Updatable) Notification information to get notified when the fleet status changes.
      */
     notificationPreferences?: pulumi.Input<inputs.FleetAppsManagement.FleetNotificationPreferences>;
     /**
-     * Products associated with the Fleet
+     * Products associated with the Fleet.
      */
     products?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -257,11 +266,11 @@ export interface FleetState {
      */
     resourceRegion?: pulumi.Input<string>;
     /**
-     * Type of resource selection in a fleet
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      */
     resourceSelectionType?: pulumi.Input<string>;
     /**
-     * (Updatable) Rule Selection Criteria
+     * (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      */
     ruleSelectionCriteria?: pulumi.Input<inputs.FleetAppsManagement.FleetRuleSelectionCriteria>;
     /**
@@ -287,13 +296,17 @@ export interface FleetState {
  */
 export interface FleetArgs {
     /**
-     * Application Type associated with the Fleet.Applicable for Environment fleet types.
+     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     applicationType?: pulumi.Input<string>;
     /**
      * Tenancy OCID
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * Credentials associated with the Fleet.
+     */
+    credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetCredential>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -307,11 +320,11 @@ export interface FleetArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Environment Type associated with the Fleet.Applicable for Environment fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     environmentType?: pulumi.Input<string>;
     /**
-     * Type of the Fleet
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      */
     fleetType: pulumi.Input<string>;
     /**
@@ -319,27 +332,27 @@ export interface FleetArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Group Type associated with Group Fleet.Applicable for Group fleet types.
+     * Group Type associated with Group Fleet.
      */
     groupType?: pulumi.Input<string>;
     /**
-     * (Updatable) A value which represents if auto confirming of the targets can be enabled
+     * (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      */
     isTargetAutoConfirm?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Conditions when met to send notifications on the fleet activities
+     * (Updatable) Notification information to get notified when the fleet status changes.
      */
     notificationPreferences?: pulumi.Input<inputs.FleetAppsManagement.FleetNotificationPreferences>;
     /**
-     * Products associated with the Fleet
+     * Products associated with the Fleet.
      */
     products?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Type of resource selection in a fleet
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      */
     resourceSelectionType?: pulumi.Input<string>;
     /**
-     * (Updatable) Rule Selection Criteria
+     * (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      */
     ruleSelectionCriteria?: pulumi.Input<inputs.FleetAppsManagement.FleetRuleSelectionCriteria>;
 }

@@ -113,6 +113,10 @@ export class FsuCollection extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     */
+    public /*out*/ readonly lastCompletedFsuCycleId!: pulumi.Output<string>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -172,6 +176,7 @@ export class FsuCollection extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["fleetDiscovery"] = state ? state.fleetDiscovery : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["lastCompletedFsuCycleId"] = state ? state.lastCompletedFsuCycleId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["serviceType"] = state ? state.serviceType : undefined;
             resourceInputs["sourceMajorVersion"] = state ? state.sourceMajorVersion : undefined;
@@ -204,6 +209,7 @@ export class FsuCollection extends pulumi.CustomResource {
             resourceInputs["sourceMajorVersion"] = args ? args.sourceMajorVersion : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["activeFsuCycles"] = undefined /*out*/;
+            resourceInputs["lastCompletedFsuCycleId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -244,6 +250,10 @@ export interface FsuCollectionState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     */
+    lastCompletedFsuCycleId?: pulumi.Input<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */

@@ -108,14 +108,14 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The scope of the property
+     * The scope of the property.
      * 
      */
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
     /**
-     * @return The scope of the property
+     * @return The scope of the property.
      * 
      */
     public Optional<Output<String>> scope() {
@@ -123,14 +123,14 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Text selection of the category
+     * (Updatable) Text selection of the property.
      * 
      */
     @Import(name="selection")
     private @Nullable Output<String> selection;
 
     /**
-     * @return (Updatable) Text selection of the category
+     * @return (Updatable) Text selection of the property.
      * 
      */
     public Optional<Output<String>> selection() {
@@ -213,14 +213,14 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Format of the value
+     * (Updatable) Format of the value.
      * 
      */
     @Import(name="valueType")
     private @Nullable Output<String> valueType;
 
     /**
-     * @return (Updatable) Format of the value
+     * @return (Updatable) Format of the value.
      * 
      */
     public Optional<Output<String>> valueType() {
@@ -228,7 +228,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * (Updatable) Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -238,7 +238,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return (Updatable) Values of the property (must be a single value if selection = &#39;single choice&#39;)
+     * @return (Updatable) Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -413,7 +413,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope The scope of the property
+         * @param scope The scope of the property.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope The scope of the property
+         * @param scope The scope of the property.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param selection (Updatable) Text selection of the category
+         * @param selection (Updatable) Text selection of the property.
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param selection (Updatable) Text selection of the category
+         * @param selection (Updatable) Text selection of the property.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param valueType (Updatable) Format of the value
+         * @param valueType (Updatable) Format of the value.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param valueType (Updatable) Format of the value
+         * @param valueType (Updatable) Format of the value.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param values (Updatable) Values of the property (must be a single value if selection = &#39;single choice&#39;)
+         * @param values (Updatable) Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -595,7 +595,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param values (Updatable) Values of the property (must be a single value if selection = &#39;single choice&#39;)
+         * @param values (Updatable) Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -608,7 +608,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param values (Updatable) Values of the property (must be a single value if selection = &#39;single choice&#39;)
+         * @param values (Updatable) Values of the property (must be a single value if selection = &#39;SINGLE_CHOICE&#39;).
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Creates a new FleetProperty.
+// Add an existing global property to a fleet in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -51,17 +51,17 @@ import (
 type FleetProperty struct {
 	pulumi.CustomResourceState
 
-	// Values of the category (must be a single value if selection = 'single choice')
+	// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
 	AllowedValues pulumi.StringArrayOutput `pulumi:"allowedValues"`
 	// Tenancy OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringOutput `pulumi:"fleetId"`
-	// Property Id.
+	// OCID referring to global level metadata property.
 	PropertyId pulumi.StringOutput `pulumi:"propertyId"`
-	// Text selection of the category
+	// Text selection of the property.
 	SelectionType pulumi.StringOutput `pulumi:"selectionType"`
 	// The current state of the FleetProperty.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -71,12 +71,12 @@ type FleetProperty struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Value of the Property
+	// (Updatable) Value of the Property.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value pulumi.StringOutput `pulumi:"value"`
-	// Format of the value
+	// Format of the value.
 	ValueType pulumi.StringOutput `pulumi:"valueType"`
 }
 
@@ -122,17 +122,17 @@ func GetFleetProperty(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FleetProperty resources.
 type fleetPropertyState struct {
-	// Values of the category (must be a single value if selection = 'single choice')
+	// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
 	AllowedValues []string `pulumi:"allowedValues"`
 	// Tenancy OCID
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId *string `pulumi:"fleetId"`
-	// Property Id.
+	// OCID referring to global level metadata property.
 	PropertyId *string `pulumi:"propertyId"`
-	// Text selection of the category
+	// Text selection of the property.
 	SelectionType *string `pulumi:"selectionType"`
 	// The current state of the FleetProperty.
 	State *string `pulumi:"state"`
@@ -142,27 +142,27 @@ type fleetPropertyState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Value of the Property
+	// (Updatable) Value of the Property.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value *string `pulumi:"value"`
-	// Format of the value
+	// Format of the value.
 	ValueType *string `pulumi:"valueType"`
 }
 
 type FleetPropertyState struct {
-	// Values of the category (must be a single value if selection = 'single choice')
+	// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
 	AllowedValues pulumi.StringArrayInput
 	// Tenancy OCID
 	CompartmentId pulumi.StringPtrInput
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringPtrInput
-	// Property Id.
+	// OCID referring to global level metadata property.
 	PropertyId pulumi.StringPtrInput
-	// Text selection of the category
+	// Text selection of the property.
 	SelectionType pulumi.StringPtrInput
 	// The current state of the FleetProperty.
 	State pulumi.StringPtrInput
@@ -172,12 +172,12 @@ type FleetPropertyState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Value of the Property
+	// (Updatable) Value of the Property.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value pulumi.StringPtrInput
-	// Format of the value
+	// Format of the value.
 	ValueType pulumi.StringPtrInput
 }
 
@@ -188,11 +188,11 @@ func (FleetPropertyState) ElementType() reflect.Type {
 type fleetPropertyArgs struct {
 	// Tenancy OCID
 	CompartmentId string `pulumi:"compartmentId"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
-	// Property Id.
+	// OCID referring to global level metadata property.
 	PropertyId string `pulumi:"propertyId"`
-	// (Updatable) Value of the Property
+	// (Updatable) Value of the Property.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -203,11 +203,11 @@ type fleetPropertyArgs struct {
 type FleetPropertyArgs struct {
 	// Tenancy OCID
 	CompartmentId pulumi.StringInput
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput
-	// Property Id.
+	// OCID referring to global level metadata property.
 	PropertyId pulumi.StringInput
-	// (Updatable) Value of the Property
+	// (Updatable) Value of the Property.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -301,7 +301,7 @@ func (o FleetPropertyOutput) ToFleetPropertyOutputWithContext(ctx context.Contex
 	return o
 }
 
-// Values of the category (must be a single value if selection = 'single choice')
+// Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
 func (o FleetPropertyOutput) AllowedValues() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FleetProperty) pulumi.StringArrayOutput { return v.AllowedValues }).(pulumi.StringArrayOutput)
 }
@@ -316,17 +316,17 @@ func (o FleetPropertyOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetProperty) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// unique Fleet identifier
+// Unique Fleet identifier.
 func (o FleetPropertyOutput) FleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetProperty) pulumi.StringOutput { return v.FleetId }).(pulumi.StringOutput)
 }
 
-// Property Id.
+// OCID referring to global level metadata property.
 func (o FleetPropertyOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetProperty) pulumi.StringOutput { return v.PropertyId }).(pulumi.StringOutput)
 }
 
-// Text selection of the category
+// Text selection of the property.
 func (o FleetPropertyOutput) SelectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetProperty) pulumi.StringOutput { return v.SelectionType }).(pulumi.StringOutput)
 }
@@ -351,7 +351,7 @@ func (o FleetPropertyOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetProperty) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) Value of the Property
+// (Updatable) Value of the Property.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -359,7 +359,7 @@ func (o FleetPropertyOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetProperty) pulumi.StringOutput { return v.Value }).(pulumi.StringOutput)
 }
 
-// Format of the value
+// Format of the value.
 func (o FleetPropertyOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v *FleetProperty) pulumi.StringOutput { return v.ValueType }).(pulumi.StringOutput)
 }

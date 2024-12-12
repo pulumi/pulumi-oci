@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseArgs;
 import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseFetchConfigurationArgs;
 import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseFetchConfigurationPlainArgs;
@@ -205,6 +206,50 @@ public final class RecoveryModFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProtectedDatabaseResult> getProtectedDatabase(GetProtectedDatabaseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:RecoveryMod/getProtectedDatabase:getProtectedDatabase", TypeShape.of(GetProtectedDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Protected Database resource in Oracle Cloud Infrastructure Recovery service.
+     * 
+     * Gets information about a specified protected database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
+     * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectedDatabase = RecoveryModFunctions.getProtectedDatabase(GetProtectedDatabaseArgs.builder()
+     *             .protectedDatabaseId(testProtectedDatabaseOciRecoveryProtectedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProtectedDatabaseResult> getProtectedDatabasePlain(GetProtectedDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:RecoveryMod/getProtectedDatabase:getProtectedDatabase", TypeShape.of(GetProtectedDatabaseResult.class), args, Utilities.withVersion(options));
     }
@@ -344,6 +389,52 @@ public final class RecoveryModFunctions {
      * 
      */
     public static Output<GetProtectedDatabaseFetchConfigurationResult> getProtectedDatabaseFetchConfiguration(GetProtectedDatabaseFetchConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", TypeShape.of(GetProtectedDatabaseFetchConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Protected Database Fetch Configuration resource in Oracle Cloud Infrastructure Recovery service.
+     * 
+     * Downloads the network service configuration file &#39;tnsnames.ora&#39; for a specified protected database. Applies to user-defined recovery systems only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
+     * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseFetchConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectedDatabaseFetchConfiguration = RecoveryModFunctions.getProtectedDatabaseFetchConfiguration(GetProtectedDatabaseFetchConfigurationArgs.builder()
+     *             .protectedDatabaseId(testProtectedDatabase.id())
+     *             .base64EncodeContent(true)
+     *             .configurationType(protectedDatabaseFetchConfigurationConfigurationType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProtectedDatabaseFetchConfigurationResult> getProtectedDatabaseFetchConfiguration(GetProtectedDatabaseFetchConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", TypeShape.of(GetProtectedDatabaseFetchConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -585,6 +676,55 @@ public final class RecoveryModFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProtectedDatabasesResult> getProtectedDatabases(GetProtectedDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", TypeShape.of(GetProtectedDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Protected Databases in Oracle Cloud Infrastructure Recovery service.
+     * 
+     * Lists the protected databases based on the specified parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
+     * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectedDatabases = RecoveryModFunctions.getProtectedDatabases(GetProtectedDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectedDatabaseDisplayName)
+     *             .id(protectedDatabaseId)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnet.id())
+     *             .state(protectedDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProtectedDatabasesResult> getProtectedDatabasesPlain(GetProtectedDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", TypeShape.of(GetProtectedDatabasesResult.class), args, Utilities.withVersion(options));
     }
@@ -730,6 +870,54 @@ public final class RecoveryModFunctions {
      * 
      */
     public static Output<GetProtectionPoliciesResult> getProtectionPolicies(GetProtectionPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", TypeShape.of(GetProtectionPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Protection Policies in Oracle Cloud Infrastructure Recovery service.
+     * 
+     * Gets a list of protection policies based on the specified parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
+     * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionPolicies = RecoveryModFunctions.getProtectionPolicies(GetProtectionPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionPolicyDisplayName)
+     *             .owner(protectionPolicyOwner)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .state(protectionPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProtectionPoliciesResult> getProtectionPolicies(GetProtectionPoliciesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", TypeShape.of(GetProtectionPoliciesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -953,6 +1141,50 @@ public final class RecoveryModFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProtectionPolicyResult> getProtectionPolicy(GetProtectionPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:RecoveryMod/getProtectionPolicy:getProtectionPolicy", TypeShape.of(GetProtectionPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
+     * 
+     * Gets information about a specified protection policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
+     * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionPolicy = RecoveryModFunctions.getProtectionPolicy(GetProtectionPolicyArgs.builder()
+     *             .protectionPolicyId(testProtectionPolicyOciRecoveryProtectionPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProtectionPolicyResult> getProtectionPolicyPlain(GetProtectionPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:RecoveryMod/getProtectionPolicy:getProtectionPolicy", TypeShape.of(GetProtectionPolicyResult.class), args, Utilities.withVersion(options));
     }
@@ -1086,6 +1318,50 @@ public final class RecoveryModFunctions {
      * 
      */
     public static Output<GetRecoveryServiceSubnetResult> getRecoveryServiceSubnet(GetRecoveryServiceSubnetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet", TypeShape.of(GetRecoveryServiceSubnetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
+     * 
+     * Gets information about a specified recovery service subnet.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
+     * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecoveryServiceSubnet = RecoveryModFunctions.getRecoveryServiceSubnet(GetRecoveryServiceSubnetArgs.builder()
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRecoveryServiceSubnetResult> getRecoveryServiceSubnet(GetRecoveryServiceSubnetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet", TypeShape.of(GetRecoveryServiceSubnetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1274,6 +1550,54 @@ public final class RecoveryModFunctions {
      * 
      */
     public static Output<GetRecoveryServiceSubnetsResult> getRecoveryServiceSubnets(GetRecoveryServiceSubnetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", TypeShape.of(GetRecoveryServiceSubnetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Recovery Service Subnets in Oracle Cloud Infrastructure Recovery service.
+     * 
+     * Returns a list of Recovery Service Subnets.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
+     * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecoveryServiceSubnets = RecoveryModFunctions.getRecoveryServiceSubnets(GetRecoveryServiceSubnetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(recoveryServiceSubnetDisplayName)
+     *             .id(recoveryServiceSubnetId)
+     *             .state(recoveryServiceSubnetState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRecoveryServiceSubnetsResult> getRecoveryServiceSubnets(GetRecoveryServiceSubnetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", TypeShape.of(GetRecoveryServiceSubnetsResult.class), args, Utilities.withVersion(options));
     }
     /**

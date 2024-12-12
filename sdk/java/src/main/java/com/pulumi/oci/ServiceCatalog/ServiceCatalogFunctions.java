@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
 import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
 import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagePlainArgs;
@@ -208,6 +209,50 @@ public final class ServiceCatalogFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPrivateApplicationResult> getPrivateApplication(GetPrivateApplicationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getPrivateApplication:getPrivateApplication", TypeShape.of(GetPrivateApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Gets the details of the specified private application.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplication = ServiceCatalogFunctions.getPrivateApplication(GetPrivateApplicationArgs.builder()
+     *             .privateApplicationId(testPrivateApplicationOciServiceCatalogPrivateApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPrivateApplicationResult> getPrivateApplicationPlain(GetPrivateApplicationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceCatalog/getPrivateApplication:getPrivateApplication", TypeShape.of(GetPrivateApplicationResult.class), args, Utilities.withVersion(options));
     }
@@ -341,6 +386,50 @@ public final class ServiceCatalogFunctions {
      * 
      */
     public static Output<GetPrivateApplicationPackageResult> getPrivateApplicationPackage(GetPrivateApplicationPackageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getPrivateApplicationPackage:getPrivateApplicationPackage", TypeShape.of(GetPrivateApplicationPackageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Private Application Package resource in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Gets the details of a specific package within a given private application.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackage = ServiceCatalogFunctions.getPrivateApplicationPackage(GetPrivateApplicationPackageArgs.builder()
+     *             .privateApplicationPackageId(testPrivateApplicationPackageOciServiceCatalogPrivateApplicationPackage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPrivateApplicationPackageResult> getPrivateApplicationPackage(GetPrivateApplicationPackageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceCatalog/getPrivateApplicationPackage:getPrivateApplicationPackage", TypeShape.of(GetPrivateApplicationPackageResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -572,6 +661,53 @@ public final class ServiceCatalogFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPrivateApplicationPackagesResult> getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", TypeShape.of(GetPrivateApplicationPackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Application Packages in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists the packages in the specified private application.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackages = ServiceCatalogFunctions.getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs.builder()
+     *             .privateApplicationId(testPrivateApplication.id())
+     *             .displayName(privateApplicationPackageDisplayName)
+     *             .packageTypes(privateApplicationPackagePackageType)
+     *             .privateApplicationPackageId(testPrivateApplicationPackage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPrivateApplicationPackagesResult> getPrivateApplicationPackagesPlain(GetPrivateApplicationPackagesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", TypeShape.of(GetPrivateApplicationPackagesResult.class), args, Utilities.withVersion(options));
     }
@@ -711,6 +847,52 @@ public final class ServiceCatalogFunctions {
      * 
      */
     public static Output<GetPrivateApplicationsResult> getPrivateApplications(GetPrivateApplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getPrivateApplications:getPrivateApplications", TypeShape.of(GetPrivateApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Applications in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the private applications in a given compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplications = ServiceCatalogFunctions.getPrivateApplications(GetPrivateApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateApplicationDisplayName)
+     *             .privateApplicationId(testPrivateApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPrivateApplicationsResult> getPrivateApplications(GetPrivateApplicationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceCatalog/getPrivateApplications:getPrivateApplications", TypeShape.of(GetPrivateApplicationsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -932,6 +1114,50 @@ public final class ServiceCatalogFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetServiceCatalogResult> getServiceCatalog(GetServiceCatalogArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getServiceCatalog:getServiceCatalog", TypeShape.of(GetServiceCatalogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Gets detailed information about the service catalog including name, compartmentId
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalog = ServiceCatalogFunctions.getServiceCatalog(GetServiceCatalogArgs.builder()
+     *             .serviceCatalogId(testServiceCatalogOciServiceCatalogServiceCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetServiceCatalogResult> getServiceCatalogPlain(GetServiceCatalogPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceCatalog/getServiceCatalog:getServiceCatalog", TypeShape.of(GetServiceCatalogResult.class), args, Utilities.withVersion(options));
     }
@@ -1065,6 +1291,50 @@ public final class ServiceCatalogFunctions {
      * 
      */
     public static Output<GetServiceCatalogAssociationResult> getServiceCatalogAssociation(GetServiceCatalogAssociationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", TypeShape.of(GetServiceCatalogAssociationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Gets detailed information about specific service catalog association.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociation = ServiceCatalogFunctions.getServiceCatalogAssociation(GetServiceCatalogAssociationArgs.builder()
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServiceCatalogAssociationResult> getServiceCatalogAssociation(GetServiceCatalogAssociationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", TypeShape.of(GetServiceCatalogAssociationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1390,6 +1660,53 @@ public final class ServiceCatalogFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetServiceCatalogAssociationsResult> getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations", TypeShape.of(GetServiceCatalogAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Service Catalog Associations in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the resource associations for a specific service catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
+     *             .entityId(testEntity.id())
+     *             .entityType(serviceCatalogAssociationEntityType)
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociation.id())
+     *             .serviceCatalogId(testServiceCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetServiceCatalogAssociationsResult> getServiceCatalogAssociationsPlain(GetServiceCatalogAssociationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations", TypeShape.of(GetServiceCatalogAssociationsResult.class), args, Utilities.withVersion(options));
     }
@@ -1529,6 +1846,52 @@ public final class ServiceCatalogFunctions {
      * 
      */
     public static Output<GetServiceCatalogsResult> getServiceCatalogs(GetServiceCatalogsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", TypeShape.of(GetServiceCatalogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the service catalogs in the given compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogs = ServiceCatalogFunctions.getServiceCatalogs(GetServiceCatalogsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceCatalogDisplayName)
+     *             .serviceCatalogId(testServiceCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServiceCatalogsResult> getServiceCatalogs(GetServiceCatalogsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", TypeShape.of(GetServiceCatalogsResult.class), args, Utilities.withVersion(options));
     }
     /**

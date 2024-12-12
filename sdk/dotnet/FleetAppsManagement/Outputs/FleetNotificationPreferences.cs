@@ -14,15 +14,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class FleetNotificationPreferences
     {
         /// <summary>
-        /// (Updatable) Copartment Id of the topic where the notifications will be directed
+        /// (Updatable) Compartment ID the topic belongs to.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// (Updatable) Preferences to send notifications on the fleet activities
+        /// (Updatable) Preferences to send notifications on the fleet activities.
         /// </summary>
         public readonly Outputs.FleetNotificationPreferencesPreferences? Preferences;
         /// <summary>
-        /// (Updatable) Topic Id where the notifications will be directed
+        /// (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
         /// </summary>
         public readonly string TopicId;
 

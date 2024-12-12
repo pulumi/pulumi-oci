@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceArgs;
 import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePlainArgs;
 import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePrivateAccessChannelArgs;
@@ -150,6 +151,50 @@ public final class AnalyticsFunctions {
      * 
      */
     public static Output<GetAnalyticsInstanceResult> getAnalyticsInstance(GetAnalyticsInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", TypeShape.of(GetAnalyticsInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * Info for a specific Analytics instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAnalyticsInstanceResult> getAnalyticsInstance(GetAnalyticsInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", TypeShape.of(GetAnalyticsInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -373,6 +418,51 @@ public final class AnalyticsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", TypeShape.of(GetAnalyticsInstancePrivateAccessChannelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * Retrieve private access channel in the specified Analytics Instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePrivateAccessChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannelPlain(GetAnalyticsInstancePrivateAccessChannelPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", TypeShape.of(GetAnalyticsInstancePrivateAccessChannelResult.class), args, Utilities.withVersion(options));
     }
@@ -518,6 +608,54 @@ public final class AnalyticsFunctions {
      * 
      */
     public static Output<GetAnalyticsInstancesResult> getAnalyticsInstances(GetAnalyticsInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", TypeShape.of(GetAnalyticsInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * List Analytics instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstances = AnalyticsFunctions.getAnalyticsInstances(GetAnalyticsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .capacityType(analyticsInstanceCapacityType)
+     *             .featureSet(analyticsInstanceFeatureSet)
+     *             .name(analyticsInstanceName)
+     *             .state(analyticsInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAnalyticsInstancesResult> getAnalyticsInstances(GetAnalyticsInstancesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", TypeShape.of(GetAnalyticsInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**

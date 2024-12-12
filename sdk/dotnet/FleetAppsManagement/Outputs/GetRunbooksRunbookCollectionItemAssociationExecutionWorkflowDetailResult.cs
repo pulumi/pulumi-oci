@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailResult
     {
         /// <summary>
-        /// Execution Workflow for the runbook.
+        /// Rollback Workflow for the runbook.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationExecutionWorkflowDetailWorkflowResult> Workflows;
 

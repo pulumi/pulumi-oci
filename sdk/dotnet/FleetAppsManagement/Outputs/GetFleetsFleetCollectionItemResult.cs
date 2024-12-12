@@ -14,13 +14,17 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetsFleetCollectionItemResult
     {
         /// <summary>
-        /// A filter to return only resources that match the Application Type given.
+        /// A filter to return resources that match the Application Type/Product Stack given..
         /// </summary>
         public readonly string ApplicationType;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// Credentials associated with the Fleet.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFleetsFleetCollectionItemCredentialResult> Credentials;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -34,11 +38,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// A filter to return only resources that match the Environment Type given.
+        /// A filter to return resources that match the Environment Type given.
         /// </summary>
         public readonly string EnvironmentType;
         /// <summary>
-        /// A filter to return only resources their fleetType matches the given fleetType.
+        /// A filter to return fleets whose fleetType matches the given fleetType.
         /// </summary>
         public readonly string FleetType;
         /// <summary>
@@ -46,15 +50,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+        /// Group Type associated with Group Fleet. Applicable for GROUP fleet types.
         /// </summary>
         public readonly string GroupType;
         /// <summary>
-        /// unique Fleet identifier
+        /// A filter to return fleets whose id matches the given Fleet identifier
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A value which represents if auto confirming of the targets can be enabled
+        /// A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         /// </summary>
         public readonly bool IsTargetAutoConfirm;
         /// <summary>
@@ -62,11 +66,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Conditions when met to send notifications on the fleet activities
+        /// Notification information to get notified when the fleet status changes.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetsFleetCollectionItemNotificationPreferenceResult> NotificationPreferences;
         /// <summary>
-        /// Products associated with the Fleet
+        /// Products associated with the Fleet.
         /// </summary>
         public readonly ImmutableArray<string> Products;
         /// <summary>
@@ -74,15 +78,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ResourceRegion;
         /// <summary>
-        /// Type of resource selection in a fleet.
+        /// Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         /// </summary>
         public readonly string ResourceSelectionType;
         /// <summary>
-        /// Rule Selection Criteria
+        /// Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetsFleetCollectionItemRuleSelectionCriteriaResult> RuleSelectionCriterias;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return fleets whose lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -103,6 +107,8 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
             string applicationType,
 
             string compartmentId,
+
+            ImmutableArray<Outputs.GetFleetsFleetCollectionItemCredentialResult> credentials,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -144,6 +150,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         {
             ApplicationType = applicationType;
             CompartmentId = compartmentId;
+            Credentials = credentials;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;

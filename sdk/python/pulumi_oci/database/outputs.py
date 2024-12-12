@@ -15209,6 +15209,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  key_history_entries: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryResult'],
                  key_store_id: str,
                  key_store_wallet_name: str,
+                 key_version_id: str,
                  kms_key_id: str,
                  largest_provisionable_autonomous_database_in_cpus: float,
                  last_maintenance_run_id: str,
@@ -15321,6 +15322,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "key_history_entries", key_history_entries)
         pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+        pulumi.set(__self__, "key_version_id", key_version_id)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "largest_provisionable_autonomous_database_in_cpus", largest_provisionable_autonomous_database_in_cpus)
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
@@ -15553,6 +15555,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         The wallet name for Oracle Key Vault.
         """
         return pulumi.get(self, "key_store_wallet_name")
+
+    @property
+    @pulumi.getter(name="keyVersionId")
+    def key_version_id(self) -> str:
+        return pulumi.get(self, "key_version_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -18809,6 +18816,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  key_history_entries: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult'],
                  key_store_id: str,
                  key_store_wallet_name: str,
+                 key_version_id: str,
                  kms_key_id: str,
                  kms_key_lifecycle_details: str,
                  kms_key_version_id: str,
@@ -19081,6 +19089,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "key_history_entries", key_history_entries)
         pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+        pulumi.set(__self__, "key_version_id", key_version_id)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_lifecycle_details", kms_key_lifecycle_details)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
@@ -19673,6 +19682,11 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The wallet name for Oracle Key Vault.
         """
         return pulumi.get(self, "key_store_wallet_name")
+
+    @property
+    @pulumi.getter(name="keyVersionId")
+    def key_version_id(self) -> str:
+        return pulumi.get(self, "key_version_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")

@@ -581,7 +581,7 @@ if not MYPY:
     class DesktopPoolSessionLifecycleActionsArgsDict(TypedDict):
         disconnect: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgsDict']]
         """
-        (Updatable) Action and grace period for disconnect
+        (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
         """
         inactivity: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgsDict']]
         """
@@ -596,7 +596,7 @@ class DesktopPoolSessionLifecycleActionsArgs:
                  disconnect: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs']] = None,
                  inactivity: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs']] = None):
         """
-        :param pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs'] disconnect: (Updatable) Action and grace period for disconnect
+        :param pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs'] disconnect: (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
         :param pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs'] inactivity: (Updatable) Action and grace period for inactivity
         """
         if disconnect is not None:
@@ -608,7 +608,7 @@ class DesktopPoolSessionLifecycleActionsArgs:
     @pulumi.getter
     def disconnect(self) -> Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs']]:
         """
-        (Updatable) Action and grace period for disconnect
+        (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
         """
         return pulumi.get(self, "disconnect")
 
@@ -633,7 +633,7 @@ if not MYPY:
     class DesktopPoolSessionLifecycleActionsDisconnectArgsDict(TypedDict):
         action: pulumi.Input[str]
         """
-        (Updatable) a disconnect action to be triggered
+        (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
         """
         grace_period_in_minutes: NotRequired[pulumi.Input[int]]
         """
@@ -648,7 +648,7 @@ class DesktopPoolSessionLifecycleActionsDisconnectArgs:
                  action: pulumi.Input[str],
                  grace_period_in_minutes: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] action: (Updatable) a disconnect action to be triggered
+        :param pulumi.Input[str] action: (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
         :param pulumi.Input[int] grace_period_in_minutes: (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
         """
         pulumi.set(__self__, "action", action)
@@ -659,7 +659,7 @@ class DesktopPoolSessionLifecycleActionsDisconnectArgs:
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
         """
-        (Updatable) a disconnect action to be triggered
+        (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
         """
         return pulumi.get(self, "action")
 
@@ -684,7 +684,7 @@ if not MYPY:
     class DesktopPoolSessionLifecycleActionsInactivityArgsDict(TypedDict):
         action: pulumi.Input[str]
         """
-        (Updatable) an inactivity action to be triggered
+        (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
         """
         grace_period_in_minutes: NotRequired[pulumi.Input[int]]
         """
@@ -699,7 +699,7 @@ class DesktopPoolSessionLifecycleActionsInactivityArgs:
                  action: pulumi.Input[str],
                  grace_period_in_minutes: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] action: (Updatable) an inactivity action to be triggered
+        :param pulumi.Input[str] action: (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
         :param pulumi.Input[int] grace_period_in_minutes: (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
         """
         pulumi.set(__self__, "action", action)
@@ -710,7 +710,7 @@ class DesktopPoolSessionLifecycleActionsInactivityArgs:
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
         """
-        (Updatable) an inactivity action to be triggered
+        (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
         """
         return pulumi.get(self, "action")
 

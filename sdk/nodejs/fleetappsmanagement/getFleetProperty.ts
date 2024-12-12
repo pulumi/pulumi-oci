@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a FleetProperty by identifier
+ * Gets a Fleet Property by identifier.
  *
  * ## Example Usage
  *
@@ -34,11 +34,11 @@ export function getFleetProperty(args: GetFleetPropertyArgs, opts?: pulumi.Invok
  */
 export interface GetFleetPropertyArgs {
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
     /**
-     * unique FleetProperty identifier
+     * unique FleetProperty identifier.
      */
     fleetPropertyId: string;
 }
@@ -48,7 +48,7 @@ export interface GetFleetPropertyArgs {
  */
 export interface GetFleetPropertyResult {
     /**
-     * Values of the category (must be a single value if selection = 'single choice')
+     * Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
      */
     readonly allowedValues: string[];
     /**
@@ -66,11 +66,11 @@ export interface GetFleetPropertyResult {
      */
     readonly id: string;
     /**
-     * Property Id Ocid.
+     * OCID referring to global level metadata property.
      */
     readonly propertyId: string;
     /**
-     * Text selection of the category
+     * Text selection of the property.
      */
     readonly selectionType: string;
     /**
@@ -90,18 +90,18 @@ export interface GetFleetPropertyResult {
      */
     readonly timeUpdated: string;
     /**
-     * Value of the Property
+     * Value of the Property.
      */
     readonly value: string;
     /**
-     * Format of the value
+     * Format of the value.
      */
     readonly valueType: string;
 }
 /**
  * This data source provides details about a specific Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a FleetProperty by identifier
+ * Gets a Fleet Property by identifier.
  *
  * ## Example Usage
  *
@@ -128,11 +128,11 @@ export function getFleetPropertyOutput(args: GetFleetPropertyOutputArgs, opts?: 
  */
 export interface GetFleetPropertyOutputArgs {
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**
-     * unique FleetProperty identifier
+     * unique FleetProperty identifier.
      */
     fleetPropertyId: pulumi.Input<string>;
 }

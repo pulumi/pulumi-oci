@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Fleet Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of FleetResources.
+        /// List resources for a fleet in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Fleet Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of FleetResources.
+        /// List resources for a fleet in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -94,25 +94,25 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return resources that match the Type
+        /// A filter to return only resources whose resourceType matches the given resourceType.
         /// </summary>
         [Input("fleetResourceType")]
         public string? FleetResourceType { get; set; }
 
         /// <summary>
-        /// unique FleetResource identifier
+        /// A filter to return only resources whose identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -146,25 +146,25 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return resources that match the Type
+        /// A filter to return only resources whose resourceType matches the given resourceType.
         /// </summary>
         [Input("fleetResourceType")]
         public Input<string>? FleetResourceType { get; set; }
 
         /// <summary>
-        /// unique FleetResource identifier
+        /// A filter to return only resources whose identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

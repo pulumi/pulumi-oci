@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
 import com.pulumi.oci.Waf.inputs.GetFirewallsPlainArgs;
@@ -177,6 +178,54 @@ public final class WafFunctions {
      * 
      */
     public static Output<GetFirewallsResult> getFirewalls(GetFirewallsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Waf/getFirewalls:getFirewalls", TypeShape.of(GetFirewallsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Web App Firewalls in Oracle Cloud Infrastructure Waf service.
+     * 
+     * Gets a list of all WebAppFirewalls in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewalls = WafFunctions.getFirewalls(GetFirewallsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallDisplayName)
+     *             .id(webAppFirewallId)
+     *             .states(webAppFirewallState)
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFirewallsResult> getFirewalls(GetFirewallsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Waf/getFirewalls:getFirewalls", TypeShape.of(GetFirewallsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -400,6 +449,50 @@ public final class WafFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetNetworkAddressListResult> getNetworkAddressList(GetNetworkAddressListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Waf/getNetworkAddressList:getNetworkAddressList", TypeShape.of(GetNetworkAddressListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Address List resource in Oracle Cloud Infrastructure Waf service.
+     * 
+     * Gets a NetworkAddressList by OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetNetworkAddressListResult> getNetworkAddressListPlain(GetNetworkAddressListPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Waf/getNetworkAddressList:getNetworkAddressList", TypeShape.of(GetNetworkAddressListResult.class), args, Utilities.withVersion(options));
     }
@@ -542,6 +635,53 @@ public final class WafFunctions {
      * 
      */
     public static Output<GetNetworkAddressListsResult> getNetworkAddressLists(GetNetworkAddressListsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", TypeShape.of(GetNetworkAddressListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Address Lists in Oracle Cloud Infrastructure Waf service.
+     * 
+     * Gets a list of all NetworkAddressLists in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressLists = WafFunctions.getNetworkAddressLists(GetNetworkAddressListsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkAddressListDisplayName)
+     *             .id(networkAddressListId)
+     *             .states(networkAddressListState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkAddressListsResult> getNetworkAddressLists(GetNetworkAddressListsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", TypeShape.of(GetNetworkAddressListsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -784,6 +924,55 @@ public final class WafFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProtectionCapabilitiesResult> getProtectionCapabilities(GetProtectionCapabilitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", TypeShape.of(GetProtectionCapabilitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
+     * 
+     * Lists of protection capabilities filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilities = WafFunctions.getProtectionCapabilities(GetProtectionCapabilitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionCapabilityDisplayName)
+     *             .groupTags(protectionCapabilityGroupTag)
+     *             .isLatestVersions(protectionCapabilityIsLatestVersion)
+     *             .key(protectionCapabilityKey)
+     *             .type(protectionCapabilityType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProtectionCapabilitiesResult> getProtectionCapabilitiesPlain(GetProtectionCapabilitiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", TypeShape.of(GetProtectionCapabilitiesResult.class), args, Utilities.withVersion(options));
     }
@@ -968,6 +1157,52 @@ public final class WafFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", TypeShape.of(GetProtectionCapabilityGroupTagsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
+     * 
+     * Lists of available group tags filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilityGroupTags = WafFunctions.getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(protectionCapabilityGroupTagName)
+     *             .type(protectionCapabilityGroupTagType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTagsPlain(GetProtectionCapabilityGroupTagsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", TypeShape.of(GetProtectionCapabilityGroupTagsResult.class), args, Utilities.withVersion(options));
     }
@@ -1101,6 +1336,50 @@ public final class WafFunctions {
      * 
      */
     public static Output<GetWebAppFirewallResult> getWebAppFirewall(GetWebAppFirewallArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Waf/getWebAppFirewall:getWebAppFirewall", TypeShape.of(GetWebAppFirewallResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
+     * 
+     * Gets a WebAppFirewall by OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWebAppFirewallResult> getWebAppFirewall(GetWebAppFirewallArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Waf/getWebAppFirewall:getWebAppFirewall", TypeShape.of(GetWebAppFirewallResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1332,6 +1611,53 @@ public final class WafFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetWebAppFirewallPoliciesResult> getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", TypeShape.of(GetWebAppFirewallPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Web App Firewall Policies in Oracle Cloud Infrastructure Waf service.
+     * 
+     * Gets a list of all WebAppFirewallPolicies in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicies = WafFunctions.getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallPolicyDisplayName)
+     *             .id(webAppFirewallPolicyId)
+     *             .states(webAppFirewallPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetWebAppFirewallPoliciesResult> getWebAppFirewallPoliciesPlain(GetWebAppFirewallPoliciesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", TypeShape.of(GetWebAppFirewallPoliciesResult.class), args, Utilities.withVersion(options));
     }
@@ -1465,6 +1791,50 @@ public final class WafFunctions {
      * 
      */
     public static Output<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Waf/getWebAppFirewallPolicy:getWebAppFirewallPolicy", TypeShape.of(GetWebAppFirewallPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
+     * 
+     * Gets a WebAppFirewallPolicy with the given OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Waf/getWebAppFirewallPolicy:getWebAppFirewallPolicy", TypeShape.of(GetWebAppFirewallPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -22,15 +22,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Credential Details
+        /// Credential specific Details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificResult> EntitySpecifics;
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         public readonly string FleetId;
         /// <summary>
-        /// unique FleetCredential identifier
+        /// A filter to return only resources whose credential identifier matches the given identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Credential Details
+        /// Credential Details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetCredentialsFleetCredentialCollectionItemPasswordResult> Passwords;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Credential Details
+        /// Credential Details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetCredentialsFleetCredentialCollectionItemUserResult> Users;
 

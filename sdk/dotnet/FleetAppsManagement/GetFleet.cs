@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a Fleet by identifier
+        /// Get the details of a fleet in Fleet Application Management.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a Fleet by identifier
+        /// Get the details of a fleet in Fleet Application Management.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
@@ -98,13 +98,17 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetFleetResult
     {
         /// <summary>
-        /// Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        /// Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         public readonly string ApplicationType;
         /// <summary>
-        /// Please provide the root compartmentId (TenancyId).
+        /// Tenancy Id (Root Compartment Id)for which the rule is created.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// Credentials associated with the Fleet.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFleetCredentialResult> Credentials;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -118,12 +122,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        /// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         public readonly string EnvironmentType;
         public readonly string FleetId;
         /// <summary>
-        /// Type of the Fleet.
+        /// Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
         /// </summary>
         public readonly string FleetType;
         /// <summary>
@@ -131,7 +135,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+        /// Group Type associated with Group Fleet. Applicable for GROUP fleet types.
         /// </summary>
         public readonly string GroupType;
         /// <summary>
@@ -139,7 +143,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A value which represents if auto confirming of the targets can be enabled
+        /// A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         /// </summary>
         public readonly bool IsTargetAutoConfirm;
         /// <summary>
@@ -147,11 +151,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Conditions when met to send notifications on the fleet activities
+        /// Notification information to get notified when the fleet status changes.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetNotificationPreferenceResult> NotificationPreferences;
         /// <summary>
-        /// Products associated with the Fleet
+        /// Products associated with the Fleet.
         /// </summary>
         public readonly ImmutableArray<string> Products;
         /// <summary>
@@ -159,11 +163,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string ResourceRegion;
         /// <summary>
-        /// Type of resource selection in a fleet.
+        /// Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
         /// </summary>
         public readonly string ResourceSelectionType;
         /// <summary>
-        /// Rule Selection Criteria
+        /// Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetRuleSelectionCriteriaResult> RuleSelectionCriterias;
         /// <summary>
@@ -188,6 +192,8 @@ namespace Pulumi.Oci.FleetAppsManagement
             string applicationType,
 
             string compartmentId,
+
+            ImmutableArray<Outputs.GetFleetCredentialResult> credentials,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -231,6 +237,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         {
             ApplicationType = applicationType;
             CompartmentId = compartmentId;
+            Credentials = credentials;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;

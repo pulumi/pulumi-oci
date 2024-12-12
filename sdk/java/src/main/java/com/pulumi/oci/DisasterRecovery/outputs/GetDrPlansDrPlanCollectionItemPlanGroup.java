@@ -29,6 +29,11 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroup {
      */
     private Boolean isPauseEnabled;
     /**
+     * @return The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    private String refreshStatus;
+    /**
      * @return The list of steps in the group.
      * 
      */
@@ -62,6 +67,13 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroup {
         return this.isPauseEnabled;
     }
     /**
+     * @return The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    public String refreshStatus() {
+        return this.refreshStatus;
+    }
+    /**
      * @return The list of steps in the group.
      * 
      */
@@ -88,6 +100,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroup {
         private String displayName;
         private String id;
         private Boolean isPauseEnabled;
+        private String refreshStatus;
         private List<GetDrPlansDrPlanCollectionItemPlanGroupStep> steps;
         private String type;
         public Builder() {}
@@ -96,6 +109,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroup {
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
     	      this.isPauseEnabled = defaults.isPauseEnabled;
+    	      this.refreshStatus = defaults.refreshStatus;
     	      this.steps = defaults.steps;
     	      this.type = defaults.type;
         }
@@ -125,6 +139,14 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroup {
             return this;
         }
         @CustomType.Setter
+        public Builder refreshStatus(String refreshStatus) {
+            if (refreshStatus == null) {
+              throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItemPlanGroup", "refreshStatus");
+            }
+            this.refreshStatus = refreshStatus;
+            return this;
+        }
+        @CustomType.Setter
         public Builder steps(List<GetDrPlansDrPlanCollectionItemPlanGroupStep> steps) {
             if (steps == null) {
               throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItemPlanGroup", "steps");
@@ -148,6 +170,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroup {
             _resultValue.displayName = displayName;
             _resultValue.id = id;
             _resultValue.isPauseEnabled = isPauseEnabled;
+            _resultValue.refreshStatus = refreshStatus;
             _resultValue.steps = steps;
             _resultValue.type = type;
             return _resultValue;

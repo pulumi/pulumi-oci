@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Scheduler Definitions in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of SchedulerDefinitions.
+        /// List all lifecycle management schedules in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -35,6 +35,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         Id = schedulerDefinitionId,
         ///         MaintenanceWindowId = testMaintenanceWindow.Id,
         ///         Product = schedulerDefinitionProduct,
+        ///         RunbookId = testRunbook.Id,
         ///         State = schedulerDefinitionState,
         ///     });
         /// 
@@ -47,7 +48,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Scheduler Definitions in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of SchedulerDefinitions.
+        /// List all lifecycle management schedules in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -68,6 +69,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         Id = schedulerDefinitionId,
         ///         MaintenanceWindowId = testMaintenanceWindow.Id,
         ///         Product = schedulerDefinitionProduct,
+        ///         RunbookId = testRunbook.Id,
         ///         State = schedulerDefinitionState,
         ///     });
         /// 
@@ -108,25 +110,31 @@ namespace Pulumi.Oci.FleetAppsManagement
         public string? FleetId { get; set; }
 
         /// <summary>
-        /// unique SchedulerDefinition identifier
+        /// A filter to return only schedule definitions whose identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// unique MaintenanceWindow identifier
+        /// A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
         /// </summary>
         [Input("maintenanceWindowId")]
         public string? MaintenanceWindowId { get; set; }
 
         /// <summary>
-        /// A filter to return only Scheduler Definitions whose assocaited product matches the given product
+        /// A filter to return only dchedule definitions whose assocaited product matches the given product
         /// </summary>
         [Input("product")]
         public string? Product { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+        /// </summary>
+        [Input("runbookId")]
+        public string? RunbookId { get; set; }
+
+        /// <summary>
+        /// A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -166,25 +174,31 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? FleetId { get; set; }
 
         /// <summary>
-        /// unique SchedulerDefinition identifier
+        /// A filter to return only schedule definitions whose identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// unique MaintenanceWindow identifier
+        /// A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.
         /// </summary>
         [Input("maintenanceWindowId")]
         public Input<string>? MaintenanceWindowId { get; set; }
 
         /// <summary>
-        /// A filter to return only Scheduler Definitions whose assocaited product matches the given product
+        /// A filter to return only dchedule definitions whose assocaited product matches the given product
         /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
+        /// </summary>
+        [Input("runbookId")]
+        public Input<string>? RunbookId { get; set; }
+
+        /// <summary>
+        /// A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -222,6 +236,10 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string? Product;
         /// <summary>
+        /// ID of the runbook
+        /// </summary>
+        public readonly string? RunbookId;
+        /// <summary>
         /// The list of scheduler_definition_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSchedulerDefinitionsSchedulerDefinitionCollectionResult> SchedulerDefinitionCollections;
@@ -246,6 +264,8 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             string? product,
 
+            string? runbookId,
+
             ImmutableArray<Outputs.GetSchedulerDefinitionsSchedulerDefinitionCollectionResult> schedulerDefinitionCollections,
 
             string? state)
@@ -257,6 +277,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             Id = id;
             MaintenanceWindowId = maintenanceWindowId;
             Product = product;
+            RunbookId = runbookId;
             SchedulerDefinitionCollections = schedulerDefinitionCollections;
             State = state;
         }

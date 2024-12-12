@@ -54,14 +54,14 @@ public final class GetMaintenanceWindowsPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * unique MaintenanceWindow identifier
+     * A filter to return only the Maintenance Windows whose identifier matches the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return unique MaintenanceWindow identifier
+     * @return A filter to return only the Maintenance Windows whose identifier matches the given identifier.
      * 
      */
     public Optional<String> id() {
@@ -69,18 +69,33 @@ public final class GetMaintenanceWindowsPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
+    }
+
+    /**
+     * A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+     * 
+     */
+    @Import(name="timeScheduleStartGreaterThanOrEqualTo")
+    private @Nullable String timeScheduleStartGreaterThanOrEqualTo;
+
+    /**
+     * @return A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+     * 
+     */
+    public Optional<String> timeScheduleStartGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeScheduleStartGreaterThanOrEqualTo);
     }
 
     private GetMaintenanceWindowsPlainArgs() {}
@@ -91,6 +106,7 @@ public final class GetMaintenanceWindowsPlainArgs extends com.pulumi.resources.I
         this.filters = $.filters;
         this.id = $.id;
         this.state = $.state;
+        this.timeScheduleStartGreaterThanOrEqualTo = $.timeScheduleStartGreaterThanOrEqualTo;
     }
 
     public static Builder builder() {
@@ -143,7 +159,7 @@ public final class GetMaintenanceWindowsPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param id unique MaintenanceWindow identifier
+         * @param id A filter to return only the Maintenance Windows whose identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -154,13 +170,24 @@ public final class GetMaintenanceWindowsPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param timeScheduleStartGreaterThanOrEqualTo A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeScheduleStartGreaterThanOrEqualTo(@Nullable String timeScheduleStartGreaterThanOrEqualTo) {
+            $.timeScheduleStartGreaterThanOrEqualTo = timeScheduleStartGreaterThanOrEqualTo;
             return this;
         }
 

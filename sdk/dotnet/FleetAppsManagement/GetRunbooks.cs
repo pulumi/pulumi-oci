@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of Runbooks.
+        /// List runbooks in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of Runbooks.
+        /// List runbooks in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -104,37 +104,37 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Runbook identifier
+        /// A filter to return runbooks whose identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// The runbook lifecycle.
+        /// A filter to return runbooks whose operation matches the given lifecycle operation.
         /// </summary>
         [Input("operation")]
         public string? Operation { get; set; }
 
         /// <summary>
-        /// The ID of the runbook platform.
+        /// A filter to return runbooks whose platform matches the given platform.
         /// </summary>
         [Input("platform")]
         public string? Platform { get; set; }
 
         /// <summary>
-        /// The runbook relevance of product or full-stack.
+        /// A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
         /// </summary>
         [Input("runbookRelevance")]
         public string? RunbookRelevance { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
 
         /// <summary>
-        /// The ID of the runbook type.
+        /// A filter to return runbooks whose type matches the given type.
         /// </summary>
         [Input("type")]
         public string? Type { get; set; }
@@ -168,37 +168,37 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Runbook identifier
+        /// A filter to return runbooks whose identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// The runbook lifecycle.
+        /// A filter to return runbooks whose operation matches the given lifecycle operation.
         /// </summary>
         [Input("operation")]
         public Input<string>? Operation { get; set; }
 
         /// <summary>
-        /// The ID of the runbook platform.
+        /// A filter to return runbooks whose platform matches the given platform.
         /// </summary>
         [Input("platform")]
         public Input<string>? Platform { get; set; }
 
         /// <summary>
-        /// The runbook relevance of product or full-stack.
+        /// A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
         /// </summary>
         [Input("runbookRelevance")]
         public Input<string>? RunbookRelevance { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The ID of the runbook type.
+        /// A filter to return runbooks whose type matches the given type.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -224,7 +224,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// The lifecycle operation performed by the task.
+        /// The lifecycle operation performed by the runbook.
         /// </summary>
         public readonly string? Operation;
         /// <summary>
@@ -236,7 +236,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionResult> RunbookCollections;
         /// <summary>
-        /// Type of runbook structure.
+        /// Relevance of the runbook.
         /// </summary>
         public readonly string? RunbookRelevance;
         /// <summary>

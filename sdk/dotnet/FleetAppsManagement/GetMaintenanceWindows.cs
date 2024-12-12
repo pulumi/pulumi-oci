@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of MaintenanceWindows in the specified Tenancy.
+        /// List maintenance windows for a specified tenancy in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -33,6 +33,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         DisplayName = maintenanceWindowDisplayName,
         ///         Id = maintenanceWindowId,
         ///         State = maintenanceWindowState,
+        ///         TimeScheduleStartGreaterThanOrEqualTo = maintenanceWindowTimeScheduleStartGreaterThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -44,7 +45,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of MaintenanceWindows in the specified Tenancy.
+        /// List maintenance windows for a specified tenancy in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         DisplayName = maintenanceWindowDisplayName,
         ///         Id = maintenanceWindowId,
         ///         State = maintenanceWindowState,
+        ///         TimeScheduleStartGreaterThanOrEqualTo = maintenanceWindowTimeScheduleStartGreaterThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -96,16 +98,22 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique MaintenanceWindow identifier
+        /// A filter to return only the Maintenance Windows whose identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+        /// </summary>
+        [Input("timeScheduleStartGreaterThanOrEqualTo")]
+        public string? TimeScheduleStartGreaterThanOrEqualTo { get; set; }
 
         public GetMaintenanceWindowsArgs()
         {
@@ -136,16 +144,22 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique MaintenanceWindow identifier
+        /// A filter to return only the Maintenance Windows whose identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+        /// </summary>
+        [Input("timeScheduleStartGreaterThanOrEqualTo")]
+        public Input<string>? TimeScheduleStartGreaterThanOrEqualTo { get; set; }
 
         public GetMaintenanceWindowsInvokeArgs()
         {
@@ -178,6 +192,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// The current state of the MaintenanceWindow.
         /// </summary>
         public readonly string? State;
+        public readonly string? TimeScheduleStartGreaterThanOrEqualTo;
 
         [OutputConstructor]
         private GetMaintenanceWindowsResult(
@@ -191,7 +206,9 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             ImmutableArray<Outputs.GetMaintenanceWindowsMaintenanceWindowCollectionResult> maintenanceWindowCollections,
 
-            string? state)
+            string? state,
+
+            string? timeScheduleStartGreaterThanOrEqualTo)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
@@ -199,6 +216,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             Id = id;
             MaintenanceWindowCollections = maintenanceWindowCollections;
             State = state;
+            TimeScheduleStartGreaterThanOrEqualTo = timeScheduleStartGreaterThanOrEqualTo;
         }
     }
 }

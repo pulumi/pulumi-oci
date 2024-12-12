@@ -12,7 +12,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
     /// 
-    /// Creates a new FleetCredential.
+    /// Add credentials to a fleet in Fleet Application Management.
     /// 
     /// ## Example Usage
     /// 
@@ -33,6 +33,14 @@ namespace Pulumi.Oci.FleetAppsManagement
     ///             CredentialLevel = fleetCredentialEntitySpecificsCredentialLevel,
     ///             ResourceId = testResource.Id,
     ///             Target = fleetCredentialEntitySpecificsTarget,
+    ///             Variables = new[]
+    ///             {
+    ///                 new Oci.FleetAppsManagement.Inputs.FleetCredentialEntitySpecificsVariableArgs
+    ///                 {
+    ///                     Name = fleetCredentialEntitySpecificsVariablesName,
+    ///                     Value = fleetCredentialEntitySpecificsVariablesValue,
+    ///                 },
+    ///             },
     ///         },
     ///         FleetId = testFleet.Id,
     ///         Password = new Oci.FleetAppsManagement.Inputs.FleetCredentialPasswordArgs
@@ -80,13 +88,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Credential Details
+        /// (Updatable) Credential specific Details.
         /// </summary>
         [Output("entitySpecifics")]
         public Output<Outputs.FleetCredentialEntitySpecifics> EntitySpecifics { get; private set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Output("fleetId")]
         public Output<string> FleetId { get; private set; } = null!;
@@ -98,7 +106,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Credential Details
+        /// (Updatable) Credential Details.
         /// </summary>
         [Output("password")]
         public Output<Outputs.FleetCredentialPassword> Password { get; private set; } = null!;
@@ -128,7 +136,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Credential Details
+        /// (Updatable) Credential Details.
         /// </summary>
         [Output("user")]
         public Output<Outputs.FleetCredentialUser> User { get; private set; } = null!;
@@ -192,25 +200,25 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Credential Details
+        /// (Updatable) Credential specific Details.
         /// </summary>
         [Input("entitySpecifics", required: true)]
         public Input<Inputs.FleetCredentialEntitySpecificsArgs> EntitySpecifics { get; set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Credential Details
+        /// (Updatable) Credential Details.
         /// </summary>
         [Input("password", required: true)]
         public Input<Inputs.FleetCredentialPasswordArgs> Password { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Credential Details
+        /// (Updatable) Credential Details.
         /// </summary>
         [Input("user", required: true)]
         public Input<Inputs.FleetCredentialUserArgs> User { get; set; } = null!;
@@ -236,13 +244,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Credential Details
+        /// (Updatable) Credential specific Details.
         /// </summary>
         [Input("entitySpecifics")]
         public Input<Inputs.FleetCredentialEntitySpecificsGetArgs>? EntitySpecifics { get; set; }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId")]
         public Input<string>? FleetId { get; set; }
@@ -254,7 +262,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Credential Details
+        /// (Updatable) Credential Details.
         /// </summary>
         [Input("password")]
         public Input<Inputs.FleetCredentialPasswordGetArgs>? Password { get; set; }
@@ -290,7 +298,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Credential Details
+        /// (Updatable) Credential Details.
         /// </summary>
         [Input("user")]
         public Input<Inputs.FleetCredentialUserGetArgs>? User { get; set; }

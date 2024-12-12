@@ -121,6 +121,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+        /// </summary>
+        [Output("lastCompletedFsuCycleId")]
+        public Output<string> LastCompletedFsuCycleId { get; private set; } = null!;
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -349,6 +355,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+        /// </summary>
+        [Input("lastCompletedFsuCycleId")]
+        public Input<string>? LastCompletedFsuCycleId { get; set; }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

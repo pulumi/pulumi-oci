@@ -19,14 +19,14 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
     public static final FleetRuleSelectionCriteriaRuleArgs Empty = new FleetRuleSelectionCriteriaRuleArgs();
 
     /**
-     * (Updatable) Rule to be be applied on.
+     * (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
      * 
      */
     @Import(name="basis")
     private @Nullable Output<String> basis;
 
     /**
-     * @return (Updatable) Rule to be be applied on.
+     * @return (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
      * 
      */
     public Optional<Output<String>> basis() {
@@ -34,14 +34,14 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Please provide the root compartmentId (TenancyId).
+     * (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Please provide the root compartmentId (TenancyId).
+     * @return (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     public Output<String> compartmentId() {
@@ -64,7 +64,7 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+     * (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -74,7 +74,7 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
     private Output<String> resourceCompartmentId;
 
     /**
-     * @return (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+     * @return (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -112,7 +112,7 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param basis (Updatable) Rule to be be applied on.
+         * @param basis (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
          * 
          * @return builder
          * 
@@ -123,7 +123,7 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param basis (Updatable) Rule to be be applied on.
+         * @param basis (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param compartmentId (Updatable) Please provide the root compartmentId (TenancyId).
+         * @param compartmentId (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
          * 
          * @return builder
          * 
@@ -144,7 +144,7 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param compartmentId (Updatable) Please provide the root compartmentId (TenancyId).
+         * @param compartmentId (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param resourceCompartmentId (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+         * @param resourceCompartmentId (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -199,7 +199,7 @@ public final class FleetRuleSelectionCriteriaRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param resourceCompartmentId (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+         * @param resourceCompartmentId (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

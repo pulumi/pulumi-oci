@@ -221,6 +221,10 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+        /// </summary>
+        public readonly bool TerminateRunsOnDeletion;
+        /// <summary>
         /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
@@ -301,6 +305,8 @@ namespace Pulumi.Oci.DataFlow
 
             string state,
 
+            bool terminateRunsOnDeletion,
+
             string timeCreated,
 
             string timeUpdated,
@@ -340,6 +346,7 @@ namespace Pulumi.Oci.DataFlow
             PrivateEndpointId = privateEndpointId;
             SparkVersion = sparkVersion;
             State = state;
+            TerminateRunsOnDeletion = terminateRunsOnDeletion;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Type = type;

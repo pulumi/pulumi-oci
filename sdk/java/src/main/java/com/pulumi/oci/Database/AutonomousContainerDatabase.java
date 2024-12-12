@@ -490,6 +490,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.keyStoreWalletName;
     }
     /**
+     * The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    @Export(name="keyVersionId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> keyVersionId;
+
+    /**
+     * @return The OCID of the key version that is used in rotate key operations.
+     * 
+     */
+    public Output<Optional<String>> keyVersionId() {
+        return Codegen.optional(this.keyVersionId);
+    }
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */

@@ -74,7 +74,7 @@ class GetFleetPropertyResult:
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> Sequence[str]:
         """
-        Values of the category (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         """
         return pulumi.get(self, "allowed_values")
 
@@ -116,7 +116,7 @@ class GetFleetPropertyResult:
     @pulumi.getter(name="propertyId")
     def property_id(self) -> str:
         """
-        Property Id Ocid.
+        OCID referring to global level metadata property.
         """
         return pulumi.get(self, "property_id")
 
@@ -124,7 +124,7 @@ class GetFleetPropertyResult:
     @pulumi.getter(name="selectionType")
     def selection_type(self) -> str:
         """
-        Text selection of the category
+        Text selection of the property.
         """
         return pulumi.get(self, "selection_type")
 
@@ -164,7 +164,7 @@ class GetFleetPropertyResult:
     @pulumi.getter
     def value(self) -> str:
         """
-        Value of the Property
+        Value of the Property.
         """
         return pulumi.get(self, "value")
 
@@ -172,7 +172,7 @@ class GetFleetPropertyResult:
     @pulumi.getter(name="valueType")
     def value_type(self) -> str:
         """
-        Format of the value
+        Format of the value.
         """
         return pulumi.get(self, "value_type")
 
@@ -205,7 +205,7 @@ def get_fleet_property(fleet_id: Optional[str] = None,
     """
     This data source provides details about a specific Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a FleetProperty by identifier
+    Gets a Fleet Property by identifier.
 
     ## Example Usage
 
@@ -218,8 +218,8 @@ def get_fleet_property(fleet_id: Optional[str] = None,
     ```
 
 
-    :param str fleet_id: unique Fleet identifier
-    :param str fleet_property_id: unique FleetProperty identifier
+    :param str fleet_id: Unique Fleet identifier.
+    :param str fleet_property_id: unique FleetProperty identifier.
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id
@@ -248,7 +248,7 @@ def get_fleet_property_output(fleet_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a FleetProperty by identifier
+    Gets a Fleet Property by identifier.
 
     ## Example Usage
 
@@ -261,8 +261,8 @@ def get_fleet_property_output(fleet_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str fleet_id: unique Fleet identifier
-    :param str fleet_property_id: unique FleetProperty identifier
+    :param str fleet_id: Unique Fleet identifier.
+    :param str fleet_property_id: unique FleetProperty identifier.
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id

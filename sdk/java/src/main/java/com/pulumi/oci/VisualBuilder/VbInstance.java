@@ -11,9 +11,8 @@ import com.pulumi.oci.Utilities;
 import com.pulumi.oci.VisualBuilder.VbInstanceArgs;
 import com.pulumi.oci.VisualBuilder.inputs.VbInstanceState;
 import com.pulumi.oci.VisualBuilder.outputs.VbInstanceAlternateCustomEndpoint;
-import com.pulumi.oci.VisualBuilder.outputs.VbInstanceAttachment;
 import com.pulumi.oci.VisualBuilder.outputs.VbInstanceCustomEndpoint;
-import com.pulumi.oci.VisualBuilder.outputs.VbInstanceIdcsInfo;
+import com.pulumi.oci.VisualBuilder.outputs.VbInstanceNetworkEndpointDetails;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -41,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.VisualBuilder.VbInstanceArgs;
  * import com.pulumi.oci.VisualBuilder.inputs.VbInstanceAlternateCustomEndpointArgs;
  * import com.pulumi.oci.VisualBuilder.inputs.VbInstanceCustomEndpointArgs;
+ * import com.pulumi.oci.VisualBuilder.inputs.VbInstanceNetworkEndpointDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -71,6 +71,12 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .idcsOpenId(testIdcsOpen.id())
  *             .isVisualBuilderEnabled(vbInstanceIsVisualBuilderEnabled)
+ *             .networkEndpointDetails(VbInstanceNetworkEndpointDetailsArgs.builder()
+ *                 .networkEndpointType(vbInstanceNetworkEndpointDetailsNetworkEndpointType)
+ *                 .subnetId(testSubnet.id())
+ *                 .networkSecurityGroupIds(vbInstanceNetworkEndpointDetailsNetworkSecurityGroupIds)
+ *                 .privateEndpointIp(vbInstanceNetworkEndpointDetailsPrivateEndpointIp)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -103,20 +109,6 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<VbInstanceAlternateCustomEndpoint>> alternateCustomEndpoints() {
         return this.alternateCustomEndpoints;
-    }
-    /**
-     * A list of associated attachments to other services
-     * 
-     */
-    @Export(name="attachments", refs={List.class,VbInstanceAttachment.class}, tree="[0,1]")
-    private Output<List<VbInstanceAttachment>> attachments;
-
-    /**
-     * @return A list of associated attachments to other services
-     * 
-     */
-    public Output<List<VbInstanceAttachment>> attachments() {
-        return this.attachments;
     }
     /**
      * (Updatable) Compartment Identifier.
@@ -203,20 +195,6 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Information for IDCS access
-     * 
-     */
-    @Export(name="idcsInfos", refs={List.class,VbInstanceIdcsInfo.class}, tree="[0,1]")
-    private Output<List<VbInstanceIdcsInfo>> idcsInfos;
-
-    /**
-     * @return Information for IDCS access
-     * 
-     */
-    public Output<List<VbInstanceIdcsInfo>> idcsInfos() {
-        return this.idcsInfos;
-    }
-    /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      * 
      */
@@ -285,6 +263,20 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> managementVcnId() {
         return this.managementVcnId;
+    }
+    /**
+     * (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    @Export(name="networkEndpointDetails", refs={VbInstanceNetworkEndpointDetails.class}, tree="[0]")
+    private Output<VbInstanceNetworkEndpointDetails> networkEndpointDetails;
+
+    /**
+     * @return (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    public Output<VbInstanceNetworkEndpointDetails> networkEndpointDetails() {
+        return this.networkEndpointDetails;
     }
     /**
      * (Updatable) The number of Nodes

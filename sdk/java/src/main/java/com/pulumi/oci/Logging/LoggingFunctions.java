@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Logging.inputs.GetLogArgs;
 import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
 import com.pulumi.oci.Logging.inputs.GetLogGroupPlainArgs;
@@ -212,6 +213,51 @@ public final class LoggingFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogResult> getLog(GetLogArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Logging/getLog:getLog", TypeShape.of(GetLogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Logging service.
+     * 
+     * Gets the log object configuration for the log object OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
+     *             .logGroupId(testLogGroup.id())
+     *             .logId(testLogOciLoggingLog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogResult> getLogPlain(GetLogPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Logging/getLog:getLog", TypeShape.of(GetLogResult.class), args, Utilities.withVersion(options));
     }
@@ -345,6 +391,50 @@ public final class LoggingFunctions {
      * 
      */
     public static Output<GetLogGroupResult> getLogGroup(GetLogGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Logging/getLogGroup:getLogGroup", TypeShape.of(GetLogGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Group resource in Oracle Cloud Infrastructure Logging service.
+     * 
+     * Get the specified log group&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
+     *             .logGroupId(testLogGroupOciLoggingLogGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogGroupResult> getLogGroup(GetLogGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Logging/getLogGroup:getLogGroup", TypeShape.of(GetLogGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -572,6 +662,52 @@ public final class LoggingFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogGroupsResult> getLogGroups(GetLogGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Logging/getLogGroups:getLogGroups", TypeShape.of(GetLogGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Groups in Oracle Cloud Infrastructure Logging service.
+     * 
+     * Lists all log groups for the specified compartment or tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroups = LoggingFunctions.getLogGroups(GetLogGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(logGroupDisplayName)
+     *             .isCompartmentIdInSubtree(logGroupIsCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogGroupsResult> getLogGroupsPlain(GetLogGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Logging/getLogGroups:getLogGroups", TypeShape.of(GetLogGroupsResult.class), args, Utilities.withVersion(options));
     }
@@ -705,6 +841,50 @@ public final class LoggingFunctions {
      * 
      */
     public static Output<GetLogSavedSearchResult> getLogSavedSearch(GetLogSavedSearchArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Logging/getLogSavedSearch:getLogSavedSearch", TypeShape.of(GetLogSavedSearchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
+     * 
+     * Retrieves a LogSavedSearch.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
+     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogSavedSearchResult> getLogSavedSearch(GetLogSavedSearchArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Logging/getLogSavedSearch:getLogSavedSearch", TypeShape.of(GetLogSavedSearchResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -887,6 +1067,52 @@ public final class LoggingFunctions {
      * 
      */
     public static Output<GetLogSavedSearchesResult> getLogSavedSearches(GetLogSavedSearchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Logging/getLogSavedSearches:getLogSavedSearches", TypeShape.of(GetLogSavedSearchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
+     * 
+     * Lists LogSavedSearches for this compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .logSavedSearchId(testLogSavedSearch.id())
+     *             .name(logSavedSearchName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogSavedSearchesResult> getLogSavedSearches(GetLogSavedSearchesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Logging/getLogSavedSearches:getLogSavedSearches", TypeShape.of(GetLogSavedSearchesResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1128,6 +1354,55 @@ public final class LoggingFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetLogsResult> getLogs(GetLogsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Logging/getLogs:getLogs", TypeShape.of(GetLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Logs in Oracle Cloud Infrastructure Logging service.
+     * 
+     * Lists the specified log group&#39;s log objects.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
+     *             .logGroupId(testLogGroup.id())
+     *             .displayName(logDisplayName)
+     *             .logType(logLogType)
+     *             .sourceResource(logSourceResource)
+     *             .sourceService(logSourceService)
+     *             .state(logState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetLogsResult> getLogsPlain(GetLogsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Logging/getLogs:getLogs", TypeShape.of(GetLogsResult.class), args, Utilities.withVersion(options));
     }
@@ -1261,6 +1536,50 @@ public final class LoggingFunctions {
      * 
      */
     public static Output<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", TypeShape.of(GetUnifiedAgentConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
+     * 
+     * Get the unified agent configuration for an ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
+     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", TypeShape.of(GetUnifiedAgentConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1452,6 +1771,55 @@ public final class LoggingFunctions {
      * 
      */
     public static Output<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", TypeShape.of(GetUnifiedAgentConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Unified Agent Configurations in Oracle Cloud Infrastructure Logging service.
+     * 
+     * Lists all unified agent configurations in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(unifiedAgentConfigurationDisplayName)
+     *             .groupId(testGroup.id())
+     *             .isCompartmentIdInSubtree(unifiedAgentConfigurationIsCompartmentIdInSubtree)
+     *             .logId(testLog.id())
+     *             .state(unifiedAgentConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", TypeShape.of(GetUnifiedAgentConfigurationsResult.class), args, Utilities.withVersion(options));
     }
     /**

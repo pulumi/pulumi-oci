@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Creates a new Property.
+ * Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
  *
  * ## Example Usage
  *
@@ -85,11 +85,11 @@ export class Property extends pulumi.CustomResource {
      */
     public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
     /**
-     * The scope of the property
+     * The scope of the property.
      */
     public /*out*/ readonly scope!: pulumi.Output<string>;
     /**
-     * (Updatable) Text selection of the category
+     * (Updatable) Text selection of the property.
      */
     public readonly selection!: pulumi.Output<string>;
     /**
@@ -113,11 +113,11 @@ export class Property extends pulumi.CustomResource {
      */
     public /*out*/ readonly type!: pulumi.Output<string>;
     /**
-     * (Updatable) Format of the value
+     * (Updatable) Format of the value.
      */
     public readonly valueType!: pulumi.Output<string>;
     /**
-     * (Updatable) Values of the property (must be a single value if selection = 'single choice')
+     * (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
      *
      *
      * ** IMPORTANT **
@@ -214,11 +214,11 @@ export interface PropertyState {
      */
     resourceRegion?: pulumi.Input<string>;
     /**
-     * The scope of the property
+     * The scope of the property.
      */
     scope?: pulumi.Input<string>;
     /**
-     * (Updatable) Text selection of the category
+     * (Updatable) Text selection of the property.
      */
     selection?: pulumi.Input<string>;
     /**
@@ -242,11 +242,11 @@ export interface PropertyState {
      */
     type?: pulumi.Input<string>;
     /**
-     * (Updatable) Format of the value
+     * (Updatable) Format of the value.
      */
     valueType?: pulumi.Input<string>;
     /**
-     * (Updatable) Values of the property (must be a single value if selection = 'single choice')
+     * (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
      *
      *
      * ** IMPORTANT **
@@ -268,15 +268,15 @@ export interface PropertyArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Text selection of the category
+     * (Updatable) Text selection of the property.
      */
     selection: pulumi.Input<string>;
     /**
-     * (Updatable) Format of the value
+     * (Updatable) Format of the value.
      */
     valueType: pulumi.Input<string>;
     /**
-     * (Updatable) Values of the property (must be a single value if selection = 'single choice')
+     * (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
      *
      *
      * ** IMPORTANT **

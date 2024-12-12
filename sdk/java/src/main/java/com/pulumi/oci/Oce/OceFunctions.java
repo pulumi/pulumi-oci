@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Oce.inputs.GetOceInstanceArgs;
 import com.pulumi.oci.Oce.inputs.GetOceInstancePlainArgs;
 import com.pulumi.oci.Oce.inputs.GetOceInstancesArgs;
@@ -147,6 +148,50 @@ public final class OceFunctions {
      * 
      */
     public static Output<GetOceInstanceResult> getOceInstance(GetOceInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Oce/getOceInstance:getOceInstance", TypeShape.of(GetOceInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
+     * 
+     * Gets a OceInstance by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOceInstanceResult> getOceInstance(GetOceInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Oce/getOceInstance:getOceInstance", TypeShape.of(GetOceInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -332,6 +377,53 @@ public final class OceFunctions {
      * 
      */
     public static Output<GetOceInstancesResult> getOceInstances(GetOceInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Oce/getOceInstances:getOceInstances", TypeShape.of(GetOceInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oce Instances in Oracle Cloud Infrastructure Content and Experience service.
+     * 
+     * Returns a list of OceInstances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstances = OceFunctions.getOceInstances(GetOceInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oceInstanceDisplayName)
+     *             .state(oceInstanceState)
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOceInstancesResult> getOceInstances(GetOceInstancesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Oce/getOceInstances:getOceInstances", TypeShape.of(GetOceInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**

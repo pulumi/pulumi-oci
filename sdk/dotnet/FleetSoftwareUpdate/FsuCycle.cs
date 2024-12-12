@@ -178,6 +178,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<string> LastCompletedAction { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+        /// </summary>
+        [Output("lastCompletedActionId")]
+        public Output<string> LastCompletedActionId { get; private set; } = null!;
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -194,6 +200,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// </summary>
         [Output("nextActionToExecutes")]
         public Output<ImmutableArray<Outputs.FsuCycleNextActionToExecute>> NextActionToExecutes { get; private set; } = null!;
+
+        /// <summary>
+        /// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+        /// </summary>
+        [Output("rollbackCycleState")]
+        public Output<string> RollbackCycleState { get; private set; } = null!;
 
         /// <summary>
         /// Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
@@ -516,6 +528,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<string>? LastCompletedAction { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+        /// </summary>
+        [Input("lastCompletedActionId")]
+        public Input<string>? LastCompletedActionId { get; set; }
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -538,6 +556,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
             get => _nextActionToExecutes ?? (_nextActionToExecutes = new InputList<Inputs.FsuCycleNextActionToExecuteGetArgs>());
             set => _nextActionToExecutes = value;
         }
+
+        /// <summary>
+        /// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+        /// </summary>
+        [Input("rollbackCycleState")]
+        public Input<string>? RollbackCycleState { get; set; }
 
         /// <summary>
         /// Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.

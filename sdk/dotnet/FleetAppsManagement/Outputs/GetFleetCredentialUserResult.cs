@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetCredentialUserResult
     {
         /// <summary>
-        /// Credential Type
+        /// Credential Type.
         /// </summary>
         public readonly string CredentialType;
         /// <summary>
@@ -34,11 +34,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string SecretVersion;
         /// <summary>
-        /// The value corresponding to the credential
+        /// The value corresponding to the credential.
         /// </summary>
         public readonly string Value;
         /// <summary>
-        /// OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        /// OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         /// </summary>
         public readonly string VaultId;
 

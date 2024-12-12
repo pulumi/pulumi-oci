@@ -18,11 +18,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Preferences to send notifications on the fleet activities
+        /// Preferences to send notifications on the fleet activities.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetsFleetCollectionItemNotificationPreferencePreferenceResult> Preferences;
         /// <summary>
-        /// Topic Id where the notifications will be directed
+        /// Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
         /// </summary>
         public readonly string TopicId;
 

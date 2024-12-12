@@ -965,6 +965,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemResult(dict):
                  fleet_discoveries: Sequence['outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryResult'],
                  freeform_tags: Mapping[str, str],
                  id: str,
+                 last_completed_fsu_cycle_id: str,
                  lifecycle_details: str,
                  service_type: str,
                  source_major_version: str,
@@ -982,6 +983,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemResult(dict):
         :param Sequence['GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArgs'] fleet_discoveries: Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: OCID identifier for the Exadata Fleet Update Collection.
+        :param str last_completed_fsu_cycle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str service_type: Exadata service type for the target resource members.
         :param str source_major_version: Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
@@ -999,6 +1001,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemResult(dict):
         pulumi.set(__self__, "fleet_discoveries", fleet_discoveries)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_completed_fsu_cycle_id", last_completed_fsu_cycle_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "source_major_version", source_major_version)
@@ -1064,6 +1067,14 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemResult(dict):
         OCID identifier for the Exadata Fleet Update Collection.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastCompletedFsuCycleId")
+    def last_completed_fsu_cycle_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+        """
+        return pulumi.get(self, "last_completed_fsu_cycle_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -1640,9 +1651,11 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
                  is_ignore_patches: bool,
                  is_keep_placement: bool,
                  last_completed_action: str,
+                 last_completed_action_id: str,
                  lifecycle_details: str,
                  max_drain_timeout_in_seconds: int,
                  next_action_to_executes: Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteResult'],
+                 rollback_cycle_state: str,
                  stage_action_schedules: Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleResult'],
                  state: str,
                  system_tags: Mapping[str, str],
@@ -1667,9 +1680,11 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
         :param bool is_ignore_patches: Ignore all patches between the source and target homes during patching.
         :param bool is_keep_placement: Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
         :param str last_completed_action: The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
+        :param str last_completed_action_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param int max_drain_timeout_in_seconds: Service drain timeout specified in seconds.
         :param Sequence['GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArgs'] next_action_to_executes: In this array all the possible actions will be listed. The first element is the suggested Action.
+        :param str rollback_cycle_state: Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
         :param Sequence['GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArgs'] stage_action_schedules: Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.
         :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
         :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1694,9 +1709,11 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
         pulumi.set(__self__, "is_ignore_patches", is_ignore_patches)
         pulumi.set(__self__, "is_keep_placement", is_keep_placement)
         pulumi.set(__self__, "last_completed_action", last_completed_action)
+        pulumi.set(__self__, "last_completed_action_id", last_completed_action_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "max_drain_timeout_in_seconds", max_drain_timeout_in_seconds)
         pulumi.set(__self__, "next_action_to_executes", next_action_to_executes)
+        pulumi.set(__self__, "rollback_cycle_state", rollback_cycle_state)
         pulumi.set(__self__, "stage_action_schedules", stage_action_schedules)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -1834,6 +1851,14 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
         return pulumi.get(self, "last_completed_action")
 
     @property
+    @pulumi.getter(name="lastCompletedActionId")
+    def last_completed_action_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+        """
+        return pulumi.get(self, "last_completed_action_id")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -1856,6 +1881,14 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
         In this array all the possible actions will be listed. The first element is the suggested Action.
         """
         return pulumi.get(self, "next_action_to_executes")
+
+    @property
+    @pulumi.getter(name="rollbackCycleState")
+    def rollback_cycle_state(self) -> str:
+        """
+        Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+        """
+        return pulumi.get(self, "rollback_cycle_state")
 
     @property
     @pulumi.getter(name="stageActionSchedules")

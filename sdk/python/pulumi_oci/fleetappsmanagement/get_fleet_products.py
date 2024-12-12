@@ -139,7 +139,7 @@ def get_fleet_products(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Fleet Products in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of FleetProducts.
+    Returns a list of products associated with the confirmed targets.
 
     ## Example Usage
 
@@ -157,8 +157,8 @@ def get_fleet_products(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fleet_id: unique Fleet identifier
-    :param str resource_display_name: Resource Display Name
+    :param str fleet_id: Unique Fleet identifier.
+    :param str resource_display_name: Resource Display Name.
     :param str resource_id: Resource Identifier
     """
     __args__ = dict()
@@ -190,7 +190,7 @@ def get_fleet_products_output(compartment_id: Optional[pulumi.Input[Optional[str
     """
     This data source provides the list of Fleet Products in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of FleetProducts.
+    Returns a list of products associated with the confirmed targets.
 
     ## Example Usage
 
@@ -208,8 +208,8 @@ def get_fleet_products_output(compartment_id: Optional[pulumi.Input[Optional[str
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fleet_id: unique Fleet identifier
-    :param str resource_display_name: Resource Display Name
+    :param str fleet_id: Unique Fleet identifier.
+    :param str resource_display_name: Resource Display Name.
     :param str resource_id: Resource Identifier
     """
     __args__ = dict()

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Fleet Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetProperties.
+ * List fleet properties in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -52,15 +52,15 @@ export interface GetFleetPropertiesArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetFleetPropertiesFilter[];
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: string;
     /**
-     * unique FleetProperty identifier
+     * A filter to return only resources whose fleetProperty identifier matches the given identifier.
      */
     id?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: string;
 }
@@ -95,7 +95,7 @@ export interface GetFleetPropertiesResult {
 /**
  * This data source provides the list of Fleet Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of FleetProperties.
+ * List fleet properties in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -138,15 +138,15 @@ export interface GetFleetPropertiesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetPropertiesFilterArgs>[]>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**
-     * unique FleetProperty identifier
+     * A filter to return only resources whose fleetProperty identifier matches the given identifier.
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: pulumi.Input<string>;
 }

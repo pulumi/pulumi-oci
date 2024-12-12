@@ -18,14 +18,14 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetFleetsArgs Empty = new GetFleetsArgs();
 
     /**
-     * A filter to return only resources that match the Application Type given.
+     * A filter to return resources that match the Application Type/Product Stack given..
      * 
      */
     @Import(name="applicationType")
     private @Nullable Output<String> applicationType;
 
     /**
-     * @return A filter to return only resources that match the Application Type given.
+     * @return A filter to return resources that match the Application Type/Product Stack given..
      * 
      */
     public Optional<Output<String>> applicationType() {
@@ -63,14 +63,14 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources that match the Environment Type given.
+     * A filter to return resources that match the Environment Type given.
      * 
      */
     @Import(name="environmentType")
     private @Nullable Output<String> environmentType;
 
     /**
-     * @return A filter to return only resources that match the Environment Type given.
+     * @return A filter to return resources that match the Environment Type given.
      * 
      */
     public Optional<Output<String>> environmentType() {
@@ -85,14 +85,14 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their fleetType matches the given fleetType.
+     * A filter to return fleets whose fleetType matches the given fleetType.
      * 
      */
     @Import(name="fleetType")
     private @Nullable Output<String> fleetType;
 
     /**
-     * @return A filter to return only resources their fleetType matches the given fleetType.
+     * @return A filter to return fleets whose fleetType matches the given fleetType.
      * 
      */
     public Optional<Output<String>> fleetType() {
@@ -100,14 +100,14 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * unique Fleet identifier
+     * A filter to return fleets whose id matches the given Fleet identifier
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return unique Fleet identifier
+     * @return A filter to return fleets whose id matches the given Fleet identifier
      * 
      */
     public Optional<Output<String>> id() {
@@ -115,14 +115,14 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources that match the Product Type given.
+     * A filter to return resources that match the Product given.
      * 
      */
     @Import(name="product")
     private @Nullable Output<String> product;
 
     /**
-     * @return A filter to return only resources that match the Product Type given.
+     * @return A filter to return resources that match the Product given.
      * 
      */
     public Optional<Output<String>> product() {
@@ -130,14 +130,14 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return fleets whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return fleets whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<Output<String>> state() {
@@ -177,7 +177,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param applicationType A filter to return only resources that match the Application Type given.
+         * @param applicationType A filter to return resources that match the Application Type/Product Stack given..
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param applicationType A filter to return only resources that match the Application Type given.
+         * @param applicationType A filter to return resources that match the Application Type/Product Stack given..
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param environmentType A filter to return only resources that match the Environment Type given.
+         * @param environmentType A filter to return resources that match the Environment Type given.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param environmentType A filter to return only resources that match the Environment Type given.
+         * @param environmentType A filter to return resources that match the Environment Type given.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param fleetType A filter to return only resources their fleetType matches the given fleetType.
+         * @param fleetType A filter to return fleets whose fleetType matches the given fleetType.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param fleetType A filter to return only resources their fleetType matches the given fleetType.
+         * @param fleetType A filter to return fleets whose fleetType matches the given fleetType.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique Fleet identifier
+         * @param id A filter to return fleets whose id matches the given Fleet identifier
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique Fleet identifier
+         * @param id A filter to return fleets whose id matches the given Fleet identifier
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param product A filter to return only resources that match the Product Type given.
+         * @param product A filter to return resources that match the Product given.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param product A filter to return only resources that match the Product Type given.
+         * @param product A filter to return resources that match the Product given.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return fleets whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return fleets whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 

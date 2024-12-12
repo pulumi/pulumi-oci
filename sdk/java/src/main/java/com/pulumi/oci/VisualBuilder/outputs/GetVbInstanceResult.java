@@ -6,9 +6,8 @@ package com.pulumi.oci.VisualBuilder.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceAlternateCustomEndpoint;
-import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceAttachment;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceCustomEndpoint;
-import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceIdcsInfo;
+import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceNetworkEndpointDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -23,11 +22,6 @@ public final class GetVbInstanceResult {
      * 
      */
     private List<GetVbInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
-    /**
-     * @return A list of associated attachments to other services
-     * 
-     */
-    private List<GetVbInstanceAttachment> attachments;
     /**
      * @return Compartment Identifier.
      * 
@@ -63,11 +57,6 @@ public final class GetVbInstanceResult {
      * 
      */
     private String id;
-    /**
-     * @return Information for IDCS access
-     * 
-     */
-    private List<GetVbInstanceIdcsInfo> idcsInfos;
     private String idcsOpenId;
     /**
      * @return The Vb Instance URL.
@@ -89,6 +78,11 @@ public final class GetVbInstanceResult {
      * 
      */
     private String managementVcnId;
+    /**
+     * @return Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    private List<GetVbInstanceNetworkEndpointDetail> networkEndpointDetails;
     /**
      * @return The number of Nodes
      * 
@@ -140,13 +134,6 @@ public final class GetVbInstanceResult {
         return this.alternateCustomEndpoints;
     }
     /**
-     * @return A list of associated attachments to other services
-     * 
-     */
-    public List<GetVbInstanceAttachment> attachments() {
-        return this.attachments;
-    }
-    /**
      * @return Compartment Identifier.
      * 
      */
@@ -195,13 +182,6 @@ public final class GetVbInstanceResult {
     public String id() {
         return this.id;
     }
-    /**
-     * @return Information for IDCS access
-     * 
-     */
-    public List<GetVbInstanceIdcsInfo> idcsInfos() {
-        return this.idcsInfos;
-    }
     public String idcsOpenId() {
         return this.idcsOpenId;
     }
@@ -232,6 +212,13 @@ public final class GetVbInstanceResult {
      */
     public String managementVcnId() {
         return this.managementVcnId;
+    }
+    /**
+     * @return Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    public List<GetVbInstanceNetworkEndpointDetail> networkEndpointDetails() {
+        return this.networkEndpointDetails;
     }
     /**
      * @return The number of Nodes
@@ -303,7 +290,6 @@ public final class GetVbInstanceResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetVbInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
-        private List<GetVbInstanceAttachment> attachments;
         private String compartmentId;
         private String consumptionModel;
         private List<GetVbInstanceCustomEndpoint> customEndpoints;
@@ -311,12 +297,12 @@ public final class GetVbInstanceResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
-        private List<GetVbInstanceIdcsInfo> idcsInfos;
         private String idcsOpenId;
         private String instanceUrl;
         private Boolean isVisualBuilderEnabled;
         private String managementNatGatewayIp;
         private String managementVcnId;
+        private List<GetVbInstanceNetworkEndpointDetail> networkEndpointDetails;
         private Integer nodeCount;
         private String serviceNatGatewayIp;
         private String serviceVcnId;
@@ -330,7 +316,6 @@ public final class GetVbInstanceResult {
         public Builder(GetVbInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alternateCustomEndpoints = defaults.alternateCustomEndpoints;
-    	      this.attachments = defaults.attachments;
     	      this.compartmentId = defaults.compartmentId;
     	      this.consumptionModel = defaults.consumptionModel;
     	      this.customEndpoints = defaults.customEndpoints;
@@ -338,12 +323,12 @@ public final class GetVbInstanceResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
-    	      this.idcsInfos = defaults.idcsInfos;
     	      this.idcsOpenId = defaults.idcsOpenId;
     	      this.instanceUrl = defaults.instanceUrl;
     	      this.isVisualBuilderEnabled = defaults.isVisualBuilderEnabled;
     	      this.managementNatGatewayIp = defaults.managementNatGatewayIp;
     	      this.managementVcnId = defaults.managementVcnId;
+    	      this.networkEndpointDetails = defaults.networkEndpointDetails;
     	      this.nodeCount = defaults.nodeCount;
     	      this.serviceNatGatewayIp = defaults.serviceNatGatewayIp;
     	      this.serviceVcnId = defaults.serviceVcnId;
@@ -365,17 +350,6 @@ public final class GetVbInstanceResult {
         }
         public Builder alternateCustomEndpoints(GetVbInstanceAlternateCustomEndpoint... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
-        }
-        @CustomType.Setter
-        public Builder attachments(List<GetVbInstanceAttachment> attachments) {
-            if (attachments == null) {
-              throw new MissingRequiredPropertyException("GetVbInstanceResult", "attachments");
-            }
-            this.attachments = attachments;
-            return this;
-        }
-        public Builder attachments(GetVbInstanceAttachment... attachments) {
-            return attachments(List.of(attachments));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -437,17 +411,6 @@ public final class GetVbInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsInfos(List<GetVbInstanceIdcsInfo> idcsInfos) {
-            if (idcsInfos == null) {
-              throw new MissingRequiredPropertyException("GetVbInstanceResult", "idcsInfos");
-            }
-            this.idcsInfos = idcsInfos;
-            return this;
-        }
-        public Builder idcsInfos(GetVbInstanceIdcsInfo... idcsInfos) {
-            return idcsInfos(List.of(idcsInfos));
-        }
-        @CustomType.Setter
         public Builder idcsOpenId(String idcsOpenId) {
             if (idcsOpenId == null) {
               throw new MissingRequiredPropertyException("GetVbInstanceResult", "idcsOpenId");
@@ -486,6 +449,17 @@ public final class GetVbInstanceResult {
             }
             this.managementVcnId = managementVcnId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder networkEndpointDetails(List<GetVbInstanceNetworkEndpointDetail> networkEndpointDetails) {
+            if (networkEndpointDetails == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceResult", "networkEndpointDetails");
+            }
+            this.networkEndpointDetails = networkEndpointDetails;
+            return this;
+        }
+        public Builder networkEndpointDetails(GetVbInstanceNetworkEndpointDetail... networkEndpointDetails) {
+            return networkEndpointDetails(List.of(networkEndpointDetails));
         }
         @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
@@ -562,7 +536,6 @@ public final class GetVbInstanceResult {
         public GetVbInstanceResult build() {
             final var _resultValue = new GetVbInstanceResult();
             _resultValue.alternateCustomEndpoints = alternateCustomEndpoints;
-            _resultValue.attachments = attachments;
             _resultValue.compartmentId = compartmentId;
             _resultValue.consumptionModel = consumptionModel;
             _resultValue.customEndpoints = customEndpoints;
@@ -570,12 +543,12 @@ public final class GetVbInstanceResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
-            _resultValue.idcsInfos = idcsInfos;
             _resultValue.idcsOpenId = idcsOpenId;
             _resultValue.instanceUrl = instanceUrl;
             _resultValue.isVisualBuilderEnabled = isVisualBuilderEnabled;
             _resultValue.managementNatGatewayIp = managementNatGatewayIp;
             _resultValue.managementVcnId = managementVcnId;
+            _resultValue.networkEndpointDetails = networkEndpointDetails;
             _resultValue.nodeCount = nodeCount;
             _resultValue.serviceNatGatewayIp = serviceNatGatewayIp;
             _resultValue.serviceVcnId = serviceVcnId;

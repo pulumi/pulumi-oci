@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DesktopPoolSessionLifecycleActionsInactivity {
     /**
-     * @return (Updatable) an inactivity action to be triggered
+     * @return (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
      * 
      */
     private String action;
@@ -26,7 +26,7 @@ public final class DesktopPoolSessionLifecycleActionsInactivity {
 
     private DesktopPoolSessionLifecycleActionsInactivity() {}
     /**
-     * @return (Updatable) an inactivity action to be triggered
+     * @return (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
      * 
      */
     public String action() {

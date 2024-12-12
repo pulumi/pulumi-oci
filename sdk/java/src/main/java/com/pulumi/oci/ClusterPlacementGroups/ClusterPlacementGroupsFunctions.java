@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupArgs;
 import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupPlainArgs;
 import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupsArgs;
@@ -147,6 +148,50 @@ public final class ClusterPlacementGroupsFunctions {
      * 
      */
     public static Output<GetClusterPlacementGroupResult> getClusterPlacementGroup(GetClusterPlacementGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ClusterPlacementGroups/getClusterPlacementGroup:getClusterPlacementGroup", TypeShape.of(GetClusterPlacementGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Placement Group resource in Oracle Cloud Infrastructure Cluster Placement Groups service.
+     * 
+     * Gets the specified cluster placement group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
+     * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterPlacementGroup = ClusterPlacementGroupsFunctions.getClusterPlacementGroup(GetClusterPlacementGroupArgs.builder()
+     *             .clusterPlacementGroupId(testClusterPlacementGroupOciClusterPlacementGroupsClusterPlacementGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetClusterPlacementGroupResult> getClusterPlacementGroup(GetClusterPlacementGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ClusterPlacementGroups/getClusterPlacementGroup:getClusterPlacementGroup", TypeShape.of(GetClusterPlacementGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -436,6 +481,55 @@ public final class ClusterPlacementGroupsFunctions {
      * 
      */
     public static Output<GetClusterPlacementGroupsResult> getClusterPlacementGroups(GetClusterPlacementGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", TypeShape.of(GetClusterPlacementGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cluster Placement Groups in Oracle Cloud Infrastructure Cluster Placement Groups service.
+     * 
+     * Gets a list of all cluster placement groups in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
+     * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterPlacementGroups = ClusterPlacementGroupsFunctions.getClusterPlacementGroups(GetClusterPlacementGroupsArgs.builder()
+     *             .ad(clusterPlacementGroupAd)
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(clusterPlacementGroupCompartmentIdInSubtree)
+     *             .id(clusterPlacementGroupId)
+     *             .name(clusterPlacementGroupName)
+     *             .state(clusterPlacementGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetClusterPlacementGroupsResult> getClusterPlacementGroups(GetClusterPlacementGroupsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", TypeShape.of(GetClusterPlacementGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**

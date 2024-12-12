@@ -195,28 +195,28 @@ class _SchedulerDefinitionState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SchedulerDefinition resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] action_group_types: All ActionGroup Types part of the schedule.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] action_group_types: All ActionGroup Types that are part of the schedule.
         :param pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionActionGroupArgs']]] action_groups: (Updatable) Action Groups associated with the Schedule.
         :param pulumi.Input[int] activity_initiation_cut_off: (Updatable) Activity Initiation Cut Off
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] application_types: All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] application_types: All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
         :param pulumi.Input[int] count_of_affected_action_groups: Count of Action Groups affected by the Schedule.
-        :param pulumi.Input[int] count_of_affected_resources: Count of Resources affected by the Schedule
-        :param pulumi.Input[int] count_of_affected_targets: Count of Targets affected by the Schedule
+        :param pulumi.Input[int] count_of_affected_resources: Count of Resources affected by the Schedule.
+        :param pulumi.Input[int] count_of_affected_targets: Count of Targets affected by the Schedule.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_operations: All LifeCycle Operations part of the schedule
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: All products part of the schedule for PRODUCT ActionGroup Type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_operations: All LifeCycle Operations that are part of the schedule.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: All products that are part of the schedule for PRODUCT ActionGroup Type.
         :param pulumi.Input[str] resource_region: Associated region
         :param pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]] run_books: (Updatable) Runbooks.
         :param pulumi.Input['SchedulerDefinitionScheduleArgs'] schedule: (Updatable) Schedule Information.
         :param pulumi.Input[str] state: The current state of the SchedulerDefinition.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_of_next_run: Scheduled date for the next run of the Job.
+        :param pulumi.Input[str] time_of_next_run: The scheduled date for the next run of the Job.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         if action_group_types is not None:
@@ -270,7 +270,7 @@ class _SchedulerDefinitionState:
     @pulumi.getter(name="actionGroupTypes")
     def action_group_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        All ActionGroup Types part of the schedule.
+        All ActionGroup Types that are part of the schedule.
         """
         return pulumi.get(self, "action_group_types")
 
@@ -306,7 +306,7 @@ class _SchedulerDefinitionState:
     @pulumi.getter(name="applicationTypes")
     def application_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         """
         return pulumi.get(self, "application_types")
 
@@ -342,7 +342,7 @@ class _SchedulerDefinitionState:
     @pulumi.getter(name="countOfAffectedResources")
     def count_of_affected_resources(self) -> Optional[pulumi.Input[int]]:
         """
-        Count of Resources affected by the Schedule
+        Count of Resources affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_resources")
 
@@ -354,7 +354,7 @@ class _SchedulerDefinitionState:
     @pulumi.getter(name="countOfAffectedTargets")
     def count_of_affected_targets(self) -> Optional[pulumi.Input[int]]:
         """
-        Count of Targets affected by the Schedule
+        Count of Targets affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_targets")
 
@@ -426,7 +426,7 @@ class _SchedulerDefinitionState:
     @pulumi.getter(name="lifecycleOperations")
     def lifecycle_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        All LifeCycle Operations part of the schedule
+        All LifeCycle Operations that are part of the schedule.
         """
         return pulumi.get(self, "lifecycle_operations")
 
@@ -438,7 +438,7 @@ class _SchedulerDefinitionState:
     @pulumi.getter
     def products(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        All products part of the schedule for PRODUCT ActionGroup Type.
+        All products that are part of the schedule for PRODUCT ActionGroup Type.
         """
         return pulumi.get(self, "products")
 
@@ -522,7 +522,7 @@ class _SchedulerDefinitionState:
     @pulumi.getter(name="timeOfNextRun")
     def time_of_next_run(self) -> Optional[pulumi.Input[str]]:
         """
-        Scheduled date for the next run of the Job.
+        The scheduled date for the next run of the Job.
         """
         return pulumi.get(self, "time_of_next_run")
 
@@ -561,7 +561,7 @@ class SchedulerDefinition(pulumi.CustomResource):
         """
         This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new SchedulerDefinition.
+        Create a SchedulerDefinition to perform lifecycle operations.
 
         ## Example Usage
 
@@ -638,7 +638,7 @@ class SchedulerDefinition(pulumi.CustomResource):
         """
         This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new SchedulerDefinition.
+        Create a SchedulerDefinition to perform lifecycle operations.
 
         ## Example Usage
 
@@ -796,28 +796,28 @@ class SchedulerDefinition(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] action_group_types: All ActionGroup Types part of the schedule.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] action_group_types: All ActionGroup Types that are part of the schedule.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]] action_groups: (Updatable) Action Groups associated with the Schedule.
         :param pulumi.Input[int] activity_initiation_cut_off: (Updatable) Activity Initiation Cut Off
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] application_types: All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] application_types: All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
         :param pulumi.Input[int] count_of_affected_action_groups: Count of Action Groups affected by the Schedule.
-        :param pulumi.Input[int] count_of_affected_resources: Count of Resources affected by the Schedule
-        :param pulumi.Input[int] count_of_affected_targets: Count of Targets affected by the Schedule
+        :param pulumi.Input[int] count_of_affected_resources: Count of Resources affected by the Schedule.
+        :param pulumi.Input[int] count_of_affected_targets: Count of Targets affected by the Schedule.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_operations: All LifeCycle Operations part of the schedule
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: All products part of the schedule for PRODUCT ActionGroup Type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_operations: All LifeCycle Operations that are part of the schedule.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] products: All products that are part of the schedule for PRODUCT ActionGroup Type.
         :param pulumi.Input[str] resource_region: Associated region
         :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]] run_books: (Updatable) Runbooks.
         :param pulumi.Input[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']] schedule: (Updatable) Schedule Information.
         :param pulumi.Input[str] state: The current state of the SchedulerDefinition.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_of_next_run: Scheduled date for the next run of the Job.
+        :param pulumi.Input[str] time_of_next_run: The scheduled date for the next run of the Job.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -853,7 +853,7 @@ class SchedulerDefinition(pulumi.CustomResource):
     @pulumi.getter(name="actionGroupTypes")
     def action_group_types(self) -> pulumi.Output[Sequence[str]]:
         """
-        All ActionGroup Types part of the schedule.
+        All ActionGroup Types that are part of the schedule.
         """
         return pulumi.get(self, "action_group_types")
 
@@ -877,7 +877,7 @@ class SchedulerDefinition(pulumi.CustomResource):
     @pulumi.getter(name="applicationTypes")
     def application_types(self) -> pulumi.Output[Sequence[str]]:
         """
-        All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
         """
         return pulumi.get(self, "application_types")
 
@@ -901,7 +901,7 @@ class SchedulerDefinition(pulumi.CustomResource):
     @pulumi.getter(name="countOfAffectedResources")
     def count_of_affected_resources(self) -> pulumi.Output[int]:
         """
-        Count of Resources affected by the Schedule
+        Count of Resources affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_resources")
 
@@ -909,7 +909,7 @@ class SchedulerDefinition(pulumi.CustomResource):
     @pulumi.getter(name="countOfAffectedTargets")
     def count_of_affected_targets(self) -> pulumi.Output[int]:
         """
-        Count of Targets affected by the Schedule
+        Count of Targets affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_targets")
 
@@ -957,7 +957,7 @@ class SchedulerDefinition(pulumi.CustomResource):
     @pulumi.getter(name="lifecycleOperations")
     def lifecycle_operations(self) -> pulumi.Output[Sequence[str]]:
         """
-        All LifeCycle Operations part of the schedule
+        All LifeCycle Operations that are part of the schedule.
         """
         return pulumi.get(self, "lifecycle_operations")
 
@@ -965,7 +965,7 @@ class SchedulerDefinition(pulumi.CustomResource):
     @pulumi.getter
     def products(self) -> pulumi.Output[Sequence[str]]:
         """
-        All products part of the schedule for PRODUCT ActionGroup Type.
+        All products that are part of the schedule for PRODUCT ActionGroup Type.
         """
         return pulumi.get(self, "products")
 
@@ -1021,7 +1021,7 @@ class SchedulerDefinition(pulumi.CustomResource):
     @pulumi.getter(name="timeOfNextRun")
     def time_of_next_run(self) -> pulumi.Output[str]:
         """
-        Scheduled date for the next run of the Job.
+        The scheduled date for the next run of the Job.
         """
         return pulumi.get(self, "time_of_next_run")
 

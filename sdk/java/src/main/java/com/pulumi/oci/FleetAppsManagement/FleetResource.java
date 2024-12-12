@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  * 
- * Creates a new FleetResource.
+ * Add resource to a fleet in Fleet Application Management.
  * 
  * ## Example Usage
  * 
@@ -68,28 +68,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:FleetAppsManagement/fleetResource:FleetResource")
 public class FleetResource extends com.pulumi.resources.CustomResource {
     /**
-     * Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     @Export(name="applicationType", refs={String.class}, tree="[0]")
     private Output<String> applicationType;
 
     /**
-     * @return Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * @return Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     public Output<String> applicationType() {
         return this.applicationType;
     }
     /**
-     * Resource Compartment
+     * Resource Compartment name.
      * 
      */
     @Export(name="compartment", refs={String.class}, tree="[0]")
     private Output<String> compartment;
 
     /**
-     * @return Resource Compartment
+     * @return Resource Compartment name.
      * 
      */
     public Output<String> compartment() {
@@ -110,14 +110,14 @@ public class FleetResource extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * Compliance State of the Resource
+     * Compliance State of the Resource.
      * 
      */
     @Export(name="complianceState", refs={String.class}, tree="[0]")
     private Output<String> complianceState;
 
     /**
-     * @return Compliance State of the Resource
+     * @return Compliance State of the Resource.
      * 
      */
     public Output<String> complianceState() {
@@ -138,28 +138,28 @@ public class FleetResource extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     @Export(name="environmentType", refs={String.class}, tree="[0]")
     private Output<String> environmentType;
 
     /**
-     * @return Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * @return Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     public Output<String> environmentType() {
         return this.environmentType;
     }
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Export(name="fleetId", refs={String.class}, tree="[0]")
     private Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Output<String> fleetId() {
@@ -180,14 +180,14 @@ public class FleetResource extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+     * Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      * 
      */
     @Export(name="product", refs={String.class}, tree="[0]")
     private Output<String> product;
 
     /**
-     * @return Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+     * @return Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      * 
      */
     public Output<String> product() {
@@ -278,14 +278,14 @@ public class FleetResource extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * Count of targets  within the resource.
+     * Count of targets within the resource.
      * 
      */
     @Export(name="targetCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> targetCount;
 
     /**
-     * @return Count of targets  within the resource.
+     * @return Count of targets within the resource.
      * 
      */
     public Output<Integer> targetCount() {
@@ -312,14 +312,14 @@ public class FleetResource extends com.pulumi.resources.CustomResource {
         return this.tenancyId;
     }
     /**
-     * Resource Tenancy Name
+     * Resource Tenancy Name.
      * 
      */
     @Export(name="tenancyName", refs={String.class}, tree="[0]")
     private Output<String> tenancyName;
 
     /**
-     * @return Resource Tenancy Name
+     * @return Resource Tenancy Name.
      * 
      */
     public Output<String> tenancyName() {

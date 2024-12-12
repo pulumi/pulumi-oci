@@ -88,7 +88,7 @@ class GetFleetCredentialResult:
     @pulumi.getter(name="entitySpecifics")
     def entity_specifics(self) -> Sequence['outputs.GetFleetCredentialEntitySpecificResult']:
         """
-        Credential Details
+        Credential specific Details.
         """
         return pulumi.get(self, "entity_specifics")
 
@@ -122,7 +122,7 @@ class GetFleetCredentialResult:
     @pulumi.getter
     def passwords(self) -> Sequence['outputs.GetFleetCredentialPasswordResult']:
         """
-        Credential Details
+        Credential Details.
         """
         return pulumi.get(self, "passwords")
 
@@ -162,7 +162,7 @@ class GetFleetCredentialResult:
     @pulumi.getter
     def users(self) -> Sequence['outputs.GetFleetCredentialUserResult']:
         """
-        Credential Details
+        Credential Details.
         """
         return pulumi.get(self, "users")
 
@@ -194,7 +194,7 @@ def get_fleet_credential(fleet_credential_id: Optional[str] = None,
     """
     This data source provides details about a specific Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a FleetCredential by identifier
+    Gets a FleetCredential by identifier.
 
     ## Example Usage
 
@@ -208,7 +208,7 @@ def get_fleet_credential(fleet_credential_id: Optional[str] = None,
 
 
     :param str fleet_credential_id: unique FleetCredential identifier
-    :param str fleet_id: unique Fleet identifier
+    :param str fleet_id: Unique Fleet identifier.
     """
     __args__ = dict()
     __args__['fleetCredentialId'] = fleet_credential_id
@@ -236,7 +236,7 @@ def get_fleet_credential_output(fleet_credential_id: Optional[pulumi.Input[str]]
     """
     This data source provides details about a specific Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a FleetCredential by identifier
+    Gets a FleetCredential by identifier.
 
     ## Example Usage
 
@@ -250,7 +250,7 @@ def get_fleet_credential_output(fleet_credential_id: Optional[pulumi.Input[str]]
 
 
     :param str fleet_credential_id: unique FleetCredential identifier
-    :param str fleet_id: unique Fleet identifier
+    :param str fleet_id: Unique Fleet identifier.
     """
     __args__ = dict()
     __args__['fleetCredentialId'] = fleet_credential_id

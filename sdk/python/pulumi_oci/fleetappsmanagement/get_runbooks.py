@@ -90,7 +90,7 @@ class GetRunbooksResult:
     @pulumi.getter
     def operation(self) -> Optional[str]:
         """
-        The lifecycle operation performed by the task.
+        The lifecycle operation performed by the runbook.
         """
         return pulumi.get(self, "operation")
 
@@ -114,7 +114,7 @@ class GetRunbooksResult:
     @pulumi.getter(name="runbookRelevance")
     def runbook_relevance(self) -> Optional[str]:
         """
-        Type of runbook structure.
+        Relevance of the runbook.
         """
         return pulumi.get(self, "runbook_relevance")
 
@@ -166,7 +166,7 @@ def get_runbooks(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of Runbooks.
+    List runbooks in Fleet Application Management.
 
     ## Example Usage
 
@@ -187,12 +187,12 @@ def get_runbooks(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique Runbook identifier
-    :param str operation: The runbook lifecycle.
-    :param str platform: The ID of the runbook platform.
-    :param str runbook_relevance: The runbook relevance of product or full-stack.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param str type: The ID of the runbook type.
+    :param str id: A filter to return runbooks whose identifier matches the given identifier.
+    :param str operation: A filter to return runbooks whose operation matches the given lifecycle operation.
+    :param str platform: A filter to return runbooks whose platform matches the given platform.
+    :param str runbook_relevance: A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param str type: A filter to return runbooks whose type matches the given type.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -231,7 +231,7 @@ def get_runbooks_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     """
     This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of Runbooks.
+    List runbooks in Fleet Application Management.
 
     ## Example Usage
 
@@ -252,12 +252,12 @@ def get_runbooks_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique Runbook identifier
-    :param str operation: The runbook lifecycle.
-    :param str platform: The ID of the runbook platform.
-    :param str runbook_relevance: The runbook relevance of product or full-stack.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param str type: The ID of the runbook type.
+    :param str id: A filter to return runbooks whose identifier matches the given identifier.
+    :param str operation: A filter to return runbooks whose operation matches the given lifecycle operation.
+    :param str platform: A filter to return runbooks whose platform matches the given platform.
+    :param str runbook_relevance: A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
+    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param str type: A filter to return runbooks whose type matches the given type.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

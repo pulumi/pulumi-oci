@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetRuleSelectionCriteriaResult
     {
         /// <summary>
-        /// Rule selection match condition.
+        /// Match condition for the rule selection. Include resources that match all rules or any of the rules.
         /// </summary>
         public readonly string MatchCondition;
         /// <summary>

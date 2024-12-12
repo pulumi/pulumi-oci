@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetsFleetCollectionItemNotificationPreferencePreferenceResult
     {
         /// <summary>
-        /// Enables or disables notification on Job Failures.'
+        /// Enables or disables notification on Job Failures.
         /// </summary>
         public readonly bool OnJobFailure;
         /// <summary>

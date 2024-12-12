@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Creates a new MaintenanceWindow.
+ * Create a maintenance window in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -88,7 +88,7 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Duration if schedule type is Custom
+     * (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      */
     public readonly duration!: pulumi.Output<string>;
     /**
@@ -96,11 +96,11 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) Does the maintenenace window cause outage?
+     * (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      */
     public readonly isOutage!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Is this is a recurring maintenance window
+     * (Updatable) Is this a recurring maintenance window?
      */
     public readonly isRecurring!: pulumi.Output<boolean>;
     /**
@@ -112,7 +112,7 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public readonly maintenanceWindowType!: pulumi.Output<string>;
     /**
-     * (Updatable) Recurrence rule specification if recurring
+     * (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      */
     public readonly recurrences!: pulumi.Output<string>;
     /**
@@ -128,7 +128,7 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) Task initiation cutoff
+     * (Updatable) Task initiation cutoff time for the maintenance window.
      */
     public readonly taskInitiationCutoff!: pulumi.Output<number>;
     /**
@@ -136,7 +136,7 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * (Updatable) Start time of schedule
+     * (Updatable) Specify the date and time of the day that the maintenance window starts.
      *
      *
      * ** IMPORTANT **
@@ -232,7 +232,7 @@ export interface MaintenanceWindowState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Duration if schedule type is Custom
+     * (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      */
     duration?: pulumi.Input<string>;
     /**
@@ -240,11 +240,11 @@ export interface MaintenanceWindowState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Does the maintenenace window cause outage?
+     * (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      */
     isOutage?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Is this is a recurring maintenance window
+     * (Updatable) Is this a recurring maintenance window?
      */
     isRecurring?: pulumi.Input<boolean>;
     /**
@@ -256,7 +256,7 @@ export interface MaintenanceWindowState {
      */
     maintenanceWindowType?: pulumi.Input<string>;
     /**
-     * (Updatable) Recurrence rule specification if recurring
+     * (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      */
     recurrences?: pulumi.Input<string>;
     /**
@@ -272,7 +272,7 @@ export interface MaintenanceWindowState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Task initiation cutoff
+     * (Updatable) Task initiation cutoff time for the maintenance window.
      */
     taskInitiationCutoff?: pulumi.Input<number>;
     /**
@@ -280,7 +280,7 @@ export interface MaintenanceWindowState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * (Updatable) Start time of schedule
+     * (Updatable) Specify the date and time of the day that the maintenance window starts.
      *
      *
      * ** IMPORTANT **
@@ -314,7 +314,7 @@ export interface MaintenanceWindowArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Duration if schedule type is Custom
+     * (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      */
     duration: pulumi.Input<string>;
     /**
@@ -322,11 +322,11 @@ export interface MaintenanceWindowArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Does the maintenenace window cause outage?
+     * (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      */
     isOutage?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Is this is a recurring maintenance window
+     * (Updatable) Is this a recurring maintenance window?
      */
     isRecurring?: pulumi.Input<boolean>;
     /**
@@ -334,15 +334,15 @@ export interface MaintenanceWindowArgs {
      */
     maintenanceWindowType?: pulumi.Input<string>;
     /**
-     * (Updatable) Recurrence rule specification if recurring
+     * (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      */
     recurrences?: pulumi.Input<string>;
     /**
-     * (Updatable) Task initiation cutoff
+     * (Updatable) Task initiation cutoff time for the maintenance window.
      */
     taskInitiationCutoff?: pulumi.Input<number>;
     /**
-     * (Updatable) Start time of schedule
+     * (Updatable) Specify the date and time of the day that the maintenance window starts.
      *
      *
      * ** IMPORTANT **

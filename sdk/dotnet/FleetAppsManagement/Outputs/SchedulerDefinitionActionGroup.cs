@@ -26,7 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string? Product;
         /// <summary>
-        /// (Updatable) Provide the ID of the resource; Ex- fleetId.
+        /// (Updatable) Provide the ID of the resource. Example fleet ID.
         /// </summary>
         public readonly string ResourceId;
         /// <summary>

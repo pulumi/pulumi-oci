@@ -31,6 +31,7 @@ public final class GetDesktopPoolResult {
      * 
      */
     private Boolean arePrivilegedUsers;
+    private Boolean areVolumesPreserved;
     /**
      * @return The availability domain of the desktop pool.
      * 
@@ -183,6 +184,9 @@ public final class GetDesktopPoolResult {
      */
     public Boolean arePrivilegedUsers() {
         return this.arePrivilegedUsers;
+    }
+    public Boolean areVolumesPreserved() {
+        return this.areVolumesPreserved;
     }
     /**
      * @return The availability domain of the desktop pool.
@@ -389,6 +393,7 @@ public final class GetDesktopPoolResult {
     public static final class Builder {
         private Integer activeDesktops;
         private Boolean arePrivilegedUsers;
+        private Boolean areVolumesPreserved;
         private String availabilityDomain;
         private List<GetDesktopPoolAvailabilityPolicy> availabilityPolicies;
         private String compartmentId;
@@ -422,6 +427,7 @@ public final class GetDesktopPoolResult {
     	      Objects.requireNonNull(defaults);
     	      this.activeDesktops = defaults.activeDesktops;
     	      this.arePrivilegedUsers = defaults.arePrivilegedUsers;
+    	      this.areVolumesPreserved = defaults.areVolumesPreserved;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availabilityPolicies = defaults.availabilityPolicies;
     	      this.compartmentId = defaults.compartmentId;
@@ -466,6 +472,14 @@ public final class GetDesktopPoolResult {
               throw new MissingRequiredPropertyException("GetDesktopPoolResult", "arePrivilegedUsers");
             }
             this.arePrivilegedUsers = arePrivilegedUsers;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder areVolumesPreserved(Boolean areVolumesPreserved) {
+            if (areVolumesPreserved == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolResult", "areVolumesPreserved");
+            }
+            this.areVolumesPreserved = areVolumesPreserved;
             return this;
         }
         @CustomType.Setter
@@ -720,6 +734,7 @@ public final class GetDesktopPoolResult {
             final var _resultValue = new GetDesktopPoolResult();
             _resultValue.activeDesktops = activeDesktops;
             _resultValue.arePrivilegedUsers = arePrivilegedUsers;
+            _resultValue.areVolumesPreserved = areVolumesPreserved;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availabilityPolicies = availabilityPolicies;
             _resultValue.compartmentId = compartmentId;

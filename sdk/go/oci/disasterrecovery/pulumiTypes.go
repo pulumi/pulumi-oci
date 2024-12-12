@@ -776,12 +776,11 @@ type DrPlanPlanGroup struct {
 	Id *string `pulumi:"id"`
 	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
 	IsPauseEnabled *bool `pulumi:"isPauseEnabled"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus *string `pulumi:"refreshStatus"`
 	// The list of steps in the group.
 	Steps []DrPlanPlanGroupStep `pulumi:"steps"`
 	// The type of DR plan to be created.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -803,12 +802,11 @@ type DrPlanPlanGroupArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
 	IsPauseEnabled pulumi.BoolPtrInput `pulumi:"isPauseEnabled"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus pulumi.StringPtrInput `pulumi:"refreshStatus"`
 	// The list of steps in the group.
 	Steps DrPlanPlanGroupStepArrayInput `pulumi:"steps"`
 	// The type of DR plan to be created.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -878,15 +876,17 @@ func (o DrPlanPlanGroupOutput) IsPauseEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) *bool { return v.IsPauseEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// The DR plan step refresh status.  Example: `STEP_ADDED`
+func (o DrPlanPlanGroupOutput) RefreshStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrPlanPlanGroup) *string { return v.RefreshStatus }).(pulumi.StringPtrOutput)
+}
+
 // The list of steps in the group.
 func (o DrPlanPlanGroupOutput) Steps() DrPlanPlanGroupStepArrayOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) []DrPlanPlanGroupStep { return v.Steps }).(DrPlanPlanGroupStepArrayOutput)
 }
 
 // The type of DR plan to be created.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrPlanPlanGroupOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -924,12 +924,11 @@ type DrPlanPlanGroupStep struct {
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId *string `pulumi:"memberId"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus *string `pulumi:"refreshStatus"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout *int `pulumi:"timeout"`
 	// The type of DR plan to be created.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps []DrPlanPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
@@ -959,12 +958,11 @@ type DrPlanPlanGroupStepArgs struct {
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId pulumi.StringPtrInput `pulumi:"memberId"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus pulumi.StringPtrInput `pulumi:"refreshStatus"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
 	// The type of DR plan to be created.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps DrPlanPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
@@ -1051,15 +1049,17 @@ func (o DrPlanPlanGroupStepOutput) MemberId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.MemberId }).(pulumi.StringPtrOutput)
 }
 
+// The DR plan step refresh status.  Example: `STEP_ADDED`
+func (o DrPlanPlanGroupStepOutput) RefreshStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.RefreshStatus }).(pulumi.StringPtrOutput)
+}
+
 // The timeout in seconds for executing this step.  Example: `600`
 func (o DrPlanPlanGroupStepOutput) Timeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *int { return v.Timeout }).(pulumi.IntPtrOutput)
 }
 
 // The type of DR plan to be created.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrPlanPlanGroupStepOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -5093,6 +5093,8 @@ type GetDrPlanPlanGroup struct {
 	Id string `pulumi:"id"`
 	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
 	IsPauseEnabled bool `pulumi:"isPauseEnabled"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus string `pulumi:"refreshStatus"`
 	// The list of steps in the group.
 	Steps []GetDrPlanPlanGroupStep `pulumi:"steps"`
 	// The type of the DR plan.
@@ -5117,6 +5119,8 @@ type GetDrPlanPlanGroupArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
 	IsPauseEnabled pulumi.BoolInput `pulumi:"isPauseEnabled"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus pulumi.StringInput `pulumi:"refreshStatus"`
 	// The list of steps in the group.
 	Steps GetDrPlanPlanGroupStepArrayInput `pulumi:"steps"`
 	// The type of the DR plan.
@@ -5189,6 +5193,11 @@ func (o GetDrPlanPlanGroupOutput) IsPauseEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroup) bool { return v.IsPauseEnabled }).(pulumi.BoolOutput)
 }
 
+// The DR plan step refresh status.  Example: `STEP_ADDED`
+func (o GetDrPlanPlanGroupOutput) RefreshStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.RefreshStatus }).(pulumi.StringOutput)
+}
+
 // The list of steps in the group.
 func (o GetDrPlanPlanGroupOutput) Steps() GetDrPlanPlanGroupStepArrayOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroup) []GetDrPlanPlanGroupStep { return v.Steps }).(GetDrPlanPlanGroupStepArrayOutput)
@@ -5232,6 +5241,8 @@ type GetDrPlanPlanGroupStep struct {
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus string `pulumi:"refreshStatus"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout int `pulumi:"timeout"`
 	// The type of the DR plan.
@@ -5264,6 +5275,8 @@ type GetDrPlanPlanGroupStepArgs struct {
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus pulumi.StringInput `pulumi:"refreshStatus"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntInput `pulumi:"timeout"`
 	// The type of the DR plan.
@@ -5351,6 +5364,11 @@ func (o GetDrPlanPlanGroupStepOutput) IsEnabled() pulumi.BoolOutput {
 // The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 func (o GetDrPlanPlanGroupStepOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.MemberId }).(pulumi.StringOutput)
+}
+
+// The DR plan step refresh status.  Example: `STEP_ADDED`
+func (o GetDrPlanPlanGroupStepOutput) RefreshStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.RefreshStatus }).(pulumi.StringOutput)
 }
 
 // The timeout in seconds for executing this step.  Example: `600`
@@ -5783,12 +5801,17 @@ type GetDrPlansDrPlanCollectionItem struct {
 	Id string `pulumi:"id"`
 	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
+	// A filter to return only DR plans that match the given lifecycle sub-state.
+	LifecycleSubState string `pulumi:"lifecycleSubState"`
 	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
 	// The list of groups in this DR plan.
-	PlanGroups []GetDrPlansDrPlanCollectionItemPlanGroup `pulumi:"planGroups"`
+	PlanGroups     []GetDrPlansDrPlanCollectionItemPlanGroup `pulumi:"planGroups"`
+	RefreshTrigger int                                       `pulumi:"refreshTrigger"`
+	// If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+	SourcePlanId string `pulumi:"sourcePlanId"`
 	// A filter to return only DR plans that match the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5798,7 +5821,8 @@ type GetDrPlansDrPlanCollectionItem struct {
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The type of the DR plan.
-	Type string `pulumi:"type"`
+	Type          string `pulumi:"type"`
+	VerifyTrigger int    `pulumi:"verifyTrigger"`
 }
 
 // GetDrPlansDrPlanCollectionItemInput is an input type that accepts GetDrPlansDrPlanCollectionItemArgs and GetDrPlansDrPlanCollectionItemOutput values.
@@ -5827,12 +5851,17 @@ type GetDrPlansDrPlanCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
+	// A filter to return only DR plans that match the given lifecycle sub-state.
+	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
 	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId pulumi.StringInput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
 	// The list of groups in this DR plan.
-	PlanGroups GetDrPlansDrPlanCollectionItemPlanGroupArrayInput `pulumi:"planGroups"`
+	PlanGroups     GetDrPlansDrPlanCollectionItemPlanGroupArrayInput `pulumi:"planGroups"`
+	RefreshTrigger pulumi.IntInput                                   `pulumi:"refreshTrigger"`
+	// If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+	SourcePlanId pulumi.StringInput `pulumi:"sourcePlanId"`
 	// A filter to return only DR plans that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5842,7 +5871,8 @@ type GetDrPlansDrPlanCollectionItemArgs struct {
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The type of the DR plan.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type          pulumi.StringInput `pulumi:"type"`
+	VerifyTrigger pulumi.IntInput    `pulumi:"verifyTrigger"`
 }
 
 func (GetDrPlansDrPlanCollectionItemArgs) ElementType() reflect.Type {
@@ -5931,6 +5961,11 @@ func (o GetDrPlansDrPlanCollectionItemOutput) LifeCycleDetails() pulumi.StringOu
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
+// A filter to return only DR plans that match the given lifecycle sub-state.
+func (o GetDrPlansDrPlanCollectionItemOutput) LifecycleSubState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
 // The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
@@ -5944,6 +5979,15 @@ func (o GetDrPlansDrPlanCollectionItemOutput) PeerRegion() pulumi.StringOutput {
 // The list of groups in this DR plan.
 func (o GetDrPlansDrPlanCollectionItemOutput) PlanGroups() GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) []GetDrPlansDrPlanCollectionItemPlanGroup { return v.PlanGroups }).(GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput)
+}
+
+func (o GetDrPlansDrPlanCollectionItemOutput) RefreshTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) int { return v.RefreshTrigger }).(pulumi.IntOutput)
+}
+
+// If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+func (o GetDrPlansDrPlanCollectionItemOutput) SourcePlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.SourcePlanId }).(pulumi.StringOutput)
 }
 
 // A filter to return only DR plans that match the given lifecycle state.
@@ -5969,6 +6013,10 @@ func (o GetDrPlansDrPlanCollectionItemOutput) TimeUpdated() pulumi.StringOutput 
 // The type of the DR plan.
 func (o GetDrPlansDrPlanCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetDrPlansDrPlanCollectionItemOutput) VerifyTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) int { return v.VerifyTrigger }).(pulumi.IntOutput)
 }
 
 type GetDrPlansDrPlanCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5998,6 +6046,8 @@ type GetDrPlansDrPlanCollectionItemPlanGroup struct {
 	Id string `pulumi:"id"`
 	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
 	IsPauseEnabled bool `pulumi:"isPauseEnabled"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus string `pulumi:"refreshStatus"`
 	// The list of steps in the group.
 	Steps []GetDrPlansDrPlanCollectionItemPlanGroupStep `pulumi:"steps"`
 	// The type of the DR plan.
@@ -6022,6 +6072,8 @@ type GetDrPlansDrPlanCollectionItemPlanGroupArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
 	IsPauseEnabled pulumi.BoolInput `pulumi:"isPauseEnabled"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus pulumi.StringInput `pulumi:"refreshStatus"`
 	// The list of steps in the group.
 	Steps GetDrPlansDrPlanCollectionItemPlanGroupStepArrayInput `pulumi:"steps"`
 	// The type of the DR plan.
@@ -6094,6 +6146,11 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) IsPauseEnabled() pulumi.B
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) bool { return v.IsPauseEnabled }).(pulumi.BoolOutput)
 }
 
+// The DR plan step refresh status.  Example: `STEP_ADDED`
+func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) RefreshStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.RefreshStatus }).(pulumi.StringOutput)
+}
+
 // The list of steps in the group.
 func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Steps() GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) []GetDrPlansDrPlanCollectionItemPlanGroupStep {
@@ -6139,6 +6196,8 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStep struct {
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus string `pulumi:"refreshStatus"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout int `pulumi:"timeout"`
 	// The type of the DR plan.
@@ -6171,6 +6230,8 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepArgs struct {
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The DR plan step refresh status.  Example: `STEP_ADDED`
+	RefreshStatus pulumi.StringInput `pulumi:"refreshStatus"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntInput `pulumi:"timeout"`
 	// The type of the DR plan.
@@ -6258,6 +6319,11 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) IsEnabled() pulumi.Bo
 // The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.MemberId }).(pulumi.StringOutput)
+}
+
+// The DR plan step refresh status.  Example: `STEP_ADDED`
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) RefreshStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.RefreshStatus }).(pulumi.StringOutput)
 }
 
 // The timeout in seconds for executing this step.  Example: `600`

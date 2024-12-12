@@ -15,14 +15,14 @@ public final class GetFleetPropertyArgs extends com.pulumi.resources.InvokeArgs 
     public static final GetFleetPropertyArgs Empty = new GetFleetPropertyArgs();
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Output<String> fleetId() {
@@ -30,14 +30,14 @@ public final class GetFleetPropertyArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * unique FleetProperty identifier
+     * unique FleetProperty identifier.
      * 
      */
     @Import(name="fleetPropertyId", required=true)
     private Output<String> fleetPropertyId;
 
     /**
-     * @return unique FleetProperty identifier
+     * @return unique FleetProperty identifier.
      * 
      */
     public Output<String> fleetPropertyId() {
@@ -70,7 +70,7 @@ public final class GetFleetPropertyArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class GetFleetPropertyArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class GetFleetPropertyArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param fleetPropertyId unique FleetProperty identifier
+         * @param fleetPropertyId unique FleetProperty identifier.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class GetFleetPropertyArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param fleetPropertyId unique FleetProperty identifier
+         * @param fleetPropertyId unique FleetProperty identifier.
          * 
          * @return builder
          * 

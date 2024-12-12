@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a Runbook by identifier
+        /// Get the details of a runbook in Fleet Application Management.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a Runbook by identifier
+        /// Get the details of a runbook in Fleet Application Management.
         /// 
         /// ## Example Usage
         /// 
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetRunbookResult
     {
         /// <summary>
-        /// JSON content with required associations
+        /// Associations for the runbook.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbookAssociationResult> Associations;
         public readonly string CompartmentId;
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Estimated time to successfully complete the runbook execution
+        /// Estimated time to successfully complete the runbook execution.
         /// </summary>
         public readonly string EstimatedTime;
         /// <summary>
@@ -123,11 +123,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// The OCID of the resource.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Is the runbook default?
+        /// Is the runbook default? Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
         /// </summary>
         public readonly bool IsDefault;
         /// <summary>
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The lifecycle operation performed by the task.
+        /// The lifecycle operation performed by the runbook.
         /// </summary>
         public readonly string Operation;
         /// <summary>
@@ -152,7 +152,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public readonly string ResourceRegion;
         public readonly string RunbookId;
         /// <summary>
-        /// Type of runbook structure.
+        /// Relevance of the runbook.
         /// </summary>
         public readonly string RunbookRelevance;
         /// <summary>

@@ -40,6 +40,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				SourcePlanId: pulumi.Any(testSourcePlan.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -72,12 +73,18 @@ type DrPlan struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails pulumi.StringOutput `pulumi:"lifeCycleDetails"`
+	// The current state of the DR plan.
+	LifecycleSubState pulumi.StringOutput `pulumi:"lifecycleSubState"`
 	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId pulumi.StringOutput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringOutput `pulumi:"peerRegion"`
 	// The list of groups in this DR plan.
 	PlanGroups DrPlanPlanGroupArrayOutput `pulumi:"planGroups"`
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	RefreshTrigger pulumi.IntPtrOutput `pulumi:"refreshTrigger"`
+	// The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+	SourcePlanId pulumi.StringOutput `pulumi:"sourcePlanId"`
 	// The current state of the DR plan.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -87,10 +94,12 @@ type DrPlan struct {
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The type of DR plan to be created.
+	Type pulumi.StringOutput `pulumi:"type"`
+	// (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Type pulumi.StringOutput `pulumi:"type"`
+	VerifyTrigger pulumi.IntPtrOutput `pulumi:"verifyTrigger"`
 }
 
 // NewDrPlan registers a new resource with the given unique name, arguments, and options.
@@ -144,12 +153,18 @@ type drPlanState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
+	// The current state of the DR plan.
+	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId *string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion *string `pulumi:"peerRegion"`
 	// The list of groups in this DR plan.
 	PlanGroups []DrPlanPlanGroup `pulumi:"planGroups"`
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	RefreshTrigger *int `pulumi:"refreshTrigger"`
+	// The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+	SourcePlanId *string `pulumi:"sourcePlanId"`
 	// The current state of the DR plan.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -159,10 +174,12 @@ type drPlanState struct {
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The type of DR plan to be created.
+	Type *string `pulumi:"type"`
+	// (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Type *string `pulumi:"type"`
+	VerifyTrigger *int `pulumi:"verifyTrigger"`
 }
 
 type DrPlanState struct {
@@ -178,12 +195,18 @@ type DrPlanState struct {
 	FreeformTags pulumi.StringMapInput
 	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails pulumi.StringPtrInput
+	// The current state of the DR plan.
+	LifecycleSubState pulumi.StringPtrInput
 	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId pulumi.StringPtrInput
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringPtrInput
 	// The list of groups in this DR plan.
 	PlanGroups DrPlanPlanGroupArrayInput
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	RefreshTrigger pulumi.IntPtrInput
+	// The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+	SourcePlanId pulumi.StringPtrInput
 	// The current state of the DR plan.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -193,10 +216,12 @@ type DrPlanState struct {
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringPtrInput
 	// The type of DR plan to be created.
+	Type pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Type pulumi.StringPtrInput
+	VerifyTrigger pulumi.IntPtrInput
 }
 
 func (DrPlanState) ElementType() reflect.Type {
@@ -212,11 +237,17 @@ type drPlanArgs struct {
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	RefreshTrigger *int `pulumi:"refreshTrigger"`
+	// The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+	SourcePlanId *string `pulumi:"sourcePlanId"`
 	// The type of DR plan to be created.
+	Type string `pulumi:"type"`
+	// (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Type string `pulumi:"type"`
+	VerifyTrigger *int `pulumi:"verifyTrigger"`
 }
 
 // The set of arguments for constructing a DrPlan resource.
@@ -229,11 +260,17 @@ type DrPlanArgs struct {
 	DrProtectionGroupId pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	RefreshTrigger pulumi.IntPtrInput
+	// The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+	SourcePlanId pulumi.StringPtrInput
 	// The type of DR plan to be created.
+	Type pulumi.StringInput
+	// (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Type pulumi.StringInput
+	VerifyTrigger pulumi.IntPtrInput
 }
 
 func (DrPlanArgs) ElementType() reflect.Type {
@@ -353,6 +390,11 @@ func (o DrPlanOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
+// The current state of the DR plan.
+func (o DrPlanOutput) LifecycleSubState() pulumi.StringOutput {
+	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
 // The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o DrPlanOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
@@ -366,6 +408,16 @@ func (o DrPlanOutput) PeerRegion() pulumi.StringOutput {
 // The list of groups in this DR plan.
 func (o DrPlanOutput) PlanGroups() DrPlanPlanGroupArrayOutput {
 	return o.ApplyT(func(v *DrPlan) DrPlanPlanGroupArrayOutput { return v.PlanGroups }).(DrPlanPlanGroupArrayOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+func (o DrPlanOutput) RefreshTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DrPlan) pulumi.IntPtrOutput { return v.RefreshTrigger }).(pulumi.IntPtrOutput)
+}
+
+// The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
+func (o DrPlanOutput) SourcePlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.SourcePlanId }).(pulumi.StringOutput)
 }
 
 // The current state of the DR plan.
@@ -389,11 +441,16 @@ func (o DrPlanOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // The type of DR plan to be created.
+func (o DrPlanOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DrPlanOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o DrPlanOutput) VerifyTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DrPlan) pulumi.IntPtrOutput { return v.VerifyTrigger }).(pulumi.IntPtrOutput)
 }
 
 type DrPlanArrayOutput struct{ *pulumi.OutputState }

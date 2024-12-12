@@ -22,7 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemAssociationGroupPropertyResult> Properties;
         /// <summary>
-        /// The ID of the runbook type.
+        /// A filter to return runbooks whose type matches the given type.
         /// </summary>
         public readonly string Type;
 

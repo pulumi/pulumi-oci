@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetRunbooksRunbookCollectionItemAssociationTaskOutputVariableMappingOutputVariableDetailResult
     {
         /// <summary>
-        /// The name of the output variable whose value that has to be mapped.
+        /// The name of the output variable whose value has to be mapped.
         /// </summary>
         public readonly string OutputVariableName;
         /// <summary>

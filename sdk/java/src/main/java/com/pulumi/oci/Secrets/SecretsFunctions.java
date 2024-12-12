@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
 import com.pulumi.oci.Secrets.inputs.GetSecretbundlePlainArgs;
 import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
@@ -206,6 +207,54 @@ public final class SecretsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSecretbundleResult> getSecretbundle(GetSecretbundleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Secrets/getSecretbundle:getSecretbundle", TypeShape.of(GetSecretbundleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
+     * 
+     * Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter.
+     * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
+     *             .secretId(testSecret.id())
+     *             .secretVersionName(testSecretVersion.name())
+     *             .stage(secretbundleStage)
+     *             .versionNumber(secretbundleVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSecretbundleResult> getSecretbundlePlain(GetSecretbundlePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Secrets/getSecretbundle:getSecretbundle", TypeShape.of(GetSecretbundleResult.class), args, Utilities.withVersion(options));
     }
@@ -339,6 +388,50 @@ public final class SecretsFunctions {
      * 
      */
     public static Output<GetSecretbundleVersionsResult> getSecretbundleVersions(GetSecretbundleVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", TypeShape.of(GetSecretbundleVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Secretbundle Versions in Oracle Cloud Infrastructure Secrets service.
+     * 
+     * Lists all secret bundle versions for the specified secret.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
+     *             .secretId(testSecret.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecretbundleVersionsResult> getSecretbundleVersions(GetSecretbundleVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", TypeShape.of(GetSecretbundleVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**

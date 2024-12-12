@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Fleet Credentials in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of FleetCredentials.
+        /// List credentials in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -34,7 +34,9 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         CredentialLevel = fleetCredentialCredentialLevel,
         ///         DisplayName = fleetCredentialDisplayName,
         ///         Id = fleetCredentialId,
+        ///         ResourceId = testResource.Id,
         ///         State = fleetCredentialState,
+        ///         Target = fleetCredentialTarget,
         ///     });
         /// 
         /// });
@@ -46,7 +48,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Fleet Credentials in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of FleetCredentials.
+        /// List credentials in Fleet Application Management.
         /// 
         /// 
         /// ## Example Usage
@@ -66,7 +68,9 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         CredentialLevel = fleetCredentialCredentialLevel,
         ///         DisplayName = fleetCredentialDisplayName,
         ///         Id = fleetCredentialId,
+        ///         ResourceId = testResource.Id,
         ///         State = fleetCredentialState,
+        ///         Target = fleetCredentialTarget,
         ///     });
         /// 
         /// });
@@ -86,7 +90,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public string? CompartmentId { get; set; }
 
         /// <summary>
-        /// Credential Level.
+        /// A filter to return only resources whose credentialLevel matches the given credentialLevel.
         /// </summary>
         [Input("credentialLevel")]
         public string? CredentialLevel { get; set; }
@@ -106,22 +110,34 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
 
         /// <summary>
-        /// unique FleetCredential identifier
+        /// A filter to return only resources whose credential identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// Resource Identifier
+        /// </summary>
+        [Input("resourceId")]
+        public string? ResourceId { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources whose target matches the given target name.
+        /// </summary>
+        [Input("target")]
+        public string? Target { get; set; }
 
         public GetFleetCredentialsArgs()
         {
@@ -138,7 +154,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Credential Level.
+        /// A filter to return only resources whose credentialLevel matches the given credentialLevel.
         /// </summary>
         [Input("credentialLevel")]
         public Input<string>? CredentialLevel { get; set; }
@@ -158,22 +174,34 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
 
         /// <summary>
-        /// unique FleetCredential identifier
+        /// A filter to return only resources whose credential identifier matches the given identifier.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// Resource Identifier
+        /// </summary>
+        [Input("resourceId")]
+        public Input<string>? ResourceId { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources whose target matches the given target name.
+        /// </summary>
+        [Input("target")]
+        public Input<string>? Target { get; set; }
 
         public GetFleetCredentialsInvokeArgs()
         {
@@ -190,7 +218,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// Credential Level.
+        /// At what level the credential is provided?
         /// </summary>
         public readonly string? CredentialLevel;
         /// <summary>
@@ -208,9 +236,17 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string? Id;
         /// <summary>
+        /// OCID of the resource associated with the target for which the credential is created.
+        /// </summary>
+        public readonly string? ResourceId;
+        /// <summary>
         /// The current state of the FleetCredential.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// Target name for which the credential is provided.
+        /// </summary>
+        public readonly string? Target;
 
         [OutputConstructor]
         private GetFleetCredentialsResult(
@@ -228,7 +264,11 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             string? id,
 
-            string? state)
+            string? resourceId,
+
+            string? state,
+
+            string? target)
         {
             CompartmentId = compartmentId;
             CredentialLevel = credentialLevel;
@@ -237,7 +277,9 @@ namespace Pulumi.Oci.FleetAppsManagement
             FleetCredentialCollections = fleetCredentialCollections;
             FleetId = fleetId;
             Id = id;
+            ResourceId = resourceId;
             State = state;
+            Target = target;
         }
     }
 }

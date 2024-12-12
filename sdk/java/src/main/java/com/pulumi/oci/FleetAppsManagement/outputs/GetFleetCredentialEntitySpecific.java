@@ -5,48 +5,62 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetCredentialEntitySpecificVariable;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetFleetCredentialEntitySpecific {
     /**
-     * @return Credential Level.
+     * @return At what level the credential is provided?
      * 
      */
     private String credentialLevel;
     /**
-     * @return OCID of the resource associated with the target for which credential is created
+     * @return OCID of the resource associated with the target for which the credential is created.
      * 
      */
     private String resourceId;
     /**
-     * @return Target associated with the Credential
+     * @return Target name for which the credential is provided.
      * 
      */
     private String target;
+    /**
+     * @return List of fleet credential variables.
+     * 
+     */
+    private List<GetFleetCredentialEntitySpecificVariable> variables;
 
     private GetFleetCredentialEntitySpecific() {}
     /**
-     * @return Credential Level.
+     * @return At what level the credential is provided?
      * 
      */
     public String credentialLevel() {
         return this.credentialLevel;
     }
     /**
-     * @return OCID of the resource associated with the target for which credential is created
+     * @return OCID of the resource associated with the target for which the credential is created.
      * 
      */
     public String resourceId() {
         return this.resourceId;
     }
     /**
-     * @return Target associated with the Credential
+     * @return Target name for which the credential is provided.
      * 
      */
     public String target() {
         return this.target;
+    }
+    /**
+     * @return List of fleet credential variables.
+     * 
+     */
+    public List<GetFleetCredentialEntitySpecificVariable> variables() {
+        return this.variables;
     }
 
     public static Builder builder() {
@@ -61,12 +75,14 @@ public final class GetFleetCredentialEntitySpecific {
         private String credentialLevel;
         private String resourceId;
         private String target;
+        private List<GetFleetCredentialEntitySpecificVariable> variables;
         public Builder() {}
         public Builder(GetFleetCredentialEntitySpecific defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentialLevel = defaults.credentialLevel;
     	      this.resourceId = defaults.resourceId;
     	      this.target = defaults.target;
+    	      this.variables = defaults.variables;
         }
 
         @CustomType.Setter
@@ -93,11 +109,23 @@ public final class GetFleetCredentialEntitySpecific {
             this.target = target;
             return this;
         }
+        @CustomType.Setter
+        public Builder variables(List<GetFleetCredentialEntitySpecificVariable> variables) {
+            if (variables == null) {
+              throw new MissingRequiredPropertyException("GetFleetCredentialEntitySpecific", "variables");
+            }
+            this.variables = variables;
+            return this;
+        }
+        public Builder variables(GetFleetCredentialEntitySpecificVariable... variables) {
+            return variables(List.of(variables));
+        }
         public GetFleetCredentialEntitySpecific build() {
             final var _resultValue = new GetFleetCredentialEntitySpecific();
             _resultValue.credentialLevel = credentialLevel;
             _resultValue.resourceId = resourceId;
             _resultValue.target = target;
+            _resultValue.variables = variables;
             return _resultValue;
         }
     }

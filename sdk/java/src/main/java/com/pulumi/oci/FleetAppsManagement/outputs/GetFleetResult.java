@@ -5,6 +5,7 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetCredential;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetNotificationPreference;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetRuleSelectionCriteria;
 import java.lang.Boolean;
@@ -16,15 +17,20 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetResult {
     /**
-     * @return Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * @return Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     private String applicationType;
     /**
-     * @return Please provide the root compartmentId (TenancyId).
+     * @return Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     private String compartmentId;
+    /**
+     * @return Credentials associated with the Fleet.
+     * 
+     */
+    private List<GetFleetCredential> credentials;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -41,13 +47,13 @@ public final class GetFleetResult {
      */
     private String displayName;
     /**
-     * @return Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * @return Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     private String environmentType;
     private String fleetId;
     /**
-     * @return Type of the Fleet.
+     * @return Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      * 
      */
     private String fleetType;
@@ -57,7 +63,7 @@ public final class GetFleetResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+     * @return Group Type associated with Group Fleet. Applicable for GROUP fleet types.
      * 
      */
     private String groupType;
@@ -67,7 +73,7 @@ public final class GetFleetResult {
      */
     private String id;
     /**
-     * @return A value which represents if auto confirming of the targets can be enabled
+     * @return A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      * 
      */
     private Boolean isTargetAutoConfirm;
@@ -77,12 +83,12 @@ public final class GetFleetResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Conditions when met to send notifications on the fleet activities
+     * @return Notification information to get notified when the fleet status changes.
      * 
      */
     private List<GetFleetNotificationPreference> notificationPreferences;
     /**
-     * @return Products associated with the Fleet
+     * @return Products associated with the Fleet.
      * 
      */
     private List<String> products;
@@ -92,12 +98,12 @@ public final class GetFleetResult {
      */
     private String resourceRegion;
     /**
-     * @return Type of resource selection in a fleet.
+     * @return Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      * 
      */
     private String resourceSelectionType;
     /**
-     * @return Rule Selection Criteria
+     * @return Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      * 
      */
     private List<GetFleetRuleSelectionCriteria> ruleSelectionCriterias;
@@ -124,18 +130,25 @@ public final class GetFleetResult {
 
     private GetFleetResult() {}
     /**
-     * @return Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * @return Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public String applicationType() {
         return this.applicationType;
     }
     /**
-     * @return Please provide the root compartmentId (TenancyId).
+     * @return Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return Credentials associated with the Fleet.
+     * 
+     */
+    public List<GetFleetCredential> credentials() {
+        return this.credentials;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -159,7 +172,7 @@ public final class GetFleetResult {
         return this.displayName;
     }
     /**
-     * @return Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * @return Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public String environmentType() {
@@ -169,7 +182,7 @@ public final class GetFleetResult {
         return this.fleetId;
     }
     /**
-     * @return Type of the Fleet.
+     * @return Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      * 
      */
     public String fleetType() {
@@ -183,7 +196,7 @@ public final class GetFleetResult {
         return this.freeformTags;
     }
     /**
-     * @return Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+     * @return Group Type associated with Group Fleet. Applicable for GROUP fleet types.
      * 
      */
     public String groupType() {
@@ -197,7 +210,7 @@ public final class GetFleetResult {
         return this.id;
     }
     /**
-     * @return A value which represents if auto confirming of the targets can be enabled
+     * @return A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      * 
      */
     public Boolean isTargetAutoConfirm() {
@@ -211,14 +224,14 @@ public final class GetFleetResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Conditions when met to send notifications on the fleet activities
+     * @return Notification information to get notified when the fleet status changes.
      * 
      */
     public List<GetFleetNotificationPreference> notificationPreferences() {
         return this.notificationPreferences;
     }
     /**
-     * @return Products associated with the Fleet
+     * @return Products associated with the Fleet.
      * 
      */
     public List<String> products() {
@@ -232,14 +245,14 @@ public final class GetFleetResult {
         return this.resourceRegion;
     }
     /**
-     * @return Type of resource selection in a fleet.
+     * @return Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
      * 
      */
     public String resourceSelectionType() {
         return this.resourceSelectionType;
     }
     /**
-     * @return Rule Selection Criteria
+     * @return Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
      * 
      */
     public List<GetFleetRuleSelectionCriteria> ruleSelectionCriterias() {
@@ -285,6 +298,7 @@ public final class GetFleetResult {
     public static final class Builder {
         private String applicationType;
         private String compartmentId;
+        private List<GetFleetCredential> credentials;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
@@ -310,6 +324,7 @@ public final class GetFleetResult {
     	      Objects.requireNonNull(defaults);
     	      this.applicationType = defaults.applicationType;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.credentials = defaults.credentials;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
@@ -347,6 +362,17 @@ public final class GetFleetResult {
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder credentials(List<GetFleetCredential> credentials) {
+            if (credentials == null) {
+              throw new MissingRequiredPropertyException("GetFleetResult", "credentials");
+            }
+            this.credentials = credentials;
+            return this;
+        }
+        public Builder credentials(GetFleetCredential... credentials) {
+            return credentials(List.of(credentials));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -521,6 +547,7 @@ public final class GetFleetResult {
             final var _resultValue = new GetFleetResult();
             _resultValue.applicationType = applicationType;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.credentials = credentials;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;

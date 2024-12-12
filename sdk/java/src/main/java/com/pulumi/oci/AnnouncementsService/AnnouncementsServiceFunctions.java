@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionArgs;
 import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionPlainArgs;
 import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionsArgs;
@@ -156,6 +157,52 @@ public final class AnnouncementsServiceFunctions {
      * 
      */
     public static Output<GetAnnouncementSubscriptionResult> getAnnouncementSubscription(GetAnnouncementSubscriptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", TypeShape.of(GetAnnouncementSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
+     * 
+     * Gets the specified announcement subscription.
+     * 
+     * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAnnouncementSubscriptionResult> getAnnouncementSubscription(GetAnnouncementSubscriptionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", TypeShape.of(GetAnnouncementSubscriptionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -397,6 +444,55 @@ public final class AnnouncementsServiceFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetAnnouncementSubscriptionsResult> getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", TypeShape.of(GetAnnouncementSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Announcement Subscriptions in Oracle Cloud Infrastructure Announcements Service service.
+     * 
+     * Gets a list of all announcement subscriptions in the specified compartment.
+     * 
+     * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscriptions = AnnouncementsServiceFunctions.getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(announcementSubscriptionDisplayName)
+     *             .id(announcementSubscriptionId)
+     *             .state(announcementSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetAnnouncementSubscriptionsResult> getAnnouncementSubscriptionsPlain(GetAnnouncementSubscriptionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", TypeShape.of(GetAnnouncementSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
@@ -536,6 +632,52 @@ public final class AnnouncementsServiceFunctions {
      * 
      */
     public static Output<GetServicesResult> getServices(GetServicesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AnnouncementsService/getServices:getServices", TypeShape.of(GetServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Services in Oracle Cloud Infrastructure.
+     * 
+     * List all OCI services
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = AnnouncementsServiceFunctions.getServices(GetServicesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .commsManagerName(serviceCommsManagerName)
+     *             .platformType(servicePlatformType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServicesResult> getServices(GetServicesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AnnouncementsService/getServices:getServices", TypeShape.of(GetServicesResult.class), args, Utilities.withVersion(options));
     }
     /**

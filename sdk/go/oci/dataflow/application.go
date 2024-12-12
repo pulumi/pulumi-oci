@@ -73,10 +73,11 @@ import (
 //						Value: pulumi.Any(applicationParametersValue),
 //					},
 //				},
-//				PoolId:             pulumi.Any(testPool.Id),
-//				PrivateEndpointId:  pulumi.Any(testPrivateEndpoint.Id),
-//				Type:               pulumi.Any(applicationType),
-//				WarehouseBucketUri: pulumi.Any(applicationWarehouseBucketUri),
+//				PoolId:                  pulumi.Any(testPool.Id),
+//				PrivateEndpointId:       pulumi.Any(testPrivateEndpoint.Id),
+//				Type:                    pulumi.Any(applicationType),
+//				WarehouseBucketUri:      pulumi.Any(applicationWarehouseBucketUri),
+//				TerminateRunsOnDeletion: pulumi.Bool(true),
 //			})
 //			if err != nil {
 //				return err
@@ -155,6 +156,11 @@ type Application struct {
 	SparkVersion pulumi.StringOutput `pulumi:"sparkVersion"`
 	// The current state of this application.
 	State pulumi.StringOutput `pulumi:"state"`
+	// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TerminateRunsOnDeletion pulumi.BoolPtrOutput `pulumi:"terminateRunsOnDeletion"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -162,9 +168,6 @@ type Application struct {
 	// The Spark application processing type.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri pulumi.StringOutput `pulumi:"warehouseBucketUri"`
 }
 
@@ -277,6 +280,11 @@ type applicationState struct {
 	SparkVersion *string `pulumi:"sparkVersion"`
 	// The current state of this application.
 	State *string `pulumi:"state"`
+	// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TerminateRunsOnDeletion *bool `pulumi:"terminateRunsOnDeletion"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -284,9 +292,6 @@ type applicationState struct {
 	// The Spark application processing type.
 	Type *string `pulumi:"type"`
 	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
 }
 
@@ -349,6 +354,11 @@ type ApplicationState struct {
 	SparkVersion pulumi.StringPtrInput
 	// The current state of this application.
 	State pulumi.StringPtrInput
+	// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TerminateRunsOnDeletion pulumi.BoolPtrInput
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -356,9 +366,6 @@ type ApplicationState struct {
 	// The Spark application processing type.
 	Type pulumi.StringPtrInput
 	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri pulumi.StringPtrInput
 }
 
@@ -419,12 +426,14 @@ type applicationArgs struct {
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// (Updatable) The Spark version utilized to run the application.
 	SparkVersion string `pulumi:"sparkVersion"`
-	// The Spark application processing type.
-	Type *string `pulumi:"type"`
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TerminateRunsOnDeletion *bool `pulumi:"terminateRunsOnDeletion"`
+	// The Spark application processing type.
+	Type *string `pulumi:"type"`
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
 }
 
@@ -482,12 +491,14 @@ type ApplicationArgs struct {
 	PrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) The Spark version utilized to run the application.
 	SparkVersion pulumi.StringInput
-	// The Spark application processing type.
-	Type pulumi.StringPtrInput
-	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TerminateRunsOnDeletion pulumi.BoolPtrInput
+	// The Spark application processing type.
+	Type pulumi.StringPtrInput
+	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	WarehouseBucketUri pulumi.StringPtrInput
 }
 
@@ -723,6 +734,14 @@ func (o ApplicationOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ApplicationOutput) TerminateRunsOnDeletion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.BoolPtrOutput { return v.TerminateRunsOnDeletion }).(pulumi.BoolPtrOutput)
+}
+
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o ApplicationOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
@@ -739,9 +758,6 @@ func (o ApplicationOutput) Type() pulumi.StringOutput {
 }
 
 // (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ApplicationOutput) WarehouseBucketUri() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.WarehouseBucketUri }).(pulumi.StringOutput)
 }

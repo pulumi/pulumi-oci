@@ -71,6 +71,7 @@ namespace Pulumi.Oci.Desktops
     ///         StandbySize = desktopPoolStandbySize,
     ///         StorageBackupPolicyId = "ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
     ///         StorageSizeInGbs = desktopPoolStorageSizeInGbs,
+    ///         AreVolumesPreserved = desktopPoolAreVolumesPreserved,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -138,13 +139,23 @@ namespace Pulumi.Oci.Desktops
         public Output<bool> ArePrivilegedUsers { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("areVolumesPreserved")]
+        public Output<bool?> AreVolumesPreserved { get; private set; } = null!;
+
+        /// <summary>
         /// The availability domain of the desktop pool.
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         /// </summary>
         [Output("availabilityPolicy")]
         public Output<Outputs.DesktopPoolAvailabilityPolicy> AvailabilityPolicy { get; private set; } = null!;
@@ -289,10 +300,6 @@ namespace Pulumi.Oci.Desktops
 
         /// <summary>
         /// Indicates whether the desktop pool uses dedicated virtual machine hosts.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("useDedicatedVmHost")]
         public Output<string> UseDedicatedVmHost { get; private set; } = null!;
@@ -350,13 +357,23 @@ namespace Pulumi.Oci.Desktops
         public Input<bool> ArePrivilegedUsers { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("areVolumesPreserved")]
+        public Input<bool>? AreVolumesPreserved { get; set; }
+
+        /// <summary>
         /// The availability domain of the desktop pool.
         /// </summary>
         [Input("availabilityDomain", required: true)]
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         /// </summary>
         [Input("availabilityPolicy", required: true)]
         public Input<Inputs.DesktopPoolAvailabilityPolicyArgs> AvailabilityPolicy { get; set; } = null!;
@@ -507,10 +524,6 @@ namespace Pulumi.Oci.Desktops
 
         /// <summary>
         /// Indicates whether the desktop pool uses dedicated virtual machine hosts.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("useDedicatedVmHost")]
         public Input<string>? UseDedicatedVmHost { get; set; }
@@ -536,13 +549,23 @@ namespace Pulumi.Oci.Desktops
         public Input<bool>? ArePrivilegedUsers { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("areVolumesPreserved")]
+        public Input<bool>? AreVolumesPreserved { get; set; }
+
+        /// <summary>
         /// The availability domain of the desktop pool.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         /// </summary>
         [Input("availabilityPolicy")]
         public Input<Inputs.DesktopPoolAvailabilityPolicyGetArgs>? AvailabilityPolicy { get; set; }
@@ -705,10 +728,6 @@ namespace Pulumi.Oci.Desktops
 
         /// <summary>
         /// Indicates whether the desktop pool uses dedicated virtual machine hosts.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("useDedicatedVmHost")]
         public Input<string>? UseDedicatedVmHost { get; set; }

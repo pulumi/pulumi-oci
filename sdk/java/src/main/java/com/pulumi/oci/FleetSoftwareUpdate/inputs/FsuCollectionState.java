@@ -111,6 +111,21 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     * 
+     */
+    @Import(name="lastCompletedFsuCycleId")
+    private @Nullable Output<String> lastCompletedFsuCycleId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     * 
+     */
+    public Optional<Output<String>> lastCompletedFsuCycleId() {
+        return Optional.ofNullable(this.lastCompletedFsuCycleId);
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -260,6 +275,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         this.displayName = $.displayName;
         this.fleetDiscovery = $.fleetDiscovery;
         this.freeformTags = $.freeformTags;
+        this.lastCompletedFsuCycleId = $.lastCompletedFsuCycleId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.serviceType = $.serviceType;
         this.sourceMajorVersion = $.sourceMajorVersion;
@@ -423,6 +439,27 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param lastCompletedFsuCycleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastCompletedFsuCycleId(@Nullable Output<String> lastCompletedFsuCycleId) {
+            $.lastCompletedFsuCycleId = lastCompletedFsuCycleId;
+            return this;
+        }
+
+        /**
+         * @param lastCompletedFsuCycleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastCompletedFsuCycleId(String lastCompletedFsuCycleId) {
+            return lastCompletedFsuCycleId(Output.of(lastCompletedFsuCycleId));
         }
 
         /**

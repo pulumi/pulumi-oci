@@ -70,6 +70,7 @@ import (
 //				StandbySize:           pulumi.Any(desktopPoolStandbySize),
 //				StorageBackupPolicyId: pulumi.String("ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz"),
 //				StorageSizeInGbs:      pulumi.Any(desktopPoolStorageSizeInGbs),
+//				AreVolumesPreserved:   pulumi.Any(desktopPoolAreVolumesPreserved),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -125,9 +126,14 @@ type DesktopPool struct {
 	ActiveDesktops pulumi.IntOutput `pulumi:"activeDesktops"`
 	// Indicates whether desktop pool users have administrative privileges on their desktop.
 	ArePrivilegedUsers pulumi.BoolOutput `pulumi:"arePrivilegedUsers"`
+	// (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	AreVolumesPreserved pulumi.BoolPtrOutput `pulumi:"areVolumesPreserved"`
 	// The availability domain of the desktop pool.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
-	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy DesktopPoolAvailabilityPolicyOutput `pulumi:"availabilityPolicy"`
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -176,9 +182,6 @@ type DesktopPool struct {
 	// (Updatable) The stop time of the desktop pool.
 	TimeStopScheduled pulumi.StringPtrOutput `pulumi:"timeStopScheduled"`
 	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UseDedicatedVmHost pulumi.StringOutput `pulumi:"useDedicatedVmHost"`
 }
 
@@ -261,9 +264,14 @@ type desktopPoolState struct {
 	ActiveDesktops *int `pulumi:"activeDesktops"`
 	// Indicates whether desktop pool users have administrative privileges on their desktop.
 	ArePrivilegedUsers *bool `pulumi:"arePrivilegedUsers"`
+	// (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	AreVolumesPreserved *bool `pulumi:"areVolumesPreserved"`
 	// The availability domain of the desktop pool.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy *DesktopPoolAvailabilityPolicy `pulumi:"availabilityPolicy"`
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -312,9 +320,6 @@ type desktopPoolState struct {
 	// (Updatable) The stop time of the desktop pool.
 	TimeStopScheduled *string `pulumi:"timeStopScheduled"`
 	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UseDedicatedVmHost *string `pulumi:"useDedicatedVmHost"`
 }
 
@@ -323,9 +328,14 @@ type DesktopPoolState struct {
 	ActiveDesktops pulumi.IntPtrInput
 	// Indicates whether desktop pool users have administrative privileges on their desktop.
 	ArePrivilegedUsers pulumi.BoolPtrInput
+	// (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	AreVolumesPreserved pulumi.BoolPtrInput
 	// The availability domain of the desktop pool.
 	AvailabilityDomain pulumi.StringPtrInput
-	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy DesktopPoolAvailabilityPolicyPtrInput
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId pulumi.StringPtrInput
@@ -374,9 +384,6 @@ type DesktopPoolState struct {
 	// (Updatable) The stop time of the desktop pool.
 	TimeStopScheduled pulumi.StringPtrInput
 	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UseDedicatedVmHost pulumi.StringPtrInput
 }
 
@@ -387,9 +394,14 @@ func (DesktopPoolState) ElementType() reflect.Type {
 type desktopPoolArgs struct {
 	// Indicates whether desktop pool users have administrative privileges on their desktop.
 	ArePrivilegedUsers bool `pulumi:"arePrivilegedUsers"`
+	// (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	AreVolumesPreserved *bool `pulumi:"areVolumesPreserved"`
 	// The availability domain of the desktop pool.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy DesktopPoolAvailabilityPolicy `pulumi:"availabilityPolicy"`
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -434,9 +446,6 @@ type desktopPoolArgs struct {
 	// (Updatable) The stop time of the desktop pool.
 	TimeStopScheduled *string `pulumi:"timeStopScheduled"`
 	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UseDedicatedVmHost *string `pulumi:"useDedicatedVmHost"`
 }
 
@@ -444,9 +453,14 @@ type desktopPoolArgs struct {
 type DesktopPoolArgs struct {
 	// Indicates whether desktop pool users have administrative privileges on their desktop.
 	ArePrivilegedUsers pulumi.BoolInput
+	// (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	AreVolumesPreserved pulumi.BoolPtrInput
 	// The availability domain of the desktop pool.
 	AvailabilityDomain pulumi.StringInput
-	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy DesktopPoolAvailabilityPolicyInput
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId pulumi.StringInput
@@ -491,9 +505,6 @@ type DesktopPoolArgs struct {
 	// (Updatable) The stop time of the desktop pool.
 	TimeStopScheduled pulumi.StringPtrInput
 	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UseDedicatedVmHost pulumi.StringPtrInput
 }
 
@@ -594,12 +605,20 @@ func (o DesktopPoolOutput) ArePrivilegedUsers() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DesktopPool) pulumi.BoolOutput { return v.ArePrivilegedUsers }).(pulumi.BoolOutput)
 }
 
+// (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DesktopPoolOutput) AreVolumesPreserved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DesktopPool) pulumi.BoolPtrOutput { return v.AreVolumesPreserved }).(pulumi.BoolPtrOutput)
+}
+
 // The availability domain of the desktop pool.
 func (o DesktopPoolOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *DesktopPool) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 func (o DesktopPoolOutput) AvailabilityPolicy() DesktopPoolAvailabilityPolicyOutput {
 	return o.ApplyT(func(v *DesktopPool) DesktopPoolAvailabilityPolicyOutput { return v.AvailabilityPolicy }).(DesktopPoolAvailabilityPolicyOutput)
 }
@@ -720,9 +739,6 @@ func (o DesktopPoolOutput) TimeStopScheduled() pulumi.StringPtrOutput {
 }
 
 // Indicates whether the desktop pool uses dedicated virtual machine hosts.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DesktopPoolOutput) UseDedicatedVmHost() pulumi.StringOutput {
 	return o.ApplyT(func(v *DesktopPool) pulumi.StringOutput { return v.UseDedicatedVmHost }).(pulumi.StringOutput)
 }

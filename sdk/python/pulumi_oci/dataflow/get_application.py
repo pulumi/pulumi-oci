@@ -27,7 +27,7 @@ class GetApplicationResult:
     """
     A collection of values returned by getApplication.
     """
-    def __init__(__self__, application_id=None, application_log_configs=None, archive_uri=None, arguments=None, class_name=None, compartment_id=None, configuration=None, defined_tags=None, description=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, idle_timeout_in_minutes=None, language=None, logs_bucket_uri=None, max_duration_in_minutes=None, metastore_id=None, num_executors=None, owner_principal_id=None, owner_user_name=None, parameters=None, pool_id=None, private_endpoint_id=None, spark_version=None, state=None, time_created=None, time_updated=None, type=None, warehouse_bucket_uri=None):
+    def __init__(__self__, application_id=None, application_log_configs=None, archive_uri=None, arguments=None, class_name=None, compartment_id=None, configuration=None, defined_tags=None, description=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, idle_timeout_in_minutes=None, language=None, logs_bucket_uri=None, max_duration_in_minutes=None, metastore_id=None, num_executors=None, owner_principal_id=None, owner_user_name=None, parameters=None, pool_id=None, private_endpoint_id=None, spark_version=None, state=None, terminate_runs_on_deletion=None, time_created=None, time_updated=None, type=None, warehouse_bucket_uri=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -121,6 +121,9 @@ class GetApplicationResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if terminate_runs_on_deletion and not isinstance(terminate_runs_on_deletion, bool):
+            raise TypeError("Expected argument 'terminate_runs_on_deletion' to be a bool")
+        pulumi.set(__self__, "terminate_runs_on_deletion", terminate_runs_on_deletion)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -380,6 +383,14 @@ class GetApplicationResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="terminateRunsOnDeletion")
+    def terminate_runs_on_deletion(self) -> bool:
+        """
+        A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+        """
+        return pulumi.get(self, "terminate_runs_on_deletion")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -449,6 +460,7 @@ class AwaitableGetApplicationResult(GetApplicationResult):
             private_endpoint_id=self.private_endpoint_id,
             spark_version=self.spark_version,
             state=self.state,
+            terminate_runs_on_deletion=self.terminate_runs_on_deletion,
             time_created=self.time_created,
             time_updated=self.time_updated,
             type=self.type,
@@ -511,6 +523,7 @@ def get_application(application_id: Optional[str] = None,
         private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
         spark_version=pulumi.get(__ret__, 'spark_version'),
         state=pulumi.get(__ret__, 'state'),
+        terminate_runs_on_deletion=pulumi.get(__ret__, 'terminate_runs_on_deletion'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
@@ -570,6 +583,7 @@ def get_application_output(application_id: Optional[pulumi.Input[str]] = None,
         private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
         spark_version=pulumi.get(__response__, 'spark_version'),
         state=pulumi.get(__response__, 'state'),
+        terminate_runs_on_deletion=pulumi.get(__response__, 'terminate_runs_on_deletion'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         type=pulumi.get(__response__, 'type'),

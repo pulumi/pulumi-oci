@@ -13,12 +13,12 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetResourceResult {
     /**
-     * @return Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * @return Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     private String applicationType;
     /**
-     * @return Resource Compartment
+     * @return Resource Compartment name.
      * 
      */
     private String compartment;
@@ -28,7 +28,7 @@ public final class GetFleetResourceResult {
      */
     private String compartmentId;
     /**
-     * @return Compliance State of the Resource
+     * @return Compliance State of the Resource.
      * 
      */
     private String complianceState;
@@ -38,7 +38,7 @@ public final class GetFleetResourceResult {
      */
     private String displayName;
     /**
-     * @return Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * @return Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     private String environmentType;
@@ -55,7 +55,7 @@ public final class GetFleetResourceResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+     * @return Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      * 
      */
     private String product;
@@ -90,7 +90,7 @@ public final class GetFleetResourceResult {
      */
     private Map<String,String> systemTags;
     /**
-     * @return Count of targets  within the resource.
+     * @return Count of targets within the resource.
      * 
      */
     private Integer targetCount;
@@ -100,7 +100,7 @@ public final class GetFleetResourceResult {
      */
     private String tenancyId;
     /**
-     * @return Resource Tenancy Name
+     * @return Resource Tenancy Name.
      * 
      */
     private String tenancyName;
@@ -117,14 +117,14 @@ public final class GetFleetResourceResult {
 
     private GetFleetResourceResult() {}
     /**
-     * @return Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * @return Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     public String applicationType() {
         return this.applicationType;
     }
     /**
-     * @return Resource Compartment
+     * @return Resource Compartment name.
      * 
      */
     public String compartment() {
@@ -138,7 +138,7 @@ public final class GetFleetResourceResult {
         return this.compartmentId;
     }
     /**
-     * @return Compliance State of the Resource
+     * @return Compliance State of the Resource.
      * 
      */
     public String complianceState() {
@@ -152,7 +152,7 @@ public final class GetFleetResourceResult {
         return this.displayName;
     }
     /**
-     * @return Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * @return Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      * 
      */
     public String environmentType() {
@@ -179,7 +179,7 @@ public final class GetFleetResourceResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+     * @return Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      * 
      */
     public String product() {
@@ -228,7 +228,7 @@ public final class GetFleetResourceResult {
         return this.systemTags;
     }
     /**
-     * @return Count of targets  within the resource.
+     * @return Count of targets within the resource.
      * 
      */
     public Integer targetCount() {
@@ -242,7 +242,7 @@ public final class GetFleetResourceResult {
         return this.tenancyId;
     }
     /**
-     * @return Resource Tenancy Name
+     * @return Resource Tenancy Name.
      * 
      */
     public String tenancyName() {

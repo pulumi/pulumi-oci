@@ -41,14 +41,14 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Output<String> fleetId() {
@@ -56,14 +56,14 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * A filter to return resources that match the Type
+     * A filter to return only resources whose resourceType matches the given resourceType.
      * 
      */
     @Import(name="fleetResourceType")
     private @Nullable Output<String> fleetResourceType;
 
     /**
-     * @return A filter to return resources that match the Type
+     * @return A filter to return only resources whose resourceType matches the given resourceType.
      * 
      */
     public Optional<Output<String>> fleetResourceType() {
@@ -71,14 +71,14 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * unique FleetResource identifier
+     * A filter to return only resources whose identifier matches the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return unique FleetResource identifier
+     * @return A filter to return only resources whose identifier matches the given identifier.
      * 
      */
     public Optional<Output<String>> id() {
@@ -86,14 +86,14 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources whose lifecycleState matches the given lifecycleState.
      * 
      */
     public Optional<Output<String>> state() {
@@ -180,7 +180,7 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param fleetResourceType A filter to return resources that match the Type
+         * @param fleetResourceType A filter to return only resources whose resourceType matches the given resourceType.
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param fleetResourceType A filter to return resources that match the Type
+         * @param fleetResourceType A filter to return only resources whose resourceType matches the given resourceType.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param id unique FleetResource identifier
+         * @param id A filter to return only resources whose identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param id unique FleetResource identifier
+         * @param id A filter to return only resources whose identifier matches the given identifier.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class GetFleetResourcesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources whose lifecycleState matches the given lifecycleState.
          * 
          * @return builder
          * 

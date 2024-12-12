@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginArgs;
 import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginPlainArgs;
 import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginsArgs;
@@ -153,6 +154,51 @@ public final class ComputeInstanceAgentFunctions {
      * 
      */
     public static Output<GetInstanceAgentPluginResult> getInstanceAgentPlugin(GetInstanceAgentPluginArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin", TypeShape.of(GetInstanceAgentPluginResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
+     * 
+     * The API to get information for a plugin.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
+     *             .instanceagentId(testInstanceagent.id())
+     *             .pluginName(instanceAgentPluginPluginName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceAgentPluginResult> getInstanceAgentPlugin(GetInstanceAgentPluginArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin", TypeShape.of(GetInstanceAgentPluginResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -381,6 +427,52 @@ public final class ComputeInstanceAgentFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetInstanceAgentPluginsResult> getInstanceAgentPlugins(GetInstanceAgentPluginsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", TypeShape.of(GetInstanceAgentPluginsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
+     * 
+     * The API to get one or more plugin information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
+     *             .instanceagentId(testInstanceagent.id())
+     *             .name(instanceAgentPluginName)
+     *             .status(instanceAgentPluginStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetInstanceAgentPluginsResult> getInstanceAgentPluginsPlain(GetInstanceAgentPluginsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", TypeShape.of(GetInstanceAgentPluginsResult.class), args, Utilities.withVersion(options));
     }
@@ -520,6 +612,52 @@ public final class ComputeInstanceAgentFunctions {
      * 
      */
     public static Output<GetInstanceAvailablePluginResult> getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", TypeShape.of(GetInstanceAvailablePluginResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
+     * 
+     * The API to get the list of plugins that are available.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAvailablePluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .osName(instanceAvailablePluginOsName)
+     *             .osVersion(instanceAvailablePluginOsVersion)
+     *             .name(instanceAvailablePluginName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceAvailablePluginResult> getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", TypeShape.of(GetInstanceAvailablePluginResult.class), args, Utilities.withVersion(options));
     }
     /**

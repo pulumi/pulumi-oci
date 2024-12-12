@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// # Gets a Fleet by identifier
+// Get the details of a fleet in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -52,46 +52,48 @@ func LookupFleet(ctx *pulumi.Context, args *LookupFleetArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getFleet.
 type LookupFleetArgs struct {
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
 }
 
 // A collection of values returned by getFleet.
 type LookupFleetResult struct {
-	// Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+	// Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 	ApplicationType string `pulumi:"applicationType"`
-	// Please provide the root compartmentId (TenancyId).
+	// Tenancy Id (Root Compartment Id)for which the rule is created.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Credentials associated with the Fleet.
+	Credentials []GetFleetCredentialType `pulumi:"credentials"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
-	// Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+	// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 	EnvironmentType string `pulumi:"environmentType"`
 	FleetId         string `pulumi:"fleetId"`
-	// Type of the Fleet.
+	// Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 	FleetType string `pulumi:"fleetType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+	// Group Type associated with Group Fleet. Applicable for GROUP fleet types.
 	GroupType string `pulumi:"groupType"`
 	// The OCID of the resource.
 	Id string `pulumi:"id"`
-	// A value which represents if auto confirming of the targets can be enabled
+	// A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
 	IsTargetAutoConfirm bool `pulumi:"isTargetAutoConfirm"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Conditions when met to send notifications on the fleet activities
+	// Notification information to get notified when the fleet status changes.
 	NotificationPreferences []GetFleetNotificationPreference `pulumi:"notificationPreferences"`
-	// Products associated with the Fleet
+	// Products associated with the Fleet.
 	Products []string `pulumi:"products"`
 	// Associated region
 	ResourceRegion string `pulumi:"resourceRegion"`
-	// Type of resource selection in a fleet.
+	// Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
 	ResourceSelectionType string `pulumi:"resourceSelectionType"`
-	// Rule Selection Criteria
+	// Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
 	RuleSelectionCriterias []GetFleetRuleSelectionCriteria `pulumi:"ruleSelectionCriterias"`
 	// The lifecycle state of the Fleet.
 	State string `pulumi:"state"`
@@ -124,7 +126,7 @@ func LookupFleetOutput(ctx *pulumi.Context, args LookupFleetOutputArgs, opts ...
 
 // A collection of arguments for invoking getFleet.
 type LookupFleetOutputArgs struct {
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
 }
 
@@ -147,14 +149,19 @@ func (o LookupFleetResultOutput) ToLookupFleetResultOutputWithContext(ctx contex
 	return o
 }
 
-// Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+// Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 func (o LookupFleetResultOutput) ApplicationType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.ApplicationType }).(pulumi.StringOutput)
 }
 
-// Please provide the root compartmentId (TenancyId).
+// Tenancy Id (Root Compartment Id)for which the rule is created.
 func (o LookupFleetResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Credentials associated with the Fleet.
+func (o LookupFleetResultOutput) Credentials() GetFleetCredentialTypeArrayOutput {
+	return o.ApplyT(func(v LookupFleetResult) []GetFleetCredentialType { return v.Credentials }).(GetFleetCredentialTypeArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -172,7 +179,7 @@ func (o LookupFleetResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 func (o LookupFleetResultOutput) EnvironmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.EnvironmentType }).(pulumi.StringOutput)
 }
@@ -181,7 +188,7 @@ func (o LookupFleetResultOutput) FleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.FleetId }).(pulumi.StringOutput)
 }
 
-// Type of the Fleet.
+// Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 func (o LookupFleetResultOutput) FleetType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.FleetType }).(pulumi.StringOutput)
 }
@@ -191,7 +198,7 @@ func (o LookupFleetResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupFleetResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+// Group Type associated with Group Fleet. Applicable for GROUP fleet types.
 func (o LookupFleetResultOutput) GroupType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.GroupType }).(pulumi.StringOutput)
 }
@@ -201,7 +208,7 @@ func (o LookupFleetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A value which represents if auto confirming of the targets can be enabled
+// A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
 func (o LookupFleetResultOutput) IsTargetAutoConfirm() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupFleetResult) bool { return v.IsTargetAutoConfirm }).(pulumi.BoolOutput)
 }
@@ -211,12 +218,12 @@ func (o LookupFleetResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Conditions when met to send notifications on the fleet activities
+// Notification information to get notified when the fleet status changes.
 func (o LookupFleetResultOutput) NotificationPreferences() GetFleetNotificationPreferenceArrayOutput {
 	return o.ApplyT(func(v LookupFleetResult) []GetFleetNotificationPreference { return v.NotificationPreferences }).(GetFleetNotificationPreferenceArrayOutput)
 }
 
-// Products associated with the Fleet
+// Products associated with the Fleet.
 func (o LookupFleetResultOutput) Products() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupFleetResult) []string { return v.Products }).(pulumi.StringArrayOutput)
 }
@@ -226,12 +233,12 @@ func (o LookupFleetResultOutput) ResourceRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.ResourceRegion }).(pulumi.StringOutput)
 }
 
-// Type of resource selection in a fleet.
+// Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
 func (o LookupFleetResultOutput) ResourceSelectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.ResourceSelectionType }).(pulumi.StringOutput)
 }
 
-// Rule Selection Criteria
+// Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
 func (o LookupFleetResultOutput) RuleSelectionCriterias() GetFleetRuleSelectionCriteriaArrayOutput {
 	return o.ApplyT(func(v LookupFleetResult) []GetFleetRuleSelectionCriteria { return v.RuleSelectionCriterias }).(GetFleetRuleSelectionCriteriaArrayOutput)
 }

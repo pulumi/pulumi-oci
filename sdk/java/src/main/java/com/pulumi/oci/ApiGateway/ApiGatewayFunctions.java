@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ApiGateway.inputs.GetApiArgs;
 import com.pulumi.oci.ApiGateway.inputs.GetApiContentArgs;
 import com.pulumi.oci.ApiGateway.inputs.GetApiContentPlainArgs;
@@ -229,6 +230,50 @@ public final class ApiGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetApiResult> getApi(GetApiArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getApi:getApi", TypeShape.of(GetApiResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Api resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets an API by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
+     *             .apiId(testApiOciApigatewayApi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetApiResult> getApiPlain(GetApiPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApiGateway/getApi:getApi", TypeShape.of(GetApiResult.class), args, Utilities.withVersion(options));
     }
@@ -362,6 +407,50 @@ public final class ApiGatewayFunctions {
      * 
      */
     public static Output<GetApiContentResult> getApiContent(GetApiContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getApiContent:getApiContent", TypeShape.of(GetApiContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Get the raw API content.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
+     *             .apiId(testApi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApiContentResult> getApiContent(GetApiContentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApiGateway/getApiContent:getApiContent", TypeShape.of(GetApiContentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -581,6 +670,50 @@ public final class ApiGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetApiDeploymentSpecificationResult> getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", TypeShape.of(GetApiDeploymentSpecificationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Api Deployment Specification resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets an API Deployment specification by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiDeploymentSpecificationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
+     *             .apiId(testApi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetApiDeploymentSpecificationResult> getApiDeploymentSpecificationPlain(GetApiDeploymentSpecificationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", TypeShape.of(GetApiDeploymentSpecificationResult.class), args, Utilities.withVersion(options));
     }
@@ -714,6 +847,50 @@ public final class ApiGatewayFunctions {
      * 
      */
     public static Output<GetApiValidationInvokeResult> getApiValidation(GetApiValidationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getApiValidation:getApiValidation", TypeShape.of(GetApiValidationInvokeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Api Validation resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets the API validation results.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiValidationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
+     *             .apiId(testApi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApiValidationInvokeResult> getApiValidation(GetApiValidationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApiGateway/getApiValidation:getApiValidation", TypeShape.of(GetApiValidationInvokeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -941,6 +1118,52 @@ public final class ApiGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetApisResult> getApis(GetApisArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getApis:getApis", TypeShape.of(GetApisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Apis in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of APIs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApis = ApiGatewayFunctions.getApis(GetApisArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(apiDisplayName)
+     *             .state(apiState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetApisResult> getApisPlain(GetApisPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApiGateway/getApis:getApis", TypeShape.of(GetApisResult.class), args, Utilities.withVersion(options));
     }
@@ -1074,6 +1297,50 @@ public final class ApiGatewayFunctions {
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a certificate by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(testCertificateOciApigatewayCertificate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApiGateway/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1301,6 +1568,52 @@ public final class ApiGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Certificates in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of certificates.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = ApiGatewayFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(certificateDisplayName)
+     *             .state(certificateState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApiGateway/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
     }
@@ -1434,6 +1747,50 @@ public final class ApiGatewayFunctions {
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getDeployment:getDeployment", TypeShape.of(GetDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a deployment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApiGateway/getDeployment:getDeployment", TypeShape.of(GetDeploymentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1665,6 +2022,53 @@ public final class ApiGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getDeployments:getDeployments", TypeShape.of(GetDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployments in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of deployments.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentDisplayName)
+     *             .gatewayId(testGateway.id())
+     *             .state(deploymentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApiGateway/getDeployments:getDeployments", TypeShape.of(GetDeploymentsResult.class), args, Utilities.withVersion(options));
     }
@@ -1798,6 +2202,50 @@ public final class ApiGatewayFunctions {
      * 
      */
     public static Output<GetGatewayResult> getGateway(GetGatewayArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getGateway:getGateway", TypeShape.of(GetGatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Gateway resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a gateway by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
+     *             .gatewayId(testGatewayOciApigatewayGateway.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetGatewayResult> getGateway(GetGatewayArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApiGateway/getGateway:getGateway", TypeShape.of(GetGatewayResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2029,6 +2477,53 @@ public final class ApiGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetGatewaysResult> getGateways(GetGatewaysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getGateways:getGateways", TypeShape.of(GetGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Gateways in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of gateways.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .displayName(gatewayDisplayName)
+     *             .state(gatewayState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetGatewaysResult> getGatewaysPlain(GetGatewaysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApiGateway/getGateways:getGateways", TypeShape.of(GetGatewaysResult.class), args, Utilities.withVersion(options));
     }
@@ -2162,6 +2657,50 @@ public final class ApiGatewayFunctions {
      * 
      */
     public static Output<GetSubscriberResult> getSubscriber(GetSubscriberArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getSubscriber:getSubscriber", TypeShape.of(GetSubscriberResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a subscriber by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscriberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSubscriberResult> getSubscriber(GetSubscriberArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApiGateway/getSubscriber:getSubscriber", TypeShape.of(GetSubscriberResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2389,6 +2928,52 @@ public final class ApiGatewayFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSubscribersResult> getSubscribers(GetSubscribersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getSubscribers:getSubscribers", TypeShape.of(GetSubscribersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of subscribers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscribersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribers = ApiGatewayFunctions.getSubscribers(GetSubscribersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriberDisplayName)
+     *             .state(subscriberState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSubscribersResult> getSubscribersPlain(GetSubscribersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApiGateway/getSubscribers:getSubscribers", TypeShape.of(GetSubscribersResult.class), args, Utilities.withVersion(options));
     }
@@ -2522,6 +3107,50 @@ public final class ApiGatewayFunctions {
      * 
      */
     public static Output<GetUsagePlanResult> getUsagePlan(GetUsagePlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getUsagePlan:getUsagePlan", TypeShape.of(GetUsagePlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a usage plan by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUsagePlanResult> getUsagePlan(GetUsagePlanArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApiGateway/getUsagePlan:getUsagePlan", TypeShape.of(GetUsagePlanResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2704,6 +3333,52 @@ public final class ApiGatewayFunctions {
      * 
      */
     public static Output<GetUsagePlansResult> getUsagePlans(GetUsagePlansArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getUsagePlans:getUsagePlans", TypeShape.of(GetUsagePlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of usage plans.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlans = ApiGatewayFunctions.getUsagePlans(GetUsagePlansArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(usagePlanDisplayName)
+     *             .state(usagePlanState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUsagePlansResult> getUsagePlans(GetUsagePlansArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApiGateway/getUsagePlans:getUsagePlans", TypeShape.of(GetUsagePlansResult.class), args, Utilities.withVersion(options));
     }
     /**

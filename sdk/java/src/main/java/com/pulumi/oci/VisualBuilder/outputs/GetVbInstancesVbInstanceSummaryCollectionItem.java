@@ -6,9 +6,8 @@ package com.pulumi.oci.VisualBuilder.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint;
-import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachment;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint;
-import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo;
+import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -23,11 +22,6 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      * 
      */
     private List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints;
-    /**
-     * @return A list of associated attachments to other services
-     * 
-     */
-    private List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -63,11 +57,6 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      * 
      */
     private String id;
-    /**
-     * @return Information for IDCS access
-     * 
-     */
-    private List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos;
     private String idcsOpenId;
     /**
      * @return The Vb Instance URL.
@@ -89,6 +78,11 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      * 
      */
     private String managementVcnId;
+    /**
+     * @return Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    private List<GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail> networkEndpointDetails;
     /**
      * @return The number of Nodes
      * 
@@ -139,13 +133,6 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         return this.alternateCustomEndpoints;
     }
     /**
-     * @return A list of associated attachments to other services
-     * 
-     */
-    public List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments() {
-        return this.attachments;
-    }
-    /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
@@ -194,13 +181,6 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
     public String id() {
         return this.id;
     }
-    /**
-     * @return Information for IDCS access
-     * 
-     */
-    public List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos() {
-        return this.idcsInfos;
-    }
     public String idcsOpenId() {
         return this.idcsOpenId;
     }
@@ -231,6 +211,13 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      */
     public String managementVcnId() {
         return this.managementVcnId;
+    }
+    /**
+     * @return Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    public List<GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail> networkEndpointDetails() {
+        return this.networkEndpointDetails;
     }
     /**
      * @return The number of Nodes
@@ -299,7 +286,6 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints;
-        private List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments;
         private String compartmentId;
         private String consumptionModel;
         private List<GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint> customEndpoints;
@@ -307,12 +293,12 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
-        private List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos;
         private String idcsOpenId;
         private String instanceUrl;
         private Boolean isVisualBuilderEnabled;
         private String managementNatGatewayIp;
         private String managementVcnId;
+        private List<GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail> networkEndpointDetails;
         private Integer nodeCount;
         private String serviceNatGatewayIp;
         private String serviceVcnId;
@@ -325,7 +311,6 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         public Builder(GetVbInstancesVbInstanceSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alternateCustomEndpoints = defaults.alternateCustomEndpoints;
-    	      this.attachments = defaults.attachments;
     	      this.compartmentId = defaults.compartmentId;
     	      this.consumptionModel = defaults.consumptionModel;
     	      this.customEndpoints = defaults.customEndpoints;
@@ -333,12 +318,12 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
-    	      this.idcsInfos = defaults.idcsInfos;
     	      this.idcsOpenId = defaults.idcsOpenId;
     	      this.instanceUrl = defaults.instanceUrl;
     	      this.isVisualBuilderEnabled = defaults.isVisualBuilderEnabled;
     	      this.managementNatGatewayIp = defaults.managementNatGatewayIp;
     	      this.managementVcnId = defaults.managementVcnId;
+    	      this.networkEndpointDetails = defaults.networkEndpointDetails;
     	      this.nodeCount = defaults.nodeCount;
     	      this.serviceNatGatewayIp = defaults.serviceNatGatewayIp;
     	      this.serviceVcnId = defaults.serviceVcnId;
@@ -359,17 +344,6 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         }
         public Builder alternateCustomEndpoints(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
-        }
-        @CustomType.Setter
-        public Builder attachments(List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments) {
-            if (attachments == null) {
-              throw new MissingRequiredPropertyException("GetVbInstancesVbInstanceSummaryCollectionItem", "attachments");
-            }
-            this.attachments = attachments;
-            return this;
-        }
-        public Builder attachments(GetVbInstancesVbInstanceSummaryCollectionItemAttachment... attachments) {
-            return attachments(List.of(attachments));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -431,17 +405,6 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsInfos(List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos) {
-            if (idcsInfos == null) {
-              throw new MissingRequiredPropertyException("GetVbInstancesVbInstanceSummaryCollectionItem", "idcsInfos");
-            }
-            this.idcsInfos = idcsInfos;
-            return this;
-        }
-        public Builder idcsInfos(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo... idcsInfos) {
-            return idcsInfos(List.of(idcsInfos));
-        }
-        @CustomType.Setter
         public Builder idcsOpenId(String idcsOpenId) {
             if (idcsOpenId == null) {
               throw new MissingRequiredPropertyException("GetVbInstancesVbInstanceSummaryCollectionItem", "idcsOpenId");
@@ -480,6 +443,17 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
             }
             this.managementVcnId = managementVcnId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder networkEndpointDetails(List<GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail> networkEndpointDetails) {
+            if (networkEndpointDetails == null) {
+              throw new MissingRequiredPropertyException("GetVbInstancesVbInstanceSummaryCollectionItem", "networkEndpointDetails");
+            }
+            this.networkEndpointDetails = networkEndpointDetails;
+            return this;
+        }
+        public Builder networkEndpointDetails(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail... networkEndpointDetails) {
+            return networkEndpointDetails(List.of(networkEndpointDetails));
         }
         @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
@@ -548,7 +522,6 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         public GetVbInstancesVbInstanceSummaryCollectionItem build() {
             final var _resultValue = new GetVbInstancesVbInstanceSummaryCollectionItem();
             _resultValue.alternateCustomEndpoints = alternateCustomEndpoints;
-            _resultValue.attachments = attachments;
             _resultValue.compartmentId = compartmentId;
             _resultValue.consumptionModel = consumptionModel;
             _resultValue.customEndpoints = customEndpoints;
@@ -556,12 +529,12 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
-            _resultValue.idcsInfos = idcsInfos;
             _resultValue.idcsOpenId = idcsOpenId;
             _resultValue.instanceUrl = instanceUrl;
             _resultValue.isVisualBuilderEnabled = isVisualBuilderEnabled;
             _resultValue.managementNatGatewayIp = managementNatGatewayIp;
             _resultValue.managementVcnId = managementVcnId;
+            _resultValue.networkEndpointDetails = networkEndpointDetails;
             _resultValue.nodeCount = nodeCount;
             _resultValue.serviceNatGatewayIp = serviceNatGatewayIp;
             _resultValue.serviceVcnId = serviceVcnId;

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of FleetTargets.
+        /// Returns the list of all confirmed targets within a fleet.
         /// 
         /// 
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of FleetTargets.
+        /// Returns the list of all confirmed targets within a fleet.
         /// 
         /// 
         /// ## Example Usage
@@ -92,19 +92,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
 
         /// <summary>
-        /// Product Name
+        /// Product Name.
         /// </summary>
         [Input("product")]
         public string? Product { get; set; }
 
         /// <summary>
-        /// Resource Display Name
+        /// Resource Display Name.
         /// </summary>
         [Input("resourceDisplayName")]
         public string? ResourceDisplayName { get; set; }
@@ -138,19 +138,19 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
 
         /// <summary>
-        /// Product Name
+        /// Product Name.
         /// </summary>
         [Input("product")]
         public Input<string>? Product { get; set; }
 
         /// <summary>
-        /// Resource Display Name
+        /// Resource Display Name.
         /// </summary>
         [Input("resourceDisplayName")]
         public Input<string>? ResourceDisplayName { get; set; }

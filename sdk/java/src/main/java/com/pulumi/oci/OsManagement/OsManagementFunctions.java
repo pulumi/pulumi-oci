@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceArgs;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceEventReportArgs;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceEventReportPlainArgs;
@@ -177,6 +178,50 @@ public final class OsManagementFunctions {
      * 
      */
     public static Output<GetManagedInstanceResult> getManagedInstance(GetManagedInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstance:getManagedInstance", TypeShape.of(GetManagedInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Returns a specific Managed Instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstance = OsManagementFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
+     *             .managedInstanceId(testManagedInstanceOciOsmanagementManagedInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedInstanceResult> getManagedInstance(GetManagedInstanceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstance:getManagedInstance", TypeShape.of(GetManagedInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -408,6 +453,53 @@ public final class OsManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedInstanceEventReportResult> getManagedInstanceEventReport(GetManagedInstanceEventReportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", TypeShape.of(GetManagedInstanceEventReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Instance Event Report resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Get summary information about events on this instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceEventReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceEventReport = OsManagementFunctions.getManagedInstanceEventReport(GetManagedInstanceEventReportArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .latestTimestampGreaterThanOrEqualTo(managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo)
+     *             .latestTimestampLessThan(managedInstanceEventReportLatestTimestampLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedInstanceEventReportResult> getManagedInstanceEventReportPlain(GetManagedInstanceEventReportPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", TypeShape.of(GetManagedInstanceEventReportResult.class), args, Utilities.withVersion(options));
     }
@@ -541,6 +633,50 @@ public final class OsManagementFunctions {
      * 
      */
     public static Output<GetManagedInstanceGroupResult> getManagedInstanceGroup(GetManagedInstanceGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", TypeShape.of(GetManagedInstanceGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Instance Group resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Returns a specific Managed Instance Group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroup = OsManagementFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsmanagementManagedInstanceGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedInstanceGroupResult> getManagedInstanceGroup(GetManagedInstanceGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", TypeShape.of(GetManagedInstanceGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -726,6 +862,53 @@ public final class OsManagementFunctions {
      * 
      */
     public static Output<GetManagedInstanceGroupsResult> getManagedInstanceGroups(GetManagedInstanceGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups", TypeShape.of(GetManagedInstanceGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Returns a list of all Managed Instance Groups.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroups = OsManagementFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceGroupDisplayName)
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .state(managedInstanceGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedInstanceGroupsResult> getManagedInstanceGroups(GetManagedInstanceGroupsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups", TypeShape.of(GetManagedInstanceGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -977,6 +1160,74 @@ public final class OsManagementFunctions {
      * 
      */
     public static Output<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", TypeShape.of(GetManagedInstanceModuleStreamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module streams, along with a summary of their
+     * status, from a managed instance.  Filters may be applied to select
+     * a subset of module streams based on the filter criteria.
+     * 
+     * The &#39;moduleName&#39; attribute filters against the name of a module.
+     * It accepts strings of the format &#34;&lt;module&gt;&#34;.  If this attribute
+     * is defined, only streams that belong to the specified module are
+     * included in the result set.  If it is not defined, the request is
+     * not subject to this filter.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream.
+     * Valid values are &#34;ENABLED&#34;, &#34;DISABLED&#34;, and &#34;ACTIVE&#34;.  If the
+     * attribute is set to &#34;ENABLED&#34;, only module streams that are enabled
+     * are included in the result set.  If the attribute is set to &#34;DISABLED&#34;,
+     * only module streams that are not enabled are included in the result
+     * set.  If the attribute is set to &#34;ACTIVE&#34;, only module streams that
+     * are active are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by the display name, the result set is sorted first
+     * by the module name and then by the stream name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceModuleStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceModuleStreams = OsManagementFunctions.getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs.builder()
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .streamName(managedInstanceModuleStreamName)
+     *             .streamStatus(managedInstanceModuleStreamStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", TypeShape.of(GetManagedInstanceModuleStreamsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1332,6 +1583,78 @@ public final class OsManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", TypeShape.of(GetManagedInstanceStreamProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles, along with a summary of their
+     * of their status, from a managed instance.  Filters may be applied to
+     * select a subset of profiles based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;modulName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream
+     * profile.  Valid values are &#34;INSTALLED&#34; and &#34;AVAILABLE&#34;.  If the
+     * attribute is set to &#34;INSTALLED&#34;, only module stream profiles that
+     * are installed are included in the result set.  If the attribute is
+     * set to &#34;AVAILABLE&#34;, only module stream profiles that are not
+     * installed are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by display name, the result set is sorted first by
+     * module name, then by stream name, and finally by profile name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceStreamProfiles = OsManagementFunctions.getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs.builder()
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .profileName(managedInstanceModuleStreamProfileName)
+     *             .profileStatus(managedInstanceProfileStatus)
+     *             .streamName(managedInstanceModuleStreamName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfilePlain(GetManagedInstanceStreamProfilePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", TypeShape.of(GetManagedInstanceStreamProfileResult.class), args, Utilities.withVersion(options));
     }
@@ -1516,6 +1839,52 @@ public final class OsManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetManagedInstancesResult> getManagedInstances(GetManagedInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstances:getManagedInstances", TypeShape.of(GetManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Returns a list of all Managed Instances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstances = OsManagementFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceDisplayName)
+     *             .osFamily(managedInstanceOsFamily)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetManagedInstancesResult> getManagedInstancesPlain(GetManagedInstancesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsManagement/getManagedInstances:getManagedInstances", TypeShape.of(GetManagedInstancesResult.class), args, Utilities.withVersion(options));
     }
@@ -1649,6 +2018,50 @@ public final class OsManagementFunctions {
      * 
      */
     public static Output<GetSoftwareSourceResult> getSoftwareSource(GetSoftwareSourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSource:getSoftwareSource", TypeShape.of(GetSoftwareSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Returns a specific Software Source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSource = OsManagementFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
+     *             .softwareSourceId(testSoftwareSourceOciOsmanagementSoftwareSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSoftwareSourceResult> getSoftwareSource(GetSoftwareSourceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSource:getSoftwareSource", TypeShape.of(GetSoftwareSourceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1876,6 +2289,52 @@ public final class OsManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", TypeShape.of(GetSoftwareSourceModuleStreamResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream from a software source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStream = OsManagementFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStreamPlain(GetSoftwareSourceModuleStreamPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsManagement/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", TypeShape.of(GetSoftwareSourceModuleStreamResult.class), args, Utilities.withVersion(options));
     }
@@ -2018,6 +2477,53 @@ public final class OsManagementFunctions {
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", TypeShape.of(GetSoftwareSourceModuleStreamProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream profile from a software source.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStreamProfile = OsManagementFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", TypeShape.of(GetSoftwareSourceModuleStreamProfileResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2304,6 +2810,66 @@ public final class OsManagementFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", TypeShape.of(GetSoftwareSourceStreamProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles from a software source.
+     * Filters may be applied to select a subset of module stream profiles
+     * based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;moduleName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceStreamProfiles = OsManagementFunctions.getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs.builder()
+     *             .softwareSourceId(softwareSource.id())
+     *             .compartmentId(compartmentId)
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .streamName(softwareSourceModuleStreamName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfilePlain(GetSoftwareSourceStreamProfilePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", TypeShape.of(GetSoftwareSourceStreamProfileResult.class), args, Utilities.withVersion(options));
     }
@@ -2443,6 +3009,52 @@ public final class OsManagementFunctions {
      * 
      */
     public static Output<GetSoftwareSourcesResult> getSoftwareSources(GetSoftwareSourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSources:getSoftwareSources", TypeShape.of(GetSoftwareSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Software Sources in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Returns a list of all Software Sources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSources = OsManagementFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .state(softwareSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSoftwareSourcesResult> getSoftwareSources(GetSoftwareSourcesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSources:getSoftwareSources", TypeShape.of(GetSoftwareSourcesResult.class), args, Utilities.withVersion(options));
     }
     /**

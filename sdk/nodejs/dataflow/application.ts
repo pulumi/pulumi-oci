@@ -62,6 +62,7 @@ import * as utilities from "../utilities";
  *     privateEndpointId: testPrivateEndpoint.id,
  *     type: applicationType,
  *     warehouseBucketUri: applicationWarehouseBucketUri,
+ *     terminateRunsOnDeletion: true,
  * });
  * ```
  *
@@ -218,6 +219,13 @@ export class Application extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly terminateRunsOnDeletion!: pulumi.Output<boolean | undefined>;
+    /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -230,11 +238,7 @@ export class Application extends pulumi.CustomResource {
      */
     public readonly type!: pulumi.Output<string>;
     /**
-     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
     public readonly warehouseBucketUri!: pulumi.Output<string>;
 
@@ -280,6 +284,7 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["privateEndpointId"] = state ? state.privateEndpointId : undefined;
             resourceInputs["sparkVersion"] = state ? state.sparkVersion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["terminateRunsOnDeletion"] = state ? state.terminateRunsOnDeletion : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
@@ -333,6 +338,7 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["poolId"] = args ? args.poolId : undefined;
             resourceInputs["privateEndpointId"] = args ? args.privateEndpointId : undefined;
             resourceInputs["sparkVersion"] = args ? args.sparkVersion : undefined;
+            resourceInputs["terminateRunsOnDeletion"] = args ? args.terminateRunsOnDeletion : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["warehouseBucketUri"] = args ? args.warehouseBucketUri : undefined;
             resourceInputs["ownerPrincipalId"] = undefined /*out*/;
@@ -467,6 +473,13 @@ export interface ApplicationState {
      */
     state?: pulumi.Input<string>;
     /**
+     * A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    terminateRunsOnDeletion?: pulumi.Input<boolean>;
+    /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
@@ -479,11 +492,7 @@ export interface ApplicationState {
      */
     type?: pulumi.Input<string>;
     /**
-     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
     warehouseBucketUri?: pulumi.Input<string>;
 }
@@ -597,15 +606,18 @@ export interface ApplicationArgs {
      */
     sparkVersion: pulumi.Input<string>;
     /**
+     * A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    terminateRunsOnDeletion?: pulumi.Input<boolean>;
+    /**
      * The Spark application processing type.
      */
     type?: pulumi.Input<string>;
     /**
-     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
     warehouseBucketUri?: pulumi.Input<string>;
 }

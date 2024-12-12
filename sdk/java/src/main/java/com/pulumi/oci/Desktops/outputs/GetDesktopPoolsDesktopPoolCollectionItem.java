@@ -31,6 +31,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
      * 
      */
     private Boolean arePrivilegedUsers;
+    private Boolean areVolumesPreserved;
     /**
      * @return The name of the availability domain.
      * 
@@ -181,6 +182,9 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
      */
     public Boolean arePrivilegedUsers() {
         return this.arePrivilegedUsers;
+    }
+    public Boolean areVolumesPreserved() {
+        return this.areVolumesPreserved;
     }
     /**
      * @return The name of the availability domain.
@@ -383,6 +387,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
     public static final class Builder {
         private Integer activeDesktops;
         private Boolean arePrivilegedUsers;
+        private Boolean areVolumesPreserved;
         private String availabilityDomain;
         private List<GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicy> availabilityPolicies;
         private String compartmentId;
@@ -415,6 +420,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.activeDesktops = defaults.activeDesktops;
     	      this.arePrivilegedUsers = defaults.arePrivilegedUsers;
+    	      this.areVolumesPreserved = defaults.areVolumesPreserved;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availabilityPolicies = defaults.availabilityPolicies;
     	      this.compartmentId = defaults.compartmentId;
@@ -458,6 +464,14 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
               throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "arePrivilegedUsers");
             }
             this.arePrivilegedUsers = arePrivilegedUsers;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder areVolumesPreserved(Boolean areVolumesPreserved) {
+            if (areVolumesPreserved == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "areVolumesPreserved");
+            }
+            this.areVolumesPreserved = areVolumesPreserved;
             return this;
         }
         @CustomType.Setter
@@ -704,6 +718,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             final var _resultValue = new GetDesktopPoolsDesktopPoolCollectionItem();
             _resultValue.activeDesktops = activeDesktops;
             _resultValue.arePrivilegedUsers = arePrivilegedUsers;
+            _resultValue.areVolumesPreserved = areVolumesPreserved;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availabilityPolicies = availabilityPolicies;
             _resultValue.compartmentId = compartmentId;

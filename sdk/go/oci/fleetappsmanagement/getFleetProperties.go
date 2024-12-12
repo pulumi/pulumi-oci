@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Fleet Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Returns a list of FleetProperties.
+// List fleet properties in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -61,11 +61,11 @@ type GetFleetPropertiesArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetFleetPropertiesFilter `pulumi:"filters"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId string `pulumi:"fleetId"`
-	// unique FleetProperty identifier
+	// A filter to return only resources whose fleetProperty identifier matches the given identifier.
 	Id *string `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
 }
 
@@ -111,11 +111,11 @@ type GetFleetPropertiesOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput              `pulumi:"displayName"`
 	Filters     GetFleetPropertiesFilterArrayInput `pulumi:"filters"`
-	// unique Fleet identifier
+	// Unique Fleet identifier.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
-	// unique FleetProperty identifier
+	// A filter to return only resources whose fleetProperty identifier matches the given identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 

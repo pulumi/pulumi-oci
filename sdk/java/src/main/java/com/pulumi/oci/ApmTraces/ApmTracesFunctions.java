@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksPlainArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
@@ -200,6 +201,51 @@ public final class ApmTracesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetQueryQuickPicksResult> getQueryQuickPicks(GetQueryQuickPicksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", TypeShape.of(GetQueryQuickPicksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Returns a list of predefined Quick Pick queries intended to assist the user
+     * to choose a query to run.  There is no sorting applied on the results.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetQueryQuickPicksResult> getQueryQuickPicksPlain(GetQueryQuickPicksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", TypeShape.of(GetQueryQuickPicksResult.class), args, Utilities.withVersion(options));
     }
@@ -345,6 +391,54 @@ public final class ApmTracesFunctions {
      * 
      */
     public static Output<GetTraceResult> getTrace(GetTraceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getTrace:getTrace", TypeShape.of(GetTraceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Gets the trace details identified by traceId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceTraceKey)
+     *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
+     *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
+     *             .traceNamespace(traceTraceNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTraceResult> getTrace(GetTraceArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApmTraces/getTrace:getTrace", TypeShape.of(GetTraceResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -588,6 +682,55 @@ public final class ApmTracesFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", TypeShape.of(GetTraceAggregatedSnapshotDataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Trace Aggregated Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Gets the aggregated snapshot identified by trace ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceAggregatedSnapshotDataTraceKey)
+     *             .serverName(traceAggregatedSnapshotDataServerName)
+     *             .serviceName(testService.name())
+     *             .spanKey(traceAggregatedSnapshotDataSpanKey)
+     *             .spanName(traceAggregatedSnapshotDataSpanName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotDataPlain(GetTraceAggregatedSnapshotDataPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", TypeShape.of(GetTraceAggregatedSnapshotDataResult.class), args, Utilities.withVersion(options));
     }
@@ -733,6 +876,54 @@ public final class ApmTracesFunctions {
      * 
      */
     public static Output<GetTraceSnapshotDataResult> getTraceSnapshotData(GetTraceSnapshotDataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", TypeShape.of(GetTraceSnapshotDataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Gets the trace snapshots data identified by trace ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceSnapshotDataTraceKey)
+     *             .isSummarized(traceSnapshotDataIsSummarized)
+     *             .snapshotTime(traceSnapshotDataSnapshotTime)
+     *             .threadId(testThread.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTraceSnapshotDataResult> getTraceSnapshotData(GetTraceSnapshotDataArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", TypeShape.of(GetTraceSnapshotDataResult.class), args, Utilities.withVersion(options));
     }
     /**

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.DataCatalog.inputs.GetCatalogArgs;
 import com.pulumi.oci.DataCatalog.inputs.GetCatalogPlainArgs;
 import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointArgs;
@@ -220,6 +221,50 @@ public final class DataCatalogFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCatalogResult> getCatalog(GetCatalogArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getCatalog:getCatalog", TypeShape.of(GetCatalogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Gets a data catalog by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
+     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCatalogResult> getCatalogPlain(GetCatalogPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataCatalog/getCatalog:getCatalog", TypeShape.of(GetCatalogResult.class), args, Utilities.withVersion(options));
     }
@@ -353,6 +398,50 @@ public final class DataCatalogFunctions {
      * 
      */
     public static Output<GetCatalogPrivateEndpointResult> getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", TypeShape.of(GetCatalogPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Gets a specific private reverse connection by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCatalogPrivateEndpointResult> getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", TypeShape.of(GetCatalogPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -580,6 +669,52 @@ public final class DataCatalogFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCatalogPrivateEndpointsResult> getCatalogPrivateEndpoints(GetCatalogPrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", TypeShape.of(GetCatalogPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Catalog Private Endpoints in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Returns a list of all the catalog private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogPrivateEndpoints = DataCatalogFunctions.getCatalogPrivateEndpoints(GetCatalogPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogPrivateEndpointDisplayName)
+     *             .state(catalogPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCatalogPrivateEndpointsResult> getCatalogPrivateEndpointsPlain(GetCatalogPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", TypeShape.of(GetCatalogPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
@@ -719,6 +854,52 @@ public final class DataCatalogFunctions {
      * 
      */
     public static Output<GetCatalogTypeResult> getCatalogType(GetCatalogTypeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getCatalogType:getCatalogType", TypeShape.of(GetCatalogTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Catalog Type resource in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Gets a specific type by key within a data catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
+     *             .catalogId(testCatalog.id())
+     *             .typeKey(catalogTypeTypeKey)
+     *             .fields(catalogTypeFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCatalogTypeResult> getCatalogType(GetCatalogTypeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getCatalogType:getCatalogType", TypeShape.of(GetCatalogTypeResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -972,6 +1153,58 @@ public final class DataCatalogFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetCatalogTypesResult> getCatalogTypes(GetCatalogTypesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getCatalogTypes:getCatalogTypes", TypeShape.of(GetCatalogTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Returns a list of all types within a data catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
+     *             .catalogId(testCatalog.id())
+     *             .externalTypeName(catalogTypeExternalTypeName)
+     *             .fields(catalogTypeFields)
+     *             .isApproved(catalogTypeIsApproved)
+     *             .isInternal(catalogTypeIsInternal)
+     *             .isTag(catalogTypeIsTag)
+     *             .name(catalogTypeName)
+     *             .state(catalogTypeState)
+     *             .typeCategory(catalogTypeTypeCategory)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetCatalogTypesResult> getCatalogTypesPlain(GetCatalogTypesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataCatalog/getCatalogTypes:getCatalogTypes", TypeShape.of(GetCatalogTypesResult.class), args, Utilities.withVersion(options));
     }
@@ -1111,6 +1344,52 @@ public final class DataCatalogFunctions {
      * 
      */
     public static Output<GetCatalogsResult> getCatalogs(GetCatalogsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getCatalogs:getCatalogs", TypeShape.of(GetCatalogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Catalogs in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Returns a list of all the data catalogs in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogs = DataCatalogFunctions.getCatalogs(GetCatalogsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogDisplayName)
+     *             .state(catalogState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCatalogsResult> getCatalogs(GetCatalogsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getCatalogs:getCatalogs", TypeShape.of(GetCatalogsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1298,6 +1577,53 @@ public final class DataCatalogFunctions {
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Gets a specific data asset connection by key.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
+     *             .catalogId(testCatalog.id())
+     *             .connectionKey(connectionConnectionKey)
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .fields(connectionFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1568,6 +1894,62 @@ public final class DataCatalogFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Connections in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Returns a list of all Connections for a data asset.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(connectionDisplayName)
+     *             .displayNameContains(connectionDisplayNameContains)
+     *             .externalKey(connectionExternalKey)
+     *             .fields(connectionFields)
+     *             .isDefault(connectionIsDefault)
+     *             .state(connectionState)
+     *             .timeCreated(connectionTimeCreated)
+     *             .timeStatusUpdated(connectionTimeStatusUpdated)
+     *             .timeUpdated(connectionTimeUpdated)
+     *             .updatedById(testUpdatedBy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataCatalog/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
     }
@@ -1707,6 +2089,52 @@ public final class DataCatalogFunctions {
      * 
      */
     public static Output<GetDataAssetResult> getDataAsset(GetDataAssetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getDataAsset:getDataAsset", TypeShape.of(GetDataAssetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Gets a specific data asset for the given key within a data catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(dataAssetDataAssetKey)
+     *             .fields(dataAssetFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDataAssetResult> getDataAsset(GetDataAssetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getDataAsset:getDataAsset", TypeShape.of(GetDataAssetResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1968,6 +2396,60 @@ public final class DataCatalogFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetDataAssetsResult> getDataAssets(GetDataAssetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getDataAssets:getDataAssets", TypeShape.of(GetDataAssetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Returns a list of data assets within a data catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
+     *             .catalogId(testCatalog.id())
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetDataAssetsResult> getDataAssetsPlain(GetDataAssetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataCatalog/getDataAssets:getDataAssets", TypeShape.of(GetDataAssetsResult.class), args, Utilities.withVersion(options));
     }
@@ -2101,6 +2583,50 @@ public final class DataCatalogFunctions {
      * 
      */
     public static Output<GetMetastoreResult> getMetastore(GetMetastoreArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getMetastore:getMetastore", TypeShape.of(GetMetastoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Gets a metastore by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetMetastoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMetastoreResult> getMetastore(GetMetastoreArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getMetastore:getMetastore", TypeShape.of(GetMetastoreResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2283,6 +2809,52 @@ public final class DataCatalogFunctions {
      * 
      */
     public static Output<GetMetastoresResult> getMetastores(GetMetastoresArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataCatalog/getMetastores:getMetastores", TypeShape.of(GetMetastoresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Metastores in Oracle Cloud Infrastructure Data Catalog service.
+     * 
+     * Returns a list of all metastores in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetMetastoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetastores = DataCatalogFunctions.getMetastores(GetMetastoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(metastoreDisplayName)
+     *             .state(metastoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMetastoresResult> getMetastores(GetMetastoresArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getMetastores:getMetastores", TypeShape.of(GetMetastoresResult.class), args, Utilities.withVersion(options));
     }
     /**

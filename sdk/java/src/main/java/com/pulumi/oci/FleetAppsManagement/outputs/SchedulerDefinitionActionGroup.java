@@ -29,7 +29,7 @@ public final class SchedulerDefinitionActionGroup {
      */
     private @Nullable String product;
     /**
-     * @return (Updatable) Provide the ID of the resource; Ex- fleetId.
+     * @return (Updatable) Provide the ID of the resource. Example fleet ID.
      * 
      */
     private String resourceId;
@@ -77,7 +77,7 @@ public final class SchedulerDefinitionActionGroup {
         return Optional.ofNullable(this.product);
     }
     /**
-     * @return (Updatable) Provide the ID of the resource; Ex- fleetId.
+     * @return (Updatable) Provide the ID of the resource. Example fleet ID.
      * 
      */
     public String resourceId() {

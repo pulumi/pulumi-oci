@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRunbookAssociationExecutionWorkflowDetailWorkflowStep {
     /**
-     * @return Provide the name of the group.
+     * @return Name of the group.
      * 
      */
     private String groupName;
@@ -22,7 +22,7 @@ public final class GetRunbookAssociationExecutionWorkflowDetailWorkflowStep {
      */
     private String stepName;
     /**
-     * @return Tasks within the Group. Provide the stepName for all tasks that are applicable
+     * @return Tasks within the Group. Provide the stepName for all applicable tasks.
      * 
      */
     private List<String> steps;
@@ -34,7 +34,7 @@ public final class GetRunbookAssociationExecutionWorkflowDetailWorkflowStep {
 
     private GetRunbookAssociationExecutionWorkflowDetailWorkflowStep() {}
     /**
-     * @return Provide the name of the group.
+     * @return Name of the group.
      * 
      */
     public String groupName() {
@@ -48,7 +48,7 @@ public final class GetRunbookAssociationExecutionWorkflowDetailWorkflowStep {
         return this.stepName;
     }
     /**
-     * @return Tasks within the Group. Provide the stepName for all tasks that are applicable
+     * @return Tasks within the Group. Provide the stepName for all applicable tasks.
      * 
      */
     public List<String> steps() {

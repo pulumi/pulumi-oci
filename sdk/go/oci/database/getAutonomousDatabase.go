@@ -190,6 +190,8 @@ type LookupAutonomousDatabaseResult struct {
 	KeyStoreId string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
+	// (Optional) The OCID of the key version that is used in rotate key operations.
+	KeyVersionId string `pulumi:"keyVersionId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// KMS key lifecycle details.
@@ -717,6 +719,11 @@ func (o LookupAutonomousDatabaseResultOutput) KeyStoreId() pulumi.StringOutput {
 // The wallet name for Oracle Key Vault.
 func (o LookupAutonomousDatabaseResultOutput) KeyStoreWalletName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+}
+
+// (Optional) The OCID of the key version that is used in rotate key operations.
+func (o LookupAutonomousDatabaseResultOutput) KeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.KeyVersionId }).(pulumi.StringOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

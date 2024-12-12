@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class FleetRuleSelectionCriteriaRule {
     /**
-     * @return (Updatable) Rule to be be applied on.
+     * @return (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
      * 
      */
     private @Nullable String basis;
     /**
-     * @return (Updatable) Please provide the root compartmentId (TenancyId).
+     * @return (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     private String compartmentId;
@@ -30,7 +30,7 @@ public final class FleetRuleSelectionCriteriaRule {
      */
     private List<FleetRuleSelectionCriteriaRuleCondition> conditions;
     /**
-     * @return (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+     * @return (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -40,14 +40,14 @@ public final class FleetRuleSelectionCriteriaRule {
 
     private FleetRuleSelectionCriteriaRule() {}
     /**
-     * @return (Updatable) Rule to be be applied on.
+     * @return (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be &#39;definedTagEquals&#39; If based on a resource property, basis will be &#39;inventoryProperties&#39;
      * 
      */
     public Optional<String> basis() {
         return Optional.ofNullable(this.basis);
     }
     /**
-     * @return (Updatable) Please provide the root compartmentId (TenancyId).
+     * @return (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
      * 
      */
     public String compartmentId() {
@@ -61,7 +61,7 @@ public final class FleetRuleSelectionCriteriaRule {
         return this.conditions;
     }
     /**
-     * @return (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+     * @return (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

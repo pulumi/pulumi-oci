@@ -13,6 +13,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     [OutputType]
     public sealed class GetFleetsFilterResult
     {
+        /// <summary>
+        /// Name of the variable.
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

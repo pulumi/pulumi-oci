@@ -36,6 +36,7 @@ class DesktopPoolArgs:
                  standby_size: pulumi.Input[int],
                  storage_backup_policy_id: pulumi.Input[str],
                  storage_size_in_gbs: pulumi.Input[int],
+                 are_volumes_preserved: Optional[pulumi.Input[bool]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -50,7 +51,7 @@ class DesktopPoolArgs:
         The set of arguments for constructing a DesktopPool resource.
         :param pulumi.Input[bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
         :param pulumi.Input[str] availability_domain: The availability domain of the desktop pool.
-        :param pulumi.Input['DesktopPoolAvailabilityPolicyArgs'] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        :param pulumi.Input['DesktopPoolAvailabilityPolicyArgs'] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment which will contain the desktop pool.
         :param pulumi.Input[str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input['DesktopPoolDevicePolicyArgs'] device_policy: (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
@@ -63,6 +64,11 @@ class DesktopPoolArgs:
         :param pulumi.Input[int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
         :param pulumi.Input[str] storage_backup_policy_id: The backup policy OCID of the storage.
         :param pulumi.Input[int] storage_size_in_gbs: The size in GBs of the storage for the desktop pool.
+        :param pulumi.Input[bool] are_volumes_preserved: (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -73,10 +79,6 @@ class DesktopPoolArgs:
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
         :param pulumi.Input[str] use_dedicated_vm_host: Indicates whether the desktop pool uses dedicated virtual machine hosts.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "are_privileged_users", are_privileged_users)
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -93,6 +95,8 @@ class DesktopPoolArgs:
         pulumi.set(__self__, "standby_size", standby_size)
         pulumi.set(__self__, "storage_backup_policy_id", storage_backup_policy_id)
         pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
+        if are_volumes_preserved is not None:
+            pulumi.set(__self__, "are_volumes_preserved", are_volumes_preserved)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -142,7 +146,7 @@ class DesktopPoolArgs:
     @pulumi.getter(name="availabilityPolicy")
     def availability_policy(self) -> pulumi.Input['DesktopPoolAvailabilityPolicyArgs']:
         """
-        (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         """
         return pulumi.get(self, "availability_policy")
 
@@ -295,6 +299,22 @@ class DesktopPoolArgs:
         pulumi.set(self, "storage_size_in_gbs", value)
 
     @property
+    @pulumi.getter(name="areVolumesPreserved")
+    def are_volumes_preserved(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "are_volumes_preserved")
+
+    @are_volumes_preserved.setter
+    def are_volumes_preserved(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_volumes_preserved", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -407,10 +427,6 @@ class DesktopPoolArgs:
     def use_dedicated_vm_host(self) -> Optional[pulumi.Input[str]]:
         """
         Indicates whether the desktop pool uses dedicated virtual machine hosts.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "use_dedicated_vm_host")
 
@@ -424,6 +440,7 @@ class _DesktopPoolState:
     def __init__(__self__, *,
                  active_desktops: Optional[pulumi.Input[int]] = None,
                  are_privileged_users: Optional[pulumi.Input[bool]] = None,
+                 are_volumes_preserved: Optional[pulumi.Input[bool]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  availability_policy: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -454,8 +471,13 @@ class _DesktopPoolState:
         Input properties used for looking up and filtering DesktopPool resources.
         :param pulumi.Input[int] active_desktops: The number of active desktops in the desktop pool.
         :param pulumi.Input[bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
+        :param pulumi.Input[bool] are_volumes_preserved: (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] availability_domain: The availability domain of the desktop pool.
-        :param pulumi.Input['DesktopPoolAvailabilityPolicyArgs'] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        :param pulumi.Input['DesktopPoolAvailabilityPolicyArgs'] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment which will contain the desktop pool.
         :param pulumi.Input[str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -480,15 +502,13 @@ class _DesktopPoolState:
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
         :param pulumi.Input[str] use_dedicated_vm_host: Indicates whether the desktop pool uses dedicated virtual machine hosts.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if active_desktops is not None:
             pulumi.set(__self__, "active_desktops", active_desktops)
         if are_privileged_users is not None:
             pulumi.set(__self__, "are_privileged_users", are_privileged_users)
+        if are_volumes_preserved is not None:
+            pulumi.set(__self__, "are_volumes_preserved", are_volumes_preserved)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if availability_policy is not None:
@@ -567,6 +587,22 @@ class _DesktopPoolState:
         pulumi.set(self, "are_privileged_users", value)
 
     @property
+    @pulumi.getter(name="areVolumesPreserved")
+    def are_volumes_preserved(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "are_volumes_preserved")
+
+    @are_volumes_preserved.setter
+    def are_volumes_preserved(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_volumes_preserved", value)
+
+    @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
         """
@@ -582,7 +618,7 @@ class _DesktopPoolState:
     @pulumi.getter(name="availabilityPolicy")
     def availability_policy(self) -> Optional[pulumi.Input['DesktopPoolAvailabilityPolicyArgs']]:
         """
-        (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         """
         return pulumi.get(self, "availability_policy")
 
@@ -871,10 +907,6 @@ class _DesktopPoolState:
     def use_dedicated_vm_host(self) -> Optional[pulumi.Input[str]]:
         """
         Indicates whether the desktop pool uses dedicated virtual machine hosts.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "use_dedicated_vm_host")
 
@@ -889,6 +921,7 @@ class DesktopPool(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_privileged_users: Optional[pulumi.Input[bool]] = None,
+                 are_volumes_preserved: Optional[pulumi.Input[bool]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  availability_policy: Optional[pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -965,6 +998,7 @@ class DesktopPool(pulumi.CustomResource):
             standby_size=desktop_pool_standby_size,
             storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
             storage_size_in_gbs=desktop_pool_storage_size_in_gbs,
+            are_volumes_preserved=desktop_pool_are_volumes_preserved,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -1009,8 +1043,13 @@ class DesktopPool(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
+        :param pulumi.Input[bool] are_volumes_preserved: (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] availability_domain: The availability domain of the desktop pool.
-        :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment which will contain the desktop pool.
         :param pulumi.Input[str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1033,10 +1072,6 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
         :param pulumi.Input[str] use_dedicated_vm_host: Indicates whether the desktop pool uses dedicated virtual machine hosts.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1095,6 +1130,7 @@ class DesktopPool(pulumi.CustomResource):
             standby_size=desktop_pool_standby_size,
             storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
             storage_size_in_gbs=desktop_pool_storage_size_in_gbs,
+            are_volumes_preserved=desktop_pool_are_volumes_preserved,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -1152,6 +1188,7 @@ class DesktopPool(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_privileged_users: Optional[pulumi.Input[bool]] = None,
+                 are_volumes_preserved: Optional[pulumi.Input[bool]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  availability_policy: Optional[pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1188,6 +1225,7 @@ class DesktopPool(pulumi.CustomResource):
             if are_privileged_users is None and not opts.urn:
                 raise TypeError("Missing required property 'are_privileged_users'")
             __props__.__dict__["are_privileged_users"] = are_privileged_users
+            __props__.__dict__["are_volumes_preserved"] = are_volumes_preserved
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
@@ -1255,6 +1293,7 @@ class DesktopPool(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             active_desktops: Optional[pulumi.Input[int]] = None,
             are_privileged_users: Optional[pulumi.Input[bool]] = None,
+            are_volumes_preserved: Optional[pulumi.Input[bool]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             availability_policy: Optional[pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1290,8 +1329,13 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] active_desktops: The number of active desktops in the desktop pool.
         :param pulumi.Input[bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
+        :param pulumi.Input[bool] are_volumes_preserved: (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] availability_domain: The availability domain of the desktop pool.
-        :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment which will contain the desktop pool.
         :param pulumi.Input[str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1316,10 +1360,6 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
         :param pulumi.Input[str] use_dedicated_vm_host: Indicates whether the desktop pool uses dedicated virtual machine hosts.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1327,6 +1367,7 @@ class DesktopPool(pulumi.CustomResource):
 
         __props__.__dict__["active_desktops"] = active_desktops
         __props__.__dict__["are_privileged_users"] = are_privileged_users
+        __props__.__dict__["are_volumes_preserved"] = are_volumes_preserved
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["availability_policy"] = availability_policy
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1372,6 +1413,18 @@ class DesktopPool(pulumi.CustomResource):
         return pulumi.get(self, "are_privileged_users")
 
     @property
+    @pulumi.getter(name="areVolumesPreserved")
+    def are_volumes_preserved(self) -> pulumi.Output[Optional[bool]]:
+        """
+        (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "are_volumes_preserved")
+
+    @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
         """
@@ -1383,7 +1436,7 @@ class DesktopPool(pulumi.CustomResource):
     @pulumi.getter(name="availabilityPolicy")
     def availability_policy(self) -> pulumi.Output['outputs.DesktopPoolAvailabilityPolicy']:
         """
-        (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool.
+        (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         """
         return pulumi.get(self, "availability_policy")
 
@@ -1576,10 +1629,6 @@ class DesktopPool(pulumi.CustomResource):
     def use_dedicated_vm_host(self) -> pulumi.Output[str]:
         """
         Indicates whether the desktop pool uses dedicated virtual machine hosts.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "use_dedicated_vm_host")
 

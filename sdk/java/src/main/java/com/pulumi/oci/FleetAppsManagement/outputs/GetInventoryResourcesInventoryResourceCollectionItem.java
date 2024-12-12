@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetInventoryResourcesInventoryResourceCollectionItem {
     /**
-     * @return Availability Domain of the resource
+     * @return Availability Domain of the resource.
      * 
      */
     private String availabilityDomain;
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
      * 
      */
     private String compartmentId;
@@ -47,7 +47,7 @@ public final class GetInventoryResourcesInventoryResourceCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return Resource Compartment ID
+     * @return A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
      * 
      */
     private String resourceCompartmentId;
@@ -74,14 +74,14 @@ public final class GetInventoryResourcesInventoryResourceCollectionItem {
 
     private GetInventoryResourcesInventoryResourceCollectionItem() {}
     /**
-     * @return Availability Domain of the resource
+     * @return Availability Domain of the resource.
      * 
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
      * 
      */
     public String compartmentId() {
@@ -123,7 +123,7 @@ public final class GetInventoryResourcesInventoryResourceCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return Resource Compartment ID
+     * @return A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
      * 
      */
     public String resourceCompartmentId() {

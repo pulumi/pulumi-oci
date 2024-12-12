@@ -56,14 +56,14 @@ public final class GetFleetProductsArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Output<String> fleetId() {
@@ -71,14 +71,14 @@ public final class GetFleetProductsArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * Resource Display Name
+     * Resource Display Name.
      * 
      */
     @Import(name="resourceDisplayName")
     private @Nullable Output<String> resourceDisplayName;
 
     /**
-     * @return Resource Display Name
+     * @return Resource Display Name.
      * 
      */
     public Optional<Output<String>> resourceDisplayName() {
@@ -185,7 +185,7 @@ public final class GetFleetProductsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class GetFleetProductsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class GetFleetProductsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param resourceDisplayName Resource Display Name
+         * @param resourceDisplayName Resource Display Name.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class GetFleetProductsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param resourceDisplayName Resource Display Name
+         * @param resourceDisplayName Resource Display Name.
          * 
          * @return builder
          * 

@@ -27,10 +27,10 @@ class PropertyArgs:
         """
         The set of arguments for constructing a Property resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
-        :param pulumi.Input[str] selection: (Updatable) Text selection of the category
-        :param pulumi.Input[str] value_type: (Updatable) Format of the value
+        :param pulumi.Input[str] selection: (Updatable) Text selection of the property.
+        :param pulumi.Input[str] value_type: (Updatable) Format of the value.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
                
                
                ** IMPORTANT **
@@ -60,7 +60,7 @@ class PropertyArgs:
     @pulumi.getter
     def selection(self) -> pulumi.Input[str]:
         """
-        (Updatable) Text selection of the category
+        (Updatable) Text selection of the property.
         """
         return pulumi.get(self, "selection")
 
@@ -72,7 +72,7 @@ class PropertyArgs:
     @pulumi.getter(name="valueType")
     def value_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Format of the value
+        (Updatable) Format of the value.
         """
         return pulumi.get(self, "value_type")
 
@@ -96,7 +96,7 @@ class PropertyArgs:
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 
 
         ** IMPORTANT **
@@ -135,15 +135,15 @@ class _PropertyState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] resource_region: Associated region
-        :param pulumi.Input[str] scope: The scope of the property
-        :param pulumi.Input[str] selection: (Updatable) Text selection of the category
+        :param pulumi.Input[str] scope: The scope of the property.
+        :param pulumi.Input[str] selection: (Updatable) Text selection of the property.
         :param pulumi.Input[str] state: The current state of the Property.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: The type of the property.
-        :param pulumi.Input[str] value_type: (Updatable) Format of the value
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        :param pulumi.Input[str] value_type: (Updatable) Format of the value.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
                
                
                ** IMPORTANT **
@@ -256,7 +256,7 @@ class _PropertyState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope of the property
+        The scope of the property.
         """
         return pulumi.get(self, "scope")
 
@@ -268,7 +268,7 @@ class _PropertyState:
     @pulumi.getter
     def selection(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Text selection of the category
+        (Updatable) Text selection of the property.
         """
         return pulumi.get(self, "selection")
 
@@ -340,7 +340,7 @@ class _PropertyState:
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Format of the value
+        (Updatable) Format of the value.
         """
         return pulumi.get(self, "value_type")
 
@@ -352,7 +352,7 @@ class _PropertyState:
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 
 
         ** IMPORTANT **
@@ -379,7 +379,7 @@ class Property(pulumi.CustomResource):
         """
         This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new Property.
+        Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
 
         ## Example Usage
 
@@ -407,9 +407,9 @@ class Property(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[str] selection: (Updatable) Text selection of the category
-        :param pulumi.Input[str] value_type: (Updatable) Format of the value
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        :param pulumi.Input[str] selection: (Updatable) Text selection of the property.
+        :param pulumi.Input[str] value_type: (Updatable) Format of the value.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
                
                
                ** IMPORTANT **
@@ -424,7 +424,7 @@ class Property(pulumi.CustomResource):
         """
         This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Creates a new Property.
+        Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
 
         ## Example Usage
 
@@ -536,15 +536,15 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] resource_region: Associated region
-        :param pulumi.Input[str] scope: The scope of the property
-        :param pulumi.Input[str] selection: (Updatable) Text selection of the category
+        :param pulumi.Input[str] scope: The scope of the property.
+        :param pulumi.Input[str] selection: (Updatable) Text selection of the property.
         :param pulumi.Input[str] state: The current state of the Property.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: The type of the property.
-        :param pulumi.Input[str] value_type: (Updatable) Format of the value
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        :param pulumi.Input[str] value_type: (Updatable) Format of the value.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
                
                
                ** IMPORTANT **
@@ -623,7 +623,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[str]:
         """
-        The scope of the property
+        The scope of the property.
         """
         return pulumi.get(self, "scope")
 
@@ -631,7 +631,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter
     def selection(self) -> pulumi.Output[str]:
         """
-        (Updatable) Text selection of the category
+        (Updatable) Text selection of the property.
         """
         return pulumi.get(self, "selection")
 
@@ -679,7 +679,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter(name="valueType")
     def value_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) Format of the value
+        (Updatable) Format of the value.
         """
         return pulumi.get(self, "value_type")
 
@@ -687,7 +687,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter
     def values(self) -> pulumi.Output[Sequence[str]]:
         """
-        (Updatable) Values of the property (must be a single value if selection = 'single choice')
+        (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 
 
         ** IMPORTANT **

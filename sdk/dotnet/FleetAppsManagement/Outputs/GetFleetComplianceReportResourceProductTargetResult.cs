@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetComplianceReportResourceProductTargetResult
     {
         /// <summary>
-        /// Last known compliance state of target.
+        /// The last known compliance state of the target.
         /// </summary>
         public readonly string ComplianceState;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetComplianceReportResourceProductTargetRecommendedPatchResult> RecommendedPatches;
         /// <summary>
-        /// Target Identifier.
+        /// Target Identifier.Can be the target name if a separate ID is not available.
         /// </summary>
         public readonly string TargetId;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string TargetName;
         /// <summary>
-        /// Current version.
+        /// Current version of the target.
         /// </summary>
         public readonly string Version;
 

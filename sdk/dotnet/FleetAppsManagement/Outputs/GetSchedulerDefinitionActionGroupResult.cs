@@ -26,7 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Product;
         /// <summary>
-        /// Provide the ID of the resource; Ex- fleetId.
+        /// Provide the ID of the resource. Example fleet ID.
         /// </summary>
         public readonly string ResourceId;
         /// <summary>

@@ -22,17 +22,17 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemActio
      */
     private String lifecycleOperation;
     /**
-     * @return A filter to return only Scheduler Definitions whose assocaited product matches the given product
+     * @return A filter to return only dchedule definitions whose assocaited product matches the given product
      * 
      */
     private String product;
     /**
-     * @return Provide the ID of the resource; Ex- fleetId.
+     * @return Provide the ID of the resource. Example fleet ID.
      * 
      */
     private String resourceId;
     /**
-     * @return ID of the runbook
+     * @return A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
      * 
      */
     private String runbookId;
@@ -68,21 +68,21 @@ public final class GetSchedulerDefinitionsSchedulerDefinitionCollectionItemActio
         return this.lifecycleOperation;
     }
     /**
-     * @return A filter to return only Scheduler Definitions whose assocaited product matches the given product
+     * @return A filter to return only dchedule definitions whose assocaited product matches the given product
      * 
      */
     public String product() {
         return this.product;
     }
     /**
-     * @return Provide the ID of the resource; Ex- fleetId.
+     * @return Provide the ID of the resource. Example fleet ID.
      * 
      */
     public String resourceId() {
         return this.resourceId;
     }
     /**
-     * @return ID of the runbook
+     * @return A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
      * 
      */
     public String runbookId() {

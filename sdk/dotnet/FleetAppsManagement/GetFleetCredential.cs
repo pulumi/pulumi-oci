@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a FleetCredential by identifier
+        /// Gets a FleetCredential by identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a FleetCredential by identifier
+        /// Gets a FleetCredential by identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public string FleetCredentialId { get; set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string> FleetCredentialId { get; set; } = null!;
 
         /// <summary>
-        /// unique Fleet identifier
+        /// Unique Fleet identifier.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Credential Details
+        /// Credential specific Details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetCredentialEntitySpecificResult> EntitySpecifics;
         public readonly string FleetCredentialId;
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Credential Details
+        /// Credential Details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetCredentialPasswordResult> Passwords;
         /// <summary>
@@ -154,7 +154,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Credential Details
+        /// Credential Details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetCredentialUserResult> Users;
 

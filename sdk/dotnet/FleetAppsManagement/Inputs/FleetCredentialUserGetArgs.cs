@@ -13,7 +13,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class FleetCredentialUserGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Credential Type
+        /// (Updatable) Credential Type.
         /// </summary>
         [Input("credentialType", required: true)]
         public Input<string> CredentialType { get; set; } = null!;
@@ -43,13 +43,13 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<string>? SecretVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) The value corresponding to the credential
+        /// (Updatable) The value corresponding to the credential.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 
         /// <summary>
-        /// (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        /// (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
         /// 
         /// 
         /// ** IMPORTANT **

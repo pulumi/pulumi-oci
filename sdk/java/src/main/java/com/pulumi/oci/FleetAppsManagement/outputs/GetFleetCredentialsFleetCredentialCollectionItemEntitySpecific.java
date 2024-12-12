@@ -5,48 +5,62 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariable;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetFleetCredentialsFleetCredentialCollectionItemEntitySpecific {
     /**
-     * @return Credential Level.
+     * @return A filter to return only resources whose credentialLevel matches the given credentialLevel.
      * 
      */
     private String credentialLevel;
     /**
-     * @return OCID of the resource associated with the target for which credential is created
+     * @return Resource Identifier
      * 
      */
     private String resourceId;
     /**
-     * @return Target associated with the Credential
+     * @return A filter to return only resources whose target matches the given target name.
      * 
      */
     private String target;
+    /**
+     * @return List of fleet credential variables.
+     * 
+     */
+    private List<GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariable> variables;
 
     private GetFleetCredentialsFleetCredentialCollectionItemEntitySpecific() {}
     /**
-     * @return Credential Level.
+     * @return A filter to return only resources whose credentialLevel matches the given credentialLevel.
      * 
      */
     public String credentialLevel() {
         return this.credentialLevel;
     }
     /**
-     * @return OCID of the resource associated with the target for which credential is created
+     * @return Resource Identifier
      * 
      */
     public String resourceId() {
         return this.resourceId;
     }
     /**
-     * @return Target associated with the Credential
+     * @return A filter to return only resources whose target matches the given target name.
      * 
      */
     public String target() {
         return this.target;
+    }
+    /**
+     * @return List of fleet credential variables.
+     * 
+     */
+    public List<GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariable> variables() {
+        return this.variables;
     }
 
     public static Builder builder() {
@@ -61,12 +75,14 @@ public final class GetFleetCredentialsFleetCredentialCollectionItemEntitySpecifi
         private String credentialLevel;
         private String resourceId;
         private String target;
+        private List<GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariable> variables;
         public Builder() {}
         public Builder(GetFleetCredentialsFleetCredentialCollectionItemEntitySpecific defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentialLevel = defaults.credentialLevel;
     	      this.resourceId = defaults.resourceId;
     	      this.target = defaults.target;
+    	      this.variables = defaults.variables;
         }
 
         @CustomType.Setter
@@ -93,11 +109,23 @@ public final class GetFleetCredentialsFleetCredentialCollectionItemEntitySpecifi
             this.target = target;
             return this;
         }
+        @CustomType.Setter
+        public Builder variables(List<GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariable> variables) {
+            if (variables == null) {
+              throw new MissingRequiredPropertyException("GetFleetCredentialsFleetCredentialCollectionItemEntitySpecific", "variables");
+            }
+            this.variables = variables;
+            return this;
+        }
+        public Builder variables(GetFleetCredentialsFleetCredentialCollectionItemEntitySpecificVariable... variables) {
+            return variables(List.of(variables));
+        }
         public GetFleetCredentialsFleetCredentialCollectionItemEntitySpecific build() {
             final var _resultValue = new GetFleetCredentialsFleetCredentialCollectionItemEntitySpecific();
             _resultValue.credentialLevel = credentialLevel;
             _resultValue.resourceId = resourceId;
             _resultValue.target = target;
+            _resultValue.variables = variables;
             return _resultValue;
         }
     }

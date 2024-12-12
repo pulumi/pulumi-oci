@@ -6,9 +6,8 @@ package com.pulumi.oci.VisualBuilder.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.VisualBuilder.inputs.VbInstanceAlternateCustomEndpointArgs;
-import com.pulumi.oci.VisualBuilder.inputs.VbInstanceAttachmentArgs;
 import com.pulumi.oci.VisualBuilder.inputs.VbInstanceCustomEndpointArgs;
-import com.pulumi.oci.VisualBuilder.inputs.VbInstanceIdcsInfoArgs;
+import com.pulumi.oci.VisualBuilder.inputs.VbInstanceNetworkEndpointDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -36,21 +35,6 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<VbInstanceAlternateCustomEndpointArgs>>> alternateCustomEndpoints() {
         return Optional.ofNullable(this.alternateCustomEndpoints);
-    }
-
-    /**
-     * A list of associated attachments to other services
-     * 
-     */
-    @Import(name="attachments")
-    private @Nullable Output<List<VbInstanceAttachmentArgs>> attachments;
-
-    /**
-     * @return A list of associated attachments to other services
-     * 
-     */
-    public Optional<Output<List<VbInstanceAttachmentArgs>>> attachments() {
-        return Optional.ofNullable(this.attachments);
     }
 
     /**
@@ -144,21 +128,6 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Information for IDCS access
-     * 
-     */
-    @Import(name="idcsInfos")
-    private @Nullable Output<List<VbInstanceIdcsInfoArgs>> idcsInfos;
-
-    /**
-     * @return Information for IDCS access
-     * 
-     */
-    public Optional<Output<List<VbInstanceIdcsInfoArgs>>> idcsInfos() {
-        return Optional.ofNullable(this.idcsInfos);
-    }
-
-    /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      * 
      */
@@ -231,6 +200,21 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> managementVcnId() {
         return Optional.ofNullable(this.managementVcnId);
+    }
+
+    /**
+     * (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    @Import(name="networkEndpointDetails")
+    private @Nullable Output<VbInstanceNetworkEndpointDetailsArgs> networkEndpointDetails;
+
+    /**
+     * @return (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+     * 
+     */
+    public Optional<Output<VbInstanceNetworkEndpointDetailsArgs>> networkEndpointDetails() {
+        return Optional.ofNullable(this.networkEndpointDetails);
     }
 
     /**
@@ -363,19 +347,18 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
 
     private VbInstanceState(VbInstanceState $) {
         this.alternateCustomEndpoints = $.alternateCustomEndpoints;
-        this.attachments = $.attachments;
         this.compartmentId = $.compartmentId;
         this.consumptionModel = $.consumptionModel;
         this.customEndpoint = $.customEndpoint;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
-        this.idcsInfos = $.idcsInfos;
         this.idcsOpenId = $.idcsOpenId;
         this.instanceUrl = $.instanceUrl;
         this.isVisualBuilderEnabled = $.isVisualBuilderEnabled;
         this.managementNatGatewayIp = $.managementNatGatewayIp;
         this.managementVcnId = $.managementVcnId;
+        this.networkEndpointDetails = $.networkEndpointDetails;
         this.nodeCount = $.nodeCount;
         this.serviceNatGatewayIp = $.serviceNatGatewayIp;
         this.serviceVcnId = $.serviceVcnId;
@@ -433,37 +416,6 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder alternateCustomEndpoints(VbInstanceAlternateCustomEndpointArgs... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
-        }
-
-        /**
-         * @param attachments A list of associated attachments to other services
-         * 
-         * @return builder
-         * 
-         */
-        public Builder attachments(@Nullable Output<List<VbInstanceAttachmentArgs>> attachments) {
-            $.attachments = attachments;
-            return this;
-        }
-
-        /**
-         * @param attachments A list of associated attachments to other services
-         * 
-         * @return builder
-         * 
-         */
-        public Builder attachments(List<VbInstanceAttachmentArgs> attachments) {
-            return attachments(Output.of(attachments));
-        }
-
-        /**
-         * @param attachments A list of associated attachments to other services
-         * 
-         * @return builder
-         * 
-         */
-        public Builder attachments(VbInstanceAttachmentArgs... attachments) {
-            return attachments(List.of(attachments));
         }
 
         /**
@@ -593,37 +545,6 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param idcsInfos Information for IDCS access
-         * 
-         * @return builder
-         * 
-         */
-        public Builder idcsInfos(@Nullable Output<List<VbInstanceIdcsInfoArgs>> idcsInfos) {
-            $.idcsInfos = idcsInfos;
-            return this;
-        }
-
-        /**
-         * @param idcsInfos Information for IDCS access
-         * 
-         * @return builder
-         * 
-         */
-        public Builder idcsInfos(List<VbInstanceIdcsInfoArgs> idcsInfos) {
-            return idcsInfos(Output.of(idcsInfos));
-        }
-
-        /**
-         * @param idcsInfos Information for IDCS access
-         * 
-         * @return builder
-         * 
-         */
-        public Builder idcsInfos(VbInstanceIdcsInfoArgs... idcsInfos) {
-            return idcsInfos(List.of(idcsInfos));
-        }
-
-        /**
          * @param idcsOpenId (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
          * 
          * @return builder
@@ -726,6 +647,27 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder managementVcnId(String managementVcnId) {
             return managementVcnId(Output.of(managementVcnId));
+        }
+
+        /**
+         * @param networkEndpointDetails (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkEndpointDetails(@Nullable Output<VbInstanceNetworkEndpointDetailsArgs> networkEndpointDetails) {
+            $.networkEndpointDetails = networkEndpointDetails;
+            return this;
+        }
+
+        /**
+         * @param networkEndpointDetails (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkEndpointDetails(VbInstanceNetworkEndpointDetailsArgs networkEndpointDetails) {
+            return networkEndpointDetails(Output.of(networkEndpointDetails));
         }
 
         /**

@@ -73,9 +73,9 @@ type LookupPropertyResult struct {
 	PropertyId       string `pulumi:"propertyId"`
 	// Associated region
 	ResourceRegion string `pulumi:"resourceRegion"`
-	// The scope of the property
+	// The scope of the property.
 	Scope string `pulumi:"scope"`
-	// Text selection of the category
+	// Text selection of the property.
 	Selection string `pulumi:"selection"`
 	// The current state of the Property.
 	State string `pulumi:"state"`
@@ -87,9 +87,9 @@ type LookupPropertyResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The type of the property.
 	Type string `pulumi:"type"`
-	// Format of the value
+	// Format of the value.
 	ValueType string `pulumi:"valueType"`
-	// Values of the property (must be a single value if selection = 'single choice')
+	// Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 	Values []string `pulumi:"values"`
 }
 
@@ -176,12 +176,12 @@ func (o LookupPropertyResultOutput) ResourceRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.ResourceRegion }).(pulumi.StringOutput)
 }
 
-// The scope of the property
+// The scope of the property.
 func (o LookupPropertyResultOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.Scope }).(pulumi.StringOutput)
 }
 
-// Text selection of the category
+// Text selection of the property.
 func (o LookupPropertyResultOutput) Selection() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.Selection }).(pulumi.StringOutput)
 }
@@ -211,12 +211,12 @@ func (o LookupPropertyResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Format of the value
+// Format of the value.
 func (o LookupPropertyResultOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.ValueType }).(pulumi.StringOutput)
 }
 
-// Values of the property (must be a single value if selection = 'single choice')
+// Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 func (o LookupPropertyResultOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupPropertyResult) []string { return v.Values }).(pulumi.StringArrayOutput)
 }

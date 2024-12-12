@@ -14,11 +14,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetComplianceReportResourceProductTargetRecommendedPatchResult
     {
         /// <summary>
-        /// The OCID of the work request to start the analysis.
+        /// Patch description.
         /// </summary>
         public readonly string PatchDescription;
         /// <summary>
-        /// The OCID to identify this analysis results.
+        /// Patch name.
         /// </summary>
         public readonly string PatchName;
         /// <summary>
@@ -26,11 +26,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string PatchType;
         /// <summary>
-        /// Time the patch was applied
+        /// Time the patch was applied.
         /// </summary>
         public readonly string TimeApplied;
         /// <summary>
-        /// Date on which patch was released.
+        /// The date on which patch was released.
         /// </summary>
         public readonly string TimeReleased;
 

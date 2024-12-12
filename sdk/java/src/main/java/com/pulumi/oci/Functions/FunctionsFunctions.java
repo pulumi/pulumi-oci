@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
 import com.pulumi.oci.Functions.inputs.GetApplicationPlainArgs;
 import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
@@ -268,6 +269,50 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetApplicationResult> getApplication(GetApplicationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getApplication:getApplication", TypeShape.of(GetApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Application resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Retrieves an application.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplication = FunctionsFunctions.getApplication(GetApplicationArgs.builder()
+     *             .applicationId(testApplicationOciFunctionsApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getApplication:getApplication", TypeShape.of(GetApplicationResult.class), args, Utilities.withVersion(options));
     }
@@ -456,6 +501,53 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetApplicationsResult> getApplications(GetApplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getApplications:getApplications", TypeShape.of(GetApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Applications in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Lists applications for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplications = FunctionsFunctions.getApplications(GetApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(applicationDisplayName)
+     *             .id(applicationId)
+     *             .state(applicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetApplicationsResult> getApplicationsPlain(GetApplicationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getApplications:getApplications", TypeShape.of(GetApplicationsResult.class), args, Utilities.withVersion(options));
     }
@@ -589,6 +681,50 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFunctionResult> getFunction(GetFunctionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunction:getFunction", TypeShape.of(GetFunctionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Function resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Retrieves a function.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunction = FunctionsFunctions.getFunction(GetFunctionArgs.builder()
+     *             .functionId(testFunctionOciFunctionsFunction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFunctionResult> getFunction(GetFunctionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFunction:getFunction", TypeShape.of(GetFunctionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -820,6 +956,53 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFunctionsResult> getFunctions(GetFunctionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunctions:getFunctions", TypeShape.of(GetFunctionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Functions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Lists functions for an application.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctions = FunctionsFunctions.getFunctions(GetFunctionsArgs.builder()
+     *             .applicationId(testApplication.id())
+     *             .displayName(functionDisplayName)
+     *             .id(functionId)
+     *             .state(functionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFunctionsResult> getFunctionsPlain(GetFunctionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFunctions:getFunctions", TypeShape.of(GetFunctionsResult.class), args, Utilities.withVersion(options));
     }
@@ -953,6 +1136,50 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFusionEnvironmentResult> getFusionEnvironment(GetFusionEnvironmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironment:getFusionEnvironment", TypeShape.of(GetFusionEnvironmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets a FusionEnvironment by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironment = FunctionsFunctions.getFusionEnvironment(GetFusionEnvironmentArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironmentOciFusionAppsFusionEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFusionEnvironmentResult> getFusionEnvironment(GetFusionEnvironmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironment:getFusionEnvironment", TypeShape.of(GetFusionEnvironmentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1172,6 +1399,50 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentAdminUserResult> getFusionEnvironmentAdminUser(GetFusionEnvironmentAdminUserArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser", TypeShape.of(GetFusionEnvironmentAdminUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * List all FusionEnvironment admin users
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentAdminUser = FunctionsFunctions.getFusionEnvironmentAdminUser(GetFusionEnvironmentAdminUserArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentAdminUserResult> getFusionEnvironmentAdminUserPlain(GetFusionEnvironmentAdminUserPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser", TypeShape.of(GetFusionEnvironmentAdminUserResult.class), args, Utilities.withVersion(options));
     }
@@ -1305,6 +1576,50 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFusionEnvironmentAdminUsersResult> getFusionEnvironmentAdminUsers(GetFusionEnvironmentAdminUsersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentAdminUsers:getFusionEnvironmentAdminUsers", TypeShape.of(GetFusionEnvironmentAdminUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fusion Environment Admin Users in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * List all FusionEnvironment admin users
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentAdminUsers = FunctionsFunctions.getFusionEnvironmentAdminUsers(GetFusionEnvironmentAdminUsersArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFusionEnvironmentAdminUsersResult> getFusionEnvironmentAdminUsers(GetFusionEnvironmentAdminUsersArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentAdminUsers:getFusionEnvironmentAdminUsers", TypeShape.of(GetFusionEnvironmentAdminUsersResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1528,6 +1843,51 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentDataMaskingActivitiesResult> getFusionEnvironmentDataMaskingActivities(GetFusionEnvironmentDataMaskingActivitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities", TypeShape.of(GetFusionEnvironmentDataMaskingActivitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fusion Environment Data Masking Activities in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Returns a list of DataMaskingActivities.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentDataMaskingActivities = FunctionsFunctions.getFusionEnvironmentDataMaskingActivities(GetFusionEnvironmentDataMaskingActivitiesArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .state(fusionEnvironmentDataMaskingActivityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentDataMaskingActivitiesResult> getFusionEnvironmentDataMaskingActivitiesPlain(GetFusionEnvironmentDataMaskingActivitiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities", TypeShape.of(GetFusionEnvironmentDataMaskingActivitiesResult.class), args, Utilities.withVersion(options));
     }
@@ -1664,6 +2024,51 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFusionEnvironmentDataMaskingActivityResult> getFusionEnvironmentDataMaskingActivity(GetFusionEnvironmentDataMaskingActivityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity", TypeShape.of(GetFusionEnvironmentDataMaskingActivityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets a DataMaskingActivity by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentDataMaskingActivity = FunctionsFunctions.getFusionEnvironmentDataMaskingActivity(GetFusionEnvironmentDataMaskingActivityArgs.builder()
+     *             .dataMaskingActivityId(testDataMaskingActivity.id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFusionEnvironmentDataMaskingActivityResult> getFusionEnvironmentDataMaskingActivity(GetFusionEnvironmentDataMaskingActivityArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity", TypeShape.of(GetFusionEnvironmentDataMaskingActivityResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -1896,6 +2301,53 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentFamiliesResult> getFusionEnvironmentFamilies(GetFusionEnvironmentFamiliesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", TypeShape.of(GetFusionEnvironmentFamiliesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fusion Environment Families in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Returns a list of FusionEnvironmentFamilies.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamiliesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentFamilies = FunctionsFunctions.getFusionEnvironmentFamilies(GetFusionEnvironmentFamiliesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentFamilyDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentFamilyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentFamiliesResult> getFusionEnvironmentFamiliesPlain(GetFusionEnvironmentFamiliesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", TypeShape.of(GetFusionEnvironmentFamiliesResult.class), args, Utilities.withVersion(options));
     }
@@ -2029,6 +2481,50 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFusionEnvironmentFamilyResult> getFusionEnvironmentFamily(GetFusionEnvironmentFamilyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily", TypeShape.of(GetFusionEnvironmentFamilyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Retrieves a fusion environment family identified by its OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentFamily = FunctionsFunctions.getFusionEnvironmentFamily(GetFusionEnvironmentFamilyArgs.builder()
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamilyOciFusionAppsFusionEnvironmentFamily.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFusionEnvironmentFamilyResult> getFusionEnvironmentFamily(GetFusionEnvironmentFamilyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily", TypeShape.of(GetFusionEnvironmentFamilyResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2248,6 +2744,50 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> getFusionEnvironmentFamilyLimitsAndUsage(GetFusionEnvironmentFamilyLimitsAndUsageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", TypeShape.of(GetFusionEnvironmentFamilyLimitsAndUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Family Limits And Usage resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that&#39;s allowed to be created based on the group&#39;s associated subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyLimitsAndUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentFamilyLimitsAndUsage = FunctionsFunctions.getFusionEnvironmentFamilyLimitsAndUsage(GetFusionEnvironmentFamilyLimitsAndUsageArgs.builder()
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentFamilyLimitsAndUsageResult> getFusionEnvironmentFamilyLimitsAndUsagePlain(GetFusionEnvironmentFamilyLimitsAndUsagePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", TypeShape.of(GetFusionEnvironmentFamilyLimitsAndUsageResult.class), args, Utilities.withVersion(options));
     }
@@ -2381,6 +2921,50 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFusionEnvironmentFamilySubscriptionDetailResult> getFusionEnvironmentFamilySubscriptionDetail(GetFusionEnvironmentFamilySubscriptionDetailArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", TypeShape.of(GetFusionEnvironmentFamilySubscriptionDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Family Subscription Detail resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets the subscription details of an fusion environment family.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilySubscriptionDetailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentFamilySubscriptionDetail = FunctionsFunctions.getFusionEnvironmentFamilySubscriptionDetail(GetFusionEnvironmentFamilySubscriptionDetailArgs.builder()
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFusionEnvironmentFamilySubscriptionDetailResult> getFusionEnvironmentFamilySubscriptionDetail(GetFusionEnvironmentFamilySubscriptionDetailArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", TypeShape.of(GetFusionEnvironmentFamilySubscriptionDetailResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2616,6 +3200,54 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentRefreshActivitiesResult> getFusionEnvironmentRefreshActivities(GetFusionEnvironmentRefreshActivitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", TypeShape.of(GetFusionEnvironmentRefreshActivitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fusion Environment Refresh Activities in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Returns a list of RefreshActivities.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentRefreshActivities = FunctionsFunctions.getFusionEnvironmentRefreshActivities(GetFusionEnvironmentRefreshActivitiesArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentRefreshActivityDisplayName)
+     *             .state(fusionEnvironmentRefreshActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentRefreshActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentRefreshActivityTimeScheduledStartGreaterThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentRefreshActivitiesResult> getFusionEnvironmentRefreshActivitiesPlain(GetFusionEnvironmentRefreshActivitiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", TypeShape.of(GetFusionEnvironmentRefreshActivitiesResult.class), args, Utilities.withVersion(options));
     }
@@ -2752,6 +3384,51 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFusionEnvironmentRefreshActivityResult> getFusionEnvironmentRefreshActivity(GetFusionEnvironmentRefreshActivityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", TypeShape.of(GetFusionEnvironmentRefreshActivityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets a RefreshActivity by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentRefreshActivity = FunctionsFunctions.getFusionEnvironmentRefreshActivity(GetFusionEnvironmentRefreshActivityArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .refreshActivityId(testRefreshActivity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFusionEnvironmentRefreshActivityResult> getFusionEnvironmentRefreshActivity(GetFusionEnvironmentRefreshActivityArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", TypeShape.of(GetFusionEnvironmentRefreshActivityResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -2992,6 +3669,55 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentScheduledActivitiesResult> getFusionEnvironmentScheduledActivities(GetFusionEnvironmentScheduledActivitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities", TypeShape.of(GetFusionEnvironmentScheduledActivitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fusion Environment Scheduled Activities in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Returns a list of ScheduledActivities.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentScheduledActivities = FunctionsFunctions.getFusionEnvironmentScheduledActivities(GetFusionEnvironmentScheduledActivitiesArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentScheduledActivityDisplayName)
+     *             .runCycle(fusionEnvironmentScheduledActivityRunCycle)
+     *             .state(fusionEnvironmentScheduledActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentScheduledActivitiesResult> getFusionEnvironmentScheduledActivitiesPlain(GetFusionEnvironmentScheduledActivitiesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities", TypeShape.of(GetFusionEnvironmentScheduledActivitiesResult.class), args, Utilities.withVersion(options));
     }
@@ -3172,6 +3898,51 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentScheduledActivityResult> getFusionEnvironmentScheduledActivity(GetFusionEnvironmentScheduledActivityArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", TypeShape.of(GetFusionEnvironmentScheduledActivityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Scheduled Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets a ScheduledActivity by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentScheduledActivity = FunctionsFunctions.getFusionEnvironmentScheduledActivity(GetFusionEnvironmentScheduledActivityArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .scheduledActivityId(testScheduledActivity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentScheduledActivityResult> getFusionEnvironmentScheduledActivityPlain(GetFusionEnvironmentScheduledActivityPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", TypeShape.of(GetFusionEnvironmentScheduledActivityResult.class), args, Utilities.withVersion(options));
     }
@@ -3308,6 +4079,51 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFusionEnvironmentServiceAttachmentResult> getFusionEnvironmentServiceAttachment(GetFusionEnvironmentServiceAttachmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", TypeShape.of(GetFusionEnvironmentServiceAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets a Service Attachment by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentServiceAttachment = FunctionsFunctions.getFusionEnvironmentServiceAttachment(GetFusionEnvironmentServiceAttachmentArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .serviceAttachmentId(testServiceAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFusionEnvironmentServiceAttachmentResult> getFusionEnvironmentServiceAttachment(GetFusionEnvironmentServiceAttachmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", TypeShape.of(GetFusionEnvironmentServiceAttachmentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3540,6 +4356,53 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentServiceAttachmentsResult> getFusionEnvironmentServiceAttachments(GetFusionEnvironmentServiceAttachmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments", TypeShape.of(GetFusionEnvironmentServiceAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fusion Environment Service Attachments in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Returns a list of service attachments.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentServiceAttachments = FunctionsFunctions.getFusionEnvironmentServiceAttachments(GetFusionEnvironmentServiceAttachmentsArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentServiceAttachmentDisplayName)
+     *             .serviceInstanceType(fusionEnvironmentServiceAttachmentServiceInstanceType)
+     *             .state(fusionEnvironmentServiceAttachmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentServiceAttachmentsResult> getFusionEnvironmentServiceAttachmentsPlain(GetFusionEnvironmentServiceAttachmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments", TypeShape.of(GetFusionEnvironmentServiceAttachmentsResult.class), args, Utilities.withVersion(options));
     }
@@ -3673,6 +4536,50 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFusionEnvironmentStatusResult> getFusionEnvironmentStatus(GetFusionEnvironmentStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", TypeShape.of(GetFusionEnvironmentStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets the status of a Fusion environment identified by its OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentStatus = FunctionsFunctions.getFusionEnvironmentStatus(GetFusionEnvironmentStatusArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFusionEnvironmentStatusResult> getFusionEnvironmentStatus(GetFusionEnvironmentStatusArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", TypeShape.of(GetFusionEnvironmentStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -3892,6 +4799,50 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentTimeAvailableForRefreshResult> getFusionEnvironmentTimeAvailableForRefresh(GetFusionEnvironmentTimeAvailableForRefreshArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentTimeAvailableForRefresh:getFusionEnvironmentTimeAvailableForRefresh", TypeShape.of(GetFusionEnvironmentTimeAvailableForRefreshResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fusion Environment Time Available For Refresh resource in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets available refresh time for this fusion environment
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentTimeAvailableForRefresh = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefresh(GetFusionEnvironmentTimeAvailableForRefreshArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentTimeAvailableForRefreshResult> getFusionEnvironmentTimeAvailableForRefreshPlain(GetFusionEnvironmentTimeAvailableForRefreshPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironmentTimeAvailableForRefresh:getFusionEnvironmentTimeAvailableForRefresh", TypeShape.of(GetFusionEnvironmentTimeAvailableForRefreshResult.class), args, Utilities.withVersion(options));
     }
@@ -4025,6 +4976,50 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetFusionEnvironmentTimeAvailableForRefreshsResult> getFusionEnvironmentTimeAvailableForRefreshs(GetFusionEnvironmentTimeAvailableForRefreshsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", TypeShape.of(GetFusionEnvironmentTimeAvailableForRefreshsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fusion Environment Time Available For Refreshs in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Gets available refresh time for this fusion environment
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironmentTimeAvailableForRefreshs = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefreshs(GetFusionEnvironmentTimeAvailableForRefreshsArgs.builder()
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetFusionEnvironmentTimeAvailableForRefreshsResult> getFusionEnvironmentTimeAvailableForRefreshs(GetFusionEnvironmentTimeAvailableForRefreshsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", TypeShape.of(GetFusionEnvironmentTimeAvailableForRefreshsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4256,6 +5251,53 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetFusionEnvironmentsResult> getFusionEnvironments(GetFusionEnvironmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFusionEnvironments:getFusionEnvironments", TypeShape.of(GetFusionEnvironmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fusion Environments in Oracle Cloud Infrastructure Fusion Apps service.
+     * 
+     * Returns a list of FusionEnvironments.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFusionEnvironments = FunctionsFunctions.getFusionEnvironments(GetFusionEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetFusionEnvironmentsResult> getFusionEnvironmentsPlain(GetFusionEnvironmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFusionEnvironments:getFusionEnvironments", TypeShape.of(GetFusionEnvironmentsResult.class), args, Utilities.withVersion(options));
     }
@@ -4389,6 +5431,50 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetPbfListingResult> getPbfListing(GetPbfListingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListing:getPbfListing", TypeShape.of(GetPbfListingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListing = FunctionsFunctions.getPbfListing(GetPbfListingArgs.builder()
+     *             .pbfListingId(testPbfListingOciFunctionsPbfListing.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPbfListingResult> getPbfListing(GetPbfListingArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getPbfListing:getPbfListing", TypeShape.of(GetPbfListingResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -4696,6 +5782,50 @@ public final class FunctionsFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetPbfListingTriggersResult> getPbfListingTriggers(GetPbfListingTriggersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", TypeShape.of(GetPbfListingTriggersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Returns a list of Triggers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
+     *             .name(pbfListingTriggerName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetPbfListingTriggersResult> getPbfListingTriggersPlain(GetPbfListingTriggersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", TypeShape.of(GetPbfListingTriggersResult.class), args, Utilities.withVersion(options));
     }
@@ -4829,6 +5959,50 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetPbfListingVersionResult> getPbfListingVersion(GetPbfListingVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListingVersion:getPbfListingVersion", TypeShape.of(GetPbfListingVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Gets a PbfListingVersion by identifier for a PbfListing.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersion = FunctionsFunctions.getPbfListingVersion(GetPbfListingVersionArgs.builder()
+     *             .pbfListingVersionId(testPbfListingVersionOciFunctionsPbfListingVersion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPbfListingVersionResult> getPbfListingVersion(GetPbfListingVersionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getPbfListingVersion:getPbfListingVersion", TypeShape.of(GetPbfListingVersionResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5029,6 +6203,58 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetPbfListingVersionsResult> getPbfListingVersions(GetPbfListingVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListingVersions:getPbfListingVersions", TypeShape.of(GetPbfListingVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
+     * containing an array of PbfListingVersionSummary response models.
+     * 
+     * Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
+     * be thrown.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListingVersions = FunctionsFunctions.getPbfListingVersions(GetPbfListingVersionsArgs.builder()
+     *             .pbfListingId(testPbfListing.id())
+     *             .isCurrentVersion(pbfListingVersionIsCurrentVersion)
+     *             .name(pbfListingVersionName)
+     *             .pbfListingVersionId(testPbfListingVersion.id())
+     *             .state(pbfListingVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPbfListingVersionsResult> getPbfListingVersions(GetPbfListingVersionsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getPbfListingVersions:getPbfListingVersions", TypeShape.of(GetPbfListingVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -5331,6 +6557,56 @@ public final class FunctionsFunctions {
      * 
      */
     public static Output<GetPbfListingsResult> getPbfListings(GetPbfListingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getPbfListings:getPbfListings", TypeShape.of(GetPbfListingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
+     * an array of PbfListingSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
+     *             .name(pbfListingName)
+     *             .nameContains(pbfListingNameContains)
+     *             .nameStartsWith(pbfListingNameStartsWith)
+     *             .pbfListingId(testPbfListing.id())
+     *             .state(pbfListingState)
+     *             .triggers(pbfListingTrigger)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPbfListingsResult> getPbfListings(GetPbfListingsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Functions/getPbfListings:getPbfListings", TypeShape.of(GetPbfListingsResult.class), args, Utilities.withVersion(options));
     }
     /**

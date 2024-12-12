@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['OnboardingArgs', 'Onboarding']
 
@@ -25,8 +27,8 @@ class OnboardingArgs:
         """
         The set of arguments for constructing a Onboarding resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
-        :param pulumi.Input[bool] is_cost_tracking_tag_enabled: A value determining if cost tracking tag is enabled or not
-        :param pulumi.Input[bool] is_fams_tag_enabled: A value determining FAMS tag is enabled or not
+        :param pulumi.Input[bool] is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+        :param pulumi.Input[bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
                
                
                ** IMPORTANT **
@@ -54,7 +56,7 @@ class OnboardingArgs:
     @pulumi.getter(name="isCostTrackingTagEnabled")
     def is_cost_tracking_tag_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        A value determining if cost tracking tag is enabled or not
+        A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         """
         return pulumi.get(self, "is_cost_tracking_tag_enabled")
 
@@ -66,7 +68,7 @@ class OnboardingArgs:
     @pulumi.getter(name="isFamsTagEnabled")
     def is_fams_tag_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        A value determining FAMS tag is enabled or not
+        A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
 
 
         ** IMPORTANT **
@@ -82,9 +84,12 @@ class OnboardingArgs:
 @pulumi.input_type
 class _OnboardingState:
     def __init__(__self__, *,
+                 applied_policies: Optional[pulumi.Input[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 discovery_frequency: Optional[pulumi.Input[str]] = None,
                  is_cost_tracking_tag_enabled: Optional[pulumi.Input[bool]] = None,
                  is_fams_tag_enabled: Optional[pulumi.Input[bool]] = None,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input['OnboardingItemArgs']]]] = None,
                  resource_region: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -93,26 +98,35 @@ class _OnboardingState:
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Onboarding resources.
+        :param pulumi.Input[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]] applied_policies: Summary of the Fleet Application Management Onboard Policy.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
-        :param pulumi.Input[bool] is_cost_tracking_tag_enabled: A value determining if cost tracking tag is enabled or not
-        :param pulumi.Input[bool] is_fams_tag_enabled: A value determining FAMS tag is enabled or not
+        :param pulumi.Input[str] discovery_frequency: Provide discovery frequency.
+        :param pulumi.Input[bool] is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+        :param pulumi.Input[bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['OnboardingItemArgs']]] items: List of Fleet Application Management Onboardings.
         :param pulumi.Input[str] resource_region: Associated region
         :param pulumi.Input[str] state: The current state of the Onboarding.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] version: Version of FAMS the tenant is onboarded to.
+        :param pulumi.Input[str] version: The version of Fleet Application Management that the tenant is onboarded to.
         """
+        if applied_policies is not None:
+            pulumi.set(__self__, "applied_policies", applied_policies)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if discovery_frequency is not None:
+            pulumi.set(__self__, "discovery_frequency", discovery_frequency)
         if is_cost_tracking_tag_enabled is not None:
             pulumi.set(__self__, "is_cost_tracking_tag_enabled", is_cost_tracking_tag_enabled)
         if is_fams_tag_enabled is not None:
             pulumi.set(__self__, "is_fams_tag_enabled", is_fams_tag_enabled)
+        if items is not None:
+            pulumi.set(__self__, "items", items)
         if resource_region is not None:
             pulumi.set(__self__, "resource_region", resource_region)
         if state is not None:
@@ -127,6 +141,18 @@ class _OnboardingState:
             pulumi.set(__self__, "version", version)
 
     @property
+    @pulumi.getter(name="appliedPolicies")
+    def applied_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]]]:
+        """
+        Summary of the Fleet Application Management Onboard Policy.
+        """
+        return pulumi.get(self, "applied_policies")
+
+    @applied_policies.setter
+    def applied_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]]]):
+        pulumi.set(self, "applied_policies", value)
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -139,10 +165,22 @@ class _OnboardingState:
         pulumi.set(self, "compartment_id", value)
 
     @property
+    @pulumi.getter(name="discoveryFrequency")
+    def discovery_frequency(self) -> Optional[pulumi.Input[str]]:
+        """
+        Provide discovery frequency.
+        """
+        return pulumi.get(self, "discovery_frequency")
+
+    @discovery_frequency.setter
+    def discovery_frequency(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "discovery_frequency", value)
+
+    @property
     @pulumi.getter(name="isCostTrackingTagEnabled")
     def is_cost_tracking_tag_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        A value determining if cost tracking tag is enabled or not
+        A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         """
         return pulumi.get(self, "is_cost_tracking_tag_enabled")
 
@@ -154,7 +192,7 @@ class _OnboardingState:
     @pulumi.getter(name="isFamsTagEnabled")
     def is_fams_tag_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        A value determining FAMS tag is enabled or not
+        A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
 
 
         ** IMPORTANT **
@@ -165,6 +203,18 @@ class _OnboardingState:
     @is_fams_tag_enabled.setter
     def is_fams_tag_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_fams_tag_enabled", value)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OnboardingItemArgs']]]]:
+        """
+        List of Fleet Application Management Onboardings.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OnboardingItemArgs']]]]):
+        pulumi.set(self, "items", value)
 
     @property
     @pulumi.getter(name="resourceRegion")
@@ -230,7 +280,7 @@ class _OnboardingState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
         """
-        Version of FAMS the tenant is onboarded to.
+        The version of Fleet Application Management that the tenant is onboarded to.
         """
         return pulumi.get(self, "version")
 
@@ -251,7 +301,8 @@ class Onboarding(pulumi.CustomResource):
         """
         This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Onboard a tenant to Fleet Application Management Service
+        Onboard a tenant to Fleet Application Management.
+        The onboarding process lets Fleet Application Management create a few required policies that you need to start using it and its features.
 
         ## Example Usage
 
@@ -272,8 +323,8 @@ class Onboarding(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
-        :param pulumi.Input[bool] is_cost_tracking_tag_enabled: A value determining if cost tracking tag is enabled or not
-        :param pulumi.Input[bool] is_fams_tag_enabled: A value determining FAMS tag is enabled or not
+        :param pulumi.Input[bool] is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+        :param pulumi.Input[bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
                
                
                ** IMPORTANT **
@@ -288,7 +339,8 @@ class Onboarding(pulumi.CustomResource):
         """
         This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Onboard a tenant to Fleet Application Management Service
+        Onboard a tenant to Fleet Application Management.
+        The onboarding process lets Fleet Application Management create a few required policies that you need to start using it and its features.
 
         ## Example Usage
 
@@ -338,6 +390,9 @@ class Onboarding(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["is_cost_tracking_tag_enabled"] = is_cost_tracking_tag_enabled
             __props__.__dict__["is_fams_tag_enabled"] = is_fams_tag_enabled
+            __props__.__dict__["applied_policies"] = None
+            __props__.__dict__["discovery_frequency"] = None
+            __props__.__dict__["items"] = None
             __props__.__dict__["resource_region"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -354,9 +409,12 @@ class Onboarding(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            applied_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OnboardingAppliedPolicyArgs', 'OnboardingAppliedPolicyArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            discovery_frequency: Optional[pulumi.Input[str]] = None,
             is_cost_tracking_tag_enabled: Optional[pulumi.Input[bool]] = None,
             is_fams_tag_enabled: Optional[pulumi.Input[bool]] = None,
+            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OnboardingItemArgs', 'OnboardingItemArgsDict']]]]] = None,
             resource_region: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -370,27 +428,33 @@ class Onboarding(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OnboardingAppliedPolicyArgs', 'OnboardingAppliedPolicyArgsDict']]]] applied_policies: Summary of the Fleet Application Management Onboard Policy.
         :param pulumi.Input[str] compartment_id: Tenancy OCID
-        :param pulumi.Input[bool] is_cost_tracking_tag_enabled: A value determining if cost tracking tag is enabled or not
-        :param pulumi.Input[bool] is_fams_tag_enabled: A value determining FAMS tag is enabled or not
+        :param pulumi.Input[str] discovery_frequency: Provide discovery frequency.
+        :param pulumi.Input[bool] is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+        :param pulumi.Input[bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OnboardingItemArgs', 'OnboardingItemArgsDict']]]] items: List of Fleet Application Management Onboardings.
         :param pulumi.Input[str] resource_region: Associated region
         :param pulumi.Input[str] state: The current state of the Onboarding.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] version: Version of FAMS the tenant is onboarded to.
+        :param pulumi.Input[str] version: The version of Fleet Application Management that the tenant is onboarded to.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _OnboardingState.__new__(_OnboardingState)
 
+        __props__.__dict__["applied_policies"] = applied_policies
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["discovery_frequency"] = discovery_frequency
         __props__.__dict__["is_cost_tracking_tag_enabled"] = is_cost_tracking_tag_enabled
         __props__.__dict__["is_fams_tag_enabled"] = is_fams_tag_enabled
+        __props__.__dict__["items"] = items
         __props__.__dict__["resource_region"] = resource_region
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -398,6 +462,14 @@ class Onboarding(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["version"] = version
         return Onboarding(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="appliedPolicies")
+    def applied_policies(self) -> pulumi.Output[Sequence['outputs.OnboardingAppliedPolicy']]:
+        """
+        Summary of the Fleet Application Management Onboard Policy.
+        """
+        return pulumi.get(self, "applied_policies")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -408,10 +480,18 @@ class Onboarding(pulumi.CustomResource):
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="discoveryFrequency")
+    def discovery_frequency(self) -> pulumi.Output[str]:
+        """
+        Provide discovery frequency.
+        """
+        return pulumi.get(self, "discovery_frequency")
+
+    @property
     @pulumi.getter(name="isCostTrackingTagEnabled")
     def is_cost_tracking_tag_enabled(self) -> pulumi.Output[bool]:
         """
-        A value determining if cost tracking tag is enabled or not
+        A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         """
         return pulumi.get(self, "is_cost_tracking_tag_enabled")
 
@@ -419,13 +499,21 @@ class Onboarding(pulumi.CustomResource):
     @pulumi.getter(name="isFamsTagEnabled")
     def is_fams_tag_enabled(self) -> pulumi.Output[bool]:
         """
-        A value determining FAMS tag is enabled or not
+        A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_fams_tag_enabled")
+
+    @property
+    @pulumi.getter
+    def items(self) -> pulumi.Output[Sequence['outputs.OnboardingItem']]:
+        """
+        List of Fleet Application Management Onboardings.
+        """
+        return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="resourceRegion")
@@ -471,7 +559,7 @@ class Onboarding(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[str]:
         """
-        Version of FAMS the tenant is onboarded to.
+        The version of Fleet Application Management that the tenant is onboarded to.
         """
         return pulumi.get(self, "version")
 

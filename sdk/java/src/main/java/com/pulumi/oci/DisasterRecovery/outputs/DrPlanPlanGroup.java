@@ -30,15 +30,17 @@ public final class DrPlanPlanGroup {
      */
     private @Nullable Boolean isPauseEnabled;
     /**
+     * @return The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    private @Nullable String refreshStatus;
+    /**
      * @return The list of steps in the group.
      * 
      */
     private @Nullable List<DrPlanPlanGroupStep> steps;
     /**
      * @return The type of DR plan to be created.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String type;
@@ -66,6 +68,13 @@ public final class DrPlanPlanGroup {
         return Optional.ofNullable(this.isPauseEnabled);
     }
     /**
+     * @return The DR plan step refresh status.  Example: `STEP_ADDED`
+     * 
+     */
+    public Optional<String> refreshStatus() {
+        return Optional.ofNullable(this.refreshStatus);
+    }
+    /**
      * @return The list of steps in the group.
      * 
      */
@@ -74,9 +83,6 @@ public final class DrPlanPlanGroup {
     }
     /**
      * @return The type of DR plan to be created.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> type() {
@@ -95,6 +101,7 @@ public final class DrPlanPlanGroup {
         private @Nullable String displayName;
         private @Nullable String id;
         private @Nullable Boolean isPauseEnabled;
+        private @Nullable String refreshStatus;
         private @Nullable List<DrPlanPlanGroupStep> steps;
         private @Nullable String type;
         public Builder() {}
@@ -103,6 +110,7 @@ public final class DrPlanPlanGroup {
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
     	      this.isPauseEnabled = defaults.isPauseEnabled;
+    	      this.refreshStatus = defaults.refreshStatus;
     	      this.steps = defaults.steps;
     	      this.type = defaults.type;
         }
@@ -126,6 +134,12 @@ public final class DrPlanPlanGroup {
             return this;
         }
         @CustomType.Setter
+        public Builder refreshStatus(@Nullable String refreshStatus) {
+
+            this.refreshStatus = refreshStatus;
+            return this;
+        }
+        @CustomType.Setter
         public Builder steps(@Nullable List<DrPlanPlanGroupStep> steps) {
 
             this.steps = steps;
@@ -145,6 +159,7 @@ public final class DrPlanPlanGroup {
             _resultValue.displayName = displayName;
             _resultValue.id = id;
             _resultValue.isPauseEnabled = isPauseEnabled;
+            _resultValue.refreshStatus = refreshStatus;
             _resultValue.steps = steps;
             _resultValue.type = type;
             return _resultValue;

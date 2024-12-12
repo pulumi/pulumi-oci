@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// # Gets a TaskRecord by identifier
+// # Gets a Task by identifier
 //
 // ## Example Usage
 //
@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetTaskRecord(ctx *pulumi.Context, args *GetTaskRecordArgs, opts ...pulumi.InvokeOption) (*GetTaskRecordResult, error) {
+func LookupTaskRecord(ctx *pulumi.Context, args *LookupTaskRecordArgs, opts ...pulumi.InvokeOption) (*LookupTaskRecordResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetTaskRecordResult
+	var rv LookupTaskRecordResult
 	err := ctx.Invoke("oci:FleetAppsManagement/getTaskRecord:getTaskRecord", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,13 +51,13 @@ func GetTaskRecord(ctx *pulumi.Context, args *GetTaskRecordArgs, opts ...pulumi.
 }
 
 // A collection of arguments for invoking getTaskRecord.
-type GetTaskRecordArgs struct {
+type LookupTaskRecordArgs struct {
 	// unique TaskDetail identifier
 	TaskRecordId string `pulumi:"taskRecordId"`
 }
 
 // A collection of values returned by getTaskRecord.
-type GetTaskRecordResult struct {
+type LookupTaskRecordResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -69,7 +69,7 @@ type GetTaskRecordResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The provider-assigned unique ID for this managed resource.
+	// The OCID of the resource.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -90,128 +90,128 @@ type GetTaskRecordResult struct {
 	Version string `pulumi:"version"`
 }
 
-func GetTaskRecordOutput(ctx *pulumi.Context, args GetTaskRecordOutputArgs, opts ...pulumi.InvokeOption) GetTaskRecordResultOutput {
+func LookupTaskRecordOutput(ctx *pulumi.Context, args LookupTaskRecordOutputArgs, opts ...pulumi.InvokeOption) LookupTaskRecordResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetTaskRecordResultOutput, error) {
-			args := v.(GetTaskRecordArgs)
+		ApplyT(func(v interface{}) (LookupTaskRecordResultOutput, error) {
+			args := v.(LookupTaskRecordArgs)
 			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetTaskRecordResult
+			var rv LookupTaskRecordResult
 			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getTaskRecord:getTaskRecord", args, &rv, "", opts...)
 			if err != nil {
-				return GetTaskRecordResultOutput{}, err
+				return LookupTaskRecordResultOutput{}, err
 			}
 
-			output := pulumi.ToOutput(rv).(GetTaskRecordResultOutput)
+			output := pulumi.ToOutput(rv).(LookupTaskRecordResultOutput)
 			if secret {
-				return pulumi.ToSecret(output).(GetTaskRecordResultOutput), nil
+				return pulumi.ToSecret(output).(LookupTaskRecordResultOutput), nil
 			}
 			return output, nil
-		}).(GetTaskRecordResultOutput)
+		}).(LookupTaskRecordResultOutput)
 }
 
 // A collection of arguments for invoking getTaskRecord.
-type GetTaskRecordOutputArgs struct {
+type LookupTaskRecordOutputArgs struct {
 	// unique TaskDetail identifier
 	TaskRecordId pulumi.StringInput `pulumi:"taskRecordId"`
 }
 
-func (GetTaskRecordOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetTaskRecordArgs)(nil)).Elem()
+func (LookupTaskRecordOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupTaskRecordArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getTaskRecord.
-type GetTaskRecordResultOutput struct{ *pulumi.OutputState }
+type LookupTaskRecordResultOutput struct{ *pulumi.OutputState }
 
-func (GetTaskRecordResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetTaskRecordResult)(nil)).Elem()
+func (LookupTaskRecordResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupTaskRecordResult)(nil)).Elem()
 }
 
-func (o GetTaskRecordResultOutput) ToGetTaskRecordResultOutput() GetTaskRecordResultOutput {
+func (o LookupTaskRecordResultOutput) ToLookupTaskRecordResultOutput() LookupTaskRecordResultOutput {
 	return o
 }
 
-func (o GetTaskRecordResultOutput) ToGetTaskRecordResultOutputWithContext(ctx context.Context) GetTaskRecordResultOutput {
+func (o LookupTaskRecordResultOutput) ToLookupTaskRecordResultOutputWithContext(ctx context.Context) LookupTaskRecordResultOutput {
 	return o
 }
 
-func (o GetTaskRecordResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTaskRecordResultOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+func (o LookupTaskRecordResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the argument.
-func (o GetTaskRecordResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // The details of the task.
-func (o GetTaskRecordResultOutput) Details() GetTaskRecordDetailArrayOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) []GetTaskRecordDetail { return v.Details }).(GetTaskRecordDetailArrayOutput)
+func (o LookupTaskRecordResultOutput) Details() GetTaskRecordDetailArrayOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) []GetTaskRecordDetail { return v.Details }).(GetTaskRecordDetailArrayOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o GetTaskRecordResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetTaskRecordResultOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+func (o LookupTaskRecordResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetTaskRecordResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.Id }).(pulumi.StringOutput)
+// The OCID of the resource.
+func (o LookupTaskRecordResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetTaskRecordResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // Associated region
-func (o GetTaskRecordResultOutput) ResourceRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.ResourceRegion }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) ResourceRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.ResourceRegion }).(pulumi.StringOutput)
 }
 
 // The current state of the TaskRecord.
-func (o GetTaskRecordResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetTaskRecordResultOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+func (o LookupTaskRecordResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-func (o GetTaskRecordResultOutput) TaskRecordId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.TaskRecordId }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) TaskRecordId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.TaskRecordId }).(pulumi.StringOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o GetTaskRecordResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o GetTaskRecordResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 // Task type.
-func (o GetTaskRecordResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
 // The version of the task
-func (o GetTaskRecordResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTaskRecordResult) string { return v.Version }).(pulumi.StringOutput)
+func (o LookupTaskRecordResultOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTaskRecordResult) string { return v.Version }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetTaskRecordResultOutput{})
+	pulumi.RegisterOutputType(LookupTaskRecordResultOutput{})
 }

@@ -78,6 +78,10 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string LastCompletedAction;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
+        /// </summary>
+        public readonly string LastCompletedActionId;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -89,6 +93,10 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// In this array all the possible actions will be listed. The first element is the suggested Action.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteResult> NextActionToExecutes;
+        /// <summary>
+        /// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+        /// </summary>
+        public readonly string RollbackCycleState;
         /// <summary>
         /// Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.
         /// </summary>
@@ -152,11 +160,15 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
 
             string lastCompletedAction,
 
+            string lastCompletedActionId,
+
             string lifecycleDetails,
 
             int maxDrainTimeoutInSeconds,
 
             ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteResult> nextActionToExecutes,
+
+            string rollbackCycleState,
 
             ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleResult> stageActionSchedules,
 
@@ -188,9 +200,11 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
             IsIgnorePatches = isIgnorePatches;
             IsKeepPlacement = isKeepPlacement;
             LastCompletedAction = lastCompletedAction;
+            LastCompletedActionId = lastCompletedActionId;
             LifecycleDetails = lifecycleDetails;
             MaxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;
             NextActionToExecutes = nextActionToExecutes;
+            RollbackCycleState = rollbackCycleState;
             StageActionSchedules = stageActionSchedules;
             State = state;
             SystemTags = systemTags;

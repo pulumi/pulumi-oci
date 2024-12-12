@@ -1281,7 +1281,7 @@ func (o DesktopPoolPrivateAccessDetailsPtrOutput) VcnId() pulumi.StringPtrOutput
 }
 
 type DesktopPoolSessionLifecycleActions struct {
-	// (Updatable) Action and grace period for disconnect
+	// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
 	Disconnect *DesktopPoolSessionLifecycleActionsDisconnect `pulumi:"disconnect"`
 	// (Updatable) Action and grace period for inactivity
 	Inactivity *DesktopPoolSessionLifecycleActionsInactivity `pulumi:"inactivity"`
@@ -1299,7 +1299,7 @@ type DesktopPoolSessionLifecycleActionsInput interface {
 }
 
 type DesktopPoolSessionLifecycleActionsArgs struct {
-	// (Updatable) Action and grace period for disconnect
+	// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
 	Disconnect DesktopPoolSessionLifecycleActionsDisconnectPtrInput `pulumi:"disconnect"`
 	// (Updatable) Action and grace period for inactivity
 	Inactivity DesktopPoolSessionLifecycleActionsInactivityPtrInput `pulumi:"inactivity"`
@@ -1382,7 +1382,7 @@ func (o DesktopPoolSessionLifecycleActionsOutput) ToDesktopPoolSessionLifecycleA
 	}).(DesktopPoolSessionLifecycleActionsPtrOutput)
 }
 
-// (Updatable) Action and grace period for disconnect
+// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
 func (o DesktopPoolSessionLifecycleActionsOutput) Disconnect() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
 	return o.ApplyT(func(v DesktopPoolSessionLifecycleActions) *DesktopPoolSessionLifecycleActionsDisconnect {
 		return v.Disconnect
@@ -1420,7 +1420,7 @@ func (o DesktopPoolSessionLifecycleActionsPtrOutput) Elem() DesktopPoolSessionLi
 	}).(DesktopPoolSessionLifecycleActionsOutput)
 }
 
-// (Updatable) Action and grace period for disconnect
+// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
 func (o DesktopPoolSessionLifecycleActionsPtrOutput) Disconnect() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActions) *DesktopPoolSessionLifecycleActionsDisconnect {
 		if v == nil {
@@ -1441,7 +1441,7 @@ func (o DesktopPoolSessionLifecycleActionsPtrOutput) Inactivity() DesktopPoolSes
 }
 
 type DesktopPoolSessionLifecycleActionsDisconnect struct {
-	// (Updatable) a disconnect action to be triggered
+	// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
 	Action string `pulumi:"action"`
 	// (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
 	GracePeriodInMinutes *int `pulumi:"gracePeriodInMinutes"`
@@ -1459,7 +1459,7 @@ type DesktopPoolSessionLifecycleActionsDisconnectInput interface {
 }
 
 type DesktopPoolSessionLifecycleActionsDisconnectArgs struct {
-	// (Updatable) a disconnect action to be triggered
+	// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
 	Action pulumi.StringInput `pulumi:"action"`
 	// (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
 	GracePeriodInMinutes pulumi.IntPtrInput `pulumi:"gracePeriodInMinutes"`
@@ -1542,7 +1542,7 @@ func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) ToDesktopPoolSession
 	}).(DesktopPoolSessionLifecycleActionsDisconnectPtrOutput)
 }
 
-// (Updatable) a disconnect action to be triggered
+// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
 func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolSessionLifecycleActionsDisconnect) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -1576,7 +1576,7 @@ func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) Elem() DesktopPoo
 	}).(DesktopPoolSessionLifecycleActionsDisconnectOutput)
 }
 
-// (Updatable) a disconnect action to be triggered
+// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
 func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) Action() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsDisconnect) *string {
 		if v == nil {
@@ -1597,7 +1597,7 @@ func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) GracePeriodInMinu
 }
 
 type DesktopPoolSessionLifecycleActionsInactivity struct {
-	// (Updatable) an inactivity action to be triggered
+	// (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
 	Action string `pulumi:"action"`
 	// (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
 	GracePeriodInMinutes *int `pulumi:"gracePeriodInMinutes"`
@@ -1615,7 +1615,7 @@ type DesktopPoolSessionLifecycleActionsInactivityInput interface {
 }
 
 type DesktopPoolSessionLifecycleActionsInactivityArgs struct {
-	// (Updatable) an inactivity action to be triggered
+	// (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
 	Action pulumi.StringInput `pulumi:"action"`
 	// (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
 	GracePeriodInMinutes pulumi.IntPtrInput `pulumi:"gracePeriodInMinutes"`
@@ -1698,7 +1698,7 @@ func (o DesktopPoolSessionLifecycleActionsInactivityOutput) ToDesktopPoolSession
 	}).(DesktopPoolSessionLifecycleActionsInactivityPtrOutput)
 }
 
-// (Updatable) an inactivity action to be triggered
+// (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
 func (o DesktopPoolSessionLifecycleActionsInactivityOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolSessionLifecycleActionsInactivity) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -1732,7 +1732,7 @@ func (o DesktopPoolSessionLifecycleActionsInactivityPtrOutput) Elem() DesktopPoo
 	}).(DesktopPoolSessionLifecycleActionsInactivityOutput)
 }
 
-// (Updatable) an inactivity action to be triggered
+// (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
 func (o DesktopPoolSessionLifecycleActionsInactivityPtrOutput) Action() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsInactivity) *string {
 		if v == nil {
@@ -4419,7 +4419,8 @@ type GetDesktopPoolsDesktopPoolCollectionItem struct {
 	// The number of active desktops in the desktop pool.
 	ActiveDesktops int `pulumi:"activeDesktops"`
 	// Indicates whether desktop pool users have administrative privileges on their desktop.
-	ArePrivilegedUsers bool `pulumi:"arePrivilegedUsers"`
+	ArePrivilegedUsers  bool `pulumi:"arePrivilegedUsers"`
+	AreVolumesPreserved bool `pulumi:"areVolumesPreserved"`
 	// The name of the availability domain.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Provides the start and stop schedule information for desktop availability of the desktop pool.
@@ -4491,7 +4492,8 @@ type GetDesktopPoolsDesktopPoolCollectionItemArgs struct {
 	// The number of active desktops in the desktop pool.
 	ActiveDesktops pulumi.IntInput `pulumi:"activeDesktops"`
 	// Indicates whether desktop pool users have administrative privileges on their desktop.
-	ArePrivilegedUsers pulumi.BoolInput `pulumi:"arePrivilegedUsers"`
+	ArePrivilegedUsers  pulumi.BoolInput `pulumi:"arePrivilegedUsers"`
+	AreVolumesPreserved pulumi.BoolInput `pulumi:"areVolumesPreserved"`
 	// The name of the availability domain.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Provides the start and stop schedule information for desktop availability of the desktop pool.
@@ -4607,6 +4609,10 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) ActiveDesktops() pulumi.
 // Indicates whether desktop pool users have administrative privileges on their desktop.
 func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) ArePrivilegedUsers() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) bool { return v.ArePrivilegedUsers }).(pulumi.BoolOutput)
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) AreVolumesPreserved() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) bool { return v.AreVolumesPreserved }).(pulumi.BoolOutput)
 }
 
 // The name of the availability domain.

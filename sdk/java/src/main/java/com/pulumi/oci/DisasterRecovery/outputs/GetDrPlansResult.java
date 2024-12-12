@@ -42,6 +42,11 @@ public final class GetDrPlansResult {
      * @return The current state of the DR plan.
      * 
      */
+    private @Nullable String lifecycleSubState;
+    /**
+     * @return The current state of the DR plan.
+     * 
+     */
     private @Nullable String state;
 
     private GetDrPlansResult() {}
@@ -86,6 +91,13 @@ public final class GetDrPlansResult {
      * @return The current state of the DR plan.
      * 
      */
+    public Optional<String> lifecycleSubState() {
+        return Optional.ofNullable(this.lifecycleSubState);
+    }
+    /**
+     * @return The current state of the DR plan.
+     * 
+     */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
@@ -106,6 +118,7 @@ public final class GetDrPlansResult {
         private String drProtectionGroupId;
         private @Nullable List<GetDrPlansFilter> filters;
         private String id;
+        private @Nullable String lifecycleSubState;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDrPlansResult defaults) {
@@ -117,6 +130,7 @@ public final class GetDrPlansResult {
     	      this.drProtectionGroupId = defaults.drProtectionGroupId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.state = defaults.state;
         }
 
@@ -175,6 +189,12 @@ public final class GetDrPlansResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleSubState(@Nullable String lifecycleSubState) {
+
+            this.lifecycleSubState = lifecycleSubState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -189,6 +209,7 @@ public final class GetDrPlansResult {
             _resultValue.drProtectionGroupId = drProtectionGroupId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.lifecycleSubState = lifecycleSubState;
             _resultValue.state = state;
             return _resultValue;
         }

@@ -26,15 +26,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly bool? IsPauseEnabled;
         /// <summary>
+        /// The DR plan step refresh status.  Example: `STEP_ADDED`
+        /// </summary>
+        public readonly string? RefreshStatus;
+        /// <summary>
         /// The list of steps in the group.
         /// </summary>
         public readonly ImmutableArray<Outputs.DrPlanPlanGroupStep> Steps;
         /// <summary>
-        /// The type of DR plan to be created. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The type of DR plan to be created.
         /// </summary>
         public readonly string? Type;
 
@@ -46,6 +46,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             bool? isPauseEnabled,
 
+            string? refreshStatus,
+
             ImmutableArray<Outputs.DrPlanPlanGroupStep> steps,
 
             string? type)
@@ -53,6 +55,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             DisplayName = displayName;
             Id = id;
             IsPauseEnabled = isPauseEnabled;
+            RefreshStatus = refreshStatus;
             Steps = steps;
             Type = type;
         }

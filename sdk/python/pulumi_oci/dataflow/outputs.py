@@ -1356,6 +1356,7 @@ class GetApplicationsApplicationResult(dict):
                  private_endpoint_id: str,
                  spark_version: str,
                  state: str,
+                 terminate_runs_on_deletion: bool,
                  time_created: str,
                  time_updated: str,
                  type: str,
@@ -1426,6 +1427,7 @@ class GetApplicationsApplicationResult(dict):
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "spark_version", spark_version)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "terminate_runs_on_deletion", terminate_runs_on_deletion)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "type", type)
@@ -1670,6 +1672,11 @@ class GetApplicationsApplicationResult(dict):
         The current state of this application.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="terminateRunsOnDeletion")
+    def terminate_runs_on_deletion(self) -> bool:
+        return pulumi.get(self, "terminate_runs_on_deletion")
 
     @property
     @pulumi.getter(name="timeCreated")

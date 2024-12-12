@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  * 
- * Creates a new FleetCredential.
+ * Add credentials to a fleet in Fleet Application Management.
  * 
  * ## Example Usage
  * 
@@ -57,6 +57,10 @@ import javax.annotation.Nullable;
  *                 .credentialLevel(fleetCredentialEntitySpecificsCredentialLevel)
  *                 .resourceId(testResource.id())
  *                 .target(fleetCredentialEntitySpecificsTarget)
+ *                 .variables(FleetCredentialEntitySpecificsVariableArgs.builder()
+ *                     .name(fleetCredentialEntitySpecificsVariablesName)
+ *                     .value(fleetCredentialEntitySpecificsVariablesValue)
+ *                     .build())
  *                 .build())
  *             .fleetId(testFleet.id())
  *             .password(FleetCredentialPasswordArgs.builder()
@@ -121,28 +125,28 @@ public class FleetCredential extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential specific Details.
      * 
      */
     @Export(name="entitySpecifics", refs={FleetCredentialEntitySpecifics.class}, tree="[0]")
     private Output<FleetCredentialEntitySpecifics> entitySpecifics;
 
     /**
-     * @return (Updatable) Credential Details
+     * @return (Updatable) Credential specific Details.
      * 
      */
     public Output<FleetCredentialEntitySpecifics> entitySpecifics() {
         return this.entitySpecifics;
     }
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Export(name="fleetId", refs={String.class}, tree="[0]")
     private Output<String> fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public Output<String> fleetId() {
@@ -163,14 +167,14 @@ public class FleetCredential extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      * 
      */
     @Export(name="password", refs={FleetCredentialPassword.class}, tree="[0]")
     private Output<FleetCredentialPassword> password;
 
     /**
-     * @return (Updatable) Credential Details
+     * @return (Updatable) Credential Details.
      * 
      */
     public Output<FleetCredentialPassword> password() {
@@ -233,14 +237,14 @@ public class FleetCredential extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Credential Details
+     * (Updatable) Credential Details.
      * 
      */
     @Export(name="user", refs={FleetCredentialUser.class}, tree="[0]")
     private Output<FleetCredentialUser> user;
 
     /**
-     * @return (Updatable) Credential Details
+     * @return (Updatable) Credential Details.
      * 
      */
     public Output<FleetCredentialUser> user() {

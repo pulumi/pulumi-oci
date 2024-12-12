@@ -13,19 +13,19 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class FleetRuleSelectionCriteriaRuleConditionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Attribute Group.
+        /// (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
         /// </summary>
         [Input("attrGroup", required: true)]
         public Input<string> AttrGroup { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Attribute Key.
+        /// (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
         /// </summary>
         [Input("attrKey", required: true)]
         public Input<string> AttrKey { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Attribute Value.
+        /// (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
         /// </summary>
         [Input("attrValue", required: true)]
         public Input<string> AttrValue { get; set; } = null!;

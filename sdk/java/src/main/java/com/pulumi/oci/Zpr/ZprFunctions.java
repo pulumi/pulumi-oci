@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;
 import com.pulumi.oci.Zpr.inputs.GetConfigurationPlainArgs;
@@ -153,6 +154,51 @@ public final class ZprFunctions {
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Zpr/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Zpr service.
+     * 
+     * Retrieves the ZPR configuration details for the root compartment (the root compartment is the tenancy).
+     * Returns ZPR configuration for root compartment (the root compartment is the tenancy).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Zpr.ZprFunctions;
+     * import com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = ZprFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(tenancyOcid)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Zpr/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -473,6 +519,52 @@ public final class ZprFunctions {
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
+    public static Output<GetZprPoliciesResult> getZprPolicies(GetZprPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Zpr/getZprPolicies:getZprPolicies", TypeShape.of(GetZprPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Zpr Policies in Oracle Cloud Infrastructure Zpr service.
+     * 
+     * Gets a list of ZprPolicies.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Zpr.ZprFunctions;
+     * import com.pulumi.oci.Zpr.inputs.GetZprPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testZprPolicies = ZprFunctions.getZprPolicies(GetZprPoliciesArgs.builder()
+     *             .compartmentId(tenancyOcid)
+     *             .name(zprPolicyName)
+     *             .state(zprPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
     public static CompletableFuture<GetZprPoliciesResult> getZprPoliciesPlain(GetZprPoliciesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Zpr/getZprPolicies:getZprPolicies", TypeShape.of(GetZprPoliciesResult.class), args, Utilities.withVersion(options));
     }
@@ -606,6 +698,50 @@ public final class ZprFunctions {
      * 
      */
     public static Output<GetZprPolicyResult> getZprPolicy(GetZprPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Zpr/getZprPolicy:getZprPolicy", TypeShape.of(GetZprPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Zpr Policy resource in Oracle Cloud Infrastructure Zpr service.
+     * 
+     * Gets information about a ZprPolicy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Zpr.ZprFunctions;
+     * import com.pulumi.oci.Zpr.inputs.GetZprPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testZprPolicy = ZprFunctions.getZprPolicy(GetZprPolicyArgs.builder()
+     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetZprPolicyResult> getZprPolicy(GetZprPolicyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Zpr/getZprPolicy:getZprPolicy", TypeShape.of(GetZprPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**

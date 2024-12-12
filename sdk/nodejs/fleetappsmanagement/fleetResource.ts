@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Creates a new FleetResource.
+ * Add resource to a fleet in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -58,11 +58,11 @@ export class FleetResource extends pulumi.CustomResource {
     }
 
     /**
-     * Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      */
     public /*out*/ readonly applicationType!: pulumi.Output<string>;
     /**
-     * Resource Compartment
+     * Resource Compartment name.
      */
     public /*out*/ readonly compartment!: pulumi.Output<string>;
     /**
@@ -70,7 +70,7 @@ export class FleetResource extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * Compliance State of the Resource
+     * Compliance State of the Resource.
      */
     public /*out*/ readonly complianceState!: pulumi.Output<string>;
     /**
@@ -78,11 +78,11 @@ export class FleetResource extends pulumi.CustomResource {
      */
     public /*out*/ readonly displayName!: pulumi.Output<string>;
     /**
-     * Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      */
     public /*out*/ readonly environmentType!: pulumi.Output<string>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     public readonly fleetId!: pulumi.Output<string>;
     /**
@@ -90,7 +90,7 @@ export class FleetResource extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+     * Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      */
     public /*out*/ readonly product!: pulumi.Output<string>;
     /**
@@ -118,7 +118,7 @@ export class FleetResource extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * Count of targets  within the resource.
+     * Count of targets within the resource.
      */
     public /*out*/ readonly targetCount!: pulumi.Output<number>;
     /**
@@ -130,7 +130,7 @@ export class FleetResource extends pulumi.CustomResource {
      */
     public readonly tenancyId!: pulumi.Output<string>;
     /**
-     * Resource Tenancy Name
+     * Resource Tenancy Name.
      */
     public /*out*/ readonly tenancyName!: pulumi.Output<string>;
     /**
@@ -220,11 +220,11 @@ export class FleetResource extends pulumi.CustomResource {
  */
 export interface FleetResourceState {
     /**
-     * Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Application Type associated with the resource when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      */
     applicationType?: pulumi.Input<string>;
     /**
-     * Resource Compartment
+     * Resource Compartment name.
      */
     compartment?: pulumi.Input<string>;
     /**
@@ -232,7 +232,7 @@ export interface FleetResourceState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * Compliance State of the Resource
+     * Compliance State of the Resource.
      */
     complianceState?: pulumi.Input<string>;
     /**
@@ -240,11 +240,11 @@ export interface FleetResourceState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      */
     environmentType?: pulumi.Input<string>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId?: pulumi.Input<string>;
     /**
@@ -252,7 +252,7 @@ export interface FleetResourceState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+     * Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      */
     product?: pulumi.Input<string>;
     /**
@@ -280,7 +280,7 @@ export interface FleetResourceState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Count of targets  within the resource.
+     * Count of targets within the resource.
      */
     targetCount?: pulumi.Input<number>;
     /**
@@ -292,7 +292,7 @@ export interface FleetResourceState {
      */
     tenancyId?: pulumi.Input<string>;
     /**
-     * Resource Tenancy Name
+     * Resource Tenancy Name.
      */
     tenancyName?: pulumi.Input<string>;
     /**
@@ -314,7 +314,7 @@ export interface FleetResourceArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      */
     fleetId: pulumi.Input<string>;
     /**

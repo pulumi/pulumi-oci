@@ -55,14 +55,14 @@ public final class GetFleetProductsPlainArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private String fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
@@ -70,14 +70,14 @@ public final class GetFleetProductsPlainArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * Resource Display Name
+     * Resource Display Name.
      * 
      */
     @Import(name="resourceDisplayName")
     private @Nullable String resourceDisplayName;
 
     /**
-     * @return Resource Display Name
+     * @return Resource Display Name.
      * 
      */
     public Optional<String> resourceDisplayName() {
@@ -160,7 +160,7 @@ public final class GetFleetProductsPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -171,7 +171,7 @@ public final class GetFleetProductsPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param resourceDisplayName Resource Display Name
+         * @param resourceDisplayName Resource Display Name.
          * 
          * @return builder
          * 

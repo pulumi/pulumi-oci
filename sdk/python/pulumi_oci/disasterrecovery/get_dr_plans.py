@@ -28,7 +28,7 @@ class GetDrPlansResult:
     """
     A collection of values returned by getDrPlans.
     """
-    def __init__(__self__, display_name=None, dr_plan_collections=None, dr_plan_id=None, dr_plan_type=None, dr_protection_group_id=None, filters=None, id=None, state=None):
+    def __init__(__self__, display_name=None, dr_plan_collections=None, dr_plan_id=None, dr_plan_type=None, dr_protection_group_id=None, filters=None, id=None, lifecycle_sub_state=None, state=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -50,6 +50,9 @@ class GetDrPlansResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if lifecycle_sub_state and not isinstance(lifecycle_sub_state, str):
+            raise TypeError("Expected argument 'lifecycle_sub_state' to be a str")
+        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -102,6 +105,14 @@ class GetDrPlansResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="lifecycleSubState")
+    def lifecycle_sub_state(self) -> Optional[str]:
+        """
+        The current state of the DR plan.
+        """
+        return pulumi.get(self, "lifecycle_sub_state")
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
@@ -123,6 +134,7 @@ class AwaitableGetDrPlansResult(GetDrPlansResult):
             dr_protection_group_id=self.dr_protection_group_id,
             filters=self.filters,
             id=self.id,
+            lifecycle_sub_state=self.lifecycle_sub_state,
             state=self.state)
 
 
@@ -131,6 +143,7 @@ def get_dr_plans(display_name: Optional[str] = None,
                  dr_plan_type: Optional[str] = None,
                  dr_protection_group_id: Optional[str] = None,
                  filters: Optional[Sequence[Union['GetDrPlansFilterArgs', 'GetDrPlansFilterArgsDict']]] = None,
+                 lifecycle_sub_state: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrPlansResult:
     """
@@ -148,6 +161,7 @@ def get_dr_plans(display_name: Optional[str] = None,
         display_name=dr_plan_display_name,
         dr_plan_id=test_dr_plan["id"],
         dr_plan_type=dr_plan_dr_plan_type,
+        lifecycle_sub_state=dr_plan_lifecycle_sub_state,
         state=dr_plan_state)
     ```
 
@@ -156,6 +170,7 @@ def get_dr_plans(display_name: Optional[str] = None,
     :param str dr_plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
     :param str dr_plan_type: The DR plan type.
     :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+    :param str lifecycle_sub_state: A filter to return only DR plans that match the given lifecycle sub-state.
     :param str state: A filter to return only DR plans that match the given lifecycle state.
     """
     __args__ = dict()
@@ -164,6 +179,7 @@ def get_dr_plans(display_name: Optional[str] = None,
     __args__['drPlanType'] = dr_plan_type
     __args__['drProtectionGroupId'] = dr_protection_group_id
     __args__['filters'] = filters
+    __args__['lifecycleSubState'] = lifecycle_sub_state
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DisasterRecovery/getDrPlans:getDrPlans', __args__, opts=opts, typ=GetDrPlansResult).value
@@ -176,12 +192,14 @@ def get_dr_plans(display_name: Optional[str] = None,
         dr_protection_group_id=pulumi.get(__ret__, 'dr_protection_group_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         state=pulumi.get(__ret__, 'state'))
 def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                         dr_plan_id: Optional[pulumi.Input[Optional[str]]] = None,
                         dr_plan_type: Optional[pulumi.Input[Optional[str]]] = None,
                         dr_protection_group_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrPlansFilterArgs', 'GetDrPlansFilterArgsDict']]]]] = None,
+                        lifecycle_sub_state: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrPlansResult]:
     """
@@ -199,6 +217,7 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
         display_name=dr_plan_display_name,
         dr_plan_id=test_dr_plan["id"],
         dr_plan_type=dr_plan_dr_plan_type,
+        lifecycle_sub_state=dr_plan_lifecycle_sub_state,
         state=dr_plan_state)
     ```
 
@@ -207,6 +226,7 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
     :param str dr_plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
     :param str dr_plan_type: The DR plan type.
     :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+    :param str lifecycle_sub_state: A filter to return only DR plans that match the given lifecycle sub-state.
     :param str state: A filter to return only DR plans that match the given lifecycle state.
     """
     __args__ = dict()
@@ -215,6 +235,7 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
     __args__['drPlanType'] = dr_plan_type
     __args__['drProtectionGroupId'] = dr_protection_group_id
     __args__['filters'] = filters
+    __args__['lifecycleSubState'] = lifecycle_sub_state
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DisasterRecovery/getDrPlans:getDrPlans', __args__, opts=opts, typ=GetDrPlansResult)
@@ -226,4 +247,5 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
         dr_protection_group_id=pulumi.get(__response__, 'dr_protection_group_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        lifecycle_sub_state=pulumi.get(__response__, 'lifecycle_sub_state'),
         state=pulumi.get(__response__, 'state')))

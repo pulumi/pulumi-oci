@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of Properties for Tenancy.
+ * List properties and their values for a tenancy in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -53,15 +53,15 @@ export interface GetPropertiesArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetPropertiesFilter[];
     /**
-     * unique Property identifier
+     * A filter to return only resources whose Property identifier matches the given identifier.
      */
     id?: string;
     /**
-     * A filter to return only resources their scope matches the given lifecycleState.
+     * A filter to return only resources their scope matches the given scope.
      */
     scope?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: string;
 }
@@ -88,7 +88,7 @@ export interface GetPropertiesResult {
      */
     readonly propertyCollections: outputs.FleetAppsManagement.GetPropertiesPropertyCollection[];
     /**
-     * The scope of the property
+     * The scope of the property.
      */
     readonly scope?: string;
     /**
@@ -99,7 +99,7 @@ export interface GetPropertiesResult {
 /**
  * This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of Properties for Tenancy.
+ * List properties and their values for a tenancy in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -143,15 +143,15 @@ export interface GetPropertiesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetPropertiesFilterArgs>[]>;
     /**
-     * unique Property identifier
+     * A filter to return only resources whose Property identifier matches the given identifier.
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their scope matches the given lifecycleState.
+     * A filter to return only resources their scope matches the given scope.
      */
     scope?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: pulumi.Input<string>;
 }

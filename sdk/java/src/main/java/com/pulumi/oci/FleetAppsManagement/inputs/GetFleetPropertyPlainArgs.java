@@ -14,14 +14,14 @@ public final class GetFleetPropertyPlainArgs extends com.pulumi.resources.Invoke
     public static final GetFleetPropertyPlainArgs Empty = new GetFleetPropertyPlainArgs();
 
     /**
-     * unique Fleet identifier
+     * Unique Fleet identifier.
      * 
      */
     @Import(name="fleetId", required=true)
     private String fleetId;
 
     /**
-     * @return unique Fleet identifier
+     * @return Unique Fleet identifier.
      * 
      */
     public String fleetId() {
@@ -29,14 +29,14 @@ public final class GetFleetPropertyPlainArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * unique FleetProperty identifier
+     * unique FleetProperty identifier.
      * 
      */
     @Import(name="fleetPropertyId", required=true)
     private String fleetPropertyId;
 
     /**
-     * @return unique FleetProperty identifier
+     * @return unique FleetProperty identifier.
      * 
      */
     public String fleetPropertyId() {
@@ -69,7 +69,7 @@ public final class GetFleetPropertyPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param fleetId unique Fleet identifier
+         * @param fleetId Unique Fleet identifier.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetFleetPropertyPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param fleetPropertyId unique FleetProperty identifier
+         * @param fleetPropertyId unique FleetProperty identifier.
          * 
          * @return builder
          * 

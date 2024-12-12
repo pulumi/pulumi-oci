@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
 import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentPlainArgs;
 import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
@@ -150,6 +151,51 @@ public final class ServiceManagerProxyFunctions {
      * 
      */
     public static Output<GetServiceEnvironmentResult> getServiceEnvironment(GetServiceEnvironmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", TypeShape.of(GetServiceEnvironmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.
+     * 
+     * Get the detailed information for a specific service environment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServiceEnvironmentResult> getServiceEnvironment(GetServiceEnvironmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", TypeShape.of(GetServiceEnvironmentResult.class), args, Utilities.withVersion(options));
     }
     /**
@@ -339,6 +385,54 @@ public final class ServiceManagerProxyFunctions {
      * 
      */
     public static Output<GetServiceEnvironmentsResult> getServiceEnvironments(GetServiceEnvironmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", TypeShape.of(GetServiceEnvironmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Service Environments in Oracle Cloud Infrastructure Service Manager Proxy service.
+     * 
+     * List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
+     * Information includes the service instance endpoints and service definition details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceEnvironmentDisplayName)
+     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetServiceEnvironmentsResult> getServiceEnvironments(GetServiceEnvironmentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", TypeShape.of(GetServiceEnvironmentsResult.class), args, Utilities.withVersion(options));
     }
     /**

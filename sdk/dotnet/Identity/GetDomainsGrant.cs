@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsGrantResult> Invoke(GetDomainsGrantInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsGrantResult>("oci:Identity/getDomainsGrant:getDomainsGrant", args ?? new GetDomainsGrantInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Grant resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a Grant
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testGrant = Oci.Identity.GetDomainsGrant.Invoke(new()
+        ///     {
+        ///         GrantId = testGrantOciIdentityDomainsGrant.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = grantAuthorization,
+        ///         ResourceTypeSchemaVersion = grantResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsGrantResult> Invoke(GetDomainsGrantInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsGrantResult>("oci:Identity/getDomainsGrant:getDomainsGrant", args ?? new GetDomainsGrantInvokeArgs(), options.WithDefaults());
     }
 
 

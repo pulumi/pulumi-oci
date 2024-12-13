@@ -101,21 +101,11 @@ type GetRunbooksResult struct {
 }
 
 func GetRunbooksOutput(ctx *pulumi.Context, args GetRunbooksOutputArgs, opts ...pulumi.InvokeOption) GetRunbooksResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetRunbooksResultOutput, error) {
 			args := v.(GetRunbooksArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRunbooksResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getRunbooks:getRunbooks", args, &rv, "", opts...)
-			if err != nil {
-				return GetRunbooksResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetRunbooksResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetRunbooksResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getRunbooks:getRunbooks", args, GetRunbooksResultOutput{}, options).(GetRunbooksResultOutput), nil
 		}).(GetRunbooksResultOutput)
 }
 

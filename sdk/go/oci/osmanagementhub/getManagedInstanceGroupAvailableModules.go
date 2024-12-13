@@ -81,21 +81,11 @@ type GetManagedInstanceGroupAvailableModulesResult struct {
 }
 
 func GetManagedInstanceGroupAvailableModulesOutput(ctx *pulumi.Context, args GetManagedInstanceGroupAvailableModulesOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceGroupAvailableModulesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedInstanceGroupAvailableModulesResultOutput, error) {
 			args := v.(GetManagedInstanceGroupAvailableModulesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedInstanceGroupAvailableModulesResult
-			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getManagedInstanceGroupAvailableModules:getManagedInstanceGroupAvailableModules", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedInstanceGroupAvailableModulesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedInstanceGroupAvailableModulesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedInstanceGroupAvailableModulesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceGroupAvailableModules:getManagedInstanceGroupAvailableModules", args, GetManagedInstanceGroupAvailableModulesResultOutput{}, options).(GetManagedInstanceGroupAvailableModulesResultOutput), nil
 		}).(GetManagedInstanceGroupAvailableModulesResultOutput)
 }
 

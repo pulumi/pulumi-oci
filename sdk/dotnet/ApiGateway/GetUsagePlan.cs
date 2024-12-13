@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         public static Output<GetUsagePlanResult> Invoke(GetUsagePlanInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsagePlanResult>("oci:ApiGateway/getUsagePlan:getUsagePlan", args ?? new GetUsagePlanInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
+        /// 
+        /// Gets a usage plan by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUsagePlan = Oci.ApiGateway.GetUsagePlan.Invoke(new()
+        ///     {
+        ///         UsagePlanId = testUsagePlanOciApigatewayUsagePlan.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUsagePlanResult> Invoke(GetUsagePlanInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUsagePlanResult>("oci:ApiGateway/getUsagePlan:getUsagePlan", args ?? new GetUsagePlanInvokeArgs(), options.WithDefaults());
     }
 
 

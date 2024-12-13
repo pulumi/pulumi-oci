@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetPbfListingVersionResult> Invoke(GetPbfListingVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingVersionResult>("oci:Functions/getPbfListingVersion:getPbfListingVersion", args ?? new GetPbfListingVersionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
+        /// 
+        /// Gets a PbfListingVersion by identifier for a PbfListing.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPbfListingVersion = Oci.Functions.GetPbfListingVersion.Invoke(new()
+        ///     {
+        ///         PbfListingVersionId = testPbfListingVersionOciFunctionsPbfListingVersion.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPbfListingVersionResult> Invoke(GetPbfListingVersionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingVersionResult>("oci:Functions/getPbfListingVersion:getPbfListingVersion", args ?? new GetPbfListingVersionInvokeArgs(), options.WithDefaults());
     }
 
 

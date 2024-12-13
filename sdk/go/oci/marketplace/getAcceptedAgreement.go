@@ -81,21 +81,11 @@ type LookupAcceptedAgreementResult struct {
 }
 
 func LookupAcceptedAgreementOutput(ctx *pulumi.Context, args LookupAcceptedAgreementOutputArgs, opts ...pulumi.InvokeOption) LookupAcceptedAgreementResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAcceptedAgreementResultOutput, error) {
 			args := v.(LookupAcceptedAgreementArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAcceptedAgreementResult
-			secret, err := ctx.InvokePackageRaw("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAcceptedAgreementResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAcceptedAgreementResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAcceptedAgreementResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", args, LookupAcceptedAgreementResultOutput{}, options).(LookupAcceptedAgreementResultOutput), nil
 		}).(LookupAcceptedAgreementResultOutput)
 }
 

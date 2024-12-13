@@ -112,6 +112,57 @@ namespace Pulumi.Oci.OsManagement
         /// </summary>
         public static Output<GetManagedInstanceModuleStreamsResult> Invoke(GetManagedInstanceModuleStreamsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceModuleStreamsResult>("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args ?? new GetManagedInstanceModuleStreamsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
+        /// 
+        /// Retrieve a list of module streams, along with a summary of their
+        /// status, from a managed instance.  Filters may be applied to select
+        /// a subset of module streams based on the filter criteria.
+        /// 
+        /// The 'moduleName' attribute filters against the name of a module.
+        /// It accepts strings of the format "&lt;module&gt;".  If this attribute
+        /// is defined, only streams that belong to the specified module are
+        /// included in the result set.  If it is not defined, the request is
+        /// not subject to this filter.
+        /// 
+        /// The "status" attribute filters against the state of a module stream.
+        /// Valid values are "ENABLED", "DISABLED", and "ACTIVE".  If the
+        /// attribute is set to "ENABLED", only module streams that are enabled
+        /// are included in the result set.  If the attribute is set to "DISABLED",
+        /// only module streams that are not enabled are included in the result
+        /// set.  If the attribute is set to "ACTIVE", only module streams that
+        /// are active are included in the result set.  If the attribute is not
+        /// defined, the request is not subject to this filter.
+        /// 
+        /// When sorting by the display name, the result set is sorted first
+        /// by the module name and then by the stream name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceModuleStreams = Oci.OsManagement.GetManagedInstanceModuleStreams.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = managedInstanceId,
+        ///         CompartmentId = compartmentId,
+        ///         ModuleName = managedInstanceModuleName,
+        ///         StreamName = managedInstanceModuleStreamName,
+        ///         StreamStatus = managedInstanceModuleStreamStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceModuleStreamsResult> Invoke(GetManagedInstanceModuleStreamsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceModuleStreamsResult>("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args ?? new GetManagedInstanceModuleStreamsInvokeArgs(), options.WithDefaults());
     }
 
 

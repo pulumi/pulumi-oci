@@ -69,21 +69,11 @@ type GetLogAnalyticsLogGroupsSummaryResult struct {
 }
 
 func GetLogAnalyticsLogGroupsSummaryOutput(ctx *pulumi.Context, args GetLogAnalyticsLogGroupsSummaryOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsLogGroupsSummaryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLogAnalyticsLogGroupsSummaryResultOutput, error) {
 			args := v.(GetLogAnalyticsLogGroupsSummaryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLogAnalyticsLogGroupsSummaryResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args, &rv, "", opts...)
-			if err != nil {
-				return GetLogAnalyticsLogGroupsSummaryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLogAnalyticsLogGroupsSummaryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLogAnalyticsLogGroupsSummaryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args, GetLogAnalyticsLogGroupsSummaryResultOutput{}, options).(GetLogAnalyticsLogGroupsSummaryResultOutput), nil
 		}).(GetLogAnalyticsLogGroupsSummaryResultOutput)
 }
 

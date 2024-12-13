@@ -56,6 +56,29 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public static Output<GetNetworkLoadBalancersPoliciesResult> Invoke(GetNetworkLoadBalancersPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancersPoliciesResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancersPolicies:getNetworkLoadBalancersPolicies", args ?? new GetNetworkLoadBalancersPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.
+        /// 
+        /// Lists the available network load balancer policies.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkLoadBalancersPolicies = Oci.NetworkLoadBalancer.GetNetworkLoadBalancersPolicies.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkLoadBalancersPoliciesResult> Invoke(GetNetworkLoadBalancersPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancersPoliciesResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancersPolicies:getNetworkLoadBalancersPolicies", args ?? new GetNetworkLoadBalancersPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

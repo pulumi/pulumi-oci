@@ -102,21 +102,11 @@ type LookupExternalNonContainerDatabaseResult struct {
 }
 
 func LookupExternalNonContainerDatabaseOutput(ctx *pulumi.Context, args LookupExternalNonContainerDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupExternalNonContainerDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalNonContainerDatabaseResultOutput, error) {
 			args := v.(LookupExternalNonContainerDatabaseArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalNonContainerDatabaseResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalNonContainerDatabaseResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalNonContainerDatabaseResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalNonContainerDatabaseResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", args, LookupExternalNonContainerDatabaseResultOutput{}, options).(LookupExternalNonContainerDatabaseResultOutput), nil
 		}).(LookupExternalNonContainerDatabaseResultOutput)
 }
 

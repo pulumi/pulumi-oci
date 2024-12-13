@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsRuleResult> Invoke(GetDomainsRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsRuleResult>("oci:Identity/getDomainsRule:getDomainsRule", args ?? new GetDomainsRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a Rule.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRule = Oci.Identity.GetDomainsRule.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         RuleId = testRuleOciEventsRule.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = ruleAuthorization,
+        ///         ResourceTypeSchemaVersion = ruleResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsRuleResult> Invoke(GetDomainsRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsRuleResult>("oci:Identity/getDomainsRule:getDomainsRule", args ?? new GetDomainsRuleInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         public static Output<GetProtectedDatabaseFetchConfigurationResult> Invoke(GetProtectedDatabaseFetchConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabaseFetchConfigurationResult>("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", args ?? new GetProtectedDatabaseFetchConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Protected Database Fetch Configuration resource in Oracle Cloud Infrastructure Recovery service.
+        /// 
+        /// Downloads the network service configuration file 'tnsnames.ora' for a specified protected database. Applies to user-defined recovery systems only.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProtectedDatabaseFetchConfiguration = Oci.RecoveryMod.GetProtectedDatabaseFetchConfiguration.Invoke(new()
+        ///     {
+        ///         ProtectedDatabaseId = testProtectedDatabase.Id,
+        ///         Base64EncodeContent = true,
+        ///         ConfigurationType = protectedDatabaseFetchConfigurationConfigurationType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProtectedDatabaseFetchConfigurationResult> Invoke(GetProtectedDatabaseFetchConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabaseFetchConfigurationResult>("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", args ?? new GetProtectedDatabaseFetchConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyUserDbCredentialsResult> Invoke(GetDomainsMyUserDbCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyUserDbCredentialsResult>("oci:Identity/getDomainsMyUserDbCredentials:getDomainsMyUserDbCredentials", args ?? new GetDomainsMyUserDbCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for a user's own database (DB) credential.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyUserDbCredentials = Oci.Identity.GetDomainsMyUserDbCredentials.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyUserDbCredentialCount = myUserDbCredentialMyUserDbCredentialCount,
+        ///         MyUserDbCredentialFilter = myUserDbCredentialMyUserDbCredentialFilter,
+        ///         Authorization = myUserDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myUserDbCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = myUserDbCredentialStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyUserDbCredentialsResult> Invoke(GetDomainsMyUserDbCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyUserDbCredentialsResult>("oci:Identity/getDomainsMyUserDbCredentials:getDomainsMyUserDbCredentials", args ?? new GetDomainsMyUserDbCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

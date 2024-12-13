@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsOauthClientCertificatesResult> Invoke(GetDomainsOauthClientCertificatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthClientCertificatesResult>("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", args ?? new GetDomainsOauthClientCertificatesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of O Auth Client Certificates in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search OAuth Client Certificates
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOauthClientCertificates = Oci.Identity.GetDomainsOauthClientCertificates.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OauthClientCertificateCount = oauthClientCertificateOauthClientCertificateCount,
+        ///         OauthClientCertificateFilter = oauthClientCertificateOauthClientCertificateFilter,
+        ///         Authorization = oauthClientCertificateAuthorization,
+        ///         ResourceTypeSchemaVersion = oauthClientCertificateResourceTypeSchemaVersion,
+        ///         StartIndex = oauthClientCertificateStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsOauthClientCertificatesResult> Invoke(GetDomainsOauthClientCertificatesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthClientCertificatesResult>("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", args ?? new GetDomainsOauthClientCertificatesInvokeArgs(), options.WithDefaults());
     }
 
 

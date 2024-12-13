@@ -70,6 +70,36 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:CloudMigrations/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Migrations in Oracle Cloud Infrastructure Cloud Migrations service.
+        /// 
+        /// Returns a list of migrations.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMigrations = Oci.CloudMigrations.GetMigrations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = migrationDisplayName,
+        ///         MigrationId = testMigration.Id,
+        ///         State = migrationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:CloudMigrations/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());
     }
 
 

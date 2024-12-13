@@ -82,6 +82,42 @@ namespace Pulumi.Oci.HealthChecks
         /// </summary>
         public static Output<GetPingProbeResultsResult> Invoke(GetPingProbeResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPingProbeResultsResult>("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args ?? new GetPingProbeResultsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ping Probe Results in Oracle Cloud Infrastructure Health Checks service.
+        /// 
+        /// Returns the results for the specified probe, where the `probeConfigurationId`
+        /// is the OCID of either a monitor or an on-demand probe.
+        /// 
+        /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+        /// a URL for fetching the next page.  Use `sortOrder` to set the order of the
+        /// results.  If `sortOrder` is unspecified, results are sorted in ascending order by
+        /// `startTime`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPingProbeResults = Oci.HealthChecks.GetPingProbeResults.Invoke(new()
+        ///     {
+        ///         ProbeConfigurationId = testProbeConfiguration.Id,
+        ///         StartTimeGreaterThanOrEqualTo = pingProbeResultStartTimeGreaterThanOrEqualTo,
+        ///         StartTimeLessThanOrEqualTo = pingProbeResultStartTimeLessThanOrEqualTo,
+        ///         Target = pingProbeResultTarget,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPingProbeResultsResult> Invoke(GetPingProbeResultsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPingProbeResultsResult>("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args ?? new GetPingProbeResultsInvokeArgs(), options.WithDefaults());
     }
 
 

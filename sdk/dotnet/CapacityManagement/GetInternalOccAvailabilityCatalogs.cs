@@ -72,6 +72,37 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public static Output<GetInternalOccAvailabilityCatalogsResult> Invoke(GetInternalOccAvailabilityCatalogsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInternalOccAvailabilityCatalogsResult>("oci:CapacityManagement/getInternalOccAvailabilityCatalogs:getInternalOccAvailabilityCatalogs", args ?? new GetInternalOccAvailabilityCatalogsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Internal Occ Availability Catalogs in Oracle Cloud Infrastructure Capacity Management service.
+        /// 
+        /// An internal api to list availability catalogs.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInternalOccAvailabilityCatalogs = Oci.CapacityManagement.GetInternalOccAvailabilityCatalogs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         OccCustomerGroupId = testOccCustomerGroup.Id,
+        ///         CatalogState = internalOccAvailabilityCatalogCatalogState,
+        ///         DisplayName = internalOccAvailabilityCatalogDisplayName,
+        ///         Id = internalOccAvailabilityCatalogId,
+        ///         Namespace = internalOccAvailabilityCatalogNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInternalOccAvailabilityCatalogsResult> Invoke(GetInternalOccAvailabilityCatalogsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInternalOccAvailabilityCatalogsResult>("oci:CapacityManagement/getInternalOccAvailabilityCatalogs:getInternalOccAvailabilityCatalogs", args ?? new GetInternalOccAvailabilityCatalogsInvokeArgs(), options.WithDefaults());
     }
 
 

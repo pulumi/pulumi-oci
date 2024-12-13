@@ -86,21 +86,11 @@ type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult s
 }
 
 func GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutput(ctx *pulumi.Context, args GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput, error) {
 			args := v.(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args, GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput{}, options).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput), nil
 		}).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput)
 }
 

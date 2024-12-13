@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetLifecycleStageResult> Invoke(GetLifecycleStageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleStageResult>("oci:OsManagementHub/getLifecycleStage:getLifecycleStage", args ?? new GetLifecycleStageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns information about the specified lifecycle stage.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLifecycleStage = Oci.OsManagementHub.GetLifecycleStage.Invoke(new()
+        ///     {
+        ///         LifecycleStageId = testLifecycleStageOciOsManagementHubLifecycleStage.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLifecycleStageResult> Invoke(GetLifecycleStageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleStageResult>("oci:OsManagementHub/getLifecycleStage:getLifecycleStage", args ?? new GetLifecycleStageInvokeArgs(), options.WithDefaults());
     }
 
 

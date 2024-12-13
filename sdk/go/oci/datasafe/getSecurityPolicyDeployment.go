@@ -88,21 +88,11 @@ type LookupSecurityPolicyDeploymentResult struct {
 }
 
 func LookupSecurityPolicyDeploymentOutput(ctx *pulumi.Context, args LookupSecurityPolicyDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityPolicyDeploymentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSecurityPolicyDeploymentResultOutput, error) {
 			args := v.(LookupSecurityPolicyDeploymentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSecurityPolicyDeploymentResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSecurityPolicyDeployment:getSecurityPolicyDeployment", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSecurityPolicyDeploymentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSecurityPolicyDeploymentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSecurityPolicyDeploymentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyDeployment:getSecurityPolicyDeployment", args, LookupSecurityPolicyDeploymentResultOutput{}, options).(LookupSecurityPolicyDeploymentResultOutput), nil
 		}).(LookupSecurityPolicyDeploymentResultOutput)
 }
 

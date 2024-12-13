@@ -111,21 +111,11 @@ type LookupMonitoredResourceResult struct {
 }
 
 func LookupMonitoredResourceOutput(ctx *pulumi.Context, args LookupMonitoredResourceOutputArgs, opts ...pulumi.InvokeOption) LookupMonitoredResourceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupMonitoredResourceResultOutput, error) {
 			args := v.(LookupMonitoredResourceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupMonitoredResourceResult
-			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", args, &rv, "", opts...)
-			if err != nil {
-				return LookupMonitoredResourceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupMonitoredResourceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupMonitoredResourceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", args, LookupMonitoredResourceResultOutput{}, options).(LookupMonitoredResourceResultOutput), nil
 		}).(LookupMonitoredResourceResultOutput)
 }
 

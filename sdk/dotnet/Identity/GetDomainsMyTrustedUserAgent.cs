@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyTrustedUserAgentResult> Invoke(GetDomainsMyTrustedUserAgentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyTrustedUserAgentResult>("oci:Identity/getDomainsMyTrustedUserAgent:getDomainsMyTrustedUserAgent", args ?? new GetDomainsMyTrustedUserAgentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific My Trusted User Agent resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a Trusted User Agent
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyTrustedUserAgent = Oci.Identity.GetDomainsMyTrustedUserAgent.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyTrustedUserAgentId = testAgent.Id,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = myTrustedUserAgentAuthorization,
+        ///         ResourceTypeSchemaVersion = myTrustedUserAgentResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyTrustedUserAgentResult> Invoke(GetDomainsMyTrustedUserAgentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyTrustedUserAgentResult>("oci:Identity/getDomainsMyTrustedUserAgent:getDomainsMyTrustedUserAgent", args ?? new GetDomainsMyTrustedUserAgentInvokeArgs(), options.WithDefaults());
     }
 
 

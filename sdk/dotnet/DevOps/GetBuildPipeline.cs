@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetBuildPipelineResult> Invoke(GetBuildPipelineInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBuildPipelineResult>("oci:DevOps/getBuildPipeline:getBuildPipeline", args ?? new GetBuildPipelineInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieves a build pipeline by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBuildPipeline = Oci.DevOps.GetBuildPipeline.Invoke(new()
+        ///     {
+        ///         BuildPipelineId = testBuildPipelineOciDevopsBuildPipeline.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBuildPipelineResult> Invoke(GetBuildPipelineInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBuildPipelineResult>("oci:DevOps/getBuildPipeline:getBuildPipeline", args ?? new GetBuildPipelineInvokeArgs(), options.WithDefaults());
     }
 
 

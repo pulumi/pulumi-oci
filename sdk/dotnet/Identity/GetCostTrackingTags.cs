@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetCostTrackingTagsResult> Invoke(GetCostTrackingTagsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCostTrackingTagsResult>("oci:Identity/getCostTrackingTags:getCostTrackingTags", args ?? new GetCostTrackingTagsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
+        /// cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCostTrackingTags = Oci.Identity.GetCostTrackingTags.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCostTrackingTagsResult> Invoke(GetCostTrackingTagsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCostTrackingTagsResult>("oci:Identity/getCostTrackingTags:getCostTrackingTags", args ?? new GetCostTrackingTagsInvokeArgs(), options.WithDefaults());
     }
 
 

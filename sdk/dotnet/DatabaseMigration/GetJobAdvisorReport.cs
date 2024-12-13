@@ -54,6 +54,28 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public static Output<GetJobAdvisorReportResult> Invoke(GetJobAdvisorReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJobAdvisorReportResult>("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args ?? new GetJobAdvisorReportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJobAdvisorReport = Oci.DatabaseMigration.GetJobAdvisorReport.Invoke(new()
+        ///     {
+        ///         JobId = testJob.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJobAdvisorReportResult> Invoke(GetJobAdvisorReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobAdvisorReportResult>("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args ?? new GetJobAdvisorReportInvokeArgs(), options.WithDefaults());
     }
 
 

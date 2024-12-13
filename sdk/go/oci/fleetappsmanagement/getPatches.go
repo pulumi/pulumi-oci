@@ -111,21 +111,11 @@ type GetPatchesResult struct {
 }
 
 func GetPatchesOutput(ctx *pulumi.Context, args GetPatchesOutputArgs, opts ...pulumi.InvokeOption) GetPatchesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPatchesResultOutput, error) {
 			args := v.(GetPatchesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPatchesResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getPatches:getPatches", args, &rv, "", opts...)
-			if err != nil {
-				return GetPatchesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPatchesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPatchesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getPatches:getPatches", args, GetPatchesResultOutput{}, options).(GetPatchesResultOutput), nil
 		}).(GetPatchesResultOutput)
 }
 

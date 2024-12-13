@@ -16,6 +16,9 @@ namespace Pulumi.Oci.Core
 
         public static Output<GetListingResourceVersionResult> Invoke(GetListingResourceVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListingResourceVersionResult>("oci:Core/getListingResourceVersion:getListingResourceVersion", args ?? new GetListingResourceVersionInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetListingResourceVersionResult> Invoke(GetListingResourceVersionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetListingResourceVersionResult>("oci:Core/getListingResourceVersion:getListingResourceVersion", args ?? new GetListingResourceVersionInvokeArgs(), options.WithDefaults());
     }
 
 

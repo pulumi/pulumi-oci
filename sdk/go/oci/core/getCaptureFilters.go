@@ -84,21 +84,11 @@ type GetCaptureFiltersResult struct {
 }
 
 func GetCaptureFiltersOutput(ctx *pulumi.Context, args GetCaptureFiltersOutputArgs, opts ...pulumi.InvokeOption) GetCaptureFiltersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCaptureFiltersResultOutput, error) {
 			args := v.(GetCaptureFiltersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCaptureFiltersResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getCaptureFilters:getCaptureFilters", args, &rv, "", opts...)
-			if err != nil {
-				return GetCaptureFiltersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCaptureFiltersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCaptureFiltersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getCaptureFilters:getCaptureFilters", args, GetCaptureFiltersResultOutput{}, options).(GetCaptureFiltersResultOutput), nil
 		}).(GetCaptureFiltersResultOutput)
 }
 

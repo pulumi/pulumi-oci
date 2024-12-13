@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabaseRefreshableClonesResult> Invoke(GetAutonomousDatabaseRefreshableClonesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseRefreshableClonesResult>("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", args ?? new GetAutonomousDatabaseRefreshableClonesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseRefreshableClones = Oci.Database.GetAutonomousDatabaseRefreshableClones.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabaseRefreshableClonesResult> Invoke(GetAutonomousDatabaseRefreshableClonesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseRefreshableClonesResult>("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", args ?? new GetAutonomousDatabaseRefreshableClonesInvokeArgs(), options.WithDefaults());
     }
 
 

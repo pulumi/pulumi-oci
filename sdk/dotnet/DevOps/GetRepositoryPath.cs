@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryPathResult> Invoke(GetRepositoryPathInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryPathResult>("oci:DevOps/getRepositoryPath:getRepositoryPath", args ?? new GetRepositoryPathInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Repository Path resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieves a list of files and directories in a repository.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryPath = Oci.DevOps.GetRepositoryPath.Invoke(new()
+        ///     {
+        ///         RepositoryId = testRepository.Id,
+        ///         DisplayName = repositoryPathDisplayName,
+        ///         FolderPath = repositoryPathFolderPath,
+        ///         PathsInSubtree = repositoryPathPathsInSubtree,
+        ///         Ref = repositoryPathRef,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryPathResult> Invoke(GetRepositoryPathInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryPathResult>("oci:DevOps/getRepositoryPath:getRepositoryPath", args ?? new GetRepositoryPathInvokeArgs(), options.WithDefaults());
     }
 
 

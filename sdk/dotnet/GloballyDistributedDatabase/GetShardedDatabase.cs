@@ -66,6 +66,34 @@ namespace Pulumi.Oci.GloballyDistributedDatabase
         /// </summary>
         public static Output<GetShardedDatabaseResult> Invoke(GetShardedDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetShardedDatabaseResult>("oci:GloballyDistributedDatabase/getShardedDatabase:getShardedDatabase", args ?? new GetShardedDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sharded Database resource in Oracle Cloud Infrastructure Globally Distributed Database service.
+        /// 
+        /// Gets the details of the Sharded database identified by given id.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testShardedDatabase = Oci.GloballyDistributedDatabase.GetShardedDatabase.Invoke(new()
+        ///     {
+        ///         ShardedDatabaseId = testShardedDatabaseOciGloballyDistributedDatabaseShardedDatabase.Id,
+        ///         Metadata = shardedDatabaseMetadata,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetShardedDatabaseResult> Invoke(GetShardedDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetShardedDatabaseResult>("oci:GloballyDistributedDatabase/getShardedDatabase:getShardedDatabase", args ?? new GetShardedDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

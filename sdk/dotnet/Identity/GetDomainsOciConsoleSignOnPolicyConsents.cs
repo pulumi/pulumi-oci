@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsOciConsoleSignOnPolicyConsentsResult> Invoke(GetDomainsOciConsoleSignOnPolicyConsentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOciConsoleSignOnPolicyConsentsResult>("oci:Identity/getDomainsOciConsoleSignOnPolicyConsents:getDomainsOciConsoleSignOnPolicyConsents", args ?? new GetDomainsOciConsoleSignOnPolicyConsentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Oci Console Sign On Policy Consents in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search OciConsoleSignOnPolicyConsent entries
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOciConsoleSignOnPolicyConsents = Oci.Identity.GetDomainsOciConsoleSignOnPolicyConsents.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OciConsoleSignOnPolicyConsentCount = ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount,
+        ///         OciConsoleSignOnPolicyConsentFilter = ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter,
+        ///         AttributeSets = ociConsoleSignOnPolicyConsentAttributeSets,
+        ///         Attributes = ociConsoleSignOnPolicyConsentAttributes,
+        ///         Authorization = ociConsoleSignOnPolicyConsentAuthorization,
+        ///         ResourceTypeSchemaVersion = ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion,
+        ///         StartIndex = ociConsoleSignOnPolicyConsentStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsOciConsoleSignOnPolicyConsentsResult> Invoke(GetDomainsOciConsoleSignOnPolicyConsentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOciConsoleSignOnPolicyConsentsResult>("oci:Identity/getDomainsOciConsoleSignOnPolicyConsents:getDomainsOciConsoleSignOnPolicyConsents", args ?? new GetDomainsOciConsoleSignOnPolicyConsentsInvokeArgs(), options.WithDefaults());
     }
 
 

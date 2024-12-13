@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDataGuardAssociationResult> Invoke(GetDataGuardAssociationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataGuardAssociationResult>("oci:Database/getDataGuardAssociation:getDataGuardAssociation", args ?? new GetDataGuardAssociationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the specified Data Guard association's configuration information.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataGuardAssociation = Oci.Database.GetDataGuardAssociation.Invoke(new()
+        ///     {
+        ///         DataGuardAssociationId = testDataGuardAssociationOciDatabaseDataGuardAssociation.Id,
+        ///         DatabaseId = testDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDataGuardAssociationResult> Invoke(GetDataGuardAssociationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataGuardAssociationResult>("oci:Database/getDataGuardAssociation:getDataGuardAssociation", args ?? new GetDataGuardAssociationInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -93,21 +93,11 @@ type GetDatabasePdbConversionHistoryEntryResult struct {
 }
 
 func GetDatabasePdbConversionHistoryEntryOutput(ctx *pulumi.Context, args GetDatabasePdbConversionHistoryEntryOutputArgs, opts ...pulumi.InvokeOption) GetDatabasePdbConversionHistoryEntryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDatabasePdbConversionHistoryEntryResultOutput, error) {
 			args := v.(GetDatabasePdbConversionHistoryEntryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDatabasePdbConversionHistoryEntryResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", args, &rv, "", opts...)
-			if err != nil {
-				return GetDatabasePdbConversionHistoryEntryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDatabasePdbConversionHistoryEntryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDatabasePdbConversionHistoryEntryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", args, GetDatabasePdbConversionHistoryEntryResultOutput{}, options).(GetDatabasePdbConversionHistoryEntryResultOutput), nil
 		}).(GetDatabasePdbConversionHistoryEntryResultOutput)
 }
 

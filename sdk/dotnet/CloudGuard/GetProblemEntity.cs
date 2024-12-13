@@ -64,6 +64,33 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetProblemEntityResult> Invoke(GetProblemEntityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProblemEntityResult>("oci:CloudGuard/getProblemEntity:getProblemEntity", args ?? new GetProblemEntityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Problem Entity resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a list of entities for a CloudGuard Problem
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProblemEntity = Oci.CloudGuard.GetProblemEntity.Invoke(new()
+        ///     {
+        ///         ProblemId = testProblem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProblemEntityResult> Invoke(GetProblemEntityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProblemEntityResult>("oci:CloudGuard/getProblemEntity:getProblemEntity", args ?? new GetProblemEntityInvokeArgs(), options.WithDefaults());
     }
 
 

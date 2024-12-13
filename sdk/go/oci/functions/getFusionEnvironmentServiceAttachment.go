@@ -90,21 +90,11 @@ type GetFusionEnvironmentServiceAttachmentResult struct {
 }
 
 func GetFusionEnvironmentServiceAttachmentOutput(ctx *pulumi.Context, args GetFusionEnvironmentServiceAttachmentOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentServiceAttachmentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFusionEnvironmentServiceAttachmentResultOutput, error) {
 			args := v.(GetFusionEnvironmentServiceAttachmentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFusionEnvironmentServiceAttachmentResult
-			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args, &rv, "", opts...)
-			if err != nil {
-				return GetFusionEnvironmentServiceAttachmentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFusionEnvironmentServiceAttachmentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFusionEnvironmentServiceAttachmentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args, GetFusionEnvironmentServiceAttachmentResultOutput{}, options).(GetFusionEnvironmentServiceAttachmentResultOutput), nil
 		}).(GetFusionEnvironmentServiceAttachmentResultOutput)
 }
 

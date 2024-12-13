@@ -60,6 +60,31 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetPeerRegionForRemotePeeringsResult> Invoke(GetPeerRegionForRemotePeeringsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPeerRegionForRemotePeeringsResult>("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args ?? new GetPeerRegionForRemotePeeringsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the regions that support remote VCN peering (which is peering across regions).
+        /// For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPeerRegionForRemotePeerings = Oci.Core.GetPeerRegionForRemotePeerings.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPeerRegionForRemotePeeringsResult> Invoke(GetPeerRegionForRemotePeeringsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPeerRegionForRemotePeeringsResult>("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args ?? new GetPeerRegionForRemotePeeringsInvokeArgs(), options.WithDefaults());
     }
 
 

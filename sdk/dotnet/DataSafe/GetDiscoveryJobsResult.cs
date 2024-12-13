@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetDiscoveryJobsResultResult> Invoke(GetDiscoveryJobsResultInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobsResultResult>("oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult", args ?? new GetDiscoveryJobsResultInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the specified discovery result.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDiscoveryJobsResult = Oci.DataSafe.GetDiscoveryJobsResult.Invoke(new()
+        ///     {
+        ///         DiscoveryJobId = testDiscoveryJob.Id,
+        ///         ResultKey = discoveryJobsResultResultKey,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDiscoveryJobsResultResult> Invoke(GetDiscoveryJobsResultInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobsResultResult>("oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult", args ?? new GetDiscoveryJobsResultInvokeArgs(), options.WithDefaults());
     }
 
 

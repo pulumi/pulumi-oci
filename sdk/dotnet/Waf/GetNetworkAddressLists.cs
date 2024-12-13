@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Waf
         /// </summary>
         public static Output<GetNetworkAddressListsResult> Invoke(GetNetworkAddressListsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkAddressListsResult>("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args ?? new GetNetworkAddressListsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Address Lists in Oracle Cloud Infrastructure Waf service.
+        /// 
+        /// Gets a list of all NetworkAddressLists in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkAddressLists = Oci.Waf.GetNetworkAddressLists.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = networkAddressListDisplayName,
+        ///         Id = networkAddressListId,
+        ///         States = networkAddressListState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkAddressListsResult> Invoke(GetNetworkAddressListsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkAddressListsResult>("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args ?? new GetNetworkAddressListsInvokeArgs(), options.WithDefaults());
     }
 
 

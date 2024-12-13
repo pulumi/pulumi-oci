@@ -92,21 +92,11 @@ type GetBuildRunsResult struct {
 }
 
 func GetBuildRunsOutput(ctx *pulumi.Context, args GetBuildRunsOutputArgs, opts ...pulumi.InvokeOption) GetBuildRunsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBuildRunsResultOutput, error) {
 			args := v.(GetBuildRunsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBuildRunsResult
-			secret, err := ctx.InvokePackageRaw("oci:DevOps/getBuildRuns:getBuildRuns", args, &rv, "", opts...)
-			if err != nil {
-				return GetBuildRunsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBuildRunsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBuildRunsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DevOps/getBuildRuns:getBuildRuns", args, GetBuildRunsResultOutput{}, options).(GetBuildRunsResultOutput), nil
 		}).(GetBuildRunsResultOutput)
 }
 

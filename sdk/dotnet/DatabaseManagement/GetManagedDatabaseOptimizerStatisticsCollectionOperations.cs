@@ -84,6 +84,43 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> Invoke(GetManagedDatabaseOptimizerStatisticsCollectionOperationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionOperationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the optimizer statistics (Auto and Manual) task operation summary for the specified Managed Database.
+        /// The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+        /// Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+        /// If the date-time range is not specified, then the operations in the last seven days are listed.
+        /// This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+        /// If you use the same header value in a consecutive request, the next page records are returned.
+        /// To obtain the required results, you can apply the different types of filters supported by this API.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseOptimizerStatisticsCollectionOperations = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperations.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         EndTimeLessThanOrEqualTo = managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo,
+        ///         FilterBy = managedDatabaseOptimizerStatisticsCollectionOperationFilterBy,
+        ///         StartTimeGreaterThanOrEqualTo = managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo,
+        ///         TaskType = managedDatabaseOptimizerStatisticsCollectionOperationTaskType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> Invoke(GetManagedDatabaseOptimizerStatisticsCollectionOperationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionOperationsInvokeArgs(), options.WithDefaults());
     }
 
 

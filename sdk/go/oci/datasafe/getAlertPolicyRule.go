@@ -79,21 +79,11 @@ type LookupAlertPolicyRuleResult struct {
 }
 
 func LookupAlertPolicyRuleOutput(ctx *pulumi.Context, args LookupAlertPolicyRuleOutputArgs, opts ...pulumi.InvokeOption) LookupAlertPolicyRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAlertPolicyRuleResultOutput, error) {
 			args := v.(LookupAlertPolicyRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAlertPolicyRuleResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAlertPolicyRule:getAlertPolicyRule", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAlertPolicyRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAlertPolicyRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAlertPolicyRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getAlertPolicyRule:getAlertPolicyRule", args, LookupAlertPolicyRuleResultOutput{}, options).(LookupAlertPolicyRuleResultOutput), nil
 		}).(LookupAlertPolicyRuleResultOutput)
 }
 

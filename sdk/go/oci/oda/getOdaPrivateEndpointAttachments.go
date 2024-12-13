@@ -83,21 +83,11 @@ type GetOdaPrivateEndpointAttachmentsResult struct {
 }
 
 func GetOdaPrivateEndpointAttachmentsOutput(ctx *pulumi.Context, args GetOdaPrivateEndpointAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetOdaPrivateEndpointAttachmentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOdaPrivateEndpointAttachmentsResultOutput, error) {
 			args := v.(GetOdaPrivateEndpointAttachmentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOdaPrivateEndpointAttachmentsResult
-			secret, err := ctx.InvokePackageRaw("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", args, &rv, "", opts...)
-			if err != nil {
-				return GetOdaPrivateEndpointAttachmentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOdaPrivateEndpointAttachmentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOdaPrivateEndpointAttachmentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", args, GetOdaPrivateEndpointAttachmentsResultOutput{}, options).(GetOdaPrivateEndpointAttachmentsResultOutput), nil
 		}).(GetOdaPrivateEndpointAttachmentsResultOutput)
 }
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         public static Output<GetDesktopsResult> Invoke(GetDesktopsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDesktopsResult>("oci:Desktops/getDesktops:getDesktops", args ?? new GetDesktopsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Desktops in Oracle Cloud Infrastructure Desktops service.
+        /// 
+        /// Returns a list of desktops filtered by the specified parameters. You can limit the results to an availability domain, desktop name, desktop OCID, desktop state, pool OCID, or compartment OCID. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDesktops = Oci.Desktops.GetDesktops.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = desktopAvailabilityDomain,
+        ///         DesktopPoolId = testDesktopPool.Id,
+        ///         DisplayName = desktopDisplayName,
+        ///         Id = desktopId,
+        ///         State = desktopState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDesktopsResult> Invoke(GetDesktopsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDesktopsResult>("oci:Desktops/getDesktops:getDesktops", args ?? new GetDesktopsInvokeArgs(), options.WithDefaults());
     }
 
 

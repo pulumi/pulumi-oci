@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsResult> Invoke(GetDomainsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsResult>("oci:Identity/getDomains:getDomains", args ?? new GetDomainsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Domains in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// List all domains that are homed or have a replica region in current region.
+        /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDomains = Oci.Identity.GetDomains.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = domainDisplayName,
+        ///         HomeRegionUrl = domainHomeRegionUrl,
+        ///         IsHiddenOnLogin = domainIsHiddenOnLogin,
+        ///         LicenseType = domainLicenseType,
+        ///         Name = domainName,
+        ///         State = domainState,
+        ///         Type = domainType,
+        ///         Url = domainUrl,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsResult> Invoke(GetDomainsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsResult>("oci:Identity/getDomains:getDomains", args ?? new GetDomainsInvokeArgs(), options.WithDefaults());
     }
 
 

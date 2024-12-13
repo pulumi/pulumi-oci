@@ -84,21 +84,11 @@ type LookupSavedQueryResult struct {
 }
 
 func LookupSavedQueryOutput(ctx *pulumi.Context, args LookupSavedQueryOutputArgs, opts ...pulumi.InvokeOption) LookupSavedQueryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSavedQueryResultOutput, error) {
 			args := v.(LookupSavedQueryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSavedQueryResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getSavedQuery:getSavedQuery", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSavedQueryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSavedQueryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSavedQueryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudGuard/getSavedQuery:getSavedQuery", args, LookupSavedQueryResultOutput{}, options).(LookupSavedQueryResultOutput), nil
 		}).(LookupSavedQueryResultOutput)
 }
 

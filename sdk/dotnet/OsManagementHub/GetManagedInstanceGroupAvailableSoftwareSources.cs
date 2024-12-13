@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceGroupAvailableSoftwareSourcesResult> Invoke(GetManagedInstanceGroupAvailableSoftwareSourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupAvailableSoftwareSourcesResult>("oci:OsManagementHub/getManagedInstanceGroupAvailableSoftwareSources:getManagedInstanceGroupAvailableSoftwareSources", args ?? new GetManagedInstanceGroupAvailableSoftwareSourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists available software sources for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the group.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceGroupAvailableSoftwareSources = Oci.OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSources.Invoke(new()
+        ///     {
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupAvailableSoftwareSourceDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupAvailableSoftwareSourceDisplayNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceGroupAvailableSoftwareSourcesResult> Invoke(GetManagedInstanceGroupAvailableSoftwareSourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupAvailableSoftwareSourcesResult>("oci:OsManagementHub/getManagedInstanceGroupAvailableSoftwareSources:getManagedInstanceGroupAvailableSoftwareSources", args ?? new GetManagedInstanceGroupAvailableSoftwareSourcesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -114,21 +114,11 @@ type GetPublicIpsResult struct {
 }
 
 func GetPublicIpsOutput(ctx *pulumi.Context, args GetPublicIpsOutputArgs, opts ...pulumi.InvokeOption) GetPublicIpsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPublicIpsResultOutput, error) {
 			args := v.(GetPublicIpsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPublicIpsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getPublicIps:getPublicIps", args, &rv, "", opts...)
-			if err != nil {
-				return GetPublicIpsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPublicIpsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPublicIpsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getPublicIps:getPublicIps", args, GetPublicIpsResultOutput{}, options).(GetPublicIpsResultOutput), nil
 		}).(GetPublicIpsResultOutput)
 }
 

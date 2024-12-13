@@ -79,21 +79,11 @@ type GetAddressRuleResult struct {
 }
 
 func GetAddressRuleOutput(ctx *pulumi.Context, args GetAddressRuleOutputArgs, opts ...pulumi.InvokeOption) GetAddressRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAddressRuleResultOutput, error) {
 			args := v.(GetAddressRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAddressRuleResult
-			secret, err := ctx.InvokePackageRaw("oci:OspGateway/getAddressRule:getAddressRule", args, &rv, "", opts...)
-			if err != nil {
-				return GetAddressRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAddressRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAddressRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OspGateway/getAddressRule:getAddressRule", args, GetAddressRuleResultOutput{}, options).(GetAddressRuleResultOutput), nil
 		}).(GetAddressRuleResultOutput)
 }
 

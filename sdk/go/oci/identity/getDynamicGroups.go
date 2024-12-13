@@ -81,21 +81,11 @@ type GetDynamicGroupsResult struct {
 }
 
 func GetDynamicGroupsOutput(ctx *pulumi.Context, args GetDynamicGroupsOutputArgs, opts ...pulumi.InvokeOption) GetDynamicGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDynamicGroupsResultOutput, error) {
 			args := v.(GetDynamicGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDynamicGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDynamicGroups:getDynamicGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetDynamicGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDynamicGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDynamicGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDynamicGroups:getDynamicGroups", args, GetDynamicGroupsResultOutput{}, options).(GetDynamicGroupsResultOutput), nil
 		}).(GetDynamicGroupsResultOutput)
 }
 

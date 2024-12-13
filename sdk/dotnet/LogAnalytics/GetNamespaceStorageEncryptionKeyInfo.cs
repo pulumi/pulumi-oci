@@ -62,6 +62,32 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceStorageEncryptionKeyInfoResult> Invoke(GetNamespaceStorageEncryptionKeyInfoInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageEncryptionKeyInfoResult>("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", args ?? new GetNamespaceStorageEncryptionKeyInfoInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// This API returns the list of customer owned encryption key info.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceStorageEncryptionKeyInfo = Oci.LogAnalytics.GetNamespaceStorageEncryptionKeyInfo.Invoke(new()
+        ///     {
+        ///         Namespace = namespaceStorageEncryptionKeyInfoNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceStorageEncryptionKeyInfoResult> Invoke(GetNamespaceStorageEncryptionKeyInfoInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageEncryptionKeyInfoResult>("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", args ?? new GetNamespaceStorageEncryptionKeyInfoInvokeArgs(), options.WithDefaults());
     }
 
 

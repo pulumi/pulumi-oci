@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsAuthenticationFactorSettingResult> Invoke(GetDomainsAuthenticationFactorSettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAuthenticationFactorSettingResult>("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", args ?? new GetDomainsAuthenticationFactorSettingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get Authentication Factor Settings
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuthenticationFactorSetting = Oci.Identity.GetDomainsAuthenticationFactorSetting.Invoke(new()
+        ///     {
+        ///         AuthenticationFactorSettingId = testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = authenticationFactorSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = authenticationFactorSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsAuthenticationFactorSettingResult> Invoke(GetDomainsAuthenticationFactorSettingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAuthenticationFactorSettingResult>("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", args ?? new GetDomainsAuthenticationFactorSettingInvokeArgs(), options.WithDefaults());
     }
 
 

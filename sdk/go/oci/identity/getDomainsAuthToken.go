@@ -120,21 +120,11 @@ type LookupDomainsAuthTokenResult struct {
 }
 
 func LookupDomainsAuthTokenOutput(ctx *pulumi.Context, args LookupDomainsAuthTokenOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAuthTokenResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsAuthTokenResultOutput, error) {
 			args := v.(LookupDomainsAuthTokenArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsAuthTokenResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsAuthToken:getDomainsAuthToken", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsAuthTokenResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsAuthTokenResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsAuthTokenResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsAuthToken:getDomainsAuthToken", args, LookupDomainsAuthTokenResultOutput{}, options).(LookupDomainsAuthTokenResultOutput), nil
 		}).(LookupDomainsAuthTokenResultOutput)
 }
 

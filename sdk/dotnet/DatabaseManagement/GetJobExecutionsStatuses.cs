@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetJobExecutionsStatusesResult> Invoke(GetJobExecutionsStatusesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJobExecutionsStatusesResult>("oci:DatabaseManagement/getJobExecutionsStatuses:getJobExecutionsStatuses", args ?? new GetJobExecutionsStatusesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Job Executions Statuses in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJobExecutionsStatuses = Oci.DatabaseManagement.GetJobExecutionsStatuses.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         EndTime = jobExecutionsStatusEndTime,
+        ///         StartTime = jobExecutionsStatusStartTime,
+        ///         Id = jobExecutionsStatusId,
+        ///         ManagedDatabaseGroupId = testManagedDatabaseGroup.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         Name = jobExecutionsStatusName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJobExecutionsStatusesResult> Invoke(GetJobExecutionsStatusesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobExecutionsStatusesResult>("oci:DatabaseManagement/getJobExecutionsStatuses:getJobExecutionsStatuses", args ?? new GetJobExecutionsStatusesInvokeArgs(), options.WithDefaults());
     }
 
 

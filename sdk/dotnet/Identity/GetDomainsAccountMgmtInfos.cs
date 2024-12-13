@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsAccountMgmtInfosResult> Invoke(GetDomainsAccountMgmtInfosInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAccountMgmtInfosResult>("oci:Identity/getDomainsAccountMgmtInfos:getDomainsAccountMgmtInfos", args ?? new GetDomainsAccountMgmtInfosInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Account Mgmt Infos in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Account Mgmt Info
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccountMgmtInfos = Oci.Identity.GetDomainsAccountMgmtInfos.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AccountMgmtInfoCount = accountMgmtInfoAccountMgmtInfoCount,
+        ///         AccountMgmtInfoFilter = accountMgmtInfoAccountMgmtInfoFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = accountMgmtInfoAuthorization,
+        ///         ResourceTypeSchemaVersion = accountMgmtInfoResourceTypeSchemaVersion,
+        ///         StartIndex = accountMgmtInfoStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsAccountMgmtInfosResult> Invoke(GetDomainsAccountMgmtInfosInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAccountMgmtInfosResult>("oci:Identity/getDomainsAccountMgmtInfos:getDomainsAccountMgmtInfos", args ?? new GetDomainsAccountMgmtInfosInvokeArgs(), options.WithDefaults());
     }
 
 

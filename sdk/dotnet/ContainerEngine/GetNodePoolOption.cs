@@ -64,6 +64,33 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetNodePoolOptionResult> Invoke(GetNodePoolOptionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNodePoolOptionResult>("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", args ?? new GetNodePoolOptionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// Get options available for node pools.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNodePoolOption = Oci.ContainerEngine.GetNodePoolOption.Invoke(new()
+        ///     {
+        ///         NodePoolOptionId = testNodePoolOptionOciContainerengineNodePoolOption.Id,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNodePoolOptionResult> Invoke(GetNodePoolOptionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNodePoolOptionResult>("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", args ?? new GetNodePoolOptionInvokeArgs(), options.WithDefaults());
     }
 
 

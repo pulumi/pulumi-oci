@@ -73,21 +73,11 @@ type GetVaultReplicasResult struct {
 }
 
 func GetVaultReplicasOutput(ctx *pulumi.Context, args GetVaultReplicasOutputArgs, opts ...pulumi.InvokeOption) GetVaultReplicasResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVaultReplicasResultOutput, error) {
 			args := v.(GetVaultReplicasArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVaultReplicasResult
-			secret, err := ctx.InvokePackageRaw("oci:Kms/getVaultReplicas:getVaultReplicas", args, &rv, "", opts...)
-			if err != nil {
-				return GetVaultReplicasResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVaultReplicasResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVaultReplicasResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Kms/getVaultReplicas:getVaultReplicas", args, GetVaultReplicasResultOutput{}, options).(GetVaultReplicasResultOutput), nil
 		}).(GetVaultReplicasResultOutput)
 }
 

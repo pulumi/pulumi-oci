@@ -26,6 +26,14 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public static Output<GetNetworkFirewallPolicyMappedSecretResult> Invoke(GetNetworkFirewallPolicyMappedSecretInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyMappedSecretResult>("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", args ?? new GetNetworkFirewallPolicyMappedSecretInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
+        /// 
+        /// Get Mapped Secret by the given name in the context of network firewall policy.
+        /// </summary>
+        public static Output<GetNetworkFirewallPolicyMappedSecretResult> Invoke(GetNetworkFirewallPolicyMappedSecretInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyMappedSecretResult>("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", args ?? new GetNetworkFirewallPolicyMappedSecretInvokeArgs(), options.WithDefaults());
     }
 
 

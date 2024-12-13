@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetOneoffPatchResult> Invoke(GetOneoffPatchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOneoffPatchResult>("oci:Database/getOneoffPatch:getOneoffPatch", args ?? new GetOneoffPatchInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified one-off patch.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOneoffPatch = Oci.Database.GetOneoffPatch.Invoke(new()
+        ///     {
+        ///         OneoffPatchId = testOneoffPatchOciDatabaseOneoffPatch.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOneoffPatchResult> Invoke(GetOneoffPatchInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOneoffPatchResult>("oci:Database/getOneoffPatch:getOneoffPatch", args ?? new GetOneoffPatchInvokeArgs(), options.WithDefaults());
     }
 
 

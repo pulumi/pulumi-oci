@@ -64,6 +64,33 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetAnnouncementsResult> Invoke(GetAnnouncementsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementsResult>("oci:FleetAppsManagement/getAnnouncements:getAnnouncements", args ?? new GetAnnouncementsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Return a list of AnnouncementSummary items.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAnnouncements = Oci.FleetAppsManagement.GetAnnouncements.Invoke(new()
+        ///     {
+        ///         DisplayName = announcementDisplayName,
+        ///         SummaryContains = announcementSummaryContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAnnouncementsResult> Invoke(GetAnnouncementsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementsResult>("oci:FleetAppsManagement/getAnnouncements:getAnnouncements", args ?? new GetAnnouncementsInvokeArgs(), options.WithDefaults());
     }
 
 

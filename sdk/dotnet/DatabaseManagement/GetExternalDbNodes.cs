@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalDbNodesResult> Invoke(GetExternalDbNodesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbNodesResult>("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", args ?? new GetExternalDbNodesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the external DB nodes in the specified external DB system.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalDbNodes = Oci.DatabaseManagement.GetExternalDbNodes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = externalDbNodeDisplayName,
+        ///         ExternalDbSystemId = testExternalDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalDbNodesResult> Invoke(GetExternalDbNodesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbNodesResult>("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", args ?? new GetExternalDbNodesInvokeArgs(), options.WithDefaults());
     }
 
 

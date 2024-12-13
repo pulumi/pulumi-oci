@@ -76,6 +76,39 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceEffectivePropertiesResult> Invoke(GetNamespaceEffectivePropertiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceEffectivePropertiesResult>("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", args ?? new GetNamespaceEffectivePropertiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Returns a list of effective properties for the specified resource.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceEffectiveProperties = Oci.LogAnalytics.GetNamespaceEffectiveProperties.Invoke(new()
+        ///     {
+        ///         Namespace = namespaceEffectivePropertyNamespace,
+        ///         AgentId = testAgent.Id,
+        ///         EntityId = testLogAnalyticsEntity.Id,
+        ///         IsIncludePatterns = namespaceEffectivePropertyIsIncludePatterns,
+        ///         Name = namespaceEffectivePropertyName,
+        ///         PatternId = testPattern.Id,
+        ///         SourceName = namespaceEffectivePropertySourceName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceEffectivePropertiesResult> Invoke(GetNamespaceEffectivePropertiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceEffectivePropertiesResult>("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", args ?? new GetNamespaceEffectivePropertiesInvokeArgs(), options.WithDefaults());
     }
 
 

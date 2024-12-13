@@ -68,6 +68,35 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetTrailFileResult> Invoke(GetTrailFileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTrailFileResult>("oci:GoldenGate/getTrailFile:getTrailFile", args ?? new GetTrailFileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Lists the TrailFiles for a deployment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTrailFile = Oci.GoldenGate.GetTrailFile.Invoke(new()
+        ///     {
+        ///         DeploymentId = testDeployment.Id,
+        ///         TrailFileId = testTrailFileOciGoldenGateTrailFile.Id,
+        ///         DisplayName = trailFileDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTrailFileResult> Invoke(GetTrailFileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTrailFileResult>("oci:GoldenGate/getTrailFile:getTrailFile", args ?? new GetTrailFileInvokeArgs(), options.WithDefaults());
     }
 
 

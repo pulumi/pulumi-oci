@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFusionEnvironmentServiceAttachmentsResult> Invoke(GetFusionEnvironmentServiceAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentServiceAttachmentsResult>("oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments", args ?? new GetFusionEnvironmentServiceAttachmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fusion Environment Service Attachments in Oracle Cloud Infrastructure Fusion Apps service.
+        /// 
+        /// Returns a list of service attachments.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFusionEnvironmentServiceAttachments = Oci.Functions.GetFusionEnvironmentServiceAttachments.Invoke(new()
+        ///     {
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         DisplayName = fusionEnvironmentServiceAttachmentDisplayName,
+        ///         ServiceInstanceType = fusionEnvironmentServiceAttachmentServiceInstanceType,
+        ///         State = fusionEnvironmentServiceAttachmentState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFusionEnvironmentServiceAttachmentsResult> Invoke(GetFusionEnvironmentServiceAttachmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentServiceAttachmentsResult>("oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments", args ?? new GetFusionEnvironmentServiceAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

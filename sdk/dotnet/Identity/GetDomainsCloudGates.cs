@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsCloudGatesResult> Invoke(GetDomainsCloudGatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGatesResult>("oci:Identity/getDomainsCloudGates:getDomainsCloudGates", args ?? new GetDomainsCloudGatesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cloud Gates in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Cloud Gates
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudGates = Oci.Identity.GetDomainsCloudGates.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CloudGateCount = cloudGateCloudGateCount,
+        ///         CloudGateFilter = cloudGateCloudGateFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = cloudGateAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateResourceTypeSchemaVersion,
+        ///         StartIndex = cloudGateStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsCloudGatesResult> Invoke(GetDomainsCloudGatesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGatesResult>("oci:Identity/getDomainsCloudGates:getDomainsCloudGates", args ?? new GetDomainsCloudGatesInvokeArgs(), options.WithDefaults());
     }
 
 

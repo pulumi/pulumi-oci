@@ -66,6 +66,34 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespacesResult> Invoke(GetNamespacesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespacesResult>("oci:LogAnalytics/getNamespaces:getNamespaces", args ?? new GetNamespacesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
+        /// result also indicates if the tenancy is onboarded with Logging Analytics.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaces = Oci.LogAnalytics.GetNamespaces.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespacesResult> Invoke(GetNamespacesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespacesResult>("oci:LogAnalytics/getNamespaces:getNamespaces", args ?? new GetNamespacesInvokeArgs(), options.WithDefaults());
     }
 
 

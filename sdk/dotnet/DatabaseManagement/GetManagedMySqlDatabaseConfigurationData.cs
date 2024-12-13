@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedMySqlDatabaseConfigurationDataResult> Invoke(GetManagedMySqlDatabaseConfigurationDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedMySqlDatabaseConfigurationDataResult>("oci:DatabaseManagement/getManagedMySqlDatabaseConfigurationData:getManagedMySqlDatabaseConfigurationData", args ?? new GetManagedMySqlDatabaseConfigurationDataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Retrieves Configuration Data for given MySQL Instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedMySqlDatabaseConfigurationData = Oci.DatabaseManagement.GetManagedMySqlDatabaseConfigurationData.Invoke(new()
+        ///     {
+        ///         ManagedMySqlDatabaseId = testManagedMySqlDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedMySqlDatabaseConfigurationDataResult> Invoke(GetManagedMySqlDatabaseConfigurationDataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedMySqlDatabaseConfigurationDataResult>("oci:DatabaseManagement/getManagedMySqlDatabaseConfigurationData:getManagedMySqlDatabaseConfigurationData", args ?? new GetManagedMySqlDatabaseConfigurationDataInvokeArgs(), options.WithDefaults());
     }
 
 

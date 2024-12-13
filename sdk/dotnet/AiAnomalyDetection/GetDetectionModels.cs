@@ -70,6 +70,36 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// </summary>
         public static Output<GetDetectionModelsResult> Invoke(GetDetectionModelsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDetectionModelsResult>("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", args ?? new GetDetectionModelsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+        /// 
+        /// Returns a list of Models.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModels = Oci.AiAnomalyDetection.GetDetectionModels.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = modelDisplayName,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDetectionModelsResult> Invoke(GetDetectionModelsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDetectionModelsResult>("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", args ?? new GetDetectionModelsInvokeArgs(), options.WithDefaults());
     }
 
 

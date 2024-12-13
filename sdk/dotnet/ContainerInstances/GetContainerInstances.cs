@@ -70,6 +70,36 @@ namespace Pulumi.Oci.ContainerInstances
         /// </summary>
         public static Output<GetContainerInstancesResult> Invoke(GetContainerInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerInstancesResult>("oci:ContainerInstances/getContainerInstances:getContainerInstances", args ?? new GetContainerInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
+        /// 
+        /// Returns a list of container instances.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testContainerInstances = Oci.ContainerInstances.GetContainerInstances.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = containerInstanceAvailabilityDomain,
+        ///         DisplayName = containerInstanceDisplayName,
+        ///         State = containerInstanceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetContainerInstancesResult> Invoke(GetContainerInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerInstancesResult>("oci:ContainerInstances/getContainerInstances:getContainerInstances", args ?? new GetContainerInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

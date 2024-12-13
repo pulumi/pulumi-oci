@@ -70,6 +70,36 @@ namespace Pulumi.Oci.UsageProxy
         /// </summary>
         public static Output<GetSubscriptionRedemptionsResult> Invoke(GetSubscriptionRedemptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRedemptionsResult>("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", args ?? new GetSubscriptionRedemptionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
+        /// 
+        /// Returns the list of redemption for the subscription ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSubscriptionRedemptions = Oci.UsageProxy.GetSubscriptionRedemptions.Invoke(new()
+        ///     {
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
+        ///         TimeRedeemedGreaterThanOrEqualTo = subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo,
+        ///         TimeRedeemedLessThan = subscriptionRedemptionTimeRedeemedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSubscriptionRedemptionsResult> Invoke(GetSubscriptionRedemptionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRedemptionsResult>("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", args ?? new GetSubscriptionRedemptionsInvokeArgs(), options.WithDefaults());
     }
 
 

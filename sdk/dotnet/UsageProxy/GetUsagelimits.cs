@@ -72,6 +72,37 @@ namespace Pulumi.Oci.UsageProxy
         /// </summary>
         public static Output<GetUsagelimitsResult> Invoke(GetUsagelimitsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsagelimitsResult>("oci:UsageProxy/getUsagelimits:getUsagelimits", args ?? new GetUsagelimitsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
+        /// 
+        /// Returns the list of usage limit for the subscription ID and tenant ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUsagelimits = Oci.UsageProxy.GetUsagelimits.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         LimitType = usagelimitLimitType,
+        ///         ResourceType = usagelimitResourceType,
+        ///         ServiceType = usagelimitServiceType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUsagelimitsResult> Invoke(GetUsagelimitsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUsagelimitsResult>("oci:UsageProxy/getUsagelimits:getUsagelimits", args ?? new GetUsagelimitsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -97,21 +97,11 @@ type GetErratumResult struct {
 }
 
 func GetErratumOutput(ctx *pulumi.Context, args GetErratumOutputArgs, opts ...pulumi.InvokeOption) GetErratumResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetErratumResultOutput, error) {
 			args := v.(GetErratumArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetErratumResult
-			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getErratum:getErratum", args, &rv, "", opts...)
-			if err != nil {
-				return GetErratumResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetErratumResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetErratumResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsManagementHub/getErratum:getErratum", args, GetErratumResultOutput{}, options).(GetErratumResultOutput), nil
 		}).(GetErratumResultOutput)
 }
 

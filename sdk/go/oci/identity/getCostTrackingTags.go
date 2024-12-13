@@ -70,21 +70,11 @@ type GetCostTrackingTagsResult struct {
 }
 
 func GetCostTrackingTagsOutput(ctx *pulumi.Context, args GetCostTrackingTagsOutputArgs, opts ...pulumi.InvokeOption) GetCostTrackingTagsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCostTrackingTagsResultOutput, error) {
 			args := v.(GetCostTrackingTagsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCostTrackingTagsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getCostTrackingTags:getCostTrackingTags", args, &rv, "", opts...)
-			if err != nil {
-				return GetCostTrackingTagsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCostTrackingTagsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCostTrackingTagsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getCostTrackingTags:getCostTrackingTags", args, GetCostTrackingTagsResultOutput{}, options).(GetCostTrackingTagsResultOutput), nil
 		}).(GetCostTrackingTagsResultOutput)
 }
 

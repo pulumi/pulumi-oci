@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSqlCollectionResult> Invoke(GetSqlCollectionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlCollectionResult>("oci:DataSafe/getSqlCollection:getSqlCollection", args ?? new GetSqlCollectionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a SQL collection by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlCollection = Oci.DataSafe.GetSqlCollection.Invoke(new()
+        ///     {
+        ///         SqlCollectionId = testSqlCollectionOciDataSafeSqlCollection.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlCollectionResult> Invoke(GetSqlCollectionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlCollectionResult>("oci:DataSafe/getSqlCollection:getSqlCollection", args ?? new GetSqlCollectionInvokeArgs(), options.WithDefaults());
     }
 
 

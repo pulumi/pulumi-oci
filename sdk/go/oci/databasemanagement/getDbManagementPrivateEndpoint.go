@@ -92,21 +92,11 @@ type LookupDbManagementPrivateEndpointResult struct {
 }
 
 func LookupDbManagementPrivateEndpointOutput(ctx *pulumi.Context, args LookupDbManagementPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupDbManagementPrivateEndpointResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDbManagementPrivateEndpointResultOutput, error) {
 			args := v.(LookupDbManagementPrivateEndpointArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDbManagementPrivateEndpointResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDbManagementPrivateEndpointResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDbManagementPrivateEndpointResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDbManagementPrivateEndpointResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint", args, LookupDbManagementPrivateEndpointResultOutput{}, options).(LookupDbManagementPrivateEndpointResultOutput), nil
 		}).(LookupDbManagementPrivateEndpointResultOutput)
 }
 

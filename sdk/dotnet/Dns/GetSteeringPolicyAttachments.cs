@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetSteeringPolicyAttachmentsResult> Invoke(GetSteeringPolicyAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSteeringPolicyAttachmentsResult>("oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments", args ?? new GetSteeringPolicyAttachmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Steering Policy Attachments in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Lists the steering policy attachments in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSteeringPolicyAttachments = Oci.Dns.GetSteeringPolicyAttachments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = steeringPolicyAttachmentDisplayName,
+        ///         Domain = steeringPolicyAttachmentDomain,
+        ///         DomainContains = steeringPolicyAttachmentDomainContains,
+        ///         Id = steeringPolicyAttachmentId,
+        ///         State = steeringPolicyAttachmentState,
+        ///         SteeringPolicyId = testSteeringPolicy.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = steeringPolicyAttachmentTimeCreatedLessThan,
+        ///         ZoneId = testZone.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSteeringPolicyAttachmentsResult> Invoke(GetSteeringPolicyAttachmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSteeringPolicyAttachmentsResult>("oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments", args ?? new GetSteeringPolicyAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

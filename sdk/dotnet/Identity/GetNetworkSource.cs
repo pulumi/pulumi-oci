@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetNetworkSourceResult> Invoke(GetNetworkSourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSourceResult>("oci:Identity/getNetworkSource:getNetworkSource", args ?? new GetNetworkSourceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Network Source resource in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Gets the specified network source's information.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkSource = Oci.Identity.GetNetworkSource.Invoke(new()
+        ///     {
+        ///         NetworkSourceId = testNetworkSourceOciIdentityNetworkSource.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkSourceResult> Invoke(GetNetworkSourceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSourceResult>("oci:Identity/getNetworkSource:getNetworkSource", args ?? new GetNetworkSourceInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public static Output<GetRemediationRecipesResult> Invoke(GetRemediationRecipesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRecipesResult>("oci:Adm/getRemediationRecipes:getRemediationRecipes", args ?? new GetRemediationRecipesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
+        /// 
+        /// Returns a list of Remediation Recipes based on the specified query parameters.
+        /// The query parameters `compartmentId` or `id` must be provided.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRemediationRecipes = Oci.Adm.GetRemediationRecipes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = remediationRecipeDisplayName,
+        ///         Id = remediationRecipeId,
+        ///         State = remediationRecipeState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRemediationRecipesResult> Invoke(GetRemediationRecipesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRecipesResult>("oci:Adm/getRemediationRecipes:getRemediationRecipes", args ?? new GetRemediationRecipesInvokeArgs(), options.WithDefaults());
     }
 
 

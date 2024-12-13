@@ -84,21 +84,11 @@ type GetDeploymentBackupsResult struct {
 }
 
 func GetDeploymentBackupsOutput(ctx *pulumi.Context, args GetDeploymentBackupsOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentBackupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDeploymentBackupsResultOutput, error) {
 			args := v.(GetDeploymentBackupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDeploymentBackupsResult
-			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getDeploymentBackups:getDeploymentBackups", args, &rv, "", opts...)
-			if err != nil {
-				return GetDeploymentBackupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDeploymentBackupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDeploymentBackupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentBackups:getDeploymentBackups", args, GetDeploymentBackupsResultOutput{}, options).(GetDeploymentBackupsResultOutput), nil
 		}).(GetDeploymentBackupsResultOutput)
 }
 

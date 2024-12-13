@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityPolicyReportDatabaseViewAccessEntryResult> Invoke(GetSecurityPolicyReportDatabaseViewAccessEntryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportDatabaseViewAccessEntryResult>("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntry:getSecurityPolicyReportDatabaseViewAccessEntry", args ?? new GetSecurityPolicyReportDatabaseViewAccessEntryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Policy Report Database View Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a database view access object by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityPolicyReportDatabaseViewAccessEntry = Oci.DataSafe.GetSecurityPolicyReportDatabaseViewAccessEntry.Invoke(new()
+        ///     {
+        ///         DatabaseViewAccessEntryKey = securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey,
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityPolicyReportDatabaseViewAccessEntryResult> Invoke(GetSecurityPolicyReportDatabaseViewAccessEntryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportDatabaseViewAccessEntryResult>("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntry:getSecurityPolicyReportDatabaseViewAccessEntry", args ?? new GetSecurityPolicyReportDatabaseViewAccessEntryInvokeArgs(), options.WithDefaults());
     }
 
 

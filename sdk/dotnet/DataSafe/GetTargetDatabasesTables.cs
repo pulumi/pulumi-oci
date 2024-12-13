@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetTargetDatabasesTablesResult> Invoke(GetTargetDatabasesTablesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesTablesResult>("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", args ?? new GetTargetDatabasesTablesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Target Databases Tables in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Returns a list of table metadata objects.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetDatabasesTables = Oci.DataSafe.GetTargetDatabasesTables.Invoke(new()
+        ///     {
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         SchemaNames = targetDatabasesTableSchemaName,
+        ///         SchemaNameContains = targetDatabasesTableSchemaNameContains,
+        ///         TableNames = testTable.Name,
+        ///         TableNameContains = targetDatabasesTableTableNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTargetDatabasesTablesResult> Invoke(GetTargetDatabasesTablesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesTablesResult>("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", args ?? new GetTargetDatabasesTablesInvokeArgs(), options.WithDefaults());
     }
 
 

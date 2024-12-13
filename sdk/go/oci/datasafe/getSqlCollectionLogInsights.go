@@ -82,21 +82,11 @@ type GetSqlCollectionLogInsightsResult struct {
 }
 
 func GetSqlCollectionLogInsightsOutput(ctx *pulumi.Context, args GetSqlCollectionLogInsightsOutputArgs, opts ...pulumi.InvokeOption) GetSqlCollectionLogInsightsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSqlCollectionLogInsightsResultOutput, error) {
 			args := v.(GetSqlCollectionLogInsightsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSqlCollectionLogInsightsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights", args, &rv, "", opts...)
-			if err != nil {
-				return GetSqlCollectionLogInsightsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSqlCollectionLogInsightsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSqlCollectionLogInsightsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights", args, GetSqlCollectionLogInsightsResultOutput{}, options).(GetSqlCollectionLogInsightsResultOutput), nil
 		}).(GetSqlCollectionLogInsightsResultOutput)
 }
 

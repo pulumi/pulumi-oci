@@ -72,6 +72,37 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetSchedulerJobJobActivityResourcesResult> Invoke(GetSchedulerJobJobActivityResourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerJobJobActivityResourcesResult>("oci:FleetAppsManagement/getSchedulerJobJobActivityResources:getSchedulerJobJobActivityResources", args ?? new GetSchedulerJobJobActivityResourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Scheduler Job Job Activity Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of resources for an Activity Execution.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSchedulerJobJobActivityResources = Oci.FleetAppsManagement.GetSchedulerJobJobActivityResources.Invoke(new()
+        ///     {
+        ///         JobActivityId = testJobActivity.Id,
+        ///         SchedulerJobId = testJob.Id,
+        ///         ResourceTaskId = testResourceTask.Id,
+        ///         Sequence = schedulerJobJobActivityResourceSequence,
+        ///         StepName = schedulerJobJobActivityResourceStepName,
+        ///         TargetName = testTarget.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSchedulerJobJobActivityResourcesResult> Invoke(GetSchedulerJobJobActivityResourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerJobJobActivityResourcesResult>("oci:FleetAppsManagement/getSchedulerJobJobActivityResources:getSchedulerJobJobActivityResources", args ?? new GetSchedulerJobJobActivityResourcesInvokeArgs(), options.WithDefaults());
     }
 
 

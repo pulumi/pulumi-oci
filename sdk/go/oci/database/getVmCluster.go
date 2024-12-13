@@ -123,21 +123,11 @@ type LookupVmClusterResult struct {
 }
 
 func LookupVmClusterOutput(ctx *pulumi.Context, args LookupVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupVmClusterResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupVmClusterResultOutput, error) {
 			args := v.(LookupVmClusterArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupVmClusterResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getVmCluster:getVmCluster", args, &rv, "", opts...)
-			if err != nil {
-				return LookupVmClusterResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupVmClusterResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupVmClusterResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getVmCluster:getVmCluster", args, LookupVmClusterResultOutput{}, options).(LookupVmClusterResultOutput), nil
 		}).(LookupVmClusterResultOutput)
 }
 

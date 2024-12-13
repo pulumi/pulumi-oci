@@ -66,21 +66,11 @@ type GetNamespaceStorageEncryptionKeyInfoResult struct {
 }
 
 func GetNamespaceStorageEncryptionKeyInfoOutput(ctx *pulumi.Context, args GetNamespaceStorageEncryptionKeyInfoOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceStorageEncryptionKeyInfoResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetNamespaceStorageEncryptionKeyInfoResultOutput, error) {
 			args := v.(GetNamespaceStorageEncryptionKeyInfoArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetNamespaceStorageEncryptionKeyInfoResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", args, &rv, "", opts...)
-			if err != nil {
-				return GetNamespaceStorageEncryptionKeyInfoResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetNamespaceStorageEncryptionKeyInfoResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetNamespaceStorageEncryptionKeyInfoResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", args, GetNamespaceStorageEncryptionKeyInfoResultOutput{}, options).(GetNamespaceStorageEncryptionKeyInfoResultOutput), nil
 		}).(GetNamespaceStorageEncryptionKeyInfoResultOutput)
 }
 

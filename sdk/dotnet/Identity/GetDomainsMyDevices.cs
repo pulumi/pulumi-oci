@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyDevicesResult> Invoke(GetDomainsMyDevicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyDevicesResult>("oci:Identity/getDomainsMyDevices:getDomainsMyDevices", args ?? new GetDomainsMyDevicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Devices in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Devices
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyDevices = Oci.Identity.GetDomainsMyDevices.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyDeviceCount = myDeviceMyDeviceCount,
+        ///         MyDeviceFilter = myDeviceMyDeviceFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = myDeviceAuthorization,
+        ///         ResourceTypeSchemaVersion = myDeviceResourceTypeSchemaVersion,
+        ///         StartIndex = myDeviceStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyDevicesResult> Invoke(GetDomainsMyDevicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyDevicesResult>("oci:Identity/getDomainsMyDevices:getDomainsMyDevices", args ?? new GetDomainsMyDevicesInvokeArgs(), options.WithDefaults());
     }
 
 

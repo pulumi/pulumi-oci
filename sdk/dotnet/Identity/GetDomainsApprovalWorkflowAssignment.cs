@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsApprovalWorkflowAssignmentResult> Invoke(GetDomainsApprovalWorkflowAssignmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowAssignmentResult>("oci:Identity/getDomainsApprovalWorkflowAssignment:getDomainsApprovalWorkflowAssignment", args ?? new GetDomainsApprovalWorkflowAssignmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get an Approval Workflow Assignment
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApprovalWorkflowAssignment = Oci.Identity.GetDomainsApprovalWorkflowAssignment.Invoke(new()
+        ///     {
+        ///         ApprovalWorkflowAssignmentId = testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = approvalWorkflowAssignmentAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowAssignmentResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsApprovalWorkflowAssignmentResult> Invoke(GetDomainsApprovalWorkflowAssignmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowAssignmentResult>("oci:Identity/getDomainsApprovalWorkflowAssignment:getDomainsApprovalWorkflowAssignment", args ?? new GetDomainsApprovalWorkflowAssignmentInvokeArgs(), options.WithDefaults());
     }
 
 

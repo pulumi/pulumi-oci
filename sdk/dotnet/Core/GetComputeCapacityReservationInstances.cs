@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeCapacityReservationInstancesResult> Invoke(GetComputeCapacityReservationInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationInstancesResult>("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", args ?? new GetComputeCapacityReservationInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeCapacityReservationInstances = Oci.Core.GetComputeCapacityReservationInstances.Invoke(new()
+        ///     {
+        ///         CapacityReservationId = testCapacityReservation.Id,
+        ///         AvailabilityDomain = computeCapacityReservationInstanceAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeCapacityReservationInstancesResult> Invoke(GetComputeCapacityReservationInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationInstancesResult>("oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances", args ?? new GetComputeCapacityReservationInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

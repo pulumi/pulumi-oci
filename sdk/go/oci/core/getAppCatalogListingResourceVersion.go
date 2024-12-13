@@ -83,21 +83,11 @@ type GetAppCatalogListingResourceVersionResult struct {
 }
 
 func GetAppCatalogListingResourceVersionOutput(ctx *pulumi.Context, args GetAppCatalogListingResourceVersionOutputArgs, opts ...pulumi.InvokeOption) GetAppCatalogListingResourceVersionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAppCatalogListingResourceVersionResultOutput, error) {
 			args := v.(GetAppCatalogListingResourceVersionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAppCatalogListingResourceVersionResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", args, &rv, "", opts...)
-			if err != nil {
-				return GetAppCatalogListingResourceVersionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAppCatalogListingResourceVersionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAppCatalogListingResourceVersionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", args, GetAppCatalogListingResourceVersionResultOutput{}, options).(GetAppCatalogListingResourceVersionResultOutput), nil
 		}).(GetAppCatalogListingResourceVersionResultOutput)
 }
 

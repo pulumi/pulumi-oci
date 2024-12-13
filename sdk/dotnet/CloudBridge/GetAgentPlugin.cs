@@ -64,6 +64,33 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         public static Output<GetAgentPluginResult> Invoke(GetAgentPluginInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentPluginResult>("oci:CloudBridge/getAgentPlugin:getAgentPlugin", args ?? new GetAgentPluginInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        /// 
+        /// Gets a plugin by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAgentPlugin = Oci.CloudBridge.GetAgentPlugin.Invoke(new()
+        ///     {
+        ///         AgentId = testAgent.Id,
+        ///         PluginName = agentPluginPluginName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAgentPluginResult> Invoke(GetAgentPluginInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentPluginResult>("oci:CloudBridge/getAgentPlugin:getAgentPlugin", args ?? new GetAgentPluginInvokeArgs(), options.WithDefaults());
     }
 
 

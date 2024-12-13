@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Secrets
         /// </summary>
         public static Output<GetSecretbundleVersionsResult> Invoke(GetSecretbundleVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecretbundleVersionsResult>("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", args ?? new GetSecretbundleVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Secretbundle Versions in Oracle Cloud Infrastructure Secrets service.
+        /// 
+        /// Lists all secret bundle versions for the specified secret.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecretbundleVersions = Oci.Secrets.GetSecretbundleVersions.Invoke(new()
+        ///     {
+        ///         SecretId = testSecret.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecretbundleVersionsResult> Invoke(GetSecretbundleVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecretbundleVersionsResult>("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", args ?? new GetSecretbundleVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

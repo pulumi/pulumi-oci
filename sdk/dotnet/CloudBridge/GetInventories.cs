@@ -66,6 +66,34 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         public static Output<GetInventoriesResult> Invoke(GetInventoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInventoriesResult>("oci:CloudBridge/getInventories:getInventories", args ?? new GetInventoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Inventories in Oracle Cloud Infrastructure Cloud Bridge service.
+        /// 
+        /// Returns a list of inventories.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInventories = Oci.CloudBridge.GetInventories.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         State = inventoryState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInventoriesResult> Invoke(GetInventoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInventoriesResult>("oci:CloudBridge/getInventories:getInventories", args ?? new GetInventoriesInvokeArgs(), options.WithDefaults());
     }
 
 

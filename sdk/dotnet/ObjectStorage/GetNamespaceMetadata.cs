@@ -16,6 +16,9 @@ namespace Pulumi.Oci.ObjectStorage
 
         public static Output<GetNamespaceMetadataResult> Invoke(GetNamespaceMetadataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceMetadataResult>("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", args ?? new GetNamespaceMetadataInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetNamespaceMetadataResult> Invoke(GetNamespaceMetadataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceMetadataResult>("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", args ?? new GetNamespaceMetadataInvokeArgs(), options.WithDefaults());
     }
 
 

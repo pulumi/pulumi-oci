@@ -88,21 +88,11 @@ type GetVolumeAttachmentsResult struct {
 }
 
 func GetVolumeAttachmentsOutput(ctx *pulumi.Context, args GetVolumeAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetVolumeAttachmentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVolumeAttachmentsResultOutput, error) {
 			args := v.(GetVolumeAttachmentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVolumeAttachmentsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getVolumeAttachments:getVolumeAttachments", args, &rv, "", opts...)
-			if err != nil {
-				return GetVolumeAttachmentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVolumeAttachmentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVolumeAttachmentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getVolumeAttachments:getVolumeAttachments", args, GetVolumeAttachmentsResultOutput{}, options).(GetVolumeAttachmentsResultOutput), nil
 		}).(GetVolumeAttachmentsResultOutput)
 }
 

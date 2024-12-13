@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseGroupResult> Invoke(GetManagedDatabaseGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseGroupResult>("oci:DatabaseManagement/getManagedDatabaseGroup:getManagedDatabaseGroup", args ?? new GetManagedDatabaseGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseGroup = Oci.DatabaseManagement.GetManagedDatabaseGroup.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseGroupId = testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseGroupResult> Invoke(GetManagedDatabaseGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseGroupResult>("oci:DatabaseManagement/getManagedDatabaseGroup:getManagedDatabaseGroup", args ?? new GetManagedDatabaseGroupInvokeArgs(), options.WithDefaults());
     }
 
 

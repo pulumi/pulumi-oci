@@ -108,21 +108,11 @@ type GetCatalogTypesResult struct {
 }
 
 func GetCatalogTypesOutput(ctx *pulumi.Context, args GetCatalogTypesOutputArgs, opts ...pulumi.InvokeOption) GetCatalogTypesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCatalogTypesResultOutput, error) {
 			args := v.(GetCatalogTypesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCatalogTypesResult
-			secret, err := ctx.InvokePackageRaw("oci:DataCatalog/getCatalogTypes:getCatalogTypes", args, &rv, "", opts...)
-			if err != nil {
-				return GetCatalogTypesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCatalogTypesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCatalogTypesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataCatalog/getCatalogTypes:getCatalogTypes", args, GetCatalogTypesResultOutput{}, options).(GetCatalogTypesResultOutput), nil
 		}).(GetCatalogTypesResultOutput)
 }
 

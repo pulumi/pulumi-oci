@@ -62,6 +62,32 @@ namespace Pulumi.Oci.VnMonitoring
         /// </summary>
         public static Output<GetPathAnalyzerTestResult> Invoke(GetPathAnalyzerTestInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPathAnalyzerTestResult>("oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest", args ?? new GetPathAnalyzerTestInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
+        /// 
+        /// Gets a `PathAnalyzerTest` using its identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPathAnalyzerTest = Oci.VnMonitoring.GetPathAnalyzerTest.Invoke(new()
+        ///     {
+        ///         PathAnalyzerTestId = testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPathAnalyzerTestResult> Invoke(GetPathAnalyzerTestInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPathAnalyzerTestResult>("oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest", args ?? new GetPathAnalyzerTestInvokeArgs(), options.WithDefaults());
     }
 
 

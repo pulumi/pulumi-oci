@@ -78,6 +78,40 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public static Output<GetInvokeRunsResult> Invoke(GetInvokeRunsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvokeRunsResult>("oci:DataFlow/getInvokeRuns:getInvokeRuns", args ?? new GetInvokeRunsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Invoke Runs in Oracle Cloud Infrastructure Data Flow service.
+        /// 
+        /// Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInvokeRuns = Oci.DataFlow.GetInvokeRuns.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ApplicationId = testApplication.Id,
+        ///         DisplayName = invokeRunDisplayName,
+        ///         DisplayNameStartsWith = invokeRunDisplayNameStartsWith,
+        ///         OwnerPrincipalId = testOwnerPrincipal.Id,
+        ///         PoolId = testPool.Id,
+        ///         State = invokeRunState,
+        ///         TimeCreatedGreaterThan = invokeRunTimeCreatedGreaterThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInvokeRunsResult> Invoke(GetInvokeRunsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvokeRunsResult>("oci:DataFlow/getInvokeRuns:getInvokeRuns", args ?? new GetInvokeRunsInvokeArgs(), options.WithDefaults());
     }
 
 

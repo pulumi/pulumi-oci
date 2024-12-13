@@ -89,21 +89,11 @@ type GetBootVolumeBackupsResult struct {
 }
 
 func GetBootVolumeBackupsOutput(ctx *pulumi.Context, args GetBootVolumeBackupsOutputArgs, opts ...pulumi.InvokeOption) GetBootVolumeBackupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBootVolumeBackupsResultOutput, error) {
 			args := v.(GetBootVolumeBackupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBootVolumeBackupsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getBootVolumeBackups:getBootVolumeBackups", args, &rv, "", opts...)
-			if err != nil {
-				return GetBootVolumeBackupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBootVolumeBackupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBootVolumeBackupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getBootVolumeBackups:getBootVolumeBackups", args, GetBootVolumeBackupsResultOutput{}, options).(GetBootVolumeBackupsResultOutput), nil
 		}).(GetBootVolumeBackupsResultOutput)
 }
 

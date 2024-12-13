@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogSetsCountResult> Invoke(GetLogSetsCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// This API returns the count of distinct log sets.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogSetsCount = Oci.LogAnalytics.GetLogSetsCount.Invoke(new()
+        ///     {
+        ///         Namespace = logSetsCountNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogSetsCountResult> Invoke(GetLogSetsCountInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountInvokeArgs(), options.WithDefaults());
     }
 
 

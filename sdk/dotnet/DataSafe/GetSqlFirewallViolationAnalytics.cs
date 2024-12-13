@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSqlFirewallViolationAnalyticsResult> Invoke(GetSqlFirewallViolationAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallViolationAnalyticsResult>("oci:DataSafe/getSqlFirewallViolationAnalytics:getSqlFirewallViolationAnalytics", args ?? new GetSqlFirewallViolationAnalyticsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sql Firewall Violation Analytics in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Returns the aggregation details of the SQL Firewall violations.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlFirewallViolationAnalytics = Oci.DataSafe.GetSqlFirewallViolationAnalytics.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sqlFirewallViolationAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = sqlFirewallViolationAnalyticCompartmentIdInSubtree,
+        ///         GroupBies = sqlFirewallViolationAnalyticGroupBy,
+        ///         QueryTimeZone = sqlFirewallViolationAnalyticQueryTimeZone,
+        ///         ScimQuery = sqlFirewallViolationAnalyticScimQuery,
+        ///         SummaryFields = sqlFirewallViolationAnalyticSummaryField,
+        ///         TimeEnded = sqlFirewallViolationAnalyticTimeEnded,
+        ///         TimeStarted = sqlFirewallViolationAnalyticTimeStarted,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlFirewallViolationAnalyticsResult> Invoke(GetSqlFirewallViolationAnalyticsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallViolationAnalyticsResult>("oci:DataSafe/getSqlFirewallViolationAnalytics:getSqlFirewallViolationAnalytics", args ?? new GetSqlFirewallViolationAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

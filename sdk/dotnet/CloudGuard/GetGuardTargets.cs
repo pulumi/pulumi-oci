@@ -102,6 +102,52 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetGuardTargetsResult> Invoke(GetGuardTargetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGuardTargetsResult>("oci:CloudGuard/getGuardTargets:getGuardTargets", args ?? new GetGuardTargetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a list of targets (TargetCollection resource with page of TargetSummary
+        /// resources) for the target identified by compartmentId. By default, only the target
+        /// associated with the compartment is returned. Setting compartmentIdInSubtree to true
+        /// returns the entire hierarchy of targets in subcompartments.
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        /// Principal doesn't have access to even one of the child compartments. This is valid only when
+        /// `compartmentIdInSubtree` is set to `true`.
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
+        /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargets = Oci.CloudGuard.GetGuardTargets.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetAccessLevel,
+        ///         CompartmentIdInSubtree = targetCompartmentIdInSubtree,
+        ///         DisplayName = targetDisplayName,
+        ///         IsNonSecurityZoneTargetsOnlyQuery = targetIsNonSecurityZoneTargetsOnlyQuery,
+        ///         State = targetState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetGuardTargetsResult> Invoke(GetGuardTargetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGuardTargetsResult>("oci:CloudGuard/getGuardTargets:getGuardTargets", args ?? new GetGuardTargetsInvokeArgs(), options.WithDefaults());
     }
 
 

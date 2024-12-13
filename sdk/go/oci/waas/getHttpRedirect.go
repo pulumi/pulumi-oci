@@ -82,21 +82,11 @@ type LookupHttpRedirectResult struct {
 }
 
 func LookupHttpRedirectOutput(ctx *pulumi.Context, args LookupHttpRedirectOutputArgs, opts ...pulumi.InvokeOption) LookupHttpRedirectResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupHttpRedirectResultOutput, error) {
 			args := v.(LookupHttpRedirectArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupHttpRedirectResult
-			secret, err := ctx.InvokePackageRaw("oci:Waas/getHttpRedirect:getHttpRedirect", args, &rv, "", opts...)
-			if err != nil {
-				return LookupHttpRedirectResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupHttpRedirectResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupHttpRedirectResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Waas/getHttpRedirect:getHttpRedirect", args, LookupHttpRedirectResultOutput{}, options).(LookupHttpRedirectResultOutput), nil
 		}).(LookupHttpRedirectResultOutput)
 }
 

@@ -108,6 +108,55 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetDataSourcesResult> Invoke(GetDataSourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataSourcesResult>("oci:CloudGuard/getDataSources:getDataSources", args ?? new GetDataSourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a list of all data sources (DataSource resources) for a compartment
+        /// identified by compartmentId. List is returned in a DataSourceCollection resource
+        /// with page of DataSourceSummary resources.
+        /// 
+        /// The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
+        /// The list does not include any subcompartments of the compartmentId passed.
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        /// Principal doesn't have access to even one of the child compartments. This is valid only when
+        /// `compartmentIdInSubtree` is set to `true`.
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+        /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataSources = Oci.CloudGuard.GetDataSources.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = dataSourceAccessLevel,
+        ///         CompartmentIdInSubtree = dataSourceCompartmentIdInSubtree,
+        ///         DataSourceFeedProvider = dataSourceDataSourceFeedProvider,
+        ///         DisplayName = dataSourceDisplayName,
+        ///         LoggingQueryType = dataSourceLoggingQueryType,
+        ///         State = dataSourceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDataSourcesResult> Invoke(GetDataSourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataSourcesResult>("oci:CloudGuard/getDataSources:getDataSources", args ?? new GetDataSourcesInvokeArgs(), options.WithDefaults());
     }
 
 

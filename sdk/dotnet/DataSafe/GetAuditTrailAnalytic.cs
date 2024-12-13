@@ -96,6 +96,49 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditTrailAnalyticResult> Invoke(GetAuditTrailAnalyticInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditTrailAnalyticResult>("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", args ?? new GetAuditTrailAnalyticInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Audit Trail Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of audit trail aggregated details . A audit trail aggregation helps understand the overall  state of trails.
+        /// As an example, it helps understand how many trails are running or stopped. It is especially useful to create dashboards or to support analytics.
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        /// Principal doesn't have access to even one of the child compartments. This is valid only when
+        /// `compartmentIdInSubtree` is set to `true`.
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies when you perform AuditTrailAnalytics on the
+        /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditTrailAnalytic = Oci.DataSafe.GetAuditTrailAnalytic.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditTrailAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = auditTrailAnalyticCompartmentIdInSubtree,
+        ///         GroupBies = auditTrailAnalyticGroupBy,
+        ///         TargetId = testTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditTrailAnalyticResult> Invoke(GetAuditTrailAnalyticInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditTrailAnalyticResult>("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", args ?? new GetAuditTrailAnalyticInvokeArgs(), options.WithDefaults());
     }
 
 

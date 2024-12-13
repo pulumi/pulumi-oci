@@ -72,6 +72,37 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwareSourceSoftwarePackagesResult> Invoke(GetSoftwareSourceSoftwarePackagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceSoftwarePackagesResult>("oci:OsManagementHub/getSoftwareSourceSoftwarePackages:getSoftwareSourceSoftwarePackages", args ?? new GetSoftwareSourceSoftwarePackagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Software Source Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists software packages in the specified software source.  Filter the list against a variety of criteria 
+        /// including but not limited to its name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSourceSoftwarePackages = Oci.OsManagementHub.GetSoftwareSourceSoftwarePackages.Invoke(new()
+        ///     {
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         DisplayName = softwareSourceSoftwarePackageDisplayName,
+        ///         DisplayNameContains = softwareSourceSoftwarePackageDisplayNameContains,
+        ///         IsLatest = softwareSourceSoftwarePackageIsLatest,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourceSoftwarePackagesResult> Invoke(GetSoftwareSourceSoftwarePackagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceSoftwarePackagesResult>("oci:OsManagementHub/getSoftwareSourceSoftwarePackages:getSoftwareSourceSoftwarePackages", args ?? new GetSoftwareSourceSoftwarePackagesInvokeArgs(), options.WithDefaults());
     }
 
 

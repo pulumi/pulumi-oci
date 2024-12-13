@@ -92,21 +92,11 @@ type LookupDeployArtifactResult struct {
 }
 
 func LookupDeployArtifactOutput(ctx *pulumi.Context, args LookupDeployArtifactOutputArgs, opts ...pulumi.InvokeOption) LookupDeployArtifactResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDeployArtifactResultOutput, error) {
 			args := v.(LookupDeployArtifactArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDeployArtifactResult
-			secret, err := ctx.InvokePackageRaw("oci:DevOps/getDeployArtifact:getDeployArtifact", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDeployArtifactResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDeployArtifactResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDeployArtifactResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DevOps/getDeployArtifact:getDeployArtifact", args, LookupDeployArtifactResultOutput{}, options).(LookupDeployArtifactResultOutput), nil
 		}).(LookupDeployArtifactResultOutput)
 }
 

@@ -69,21 +69,11 @@ type GetInstanceCredentialsResult struct {
 }
 
 func GetInstanceCredentialsOutput(ctx *pulumi.Context, args GetInstanceCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetInstanceCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInstanceCredentialsResultOutput, error) {
 			args := v.(GetInstanceCredentialsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInstanceCredentialsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getInstanceCredentials:getInstanceCredentials", args, &rv, "", opts...)
-			if err != nil {
-				return GetInstanceCredentialsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInstanceCredentialsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInstanceCredentialsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getInstanceCredentials:getInstanceCredentials", args, GetInstanceCredentialsResultOutput{}, options).(GetInstanceCredentialsResultOutput), nil
 		}).(GetInstanceCredentialsResultOutput)
 }
 

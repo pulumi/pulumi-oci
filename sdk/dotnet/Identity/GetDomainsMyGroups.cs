@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyGroupsResult> Invoke(GetDomainsMyGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyGroupsResult>("oci:Identity/getDomainsMyGroups:getDomainsMyGroups", args ?? new GetDomainsMyGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Groups in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for 'My Groups'.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyGroups = Oci.Identity.GetDomainsMyGroups.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyGroupCount = myGroupMyGroupCount,
+        ///         MyGroupFilter = myGroupMyGroupFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = myGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = myGroupResourceTypeSchemaVersion,
+        ///         StartIndex = myGroupStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyGroupsResult> Invoke(GetDomainsMyGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyGroupsResult>("oci:Identity/getDomainsMyGroups:getDomainsMyGroups", args ?? new GetDomainsMyGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

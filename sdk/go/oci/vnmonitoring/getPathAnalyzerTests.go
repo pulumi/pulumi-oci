@@ -79,21 +79,11 @@ type GetPathAnalyzerTestsResult struct {
 }
 
 func GetPathAnalyzerTestsOutput(ctx *pulumi.Context, args GetPathAnalyzerTestsOutputArgs, opts ...pulumi.InvokeOption) GetPathAnalyzerTestsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPathAnalyzerTestsResultOutput, error) {
 			args := v.(GetPathAnalyzerTestsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPathAnalyzerTestsResult
-			secret, err := ctx.InvokePackageRaw("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", args, &rv, "", opts...)
-			if err != nil {
-				return GetPathAnalyzerTestsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPathAnalyzerTestsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPathAnalyzerTestsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:VnMonitoring/getPathAnalyzerTests:GetPathAnalyzerTests", args, GetPathAnalyzerTestsResultOutput{}, options).(GetPathAnalyzerTestsResultOutput), nil
 		}).(GetPathAnalyzerTestsResultOutput)
 }
 

@@ -78,6 +78,40 @@ namespace Pulumi.Oci.OneSubsription
         /// </summary>
         public static Output<GetSubscriptionsResult> Invoke(GetSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionsResult>("oci:OneSubsription/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
+        /// 
+        /// This list API returns all subscriptions for a given plan number or subscription id or buyer email 
+        /// and provides additional parameters to include ratecard and commitment details.
+        /// This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw
+        /// a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSubscriptions = Oci.OneSubsription.GetSubscriptions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         BuyerEmail = subscriptionBuyerEmail,
+        ///         IsCommitInfoRequired = subscriptionIsCommitInfoRequired,
+        ///         PlanNumber = subscriptionPlanNumber,
+        ///         SubscriptionId = testSubscription.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSubscriptionsResult> Invoke(GetSubscriptionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionsResult>("oci:OneSubsription/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

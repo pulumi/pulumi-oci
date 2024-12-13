@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Opa
         /// </summary>
         public static Output<GetOpaInstancesResult> Invoke(GetOpaInstancesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOpaInstancesResult>("oci:Opa/getOpaInstances:getOpaInstances", args ?? new GetOpaInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Opa Instances in Oracle Cloud Infrastructure Opa service.
+        /// 
+        /// Returns a list of OpaInstances.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOpaInstances = Oci.Opa.GetOpaInstances.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = opaInstanceDisplayName,
+        ///         Id = opaInstanceId,
+        ///         State = opaInstanceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOpaInstancesResult> Invoke(GetOpaInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOpaInstancesResult>("oci:Opa/getOpaInstances:getOpaInstances", args ?? new GetOpaInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

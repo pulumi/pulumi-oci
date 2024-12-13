@@ -87,21 +87,11 @@ type GetVirtualServiceRouteTablesResult struct {
 }
 
 func GetVirtualServiceRouteTablesOutput(ctx *pulumi.Context, args GetVirtualServiceRouteTablesOutputArgs, opts ...pulumi.InvokeOption) GetVirtualServiceRouteTablesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVirtualServiceRouteTablesResultOutput, error) {
 			args := v.(GetVirtualServiceRouteTablesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVirtualServiceRouteTablesResult
-			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getVirtualServiceRouteTables:getVirtualServiceRouteTables", args, &rv, "", opts...)
-			if err != nil {
-				return GetVirtualServiceRouteTablesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVirtualServiceRouteTablesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVirtualServiceRouteTablesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ServiceMesh/getVirtualServiceRouteTables:getVirtualServiceRouteTables", args, GetVirtualServiceRouteTablesResultOutput{}, options).(GetVirtualServiceRouteTablesResultOutput), nil
 		}).(GetVirtualServiceRouteTablesResultOutput)
 }
 

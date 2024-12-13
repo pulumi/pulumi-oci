@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyCompletedApprovalResult> Invoke(GetDomainsMyCompletedApprovalInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCompletedApprovalResult>("oci:Identity/getDomainsMyCompletedApproval:getDomainsMyCompletedApproval", args ?? new GetDomainsMyCompletedApprovalInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific My Completed Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get My MyCompletedApproval
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyCompletedApproval = Oci.Identity.GetDomainsMyCompletedApproval.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCompletedApprovalId = testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.Id,
+        ///         Authorization = myCompletedApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myCompletedApprovalResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyCompletedApprovalResult> Invoke(GetDomainsMyCompletedApprovalInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCompletedApprovalResult>("oci:Identity/getDomainsMyCompletedApproval:getDomainsMyCompletedApproval", args ?? new GetDomainsMyCompletedApprovalInvokeArgs(), options.WithDefaults());
     }
 
 

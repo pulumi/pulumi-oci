@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDatabasePdbConversionHistoryEntriesResult> Invoke(GetDatabasePdbConversionHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabasePdbConversionHistoryEntriesResult>("oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries", args ?? new GetDatabasePdbConversionHistoryEntriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabasePdbConversionHistoryEntries = Oci.Database.GetDatabasePdbConversionHistoryEntries.Invoke(new()
+        ///     {
+        ///         DatabaseId = testDatabase.Id,
+        ///         PdbConversionAction = databasePdbConversionHistoryEntryPdbConversionAction,
+        ///         State = databasePdbConversionHistoryEntryState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabasePdbConversionHistoryEntriesResult> Invoke(GetDatabasePdbConversionHistoryEntriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabasePdbConversionHistoryEntriesResult>("oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries", args ?? new GetDatabasePdbConversionHistoryEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

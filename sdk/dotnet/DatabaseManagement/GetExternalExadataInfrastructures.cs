@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalExadataInfrastructuresResult> Invoke(GetExternalExadataInfrastructuresInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataInfrastructuresResult>("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args ?? new GetExternalExadataInfrastructuresInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the Exadata infrastructure resources in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalExadataInfrastructures = Oci.DatabaseManagement.GetExternalExadataInfrastructures.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = externalExadataInfrastructureDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalExadataInfrastructuresResult> Invoke(GetExternalExadataInfrastructuresInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataInfrastructuresResult>("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args ?? new GetExternalExadataInfrastructuresInvokeArgs(), options.WithDefaults());
     }
 
 

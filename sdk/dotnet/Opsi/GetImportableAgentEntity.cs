@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetImportableAgentEntityResult> Invoke(GetImportableAgentEntityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImportableAgentEntityResult>("oci:Opsi/getImportableAgentEntity:getImportableAgentEntity", args ?? new GetImportableAgentEntityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Importable Agent Entity resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of agent entities available to add a new hostInsight.  An agent entity is "available"
+        /// and will be shown if all the following conditions are true:
+        ///    1.  The agent OCID is not already being used for an existing hostInsight.
+        ///    2.  The agent availabilityStatus = 'ACTIVE'
+        ///    3.  The agent lifecycleState = 'ACTIVE'
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testImportableAgentEntity = Oci.Opsi.GetImportableAgentEntity.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetImportableAgentEntityResult> Invoke(GetImportableAgentEntityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetImportableAgentEntityResult>("oci:Opsi/getImportableAgentEntity:getImportableAgentEntity", args ?? new GetImportableAgentEntityInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetResolverEndpointResult> Invoke(GetResolverEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResolverEndpointResult>("oci:Dns/getResolverEndpoint:getResolverEndpoint", args ?? new GetResolverEndpointInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Gets information about a specific resolver endpoint.
+        /// 
+        /// Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+        /// in a `404` response to be consistent with other operations of the API.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResolverEndpoint = Oci.Dns.GetResolverEndpoint.Invoke(new()
+        ///     {
+        ///         ResolverEndpointName = testResolverEndpointOciDnsResolverEndpoint.Name,
+        ///         ResolverId = testResolver.Id,
+        ///         Scope = "PRIVATE",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResolverEndpointResult> Invoke(GetResolverEndpointInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResolverEndpointResult>("oci:Dns/getResolverEndpoint:getResolverEndpoint", args ?? new GetResolverEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

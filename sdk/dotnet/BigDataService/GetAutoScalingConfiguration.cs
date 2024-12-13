@@ -66,6 +66,34 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public static Output<GetAutoScalingConfigurationResult> Invoke(GetAutoScalingConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationResult>("oci:BigDataService/getAutoScalingConfiguration:getAutoScalingConfiguration", args ?? new GetAutoScalingConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+        /// 
+        /// Returns details of the autoscale configuration identified by the given ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutoScalingConfiguration = Oci.BigDataService.GetAutoScalingConfiguration.Invoke(new()
+        ///     {
+        ///         AutoScalingConfigurationId = testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.Id,
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutoScalingConfigurationResult> Invoke(GetAutoScalingConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationResult>("oci:BigDataService/getAutoScalingConfiguration:getAutoScalingConfiguration", args ?? new GetAutoScalingConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

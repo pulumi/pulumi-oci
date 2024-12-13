@@ -91,21 +91,11 @@ type GetSecurityZonesResult struct {
 }
 
 func GetSecurityZonesOutput(ctx *pulumi.Context, args GetSecurityZonesOutputArgs, opts ...pulumi.InvokeOption) GetSecurityZonesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSecurityZonesResultOutput, error) {
 			args := v.(GetSecurityZonesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSecurityZonesResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getSecurityZones:getSecurityZones", args, &rv, "", opts...)
-			if err != nil {
-				return GetSecurityZonesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSecurityZonesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSecurityZonesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudGuard/getSecurityZones:getSecurityZones", args, GetSecurityZonesResultOutput{}, options).(GetSecurityZonesResultOutput), nil
 		}).(GetSecurityZonesResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetExadataInsightResult> Invoke(GetExadataInsightInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInsightResult>("oci:Opsi/getExadataInsight:getExadataInsight", args ?? new GetExadataInsightInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets details of an Exadata insight.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExadataInsight = Oci.Opsi.GetExadataInsight.Invoke(new()
+        ///     {
+        ///         ExadataInsightId = testExadataInsightOciOpsiExadataInsight.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExadataInsightResult> Invoke(GetExadataInsightInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataInsightResult>("oci:Opsi/getExadataInsight:getExadataInsight", args ?? new GetExadataInsightInvokeArgs(), options.WithDefaults());
     }
 
 

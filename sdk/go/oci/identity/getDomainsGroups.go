@@ -104,21 +104,11 @@ type GetDomainsGroupsResult struct {
 }
 
 func GetDomainsGroupsOutput(ctx *pulumi.Context, args GetDomainsGroupsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsGroupsResultOutput, error) {
 			args := v.(GetDomainsGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsGroups:getDomainsGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsGroups:getDomainsGroups", args, GetDomainsGroupsResultOutput{}, options).(GetDomainsGroupsResultOutput), nil
 		}).(GetDomainsGroupsResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public static Output<GetDbSystemConnectionDetailResult> Invoke(GetDbSystemConnectionDetailInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemConnectionDetailResult>("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", args ?? new GetDbSystemConnectionDetailInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
+        /// 
+        /// Gets the database system connection details.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbSystemConnectionDetail = Oci.Psql.GetDbSystemConnectionDetail.Invoke(new()
+        ///     {
+        ///         DbSystemId = testDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbSystemConnectionDetailResult> Invoke(GetDbSystemConnectionDetailInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemConnectionDetailResult>("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", args ?? new GetDbSystemConnectionDetailInvokeArgs(), options.WithDefaults());
     }
 
 

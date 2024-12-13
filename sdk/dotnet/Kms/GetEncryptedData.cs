@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public static Output<GetEncryptedDataResult> Invoke(GetEncryptedDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEncryptedDataResult>("oci:Kms/getEncryptedData:getEncryptedData", args ?? new GetEncryptedDataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `oci.Kms.EncryptedData` data source provides details about a specific EncryptedData
+        /// 
+        /// Encrypts data using the given EncryptDataDetails resource. 
+        /// Plaintext included in the example request is a base64-encoded value 
+        /// of a UTF-8 string.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEncryptedData = Oci.Kms.GetEncryptedData.Invoke(new()
+        ///     {
+        ///         CryptoEndpoint = encryptedDataCryptoEndpoint,
+        ///         KeyId = testKey.Id,
+        ///         Plaintext = encryptedDataPlaintext,
+        ///         AssociatedData = encryptedDataAssociatedData,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEncryptedDataResult> Invoke(GetEncryptedDataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEncryptedDataResult>("oci:Kms/getEncryptedData:getEncryptedData", args ?? new GetEncryptedDataInvokeArgs(), options.WithDefaults());
     }
 
 

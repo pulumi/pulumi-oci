@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetPluggableDatabaseResult> Invoke(GetPluggableDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPluggableDatabaseResult>("oci:Database/getPluggableDatabase:getPluggableDatabase", args ?? new GetPluggableDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified pluggable database.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPluggableDatabase = Oci.Database.GetPluggableDatabase.Invoke(new()
+        ///     {
+        ///         PluggableDatabaseId = testPluggableDatabaseOciDatabasePluggableDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPluggableDatabaseResult> Invoke(GetPluggableDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPluggableDatabaseResult>("oci:Database/getPluggableDatabase:getPluggableDatabase", args ?? new GetPluggableDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

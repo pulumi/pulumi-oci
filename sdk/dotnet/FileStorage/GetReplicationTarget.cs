@@ -62,6 +62,32 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public static Output<GetReplicationTargetResult> Invoke(GetReplicationTargetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicationTargetResult>("oci:FileStorage/getReplicationTarget:getReplicationTarget", args ?? new GetReplicationTargetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Replication Target resource in Oracle Cloud Infrastructure File Storage service.
+        /// 
+        /// Gets the specified replication target's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReplicationTarget = Oci.FileStorage.GetReplicationTarget.Invoke(new()
+        ///     {
+        ///         ReplicationTargetId = testReplicationTargetOciFileStorageReplicationTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReplicationTargetResult> Invoke(GetReplicationTargetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicationTargetResult>("oci:FileStorage/getReplicationTarget:getReplicationTarget", args ?? new GetReplicationTargetInvokeArgs(), options.WithDefaults());
     }
 
 

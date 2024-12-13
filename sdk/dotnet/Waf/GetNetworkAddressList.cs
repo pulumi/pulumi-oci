@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Waf
         /// </summary>
         public static Output<GetNetworkAddressListResult> Invoke(GetNetworkAddressListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkAddressListResult>("oci:Waf/getNetworkAddressList:getNetworkAddressList", args ?? new GetNetworkAddressListInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Network Address List resource in Oracle Cloud Infrastructure Waf service.
+        /// 
+        /// Gets a NetworkAddressList by OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkAddressList = Oci.Waf.GetNetworkAddressList.Invoke(new()
+        ///     {
+        ///         NetworkAddressListId = testNetworkAddressListOciWafNetworkAddressList.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkAddressListResult> Invoke(GetNetworkAddressListInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkAddressListResult>("oci:Waf/getNetworkAddressList:getNetworkAddressList", args ?? new GetNetworkAddressListInvokeArgs(), options.WithDefaults());
     }
 
 

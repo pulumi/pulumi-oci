@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> Invoke(GetJavaDownloadsJavaLicenseAcceptanceRecordInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaLicenseAcceptanceRecordResult>("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord", args ?? new GetJavaDownloadsJavaLicenseAcceptanceRecordInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+        /// 
+        /// Returns a specific Java license acceptance record in a tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaLicenseAcceptanceRecord = Oci.Jms.GetJavaDownloadsJavaLicenseAcceptanceRecord.Invoke(new()
+        ///     {
+        ///         JavaLicenseAcceptanceRecordId = testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> Invoke(GetJavaDownloadsJavaLicenseAcceptanceRecordInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaLicenseAcceptanceRecordResult>("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord", args ?? new GetJavaDownloadsJavaLicenseAcceptanceRecordInvokeArgs(), options.WithDefaults());
     }
 
 

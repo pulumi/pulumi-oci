@@ -68,21 +68,11 @@ type GetFastLaunchJobConfigsResult struct {
 }
 
 func GetFastLaunchJobConfigsOutput(ctx *pulumi.Context, args GetFastLaunchJobConfigsOutputArgs, opts ...pulumi.InvokeOption) GetFastLaunchJobConfigsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFastLaunchJobConfigsResultOutput, error) {
 			args := v.(GetFastLaunchJobConfigsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFastLaunchJobConfigsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args, &rv, "", opts...)
-			if err != nil {
-				return GetFastLaunchJobConfigsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFastLaunchJobConfigsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFastLaunchJobConfigsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args, GetFastLaunchJobConfigsResultOutput{}, options).(GetFastLaunchJobConfigsResultOutput), nil
 		}).(GetFastLaunchJobConfigsResultOutput)
 }
 

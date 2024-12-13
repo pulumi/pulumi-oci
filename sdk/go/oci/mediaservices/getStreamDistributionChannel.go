@@ -85,21 +85,11 @@ type LookupStreamDistributionChannelResult struct {
 }
 
 func LookupStreamDistributionChannelOutput(ctx *pulumi.Context, args LookupStreamDistributionChannelOutputArgs, opts ...pulumi.InvokeOption) LookupStreamDistributionChannelResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupStreamDistributionChannelResultOutput, error) {
 			args := v.(LookupStreamDistributionChannelArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupStreamDistributionChannelResult
-			secret, err := ctx.InvokePackageRaw("oci:MediaServices/getStreamDistributionChannel:getStreamDistributionChannel", args, &rv, "", opts...)
-			if err != nil {
-				return LookupStreamDistributionChannelResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupStreamDistributionChannelResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupStreamDistributionChannelResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:MediaServices/getStreamDistributionChannel:getStreamDistributionChannel", args, LookupStreamDistributionChannelResultOutput{}, options).(LookupStreamDistributionChannelResultOutput), nil
 		}).(LookupStreamDistributionChannelResultOutput)
 }
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> Invoke(GetCloudExadataInfrastructureUnAllocatedResourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudExadataInfrastructureUnAllocatedResourceResult>("oci:Database/getCloudExadataInfrastructureUnAllocatedResource:getCloudExadataInfrastructureUnAllocatedResource", args ?? new GetCloudExadataInfrastructureUnAllocatedResourceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets unallocated resources information for the specified Cloud Exadata infrastructure.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudExadataInfrastructureUnAllocatedResource = Oci.Database.GetCloudExadataInfrastructureUnAllocatedResource.Invoke(new()
+        ///     {
+        ///         CloudExadataInfrastructureId = testCloudExadataInfrastructure.Id,
+        ///         DbServers = cloudExadataInfrastructureUnAllocatedResourceDbServers,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCloudExadataInfrastructureUnAllocatedResourceResult> Invoke(GetCloudExadataInfrastructureUnAllocatedResourceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudExadataInfrastructureUnAllocatedResourceResult>("oci:Database/getCloudExadataInfrastructureUnAllocatedResource:getCloudExadataInfrastructureUnAllocatedResource", args ?? new GetCloudExadataInfrastructureUnAllocatedResourceInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -80,21 +80,11 @@ type GetSecurityPolicyReportRoleGrantPathsResult struct {
 }
 
 func GetSecurityPolicyReportRoleGrantPathsOutput(ctx *pulumi.Context, args GetSecurityPolicyReportRoleGrantPathsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyReportRoleGrantPathsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSecurityPolicyReportRoleGrantPathsResultOutput, error) {
 			args := v.(GetSecurityPolicyReportRoleGrantPathsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSecurityPolicyReportRoleGrantPathsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", args, &rv, "", opts...)
-			if err != nil {
-				return GetSecurityPolicyReportRoleGrantPathsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSecurityPolicyReportRoleGrantPathsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSecurityPolicyReportRoleGrantPathsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", args, GetSecurityPolicyReportRoleGrantPathsResultOutput{}, options).(GetSecurityPolicyReportRoleGrantPathsResultOutput), nil
 		}).(GetSecurityPolicyReportRoleGrantPathsResultOutput)
 }
 

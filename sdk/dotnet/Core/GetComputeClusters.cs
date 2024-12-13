@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeClustersResult> Invoke(GetComputeClustersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeClustersResult>("oci:Core/getComputeClusters:getComputeClusters", args ?? new GetComputeClustersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the compute clusters in the specified compartment.
+        /// A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeClusters = Oci.Core.GetComputeClusters.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeClusterAvailabilityDomain,
+        ///         DisplayName = computeClusterDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeClustersResult> Invoke(GetComputeClustersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeClustersResult>("oci:Core/getComputeClusters:getComputeClusters", args ?? new GetComputeClustersInvokeArgs(), options.WithDefaults());
     }
 
 

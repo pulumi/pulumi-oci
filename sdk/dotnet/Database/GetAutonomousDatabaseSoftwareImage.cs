@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabaseSoftwareImageResult> Invoke(GetAutonomousDatabaseSoftwareImageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseSoftwareImageResult>("oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage", args ?? new GetAutonomousDatabaseSoftwareImageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified Autonomous Database Software Image.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseSoftwareImage = Oci.Database.GetAutonomousDatabaseSoftwareImage.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseSoftwareImageId = testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabaseSoftwareImageResult> Invoke(GetAutonomousDatabaseSoftwareImageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseSoftwareImageResult>("oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage", args ?? new GetAutonomousDatabaseSoftwareImageInvokeArgs(), options.WithDefaults());
     }
 
 

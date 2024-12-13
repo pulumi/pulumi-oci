@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetConsoleHistoriesResult> Invoke(GetConsoleHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConsoleHistoriesResult>("oci:Core/getConsoleHistories:getConsoleHistories", args ?? new GetConsoleHistoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the console history metadata for the specified compartment or instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConsoleHistories = Oci.Core.GetConsoleHistories.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = consoleHistoryAvailabilityDomain,
+        ///         InstanceId = testInstance.Id,
+        ///         State = consoleHistoryState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConsoleHistoriesResult> Invoke(GetConsoleHistoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConsoleHistoriesResult>("oci:Core/getConsoleHistories:getConsoleHistories", args ?? new GetConsoleHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

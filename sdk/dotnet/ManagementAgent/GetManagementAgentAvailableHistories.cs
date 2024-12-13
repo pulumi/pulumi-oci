@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public static Output<GetManagementAgentAvailableHistoriesResult> Invoke(GetManagementAgentAvailableHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentAvailableHistoriesResult>("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", args ?? new GetManagementAgentAvailableHistoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
+        /// 
+        /// Lists the availability history records of Management Agent
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementAgentAvailableHistories = Oci.ManagementAgent.GetManagementAgentAvailableHistories.Invoke(new()
+        ///     {
+        ///         ManagementAgentId = testManagementAgent.Id,
+        ///         TimeAvailabilityStatusEndedGreaterThan = managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan,
+        ///         TimeAvailabilityStatusStartedLessThan = managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementAgentAvailableHistoriesResult> Invoke(GetManagementAgentAvailableHistoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentAvailableHistoriesResult>("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", args ?? new GetManagementAgentAvailableHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

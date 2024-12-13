@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataLabellingService
         /// </summary>
         public static Output<GetAnnotationFormatResult> Invoke(GetAnnotationFormatInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnnotationFormatResult>("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args ?? new GetAnnotationFormatInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Annotation Format resource in Oracle Cloud Infrastructure Data Labeling Service service.
+        /// 
+        /// These are a static list in a given region.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAnnotationFormat = Oci.DataLabellingService.GetAnnotationFormat.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAnnotationFormatResult> Invoke(GetAnnotationFormatInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnnotationFormatResult>("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args ?? new GetAnnotationFormatInvokeArgs(), options.WithDefaults());
     }
 
 

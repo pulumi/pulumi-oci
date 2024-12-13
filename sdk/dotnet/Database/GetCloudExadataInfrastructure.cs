@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetCloudExadataInfrastructureResult> Invoke(GetCloudExadataInfrastructureInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudExadataInfrastructureResult>("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", args ?? new GetCloudExadataInfrastructureInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudExadataInfrastructure = Oci.Database.GetCloudExadataInfrastructure.Invoke(new()
+        ///     {
+        ///         CloudExadataInfrastructureId = testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCloudExadataInfrastructureResult> Invoke(GetCloudExadataInfrastructureInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudExadataInfrastructureResult>("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", args ?? new GetCloudExadataInfrastructureInvokeArgs(), options.WithDefaults());
     }
 
 

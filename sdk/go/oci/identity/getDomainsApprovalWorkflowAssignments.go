@@ -106,21 +106,11 @@ type GetDomainsApprovalWorkflowAssignmentsResult struct {
 }
 
 func GetDomainsApprovalWorkflowAssignmentsOutput(ctx *pulumi.Context, args GetDomainsApprovalWorkflowAssignmentsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsApprovalWorkflowAssignmentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsApprovalWorkflowAssignmentsResultOutput, error) {
 			args := v.(GetDomainsApprovalWorkflowAssignmentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsApprovalWorkflowAssignmentsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsApprovalWorkflowAssignments:getDomainsApprovalWorkflowAssignments", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsApprovalWorkflowAssignmentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsApprovalWorkflowAssignmentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsApprovalWorkflowAssignmentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsApprovalWorkflowAssignments:getDomainsApprovalWorkflowAssignments", args, GetDomainsApprovalWorkflowAssignmentsResultOutput{}, options).(GetDomainsApprovalWorkflowAssignmentsResultOutput), nil
 		}).(GetDomainsApprovalWorkflowAssignmentsResultOutput)
 }
 

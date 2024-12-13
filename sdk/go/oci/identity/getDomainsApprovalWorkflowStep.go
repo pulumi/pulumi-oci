@@ -120,21 +120,11 @@ type LookupDomainsApprovalWorkflowStepResult struct {
 }
 
 func LookupDomainsApprovalWorkflowStepOutput(ctx *pulumi.Context, args LookupDomainsApprovalWorkflowStepOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsApprovalWorkflowStepResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsApprovalWorkflowStepResultOutput, error) {
 			args := v.(LookupDomainsApprovalWorkflowStepArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsApprovalWorkflowStepResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsApprovalWorkflowStep:getDomainsApprovalWorkflowStep", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsApprovalWorkflowStepResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsApprovalWorkflowStepResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsApprovalWorkflowStepResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsApprovalWorkflowStep:getDomainsApprovalWorkflowStep", args, LookupDomainsApprovalWorkflowStepResultOutput{}, options).(LookupDomainsApprovalWorkflowStepResultOutput), nil
 		}).(LookupDomainsApprovalWorkflowStepResultOutput)
 }
 

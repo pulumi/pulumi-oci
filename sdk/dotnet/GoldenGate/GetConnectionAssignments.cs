@@ -70,6 +70,36 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetConnectionAssignmentsResult> Invoke(GetConnectionAssignmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectionAssignmentsResult>("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", args ?? new GetConnectionAssignmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Connection Assignments in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Lists the Connection Assignments in the compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnectionAssignments = Oci.GoldenGate.GetConnectionAssignments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ConnectionId = testConnection.Id,
+        ///         DeploymentId = testDeployment.Id,
+        ///         Name = connectionAssignmentName,
+        ///         State = connectionAssignmentState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConnectionAssignmentsResult> Invoke(GetConnectionAssignmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectionAssignmentsResult>("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", args ?? new GetConnectionAssignmentsInvokeArgs(), options.WithDefaults());
     }
 
 

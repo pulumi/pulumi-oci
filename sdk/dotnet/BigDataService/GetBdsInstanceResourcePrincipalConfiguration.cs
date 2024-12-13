@@ -66,6 +66,34 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public static Output<GetBdsInstanceResourcePrincipalConfigurationResult> Invoke(GetBdsInstanceResourcePrincipalConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceResourcePrincipalConfigurationResult>("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", args ?? new GetBdsInstanceResourcePrincipalConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+        /// 
+        /// Returns details of the resourcePrincipalConfiguration identified by the given ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBdsInstanceResourcePrincipalConfiguration = Oci.BigDataService.GetBdsInstanceResourcePrincipalConfiguration.Invoke(new()
+        ///     {
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///         ResourcePrincipalConfigurationId = testConfiguration.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBdsInstanceResourcePrincipalConfigurationResult> Invoke(GetBdsInstanceResourcePrincipalConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceResourcePrincipalConfigurationResult>("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", args ?? new GetBdsInstanceResourcePrincipalConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

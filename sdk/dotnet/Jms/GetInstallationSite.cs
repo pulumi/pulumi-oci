@@ -84,6 +84,43 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetInstallationSiteResult> Invoke(GetInstallationSiteInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstallationSiteResult>("oci:Jms/getInstallationSite:getInstallationSite", args ?? new GetInstallationSiteInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Installation Site resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// List Java installation sites in a Fleet filtered by query parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetInstallationSite = Oci.Jms.GetInstallationSite.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         ApplicationId = fleetInstallationSiteApplicationId,
+        ///         InstallationPath = fleetInstallationSiteInstallationPath,
+        ///         JreDistribution = fleetInstallationSiteJreDistribution,
+        ///         JreSecurityStatus = fleetInstallationSiteJreSecurityStatus,
+        ///         JreVendor = fleetInstallationSiteJreVendor,
+        ///         JreVersion = fleetInstallationSiteJreVersion,
+        ///         ManagedInstanceId = fleetInstallationSiteManagedInstanceId,
+        ///         OsFamilies = fleetInstallationSiteOsFamily,
+        ///         PathContains = fleetInstallationSitePathContains,
+        ///         TimeEnd = fleetInstallationSiteTimeEnd,
+        ///         TimeStart = fleetInstallationSiteTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstallationSiteResult> Invoke(GetInstallationSiteInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstallationSiteResult>("oci:Jms/getInstallationSite:getInstallationSite", args ?? new GetInstallationSiteInvokeArgs(), options.WithDefaults());
     }
 
 

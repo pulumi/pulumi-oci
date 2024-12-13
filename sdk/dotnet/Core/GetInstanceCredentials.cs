@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstanceCredentialsResult> Invoke(GetInstanceCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceCredentialsResult>("oci:Core/getInstanceCredentials:getInstanceCredentials", args ?? new GetInstanceCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Instance Credential resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
+        /// For certain operating systems, users will be forced to change the initial credentials.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstanceCredential = Oci.Core.GetInstanceCredentials.Invoke(new()
+        ///     {
+        ///         InstanceId = testInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstanceCredentialsResult> Invoke(GetInstanceCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceCredentialsResult>("oci:Core/getInstanceCredentials:getInstanceCredentials", args ?? new GetInstanceCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -93,21 +93,11 @@ type GetSecretbundleResult struct {
 }
 
 func GetSecretbundleOutput(ctx *pulumi.Context, args GetSecretbundleOutputArgs, opts ...pulumi.InvokeOption) GetSecretbundleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSecretbundleResultOutput, error) {
 			args := v.(GetSecretbundleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSecretbundleResult
-			secret, err := ctx.InvokePackageRaw("oci:Secrets/getSecretbundle:getSecretbundle", args, &rv, "", opts...)
-			if err != nil {
-				return GetSecretbundleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSecretbundleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSecretbundleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Secrets/getSecretbundle:getSecretbundle", args, GetSecretbundleResultOutput{}, options).(GetSecretbundleResultOutput), nil
 		}).(GetSecretbundleResultOutput)
 }
 

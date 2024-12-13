@@ -74,6 +74,38 @@ namespace Pulumi.Oci.ApmTraces
         /// </summary>
         public static Output<GetTraceAggregatedSnapshotDataResult> Invoke(GetTraceAggregatedSnapshotDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTraceAggregatedSnapshotDataResult>("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", args ?? new GetTraceAggregatedSnapshotDataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Trace Aggregated Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
+        /// 
+        /// Gets the aggregated snapshot identified by trace ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTraceAggregatedSnapshotData = Oci.ApmTraces.GetTraceAggregatedSnapshotData.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         TraceKey = traceAggregatedSnapshotDataTraceKey,
+        ///         ServerName = traceAggregatedSnapshotDataServerName,
+        ///         ServiceName = testService.Name,
+        ///         SpanKey = traceAggregatedSnapshotDataSpanKey,
+        ///         SpanName = traceAggregatedSnapshotDataSpanName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTraceAggregatedSnapshotDataResult> Invoke(GetTraceAggregatedSnapshotDataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTraceAggregatedSnapshotDataResult>("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", args ?? new GetTraceAggregatedSnapshotDataInvokeArgs(), options.WithDefaults());
     }
 
 

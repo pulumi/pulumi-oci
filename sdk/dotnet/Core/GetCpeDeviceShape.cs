@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCpeDeviceShapeResult> Invoke(GetCpeDeviceShapeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCpeDeviceShapeResult>("oci:Core/getCpeDeviceShape:getCpeDeviceShape", args ?? new GetCpeDeviceShapeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cpe Device Shape resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the detailed information about the specified CPE device type. This might include a set of questions
+        /// that are specific to the particular CPE device type. The customer must supply answers to those questions
+        /// (see [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig)).
+        /// The service merges the answers with a template of other information for the CPE device type. The following
+        /// operations return the merged content:
+        /// 
+        ///   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+        ///   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+        ///   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCpeDeviceShape = Oci.Core.GetCpeDeviceShape.Invoke(new()
+        ///     {
+        ///         CpeDeviceShapeId = testCpeDeviceShapeOciCoreCpeDeviceShape.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCpeDeviceShapeResult> Invoke(GetCpeDeviceShapeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCpeDeviceShapeResult>("oci:Core/getCpeDeviceShape:getCpeDeviceShape", args ?? new GetCpeDeviceShapeInvokeArgs(), options.WithDefaults());
     }
 
 

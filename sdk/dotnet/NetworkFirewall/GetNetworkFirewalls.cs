@@ -74,6 +74,38 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public static Output<GetNetworkFirewallsResult> Invoke(GetNetworkFirewallsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallsResult>("oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls", args ?? new GetNetworkFirewallsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Firewalls in Oracle Cloud Infrastructure Network Firewall service.
+        /// 
+        /// Returns a list of NetworkFirewalls.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewalls = Oci.NetworkFirewall.GetNetworkFirewalls.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = networkFirewallAvailabilityDomain,
+        ///         DisplayName = networkFirewallDisplayName,
+        ///         Id = networkFirewallId,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         State = networkFirewallState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkFirewallsResult> Invoke(GetNetworkFirewallsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallsResult>("oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls", args ?? new GetNetworkFirewallsInvokeArgs(), options.WithDefaults());
     }
 
 

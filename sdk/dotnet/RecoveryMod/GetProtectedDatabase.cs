@@ -62,6 +62,32 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         public static Output<GetProtectedDatabaseResult> Invoke(GetProtectedDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabaseResult>("oci:RecoveryMod/getProtectedDatabase:getProtectedDatabase", args ?? new GetProtectedDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Protected Database resource in Oracle Cloud Infrastructure Recovery service.
+        /// 
+        /// Gets information about a specified protected database.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProtectedDatabase = Oci.RecoveryMod.GetProtectedDatabase.Invoke(new()
+        ///     {
+        ///         ProtectedDatabaseId = testProtectedDatabaseOciRecoveryProtectedDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProtectedDatabaseResult> Invoke(GetProtectedDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabaseResult>("oci:RecoveryMod/getProtectedDatabase:getProtectedDatabase", args ?? new GetProtectedDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

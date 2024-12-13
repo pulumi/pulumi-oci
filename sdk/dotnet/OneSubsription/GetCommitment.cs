@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OneSubsription
         /// </summary>
         public static Output<GetCommitmentResult> Invoke(GetCommitmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCommitmentResult>("oci:OneSubsription/getCommitment:getCommitment", args ?? new GetCommitmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
+        /// 
+        /// This API returns the commitment details corresponding to the id provided
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCommitment = Oci.OneSubsription.GetCommitment.Invoke(new()
+        ///     {
+        ///         CommitmentId = testCommitmentOciOnesubscriptionCommitment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCommitmentResult> Invoke(GetCommitmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCommitmentResult>("oci:OneSubsription/getCommitment:getCommitment", args ?? new GetCommitmentInvokeArgs(), options.WithDefaults());
     }
 
 

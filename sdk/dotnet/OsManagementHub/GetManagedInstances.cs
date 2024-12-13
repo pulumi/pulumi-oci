@@ -106,6 +106,54 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstancesResult> Invoke(GetManagedInstancesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstancesResult>("oci:OsManagementHub/getManagedInstances:getManagedInstances", args ?? new GetManagedInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstances = Oci.OsManagementHub.GetManagedInstances.Invoke(new()
+        ///     {
+        ///         AdvisoryNames = managedInstanceAdvisoryName,
+        ///         ArchTypes = managedInstanceArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceDisplayName,
+        ///         DisplayNameContains = managedInstanceDisplayNameContains,
+        ///         Group = managedInstanceGroup,
+        ///         GroupNotEqualTo = managedInstanceGroupNotEqualTo,
+        ///         IsAttachedToGroupOrLifecycleStage = managedInstanceIsAttachedToGroupOrLifecycleStage,
+        ///         IsManagedByAutonomousLinux = managedInstanceIsManagedByAutonomousLinux,
+        ///         IsManagementStation = managedInstanceIsManagementStation,
+        ///         IsProfileAttached = managedInstanceIsProfileAttached,
+        ///         LifecycleEnvironment = managedInstanceLifecycleEnvironment,
+        ///         LifecycleEnvironmentNotEqualTo = managedInstanceLifecycleEnvironmentNotEqualTo,
+        ///         LifecycleStage = managedInstanceLifecycleStage,
+        ///         LifecycleStageNotEqualTo = managedInstanceLifecycleStageNotEqualTo,
+        ///         Locations = managedInstanceLocation,
+        ///         LocationNotEqualTos = managedInstanceLocationNotEqualTo,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         OsFamilies = managedInstanceOsFamily,
+        ///         Profiles = managedInstanceProfile,
+        ///         ProfileNotEqualTos = managedInstanceProfileNotEqualTo,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         Statuses = managedInstanceStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstancesResult> Invoke(GetManagedInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstancesResult>("oci:OsManagementHub/getManagedInstances:getManagedInstances", args ?? new GetManagedInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

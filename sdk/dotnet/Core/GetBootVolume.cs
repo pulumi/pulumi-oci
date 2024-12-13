@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetBootVolumeResult> Invoke(GetBootVolumeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeResult>("oci:Core/getBootVolume:getBootVolume", args ?? new GetBootVolumeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Boot Volume resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets information for the specified boot volume.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBootVolume = Oci.Core.GetBootVolume.Invoke(new()
+        ///     {
+        ///         BootVolumeId = testBootVolumeOciCoreBootVolume.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBootVolumeResult> Invoke(GetBootVolumeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeResult>("oci:Core/getBootVolume:getBootVolume", args ?? new GetBootVolumeInvokeArgs(), options.WithDefaults());
     }
 
 

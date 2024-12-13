@@ -85,21 +85,11 @@ type GetOpsiConfigurationConfigurationItemResult struct {
 }
 
 func GetOpsiConfigurationConfigurationItemOutput(ctx *pulumi.Context, args GetOpsiConfigurationConfigurationItemOutputArgs, opts ...pulumi.InvokeOption) GetOpsiConfigurationConfigurationItemResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOpsiConfigurationConfigurationItemResultOutput, error) {
 			args := v.(GetOpsiConfigurationConfigurationItemArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOpsiConfigurationConfigurationItemResult
-			secret, err := ctx.InvokePackageRaw("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args, &rv, "", opts...)
-			if err != nil {
-				return GetOpsiConfigurationConfigurationItemResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOpsiConfigurationConfigurationItemResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOpsiConfigurationConfigurationItemResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args, GetOpsiConfigurationConfigurationItemResultOutput{}, options).(GetOpsiConfigurationConfigurationItemResultOutput), nil
 		}).(GetOpsiConfigurationConfigurationItemResultOutput)
 }
 

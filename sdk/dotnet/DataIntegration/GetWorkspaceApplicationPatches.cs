@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceApplicationPatchesResult> Invoke(GetWorkspaceApplicationPatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationPatchesResult>("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", args ?? new GetWorkspaceApplicationPatchesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Workspace Application Patches in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceApplicationPatches = Oci.DataIntegration.GetWorkspaceApplicationPatches.Invoke(new()
+        ///     {
+        ///         ApplicationKey = workspaceApplicationPatchApplicationKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Fields = workspaceApplicationPatchFields,
+        ///         Identifiers = workspaceApplicationPatchIdentifier,
+        ///         Name = workspaceApplicationPatchName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceApplicationPatchesResult> Invoke(GetWorkspaceApplicationPatchesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationPatchesResult>("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", args ?? new GetWorkspaceApplicationPatchesInvokeArgs(), options.WithDefaults());
     }
 
 

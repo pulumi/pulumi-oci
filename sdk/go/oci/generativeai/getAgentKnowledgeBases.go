@@ -81,21 +81,11 @@ type GetAgentKnowledgeBasesResult struct {
 }
 
 func GetAgentKnowledgeBasesOutput(ctx *pulumi.Context, args GetAgentKnowledgeBasesOutputArgs, opts ...pulumi.InvokeOption) GetAgentKnowledgeBasesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAgentKnowledgeBasesResultOutput, error) {
 			args := v.(GetAgentKnowledgeBasesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAgentKnowledgeBasesResult
-			secret, err := ctx.InvokePackageRaw("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", args, &rv, "", opts...)
-			if err != nil {
-				return GetAgentKnowledgeBasesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAgentKnowledgeBasesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAgentKnowledgeBasesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", args, GetAgentKnowledgeBasesResultOutput{}, options).(GetAgentKnowledgeBasesResultOutput), nil
 		}).(GetAgentKnowledgeBasesResultOutput)
 }
 

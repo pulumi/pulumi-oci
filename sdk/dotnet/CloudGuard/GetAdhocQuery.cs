@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetAdhocQueryResult> Invoke(GetAdhocQueryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAdhocQueryResult>("oci:CloudGuard/getAdhocQuery:getAdhocQuery", args ?? new GetAdhocQueryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns an adhoc query identified by adhocQueryId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAdhocQuery = Oci.CloudGuard.GetAdhocQuery.Invoke(new()
+        ///     {
+        ///         AdhocQueryId = testAdhocQueryOciCloudGuardAdhocQuery.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAdhocQueryResult> Invoke(GetAdhocQueryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAdhocQueryResult>("oci:CloudGuard/getAdhocQuery:getAdhocQuery", args ?? new GetAdhocQueryInvokeArgs(), options.WithDefaults());
     }
 
 

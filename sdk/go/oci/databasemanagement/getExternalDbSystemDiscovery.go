@@ -91,21 +91,11 @@ type LookupExternalDbSystemDiscoveryResult struct {
 }
 
 func LookupExternalDbSystemDiscoveryOutput(ctx *pulumi.Context, args LookupExternalDbSystemDiscoveryOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbSystemDiscoveryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalDbSystemDiscoveryResultOutput, error) {
 			args := v.(LookupExternalDbSystemDiscoveryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalDbSystemDiscoveryResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalDbSystemDiscoveryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalDbSystemDiscoveryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalDbSystemDiscoveryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery", args, LookupExternalDbSystemDiscoveryResultOutput{}, options).(LookupExternalDbSystemDiscoveryResultOutput), nil
 		}).(LookupExternalDbSystemDiscoveryResultOutput)
 }
 

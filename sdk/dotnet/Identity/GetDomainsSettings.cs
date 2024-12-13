@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSettingsResult> Invoke(GetDomainsSettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSettingsResult>("oci:Identity/getDomainsSettings:getDomainsSettings", args ?? new GetDomainsSettingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Settings in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Settings
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSettings = Oci.Identity.GetDomainsSettings.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = settingAuthorization,
+        ///         ResourceTypeSchemaVersion = settingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSettingsResult> Invoke(GetDomainsSettingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSettingsResult>("oci:Identity/getDomainsSettings:getDomainsSettings", args ?? new GetDomainsSettingsInvokeArgs(), options.WithDefaults());
     }
 
 

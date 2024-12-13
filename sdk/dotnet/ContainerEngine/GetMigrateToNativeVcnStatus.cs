@@ -16,6 +16,9 @@ namespace Pulumi.Oci.ContainerEngine
 
         public static Output<GetMigrateToNativeVcnStatusResult> Invoke(GetMigrateToNativeVcnStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrateToNativeVcnStatusResult>("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args ?? new GetMigrateToNativeVcnStatusInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetMigrateToNativeVcnStatusResult> Invoke(GetMigrateToNativeVcnStatusInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrateToNativeVcnStatusResult>("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args ?? new GetMigrateToNativeVcnStatusInvokeArgs(), options.WithDefaults());
     }
 
 

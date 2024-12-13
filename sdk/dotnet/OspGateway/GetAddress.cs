@@ -66,6 +66,34 @@ namespace Pulumi.Oci.OspGateway
         /// </summary>
         public static Output<GetAddressResult> Invoke(GetAddressInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressResult>("oci:OspGateway/getAddress:getAddress", args ?? new GetAddressInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
+        /// 
+        /// Get the address by id for the compartment
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAddress = Oci.OspGateway.GetAddress.Invoke(new()
+        ///     {
+        ///         AddressId = testAddres.Id,
+        ///         CompartmentId = compartmentId,
+        ///         OspHomeRegion = addressOspHomeRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAddressResult> Invoke(GetAddressInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddressResult>("oci:OspGateway/getAddress:getAddress", args ?? new GetAddressInvokeArgs(), options.WithDefaults());
     }
 
 

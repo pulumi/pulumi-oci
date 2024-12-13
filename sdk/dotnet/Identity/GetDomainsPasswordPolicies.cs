@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsPasswordPoliciesResult> Invoke(GetDomainsPasswordPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsPasswordPoliciesResult>("oci:Identity/getDomainsPasswordPolicies:getDomainsPasswordPolicies", args ?? new GetDomainsPasswordPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for password policies.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPasswordPolicies = Oci.Identity.GetDomainsPasswordPolicies.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         PasswordPolicyCount = passwordPolicyPasswordPolicyCount,
+        ///         PasswordPolicyFilter = passwordPolicyPasswordPolicyFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = passwordPolicyAuthorization,
+        ///         ResourceTypeSchemaVersion = passwordPolicyResourceTypeSchemaVersion,
+        ///         StartIndex = passwordPolicyStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsPasswordPoliciesResult> Invoke(GetDomainsPasswordPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsPasswordPoliciesResult>("oci:Identity/getDomainsPasswordPolicies:getDomainsPasswordPolicies", args ?? new GetDomainsPasswordPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

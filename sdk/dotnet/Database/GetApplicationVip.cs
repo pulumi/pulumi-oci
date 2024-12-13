@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetApplicationVipResult> Invoke(GetApplicationVipInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApplicationVipResult>("oci:Database/getApplicationVip:getApplicationVip", args ?? new GetApplicationVipInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about a specified application virtual IP (VIP) address.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApplicationVip = Oci.Database.GetApplicationVip.Invoke(new()
+        ///     {
+        ///         ApplicationVipId = testApplicationVipOciDatabaseApplicationVip.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApplicationVipResult> Invoke(GetApplicationVipInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApplicationVipResult>("oci:Database/getApplicationVip:getApplicationVip", args ?? new GetApplicationVipInvokeArgs(), options.WithDefaults());
     }
 
 

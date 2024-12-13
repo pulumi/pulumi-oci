@@ -120,6 +120,61 @@ namespace Pulumi.Oci.OsManagement
         /// </summary>
         public static Output<GetManagedInstanceStreamProfileResult> Invoke(GetManagedInstanceStreamProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceStreamProfileResult>("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args ?? new GetManagedInstanceStreamProfileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+        /// 
+        /// Retrieve a list of module stream profiles, along with a summary of their
+        /// of their status, from a managed instance.  Filters may be applied to
+        /// select a subset of profiles based on the filter criteria.
+        /// 
+        /// The "moduleName", "streamName", and "profileName" attributes combine
+        /// to form a set of filters on the list of module stream profiles.  If
+        /// a "modulName" is provided, only profiles that belong to that module
+        /// are returned.  If both a "moduleName" and "streamName" are given,
+        /// only profiles belonging to that module stream are returned.  Finally,
+        /// if all three are given then only the particular profile indicated
+        /// by the triple is returned.  It is not valid to supply a "streamName"
+        /// without a "moduleName".  It is also not valid to supply a "profileName"
+        /// without a "streamName".
+        /// 
+        /// The "status" attribute filters against the state of a module stream
+        /// profile.  Valid values are "INSTALLED" and "AVAILABLE".  If the
+        /// attribute is set to "INSTALLED", only module stream profiles that
+        /// are installed are included in the result set.  If the attribute is
+        /// set to "AVAILABLE", only module stream profiles that are not
+        /// installed are included in the result set.  If the attribute is not
+        /// defined, the request is not subject to this filter.
+        /// 
+        /// When sorting by display name, the result set is sorted first by
+        /// module name, then by stream name, and finally by profile name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceStreamProfiles = Oci.OsManagement.GetManagedInstanceStreamProfile.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = managedInstanceId,
+        ///         CompartmentId = compartmentId,
+        ///         ModuleName = managedInstanceModuleName,
+        ///         ProfileName = managedInstanceModuleStreamProfileName,
+        ///         ProfileStatus = managedInstanceProfileStatus,
+        ///         StreamName = managedInstanceModuleStreamName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceStreamProfileResult> Invoke(GetManagedInstanceStreamProfileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceStreamProfileResult>("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args ?? new GetManagedInstanceStreamProfileInvokeArgs(), options.WithDefaults());
     }
 
 

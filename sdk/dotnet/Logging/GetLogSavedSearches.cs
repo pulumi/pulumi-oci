@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Logging
         /// </summary>
         public static Output<GetLogSavedSearchesResult> Invoke(GetLogSavedSearchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogSavedSearchesResult>("oci:Logging/getLogSavedSearches:getLogSavedSearches", args ?? new GetLogSavedSearchesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
+        /// 
+        /// Lists LogSavedSearches for this compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogSavedSearches = Oci.Logging.GetLogSavedSearches.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         LogSavedSearchId = testLogSavedSearch.Id,
+        ///         Name = logSavedSearchName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogSavedSearchesResult> Invoke(GetLogSavedSearchesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogSavedSearchesResult>("oci:Logging/getLogSavedSearches:getLogSavedSearches", args ?? new GetLogSavedSearchesInvokeArgs(), options.WithDefaults());
     }
 
 

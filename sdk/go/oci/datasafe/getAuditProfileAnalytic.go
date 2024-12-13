@@ -90,21 +90,11 @@ type GetAuditProfileAnalyticResult struct {
 }
 
 func GetAuditProfileAnalyticOutput(ctx *pulumi.Context, args GetAuditProfileAnalyticOutputArgs, opts ...pulumi.InvokeOption) GetAuditProfileAnalyticResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAuditProfileAnalyticResultOutput, error) {
 			args := v.(GetAuditProfileAnalyticArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAuditProfileAnalyticResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args, &rv, "", opts...)
-			if err != nil {
-				return GetAuditProfileAnalyticResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAuditProfileAnalyticResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAuditProfileAnalyticResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args, GetAuditProfileAnalyticResultOutput{}, options).(GetAuditProfileAnalyticResultOutput), nil
 		}).(GetAuditProfileAnalyticResultOutput)
 }
 

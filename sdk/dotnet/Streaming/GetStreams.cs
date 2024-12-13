@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Streaming
         /// </summary>
         public static Output<GetStreamsResult> Invoke(GetStreamsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamsResult>("oci:Streaming/getStreams:getStreams", args ?? new GetStreamsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Streams in Oracle Cloud Infrastructure Streaming service.
+        /// 
+        /// Lists the streams in the given compartment id.
+        /// If the compartment id is specified, it will list streams in the compartment, regardless of their stream pool.
+        /// If the stream pool id is specified, the action will be scoped to that stream pool.
+        /// The compartment id and stream pool id cannot be specified at the same time.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testStreams = Oci.Streaming.GetStreams.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Id = streamId,
+        ///         Name = streamName,
+        ///         State = streamState,
+        ///         StreamPoolId = testStreamPool.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetStreamsResult> Invoke(GetStreamsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetStreamsResult>("oci:Streaming/getStreams:getStreams", args ?? new GetStreamsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbHomePatchHistoryEntriesResult> Invoke(GetDbHomePatchHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbHomePatchHistoryEntriesResult>("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args ?? new GetDbHomePatchHistoryEntriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the history of patch operations on the specified Database Home.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbHomePatchHistoryEntries = Oci.Database.GetDbHomePatchHistoryEntries.Invoke(new()
+        ///     {
+        ///         DbHomeId = testDbHome.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbHomePatchHistoryEntriesResult> Invoke(GetDbHomePatchHistoryEntriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbHomePatchHistoryEntriesResult>("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args ?? new GetDbHomePatchHistoryEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

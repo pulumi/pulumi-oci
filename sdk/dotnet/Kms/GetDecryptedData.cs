@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public static Output<GetDecryptedDataResult> Invoke(GetDecryptedDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDecryptedDataResult>("oci:Kms/getDecryptedData:getDecryptedData", args ?? new GetDecryptedDataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// The `oci.Kms.getDecryptedData` data source provides details about a specific DecryptedData
+        /// 
+        /// Decrypts data using the given DecryptDataDetails resource.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDecryptedData = Oci.Kms.GetDecryptedData.Invoke(new()
+        ///     {
+        ///         Ciphertext = decryptedDataCiphertext,
+        ///         CryptoEndpoint = decryptedDataCryptoEndpoint,
+        ///         KeyId = testKey.Id,
+        ///         AssociatedData = decryptedDataAssociatedData,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDecryptedDataResult> Invoke(GetDecryptedDataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDecryptedDataResult>("oci:Kms/getDecryptedData:getDecryptedData", args ?? new GetDecryptedDataInvokeArgs(), options.WithDefaults());
     }
 
 

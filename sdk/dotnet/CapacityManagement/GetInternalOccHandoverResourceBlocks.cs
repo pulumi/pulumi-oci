@@ -76,6 +76,39 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public static Output<GetInternalOccHandoverResourceBlocksResult> Invoke(GetInternalOccHandoverResourceBlocksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInternalOccHandoverResourceBlocksResult>("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", args ?? new GetInternalOccHandoverResourceBlocksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Internal Occ Handover Resource Blocks in Oracle Cloud Infrastructure Capacity Management service.
+        /// 
+        /// List Occ Handover Resource blocks.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInternalOccHandoverResourceBlocks = Oci.CapacityManagement.GetInternalOccHandoverResourceBlocks.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = internalOccHandoverResourceBlockNamespace,
+        ///         OccCustomerGroupId = testOccCustomerGroup.Id,
+        ///         HandoverDateGreaterThanOrEqualTo = internalOccHandoverResourceBlockHandoverDateGreaterThanOrEqualTo,
+        ///         HandoverDateLessThanOrEqualTo = internalOccHandoverResourceBlockHandoverDateLessThanOrEqualTo,
+        ///         HandoverResourceName = testResource.Name,
+        ///         OccHandoverResourceBlockId = testOccHandoverResourceBlock.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInternalOccHandoverResourceBlocksResult> Invoke(GetInternalOccHandoverResourceBlocksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInternalOccHandoverResourceBlocksResult>("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", args ?? new GetInternalOccHandoverResourceBlocksInvokeArgs(), options.WithDefaults());
     }
 
 

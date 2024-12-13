@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaFamilyResult> Invoke(GetJavaFamilyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaFamilyResult>("oci:Jms/getJavaFamily:getJavaFamily", args ?? new GetJavaFamilyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Returns metadata associated with a specific Java release family.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaFamily = Oci.Jms.GetJavaFamily.Invoke(new()
+        ///     {
+        ///         FamilyVersion = javaFamilyFamilyVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaFamilyResult> Invoke(GetJavaFamilyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaFamilyResult>("oci:Jms/getJavaFamily:getJavaFamily", args ?? new GetJavaFamilyInvokeArgs(), options.WithDefaults());
     }
 
 

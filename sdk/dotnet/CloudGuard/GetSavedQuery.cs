@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetSavedQueryResult> Invoke(GetSavedQueryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSavedQueryResult>("oci:CloudGuard/getSavedQuery:getSavedQuery", args ?? new GetSavedQueryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a SavedQuery resource identified by savedQueryId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSavedQuery = Oci.CloudGuard.GetSavedQuery.Invoke(new()
+        ///     {
+        ///         SavedQueryId = testSavedQueryOciCloudGuardSavedQuery.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSavedQueryResult> Invoke(GetSavedQueryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSavedQueryResult>("oci:CloudGuard/getSavedQuery:getSavedQuery", args ?? new GetSavedQueryInvokeArgs(), options.WithDefaults());
     }
 
 

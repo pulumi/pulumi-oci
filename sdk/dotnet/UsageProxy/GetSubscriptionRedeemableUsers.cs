@@ -66,6 +66,34 @@ namespace Pulumi.Oci.UsageProxy
         /// </summary>
         public static Output<GetSubscriptionRedeemableUsersResult> Invoke(GetSubscriptionRedeemableUsersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRedeemableUsersResult>("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", args ?? new GetSubscriptionRedeemableUsersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
+        /// 
+        /// Provides the list of user summary that can redeem rewards for the given subscription ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSubscriptionRedeemableUsers = Oci.UsageProxy.GetSubscriptionRedeemableUsers.Invoke(new()
+        ///     {
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSubscriptionRedeemableUsersResult> Invoke(GetSubscriptionRedeemableUsersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRedeemableUsersResult>("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", args ?? new GetSubscriptionRedeemableUsersInvokeArgs(), options.WithDefaults());
     }
 
 

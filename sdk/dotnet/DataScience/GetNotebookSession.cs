@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetNotebookSessionResult> Invoke(GetNotebookSessionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNotebookSessionResult>("oci:DataScience/getNotebookSession:getNotebookSession", args ?? new GetNotebookSessionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// Gets the specified notebook session's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNotebookSession = Oci.DataScience.GetNotebookSession.Invoke(new()
+        ///     {
+        ///         NotebookSessionId = testNotebookSessionOciDatascienceNotebookSession.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNotebookSessionResult> Invoke(GetNotebookSessionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNotebookSessionResult>("oci:DataScience/getNotebookSession:getNotebookSession", args ?? new GetNotebookSessionInvokeArgs(), options.WithDefaults());
     }
 
 

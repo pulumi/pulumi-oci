@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// </summary>
         public static Output<GetInstanceAgentPluginsResult> Invoke(GetInstanceAgentPluginsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceAgentPluginsResult>("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", args ?? new GetInstanceAgentPluginsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
+        /// 
+        /// The API to get one or more plugin information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstanceAgentPlugins = Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.Invoke(new()
+        ///     {
+        ///         InstanceagentId = testInstanceagent.Id,
+        ///         Name = instanceAgentPluginName,
+        ///         Status = instanceAgentPluginStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstanceAgentPluginsResult> Invoke(GetInstanceAgentPluginsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceAgentPluginsResult>("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", args ?? new GetInstanceAgentPluginsInvokeArgs(), options.WithDefaults());
     }
 
 

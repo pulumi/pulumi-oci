@@ -120,21 +120,11 @@ type LookupBdsInstanceResult struct {
 }
 
 func LookupBdsInstanceOutput(ctx *pulumi.Context, args LookupBdsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupBdsInstanceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBdsInstanceResultOutput, error) {
 			args := v.(LookupBdsInstanceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBdsInstanceResult
-			secret, err := ctx.InvokePackageRaw("oci:BigDataService/getBdsInstance:getBdsInstance", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBdsInstanceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBdsInstanceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBdsInstanceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:BigDataService/getBdsInstance:getBdsInstance", args, LookupBdsInstanceResultOutput{}, options).(LookupBdsInstanceResultOutput), nil
 		}).(LookupBdsInstanceResultOutput)
 }
 

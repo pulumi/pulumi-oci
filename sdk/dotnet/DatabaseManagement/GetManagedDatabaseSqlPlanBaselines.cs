@@ -26,6 +26,14 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlPlanBaselinesResult> Invoke(GetManagedDatabaseSqlPlanBaselinesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselinesResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", args ?? new GetManagedDatabaseSqlPlanBaselinesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the SQL plan baselines for the specified Managed Database.
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlPlanBaselinesResult> Invoke(GetManagedDatabaseSqlPlanBaselinesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselinesResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", args ?? new GetManagedDatabaseSqlPlanBaselinesInvokeArgs(), options.WithDefaults());
     }
 
 

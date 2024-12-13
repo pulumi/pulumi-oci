@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetSecurityZoneResult> Invoke(GetSecurityZoneInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityZoneResult>("oci:CloudGuard/getSecurityZone:getSecurityZone", args ?? new GetSecurityZoneInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a security zone (SecurityZone resource) identified by securityZoneId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityZone = Oci.CloudGuard.GetSecurityZone.Invoke(new()
+        ///     {
+        ///         SecurityZoneId = testSecurityZoneOciCloudGuardSecurityZone.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityZoneResult> Invoke(GetSecurityZoneInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityZoneResult>("oci:CloudGuard/getSecurityZone:getSecurityZone", args ?? new GetSecurityZoneInvokeArgs(), options.WithDefaults());
     }
 
 

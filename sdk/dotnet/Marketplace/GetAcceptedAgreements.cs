@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public static Output<GetAcceptedAgreementsResult> Invoke(GetAcceptedAgreementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAcceptedAgreementsResult>("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", args ?? new GetAcceptedAgreementsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Accepted Agreements in Oracle Cloud Infrastructure Marketplace service.
+        /// 
+        /// Lists the terms of use agreements that have been accepted in the specified compartment.
+        /// You can filter results by specifying query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAcceptedAgreements = Oci.Marketplace.GetAcceptedAgreements.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AcceptedAgreementId = testAcceptedAgreement.Id,
+        ///         DisplayName = acceptedAgreementDisplayName,
+        ///         ListingId = testListing.Id,
+        ///         PackageVersion = acceptedAgreementPackageVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAcceptedAgreementsResult> Invoke(GetAcceptedAgreementsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAcceptedAgreementsResult>("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", args ?? new GetAcceptedAgreementsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetEnterpriseManagerBridgesResult> Invoke(GetEnterpriseManagerBridgesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEnterpriseManagerBridgesResult>("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", args ?? new GetEnterpriseManagerBridgesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+        /// When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEnterpriseManagerBridges = Oci.Opsi.GetEnterpriseManagerBridges.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = enterpriseManagerBridgeCompartmentIdInSubtree,
+        ///         DisplayName = enterpriseManagerBridgeDisplayName,
+        ///         Id = enterpriseManagerBridgeId,
+        ///         States = enterpriseManagerBridgeState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEnterpriseManagerBridgesResult> Invoke(GetEnterpriseManagerBridgesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEnterpriseManagerBridgesResult>("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", args ?? new GetEnterpriseManagerBridgesInvokeArgs(), options.WithDefaults());
     }
 
 

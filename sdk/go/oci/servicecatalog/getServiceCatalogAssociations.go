@@ -83,21 +83,11 @@ type GetServiceCatalogAssociationsResult struct {
 }
 
 func GetServiceCatalogAssociationsOutput(ctx *pulumi.Context, args GetServiceCatalogAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetServiceCatalogAssociationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetServiceCatalogAssociationsResultOutput, error) {
 			args := v.(GetServiceCatalogAssociationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetServiceCatalogAssociationsResult
-			secret, err := ctx.InvokePackageRaw("oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations", args, &rv, "", opts...)
-			if err != nil {
-				return GetServiceCatalogAssociationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetServiceCatalogAssociationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetServiceCatalogAssociationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations", args, GetServiceCatalogAssociationsResultOutput{}, options).(GetServiceCatalogAssociationsResultOutput), nil
 		}).(GetServiceCatalogAssociationsResultOutput)
 }
 

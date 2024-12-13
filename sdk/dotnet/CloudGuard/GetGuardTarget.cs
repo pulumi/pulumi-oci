@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetGuardTargetResult> Invoke(GetGuardTargetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGuardTargetResult>("oci:CloudGuard/getGuardTarget:getGuardTarget", args ?? new GetGuardTargetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a target (Target resource) identified by targetId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTarget = Oci.CloudGuard.GetGuardTarget.Invoke(new()
+        ///     {
+        ///         TargetId = testTargetOciCloudGuardTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetGuardTargetResult> Invoke(GetGuardTargetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGuardTargetResult>("oci:CloudGuard/getGuardTarget:getGuardTarget", args ?? new GetGuardTargetInvokeArgs(), options.WithDefaults());
     }
 
 

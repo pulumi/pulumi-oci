@@ -96,21 +96,11 @@ type LookupExternalExadataStorageGridResult struct {
 }
 
 func LookupExternalExadataStorageGridOutput(ctx *pulumi.Context, args LookupExternalExadataStorageGridOutputArgs, opts ...pulumi.InvokeOption) LookupExternalExadataStorageGridResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalExadataStorageGridResultOutput, error) {
 			args := v.(LookupExternalExadataStorageGridArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalExadataStorageGridResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalExadataStorageGridResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalExadataStorageGridResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalExadataStorageGridResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", args, LookupExternalExadataStorageGridResultOutput{}, options).(LookupExternalExadataStorageGridResultOutput), nil
 		}).(LookupExternalExadataStorageGridResultOutput)
 }
 

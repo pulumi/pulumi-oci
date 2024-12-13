@@ -73,21 +73,11 @@ type GetDiscoveryJobLogsResult struct {
 }
 
 func GetDiscoveryJobLogsOutput(ctx *pulumi.Context, args GetDiscoveryJobLogsOutputArgs, opts ...pulumi.InvokeOption) GetDiscoveryJobLogsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDiscoveryJobLogsResultOutput, error) {
 			args := v.(GetDiscoveryJobLogsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDiscoveryJobLogsResult
-			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", args, &rv, "", opts...)
-			if err != nil {
-				return GetDiscoveryJobLogsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDiscoveryJobLogsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDiscoveryJobLogsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", args, GetDiscoveryJobLogsResultOutput{}, options).(GetDiscoveryJobLogsResultOutput), nil
 		}).(GetDiscoveryJobLogsResultOutput)
 }
 

@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJmsPluginsResult> Invoke(GetJmsPluginsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJmsPluginsResult>("oci:Jms/getJmsPlugins:getJmsPlugins", args ?? new GetJmsPluginsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Jms Plugins in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Lists the JmsPlugins.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJmsPlugins = Oci.Jms.GetJmsPlugins.Invoke(new()
+        ///     {
+        ///         AgentId = jmsPluginAgentId,
+        ///         AvailabilityStatus = jmsPluginAvailabilityStatus,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = jmsPluginCompartmentIdInSubtree,
+        ///         FleetId = testFleet.Id,
+        ///         HostnameContains = jmsPluginHostnameContains,
+        ///         Id = jmsPluginId,
+        ///         State = jmsPluginState,
+        ///         TimeLastSeenLessThanOrEqualTo = jmsPluginTimeLastSeenLessThanOrEqualTo,
+        ///         TimeRegisteredLessThanOrEqualTo = jmsPluginTimeRegisteredLessThanOrEqualTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJmsPluginsResult> Invoke(GetJmsPluginsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJmsPluginsResult>("oci:Jms/getJmsPlugins:getJmsPlugins", args ?? new GetJmsPluginsInvokeArgs(), options.WithDefaults());
     }
 
 

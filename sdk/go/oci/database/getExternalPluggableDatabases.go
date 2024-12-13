@@ -85,21 +85,11 @@ type GetExternalPluggableDatabasesResult struct {
 }
 
 func GetExternalPluggableDatabasesOutput(ctx *pulumi.Context, args GetExternalPluggableDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetExternalPluggableDatabasesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalPluggableDatabasesResultOutput, error) {
 			args := v.(GetExternalPluggableDatabasesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalPluggableDatabasesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getExternalPluggableDatabases:getExternalPluggableDatabases", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalPluggableDatabasesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalPluggableDatabasesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalPluggableDatabasesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getExternalPluggableDatabases:getExternalPluggableDatabases", args, GetExternalPluggableDatabasesResultOutput{}, options).(GetExternalPluggableDatabasesResultOutput), nil
 		}).(GetExternalPluggableDatabasesResultOutput)
 }
 

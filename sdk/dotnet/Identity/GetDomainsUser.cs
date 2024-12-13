@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsUserResult> Invoke(GetDomainsUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserResult>("oci:Identity/getDomainsUser:getDomainsUser", args ?? new GetDomainsUserInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a user.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUser = Oci.Identity.GetDomainsUser.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserId = testUserOciIdentityUser.Id,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = userAuthorization,
+        ///         ResourceTypeSchemaVersion = userResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsUserResult> Invoke(GetDomainsUserInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserResult>("oci:Identity/getDomainsUser:getDomainsUser", args ?? new GetDomainsUserInvokeArgs(), options.WithDefaults());
     }
 
 

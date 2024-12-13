@@ -64,21 +64,11 @@ type GetServicesResult struct {
 }
 
 func GetServicesOutput(ctx *pulumi.Context, args GetServicesOutputArgs, opts ...pulumi.InvokeOption) GetServicesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetServicesResultOutput, error) {
 			args := v.(GetServicesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetServicesResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getServices:getServices", args, &rv, "", opts...)
-			if err != nil {
-				return GetServicesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetServicesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetServicesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getServices:getServices", args, GetServicesResultOutput{}, options).(GetServicesResultOutput), nil
 		}).(GetServicesResultOutput)
 }
 

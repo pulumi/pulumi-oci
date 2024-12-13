@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetAvailabilityDomainsResult> Invoke(GetAvailabilityDomainsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAvailabilityDomainsResult>("oci:Identity/getAvailabilityDomains:getAvailabilityDomains", args ?? new GetAvailabilityDomainsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Availability Domains in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or another
+        /// of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
+        /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+        /// Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
+        /// create a dependency on the list order.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAvailabilityDomains = Oci.Identity.GetAvailabilityDomains.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAvailabilityDomainsResult> Invoke(GetAvailabilityDomainsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAvailabilityDomainsResult>("oci:Identity/getAvailabilityDomains:getAvailabilityDomains", args ?? new GetAvailabilityDomainsInvokeArgs(), options.WithDefaults());
     }
 
 

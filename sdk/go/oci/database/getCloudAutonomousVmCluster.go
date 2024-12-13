@@ -182,21 +182,11 @@ type LookupCloudAutonomousVmClusterResult struct {
 }
 
 func LookupCloudAutonomousVmClusterOutput(ctx *pulumi.Context, args LookupCloudAutonomousVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupCloudAutonomousVmClusterResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupCloudAutonomousVmClusterResultOutput, error) {
 			args := v.(LookupCloudAutonomousVmClusterArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupCloudAutonomousVmClusterResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", args, &rv, "", opts...)
-			if err != nil {
-				return LookupCloudAutonomousVmClusterResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupCloudAutonomousVmClusterResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupCloudAutonomousVmClusterResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", args, LookupCloudAutonomousVmClusterResultOutput{}, options).(LookupCloudAutonomousVmClusterResultOutput), nil
 		}).(LookupCloudAutonomousVmClusterResultOutput)
 }
 

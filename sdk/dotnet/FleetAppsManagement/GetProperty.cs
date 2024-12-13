@@ -62,6 +62,32 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetPropertyResult> Invoke(GetPropertyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("oci:FleetAppsManagement/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Gets a Property by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProperty = Oci.FleetAppsManagement.GetProperty.Invoke(new()
+        ///     {
+        ///         PropertyId = testPropertyOciFleetAppsManagementProperty.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPropertyResult> Invoke(GetPropertyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("oci:FleetAppsManagement/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithDefaults());
     }
 
 

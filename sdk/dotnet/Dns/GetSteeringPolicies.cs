@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetSteeringPoliciesResult> Invoke(GetSteeringPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSteeringPoliciesResult>("oci:Dns/getSteeringPolicies:getSteeringPolicies", args ?? new GetSteeringPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Steering Policies in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Gets a list of all steering policies in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSteeringPolicies = Oci.Dns.GetSteeringPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = steeringPolicyDisplayName,
+        ///         DisplayNameContains = steeringPolicyDisplayNameContains,
+        ///         HealthCheckMonitorId = testHttpMonitor.Id,
+        ///         Id = steeringPolicyId,
+        ///         State = steeringPolicyState,
+        ///         Template = steeringPolicyTemplate,
+        ///         TimeCreatedGreaterThanOrEqualTo = steeringPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = steeringPolicyTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSteeringPoliciesResult> Invoke(GetSteeringPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSteeringPoliciesResult>("oci:Dns/getSteeringPolicies:getSteeringPolicies", args ?? new GetSteeringPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

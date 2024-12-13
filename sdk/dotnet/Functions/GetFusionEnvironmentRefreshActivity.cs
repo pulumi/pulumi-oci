@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFusionEnvironmentRefreshActivityResult> Invoke(GetFusionEnvironmentRefreshActivityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivityResult>("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args ?? new GetFusionEnvironmentRefreshActivityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+        /// 
+        /// Gets a RefreshActivity by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFusionEnvironmentRefreshActivity = Oci.Functions.GetFusionEnvironmentRefreshActivity.Invoke(new()
+        ///     {
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         RefreshActivityId = testRefreshActivity.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFusionEnvironmentRefreshActivityResult> Invoke(GetFusionEnvironmentRefreshActivityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivityResult>("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args ?? new GetFusionEnvironmentRefreshActivityInvokeArgs(), options.WithDefaults());
     }
 
 

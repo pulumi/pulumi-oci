@@ -87,21 +87,11 @@ type GetProtectionPoliciesResult struct {
 }
 
 func GetProtectionPoliciesOutput(ctx *pulumi.Context, args GetProtectionPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetProtectionPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetProtectionPoliciesResultOutput, error) {
 			args := v.(GetProtectionPoliciesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetProtectionPoliciesResult
-			secret, err := ctx.InvokePackageRaw("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args, &rv, "", opts...)
-			if err != nil {
-				return GetProtectionPoliciesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetProtectionPoliciesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetProtectionPoliciesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args, GetProtectionPoliciesResultOutput{}, options).(GetProtectionPoliciesResultOutput), nil
 		}).(GetProtectionPoliciesResultOutput)
 }
 

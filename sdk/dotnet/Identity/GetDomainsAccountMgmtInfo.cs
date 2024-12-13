@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsAccountMgmtInfoResult> Invoke(GetDomainsAccountMgmtInfoInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAccountMgmtInfoResult>("oci:Identity/getDomainsAccountMgmtInfo:getDomainsAccountMgmtInfo", args ?? new GetDomainsAccountMgmtInfoInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Account Mgmt Info resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get Account Mgmt Info
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccountMgmtInfo = Oci.Identity.GetDomainsAccountMgmtInfo.Invoke(new()
+        ///     {
+        ///         AccountMgmtInfoId = testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = accountMgmtInfoAuthorization,
+        ///         ResourceTypeSchemaVersion = accountMgmtInfoResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsAccountMgmtInfoResult> Invoke(GetDomainsAccountMgmtInfoInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAccountMgmtInfoResult>("oci:Identity/getDomainsAccountMgmtInfo:getDomainsAccountMgmtInfo", args ?? new GetDomainsAccountMgmtInfoInvokeArgs(), options.WithDefaults());
     }
 
 

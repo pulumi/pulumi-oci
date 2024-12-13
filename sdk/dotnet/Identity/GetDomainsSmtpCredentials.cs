@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSmtpCredentialsResult> Invoke(GetDomainsSmtpCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSmtpCredentialsResult>("oci:Identity/getDomainsSmtpCredentials:getDomainsSmtpCredentials", args ?? new GetDomainsSmtpCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for SMTP credentials.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSmtpCredentials = Oci.Identity.GetDomainsSmtpCredentials.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SmtpCredentialCount = smtpCredentialSmtpCredentialCount,
+        ///         SmtpCredentialFilter = smtpCredentialSmtpCredentialFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = smtpCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = smtpCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = smtpCredentialStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSmtpCredentialsResult> Invoke(GetDomainsSmtpCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSmtpCredentialsResult>("oci:Identity/getDomainsSmtpCredentials:getDomainsSmtpCredentials", args ?? new GetDomainsSmtpCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

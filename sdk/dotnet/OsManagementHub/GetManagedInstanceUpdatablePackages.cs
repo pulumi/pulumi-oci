@@ -74,6 +74,38 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceUpdatablePackagesResult> Invoke(GetManagedInstanceUpdatablePackagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceUpdatablePackagesResult>("oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages", args ?? new GetManagedInstanceUpdatablePackagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Updatable Packages in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns a list of updatable packages for a managed instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceUpdatablePackages = Oci.OsManagementHub.GetManagedInstanceUpdatablePackages.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         AdvisoryNames = managedInstanceUpdatablePackageAdvisoryName,
+        ///         ClassificationTypes = managedInstanceUpdatablePackageClassificationType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceUpdatablePackageDisplayName,
+        ///         DisplayNameContains = managedInstanceUpdatablePackageDisplayNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceUpdatablePackagesResult> Invoke(GetManagedInstanceUpdatablePackagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceUpdatablePackagesResult>("oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages", args ?? new GetManagedInstanceUpdatablePackagesInvokeArgs(), options.WithDefaults());
     }
 
 

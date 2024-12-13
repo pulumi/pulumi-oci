@@ -26,6 +26,14 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceTaskResult> Invoke(GetWorkspaceTaskInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceTaskResult>("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", args ?? new GetWorkspaceTaskInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Retrieves a task using the specified identifier.
+        /// </summary>
+        public static Output<GetWorkspaceTaskResult> Invoke(GetWorkspaceTaskInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceTaskResult>("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", args ?? new GetWorkspaceTaskInvokeArgs(), options.WithDefaults());
     }
 
 

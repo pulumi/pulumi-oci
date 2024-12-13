@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAlertPolicyRulesResult> Invoke(GetAlertPolicyRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertPolicyRulesResult>("oci:DataSafe/getAlertPolicyRules:getAlertPolicyRules", args ?? new GetAlertPolicyRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
+        /// If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAlertPolicyRules = Oci.DataSafe.GetAlertPolicyRules.Invoke(new()
+        ///     {
+        ///         AlertPolicyId = testAlertPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlertPolicyRulesResult> Invoke(GetAlertPolicyRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertPolicyRulesResult>("oci:DataSafe/getAlertPolicyRules:getAlertPolicyRules", args ?? new GetAlertPolicyRulesInvokeArgs(), options.WithDefaults());
     }
 
 

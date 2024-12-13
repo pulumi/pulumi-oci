@@ -62,6 +62,32 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public static Output<GetNetworkLoadBalancerResult> Invoke(GetNetworkLoadBalancerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancerResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", args ?? new GetNetworkLoadBalancerInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
+        /// 
+        /// Retrieves network load balancer configuration information by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkLoadBalancer = Oci.NetworkLoadBalancer.GetNetworkLoadBalancer.Invoke(new()
+        ///     {
+        ///         NetworkLoadBalancerId = testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkLoadBalancerResult> Invoke(GetNetworkLoadBalancerInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancerResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", args ?? new GetNetworkLoadBalancerInvokeArgs(), options.WithDefaults());
     }
 
 

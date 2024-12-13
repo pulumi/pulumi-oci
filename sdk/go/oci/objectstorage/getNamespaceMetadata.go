@@ -36,21 +36,11 @@ type LookupNamespaceMetadataResult struct {
 }
 
 func LookupNamespaceMetadataOutput(ctx *pulumi.Context, args LookupNamespaceMetadataOutputArgs, opts ...pulumi.InvokeOption) LookupNamespaceMetadataResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupNamespaceMetadataResultOutput, error) {
 			args := v.(LookupNamespaceMetadataArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupNamespaceMetadataResult
-			secret, err := ctx.InvokePackageRaw("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", args, &rv, "", opts...)
-			if err != nil {
-				return LookupNamespaceMetadataResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupNamespaceMetadataResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupNamespaceMetadataResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata", args, LookupNamespaceMetadataResultOutput{}, options).(LookupNamespaceMetadataResultOutput), nil
 		}).(LookupNamespaceMetadataResultOutput)
 }
 

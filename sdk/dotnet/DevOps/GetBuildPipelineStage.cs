@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetBuildPipelineStageResult> Invoke(GetBuildPipelineStageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBuildPipelineStageResult>("oci:DevOps/getBuildPipelineStage:getBuildPipelineStage", args ?? new GetBuildPipelineStageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieves a stage based on the stage ID provided in the request.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBuildPipelineStage = Oci.DevOps.GetBuildPipelineStage.Invoke(new()
+        ///     {
+        ///         BuildPipelineStageId = testBuildPipelineStageOciDevopsBuildPipelineStage.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBuildPipelineStageResult> Invoke(GetBuildPipelineStageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBuildPipelineStageResult>("oci:DevOps/getBuildPipelineStage:getBuildPipelineStage", args ?? new GetBuildPipelineStageInvokeArgs(), options.WithDefaults());
     }
 
 

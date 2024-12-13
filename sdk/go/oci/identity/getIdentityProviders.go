@@ -89,21 +89,11 @@ type GetIdentityProvidersResult struct {
 }
 
 func GetIdentityProvidersOutput(ctx *pulumi.Context, args GetIdentityProvidersOutputArgs, opts ...pulumi.InvokeOption) GetIdentityProvidersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetIdentityProvidersResultOutput, error) {
 			args := v.(GetIdentityProvidersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetIdentityProvidersResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getIdentityProviders:getIdentityProviders", args, &rv, "", opts...)
-			if err != nil {
-				return GetIdentityProvidersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetIdentityProvidersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetIdentityProvidersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getIdentityProviders:getIdentityProviders", args, GetIdentityProvidersResultOutput{}, options).(GetIdentityProvidersResultOutput), nil
 		}).(GetIdentityProvidersResultOutput)
 }
 

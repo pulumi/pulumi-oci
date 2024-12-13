@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Secrets
         /// </summary>
         public static Output<GetSecretbundleResult> Invoke(GetSecretbundleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecretbundleResult>("oci:Secrets/getSecretbundle:getSecretbundle", args ?? new GetSecretbundleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
+        /// 
+        /// Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter. 
+        /// If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecretbundle = Oci.Secrets.GetSecretbundle.Invoke(new()
+        ///     {
+        ///         SecretId = testSecret.Id,
+        ///         SecretVersionName = testSecretVersion.Name,
+        ///         Stage = secretbundleStage,
+        ///         VersionNumber = secretbundleVersionNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecretbundleResult> Invoke(GetSecretbundleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecretbundleResult>("oci:Secrets/getSecretbundle:getSecretbundle", args ?? new GetSecretbundleInvokeArgs(), options.WithDefaults());
     }
 
 

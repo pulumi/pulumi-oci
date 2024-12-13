@@ -82,21 +82,11 @@ type GetBucketSummariesResult struct {
 }
 
 func GetBucketSummariesOutput(ctx *pulumi.Context, args GetBucketSummariesOutputArgs, opts ...pulumi.InvokeOption) GetBucketSummariesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBucketSummariesResultOutput, error) {
 			args := v.(GetBucketSummariesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBucketSummariesResult
-			secret, err := ctx.InvokePackageRaw("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args, &rv, "", opts...)
-			if err != nil {
-				return GetBucketSummariesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBucketSummariesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBucketSummariesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args, GetBucketSummariesResultOutput{}, options).(GetBucketSummariesResultOutput), nil
 		}).(GetBucketSummariesResultOutput)
 }
 

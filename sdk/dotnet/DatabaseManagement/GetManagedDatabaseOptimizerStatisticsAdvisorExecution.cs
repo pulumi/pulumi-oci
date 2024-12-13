@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> Invoke(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+        /// Managed Database, findings, recommendations, rationale, and examples.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecution = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecution.Invoke(new()
+        ///     {
+        ///         ExecutionName = managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         TaskName = managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> Invoke(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionInvokeArgs(), options.WithDefaults());
     }
 
 

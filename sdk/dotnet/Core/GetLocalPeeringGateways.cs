@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetLocalPeeringGatewaysResult> Invoke(GetLocalPeeringGatewaysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLocalPeeringGatewaysResult>("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", args ?? new GetLocalPeeringGatewaysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Local Peering Gateways in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the local peering gateways (LPGs) for the specified VCN and specified compartment.
+        /// If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLocalPeeringGateways = Oci.Core.GetLocalPeeringGateways.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLocalPeeringGatewaysResult> Invoke(GetLocalPeeringGatewaysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLocalPeeringGatewaysResult>("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", args ?? new GetLocalPeeringGatewaysInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCaptureFilterResult> Invoke(GetCaptureFilterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCaptureFilterResult>("oci:Core/getCaptureFilter:getCaptureFilter", args ?? new GetCaptureFilterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets information about the specified VTAP capture filter.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCaptureFilter = Oci.Core.GetCaptureFilter.Invoke(new()
+        ///     {
+        ///         CaptureFilterId = testCaptureFilterOciCoreCaptureFilter.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCaptureFilterResult> Invoke(GetCaptureFilterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCaptureFilterResult>("oci:Core/getCaptureFilter:getCaptureFilter", args ?? new GetCaptureFilterInvokeArgs(), options.WithDefaults());
     }
 
 

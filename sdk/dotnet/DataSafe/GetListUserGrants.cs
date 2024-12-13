@@ -86,6 +86,44 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetListUserGrantsResult> Invoke(GetListUserGrantsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListUserGrantsResult>("oci:DataSafe/getListUserGrants:getListUserGrants", args ?? new GetListUserGrantsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of List User Grants in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of grants for a particular user in the specified user assessment. A user grant contains details such as the
+        /// privilege name, type, category, and depth level. The depth level indicates how deep in the hierarchy of roles granted to
+        /// roles a privilege grant is. The userKey in this operation is a system-generated identifier. Perform the operation ListUsers
+        /// to get the userKey for a particular user.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testListUserGrants = Oci.DataSafe.GetListUserGrants.Invoke(new()
+        ///     {
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///         UserKey = listUserGrantUserKey,
+        ///         DepthLevel = listUserGrantDepthLevel,
+        ///         DepthLevelGreaterThanOrEqualTo = listUserGrantDepthLevelGreaterThanOrEqualTo,
+        ///         DepthLevelLessThan = listUserGrantDepthLevelLessThan,
+        ///         GrantKey = listUserGrantGrantKey,
+        ///         GrantName = listUserGrantGrantName,
+        ///         PrivilegeCategory = listUserGrantPrivilegeCategory,
+        ///         PrivilegeType = listUserGrantPrivilegeType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetListUserGrantsResult> Invoke(GetListUserGrantsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetListUserGrantsResult>("oci:DataSafe/getListUserGrants:getListUserGrants", args ?? new GetListUserGrantsInvokeArgs(), options.WithDefaults());
     }
 
 

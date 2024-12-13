@@ -74,6 +74,38 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetCompliancePolicyRulesResult> Invoke(GetCompliancePolicyRulesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCompliancePolicyRulesResult>("oci:FleetAppsManagement/getCompliancePolicyRules:getCompliancePolicyRules", args ?? new GetCompliancePolicyRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compliance Policy Rules in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Gets a list of CompliancePolicyRules.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCompliancePolicyRules = Oci.FleetAppsManagement.GetCompliancePolicyRules.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompliancePolicyId = testCompliancePolicy.Id,
+        ///         DisplayName = compliancePolicyRuleDisplayName,
+        ///         Id = compliancePolicyRuleId,
+        ///         PatchName = testPatch.Name,
+        ///         State = compliancePolicyRuleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCompliancePolicyRulesResult> Invoke(GetCompliancePolicyRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCompliancePolicyRulesResult>("oci:FleetAppsManagement/getCompliancePolicyRules:getCompliancePolicyRules", args ?? new GetCompliancePolicyRulesInvokeArgs(), options.WithDefaults());
     }
 
 

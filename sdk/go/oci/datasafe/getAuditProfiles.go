@@ -125,21 +125,11 @@ type GetAuditProfilesResult struct {
 }
 
 func GetAuditProfilesOutput(ctx *pulumi.Context, args GetAuditProfilesOutputArgs, opts ...pulumi.InvokeOption) GetAuditProfilesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAuditProfilesResultOutput, error) {
 			args := v.(GetAuditProfilesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAuditProfilesResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditProfiles:getAuditProfiles", args, &rv, "", opts...)
-			if err != nil {
-				return GetAuditProfilesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAuditProfilesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAuditProfilesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getAuditProfiles:getAuditProfiles", args, GetAuditProfilesResultOutput{}, options).(GetAuditProfilesResultOutput), nil
 		}).(GetAuditProfilesResultOutput)
 }
 

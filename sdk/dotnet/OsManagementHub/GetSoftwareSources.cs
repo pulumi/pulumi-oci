@@ -92,6 +92,47 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwareSourcesResult> Invoke(GetSoftwareSourcesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourcesResult>("oci:OsManagementHub/getSoftwareSources:getSoftwareSources", args ?? new GetSoftwareSourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
+        /// variety of criteria including but not limited to its name, status, architecture, and OS family.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSources = Oci.OsManagementHub.GetSoftwareSources.Invoke(new()
+        ///     {
+        ///         ArchTypes = softwareSourceArchType,
+        ///         Availabilities = softwareSourceAvailability,
+        ///         AvailabilityAnywheres = softwareSourceAvailabilityAnywhere,
+        ///         AvailabilityAtOcis = softwareSourceAvailabilityAtOci,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = softwareSourceDisplayName,
+        ///         DisplayNameContains = softwareSourceDisplayNameContains,
+        ///         DisplayNameNotEqualTos = softwareSourceDisplayNameNotEqualTo,
+        ///         IsMandatoryForAutonomousLinux = softwareSourceIsMandatoryForAutonomousLinux,
+        ///         OsFamilies = softwareSourceOsFamily,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         SoftwareSourceTypes = softwareSourceSoftwareSourceType,
+        ///         States = softwareSourceState,
+        ///         VendorName = softwareSourceVendorName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourcesResult> Invoke(GetSoftwareSourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourcesResult>("oci:OsManagementHub/getSoftwareSources:getSoftwareSources", args ?? new GetSoftwareSourcesInvokeArgs(), options.WithDefaults());
     }
 
 

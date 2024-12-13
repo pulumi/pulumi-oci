@@ -74,6 +74,38 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceGroupAvailablePackagesResult> Invoke(GetManagedInstanceGroupAvailablePackagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupAvailablePackagesResult>("oci:OsManagementHub/getManagedInstanceGroupAvailablePackages:getManagedInstanceGroupAvailablePackages", args ?? new GetManagedInstanceGroupAvailablePackagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Group Available Packages in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists available packages on the specified managed instances group. Filter the list against a variety 
+        /// of criteria including but not limited to the package name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceGroupAvailablePackages = Oci.OsManagementHub.GetManagedInstanceGroupAvailablePackages.Invoke(new()
+        ///     {
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupAvailablePackageDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupAvailablePackageDisplayNameContains,
+        ///         IsLatest = managedInstanceGroupAvailablePackageIsLatest,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceGroupAvailablePackagesResult> Invoke(GetManagedInstanceGroupAvailablePackagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupAvailablePackagesResult>("oci:OsManagementHub/getManagedInstanceGroupAvailablePackages:getManagedInstanceGroupAvailablePackages", args ?? new GetManagedInstanceGroupAvailablePackagesInvokeArgs(), options.WithDefaults());
     }
 
 

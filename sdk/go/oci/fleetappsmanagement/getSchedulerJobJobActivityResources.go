@@ -90,21 +90,11 @@ type GetSchedulerJobJobActivityResourcesResult struct {
 }
 
 func GetSchedulerJobJobActivityResourcesOutput(ctx *pulumi.Context, args GetSchedulerJobJobActivityResourcesOutputArgs, opts ...pulumi.InvokeOption) GetSchedulerJobJobActivityResourcesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSchedulerJobJobActivityResourcesResultOutput, error) {
 			args := v.(GetSchedulerJobJobActivityResourcesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSchedulerJobJobActivityResourcesResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getSchedulerJobJobActivityResources:getSchedulerJobJobActivityResources", args, &rv, "", opts...)
-			if err != nil {
-				return GetSchedulerJobJobActivityResourcesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSchedulerJobJobActivityResourcesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSchedulerJobJobActivityResourcesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerJobJobActivityResources:getSchedulerJobJobActivityResources", args, GetSchedulerJobJobActivityResourcesResultOutput{}, options).(GetSchedulerJobJobActivityResourcesResultOutput), nil
 		}).(GetSchedulerJobJobActivityResourcesResultOutput)
 }
 

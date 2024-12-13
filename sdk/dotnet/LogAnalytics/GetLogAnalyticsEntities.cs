@@ -86,6 +86,44 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsEntitiesResult> Invoke(GetLogAnalyticsEntitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntitiesResult>("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args ?? new GetLogAnalyticsEntitiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Return a list of log analytics entities.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsEntities = Oci.LogAnalytics.GetLogAnalyticsEntities.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = logAnalyticsEntityNamespace,
+        ///         CloudResourceId = testCloudResource.Id,
+        ///         EntityTypeNames = logAnalyticsEntityEntityTypeName,
+        ///         Hostname = logAnalyticsEntityHostname,
+        ///         HostnameContains = logAnalyticsEntityHostnameContains,
+        ///         IsManagementAgentIdNull = logAnalyticsEntityIsManagementAgentIdNull,
+        ///         LifecycleDetailsContains = logAnalyticsEntityLifecycleDetailsContains,
+        ///         MetadataEquals = logAnalyticsEntityMetadataEquals,
+        ///         Name = logAnalyticsEntityName,
+        ///         NameContains = logAnalyticsEntityNameContains,
+        ///         SourceId = testSource.Id,
+        ///         State = logAnalyticsEntityState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsEntitiesResult> Invoke(GetLogAnalyticsEntitiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntitiesResult>("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args ?? new GetLogAnalyticsEntitiesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsAppRolesResult> Invoke(GetDomainsAppRolesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAppRolesResult>("oci:Identity/getDomainsAppRoles:getDomainsAppRoles", args ?? new GetDomainsAppRolesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of App Roles in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search AppRoles
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAppRoles = Oci.Identity.GetDomainsAppRoles.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AppRoleCount = appRoleAppRoleCount,
+        ///         AppRoleFilter = appRoleAppRoleFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = appRoleAuthorization,
+        ///         ResourceTypeSchemaVersion = appRoleResourceTypeSchemaVersion,
+        ///         StartIndex = appRoleStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsAppRolesResult> Invoke(GetDomainsAppRolesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAppRolesResult>("oci:Identity/getDomainsAppRoles:getDomainsAppRoles", args ?? new GetDomainsAppRolesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetResolversResult> Invoke(GetResolversInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResolversResult>("oci:Dns/getResolvers:getResolvers", args ?? new GetResolversInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Gets a list of all resolvers within a compartment.
+        /// 
+        /// The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+        /// on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+        /// query parameter is provided, the collection does not include resolvers in the DELETED
+        /// lifecycleState to be consistent with other operations of the API.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResolvers = Oci.Dns.GetResolvers.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Scope = "PRIVATE",
+        ///         DisplayName = resolverDisplayName,
+        ///         Id = resolverId,
+        ///         State = resolverState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResolversResult> Invoke(GetResolversInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResolversResult>("oci:Dns/getResolvers:getResolvers", args ?? new GetResolversInvokeArgs(), options.WithDefaults());
     }
 
 

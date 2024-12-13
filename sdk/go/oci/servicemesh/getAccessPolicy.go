@@ -88,21 +88,11 @@ type LookupAccessPolicyResult struct {
 }
 
 func LookupAccessPolicyOutput(ctx *pulumi.Context, args LookupAccessPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAccessPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAccessPolicyResultOutput, error) {
 			args := v.(LookupAccessPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAccessPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getAccessPolicy:getAccessPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAccessPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAccessPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAccessPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ServiceMesh/getAccessPolicy:getAccessPolicy", args, LookupAccessPolicyResultOutput{}, options).(LookupAccessPolicyResultOutput), nil
 		}).(LookupAccessPolicyResultOutput)
 }
 

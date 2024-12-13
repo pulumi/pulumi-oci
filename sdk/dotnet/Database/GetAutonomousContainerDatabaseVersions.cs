@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousContainerDatabaseVersionsResult> Invoke(GetAutonomousContainerDatabaseVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseVersionsResult>("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", args ?? new GetAutonomousContainerDatabaseVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of supported Autonomous Container Database versions.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousContainerDatabaseVersions = Oci.Database.GetAutonomousContainerDatabaseVersions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ServiceComponent = autonomousContainerDatabaseVersionServiceComponent,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousContainerDatabaseVersionsResult> Invoke(GetAutonomousContainerDatabaseVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseVersionsResult>("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", args ?? new GetAutonomousContainerDatabaseVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

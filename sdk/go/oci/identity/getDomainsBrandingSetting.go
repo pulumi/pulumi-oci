@@ -146,21 +146,11 @@ type GetDomainsBrandingSettingResult struct {
 }
 
 func GetDomainsBrandingSettingOutput(ctx *pulumi.Context, args GetDomainsBrandingSettingOutputArgs, opts ...pulumi.InvokeOption) GetDomainsBrandingSettingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsBrandingSettingResultOutput, error) {
 			args := v.(GetDomainsBrandingSettingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsBrandingSettingResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsBrandingSetting:getDomainsBrandingSetting", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsBrandingSettingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsBrandingSettingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsBrandingSettingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsBrandingSetting:getDomainsBrandingSetting", args, GetDomainsBrandingSettingResultOutput{}, options).(GetDomainsBrandingSettingResultOutput), nil
 		}).(GetDomainsBrandingSettingResultOutput)
 }
 

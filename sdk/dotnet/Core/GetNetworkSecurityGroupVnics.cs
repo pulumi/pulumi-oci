@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetNetworkSecurityGroupVnicsResult> Invoke(GetNetworkSecurityGroupVnicsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupVnicsResult>("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", args ?? new GetNetworkSecurityGroupVnicsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the VNICs in the specified network security group.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkSecurityGroupVnics = Oci.Core.GetNetworkSecurityGroupVnics.Invoke(new()
+        ///     {
+        ///         NetworkSecurityGroupId = testNetworkSecurityGroup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkSecurityGroupVnicsResult> Invoke(GetNetworkSecurityGroupVnicsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupVnicsResult>("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", args ?? new GetNetworkSecurityGroupVnicsInvokeArgs(), options.WithDefaults());
     }
 
 

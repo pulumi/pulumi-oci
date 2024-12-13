@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousContainerDatabaseDataguardAssociationResult> Invoke(GetAutonomousContainerDatabaseDataguardAssociationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseDataguardAssociationResult>("oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation", args ?? new GetAutonomousContainerDatabaseDataguardAssociationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousContainerDatabaseDataguardAssociation = Oci.Database.GetAutonomousContainerDatabaseDataguardAssociation.Invoke(new()
+        ///     {
+        ///         AutonomousContainerDatabaseDataguardAssociationId = testAutonomousContainerDatabaseDataguardAssociationOciDatabaseAutonomousContainerDatabaseDataguardAssociation.Id,
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousContainerDatabaseDataguardAssociationResult> Invoke(GetAutonomousContainerDatabaseDataguardAssociationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseDataguardAssociationResult>("oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation", args ?? new GetAutonomousContainerDatabaseDataguardAssociationInvokeArgs(), options.WithDefaults());
     }
 
 

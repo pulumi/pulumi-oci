@@ -94,21 +94,11 @@ type LookupWorkspaceTaskResult struct {
 }
 
 func LookupWorkspaceTaskOutput(ctx *pulumi.Context, args LookupWorkspaceTaskOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceTaskResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupWorkspaceTaskResultOutput, error) {
 			args := v.(LookupWorkspaceTaskArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupWorkspaceTaskResult
-			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", args, &rv, "", opts...)
-			if err != nil {
-				return LookupWorkspaceTaskResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupWorkspaceTaskResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupWorkspaceTaskResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", args, LookupWorkspaceTaskResultOutput{}, options).(LookupWorkspaceTaskResultOutput), nil
 		}).(LookupWorkspaceTaskResultOutput)
 }
 

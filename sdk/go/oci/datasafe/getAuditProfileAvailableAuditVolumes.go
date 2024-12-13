@@ -90,21 +90,11 @@ type GetAuditProfileAvailableAuditVolumesResult struct {
 }
 
 func GetAuditProfileAvailableAuditVolumesOutput(ctx *pulumi.Context, args GetAuditProfileAvailableAuditVolumesOutputArgs, opts ...pulumi.InvokeOption) GetAuditProfileAvailableAuditVolumesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAuditProfileAvailableAuditVolumesResultOutput, error) {
 			args := v.(GetAuditProfileAvailableAuditVolumesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAuditProfileAvailableAuditVolumesResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args, &rv, "", opts...)
-			if err != nil {
-				return GetAuditProfileAvailableAuditVolumesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAuditProfileAvailableAuditVolumesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAuditProfileAvailableAuditVolumesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args, GetAuditProfileAvailableAuditVolumesResultOutput{}, options).(GetAuditProfileAvailableAuditVolumesResultOutput), nil
 		}).(GetAuditProfileAvailableAuditVolumesResultOutput)
 }
 

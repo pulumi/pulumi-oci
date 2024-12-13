@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Streaming
         /// </summary>
         public static Output<GetStreamResult> Invoke(GetStreamInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamResult>("oci:Streaming/getStream:getStream", args ?? new GetStreamInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Stream resource in Oracle Cloud Infrastructure Streaming service.
+        /// 
+        /// Gets detailed information about a stream, including the number of partitions.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testStream = Oci.Streaming.GetStream.Invoke(new()
+        ///     {
+        ///         StreamId = testStreamOciStreamingStream.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetStreamResult> Invoke(GetStreamInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetStreamResult>("oci:Streaming/getStream:getStream", args ?? new GetStreamInvokeArgs(), options.WithDefaults());
     }
 
 

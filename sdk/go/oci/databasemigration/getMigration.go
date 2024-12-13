@@ -111,21 +111,11 @@ type LookupMigrationResult struct {
 }
 
 func LookupMigrationOutput(ctx *pulumi.Context, args LookupMigrationOutputArgs, opts ...pulumi.InvokeOption) LookupMigrationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupMigrationResultOutput, error) {
 			args := v.(LookupMigrationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupMigrationResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseMigration/getMigration:getMigration", args, &rv, "", opts...)
-			if err != nil {
-				return LookupMigrationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupMigrationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupMigrationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseMigration/getMigration:getMigration", args, LookupMigrationResultOutput{}, options).(LookupMigrationResultOutput), nil
 		}).(LookupMigrationResultOutput)
 }
 

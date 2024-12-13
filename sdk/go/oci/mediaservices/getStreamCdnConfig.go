@@ -91,21 +91,11 @@ type LookupStreamCdnConfigResult struct {
 }
 
 func LookupStreamCdnConfigOutput(ctx *pulumi.Context, args LookupStreamCdnConfigOutputArgs, opts ...pulumi.InvokeOption) LookupStreamCdnConfigResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupStreamCdnConfigResultOutput, error) {
 			args := v.(LookupStreamCdnConfigArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupStreamCdnConfigResult
-			secret, err := ctx.InvokePackageRaw("oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig", args, &rv, "", opts...)
-			if err != nil {
-				return LookupStreamCdnConfigResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupStreamCdnConfigResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupStreamCdnConfigResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig", args, LookupStreamCdnConfigResultOutput{}, options).(LookupStreamCdnConfigResultOutput), nil
 		}).(LookupStreamCdnConfigResultOutput)
 }
 

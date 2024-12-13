@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Ons
         /// </summary>
         public static Output<GetNotificationTopicsResult> Invoke(GetNotificationTopicsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNotificationTopicsResult>("oci:Ons/getNotificationTopics:getNotificationTopics", args ?? new GetNotificationTopicsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Notification Topics in Oracle Cloud Infrastructure Notifications service.
+        /// 
+        /// Lists topics in the specified compartment.
+        /// 
+        /// Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNotificationTopics = Oci.Ons.GetNotificationTopics.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Id = notificationTopicId,
+        ///         Name = notificationTopicName,
+        ///         State = notificationTopicState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNotificationTopicsResult> Invoke(GetNotificationTopicsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNotificationTopicsResult>("oci:Ons/getNotificationTopics:getNotificationTopics", args ?? new GetNotificationTopicsInvokeArgs(), options.WithDefaults());
     }
 
 

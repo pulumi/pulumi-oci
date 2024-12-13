@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetLibraryMaskingFormatsResult> Invoke(GetLibraryMaskingFormatsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLibraryMaskingFormatsResult>("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", args ?? new GetLibraryMaskingFormatsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of library masking formats based on the specified query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLibraryMaskingFormats = Oci.DataSafe.GetLibraryMaskingFormats.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = libraryMaskingFormatAccessLevel,
+        ///         CompartmentIdInSubtree = libraryMaskingFormatCompartmentIdInSubtree,
+        ///         DisplayName = libraryMaskingFormatDisplayName,
+        ///         LibraryMaskingFormatId = testLibraryMaskingFormat.Id,
+        ///         LibraryMaskingFormatSource = libraryMaskingFormatLibraryMaskingFormatSource,
+        ///         State = libraryMaskingFormatState,
+        ///         TimeCreatedGreaterThanOrEqualTo = libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = libraryMaskingFormatTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLibraryMaskingFormatsResult> Invoke(GetLibraryMaskingFormatsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLibraryMaskingFormatsResult>("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", args ?? new GetLibraryMaskingFormatsInvokeArgs(), options.WithDefaults());
     }
 
 

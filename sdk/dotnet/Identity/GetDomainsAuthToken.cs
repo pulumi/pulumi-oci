@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsAuthTokenResult> Invoke(GetDomainsAuthTokenInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAuthTokenResult>("oci:Identity/getDomainsAuthToken:getDomainsAuthToken", args ?? new GetDomainsAuthTokenInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a user's Auth token.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuthToken = Oci.Identity.GetDomainsAuthToken.Invoke(new()
+        ///     {
+        ///         AuthTokenId = testAuthTokenOciIdentityAuthToken.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = authTokenAuthorization,
+        ///         ResourceTypeSchemaVersion = authTokenResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsAuthTokenResult> Invoke(GetDomainsAuthTokenInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAuthTokenResult>("oci:Identity/getDomainsAuthToken:getDomainsAuthToken", args ?? new GetDomainsAuthTokenInvokeArgs(), options.WithDefaults());
     }
 
 

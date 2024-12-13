@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetMysqlBackupResult> Invoke(GetMysqlBackupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMysqlBackupResult>("oci:Mysql/getMysqlBackup:getMysqlBackup", args ?? new GetMysqlBackupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Get information about the specified Backup
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMysqlBackup = Oci.Mysql.GetMysqlBackup.Invoke(new()
+        ///     {
+        ///         BackupId = testBackup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMysqlBackupResult> Invoke(GetMysqlBackupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlBackupResult>("oci:Mysql/getMysqlBackup:getMysqlBackup", args ?? new GetMysqlBackupInvokeArgs(), options.WithDefaults());
     }
 
 

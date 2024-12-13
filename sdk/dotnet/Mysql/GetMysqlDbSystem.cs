@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetMysqlDbSystemResult> Invoke(GetMysqlDbSystemInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMysqlDbSystemResult>("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", args ?? new GetMysqlDbSystemInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Get information about the specified DB System.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMysqlDbSystem = Oci.Mysql.GetMysqlDbSystem.Invoke(new()
+        ///     {
+        ///         DbSystemId = testDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMysqlDbSystemResult> Invoke(GetMysqlDbSystemInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlDbSystemResult>("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", args ?? new GetMysqlDbSystemInvokeArgs(), options.WithDefaults());
     }
 
 

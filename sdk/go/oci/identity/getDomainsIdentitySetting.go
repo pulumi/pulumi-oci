@@ -130,21 +130,11 @@ type LookupDomainsIdentitySettingResult struct {
 }
 
 func LookupDomainsIdentitySettingOutput(ctx *pulumi.Context, args LookupDomainsIdentitySettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsIdentitySettingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsIdentitySettingResultOutput, error) {
 			args := v.(LookupDomainsIdentitySettingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsIdentitySettingResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsIdentitySetting:getDomainsIdentitySetting", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsIdentitySettingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsIdentitySettingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsIdentitySettingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsIdentitySetting:getDomainsIdentitySetting", args, LookupDomainsIdentitySettingResultOutput{}, options).(LookupDomainsIdentitySettingResultOutput), nil
 		}).(LookupDomainsIdentitySettingResultOutput)
 }
 

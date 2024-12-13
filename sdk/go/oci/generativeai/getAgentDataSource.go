@@ -90,21 +90,11 @@ type LookupAgentDataSourceResult struct {
 }
 
 func LookupAgentDataSourceOutput(ctx *pulumi.Context, args LookupAgentDataSourceOutputArgs, opts ...pulumi.InvokeOption) LookupAgentDataSourceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAgentDataSourceResultOutput, error) {
 			args := v.(LookupAgentDataSourceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAgentDataSourceResult
-			secret, err := ctx.InvokePackageRaw("oci:GenerativeAi/getAgentDataSource:getAgentDataSource", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAgentDataSourceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAgentDataSourceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAgentDataSourceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GenerativeAi/getAgentDataSource:getAgentDataSource", args, LookupAgentDataSourceResultOutput{}, options).(LookupAgentDataSourceResultOutput), nil
 		}).(LookupAgentDataSourceResultOutput)
 }
 

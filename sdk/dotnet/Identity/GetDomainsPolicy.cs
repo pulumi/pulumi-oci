@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsPolicyResult> Invoke(GetDomainsPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsPolicyResult>("oci:Identity/getDomainsPolicy:getDomainsPolicy", args ?? new GetDomainsPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a Policy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPolicy = Oci.Identity.GetDomainsPolicy.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         PolicyId = testPolicyOciIdentityPolicy.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = policyAuthorization,
+        ///         ResourceTypeSchemaVersion = policyResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsPolicyResult> Invoke(GetDomainsPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsPolicyResult>("oci:Identity/getDomainsPolicy:getDomainsPolicy", args ?? new GetDomainsPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

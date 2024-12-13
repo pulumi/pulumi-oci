@@ -110,21 +110,11 @@ type LookupSqlEndpointResult struct {
 }
 
 func LookupSqlEndpointOutput(ctx *pulumi.Context, args LookupSqlEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupSqlEndpointResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSqlEndpointResultOutput, error) {
 			args := v.(LookupSqlEndpointArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSqlEndpointResult
-			secret, err := ctx.InvokePackageRaw("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSqlEndpointResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSqlEndpointResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSqlEndpointResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", args, LookupSqlEndpointResultOutput{}, options).(LookupSqlEndpointResultOutput), nil
 		}).(LookupSqlEndpointResultOutput)
 }
 

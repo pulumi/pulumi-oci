@@ -62,6 +62,32 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         public static Output<GetSslCipherSuitesResult> Invoke(GetSslCipherSuitesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSslCipherSuitesResult>("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", args ?? new GetSslCipherSuitesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
+        /// 
+        /// Lists all SSL cipher suites associated with the specified load balancer.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSslCipherSuites = Oci.LoadBalancer.GetSslCipherSuites.Invoke(new()
+        ///     {
+        ///         LoadBalancerId = testLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSslCipherSuitesResult> Invoke(GetSslCipherSuitesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSslCipherSuitesResult>("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", args ?? new GetSslCipherSuitesInvokeArgs(), options.WithDefaults());
     }
 
 

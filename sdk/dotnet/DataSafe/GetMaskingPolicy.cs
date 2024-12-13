@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetMaskingPolicyResult> Invoke(GetMaskingPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyResult>("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", args ?? new GetMaskingPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the specified masking policy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaskingPolicy = Oci.DataSafe.GetMaskingPolicy.Invoke(new()
+        ///     {
+        ///         MaskingPolicyId = testMaskingPolicyOciDataSafeMaskingPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaskingPolicyResult> Invoke(GetMaskingPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyResult>("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", args ?? new GetMaskingPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

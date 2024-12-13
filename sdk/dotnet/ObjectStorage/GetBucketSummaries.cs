@@ -82,6 +82,42 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public static Output<GetBucketSummariesResult> Invoke(GetBucketSummariesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBucketSummariesResult>("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args ?? new GetBucketSummariesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
+        /// and does not contain fields like the user-defined metadata.
+        /// 
+        /// ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
+        /// `opc-next-page` value with the `page` request parameter.
+        /// 
+        /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+        /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+        /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBuckets = Oci.ObjectStorage.GetBucketSummaries.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = bucketNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBucketSummariesResult> Invoke(GetBucketSummariesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBucketSummariesResult>("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args ?? new GetBucketSummariesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstanceMaintenanceEventsResult> Invoke(GetInstanceMaintenanceEventsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMaintenanceEventsResult>("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", args ?? new GetInstanceMaintenanceEventsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Instance Maintenance Events in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets a list of all the maintenance events for the given instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstanceMaintenanceEvents = Oci.Core.GetInstanceMaintenanceEvents.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CorrelationToken = instanceMaintenanceEventCorrelationToken,
+        ///         InstanceAction = instanceMaintenanceEventInstanceAction,
+        ///         InstanceId = testInstance.Id,
+        ///         State = instanceMaintenanceEventState,
+        ///         TimeWindowStartGreaterThanOrEqualTo = instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo,
+        ///         TimeWindowStartLessThanOrEqualTo = instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstanceMaintenanceEventsResult> Invoke(GetInstanceMaintenanceEventsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMaintenanceEventsResult>("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", args ?? new GetInstanceMaintenanceEventsInvokeArgs(), options.WithDefaults());
     }
 
 

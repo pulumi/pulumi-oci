@@ -72,21 +72,11 @@ type GetListingTaxesResult struct {
 }
 
 func GetListingTaxesOutput(ctx *pulumi.Context, args GetListingTaxesOutputArgs, opts ...pulumi.InvokeOption) GetListingTaxesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetListingTaxesResultOutput, error) {
 			args := v.(GetListingTaxesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetListingTaxesResult
-			secret, err := ctx.InvokePackageRaw("oci:Marketplace/getListingTaxes:getListingTaxes", args, &rv, "", opts...)
-			if err != nil {
-				return GetListingTaxesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetListingTaxesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetListingTaxesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Marketplace/getListingTaxes:getListingTaxes", args, GetListingTaxesResultOutput{}, options).(GetListingTaxesResultOutput), nil
 		}).(GetListingTaxesResultOutput)
 }
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.OneSubsription
         /// </summary>
         public static Output<GetInvoiceLineComputedUsagesResult> Invoke(GetInvoiceLineComputedUsagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvoiceLineComputedUsagesResult>("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args ?? new GetInvoiceLineComputedUsagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
+        /// 
+        /// This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInvoiceLineComputedUsages = Oci.OneSubsription.GetInvoiceLineComputedUsages.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         InvoiceLineId = testInvoiceLine.Id,
+        ///         Fields = invoiceLineComputedUsageFields,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInvoiceLineComputedUsagesResult> Invoke(GetInvoiceLineComputedUsagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvoiceLineComputedUsagesResult>("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args ?? new GetInvoiceLineComputedUsagesInvokeArgs(), options.WithDefaults());
     }
 
 

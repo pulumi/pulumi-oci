@@ -96,21 +96,11 @@ type LookupFsuCollectionResult struct {
 }
 
 func LookupFsuCollectionOutput(ctx *pulumi.Context, args LookupFsuCollectionOutputArgs, opts ...pulumi.InvokeOption) LookupFsuCollectionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupFsuCollectionResultOutput, error) {
 			args := v.(LookupFsuCollectionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupFsuCollectionResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetSoftwareUpdate/getFsuCollection:getFsuCollection", args, &rv, "", opts...)
-			if err != nil {
-				return LookupFsuCollectionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupFsuCollectionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupFsuCollectionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetSoftwareUpdate/getFsuCollection:getFsuCollection", args, LookupFsuCollectionResultOutput{}, options).(LookupFsuCollectionResultOutput), nil
 		}).(LookupFsuCollectionResultOutput)
 }
 

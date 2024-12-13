@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public static Output<GetSddcResult> Invoke(GetSddcInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSddcResult>("oci:Ocvp/getSddc:getSddc", args ?? new GetSddcInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// 
+        /// Gets the specified SDDC's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSddc = Oci.Ocvp.GetSddc.Invoke(new()
+        ///     {
+        ///         SddcId = testSddcOciOcvpSddc.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSddcResult> Invoke(GetSddcInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSddcResult>("oci:Ocvp/getSddc:getSddc", args ?? new GetSddcInvokeArgs(), options.WithDefaults());
     }
 
 

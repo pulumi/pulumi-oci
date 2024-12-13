@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetBuildRunResult> Invoke(GetBuildRunInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBuildRunResult>("oci:DevOps/getBuildRun:getBuildRun", args ?? new GetBuildRunInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Build Run resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns the details of a build run for a given build run ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBuildRun = Oci.DevOps.GetBuildRun.Invoke(new()
+        ///     {
+        ///         BuildRunId = testBuildRunOciDevopsBuildRun.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBuildRunResult> Invoke(GetBuildRunInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBuildRunResult>("oci:DevOps/getBuildRun:getBuildRun", args ?? new GetBuildRunInvokeArgs(), options.WithDefaults());
     }
 
 

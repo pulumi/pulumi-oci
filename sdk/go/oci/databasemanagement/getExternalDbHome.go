@@ -90,21 +90,11 @@ type LookupExternalDbHomeResult struct {
 }
 
 func LookupExternalDbHomeOutput(ctx *pulumi.Context, args LookupExternalDbHomeOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbHomeResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalDbHomeResultOutput, error) {
 			args := v.(LookupExternalDbHomeArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalDbHomeResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalDbHomeResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalDbHomeResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalDbHomeResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args, LookupExternalDbHomeResultOutput{}, options).(LookupExternalDbHomeResultOutput), nil
 		}).(LookupExternalDbHomeResultOutput)
 }
 

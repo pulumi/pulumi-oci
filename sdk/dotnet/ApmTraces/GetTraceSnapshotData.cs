@@ -72,6 +72,37 @@ namespace Pulumi.Oci.ApmTraces
         /// </summary>
         public static Output<GetTraceSnapshotDataResult> Invoke(GetTraceSnapshotDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTraceSnapshotDataResult>("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args ?? new GetTraceSnapshotDataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
+        /// 
+        /// Gets the trace snapshots data identified by trace ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTraceSnapshotData = Oci.ApmTraces.GetTraceSnapshotData.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         TraceKey = traceSnapshotDataTraceKey,
+        ///         IsSummarized = traceSnapshotDataIsSummarized,
+        ///         SnapshotTime = traceSnapshotDataSnapshotTime,
+        ///         ThreadId = testThread.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTraceSnapshotDataResult> Invoke(GetTraceSnapshotDataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTraceSnapshotDataResult>("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args ?? new GetTraceSnapshotDataInvokeArgs(), options.WithDefaults());
     }
 
 

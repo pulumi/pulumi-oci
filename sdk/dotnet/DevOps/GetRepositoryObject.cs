@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryObjectResult> Invoke(GetRepositoryObjectInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryObjectResult>("oci:DevOps/getRepositoryObject:getRepositoryObject", args ?? new GetRepositoryObjectInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Repository Object resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieves blob of specific branch name/commit ID and file path.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryObject = Oci.DevOps.GetRepositoryObject.Invoke(new()
+        ///     {
+        ///         RepositoryId = testRepository.Id,
+        ///         FilePath = repositoryObjectFilePath,
+        ///         RefName = repositoryObjectRefName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryObjectResult> Invoke(GetRepositoryObjectInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryObjectResult>("oci:DevOps/getRepositoryObject:getRepositoryObject", args ?? new GetRepositoryObjectInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Waas
         /// </summary>
         public static Output<GetAddressListResult> Invoke(GetAddressListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressListResult>("oci:Waas/getAddressList:getAddressList", args ?? new GetAddressListInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+        /// 
+        /// Gets the details of an address list.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAddressList = Oci.Waas.GetAddressList.Invoke(new()
+        ///     {
+        ///         AddressListId = testAddressListOciWaasAddressList.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAddressListResult> Invoke(GetAddressListInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddressListResult>("oci:Waas/getAddressList:getAddressList", args ?? new GetAddressListInvokeArgs(), options.WithDefaults());
     }
 
 

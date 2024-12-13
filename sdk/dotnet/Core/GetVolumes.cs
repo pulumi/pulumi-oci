@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVolumesResult> Invoke(GetVolumesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumesResult>("oci:Core/getVolumes:getVolumes", args ?? new GetVolumesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the volumes in the specified compartment and availability domain.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVolumes = Oci.Core.GetVolumes.Invoke(new()
+        ///     {
+        ///         AvailabilityDomain = volumeAvailabilityDomain,
+        ///         ClusterPlacementGroupId = testGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = volumeDisplayName,
+        ///         State = volumeState,
+        ///         VolumeGroupId = testVolumeGroup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVolumesResult> Invoke(GetVolumesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumesResult>("oci:Core/getVolumes:getVolumes", args ?? new GetVolumesInvokeArgs(), options.WithDefaults());
     }
 
 

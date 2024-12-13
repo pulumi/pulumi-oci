@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetKeyStoreResult> Invoke(GetKeyStoreInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKeyStoreResult>("oci:Database/getKeyStore:getKeyStore", args ?? new GetKeyStoreInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Key Store resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified key store.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testKeyStore = Oci.Database.GetKeyStore.Invoke(new()
+        ///     {
+        ///         KeyStoreId = testKeyStoreOciDatabaseKeyStore.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetKeyStoreResult> Invoke(GetKeyStoreInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetKeyStoreResult>("oci:Database/getKeyStore:getKeyStore", args ?? new GetKeyStoreInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwarePackagesResult> Invoke(GetSoftwarePackagesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwarePackagesResult>("oci:OsManagementHub/getSoftwarePackages:getSoftwarePackages", args ?? new GetSoftwarePackagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists software packages available through the OS Management Hub service.  Filter the list against a variety of criteria 
+        /// including but not limited to its name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwarePackages = Oci.OsManagementHub.GetSoftwarePackages.Invoke(new()
+        ///     {
+        ///         Architecture = softwarePackageArchitecture,
+        ///         DisplayName = softwarePackageDisplayName,
+        ///         DisplayNameContains = softwarePackageDisplayNameContains,
+        ///         IsLatest = softwarePackageIsLatest,
+        ///         OsFamily = softwarePackageOsFamily,
+        ///         Version = softwarePackageVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwarePackagesResult> Invoke(GetSoftwarePackagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwarePackagesResult>("oci:OsManagementHub/getSoftwarePackages:getSoftwarePackages", args ?? new GetSoftwarePackagesInvokeArgs(), options.WithDefaults());
     }
 
 

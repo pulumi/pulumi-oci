@@ -114,21 +114,11 @@ type GetReportsResult struct {
 }
 
 func GetReportsOutput(ctx *pulumi.Context, args GetReportsOutputArgs, opts ...pulumi.InvokeOption) GetReportsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetReportsResultOutput, error) {
 			args := v.(GetReportsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetReportsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getReports:getReports", args, &rv, "", opts...)
-			if err != nil {
-				return GetReportsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetReportsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetReportsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getReports:getReports", args, GetReportsResultOutput{}, options).(GetReportsResultOutput), nil
 		}).(GetReportsResultOutput)
 }
 

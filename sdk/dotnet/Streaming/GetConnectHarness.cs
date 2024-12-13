@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Streaming
         /// </summary>
         public static Output<GetConnectHarnessResult> Invoke(GetConnectHarnessInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectHarnessResult>("oci:Streaming/getConnectHarness:getConnectHarness", args ?? new GetConnectHarnessInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
+        /// 
+        /// Gets detailed information about a connect harness.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnectHarness = Oci.Streaming.GetConnectHarness.Invoke(new()
+        ///     {
+        ///         ConnectHarnessId = testConnectHarnes.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConnectHarnessResult> Invoke(GetConnectHarnessInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectHarnessResult>("oci:Streaming/getConnectHarness:getConnectHarness", args ?? new GetConnectHarnessInvokeArgs(), options.WithDefaults());
     }
 
 

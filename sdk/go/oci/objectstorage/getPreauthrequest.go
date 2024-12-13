@@ -93,21 +93,11 @@ type LookupPreauthrequestResult struct {
 }
 
 func LookupPreauthrequestOutput(ctx *pulumi.Context, args LookupPreauthrequestOutputArgs, opts ...pulumi.InvokeOption) LookupPreauthrequestResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupPreauthrequestResultOutput, error) {
 			args := v.(LookupPreauthrequestArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupPreauthrequestResult
-			secret, err := ctx.InvokePackageRaw("oci:ObjectStorage/getPreauthrequest:getPreauthrequest", args, &rv, "", opts...)
-			if err != nil {
-				return LookupPreauthrequestResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupPreauthrequestResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupPreauthrequestResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ObjectStorage/getPreauthrequest:getPreauthrequest", args, LookupPreauthrequestResultOutput{}, options).(LookupPreauthrequestResultOutput), nil
 		}).(LookupPreauthrequestResultOutput)
 }
 

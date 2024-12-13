@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetDbManagementPrivateEndpointsResult> Invoke(GetDbManagementPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbManagementPrivateEndpointsResult>("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", args ?? new GetDbManagementPrivateEndpointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db Management Private Endpoints in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets a list of Database Management private endpoints.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbManagementPrivateEndpoints = Oci.DatabaseManagement.GetDbManagementPrivateEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         IsCluster = dbManagementPrivateEndpointIsCluster,
+        ///         IsDnsResolutionEnabled = dbManagementPrivateEndpointIsDnsResolutionEnabled,
+        ///         Name = dbManagementPrivateEndpointName,
+        ///         State = dbManagementPrivateEndpointState,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbManagementPrivateEndpointsResult> Invoke(GetDbManagementPrivateEndpointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbManagementPrivateEndpointsResult>("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", args ?? new GetDbManagementPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

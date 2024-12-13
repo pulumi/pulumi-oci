@@ -84,6 +84,43 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public static Output<GetSnapshotsResult> Invoke(GetSnapshotsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSnapshotsResult>("oci:FileStorage/getSnapshots:getSnapshots", args ?? new GetSnapshotsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
+        /// 
+        /// Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+        /// or by file system snapshot policy and file system.
+        /// 
+        /// If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+        /// 
+        /// Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+        /// (sort by name is NOT supported for listing snapshots by policy and compartment).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSnapshots = Oci.FileStorage.GetSnapshots.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         FileSystemId = testFileSystem.Id,
+        ///         FilesystemSnapshotPolicyId = testFilesystemSnapshotPolicy.Id,
+        ///         Id = snapshotId,
+        ///         State = snapshotState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSnapshotsResult> Invoke(GetSnapshotsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSnapshotsResult>("oci:FileStorage/getSnapshots:getSnapshots", args ?? new GetSnapshotsInvokeArgs(), options.WithDefaults());
     }
 
 

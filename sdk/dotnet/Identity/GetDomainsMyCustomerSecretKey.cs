@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyCustomerSecretKeyResult> Invoke(GetDomainsMyCustomerSecretKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCustomerSecretKeyResult>("oci:Identity/getDomainsMyCustomerSecretKey:getDomainsMyCustomerSecretKey", args ?? new GetDomainsMyCustomerSecretKeyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a user's own customer secret key.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyCustomerSecretKey = Oci.Identity.GetDomainsMyCustomerSecretKey.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCustomerSecretKeyId = testCustomerSecretKey.Id,
+        ///         Authorization = myCustomerSecretKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myCustomerSecretKeyResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyCustomerSecretKeyResult> Invoke(GetDomainsMyCustomerSecretKeyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCustomerSecretKeyResult>("oci:Identity/getDomainsMyCustomerSecretKey:getDomainsMyCustomerSecretKey", args ?? new GetDomainsMyCustomerSecretKeyInvokeArgs(), options.WithDefaults());
     }
 
 

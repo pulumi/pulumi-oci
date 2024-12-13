@@ -76,21 +76,11 @@ type GetVantagePointResult struct {
 }
 
 func GetVantagePointOutput(ctx *pulumi.Context, args GetVantagePointOutputArgs, opts ...pulumi.InvokeOption) GetVantagePointResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVantagePointResultOutput, error) {
 			args := v.(GetVantagePointArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVantagePointResult
-			secret, err := ctx.InvokePackageRaw("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args, &rv, "", opts...)
-			if err != nil {
-				return GetVantagePointResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVantagePointResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVantagePointResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args, GetVantagePointResultOutput{}, options).(GetVantagePointResultOutput), nil
 		}).(GetVantagePointResultOutput)
 }
 

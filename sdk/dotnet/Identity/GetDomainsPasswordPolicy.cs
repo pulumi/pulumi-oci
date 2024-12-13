@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsPasswordPolicyResult> Invoke(GetDomainsPasswordPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsPasswordPolicyResult>("oci:Identity/getDomainsPasswordPolicy:getDomainsPasswordPolicy", args ?? new GetDomainsPasswordPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a password policy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPasswordPolicy = Oci.Identity.GetDomainsPasswordPolicy.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         PasswordPolicyId = testPolicy.Id,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = passwordPolicyAuthorization,
+        ///         ResourceTypeSchemaVersion = passwordPolicyResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsPasswordPolicyResult> Invoke(GetDomainsPasswordPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsPasswordPolicyResult>("oci:Identity/getDomainsPasswordPolicy:getDomainsPasswordPolicy", args ?? new GetDomainsPasswordPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

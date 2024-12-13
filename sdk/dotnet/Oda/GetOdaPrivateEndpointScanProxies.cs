@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public static Output<GetOdaPrivateEndpointScanProxiesResult> Invoke(GetOdaPrivateEndpointScanProxiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointScanProxiesResult>("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", args ?? new GetOdaPrivateEndpointScanProxiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Oda Private Endpoint Scan Proxies in Oracle Cloud Infrastructure Digital Assistant service.
+        /// 
+        /// Returns a page of ODA Private Endpoint Scan Proxies that belong to the specified
+        /// ODA Private Endpoint.
+        /// 
+        /// If the `opc-next-page` header appears in the response, then
+        /// there are more items to retrieve. To get the next page in the subsequent
+        /// GET request, include the header's value as the `page` query parameter.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOdaPrivateEndpointScanProxies = Oci.Oda.GetOdaPrivateEndpointScanProxies.Invoke(new()
+        ///     {
+        ///         OdaPrivateEndpointId = testOdaPrivateEndpoint.Id,
+        ///         State = odaPrivateEndpointScanProxyState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOdaPrivateEndpointScanProxiesResult> Invoke(GetOdaPrivateEndpointScanProxiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointScanProxiesResult>("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", args ?? new GetOdaPrivateEndpointScanProxiesInvokeArgs(), options.WithDefaults());
     }
 
 

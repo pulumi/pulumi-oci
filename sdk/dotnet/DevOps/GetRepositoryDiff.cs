@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryDiffResult> Invoke(GetRepositoryDiffInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryDiffResult>("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args ?? new GetRepositoryDiffInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Repository Diff resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by "/repositories/{repositoryId}/file/diffs"
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryDiff = Oci.DevOps.GetRepositoryDiff.Invoke(new()
+        ///     {
+        ///         BaseVersion = repositoryDiffBaseVersion,
+        ///         FilePath = repositoryDiffFilePath,
+        ///         RepositoryId = testRepository.Id,
+        ///         TargetVersion = repositoryDiffTargetVersion,
+        ///         IsComparisonFromMergeBase = repositoryDiffIsComparisonFromMergeBase,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryDiffResult> Invoke(GetRepositoryDiffInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryDiffResult>("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args ?? new GetRepositoryDiffInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseUsersResult> Invoke(GetManagedDatabaseUsersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUsersResult>("oci:DatabaseManagement/getManagedDatabaseUsers:getManagedDatabaseUsers", args ?? new GetManagedDatabaseUsersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of users for the specified managedDatabaseId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseUsers = Oci.DatabaseManagement.GetManagedDatabaseUsers.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         Name = managedDatabaseUserName,
+        ///         OpcNamedCredentialId = managedDatabaseUserOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseUsersResult> Invoke(GetManagedDatabaseUsersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUsersResult>("oci:DatabaseManagement/getManagedDatabaseUsers:getManagedDatabaseUsers", args ?? new GetManagedDatabaseUsersInvokeArgs(), options.WithDefaults());
     }
 
 

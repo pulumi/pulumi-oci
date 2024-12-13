@@ -106,21 +106,11 @@ type LookupFleetResourceResult struct {
 }
 
 func LookupFleetResourceOutput(ctx *pulumi.Context, args LookupFleetResourceOutputArgs, opts ...pulumi.InvokeOption) LookupFleetResourceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupFleetResourceResultOutput, error) {
 			args := v.(LookupFleetResourceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupFleetResourceResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getFleetResource:getFleetResource", args, &rv, "", opts...)
-			if err != nil {
-				return LookupFleetResourceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupFleetResourceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupFleetResourceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetResource:getFleetResource", args, LookupFleetResourceResultOutput{}, options).(LookupFleetResourceResultOutput), nil
 		}).(LookupFleetResourceResultOutput)
 }
 

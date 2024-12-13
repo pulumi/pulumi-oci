@@ -92,6 +92,47 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetMaskingPoliciesMaskingColumnsResult> Invoke(GetMaskingPoliciesMaskingColumnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPoliciesMaskingColumnsResult>("oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns", args ?? new GetMaskingPoliciesMaskingColumnsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Masking Policies Masking Columns in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaskingPoliciesMaskingColumns = Oci.DataSafe.GetMaskingPoliciesMaskingColumns.Invoke(new()
+        ///     {
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         ColumnNames = maskingPoliciesMaskingColumnColumnName,
+        ///         DataTypes = maskingPoliciesMaskingColumnDataType,
+        ///         IsMaskingEnabled = maskingPoliciesMaskingColumnIsMaskingEnabled,
+        ///         IsSeedRequired = maskingPoliciesMaskingColumnIsSeedRequired,
+        ///         MaskingColumnGroups = maskingPoliciesMaskingColumnMaskingColumnGroup,
+        ///         MaskingColumnLifecycleState = maskingPoliciesMaskingColumnMaskingColumnLifecycleState,
+        ///         Objects = maskingPoliciesMaskingColumnObject,
+        ///         ObjectTypes = maskingPoliciesMaskingColumnObjectType,
+        ///         SchemaNames = maskingPoliciesMaskingColumnSchemaName,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = maskingPoliciesMaskingColumnTimeCreatedLessThan,
+        ///         TimeUpdatedGreaterThanOrEqualTo = maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo,
+        ///         TimeUpdatedLessThan = maskingPoliciesMaskingColumnTimeUpdatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaskingPoliciesMaskingColumnsResult> Invoke(GetMaskingPoliciesMaskingColumnsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPoliciesMaskingColumnsResult>("oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns", args ?? new GetMaskingPoliciesMaskingColumnsInvokeArgs(), options.WithDefaults());
     }
 
 

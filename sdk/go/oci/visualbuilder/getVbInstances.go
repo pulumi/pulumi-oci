@@ -79,21 +79,11 @@ type GetVbInstancesResult struct {
 }
 
 func GetVbInstancesOutput(ctx *pulumi.Context, args GetVbInstancesOutputArgs, opts ...pulumi.InvokeOption) GetVbInstancesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVbInstancesResultOutput, error) {
 			args := v.(GetVbInstancesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVbInstancesResult
-			secret, err := ctx.InvokePackageRaw("oci:VisualBuilder/getVbInstances:getVbInstances", args, &rv, "", opts...)
-			if err != nil {
-				return GetVbInstancesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVbInstancesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVbInstancesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:VisualBuilder/getVbInstances:getVbInstances", args, GetVbInstancesResultOutput{}, options).(GetVbInstancesResultOutput), nil
 		}).(GetVbInstancesResultOutput)
 }
 

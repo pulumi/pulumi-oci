@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public static Output<GetVaultsResult> Invoke(GetVaultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVaultsResult>("oci:Kms/getVaults:getVaults", args ?? new GetVaultsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Vaults in Oracle Cloud Infrastructure Kms service.
+        /// 
+        /// Lists the vaults in the specified compartment.
+        /// 
+        /// As a provisioning operation, this call is subject to a Key Management limit that applies to
+        /// the total number of requests across all provisioning read operations. Key Management might
+        /// throttle this call to reject an otherwise valid request when the total rate of provisioning
+        /// read operations exceeds 10 requests per second for a given tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVaults = Oci.Kms.GetVaults.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVaultsResult> Invoke(GetVaultsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVaultsResult>("oci:Kms/getVaults:getVaults", args ?? new GetVaultsInvokeArgs(), options.WithDefaults());
     }
 
 

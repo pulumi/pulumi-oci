@@ -88,21 +88,11 @@ type GetJobExecutionsStatusResult struct {
 }
 
 func GetJobExecutionsStatusOutput(ctx *pulumi.Context, args GetJobExecutionsStatusOutputArgs, opts ...pulumi.InvokeOption) GetJobExecutionsStatusResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetJobExecutionsStatusResultOutput, error) {
 			args := v.(GetJobExecutionsStatusArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetJobExecutionsStatusResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", args, &rv, "", opts...)
-			if err != nil {
-				return GetJobExecutionsStatusResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetJobExecutionsStatusResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetJobExecutionsStatusResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", args, GetJobExecutionsStatusResultOutput{}, options).(GetJobExecutionsStatusResultOutput), nil
 		}).(GetJobExecutionsStatusResultOutput)
 }
 

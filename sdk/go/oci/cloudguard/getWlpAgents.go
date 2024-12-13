@@ -69,21 +69,11 @@ type GetWlpAgentsResult struct {
 }
 
 func GetWlpAgentsOutput(ctx *pulumi.Context, args GetWlpAgentsOutputArgs, opts ...pulumi.InvokeOption) GetWlpAgentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetWlpAgentsResultOutput, error) {
 			args := v.(GetWlpAgentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetWlpAgentsResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getWlpAgents:getWlpAgents", args, &rv, "", opts...)
-			if err != nil {
-				return GetWlpAgentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetWlpAgentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetWlpAgentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudGuard/getWlpAgents:getWlpAgents", args, GetWlpAgentsResultOutput{}, options).(GetWlpAgentsResultOutput), nil
 		}).(GetWlpAgentsResultOutput)
 }
 

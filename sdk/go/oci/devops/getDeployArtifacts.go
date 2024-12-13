@@ -87,21 +87,11 @@ type GetDeployArtifactsResult struct {
 }
 
 func GetDeployArtifactsOutput(ctx *pulumi.Context, args GetDeployArtifactsOutputArgs, opts ...pulumi.InvokeOption) GetDeployArtifactsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDeployArtifactsResultOutput, error) {
 			args := v.(GetDeployArtifactsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDeployArtifactsResult
-			secret, err := ctx.InvokePackageRaw("oci:DevOps/getDeployArtifacts:getDeployArtifacts", args, &rv, "", opts...)
-			if err != nil {
-				return GetDeployArtifactsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDeployArtifactsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDeployArtifactsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DevOps/getDeployArtifacts:getDeployArtifacts", args, GetDeployArtifactsResultOutput{}, options).(GetDeployArtifactsResultOutput), nil
 		}).(GetDeployArtifactsResultOutput)
 }
 

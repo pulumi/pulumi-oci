@@ -73,21 +73,11 @@ type GetImportableComputeEntityResult struct {
 }
 
 func GetImportableComputeEntityOutput(ctx *pulumi.Context, args GetImportableComputeEntityOutputArgs, opts ...pulumi.InvokeOption) GetImportableComputeEntityResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetImportableComputeEntityResultOutput, error) {
 			args := v.(GetImportableComputeEntityArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetImportableComputeEntityResult
-			secret, err := ctx.InvokePackageRaw("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", args, &rv, "", opts...)
-			if err != nil {
-				return GetImportableComputeEntityResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetImportableComputeEntityResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetImportableComputeEntityResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", args, GetImportableComputeEntityResultOutput{}, options).(GetImportableComputeEntityResultOutput), nil
 		}).(GetImportableComputeEntityResultOutput)
 }
 

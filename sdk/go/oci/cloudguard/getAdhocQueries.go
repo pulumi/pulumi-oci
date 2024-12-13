@@ -105,21 +105,11 @@ type GetAdhocQueriesResult struct {
 }
 
 func GetAdhocQueriesOutput(ctx *pulumi.Context, args GetAdhocQueriesOutputArgs, opts ...pulumi.InvokeOption) GetAdhocQueriesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAdhocQueriesResultOutput, error) {
 			args := v.(GetAdhocQueriesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAdhocQueriesResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getAdhocQueries:getAdhocQueries", args, &rv, "", opts...)
-			if err != nil {
-				return GetAdhocQueriesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAdhocQueriesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAdhocQueriesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudGuard/getAdhocQueries:getAdhocQueries", args, GetAdhocQueriesResultOutput{}, options).(GetAdhocQueriesResultOutput), nil
 		}).(GetAdhocQueriesResultOutput)
 }
 

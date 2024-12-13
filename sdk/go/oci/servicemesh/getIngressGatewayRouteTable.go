@@ -90,21 +90,11 @@ type LookupIngressGatewayRouteTableResult struct {
 }
 
 func LookupIngressGatewayRouteTableOutput(ctx *pulumi.Context, args LookupIngressGatewayRouteTableOutputArgs, opts ...pulumi.InvokeOption) LookupIngressGatewayRouteTableResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupIngressGatewayRouteTableResultOutput, error) {
 			args := v.(LookupIngressGatewayRouteTableArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupIngressGatewayRouteTableResult
-			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getIngressGatewayRouteTable:getIngressGatewayRouteTable", args, &rv, "", opts...)
-			if err != nil {
-				return LookupIngressGatewayRouteTableResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupIngressGatewayRouteTableResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupIngressGatewayRouteTableResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ServiceMesh/getIngressGatewayRouteTable:getIngressGatewayRouteTable", args, LookupIngressGatewayRouteTableResultOutput{}, options).(LookupIngressGatewayRouteTableResultOutput), nil
 		}).(LookupIngressGatewayRouteTableResultOutput)
 }
 

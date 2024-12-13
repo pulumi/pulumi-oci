@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVcnsResult> Invoke(GetVcnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVcnsResult>("oci:Core/getVcns:getVcns", args ?? new GetVcnsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the virtual cloud networks (VCNs) in the specified compartment.
+        /// 
+        /// 
+        /// ## Supported Aliases
+        /// 
+        /// * `oci.Core.getVirtualNetworks`
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVcns = Oci.Core.GetVcns.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vcnDisplayName,
+        ///         State = vcnState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVcnsResult> Invoke(GetVcnsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVcnsResult>("oci:Core/getVcns:getVcns", args ?? new GetVcnsInvokeArgs(), options.WithDefaults());
     }
 
 

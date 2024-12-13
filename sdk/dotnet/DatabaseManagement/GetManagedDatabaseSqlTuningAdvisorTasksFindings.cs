@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Sql Tuning Advisor Tasks Findings in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets an array of the details of the findings that match specific filters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksFindings = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindings.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         BeginExecId = testBeginExec.Id,
+        ///         EndExecId = testEndExec.Id,
+        ///         FindingFilter = managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter,
+        ///         IndexHashFilter = managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId,
+        ///         SearchPeriod = managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod,
+        ///         StatsHashFilter = managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs(), options.WithDefaults());
     }
 
 

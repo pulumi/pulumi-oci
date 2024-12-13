@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeCapacityReservationInstanceShapesResult> Invoke(GetComputeCapacityReservationInstanceShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationInstanceShapesResult>("oci:Core/getComputeCapacityReservationInstanceShapes:getComputeCapacityReservationInstanceShapes", args ?? new GetComputeCapacityReservationInstanceShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the shapes that can be reserved within the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeCapacityReservationInstanceShapes = Oci.Core.GetComputeCapacityReservationInstanceShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeCapacityReservationInstanceShapeAvailabilityDomain,
+        ///         DisplayName = computeCapacityReservationInstanceShapeDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeCapacityReservationInstanceShapesResult> Invoke(GetComputeCapacityReservationInstanceShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationInstanceShapesResult>("oci:Core/getComputeCapacityReservationInstanceShapes:getComputeCapacityReservationInstanceShapes", args ?? new GetComputeCapacityReservationInstanceShapesInvokeArgs(), options.WithDefaults());
     }
 
 

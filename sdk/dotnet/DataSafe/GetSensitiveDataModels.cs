@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSensitiveDataModelsResult> Invoke(GetSensitiveDataModelsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelsResult>("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", args ?? new GetSensitiveDataModelsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sensitive Data Models in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of sensitive data models based on the specified query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveDataModels = Oci.DataSafe.GetSensitiveDataModels.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sensitiveDataModelAccessLevel,
+        ///         CompartmentIdInSubtree = sensitiveDataModelCompartmentIdInSubtree,
+        ///         DisplayName = sensitiveDataModelDisplayName,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         State = sensitiveDataModelState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = sensitiveDataModelTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = sensitiveDataModelTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSensitiveDataModelsResult> Invoke(GetSensitiveDataModelsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelsResult>("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", args ?? new GetSensitiveDataModelsInvokeArgs(), options.WithDefaults());
     }
 
 

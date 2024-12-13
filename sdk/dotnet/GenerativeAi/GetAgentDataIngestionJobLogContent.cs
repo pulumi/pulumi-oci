@@ -68,6 +68,35 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public static Output<GetAgentDataIngestionJobLogContentResult> Invoke(GetAgentDataIngestionJobLogContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentDataIngestionJobLogContentResult>("oci:GenerativeAi/getAgentDataIngestionJobLogContent:getAgentDataIngestionJobLogContent", args ?? new GetAgentDataIngestionJobLogContentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Data Ingestion Job Log Content resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        /// 
+        /// **GetDataIngestionJobLogContent**
+        /// 
+        /// Returns the raw log file for the specified data ingestion job in text format.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataIngestionJobLogContent = Oci.GenerativeAi.GetAgentDataIngestionJobLogContent.Invoke(new()
+        ///     {
+        ///         DataIngestionJobId = testDataIngestionJob.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAgentDataIngestionJobLogContentResult> Invoke(GetAgentDataIngestionJobLogContentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentDataIngestionJobLogContentResult>("oci:GenerativeAi/getAgentDataIngestionJobLogContent:getAgentDataIngestionJobLogContent", args ?? new GetAgentDataIngestionJobLogContentInvokeArgs(), options.WithDefaults());
     }
 
 

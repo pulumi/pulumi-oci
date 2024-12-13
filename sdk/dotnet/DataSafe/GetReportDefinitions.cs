@@ -82,6 +82,42 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetReportDefinitionsResult> Invoke(GetReportDefinitionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReportDefinitionsResult>("oci:DataSafe/getReportDefinitions:getReportDefinitions", args ?? new GetReportDefinitionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Report Definitions in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of report definitions.
+        /// The ListReportDefinitions operation returns only the report definitions in the specified `compartmentId`.
+        /// It also returns the seeded report definitions which are available to all the compartments.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReportDefinitions = Oci.DataSafe.GetReportDefinitions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = reportDefinitionAccessLevel,
+        ///         Category = reportDefinitionCategory,
+        ///         CompartmentIdInSubtree = reportDefinitionCompartmentIdInSubtree,
+        ///         DataSource = reportDefinitionDataSource,
+        ///         DisplayName = reportDefinitionDisplayName,
+        ///         IsSeeded = reportDefinitionIsSeeded,
+        ///         State = reportDefinitionState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReportDefinitionsResult> Invoke(GetReportDefinitionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReportDefinitionsResult>("oci:DataSafe/getReportDefinitions:getReportDefinitions", args ?? new GetReportDefinitionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetWorkRequestsResult> Invoke(GetWorkRequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkRequestsResult>("oci:ContainerEngine/getWorkRequests:getWorkRequests", args ?? new GetWorkRequestsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// List all work requests in a compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkRequests = Oci.ContainerEngine.GetWorkRequests.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ClusterId = testCluster.Id,
+        ///         ResourceId = testResource.Id,
+        ///         ResourceType = workRequestResourceType,
+        ///         Statuses = workRequestStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkRequestsResult> Invoke(GetWorkRequestsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkRequestsResult>("oci:ContainerEngine/getWorkRequests:getWorkRequests", args ?? new GetWorkRequestsInvokeArgs(), options.WithDefaults());
     }
 
 

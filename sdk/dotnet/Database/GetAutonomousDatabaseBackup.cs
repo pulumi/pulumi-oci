@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabaseBackupResult> Invoke(GetAutonomousDatabaseBackupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseBackupResult>("oci:Database/getAutonomousDatabaseBackup:getAutonomousDatabaseBackup", args ?? new GetAutonomousDatabaseBackupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified Autonomous Database backup.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseBackup = Oci.Database.GetAutonomousDatabaseBackup.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseBackupId = testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabaseBackupResult> Invoke(GetAutonomousDatabaseBackupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseBackupResult>("oci:Database/getAutonomousDatabaseBackup:getAutonomousDatabaseBackup", args ?? new GetAutonomousDatabaseBackupInvokeArgs(), options.WithDefaults());
     }
 
 

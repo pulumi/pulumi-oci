@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFusionEnvironmentsResult> Invoke(GetFusionEnvironmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentsResult>("oci:Functions/getFusionEnvironments:getFusionEnvironments", args ?? new GetFusionEnvironmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fusion Environments in Oracle Cloud Infrastructure Fusion Apps service.
+        /// 
+        /// Returns a list of FusionEnvironments.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFusionEnvironments = Oci.Functions.GetFusionEnvironments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fusionEnvironmentDisplayName,
+        ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamily.Id,
+        ///         State = fusionEnvironmentState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFusionEnvironmentsResult> Invoke(GetFusionEnvironmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentsResult>("oci:Functions/getFusionEnvironments:getFusionEnvironments", args ?? new GetFusionEnvironmentsInvokeArgs(), options.WithDefaults());
     }
 
 

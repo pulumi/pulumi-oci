@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public static Output<GetDatabaseToolsConnectionsResult> Invoke(GetDatabaseToolsConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsConnectionsResult>("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args ?? new GetDatabaseToolsConnectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
+        /// 
+        /// Returns a list of Database Tools connections.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabaseToolsConnections = Oci.DatabaseTools.GetDatabaseToolsConnections.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseToolsConnectionDisplayName,
+        ///         RelatedResourceIdentifier = databaseToolsConnectionRelatedResourceIdentifier,
+        ///         RuntimeSupports = databaseToolsConnectionRuntimeSupport,
+        ///         State = databaseToolsConnectionState,
+        ///         Types = databaseToolsConnectionType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabaseToolsConnectionsResult> Invoke(GetDatabaseToolsConnectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsConnectionsResult>("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args ?? new GetDatabaseToolsConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

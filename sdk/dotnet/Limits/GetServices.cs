@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         public static Output<GetServicesResult> Invoke(GetServicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServicesResult>("oci:Limits/getServices:getServices", args ?? new GetServicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
+        /// 
+        /// Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
+        /// This includes the programmatic service name, along with the friendly service name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServices = Oci.Limits.GetServices.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         SubscriptionId = subscriptionOcid,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServicesResult> Invoke(GetServicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServicesResult>("oci:Limits/getServices:getServices", args ?? new GetServicesInvokeArgs(), options.WithDefaults());
     }
 
 

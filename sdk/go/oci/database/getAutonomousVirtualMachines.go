@@ -79,21 +79,11 @@ type GetAutonomousVirtualMachinesResult struct {
 }
 
 func GetAutonomousVirtualMachinesOutput(ctx *pulumi.Context, args GetAutonomousVirtualMachinesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousVirtualMachinesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAutonomousVirtualMachinesResultOutput, error) {
 			args := v.(GetAutonomousVirtualMachinesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAutonomousVirtualMachinesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", args, &rv, "", opts...)
-			if err != nil {
-				return GetAutonomousVirtualMachinesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAutonomousVirtualMachinesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAutonomousVirtualMachinesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", args, GetAutonomousVirtualMachinesResultOutput{}, options).(GetAutonomousVirtualMachinesResultOutput), nil
 		}).(GetAutonomousVirtualMachinesResultOutput)
 }
 

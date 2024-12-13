@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Nosql
         /// </summary>
         public static Output<GetIndexesResult> Invoke(GetIndexesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIndexesResult>("oci:Nosql/getIndexes:getIndexes", args ?? new GetIndexesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Indexes in Oracle Cloud Infrastructure NoSQL Database service.
+        /// 
+        /// Get a list of indexes on a table.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIndexes = Oci.Nosql.GetIndexes.Invoke(new()
+        ///     {
+        ///         TableNameOrId = testTableNameOr.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = indexName,
+        ///         State = indexState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIndexesResult> Invoke(GetIndexesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIndexesResult>("oci:Nosql/getIndexes:getIndexes", args ?? new GetIndexesInvokeArgs(), options.WithDefaults());
     }
 
 

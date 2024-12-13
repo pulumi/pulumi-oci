@@ -90,6 +90,46 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetZonesResult> Invoke(GetZonesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetZonesResult>("oci:Dns/getZones:getZones", args ?? new GetZonesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Gets a list of all zones in the specified compartment.
+        /// 
+        /// The collection can be filtered by name, time created, scope, associated view, and zone type.
+        /// Filtering by view is only supported for private zones.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testZones = Oci.Dns.GetZones.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DnssecState = zoneDnssecState,
+        ///         Name = zoneName,
+        ///         NameContains = zoneNameContains,
+        ///         Scope = zoneScope,
+        ///         State = zoneState,
+        ///         TimeCreatedGreaterThanOrEqualTo = zoneTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = zoneTimeCreatedLessThan,
+        ///         TsigKeyId = testTsigKey.Id,
+        ///         ViewId = testView.Id,
+        ///         ZoneType = zoneZoneType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetZonesResult> Invoke(GetZonesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetZonesResult>("oci:Dns/getZones:getZones", args ?? new GetZonesInvokeArgs(), options.WithDefaults());
     }
 
 

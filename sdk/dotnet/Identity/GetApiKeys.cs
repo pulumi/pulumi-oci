@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetApiKeysResult> Invoke(GetApiKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApiKeysResult>("oci:Identity/getApiKeys:getApiKeys", args ?? new GetApiKeysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the API signing keys for the specified user. A user can have a maximum of three keys.
+        /// 
+        /// Every user has permission to use this API call for *their own user ID*.  An administrator in your
+        /// organization does not need to write a policy to give users this ability.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApiKeys = Oci.Identity.GetApiKeys.Invoke(new()
+        ///     {
+        ///         UserId = testUser.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApiKeysResult> Invoke(GetApiKeysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApiKeysResult>("oci:Identity/getApiKeys:getApiKeys", args ?? new GetApiKeysInvokeArgs(), options.WithDefaults());
     }
 
 

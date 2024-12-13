@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDatabasePdbConversionHistoryEntryResult> Invoke(GetDatabasePdbConversionHistoryEntryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabasePdbConversionHistoryEntryResult>("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", args ?? new GetDatabasePdbConversionHistoryEntryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabasePdbConversionHistoryEntry = Oci.Database.GetDatabasePdbConversionHistoryEntry.Invoke(new()
+        ///     {
+        ///         DatabaseId = testDatabase.Id,
+        ///         PdbConversionHistoryEntryId = testPdbConversionHistoryEntry.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabasePdbConversionHistoryEntryResult> Invoke(GetDatabasePdbConversionHistoryEntryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabasePdbConversionHistoryEntryResult>("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", args ?? new GetDatabasePdbConversionHistoryEntryInvokeArgs(), options.WithDefaults());
     }
 
 

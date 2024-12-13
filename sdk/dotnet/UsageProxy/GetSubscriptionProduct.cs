@@ -70,6 +70,36 @@ namespace Pulumi.Oci.UsageProxy
         /// </summary>
         public static Output<GetSubscriptionProductResult> Invoke(GetSubscriptionProductInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionProductResult>("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", args ?? new GetSubscriptionProductInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Subscription Product resource in Oracle Cloud Infrastructure Usage Proxy service.
+        /// 
+        /// Provides product information that is specific to a reward usage period and its usage details.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSubscriptionProduct = Oci.UsageProxy.GetSubscriptionProduct.Invoke(new()
+        ///     {
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
+        ///         UsagePeriodKey = subscriptionProductUsagePeriodKey,
+        ///         Producttype = subscriptionProductProducttype,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSubscriptionProductResult> Invoke(GetSubscriptionProductInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionProductResult>("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", args ?? new GetSubscriptionProductInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -82,21 +82,11 @@ type GetInstVbsInstancesResult struct {
 }
 
 func GetInstVbsInstancesOutput(ctx *pulumi.Context, args GetInstVbsInstancesOutputArgs, opts ...pulumi.InvokeOption) GetInstVbsInstancesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInstVbsInstancesResultOutput, error) {
 			args := v.(GetInstVbsInstancesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInstVbsInstancesResult
-			secret, err := ctx.InvokePackageRaw("oci:Vbs/getInstVbsInstances:getInstVbsInstances", args, &rv, "", opts...)
-			if err != nil {
-				return GetInstVbsInstancesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInstVbsInstancesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInstVbsInstancesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Vbs/getInstVbsInstances:getInstVbsInstances", args, GetInstVbsInstancesResultOutput{}, options).(GetInstVbsInstancesResultOutput), nil
 		}).(GetInstVbsInstancesResultOutput)
 }
 

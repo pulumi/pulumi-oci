@@ -99,21 +99,11 @@ type LookupReplicationResult struct {
 }
 
 func LookupReplicationOutput(ctx *pulumi.Context, args LookupReplicationOutputArgs, opts ...pulumi.InvokeOption) LookupReplicationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupReplicationResultOutput, error) {
 			args := v.(LookupReplicationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupReplicationResult
-			secret, err := ctx.InvokePackageRaw("oci:FileStorage/getReplication:getReplication", args, &rv, "", opts...)
-			if err != nil {
-				return LookupReplicationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupReplicationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupReplicationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FileStorage/getReplication:getReplication", args, LookupReplicationResultOutput{}, options).(LookupReplicationResultOutput), nil
 		}).(LookupReplicationResultOutput)
 }
 

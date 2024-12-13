@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetFastLaunchJobConfigsResult> Invoke(GetFastLaunchJobConfigsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFastLaunchJobConfigsResult>("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args ?? new GetFastLaunchJobConfigsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// List fast launch capable job configs in the specified compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFastLaunchJobConfigs = Oci.DataScience.GetFastLaunchJobConfigs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFastLaunchJobConfigsResult> Invoke(GetFastLaunchJobConfigsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFastLaunchJobConfigsResult>("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args ?? new GetFastLaunchJobConfigsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetResult> Invoke(GetFleetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetResult>("oci:Jms/getFleet:getFleet", args ?? new GetFleetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Retrieve a Fleet with the specified identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleet = Oci.Jms.GetFleet.Invoke(new()
+        ///     {
+        ///         FleetId = testFleetOciJmsFleet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetResult> Invoke(GetFleetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetResult>("oci:Jms/getFleet:getFleet", args ?? new GetFleetInvokeArgs(), options.WithDefaults());
     }
 
 

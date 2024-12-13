@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditProfileResult> Invoke(GetAuditProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileResult>("oci:DataSafe/getAuditProfile:getAuditProfile", args ?? new GetAuditProfileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of audit profile resource and associated audit trails of the audit profile.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditProfile = Oci.DataSafe.GetAuditProfile.Invoke(new()
+        ///     {
+        ///         AuditProfileId = testAuditProfileOciDataSafeAuditProfile.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditProfileResult> Invoke(GetAuditProfileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileResult>("oci:DataSafe/getAuditProfile:getAuditProfile", args ?? new GetAuditProfileInvokeArgs(), options.WithDefaults());
     }
 
 

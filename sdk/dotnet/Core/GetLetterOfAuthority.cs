@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetLetterOfAuthorityResult> Invoke(GetLetterOfAuthorityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLetterOfAuthorityResult>("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args ?? new GetLetterOfAuthorityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Letter Of Authority resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the Letter of Authority for the specified cross-connect.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLetterOfAuthority = Oci.Core.GetLetterOfAuthority.Invoke(new()
+        ///     {
+        ///         CrossConnectId = testCrossConnect.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLetterOfAuthorityResult> Invoke(GetLetterOfAuthorityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLetterOfAuthorityResult>("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args ?? new GetLetterOfAuthorityInvokeArgs(), options.WithDefaults());
     }
 
 

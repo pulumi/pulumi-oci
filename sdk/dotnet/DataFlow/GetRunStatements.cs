@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public static Output<GetRunStatementsResult> Invoke(GetRunStatementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRunStatementsResult>("oci:DataFlow/getRunStatements:getRunStatements", args ?? new GetRunStatementsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
+        /// 
+        /// Lists all statements for a Session run.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRunStatements = Oci.DataFlow.GetRunStatements.Invoke(new()
+        ///     {
+        ///         RunId = testRun.Id,
+        ///         State = runStatementState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRunStatementsResult> Invoke(GetRunStatementsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRunStatementsResult>("oci:DataFlow/getRunStatements:getRunStatements", args ?? new GetRunStatementsInvokeArgs(), options.WithDefaults());
     }
 
 

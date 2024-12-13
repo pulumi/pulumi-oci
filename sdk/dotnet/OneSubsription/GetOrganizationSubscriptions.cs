@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OneSubsription
         /// </summary>
         public static Output<GetOrganizationSubscriptionsResult> Invoke(GetOrganizationSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOrganizationSubscriptionsResult>("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
+        /// 
+        /// API that returns data for the list of subscription ids returned from Organizations API
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOrganizationSubscriptions = Oci.OneSubsription.GetOrganizationSubscriptions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOrganizationSubscriptionsResult> Invoke(GetOrganizationSubscriptionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOrganizationSubscriptionsResult>("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

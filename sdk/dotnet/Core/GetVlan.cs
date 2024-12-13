@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVlanResult> Invoke(GetVlanInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVlanResult>("oci:Core/getVlan:getVlan", args ?? new GetVlanInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vlan resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified VLAN's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVlan = Oci.Core.GetVlan.Invoke(new()
+        ///     {
+        ///         VlanId = testVlanOciCoreVlan.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVlanResult> Invoke(GetVlanInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVlanResult>("oci:Core/getVlan:getVlan", args ?? new GetVlanInvokeArgs(), options.WithDefaults());
     }
 
 

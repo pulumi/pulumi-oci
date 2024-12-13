@@ -26,6 +26,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetVmClusterRecommendedNetworkResult> Invoke(GetVmClusterRecommendedNetworkInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterRecommendedNetworkResult>("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", args ?? new GetVmClusterRecommendedNetworkInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Generates a recommended Cloud@Customer VM cluster network configuration.
+        /// </summary>
+        public static Output<GetVmClusterRecommendedNetworkResult> Invoke(GetVmClusterRecommendedNetworkInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterRecommendedNetworkResult>("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", args ?? new GetVmClusterRecommendedNetworkInvokeArgs(), options.WithDefaults());
     }
 
 

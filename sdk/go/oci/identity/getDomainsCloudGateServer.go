@@ -126,21 +126,11 @@ type LookupDomainsCloudGateServerResult struct {
 }
 
 func LookupDomainsCloudGateServerOutput(ctx *pulumi.Context, args LookupDomainsCloudGateServerOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsCloudGateServerResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsCloudGateServerResultOutput, error) {
 			args := v.(LookupDomainsCloudGateServerArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsCloudGateServerResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsCloudGateServer:getDomainsCloudGateServer", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsCloudGateServerResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsCloudGateServerResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsCloudGateServerResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsCloudGateServer:getDomainsCloudGateServer", args, LookupDomainsCloudGateServerResultOutput{}, options).(LookupDomainsCloudGateServerResultOutput), nil
 		}).(LookupDomainsCloudGateServerResultOutput)
 }
 

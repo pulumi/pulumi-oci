@@ -72,21 +72,11 @@ type GetDbSystemShapesResult struct {
 }
 
 func GetDbSystemShapesOutput(ctx *pulumi.Context, args GetDbSystemShapesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemShapesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDbSystemShapesResultOutput, error) {
 			args := v.(GetDbSystemShapesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDbSystemShapesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getDbSystemShapes:getDbSystemShapes", args, &rv, "", opts...)
-			if err != nil {
-				return GetDbSystemShapesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDbSystemShapesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDbSystemShapesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getDbSystemShapes:getDbSystemShapes", args, GetDbSystemShapesResultOutput{}, options).(GetDbSystemShapesResultOutput), nil
 		}).(GetDbSystemShapesResultOutput)
 }
 

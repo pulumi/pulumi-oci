@@ -73,21 +73,11 @@ type GetApplianceImagesResult struct {
 }
 
 func GetApplianceImagesOutput(ctx *pulumi.Context, args GetApplianceImagesOutputArgs, opts ...pulumi.InvokeOption) GetApplianceImagesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetApplianceImagesResultOutput, error) {
 			args := v.(GetApplianceImagesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetApplianceImagesResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudBridge/getApplianceImages:getApplianceImages", args, &rv, "", opts...)
-			if err != nil {
-				return GetApplianceImagesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetApplianceImagesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetApplianceImagesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudBridge/getApplianceImages:getApplianceImages", args, GetApplianceImagesResultOutput{}, options).(GetApplianceImagesResultOutput), nil
 		}).(GetApplianceImagesResultOutput)
 }
 

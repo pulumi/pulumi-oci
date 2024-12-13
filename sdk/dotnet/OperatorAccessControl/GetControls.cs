@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public static Output<GetControlsResult> Invoke(GetControlsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetControlsResult>("oci:OperatorAccessControl/getControls:getControls", args ?? new GetControlsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
+        /// 
+        /// Lists the operator controls in the compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOperatorControls = Oci.OperatorAccessControl.GetControls.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = operatorControlDisplayName,
+        ///         ResourceType = operatorControlResourceType,
+        ///         State = operatorControlState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetControlsResult> Invoke(GetControlsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetControlsResult>("oci:OperatorAccessControl/getControls:getControls", args ?? new GetControlsInvokeArgs(), options.WithDefaults());
     }
 
 

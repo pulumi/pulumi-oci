@@ -16,6 +16,9 @@ namespace Pulumi.Oci.DataSafe
 
         public static Output<GetSecurityAssessmentFindingResult> Invoke(GetSecurityAssessmentFindingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingResult>("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args ?? new GetSecurityAssessmentFindingInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetSecurityAssessmentFindingResult> Invoke(GetSecurityAssessmentFindingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingResult>("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args ?? new GetSecurityAssessmentFindingInvokeArgs(), options.WithDefaults());
     }
 
 

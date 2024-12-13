@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Waas
         /// </summary>
         public static Output<GetCertificatesResult> Invoke(GetCertificatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificatesResult>("oci:Waas/getCertificates:getCertificates", args ?? new GetCertificatesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Certificates in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+        /// 
+        /// Gets a list of SSL certificates that can be used in a WAAS policy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCertificates = Oci.Waas.GetCertificates.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = certificateDisplayNames,
+        ///         Ids = certificateIds,
+        ///         States = certificateStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = certificateTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = certificateTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCertificatesResult> Invoke(GetCertificatesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificatesResult>("oci:Waas/getCertificates:getCertificates", args ?? new GetCertificatesInvokeArgs(), options.WithDefaults());
     }
 
 

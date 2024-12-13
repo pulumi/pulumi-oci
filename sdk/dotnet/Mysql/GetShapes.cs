@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetShapesResult> Invoke(GetShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:Mysql/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Shapes in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Gets a list of the shapes you can use to create a new MySQL DB System.
+        /// The shape determines the resources allocated to the DB System:
+        /// CPU cores and memory for VM shapes; CPU cores, memory and
+        /// storage for non-VM (or bare metal) shapes.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testShapes = Oci.Mysql.GetShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = shapeAvailabilityDomain,
+        ///         IsSupportedFors = shapeIsSupportedFor,
+        ///         Name = shapeName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetShapesResult> Invoke(GetShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:Mysql/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
     }
 
 

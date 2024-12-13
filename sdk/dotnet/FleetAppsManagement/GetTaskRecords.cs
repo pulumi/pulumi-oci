@@ -74,6 +74,38 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetTaskRecordsResult> Invoke(GetTaskRecordsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTaskRecordsResult>("oci:FleetAppsManagement/getTaskRecords:getTaskRecords", args ?? new GetTaskRecordsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Task Records in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of TaskRecords.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTaskRecords = Oci.FleetAppsManagement.GetTaskRecords.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = taskRecordDisplayName,
+        ///         Id = taskRecordId,
+        ///         Platform = taskRecordPlatform,
+        ///         State = taskRecordState,
+        ///         Type = taskRecordType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTaskRecordsResult> Invoke(GetTaskRecordsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTaskRecordsResult>("oci:FleetAppsManagement/getTaskRecords:getTaskRecords", args ?? new GetTaskRecordsInvokeArgs(), options.WithDefaults());
     }
 
 

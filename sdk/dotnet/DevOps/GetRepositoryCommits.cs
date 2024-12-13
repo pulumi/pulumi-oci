@@ -78,6 +78,40 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryCommitsResult> Invoke(GetRepositoryCommitsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryCommitsResult>("oci:DevOps/getRepositoryCommits:getRepositoryCommits", args ?? new GetRepositoryCommitsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Repository Commits in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of commits.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryCommits = Oci.DevOps.GetRepositoryCommits.Invoke(new()
+        ///     {
+        ///         RepositoryId = testRepository.Id,
+        ///         AuthorName = repositoryCommitAuthorName,
+        ///         CommitMessage = repositoryCommitCommitMessage,
+        ///         ExcludeRefName = repositoryCommitExcludeRefName,
+        ///         FilePath = repositoryCommitFilePath,
+        ///         RefName = repositoryCommitRefName,
+        ///         TimestampGreaterThanOrEqualTo = repositoryCommitTimestampGreaterThanOrEqualTo,
+        ///         TimestampLessThanOrEqualTo = repositoryCommitTimestampLessThanOrEqualTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryCommitsResult> Invoke(GetRepositoryCommitsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryCommitsResult>("oci:DevOps/getRepositoryCommits:getRepositoryCommits", args ?? new GetRepositoryCommitsInvokeArgs(), options.WithDefaults());
     }
 
 

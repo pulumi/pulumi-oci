@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsApiKeysResult> Invoke(GetDomainsApiKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApiKeysResult>("oci:Identity/getDomainsApiKeys:getDomainsApiKeys", args ?? new GetDomainsApiKeysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search API keys.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApiKeys = Oci.Identity.GetDomainsApiKeys.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApiKeyCount = apiKeyApiKeyCount,
+        ///         ApiKeyFilter = apiKeyApiKeyFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = apiKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = apiKeyResourceTypeSchemaVersion,
+        ///         StartIndex = apiKeyStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsApiKeysResult> Invoke(GetDomainsApiKeysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApiKeysResult>("oci:Identity/getDomainsApiKeys:getDomainsApiKeys", args ?? new GetDomainsApiKeysInvokeArgs(), options.WithDefaults());
     }
 
 

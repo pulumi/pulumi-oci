@@ -74,6 +74,38 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public static Output<GetResultResult> Invoke(GetResultInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResultResult>("oci:ApmSynthetics/getResult:getResult", args ?? new GetResultInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// 
+        /// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResult = Oci.ApmSynthetics.GetResult.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ExecutionTime = resultExecutionTime,
+        ///         MonitorId = testMonitor.Id,
+        ///         ResultContentType = resultResultContentType,
+        ///         ResultType = resultResultType,
+        ///         VantagePoint = resultVantagePoint,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResultResult> Invoke(GetResultInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResultResult>("oci:ApmSynthetics/getResult:getResult", args ?? new GetResultInvokeArgs(), options.WithDefaults());
     }
 
 

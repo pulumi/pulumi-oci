@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCnvDnsResolverAssociationResult> Invoke(GetCnvDnsResolverAssociationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCnvDnsResolverAssociationResult>("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", args ?? new GetCnvDnsResolverAssociationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vcn Dns Resolver Association resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Get the associated DNS resolver information with a vcn
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVcnDnsResolverAssociation = Oci.Core.GetCnvDnsResolverAssociation.Invoke(new()
+        ///     {
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCnvDnsResolverAssociationResult> Invoke(GetCnvDnsResolverAssociationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCnvDnsResolverAssociationResult>("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", args ?? new GetCnvDnsResolverAssociationInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetPlatformConfigurationsResult> Invoke(GetPlatformConfigurationsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPlatformConfigurationsResult>("oci:FleetAppsManagement/getPlatformConfigurations:getPlatformConfigurations", args ?? new GetPlatformConfigurationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Platform Configurations in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of PlatformConfiguration for Tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPlatformConfigurations = Oci.FleetAppsManagement.GetPlatformConfigurations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ConfigCategory = platformConfigurationConfigCategory,
+        ///         DisplayName = platformConfigurationDisplayName,
+        ///         Id = platformConfigurationId,
+        ///         State = platformConfigurationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPlatformConfigurationsResult> Invoke(GetPlatformConfigurationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPlatformConfigurationsResult>("oci:FleetAppsManagement/getPlatformConfigurations:getPlatformConfigurations", args ?? new GetPlatformConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

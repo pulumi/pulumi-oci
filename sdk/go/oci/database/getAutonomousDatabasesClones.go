@@ -87,21 +87,11 @@ type GetAutonomousDatabasesClonesResult struct {
 }
 
 func GetAutonomousDatabasesClonesOutput(ctx *pulumi.Context, args GetAutonomousDatabasesClonesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabasesClonesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAutonomousDatabasesClonesResultOutput, error) {
 			args := v.(GetAutonomousDatabasesClonesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAutonomousDatabasesClonesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", args, &rv, "", opts...)
-			if err != nil {
-				return GetAutonomousDatabasesClonesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAutonomousDatabasesClonesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAutonomousDatabasesClonesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", args, GetAutonomousDatabasesClonesResultOutput{}, options).(GetAutonomousDatabasesClonesResultOutput), nil
 		}).(GetAutonomousDatabasesClonesResultOutput)
 }
 

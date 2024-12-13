@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public static Output<GetRemediationRunApplicationDependencyRecommendationsResult> Invoke(GetRemediationRunApplicationDependencyRecommendationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRunApplicationDependencyRecommendationsResult>("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", args ?? new GetRemediationRunApplicationDependencyRecommendationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
+        /// 
+        /// Returns a list of application dependency with their associated recommendations.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRemediationRunApplicationDependencyRecommendations = Oci.Adm.GetRemediationRunApplicationDependencyRecommendations.Invoke(new()
+        ///     {
+        ///         RemediationRunId = testRemediationRun.Id,
+        ///         Gav = remediationRunApplicationDependencyRecommendationGav,
+        ///         Purl = remediationRunApplicationDependencyRecommendationPurl,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRemediationRunApplicationDependencyRecommendationsResult> Invoke(GetRemediationRunApplicationDependencyRecommendationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRunApplicationDependencyRecommendationsResult>("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", args ?? new GetRemediationRunApplicationDependencyRecommendationsInvokeArgs(), options.WithDefaults());
     }
 
 

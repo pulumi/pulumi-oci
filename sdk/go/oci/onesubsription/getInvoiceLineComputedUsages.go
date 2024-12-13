@@ -76,21 +76,11 @@ type GetInvoiceLineComputedUsagesResult struct {
 }
 
 func GetInvoiceLineComputedUsagesOutput(ctx *pulumi.Context, args GetInvoiceLineComputedUsagesOutputArgs, opts ...pulumi.InvokeOption) GetInvoiceLineComputedUsagesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInvoiceLineComputedUsagesResultOutput, error) {
 			args := v.(GetInvoiceLineComputedUsagesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInvoiceLineComputedUsagesResult
-			secret, err := ctx.InvokePackageRaw("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args, &rv, "", opts...)
-			if err != nil {
-				return GetInvoiceLineComputedUsagesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInvoiceLineComputedUsagesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInvoiceLineComputedUsagesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args, GetInvoiceLineComputedUsagesResultOutput{}, options).(GetInvoiceLineComputedUsagesResultOutput), nil
 		}).(GetInvoiceLineComputedUsagesResultOutput)
 }
 

@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public static Output<GetSqlEndpointsResult> Invoke(GetSqlEndpointsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlEndpointsResult>("oci:DataFlow/getSqlEndpoints:getSqlEndpoints", args ?? new GetSqlEndpointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
+        /// 
+        /// Lists all Sql Endpoints in the specified compartment.
+        /// The query must include compartmentId or sqlEndpointId.
+        /// If the query does not include either compartmentId or sqlEndpointId, an error is returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlEndpoints = Oci.DataFlow.GetSqlEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = sqlEndpointDisplayName,
+        ///         SqlEndpointId = testSqlEndpoint.Id,
+        ///         State = sqlEndpointState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlEndpointsResult> Invoke(GetSqlEndpointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlEndpointsResult>("oci:DataFlow/getSqlEndpoints:getSqlEndpoints", args ?? new GetSqlEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

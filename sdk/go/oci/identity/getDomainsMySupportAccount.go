@@ -108,21 +108,11 @@ type LookupDomainsMySupportAccountResult struct {
 }
 
 func LookupDomainsMySupportAccountOutput(ctx *pulumi.Context, args LookupDomainsMySupportAccountOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsMySupportAccountResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsMySupportAccountResultOutput, error) {
 			args := v.(LookupDomainsMySupportAccountArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsMySupportAccountResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMySupportAccount:getDomainsMySupportAccount", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsMySupportAccountResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsMySupportAccountResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsMySupportAccountResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsMySupportAccount:getDomainsMySupportAccount", args, LookupDomainsMySupportAccountResultOutput{}, options).(LookupDomainsMySupportAccountResultOutput), nil
 		}).(LookupDomainsMySupportAccountResultOutput)
 }
 

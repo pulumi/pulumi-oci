@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyAppsResult> Invoke(GetDomainsMyAppsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyAppsResult>("oci:Identity/getDomainsMyApps:getDomainsMyApps", args ?? new GetDomainsMyAppsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Apps in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search My Apps
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyApps = Oci.Identity.GetDomainsMyApps.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyAppCount = myAppMyAppCount,
+        ///         MyAppFilter = myAppMyAppFilter,
+        ///         Authorization = myAppAuthorization,
+        ///         ResourceTypeSchemaVersion = myAppResourceTypeSchemaVersion,
+        ///         StartIndex = myAppStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyAppsResult> Invoke(GetDomainsMyAppsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyAppsResult>("oci:Identity/getDomainsMyApps:getDomainsMyApps", args ?? new GetDomainsMyAppsInvokeArgs(), options.WithDefaults());
     }
 
 

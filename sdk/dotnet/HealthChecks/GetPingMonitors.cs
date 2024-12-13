@@ -74,6 +74,38 @@ namespace Pulumi.Oci.HealthChecks
         /// </summary>
         public static Output<GetPingMonitorsResult> Invoke(GetPingMonitorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPingMonitorsResult>("oci:HealthChecks/getPingMonitors:getPingMonitors", args ?? new GetPingMonitorsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ping Monitors in Oracle Cloud Infrastructure Health Checks service.
+        /// 
+        /// Gets a list of configured ping monitors.
+        /// 
+        /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+        /// a URL for fetching the next page.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPingMonitors = Oci.HealthChecks.GetPingMonitors.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = pingMonitorDisplayName,
+        ///         HomeRegion = pingMonitorHomeRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPingMonitorsResult> Invoke(GetPingMonitorsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPingMonitorsResult>("oci:HealthChecks/getPingMonitors:getPingMonitors", args ?? new GetPingMonitorsInvokeArgs(), options.WithDefaults());
     }
 
 

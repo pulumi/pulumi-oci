@@ -68,6 +68,35 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public static Output<GetPreauthrequestsResult> Invoke(GetPreauthrequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPreauthrequestsResult>("oci:ObjectStorage/getPreauthrequests:getPreauthrequests", args ?? new GetPreauthrequestsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Lists pre-authenticated requests for the bucket.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPreauthenticatedRequests = Oci.ObjectStorage.GetPreauthrequests.Invoke(new()
+        ///     {
+        ///         Bucket = preauthenticatedRequestBucket,
+        ///         Namespace = preauthenticatedRequestNamespace,
+        ///         ObjectNamePrefix = preauthenticatedRequestObjectNamePrefix,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPreauthrequestsResult> Invoke(GetPreauthrequestsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPreauthrequestsResult>("oci:ObjectStorage/getPreauthrequests:getPreauthrequests", args ?? new GetPreauthrequestsInvokeArgs(), options.WithDefaults());
     }
 
 

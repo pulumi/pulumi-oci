@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public static Output<GetShapesResult> Invoke(GetShapesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:Psql/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Shapes in Oracle Cloud Infrastructure Psql service.
+        /// 
+        /// Returns the list of shapes allowed in the region.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testShapes = Oci.Psql.GetShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Id = shapeId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetShapesResult> Invoke(GetShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:Psql/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
     }
 
 

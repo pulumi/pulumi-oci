@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsCloudGateMappingResult> Invoke(GetDomainsCloudGateMappingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGateMappingResult>("oci:Identity/getDomainsCloudGateMapping:getDomainsCloudGateMapping", args ?? new GetDomainsCloudGateMappingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a Cloud Gate mapping
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudGateMapping = Oci.Identity.GetDomainsCloudGateMapping.Invoke(new()
+        ///     {
+        ///         CloudGateMappingId = testCloudGateMappingOciIdentityDomainsCloudGateMapping.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = cloudGateMappingAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateMappingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsCloudGateMappingResult> Invoke(GetDomainsCloudGateMappingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGateMappingResult>("oci:Identity/getDomainsCloudGateMapping:getDomainsCloudGateMapping", args ?? new GetDomainsCloudGateMappingInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetManagedEntityCountsResult> Invoke(GetManagedEntityCountsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedEntityCountsResult>("oci:FleetAppsManagement/getManagedEntityCounts:getManagedEntityCounts", args ?? new GetManagedEntityCountsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Entity Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Retrieve  aggregated summary information of Managed Entities within a Tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedEntityCounts = Oci.FleetAppsManagement.GetManagedEntityCounts.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedEntityCountsResult> Invoke(GetManagedEntityCountsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedEntityCountsResult>("oci:FleetAppsManagement/getManagedEntityCounts:getManagedEntityCounts", args ?? new GetManagedEntityCountsInvokeArgs(), options.WithDefaults());
     }
 
 

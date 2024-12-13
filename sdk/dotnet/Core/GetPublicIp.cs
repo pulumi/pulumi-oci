@@ -154,6 +154,78 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetPublicIpResult> Invoke(GetPublicIpInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpResult>("oci:Core/getPublicIp:getPublicIp", args ?? new GetPublicIpInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified public IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// Alternatively, you can get the object by using [GetPublicIpByIpAddress](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByIpAddress)
+        /// with the public IP address (for example, 203.0.113.2).
+        /// 
+        /// Or you can use [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByPrivateIpId)
+        /// with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is assigned to.
+        /// 
+        /// **Note:** If you're fetching a reserved public IP that is in the process of being
+        /// moved to a different private IP, the service returns the public IP object with
+        /// `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ### Get a public ip by public ip id
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOciCorePublicIpById = Oci.Core.GetPublicIp.Invoke(new()
+        ///     {
+        ///         Id = testPublicIpId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ### Get a public ip by private ip id
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOciCorePublicIpByPrivateIpId = Oci.Core.GetPublicIp.Invoke(new()
+        ///     {
+        ///         PrivateIpId = testPublicIpPrivateIpId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ### Get a public ip by public ip address
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOciCorePublicIpByIp = Oci.Core.GetPublicIp.Invoke(new()
+        ///     {
+        ///         IpAddress = testPublicIpIpAddress,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPublicIpResult> Invoke(GetPublicIpInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpResult>("oci:Core/getPublicIp:getPublicIp", args ?? new GetPublicIpInvokeArgs(), options.WithDefaults());
     }
 
 

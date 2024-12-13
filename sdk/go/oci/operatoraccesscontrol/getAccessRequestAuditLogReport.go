@@ -76,21 +76,11 @@ type GetAccessRequestAuditLogReportResult struct {
 }
 
 func GetAccessRequestAuditLogReportOutput(ctx *pulumi.Context, args GetAccessRequestAuditLogReportOutputArgs, opts ...pulumi.InvokeOption) GetAccessRequestAuditLogReportResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAccessRequestAuditLogReportResultOutput, error) {
 			args := v.(GetAccessRequestAuditLogReportArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAccessRequestAuditLogReportResult
-			secret, err := ctx.InvokePackageRaw("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", args, &rv, "", opts...)
-			if err != nil {
-				return GetAccessRequestAuditLogReportResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAccessRequestAuditLogReportResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAccessRequestAuditLogReportResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", args, GetAccessRequestAuditLogReportResultOutput{}, options).(GetAccessRequestAuditLogReportResultOutput), nil
 		}).(GetAccessRequestAuditLogReportResultOutput)
 }
 

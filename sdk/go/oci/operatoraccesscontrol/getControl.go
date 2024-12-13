@@ -104,21 +104,11 @@ type GetControlResult struct {
 }
 
 func GetControlOutput(ctx *pulumi.Context, args GetControlOutputArgs, opts ...pulumi.InvokeOption) GetControlResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetControlResultOutput, error) {
 			args := v.(GetControlArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetControlResult
-			secret, err := ctx.InvokePackageRaw("oci:OperatorAccessControl/getControl:getControl", args, &rv, "", opts...)
-			if err != nil {
-				return GetControlResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetControlResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetControlResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OperatorAccessControl/getControl:getControl", args, GetControlResultOutput{}, options).(GetControlResultOutput), nil
 		}).(GetControlResultOutput)
 }
 

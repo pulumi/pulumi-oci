@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsUnprocessedDataBucketResult> Invoke(GetLogAnalyticsUnprocessedDataBucketInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsUnprocessedDataBucketResult>("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args ?? new GetLogAnalyticsUnprocessedDataBucketInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// This API retrieves details of the configured bucket that stores unprocessed payloads.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsUnprocessedDataBucket = Oci.LogAnalytics.GetLogAnalyticsUnprocessedDataBucket.Invoke(new()
+        ///     {
+        ///         Namespace = logAnalyticsUnprocessedDataBucketNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsUnprocessedDataBucketResult> Invoke(GetLogAnalyticsUnprocessedDataBucketInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsUnprocessedDataBucketResult>("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args ?? new GetLogAnalyticsUnprocessedDataBucketInvokeArgs(), options.WithDefaults());
     }
 
 

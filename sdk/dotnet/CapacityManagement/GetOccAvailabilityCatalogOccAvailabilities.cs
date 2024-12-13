@@ -70,6 +70,36 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public static Output<GetOccAvailabilityCatalogOccAvailabilitiesResult> Invoke(GetOccAvailabilityCatalogOccAvailabilitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccAvailabilityCatalogOccAvailabilitiesResult>("oci:CapacityManagement/getOccAvailabilityCatalogOccAvailabilities:getOccAvailabilityCatalogOccAvailabilities", args ?? new GetOccAvailabilityCatalogOccAvailabilitiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Occ Availability Catalog Occ Availabilities in Oracle Cloud Infrastructure Capacity Management service.
+        /// 
+        /// Lists availabilities for a particular availability catalog.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOccAvailabilityCatalogOccAvailabilities = Oci.CapacityManagement.GetOccAvailabilityCatalogOccAvailabilities.Invoke(new()
+        ///     {
+        ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
+        ///         DateExpectedCapacityHandover = occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover,
+        ///         ResourceName = testResource.Name,
+        ///         ResourceType = occAvailabilityCatalogOccAvailabilityResourceType,
+        ///         WorkloadType = occAvailabilityCatalogOccAvailabilityWorkloadType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOccAvailabilityCatalogOccAvailabilitiesResult> Invoke(GetOccAvailabilityCatalogOccAvailabilitiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOccAvailabilityCatalogOccAvailabilitiesResult>("oci:CapacityManagement/getOccAvailabilityCatalogOccAvailabilities:getOccAvailabilityCatalogOccAvailabilities", args ?? new GetOccAvailabilityCatalogOccAvailabilitiesInvokeArgs(), options.WithDefaults());
     }
 
 

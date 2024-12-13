@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalDbSystemDiscoveriesResult> Invoke(GetExternalDbSystemDiscoveriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbSystemDiscoveriesResult>("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", args ?? new GetExternalDbSystemDiscoveriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the external DB system discovery resources in the specified compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalDbSystemDiscoveries = Oci.DatabaseManagement.GetExternalDbSystemDiscoveries.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = externalDbSystemDiscoveryDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalDbSystemDiscoveriesResult> Invoke(GetExternalDbSystemDiscoveriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbSystemDiscoveriesResult>("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", args ?? new GetExternalDbSystemDiscoveriesInvokeArgs(), options.WithDefaults());
     }
 
 

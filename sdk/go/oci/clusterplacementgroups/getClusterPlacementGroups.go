@@ -90,21 +90,11 @@ type GetClusterPlacementGroupsResult struct {
 }
 
 func GetClusterPlacementGroupsOutput(ctx *pulumi.Context, args GetClusterPlacementGroupsOutputArgs, opts ...pulumi.InvokeOption) GetClusterPlacementGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetClusterPlacementGroupsResultOutput, error) {
 			args := v.(GetClusterPlacementGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetClusterPlacementGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetClusterPlacementGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetClusterPlacementGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetClusterPlacementGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", args, GetClusterPlacementGroupsResultOutput{}, options).(GetClusterPlacementGroupsResultOutput), nil
 		}).(GetClusterPlacementGroupsResultOutput)
 }
 

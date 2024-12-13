@@ -62,6 +62,32 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetBaselineableMetricResult> Invoke(GetBaselineableMetricInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBaselineableMetricResult>("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", args ?? new GetBaselineableMetricInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// Get the Baseline-able metric for the given id
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBaselineableMetric = Oci.StackMonitoring.GetBaselineableMetric.Invoke(new()
+        ///     {
+        ///         BaselineableMetricId = testBaselineableMetricOciStackMonitoringBaselineableMetric.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBaselineableMetricResult> Invoke(GetBaselineableMetricInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBaselineableMetricResult>("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", args ?? new GetBaselineableMetricInvokeArgs(), options.WithDefaults());
     }
 
 

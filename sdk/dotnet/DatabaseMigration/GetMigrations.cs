@@ -22,6 +22,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// ## Example Usage
+        /// </summary>
+        public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());
     }
 
 

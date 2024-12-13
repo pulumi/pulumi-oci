@@ -101,21 +101,11 @@ type GetMaskingPolicyHealthReportsResult struct {
 }
 
 func GetMaskingPolicyHealthReportsOutput(ctx *pulumi.Context, args GetMaskingPolicyHealthReportsOutputArgs, opts ...pulumi.InvokeOption) GetMaskingPolicyHealthReportsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMaskingPolicyHealthReportsResultOutput, error) {
 			args := v.(GetMaskingPolicyHealthReportsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMaskingPolicyHealthReportsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getMaskingPolicyHealthReports:getMaskingPolicyHealthReports", args, &rv, "", opts...)
-			if err != nil {
-				return GetMaskingPolicyHealthReportsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMaskingPolicyHealthReportsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMaskingPolicyHealthReportsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getMaskingPolicyHealthReports:getMaskingPolicyHealthReports", args, GetMaskingPolicyHealthReportsResultOutput{}, options).(GetMaskingPolicyHealthReportsResultOutput), nil
 		}).(GetMaskingPolicyHealthReportsResultOutput)
 }
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetRecommendationResult> Invoke(GetRecommendationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecommendationResult>("oci:Optimizer/getRecommendation:getRecommendation", args ?? new GetRecommendationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Gets the recommendation for the specified OCID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRecommendation = Oci.Optimizer.GetRecommendation.Invoke(new()
+        ///     {
+        ///         RecommendationId = testRecommendationOciOptimizerRecommendation.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRecommendationResult> Invoke(GetRecommendationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecommendationResult>("oci:Optimizer/getRecommendation:getRecommendation", args ?? new GetRecommendationInvokeArgs(), options.WithDefaults());
     }
 
 

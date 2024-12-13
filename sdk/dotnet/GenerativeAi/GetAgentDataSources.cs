@@ -74,6 +74,38 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public static Output<GetAgentDataSourcesResult> Invoke(GetAgentDataSourcesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentDataSourcesResult>("oci:GenerativeAi/getAgentDataSources:getAgentDataSources", args ?? new GetAgentDataSourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
+        /// 
+        /// **ListDataSources**
+        /// 
+        /// Gets a list of data sources.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataSources = Oci.GenerativeAi.GetAgentDataSources.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = dataSourceDisplayName,
+        ///         KnowledgeBaseId = testKnowledgeBase.Id,
+        ///         State = dataSourceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAgentDataSourcesResult> Invoke(GetAgentDataSourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentDataSourcesResult>("oci:GenerativeAi/getAgentDataSources:getAgentDataSources", args ?? new GetAgentDataSourcesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -81,21 +81,11 @@ type GetManagedDatabaseUserProxiedForUsersResult struct {
 }
 
 func GetManagedDatabaseUserProxiedForUsersOutput(ctx *pulumi.Context, args GetManagedDatabaseUserProxiedForUsersOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserProxiedForUsersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabaseUserProxiedForUsersResultOutput, error) {
 			args := v.(GetManagedDatabaseUserProxiedForUsersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabaseUserProxiedForUsersResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabaseUserProxiedForUsersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabaseUserProxiedForUsersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabaseUserProxiedForUsersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", args, GetManagedDatabaseUserProxiedForUsersResultOutput{}, options).(GetManagedDatabaseUserProxiedForUsersResultOutput), nil
 		}).(GetManagedDatabaseUserProxiedForUsersResultOutput)
 }
 

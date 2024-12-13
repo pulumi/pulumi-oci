@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetDataMaskRuleResult> Invoke(GetDataMaskRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataMaskRuleResult>("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args ?? new GetDataMaskRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a DataMaskRule resource, identified by dataMaskRuleId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataMaskRule = Oci.CloudGuard.GetDataMaskRule.Invoke(new()
+        ///     {
+        ///         DataMaskRuleId = testDataMaskRuleOciCloudGuardDataMaskRule.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDataMaskRuleResult> Invoke(GetDataMaskRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataMaskRuleResult>("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args ?? new GetDataMaskRuleInvokeArgs(), options.WithDefaults());
     }
 
 

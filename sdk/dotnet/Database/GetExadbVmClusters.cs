@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetExadbVmClustersResult> Invoke(GetExadbVmClustersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadbVmClustersResult>("oci:Database/getExadbVmClusters:getExadbVmClusters", args ?? new GetExadbVmClustersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Exadb Vm Clusters in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the Exadata VM clusters on Exascale Infrastructure in the specified compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExadbVmClusters = Oci.Database.GetExadbVmClusters.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = exadbVmClusterDisplayName,
+        ///         ExascaleDbStorageVaultId = testExascaleDbStorageVault.Id,
+        ///         State = exadbVmClusterState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExadbVmClustersResult> Invoke(GetExadbVmClustersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadbVmClustersResult>("oci:Database/getExadbVmClusters:getExadbVmClusters", args ?? new GetExadbVmClustersInvokeArgs(), options.WithDefaults());
     }
 
 

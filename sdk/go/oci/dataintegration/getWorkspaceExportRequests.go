@@ -91,21 +91,11 @@ type GetWorkspaceExportRequestsResult struct {
 }
 
 func GetWorkspaceExportRequestsOutput(ctx *pulumi.Context, args GetWorkspaceExportRequestsOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceExportRequestsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetWorkspaceExportRequestsResultOutput, error) {
 			args := v.(GetWorkspaceExportRequestsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetWorkspaceExportRequestsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceExportRequests:getWorkspaceExportRequests", args, &rv, "", opts...)
-			if err != nil {
-				return GetWorkspaceExportRequestsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetWorkspaceExportRequestsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetWorkspaceExportRequestsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceExportRequests:getWorkspaceExportRequests", args, GetWorkspaceExportRequestsResultOutput{}, options).(GetWorkspaceExportRequestsResultOutput), nil
 		}).(GetWorkspaceExportRequestsResultOutput)
 }
 

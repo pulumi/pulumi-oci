@@ -89,21 +89,11 @@ type GetDesktopPoolVolumesResult struct {
 }
 
 func GetDesktopPoolVolumesOutput(ctx *pulumi.Context, args GetDesktopPoolVolumesOutputArgs, opts ...pulumi.InvokeOption) GetDesktopPoolVolumesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDesktopPoolVolumesResultOutput, error) {
 			args := v.(GetDesktopPoolVolumesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDesktopPoolVolumesResult
-			secret, err := ctx.InvokePackageRaw("oci:Desktops/getDesktopPoolVolumes:getDesktopPoolVolumes", args, &rv, "", opts...)
-			if err != nil {
-				return GetDesktopPoolVolumesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDesktopPoolVolumesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDesktopPoolVolumesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Desktops/getDesktopPoolVolumes:getDesktopPoolVolumes", args, GetDesktopPoolVolumesResultOutput{}, options).(GetDesktopPoolVolumesResultOutput), nil
 		}).(GetDesktopPoolVolumesResultOutput)
 }
 

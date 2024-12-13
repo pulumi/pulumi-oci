@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFusionEnvironmentScheduledActivitiesResult> Invoke(GetFusionEnvironmentScheduledActivitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentScheduledActivitiesResult>("oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities", args ?? new GetFusionEnvironmentScheduledActivitiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fusion Environment Scheduled Activities in Oracle Cloud Infrastructure Fusion Apps service.
+        /// 
+        /// Returns a list of ScheduledActivities.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFusionEnvironmentScheduledActivities = Oci.Functions.GetFusionEnvironmentScheduledActivities.Invoke(new()
+        ///     {
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         DisplayName = fusionEnvironmentScheduledActivityDisplayName,
+        ///         RunCycle = fusionEnvironmentScheduledActivityRunCycle,
+        ///         State = fusionEnvironmentScheduledActivityState,
+        ///         TimeExpectedFinishLessThanOrEqualTo = fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo,
+        ///         TimeScheduledStartGreaterThanOrEqualTo = fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFusionEnvironmentScheduledActivitiesResult> Invoke(GetFusionEnvironmentScheduledActivitiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentScheduledActivitiesResult>("oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities", args ?? new GetFusionEnvironmentScheduledActivitiesInvokeArgs(), options.WithDefaults());
     }
 
 

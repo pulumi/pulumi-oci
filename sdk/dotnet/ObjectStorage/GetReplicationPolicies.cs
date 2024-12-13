@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public static Output<GetReplicationPoliciesResult> Invoke(GetReplicationPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicationPoliciesResult>("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args ?? new GetReplicationPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// List the replication policies associated with a bucket.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReplicationPolicies = Oci.ObjectStorage.GetReplicationPolicies.Invoke(new()
+        ///     {
+        ///         Bucket = replicationPolicyBucket,
+        ///         Namespace = replicationPolicyNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReplicationPoliciesResult> Invoke(GetReplicationPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicationPoliciesResult>("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args ?? new GetReplicationPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

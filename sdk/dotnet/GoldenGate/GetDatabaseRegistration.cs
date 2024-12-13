@@ -66,6 +66,34 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetDatabaseRegistrationResult> Invoke(GetDatabaseRegistrationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseRegistrationResult>("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args ?? new GetDatabaseRegistrationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Note: Deprecated. Use the /connections API instead.
+        /// Retrieves a DatabaseRegistration.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabaseRegistration = Oci.GoldenGate.GetDatabaseRegistration.Invoke(new()
+        ///     {
+        ///         DatabaseRegistrationId = testDatabaseRegistrationOciGoldenGateDatabaseRegistration.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabaseRegistrationResult> Invoke(GetDatabaseRegistrationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseRegistrationResult>("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args ?? new GetDatabaseRegistrationInvokeArgs(), options.WithDefaults());
     }
 
 

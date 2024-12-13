@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsApprovalWorkflowResult> Invoke(GetDomainsApprovalWorkflowInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowResult>("oci:Identity/getDomainsApprovalWorkflow:getDomainsApprovalWorkflow", args ?? new GetDomainsApprovalWorkflowInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Approval Workflow resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get ApprovalWorkflow
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApprovalWorkflow = Oci.Identity.GetDomainsApprovalWorkflow.Invoke(new()
+        ///     {
+        ///         ApprovalWorkflowId = testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = approvalWorkflowAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsApprovalWorkflowResult> Invoke(GetDomainsApprovalWorkflowInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowResult>("oci:Identity/getDomainsApprovalWorkflow:getDomainsApprovalWorkflow", args ?? new GetDomainsApprovalWorkflowInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public static Output<GetSuppressionResult> Invoke(GetSuppressionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSuppressionResult>("oci:Email/getSuppression:getSuppression", args ?? new GetSuppressionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Suppression resource in Oracle Cloud Infrastructure Email service.
+        /// 
+        /// Gets the details of a suppressed recipient email address for a given
+        /// `suppressionId`. Each suppression is given a unique OCID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSuppression = Oci.Email.GetSuppression.Invoke(new()
+        ///     {
+        ///         SuppressionId = testSuppressionOciEmailSuppression.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSuppressionResult> Invoke(GetSuppressionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSuppressionResult>("oci:Email/getSuppression:getSuppression", args ?? new GetSuppressionInvokeArgs(), options.WithDefaults());
     }
 
 

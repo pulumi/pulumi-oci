@@ -72,6 +72,37 @@ namespace Pulumi.Oci.OneSubsription
         /// </summary>
         public static Output<GetInvoicesResult> Invoke(GetInvoicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvoicesResult>("oci:OneSubsription/getInvoices:getInvoices", args ?? new GetInvoicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Invoices in Oracle Cloud Infrastructure Onesubscription service.
+        /// 
+        /// This is a collection API which returns a list of Invoices for given filters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInvoices = Oci.OneSubsription.GetInvoices.Invoke(new()
+        ///     {
+        ///         ArCustomerTransactionId = testArCustomerTransaction.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Fields = invoiceFields,
+        ///         TimeFrom = invoiceTimeFrom,
+        ///         TimeTo = invoiceTimeTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInvoicesResult> Invoke(GetInvoicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvoicesResult>("oci:OneSubsription/getInvoices:getInvoices", args ?? new GetInvoicesInvokeArgs(), options.WithDefaults());
     }
 
 

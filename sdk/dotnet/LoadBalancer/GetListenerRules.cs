@@ -78,6 +78,40 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         public static Output<GetListenerRulesResult> Invoke(GetListenerRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListenerRulesResult>("oci:LoadBalancer/getListenerRules:getListenerRules", args ?? new GetListenerRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Listener Rules in Oracle Cloud Infrastructure Load Balancer service.
+        /// 
+        /// Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
+        /// the rules in the following order:
+        /// 
+        /// *  Access control rules
+        /// *  Allow method rules
+        /// *  Request header rules
+        /// *  Response header rules
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testListenerRules = Oci.LoadBalancer.GetListenerRules.Invoke(new()
+        ///     {
+        ///         ListenerName = testListener.Name,
+        ///         LoadBalancerId = testLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetListenerRulesResult> Invoke(GetListenerRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetListenerRulesResult>("oci:LoadBalancer/getListenerRules:getListenerRules", args ?? new GetListenerRulesInvokeArgs(), options.WithDefaults());
     }
 
 

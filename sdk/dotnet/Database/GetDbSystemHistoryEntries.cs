@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbSystemHistoryEntriesResult> Invoke(GetDbSystemHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemHistoryEntriesResult>("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", args ?? new GetDbSystemHistoryEntriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the history of the patch actions performed on the specified DB system.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbSystemPatchHistoryEntries = Oci.Database.GetDbSystemHistoryEntries.Invoke(new()
+        ///     {
+        ///         DbSystemId = testDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbSystemHistoryEntriesResult> Invoke(GetDbSystemHistoryEntriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemHistoryEntriesResult>("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", args ?? new GetDbSystemHistoryEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDbVersionsResult> Invoke(GetAutonomousDbVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDbVersionsResult>("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", args ?? new GetAutonomousDbVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of supported Autonomous Database versions.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDbVersions = Oci.Database.GetAutonomousDbVersions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DbWorkload = autonomousDbVersionDbWorkload,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDbVersionsResult> Invoke(GetAutonomousDbVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDbVersionsResult>("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", args ?? new GetAutonomousDbVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

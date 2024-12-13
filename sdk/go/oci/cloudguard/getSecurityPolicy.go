@@ -92,21 +92,11 @@ type GetSecurityPolicyResult struct {
 }
 
 func GetSecurityPolicyOutput(ctx *pulumi.Context, args GetSecurityPolicyOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSecurityPolicyResultOutput, error) {
 			args := v.(GetSecurityPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSecurityPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getSecurityPolicy:getSecurityPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return GetSecurityPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSecurityPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSecurityPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudGuard/getSecurityPolicy:getSecurityPolicy", args, GetSecurityPolicyResultOutput{}, options).(GetSecurityPolicyResultOutput), nil
 		}).(GetSecurityPolicyResultOutput)
 }
 

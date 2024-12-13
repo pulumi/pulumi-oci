@@ -126,21 +126,11 @@ type LookupVirtualCircuitResult struct {
 }
 
 func LookupVirtualCircuitOutput(ctx *pulumi.Context, args LookupVirtualCircuitOutputArgs, opts ...pulumi.InvokeOption) LookupVirtualCircuitResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupVirtualCircuitResultOutput, error) {
 			args := v.(LookupVirtualCircuitArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupVirtualCircuitResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getVirtualCircuit:getVirtualCircuit", args, &rv, "", opts...)
-			if err != nil {
-				return LookupVirtualCircuitResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupVirtualCircuitResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupVirtualCircuitResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getVirtualCircuit:getVirtualCircuit", args, LookupVirtualCircuitResultOutput{}, options).(LookupVirtualCircuitResultOutput), nil
 		}).(LookupVirtualCircuitResultOutput)
 }
 

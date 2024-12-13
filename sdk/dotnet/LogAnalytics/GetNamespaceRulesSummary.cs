@@ -66,6 +66,34 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceRulesSummaryResult> Invoke(GetNamespaceRulesSummaryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceRulesSummaryResult>("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", args ?? new GetNamespaceRulesSummaryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Returns the count of detection rules in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceRulesSummary = Oci.LogAnalytics.GetNamespaceRulesSummary.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceRulesSummaryNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceRulesSummaryResult> Invoke(GetNamespaceRulesSummaryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceRulesSummaryResult>("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", args ?? new GetNamespaceRulesSummaryInvokeArgs(), options.WithDefaults());
     }
 
 

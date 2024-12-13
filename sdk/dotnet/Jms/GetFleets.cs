@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetsResult> Invoke(GetFleetsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetsResult>("oci:Jms/getFleets:getFleets", args ?? new GetFleetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
+        /// is required unless the query parameter `id` is specified.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleets = Oci.Jms.GetFleets.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fleetDisplayName,
+        ///         DisplayNameContains = fleetDisplayNameContains,
+        ///         Id = fleetId,
+        ///         State = fleetState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetsResult> Invoke(GetFleetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetsResult>("oci:Jms/getFleets:getFleets", args ?? new GetFleetsInvokeArgs(), options.WithDefaults());
     }
 
 

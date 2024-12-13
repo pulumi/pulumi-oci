@@ -88,6 +88,45 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSensitiveTypesResult> Invoke(GetSensitiveTypesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveTypesResult>("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", args ?? new GetSensitiveTypesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of sensitive types based on the specified query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveTypes = Oci.DataSafe.GetSensitiveTypes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sensitiveTypeAccessLevel,
+        ///         CompartmentIdInSubtree = sensitiveTypeCompartmentIdInSubtree,
+        ///         DefaultMaskingFormatId = testDefaultMaskingFormat.Id,
+        ///         DisplayName = sensitiveTypeDisplayName,
+        ///         EntityType = sensitiveTypeEntityType,
+        ///         IsCommon = sensitiveTypeIsCommon,
+        ///         ParentCategoryId = testCategory.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         SensitiveTypeSource = sensitiveTypeSensitiveTypeSource,
+        ///         State = sensitiveTypeState,
+        ///         TimeCreatedGreaterThanOrEqualTo = sensitiveTypeTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = sensitiveTypeTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSensitiveTypesResult> Invoke(GetSensitiveTypesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveTypesResult>("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", args ?? new GetSensitiveTypesInvokeArgs(), options.WithDefaults());
     }
 
 

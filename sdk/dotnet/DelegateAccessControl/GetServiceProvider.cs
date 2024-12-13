@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// </summary>
         public static Output<GetServiceProviderResult> Invoke(GetServiceProviderInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceProviderResult>("oci:DelegateAccessControl/getServiceProvider:getServiceProvider", args ?? new GetServiceProviderInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Service Provider resource in Oracle Cloud Infrastructure Delegate Access Control service.
+        /// 
+        /// Gets a ServiceProvider by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServiceProvider = Oci.DelegateAccessControl.GetServiceProvider.Invoke(new()
+        ///     {
+        ///         ServiceProviderId = testServiceProviderOciDelegateAccessControlServiceProvider.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServiceProviderResult> Invoke(GetServiceProviderInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceProviderResult>("oci:DelegateAccessControl/getServiceProvider:getServiceProvider", args ?? new GetServiceProviderInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -131,21 +131,11 @@ type GetSqlFirewallPoliciesResult struct {
 }
 
 func GetSqlFirewallPoliciesOutput(ctx *pulumi.Context, args GetSqlFirewallPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetSqlFirewallPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSqlFirewallPoliciesResultOutput, error) {
 			args := v.(GetSqlFirewallPoliciesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSqlFirewallPoliciesResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSqlFirewallPolicies:getSqlFirewallPolicies", args, &rv, "", opts...)
-			if err != nil {
-				return GetSqlFirewallPoliciesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSqlFirewallPoliciesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSqlFirewallPoliciesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSqlFirewallPolicies:getSqlFirewallPolicies", args, GetSqlFirewallPoliciesResultOutput{}, options).(GetSqlFirewallPoliciesResultOutput), nil
 		}).(GetSqlFirewallPoliciesResultOutput)
 }
 

@@ -108,6 +108,55 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetUserAssessmentUsersResult> Invoke(GetUserAssessmentUsersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentUsersResult>("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", args ?? new GetUserAssessmentUsersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of users of the specified user assessment. The result contains the database user details for each user, such
+        /// as user type, account status, last login time, user creation time, authentication type, user profile, and the date and time
+        /// of the latest password change. It also contains the user category derived from these user details as well as privileges
+        /// granted to each user.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAssessmentUsers = Oci.DataSafe.GetUserAssessmentUsers.Invoke(new()
+        ///     {
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///         AccessLevel = userAssessmentUserAccessLevel,
+        ///         AccountStatus = userAssessmentUserAccountStatus,
+        ///         AreAllSchemasAccessible = userAssessmentUserAreAllSchemasAccessible,
+        ///         AuthenticationType = userAssessmentUserAuthenticationType,
+        ///         CompartmentIdInSubtree = userAssessmentUserCompartmentIdInSubtree,
+        ///         SchemaLists = userAssessmentUserSchemaList,
+        ///         TargetId = testTarget.Id,
+        ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,
+        ///         TimeLastLoginLessThan = userAssessmentUserTimeLastLoginLessThan,
+        ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo,
+        ///         TimePasswordLastChangedLessThan = userAssessmentUserTimePasswordLastChangedLessThan,
+        ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo,
+        ///         TimeUserCreatedLessThan = userAssessmentUserTimeUserCreatedLessThan,
+        ///         UserCategory = userAssessmentUserUserCategory,
+        ///         UserKey = userAssessmentUserUserKey,
+        ///         UserName = testUser.Name,
+        ///         UserProfile = userAssessmentUserUserProfile,
+        ///         UserRole = userAssessmentUserUserRole,
+        ///         UserType = userAssessmentUserUserType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserAssessmentUsersResult> Invoke(GetUserAssessmentUsersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentUsersResult>("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", args ?? new GetUserAssessmentUsersInvokeArgs(), options.WithDefaults());
     }
 
 

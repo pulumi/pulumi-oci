@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSqlFirewallViolationsResult> Invoke(GetSqlFirewallViolationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallViolationsResult>("oci:DataSafe/getSqlFirewallViolations:getSqlFirewallViolations", args ?? new GetSqlFirewallViolationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of all the SQL Firewall violations captured by the firewall.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlFirewallViolations = Oci.DataSafe.GetSqlFirewallViolations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sqlFirewallViolationAccessLevel,
+        ///         CompartmentIdInSubtree = sqlFirewallViolationCompartmentIdInSubtree,
+        ///         ScimQuery = sqlFirewallViolationScimQuery,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlFirewallViolationsResult> Invoke(GetSqlFirewallViolationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallViolationsResult>("oci:DataSafe/getSqlFirewallViolations:getSqlFirewallViolations", args ?? new GetSqlFirewallViolationsInvokeArgs(), options.WithDefaults());
     }
 
 

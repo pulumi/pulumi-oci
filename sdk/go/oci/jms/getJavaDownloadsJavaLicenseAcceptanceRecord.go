@@ -86,21 +86,11 @@ type LookupJavaDownloadsJavaLicenseAcceptanceRecordResult struct {
 }
 
 func LookupJavaDownloadsJavaLicenseAcceptanceRecordOutput(ctx *pulumi.Context, args LookupJavaDownloadsJavaLicenseAcceptanceRecordOutputArgs, opts ...pulumi.InvokeOption) LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput, error) {
 			args := v.(LookupJavaDownloadsJavaLicenseAcceptanceRecordArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupJavaDownloadsJavaLicenseAcceptanceRecordResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord", args, &rv, "", opts...)
-			if err != nil {
-				return LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord", args, LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput{}, options).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput), nil
 		}).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput)
 }
 

@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaDownloadsJavaDownloadRecordsResult> Invoke(GetJavaDownloadsJavaDownloadRecordsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadRecordsResult>("oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords", args ?? new GetJavaDownloadsJavaDownloadRecordsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Java Download Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+        /// 
+        /// Returns a list of Java download records in a tenancy based on specified parameters.
+        /// See [JavaReleases API](https://docs.cloud.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases)
+        /// for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaDownloadRecords = Oci.Jms.GetJavaDownloadsJavaDownloadRecords.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Architecture = javaDownloadRecordArchitecture,
+        ///         FamilyVersion = javaDownloadRecordFamilyVersion,
+        ///         OsFamily = javaDownloadRecordOsFamily,
+        ///         PackageTypeDetail = javaDownloadRecordPackageTypeDetail,
+        ///         ReleaseVersion = javaDownloadRecordReleaseVersion,
+        ///         TimeEnd = javaDownloadRecordTimeEnd,
+        ///         TimeStart = javaDownloadRecordTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaDownloadsJavaDownloadRecordsResult> Invoke(GetJavaDownloadsJavaDownloadRecordsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadRecordsResult>("oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords", args ?? new GetJavaDownloadsJavaDownloadRecordsInvokeArgs(), options.WithDefaults());
     }
 
 

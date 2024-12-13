@@ -87,21 +87,11 @@ type GetFleetsResult struct {
 }
 
 func GetFleetsOutput(ctx *pulumi.Context, args GetFleetsOutputArgs, opts ...pulumi.InvokeOption) GetFleetsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFleetsResultOutput, error) {
 			args := v.(GetFleetsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFleetsResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getFleets:getFleets", args, &rv, "", opts...)
-			if err != nil {
-				return GetFleetsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFleetsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFleetsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getFleets:getFleets", args, GetFleetsResultOutput{}, options).(GetFleetsResultOutput), nil
 		}).(GetFleetsResultOutput)
 }
 

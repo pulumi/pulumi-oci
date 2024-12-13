@@ -113,21 +113,11 @@ type GetInstallationSitesResult struct {
 }
 
 func GetInstallationSitesOutput(ctx *pulumi.Context, args GetInstallationSitesOutputArgs, opts ...pulumi.InvokeOption) GetInstallationSitesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInstallationSitesResultOutput, error) {
 			args := v.(GetInstallationSitesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInstallationSitesResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getInstallationSites:getInstallationSites", args, &rv, "", opts...)
-			if err != nil {
-				return GetInstallationSitesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInstallationSitesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInstallationSitesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getInstallationSites:getInstallationSites", args, GetInstallationSitesResultOutput{}, options).(GetInstallationSitesResultOutput), nil
 		}).(GetInstallationSitesResultOutput)
 }
 

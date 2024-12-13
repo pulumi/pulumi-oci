@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public static Output<GetSendersResult> Invoke(GetSendersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSendersResult>("oci:Email/getSenders:getSenders", args ?? new GetSendersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Senders in Oracle Cloud Infrastructure Email service.
+        /// 
+        /// Gets a collection of approved sender email addresses and sender IDs.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSenders = Oci.Email.GetSenders.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Domain = senderDomain,
+        ///         EmailAddress = senderEmailAddress,
+        ///         State = senderState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSendersResult> Invoke(GetSendersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSendersResult>("oci:Email/getSenders:getSenders", args ?? new GetSendersInvokeArgs(), options.WithDefaults());
     }
 
 

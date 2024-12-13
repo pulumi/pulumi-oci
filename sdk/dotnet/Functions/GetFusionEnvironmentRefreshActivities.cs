@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFusionEnvironmentRefreshActivitiesResult> Invoke(GetFusionEnvironmentRefreshActivitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivitiesResult>("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args ?? new GetFusionEnvironmentRefreshActivitiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fusion Environment Refresh Activities in Oracle Cloud Infrastructure Fusion Apps service.
+        /// 
+        /// Returns a list of RefreshActivities.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFusionEnvironmentRefreshActivities = Oci.Functions.GetFusionEnvironmentRefreshActivities.Invoke(new()
+        ///     {
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         DisplayName = fusionEnvironmentRefreshActivityDisplayName,
+        ///         State = fusionEnvironmentRefreshActivityState,
+        ///         TimeExpectedFinishLessThanOrEqualTo = fusionEnvironmentRefreshActivityTimeExpectedFinishLessThanOrEqualTo,
+        ///         TimeScheduledStartGreaterThanOrEqualTo = fusionEnvironmentRefreshActivityTimeScheduledStartGreaterThanOrEqualTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFusionEnvironmentRefreshActivitiesResult> Invoke(GetFusionEnvironmentRefreshActivitiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivitiesResult>("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args ?? new GetFusionEnvironmentRefreshActivitiesInvokeArgs(), options.WithDefaults());
     }
 
 

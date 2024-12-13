@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetOpsiConfigurationConfigurationItemResult> Invoke(GetOpsiConfigurationConfigurationItemInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOpsiConfigurationConfigurationItemResult>("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args ?? new GetOpsiConfigurationConfigurationItemInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+        /// Values specified in configItemField param will determine what fields for each configuration items have to be returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOpsiConfigurationConfigurationItem = Oci.Opsi.GetOpsiConfigurationConfigurationItem.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ConfigItemFields = opsiConfigurationConfigurationItemConfigItemField,
+        ///         ConfigItemsApplicableContexts = opsiConfigurationConfigurationItemConfigItemsApplicableContext,
+        ///         Name = opsiConfigurationConfigurationItemName,
+        ///         OpsiConfigType = opsiConfigurationConfigurationItemOpsiConfigType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOpsiConfigurationConfigurationItemResult> Invoke(GetOpsiConfigurationConfigurationItemInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOpsiConfigurationConfigurationItemResult>("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args ?? new GetOpsiConfigurationConfigurationItemInvokeArgs(), options.WithDefaults());
     }
 
 

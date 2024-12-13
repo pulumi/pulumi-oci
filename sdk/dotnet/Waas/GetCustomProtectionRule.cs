@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Waas
         /// </summary>
         public static Output<GetCustomProtectionRuleResult> Invoke(GetCustomProtectionRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCustomProtectionRuleResult>("oci:Waas/getCustomProtectionRule:getCustomProtectionRule", args ?? new GetCustomProtectionRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+        /// 
+        /// Gets the details of a custom protection rule.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCustomProtectionRule = Oci.Waas.GetCustomProtectionRule.Invoke(new()
+        ///     {
+        ///         CustomProtectionRuleId = testCustomProtectionRuleOciWaasCustomProtectionRule.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCustomProtectionRuleResult> Invoke(GetCustomProtectionRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCustomProtectionRuleResult>("oci:Waas/getCustomProtectionRule:getCustomProtectionRule", args ?? new GetCustomProtectionRuleInvokeArgs(), options.WithDefaults());
     }
 
 

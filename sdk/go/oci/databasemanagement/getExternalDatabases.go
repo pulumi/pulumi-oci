@@ -82,21 +82,11 @@ type GetExternalDatabasesResult struct {
 }
 
 func GetExternalDatabasesOutput(ctx *pulumi.Context, args GetExternalDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetExternalDatabasesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalDatabasesResultOutput, error) {
 			args := v.(GetExternalDatabasesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalDatabasesResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalDatabasesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalDatabasesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalDatabasesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", args, GetExternalDatabasesResultOutput{}, options).(GetExternalDatabasesResultOutput), nil
 		}).(GetExternalDatabasesResultOutput)
 }
 

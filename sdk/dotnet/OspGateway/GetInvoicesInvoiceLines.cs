@@ -66,6 +66,34 @@ namespace Pulumi.Oci.OspGateway
         /// </summary>
         public static Output<GetInvoicesInvoiceLinesResult> Invoke(GetInvoicesInvoiceLinesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvoicesInvoiceLinesResult>("oci:OspGateway/getInvoicesInvoiceLines:getInvoicesInvoiceLines", args ?? new GetInvoicesInvoiceLinesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Invoices Invoice Lines in Oracle Cloud Infrastructure Osp Gateway service.
+        /// 
+        /// Returns the invoice product list by invoice id
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInvoicesInvoiceLines = Oci.OspGateway.GetInvoicesInvoiceLines.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         InternalInvoiceId = testInvoice.Id,
+        ///         OspHomeRegion = invoicesInvoiceLineOspHomeRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInvoicesInvoiceLinesResult> Invoke(GetInvoicesInvoiceLinesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvoicesInvoiceLinesResult>("oci:OspGateway/getInvoicesInvoiceLines:getInvoicesInvoiceLines", args ?? new GetInvoicesInvoiceLinesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -91,21 +91,11 @@ type GetViewsResult struct {
 }
 
 func GetViewsOutput(ctx *pulumi.Context, args GetViewsOutputArgs, opts ...pulumi.InvokeOption) GetViewsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetViewsResultOutput, error) {
 			args := v.(GetViewsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetViewsResult
-			secret, err := ctx.InvokePackageRaw("oci:Dns/getViews:getViews", args, &rv, "", opts...)
-			if err != nil {
-				return GetViewsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetViewsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetViewsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Dns/getViews:getViews", args, GetViewsResultOutput{}, options).(GetViewsResultOutput), nil
 		}).(GetViewsResultOutput)
 }
 

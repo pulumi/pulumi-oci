@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeCapacityTopologyResult> Invoke(GetComputeCapacityTopologyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyResult>("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", args ?? new GetComputeCapacityTopologyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets information about the specified compute capacity topology.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeCapacityTopology = Oci.Core.GetComputeCapacityTopology.Invoke(new()
+        ///     {
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopologyOciCoreComputeCapacityTopology.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeCapacityTopologyResult> Invoke(GetComputeCapacityTopologyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyResult>("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", args ?? new GetComputeCapacityTopologyInvokeArgs(), options.WithDefaults());
     }
 
 

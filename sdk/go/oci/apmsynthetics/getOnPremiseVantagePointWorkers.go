@@ -91,21 +91,11 @@ type GetOnPremiseVantagePointWorkersResult struct {
 }
 
 func GetOnPremiseVantagePointWorkersOutput(ctx *pulumi.Context, args GetOnPremiseVantagePointWorkersOutputArgs, opts ...pulumi.InvokeOption) GetOnPremiseVantagePointWorkersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOnPremiseVantagePointWorkersResultOutput, error) {
 			args := v.(GetOnPremiseVantagePointWorkersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOnPremiseVantagePointWorkersResult
-			secret, err := ctx.InvokePackageRaw("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", args, &rv, "", opts...)
-			if err != nil {
-				return GetOnPremiseVantagePointWorkersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOnPremiseVantagePointWorkersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOnPremiseVantagePointWorkersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", args, GetOnPremiseVantagePointWorkersResultOutput{}, options).(GetOnPremiseVantagePointWorkersResultOutput), nil
 		}).(GetOnPremiseVantagePointWorkersResultOutput)
 }
 

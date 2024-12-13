@@ -78,6 +78,40 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseAttentionLogCountsResult> Invoke(GetManagedDatabaseAttentionLogCountsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAttentionLogCountsResult>("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", args ?? new GetManagedDatabaseAttentionLogCountsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Get the counts of attention logs for the specified Managed Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseAttentionLogCounts = Oci.DatabaseManagement.GetManagedDatabaseAttentionLogCounts.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         GroupBy = managedDatabaseAttentionLogCountGroupBy,
+        ///         IsRegularExpression = managedDatabaseAttentionLogCountIsRegularExpression,
+        ///         LogSearchText = managedDatabaseAttentionLogCountLogSearchText,
+        ///         TimeGreaterThanOrEqualTo = managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = managedDatabaseAttentionLogCountTimeLessThanOrEqualTo,
+        ///         TypeFilter = managedDatabaseAttentionLogCountTypeFilter,
+        ///         UrgencyFilter = managedDatabaseAttentionLogCountUrgencyFilter,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseAttentionLogCountsResult> Invoke(GetManagedDatabaseAttentionLogCountsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAttentionLogCountsResult>("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", args ?? new GetManagedDatabaseAttentionLogCountsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public static Output<GetKeyVersionsResult> Invoke(GetKeyVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKeyVersionsResult>("oci:Kms/getKeyVersions:getKeyVersions", args ?? new GetKeyVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Key Versions in Oracle Cloud Infrastructure Kms service.
+        /// 
+        /// Lists all [KeyVersion](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/KeyVersion/) resources for the specified
+        /// master encryption key.
+        /// 
+        /// As a management operation, this call is subject to a Key Management limit that applies to the total number
+        /// of requests across all management read operations. Key Management might throttle this call to reject an
+        /// otherwise valid request when the total rate of management read operations exceeds 10 requests per second
+        /// for a given tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testKeyVersions = Oci.Kms.GetKeyVersions.Invoke(new()
+        ///     {
+        ///         KeyId = testKey.Id,
+        ///         ManagementEndpoint = keyVersionManagementEndpoint,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetKeyVersionsResult> Invoke(GetKeyVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetKeyVersionsResult>("oci:Kms/getKeyVersions:getKeyVersions", args ?? new GetKeyVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

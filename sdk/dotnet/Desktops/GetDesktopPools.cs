@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         public static Output<GetDesktopPoolsResult> Invoke(GetDesktopPoolsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDesktopPoolsResult>("oci:Desktops/getDesktopPools:getDesktopPools", args ?? new GetDesktopPoolsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Desktop Pools in Oracle Cloud Infrastructure Desktops service.
+        /// 
+        /// Returns a list of desktop pools within the given compartment. You can limit the results to an availability domain, pool name, or pool state. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDesktopPools = Oci.Desktops.GetDesktopPools.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = desktopPoolAvailabilityDomain,
+        ///         DisplayName = desktopPoolDisplayName,
+        ///         Id = desktopPoolId,
+        ///         State = desktopPoolState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDesktopPoolsResult> Invoke(GetDesktopPoolsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDesktopPoolsResult>("oci:Desktops/getDesktopPools:getDesktopPools", args ?? new GetDesktopPoolsInvokeArgs(), options.WithDefaults());
     }
 
 

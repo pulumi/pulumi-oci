@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsNetworkPerimetersResult> Invoke(GetDomainsNetworkPerimetersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsNetworkPerimetersResult>("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", args ?? new GetDomainsNetworkPerimetersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Perimeters in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search NetworkPerimeters
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkPerimeters = Oci.Identity.GetDomainsNetworkPerimeters.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         NetworkPerimeterCount = networkPerimeterNetworkPerimeterCount,
+        ///         NetworkPerimeterFilter = networkPerimeterNetworkPerimeterFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = networkPerimeterAuthorization,
+        ///         ResourceTypeSchemaVersion = networkPerimeterResourceTypeSchemaVersion,
+        ///         StartIndex = networkPerimeterStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsNetworkPerimetersResult> Invoke(GetDomainsNetworkPerimetersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsNetworkPerimetersResult>("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", args ?? new GetDomainsNetworkPerimetersInvokeArgs(), options.WithDefaults());
     }
 
 

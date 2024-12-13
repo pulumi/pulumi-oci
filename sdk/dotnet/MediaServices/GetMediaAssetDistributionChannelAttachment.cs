@@ -26,6 +26,14 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetMediaAssetDistributionChannelAttachmentResult> Invoke(GetMediaAssetDistributionChannelAttachmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaAssetDistributionChannelAttachmentResult>("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", args ?? new GetMediaAssetDistributionChannelAttachmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
+        /// </summary>
+        public static Output<GetMediaAssetDistributionChannelAttachmentResult> Invoke(GetMediaAssetDistributionChannelAttachmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMediaAssetDistributionChannelAttachmentResult>("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", args ?? new GetMediaAssetDistributionChannelAttachmentInvokeArgs(), options.WithDefaults());
     }
 
 

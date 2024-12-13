@@ -96,21 +96,11 @@ type LookupDeployEnvironmentResult struct {
 }
 
 func LookupDeployEnvironmentOutput(ctx *pulumi.Context, args LookupDeployEnvironmentOutputArgs, opts ...pulumi.InvokeOption) LookupDeployEnvironmentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDeployEnvironmentResultOutput, error) {
 			args := v.(LookupDeployEnvironmentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDeployEnvironmentResult
-			secret, err := ctx.InvokePackageRaw("oci:DevOps/getDeployEnvironment:getDeployEnvironment", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDeployEnvironmentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDeployEnvironmentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDeployEnvironmentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DevOps/getDeployEnvironment:getDeployEnvironment", args, LookupDeployEnvironmentResultOutput{}, options).(LookupDeployEnvironmentResultOutput), nil
 		}).(LookupDeployEnvironmentResultOutput)
 }
 

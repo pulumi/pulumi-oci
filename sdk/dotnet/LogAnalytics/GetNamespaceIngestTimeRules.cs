@@ -76,6 +76,39 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceIngestTimeRulesResult> Invoke(GetNamespaceIngestTimeRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceIngestTimeRulesResult>("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", args ?? new GetNamespaceIngestTimeRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceIngestTimeRules = Oci.LogAnalytics.GetNamespaceIngestTimeRules.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceIngestTimeRuleNamespace,
+        ///         ConditionKind = namespaceIngestTimeRuleConditionKind,
+        ///         DisplayName = namespaceIngestTimeRuleDisplayName,
+        ///         FieldName = namespaceIngestTimeRuleFieldName,
+        ///         FieldValue = namespaceIngestTimeRuleFieldValue,
+        ///         State = namespaceIngestTimeRuleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceIngestTimeRulesResult> Invoke(GetNamespaceIngestTimeRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceIngestTimeRulesResult>("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", args ?? new GetNamespaceIngestTimeRulesInvokeArgs(), options.WithDefaults());
     }
 
 

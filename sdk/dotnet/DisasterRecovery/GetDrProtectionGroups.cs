@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public static Output<GetDrProtectionGroupsResult> Invoke(GetDrProtectionGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrProtectionGroupsResult>("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", args ?? new GetDrProtectionGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
+        /// 
+        /// Get a summary list of all DR protection groups in a compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDrProtectionGroups = Oci.DisasterRecovery.GetDrProtectionGroups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = drProtectionGroupDisplayName,
+        ///         DrProtectionGroupId = testDrProtectionGroup.Id,
+        ///         LifecycleSubState = drProtectionGroupLifecycleSubState,
+        ///         Role = drProtectionGroupRole,
+        ///         State = drProtectionGroupState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDrProtectionGroupsResult> Invoke(GetDrProtectionGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrProtectionGroupsResult>("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", args ?? new GetDrProtectionGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

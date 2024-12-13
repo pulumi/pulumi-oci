@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetAwrHubsResult> Invoke(GetAwrHubsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubsResult>("oci:Opsi/getAwrHubs:getAwrHubs", args ?? new GetAwrHubsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment. 
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAwrHubs = Oci.Opsi.GetAwrHubs.Invoke(new()
+        ///     {
+        ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = awrHubDisplayName,
+        ///         Id = awrHubId,
+        ///         States = awrHubState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAwrHubsResult> Invoke(GetAwrHubsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubsResult>("oci:Opsi/getAwrHubs:getAwrHubs", args ?? new GetAwrHubsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -98,21 +98,11 @@ type LookupExternalDbNodeResult struct {
 }
 
 func LookupExternalDbNodeOutput(ctx *pulumi.Context, args LookupExternalDbNodeOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbNodeResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalDbNodeResultOutput, error) {
 			args := v.(LookupExternalDbNodeArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalDbNodeResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalDbNodeResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalDbNodeResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalDbNodeResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbNode:getExternalDbNode", args, LookupExternalDbNodeResultOutput{}, options).(LookupExternalDbNodeResultOutput), nil
 		}).(LookupExternalDbNodeResultOutput)
 }
 

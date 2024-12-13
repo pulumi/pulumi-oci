@@ -68,6 +68,35 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public static Output<GetNetworkFirewallPolicyDecryptionRulesResult> Invoke(GetNetworkFirewallPolicyDecryptionRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionRulesResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRules:getNetworkFirewallPolicyDecryptionRules", args ?? new GetNetworkFirewallPolicyDecryptionRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Firewall Policy Decryption Rules in Oracle Cloud Infrastructure Network Firewall service.
+        /// 
+        /// Returns a list of Decryption Rule for the Network Firewall Policy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyDecryptionRules = Oci.NetworkFirewall.GetNetworkFirewallPolicyDecryptionRules.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         DecryptionRulePriorityOrder = networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder,
+        ///         DisplayName = networkFirewallPolicyDecryptionRuleDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkFirewallPolicyDecryptionRulesResult> Invoke(GetNetworkFirewallPolicyDecryptionRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionRulesResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRules:getNetworkFirewallPolicyDecryptionRules", args ?? new GetNetworkFirewallPolicyDecryptionRulesInvokeArgs(), options.WithDefaults());
     }
 
 

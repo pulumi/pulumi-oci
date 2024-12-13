@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetMysqlBackupsResult> Invoke(GetMysqlBackupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMysqlBackupsResult>("oci:Mysql/getMysqlBackups:getMysqlBackups", args ?? new GetMysqlBackupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Mysql Backups in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Get a list of DB System backups.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMysqlBackups = Oci.Mysql.GetMysqlBackups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         BackupId = testBackup.Id,
+        ///         CreationType = mysqlBackupCreationType,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DisplayName = mysqlBackupDisplayName,
+        ///         State = mysqlBackupState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMysqlBackupsResult> Invoke(GetMysqlBackupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlBackupsResult>("oci:Mysql/getMysqlBackups:getMysqlBackups", args ?? new GetMysqlBackupsInvokeArgs(), options.WithDefaults());
     }
 
 

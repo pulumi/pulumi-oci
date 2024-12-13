@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         public static Output<GetDesktopPoolVolumesResult> Invoke(GetDesktopPoolVolumesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDesktopPoolVolumesResult>("oci:Desktops/getDesktopPoolVolumes:getDesktopPoolVolumes", args ?? new GetDesktopPoolVolumesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Desktop Pool Volumes in Oracle Cloud Infrastructure Desktops service.
+        /// 
+        /// Returns a list of volumes within the given desktop pool. You can limit the results to an availability domain, volume name, or volume state. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDesktopPoolVolumes = Oci.Desktops.GetDesktopPoolVolumes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DesktopPoolId = testDesktopPool.Id,
+        ///         AvailabilityDomain = desktopPoolVolumeAvailabilityDomain,
+        ///         DisplayName = desktopPoolVolumeDisplayName,
+        ///         Id = desktopPoolVolumeId,
+        ///         State = desktopPoolVolumeState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDesktopPoolVolumesResult> Invoke(GetDesktopPoolVolumesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDesktopPoolVolumesResult>("oci:Desktops/getDesktopPoolVolumes:getDesktopPoolVolumes", args ?? new GetDesktopPoolVolumesInvokeArgs(), options.WithDefaults());
     }
 
 

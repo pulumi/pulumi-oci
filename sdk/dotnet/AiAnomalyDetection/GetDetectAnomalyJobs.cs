@@ -74,6 +74,38 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// </summary>
         public static Output<GetDetectAnomalyJobsResult> Invoke(GetDetectAnomalyJobsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDetectAnomalyJobsResult>("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", args ?? new GetDetectAnomalyJobsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+        /// 
+        /// Returns a list of all the Anomaly Detection jobs in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDetectAnomalyJobs = Oci.AiAnomalyDetection.GetDetectAnomalyJobs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DetectAnomalyJobId = testDetectAnomalyJob.Id,
+        ///         DisplayName = detectAnomalyJobDisplayName,
+        ///         ModelId = testModel.Id,
+        ///         ProjectId = testProject.Id,
+        ///         State = detectAnomalyJobState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDetectAnomalyJobsResult> Invoke(GetDetectAnomalyJobsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDetectAnomalyJobsResult>("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", args ?? new GetDetectAnomalyJobsInvokeArgs(), options.WithDefaults());
     }
 
 

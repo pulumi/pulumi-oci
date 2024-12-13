@@ -64,21 +64,11 @@ type GetJavaDownloadsJavaDownloadReportContentResult struct {
 }
 
 func GetJavaDownloadsJavaDownloadReportContentOutput(ctx *pulumi.Context, args GetJavaDownloadsJavaDownloadReportContentOutputArgs, opts ...pulumi.InvokeOption) GetJavaDownloadsJavaDownloadReportContentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetJavaDownloadsJavaDownloadReportContentResultOutput, error) {
 			args := v.(GetJavaDownloadsJavaDownloadReportContentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetJavaDownloadsJavaDownloadReportContentResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getJavaDownloadsJavaDownloadReportContent:getJavaDownloadsJavaDownloadReportContent", args, &rv, "", opts...)
-			if err != nil {
-				return GetJavaDownloadsJavaDownloadReportContentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetJavaDownloadsJavaDownloadReportContentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetJavaDownloadsJavaDownloadReportContentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaDownloadReportContent:getJavaDownloadsJavaDownloadReportContent", args, GetJavaDownloadsJavaDownloadReportContentResultOutput{}, options).(GetJavaDownloadsJavaDownloadReportContentResultOutput), nil
 		}).(GetJavaDownloadsJavaDownloadReportContentResultOutput)
 }
 

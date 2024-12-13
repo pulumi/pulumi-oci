@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseTableStatisticsResult> Invoke(GetManagedDatabaseTableStatisticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseTableStatisticsResult>("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args ?? new GetManagedDatabaseTableStatisticsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the number of database table objects grouped by different statuses such as
+        /// Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseTableStatistics = Oci.DatabaseManagement.GetManagedDatabaseTableStatistics.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseTableStatisticsResult> Invoke(GetManagedDatabaseTableStatisticsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseTableStatisticsResult>("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args ?? new GetManagedDatabaseTableStatisticsInvokeArgs(), options.WithDefaults());
     }
 
 

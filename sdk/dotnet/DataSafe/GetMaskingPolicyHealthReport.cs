@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetMaskingPolicyHealthReportResult> Invoke(GetMaskingPolicyHealthReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyHealthReportResult>("oci:DataSafe/getMaskingPolicyHealthReport:getMaskingPolicyHealthReport", args ?? new GetMaskingPolicyHealthReportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Masking Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the specified masking policy health report.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaskingPolicyHealthReport = Oci.DataSafe.GetMaskingPolicyHealthReport.Invoke(new()
+        ///     {
+        ///         MaskingPolicyHealthReportId = testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaskingPolicyHealthReportResult> Invoke(GetMaskingPolicyHealthReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyHealthReportResult>("oci:DataSafe/getMaskingPolicyHealthReport:getMaskingPolicyHealthReport", args ?? new GetMaskingPolicyHealthReportInvokeArgs(), options.WithDefaults());
     }
 
 

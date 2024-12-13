@@ -72,6 +72,37 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetSchedulerJobJobActivityStepsResult> Invoke(GetSchedulerJobJobActivityStepsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerJobJobActivityStepsResult>("oci:FleetAppsManagement/getSchedulerJobJobActivitySteps:getSchedulerJobJobActivitySteps", args ?? new GetSchedulerJobJobActivityStepsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Scheduler Job Job Activity Steps in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of Steps for an Activity Execution.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSchedulerJobJobActivitySteps = Oci.FleetAppsManagement.GetSchedulerJobJobActivitySteps.Invoke(new()
+        ///     {
+        ///         JobActivityId = testJobActivity.Id,
+        ///         SchedulerJobId = testJob.Id,
+        ///         ResourceTaskId = testResourceTask.Id,
+        ///         Sequence = schedulerJobJobActivityStepSequence,
+        ///         StepName = schedulerJobJobActivityStepStepName,
+        ///         TargetName = testTarget.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSchedulerJobJobActivityStepsResult> Invoke(GetSchedulerJobJobActivityStepsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerJobJobActivityStepsResult>("oci:FleetAppsManagement/getSchedulerJobJobActivitySteps:getSchedulerJobJobActivitySteps", args ?? new GetSchedulerJobJobActivityStepsInvokeArgs(), options.WithDefaults());
     }
 
 

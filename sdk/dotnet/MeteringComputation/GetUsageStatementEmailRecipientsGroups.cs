@@ -66,6 +66,34 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public static Output<GetUsageStatementEmailRecipientsGroupsResult> Invoke(GetUsageStatementEmailRecipientsGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsageStatementEmailRecipientsGroupsResult>("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", args ?? new GetUsageStatementEmailRecipientsGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
+        /// 
+        /// Return the saved usage statement email recipient group.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUsageStatementEmailRecipientsGroups = Oci.MeteringComputation.GetUsageStatementEmailRecipientsGroups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUsageStatementEmailRecipientsGroupsResult> Invoke(GetUsageStatementEmailRecipientsGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUsageStatementEmailRecipientsGroupsResult>("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", args ?? new GetUsageStatementEmailRecipientsGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

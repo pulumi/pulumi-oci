@@ -72,6 +72,37 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetSecurityRecipesResult> Invoke(GetSecurityRecipesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityRecipesResult>("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", args ?? new GetSecurityRecipesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+        /// compartment, identified by compartmentId.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityRecipes = Oci.CloudGuard.GetSecurityRecipes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = securityRecipeDisplayName,
+        ///         Id = securityRecipeId,
+        ///         State = securityRecipeState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityRecipesResult> Invoke(GetSecurityRecipesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityRecipesResult>("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", args ?? new GetSecurityRecipesInvokeArgs(), options.WithDefaults());
     }
 
 

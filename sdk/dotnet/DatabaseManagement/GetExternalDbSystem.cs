@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalDbSystemResult> Invoke(GetExternalDbSystemInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbSystemResult>("oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem", args ?? new GetExternalDbSystemInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the external DB system specified by `externalDbSystemId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalDbSystem = Oci.DatabaseManagement.GetExternalDbSystem.Invoke(new()
+        ///     {
+        ///         ExternalDbSystemId = testExternalDbSystemOciDatabaseManagementExternalDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalDbSystemResult> Invoke(GetExternalDbSystemInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbSystemResult>("oci:DatabaseManagement/getExternalDbSystem:getExternalDbSystem", args ?? new GetExternalDbSystemInvokeArgs(), options.WithDefaults());
     }
 
 

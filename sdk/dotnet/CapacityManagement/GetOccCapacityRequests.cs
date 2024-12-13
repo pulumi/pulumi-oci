@@ -72,6 +72,37 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public static Output<GetOccCapacityRequestsResult> Invoke(GetOccCapacityRequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccCapacityRequestsResult>("oci:CapacityManagement/getOccCapacityRequests:getOccCapacityRequests", args ?? new GetOccCapacityRequestsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Occ Capacity Requests in Oracle Cloud Infrastructure Capacity Management service.
+        /// 
+        /// Lists all capacity requests.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOccCapacityRequests = Oci.CapacityManagement.GetOccCapacityRequests.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = occCapacityRequestDisplayName,
+        ///         Id = occCapacityRequestId,
+        ///         Namespace = occCapacityRequestNamespace,
+        ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
+        ///         RequestType = occCapacityRequestRequestType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOccCapacityRequestsResult> Invoke(GetOccCapacityRequestsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOccCapacityRequestsResult>("oci:CapacityManagement/getOccCapacityRequests:getOccCapacityRequests", args ?? new GetOccCapacityRequestsInvokeArgs(), options.WithDefaults());
     }
 
 

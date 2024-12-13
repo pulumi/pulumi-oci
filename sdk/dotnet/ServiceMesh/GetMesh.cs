@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ServiceMesh
         /// </summary>
         public static Output<GetMeshResult> Invoke(GetMeshInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMeshResult>("oci:ServiceMesh/getMesh:getMesh", args ?? new GetMeshInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Mesh resource in Oracle Cloud Infrastructure Service Mesh service.
+        /// 
+        /// Gets a Mesh by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMesh = Oci.ServiceMesh.GetMesh.Invoke(new()
+        ///     {
+        ///         MeshId = testMeshOciServiceMeshMesh.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMeshResult> Invoke(GetMeshInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMeshResult>("oci:ServiceMesh/getMesh:getMesh", args ?? new GetMeshInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditTrailResult> Invoke(GetAuditTrailInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditTrailResult>("oci:DataSafe/getAuditTrail:getAuditTrail", args ?? new GetAuditTrailInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of audit trail.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditTrail = Oci.DataSafe.GetAuditTrail.Invoke(new()
+        ///     {
+        ///         AuditTrailId = testAuditTrailOciDataSafeAuditTrail.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditTrailResult> Invoke(GetAuditTrailInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditTrailResult>("oci:DataSafe/getAuditTrail:getAuditTrail", args ?? new GetAuditTrailInvokeArgs(), options.WithDefaults());
     }
 
 

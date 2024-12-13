@@ -104,21 +104,11 @@ type GetSqlFirewallViolationAnalyticsResult struct {
 }
 
 func GetSqlFirewallViolationAnalyticsOutput(ctx *pulumi.Context, args GetSqlFirewallViolationAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetSqlFirewallViolationAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSqlFirewallViolationAnalyticsResultOutput, error) {
 			args := v.(GetSqlFirewallViolationAnalyticsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSqlFirewallViolationAnalyticsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSqlFirewallViolationAnalytics:getSqlFirewallViolationAnalytics", args, &rv, "", opts...)
-			if err != nil {
-				return GetSqlFirewallViolationAnalyticsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSqlFirewallViolationAnalyticsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSqlFirewallViolationAnalyticsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSqlFirewallViolationAnalytics:getSqlFirewallViolationAnalytics", args, GetSqlFirewallViolationAnalyticsResultOutput{}, options).(GetSqlFirewallViolationAnalyticsResultOutput), nil
 		}).(GetSqlFirewallViolationAnalyticsResultOutput)
 }
 

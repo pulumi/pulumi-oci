@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetMaskingPolicyMaskingObjectsResult> Invoke(GetMaskingPolicyMaskingObjectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyMaskingObjectsResult>("oci:DataSafe/getMaskingPolicyMaskingObjects:getMaskingPolicyMaskingObjects", args ?? new GetMaskingPolicyMaskingObjectsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Masking Policy Masking Objects in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaskingPolicyMaskingObjects = Oci.DataSafe.GetMaskingPolicyMaskingObjects.Invoke(new()
+        ///     {
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         Objects = maskingPolicyMaskingObjectObject,
+        ///         ObjectTypes = maskingPolicyMaskingObjectObjectType,
+        ///         SchemaNames = maskingPolicyMaskingObjectSchemaName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaskingPolicyMaskingObjectsResult> Invoke(GetMaskingPolicyMaskingObjectsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyMaskingObjectsResult>("oci:DataSafe/getMaskingPolicyMaskingObjects:getMaskingPolicyMaskingObjects", args ?? new GetMaskingPolicyMaskingObjectsInvokeArgs(), options.WithDefaults());
     }
 
 

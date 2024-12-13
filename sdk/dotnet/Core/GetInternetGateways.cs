@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInternetGatewaysResult> Invoke(GetInternetGatewaysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInternetGatewaysResult>("oci:Core/getInternetGateways:getInternetGateways", args ?? new GetInternetGatewaysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Internet Gateways in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the internet gateways in the specified VCN and the specified compartment.
+        /// If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInternetGateways = Oci.Core.GetInternetGateways.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = internetGatewayDisplayName,
+        ///         State = internetGatewayState,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInternetGatewaysResult> Invoke(GetInternetGatewaysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInternetGatewaysResult>("oci:Core/getInternetGateways:getInternetGateways", args ?? new GetInternetGatewaysInvokeArgs(), options.WithDefaults());
     }
 
 

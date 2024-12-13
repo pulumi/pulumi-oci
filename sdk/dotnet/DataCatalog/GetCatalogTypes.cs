@@ -78,6 +78,40 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetCatalogTypesResult> Invoke(GetCatalogTypesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCatalogTypesResult>("oci:DataCatalog/getCatalogTypes:getCatalogTypes", args ?? new GetCatalogTypesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Returns a list of all types within a data catalog.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCatalogTypes = Oci.DataCatalog.GetCatalogTypes.Invoke(new()
+        ///     {
+        ///         CatalogId = testCatalog.Id,
+        ///         ExternalTypeName = catalogTypeExternalTypeName,
+        ///         Fields = catalogTypeFields,
+        ///         IsApproved = catalogTypeIsApproved,
+        ///         IsInternal = catalogTypeIsInternal,
+        ///         IsTag = catalogTypeIsTag,
+        ///         Name = catalogTypeName,
+        ///         State = catalogTypeState,
+        ///         TypeCategory = catalogTypeTypeCategory,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCatalogTypesResult> Invoke(GetCatalogTypesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCatalogTypesResult>("oci:DataCatalog/getCatalogTypes:getCatalogTypes", args ?? new GetCatalogTypesInvokeArgs(), options.WithDefaults());
     }
 
 

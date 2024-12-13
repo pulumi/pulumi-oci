@@ -72,21 +72,11 @@ type GetExternalAsmDiskGroupsResult struct {
 }
 
 func GetExternalAsmDiskGroupsOutput(ctx *pulumi.Context, args GetExternalAsmDiskGroupsOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmDiskGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalAsmDiskGroupsResultOutput, error) {
 			args := v.(GetExternalAsmDiskGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalAsmDiskGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalAsmDiskGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalAsmDiskGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalAsmDiskGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", args, GetExternalAsmDiskGroupsResultOutput{}, options).(GetExternalAsmDiskGroupsResultOutput), nil
 		}).(GetExternalAsmDiskGroupsResultOutput)
 }
 

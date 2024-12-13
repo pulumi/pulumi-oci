@@ -145,21 +145,11 @@ type LookupExadbVmClusterResult struct {
 }
 
 func LookupExadbVmClusterOutput(ctx *pulumi.Context, args LookupExadbVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupExadbVmClusterResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExadbVmClusterResultOutput, error) {
 			args := v.(LookupExadbVmClusterArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExadbVmClusterResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getExadbVmCluster:getExadbVmCluster", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExadbVmClusterResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExadbVmClusterResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExadbVmClusterResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getExadbVmCluster:getExadbVmCluster", args, LookupExadbVmClusterResultOutput{}, options).(LookupExadbVmClusterResultOutput), nil
 		}).(LookupExadbVmClusterResultOutput)
 }
 

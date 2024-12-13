@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTaskResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTask:getManagedDatabaseSqlTuningAdvisorTask", args ?? new GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Sql Tuning Advisor Task resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the SQL Tuning Advisor tasks for the specified Managed Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlTuningAdvisorTask = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTask.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         Name = managedDatabaseSqlTuningAdvisorTaskName,
+        ///         Status = managedDatabaseSqlTuningAdvisorTaskStatus,
+        ///         TimeGreaterThanOrEqualTo = managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTaskResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTask:getManagedDatabaseSqlTuningAdvisorTask", args ?? new GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs(), options.WithDefaults());
     }
 
 

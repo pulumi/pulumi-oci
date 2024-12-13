@@ -72,21 +72,11 @@ type LookupClusterOptionResult struct {
 }
 
 func LookupClusterOptionOutput(ctx *pulumi.Context, args LookupClusterOptionOutputArgs, opts ...pulumi.InvokeOption) LookupClusterOptionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupClusterOptionResultOutput, error) {
 			args := v.(LookupClusterOptionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupClusterOptionResult
-			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getClusterOption:getClusterOption", args, &rv, "", opts...)
-			if err != nil {
-				return LookupClusterOptionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupClusterOptionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupClusterOptionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ContainerEngine/getClusterOption:getClusterOption", args, LookupClusterOptionResultOutput{}, options).(LookupClusterOptionResultOutput), nil
 		}).(LookupClusterOptionResultOutput)
 }
 

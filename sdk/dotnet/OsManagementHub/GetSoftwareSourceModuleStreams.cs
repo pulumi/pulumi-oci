@@ -74,6 +74,38 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwareSourceModuleStreamsResult> Invoke(GetSoftwareSourceModuleStreamsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamsResult>("oci:OsManagementHub/getSoftwareSourceModuleStreams:getSoftwareSourceModuleStreams", args ?? new GetSoftwareSourceModuleStreamsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
+        /// Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSourceModuleStreams = Oci.OsManagementHub.GetSoftwareSourceModuleStreams.Invoke(new()
+        ///     {
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         IsLatest = softwareSourceModuleStreamIsLatest,
+        ///         ModuleName = softwareSourceModuleStreamModuleName,
+        ///         ModuleNameContains = softwareSourceModuleStreamModuleNameContains,
+        ///         Name = softwareSourceModuleStreamName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourceModuleStreamsResult> Invoke(GetSoftwareSourceModuleStreamsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamsResult>("oci:OsManagementHub/getSoftwareSourceModuleStreams:getSoftwareSourceModuleStreams", args ?? new GetSoftwareSourceModuleStreamsInvokeArgs(), options.WithDefaults());
     }
 
 
